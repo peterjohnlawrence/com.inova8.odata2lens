@@ -1,0 +1,99 @@
+#set ($ViewTitle	= "ViewTitle") 
+#set ($This	= "this") 
+#set ($SearchTooltip	= "SearchTooltip") 
+#macro( maptypes $range )
+  #if ($range == "Edm.Binary")
+  #elseif ($range == "Edm.Boolean"),type: 'sap.ui.model.type.Boolean'
+  #elseif ($range == "Edm.Byte")
+  #elseif ($range == "Edm.SByte")
+  #elseif ($range == "Edm.Date")
+  #elseif ($range == "Edm.DateTimeOffset")
+  #elseif ($range == "Edm.TimeOfDay")
+  #elseif ($range == "Edm.Duration")
+  #elseif ($range == "Edm.Decimal")
+  #elseif ($range == "Edm.Single")
+  #elseif ($range == "Edm.Double"),type: 'sap.ui.model.type.Float'
+  #elseif ($range == "Edm.Guid"),type: 'sap.ui.model.type.String'
+  #elseif ($range == "Edm.Int16"),type: 'sap.ui.model.type.Integer'
+  #elseif ($range == "Edm.Int32"),type: 'sap.ui.model.type.Integer'
+  #elseif ($range == "Edm.Int64"),type: 'sap.ui.model.type.Integer'
+  #elseif ($range == "Edm.String"),type: 'sap.ui.model.type.String'
+  #elseif ($range == "Edm.Stream")
+  #elseif ($range == "Edm.Geography")
+  #elseif ($range == "Edm.GeographyPoint")
+  #elseif ($range == "Edm.GeographyLineString")
+  #elseif ($range == "Edm.GeographyPolygon")
+  #elseif ($range == "Edm.GeographyMultiPoint")
+  #elseif ($range == "Edm.GeographyMultiLineString")
+  #elseif ($range == "Edm.GeographyMultiPolygon")
+  #elseif ($range == "Edm.GeographyCollection")
+  #elseif ($range == "Edm.Geometry")
+  #elseif ($range == "Edm.GeometryPoint")
+  #elseif ($range == "Edm.GeometryLineString")
+  #elseif ($range == "Edm.GeometryPolygon")
+  #elseif ($range == "Edm.GeometryMultiPoint")
+  #elseif ($range == "Edm.GeometryMultiLineString")
+  #elseif ($range == "Edm.GeometryMultiPolygon")
+  #elseif ($range == "Edm.GeometryCollection")
+  #else
+  #end 
+#end
+<mvc:View controllerName="com.inova8.lens.controller.EntitySet" xmlns="sap.m" xmlns:mvc="sap.ui.core.mvc" xmlns:layout="sap.ui.layout"
+	xmlns:rdf="com.inova8.lens.control">
+	<Page showHeader="false" id="page" navButtonPress="onNavBack" showNavButton="true" title="{i18n>$entitySet.target.$ViewTitle}">
+		<content>
+			<Table id="table" inset="false" items="{ path: 'dataModel>/$entitySet.name' , sorter: { path: 'label', descending: false } 
+					#set($numOfExpand = 0)		
+					#foreach($property in $uiTemplate.properties)
+						#if((!$property.hidden) && ($property.propertyType == "C")) 
+							#if($numOfExpand == 0) ,parameters:{$expand:{ #else , #end
+							$property.property:{ $count:true,$select:'subjectId'}	
+							#set($numOfExpand = $numOfExpand + 1)
+						#end					
+					#end
+					#if($numOfExpand > 0) }} #end
+				}"
+				noDataText="{entitySetView>/tableNoDataText}" busyIndicatorDelay="{entitySetView>/tableBusyDelay}" growing="true" growingScrollToLoad="true"
+				updateFinished="onUpdateFinished"  fixedLayout="false">
+				<headerToolbar>
+					<Toolbar>
+						<ToolbarSpacer/>
+						<Title id="tableHeader" text="{entitySetView>/entitySetTableTitle}"/>
+						<ToolbarSpacer/>
+						<SearchField id="searchField" tooltip="{i18n>$entitySet.target.$SearchTooltip}" search="onSearch" width="auto"></SearchField>
+					</Toolbar>
+				</headerToolbar>
+				<columns>
+					<Column >
+						<Text text="{i18n>$entitySet.target.$This}"/>
+					</Column>
+					#foreach($property in $uiTemplate.properties)
+						#if(!$property.hidden)
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>$entitySet.target.$property.property}"/>
+					</Column>
+						#end
+					#end									
+				</columns>
+				<items>
+					<ColumnListItem id="template" type="Navigation" press="onPress">
+						<cells>
+							<rdf:TextResource path="dataModel>" entitySet="$entitySet.name"/>
+							#foreach($property in $uiTemplate.properties)
+								#if(!$property.hidden)
+									#if($property.propertyType == "D")
+							<Text text="{path: 'dataModel>$property.property'#maptypes($property.range)}"/>
+									#elseif ($property.propertyType == "O")
+							<rdf:TextResource path="dataModel>$property.property" entitySet="$property.range"/>
+									#elseif ($property.propertyType == "C")
+							<rdf:NavigationPropertyCollection path="dataModel>$property.property/$count" navigationProperty="$entitySet.name/$property.property"/>
+									#end
+								#end
+							#end							
+						</cells>
+					</ColumnListItem>
+				</items>
+			</Table>
+		</content>
+	</Page>
+</mvc:View>

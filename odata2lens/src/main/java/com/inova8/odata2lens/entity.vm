@@ -1,0 +1,65 @@
+#set ($ViewTitle	= "ViewTitle") 
+#set ($This	= "this") 
+#set ($SearchTooltip	= "SearchTooltip") 
+#macro( maptypes $range )
+  #if ($range == "Edm.Binary")
+  #elseif ($range == "Edm.Boolean"),type: 'sap.ui.model.type.Boolean'
+  #elseif ($range == "Edm.Byte")
+  #elseif ($range == "Edm.SByte")
+  #elseif ($range == "Edm.Date")
+  #elseif ($range == "Edm.DateTimeOffset")
+  #elseif ($range == "Edm.TimeOfDay")
+  #elseif ($range == "Edm.Duration")
+  #elseif ($range == "Edm.Decimal")
+  #elseif ($range == "Edm.Single")
+  #elseif ($range == "Edm.Double"),type: 'sap.ui.model.type.Float'
+  #elseif ($range == "Edm.Guid"),type: 'sap.ui.model.type.String'
+  #elseif ($range == "Edm.Int16"),type: 'sap.ui.model.type.Integer'
+  #elseif ($range == "Edm.Int32"),type: 'sap.ui.model.type.Integer'
+  #elseif ($range == "Edm.Int64"),type: 'sap.ui.model.type.Integer'
+  #elseif ($range == "Edm.String"),type: 'sap.ui.model.type.String'
+  #elseif ($range == "Edm.Stream")
+  #elseif ($range == "Edm.Geography")
+  #elseif ($range == "Edm.GeographyPoint")
+  #elseif ($range == "Edm.GeographyLineString")
+  #elseif ($range == "Edm.GeographyPolygon")
+  #elseif ($range == "Edm.GeographyMultiPoint")
+  #elseif ($range == "Edm.GeographyMultiLineString")
+  #elseif ($range == "Edm.GeographyMultiPolygon")
+  #elseif ($range == "Edm.GeographyCollection")
+  #elseif ($range == "Edm.Geometry")
+  #elseif ($range == "Edm.GeometryPoint")
+  #elseif ($range == "Edm.GeometryLineString")
+  #elseif ($range == "Edm.GeometryPolygon")
+  #elseif ($range == "Edm.GeometryMultiPoint")
+  #elseif ($range == "Edm.GeometryMultiLineString")
+  #elseif ($range == "Edm.GeometryMultiPolygon")
+  #elseif ($range == "Edm.GeometryCollection")
+  #else
+  #end 
+#end
+<mvc:View controllerName="com.inova8.lens.controller.Entity" xmlns="sap.m" xmlns:mvc="sap.ui.core.mvc"
+	xmlns:f="sap.ui.layout.form" xmlns:table="sap.ui.table" xmlns:rdf="com.inova8.lens.control">
+	<Page showHeader="true" id="page" navButtonPress="onNavBack" showNavButton="false" title="{i18n>$entity.target#[[.Title]]#}"
+		busy="{entityView>/busy}" busyIndicatorDelay="{entityView>/delay}">
+		<content>
+			<f:SimpleForm class="editableForm" columnsL="1" columnsM="1" editable="true" emptySpanL="4" emptySpanM="4" 
+				labelSpanL="2" labelSpanM="2" layout="ResponsiveGridLayout" maxContainerCols="2" minWidth="1024" singleContainerFullSize="true">
+				<f:content>
+					<Label text="{i18n>$entity.target.$This}" required="false"/><rdf:TextResource path="dataModel>" entitySet="$entity.name"/>
+					#foreach($property in $uiTemplate.properties)
+						#if(!$property.hidden)
+							#if($property.propertyType == "D")
+							<Label text="{i18n>$entity.target.$property.property}" required="false"/><Text text="{path: 'dataModel>$property.property'#maptypes($property.range)}"/>		
+							#elseif ($property.propertyType == "O")
+							<Label text="{i18n>$entity.target.$property.property}" required="false"/><rdf:TextResource path="dataModel>$property.property" entitySet="$property.range"/>		
+							#elseif ($property.propertyType == "C")
+							<Label text="{i18n>$entity.target.$property.property}" required="false"/><rdf:ListResource path="dataModel>$property.property" entitySet="$property.range"/>
+							#end
+						#end
+					#end		
+				</f:content>
+			</f:SimpleForm>
+		</content>
+	</Page>
+</mvc:View>

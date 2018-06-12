@@ -1,0 +1,70 @@
+# This is the resource bundle for lens.framework.v4
+Lens.appTitle=Nexify Lens
+Lens.appDescription=Quorum Browser
+Lens.notificationTitle=Notifications
+Lens.notificationButtonText=Show all Notifications
+Lens.userHeaderTitle=Settings
+Lens.searchTooltip = Enter text to match anything across all types
+
+#~~~ common errors ~~~~~~~~~~~~~~~~~~~~~~~~~~
+tableNoDataText = No data retrieved
+
+#~~~ Home View ~~~~~~~~~~~~~~~~~~~~~~~~~~
+home.ViewTitle=Home
+
+#~~~ Settings View ~~~~~~~~~~~~~~~~~~~~~~~~~~
+settings.ViewTitle=Settings
+
+#~~~ Not Found View ~~~~~~~~~~~~~~~~~~~~~~~
+NotFound.Title=Not Found
+NotFound.noObjectFoundText=This <ObjectName> is not available
+NotFound.noObjectsAvailableText=No <ObjectNamePlural> are currently available
+NotFound.Text=The requested resource was not found
+
+#~~~ Error Handling ~~~~~~~~~~~~~~~~~~~~~~~
+ErrorHandler.errorText=Sorry, a technical error occurred! Please try again later.
+
+#~~~ Login Handling ~~~~~~~~~~~~~~~~~~~~~~~
+Login.title=Login
+Login.user=Username
+Login.userPlaceholder =
+Login.pass=Password
+Login.passPlaceholder =
+Login.OK=Login
+Login.PasswordReset=Reset Password
+Login.verificationCode=Verification Code
+Login.verificationCodePlaceholder
+Login.newpass=New password
+Login.newpassPlaceholder =
+
+#~~~ Search View ~~~~~~~~~~~~~~~~~~~~~~~~~~
+search.ViewTitle=Search Results
+search.TableTitle=Search
+search.SearchTooltip=Enter text value or a part of it.
+search.NoDataWithSearchText=No matching Employees found
+search.TableTitleCount=Search ({0})
+search.tableNoDataText=No search results are currently available
+search.resource = Resource
+search.type = Type
+search.property = Property
+search.value = Value containing match
+
+#~~~ entityGraph View ~~~~~~~~~~~~~~~~~~~~~~~~~~
+entityGraph.ViewTitle=Entity Graph
+entityGraph.ViewTitleEntity=Entity {0} Graph
+entityGraph.noDataText=No results are currently available
+entityGraph.backgroundContextMenu = Background Menu
+entityGraph.showHidden = Show Hidden
+entityGraph.selectAll = Select All
+entityGraph.linkContextMenu = Link Menu
+entityGraph.hideLink = Hide Link
+entityGraph.removeLink = Remove Link
+entityGraph.selectEnds = Select Ends
+entityGraph.nodeContextMenu = Node Menu
+entityGraph.expandAllNode = Expand All
+entityGraph.expandSelectedNode = Expand Selected
+entityGraph.hideNode = Hide Node
+entityGraph.removeNode = Remove Node
+entityGraph.selectLinked = Select Linked
+entityGraph.mapMode = Map Mode
+entityGraph.mapModeTooltip = Selecting Map Mode will position nodes over map. Other layout preferences will be ignored.

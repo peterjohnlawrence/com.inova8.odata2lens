@@ -1,0 +1,98 @@
+##set ( $entity = "GP_Practice")	
+##set ( $entitySet = "GP_Practice")	
+##set ( $entityNavigationSets = ["GP_Practice_Amended_Record_Indicator","GP_Practice_High_Level_Health_Geography","GP_Practice_National_Grouping","GP_Practice_Organisation_Sub_Type_Code","GP_Practice_Prescribing_Setting","GP_Practice_Status_Code"])	
+#set ( $plural= "s")	
+#set ( $dashboard= "DashBoard")		
+{
+#foreach($entityType in $entityTypes)
+	"$entityType.entitySet.name": {
+		"text": "$entityType.entitySet.label",
+		"target": "$entityType.entitySet.target",
+		"tooltip": "Show all $entityType.entitySet.label",
+		"image": "./images/icons/category.png",
+		"icon": "sap-icon://expand-group",
+		"menu": [{
+			"text": "Graph View",
+			"icon": "sap-icon://overview-chart",
+			"target": "entityGraph",
+			"tooltip": "$entityType.entitySet.label Graph",
+			"parameters": {
+				"objectId": "$entityType.entitySet.name",
+				"queryOptions": {
+					"$top": 10
+				}
+			}
+		}, {
+			"text": "$entityType.entitySet.label",
+			"icon": "sap-icon://home",
+			"target": "$entityType.entitySet.target",
+			"tooltip": "Show all $entityType.entitySet.label"
+		}, {
+			"text": "$dashboard",
+			"icon": "sap-icon://business-objects-experience",
+			"target": "$entitySet.dashboardTarget",
+			"tooltip": "Show $entityType.entitySet.label $dashboard"
+		}],
+		"entity": {
+			"target": "$entityType.entity.name",
+			"icon": "./images/icons/category.png",
+			"menu": [{
+				"text": "Graph View",
+				"icon": "sap-icon://overview-chart",
+				"target": "entityGraph",
+				"tooltip": "$entityType.entity.tooltip Graph"
+			}, {
+				"text": "Details",
+				"icon": "sap-icon://detail-view",
+				"target": "$entityType.entity.target",
+				"tooltip": "$entityType.entity.tooltip Details"
+			}
+	#foreach($navigationSet in $entityType.entity.navigationSet)
+			, {
+				"text": "$navigationSet.label",
+				"icon": "sap-icon://expand-group",
+				"target": "$entityType.entity.target$navigationSet.name",
+				"tooltip": "$navigationSet.tooltip"
+			}
+	#end	
+	#foreach($navigationProperty in $entityType.entity.navigationProperties)
+			, {
+				"text": "$navigationProperty.label",
+				"icon": "sap-icon://enter-more",
+				"target": "$navigationProperty.targetEntityType",
+				"tooltip": "$navigationProperty.tooltip",
+				"parameters": {
+					"navigation": "$navigationProperty.name"
+				}
+			}
+	#end			
+			]
+		}
+		,"navigationProperty": {
+	#foreach($navigationSet in $entityType.entity.navigationSet)
+			"$navigationSet.name": {
+				"target": "$navigationSet.name",
+				"icon": "./images/icons/territory.png",
+				"menu": [{
+					"text": "Graph View",
+					"icon": "sap-icon://overview-chart",
+					"target": "navigationSetGraph",
+					"tooltip": "$navigationSet.name Graph"
+				}, {
+					"text": "$navigationSet.label",
+					"icon": "sap-icon://expand-group",
+					"target": "$navigationSet.target",
+					"tooltip": "$navigationSet.tooltip"
+				}]
+			}
+		#if ( $foreach.hasNext ) 
+		,
+		#end
+	#end
+		}
+	}
+	#if ( $foreach.hasNext ) 
+	,
+	#end	
+#end
+}

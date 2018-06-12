@@ -1,0 +1,14 @@
+
+#~~~ $entity.target View ~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+$entity.target#[[.Title]]# = $entity.label Details
+$entity.target#[[.this]]# = $entity.label
+#foreach($property in $entity.properties)
+$entity.target#[[.]]#$property.name = $property.label
+#end
+#foreach($navigationProperty in $entity.navigationProperties)
+$entity.target#[[.]]#$navigationProperty.name  = $navigationProperty.label  
+#end
+#foreach($navigationSet in $entity.navigationSet)
+$entity.target#[[.]]#$navigationSet.name  = $navigationSet.label  
+#end
