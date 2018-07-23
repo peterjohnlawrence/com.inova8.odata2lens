@@ -55,9 +55,9 @@ public class GenerateLens {
 		TreeMap<String, EntityType> entityTypes = new TreeMap<String, EntityType>();
 		createMetadata(edm, schemaName, entityTypes);
 		generateUITemplate(schemaName, entityTypes);
-		TreeMap<String, UITemplate> uiTemplates = readUITemplate(schemaName);
+		TreeMap<String, UITemplate> uiTemplates = readUITemplate(schemaName,entityTypes);
 		generateRouting(schemaName, entityTypes);
-		generateContextMenu(schemaName, entityTypes);
+		generateContextMenu(schemaName, entityTypes, uiTemplates);
 		StringWriter i18nWriter = generateI18n();
 		generateEntitySet(schemaName, entityTypes, i18nWriter, uiTemplates);
 		generateEntity(schemaName, entityTypes, i18nWriter, uiTemplates);
@@ -70,7 +70,7 @@ public class GenerateLens {
 		//System.out.println(i18nWriter.toString());
 	}
 
-	private static TreeMap<String, UITemplate> readUITemplate(String schemaName) throws IOException {
+	private static TreeMap<String, UITemplate> readUITemplate(String schemaName , TreeMap<String, EntityType> entityTypes) throws IOException {
 
 		BufferedReader uiTemplateReader = null;
 		TreeMap<String, UITemplate> uiTemplates = new TreeMap<String, UITemplate>();
@@ -83,16 +83,26 @@ public class GenerateLens {
 			String cvsSplitBy = ",";
 			while ((line = uiTemplateReader.readLine()) != null) {
 				String[] template = line.split(cvsSplitBy);
-				if (template.length == 13) {
+				if (template.length > 12) {
 					String target = null;
 					try {
-						target = template[3].trim();
+						target = template[4].trim();
 						UITemplate currentTemplate = uiTemplates.get(target);
 						currentTemplate.update(template[0].trim(), template[1].trim(), template[2].trim(),
-									template[3].trim(), template[4].trim(), template[5].trim(), template[6].trim());
-						currentTemplate.updateProperty(template[7].trim(), template[8].trim(), template[9].trim(),
-								Float.parseFloat(template[10].trim()), Boolean.parseBoolean(template[11].trim()), template[12].trim());
+									template[3].trim(), template[4].trim(), template[5].trim(), template[6].trim(), template[7].trim());
+						EntityType entityType = entityTypes.get(template[1].trim());
+						if( !template[2].trim().isEmpty()) entityType.getEntitySet().setEntityIcon(template[2].trim());
+						if( !template[3].trim().isEmpty()) entityType.getEntitySet().setImage(template[3].trim());
+						if( !template[5].trim().isEmpty()) entityType.getEntity().setTargetIcon(template[5].trim());
+						if(template.length == 15) currentTemplate.updateProperty(template[8].trim(), template[9].trim(), template[10].trim(),
+								Float.parseFloat(template[11].trim()), Boolean.parseBoolean(template[12].trim()), template[13].trim(), template[14].trim());
+						else currentTemplate.updateProperty(template[8].trim(), template[9].trim(), template[10].trim(),
+								Float.parseFloat(template[11].trim()), Boolean.parseBoolean(template[12].trim()), template[13].trim(), "");
+						
+
+							
 					} catch (Exception e) {
+						int x=1;
 					} finally {
 					}
 				}
@@ -118,19 +128,19 @@ public class GenerateLens {
 			UITemplate currentTemplate = null;
 			while ((line = uiTemplateReader.readLine()) != null) {
 				String[] template = line.split(cvsSplitBy);
-				if (template.length == 13) {
+				if (template.length == 15) {
 					String target = null;
 					try {
-						target = template[3].trim();
+						target = template[4].trim();
 						if (!target.equals(currentTarget)) {
 							currentTemplate = new UITemplate(template[0].trim(), template[1].trim(), template[2].trim(),
-									template[3].trim(), template[4].trim(), template[5].trim(), template[6].trim());
+									template[3].trim(), template[4].trim(), template[5].trim(), template[6].trim(), template[7].trim());
 							currentTarget = target;
 							uiTemplates.put(target, currentTemplate);						
 						}
-						currentTemplate.getProperties().put(Float.parseFloat(template[10].trim()),
-								new PropertyTemplate(template[7].trim(), template[8].trim(), template[9].trim(),
-										Float.parseFloat(template[10].trim()), Boolean.parseBoolean(template[11].trim()), template[12].trim()));
+						currentTemplate.getProperties().put(Float.parseFloat(template[11].trim()),
+								new PropertyTemplate(template[8].trim(), template[9].trim(), template[10].trim(),
+										Float.parseFloat(template[11].trim()), Boolean.parseBoolean(template[12].trim()), template[13].trim(), template[14].trim()));
 					} catch (Exception e) {
 					} finally {
 					}
@@ -190,7 +200,9 @@ public class GenerateLens {
 								: edmEntityType.getName() + "s",
 						entityTypeAnnotations.containsKey("sap.quickinfo")
 								? entityTypeAnnotations.get("sap.quickinfo") + "s"
-								: "Show " + edmEntityType.getName() + "s");
+								: "Show " + edmEntityType.getName() + "s",
+						"./images/icons/category.png", "sap-icon://expand-group"		
+						);
 				//value = edmEntityType.getAnnotations().get(0).getExpression().asConstant().getValueAsString()
 				TreeMap<String, EntityNavigationSet> entityNavigationSets = new TreeMap<String, EntityNavigationSet>();
 				TreeMap<String, NavigationProperty> navigationProperties = new TreeMap<String, NavigationProperty>();
@@ -205,7 +217,9 @@ public class GenerateLens {
 										propertyAnnotations.containsKey("sap.label")
 												? propertyAnnotations.get("sap.label") : propertyName,
 										propertyAnnotations.containsKey("sap.quickinfo")
-												? propertyAnnotations.get("sap.quickinfo") : propertyName,property.getType().getFullQualifiedName().toString()));
+												? propertyAnnotations.get("sap.quickinfo") : propertyName,property.getType().getFullQualifiedName().toString(),null)
+
+								);
 					}
 
 				}
@@ -228,7 +242,7 @@ public class GenerateLens {
 													? navigationPropertyAnnotations.get("sap.quickinfo")
 													: "Show " + edmEntityType.getName() + "s "
 															+ navigationProperty.getType().getName(),
-											navigationProperty.getType().getName(), navigationProperty.getType().getName()));
+											navigationProperty.getType().getName(), navigationProperty.getType().getName(), ""));
 						} else {
 							navigationProperties.put(navigationPropertyName, new NavigationProperty(
 									navigationPropertyName,
@@ -237,7 +251,7 @@ public class GenerateLens {
 									navigationPropertyAnnotations.containsKey("sap.quickinfo")
 											? navigationPropertyAnnotations.get("sap.quickinfo")
 											: "Show " + navigationPropertyName,
-									navigationProperty.getType().getName(), navigationProperty.getType().getName()));
+									navigationProperty.getType().getName(), navigationProperty.getType().getName(), ""));
 						}
 					}
 				}
@@ -246,12 +260,22 @@ public class GenerateLens {
 						entityTypeAnnotations.containsKey("sap.label") ? entityTypeAnnotations.get("sap.label")
 								: edmEntityType.getName(),
 						entityTypeAnnotations.containsKey("sap.quickinfo") ? entityTypeAnnotations.get("sap.quickinfo")
-								: edmEntityType.getName(),
+								: edmEntityType.getName(), "sap-icon://expand-group",
 						entityNavigationSets, navigationProperties, properties);
 				entityTypes.put(edmEntityType.getName(), new EntityType(entity, entitySet));
 			}
 		}
-
+		for( EntityType entityType : entityTypes.values()) {
+			for(NavigationProperty navigationProperty : entityType.getEntity().getNavigationProperties().values()) {
+				
+				navigationProperty.setRangeType(  entityTypes.get(navigationProperty.getRange()) );
+				
+			}
+			for (EntityNavigationSet navigationSet : entityType.getEntity().getNavigationSet().values()) {
+				navigationSet.setRangeType(  entityTypes.get(navigationSet.getRange()) );
+			}
+			
+		}
 	}
 
 	private static boolean isFunctionImport(List<EdmFunction> edmFunctions, EdmEntityType edmEntityType) {
@@ -305,7 +329,7 @@ public class GenerateLens {
 		System.out.println(uiWriter.toString());
 	}
 
-	private static void generateContextMenu(String schemaName, TreeMap<String, EntityType> entityTypes)
+	private static void generateContextMenu(String schemaName, TreeMap<String, EntityType> entityTypes,TreeMap<String, UITemplate>  uiTemplates)
 			throws IOException {
 
 		Template contextMenuTemplate = null;

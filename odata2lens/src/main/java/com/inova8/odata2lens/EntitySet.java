@@ -6,13 +6,18 @@ public class EntitySet {
 	String dashboardTarget;
 	String label;
 	String tooltip;
+	String image;
+	String entityIcon;
+	
 
-	public EntitySet(String name, String target, String dashboardTarget, String label, String tooltip) {
+	public EntitySet(String name, String target, String dashboardTarget, String label, String tooltip, String image,String entityIcon) {
 		this.name = name;
 		this.target = target;
 		this.dashboardTarget = dashboardTarget;
 		this.label = label;
 		this.tooltip = tooltip;
+		this.image = image;
+		this.entityIcon = entityIcon;
 	}
 
 	public String getName() {
@@ -30,6 +35,18 @@ public class EntitySet {
 
 	public String getTooltip() {
 		return tooltip;
+	}
+	public String getImage() {
+		return image;
+	}
+	public String getEntityIcon() {
+		return entityIcon;
+	}
+	void setImage(String image) {
+		this.image = image;
+	}
+	void setEntityIcon(String entityIcon) {
+		this.entityIcon = entityIcon;
 	}
 
 }

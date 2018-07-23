@@ -5,13 +5,15 @@ public class Property {
 	String label;
 	String tooltip;
 	String range;
+	String formatOptions;
 
-	public Property(String name, String label, String tooltip, String range) {
+	public Property(String name, String label, String tooltip, String range, String formatOptions) {
 		this.name = name;
 
 		this.label = label;
 		this.tooltip = tooltip;
 		this.range = range;
+		this.formatOptions = formatOptions;
 	}
 
 	public String getName() {
@@ -29,4 +31,6 @@ public class Property {
 	public String getRange() {
 		return range;
 	}
-}
+	public String getFormatOptions() {
+		return formatOptions;
+	}}

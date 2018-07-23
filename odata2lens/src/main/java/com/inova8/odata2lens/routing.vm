@@ -38,16 +38,22 @@
 				"login"
 			]
 		}, {
-			"pattern": "Search/:searchText:",
+			"pattern": "Search:?queryOptions:",
 			"name": "search",
 			"target": [
 				"search"
 			]
 		}, {
-			"pattern": "EntityGraph/{objectId}/:navigation::?queryOptions:",
-			"name": "entityGraph",
+			"pattern": "AdvancedSearch:?queryOptions:",
+			"name": "advancedSearch",
 			"target": [
-				"entityGraph"
+				"advancedSearch"
+			]
+		}, {
+			"pattern": "Graph/{objectId}/:navigation::?queryOptions:",
+			"name": "graph",
+			"target": [
+				"graph"
 			]
 		}
 #foreach($entityType in $entityTypes)		
@@ -98,9 +104,14 @@
 				"viewId": "search",
 				"viewLevel": 1
 			},
-			"entityGraph": {
-				"viewName": "EntityGraph/EntityGraph",
-				"viewId": "entityGraph",
+			"advancedSearch": {
+				"viewName": "AdvancedSearch",
+				"viewId": "advancedSearch",
+				"viewLevel": 1
+			},
+			"graph": {
+				"viewName": "Graph/Graph",
+				"viewId": "graph",
 				"viewLevel": 1
 			},
 			"default": {

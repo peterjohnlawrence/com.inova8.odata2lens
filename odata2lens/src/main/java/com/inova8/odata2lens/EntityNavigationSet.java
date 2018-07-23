@@ -8,15 +8,19 @@ public class EntityNavigationSet {
 	private String label;
 	private String tooltip;
 	private String targetEntityType;
-	String range;
-	
-	public EntityNavigationSet(String name, String target, String label, String tooltip, String targetEntityType,	String range) {
+	private String icon;
+	private String range;
+	private EntityType rangeType;
+
+	public EntityNavigationSet(String name, String target, String label, String tooltip, String targetEntityType,
+			String range, String icon) {
 		this.name = name;
 		this.target = target;
 		this.label = label;
 		this.tooltip = tooltip;
-		this.targetEntityType =targetEntityType;
+		this.targetEntityType = targetEntityType;
 		this.range = range;
+		this.icon = icon;
 	}
 
 	public String getName() {
@@ -34,12 +38,30 @@ public class EntityNavigationSet {
 	public String getTooltip() {
 		return tooltip;
 	}
+
 	public String getTargetEntityType() {
 		return targetEntityType;
 	}
 
 	public String getRange() {
 		return range;
+	}
+
+	public String getIcon() {
+		if (icon.isEmpty()) {
+			return rangeType.getEntity().getTargetIcon();
+		} else {
+			return icon;
+		}
+	}
+
+	void setIcon(String icon) {
+		this.icon = icon;
+	}
+
+	public void setRangeType(EntityType entityType) {
+		this.rangeType = entityType;
+		
 	}
 
 }

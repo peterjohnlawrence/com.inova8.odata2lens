@@ -1,40 +1,43 @@
 #set ($ViewTitle	= "ViewTitle") 
 #set ($This	= "this") 
 #set ($SearchTooltip	= "SearchTooltip") 
-#macro( maptypes $range )
-  #if ($range == "Edm.Binary")
-  #elseif ($range == "Edm.Boolean"),type: 'sap.ui.model.type.Boolean'
-  #elseif ($range == "Edm.Byte")
-  #elseif ($range == "Edm.SByte")
-  #elseif ($range == "Edm.Date")
-  #elseif ($range == "Edm.DateTimeOffset")
-  #elseif ($range == "Edm.TimeOfDay")
-  #elseif ($range == "Edm.Duration")
-  #elseif ($range == "Edm.Decimal")
-  #elseif ($range == "Edm.Single")
-  #elseif ($range == "Edm.Double"),type: 'sap.ui.model.type.Float'
-  #elseif ($range == "Edm.Guid"),type: 'sap.ui.model.type.String'
-  #elseif ($range == "Edm.Int16"),type: 'sap.ui.model.type.Integer'
-  #elseif ($range == "Edm.Int32"),type: 'sap.ui.model.type.Integer'
-  #elseif ($range == "Edm.Int64"),type: 'sap.ui.model.type.Integer'
-  #elseif ($range == "Edm.String"),type: 'sap.ui.model.type.String'
-  #elseif ($range == "Edm.Stream")
-  #elseif ($range == "Edm.Geography")
-  #elseif ($range == "Edm.GeographyPoint")
-  #elseif ($range == "Edm.GeographyLineString")
-  #elseif ($range == "Edm.GeographyPolygon")
-  #elseif ($range == "Edm.GeographyMultiPoint")
-  #elseif ($range == "Edm.GeographyMultiLineString")
-  #elseif ($range == "Edm.GeographyMultiPolygon")
-  #elseif ($range == "Edm.GeographyCollection")
-  #elseif ($range == "Edm.Geometry")
-  #elseif ($range == "Edm.GeometryPoint")
-  #elseif ($range == "Edm.GeometryLineString")
-  #elseif ($range == "Edm.GeometryPolygon")
-  #elseif ($range == "Edm.GeometryMultiPoint")
-  #elseif ($range == "Edm.GeometryMultiLineString")
-  #elseif ($range == "Edm.GeometryMultiPolygon")
-  #elseif ($range == "Edm.GeometryCollection")
+#macro( entitySetmaptypes $propertyObject $target )
+#set( $property =  $propertyObject.property)
+#set( $range =  $propertyObject.range)
+#set( $formatOptions =  $propertyObject.formatOptions)
+  #if ($range == "Edm.Binary")  <Text text="{dataModel>$property}"/>
+  #elseif ($range == "Edm.Boolean")  <Text text="{path:'dataModel>$property',type:'sap.ui.model.type.Boolean'}"/>  
+  #elseif ($range == "Edm.Byte")  <Text text="{dataModel>$property}"/>
+  #elseif ($range == "Edm.SByte")  <Text text="{dataModel>$property}"/>
+  #elseif ($range == "Edm.Date")  <Text text="{dataModel>$property}"/>
+  #elseif ($range == "Edm.DateTimeOffset")  <Text text="{dataModel>$property}"/>
+  #elseif ($range == "Edm.TimeOfDay")  <Text text="{dataModel>$property}"/>
+  #elseif ($range == "Edm.Duration")  <Text text="{dataModel>$property}"/>
+  #elseif ($range == "Edm.Decimal")  <Text text="{dataModel>$property}"/>
+  #elseif ($range == "Edm.Single")  <Text text="{dataModel>$property}"/>
+  #elseif ($range == "Edm.Double")  <Text text="{path:'dataModel>$property',type:'sap.ui.model.type.Float'$!formatOptions }"/>
+  #elseif ($range == "Edm.Guid")  <Text text="{path:'dataModel>$property',type:'sap.ui.model.type.String'}"/>
+  #elseif ($range == "Edm.Int16")  <Text text="{path:'dataModel>$property',type:'sap.ui.model.type.Integer'$!formatOptions }"/>
+  #elseif ($range == "Edm.Int32")  <Text text="{path:'dataModel>$property',type:'sap.ui.model.type.Integer'$!formatOptions }"/>
+  #elseif ($range == "Edm.Int64")  <Text text="{path:'dataModel>$property',type:'sap.ui.model.type.Integer'$!formatOptions }"/>
+  #elseif ($range == "Edm.String")  <rdf:TextLink text="{path:'dataModel>$property',type:'sap.ui.model.type.String'}" linkText="{i18n>$target.$property}"/>
+  #elseif ($range == "Edm.Stream")  <Text text="{dataModel>$property}"/>
+  #elseif ($range == "Edm.Geography")  <Text text="{dataModel>$property}"/>
+  #elseif ($range == "Edm.GeographyPoint")  <Text text="{dataModel>$property}"/>
+  #elseif ($range == "Edm.GeographyLineString")  <Text text="{dataModel>$property}"/>
+  #elseif ($range == "Edm.GeographyPolygon")  <Text text="{dataModel>$property}"/>
+  #elseif ($range == "Edm.GeographyMultiPoint")  <Text text="{dataModel>$property}"/>
+  #elseif ($range == "Edm.GeographyMultiLineString")  <Text text="{dataModel>$property}"/>
+  #elseif ($range == "Edm.GeographyMultiPolygon")  <Text text="{dataModel>$property}"/>
+  #elseif ($range == "Edm.GeographyCollection")  <Text text="{dataModel>$property}"/>
+  #elseif ($range == "Edm.Geometry")<Text text="{dataModel>$property}"/>
+  #elseif ($range == "Edm.GeometryPoint")  <Text text="{dataModel>$property}"/>
+  #elseif ($range == "Edm.GeometryLineString")  <Text text="{dataModel>$property}"/>
+  #elseif ($range == "Edm.GeometryPolygon")  <Text text="{dataModel>$property}"/>
+  #elseif ($range == "Edm.GeometryMultiPoint")  <Text text="{dataModel>$property}"/>
+  #elseif ($range == "Edm.GeometryMultiLineString")  <Text text="{dataModel>$property}"/>
+  #elseif ($range == "Edm.GeometryMultiPolygon")  <Text text="{dataModel>$property}"/>
+  #elseif ($range == "Edm.GeometryCollection")  <Text text="{dataModel>$property}"/>
   #else
   #end 
 #end
@@ -60,7 +63,7 @@
 						<ToolbarSpacer/>
 						<Title id="tableHeader" text="{entitySetView>/entitySetTableTitle}"/>
 						<ToolbarSpacer/>
-						<SearchField id="searchField" tooltip="{i18n>$entitySet.target.$SearchTooltip}" search="onSearch" width="auto"></SearchField>
+						<SearchField id="searchField" tooltip="{i18n>search.searchTooltip}" search="onSearch" width="auto"></SearchField>
 					</Toolbar>
 				</headerToolbar>
 				<columns>
@@ -82,7 +85,7 @@
 							#foreach($property in $uiTemplate.properties)
 								#if(!$property.hidden)
 									#if($property.propertyType == "D")
-							<Text text="{path: 'dataModel>$property.property'#maptypes($property.range)}"/>
+							#entitySetmaptypes($property $entity.target  ) 	
 									#elseif ($property.propertyType == "O")
 							<rdf:TextResource path="dataModel>$property.property" entitySet="$property.range"/>
 									#elseif ($property.propertyType == "C")

@@ -1,33 +1,33 @@
-sequence, entity, entityIcon, target, targetIcon, type, targetEntity, property, propertyType, propertyRange, ordinal, hidden, aggregate
+sequence, entity, entityIcon, image, target, targetIcon, type, targetEntity, property, propertyType, propertyRange, ordinal, hidden, aggregate, formatOptions
 #set ($sequence = 0)
 #foreach($entityType in $entityTypes)
 	#set ($sequence = $sequence + 1)
 	#set ($numSoFar = 0)
 	#foreach($property in $entityType.entity.properties)
-$sequence, $entityType.entitySet.name, entityIcon, $entityType.entitySet.target, targetIcon, Grid, $entityType.entitySet.name ,$property.name, D, $property.range,$numSoFar, false, [] 
+$sequence, $entityType.entitySet.name, "sap-icon://expand-group", "./images/icons/category.png", $entityType.entitySet.target, "sap-icon://expand-group", Grid, $entityType.entitySet.name ,$property.name, D, $property.range,$numSoFar, false, [] ,""
 	#set ($numSoFar = $numSoFar + 1  )
 	#end				
 	#foreach($navigationProperty in $entityType.entity.navigationProperties)
-$sequence, $entityType.entitySet.name, entityIcon, $entityType.entitySet.target ,targetIcon,  Grid, $entityType.entitySet.name ,$navigationProperty.name, O, $navigationProperty.range, $numSoFar, true, [] 
+$sequence, $entityType.entitySet.name, "sap-icon://expand-group", "./images/icons/category.png", $entityType.entitySet.target ,"sap-icon://expand-group",  Grid, $entityType.entitySet.name ,$navigationProperty.name, O, $navigationProperty.range, $numSoFar, true, [] ,""
 		#set ($numSoFar = $numSoFar + 1  )
 	#end	
 	#foreach($entityNavigationSet in $entityType.entity.navigationSet)
-$sequence, $entityType.entitySet.name, entityIcon,$entityType.entitySet.target ,  targetIcon, Grid, $entityType.entitySet.name ,$entityNavigationSet.name, C, $entityNavigationSet.range,$numSoFar, true, [Count]
+$sequence, $entityType.entitySet.name, "sap-icon://expand-group","./images/icons/category.png", $entityType.entitySet.target ,  "sap-icon://expand-group", Grid, $entityType.entitySet.name ,$entityNavigationSet.name, C, $entityNavigationSet.range,$numSoFar, true, [Count],""
 		#set ($numSoFar = $numSoFar + 1  )
 	#end	
 	
 	#set ($sequence = $sequence + 1)
 	#set ($numSoFar = 0)
 	#foreach($property in $entityType.entity.properties)
-$sequence, $entityType.entitySet.name, entityIcon,$entityType.entity.target , targetIcon,  Form, $entityType.entitySet.name ,$property.name, D, $property.range,$numSoFar, false, []  
+$sequence, $entityType.entitySet.name, "sap-icon://expand-group","./images/icons/category.png", $entityType.entity.target , "sap-icon://expand-group",  Form, $entityType.entitySet.name ,$property.name, D, $property.range,$numSoFar, false, [] ,"" 
 	#set ($numSoFar = $numSoFar + 1  )
 	#end				
 	#foreach($navigationProperty in $entityType.entity.navigationProperties)
-$sequence, $entityType.entitySet.name, entityIcon,$entityType.entity.target ,  targetIcon, Form, $entityType.entitySet.name ,$navigationProperty.name, O, $navigationProperty.range,$numSoFar, false, [] 
+$sequence, $entityType.entitySet.name, "sap-icon://expand-group","./images/icons/category.png", $entityType.entity.target ,  "sap-icon://expand-group", Form, $entityType.entitySet.name ,$navigationProperty.name, O, $navigationProperty.range,$numSoFar, false, [] ,""
 		#set ($numSoFar = $numSoFar + 1  )
 	#end	
 	#foreach($entityNavigationSet in $entityType.entity.navigationSet)
-$sequence, $entityType.entitySet.name, entityIcon,$entityType.entity.target ,  targetIcon, Form, $entityType.entitySet.name ,$entityNavigationSet.name, C, $entityNavigationSet.range,$numSoFar, true, [List]
+$sequence, $entityType.entitySet.name, "sap-icon://expand-group","./images/icons/category.png",$entityType.entity.target , "sap-icon://expand-group", Form, $entityType.entitySet.name ,$entityNavigationSet.name, C, $entityNavigationSet.range,$numSoFar, true, [List],""
 		#set ($numSoFar = $numSoFar + 1  )
 	#end	
 	
@@ -36,15 +36,15 @@ $sequence, $entityType.entitySet.name, entityIcon,$entityType.entity.target ,  t
 	#set ( $thisEntityType = $entityTypes.get($navigationSet.targetEntityType))
 	#set ($numSoFar = 0)
 	#foreach($property in $thisEntityType.entity.properties)
-$sequence, $entityType.entitySet.name, entityIcon, $entityType.entity.target$navigationSet.name , targetIcon, Grid, $navigationSet.targetEntityType , $property.name, D, $property.range,$numSoFar, false, []  
+$sequence, $entityType.entitySet.name, "sap-icon://expand-group","./images/icons/category.png", $entityType.entity.target$navigationSet.name , "sap-icon://expand-group", Grid, $navigationSet.targetEntityType , $property.name, D, $property.range,$numSoFar, false, [],""  
 	#set ($numSoFar = $numSoFar + 1  )
 	#end				
 	#foreach($navigationProperty in $thisEntityType.entity.navigationProperties)
-$sequence, $entityType.entitySet.name, entityIcon,  $entityType.entity.target$navigationSet.name , targetIcon,Grid, $navigationSet.targetEntityType , $navigationProperty.name, O,$navigationProperty.range, $numSoFar, true, [] 
+$sequence, $entityType.entitySet.name, "sap-icon://expand-group","./images/icons/category.png",  $entityType.entity.target$navigationSet.name , "sap-icon://expand-group",Grid, $navigationSet.targetEntityType , $navigationProperty.name, O,$navigationProperty.range, $numSoFar, true, [] ,""
 		#set ($numSoFar = $numSoFar + 1  )
 	#end	
 	#foreach($entityNavigationSet in $thisEntityType.entity.navigationSet)
-$sequence, $entityType.entitySet.name, entityIcon, $entityType.entity.target$navigationSet.name , targetIcon, Grid, $navigationSet.targetEntityType , $entityNavigationSet.name, C, $entityNavigationSet.range,$numSoFar, true, [Count] 
+$sequence, $entityType.entitySet.name, "sap-icon://expand-group","./images/icons/category.png", $entityType.entity.target$navigationSet.name , "sap-icon://expand-group", Grid, $navigationSet.targetEntityType , $entityNavigationSet.name, C, $entityNavigationSet.range,$numSoFar, true, [Count] ,""
 		#set ($numSoFar = $numSoFar + 1  )
 	#end	
 	

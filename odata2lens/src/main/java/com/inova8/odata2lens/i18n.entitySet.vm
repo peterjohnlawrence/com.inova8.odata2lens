@@ -12,8 +12,8 @@ $entitySet.target#[[.this]]# = $entitySet.label
 $entitySet.target#[[.]]#$property.name = $property.label
 #end
 #foreach($navigationProperty in $entity.navigationProperties)
-$entitySet.target#[[.]]#$navigationProperty.name  = $navigationProperty.label  
+$entitySet.target#[[.]]#$navigationProperty.name = $navigationProperty.label  
 #end
 #foreach($navigationSet in $entity.navigationSet)
-$entitySet.target#[[.]]#$navigationSet.name  = $navigationSet.label  
+$entitySet.target#[[.]]#$navigationSet.name = $navigationSet.label  
 #end

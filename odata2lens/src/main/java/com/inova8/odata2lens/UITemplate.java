@@ -10,13 +10,15 @@ public class UITemplate {
 	private String targetIcon;
 	private String type;
 	private String targetEntity;
+	private String image;
 	private TreeMap<Float, PropertyTemplate> properties = new TreeMap<Float, PropertyTemplate>();
-	public UITemplate(String sequence, String entity, String entityIcon, String target, String targetIcon, String type,
+	public UITemplate(String sequence, String entity, String entityIcon, String image, String target, String targetIcon, String type,
 			String targetEntity) {
 		super();
 		this.sequence = sequence;
 		this.entity = entity;
 		this.entityIcon = entityIcon;
+		this.image = image;
 		this.target = target;
 		this.targetIcon = targetIcon;
 		this.type = type;
@@ -31,6 +33,9 @@ public class UITemplate {
 	}
 	public String getEntityIcon() {
 		return entityIcon;
+	}
+	public String getImage() {
+		return image;
 	}
 	public String getTarget() {
 		return target;
@@ -47,18 +52,18 @@ public class UITemplate {
 	public TreeMap<Float, PropertyTemplate> getProperties() {
 		return properties;
 	}
-	public void update(String sequence, String entity, String entityIcon, String target, String targetIcon, String type,
+	public void update(String sequence, String entity, String entityIcon, String image, String target, String targetIcon, String type,
 			String targetEntity) {
-		this.sequence = sequence;
-		this.entity = entity;
-		this.entityIcon = entityIcon;
-		this.target = target;
-		this.targetIcon = targetIcon;
-		this.type = type;
-		this.targetEntity = targetEntity;
-		
+		if(!sequence.isEmpty()) this.sequence = sequence;
+		if(!entity.isEmpty()) this.entity = entity;
+		if(!entityIcon.isEmpty()) this.entityIcon = entityIcon;
+		if(!image.isEmpty()) this.image = image;
+		if(!target.isEmpty()) this.target = target;
+		if(!targetIcon.isEmpty()) this.targetIcon = targetIcon;
+		if(!type.isEmpty()) this.type = type;
+		if(!targetEntity.isEmpty()) this.targetEntity = targetEntity;		
 	}
-	public void updateProperty(String property, String propertyType, String range, Float ordinal, boolean hidden, String aggregate) {
+	public void updateProperty(String property, String propertyType, String range, Float ordinal, boolean hidden, String aggregate, String formatOptions) {
 		Float currentOrdinal = null;
 		for(PropertyTemplate propertyTemplate : properties.values()){
 			if(propertyTemplate.getProperty().equals(property)){
@@ -67,7 +72,7 @@ public class UITemplate {
 			}		
 		}
 		if(currentOrdinal!=null){
-			PropertyTemplate propertyTemplate = new PropertyTemplate( property,  propertyType,  range,  ordinal,  hidden,  aggregate);
+			PropertyTemplate propertyTemplate = new PropertyTemplate( property,  propertyType,  range,  ordinal,  hidden,  aggregate, formatOptions);
 			properties.remove(currentOrdinal);
 			properties.put(ordinal,propertyTemplate);
 		}

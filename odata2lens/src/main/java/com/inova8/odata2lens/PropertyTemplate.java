@@ -7,7 +7,8 @@ public class PropertyTemplate {
 	private Float ordinal;
 	private boolean hidden;
 	private String aggregate;
-	public PropertyTemplate(String property, String propertyType, String range, Float ordinal, boolean hidden, String aggregate) {
+	private String formatOptions;
+	public PropertyTemplate(String property, String propertyType, String range, Float ordinal, boolean hidden, String aggregate, String formatOptions) {
 		super();
 		this.property = property;
 		this.propertyType = propertyType;
@@ -15,6 +16,7 @@ public class PropertyTemplate {
 		this.ordinal = ordinal;
 		this.hidden = hidden;
 		this.aggregate = aggregate;
+		this.formatOptions= (formatOptions.isEmpty()||formatOptions.equals("\"\"") ? null:", formatOptions:" +  formatOptions.replace(";",","));
 	}
 	public String getProperty() {
 		return property;
@@ -34,12 +36,17 @@ public class PropertyTemplate {
 	public String getRange() {
 		return range;
 	}
-	public void update(String property, String propertyType, String range, Float ordinal, boolean hidden, String aggregate) {
+	public String getFormatOptions() {
+		return formatOptions;
+	}
+	public void update(String property, String propertyType, String range, Float ordinal, boolean hidden, String aggregate, String formatOptions) {
 		this.property = property;
 		this.propertyType = propertyType;
 		this.range = range;
 		this.ordinal = ordinal;
 		this.hidden = hidden;
 		this.aggregate = aggregate;		
+		this.formatOptions= (formatOptions.isEmpty()||formatOptions.equals("\"\"")? null :", formatOptions:" +formatOptions.replace(";",","));
 	}
+
 }
