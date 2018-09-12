@@ -1,0 +1,58 @@
+<mvc:View controllerName="com.inova8.lens.controller.EntityNavigationSet" xmlns="sap.m" xmlns:mvc="sap.ui.core.mvc" xmlns:layout="sap.ui.layout"
+	xmlns:rdf="com.inova8.lens.control">
+	<Page showHeader="false" id="page" navButtonPress="onNavBack" showNavButton="false" title="{i18n>Actual_Medicinal_Product_PackActual_Medicinal_Product_Pack_VMPP_Id.ViewTitle}">
+		<content>
+			<Table id="table" inset="false" items="{ path: '/{objectId}/Actual_Medicinal_Product_Pack_VMPP_Id', sorter: { path: 'label', descending: false } 
+				}"
+				noDataText="{entityNavigationSetView>/tableNoDataText}" busyIndicatorDelay="{entityNavigationSetView>/tableBusyDelay}" growing="true" growingScrollToLoad="true"
+				updateFinished="onUpdateFinished"  fixedLayout="false">
+				<headerToolbar>
+					<Toolbar>					
+					<ToolbarSpacer/>
+						<Title id="entitySet"/>
+						<rdf:TextResource id="resourceTitle" />
+						<Title id="tableHeader" text="{entityNavigationSetView>/entityNavigationSetTableTitle}"/>
+						<ToolbarSpacer/>
+						<SearchField id="searchField" tooltip="{i18n>search.searchTooltip}" search="onSearch" width="auto"></SearchField>
+					</Toolbar>
+				</headerToolbar>
+				<columns>
+					<Column >
+						<Text text="{i18n>Actual_Medicinal_Product_PackActual_Medicinal_Product_Pack_VMPP_Id.this}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>Actual_Medicinal_Product_PackActual_Medicinal_Product_Pack_VMPP_Id.Virtual_Medicinal_Product_Pack_Abbreviated_Name}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>Actual_Medicinal_Product_PackActual_Medicinal_Product_Pack_VMPP_Id.Virtual_Medicinal_Product_Pack_Id}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>Actual_Medicinal_Product_PackActual_Medicinal_Product_Pack_VMPP_Id.Virtual_Medicinal_Product_Pack_Invalid}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>Actual_Medicinal_Product_PackActual_Medicinal_Product_Pack_VMPP_Id.Virtual_Medicinal_Product_Pack_Name}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>Actual_Medicinal_Product_PackActual_Medicinal_Product_Pack_VMPP_Id.Virtual_Medicinal_Product_Pack_Price}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>Actual_Medicinal_Product_PackActual_Medicinal_Product_Pack_VMPP_Id.Virtual_Medicinal_Product_Pack_Price_Date}"/>
+					</Column>
+				</columns>
+				<items>
+					<ColumnListItem id="template" type="Navigation" press="onPress">
+						<cells>
+							<rdf:TextResource path="dataModel>" entitySet="Virtual_Medicinal_Product_Pack"/>
+  <rdf:TextLink text="{path:'dataModel>Virtual_Medicinal_Product_Pack_Abbreviated_Name',type:'sap.ui.model.type.String' }" linkText="{i18n>Virtual_Medicinal_Product_Pack.Virtual_Medicinal_Product_Pack_Abbreviated_Name}"/>
+  <rdf:TextLink text="{path:'dataModel>Virtual_Medicinal_Product_Pack_Id',type:'sap.ui.model.type.String' }" linkText="{i18n>Virtual_Medicinal_Product_Pack.Virtual_Medicinal_Product_Pack_Id}"/>
+  <Text text="{path:'dataModel>Virtual_Medicinal_Product_Pack_Invalid',type:'sap.ui.model.type.Boolean'}"/>  
+  <rdf:TextLink text="{path:'dataModel>Virtual_Medicinal_Product_Pack_Name',type:'sap.ui.model.type.String' }" linkText="{i18n>Virtual_Medicinal_Product_Pack.Virtual_Medicinal_Product_Pack_Name}"/>
+  <Text text="{path:'dataModel>Virtual_Medicinal_Product_Pack_Price',type:'sap.ui.model.type.Integer' }"/>
+  <Text text="{dataModel>Virtual_Medicinal_Product_Pack_Price_Date}"/>
+						</cells>
+					</ColumnListItem>
+				</items>
+			</Table>
+		</content>
+	</Page>
+</mvc:View>

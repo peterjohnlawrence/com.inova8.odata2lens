@@ -1,0 +1,74 @@
+<mvc:View controllerName="com.inova8.lens.controller.EntityNavigationSet" xmlns="sap.m" xmlns:mvc="sap.ui.core.mvc" xmlns:layout="sap.ui.layout"
+	xmlns:rdf="com.inova8.lens.control">
+	<Page showHeader="false" id="page" navButtonPress="onNavBack" showNavButton="false" title="{i18n>Clinical_Commissioning_Group_SiteClinical_Commissioning_Group_Site_Parent_Organisation_Code.ViewTitle}">
+		<content>
+			<Table id="table" inset="false" items="{ path: '/{objectId}/Clinical_Commissioning_Group_Site_Parent_Organisation_Code', sorter: { path: 'label', descending: false } 
+				}"
+				noDataText="{entityNavigationSetView>/tableNoDataText}" busyIndicatorDelay="{entityNavigationSetView>/tableBusyDelay}" growing="true" growingScrollToLoad="true"
+				updateFinished="onUpdateFinished"  fixedLayout="false">
+				<headerToolbar>
+					<Toolbar>					
+					<ToolbarSpacer/>
+						<Title id="entitySet"/>
+						<rdf:TextResource id="resourceTitle" />
+						<Title id="tableHeader" text="{entityNavigationSetView>/entityNavigationSetTableTitle}"/>
+						<ToolbarSpacer/>
+						<SearchField id="searchField" tooltip="{i18n>search.searchTooltip}" search="onSearch" width="auto"></SearchField>
+					</Toolbar>
+				</headerToolbar>
+				<columns>
+					<Column >
+						<Text text="{i18n>Clinical_Commissioning_Group_SiteClinical_Commissioning_Group_Site_Parent_Organisation_Code.this}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>Clinical_Commissioning_Group_SiteClinical_Commissioning_Group_Site_Parent_Organisation_Code.Clinical_Commissioning_Group_Address_Line_1}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>Clinical_Commissioning_Group_SiteClinical_Commissioning_Group_Site_Parent_Organisation_Code.Clinical_Commissioning_Group_Address_Line_2}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>Clinical_Commissioning_Group_SiteClinical_Commissioning_Group_Site_Parent_Organisation_Code.Clinical_Commissioning_Group_Address_Line_3}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>Clinical_Commissioning_Group_SiteClinical_Commissioning_Group_Site_Parent_Organisation_Code.Clinical_Commissioning_Group_Address_Line_4}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>Clinical_Commissioning_Group_SiteClinical_Commissioning_Group_Site_Parent_Organisation_Code.Clinical_Commissioning_Group_Address_Line_5}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>Clinical_Commissioning_Group_SiteClinical_Commissioning_Group_Site_Parent_Organisation_Code.Clinical_Commissioning_Group_Close_Date}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>Clinical_Commissioning_Group_SiteClinical_Commissioning_Group_Site_Parent_Organisation_Code.Clinical_Commissioning_Group_Name}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>Clinical_Commissioning_Group_SiteClinical_Commissioning_Group_Site_Parent_Organisation_Code.Clinical_Commissioning_Group_Open_Date}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>Clinical_Commissioning_Group_SiteClinical_Commissioning_Group_Site_Parent_Organisation_Code.Clinical_Commissioning_Group_Organisation_Code}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>Clinical_Commissioning_Group_SiteClinical_Commissioning_Group_Site_Parent_Organisation_Code.Clinical_Commissioning_Group_Postcode}"/>
+					</Column>
+				</columns>
+				<items>
+					<ColumnListItem id="template" type="Navigation" press="onPress">
+						<cells>
+							<rdf:TextResource path="dataModel>" entitySet="Clinical_Commissioning_Group"/>
+  <rdf:TextLink text="{path:'dataModel>Clinical_Commissioning_Group_Address_Line_1',type:'sap.ui.model.type.String' }" linkText="{i18n>Clinical_Commissioning_Group.Clinical_Commissioning_Group_Address_Line_1}"/>
+  <rdf:TextLink text="{path:'dataModel>Clinical_Commissioning_Group_Address_Line_2',type:'sap.ui.model.type.String' }" linkText="{i18n>Clinical_Commissioning_Group.Clinical_Commissioning_Group_Address_Line_2}"/>
+  <rdf:TextLink text="{path:'dataModel>Clinical_Commissioning_Group_Address_Line_3',type:'sap.ui.model.type.String' }" linkText="{i18n>Clinical_Commissioning_Group.Clinical_Commissioning_Group_Address_Line_3}"/>
+  <rdf:TextLink text="{path:'dataModel>Clinical_Commissioning_Group_Address_Line_4',type:'sap.ui.model.type.String' }" linkText="{i18n>Clinical_Commissioning_Group.Clinical_Commissioning_Group_Address_Line_4}"/>
+  <rdf:TextLink text="{path:'dataModel>Clinical_Commissioning_Group_Address_Line_5',type:'sap.ui.model.type.String' }" linkText="{i18n>Clinical_Commissioning_Group.Clinical_Commissioning_Group_Address_Line_5}"/>
+  <Text text="{dataModel>Clinical_Commissioning_Group_Close_Date}"/>
+  <rdf:TextLink text="{path:'dataModel>Clinical_Commissioning_Group_Name',type:'sap.ui.model.type.String' }" linkText="{i18n>Clinical_Commissioning_Group.Clinical_Commissioning_Group_Name}"/>
+  <Text text="{dataModel>Clinical_Commissioning_Group_Open_Date}"/>
+  <rdf:TextLink text="{path:'dataModel>Clinical_Commissioning_Group_Organisation_Code',type:'sap.ui.model.type.String' }" linkText="{i18n>Clinical_Commissioning_Group.Clinical_Commissioning_Group_Organisation_Code}"/>
+  <rdf:TextLink text="{path:'dataModel>Clinical_Commissioning_Group_Postcode',type:'sap.ui.model.type.String' }" linkText="{i18n>Clinical_Commissioning_Group.Clinical_Commissioning_Group_Postcode}"/>
+						</cells>
+					</ColumnListItem>
+				</items>
+			</Table>
+		</content>
+	</Page>
+</mvc:View>

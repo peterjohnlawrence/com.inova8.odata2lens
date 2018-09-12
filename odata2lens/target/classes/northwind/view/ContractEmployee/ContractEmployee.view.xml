@@ -1,0 +1,47 @@
+<mvc:View controllerName="com.inova8.lens.controller.Entity" xmlns="sap.m" xmlns:mvc="sap.ui.core.mvc"
+	xmlns:f="sap.ui.layout.form" xmlns:table="sap.ui.table" xmlns:rdf="com.inova8.lens.control">
+	<Page showHeader="true" id="page" navButtonPress="onNavBack" showNavButton="false" title="{i18n>ContractEmployee.Title}"
+		busy="{entityView>/busy}" busyIndicatorDelay="{entityView>/delay}">
+		<customHeader>
+			<Toolbar>
+				<ToolbarSpacer/>
+				<Title text="{i18n>ContractEmployee.this}"/>
+				<rdf:TextResource path="dataModel>" entitySet="ContractEmployee"/>
+				<Title text="{i18n>ContractEmployee.Title}" />
+				<ToolbarSpacer/>
+			</Toolbar>
+		</customHeader>
+		<content>
+			<f:SimpleForm class="editableForm" columnsL="1" columnsM="1" editable="true" emptySpanL="4" emptySpanM="4" 
+				labelSpanL="2" labelSpanM="2" layout="ResponsiveGridLayout" maxContainerCols="2" minWidth="1024" singleContainerFullSize="true">
+				<f:content>
+					<!--<Label text="{i18n>ContractEmployee.this}" required="false"/><rdf:TextResource path="dataModel>" entitySet="ContractEmployee"/>-->
+					<Label text="{i18n>ContractEmployee.birthDate}" required="false"/>   <Text text="{dataModel>birthDate}"/>
+					<Label text="{i18n>ContractEmployee.comment}" required="false"/>   <rdf:TextLink text="{path:'dataModel>comment',type:'sap.ui.model.type.String' }" linkText="{i18n>ContractEmployee.comment}"/>
+					<Label text="{i18n>ContractEmployee.employeeAddress}" required="false"/>   <rdf:TextLink text="{path:'dataModel>employeeAddress',type:'sap.ui.model.type.String' }" linkText="{i18n>ContractEmployee.employeeAddress}"/>
+					<Label text="{i18n>ContractEmployee.employeeCity}" required="false"/>   <rdf:TextLink text="{path:'dataModel>employeeCity',type:'sap.ui.model.type.String' }" linkText="{i18n>ContractEmployee.employeeCity}"/>
+					<Label text="{i18n>ContractEmployee.employeeCountry}" required="false"/>   <rdf:TextLink text="{path:'dataModel>employeeCountry',type:'sap.ui.model.type.String' }" linkText="{i18n>ContractEmployee.employeeCountry}"/>
+					<Label text="{i18n>ContractEmployee.employeeLinkedIn}" required="false"/>   <rdf:TextLink text="{path:'dataModel>employeeLinkedIn',type:'sap.ui.model.type.String' }" linkText="{i18n>ContractEmployee.employeeLinkedIn}"/>
+					<Label text="{i18n>ContractEmployee.employeePostalCode}" required="false"/>   <rdf:TextLink text="{path:'dataModel>employeePostalCode',type:'sap.ui.model.type.String' }" linkText="{i18n>ContractEmployee.employeePostalCode}"/>
+					<Label text="{i18n>ContractEmployee.extension}" required="false"/>   <rdf:TextLink text="{path:'dataModel>extension',type:'sap.ui.model.type.String' }" linkText="{i18n>ContractEmployee.extension}"/>
+					<Label text="{i18n>ContractEmployee.firstName}" required="false"/>   <rdf:TextLink text="{path:'dataModel>firstName',type:'sap.ui.model.type.String' }" linkText="{i18n>ContractEmployee.firstName}"/>
+					<Label text="{i18n>ContractEmployee.hireDate}" required="false"/>   <Text text="{dataModel>hireDate}"/>
+					<Label text="{i18n>ContractEmployee.homePhone}" required="false"/>   <rdf:TextLink text="{path:'dataModel>homePhone',type:'sap.ui.model.type.String' }" linkText="{i18n>ContractEmployee.homePhone}"/>
+					<Label text="{i18n>ContractEmployee.isDefinedBy}" required="false"/>   <rdf:TextLink text="{path:'dataModel>isDefinedBy',type:'sap.ui.model.type.String' }" linkText="{i18n>ContractEmployee.isDefinedBy}"/>
+					<Label text="{i18n>ContractEmployee.lastName}" required="false"/>   <rdf:TextLink text="{path:'dataModel>lastName',type:'sap.ui.model.type.String' }" linkText="{i18n>ContractEmployee.lastName}"/>
+					<Label text="{i18n>ContractEmployee.lat}" required="false"/>   <Text text="{path:'dataModel>lat',type:'sap.ui.model.type.Float' }"/>
+					<Label text="{i18n>ContractEmployee.lat_long}" required="false"/>   <rdf:TextLink text="{path:'dataModel>lat_long',type:'sap.ui.model.type.String' }" linkText="{i18n>ContractEmployee.lat_long}"/>
+					<Label text="{i18n>ContractEmployee.long}" required="false"/>   <Text text="{path:'dataModel>long',type:'sap.ui.model.type.Float' }"/>
+					<Label text="{i18n>ContractEmployee.notes}" required="false"/>   <rdf:TextLink text="{path:'dataModel>notes',type:'sap.ui.model.type.String' }" linkText="{i18n>ContractEmployee.notes}"/>
+					<Label text="{i18n>ContractEmployee.photo}" required="false"/>   <rdf:TextLink text="{path:'dataModel>photo',type:'sap.ui.model.type.String' }" linkText="{i18n>ContractEmployee.photo}"/>
+					<Label text="{i18n>ContractEmployee.regionDescription}" required="false"/>   <rdf:TextLink text="{path:'dataModel>regionDescription',type:'sap.ui.model.type.String' }" linkText="{i18n>ContractEmployee.regionDescription}"/>
+					<Label text="{i18n>ContractEmployee.reportsToNotation}" required="false"/>   <rdf:TextLink text="{path:'dataModel>reportsToNotation',type:'sap.ui.model.type.String' }" linkText="{i18n>ContractEmployee.reportsToNotation}"/>
+					<Label text="{i18n>ContractEmployee.territoryNotation}" required="false"/>   <rdf:TextLink text="{path:'dataModel>territoryNotation',type:'sap.ui.model.type.String' }" linkText="{i18n>ContractEmployee.territoryNotation}"/>
+					<Label text="{i18n>ContractEmployee.title}" required="false"/>   <rdf:TextLink text="{path:'dataModel>title',type:'sap.ui.model.type.String' }" linkText="{i18n>ContractEmployee.title}"/>
+					<Label text="{i18n>ContractEmployee.titleOfCourtesy}" required="false"/>   <rdf:TextLink text="{path:'dataModel>titleOfCourtesy',type:'sap.ui.model.type.String' }" linkText="{i18n>ContractEmployee.titleOfCourtesy}"/>
+					<Label text="{i18n>ContractEmployee.reportsTo}" required="false"/><rdf:TextResource path="dataModel>reportsTo" entitySet="Employee"/>		
+				</f:content>
+			</f:SimpleForm>
+		</content>
+	</Page>
+</mvc:View>

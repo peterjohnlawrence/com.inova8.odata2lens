@@ -1,0 +1,41 @@
+<mvc:View controllerName="com.inova8.lens.controller.Entity" xmlns="sap.m" xmlns:mvc="sap.ui.core.mvc"
+	xmlns:f="sap.ui.layout.form" xmlns:table="sap.ui.table" xmlns:rdf="com.inova8.lens.control">
+	<Page showHeader="true" id="page" navButtonPress="onNavBack" showNavButton="false" title="{i18n>Nurse_Prescriber.Title}"
+		busy="{entityView>/busy}" busyIndicatorDelay="{entityView>/delay}">
+		<customHeader>
+			<Toolbar>
+				<ToolbarSpacer/>
+				<Title text="{i18n>Nurse_Prescriber.this}"/>
+				<rdf:TextResource path="dataModel>" entitySet="Nurse_Prescriber"/>
+				<Title text="{i18n>Nurse_Prescriber.Title}" />
+				<ToolbarSpacer/>
+			</Toolbar>
+		</customHeader>
+		<content>
+			<f:SimpleForm class="editableForm" columnsL="1" columnsM="1" editable="true" emptySpanL="4" emptySpanM="4" 
+				labelSpanL="2" labelSpanM="2" layout="ResponsiveGridLayout" maxContainerCols="2" minWidth="1024" singleContainerFullSize="true">
+				<f:content>
+					<!--<Label text="{i18n>Nurse_Prescriber.this}" required="false"/><rdf:TextResource path="dataModel>" entitySet="Nurse_Prescriber"/>-->
+					<Label text="{i18n>Nurse_Prescriber.Nurse_Prescriber_Address_Line_1}" required="false"/>   <rdf:TextLink text="{path:'dataModel>Nurse_Prescriber_Address_Line_1',type:'sap.ui.model.type.String' }" linkText="{i18n>Nurse_Prescriber.Nurse_Prescriber_Address_Line_1}"/>
+					<Label text="{i18n>Nurse_Prescriber.Nurse_Prescriber_Address_Line_2}" required="false"/>   <rdf:TextLink text="{path:'dataModel>Nurse_Prescriber_Address_Line_2',type:'sap.ui.model.type.String' }" linkText="{i18n>Nurse_Prescriber.Nurse_Prescriber_Address_Line_2}"/>
+					<Label text="{i18n>Nurse_Prescriber.Nurse_Prescriber_Address_Line_3}" required="false"/>   <rdf:TextLink text="{path:'dataModel>Nurse_Prescriber_Address_Line_3',type:'sap.ui.model.type.String' }" linkText="{i18n>Nurse_Prescriber.Nurse_Prescriber_Address_Line_3}"/>
+					<Label text="{i18n>Nurse_Prescriber.Nurse_Prescriber_Address_Line_4}" required="false"/>   <rdf:TextLink text="{path:'dataModel>Nurse_Prescriber_Address_Line_4',type:'sap.ui.model.type.String' }" linkText="{i18n>Nurse_Prescriber.Nurse_Prescriber_Address_Line_4}"/>
+					<Label text="{i18n>Nurse_Prescriber.Nurse_Prescriber_Address_Line_5}" required="false"/>   <rdf:TextLink text="{path:'dataModel>Nurse_Prescriber_Address_Line_5',type:'sap.ui.model.type.String' }" linkText="{i18n>Nurse_Prescriber.Nurse_Prescriber_Address_Line_5}"/>
+					<Label text="{i18n>Nurse_Prescriber.Nurse_Prescriber_Close_Date}" required="false"/>   <Text text="{dataModel>Nurse_Prescriber_Close_Date}"/>
+					<Label text="{i18n>Nurse_Prescriber.Nurse_Prescriber_Initials}" required="false"/>   <rdf:TextLink text="{path:'dataModel>Nurse_Prescriber_Initials',type:'sap.ui.model.type.String' }" linkText="{i18n>Nurse_Prescriber.Nurse_Prescriber_Initials}"/>
+					<Label text="{i18n>Nurse_Prescriber.Nurse_Prescriber_Name}" required="false"/>   <rdf:TextLink text="{path:'dataModel>Nurse_Prescriber_Name',type:'sap.ui.model.type.String' }" linkText="{i18n>Nurse_Prescriber.Nurse_Prescriber_Name}"/>
+					<Label text="{i18n>Nurse_Prescriber.Nurse_Prescriber_Name_Manipulation_Indicator}" required="false"/>   <rdf:TextLink text="{path:'dataModel>Nurse_Prescriber_Name_Manipulation_Indicator',type:'sap.ui.model.type.String' }" linkText="{i18n>Nurse_Prescriber.Nurse_Prescriber_Name_Manipulation_Indicator}"/>
+					<Label text="{i18n>Nurse_Prescriber.Nurse_Prescriber_Nurse_PIN}" required="false"/>   <rdf:TextLink text="{path:'dataModel>Nurse_Prescriber_Nurse_PIN',type:'sap.ui.model.type.String' }" linkText="{i18n>Nurse_Prescriber.Nurse_Prescriber_Nurse_PIN}"/>
+					<Label text="{i18n>Nurse_Prescriber.Nurse_Prescriber_Open_Date}" required="false"/>   <Text text="{dataModel>Nurse_Prescriber_Open_Date}"/>
+					<Label text="{i18n>Nurse_Prescriber.Nurse_Prescriber_Postcode}" required="false"/>   <rdf:TextLink text="{path:'dataModel>Nurse_Prescriber_Postcode',type:'sap.ui.model.type.String' }" linkText="{i18n>Nurse_Prescriber.Nurse_Prescriber_Postcode}"/>
+					<Label text="{i18n>Nurse_Prescriber.Nurse_Prescriber_Senior_Partner_Name}" required="false"/>   <rdf:TextLink text="{path:'dataModel>Nurse_Prescriber_Senior_Partner_Name',type:'sap.ui.model.type.String' }" linkText="{i18n>Nurse_Prescriber.Nurse_Prescriber_Senior_Partner_Name}"/>
+					<Label text="{i18n>Nurse_Prescriber.Nurse_Prescriber_Surname}" required="false"/>   <rdf:TextLink text="{path:'dataModel>Nurse_Prescriber_Surname',type:'sap.ui.model.type.String' }" linkText="{i18n>Nurse_Prescriber.Nurse_Prescriber_Surname}"/>
+					<Label text="{i18n>Nurse_Prescriber.Nurse_Prescriber_Telephone_Number}" required="false"/>   <rdf:TextLink text="{path:'dataModel>Nurse_Prescriber_Telephone_Number',type:'sap.ui.model.type.String' }" linkText="{i18n>Nurse_Prescriber.Nurse_Prescriber_Telephone_Number}"/>
+					<Label text="{i18n>Nurse_Prescriber.Nurse_Prescriber_Title}" required="false"/>   <rdf:TextLink text="{path:'dataModel>Nurse_Prescriber_Title',type:'sap.ui.model.type.String' }" linkText="{i18n>Nurse_Prescriber.Nurse_Prescriber_Title}"/>
+					<Label text="{i18n>Nurse_Prescriber.Nurse_Prescriber_Current_Care_Organisation_Code}" required="false"/><rdf:TextResource path="dataModel>Nurse_Prescriber_Current_Care_Organisation_Code" entitySet="Current_Care_Organisation"/>		
+					<Label text="{i18n>Nurse_Prescriber.Nurse_Prescriber_Parent_Organisation_Code}" required="false"/><rdf:TextResource path="dataModel>Nurse_Prescriber_Parent_Organisation_Code" entitySet="GP_Practice"/>		
+				</f:content>
+			</f:SimpleForm>
+		</content>
+	</Page>
+</mvc:View>

@@ -1,0 +1,26 @@
+<mvc:View controllerName="com.inova8.lens.controller.Entity" xmlns="sap.m" xmlns:mvc="sap.ui.core.mvc"
+	xmlns:f="sap.ui.layout.form" xmlns:table="sap.ui.table" xmlns:rdf="com.inova8.lens.control">
+	<Page showHeader="true" id="page" navButtonPress="onNavBack" showNavButton="false" title="{i18n>Region.Title}"
+		busy="{entityView>/busy}" busyIndicatorDelay="{entityView>/delay}">
+		<customHeader>
+			<Toolbar>
+				<ToolbarSpacer/>
+				<Title text="{i18n>Region.this}"/>
+				<rdf:TextResource path="dataModel>" entitySet="Region"/>
+				<Title text="{i18n>Region.Title}" />
+				<ToolbarSpacer/>
+			</Toolbar>
+		</customHeader>
+		<content>
+			<f:SimpleForm class="editableForm" columnsL="1" columnsM="1" editable="true" emptySpanL="4" emptySpanM="4" 
+				labelSpanL="2" labelSpanM="2" layout="ResponsiveGridLayout" maxContainerCols="2" minWidth="1024" singleContainerFullSize="true">
+				<f:content>
+					<!--<Label text="{i18n>Region.this}" required="false"/><rdf:TextResource path="dataModel>" entitySet="Region"/>-->
+					<Label text="{i18n>Region.comment}" required="false"/>   <rdf:TextLink text="{path:'dataModel>comment',type:'sap.ui.model.type.String' }" linkText="{i18n>Region.comment}"/>
+					<Label text="{i18n>Region.isDefinedBy}" required="false"/>   <rdf:TextLink text="{path:'dataModel>isDefinedBy',type:'sap.ui.model.type.String' }" linkText="{i18n>Region.isDefinedBy}"/>
+					<Label text="{i18n>Region.regionDescription}" required="false"/>   <rdf:TextLink text="{path:'dataModel>regionDescription',type:'sap.ui.model.type.String' }" linkText="{i18n>Region.regionDescription}"/>
+				</f:content>
+			</f:SimpleForm>
+		</content>
+	</Page>
+</mvc:View>

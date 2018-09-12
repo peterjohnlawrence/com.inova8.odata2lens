@@ -1,0 +1,56 @@
+<mvc:View controllerName="com.inova8.lens.controller.EntitySet" xmlns="sap.m" xmlns:mvc="sap.ui.core.mvc" xmlns:layout="sap.ui.layout"
+	xmlns:rdf="com.inova8.lens.control">
+	<Page showHeader="false" id="page" navButtonPress="onNavBack" showNavButton="true" title="{i18n>Dental_Consultants.ViewTitle}">
+		<content>
+			<Table id="table" inset="false" items="{ path: 'dataModel>/Dental_Consultant' , sorter: { path: 'label', descending: false } 
+				}"
+				noDataText="{entitySetView>/tableNoDataText}" busyIndicatorDelay="{entitySetView>/tableBusyDelay}" growing="true" growingScrollToLoad="true"
+				updateFinished="onUpdateFinished"  fixedLayout="false">
+				<headerToolbar>
+					<Toolbar>
+						<ToolbarSpacer/>
+						<Title id="tableHeader" text="{entitySetView>/entitySetTableTitle}"/>
+						<ToolbarSpacer/>
+						<SearchField id="searchField" tooltip="{i18n>search.searchTooltip}" search="onSearch" width="auto"></SearchField>
+					</Toolbar>
+				</headerToolbar>
+				<columns>
+					<Column >
+						<Text text="{i18n>Dental_Consultants.this}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>Dental_Consultants.Dental_Consultant_Dental_Consultant_Code}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>Dental_Consultants.Dental_Consultant_GDC_Code}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>Dental_Consultants.Dental_Consultant_Initials}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>Dental_Consultants.Dental_Consultant_Practitioner_Type}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>Dental_Consultants.Dental_Consultant_Speciality_Function_Code}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>Dental_Consultants.Dental_Consultant_Surname}"/>
+					</Column>
+				</columns>
+				<items>
+					<ColumnListItem id="template" type="Navigation" press="onPress">
+						<cells>
+							<rdf:TextResource path="dataModel>" entitySet="Dental_Consultant"/>
+  <rdf:TextLink text="{path:'dataModel>Dental_Consultant_Dental_Consultant_Code',type:'sap.ui.model.type.String'}" linkText="{i18n>Dental_Consultant.Dental_Consultant_Dental_Consultant_Code}"/>
+  <rdf:TextLink text="{path:'dataModel>Dental_Consultant_GDC_Code',type:'sap.ui.model.type.String'}" linkText="{i18n>Dental_Consultant.Dental_Consultant_GDC_Code}"/>
+  <rdf:TextLink text="{path:'dataModel>Dental_Consultant_Initials',type:'sap.ui.model.type.String'}" linkText="{i18n>Dental_Consultant.Dental_Consultant_Initials}"/>
+  <rdf:TextLink text="{path:'dataModel>Dental_Consultant_Practitioner_Type',type:'sap.ui.model.type.String'}" linkText="{i18n>Dental_Consultant.Dental_Consultant_Practitioner_Type}"/>
+  <rdf:TextLink text="{path:'dataModel>Dental_Consultant_Speciality_Function_Code',type:'sap.ui.model.type.String'}" linkText="{i18n>Dental_Consultant.Dental_Consultant_Speciality_Function_Code}"/>
+  <rdf:TextLink text="{path:'dataModel>Dental_Consultant_Surname',type:'sap.ui.model.type.String'}" linkText="{i18n>Dental_Consultant.Dental_Consultant_Surname}"/>
+						</cells>
+					</ColumnListItem>
+				</items>
+			</Table>
+		</content>
+	</Page>
+</mvc:View>

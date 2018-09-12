@@ -1,0 +1,52 @@
+<mvc:View controllerName="com.inova8.lens.controller.EntitySet" xmlns="sap.m" xmlns:mvc="sap.ui.core.mvc" xmlns:layout="sap.ui.layout"
+	xmlns:rdf="com.inova8.lens.control">
+	<Page showHeader="false" id="page" navButtonPress="onNavBack" showNavButton="true" title="{i18n>Actual_Medicinal_Products.ViewTitle}">
+		<content>
+			<Table id="table" inset="false" items="{ path: 'dataModel>/Actual_Medicinal_Product' , sorter: { path: 'label', descending: false } 
+				}"
+				noDataText="{entitySetView>/tableNoDataText}" busyIndicatorDelay="{entitySetView>/tableBusyDelay}" growing="true" growingScrollToLoad="true"
+				updateFinished="onUpdateFinished"  fixedLayout="false">
+				<headerToolbar>
+					<Toolbar>
+						<ToolbarSpacer/>
+						<Title id="tableHeader" text="{entitySetView>/entitySetTableTitle}"/>
+						<ToolbarSpacer/>
+						<SearchField id="searchField" tooltip="{i18n>search.searchTooltip}" search="onSearch" width="auto"></SearchField>
+					</Toolbar>
+				</headerToolbar>
+				<columns>
+					<Column >
+						<Text text="{i18n>Actual_Medicinal_Products.this}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>Actual_Medicinal_Products.Actual_Medicinal_Product_Abbreviated_Name}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>Actual_Medicinal_Products.Actual_Medicinal_Product_Description}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>Actual_Medicinal_Products.Actual_Medicinal_Product_Id}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>Actual_Medicinal_Products.Actual_Medicinal_Product_Invalid}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>Actual_Medicinal_Products.Actual_Medicinal_Product_Name}"/>
+					</Column>
+				</columns>
+				<items>
+					<ColumnListItem id="template" type="Navigation" press="onPress">
+						<cells>
+							<rdf:TextResource path="dataModel>" entitySet="Actual_Medicinal_Product"/>
+  <rdf:TextLink text="{path:'dataModel>Actual_Medicinal_Product_Abbreviated_Name',type:'sap.ui.model.type.String'}" linkText="{i18n>Actual_Medicinal_Product.Actual_Medicinal_Product_Abbreviated_Name}"/>
+  <rdf:TextLink text="{path:'dataModel>Actual_Medicinal_Product_Description',type:'sap.ui.model.type.String'}" linkText="{i18n>Actual_Medicinal_Product.Actual_Medicinal_Product_Description}"/>
+  <rdf:TextLink text="{path:'dataModel>Actual_Medicinal_Product_Id',type:'sap.ui.model.type.String'}" linkText="{i18n>Actual_Medicinal_Product.Actual_Medicinal_Product_Id}"/>
+  <Text text="{path:'dataModel>Actual_Medicinal_Product_Invalid',type:'sap.ui.model.type.Boolean'}"/>  
+  <rdf:TextLink text="{path:'dataModel>Actual_Medicinal_Product_Name',type:'sap.ui.model.type.String'}" linkText="{i18n>Actual_Medicinal_Product.Actual_Medicinal_Product_Name}"/>
+						</cells>
+					</ColumnListItem>
+				</items>
+			</Table>
+		</content>
+	</Page>
+</mvc:View>

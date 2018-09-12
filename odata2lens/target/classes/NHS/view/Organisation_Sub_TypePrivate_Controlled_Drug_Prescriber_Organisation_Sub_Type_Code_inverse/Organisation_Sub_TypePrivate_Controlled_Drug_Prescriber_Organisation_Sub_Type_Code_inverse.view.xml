@@ -1,0 +1,86 @@
+<mvc:View controllerName="com.inova8.lens.controller.EntityNavigationSet" xmlns="sap.m" xmlns:mvc="sap.ui.core.mvc" xmlns:layout="sap.ui.layout"
+	xmlns:rdf="com.inova8.lens.control">
+	<Page showHeader="false" id="page" navButtonPress="onNavBack" showNavButton="false" title="{i18n>Organisation_Sub_TypePrivate_Controlled_Drug_Prescriber_Organisation_Sub_Type_Code_inverse.ViewTitle}">
+		<content>
+			<Table id="table" inset="false" items="{ path: '/{objectId}/Private_Controlled_Drug_Prescriber_Organisation_Sub_Type_Code_inverse', sorter: { path: 'label', descending: false } 
+				}"
+				noDataText="{entityNavigationSetView>/tableNoDataText}" busyIndicatorDelay="{entityNavigationSetView>/tableBusyDelay}" growing="true" growingScrollToLoad="true"
+				updateFinished="onUpdateFinished"  fixedLayout="false">
+				<headerToolbar>
+					<Toolbar>					
+					<ToolbarSpacer/>
+						<Title id="entitySet"/>
+						<rdf:TextResource id="resourceTitle" />
+						<Title id="tableHeader" text="{entityNavigationSetView>/entityNavigationSetTableTitle}"/>
+						<ToolbarSpacer/>
+						<SearchField id="searchField" tooltip="{i18n>search.searchTooltip}" search="onSearch" width="auto"></SearchField>
+					</Toolbar>
+				</headerToolbar>
+				<columns>
+					<Column >
+						<Text text="{i18n>Organisation_Sub_TypePrivate_Controlled_Drug_Prescriber_Organisation_Sub_Type_Code_inverse.this}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>Organisation_Sub_TypePrivate_Controlled_Drug_Prescriber_Organisation_Sub_Type_Code_inverse.Private_Controlled_Drug_Prescriber_Address_Line_1}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>Organisation_Sub_TypePrivate_Controlled_Drug_Prescriber_Organisation_Sub_Type_Code_inverse.Private_Controlled_Drug_Prescriber_Address_Line_2}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>Organisation_Sub_TypePrivate_Controlled_Drug_Prescriber_Organisation_Sub_Type_Code_inverse.Private_Controlled_Drug_Prescriber_Address_Line_3}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>Organisation_Sub_TypePrivate_Controlled_Drug_Prescriber_Organisation_Sub_Type_Code_inverse.Private_Controlled_Drug_Prescriber_Address_Line_4}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>Organisation_Sub_TypePrivate_Controlled_Drug_Prescriber_Organisation_Sub_Type_Code_inverse.Private_Controlled_Drug_Prescriber_Address_Line_5}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>Organisation_Sub_TypePrivate_Controlled_Drug_Prescriber_Organisation_Sub_Type_Code_inverse.Private_Controlled_Drug_Prescriber_Close_Date}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>Organisation_Sub_TypePrivate_Controlled_Drug_Prescriber_Organisation_Sub_Type_Code_inverse.Private_Controlled_Drug_Prescriber_Contact_Telephone_Number}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>Organisation_Sub_TypePrivate_Controlled_Drug_Prescriber_Organisation_Sub_Type_Code_inverse.Private_Controlled_Drug_Prescriber_Join_Parent_Date}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>Organisation_Sub_TypePrivate_Controlled_Drug_Prescriber_Organisation_Sub_Type_Code_inverse.Private_Controlled_Drug_Prescriber_Left_Parent_Date}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>Organisation_Sub_TypePrivate_Controlled_Drug_Prescriber_Organisation_Sub_Type_Code_inverse.Private_Controlled_Drug_Prescriber_Name}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>Organisation_Sub_TypePrivate_Controlled_Drug_Prescriber_Organisation_Sub_Type_Code_inverse.Private_Controlled_Drug_Prescriber_Open_Date}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>Organisation_Sub_TypePrivate_Controlled_Drug_Prescriber_Organisation_Sub_Type_Code_inverse.Private_Controlled_Drug_Prescriber_Organisation_Code}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>Organisation_Sub_TypePrivate_Controlled_Drug_Prescriber_Organisation_Sub_Type_Code_inverse.Private_Controlled_Drug_Prescriber_Postcode}"/>
+					</Column>
+				</columns>
+				<items>
+					<ColumnListItem id="template" type="Navigation" press="onPress">
+						<cells>
+							<rdf:TextResource path="dataModel>" entitySet="Private_Controlled_Drug_Prescriber"/>
+  <rdf:TextLink text="{path:'dataModel>Private_Controlled_Drug_Prescriber_Address_Line_1',type:'sap.ui.model.type.String' }" linkText="{i18n>Private_Controlled_Drug_Prescriber.Private_Controlled_Drug_Prescriber_Address_Line_1}"/>
+  <rdf:TextLink text="{path:'dataModel>Private_Controlled_Drug_Prescriber_Address_Line_2',type:'sap.ui.model.type.String' }" linkText="{i18n>Private_Controlled_Drug_Prescriber.Private_Controlled_Drug_Prescriber_Address_Line_2}"/>
+  <rdf:TextLink text="{path:'dataModel>Private_Controlled_Drug_Prescriber_Address_Line_3',type:'sap.ui.model.type.String' }" linkText="{i18n>Private_Controlled_Drug_Prescriber.Private_Controlled_Drug_Prescriber_Address_Line_3}"/>
+  <rdf:TextLink text="{path:'dataModel>Private_Controlled_Drug_Prescriber_Address_Line_4',type:'sap.ui.model.type.String' }" linkText="{i18n>Private_Controlled_Drug_Prescriber.Private_Controlled_Drug_Prescriber_Address_Line_4}"/>
+  <rdf:TextLink text="{path:'dataModel>Private_Controlled_Drug_Prescriber_Address_Line_5',type:'sap.ui.model.type.String' }" linkText="{i18n>Private_Controlled_Drug_Prescriber.Private_Controlled_Drug_Prescriber_Address_Line_5}"/>
+  <Text text="{dataModel>Private_Controlled_Drug_Prescriber_Close_Date}"/>
+  <rdf:TextLink text="{path:'dataModel>Private_Controlled_Drug_Prescriber_Contact_Telephone_Number',type:'sap.ui.model.type.String' }" linkText="{i18n>Private_Controlled_Drug_Prescriber.Private_Controlled_Drug_Prescriber_Contact_Telephone_Number}"/>
+  <Text text="{dataModel>Private_Controlled_Drug_Prescriber_Join_Parent_Date}"/>
+  <Text text="{dataModel>Private_Controlled_Drug_Prescriber_Left_Parent_Date}"/>
+  <rdf:TextLink text="{path:'dataModel>Private_Controlled_Drug_Prescriber_Name',type:'sap.ui.model.type.String' }" linkText="{i18n>Private_Controlled_Drug_Prescriber.Private_Controlled_Drug_Prescriber_Name}"/>
+  <Text text="{dataModel>Private_Controlled_Drug_Prescriber_Open_Date}"/>
+  <rdf:TextLink text="{path:'dataModel>Private_Controlled_Drug_Prescriber_Organisation_Code',type:'sap.ui.model.type.String' }" linkText="{i18n>Private_Controlled_Drug_Prescriber.Private_Controlled_Drug_Prescriber_Organisation_Code}"/>
+  <rdf:TextLink text="{path:'dataModel>Private_Controlled_Drug_Prescriber_Postcode',type:'sap.ui.model.type.String' }" linkText="{i18n>Private_Controlled_Drug_Prescriber.Private_Controlled_Drug_Prescriber_Postcode}"/>
+						</cells>
+					</ColumnListItem>
+				</items>
+			</Table>
+		</content>
+	</Page>
+</mvc:View>

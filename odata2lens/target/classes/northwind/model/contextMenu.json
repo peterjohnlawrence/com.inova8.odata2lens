@@ -1,0 +1,2134 @@
+{
+	"qb_DataSet": {
+		"image": "./images/icons/category.svg",
+		"entity": {
+			"target": "qb_DataSet",
+			"icon": "sap-icon://database",
+			"menu": [{
+				"key": "graph",
+				"text": "Graph View",
+				"icon": "sap-icon://overview-chart",
+				"target": "graphgraph",
+				"tooltip": "Category Graph",
+				"visible": true
+			}, {
+				"key": "Details",
+				"text": "Details",
+				"icon": "sap-icon://detail-view",
+				"target": "DataSet",
+				"tooltip": "DataSet Details",
+				"visible": true
+			}, {
+				"key": "DataSetisDatasetOf",
+				"text": "Graph",
+				"icon": "sap-icon://database",
+				"target": "DataSetisDatasetOf",
+				"tooltip": "Dataset's Graph Details",
+				"visible": true
+			}]
+		},
+		"navigationProperty": {
+			"isCategoryOf": {
+				"target": "qb_isDatasetOf",
+				"icon": "sap-icon://thing-type",
+				"menu": [{
+					"key": "graph",
+					"text": "Graph View",
+					"icon": "sap-icon://overview-chart",
+					"target": "navigationSetGraph",
+					"tooltip": "isCategoryOf Graph",
+					"visible": true
+				}, {
+					"key": "qb_isDatasetOf",
+					"text": "is dataset of",
+					"icon": "sap-icon://database",
+					"target": "DataSetisDatasetOf",
+					"tooltip": "is dataset of",
+					"visible": true
+				}]
+			}
+		}
+	},
+	"datacube_Graph": {
+		"image": "./images/icons/category.svg"
+	},
+	"Category": {
+		"key": "Category",
+		"text": "Categorys",
+		"target": "Categorys",
+		"tooltip": "Show all Categorys",
+		"image": "./images/northwind/category.svg",
+		"icon": "sap-icon://northwind/category",
+		"visible":true,
+		"menu": [{
+			"type":"entitySet",
+		    "key": "graph",
+			"text": "Graph View",
+			"target": "graph",
+			"tooltip": "Categorys Graph",
+			"visible":true,
+			"parameters": {
+				"objectId": "Category",
+				"queryOptions": {
+					"$top": 10
+				}
+			}
+		}, {
+			"type":"entitySet",
+			"key": "Categorys",
+			"text": "Categorys",
+			"target": "Categorys",
+			"tooltip": "Show all Categorys",
+			"visible":true
+		}, {
+			"type":"entitySet",
+			"key": "DashBoard",
+			"text": "DashBoard",
+			"target": "CategorysDashBoard",
+			"tooltip": "Show Categorys DashBoard",
+			"visible":true
+		}
+		],
+		"entity": {
+			"target": "Category",
+			"icon": "sap-icon://northwind/category",
+			"menu": [{
+			    "type":"entity",
+				"key": "graph",
+				"text": "Graph View",
+				"icon": "sap-icon://overview-chart",
+				"target": "graph",
+				"tooltip": "Category Graph",
+				"visible": true
+			},{
+				"type":"entity",
+				"key": "linked",
+				"text": "Linked Search",
+				"icon": "sap-icon://chain-link",
+				"target": "linkedSearch",
+				"tooltip": "Search for things linked to this",
+				"visible": true
+			}, {
+				"type":"entity",
+				"key": "Details",
+				"text": "Details",
+				"icon": "sap-icon://detail-view",
+				"target": "Category",
+				"tooltip": "Category Details",
+				"visible": true 			}
+			, {
+				"type":"navigationSet",
+				"key": "isCategoryOf",
+				"text": "is category of",
+				"icon": "sap-icon://northwind/parttimeEmployee",
+				"target": "CategoryisCategoryOf",
+				"tooltip": "is category of",
+				"visible": true 			}
+			]
+		}
+		,"navigationProperty": {
+			"isCategoryOf": {
+				"target": "CategoryisCategoryOf",
+				"icon": "sap-icon://northwind/category",
+				"menu": [{
+					"type":"navigationSet",
+					"key": "graph",
+					"text": "Graph View",
+					"icon": "sap-icon://overview-chart",
+					"target": "navigationSetGraph",
+					"tooltip": "isCategoryOf Graph",
+					"visible": true
+				}, {
+					"type":"navigationSet",
+					"key": "isCategoryOf",
+					"text": "is category of",
+					"icon": "sap-icon://northwind/parttimeEmployee",
+					"target": "CategoryisCategoryOf",
+					"tooltip": "is category of",
+					"visible": true
+				}]
+			}
+		}
+	}
+	,
+	"ContractEmployee": {
+		"key": "ContractEmployee",
+		"text": "Contract employees",
+		"target": "ContractEmployees",
+		"tooltip": "Show all Contract employees",
+		"image": "./images/northwind/contractEmployee",
+		"icon": "sap-icon://northwind/contractEmployee",
+		"visible":true,
+		"menu": [{
+			"type":"entitySet",
+		    "key": "graph",
+			"text": "Graph View",
+			"target": "graph",
+			"tooltip": "Contract employees Graph",
+			"visible":true,
+			"parameters": {
+				"objectId": "ContractEmployee",
+				"queryOptions": {
+					"$top": 10
+				}
+			}
+		}, {
+			"type":"entitySet",
+			"key": "ContractEmployees",
+			"text": "Contract employees",
+			"target": "ContractEmployees",
+			"tooltip": "Show all Contract employees",
+			"visible":true
+		}, {
+			"type":"entitySet",
+			"key": "DashBoard",
+			"text": "DashBoard",
+			"target": "ContractEmployeesDashBoard",
+			"tooltip": "Show Contract employees DashBoard",
+			"visible":true
+		}
+		,{
+			"type":"menuNavigation",
+			"key": "Employee",
+			"text": "▲ Employees",
+			"icon": "$parentEntitySet.icon",
+			"target": "Employee",
+			"tooltip": "Go up to Employees",
+			"visible": true
+		}
+		],
+		"entity": {
+			"target": "ContractEmployee",
+			"icon": "sap-icon://northwind/contractEmployee",
+			"menu": [{
+			    "type":"entity",
+				"key": "graph",
+				"text": "Graph View",
+				"icon": "sap-icon://overview-chart",
+				"target": "graph",
+				"tooltip": "ContractEmployee Graph",
+				"visible": true
+			},{
+				"type":"entity",
+				"key": "linked",
+				"text": "Linked Search",
+				"icon": "sap-icon://chain-link",
+				"target": "linkedSearch",
+				"tooltip": "Search for things linked to this",
+				"visible": true
+			}, {
+				"type":"entity",
+				"key": "Details",
+				"text": "Details",
+				"icon": "sap-icon://detail-view",
+				"target": "ContractEmployee",
+				"tooltip": "ContractEmployee Details",
+				"visible": true 			}
+			, {
+				"type":"navigationSet",
+				"key": "contractCustomer",
+				"text": "contract customer",
+				"icon": "sap-icon://northwind/customer",
+				"target": "ContractEmployeecontractCustomer",
+				"tooltip": "contract customer",
+				"visible": true 			}
+			, {
+				"type":"navigationSet",
+				"key": "employeeRegion",
+				"text": "supports region",
+				"icon": "sap-icon://northwind/region",
+				"target": "ContractEmployeeemployeeRegion",
+				"tooltip": "supports region",
+				"visible": true 			}
+			, {
+				"type":"navigationSet",
+				"key": "managesEmployee",
+				"text": "manages employee",
+				"icon": "sap-icon://northwind/employee",
+				"target": "ContractEmployeemanagesEmployee",
+				"tooltip": "manages employee",
+				"visible": true 			}
+			, {
+				"type":"navigationSet",
+				"key": "managesOrder",
+				"text": "manages order",
+				"icon": "sap-icon://northwind/order",
+				"target": "ContractEmployeemanagesOrder",
+				"tooltip": "manages order",
+				"visible": true 			}
+			, {
+				"type":"navigationSet",
+				"key": "territory",
+				"text": "operates within territory",
+				"icon": "sap-icon://northwind/territory",
+				"target": "ContractEmployeeterritory",
+				"tooltip": "operates within territory",
+				"visible": true 			}
+			, {				
+				"type":"navigationProperty",
+				"key": "reportsTo",
+				"text": "reports to employee",
+				"icon": "sap-icon://northwind/employee",
+				"target": "Employee",
+				"tooltip": "reports to employee",
+				"parameters": {
+					"navigation": "reportsTo"
+				},
+				"visible": true 			}
+			]
+		}
+		,"navigationProperty": {
+			"contractCustomer": {
+				"target": "ContractEmployeecontractCustomer",
+				"icon": "sap-icon://northwind/contractEmployee",
+				"menu": [{
+					"type":"navigationSet",
+					"key": "graph",
+					"text": "Graph View",
+					"icon": "sap-icon://overview-chart",
+					"target": "navigationSetGraph",
+					"tooltip": "contractCustomer Graph",
+					"visible": true
+				}, {
+					"type":"navigationSet",
+					"key": "contractCustomer",
+					"text": "contract customer",
+					"icon": "sap-icon://northwind/customer",
+					"target": "ContractEmployeecontractCustomer",
+					"tooltip": "contract customer",
+					"visible": true
+				}]
+			}
+		,
+			"employeeRegion": {
+				"target": "ContractEmployeeemployeeRegion",
+				"icon": "sap-icon://northwind/contractEmployee",
+				"menu": [{
+					"type":"navigationSet",
+					"key": "graph",
+					"text": "Graph View",
+					"icon": "sap-icon://overview-chart",
+					"target": "navigationSetGraph",
+					"tooltip": "employeeRegion Graph",
+					"visible": true
+				}, {
+					"type":"navigationSet",
+					"key": "employeeRegion",
+					"text": "supports region",
+					"icon": "sap-icon://northwind/region",
+					"target": "ContractEmployeeemployeeRegion",
+					"tooltip": "supports region",
+					"visible": true
+				}]
+			}
+		,
+			"managesEmployee": {
+				"target": "ContractEmployeemanagesEmployee",
+				"icon": "sap-icon://northwind/contractEmployee",
+				"menu": [{
+					"type":"navigationSet",
+					"key": "graph",
+					"text": "Graph View",
+					"icon": "sap-icon://overview-chart",
+					"target": "navigationSetGraph",
+					"tooltip": "managesEmployee Graph",
+					"visible": true
+				}, {
+					"type":"navigationSet",
+					"key": "managesEmployee",
+					"text": "manages employee",
+					"icon": "sap-icon://northwind/employee",
+					"target": "ContractEmployeemanagesEmployee",
+					"tooltip": "manages employee",
+					"visible": true
+				}]
+			}
+		,
+			"managesOrder": {
+				"target": "ContractEmployeemanagesOrder",
+				"icon": "sap-icon://northwind/contractEmployee",
+				"menu": [{
+					"type":"navigationSet",
+					"key": "graph",
+					"text": "Graph View",
+					"icon": "sap-icon://overview-chart",
+					"target": "navigationSetGraph",
+					"tooltip": "managesOrder Graph",
+					"visible": true
+				}, {
+					"type":"navigationSet",
+					"key": "managesOrder",
+					"text": "manages order",
+					"icon": "sap-icon://northwind/order",
+					"target": "ContractEmployeemanagesOrder",
+					"tooltip": "manages order",
+					"visible": true
+				}]
+			}
+		,
+			"territory": {
+				"target": "ContractEmployeeterritory",
+				"icon": "sap-icon://northwind/contractEmployee",
+				"menu": [{
+					"type":"navigationSet",
+					"key": "graph",
+					"text": "Graph View",
+					"icon": "sap-icon://overview-chart",
+					"target": "navigationSetGraph",
+					"tooltip": "territory Graph",
+					"visible": true
+				}, {
+					"type":"navigationSet",
+					"key": "territory",
+					"text": "operates within territory",
+					"icon": "sap-icon://northwind/territory",
+					"target": "ContractEmployeeterritory",
+					"tooltip": "operates within territory",
+					"visible": true
+				}]
+			}
+		}
+	}
+	,
+	"Customer": {
+		"key": "Customer",
+		"text": "Customers",
+		"target": "Customers",
+		"tooltip": "Show all Customers",
+		"image": "./images/northwind/customer.svg",
+		"icon": "sap-icon://northwind/customer",
+		"visible":true,
+		"menu": [{
+			"type":"entitySet",
+		    "key": "graph",
+			"text": "Graph View",
+			"target": "graph",
+			"tooltip": "Customers Graph",
+			"visible":true,
+			"parameters": {
+				"objectId": "Customer",
+				"queryOptions": {
+					"$top": 10
+				}
+			}
+		}, {
+			"type":"entitySet",
+			"key": "Customers",
+			"text": "Customers",
+			"target": "Customers",
+			"tooltip": "Show all Customers",
+			"visible":true
+		}, {
+			"type":"entitySet",
+			"key": "DashBoard",
+			"text": "DashBoard",
+			"target": "CustomersDashBoard",
+			"tooltip": "Show Customers DashBoard",
+			"visible":true
+		}
+		],
+		"entity": {
+			"target": "Customer",
+			"icon": "sap-icon://northwind/customer",
+			"menu": [{
+			    "type":"entity",
+				"key": "graph",
+				"text": "Graph View",
+				"icon": "sap-icon://overview-chart",
+				"target": "graph",
+				"tooltip": "Customer Graph",
+				"visible": true
+			},{
+				"type":"entity",
+				"key": "linked",
+				"text": "Linked Search",
+				"icon": "sap-icon://chain-link",
+				"target": "linkedSearch",
+				"tooltip": "Search for things linked to this",
+				"visible": true
+			}, {
+				"type":"entity",
+				"key": "Details",
+				"text": "Details",
+				"icon": "sap-icon://detail-view",
+				"target": "Customer",
+				"tooltip": "Customer Details",
+				"visible": true 			}
+			, {
+				"type":"navigationSet",
+				"key": "customerRegion",
+				"text": "is part of region",
+				"icon": "sap-icon://northwind/region",
+				"target": "CustomercustomerRegion",
+				"tooltip": "is part of region",
+				"visible": true 			}
+			, {
+				"type":"navigationSet",
+				"key": "customer_customer_Order",
+				"text": "is referenced in customer_order",
+				"icon": "sap-icon://northwind/Customer_Order",
+				"target": "Customercustomer_customer_Order",
+				"tooltip": "is referenced in customer_order",
+				"visible": true 			}
+			, {
+				"type":"navigationSet",
+				"key": "hasPlacedOrder",
+				"text": "has placed Order",
+				"icon": "sap-icon://northwind/order",
+				"target": "CustomerhasPlacedOrder",
+				"tooltip": "has placed Order",
+				"visible": true 			}
+			]
+		}
+		,"navigationProperty": {
+			"customerRegion": {
+				"target": "CustomercustomerRegion",
+				"icon": "sap-icon://northwind/customer",
+				"menu": [{
+					"type":"navigationSet",
+					"key": "graph",
+					"text": "Graph View",
+					"icon": "sap-icon://overview-chart",
+					"target": "navigationSetGraph",
+					"tooltip": "customerRegion Graph",
+					"visible": true
+				}, {
+					"type":"navigationSet",
+					"key": "customerRegion",
+					"text": "is part of region",
+					"icon": "sap-icon://northwind/region",
+					"target": "CustomercustomerRegion",
+					"tooltip": "is part of region",
+					"visible": true
+				}]
+			}
+		,
+			"customer_customer_Order": {
+				"target": "Customercustomer_customer_Order",
+				"icon": "sap-icon://northwind/customer",
+				"menu": [{
+					"type":"navigationSet",
+					"key": "graph",
+					"text": "Graph View",
+					"icon": "sap-icon://overview-chart",
+					"target": "navigationSetGraph",
+					"tooltip": "customer_customer_Order Graph",
+					"visible": true
+				}, {
+					"type":"navigationSet",
+					"key": "customer_customer_Order",
+					"text": "is referenced in customer_order",
+					"icon": "sap-icon://northwind/Customer_Order",
+					"target": "Customercustomer_customer_Order",
+					"tooltip": "is referenced in customer_order",
+					"visible": true
+				}]
+			}
+		,
+			"hasPlacedOrder": {
+				"target": "CustomerhasPlacedOrder",
+				"icon": "sap-icon://northwind/customer",
+				"menu": [{
+					"type":"navigationSet",
+					"key": "graph",
+					"text": "Graph View",
+					"icon": "sap-icon://overview-chart",
+					"target": "navigationSetGraph",
+					"tooltip": "hasPlacedOrder Graph",
+					"visible": true
+				}, {
+					"type":"navigationSet",
+					"key": "hasPlacedOrder",
+					"text": "has placed Order",
+					"icon": "sap-icon://northwind/order",
+					"target": "CustomerhasPlacedOrder",
+					"tooltip": "has placed Order",
+					"visible": true
+				}]
+			}
+		}
+	}
+	,
+	"Customer_Order": {
+		"key": "Customer_Order",
+		"text": "Customer_Orders",
+		"target": "Customer_Orders",
+		"tooltip": "Show all Customer_Orders",
+		"image": "./images/northwind/Customer_Order.svg",
+		"icon": "sap-icon://northwind/Customer_Order",
+		"visible":false,
+		"menu": [{
+			"type":"entitySet",
+		    "key": "graph",
+			"text": "Graph View",
+			"target": "graph",
+			"tooltip": "Customer_Orders Graph",
+			"visible":false,
+			"parameters": {
+				"objectId": "Customer_Order",
+				"queryOptions": {
+					"$top": 10
+				}
+			}
+		}, {
+			"type":"entitySet",
+			"key": "Customer_Orders",
+			"text": "Customer_Orders",
+			"target": "Customer_Orders",
+			"tooltip": "Show all Customer_Orders",
+			"visible":false
+		}, {
+			"type":"entitySet",
+			"key": "DashBoard",
+			"text": "DashBoard",
+			"target": "Customer_OrdersDashBoard",
+			"tooltip": "Show Customer_Orders DashBoard",
+			"visible":false
+		}
+		],
+		"entity": {
+			"target": "Customer_Order",
+			"icon": "sap-icon://northwind/Customer_Order",
+			"menu": [{
+			    "type":"entity",
+				"key": "graph",
+				"text": "Graph View",
+				"icon": "sap-icon://overview-chart",
+				"target": "graph",
+				"tooltip": "Customer_Order Graph",
+				"visible": true
+			},{
+				"type":"entity",
+				"key": "linked",
+				"text": "Linked Search",
+				"icon": "sap-icon://chain-link",
+				"target": "linkedSearch",
+				"tooltip": "Search for things linked to this",
+				"visible": true
+			}, {
+				"type":"entity",
+				"key": "Details",
+				"text": "Details",
+				"icon": "sap-icon://detail-view",
+				"target": "Customer_Order",
+				"tooltip": "Customer_Order Details",
+				"visible": true 			}
+			, {				
+				"type":"navigationProperty",
+				"key": "customer_Order_customer",
+				"text": "customer_Order_customer",
+				"icon": "sap-icon://northwind/customer",
+				"target": "Customer",
+				"tooltip": "customer_Order_customer",
+				"parameters": {
+					"navigation": "customer_Order_customer"
+				},
+				"visible": true 			}
+			, {				
+				"type":"navigationProperty",
+				"key": "customer_Order_order",
+				"text": "customer_Order_order",
+				"icon": "sap-icon://northwind/order",
+				"target": "Order",
+				"tooltip": "customer_Order_order",
+				"parameters": {
+					"navigation": "customer_Order_order"
+				},
+				"visible": true 			}
+			]
+		}
+		,"navigationProperty": {
+		}
+	}
+	,
+	"Employee": {
+		"key": "Employee",
+		"text": "Employees",
+		"target": "Employees",
+		"tooltip": "Show all Employees",
+		"image": "./images/northwind/employee.svg",
+		"icon": "sap-icon://northwind/employee",
+		"visible":true,
+		"menu": [{
+			"type":"entitySet",
+		    "key": "graph",
+			"text": "Graph View",
+			"target": "graph",
+			"tooltip": "Employees Graph",
+			"visible":true,
+			"parameters": {
+				"objectId": "Employee",
+				"queryOptions": {
+					"$top": 10
+				}
+			}
+		}, {
+			"type":"entitySet",
+			"key": "Employees",
+			"text": "Employees",
+			"target": "Employees",
+			"tooltip": "Show all Employees",
+			"visible":true
+		}, {
+			"type":"entitySet",
+			"key": "DashBoard",
+			"text": "DashBoard",
+			"target": "EmployeesDashBoard",
+			"tooltip": "Show Employees DashBoard",
+			"visible":true
+		}
+		,{
+			"type":"menuNavigation",
+			"key": "ParttimeEmployee",
+			"text": "▼ Parttime employees",
+			"icon": "$childEntitySet.icon",
+			"target": "ParttimeEmployee",
+			"tooltip": "Go down to Parttime employees",
+			"visible": true
+		}
+		,{
+			"type":"menuNavigation",
+			"key": "ContractEmployee",
+			"text": "▼ Contract employees",
+			"icon": "$childEntitySet.icon",
+			"target": "ContractEmployee",
+			"tooltip": "Go down to Contract employees",
+			"visible": true
+		}
+		],
+		"entity": {
+			"target": "Employee",
+			"icon": "sap-icon://northwind/employee",
+			"menu": [{
+			    "type":"entity",
+				"key": "graph",
+				"text": "Graph View",
+				"icon": "sap-icon://overview-chart",
+				"target": "graph",
+				"tooltip": "Employee Graph",
+				"visible": true
+			},{
+				"type":"entity",
+				"key": "linked",
+				"text": "Linked Search",
+				"icon": "sap-icon://chain-link",
+				"target": "linkedSearch",
+				"tooltip": "Search for things linked to this",
+				"visible": true
+			}, {
+				"type":"entity",
+				"key": "Details",
+				"text": "Details",
+				"icon": "sap-icon://detail-view",
+				"target": "Employee",
+				"tooltip": "Employee Details",
+				"visible": true 			}
+			, {
+				"type":"navigationSet",
+				"key": "employeeRegion",
+				"text": "supports region",
+				"icon": "sap-icon://northwind/region",
+				"target": "EmployeeemployeeRegion",
+				"tooltip": "supports region",
+				"visible": true 			}
+			, {
+				"type":"navigationSet",
+				"key": "managesEmployee",
+				"text": "manages employee",
+				"icon": "sap-icon://northwind/employee",
+				"target": "EmployeemanagesEmployee",
+				"tooltip": "manages employee",
+				"visible": true 			}
+			, {
+				"type":"navigationSet",
+				"key": "managesOrder",
+				"text": "manages order",
+				"icon": "sap-icon://northwind/order",
+				"target": "EmployeemanagesOrder",
+				"tooltip": "manages order",
+				"visible": true 			}
+			, {
+				"type":"navigationSet",
+				"key": "territory",
+				"text": "operates within territory",
+				"icon": "sap-icon://northwind/territory",
+				"target": "Employeeterritory",
+				"tooltip": "operates within territory",
+				"visible": true 			}
+			, {				
+				"type":"navigationProperty",
+				"key": "reportsTo",
+				"text": "reports to employee",
+				"icon": "sap-icon://northwind/employee",
+				"target": "Employee",
+				"tooltip": "reports to employee",
+				"parameters": {
+					"navigation": "reportsTo"
+				},
+				"visible": true 			}
+			]
+		}
+		,"navigationProperty": {
+			"employeeRegion": {
+				"target": "EmployeeemployeeRegion",
+				"icon": "sap-icon://northwind/employee",
+				"menu": [{
+					"type":"navigationSet",
+					"key": "graph",
+					"text": "Graph View",
+					"icon": "sap-icon://overview-chart",
+					"target": "navigationSetGraph",
+					"tooltip": "employeeRegion Graph",
+					"visible": true
+				}, {
+					"type":"navigationSet",
+					"key": "employeeRegion",
+					"text": "supports region",
+					"icon": "sap-icon://northwind/region",
+					"target": "EmployeeemployeeRegion",
+					"tooltip": "supports region",
+					"visible": true
+				}]
+			}
+		,
+			"managesEmployee": {
+				"target": "EmployeemanagesEmployee",
+				"icon": "sap-icon://northwind/employee",
+				"menu": [{
+					"type":"navigationSet",
+					"key": "graph",
+					"text": "Graph View",
+					"icon": "sap-icon://overview-chart",
+					"target": "navigationSetGraph",
+					"tooltip": "managesEmployee Graph",
+					"visible": true
+				}, {
+					"type":"navigationSet",
+					"key": "managesEmployee",
+					"text": "manages employee",
+					"icon": "sap-icon://northwind/employee",
+					"target": "EmployeemanagesEmployee",
+					"tooltip": "manages employee",
+					"visible": true
+				}]
+			}
+		,
+			"managesOrder": {
+				"target": "EmployeemanagesOrder",
+				"icon": "sap-icon://northwind/employee",
+				"menu": [{
+					"type":"navigationSet",
+					"key": "graph",
+					"text": "Graph View",
+					"icon": "sap-icon://overview-chart",
+					"target": "navigationSetGraph",
+					"tooltip": "managesOrder Graph",
+					"visible": true
+				}, {
+					"type":"navigationSet",
+					"key": "managesOrder",
+					"text": "manages order",
+					"icon": "sap-icon://northwind/order",
+					"target": "EmployeemanagesOrder",
+					"tooltip": "manages order",
+					"visible": true
+				}]
+			}
+		,
+			"territory": {
+				"target": "Employeeterritory",
+				"icon": "sap-icon://northwind/employee",
+				"menu": [{
+					"type":"navigationSet",
+					"key": "graph",
+					"text": "Graph View",
+					"icon": "sap-icon://overview-chart",
+					"target": "navigationSetGraph",
+					"tooltip": "territory Graph",
+					"visible": true
+				}, {
+					"type":"navigationSet",
+					"key": "territory",
+					"text": "operates within territory",
+					"icon": "sap-icon://northwind/territory",
+					"target": "Employeeterritory",
+					"tooltip": "operates within territory",
+					"visible": true
+				}]
+			}
+		}
+	}
+	,
+	"Order": {
+		"key": "Order",
+		"text": "Orders",
+		"target": "Orders",
+		"tooltip": "Show all Orders",
+		"image": "./images/northwind/order.svg",
+		"icon": "sap-icon://northwind/order",
+		"visible":true,
+		"menu": [{
+			"type":"entitySet",
+		    "key": "graph",
+			"text": "Graph View",
+			"target": "graph",
+			"tooltip": "Orders Graph",
+			"visible":true,
+			"parameters": {
+				"objectId": "Order",
+				"queryOptions": {
+					"$top": 10
+				}
+			}
+		}, {
+			"type":"entitySet",
+			"key": "Orders",
+			"text": "Orders",
+			"target": "Orders",
+			"tooltip": "Show all Orders",
+			"visible":true
+		}, {
+			"type":"entitySet",
+			"key": "DashBoard",
+			"text": "DashBoard",
+			"target": "OrdersDashBoard",
+			"tooltip": "Show Orders DashBoard",
+			"visible":true
+		}
+		],
+		"entity": {
+			"target": "Order",
+			"icon": "sap-icon://northwind/order",
+			"menu": [{
+			    "type":"entity",
+				"key": "graph",
+				"text": "Graph View",
+				"icon": "sap-icon://overview-chart",
+				"target": "graph",
+				"tooltip": "Order Graph",
+				"visible": true
+			},{
+				"type":"entity",
+				"key": "linked",
+				"text": "Linked Search",
+				"icon": "sap-icon://chain-link",
+				"target": "linkedSearch",
+				"tooltip": "Search for things linked to this",
+				"visible": true
+			}, {
+				"type":"entity",
+				"key": "Details",
+				"text": "Details",
+				"icon": "sap-icon://detail-view",
+				"target": "Order",
+				"tooltip": "Order Details",
+				"visible": true 			}
+			, {
+				"type":"navigationSet",
+				"key": "hasOrderDetail",
+				"text": "has order details",
+				"icon": "sap-icon://northwind/orderDetail",
+				"target": "OrderhasOrderDetail",
+				"tooltip": "has order details",
+				"visible": true 			}
+			, {
+				"type":"navigationSet",
+				"key": "order_customer_Order",
+				"text": "is summarized in",
+				"icon": "sap-icon://northwind/Customer_Order",
+				"target": "Orderorder_customer_Order",
+				"tooltip": "is summarized in",
+				"visible": true 			}
+			, {
+				"type":"navigationSet",
+				"key": "order_orderSummary",
+				"text": "is referenced in a order summary",
+				"icon": "sap-icon://northwind/OrderSummary",
+				"target": "Orderorder_orderSummary",
+				"tooltip": "is referenced in a order summary",
+				"visible": true 			}
+			, {				
+				"type":"navigationProperty",
+				"key": "customer",
+				"text": "placed by customer",
+				"icon": "sap-icon://northwind/customer",
+				"target": "Customer",
+				"tooltip": "placed by customer",
+				"parameters": {
+					"navigation": "customer"
+				},
+				"visible": true 			}
+			, {				
+				"type":"navigationProperty",
+				"key": "employee",
+				"text": "is managed by",
+				"icon": "sap-icon://northwind/employee",
+				"target": "Employee",
+				"tooltip": "is managed by",
+				"parameters": {
+					"navigation": "employee"
+				},
+				"visible": true 			}
+			, {				
+				"type":"navigationProperty",
+				"key": "orderRegion",
+				"text": "is ordered in region",
+				"icon": "sap-icon://northwind/region",
+				"target": "Region",
+				"tooltip": "is ordered in region",
+				"parameters": {
+					"navigation": "orderRegion"
+				},
+				"visible": true 			}
+			, {				
+				"type":"navigationProperty",
+				"key": "shipVia",
+				"text": "is shipped by",
+				"icon": "sap-icon://northwind/shipper",
+				"target": "Shipper",
+				"tooltip": "is shipped by",
+				"parameters": {
+					"navigation": "shipVia"
+				},
+				"visible": true 			}
+			]
+		}
+		,"navigationProperty": {
+			"hasOrderDetail": {
+				"target": "OrderhasOrderDetail",
+				"icon": "sap-icon://northwind/order",
+				"menu": [{
+					"type":"navigationSet",
+					"key": "graph",
+					"text": "Graph View",
+					"icon": "sap-icon://overview-chart",
+					"target": "navigationSetGraph",
+					"tooltip": "hasOrderDetail Graph",
+					"visible": true
+				}, {
+					"type":"navigationSet",
+					"key": "hasOrderDetail",
+					"text": "has order details",
+					"icon": "sap-icon://northwind/orderDetail",
+					"target": "OrderhasOrderDetail",
+					"tooltip": "has order details",
+					"visible": true
+				}]
+			}
+		,
+			"order_customer_Order": {
+				"target": "Orderorder_customer_Order",
+				"icon": "sap-icon://northwind/order",
+				"menu": [{
+					"type":"navigationSet",
+					"key": "graph",
+					"text": "Graph View",
+					"icon": "sap-icon://overview-chart",
+					"target": "navigationSetGraph",
+					"tooltip": "order_customer_Order Graph",
+					"visible": true
+				}, {
+					"type":"navigationSet",
+					"key": "order_customer_Order",
+					"text": "is summarized in",
+					"icon": "sap-icon://northwind/Customer_Order",
+					"target": "Orderorder_customer_Order",
+					"tooltip": "is summarized in",
+					"visible": true
+				}]
+			}
+		,
+			"order_orderSummary": {
+				"target": "Orderorder_orderSummary",
+				"icon": "sap-icon://northwind/order",
+				"menu": [{
+					"type":"navigationSet",
+					"key": "graph",
+					"text": "Graph View",
+					"icon": "sap-icon://overview-chart",
+					"target": "navigationSetGraph",
+					"tooltip": "order_orderSummary Graph",
+					"visible": true
+				}, {
+					"type":"navigationSet",
+					"key": "order_orderSummary",
+					"text": "is referenced in a order summary",
+					"icon": "sap-icon://northwind/OrderSummary",
+					"target": "Orderorder_orderSummary",
+					"tooltip": "is referenced in a order summary",
+					"visible": true
+				}]
+			}
+		}
+	}
+	,
+	"OrderDetail": {
+		"key": "OrderDetail",
+		"text": "Order details",
+		"target": "OrderDetails",
+		"tooltip": "Show all Order details",
+		"image": "./images/northwind/orderDetail.svg",
+		"icon": "sap-icon://northwind/orderDetail",
+		"visible":true,
+		"menu": [{
+			"type":"entitySet",
+		    "key": "graph",
+			"text": "Graph View",
+			"target": "graph",
+			"tooltip": "Order details Graph",
+			"visible":true,
+			"parameters": {
+				"objectId": "OrderDetail",
+				"queryOptions": {
+					"$top": 10
+				}
+			}
+		}, {
+			"type":"entitySet",
+			"key": "OrderDetails",
+			"text": "Order details",
+			"target": "OrderDetails",
+			"tooltip": "Show all Order details",
+			"visible":true
+		}, {
+			"type":"entitySet",
+			"key": "DashBoard",
+			"text": "DashBoard",
+			"target": "OrderDetailsDashBoard",
+			"tooltip": "Show Order details DashBoard",
+			"visible":true
+		}
+		],
+		"entity": {
+			"target": "OrderDetail",
+			"icon": "sap-icon://northwind/orderDetail",
+			"menu": [{
+			    "type":"entity",
+				"key": "graph",
+				"text": "Graph View",
+				"icon": "sap-icon://overview-chart",
+				"target": "graph",
+				"tooltip": "OrderDetail Graph",
+				"visible": true
+			},{
+				"type":"entity",
+				"key": "linked",
+				"text": "Linked Search",
+				"icon": "sap-icon://chain-link",
+				"target": "linkedSearch",
+				"tooltip": "Search for things linked to this",
+				"visible": true
+			}, {
+				"type":"entity",
+				"key": "Details",
+				"text": "Details",
+				"icon": "sap-icon://detail-view",
+				"target": "OrderDetail",
+				"tooltip": "OrderDetail Details",
+				"visible": true 			}
+			, {				
+				"type":"navigationProperty",
+				"key": "order",
+				"text": "is part of order",
+				"icon": "sap-icon://northwind/order",
+				"target": "Order",
+				"tooltip": "is part of order",
+				"parameters": {
+					"navigation": "order"
+				},
+				"visible": true 			}
+			, {				
+				"type":"navigationProperty",
+				"key": "product",
+				"text": "includes product",
+				"icon": "sap-icon://northwind/parttimeEmployee",
+				"target": "Product",
+				"tooltip": "includes product",
+				"parameters": {
+					"navigation": "product"
+				},
+				"visible": true 			}
+			]
+		}
+		,"navigationProperty": {
+		}
+	}
+	,
+	"OrderSummary": {
+		"key": "OrderSummary",
+		"text": "Order summarys",
+		"target": "OrderSummarys",
+		"tooltip": "Show all Order summarys",
+		"image": "./images/northwind/OrderSummary.svg",
+		"icon": "sap-icon://northwind/OrderSummary",
+		"visible":false,
+		"menu": [{
+			"type":"entitySet",
+		    "key": "graph",
+			"text": "Graph View",
+			"target": "graph",
+			"tooltip": "Order summarys Graph",
+			"visible":false,
+			"parameters": {
+				"objectId": "OrderSummary",
+				"queryOptions": {
+					"$top": 10
+				}
+			}
+		}, {
+			"type":"entitySet",
+			"key": "OrderSummarys",
+			"text": "Order summarys",
+			"target": "OrderSummarys",
+			"tooltip": "Show all Order summarys",
+			"visible":false
+		}, {
+			"type":"entitySet",
+			"key": "DashBoard",
+			"text": "DashBoard",
+			"target": "OrderSummarysDashBoard",
+			"tooltip": "Show Order summarys DashBoard",
+			"visible":false
+		}
+		],
+		"entity": {
+			"target": "OrderSummary",
+			"icon": "sap-icon://northwind/OrderSummary",
+			"menu": [{
+			    "type":"entity",
+				"key": "graph",
+				"text": "Graph View",
+				"icon": "sap-icon://overview-chart",
+				"target": "graph",
+				"tooltip": "OrderSummary Graph",
+				"visible": true
+			},{
+				"type":"entity",
+				"key": "linked",
+				"text": "Linked Search",
+				"icon": "sap-icon://chain-link",
+				"target": "linkedSearch",
+				"tooltip": "Search for things linked to this",
+				"visible": true
+			}, {
+				"type":"entity",
+				"key": "Details",
+				"text": "Details",
+				"icon": "sap-icon://detail-view",
+				"target": "OrderSummary",
+				"tooltip": "OrderSummary Details",
+				"visible": true 			}
+			, {				
+				"type":"navigationProperty",
+				"key": "orderSummary_order",
+				"text": "references order",
+				"icon": "sap-icon://northwind/order",
+				"target": "Order",
+				"tooltip": "references order",
+				"parameters": {
+					"navigation": "orderSummary_order"
+				},
+				"visible": true 			}
+			, {				
+				"type":"navigationProperty",
+				"key": "orderSummary_product",
+				"text": "references product",
+				"icon": "sap-icon://northwind/parttimeEmployee",
+				"target": "Product",
+				"tooltip": "references product",
+				"parameters": {
+					"navigation": "orderSummary_product"
+				},
+				"visible": true 			}
+			]
+		}
+		,"navigationProperty": {
+		}
+	}
+	,
+	"ParttimeEmployee": {
+		"key": "ParttimeEmployee",
+		"text": "Parttime employees",
+		"target": "ParttimeEmployees",
+		"tooltip": "Show all Parttime employees",
+		"image": "./images/northwind/parttimeEmployee.svg",
+		"icon": "sap-icon://northwind/parttimeEmployee",
+		"visible":true,
+		"menu": [{
+			"type":"entitySet",
+		    "key": "graph",
+			"text": "Graph View",
+			"target": "graph",
+			"tooltip": "Parttime employees Graph",
+			"visible":true,
+			"parameters": {
+				"objectId": "ParttimeEmployee",
+				"queryOptions": {
+					"$top": 10
+				}
+			}
+		}, {
+			"type":"entitySet",
+			"key": "ParttimeEmployees",
+			"text": "Parttime employees",
+			"target": "ParttimeEmployees",
+			"tooltip": "Show all Parttime employees",
+			"visible":true
+		}, {
+			"type":"entitySet",
+			"key": "DashBoard",
+			"text": "DashBoard",
+			"target": "ParttimeEmployeesDashBoard",
+			"tooltip": "Show Parttime employees DashBoard",
+			"visible":true
+		}
+		,{
+			"type":"menuNavigation",
+			"key": "Employee",
+			"text": "▲ Employees",
+			"icon": "$parentEntitySet.icon",
+			"target": "Employee",
+			"tooltip": "Go up to Employees",
+			"visible": true
+		}
+		],
+		"entity": {
+			"target": "ParttimeEmployee",
+			"icon": "sap-icon://northwind/parttimeEmployee",
+			"menu": [{
+			    "type":"entity",
+				"key": "graph",
+				"text": "Graph View",
+				"icon": "sap-icon://overview-chart",
+				"target": "graph",
+				"tooltip": "ParttimeEmployee Graph",
+				"visible": true
+			},{
+				"type":"entity",
+				"key": "linked",
+				"text": "Linked Search",
+				"icon": "sap-icon://chain-link",
+				"target": "linkedSearch",
+				"tooltip": "Search for things linked to this",
+				"visible": true
+			}, {
+				"type":"entity",
+				"key": "Details",
+				"text": "Details",
+				"icon": "sap-icon://detail-view",
+				"target": "ParttimeEmployee",
+				"tooltip": "ParttimeEmployee Details",
+				"visible": true 			}
+			, {
+				"type":"navigationSet",
+				"key": "employeeRegion",
+				"text": "supports region",
+				"icon": "sap-icon://northwind/region",
+				"target": "ParttimeEmployeeemployeeRegion",
+				"tooltip": "supports region",
+				"visible": true 			}
+			, {
+				"type":"navigationSet",
+				"key": "managesEmployee",
+				"text": "manages employee",
+				"icon": "sap-icon://northwind/employee",
+				"target": "ParttimeEmployeemanagesEmployee",
+				"tooltip": "manages employee",
+				"visible": true 			}
+			, {
+				"type":"navigationSet",
+				"key": "managesOrder",
+				"text": "manages order",
+				"icon": "sap-icon://northwind/order",
+				"target": "ParttimeEmployeemanagesOrder",
+				"tooltip": "manages order",
+				"visible": true 			}
+			, {
+				"type":"navigationSet",
+				"key": "territory",
+				"text": "operates within territory",
+				"icon": "sap-icon://northwind/territory",
+				"target": "ParttimeEmployeeterritory",
+				"tooltip": "operates within territory",
+				"visible": true 			}
+			, {				
+				"type":"navigationProperty",
+				"key": "reportsTo",
+				"text": "reports to employee",
+				"icon": "sap-icon://northwind/employee",
+				"target": "Employee",
+				"tooltip": "reports to employee",
+				"parameters": {
+					"navigation": "reportsTo"
+				},
+				"visible": true 			}
+			]
+		}
+		,"navigationProperty": {
+			"employeeRegion": {
+				"target": "ParttimeEmployeeemployeeRegion",
+				"icon": "sap-icon://northwind/parttimeEmployee",
+				"menu": [{
+					"type":"navigationSet",
+					"key": "graph",
+					"text": "Graph View",
+					"icon": "sap-icon://overview-chart",
+					"target": "navigationSetGraph",
+					"tooltip": "employeeRegion Graph",
+					"visible": true
+				}, {
+					"type":"navigationSet",
+					"key": "employeeRegion",
+					"text": "supports region",
+					"icon": "sap-icon://northwind/region",
+					"target": "ParttimeEmployeeemployeeRegion",
+					"tooltip": "supports region",
+					"visible": true
+				}]
+			}
+		,
+			"managesEmployee": {
+				"target": "ParttimeEmployeemanagesEmployee",
+				"icon": "sap-icon://northwind/parttimeEmployee",
+				"menu": [{
+					"type":"navigationSet",
+					"key": "graph",
+					"text": "Graph View",
+					"icon": "sap-icon://overview-chart",
+					"target": "navigationSetGraph",
+					"tooltip": "managesEmployee Graph",
+					"visible": true
+				}, {
+					"type":"navigationSet",
+					"key": "managesEmployee",
+					"text": "manages employee",
+					"icon": "sap-icon://northwind/employee",
+					"target": "ParttimeEmployeemanagesEmployee",
+					"tooltip": "manages employee",
+					"visible": true
+				}]
+			}
+		,
+			"managesOrder": {
+				"target": "ParttimeEmployeemanagesOrder",
+				"icon": "sap-icon://northwind/parttimeEmployee",
+				"menu": [{
+					"type":"navigationSet",
+					"key": "graph",
+					"text": "Graph View",
+					"icon": "sap-icon://overview-chart",
+					"target": "navigationSetGraph",
+					"tooltip": "managesOrder Graph",
+					"visible": true
+				}, {
+					"type":"navigationSet",
+					"key": "managesOrder",
+					"text": "manages order",
+					"icon": "sap-icon://northwind/order",
+					"target": "ParttimeEmployeemanagesOrder",
+					"tooltip": "manages order",
+					"visible": true
+				}]
+			}
+		,
+			"territory": {
+				"target": "ParttimeEmployeeterritory",
+				"icon": "sap-icon://northwind/parttimeEmployee",
+				"menu": [{
+					"type":"navigationSet",
+					"key": "graph",
+					"text": "Graph View",
+					"icon": "sap-icon://overview-chart",
+					"target": "navigationSetGraph",
+					"tooltip": "territory Graph",
+					"visible": true
+				}, {
+					"type":"navigationSet",
+					"key": "territory",
+					"text": "operates within territory",
+					"icon": "sap-icon://northwind/territory",
+					"target": "ParttimeEmployeeterritory",
+					"tooltip": "operates within territory",
+					"visible": true
+				}]
+			}
+		}
+	}
+	,
+	"Product": {
+		"key": "Product",
+		"text": "Products",
+		"target": "Products",
+		"tooltip": "Show all Products",
+		"image": "./images/northwind/product.svg",
+		"icon": "sap-icon://northwind/parttimeEmployee",
+		"visible":true,
+		"menu": [{
+			"type":"entitySet",
+		    "key": "graph",
+			"text": "Graph View",
+			"target": "graph",
+			"tooltip": "Products Graph",
+			"visible":true,
+			"parameters": {
+				"objectId": "Product",
+				"queryOptions": {
+					"$top": 10
+				}
+			}
+		}, {
+			"type":"entitySet",
+			"key": "Products",
+			"text": "Products",
+			"target": "Products",
+			"tooltip": "Show all Products",
+			"visible":true
+		}, {
+			"type":"entitySet",
+			"key": "DashBoard",
+			"text": "DashBoard",
+			"target": "ProductsDashBoard",
+			"tooltip": "Show Products DashBoard",
+			"visible":true
+		}
+		],
+		"entity": {
+			"target": "Product",
+			"icon": "sap-icon://northwind/parttimeEmployee",
+			"menu": [{
+			    "type":"entity",
+				"key": "graph",
+				"text": "Graph View",
+				"icon": "sap-icon://overview-chart",
+				"target": "graph",
+				"tooltip": "Product Graph",
+				"visible": true
+			},{
+				"type":"entity",
+				"key": "linked",
+				"text": "Linked Search",
+				"icon": "sap-icon://chain-link",
+				"target": "linkedSearch",
+				"tooltip": "Search for things linked to this",
+				"visible": true
+			}, {
+				"type":"entity",
+				"key": "Details",
+				"text": "Details",
+				"icon": "sap-icon://detail-view",
+				"target": "Product",
+				"tooltip": "Product Details",
+				"visible": true 			}
+			, {
+				"type":"navigationSet",
+				"key": "isPartOfOrderDetail",
+				"text": "is part of order detail",
+				"icon": "sap-icon://northwind/orderDetail",
+				"target": "ProductisPartOfOrderDetail",
+				"tooltip": "is part of order detail",
+				"visible": true 			}
+			, {
+				"type":"navigationSet",
+				"key": "product_orderSummary",
+				"text": "is referenced in a order summary",
+				"icon": "sap-icon://northwind/OrderSummary",
+				"target": "Productproduct_orderSummary",
+				"tooltip": "is referenced in a order summary",
+				"visible": true 			}
+			, {				
+				"type":"navigationProperty",
+				"key": "category",
+				"text": "is categorized as",
+				"icon": "sap-icon://northwind/category",
+				"target": "Category",
+				"tooltip": "is categorized as",
+				"parameters": {
+					"navigation": "category"
+				},
+				"visible": true 			}
+			, {				
+				"type":"navigationProperty",
+				"key": "supplier",
+				"text": "is supplied by",
+				"icon": "sap-icon://northwind/supplier",
+				"target": "Supplier",
+				"tooltip": "is supplied by",
+				"parameters": {
+					"navigation": "supplier"
+				},
+				"visible": true 			}
+			]
+		}
+		,"navigationProperty": {
+			"isPartOfOrderDetail": {
+				"target": "ProductisPartOfOrderDetail",
+				"icon": "sap-icon://northwind/parttimeEmployee",
+				"menu": [{
+					"type":"navigationSet",
+					"key": "graph",
+					"text": "Graph View",
+					"icon": "sap-icon://overview-chart",
+					"target": "navigationSetGraph",
+					"tooltip": "isPartOfOrderDetail Graph",
+					"visible": true
+				}, {
+					"type":"navigationSet",
+					"key": "isPartOfOrderDetail",
+					"text": "is part of order detail",
+					"icon": "sap-icon://northwind/orderDetail",
+					"target": "ProductisPartOfOrderDetail",
+					"tooltip": "is part of order detail",
+					"visible": true
+				}]
+			}
+		,
+			"product_orderSummary": {
+				"target": "Productproduct_orderSummary",
+				"icon": "sap-icon://northwind/parttimeEmployee",
+				"menu": [{
+					"type":"navigationSet",
+					"key": "graph",
+					"text": "Graph View",
+					"icon": "sap-icon://overview-chart",
+					"target": "navigationSetGraph",
+					"tooltip": "product_orderSummary Graph",
+					"visible": true
+				}, {
+					"type":"navigationSet",
+					"key": "product_orderSummary",
+					"text": "is referenced in a order summary",
+					"icon": "sap-icon://northwind/OrderSummary",
+					"target": "Productproduct_orderSummary",
+					"tooltip": "is referenced in a order summary",
+					"visible": true
+				}]
+			}
+		}
+	}
+	,
+	"Region": {
+		"key": "Region",
+		"text": "Regions",
+		"target": "Regions",
+		"tooltip": "Show all Regions",
+		"image": "./images/northwind/region.svg",
+		"icon": "sap-icon://northwind/region",
+		"visible":true,
+		"menu": [{
+			"type":"entitySet",
+		    "key": "graph",
+			"text": "Graph View",
+			"target": "graph",
+			"tooltip": "Regions Graph",
+			"visible":true,
+			"parameters": {
+				"objectId": "Region",
+				"queryOptions": {
+					"$top": 10
+				}
+			}
+		}, {
+			"type":"entitySet",
+			"key": "Regions",
+			"text": "Regions",
+			"target": "Regions",
+			"tooltip": "Show all Regions",
+			"visible":true
+		}, {
+			"type":"entitySet",
+			"key": "DashBoard",
+			"text": "DashBoard",
+			"target": "RegionsDashBoard",
+			"tooltip": "Show Regions DashBoard",
+			"visible":true
+		}
+		],
+		"entity": {
+			"target": "Region",
+			"icon": "sap-icon://northwind/region",
+			"menu": [{
+			    "type":"entity",
+				"key": "graph",
+				"text": "Graph View",
+				"icon": "sap-icon://overview-chart",
+				"target": "graph",
+				"tooltip": "Region Graph",
+				"visible": true
+			},{
+				"type":"entity",
+				"key": "linked",
+				"text": "Linked Search",
+				"icon": "sap-icon://chain-link",
+				"target": "linkedSearch",
+				"tooltip": "Search for things linked to this",
+				"visible": true
+			}, {
+				"type":"entity",
+				"key": "Details",
+				"text": "Details",
+				"icon": "sap-icon://detail-view",
+				"target": "Region",
+				"tooltip": "Region Details",
+				"visible": true 			}
+			]
+		}
+		,"navigationProperty": {
+		}
+	}
+	,
+	"Shipper": {
+		"key": "Shipper",
+		"text": "Shippers",
+		"target": "Shippers",
+		"tooltip": "Show all Shippers",
+		"image": "./images/northwind/shipper.svg",
+		"icon": "sap-icon://northwind/shipper",
+		"visible":true,
+		"menu": [{
+			"type":"entitySet",
+		    "key": "graph",
+			"text": "Graph View",
+			"target": "graph",
+			"tooltip": "Shippers Graph",
+			"visible":true,
+			"parameters": {
+				"objectId": "Shipper",
+				"queryOptions": {
+					"$top": 10
+				}
+			}
+		}, {
+			"type":"entitySet",
+			"key": "Shippers",
+			"text": "Shippers",
+			"target": "Shippers",
+			"tooltip": "Show all Shippers",
+			"visible":true
+		}, {
+			"type":"entitySet",
+			"key": "DashBoard",
+			"text": "DashBoard",
+			"target": "ShippersDashBoard",
+			"tooltip": "Show Shippers DashBoard",
+			"visible":true
+		}
+		],
+		"entity": {
+			"target": "Shipper",
+			"icon": "sap-icon://northwind/shipper",
+			"menu": [{
+			    "type":"entity",
+				"key": "graph",
+				"text": "Graph View",
+				"icon": "sap-icon://overview-chart",
+				"target": "graph",
+				"tooltip": "Shipper Graph",
+				"visible": true
+			},{
+				"type":"entity",
+				"key": "linked",
+				"text": "Linked Search",
+				"icon": "sap-icon://chain-link",
+				"target": "linkedSearch",
+				"tooltip": "Search for things linked to this",
+				"visible": true
+			}, {
+				"type":"entity",
+				"key": "Details",
+				"text": "Details",
+				"icon": "sap-icon://detail-view",
+				"target": "Shipper",
+				"tooltip": "Shipper Details",
+				"visible": true 			}
+			, {
+				"type":"navigationSet",
+				"key": "shipsOrder",
+				"text": "ships Order",
+				"icon": "sap-icon://northwind/order",
+				"target": "ShippershipsOrder",
+				"tooltip": "ships Order",
+				"visible": true 			}
+			]
+		}
+		,"navigationProperty": {
+			"shipsOrder": {
+				"target": "ShippershipsOrder",
+				"icon": "sap-icon://northwind/shipper",
+				"menu": [{
+					"type":"navigationSet",
+					"key": "graph",
+					"text": "Graph View",
+					"icon": "sap-icon://overview-chart",
+					"target": "navigationSetGraph",
+					"tooltip": "shipsOrder Graph",
+					"visible": true
+				}, {
+					"type":"navigationSet",
+					"key": "shipsOrder",
+					"text": "ships Order",
+					"icon": "sap-icon://northwind/order",
+					"target": "ShippershipsOrder",
+					"tooltip": "ships Order",
+					"visible": true
+				}]
+			}
+		}
+	}
+	,
+	"Supplier": {
+		"key": "Supplier",
+		"text": "Suppliers",
+		"target": "Suppliers",
+		"tooltip": "Show all Suppliers",
+		"image": "./images/northwind/supplier.svg",
+		"icon": "sap-icon://northwind/supplier",
+		"visible":true,
+		"menu": [{
+			"type":"entitySet",
+		    "key": "graph",
+			"text": "Graph View",
+			"target": "graph",
+			"tooltip": "Suppliers Graph",
+			"visible":true,
+			"parameters": {
+				"objectId": "Supplier",
+				"queryOptions": {
+					"$top": 10
+				}
+			}
+		}, {
+			"type":"entitySet",
+			"key": "Suppliers",
+			"text": "Suppliers",
+			"target": "Suppliers",
+			"tooltip": "Show all Suppliers",
+			"visible":true
+		}, {
+			"type":"entitySet",
+			"key": "DashBoard",
+			"text": "DashBoard",
+			"target": "SuppliersDashBoard",
+			"tooltip": "Show Suppliers DashBoard",
+			"visible":true
+		}
+		],
+		"entity": {
+			"target": "Supplier",
+			"icon": "sap-icon://northwind/supplier",
+			"menu": [{
+			    "type":"entity",
+				"key": "graph",
+				"text": "Graph View",
+				"icon": "sap-icon://overview-chart",
+				"target": "graph",
+				"tooltip": "Supplier Graph",
+				"visible": true
+			},{
+				"type":"entity",
+				"key": "linked",
+				"text": "Linked Search",
+				"icon": "sap-icon://chain-link",
+				"target": "linkedSearch",
+				"tooltip": "Search for things linked to this",
+				"visible": true
+			}, {
+				"type":"entity",
+				"key": "Details",
+				"text": "Details",
+				"icon": "sap-icon://detail-view",
+				"target": "Supplier",
+				"tooltip": "Supplier Details",
+				"visible": true 			}
+			, {
+				"type":"navigationSet",
+				"key": "supplierRegion",
+				"text": "supplies in region",
+				"icon": "sap-icon://northwind/region",
+				"target": "SuppliersupplierRegion",
+				"tooltip": "supplies in region",
+				"visible": true 			}
+			, {
+				"type":"navigationSet",
+				"key": "suppliesProduct",
+				"text": "supplies product",
+				"icon": "sap-icon://northwind/parttimeEmployee",
+				"target": "SuppliersuppliesProduct",
+				"tooltip": "supplies product",
+				"visible": true 			}
+			]
+		}
+		,"navigationProperty": {
+			"supplierRegion": {
+				"target": "SuppliersupplierRegion",
+				"icon": "sap-icon://northwind/supplier",
+				"menu": [{
+					"type":"navigationSet",
+					"key": "graph",
+					"text": "Graph View",
+					"icon": "sap-icon://overview-chart",
+					"target": "navigationSetGraph",
+					"tooltip": "supplierRegion Graph",
+					"visible": true
+				}, {
+					"type":"navigationSet",
+					"key": "supplierRegion",
+					"text": "supplies in region",
+					"icon": "sap-icon://northwind/region",
+					"target": "SuppliersupplierRegion",
+					"tooltip": "supplies in region",
+					"visible": true
+				}]
+			}
+		,
+			"suppliesProduct": {
+				"target": "SuppliersuppliesProduct",
+				"icon": "sap-icon://northwind/supplier",
+				"menu": [{
+					"type":"navigationSet",
+					"key": "graph",
+					"text": "Graph View",
+					"icon": "sap-icon://overview-chart",
+					"target": "navigationSetGraph",
+					"tooltip": "suppliesProduct Graph",
+					"visible": true
+				}, {
+					"type":"navigationSet",
+					"key": "suppliesProduct",
+					"text": "supplies product",
+					"icon": "sap-icon://northwind/parttimeEmployee",
+					"target": "SuppliersuppliesProduct",
+					"tooltip": "supplies product",
+					"visible": true
+				}]
+			}
+		}
+	}
+	,
+	"Territory": {
+		"key": "Territory",
+		"text": "Territorys",
+		"target": "Territorys",
+		"tooltip": "Show all Territorys",
+		"image": "./images/northwind/territory.svg",
+		"icon": "sap-icon://northwind/territory",
+		"visible":true,
+		"menu": [{
+			"type":"entitySet",
+		    "key": "graph",
+			"text": "Graph View",
+			"target": "graph",
+			"tooltip": "Territorys Graph",
+			"visible":true,
+			"parameters": {
+				"objectId": "Territory",
+				"queryOptions": {
+					"$top": 10
+				}
+			}
+		}, {
+			"type":"entitySet",
+			"key": "Territorys",
+			"text": "Territorys",
+			"target": "Territorys",
+			"tooltip": "Show all Territorys",
+			"visible":true
+		}, {
+			"type":"entitySet",
+			"key": "DashBoard",
+			"text": "DashBoard",
+			"target": "TerritorysDashBoard",
+			"tooltip": "Show Territorys DashBoard",
+			"visible":true
+		}
+		],
+		"entity": {
+			"target": "Territory",
+			"icon": "sap-icon://northwind/territory",
+			"menu": [{
+			    "type":"entity",
+				"key": "graph",
+				"text": "Graph View",
+				"icon": "sap-icon://overview-chart",
+				"target": "graph",
+				"tooltip": "Territory Graph",
+				"visible": true
+			},{
+				"type":"entity",
+				"key": "linked",
+				"text": "Linked Search",
+				"icon": "sap-icon://chain-link",
+				"target": "linkedSearch",
+				"tooltip": "Search for things linked to this",
+				"visible": true
+			}, {
+				"type":"entity",
+				"key": "Details",
+				"text": "Details",
+				"icon": "sap-icon://detail-view",
+				"target": "Territory",
+				"tooltip": "Territory Details",
+				"visible": true 			}
+			, {
+				"type":"navigationSet",
+				"key": "territoryOf",
+				"text": "within which operates employee",
+				"icon": "sap-icon://northwind/employee",
+				"target": "TerritoryterritoryOf",
+				"tooltip": "within which operates employee",
+				"visible": true 			}
+			, {
+				"type":"navigationSet",
+				"key": "territoryRegion",
+				"text": "is located within region",
+				"icon": "sap-icon://northwind/region",
+				"target": "TerritoryterritoryRegion",
+				"tooltip": "is located within region",
+				"visible": true 			}
+			]
+		}
+		,"navigationProperty": {
+			"territoryOf": {
+				"target": "TerritoryterritoryOf",
+				"icon": "sap-icon://northwind/territory",
+				"menu": [{
+					"type":"navigationSet",
+					"key": "graph",
+					"text": "Graph View",
+					"icon": "sap-icon://overview-chart",
+					"target": "navigationSetGraph",
+					"tooltip": "territoryOf Graph",
+					"visible": true
+				}, {
+					"type":"navigationSet",
+					"key": "territoryOf",
+					"text": "within which operates employee",
+					"icon": "sap-icon://northwind/employee",
+					"target": "TerritoryterritoryOf",
+					"tooltip": "within which operates employee",
+					"visible": true
+				}]
+			}
+		,
+			"territoryRegion": {
+				"target": "TerritoryterritoryRegion",
+				"icon": "sap-icon://northwind/territory",
+				"menu": [{
+					"type":"navigationSet",
+					"key": "graph",
+					"text": "Graph View",
+					"icon": "sap-icon://overview-chart",
+					"target": "navigationSetGraph",
+					"tooltip": "territoryRegion Graph",
+					"visible": true
+				}, {
+					"type":"navigationSet",
+					"key": "territoryRegion",
+					"text": "is located within region",
+					"icon": "sap-icon://northwind/region",
+					"target": "TerritoryterritoryRegion",
+					"tooltip": "is located within region",
+					"visible": true
+				}]
+			}
+		}
+	}
+	,
+	"USState": {
+		"key": "USState",
+		"text": "USStates",
+		"target": "USStates",
+		"tooltip": "Show all USStates",
+		"image": "./images/northwind/usstate.svg",
+		"icon": "sap-icon://northwind/usstate",
+		"visible":true,
+		"menu": [{
+			"type":"entitySet",
+		    "key": "graph",
+			"text": "Graph View",
+			"target": "graph",
+			"tooltip": "USStates Graph",
+			"visible":true,
+			"parameters": {
+				"objectId": "USState",
+				"queryOptions": {
+					"$top": 10
+				}
+			}
+		}, {
+			"type":"entitySet",
+			"key": "USStates",
+			"text": "USStates",
+			"target": "USStates",
+			"tooltip": "Show all USStates",
+			"visible":true
+		}, {
+			"type":"entitySet",
+			"key": "DashBoard",
+			"text": "DashBoard",
+			"target": "USStatesDashBoard",
+			"tooltip": "Show USStates DashBoard",
+			"visible":true
+		}
+		],
+		"entity": {
+			"target": "USState",
+			"icon": "sap-icon://northwind/usstate",
+			"menu": [{
+			    "type":"entity",
+				"key": "graph",
+				"text": "Graph View",
+				"icon": "sap-icon://overview-chart",
+				"target": "graph",
+				"tooltip": "USState Graph",
+				"visible": true
+			},{
+				"type":"entity",
+				"key": "linked",
+				"text": "Linked Search",
+				"icon": "sap-icon://chain-link",
+				"target": "linkedSearch",
+				"tooltip": "Search for things linked to this",
+				"visible": true
+			}, {
+				"type":"entity",
+				"key": "Details",
+				"text": "Details",
+				"icon": "sap-icon://detail-view",
+				"target": "USState",
+				"tooltip": "USState Details",
+				"visible": true 			}
+			, {
+				"type":"navigationSet",
+				"key": "usstateRegion",
+				"text": "usstate region",
+				"icon": "sap-icon://northwind/region",
+				"target": "USStateusstateRegion",
+				"tooltip": "usstate region",
+				"visible": true 			}
+			]
+		}
+		,"navigationProperty": {
+			"usstateRegion": {
+				"target": "USStateusstateRegion",
+				"icon": "sap-icon://northwind/usstate",
+				"menu": [{
+					"type":"navigationSet",
+					"key": "graph",
+					"text": "Graph View",
+					"icon": "sap-icon://overview-chart",
+					"target": "navigationSetGraph",
+					"tooltip": "usstateRegion Graph",
+					"visible": true
+				}, {
+					"type":"navigationSet",
+					"key": "usstateRegion",
+					"text": "usstate region",
+					"icon": "sap-icon://northwind/region",
+					"target": "USStateusstateRegion",
+					"tooltip": "usstate region",
+					"visible": true
+				}]
+			}
+		}
+	}
+}

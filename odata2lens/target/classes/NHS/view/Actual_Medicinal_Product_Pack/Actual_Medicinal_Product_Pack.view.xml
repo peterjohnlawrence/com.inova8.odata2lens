@@ -1,0 +1,33 @@
+<mvc:View controllerName="com.inova8.lens.controller.Entity" xmlns="sap.m" xmlns:mvc="sap.ui.core.mvc"
+	xmlns:f="sap.ui.layout.form" xmlns:table="sap.ui.table" xmlns:rdf="com.inova8.lens.control">
+	<Page showHeader="true" id="page" navButtonPress="onNavBack" showNavButton="false" title="{i18n>Actual_Medicinal_Product_Pack.Title}"
+		busy="{entityView>/busy}" busyIndicatorDelay="{entityView>/delay}">
+		<customHeader>
+			<Toolbar>
+				<ToolbarSpacer/>
+				<Title text="{i18n>Actual_Medicinal_Product_Pack.this}"/>
+				<rdf:TextResource path="dataModel>" entitySet="Actual_Medicinal_Product_Pack"/>
+				<Title text="{i18n>Actual_Medicinal_Product_Pack.Title}" />
+				<ToolbarSpacer/>
+			</Toolbar>
+		</customHeader>
+		<content>
+			<f:SimpleForm class="editableForm" columnsL="1" columnsM="1" editable="true" emptySpanL="4" emptySpanM="4" 
+				labelSpanL="2" labelSpanM="2" layout="ResponsiveGridLayout" maxContainerCols="2" minWidth="1024" singleContainerFullSize="true">
+				<f:content>
+					<!--<Label text="{i18n>Actual_Medicinal_Product_Pack.this}" required="false"/><rdf:TextResource path="dataModel>" entitySet="Actual_Medicinal_Product_Pack"/>-->
+					<Label text="{i18n>Actual_Medicinal_Product_Pack.Actual_Medicinal_Product_Pack_Abbreviated_Name}" required="false"/>   <rdf:TextLink text="{path:'dataModel>Actual_Medicinal_Product_Pack_Abbreviated_Name',type:'sap.ui.model.type.String' }" linkText="{i18n>Actual_Medicinal_Product_Pack.Actual_Medicinal_Product_Pack_Abbreviated_Name}"/>
+					<Label text="{i18n>Actual_Medicinal_Product_Pack.Actual_Medicinal_Product_Pack_Discontinued}" required="false"/>   <Text text="{path:'dataModel>Actual_Medicinal_Product_Pack_Discontinued',type:'sap.ui.model.type.Boolean'}"/>  
+					<Label text="{i18n>Actual_Medicinal_Product_Pack.Actual_Medicinal_Product_Pack_Discontinued_Date}" required="false"/>   <Text text="{dataModel>Actual_Medicinal_Product_Pack_Discontinued_Date}"/>
+					<Label text="{i18n>Actual_Medicinal_Product_Pack.Actual_Medicinal_Product_Pack_GTIN}" required="false"/>   <rdf:TextLink text="{path:'dataModel>Actual_Medicinal_Product_Pack_GTIN',type:'sap.ui.model.type.String' }" linkText="{i18n>Actual_Medicinal_Product_Pack.Actual_Medicinal_Product_Pack_GTIN}"/>
+					<Label text="{i18n>Actual_Medicinal_Product_Pack.Actual_Medicinal_Product_Pack_Id}" required="false"/>   <rdf:TextLink text="{path:'dataModel>Actual_Medicinal_Product_Pack_Id',type:'sap.ui.model.type.String' }" linkText="{i18n>Actual_Medicinal_Product_Pack.Actual_Medicinal_Product_Pack_Id}"/>
+					<Label text="{i18n>Actual_Medicinal_Product_Pack.Actual_Medicinal_Product_Pack_Invalid}" required="false"/>   <Text text="{path:'dataModel>Actual_Medicinal_Product_Pack_Invalid',type:'sap.ui.model.type.Boolean'}"/>  
+					<Label text="{i18n>Actual_Medicinal_Product_Pack.Actual_Medicinal_Product_Pack_Name}" required="false"/>   <rdf:TextLink text="{path:'dataModel>Actual_Medicinal_Product_Pack_Name',type:'sap.ui.model.type.String' }" linkText="{i18n>Actual_Medicinal_Product_Pack.Actual_Medicinal_Product_Pack_Name}"/>
+					<Label text="{i18n>Actual_Medicinal_Product_Pack.Actual_Medicinal_Product_Pack_Price}" required="false"/>   <Text text="{path:'dataModel>Actual_Medicinal_Product_Pack_Price',type:'sap.ui.model.type.Integer' }"/>
+					<Label text="{i18n>Actual_Medicinal_Product_Pack.Actual_Medicinal_Product_Pack_Price_Date}" required="false"/>   <Text text="{dataModel>Actual_Medicinal_Product_Pack_Price_Date}"/>
+					<Label text="{i18n>Actual_Medicinal_Product_Pack.Actual_Medicinal_Product_Pack_Sub_Pack_Info}" required="false"/>   <rdf:TextLink text="{path:'dataModel>Actual_Medicinal_Product_Pack_Sub_Pack_Info',type:'sap.ui.model.type.String' }" linkText="{i18n>Actual_Medicinal_Product_Pack.Actual_Medicinal_Product_Pack_Sub_Pack_Info}"/>
+				</f:content>
+			</f:SimpleForm>
+		</content>
+	</Page>
+</mvc:View>

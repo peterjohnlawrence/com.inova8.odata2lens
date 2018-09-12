@@ -49,7 +49,11 @@ public class EntityNavigationSet {
 
 	public String getIcon() {
 		if (icon.isEmpty()) {
-			return rangeType.getEntity().getTargetIcon();
+			if (rangeType != null) {
+				return rangeType.getEntity().getTargetIcon();
+			} else {
+				return "";
+			}
 		} else {
 			return icon;
 		}
@@ -61,7 +65,7 @@ public class EntityNavigationSet {
 
 	public void setRangeType(EntityType entityType) {
 		this.rangeType = entityType;
-		
+
 	}
 
 }

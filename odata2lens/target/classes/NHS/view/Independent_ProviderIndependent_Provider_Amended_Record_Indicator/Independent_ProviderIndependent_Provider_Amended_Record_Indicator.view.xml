@@ -1,0 +1,42 @@
+<mvc:View controllerName="com.inova8.lens.controller.EntityNavigationSet" xmlns="sap.m" xmlns:mvc="sap.ui.core.mvc" xmlns:layout="sap.ui.layout"
+	xmlns:rdf="com.inova8.lens.control">
+	<Page showHeader="false" id="page" navButtonPress="onNavBack" showNavButton="false" title="{i18n>Independent_ProviderIndependent_Provider_Amended_Record_Indicator.ViewTitle}">
+		<content>
+			<Table id="table" inset="false" items="{ path: '/{objectId}/Independent_Provider_Amended_Record_Indicator', sorter: { path: 'label', descending: false } 
+				}"
+				noDataText="{entityNavigationSetView>/tableNoDataText}" busyIndicatorDelay="{entityNavigationSetView>/tableBusyDelay}" growing="true" growingScrollToLoad="true"
+				updateFinished="onUpdateFinished"  fixedLayout="false">
+				<headerToolbar>
+					<Toolbar>					
+					<ToolbarSpacer/>
+						<Title id="entitySet"/>
+						<rdf:TextResource id="resourceTitle" />
+						<Title id="tableHeader" text="{entityNavigationSetView>/entityNavigationSetTableTitle}"/>
+						<ToolbarSpacer/>
+						<SearchField id="searchField" tooltip="{i18n>search.searchTooltip}" search="onSearch" width="auto"></SearchField>
+					</Toolbar>
+				</headerToolbar>
+				<columns>
+					<Column >
+						<Text text="{i18n>Independent_ProviderIndependent_Provider_Amended_Record_Indicator.this}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>Independent_ProviderIndependent_Provider_Amended_Record_Indicator.Amended_Record_Indicator_Code}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>Independent_ProviderIndependent_Provider_Amended_Record_Indicator.Amended_Record_Indicator_Name}"/>
+					</Column>
+				</columns>
+				<items>
+					<ColumnListItem id="template" type="Navigation" press="onPress">
+						<cells>
+							<rdf:TextResource path="dataModel>" entitySet="Amended_Record_Indicator"/>
+  <rdf:TextLink text="{path:'dataModel>Amended_Record_Indicator_Code',type:'sap.ui.model.type.String' }" linkText="{i18n>Amended_Record_Indicator.Amended_Record_Indicator_Code}"/>
+  <rdf:TextLink text="{path:'dataModel>Amended_Record_Indicator_Name',type:'sap.ui.model.type.String' }" linkText="{i18n>Amended_Record_Indicator.Amended_Record_Indicator_Name}"/>
+						</cells>
+					</ColumnListItem>
+				</items>
+			</Table>
+		</content>
+	</Page>
+</mvc:View>

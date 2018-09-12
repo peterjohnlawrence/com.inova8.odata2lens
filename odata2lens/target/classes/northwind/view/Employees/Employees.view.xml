@@ -1,0 +1,94 @@
+<mvc:View controllerName="com.inova8.lens.controller.EntitySet" xmlns="sap.m" xmlns:mvc="sap.ui.core.mvc" xmlns:layout="sap.ui.layout"
+	xmlns:rdf="com.inova8.lens.control">
+	<Page showHeader="false" id="page" navButtonPress="onNavBack" showNavButton="true" title="{i18n>Employees.ViewTitle}">
+		<content>
+			<Table id="table" inset="false" items="{ path: 'dataModel>/Employee' , sorter: { path: 'label', descending: false } 
+ ,parameters:{$expand:{ 							managesEmployee:{ $count:true}	
+ , 							managesOrder:{ $count:true}	
+ }} 				}"
+				noDataText="{entitySetView>/tableNoDataText}" busyIndicatorDelay="{entitySetView>/tableBusyDelay}" growing="true" growingScrollToLoad="true"
+				updateFinished="onUpdateFinished"  fixedLayout="false">
+				<headerToolbar>
+					<Toolbar>
+						<ToolbarSpacer/>
+						<Title id="tableHeader" text="{entitySetView>/entitySetTableTitle}"/>
+						<ToolbarSpacer/>
+						<SearchField id="searchField" tooltip="{i18n>search.searchTooltip}" search="onSearch" width="auto"></SearchField>
+					</Toolbar>
+				</headerToolbar>
+				<columns>
+					<Column >
+						<Text text="{i18n>Employees.this}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>Employees.employeePostalCode}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>Employees.comment}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>Employees.employeeAddress}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>Employees.employeeCity}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>Employees.employeeCountry}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>Employees.employeeLinkedIn}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>Employees.extension}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>Employees.firstName}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>Employees.hireDate}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>Employees.lat}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>Employees.long}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>Employees.regionDescription}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>Employees.title}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>Employees.managesEmployee}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>Employees.managesOrder}"/>
+					</Column>
+				</columns>
+				<items>
+					<ColumnListItem id="template" type="Navigation" press="onPress">
+						<cells>
+							<rdf:TextResource path="dataModel>" entitySet="Employee"/>
+  <rdf:TextLink text="{path:'dataModel>employeePostalCode',type:'sap.ui.model.type.String'}" linkText="{i18n>Employee.employeePostalCode}"/>
+  <rdf:TextLink text="{path:'dataModel>comment',type:'sap.ui.model.type.String'}" linkText="{i18n>Employee.comment}"/>
+  <rdf:TextLink text="{path:'dataModel>employeeAddress',type:'sap.ui.model.type.String'}" linkText="{i18n>Employee.employeeAddress}"/>
+  <rdf:TextLink text="{path:'dataModel>employeeCity',type:'sap.ui.model.type.String'}" linkText="{i18n>Employee.employeeCity}"/>
+  <rdf:TextLink text="{path:'dataModel>employeeCountry',type:'sap.ui.model.type.String'}" linkText="{i18n>Employee.employeeCountry}"/>
+  <rdf:TextLink text="{path:'dataModel>employeeLinkedIn',type:'sap.ui.model.type.String'}" linkText="{i18n>Employee.employeeLinkedIn}"/>
+  <rdf:TextLink text="{path:'dataModel>extension',type:'sap.ui.model.type.String'}" linkText="{i18n>Employee.extension}"/>
+  <rdf:TextLink text="{path:'dataModel>firstName',type:'sap.ui.model.type.String'}" linkText="{i18n>Employee.firstName}"/>
+  <Text text="{dataModel>hireDate}"/>
+  <Text text="{path:'dataModel>lat',type:'sap.ui.model.type.Float', formatOptions:{'style':'short','maxFractionDigits':2} }"/>
+  <Text text="{path:'dataModel>long',type:'sap.ui.model.type.Float', formatOptions:{'style':'short','minFractionDigits':5} }"/>
+  <rdf:TextLink text="{path:'dataModel>regionDescription',type:'sap.ui.model.type.String'}" linkText="{i18n>Employee.regionDescription}"/>
+  <rdf:TextLink text="{path:'dataModel>title',type:'sap.ui.model.type.String'}" linkText="{i18n>Employee.title}"/>
+							<rdf:NavigationPropertyCollection path="dataModel>managesEmployee/$count" navigationProperty="Employee/managesEmployee"/>
+							<rdf:NavigationPropertyCollection path="dataModel>managesOrder/$count" navigationProperty="Employee/managesOrder"/>
+						</cells>
+					</ColumnListItem>
+				</items>
+			</Table>
+		</content>
+	</Page>
+</mvc:View>

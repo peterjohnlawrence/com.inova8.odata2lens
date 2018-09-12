@@ -1,0 +1,34 @@
+<mvc:View controllerName="com.inova8.lens.controller.Entity" xmlns="sap.m" xmlns:mvc="sap.ui.core.mvc"
+	xmlns:f="sap.ui.layout.form" xmlns:table="sap.ui.table" xmlns:rdf="com.inova8.lens.control">
+	<Page showHeader="true" id="page" navButtonPress="onNavBack" showNavButton="false" title="{i18n>General_Dental_Practitioner.Title}"
+		busy="{entityView>/busy}" busyIndicatorDelay="{entityView>/delay}">
+		<customHeader>
+			<Toolbar>
+				<ToolbarSpacer/>
+				<Title text="{i18n>General_Dental_Practitioner.this}"/>
+				<rdf:TextResource path="dataModel>" entitySet="General_Dental_Practitioner"/>
+				<Title text="{i18n>General_Dental_Practitioner.Title}" />
+				<ToolbarSpacer/>
+			</Toolbar>
+		</customHeader>
+		<content>
+			<f:SimpleForm class="editableForm" columnsL="1" columnsM="1" editable="true" emptySpanL="4" emptySpanM="4" 
+				labelSpanL="2" labelSpanM="2" layout="ResponsiveGridLayout" maxContainerCols="2" minWidth="1024" singleContainerFullSize="true">
+				<f:content>
+					<!--<Label text="{i18n>General_Dental_Practitioner.this}" required="false"/><rdf:TextResource path="dataModel>" entitySet="General_Dental_Practitioner"/>-->
+					<Label text="{i18n>General_Dental_Practitioner.General_Dental_Practitioner_Address_Line_1}" required="false"/>   <rdf:TextLink text="{path:'dataModel>General_Dental_Practitioner_Address_Line_1',type:'sap.ui.model.type.String' }" linkText="{i18n>General_Dental_Practitioner.General_Dental_Practitioner_Address_Line_1}"/>
+					<Label text="{i18n>General_Dental_Practitioner.General_Dental_Practitioner_Address_Line_2}" required="false"/>   <rdf:TextLink text="{path:'dataModel>General_Dental_Practitioner_Address_Line_2',type:'sap.ui.model.type.String' }" linkText="{i18n>General_Dental_Practitioner.General_Dental_Practitioner_Address_Line_2}"/>
+					<Label text="{i18n>General_Dental_Practitioner.General_Dental_Practitioner_Address_Line_3}" required="false"/>   <rdf:TextLink text="{path:'dataModel>General_Dental_Practitioner_Address_Line_3',type:'sap.ui.model.type.String' }" linkText="{i18n>General_Dental_Practitioner.General_Dental_Practitioner_Address_Line_3}"/>
+					<Label text="{i18n>General_Dental_Practitioner.General_Dental_Practitioner_Address_Line_4}" required="false"/>   <rdf:TextLink text="{path:'dataModel>General_Dental_Practitioner_Address_Line_4',type:'sap.ui.model.type.String' }" linkText="{i18n>General_Dental_Practitioner.General_Dental_Practitioner_Address_Line_4}"/>
+					<Label text="{i18n>General_Dental_Practitioner.General_Dental_Practitioner_Address_Line_5}" required="false"/>   <rdf:TextLink text="{path:'dataModel>General_Dental_Practitioner_Address_Line_5',type:'sap.ui.model.type.String' }" linkText="{i18n>General_Dental_Practitioner.General_Dental_Practitioner_Address_Line_5}"/>
+					<Label text="{i18n>General_Dental_Practitioner.General_Dental_Practitioner_Close_Date}" required="false"/>   <Text text="{dataModel>General_Dental_Practitioner_Close_Date}"/>
+					<Label text="{i18n>General_Dental_Practitioner.General_Dental_Practitioner_GDC_Code}" required="false"/>   <rdf:TextLink text="{path:'dataModel>General_Dental_Practitioner_GDC_Code',type:'sap.ui.model.type.String' }" linkText="{i18n>General_Dental_Practitioner.General_Dental_Practitioner_GDC_Code}"/>
+					<Label text="{i18n>General_Dental_Practitioner.General_Dental_Practitioner_Name}" required="false"/>   <rdf:TextLink text="{path:'dataModel>General_Dental_Practitioner_Name',type:'sap.ui.model.type.String' }" linkText="{i18n>General_Dental_Practitioner.General_Dental_Practitioner_Name}"/>
+					<Label text="{i18n>General_Dental_Practitioner.General_Dental_Practitioner_Open_Date}" required="false"/>   <Text text="{dataModel>General_Dental_Practitioner_Open_Date}"/>
+					<Label text="{i18n>General_Dental_Practitioner.General_Dental_Practitioner_Organisation_Code}" required="false"/>   <rdf:TextLink text="{path:'dataModel>General_Dental_Practitioner_Organisation_Code',type:'sap.ui.model.type.String' }" linkText="{i18n>General_Dental_Practitioner.General_Dental_Practitioner_Organisation_Code}"/>
+					<Label text="{i18n>General_Dental_Practitioner.General_Dental_Practitioner_Postcode}" required="false"/>   <rdf:TextLink text="{path:'dataModel>General_Dental_Practitioner_Postcode',type:'sap.ui.model.type.String' }" linkText="{i18n>General_Dental_Practitioner.General_Dental_Practitioner_Postcode}"/>
+				</f:content>
+			</f:SimpleForm>
+		</content>
+	</Page>
+</mvc:View>

@@ -1,0 +1,30 @@
+<mvc:View controllerName="com.inova8.lens.controller.Entity" xmlns="sap.m" xmlns:mvc="sap.ui.core.mvc"
+	xmlns:f="sap.ui.layout.form" xmlns:table="sap.ui.table" xmlns:rdf="com.inova8.lens.control">
+	<Page showHeader="true" id="page" navButtonPress="onNavBack" showNavButton="false" title="{i18n>Prescription_Order.Title}"
+		busy="{entityView>/busy}" busyIndicatorDelay="{entityView>/delay}">
+		<customHeader>
+			<Toolbar>
+				<ToolbarSpacer/>
+				<Title text="{i18n>Prescription_Order.this}"/>
+				<rdf:TextResource path="dataModel>" entitySet="Prescription_Order"/>
+				<Title text="{i18n>Prescription_Order.Title}" />
+				<ToolbarSpacer/>
+			</Toolbar>
+		</customHeader>
+		<content>
+			<f:SimpleForm class="editableForm" columnsL="1" columnsM="1" editable="true" emptySpanL="4" emptySpanM="4" 
+				labelSpanL="2" labelSpanM="2" layout="ResponsiveGridLayout" maxContainerCols="2" minWidth="1024" singleContainerFullSize="true">
+				<f:content>
+					<!--<Label text="{i18n>Prescription_Order.this}" required="false"/><rdf:TextResource path="dataModel>" entitySet="Prescription_Order"/>-->
+					<Label text="{i18n>Prescription_Order.Prescription_Order_ACT_COST}" required="false"/>   <Text text="{dataModel>Prescription_Order_ACT_COST}"/>
+					<Label text="{i18n>Prescription_Order.Prescription_Order_BNF_NAME}" required="false"/>   <rdf:TextLink text="{path:'dataModel>Prescription_Order_BNF_NAME',type:'sap.ui.model.type.String' }" linkText="{i18n>Prescription_Order.Prescription_Order_BNF_NAME}"/>
+					<Label text="{i18n>Prescription_Order.Prescription_Order_ITEMS}" required="false"/>   <Text text="{path:'dataModel>Prescription_Order_ITEMS',type:'sap.ui.model.type.Integer' }"/>
+					<Label text="{i18n>Prescription_Order.Prescription_Order_NIC}" required="false"/>   <Text text="{dataModel>Prescription_Order_NIC}"/>
+					<Label text="{i18n>Prescription_Order.Prescription_Order_PERIOD}" required="false"/>   <Text text="{dataModel>Prescription_Order_PERIOD}"/>
+					<Label text="{i18n>Prescription_Order.Prescription_Order_QUANTITY}" required="false"/>   <Text text="{dataModel>Prescription_Order_QUANTITY}"/>
+					<Label text="{i18n>Prescription_Order.Prescription_Order_PRACTICE}" required="false"/><rdf:TextResource path="dataModel>Prescription_Order_PRACTICE" entitySet="GP_Practice"/>		
+				</f:content>
+			</f:SimpleForm>
+		</content>
+	</Page>
+</mvc:View>

@@ -1,0 +1,42 @@
+<mvc:View controllerName="com.inova8.lens.controller.EntityNavigationSet" xmlns="sap.m" xmlns:mvc="sap.ui.core.mvc" xmlns:layout="sap.ui.layout"
+	xmlns:rdf="com.inova8.lens.control">
+	<Page showHeader="false" id="page" navButtonPress="onNavBack" showNavButton="false" title="{i18n>General_Dental_PracticeGeneral_Dental_Practice_Organisation_Sub_Type_Code.ViewTitle}">
+		<content>
+			<Table id="table" inset="false" items="{ path: '/{objectId}/General_Dental_Practice_Organisation_Sub_Type_Code', sorter: { path: 'label', descending: false } 
+				}"
+				noDataText="{entityNavigationSetView>/tableNoDataText}" busyIndicatorDelay="{entityNavigationSetView>/tableBusyDelay}" growing="true" growingScrollToLoad="true"
+				updateFinished="onUpdateFinished"  fixedLayout="false">
+				<headerToolbar>
+					<Toolbar>					
+					<ToolbarSpacer/>
+						<Title id="entitySet"/>
+						<rdf:TextResource id="resourceTitle" />
+						<Title id="tableHeader" text="{entityNavigationSetView>/entityNavigationSetTableTitle}"/>
+						<ToolbarSpacer/>
+						<SearchField id="searchField" tooltip="{i18n>search.searchTooltip}" search="onSearch" width="auto"></SearchField>
+					</Toolbar>
+				</headerToolbar>
+				<columns>
+					<Column >
+						<Text text="{i18n>General_Dental_PracticeGeneral_Dental_Practice_Organisation_Sub_Type_Code.this}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>General_Dental_PracticeGeneral_Dental_Practice_Organisation_Sub_Type_Code.Organisation_Sub_Type_Code}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>General_Dental_PracticeGeneral_Dental_Practice_Organisation_Sub_Type_Code.Organisation_Sub_Type_Name}"/>
+					</Column>
+				</columns>
+				<items>
+					<ColumnListItem id="template" type="Navigation" press="onPress">
+						<cells>
+							<rdf:TextResource path="dataModel>" entitySet="Organisation_Sub_Type"/>
+  <rdf:TextLink text="{path:'dataModel>Organisation_Sub_Type_Code',type:'sap.ui.model.type.String' }" linkText="{i18n>Organisation_Sub_Type.Organisation_Sub_Type_Code}"/>
+  <rdf:TextLink text="{path:'dataModel>Organisation_Sub_Type_Name',type:'sap.ui.model.type.String' }" linkText="{i18n>Organisation_Sub_Type.Organisation_Sub_Type_Name}"/>
+						</cells>
+					</ColumnListItem>
+				</items>
+			</Table>
+		</content>
+	</Page>
+</mvc:View>

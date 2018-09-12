@@ -1,0 +1,23 @@
+<mvc:View controllerName="com.inova8.lens.controller.Entity" xmlns="sap.m" xmlns:mvc="sap.ui.core.mvc"
+	xmlns:f="sap.ui.layout.form" xmlns:table="sap.ui.table" xmlns:rdf="com.inova8.lens.control">
+	<Page showHeader="true" id="page" navButtonPress="onNavBack" showNavButton="false" title="{i18n>Current_Care_Organisation.Title}"
+		busy="{entityView>/busy}" busyIndicatorDelay="{entityView>/delay}">
+		<customHeader>
+			<Toolbar>
+				<ToolbarSpacer/>
+				<Title text="{i18n>Current_Care_Organisation.this}"/>
+				<rdf:TextResource path="dataModel>" entitySet="Current_Care_Organisation"/>
+				<Title text="{i18n>Current_Care_Organisation.Title}" />
+				<ToolbarSpacer/>
+			</Toolbar>
+		</customHeader>
+		<content>
+			<f:SimpleForm class="editableForm" columnsL="1" columnsM="1" editable="true" emptySpanL="4" emptySpanM="4" 
+				labelSpanL="2" labelSpanM="2" layout="ResponsiveGridLayout" maxContainerCols="2" minWidth="1024" singleContainerFullSize="true">
+				<f:content>
+					<!--<Label text="{i18n>Current_Care_Organisation.this}" required="false"/><rdf:TextResource path="dataModel>" entitySet="Current_Care_Organisation"/>-->
+				</f:content>
+			</f:SimpleForm>
+		</content>
+	</Page>
+</mvc:View>

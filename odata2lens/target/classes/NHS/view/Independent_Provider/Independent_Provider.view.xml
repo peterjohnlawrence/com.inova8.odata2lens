@@ -1,0 +1,34 @@
+<mvc:View controllerName="com.inova8.lens.controller.Entity" xmlns="sap.m" xmlns:mvc="sap.ui.core.mvc"
+	xmlns:f="sap.ui.layout.form" xmlns:table="sap.ui.table" xmlns:rdf="com.inova8.lens.control">
+	<Page showHeader="true" id="page" navButtonPress="onNavBack" showNavButton="false" title="{i18n>Independent_Provider.Title}"
+		busy="{entityView>/busy}" busyIndicatorDelay="{entityView>/delay}">
+		<customHeader>
+			<Toolbar>
+				<ToolbarSpacer/>
+				<Title text="{i18n>Independent_Provider.this}"/>
+				<rdf:TextResource path="dataModel>" entitySet="Independent_Provider"/>
+				<Title text="{i18n>Independent_Provider.Title}" />
+				<ToolbarSpacer/>
+			</Toolbar>
+		</customHeader>
+		<content>
+			<f:SimpleForm class="editableForm" columnsL="1" columnsM="1" editable="true" emptySpanL="4" emptySpanM="4" 
+				labelSpanL="2" labelSpanM="2" layout="ResponsiveGridLayout" maxContainerCols="2" minWidth="1024" singleContainerFullSize="true">
+				<f:content>
+					<!--<Label text="{i18n>Independent_Provider.this}" required="false"/><rdf:TextResource path="dataModel>" entitySet="Independent_Provider"/>-->
+					<Label text="{i18n>Independent_Provider.Independent_Provider_Address_Line_1}" required="false"/>   <rdf:TextLink text="{path:'dataModel>Independent_Provider_Address_Line_1',type:'sap.ui.model.type.String' }" linkText="{i18n>Independent_Provider.Independent_Provider_Address_Line_1}"/>
+					<Label text="{i18n>Independent_Provider.Independent_Provider_Address_Line_2}" required="false"/>   <rdf:TextLink text="{path:'dataModel>Independent_Provider_Address_Line_2',type:'sap.ui.model.type.String' }" linkText="{i18n>Independent_Provider.Independent_Provider_Address_Line_2}"/>
+					<Label text="{i18n>Independent_Provider.Independent_Provider_Address_Line_3}" required="false"/>   <rdf:TextLink text="{path:'dataModel>Independent_Provider_Address_Line_3',type:'sap.ui.model.type.String' }" linkText="{i18n>Independent_Provider.Independent_Provider_Address_Line_3}"/>
+					<Label text="{i18n>Independent_Provider.Independent_Provider_Address_Line_4}" required="false"/>   <rdf:TextLink text="{path:'dataModel>Independent_Provider_Address_Line_4',type:'sap.ui.model.type.String' }" linkText="{i18n>Independent_Provider.Independent_Provider_Address_Line_4}"/>
+					<Label text="{i18n>Independent_Provider.Independent_Provider_Address_Line_5}" required="false"/>   <rdf:TextLink text="{path:'dataModel>Independent_Provider_Address_Line_5',type:'sap.ui.model.type.String' }" linkText="{i18n>Independent_Provider.Independent_Provider_Address_Line_5}"/>
+					<Label text="{i18n>Independent_Provider.Independent_Provider_Close_Date}" required="false"/>   <Text text="{dataModel>Independent_Provider_Close_Date}"/>
+					<Label text="{i18n>Independent_Provider.Independent_Provider_Contact_Telephone_Number}" required="false"/>   <rdf:TextLink text="{path:'dataModel>Independent_Provider_Contact_Telephone_Number',type:'sap.ui.model.type.String' }" linkText="{i18n>Independent_Provider.Independent_Provider_Contact_Telephone_Number}"/>
+					<Label text="{i18n>Independent_Provider.Independent_Provider_Name}" required="false"/>   <rdf:TextLink text="{path:'dataModel>Independent_Provider_Name',type:'sap.ui.model.type.String' }" linkText="{i18n>Independent_Provider.Independent_Provider_Name}"/>
+					<Label text="{i18n>Independent_Provider.Independent_Provider_Open_Date}" required="false"/>   <Text text="{dataModel>Independent_Provider_Open_Date}"/>
+					<Label text="{i18n>Independent_Provider.Independent_Provider_Organisation_Code}" required="false"/>   <rdf:TextLink text="{path:'dataModel>Independent_Provider_Organisation_Code',type:'sap.ui.model.type.String' }" linkText="{i18n>Independent_Provider.Independent_Provider_Organisation_Code}"/>
+					<Label text="{i18n>Independent_Provider.Independent_Provider_Postcode}" required="false"/>   <rdf:TextLink text="{path:'dataModel>Independent_Provider_Postcode',type:'sap.ui.model.type.String' }" linkText="{i18n>Independent_Provider.Independent_Provider_Postcode}"/>
+				</f:content>
+			</f:SimpleForm>
+		</content>
+	</Page>
+</mvc:View>

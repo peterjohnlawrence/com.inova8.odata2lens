@@ -1,0 +1,46 @@
+<mvc:View controllerName="com.inova8.lens.controller.EntityNavigationSet" xmlns="sap.m" xmlns:mvc="sap.ui.core.mvc" xmlns:layout="sap.ui.layout"
+	xmlns:rdf="com.inova8.lens.control">
+	<Page showHeader="false" id="page" navButtonPress="onNavBack" showNavButton="false" title="{i18n>Amended_Record_IndicatorGeneral_Practitioner_Membership_Amended_Record_Indicator_inverse.ViewTitle}">
+		<content>
+			<Table id="table" inset="false" items="{ path: '/{objectId}/General_Practitioner_Membership_Amended_Record_Indicator_inverse', sorter: { path: 'label', descending: false } 
+				}"
+				noDataText="{entityNavigationSetView>/tableNoDataText}" busyIndicatorDelay="{entityNavigationSetView>/tableBusyDelay}" growing="true" growingScrollToLoad="true"
+				updateFinished="onUpdateFinished"  fixedLayout="false">
+				<headerToolbar>
+					<Toolbar>					
+					<ToolbarSpacer/>
+						<Title id="entitySet"/>
+						<rdf:TextResource id="resourceTitle" />
+						<Title id="tableHeader" text="{entityNavigationSetView>/entityNavigationSetTableTitle}"/>
+						<ToolbarSpacer/>
+						<SearchField id="searchField" tooltip="{i18n>search.searchTooltip}" search="onSearch" width="auto"></SearchField>
+					</Toolbar>
+				</headerToolbar>
+				<columns>
+					<Column >
+						<Text text="{i18n>Amended_Record_IndicatorGeneral_Practitioner_Membership_Amended_Record_Indicator_inverse.this}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>Amended_Record_IndicatorGeneral_Practitioner_Membership_Amended_Record_Indicator_inverse.General_Practitioner_Membership_Join_Parent_Date}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>Amended_Record_IndicatorGeneral_Practitioner_Membership_Amended_Record_Indicator_inverse.General_Practitioner_Membership_Left_Parent_Date}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>Amended_Record_IndicatorGeneral_Practitioner_Membership_Amended_Record_Indicator_inverse.General_Practitioner_Membership_Parent_Organisation_Type}"/>
+					</Column>
+				</columns>
+				<items>
+					<ColumnListItem id="template" type="Navigation" press="onPress">
+						<cells>
+							<rdf:TextResource path="dataModel>" entitySet="General_Practitioner_Membership"/>
+  <Text text="{dataModel>General_Practitioner_Membership_Join_Parent_Date}"/>
+  <Text text="{dataModel>General_Practitioner_Membership_Left_Parent_Date}"/>
+  <rdf:TextLink text="{path:'dataModel>General_Practitioner_Membership_Parent_Organisation_Type',type:'sap.ui.model.type.String' }" linkText="{i18n>General_Practitioner_Membership.General_Practitioner_Membership_Parent_Organisation_Type}"/>
+						</cells>
+					</ColumnListItem>
+				</items>
+			</Table>
+		</content>
+	</Page>
+</mvc:View>

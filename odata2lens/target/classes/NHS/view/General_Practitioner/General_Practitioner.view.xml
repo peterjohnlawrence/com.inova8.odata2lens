@@ -1,0 +1,41 @@
+<mvc:View controllerName="com.inova8.lens.controller.Entity" xmlns="sap.m" xmlns:mvc="sap.ui.core.mvc"
+	xmlns:f="sap.ui.layout.form" xmlns:table="sap.ui.table" xmlns:rdf="com.inova8.lens.control">
+	<Page showHeader="true" id="page" navButtonPress="onNavBack" showNavButton="false" title="{i18n>General_Practitioner.Title}"
+		busy="{entityView>/busy}" busyIndicatorDelay="{entityView>/delay}">
+		<customHeader>
+			<Toolbar>
+				<ToolbarSpacer/>
+				<Title text="{i18n>General_Practitioner.this}"/>
+				<rdf:TextResource path="dataModel>" entitySet="General_Practitioner"/>
+				<Title text="{i18n>General_Practitioner.Title}" />
+				<ToolbarSpacer/>
+			</Toolbar>
+		</customHeader>
+		<content>
+			<f:SimpleForm class="editableForm" columnsL="1" columnsM="1" editable="true" emptySpanL="4" emptySpanM="4" 
+				labelSpanL="2" labelSpanM="2" layout="ResponsiveGridLayout" maxContainerCols="2" minWidth="1024" singleContainerFullSize="true">
+				<f:content>
+					<!--<Label text="{i18n>General_Practitioner.this}" required="false"/><rdf:TextResource path="dataModel>" entitySet="General_Practitioner"/>-->
+					<Label text="{i18n>General_Practitioner.General_Practitioner_Address_Line_1}" required="false"/>   <rdf:TextLink text="{path:'dataModel>General_Practitioner_Address_Line_1',type:'sap.ui.model.type.String' }" linkText="{i18n>General_Practitioner.General_Practitioner_Address_Line_1}"/>
+					<Label text="{i18n>General_Practitioner.General_Practitioner_Address_Line_2}" required="false"/>   <rdf:TextLink text="{path:'dataModel>General_Practitioner_Address_Line_2',type:'sap.ui.model.type.String' }" linkText="{i18n>General_Practitioner.General_Practitioner_Address_Line_2}"/>
+					<Label text="{i18n>General_Practitioner.General_Practitioner_Address_Line_3}" required="false"/>   <rdf:TextLink text="{path:'dataModel>General_Practitioner_Address_Line_3',type:'sap.ui.model.type.String' }" linkText="{i18n>General_Practitioner.General_Practitioner_Address_Line_3}"/>
+					<Label text="{i18n>General_Practitioner.General_Practitioner_Address_Line_4}" required="false"/>   <rdf:TextLink text="{path:'dataModel>General_Practitioner_Address_Line_4',type:'sap.ui.model.type.String' }" linkText="{i18n>General_Practitioner.General_Practitioner_Address_Line_4}"/>
+					<Label text="{i18n>General_Practitioner.General_Practitioner_Address_Line_5}" required="false"/>   <rdf:TextLink text="{path:'dataModel>General_Practitioner_Address_Line_5',type:'sap.ui.model.type.String' }" linkText="{i18n>General_Practitioner.General_Practitioner_Address_Line_5}"/>
+					<Label text="{i18n>General_Practitioner.General_Practitioner_Close_Date}" required="false"/>   <Text text="{dataModel>General_Practitioner_Close_Date}"/>
+					<Label text="{i18n>General_Practitioner.General_Practitioner_Contact_Telephone_Number}" required="false"/>   <rdf:TextLink text="{path:'dataModel>General_Practitioner_Contact_Telephone_Number',type:'sap.ui.model.type.String' }" linkText="{i18n>General_Practitioner.General_Practitioner_Contact_Telephone_Number}"/>
+					<Label text="{i18n>General_Practitioner.General_Practitioner_GMC_Reference_Number}" required="false"/>   <rdf:TextLink text="{path:'dataModel>General_Practitioner_GMC_Reference_Number',type:'sap.ui.model.type.String' }" linkText="{i18n>General_Practitioner.General_Practitioner_GMC_Reference_Number}"/>
+					<Label text="{i18n>General_Practitioner.General_Practitioner_GNC_Prescriber_ID}" required="false"/>   <rdf:TextLink text="{path:'dataModel>General_Practitioner_GNC_Prescriber_ID',type:'sap.ui.model.type.String' }" linkText="{i18n>General_Practitioner.General_Practitioner_GNC_Prescriber_ID}"/>
+					<Label text="{i18n>General_Practitioner.General_Practitioner_Given_Name}" required="false"/>   <rdf:TextLink text="{path:'dataModel>General_Practitioner_Given_Name',type:'sap.ui.model.type.String' }" linkText="{i18n>General_Practitioner.General_Practitioner_Given_Name}"/>
+					<Label text="{i18n>General_Practitioner.General_Practitioner_Join_Parent_Date}" required="false"/>   <Text text="{dataModel>General_Practitioner_Join_Parent_Date}"/>
+					<Label text="{i18n>General_Practitioner.General_Practitioner_Left_Parent_Date}" required="false"/>   <Text text="{dataModel>General_Practitioner_Left_Parent_Date}"/>
+					<Label text="{i18n>General_Practitioner.General_Practitioner_Name}" required="false"/>   <rdf:TextLink text="{path:'dataModel>General_Practitioner_Name',type:'sap.ui.model.type.String' }" linkText="{i18n>General_Practitioner.General_Practitioner_Name}"/>
+					<Label text="{i18n>General_Practitioner.General_Practitioner_Open_Date}" required="false"/>   <Text text="{dataModel>General_Practitioner_Open_Date}"/>
+					<Label text="{i18n>General_Practitioner.General_Practitioner_Organisation_Code}" required="false"/>   <rdf:TextLink text="{path:'dataModel>General_Practitioner_Organisation_Code',type:'sap.ui.model.type.String' }" linkText="{i18n>General_Practitioner.General_Practitioner_Organisation_Code}"/>
+					<Label text="{i18n>General_Practitioner.General_Practitioner_Postcode}" required="false"/>   <rdf:TextLink text="{path:'dataModel>General_Practitioner_Postcode',type:'sap.ui.model.type.String' }" linkText="{i18n>General_Practitioner.General_Practitioner_Postcode}"/>
+					<Label text="{i18n>General_Practitioner.General_Practitioner_Surname}" required="false"/>   <rdf:TextLink text="{path:'dataModel>General_Practitioner_Surname',type:'sap.ui.model.type.String' }" linkText="{i18n>General_Practitioner.General_Practitioner_Surname}"/>
+					<Label text="{i18n>General_Practitioner.General_Practitioner_Current_Care_Organisation}" required="false"/><rdf:TextResource path="dataModel>General_Practitioner_Current_Care_Organisation" entitySet="Clinical_Commissioning_Group"/>		
+				</f:content>
+			</f:SimpleForm>
+		</content>
+	</Page>
+</mvc:View>

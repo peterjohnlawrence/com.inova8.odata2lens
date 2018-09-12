@@ -1,0 +1,213 @@
+{
+	"routing": {
+		"config": {
+			"routerClass": "sap.m.routing.Router",
+			"viewType": "XML",
+			"viewPath": "com.inova8.lens.view",
+			"controlId": "mainContents",
+			"controlAggregation": "pages",
+			"bypassed": {
+				"target": [
+					"notFound"
+				]
+			},
+			"async": true
+		},
+		"routes": [{
+			"pattern": "",
+			"name": "home",
+			"target": [
+				"home"
+			]
+		}, {
+			"pattern": "notFound",
+			"name": "notFound",
+			"target": [
+				"notFound"
+			]
+		}, {
+			"pattern": "DataSets/:objectId:/:navigation::?queryOptions:",
+			"name": "DataSets",
+			"target": [
+				"DataSets"
+			]
+		}, {
+			"pattern": "DataSetisDatasetOf/:objectId:/:navigation::?queryOptions:",
+			"name": "DataSetisDatasetOf",
+			"target": [
+				"DataSetisDatasetOf"
+			]
+		}, {
+			"pattern": "Settings",
+			"name": "settings",
+			"target": [
+				"settings"
+			]
+		}, {
+			"pattern": "login",
+			"name": "login",
+			"target": [
+				"login"
+			]
+		}, {
+			"pattern": "Search:?queryOptions:",
+			"name": "search",
+			"target": [
+				"search"
+			]
+		}, {
+			"pattern": "LinkedSearch/{objectId}/:?queryOptions:",
+			"name": "linkedSearch",
+			"target": [
+				"linkedSearch"
+			]
+		}, {
+			"pattern": "AdvancedSearch:?queryOptions:",
+			"name": "advancedSearch",
+			"target": [
+				"advancedSearch"
+			]
+		}, {
+			"pattern": "Graph/{objectId}/:navigation::?queryOptions:",
+			"name": "graph",
+			"target": [
+				"graph"
+			]
+		}, {
+			"pattern": "Graph/{objectId}/:navigation::?queryOptions:",
+			"name": "navigationSetGraph",
+			"target": [
+				"graph"
+			]
+		}, {
+			"pattern": "Graph/{objectId}/qb_isDatasetOf?graph=true",
+			"name": "graphgraph",
+			"target": [
+				"graph"
+			]
+		}, {
+			"pattern": "QueryGraph/{objectId}/:queries*:",
+			"name": "querygraph",
+			"target": [
+				"graph"
+			]
+		}
+#foreach($entityType in $entityTypes)		
+		,{
+			"pattern": "$entityType.entitySet.target/:objectId:/:navigation::?queryOptions:",
+			"name": "$entityType.entitySet.target",
+			"target": [
+				"$entityType.entitySet.target"
+			]
+		}	
+		,{
+			"pattern": "$entityType.entity.target/:objectId:/:navigation::?queryOptions:",
+			"name": "$entityType.entity.target",
+			"target": [
+				"$entityType.entity.target"
+			]
+		}
+	#foreach($navigationSet in $entityType.entity.navigationSet)			
+		, {
+			"pattern": "$navigationSet.target/{objectId}:/navigation::?queryOptions:",
+			"name": "$navigationSet.target",
+			"target": [
+				"$navigationSet.target"
+			]
+		}		
+	#end		
+#end			
+	],
+		"targets": {
+			"home": {
+				"viewName": "view/Home",
+				"viewPath": "NHS",
+				"viewId": "home",
+				"viewLevel": 1
+			},
+			"DataSets": {
+				"viewName": "DataSets",
+				"viewId": "DataSets",
+				"viewLevel": 1
+			},
+			"DataSetisDatasetOf": {
+				"viewName": "DataSetisDatasetOf",
+				"viewId": "DataSetisDatasetOf",
+				"viewLevel": 1
+			},
+			"settings": {
+				"viewName": "Settings",
+				"viewId": "settings",
+				"viewLevel": 1
+			},
+			"login": {
+				"viewName": "Login",
+				"viewId": "login",
+				"viewLevel": 1
+			},
+			"search": {
+				"viewName": "Search",
+				"viewId": "search",
+				"viewLevel": 1
+			},
+			"linkedSearch": {
+				"viewName": "LinkedSearch",
+				"viewId": "linkedSearch",
+				"viewLevel": 1
+			},
+			"advancedSearch": {
+				"viewName": "AdvancedSearch",
+				"viewId": "advancedSearch",
+				"viewLevel": 1
+			},
+			"graph": {
+				"viewName": "Graph/Graph",
+				"viewId": "graph",
+				"viewLevel": 1
+			},
+			"default": {
+				"viewName": "Default",
+				"viewId": "Default",
+				"viewLevel": 1
+			},
+			"objectNotFound": {
+				"viewName": "ObjectNotFound",
+				"viewId": "objectNotFound"
+			},
+			"notFound": {
+				"viewName": "NotFound",
+				"viewId": "notFound"
+			},
+			"legal": {
+				"viewName": "NotFound",
+				"viewId": "notFound"
+			},
+			"links": {
+				"viewName": "NotFound",
+				"viewId": "notFound"
+			}
+#foreach($entityType in $entityTypes)		
+			,"$entityType.entitySet.target": {
+				"viewName": "view/$entityType.entitySet.target/$entityType.entitySet.target",
+				"viewPath":"$schema",
+				"viewId": "$entityType.entitySet.target",
+				"viewLevel": 1
+			}
+			,"$entityType.entity.target": {
+				"viewName": "view/$entityType.entity.target/$entityType.entity.target",
+				"viewPath":"$schema",
+				"viewId": "$entityType.entity.target",
+				"viewLevel": 1
+			}
+	#foreach($navigationSet in $entityType.entity.navigationSet)			
+			, 	"$navigationSet.target": {
+				"viewName": "view/$navigationSet.target/$navigationSet.target",
+				"viewPath":"$schema",
+				"viewId": "$navigationSet.target",
+				"viewLevel": 1
+			}	
+	#end					
+#end
+		}
+	}
+}

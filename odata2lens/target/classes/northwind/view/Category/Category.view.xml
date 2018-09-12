@@ -1,0 +1,28 @@
+<mvc:View controllerName="com.inova8.lens.controller.Entity" xmlns="sap.m" xmlns:mvc="sap.ui.core.mvc"
+	xmlns:f="sap.ui.layout.form" xmlns:table="sap.ui.table" xmlns:rdf="com.inova8.lens.control">
+	<Page showHeader="true" id="page" navButtonPress="onNavBack" showNavButton="false" title="{i18n>Category.Title}"
+		busy="{entityView>/busy}" busyIndicatorDelay="{entityView>/delay}">
+		<customHeader>
+			<Toolbar>
+				<ToolbarSpacer/>
+				<Title text="{i18n>Category.this}"/>
+				<rdf:TextResource path="dataModel>" entitySet="Category"/>
+				<Title text="{i18n>Category.Title}" />
+				<ToolbarSpacer/>
+			</Toolbar>
+		</customHeader>
+		<content>
+			<f:SimpleForm class="editableForm" columnsL="1" columnsM="1" editable="true" emptySpanL="4" emptySpanM="4" 
+				labelSpanL="2" labelSpanM="2" layout="ResponsiveGridLayout" maxContainerCols="2" minWidth="1024" singleContainerFullSize="true">
+				<f:content>
+					<!--<Label text="{i18n>Category.this}" required="false"/><rdf:TextResource path="dataModel>" entitySet="Category"/>-->
+					<Label text="{i18n>Category.categoryName}" required="false"/>   <rdf:TextLink text="{path:'dataModel>categoryName',type:'sap.ui.model.type.String' }" linkText="{i18n>Category.categoryName}"/>
+					<Label text="{i18n>Category.comment}" required="false"/>   <rdf:TextLink text="{path:'dataModel>comment',type:'sap.ui.model.type.String' }" linkText="{i18n>Category.comment}"/>
+					<Label text="{i18n>Category.description}" required="false"/>   <rdf:TextLink text="{path:'dataModel>description',type:'sap.ui.model.type.String' }" linkText="{i18n>Category.description}"/>
+					<Label text="{i18n>Category.isDefinedBy}" required="false"/>   <rdf:TextLink text="{path:'dataModel>isDefinedBy',type:'sap.ui.model.type.String' }" linkText="{i18n>Category.isDefinedBy}"/>
+					<Label text="{i18n>Category.picture}" required="false"/>   <rdf:TextLink text="{path:'dataModel>picture',type:'sap.ui.model.type.String' }" linkText="{i18n>Category.picture}"/>
+				</f:content>
+			</f:SimpleForm>
+		</content>
+	</Page>
+</mvc:View>

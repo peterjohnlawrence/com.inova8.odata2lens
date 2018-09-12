@@ -1,0 +1,106 @@
+<mvc:View controllerName="com.inova8.lens.controller.EntityNavigationSet" xmlns="sap.m" xmlns:mvc="sap.ui.core.mvc" xmlns:layout="sap.ui.layout"
+	xmlns:rdf="com.inova8.lens.control">
+	<Page showHeader="false" id="page" navButtonPress="onNavBack" showNavButton="false" title="{i18n>Provider_PurchaserGP_Practice_Provider_Purchaser_inverse.ViewTitle}">
+		<content>
+			<Table id="table" inset="false" items="{ path: '/{objectId}/GP_Practice_Provider_Purchaser_inverse', sorter: { path: 'label', descending: false } 
+				}"
+				noDataText="{entityNavigationSetView>/tableNoDataText}" busyIndicatorDelay="{entityNavigationSetView>/tableBusyDelay}" growing="true" growingScrollToLoad="true"
+				updateFinished="onUpdateFinished"  fixedLayout="false">
+				<headerToolbar>
+					<Toolbar>					
+					<ToolbarSpacer/>
+						<Title id="entitySet"/>
+						<rdf:TextResource id="resourceTitle" />
+						<Title id="tableHeader" text="{entityNavigationSetView>/entityNavigationSetTableTitle}"/>
+						<ToolbarSpacer/>
+						<SearchField id="searchField" tooltip="{i18n>search.searchTooltip}" search="onSearch" width="auto"></SearchField>
+					</Toolbar>
+				</headerToolbar>
+				<columns>
+					<Column >
+						<Text text="{i18n>Provider_PurchaserGP_Practice_Provider_Purchaser_inverse.this}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>Provider_PurchaserGP_Practice_Provider_Purchaser_inverse.GP_Practice_Address_Line_1}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>Provider_PurchaserGP_Practice_Provider_Purchaser_inverse.GP_Practice_Address_Line_2}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>Provider_PurchaserGP_Practice_Provider_Purchaser_inverse.GP_Practice_Address_Line_3}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>Provider_PurchaserGP_Practice_Provider_Purchaser_inverse.GP_Practice_Address_Line_4}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>Provider_PurchaserGP_Practice_Provider_Purchaser_inverse.GP_Practice_Address_Line_5}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>Provider_PurchaserGP_Practice_Provider_Purchaser_inverse.GP_Practice_Close_Date}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>Provider_PurchaserGP_Practice_Provider_Purchaser_inverse.GP_Practice_Contact_Telephone_Number}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>Provider_PurchaserGP_Practice_Provider_Purchaser_inverse.GP_Practice_Join_Provider_Purchaser_Date}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>Provider_PurchaserGP_Practice_Provider_Purchaser_inverse.GP_Practice_Left_Provider_Purchaser_Date}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>Provider_PurchaserGP_Practice_Provider_Purchaser_inverse.GP_Practice_Name}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>Provider_PurchaserGP_Practice_Provider_Purchaser_inverse.GP_Practice_Number_Of_Patients}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>Provider_PurchaserGP_Practice_Provider_Purchaser_inverse.GP_Practice_Open_Date}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>Provider_PurchaserGP_Practice_Provider_Purchaser_inverse.GP_Practice_Organisation_Code}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>Provider_PurchaserGP_Practice_Provider_Purchaser_inverse.GP_Practice_Postcode}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>Provider_PurchaserGP_Practice_Provider_Purchaser_inverse.alt}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>Provider_PurchaserGP_Practice_Provider_Purchaser_inverse.lat}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>Provider_PurchaserGP_Practice_Provider_Purchaser_inverse.lat_long}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>Provider_PurchaserGP_Practice_Provider_Purchaser_inverse.long}"/>
+					</Column>
+				</columns>
+				<items>
+					<ColumnListItem id="template" type="Navigation" press="onPress">
+						<cells>
+							<rdf:TextResource path="dataModel>" entitySet="GP_Practice"/>
+  <rdf:TextLink text="{path:'dataModel>GP_Practice_Address_Line_1',type:'sap.ui.model.type.String' }" linkText="{i18n>GP_Practice.GP_Practice_Address_Line_1}"/>
+  <rdf:TextLink text="{path:'dataModel>GP_Practice_Address_Line_2',type:'sap.ui.model.type.String' }" linkText="{i18n>GP_Practice.GP_Practice_Address_Line_2}"/>
+  <rdf:TextLink text="{path:'dataModel>GP_Practice_Address_Line_3',type:'sap.ui.model.type.String' }" linkText="{i18n>GP_Practice.GP_Practice_Address_Line_3}"/>
+  <rdf:TextLink text="{path:'dataModel>GP_Practice_Address_Line_4',type:'sap.ui.model.type.String' }" linkText="{i18n>GP_Practice.GP_Practice_Address_Line_4}"/>
+  <rdf:TextLink text="{path:'dataModel>GP_Practice_Address_Line_5',type:'sap.ui.model.type.String' }" linkText="{i18n>GP_Practice.GP_Practice_Address_Line_5}"/>
+  <Text text="{dataModel>GP_Practice_Close_Date}"/>
+  <rdf:TextLink text="{path:'dataModel>GP_Practice_Contact_Telephone_Number',type:'sap.ui.model.type.String' }" linkText="{i18n>GP_Practice.GP_Practice_Contact_Telephone_Number}"/>
+  <Text text="{dataModel>GP_Practice_Join_Provider_Purchaser_Date}"/>
+  <Text text="{dataModel>GP_Practice_Left_Provider_Purchaser_Date}"/>
+  <rdf:TextLink text="{path:'dataModel>GP_Practice_Name',type:'sap.ui.model.type.String' }" linkText="{i18n>GP_Practice.GP_Practice_Name}"/>
+  <Text text="{path:'dataModel>GP_Practice_Number_Of_Patients',type:'sap.ui.model.type.Integer' }"/>
+  <Text text="{dataModel>GP_Practice_Open_Date}"/>
+  <rdf:TextLink text="{path:'dataModel>GP_Practice_Organisation_Code',type:'sap.ui.model.type.String' }" linkText="{i18n>GP_Practice.GP_Practice_Organisation_Code}"/>
+  <rdf:TextLink text="{path:'dataModel>GP_Practice_Postcode',type:'sap.ui.model.type.String' }" linkText="{i18n>GP_Practice.GP_Practice_Postcode}"/>
+  <rdf:TextLink text="{path:'dataModel>alt',type:'sap.ui.model.type.String' }" linkText="{i18n>GP_Practice.alt}"/>
+  <rdf:TextLink text="{path:'dataModel>lat',type:'sap.ui.model.type.String' }" linkText="{i18n>GP_Practice.lat}"/>
+  <rdf:TextLink text="{path:'dataModel>lat_long',type:'sap.ui.model.type.String' }" linkText="{i18n>GP_Practice.lat_long}"/>
+  <rdf:TextLink text="{path:'dataModel>long',type:'sap.ui.model.type.String' }" linkText="{i18n>GP_Practice.long}"/>
+						</cells>
+					</ColumnListItem>
+				</items>
+			</Table>
+		</content>
+	</Page>
+</mvc:View>

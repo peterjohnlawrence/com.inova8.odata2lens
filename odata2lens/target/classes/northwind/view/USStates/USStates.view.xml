@@ -1,0 +1,56 @@
+<mvc:View controllerName="com.inova8.lens.controller.EntitySet" xmlns="sap.m" xmlns:mvc="sap.ui.core.mvc" xmlns:layout="sap.ui.layout"
+	xmlns:rdf="com.inova8.lens.control">
+	<Page showHeader="false" id="page" navButtonPress="onNavBack" showNavButton="true" title="{i18n>USStates.ViewTitle}">
+		<content>
+			<Table id="table" inset="false" items="{ path: 'dataModel>/USState' , sorter: { path: 'label', descending: false } 
+				}"
+				noDataText="{entitySetView>/tableNoDataText}" busyIndicatorDelay="{entitySetView>/tableBusyDelay}" growing="true" growingScrollToLoad="true"
+				updateFinished="onUpdateFinished"  fixedLayout="false">
+				<headerToolbar>
+					<Toolbar>
+						<ToolbarSpacer/>
+						<Title id="tableHeader" text="{entitySetView>/entitySetTableTitle}"/>
+						<ToolbarSpacer/>
+						<SearchField id="searchField" tooltip="{i18n>search.searchTooltip}" search="onSearch" width="auto"></SearchField>
+					</Toolbar>
+				</headerToolbar>
+				<columns>
+					<Column >
+						<Text text="{i18n>USStates.this}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>USStates.comment}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>USStates.isDefinedBy}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>USStates.regionDescription}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>USStates.regionNotation}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>USStates.stateAbbr}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>USStates.stateName}"/>
+					</Column>
+				</columns>
+				<items>
+					<ColumnListItem id="template" type="Navigation" press="onPress">
+						<cells>
+							<rdf:TextResource path="dataModel>" entitySet="USState"/>
+  <rdf:TextLink text="{path:'dataModel>comment',type:'sap.ui.model.type.String'}" linkText="{i18n>USState.comment}"/>
+  <rdf:TextLink text="{path:'dataModel>isDefinedBy',type:'sap.ui.model.type.String'}" linkText="{i18n>USState.isDefinedBy}"/>
+  <rdf:TextLink text="{path:'dataModel>regionDescription',type:'sap.ui.model.type.String'}" linkText="{i18n>USState.regionDescription}"/>
+  <rdf:TextLink text="{path:'dataModel>regionNotation',type:'sap.ui.model.type.String'}" linkText="{i18n>USState.regionNotation}"/>
+  <rdf:TextLink text="{path:'dataModel>stateAbbr',type:'sap.ui.model.type.String'}" linkText="{i18n>USState.stateAbbr}"/>
+  <rdf:TextLink text="{path:'dataModel>stateName',type:'sap.ui.model.type.String'}" linkText="{i18n>USState.stateName}"/>
+						</cells>
+					</ColumnListItem>
+				</items>
+			</Table>
+		</content>
+	</Page>
+</mvc:View>

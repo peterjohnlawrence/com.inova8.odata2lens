@@ -1,0 +1,102 @@
+<mvc:View controllerName="com.inova8.lens.controller.EntityNavigationSet" xmlns="sap.m" xmlns:mvc="sap.ui.core.mvc" xmlns:layout="sap.ui.layout"
+	xmlns:rdf="com.inova8.lens.control">
+	<Page showHeader="false" id="page" navButtonPress="onNavBack" showNavButton="false" title="{i18n>Geographical_RegionGeneral_Practitioner_National_Grouping_inverse.ViewTitle}">
+		<content>
+			<Table id="table" inset="false" items="{ path: '/{objectId}/General_Practitioner_National_Grouping_inverse', sorter: { path: 'label', descending: false } 
+				}"
+				noDataText="{entityNavigationSetView>/tableNoDataText}" busyIndicatorDelay="{entityNavigationSetView>/tableBusyDelay}" growing="true" growingScrollToLoad="true"
+				updateFinished="onUpdateFinished"  fixedLayout="false">
+				<headerToolbar>
+					<Toolbar>					
+					<ToolbarSpacer/>
+						<Title id="entitySet"/>
+						<rdf:TextResource id="resourceTitle" />
+						<Title id="tableHeader" text="{entityNavigationSetView>/entityNavigationSetTableTitle}"/>
+						<ToolbarSpacer/>
+						<SearchField id="searchField" tooltip="{i18n>search.searchTooltip}" search="onSearch" width="auto"></SearchField>
+					</Toolbar>
+				</headerToolbar>
+				<columns>
+					<Column >
+						<Text text="{i18n>Geographical_RegionGeneral_Practitioner_National_Grouping_inverse.this}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>Geographical_RegionGeneral_Practitioner_National_Grouping_inverse.General_Practitioner_Address_Line_1}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>Geographical_RegionGeneral_Practitioner_National_Grouping_inverse.General_Practitioner_Address_Line_2}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>Geographical_RegionGeneral_Practitioner_National_Grouping_inverse.General_Practitioner_Address_Line_3}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>Geographical_RegionGeneral_Practitioner_National_Grouping_inverse.General_Practitioner_Address_Line_4}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>Geographical_RegionGeneral_Practitioner_National_Grouping_inverse.General_Practitioner_Address_Line_5}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>Geographical_RegionGeneral_Practitioner_National_Grouping_inverse.General_Practitioner_Close_Date}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>Geographical_RegionGeneral_Practitioner_National_Grouping_inverse.General_Practitioner_Contact_Telephone_Number}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>Geographical_RegionGeneral_Practitioner_National_Grouping_inverse.General_Practitioner_GMC_Reference_Number}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>Geographical_RegionGeneral_Practitioner_National_Grouping_inverse.General_Practitioner_GNC_Prescriber_ID}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>Geographical_RegionGeneral_Practitioner_National_Grouping_inverse.General_Practitioner_Given_Name}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>Geographical_RegionGeneral_Practitioner_National_Grouping_inverse.General_Practitioner_Join_Parent_Date}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>Geographical_RegionGeneral_Practitioner_National_Grouping_inverse.General_Practitioner_Left_Parent_Date}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>Geographical_RegionGeneral_Practitioner_National_Grouping_inverse.General_Practitioner_Name}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>Geographical_RegionGeneral_Practitioner_National_Grouping_inverse.General_Practitioner_Open_Date}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>Geographical_RegionGeneral_Practitioner_National_Grouping_inverse.General_Practitioner_Organisation_Code}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>Geographical_RegionGeneral_Practitioner_National_Grouping_inverse.General_Practitioner_Postcode}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>Geographical_RegionGeneral_Practitioner_National_Grouping_inverse.General_Practitioner_Surname}"/>
+					</Column>
+				</columns>
+				<items>
+					<ColumnListItem id="template" type="Navigation" press="onPress">
+						<cells>
+							<rdf:TextResource path="dataModel>" entitySet="General_Practitioner"/>
+  <rdf:TextLink text="{path:'dataModel>General_Practitioner_Address_Line_1',type:'sap.ui.model.type.String' }" linkText="{i18n>General_Practitioner.General_Practitioner_Address_Line_1}"/>
+  <rdf:TextLink text="{path:'dataModel>General_Practitioner_Address_Line_2',type:'sap.ui.model.type.String' }" linkText="{i18n>General_Practitioner.General_Practitioner_Address_Line_2}"/>
+  <rdf:TextLink text="{path:'dataModel>General_Practitioner_Address_Line_3',type:'sap.ui.model.type.String' }" linkText="{i18n>General_Practitioner.General_Practitioner_Address_Line_3}"/>
+  <rdf:TextLink text="{path:'dataModel>General_Practitioner_Address_Line_4',type:'sap.ui.model.type.String' }" linkText="{i18n>General_Practitioner.General_Practitioner_Address_Line_4}"/>
+  <rdf:TextLink text="{path:'dataModel>General_Practitioner_Address_Line_5',type:'sap.ui.model.type.String' }" linkText="{i18n>General_Practitioner.General_Practitioner_Address_Line_5}"/>
+  <Text text="{dataModel>General_Practitioner_Close_Date}"/>
+  <rdf:TextLink text="{path:'dataModel>General_Practitioner_Contact_Telephone_Number',type:'sap.ui.model.type.String' }" linkText="{i18n>General_Practitioner.General_Practitioner_Contact_Telephone_Number}"/>
+  <rdf:TextLink text="{path:'dataModel>General_Practitioner_GMC_Reference_Number',type:'sap.ui.model.type.String' }" linkText="{i18n>General_Practitioner.General_Practitioner_GMC_Reference_Number}"/>
+  <rdf:TextLink text="{path:'dataModel>General_Practitioner_GNC_Prescriber_ID',type:'sap.ui.model.type.String' }" linkText="{i18n>General_Practitioner.General_Practitioner_GNC_Prescriber_ID}"/>
+  <rdf:TextLink text="{path:'dataModel>General_Practitioner_Given_Name',type:'sap.ui.model.type.String' }" linkText="{i18n>General_Practitioner.General_Practitioner_Given_Name}"/>
+  <Text text="{dataModel>General_Practitioner_Join_Parent_Date}"/>
+  <Text text="{dataModel>General_Practitioner_Left_Parent_Date}"/>
+  <rdf:TextLink text="{path:'dataModel>General_Practitioner_Name',type:'sap.ui.model.type.String' }" linkText="{i18n>General_Practitioner.General_Practitioner_Name}"/>
+  <Text text="{dataModel>General_Practitioner_Open_Date}"/>
+  <rdf:TextLink text="{path:'dataModel>General_Practitioner_Organisation_Code',type:'sap.ui.model.type.String' }" linkText="{i18n>General_Practitioner.General_Practitioner_Organisation_Code}"/>
+  <rdf:TextLink text="{path:'dataModel>General_Practitioner_Postcode',type:'sap.ui.model.type.String' }" linkText="{i18n>General_Practitioner.General_Practitioner_Postcode}"/>
+  <rdf:TextLink text="{path:'dataModel>General_Practitioner_Surname',type:'sap.ui.model.type.String' }" linkText="{i18n>General_Practitioner.General_Practitioner_Surname}"/>
+						</cells>
+					</ColumnListItem>
+				</items>
+			</Table>
+		</content>
+	</Page>
+</mvc:View>

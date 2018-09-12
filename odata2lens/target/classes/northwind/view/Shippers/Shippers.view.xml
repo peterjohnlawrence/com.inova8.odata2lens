@@ -1,0 +1,48 @@
+<mvc:View controllerName="com.inova8.lens.controller.EntitySet" xmlns="sap.m" xmlns:mvc="sap.ui.core.mvc" xmlns:layout="sap.ui.layout"
+	xmlns:rdf="com.inova8.lens.control">
+	<Page showHeader="false" id="page" navButtonPress="onNavBack" showNavButton="true" title="{i18n>Shippers.ViewTitle}">
+		<content>
+			<Table id="table" inset="false" items="{ path: 'dataModel>/Shipper' , sorter: { path: 'label', descending: false } 
+				}"
+				noDataText="{entitySetView>/tableNoDataText}" busyIndicatorDelay="{entitySetView>/tableBusyDelay}" growing="true" growingScrollToLoad="true"
+				updateFinished="onUpdateFinished"  fixedLayout="false">
+				<headerToolbar>
+					<Toolbar>
+						<ToolbarSpacer/>
+						<Title id="tableHeader" text="{entitySetView>/entitySetTableTitle}"/>
+						<ToolbarSpacer/>
+						<SearchField id="searchField" tooltip="{i18n>search.searchTooltip}" search="onSearch" width="auto"></SearchField>
+					</Toolbar>
+				</headerToolbar>
+				<columns>
+					<Column >
+						<Text text="{i18n>Shippers.this}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>Shippers.comment}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>Shippers.isDefinedBy}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>Shippers.shipperCompanyName}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>Shippers.shipperPhone}"/>
+					</Column>
+				</columns>
+				<items>
+					<ColumnListItem id="template" type="Navigation" press="onPress">
+						<cells>
+							<rdf:TextResource path="dataModel>" entitySet="Shipper"/>
+  <rdf:TextLink text="{path:'dataModel>comment',type:'sap.ui.model.type.String'}" linkText="{i18n>Shipper.comment}"/>
+  <rdf:TextLink text="{path:'dataModel>isDefinedBy',type:'sap.ui.model.type.String'}" linkText="{i18n>Shipper.isDefinedBy}"/>
+  <rdf:TextLink text="{path:'dataModel>shipperCompanyName',type:'sap.ui.model.type.String'}" linkText="{i18n>Shipper.shipperCompanyName}"/>
+  <rdf:TextLink text="{path:'dataModel>shipperPhone',type:'sap.ui.model.type.String'}" linkText="{i18n>Shipper.shipperPhone}"/>
+						</cells>
+					</ColumnListItem>
+				</items>
+			</Table>
+		</content>
+	</Page>
+</mvc:View>

@@ -1,0 +1,45 @@
+<mvc:View controllerName="com.inova8.lens.controller.Entity" xmlns="sap.m" xmlns:mvc="sap.ui.core.mvc"
+	xmlns:f="sap.ui.layout.form" xmlns:table="sap.ui.table" xmlns:rdf="com.inova8.lens.control">
+	<Page showHeader="true" id="page" navButtonPress="onNavBack" showNavButton="false" title="{i18n>Order.Title}"
+		busy="{entityView>/busy}" busyIndicatorDelay="{entityView>/delay}">
+		<customHeader>
+			<Toolbar>
+				<ToolbarSpacer/>
+				<Title text="{i18n>Order.this}"/>
+				<rdf:TextResource path="dataModel>" entitySet="Order"/>
+				<Title text="{i18n>Order.Title}" />
+				<ToolbarSpacer/>
+			</Toolbar>
+		</customHeader>
+		<content>
+			<f:SimpleForm class="editableForm" columnsL="1" columnsM="1" editable="true" emptySpanL="4" emptySpanM="4" 
+				labelSpanL="2" labelSpanM="2" layout="ResponsiveGridLayout" maxContainerCols="2" minWidth="1024" singleContainerFullSize="true">
+				<f:content>
+					<!--<Label text="{i18n>Order.this}" required="false"/><rdf:TextResource path="dataModel>" entitySet="Order"/>-->
+					<Label text="{i18n>Order.comment}" required="false"/>   <rdf:TextLink text="{path:'dataModel>comment',type:'sap.ui.model.type.String' }" linkText="{i18n>Order.comment}"/>
+					<Label text="{i18n>Order.lat}" required="false"/>   <Text text="{path:'dataModel>lat',type:'sap.ui.model.type.Float' }"/>
+					<Label text="{i18n>Order.customerNotation}" required="false"/>   <rdf:TextLink text="{path:'dataModel>customerNotation',type:'sap.ui.model.type.String' }" linkText="{i18n>Order.customerNotation}"/>
+					<Label text="{i18n>Order.employeeNotation}" required="false"/>   <rdf:TextLink text="{path:'dataModel>employeeNotation',type:'sap.ui.model.type.String' }" linkText="{i18n>Order.employeeNotation}"/>
+					<Label text="{i18n>Order.freight}" required="false"/>   <rdf:TextLink text="{path:'dataModel>freight',type:'sap.ui.model.type.String' }" linkText="{i18n>Order.freight}"/>
+					<Label text="{i18n>Order.isDefinedBy}" required="false"/>   <rdf:TextLink text="{path:'dataModel>isDefinedBy',type:'sap.ui.model.type.String' }" linkText="{i18n>Order.isDefinedBy}"/>
+					<Label text="{i18n>Order.lat_long}" required="false"/>   <rdf:TextLink text="{path:'dataModel>lat_long',type:'sap.ui.model.type.String' }" linkText="{i18n>Order.lat_long}"/>
+					<Label text="{i18n>Order.long}" required="false"/>   <Text text="{path:'dataModel>long',type:'sap.ui.model.type.Float' }"/>
+					<Label text="{i18n>Order.orderDate}" required="false"/>   <Text text="{dataModel>orderDate}"/>
+					<Label text="{i18n>Order.regionDescription}" required="false"/>   <rdf:TextLink text="{path:'dataModel>regionDescription',type:'sap.ui.model.type.String' }" linkText="{i18n>Order.regionDescription}"/>
+					<Label text="{i18n>Order.requiredDate}" required="false"/>   <Text text="{dataModel>requiredDate}"/>
+					<Label text="{i18n>Order.shipAddress}" required="false"/>   <rdf:TextLink text="{path:'dataModel>shipAddress',type:'sap.ui.model.type.String' }" linkText="{i18n>Order.shipAddress}"/>
+					<Label text="{i18n>Order.shipCity}" required="false"/>   <rdf:TextLink text="{path:'dataModel>shipCity',type:'sap.ui.model.type.String' }" linkText="{i18n>Order.shipCity}"/>
+					<Label text="{i18n>Order.shipCountry}" required="false"/>   <rdf:TextLink text="{path:'dataModel>shipCountry',type:'sap.ui.model.type.String' }" linkText="{i18n>Order.shipCountry}"/>
+					<Label text="{i18n>Order.shipName}" required="false"/>   <rdf:TextLink text="{path:'dataModel>shipName',type:'sap.ui.model.type.String' }" linkText="{i18n>Order.shipName}"/>
+					<Label text="{i18n>Order.shipPostalCode}" required="false"/>   <rdf:TextLink text="{path:'dataModel>shipPostalCode',type:'sap.ui.model.type.String' }" linkText="{i18n>Order.shipPostalCode}"/>
+					<Label text="{i18n>Order.shipViaNotation}" required="false"/>   <rdf:TextLink text="{path:'dataModel>shipViaNotation',type:'sap.ui.model.type.String' }" linkText="{i18n>Order.shipViaNotation}"/>
+					<Label text="{i18n>Order.shippedDate}" required="false"/>   <Text text="{dataModel>shippedDate}"/>
+					<Label text="{i18n>Order.customer}" required="false"/><rdf:TextResource path="dataModel>customer" entitySet="Customer"/>		
+					<Label text="{i18n>Order.employee}" required="false"/><rdf:TextResource path="dataModel>employee" entitySet="Employee"/>		
+					<Label text="{i18n>Order.orderRegion}" required="false"/><rdf:TextResource path="dataModel>orderRegion" entitySet="Region"/>		
+					<Label text="{i18n>Order.shipVia}" required="false"/><rdf:TextResource path="dataModel>shipVia" entitySet="Shipper"/>		
+				</f:content>
+			</f:SimpleForm>
+		</content>
+	</Page>
+</mvc:View>

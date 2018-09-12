@@ -1,0 +1,27 @@
+<mvc:View controllerName="com.inova8.lens.controller.Entity" xmlns="sap.m" xmlns:mvc="sap.ui.core.mvc"
+	xmlns:f="sap.ui.layout.form" xmlns:table="sap.ui.table" xmlns:rdf="com.inova8.lens.control">
+	<Page showHeader="true" id="page" navButtonPress="onNavBack" showNavButton="false" title="{i18n>Practice_Membership.Title}"
+		busy="{entityView>/busy}" busyIndicatorDelay="{entityView>/delay}">
+		<customHeader>
+			<Toolbar>
+				<ToolbarSpacer/>
+				<Title text="{i18n>Practice_Membership.this}"/>
+				<rdf:TextResource path="dataModel>" entitySet="Practice_Membership"/>
+				<Title text="{i18n>Practice_Membership.Title}" />
+				<ToolbarSpacer/>
+			</Toolbar>
+		</customHeader>
+		<content>
+			<f:SimpleForm class="editableForm" columnsL="1" columnsM="1" editable="true" emptySpanL="4" emptySpanM="4" 
+				labelSpanL="2" labelSpanM="2" layout="ResponsiveGridLayout" maxContainerCols="2" minWidth="1024" singleContainerFullSize="true">
+				<f:content>
+					<!--<Label text="{i18n>Practice_Membership.this}" required="false"/><rdf:TextResource path="dataModel>" entitySet="Practice_Membership"/>-->
+					<Label text="{i18n>Practice_Membership.Practice_Membership_Join_Parent_Date}" required="false"/>   <Text text="{dataModel>Practice_Membership_Join_Parent_Date}"/>
+					<Label text="{i18n>Practice_Membership.Practice_Membership_Left_Parent_Date}" required="false"/>   <Text text="{dataModel>Practice_Membership_Left_Parent_Date}"/>
+					<Label text="{i18n>Practice_Membership.Practice_Membership_Parent_Organisation_Type}" required="false"/>   <rdf:TextLink text="{path:'dataModel>Practice_Membership_Parent_Organisation_Type',type:'sap.ui.model.type.String' }" linkText="{i18n>Practice_Membership.Practice_Membership_Parent_Organisation_Type}"/>
+					<Label text="{i18n>Practice_Membership.Practice_Membership_Organisation_Code}" required="false"/><rdf:TextResource path="dataModel>Practice_Membership_Organisation_Code" entitySet="GP_Practice"/>		
+				</f:content>
+			</f:SimpleForm>
+		</content>
+	</Page>
+</mvc:View>

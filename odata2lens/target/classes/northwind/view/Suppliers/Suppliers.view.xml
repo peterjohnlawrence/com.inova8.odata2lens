@@ -1,0 +1,100 @@
+<mvc:View controllerName="com.inova8.lens.controller.EntitySet" xmlns="sap.m" xmlns:mvc="sap.ui.core.mvc" xmlns:layout="sap.ui.layout"
+	xmlns:rdf="com.inova8.lens.control">
+	<Page showHeader="false" id="page" navButtonPress="onNavBack" showNavButton="true" title="{i18n>Suppliers.ViewTitle}">
+		<content>
+			<Table id="table" inset="false" items="{ path: 'dataModel>/Supplier' , sorter: { path: 'label', descending: false } 
+				}"
+				noDataText="{entitySetView>/tableNoDataText}" busyIndicatorDelay="{entitySetView>/tableBusyDelay}" growing="true" growingScrollToLoad="true"
+				updateFinished="onUpdateFinished"  fixedLayout="false">
+				<headerToolbar>
+					<Toolbar>
+						<ToolbarSpacer/>
+						<Title id="tableHeader" text="{entitySetView>/entitySetTableTitle}"/>
+						<ToolbarSpacer/>
+						<SearchField id="searchField" tooltip="{i18n>search.searchTooltip}" search="onSearch" width="auto"></SearchField>
+					</Toolbar>
+				</headerToolbar>
+				<columns>
+					<Column >
+						<Text text="{i18n>Suppliers.this}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>Suppliers.comment}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>Suppliers.homePage}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>Suppliers.isDefinedBy}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>Suppliers.lat}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>Suppliers.lat_long}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>Suppliers.long}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>Suppliers.regionDescription}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>Suppliers.supplierAddress}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>Suppliers.supplierCity}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>Suppliers.supplierCompanyName}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>Suppliers.supplierContactName}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>Suppliers.supplierContactTitle}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>Suppliers.supplierCountry}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>Suppliers.supplierFax}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>Suppliers.supplierHomePage}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>Suppliers.supplierPhone}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>Suppliers.supplierPostalCode}"/>
+					</Column>
+				</columns>
+				<items>
+					<ColumnListItem id="template" type="Navigation" press="onPress">
+						<cells>
+							<rdf:TextResource path="dataModel>" entitySet="Supplier"/>
+  <rdf:TextLink text="{path:'dataModel>comment',type:'sap.ui.model.type.String'}" linkText="{i18n>Supplier.comment}"/>
+  <rdf:TextLink text="{path:'dataModel>homePage',type:'sap.ui.model.type.String'}" linkText="{i18n>Supplier.homePage}"/>
+  <rdf:TextLink text="{path:'dataModel>isDefinedBy',type:'sap.ui.model.type.String'}" linkText="{i18n>Supplier.isDefinedBy}"/>
+  <Text text="{path:'dataModel>lat',type:'sap.ui.model.type.Float' }"/>
+  <rdf:TextLink text="{path:'dataModel>lat_long',type:'sap.ui.model.type.String'}" linkText="{i18n>Supplier.lat_long}"/>
+  <Text text="{path:'dataModel>long',type:'sap.ui.model.type.Float' }"/>
+  <rdf:TextLink text="{path:'dataModel>regionDescription',type:'sap.ui.model.type.String'}" linkText="{i18n>Supplier.regionDescription}"/>
+  <rdf:TextLink text="{path:'dataModel>supplierAddress',type:'sap.ui.model.type.String'}" linkText="{i18n>Supplier.supplierAddress}"/>
+  <rdf:TextLink text="{path:'dataModel>supplierCity',type:'sap.ui.model.type.String'}" linkText="{i18n>Supplier.supplierCity}"/>
+  <rdf:TextLink text="{path:'dataModel>supplierCompanyName',type:'sap.ui.model.type.String'}" linkText="{i18n>Supplier.supplierCompanyName}"/>
+  <rdf:TextLink text="{path:'dataModel>supplierContactName',type:'sap.ui.model.type.String'}" linkText="{i18n>Supplier.supplierContactName}"/>
+  <rdf:TextLink text="{path:'dataModel>supplierContactTitle',type:'sap.ui.model.type.String'}" linkText="{i18n>Supplier.supplierContactTitle}"/>
+  <rdf:TextLink text="{path:'dataModel>supplierCountry',type:'sap.ui.model.type.String'}" linkText="{i18n>Supplier.supplierCountry}"/>
+  <rdf:TextLink text="{path:'dataModel>supplierFax',type:'sap.ui.model.type.String'}" linkText="{i18n>Supplier.supplierFax}"/>
+  <rdf:TextLink text="{path:'dataModel>supplierHomePage',type:'sap.ui.model.type.String'}" linkText="{i18n>Supplier.supplierHomePage}"/>
+  <rdf:TextLink text="{path:'dataModel>supplierPhone',type:'sap.ui.model.type.String'}" linkText="{i18n>Supplier.supplierPhone}"/>
+  <rdf:TextLink text="{path:'dataModel>supplierPostalCode',type:'sap.ui.model.type.String'}" linkText="{i18n>Supplier.supplierPostalCode}"/>
+						</cells>
+					</ColumnListItem>
+				</items>
+			</Table>
+		</content>
+	</Page>
+</mvc:View>

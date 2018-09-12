@@ -1,0 +1,40 @@
+<mvc:View controllerName="com.inova8.lens.controller.Entity" xmlns="sap.m" xmlns:mvc="sap.ui.core.mvc"
+	xmlns:f="sap.ui.layout.form" xmlns:table="sap.ui.table" xmlns:rdf="com.inova8.lens.control">
+	<Page showHeader="true" id="page" navButtonPress="onNavBack" showNavButton="false" title="{i18n>Supplier.Title}"
+		busy="{entityView>/busy}" busyIndicatorDelay="{entityView>/delay}">
+		<customHeader>
+			<Toolbar>
+				<ToolbarSpacer/>
+				<Title text="{i18n>Supplier.this}"/>
+				<rdf:TextResource path="dataModel>" entitySet="Supplier"/>
+				<Title text="{i18n>Supplier.Title}" />
+				<ToolbarSpacer/>
+			</Toolbar>
+		</customHeader>
+		<content>
+			<f:SimpleForm class="editableForm" columnsL="1" columnsM="1" editable="true" emptySpanL="4" emptySpanM="4" 
+				labelSpanL="2" labelSpanM="2" layout="ResponsiveGridLayout" maxContainerCols="2" minWidth="1024" singleContainerFullSize="true">
+				<f:content>
+					<!--<Label text="{i18n>Supplier.this}" required="false"/><rdf:TextResource path="dataModel>" entitySet="Supplier"/>-->
+					<Label text="{i18n>Supplier.comment}" required="false"/>   <rdf:TextLink text="{path:'dataModel>comment',type:'sap.ui.model.type.String' }" linkText="{i18n>Supplier.comment}"/>
+					<Label text="{i18n>Supplier.homePage}" required="false"/>   <rdf:TextLink text="{path:'dataModel>homePage',type:'sap.ui.model.type.String' }" linkText="{i18n>Supplier.homePage}"/>
+					<Label text="{i18n>Supplier.isDefinedBy}" required="false"/>   <rdf:TextLink text="{path:'dataModel>isDefinedBy',type:'sap.ui.model.type.String' }" linkText="{i18n>Supplier.isDefinedBy}"/>
+					<Label text="{i18n>Supplier.lat}" required="false"/>   <Text text="{path:'dataModel>lat',type:'sap.ui.model.type.Float' }"/>
+					<Label text="{i18n>Supplier.lat_long}" required="false"/>   <rdf:TextLink text="{path:'dataModel>lat_long',type:'sap.ui.model.type.String' }" linkText="{i18n>Supplier.lat_long}"/>
+					<Label text="{i18n>Supplier.long}" required="false"/>   <Text text="{path:'dataModel>long',type:'sap.ui.model.type.Float' }"/>
+					<Label text="{i18n>Supplier.regionDescription}" required="false"/>   <rdf:TextLink text="{path:'dataModel>regionDescription',type:'sap.ui.model.type.String' }" linkText="{i18n>Supplier.regionDescription}"/>
+					<Label text="{i18n>Supplier.supplierAddress}" required="false"/>   <rdf:TextLink text="{path:'dataModel>supplierAddress',type:'sap.ui.model.type.String' }" linkText="{i18n>Supplier.supplierAddress}"/>
+					<Label text="{i18n>Supplier.supplierCity}" required="false"/>   <rdf:TextLink text="{path:'dataModel>supplierCity',type:'sap.ui.model.type.String' }" linkText="{i18n>Supplier.supplierCity}"/>
+					<Label text="{i18n>Supplier.supplierCompanyName}" required="false"/>   <rdf:TextLink text="{path:'dataModel>supplierCompanyName',type:'sap.ui.model.type.String' }" linkText="{i18n>Supplier.supplierCompanyName}"/>
+					<Label text="{i18n>Supplier.supplierContactName}" required="false"/>   <rdf:TextLink text="{path:'dataModel>supplierContactName',type:'sap.ui.model.type.String' }" linkText="{i18n>Supplier.supplierContactName}"/>
+					<Label text="{i18n>Supplier.supplierContactTitle}" required="false"/>   <rdf:TextLink text="{path:'dataModel>supplierContactTitle',type:'sap.ui.model.type.String' }" linkText="{i18n>Supplier.supplierContactTitle}"/>
+					<Label text="{i18n>Supplier.supplierCountry}" required="false"/>   <rdf:TextLink text="{path:'dataModel>supplierCountry',type:'sap.ui.model.type.String' }" linkText="{i18n>Supplier.supplierCountry}"/>
+					<Label text="{i18n>Supplier.supplierFax}" required="false"/>   <rdf:TextLink text="{path:'dataModel>supplierFax',type:'sap.ui.model.type.String' }" linkText="{i18n>Supplier.supplierFax}"/>
+					<Label text="{i18n>Supplier.supplierHomePage}" required="false"/>   <rdf:TextLink text="{path:'dataModel>supplierHomePage',type:'sap.ui.model.type.String' }" linkText="{i18n>Supplier.supplierHomePage}"/>
+					<Label text="{i18n>Supplier.supplierPhone}" required="false"/>   <rdf:TextLink text="{path:'dataModel>supplierPhone',type:'sap.ui.model.type.String' }" linkText="{i18n>Supplier.supplierPhone}"/>
+					<Label text="{i18n>Supplier.supplierPostalCode}" required="false"/>   <rdf:TextLink text="{path:'dataModel>supplierPostalCode',type:'sap.ui.model.type.String' }" linkText="{i18n>Supplier.supplierPostalCode}"/>
+				</f:content>
+			</f:SimpleForm>
+		</content>
+	</Page>
+</mvc:View>

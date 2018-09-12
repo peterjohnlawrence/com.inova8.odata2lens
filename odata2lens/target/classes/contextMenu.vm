@@ -1,0 +1,205 @@
+#set ( $plural= "s")	
+#set ( $dashboard= "DashBoard")		
+{
+	"qb_DataSet": {
+		"image": "./images/icons/category.svg",
+		"entity": {
+			"target": "qb_DataSet",
+			"icon": "sap-icon://database",
+			"menu": [{
+				"key": "graph",
+				"text": "Graph View",
+				"icon": "sap-icon://overview-chart",
+				"target": "graphgraph",
+				"tooltip": "Category Graph",
+				"visible": true
+			}, {
+				"key": "Details",
+				"text": "Details",
+				"icon": "sap-icon://detail-view",
+				"target": "DataSet",
+				"tooltip": "DataSet Details",
+				"visible": true
+			}, {
+				"key": "DataSetisDatasetOf",
+				"text": "Graph",
+				"icon": "sap-icon://database",
+				"target": "DataSetisDatasetOf",
+				"tooltip": "Dataset's Graph Details",
+				"visible": true
+			}]
+		},
+		"navigationProperty": {
+			"isCategoryOf": {
+				"target": "qb_isDatasetOf",
+				"icon": "sap-icon://thing-type",
+				"menu": [{
+					"key": "graph",
+					"text": "Graph View",
+					"icon": "sap-icon://overview-chart",
+					"target": "navigationSetGraph",
+					"tooltip": "isCategoryOf Graph",
+					"visible": true
+				}, {
+					"key": "qb_isDatasetOf",
+					"text": "is dataset of",
+					"icon": "sap-icon://database",
+					"target": "DataSetisDatasetOf",
+					"tooltip": "is dataset of",
+					"visible": true
+				}]
+			}
+		}
+	},
+	"datacube_Graph": {
+		"image": "./images/icons/category.svg"
+	},
+#foreach($entityType in $entityTypes)
+	"$entityType.entitySet.name": {
+		"key": "$entityType.entitySet.name",
+		"text": "$entityType.entitySet.label",
+		"target": "$entityType.entitySet.target",
+		"tooltip": "Show all $entityType.entitySet.label",
+		"image": "$entityType.entitySet.image",
+		"icon": "$entityType.entitySet.entityIcon",
+		"visible":$entityType.entitySet.visible,
+		"menu": [{
+			"type":"entitySet",
+		    "key": "graph",
+			"text": "Graph View",
+			"target": "graph",
+			"tooltip": "$entityType.entitySet.label Graph",
+			"visible":$entityType.entitySet.visible,
+			"parameters": {
+				"objectId": "$entityType.entitySet.name",
+				"queryOptions": {
+					"$top": 10
+				}
+			}
+		}, {
+			"type":"entitySet",
+			"key": "$entityType.entitySet.target",
+			"text": "$entityType.entitySet.label",
+			"target": "$entityType.entitySet.target",
+			"tooltip": "Show all $entityType.entitySet.label",
+			"visible":$entityType.entitySet.visible
+		}, {
+			"type":"entitySet",
+			"key": "$dashboard",
+			"text": "$dashboard",
+			"target": "$entityType.entitySet.dashboardTarget",
+			"tooltip": "Show $entityType.entitySet.label $dashboard",
+			"visible":$entityType.entitySet.visible
+		}
+		#foreach($childEntitySet in $entityType.entitySet.childEntitySets)
+		,{
+			"type":"menuNavigation",
+			"key": "$childEntitySet.name",
+			"text": "▼ $childEntitySet.label",
+			"icon": "$childEntitySet.icon",
+			"target": "$childEntitySet.name",
+			"tooltip": "Go down to $childEntitySet.label",
+			"visible": $childEntitySet.visible
+		}
+		#end		
+		#foreach($parentEntitySet in $entityType.entitySet.parentEntitySets)
+		,{
+			"type":"menuNavigation",
+			"key": "$parentEntitySet.name",
+			"text": "▲ $parentEntitySet.label",
+			"icon": "$parentEntitySet.icon",
+			"target": "$parentEntitySet.name",
+			"tooltip": "Go up to $parentEntitySet.label",
+			"visible": $parentEntitySet.visible
+		}
+		#end
+		],
+		"entity": {
+			"target": "$entityType.entity.target",
+			"icon": "$entityType.entitySet.entityIcon",
+			"menu": [{
+			    "type":"entity",
+				"key": "graph",
+				"text": "Graph View",
+				"icon": "sap-icon://overview-chart",
+				"target": "graph",
+				"tooltip": "$entityType.entity.tooltip Graph",
+				"visible": true
+			},{
+				"type":"entity",
+				"key": "linked",
+				"text": "Linked Search",
+				"icon": "sap-icon://chain-link",
+				"target": "linkedSearch",
+				"tooltip": "Search for things linked to this",
+				"visible": true
+			}, {
+				"type":"entity",
+				"key": "Details",
+				"text": "Details",
+				"icon": "sap-icon://detail-view",
+				"target": "$entityType.entity.target",
+				"tooltip": "$entityType.entity.tooltip Details",
+				"visible": true ##$entityType.entity.targetVisible
+			}
+	#foreach($navigationSet in $entityType.entity.navigationSet)
+			, {
+				"type":"navigationSet",
+				"key": "$navigationSet.name",
+				"text": "$navigationSet.label",
+				"icon": "$navigationSet.icon",
+				"target": "$entityType.entity.target$navigationSet.name",
+				"tooltip": "$navigationSet.tooltip",
+				"visible": true ##$navigationSet.targetVisible
+			}
+	#end	
+	#foreach($navigationProperty in $entityType.entity.navigationProperties)
+			, {				
+				"type":"navigationProperty",
+				"key": "$navigationProperty.name",
+				"text": "$navigationProperty.label",
+				"icon": "$navigationProperty.icon",
+				"target": "$navigationProperty.targetEntityType",
+				"tooltip": "$navigationProperty.tooltip",
+				"parameters": {
+					"navigation": "$navigationProperty.name"
+				},
+				"visible": true ##$navigationProperty.targetVisible
+			}
+	#end			
+			]
+		}
+		,"navigationProperty": {
+	#foreach($navigationSet in $entityType.entity.navigationSet)
+			"$navigationSet.name": {
+				"target": "$navigationSet.target",
+				"icon": "$entityType.entity.targetIcon",
+				"menu": [{
+					"type":"navigationSet",
+					"key": "graph",
+					"text": "Graph View",
+					"icon": "sap-icon://overview-chart",
+					"target": "navigationSetGraph",
+					"tooltip": "$navigationSet.name Graph",
+					"visible": true
+				}, {
+					"type":"navigationSet",
+					"key": "$navigationSet.name",
+					"text": "$navigationSet.label",
+					"icon": "$navigationSet.icon",
+					"target": "$navigationSet.target",
+					"tooltip": "$navigationSet.tooltip",
+					"visible": true
+				}]
+			}
+		#if ( $foreach.hasNext ) 
+		,
+		#end
+	#end
+		}
+	}
+	#if ( $foreach.hasNext ) 
+	,
+	#end	
+#end
+}

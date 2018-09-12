@@ -32,15 +32,17 @@ import org.apache.velocity.VelocityContext;
 import org.apache.velocity.app.Velocity;
 import com.inova8.odata2lens.NavigationProperty;
 
-/**
- * Hello world!
- *
- */
 public class GenerateLens {
 	String workingPath;
 
 	public static void main(String[] args) throws IOException, ODataException {
-		String schemaName = args[0];//"northwind";
+		for (String schemaName: args) {
+			generate(schemaName);
+		}
+	}
+
+	private static void generate(String schemaName) throws IOException, ODataException {
+		System.out.println("Generating " + schemaName );
 		Edm edm = null;
 		edm = readEdm("http://localhost:8080/odata2sparql/" + schemaName);
 
@@ -55,7 +57,7 @@ public class GenerateLens {
 		TreeMap<String, EntityType> entityTypes = new TreeMap<String, EntityType>();
 		createMetadata(edm, schemaName, entityTypes);
 		generateUITemplate(schemaName, entityTypes);
-		TreeMap<String, UITemplate> uiTemplates = readUITemplate(schemaName,entityTypes);
+		TreeMap<String, UITemplate> uiTemplates = readUITemplate(schemaName, entityTypes);
 		generateRouting(schemaName, entityTypes);
 		generateContextMenu(schemaName, entityTypes, uiTemplates);
 		StringWriter i18nWriter = generateI18n();
@@ -67,43 +69,56 @@ public class GenerateLens {
 				new File(getWorkingPath() + "\\" + schemaName + "\\" + "i18n\\", "i18n.properties"));
 		fw.write(i18nWriter.toString());
 		fw.close();
-		//System.out.println(i18nWriter.toString());
+		System.out.println(schemaName + " generated");
 	}
 
-	private static TreeMap<String, UITemplate> readUITemplate(String schemaName , TreeMap<String, EntityType> entityTypes) throws IOException {
+	private static TreeMap<String, UITemplate> readUITemplate(String schemaName,
+			TreeMap<String, EntityType> entityTypes) throws IOException {
 
 		BufferedReader uiTemplateReader = null;
 		TreeMap<String, UITemplate> uiTemplates = new TreeMap<String, UITemplate>();
-		
+
 		uiTemplates = readUITemplateFile(getWorkingPath() + "\\" + schemaName + "\\uitemplate.generated.csv");
 		try {
 			String uiTemplateFile = getWorkingPath() + "\\" + schemaName + "\\uitemplate.csv";
 			uiTemplateReader = new BufferedReader(new FileReader(uiTemplateFile));
 			String line = "";
 			String cvsSplitBy = ",";
+			Boolean firstLine = true;
 			while ((line = uiTemplateReader.readLine()) != null) {
-				String[] template = line.split(cvsSplitBy);
-				if (template.length > 12) {
-					String target = null;
-					try {
-						target = template[4].trim();
-						UITemplate currentTemplate = uiTemplates.get(target);
-						currentTemplate.update(template[0].trim(), template[1].trim(), template[2].trim(),
-									template[3].trim(), template[4].trim(), template[5].trim(), template[6].trim(), template[7].trim());
-						EntityType entityType = entityTypes.get(template[1].trim());
-						if( !template[2].trim().isEmpty()) entityType.getEntitySet().setEntityIcon(template[2].trim());
-						if( !template[3].trim().isEmpty()) entityType.getEntitySet().setImage(template[3].trim());
-						if( !template[5].trim().isEmpty()) entityType.getEntity().setTargetIcon(template[5].trim());
-						if(template.length == 15) currentTemplate.updateProperty(template[8].trim(), template[9].trim(), template[10].trim(),
-								Float.parseFloat(template[11].trim()), Boolean.parseBoolean(template[12].trim()), template[13].trim(), template[14].trim());
-						else currentTemplate.updateProperty(template[8].trim(), template[9].trim(), template[10].trim(),
-								Float.parseFloat(template[11].trim()), Boolean.parseBoolean(template[12].trim()), template[13].trim(), "");
-						
-
-							
-					} catch (Exception e) {
-						int x=1;
-					} finally {
+				if (firstLine) {
+					firstLine = false;
+				} else {
+					String[] template = line.split(cvsSplitBy);
+					if (template.length > 13) {
+						String target = null;
+						try {
+							target = template[4].trim();
+							UITemplate currentTemplate = uiTemplates.get(target);
+							currentTemplate.update(template[0].trim(), template[1].trim(), template[2].trim(),
+									template[3].trim(), template[4].trim(), template[5].trim(), template[6].trim(),
+									template[7].trim(), template[8].trim());
+							EntityType entityType = entityTypes.get(template[1].trim());
+							if (!template[2].trim().isEmpty())
+								entityType.getEntitySet().setEntityIcon(template[2].trim());
+							if (!template[3].trim().isEmpty())
+								entityType.getEntitySet().setImage(template[3].trim());
+							if (!template[5].trim().isEmpty())
+								entityType.getEntity().setTargetIcon(template[5].trim());
+							if (!template[8].trim().isEmpty())
+								entityType.getEntitySet().setVisible(Boolean.parseBoolean(template[8].trim()));
+							if (template.length == 16)
+								currentTemplate.updateProperty(template[9].trim(), template[10].trim(),
+										template[11].trim(), Float.parseFloat(template[12].trim()),
+										Boolean.parseBoolean(template[13].trim()), template[14].trim(),
+										template[15].trim());
+							else
+								currentTemplate.updateProperty(template[9].trim(), template[10].trim(),
+										template[11].trim(), Float.parseFloat(template[12].trim()),
+										Boolean.parseBoolean(template[13].trim()), template[14].trim(), "");
+						} catch (Exception e) {
+						} finally {
+						}
 					}
 				}
 			}
@@ -116,6 +131,7 @@ public class GenerateLens {
 		}
 		return uiTemplates;
 	}
+
 	private static TreeMap<String, UITemplate> readUITemplateFile(String uiTemplateFile) throws IOException {
 
 		BufferedReader uiTemplateReader = null;
@@ -124,25 +140,33 @@ public class GenerateLens {
 			uiTemplateReader = new BufferedReader(new FileReader(uiTemplateFile));
 			String line = "";
 			String cvsSplitBy = ",";
+			Boolean firstLine = true;
 			String currentTarget = null;
 			UITemplate currentTemplate = null;
 			while ((line = uiTemplateReader.readLine()) != null) {
-				String[] template = line.split(cvsSplitBy);
-				if (template.length == 15) {
-					String target = null;
-					try {
-						target = template[4].trim();
-						if (!target.equals(currentTarget)) {
-							currentTemplate = new UITemplate(template[0].trim(), template[1].trim(), template[2].trim(),
-									template[3].trim(), template[4].trim(), template[5].trim(), template[6].trim(), template[7].trim());
-							currentTarget = target;
-							uiTemplates.put(target, currentTemplate);						
+				if (firstLine) {
+					firstLine = false;
+				} else {
+					String[] template = line.split(cvsSplitBy);
+					if (template.length == 16) {
+						String target = null;
+						try {
+							target = template[4].trim();
+							if (!target.equals(currentTarget)) {
+								currentTemplate = new UITemplate(template[0].trim(), template[1].trim(),
+										template[2].trim(), template[3].trim(), template[4].trim(), template[5].trim(),
+										template[6].trim(), template[7].trim(), template[8].trim());
+								currentTarget = target;
+								uiTemplates.put(target, currentTemplate);
+							}
+							currentTemplate.getProperties().put(Float.parseFloat(template[12].trim()),
+									new PropertyTemplate(template[9].trim(), template[10].trim(), template[11].trim(),
+											Float.parseFloat(template[12].trim()),
+											Boolean.parseBoolean(template[13].trim()), template[14].trim(),
+											template[15].trim()));
+						} catch (Exception e) {
+						} finally {
 						}
-						currentTemplate.getProperties().put(Float.parseFloat(template[11].trim()),
-								new PropertyTemplate(template[8].trim(), template[9].trim(), template[10].trim(),
-										Float.parseFloat(template[11].trim()), Boolean.parseBoolean(template[12].trim()), template[13].trim(), template[14].trim()));
-					} catch (Exception e) {
-					} finally {
 					}
 				}
 			}
@@ -155,10 +179,10 @@ public class GenerateLens {
 		}
 		return uiTemplates;
 	}
+
 	private static StringWriter generateI18n() {
 		StringWriter i18nWriter = new StringWriter();
 		Template i18nTemplate = Velocity.getTemplate("i18n.vm");
-		StringWriter routingWriter = new StringWriter();
 		VelocityContext i18nContext = new VelocityContext();
 		i18nTemplate.merge(i18nContext, i18nWriter);
 		return i18nWriter;
@@ -166,17 +190,15 @@ public class GenerateLens {
 
 	private static HashMap<String, String> getAnnotations(String defaultLabel, List<EdmAnnotation> annotations) {
 		HashMap<String, String> annotationStrings = new HashMap<String, String>();
-		String[] a = { "sap.label", "sap.heading", "sap.quickinfo" };
-		int n = 0;
 		for (EdmAnnotation annotation : annotations) {
 			String expressionvalue = annotation.getExpression().asConstant().getValueAsString();
+			String termFQN = annotation.getTerm().getFullQualifiedName().toString();
 			if (expressionvalue != "") {
-				annotationStrings.put(a[n], annotation.getExpression().asConstant().getValueAsString());
+				annotationStrings.put(termFQN, annotation.getExpression().asConstant().getValueAsString());
 				defaultLabel = expressionvalue;
 			} else {
-				annotationStrings.put(a[n], defaultLabel);
+				annotationStrings.put(termFQN, defaultLabel);
 			}
-			n++;
 		}
 		return annotationStrings;
 	}
@@ -185,13 +207,8 @@ public class GenerateLens {
 			throws IOException {
 
 		EdmSchema schema = edm.getSchema(schemaName);
-
 		for (EdmEntityType edmEntityType : schema.getEntityTypes()) {
 			if (!isFunctionImport(schema.getFunctions(), edmEntityType)) {
-				//String value = edmEntityType.getAnnotations().get(0).getExpression().asConstant().getValueAsString();
-				//This should work!! 
-				// https://github.com/apache/olingo-odata4/blob/master/fit/src/test/java/org/apache/olingo/fit/tecsvc/client/BasicITCase.java
-				//EdmAnnotation annotation =	edmEntityType.getAnnotation(edm.getTerm(new FullQualifiedName("sap", "label")), null);
 				HashMap<String, String> entityTypeAnnotations = getAnnotations(edmEntityType.getName(),
 						edmEntityType.getAnnotations());
 				EntitySet entitySet = new EntitySet(edmEntityType.getName(), edmEntityType.getName() + "s",
@@ -201,9 +218,12 @@ public class GenerateLens {
 						entityTypeAnnotations.containsKey("sap.quickinfo")
 								? entityTypeAnnotations.get("sap.quickinfo") + "s"
 								: "Show " + edmEntityType.getName() + "s",
-						"./images/icons/category.png", "sap-icon://expand-group"		
-						);
-				//value = edmEntityType.getAnnotations().get(0).getExpression().asConstant().getValueAsString()
+						"./images/icons/category.png", "sap-icon://expand-group", true,
+						entityTypeAnnotations.containsKey("odata.baseType")
+								? entityTypeAnnotations.get("odata.baseType")
+								: null
+
+				);
 				TreeMap<String, EntityNavigationSet> entityNavigationSets = new TreeMap<String, EntityNavigationSet>();
 				TreeMap<String, NavigationProperty> navigationProperties = new TreeMap<String, NavigationProperty>();
 				TreeMap<String, Property> properties = new TreeMap<String, Property>();
@@ -212,16 +232,16 @@ public class GenerateLens {
 						EdmProperty property = (EdmProperty) edmEntityType.getProperty(propertyName);
 						HashMap<String, String> propertyAnnotations = getAnnotations(propertyName,
 								property.getAnnotations());
-						properties.put(propertyName,
-								new Property(propertyName,
-										propertyAnnotations.containsKey("sap.label")
-												? propertyAnnotations.get("sap.label") : propertyName,
-										propertyAnnotations.containsKey("sap.quickinfo")
-												? propertyAnnotations.get("sap.quickinfo") : propertyName,property.getType().getFullQualifiedName().toString(),null)
+						properties.put(propertyName, new Property(propertyName,
+								propertyAnnotations.containsKey("sap.label") ? propertyAnnotations.get("sap.label")
+										: propertyName,
+								propertyAnnotations.containsKey("sap.quickinfo")
+										? propertyAnnotations.get("sap.quickinfo")
+										: propertyName,
+								property.getType().getFullQualifiedName().toString(), null)
 
-								);
+						);
 					}
-
 				}
 
 				for (String navigationPropertyName : edmEntityType.getNavigationPropertyNames()) {
@@ -229,7 +249,8 @@ public class GenerateLens {
 							.getNavigationProperty(navigationPropertyName);
 					HashMap<String, String> navigationPropertyAnnotations = getAnnotations(navigationPropertyName,
 							navigationProperty.getAnnotations());
-					if (!isFunctionImport(schema.getFunctions(), navigationProperty.getType())) {
+					if (!isFunctionImport(schema.getFunctions(), navigationProperty.getType())
+							&& !isNavigationOutsideOfNamespace(schema.getEntityTypes(), navigationProperty.getType())) {
 						if (navigationProperty.isCollection()) {
 							entityNavigationSets.put(navigationPropertyName,
 									new EntityNavigationSet(navigationPropertyName,
@@ -242,16 +263,19 @@ public class GenerateLens {
 													? navigationPropertyAnnotations.get("sap.quickinfo")
 													: "Show " + edmEntityType.getName() + "s "
 															+ navigationProperty.getType().getName(),
-											navigationProperty.getType().getName(), navigationProperty.getType().getName(), ""));
+											navigationProperty.getType().getName(),
+											navigationProperty.getType().getName(), ""));
 						} else {
-							navigationProperties.put(navigationPropertyName, new NavigationProperty(
-									navigationPropertyName,
-									navigationPropertyAnnotations.containsKey("sap.label")
-											? navigationPropertyAnnotations.get("sap.label") : navigationPropertyName,
-									navigationPropertyAnnotations.containsKey("sap.quickinfo")
-											? navigationPropertyAnnotations.get("sap.quickinfo")
-											: "Show " + navigationPropertyName,
-									navigationProperty.getType().getName(), navigationProperty.getType().getName(), ""));
+							navigationProperties.put(navigationPropertyName,
+									new NavigationProperty(navigationPropertyName,
+											navigationPropertyAnnotations.containsKey("sap.label")
+													? navigationPropertyAnnotations.get("sap.label")
+													: navigationPropertyName,
+											navigationPropertyAnnotations.containsKey("sap.quickinfo")
+													? navigationPropertyAnnotations.get("sap.quickinfo")
+													: "Show " + navigationPropertyName,
+											navigationProperty.getType().getName(),
+											navigationProperty.getType().getName(), ""));
 						}
 					}
 				}
@@ -260,22 +284,38 @@ public class GenerateLens {
 						entityTypeAnnotations.containsKey("sap.label") ? entityTypeAnnotations.get("sap.label")
 								: edmEntityType.getName(),
 						entityTypeAnnotations.containsKey("sap.quickinfo") ? entityTypeAnnotations.get("sap.quickinfo")
-								: edmEntityType.getName(), "sap-icon://expand-group",
-						entityNavigationSets, navigationProperties, properties);
+								: edmEntityType.getName(),
+						"sap-icon://expand-group", entityNavigationSets, navigationProperties, properties);
 				entityTypes.put(edmEntityType.getName(), new EntityType(entity, entitySet));
 			}
 		}
-		for( EntityType entityType : entityTypes.values()) {
-			for(NavigationProperty navigationProperty : entityType.getEntity().getNavigationProperties().values()) {
-				
-				navigationProperty.setRangeType(  entityTypes.get(navigationProperty.getRange()) );
-				
+		//Post process to identify parent and child entitySets
+		for (EntityType entityType : entityTypes.values()) {
+			for (NavigationProperty navigationProperty : entityType.getEntity().getNavigationProperties().values()) {
+
+				navigationProperty.setRangeType(entityTypes.get(navigationProperty.getRange()));
+
 			}
 			for (EntityNavigationSet navigationSet : entityType.getEntity().getNavigationSet().values()) {
-				navigationSet.setRangeType(  entityTypes.get(navigationSet.getRange()) );
+				navigationSet.setRangeType(entityTypes.get(navigationSet.getRange()));
 			}
-			
+			EntitySet entitySet = entityType.getEntitySet();
+			if(!entitySet.getBaseTypes().isEmpty()) {
+				for( String baseType : entitySet.getBaseTypes()) {
+					if(entityTypes.containsKey(baseType)) {						
+						EntityType baseEntityType = entityTypes.get(baseType);
+						baseEntityType.getEntitySet().addChildEntitySet(entitySet);
+						entitySet.addParentEntitySet(baseEntityType.getEntitySet());
+					}
+				}
+			}	
 		}
+	}
+
+	private static boolean isNavigationOutsideOfNamespace(List<EdmEntityType> schemaEntityTypes,
+			EdmEntityType entityType) {
+
+		return !schemaEntityTypes.contains(entityType);
 	}
 
 	private static boolean isFunctionImport(List<EdmFunction> edmFunctions, EdmEntityType edmEntityType) {
@@ -304,7 +344,7 @@ public class GenerateLens {
 				new File(getWorkingPath() + "\\" + schemaName + "\\" + "model\\", "routing.json"));
 		fw.write(routingWriter.toString());
 		fw.close();
-		System.out.println(routingWriter.toString());
+		//System.out.println(routingWriter.toString());
 
 	}
 
@@ -326,11 +366,11 @@ public class GenerateLens {
 				new File(getWorkingPath() + "\\" + schemaName + "\\", "uiTemplate.generated.csv"));
 		fw.write(uiWriter.toString());
 		fw.close();
-		System.out.println(uiWriter.toString());
+		//System.out.println(uiWriter.toString());
 	}
 
-	private static void generateContextMenu(String schemaName, TreeMap<String, EntityType> entityTypes,TreeMap<String, UITemplate>  uiTemplates)
-			throws IOException {
+	private static void generateContextMenu(String schemaName, TreeMap<String, EntityType> entityTypes,
+			TreeMap<String, UITemplate> uiTemplates) throws IOException {
 
 		Template contextMenuTemplate = null;
 
@@ -347,7 +387,7 @@ public class GenerateLens {
 				new File(getWorkingPath() + "\\" + schemaName + "\\" + "model\\", "contextMenu.json"));
 		fw.write(contextMenuWriter.toString());
 		fw.close();
-		System.out.println(contextMenuWriter.toString());
+		//System.out.println(contextMenuWriter.toString());
 	}
 
 	private static void generateEntitySet(String schemaName, TreeMap<String, EntityType> entityTypes,
@@ -378,8 +418,8 @@ public class GenerateLens {
 							+ "\\" + entityType.getEntitySet().getTarget() + ".view.xml"));
 			fw.write(entitySetWriter.toString());
 			fw.close();
-			System.out.println(entitySetWriter.toString());
-			System.out.println(i18nWriter.toString());
+			//System.out.println(entitySetWriter.toString());
+			//System.out.println(i18nWriter.toString());
 		}
 
 	}
@@ -410,8 +450,8 @@ public class GenerateLens {
 					+ entityType.getEntity().getTarget() + "\\" + entityType.getEntity().getTarget() + ".view.xml"));
 			fw.write(entityWriter.toString());
 			fw.close();
-			System.out.println(entityWriter.toString());
-			System.out.println(i18nWriter.toString());
+			//System.out.println(entityWriter.toString());
+			//System.out.println(i18nWriter.toString());
 		}
 
 	}
@@ -427,28 +467,32 @@ public class GenerateLens {
 
 		for (EntityType entityType : entityTypes.values()) {
 			for (EntityNavigationSet entityNavigationSet : entityType.getEntity().getNavigationSet().values()) {
-				StringWriter entityNavigationSetWriter = new StringWriter();
-				VelocityContext entityNavigationSetContext = new VelocityContext();
 
-				entityNavigationSetContext.put("schema", schemaName);
-				entityNavigationSetContext.put("entity",
-						entityTypes.get(entityNavigationSet.getTargetEntityType()).getEntity());
-				entityNavigationSetContext.put("entitySet",
-						entityTypes.get(entityNavigationSet.getTargetEntityType()).getEntitySet());
-				entityNavigationSetContext.put("entityNavigationSet", entityNavigationSet);
-				entityNavigationSetContext.put("uiTemplate", uiTemplates.get(entityNavigationSet.getTarget()));
-				entityNavigationSetTemplate.merge(entityNavigationSetContext, entityNavigationSetWriter);
+				if (entityTypes.get(entityNavigationSet.getTargetEntityType()) != null) {
+					//Only include those that are within this namespace
+					StringWriter entityNavigationSetWriter = new StringWriter();
+					VelocityContext entityNavigationSetContext = new VelocityContext();
 
-				i18nTemplate.merge(entityNavigationSetContext, i18nWriter);
+					entityNavigationSetContext.put("schema", schemaName);
+					entityNavigationSetContext.put("entity",
+							entityTypes.get(entityNavigationSet.getTargetEntityType()).getEntity());
+					entityNavigationSetContext.put("entitySet",
+							entityTypes.get(entityNavigationSet.getTargetEntityType()).getEntitySet());
+					entityNavigationSetContext.put("entityNavigationSet", entityNavigationSet);
+					entityNavigationSetContext.put("uiTemplate", uiTemplates.get(entityNavigationSet.getTarget()));
+					entityNavigationSetTemplate.merge(entityNavigationSetContext, entityNavigationSetWriter);
 
-				(new File(getWorkingPath() + "\\" + schemaName + "\\view\\" + entityNavigationSet.getTarget()))
-						.mkdirs();
-				FileWriter fw = new FileWriter(new File(getWorkingPath() + "\\" + schemaName + "\\view\\"
-						+ entityNavigationSet.getTarget() + "\\" + entityNavigationSet.getTarget() + ".view.xml"));
-				fw.write(entityNavigationSetWriter.toString());
-				fw.close();
-				System.out.println(entityNavigationSetWriter.toString());
-				System.out.println(i18nWriter.toString());
+					i18nTemplate.merge(entityNavigationSetContext, i18nWriter);
+
+					(new File(getWorkingPath() + "\\" + schemaName + "\\view\\" + entityNavigationSet.getTarget()))
+							.mkdirs();
+					FileWriter fw = new FileWriter(new File(getWorkingPath() + "\\" + schemaName + "\\view\\"
+							+ entityNavigationSet.getTarget() + "\\" + entityNavigationSet.getTarget() + ".view.xml"));
+					fw.write(entityNavigationSetWriter.toString());
+					fw.close();
+					//System.out.println(entityNavigationSetWriter.toString());
+					//System.out.println(i18nWriter.toString());
+				}
 			}
 		}
 
@@ -466,7 +510,7 @@ public class GenerateLens {
 		URL main = GenerateLens.class.getResource("GenerateLens.class");
 		File file = new File(main.getPath());
 		Path path = Paths.get(file.getPath());
-		String sPath = path.getParent().toString();
+		String sPath = path.getParent().getParent().getParent().getParent().toString();
 		return sPath;
 	}
 

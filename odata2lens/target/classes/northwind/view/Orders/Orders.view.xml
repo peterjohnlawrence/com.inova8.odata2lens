@@ -1,0 +1,104 @@
+<mvc:View controllerName="com.inova8.lens.controller.EntitySet" xmlns="sap.m" xmlns:mvc="sap.ui.core.mvc" xmlns:layout="sap.ui.layout"
+	xmlns:rdf="com.inova8.lens.control">
+	<Page showHeader="false" id="page" navButtonPress="onNavBack" showNavButton="true" title="{i18n>Orders.ViewTitle}">
+		<content>
+			<Table id="table" inset="false" items="{ path: 'dataModel>/Order' , sorter: { path: 'label', descending: false } 
+				}"
+				noDataText="{entitySetView>/tableNoDataText}" busyIndicatorDelay="{entitySetView>/tableBusyDelay}" growing="true" growingScrollToLoad="true"
+				updateFinished="onUpdateFinished"  fixedLayout="false">
+				<headerToolbar>
+					<Toolbar>
+						<ToolbarSpacer/>
+						<Title id="tableHeader" text="{entitySetView>/entitySetTableTitle}"/>
+						<ToolbarSpacer/>
+						<SearchField id="searchField" tooltip="{i18n>search.searchTooltip}" search="onSearch" width="auto"></SearchField>
+					</Toolbar>
+				</headerToolbar>
+				<columns>
+					<Column >
+						<Text text="{i18n>Orders.this}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>Orders.comment}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>Orders.customerNotation}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>Orders.employeeNotation}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>Orders.freight}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>Orders.isDefinedBy}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>Orders.lat}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>Orders.lat_long}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>Orders.long}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>Orders.orderDate}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>Orders.regionDescription}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>Orders.requiredDate}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>Orders.shipAddress}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>Orders.shipCity}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>Orders.shipCountry}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>Orders.shipName}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>Orders.shipPostalCode}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>Orders.shipViaNotation}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>Orders.shippedDate}"/>
+					</Column>
+				</columns>
+				<items>
+					<ColumnListItem id="template" type="Navigation" press="onPress">
+						<cells>
+							<rdf:TextResource path="dataModel>" entitySet="Order"/>
+  <rdf:TextLink text="{path:'dataModel>comment',type:'sap.ui.model.type.String'}" linkText="{i18n>Order.comment}"/>
+  <rdf:TextLink text="{path:'dataModel>customerNotation',type:'sap.ui.model.type.String'}" linkText="{i18n>Order.customerNotation}"/>
+  <rdf:TextLink text="{path:'dataModel>employeeNotation',type:'sap.ui.model.type.String'}" linkText="{i18n>Order.employeeNotation}"/>
+  <rdf:TextLink text="{path:'dataModel>freight',type:'sap.ui.model.type.String'}" linkText="{i18n>Order.freight}"/>
+  <rdf:TextLink text="{path:'dataModel>isDefinedBy',type:'sap.ui.model.type.String'}" linkText="{i18n>Order.isDefinedBy}"/>
+  <Text text="{path:'dataModel>lat',type:'sap.ui.model.type.Float' }"/>
+  <rdf:TextLink text="{path:'dataModel>lat_long',type:'sap.ui.model.type.String'}" linkText="{i18n>Order.lat_long}"/>
+  <Text text="{path:'dataModel>long',type:'sap.ui.model.type.Float' }"/>
+  <Text text="{dataModel>orderDate}"/>
+  <rdf:TextLink text="{path:'dataModel>regionDescription',type:'sap.ui.model.type.String'}" linkText="{i18n>Order.regionDescription}"/>
+  <Text text="{dataModel>requiredDate}"/>
+  <rdf:TextLink text="{path:'dataModel>shipAddress',type:'sap.ui.model.type.String'}" linkText="{i18n>Order.shipAddress}"/>
+  <rdf:TextLink text="{path:'dataModel>shipCity',type:'sap.ui.model.type.String'}" linkText="{i18n>Order.shipCity}"/>
+  <rdf:TextLink text="{path:'dataModel>shipCountry',type:'sap.ui.model.type.String'}" linkText="{i18n>Order.shipCountry}"/>
+  <rdf:TextLink text="{path:'dataModel>shipName',type:'sap.ui.model.type.String'}" linkText="{i18n>Order.shipName}"/>
+  <rdf:TextLink text="{path:'dataModel>shipPostalCode',type:'sap.ui.model.type.String'}" linkText="{i18n>Order.shipPostalCode}"/>
+  <rdf:TextLink text="{path:'dataModel>shipViaNotation',type:'sap.ui.model.type.String'}" linkText="{i18n>Order.shipViaNotation}"/>
+  <Text text="{dataModel>shippedDate}"/>
+						</cells>
+					</ColumnListItem>
+				</items>
+			</Table>
+		</content>
+	</Page>
+</mvc:View>

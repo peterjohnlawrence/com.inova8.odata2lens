@@ -1,0 +1,43 @@
+<mvc:View controllerName="com.inova8.lens.controller.Entity" xmlns="sap.m" xmlns:mvc="sap.ui.core.mvc"
+	xmlns:f="sap.ui.layout.form" xmlns:table="sap.ui.table" xmlns:rdf="com.inova8.lens.control">
+	<Page showHeader="true" id="page" navButtonPress="onNavBack" showNavButton="false" title="{i18n>GP_Practice.Title}"
+		busy="{entityView>/busy}" busyIndicatorDelay="{entityView>/delay}">
+		<customHeader>
+			<Toolbar>
+				<ToolbarSpacer/>
+				<Title text="{i18n>GP_Practice.this}"/>
+				<rdf:TextResource path="dataModel>" entitySet="GP_Practice"/>
+				<Title text="{i18n>GP_Practice.Title}" />
+				<ToolbarSpacer/>
+			</Toolbar>
+		</customHeader>
+		<content>
+			<f:SimpleForm class="editableForm" columnsL="1" columnsM="1" editable="true" emptySpanL="4" emptySpanM="4" 
+				labelSpanL="2" labelSpanM="2" layout="ResponsiveGridLayout" maxContainerCols="2" minWidth="1024" singleContainerFullSize="true">
+				<f:content>
+					<!--<Label text="{i18n>GP_Practice.this}" required="false"/><rdf:TextResource path="dataModel>" entitySet="GP_Practice"/>-->
+					<Label text="{i18n>GP_Practice.GP_Practice_Address_Line_1}" required="false"/>   <rdf:TextLink text="{path:'dataModel>GP_Practice_Address_Line_1',type:'sap.ui.model.type.String' }" linkText="{i18n>GP_Practice.GP_Practice_Address_Line_1}"/>
+					<Label text="{i18n>GP_Practice.GP_Practice_Address_Line_2}" required="false"/>   <rdf:TextLink text="{path:'dataModel>GP_Practice_Address_Line_2',type:'sap.ui.model.type.String' }" linkText="{i18n>GP_Practice.GP_Practice_Address_Line_2}"/>
+					<Label text="{i18n>GP_Practice.GP_Practice_Address_Line_3}" required="false"/>   <rdf:TextLink text="{path:'dataModel>GP_Practice_Address_Line_3',type:'sap.ui.model.type.String' }" linkText="{i18n>GP_Practice.GP_Practice_Address_Line_3}"/>
+					<Label text="{i18n>GP_Practice.GP_Practice_Address_Line_4}" required="false"/>   <rdf:TextLink text="{path:'dataModel>GP_Practice_Address_Line_4',type:'sap.ui.model.type.String' }" linkText="{i18n>GP_Practice.GP_Practice_Address_Line_4}"/>
+					<Label text="{i18n>GP_Practice.GP_Practice_Address_Line_5}" required="false"/>   <rdf:TextLink text="{path:'dataModel>GP_Practice_Address_Line_5',type:'sap.ui.model.type.String' }" linkText="{i18n>GP_Practice.GP_Practice_Address_Line_5}"/>
+					<Label text="{i18n>GP_Practice.GP_Practice_Close_Date}" required="false"/>   <Text text="{dataModel>GP_Practice_Close_Date}"/>
+					<Label text="{i18n>GP_Practice.GP_Practice_Contact_Telephone_Number}" required="false"/>   <rdf:TextLink text="{path:'dataModel>GP_Practice_Contact_Telephone_Number',type:'sap.ui.model.type.String' }" linkText="{i18n>GP_Practice.GP_Practice_Contact_Telephone_Number}"/>
+					<Label text="{i18n>GP_Practice.GP_Practice_Join_Provider_Purchaser_Date}" required="false"/>   <Text text="{dataModel>GP_Practice_Join_Provider_Purchaser_Date}"/>
+					<Label text="{i18n>GP_Practice.GP_Practice_Left_Provider_Purchaser_Date}" required="false"/>   <Text text="{dataModel>GP_Practice_Left_Provider_Purchaser_Date}"/>
+					<Label text="{i18n>GP_Practice.GP_Practice_Name}" required="false"/>   <rdf:TextLink text="{path:'dataModel>GP_Practice_Name',type:'sap.ui.model.type.String' }" linkText="{i18n>GP_Practice.GP_Practice_Name}"/>
+					<Label text="{i18n>GP_Practice.GP_Practice_Number_Of_Patients}" required="false"/>   <Text text="{path:'dataModel>GP_Practice_Number_Of_Patients',type:'sap.ui.model.type.Integer' }"/>
+					<Label text="{i18n>GP_Practice.GP_Practice_Open_Date}" required="false"/>   <Text text="{dataModel>GP_Practice_Open_Date}"/>
+					<Label text="{i18n>GP_Practice.GP_Practice_Organisation_Code}" required="false"/>   <rdf:TextLink text="{path:'dataModel>GP_Practice_Organisation_Code',type:'sap.ui.model.type.String' }" linkText="{i18n>GP_Practice.GP_Practice_Organisation_Code}"/>
+					<Label text="{i18n>GP_Practice.GP_Practice_Postcode}" required="false"/>   <rdf:TextLink text="{path:'dataModel>GP_Practice_Postcode',type:'sap.ui.model.type.String' }" linkText="{i18n>GP_Practice.GP_Practice_Postcode}"/>
+					<Label text="{i18n>GP_Practice.alt}" required="false"/>   <rdf:TextLink text="{path:'dataModel>alt',type:'sap.ui.model.type.String' }" linkText="{i18n>GP_Practice.alt}"/>
+					<Label text="{i18n>GP_Practice.lat}" required="false"/>   <rdf:TextLink text="{path:'dataModel>lat',type:'sap.ui.model.type.String' }" linkText="{i18n>GP_Practice.lat}"/>
+					<Label text="{i18n>GP_Practice.lat_long}" required="false"/>   <rdf:TextLink text="{path:'dataModel>lat_long',type:'sap.ui.model.type.String' }" linkText="{i18n>GP_Practice.lat_long}"/>
+					<Label text="{i18n>GP_Practice.long}" required="false"/>   <rdf:TextLink text="{path:'dataModel>long',type:'sap.ui.model.type.String' }" linkText="{i18n>GP_Practice.long}"/>
+					<Label text="{i18n>GP_Practice.GP_Practice_Commissioner}" required="false"/><rdf:TextResource path="dataModel>GP_Practice_Commissioner" entitySet="Clinical_Commissioning_Group"/>		
+					<Label text="{i18n>GP_Practice.GP_Practice_Provider_Purchaser}" required="false"/><rdf:TextResource path="dataModel>GP_Practice_Provider_Purchaser" entitySet="Provider_Purchaser"/>		
+				</f:content>
+			</f:SimpleForm>
+		</content>
+	</Page>
+</mvc:View>

@@ -1,0 +1,32 @@
+<mvc:View controllerName="com.inova8.lens.controller.Entity" xmlns="sap.m" xmlns:mvc="sap.ui.core.mvc"
+	xmlns:f="sap.ui.layout.form" xmlns:table="sap.ui.table" xmlns:rdf="com.inova8.lens.control">
+	<Page showHeader="true" id="page" navButtonPress="onNavBack" showNavButton="false" title="{i18n>BNF_Medicinal_Product.Title}"
+		busy="{entityView>/busy}" busyIndicatorDelay="{entityView>/delay}">
+		<customHeader>
+			<Toolbar>
+				<ToolbarSpacer/>
+				<Title text="{i18n>BNF_Medicinal_Product.this}"/>
+				<rdf:TextResource path="dataModel>" entitySet="BNF_Medicinal_Product"/>
+				<Title text="{i18n>BNF_Medicinal_Product.Title}" />
+				<ToolbarSpacer/>
+			</Toolbar>
+		</customHeader>
+		<content>
+			<f:SimpleForm class="editableForm" columnsL="1" columnsM="1" editable="true" emptySpanL="4" emptySpanM="4" 
+				labelSpanL="2" labelSpanM="2" layout="ResponsiveGridLayout" maxContainerCols="2" minWidth="1024" singleContainerFullSize="true">
+				<f:content>
+					<!--<Label text="{i18n>BNF_Medicinal_Product.this}" required="false"/><rdf:TextResource path="dataModel>" entitySet="BNF_Medicinal_Product"/>-->
+					<Label text="{i18n>BNF_Medicinal_Product.BNF_Medicinal_Product_Chemical_Substance_Code}" required="false"/>   <rdf:TextLink text="{path:'dataModel>BNF_Medicinal_Product_Chemical_Substance_Code',type:'sap.ui.model.type.String' }" linkText="{i18n>BNF_Medicinal_Product.BNF_Medicinal_Product_Chemical_Substance_Code}"/>
+					<Label text="{i18n>BNF_Medicinal_Product.BNF_Medicinal_Product_Chemical_Substance_Name}" required="false"/>   <rdf:TextLink text="{path:'dataModel>BNF_Medicinal_Product_Chemical_Substance_Name',type:'sap.ui.model.type.String' }" linkText="{i18n>BNF_Medicinal_Product.BNF_Medicinal_Product_Chemical_Substance_Name}"/>
+					<Label text="{i18n>BNF_Medicinal_Product.BNF_Medicinal_Product_DMD_Product_Description}" required="false"/>   <rdf:TextLink text="{path:'dataModel>BNF_Medicinal_Product_DMD_Product_Description',type:'sap.ui.model.type.String' }" linkText="{i18n>BNF_Medicinal_Product.BNF_Medicinal_Product_DMD_Product_Description}"/>
+					<Label text="{i18n>BNF_Medicinal_Product.BNF_Medicinal_Product_Id}" required="false"/>   <rdf:TextLink text="{path:'dataModel>BNF_Medicinal_Product_Id',type:'sap.ui.model.type.String' }" linkText="{i18n>BNF_Medicinal_Product.BNF_Medicinal_Product_Id}"/>
+					<Label text="{i18n>BNF_Medicinal_Product.BNF_Medicinal_Product_MDR_Product_Description}" required="false"/>   <rdf:TextLink text="{path:'dataModel>BNF_Medicinal_Product_MDR_Product_Description',type:'sap.ui.model.type.String' }" linkText="{i18n>BNF_Medicinal_Product.BNF_Medicinal_Product_MDR_Product_Description}"/>
+					<Label text="{i18n>BNF_Medicinal_Product.BNF_Medicinal_Product_Presentation_Code}" required="false"/>   <rdf:TextLink text="{path:'dataModel>BNF_Medicinal_Product_Presentation_Code',type:'sap.ui.model.type.String' }" linkText="{i18n>BNF_Medicinal_Product.BNF_Medicinal_Product_Presentation_Code}"/>
+					<Label text="{i18n>BNF_Medicinal_Product.BNF_Medicinal_Product_Presentation_Name}" required="false"/>   <rdf:TextLink text="{path:'dataModel>BNF_Medicinal_Product_Presentation_Name',type:'sap.ui.model.type.String' }" linkText="{i18n>BNF_Medicinal_Product.BNF_Medicinal_Product_Presentation_Name}"/>
+					<Label text="{i18n>BNF_Medicinal_Product.BNF_Medicinal_Product_Product_Code}" required="false"/>   <rdf:TextLink text="{path:'dataModel>BNF_Medicinal_Product_Product_Code',type:'sap.ui.model.type.String' }" linkText="{i18n>BNF_Medicinal_Product.BNF_Medicinal_Product_Product_Code}"/>
+					<Label text="{i18n>BNF_Medicinal_Product.BNF_Medicinal_Product_Product_Name}" required="false"/>   <rdf:TextLink text="{path:'dataModel>BNF_Medicinal_Product_Product_Name',type:'sap.ui.model.type.String' }" linkText="{i18n>BNF_Medicinal_Product.BNF_Medicinal_Product_Product_Name}"/>
+				</f:content>
+			</f:SimpleForm>
+		</content>
+	</Page>
+</mvc:View>

@@ -1,0 +1,16 @@
+{
+	"queries": [{
+		"query": "isabel"
+	}, {
+		"query": "isabel AND portugal"
+	}, {
+		"query": "Sweet and savory sauces, relishes, spreads, and seasonings"
+	}, {
+		"query": "Geitost"
+	}, {
+		"query": "(5) 555-3932 LINKEDTO Geitost"
+	}, {
+		"query": "isabel LINKEDTO portugal"
+	}]
+}
+
