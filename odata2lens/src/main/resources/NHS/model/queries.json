@@ -1,0 +1,15 @@
+{
+	"queries": [{
+		"query": "isabel"
+	}, {
+		"query": "isabel AND portugal"
+	}, {
+		"query": "(5) 555-3932"
+	}, {
+		"query": "Geitost"
+	}, {
+		"query": "(5) 555-3932 LINKEDTO Geitost"
+	}, {
+		"query": "isabel LINKEDTO portugal"
+	}]
+}

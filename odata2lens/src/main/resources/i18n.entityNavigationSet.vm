@@ -1,0 +1,18 @@
+
+#~~~ $entityNavigationSet.target View ~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+$entityNavigationSet.target#[[.ViewTitle]]# =  $entityNavigationSet.label
+$entityNavigationSet.target#[[.TableTitle]]# = $entityNavigationSet.label  
+$entityNavigationSet.target#[[.TableTitleCount]]# = $entityNavigationSet.label ({1})
+$entityNavigationSet.target#[[.SearchTooltip]]# = Enter text to search within $entityNavigationSet.target 
+$entityNavigationSet.target#[[.tableNoDataText]]# = No $entityNavigationSet.target  are currently available
+$entityNavigationSet.target#[[.this]]# = $entityNavigationSet.targetEntityType
+#foreach($property in $entity.properties)
+$entityNavigationSet.target#[[.]]#$property.name = $property.label
+#end
+#foreach($navigationProperty in $entity.navigationProperties)
+$entityNavigationSet.target#[[.]]#$navigationProperty.name = $navigationProperty.label  
+#end
+#foreach($navigationSet in $entity.navigationSet)
+$entityNavigationSet.target#[[.]]#$navigationSet.name = $navigationSet.label  
+#end

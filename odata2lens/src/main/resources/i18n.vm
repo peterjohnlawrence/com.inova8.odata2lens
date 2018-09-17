@@ -1,0 +1,120 @@
+# This is the resource bundle for lens.framework.v4
+Lens.appTitle=Nexify Lens
+Lens.appDescription=Quorum Browser
+Lens.notificationTitle=Notifications
+Lens.notificationButtonText=Show all Notifications
+Lens.userHeaderTitle=Settings
+
+#~~~ common errors ~~~~~~~~~~~~~~~~~~~~~~~~~~
+tableNoDataText = No data retrieved
+
+#~~~ Home View ~~~~~~~~~~~~~~~~~~~~~~~~~~
+home.ViewTitle=Home
+
+#~~~ Settings View ~~~~~~~~~~~~~~~~~~~~~~~~~~
+settings.ViewTitle=Settings
+
+#~~~ Not Found View ~~~~~~~~~~~~~~~~~~~~~~~
+NotFound.Title=Not Found
+NotFound.noObjectFoundText=This <ObjectName> is not available
+NotFound.noObjectsAvailableText=No <ObjectNamePlural> are currently available
+NotFound.Text=The requested resource was not found
+
+#~~~ Error Handling ~~~~~~~~~~~~~~~~~~~~~~~
+ErrorHandler.errorText=Sorry, a technical error occurred! Please try again later.
+
+#~~~ Login Handling ~~~~~~~~~~~~~~~~~~~~~~~
+Login.title=Login
+Login.user=Username
+Login.userPlaceholder =
+Login.pass=Password
+Login.passPlaceholder =
+Login.OK=Login
+Login.PasswordReset=Reset Password
+Login.verificationCode=Verification Code
+Login.verificationCodePlaceholder
+Login.newpass=New password
+Login.newpassPlaceholder =
+
+#~~~ Search View ~~~~~~~~~~~~~~~~~~~~~~~~~~
+search.placeholder=Search
+search.ViewTitle=Search Results
+search.TableTitle=Search
+search.searchTooltip=Enter text value or a part of it using the following syntax:\nAnchoring: Use ^ to indicate the beginning or $ to indicate the endMatch any character.\nMatch any character: . can be used to represent any character.\nOne-or-more: + can be used to repeat the preceding shortest pattern once or more times.\nZero-or-more: * can be used to match the preceding shortest pattern zero-or-more times.\nZero-or-one: ? makes the preceding shortest pattern optional.\nMin-to-max: {} can be used to specify a minimum and (optionally) a maximum number of times the preceding shortest pattern can repeat.\nGrouping: () can be used to form sub-patterns.\nAlternation: | acts as an OR operator.\nComplement: The shortest pattern that follows a tilde ~ is negated.\nInterval: Numeric ranges, enclosed by angle brackets <>.\nIntersection: & joins two patterns in a way that both of them have to match.\nAny string: @ matches any string in its entirety.
+search.NoDataWithSearchText=No matching Employees found
+search.TableTitleCount=Search ({0})
+search.tableNoDataText=No search results are currently available
+search.resource = Resource
+search.type = Type
+search.property = Property
+search.value = Value containing match
+
+#~~~ AdvancedSearch View ~~~~~~~~~~~~~~~~~~~~~~~~~~
+advancedsearch.ViewTitle=Advanced Search Results
+advancedsearch.TableTitle=Advanced Search
+advancedsearch.SearchTooltip=Enter text value or a part of it using the following syntax:\nAnchoring: Use ^ to indicate the beginning or $ to indicate the endMatch any character.\nMatch any character: . can be used to represent any character.\nOne-or-more: + can be used to repeat the preceding shortest pattern once or more times.\nZero-or-more: * can be used to match the preceding shortest pattern zero-or-more times.\nZero-or-one: ? makes the preceding shortest pattern optional.\nMin-to-max: {} can be used to specify a minimum and (optionally) a maximum number of times the preceding shortest pattern can repeat.\nGrouping: () can be used to form sub-patterns.\nAlternation: | acts as an OR operator.\nComplement: The shortest pattern that follows a tilde ~ is negated.\nInterval: Numeric ranges, enclosed by angle brackets <>.\nIntersection: & joins two patterns in a way that both of them have to match.\nAny string: @ matches any string in its entirety.
+advancedsearch.NoDataWithSearchText=No matching values found
+advancedsearch.TableTitleCount=Search ({0})
+advancedsearch.tableNoDataText=No search results are currently available
+advancedsearch.linkedto = that is linked to 
+advancedsearch.linkPath = Path between A & B
+advancedsearch.typeA = TypeA
+advancedsearch.entityA = EntityA
+advancedsearch.formattedValueA = ValueA containing match
+advancedsearch.typeB = TypeB
+advancedsearch.entityB = EntityB
+advancedsearch.formattedValueB = ValueB containing match
+
+#~~~ LinkedSearch View ~~~~~~~~~~~~~~~~~~~~~~~~~~
+linkedsearch.ViewTitle=Linked Search Results
+linkedsearch.TableTitle=Linked Search
+linkedsearch.SearchTooltip=Enter text value or a part of it using the following syntax:\nAnchoring: Use ^ to indicate the beginning or $ to indicate the endMatch any character.\nMatch any character: . can be used to represent any character.\nOne-or-more: + can be used to repeat the preceding shortest pattern once or more times.\nZero-or-more: * can be used to match the preceding shortest pattern zero-or-more times.\nZero-or-one: ? makes the preceding shortest pattern optional.\nMin-to-max: {} can be used to specify a minimum and (optionally) a maximum number of times the preceding shortest pattern can repeat.\nGrouping: () can be used to form sub-patterns.\nAlternation: | acts as an OR operator.\nComplement: The shortest pattern that follows a tilde ~ is negated.\nInterval: Numeric ranges, enclosed by angle brackets <>.\nIntersection: & joins two patterns in a way that both of them have to match.\nAny string: @ matches any string in its entirety.
+linkedsearch.NoDataWithSearchText=No matching values found
+linkedsearch.TableTitleCount=Search ({0})
+linkedsearch.tableNoDataText=No search results are currently available
+linkedsearch.linkedto = that which is linked to 
+linkedsearch.linkPath = Path between A & B
+linkedsearch.typeA = TypeA
+linkedsearch.entityA = EntityA
+linkedsearch.typeB = TypeB
+linkedsearch.entityB = EntityB
+linkedsearch.formattedValueB = ValueB containing match
+
+#~~~ Graph View ~~~~~~~~~~~~~~~~~~~~~~~~~~
+graph.ViewTitle=Entity Graph of
+graph.ViewTitleEntitySet=EntitySet {0} Graph
+graph.noDataText=No results are currently available
+graph.backgroundContextMenu = Background Menu
+graph.showHidden = Show Hidden
+graph.selectAll = Select All
+graph.regroupAll = Regroup All
+graph.linkContextMenu = Link Menu
+graph.hideLink = Hide Link
+graph.removeLink = Remove Link
+graph.selectEnds = Select Ends
+graph.nodeContextMenu = Node Menu
+graph.expandAllNode = Expand All
+graph.expandSelectedNode = Expand Selected
+graph.hideNode = Hide Node
+graph.removeNode = Remove Node
+graph.selectLinked = Select Linked
+graph.EntityNodeDetails = Entity Node Details
+graph.GroupNodeDetails = Group Node Details
+graph.NodeGrouping = Node Grouping
+graph.NodeFiltering = Node Filtering
+graph.Filter = Toggle Filtering
+graph.filterTooltip = Toggle filtering on causes all selected filters to be applied
+graph.AddFilter = Add
+graph.DeleteFilter = Delete
+graph.Layout = Layout
+graph.LayoutAlgorithm = Layout Algorithm
+graph.GeomapView = Geomap
+graph.mapMode = Toggle Map Mode
+graph.mapModeTooltip = Selecting Map Mode will position nodes over map. Other layout preferences will be ignored.
+graph.History = History
+graph.groupContextMenu = Group Menu
+graph.expandGroup = Expand Group
+graph.hideGroup = Hide Group
+graph.removeGroup = Remove Group
+graph.expandedGroupContextMenu = Expanded Group Menu
+graph.regroup = Regroup Nodes
