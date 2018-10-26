@@ -6,6 +6,7 @@ public class NavigationProperty {
 	private String label;
 	private String tooltip;
 	private String range;
+	private String subTypeName;
 	private String icon;
 	private EntityType rangeType;
 
@@ -38,6 +39,14 @@ public class NavigationProperty {
 	public String getRange() {
 
 		return range;
+	}
+
+	public String getSubTypeName() {
+
+		return subTypeName;
+	}
+	public void setSubTypeName(String subTypeName) {
+		this.subTypeName = subTypeName;
 	}
 
 	public String getIcon() {

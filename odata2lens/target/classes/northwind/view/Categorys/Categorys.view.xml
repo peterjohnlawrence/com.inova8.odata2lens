@@ -28,21 +28,21 @@
 						<Text text="{i18n>Categorys.description}"/>
 					</Column>
 					<Column demandPopin="true" minScreenWidth="Tablet">
-						<Text text="{i18n>Categorys.isDefinedBy}"/>
+						<Text text="{i18n>Categorys.picture}"/>
 					</Column>
 					<Column demandPopin="true" minScreenWidth="Tablet">
-						<Text text="{i18n>Categorys.picture}"/>
+						<Text text="{i18n>Categorys.seeAlso}"/>
 					</Column>
 				</columns>
 				<items>
 					<ColumnListItem id="template" type="Navigation" press="onPress">
 						<cells>
 							<rdf:TextResource path="dataModel>" entitySet="Category"/>
-  <rdf:TextLink text="{path:'dataModel>categoryName',type:'sap.ui.model.type.String'}" linkText="{i18n>Category.categoryName}"/>
-  <rdf:TextLink text="{path:'dataModel>comment',type:'sap.ui.model.type.String'}" linkText="{i18n>Category.comment}"/>
-  <rdf:TextLink text="{path:'dataModel>description',type:'sap.ui.model.type.String'}" linkText="{i18n>Category.description}"/>
-  <rdf:TextLink text="{path:'dataModel>isDefinedBy',type:'sap.ui.model.type.String'}" linkText="{i18n>Category.isDefinedBy}"/>
-  <rdf:TextLink text="{path:'dataModel>picture',type:'sap.ui.model.type.String'}" linkText="{i18n>Category.picture}"/>
+							<rdf:TextLink text="{path:'dataModel>categoryName',type:'sap.ui.model.type.String'}" linkText="{i18n>Category.categoryName}"/>
+							<rdf:TextLink text="{path:'dataModel>comment',type:'sap.ui.model.type.String'}" linkText="{i18n>Category.comment}"/>
+							<rdf:TextLink text="{path:'dataModel>description',type:'sap.ui.model.type.String'}" linkText="{i18n>Category.description}"/>
+							<rdf:TextLink text="{path:'dataModel>picture',type:'sap.ui.model.type.String'}" linkText="{i18n>Category.picture}"/>
+							<rdf:TextLink text="{path:'dataModel>seeAlso',type:'sap.ui.model.type.String'}" linkText="{i18n>Category.seeAlso}"/>
 						</cells>
 					</ColumnListItem>
 				</items>

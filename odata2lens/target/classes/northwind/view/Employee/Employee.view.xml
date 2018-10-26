@@ -1,47 +1,287 @@
-<mvc:View controllerName="com.inova8.lens.controller.Entity" xmlns="sap.m" xmlns:mvc="sap.ui.core.mvc"
-	xmlns:f="sap.ui.layout.form" xmlns:table="sap.ui.table" xmlns:rdf="com.inova8.lens.control">
-	<Page showHeader="true" id="page" navButtonPress="onNavBack" showNavButton="false" title="{i18n>Employee.Title}"
-		busy="{entityView>/busy}" busyIndicatorDelay="{entityView>/delay}">
+<mvc:View controllerName="com.inova8.lens.controller.Entity360" xmlns="sap.m" xmlns:mvc="sap.ui.core.mvc" xmlns:l="sap.ui.layout"
+	xmlns:f="sap.ui.layout.form" xmlns:table="sap.ui.table" xmlns:rdf="com.inova8.lens.control" xmlns:html="http://www.w3.org/1999/xhtml"
+	xmlns:core="sap.ui.core">
+	<Page showHeader="true" id="page" navButtonPress="onNavBack" showNavButton="false" title="{i18n>Employee.Title}" busy="{entityView>/busy}"
+		busyIndicatorDelay="{entityView>/delay}" >
 		<customHeader>
 			<Toolbar>
 				<ToolbarSpacer/>
 				<Title text="{i18n>Employee.this}"/>
 				<rdf:TextResource path="dataModel>" entitySet="Employee"/>
-				<Title text="{i18n>Employee.Title}" />
+				<Title text="{i18n>Employee.Title}"/>
 				<ToolbarSpacer/>
+				<ToggleButton id="toggleColumns" icon="sap-icon://hide" activeIcon="sap-icon://show" press="onSettingsPressed" visible="true"	>
+					<layoutData>
+						<OverflowToolbarLayoutData priority="NeverOverflow"/>
+					</layoutData>
+				</ToggleButton>
+				
 			</Toolbar>
 		</customHeader>
-		<content>
-			<f:SimpleForm class="editableForm" columnsL="1" columnsM="1" editable="true" emptySpanL="4" emptySpanM="4" 
-				labelSpanL="2" labelSpanM="2" layout="ResponsiveGridLayout" maxContainerCols="2" minWidth="1024" singleContainerFullSize="true">
-				<f:content>
-					<!--<Label text="{i18n>Employee.this}" required="false"/><rdf:TextResource path="dataModel>" entitySet="Employee"/>-->
-					<Label text="{i18n>Employee.birthDate}" required="false"/>   <Text text="{dataModel>birthDate}"/>
-					<Label text="{i18n>Employee.comment}" required="false"/>   <rdf:TextLink text="{path:'dataModel>comment',type:'sap.ui.model.type.String' }" linkText="{i18n>Employee.comment}"/>
-					<Label text="{i18n>Employee.employeeAddress}" required="false"/>   <rdf:TextLink text="{path:'dataModel>employeeAddress',type:'sap.ui.model.type.String' }" linkText="{i18n>Employee.employeeAddress}"/>
-					<Label text="{i18n>Employee.employeeCity}" required="false"/>   <rdf:TextLink text="{path:'dataModel>employeeCity',type:'sap.ui.model.type.String' }" linkText="{i18n>Employee.employeeCity}"/>
-					<Label text="{i18n>Employee.employeeCountry}" required="false"/>   <rdf:TextLink text="{path:'dataModel>employeeCountry',type:'sap.ui.model.type.String' }" linkText="{i18n>Employee.employeeCountry}"/>
-					<Label text="{i18n>Employee.employeeLinkedIn}" required="false"/>   <rdf:TextLink text="{path:'dataModel>employeeLinkedIn',type:'sap.ui.model.type.String' }" linkText="{i18n>Employee.employeeLinkedIn}"/>
-					<Label text="{i18n>Employee.employeePostalCode}" required="false"/>   <rdf:TextLink text="{path:'dataModel>employeePostalCode',type:'sap.ui.model.type.String' }" linkText="{i18n>Employee.employeePostalCode}"/>
-					<Label text="{i18n>Employee.extension}" required="false"/>   <rdf:TextLink text="{path:'dataModel>extension',type:'sap.ui.model.type.String' }" linkText="{i18n>Employee.extension}"/>
-					<Label text="{i18n>Employee.firstName}" required="false"/>   <rdf:TextLink text="{path:'dataModel>firstName',type:'sap.ui.model.type.String' }" linkText="{i18n>Employee.firstName}"/>
-					<Label text="{i18n>Employee.hireDate}" required="false"/>   <Text text="{dataModel>hireDate}"/>
-					<Label text="{i18n>Employee.homePhone}" required="false"/>   <rdf:TextLink text="{path:'dataModel>homePhone',type:'sap.ui.model.type.String' }" linkText="{i18n>Employee.homePhone}"/>
-					<Label text="{i18n>Employee.isDefinedBy}" required="false"/>   <rdf:TextLink text="{path:'dataModel>isDefinedBy',type:'sap.ui.model.type.String' }" linkText="{i18n>Employee.isDefinedBy}"/>
-					<Label text="{i18n>Employee.lastName}" required="false"/>   <rdf:TextLink text="{path:'dataModel>lastName',type:'sap.ui.model.type.String' }" linkText="{i18n>Employee.lastName}"/>
-					<Label text="{i18n>Employee.lat}" required="false"/>   <Text text="{path:'dataModel>lat',type:'sap.ui.model.type.Float' }"/>
-					<Label text="{i18n>Employee.lat_long}" required="false"/>   <rdf:TextLink text="{path:'dataModel>lat_long',type:'sap.ui.model.type.String' }" linkText="{i18n>Employee.lat_long}"/>
-					<Label text="{i18n>Employee.long}" required="false"/>   <Text text="{path:'dataModel>long',type:'sap.ui.model.type.Float' }"/>
-					<Label text="{i18n>Employee.notes}" required="false"/>   <rdf:TextLink text="{path:'dataModel>notes',type:'sap.ui.model.type.String' }" linkText="{i18n>Employee.notes}"/>
-					<Label text="{i18n>Employee.photo}" required="false"/>   <rdf:TextLink text="{path:'dataModel>photo',type:'sap.ui.model.type.String' }" linkText="{i18n>Employee.photo}"/>
-					<Label text="{i18n>Employee.regionDescription}" required="false"/>   <rdf:TextLink text="{path:'dataModel>regionDescription',type:'sap.ui.model.type.String' }" linkText="{i18n>Employee.regionDescription}"/>
-					<Label text="{i18n>Employee.reportsToNotation}" required="false"/>   <rdf:TextLink text="{path:'dataModel>reportsToNotation',type:'sap.ui.model.type.String' }" linkText="{i18n>Employee.reportsToNotation}"/>
-					<Label text="{i18n>Employee.territoryNotation}" required="false"/>   <rdf:TextLink text="{path:'dataModel>territoryNotation',type:'sap.ui.model.type.String' }" linkText="{i18n>Employee.territoryNotation}"/>
-					<Label text="{i18n>Employee.title}" required="false"/>   <rdf:TextLink text="{path:'dataModel>title',type:'sap.ui.model.type.String' }" linkText="{i18n>Employee.title}"/>
-					<Label text="{i18n>Employee.titleOfCourtesy}" required="false"/>   <rdf:TextLink text="{path:'dataModel>titleOfCourtesy',type:'sap.ui.model.type.String' }" linkText="{i18n>Employee.titleOfCourtesy}"/>
-					<Label text="{i18n>Employee.reportsTo}" required="false"/><rdf:TextResource path="dataModel>reportsTo" entitySet="Employee"/>		
-				</f:content>
-			</f:SimpleForm>
-		</content>
+		<Table id="form360" inset="false" fixedLayout="true" class="multicolumnform" updateFinished="hideColumns">
+			<columns>
+				<Column hAlign="Right" width="200px">
+					<Text text=""/>
+				</Column>
+				<Column visible="true">
+				</Column>
+				<Column visible="true">
+					<Text text="ContractEmployee"/>
+				</Column>
+				<Column visible="true">
+					<Text text="ParttimeEmployee"/>
+				</Column>
+			</columns>
+			<items>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>Employee.birthDate}" required="false"/> 
+						<Text text="{dataModel>birthDate}"/>
+						<Text text=""/>
+						<Text text=""/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>Employee.comment}" required="false"/> 
+						<rdf:TextLink text="{path:'dataModel>comment',type:'sap.ui.model.type.String' }" linkText="{i18n>Employee.comment}"/>
+						<Text text=""/>
+						<Text text=""/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>Employee.employeeAddress}" required="false"/> 
+						<rdf:TextLink text="{path:'dataModel>employeeAddress',type:'sap.ui.model.type.String' }" linkText="{i18n>Employee.employeeAddress}"/>
+						<Text text=""/>
+						<Text text=""/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>Employee.employeeCity}" required="false"/> 
+						<rdf:TextLink text="{path:'dataModel>employeeCity',type:'sap.ui.model.type.String' }" linkText="{i18n>Employee.employeeCity}"/>
+						<Text text=""/>
+						<Text text=""/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>Employee.employeeCountry}" required="false"/> 
+						<rdf:TextLink text="{path:'dataModel>employeeCountry',type:'sap.ui.model.type.String' }" linkText="{i18n>Employee.employeeCountry}"/>
+						<Text text=""/>
+						<Text text=""/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>Employee.employeeLinkedIn}" required="false"/> 
+						<rdf:TextLink text="{path:'dataModel>employeeLinkedIn',type:'sap.ui.model.type.String' }" linkText="{i18n>Employee.employeeLinkedIn}"/>
+						<Text text=""/>
+						<Text text=""/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>Employee.employeePostalCode}" required="false"/> 
+						<rdf:TextLink text="{path:'dataModel>employeePostalCode',type:'sap.ui.model.type.String' }" linkText="{i18n>Employee.employeePostalCode}"/>
+						<Text text=""/>
+						<Text text=""/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>Employee.employeeSalary}" required="false"/> 
+						<Text text=""/>
+						<Text text="{path:'dataModel>employeeSalary/contractEmployeeSalary',type:'sap.ui.model.type.Float', formatOptions:{'style':'short','maxFractionDigits':2} }"/>
+						<Text text="{path:'dataModel>employeeSalary/parttimeEmployeeSalary',type:'sap.ui.model.type.Float', formatOptions:{'style':'short','maxFractionDigits':2} }"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>Employee.employer}" required="false"/> 
+						<Text text=""/>
+						<rdf:ListResource path="dataModel>employer/contractEmployer" entitySet="Shipper"/>
+						<rdf:ListResource path="dataModel>employer/parttimeEmployer" entitySet="Supplier"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>Employee.extension}" required="false"/> 
+						<rdf:TextLink text="{path:'dataModel>extension',type:'sap.ui.model.type.String' }" linkText="{i18n>Employee.extension}"/>
+						<Text text=""/>
+						<Text text=""/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>Employee.favorite}" required="false"/> 
+						<Text text=""/>
+						<rdf:TextResource path="dataModel>favorite/contractFavorite" entitySet="Product"/>		
+						<rdf:TextResource path="dataModel>favorite/parttimeFavorite" entitySet="Product"/>		
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>Employee.firstName}" required="false"/> 
+						<rdf:TextLink text="{path:'dataModel>firstName',type:'sap.ui.model.type.String' }" linkText="{i18n>Employee.firstName}"/>
+						<Text text=""/>
+						<Text text=""/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>Employee.hireDate}" required="false"/> 
+						<Text text="{dataModel>hireDate}"/>
+						<Text text=""/>
+						<Text text=""/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>Employee.homePhone}" required="false"/> 
+						<rdf:TextLink text="{path:'dataModel>homePhone',type:'sap.ui.model.type.String' }" linkText="{i18n>Employee.homePhone}"/>
+						<Text text=""/>
+						<Text text=""/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>Employee.lastName}" required="false"/> 
+						<rdf:TextLink text="{path:'dataModel>lastName',type:'sap.ui.model.type.String' }" linkText="{i18n>Employee.lastName}"/>
+						<Text text=""/>
+						<Text text=""/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>Employee.lat}" required="false"/> 
+						<Text text="{path:'dataModel>lat',type:'sap.ui.model.type.Float' }"/>
+						<Text text=""/>
+						<Text text=""/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>Employee.lat_long}" required="false"/> 
+						<rdf:TextLink text="{path:'dataModel>lat_long',type:'sap.ui.model.type.String' }" linkText="{i18n>Employee.lat_long}"/>
+						<Text text=""/>
+						<Text text=""/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>Employee.long}" required="false"/> 
+						<Text text="{path:'dataModel>long',type:'sap.ui.model.type.Float' }"/>
+						<Text text=""/>
+						<Text text=""/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>Employee.notes}" required="false"/> 
+						<rdf:TextLink text="{path:'dataModel>notes',type:'sap.ui.model.type.String' }" linkText="{i18n>Employee.notes}"/>
+						<Text text=""/>
+						<Text text=""/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>Employee.photo}" required="false"/> 
+						<rdf:TextLink text="{path:'dataModel>photo',type:'sap.ui.model.type.String' }" linkText="{i18n>Employee.photo}"/>
+						<Text text=""/>
+						<Text text=""/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>Employee.regionDescription}" required="false"/> 
+						<rdf:TextLink text="{path:'dataModel>regionDescription',type:'sap.ui.model.type.String' }" linkText="{i18n>Employee.regionDescription}"/>
+						<Text text=""/>
+						<Text text=""/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>Employee.reportsToNotation}" required="false"/> 
+						<rdf:TextLink text="{path:'dataModel>reportsToNotation',type:'sap.ui.model.type.String' }" linkText="{i18n>Employee.reportsToNotation}"/>
+						<Text text=""/>
+						<Text text=""/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>Employee.seeAlso}" required="false"/> 
+						<rdf:TextLink text="{path:'dataModel>seeAlso',type:'sap.ui.model.type.String' }" linkText="{i18n>Employee.seeAlso}"/>
+						<Text text=""/>
+						<Text text=""/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>Employee.territoryNotation}" required="false"/> 
+						<rdf:TextLink text="{path:'dataModel>territoryNotation',type:'sap.ui.model.type.String' }" linkText="{i18n>Employee.territoryNotation}"/>
+						<Text text=""/>
+						<Text text=""/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>Employee.title}" required="false"/> 
+						<rdf:TextLink text="{path:'dataModel>title',type:'sap.ui.model.type.String' }" linkText="{i18n>Employee.title}"/>
+						<Text text=""/>
+						<Text text=""/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>Employee.titleOfCourtesy}" required="false"/> 
+						<rdf:TextLink text="{path:'dataModel>titleOfCourtesy',type:'sap.ui.model.type.String' }" linkText="{i18n>Employee.titleOfCourtesy}"/>
+						<Text text=""/>
+						<Text text=""/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>Employee.reportsTo}" required="false"/> 
+						<rdf:TextResource path="dataModel>reportsTo" entitySet="Employee"/>		
+						<Text text=""/>
+						<Text text=""/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>Employee.employeeRegion}" required="false"/> 
+						<rdf:ListResource path="dataModel>employeeRegion" entitySet="Region"/>
+						<Text text=""/>
+						<Text text=""/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>Employee.managesEmployee}" required="false"/> 
+						<rdf:ListResource path="dataModel>managesEmployee" entitySet="Employee"/>
+						<Text text=""/>
+						<Text text=""/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>Employee.managesOrder}" required="false"/> 
+						<rdf:ListResource path="dataModel>managesOrder" entitySet="Order"/>
+						<Text text=""/>
+						<Text text=""/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>Employee.territory}" required="false"/> 
+						<rdf:ListResource path="dataModel>territory" entitySet="Territory"/>
+						<Text text=""/>
+						<Text text=""/>
+					</cells>
+				</ColumnListItem>
+			</items>
+		</Table>
 	</Page>
 </mvc:View>

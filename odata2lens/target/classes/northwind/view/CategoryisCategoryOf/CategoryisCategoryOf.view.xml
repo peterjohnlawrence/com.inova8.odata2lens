@@ -30,9 +30,6 @@
 						<Text text="{i18n>CategoryisCategoryOf.discontinued}"/>
 					</Column>
 					<Column demandPopin="true" minScreenWidth="Tablet">
-						<Text text="{i18n>CategoryisCategoryOf.isDefinedBy}"/>
-					</Column>
-					<Column demandPopin="true" minScreenWidth="Tablet">
 						<Text text="{i18n>CategoryisCategoryOf.productName}"/>
 					</Column>
 					<Column demandPopin="true" minScreenWidth="Tablet">
@@ -43,6 +40,9 @@
 					</Column>
 					<Column demandPopin="true" minScreenWidth="Tablet">
 						<Text text="{i18n>CategoryisCategoryOf.reorderLevel}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>CategoryisCategoryOf.seeAlso}"/>
 					</Column>
 					<Column demandPopin="true" minScreenWidth="Tablet">
 						<Text text="{i18n>CategoryisCategoryOf.supplierNotation}"/>
@@ -58,17 +58,17 @@
 					<ColumnListItem id="template" type="Navigation" press="onPress">
 						<cells>
 							<rdf:TextResource path="dataModel>" entitySet="Product"/>
-  <rdf:TextLink text="{path:'dataModel>categoryNotation',type:'sap.ui.model.type.String' }" linkText="{i18n>Product.categoryNotation}"/>
-  <rdf:TextLink text="{path:'dataModel>comment',type:'sap.ui.model.type.String' }" linkText="{i18n>Product.comment}"/>
-  <Text text="{path:'dataModel>discontinued',type:'sap.ui.model.type.Boolean'}"/>  
-  <rdf:TextLink text="{path:'dataModel>isDefinedBy',type:'sap.ui.model.type.String' }" linkText="{i18n>Product.isDefinedBy}"/>
-  <rdf:TextLink text="{path:'dataModel>productName',type:'sap.ui.model.type.String' }" linkText="{i18n>Product.productName}"/>
-  <Text text="{path:'dataModel>productUnitPrice',type:'sap.ui.model.type.Float' }"/>
-  <rdf:TextLink text="{path:'dataModel>quantityPerUnit',type:'sap.ui.model.type.String' }" linkText="{i18n>Product.quantityPerUnit}"/>
-  <Text text="{path:'dataModel>reorderLevel',type:'sap.ui.model.type.Integer' }"/>
-  <rdf:TextLink text="{path:'dataModel>supplierNotation',type:'sap.ui.model.type.String' }" linkText="{i18n>Product.supplierNotation}"/>
-  <Text text="{path:'dataModel>unitsInStock',type:'sap.ui.model.type.Integer' }"/>
-  <Text text="{path:'dataModel>unitsOnOrder',type:'sap.ui.model.type.Integer' }"/>
+							<rdf:TextLink text="{path:'dataModel>categoryNotation',type:'sap.ui.model.type.String'}" linkText="{i18n>Product.categoryNotation}"/>
+							<rdf:TextLink text="{path:'dataModel>comment',type:'sap.ui.model.type.String'}" linkText="{i18n>Product.comment}"/>
+								<Text text="{path:'dataModel>discontinued',type:'sap.ui.model.type.Boolean'}"/>  
+							<rdf:TextLink text="{path:'dataModel>productName',type:'sap.ui.model.type.String'}" linkText="{i18n>Product.productName}"/>
+							<Text text="{path:'dataModel>productUnitPrice',type:'sap.ui.model.type.Float', formatOptions:{'style':'short','maxFractionDigits':2} }"/>
+							<rdf:TextLink text="{path:'dataModel>quantityPerUnit',type:'sap.ui.model.type.String'}" linkText="{i18n>Product.quantityPerUnit}"/>
+							<Text text="{path:'dataModel>reorderLevel',type:'sap.ui.model.type.Integer' }"/>
+							<rdf:TextLink text="{path:'dataModel>seeAlso',type:'sap.ui.model.type.String'}" linkText="{i18n>Product.seeAlso}"/>
+							<rdf:TextLink text="{path:'dataModel>supplierNotation',type:'sap.ui.model.type.String'}" linkText="{i18n>Product.supplierNotation}"/>
+							<Text text="{path:'dataModel>unitsInStock',type:'sap.ui.model.type.Integer' }"/>
+							<Text text="{path:'dataModel>unitsOnOrder',type:'sap.ui.model.type.Integer' }"/>
 						</cells>
 					</ColumnListItem>
 				</items>

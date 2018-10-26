@@ -1,27 +1,69 @@
-<mvc:View controllerName="com.inova8.lens.controller.Entity" xmlns="sap.m" xmlns:mvc="sap.ui.core.mvc"
-	xmlns:f="sap.ui.layout.form" xmlns:table="sap.ui.table" xmlns:rdf="com.inova8.lens.control">
-	<Page showHeader="true" id="page" navButtonPress="onNavBack" showNavButton="false" title="{i18n>Territory.Title}"
-		busy="{entityView>/busy}" busyIndicatorDelay="{entityView>/delay}">
+<mvc:View controllerName="com.inova8.lens.controller.Entity360" xmlns="sap.m" xmlns:mvc="sap.ui.core.mvc" xmlns:l="sap.ui.layout"
+	xmlns:f="sap.ui.layout.form" xmlns:table="sap.ui.table" xmlns:rdf="com.inova8.lens.control" xmlns:html="http://www.w3.org/1999/xhtml"
+	xmlns:core="sap.ui.core">
+	<Page showHeader="true" id="page" navButtonPress="onNavBack" showNavButton="false" title="{i18n>Territory.Title}" busy="{entityView>/busy}"
+		busyIndicatorDelay="{entityView>/delay}" >
 		<customHeader>
 			<Toolbar>
 				<ToolbarSpacer/>
 				<Title text="{i18n>Territory.this}"/>
 				<rdf:TextResource path="dataModel>" entitySet="Territory"/>
-				<Title text="{i18n>Territory.Title}" />
+				<Title text="{i18n>Territory.Title}"/>
 				<ToolbarSpacer/>
+				<ToggleButton id="toggleColumns" icon="sap-icon://hide" activeIcon="sap-icon://show" press="onSettingsPressed" visible="false"	>
+					<layoutData>
+						<OverflowToolbarLayoutData priority="NeverOverflow"/>
+					</layoutData>
+				</ToggleButton>
+				
 			</Toolbar>
 		</customHeader>
-		<content>
-			<f:SimpleForm class="editableForm" columnsL="1" columnsM="1" editable="true" emptySpanL="4" emptySpanM="4" 
-				labelSpanL="2" labelSpanM="2" layout="ResponsiveGridLayout" maxContainerCols="2" minWidth="1024" singleContainerFullSize="true">
-				<f:content>
-					<!--<Label text="{i18n>Territory.this}" required="false"/><rdf:TextResource path="dataModel>" entitySet="Territory"/>-->
-					<Label text="{i18n>Territory.comment}" required="false"/>   <rdf:TextLink text="{path:'dataModel>comment',type:'sap.ui.model.type.String' }" linkText="{i18n>Territory.comment}"/>
-					<Label text="{i18n>Territory.isDefinedBy}" required="false"/>   <rdf:TextLink text="{path:'dataModel>isDefinedBy',type:'sap.ui.model.type.String' }" linkText="{i18n>Territory.isDefinedBy}"/>
-					<Label text="{i18n>Territory.regionNotation}" required="false"/>   <rdf:TextLink text="{path:'dataModel>regionNotation',type:'sap.ui.model.type.String' }" linkText="{i18n>Territory.regionNotation}"/>
-					<Label text="{i18n>Territory.territoryDescription}" required="false"/>   <rdf:TextLink text="{path:'dataModel>territoryDescription',type:'sap.ui.model.type.String' }" linkText="{i18n>Territory.territoryDescription}"/>
-				</f:content>
-			</f:SimpleForm>
-		</content>
+		<Table id="form360" inset="false" fixedLayout="true" class="multicolumnform" updateFinished="hideColumns">
+			<columns>
+				<Column hAlign="Right" width="200px">
+					<Text text=""/>
+				</Column>
+				<Column visible="true">
+				</Column>
+			</columns>
+			<items>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>Territory.comment}" required="false"/> 
+						<rdf:TextLink text="{path:'dataModel>comment',type:'sap.ui.model.type.String' }" linkText="{i18n>Territory.comment}"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>Territory.regionNotation}" required="false"/> 
+						<rdf:TextLink text="{path:'dataModel>regionNotation',type:'sap.ui.model.type.String' }" linkText="{i18n>Territory.regionNotation}"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>Territory.seeAlso}" required="false"/> 
+						<rdf:TextLink text="{path:'dataModel>seeAlso',type:'sap.ui.model.type.String' }" linkText="{i18n>Territory.seeAlso}"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>Territory.territoryDescription}" required="false"/> 
+						<rdf:TextLink text="{path:'dataModel>territoryDescription',type:'sap.ui.model.type.String' }" linkText="{i18n>Territory.territoryDescription}"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>Territory.territoryOf}" required="false"/> 
+						<rdf:ListResource path="dataModel>territoryOf" entitySet="Employee"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>Territory.territoryRegion}" required="false"/> 
+						<rdf:ListResource path="dataModel>territoryRegion" entitySet="Region"/>
+					</cells>
+				</ColumnListItem>
+			</items>
+		</Table>
 	</Page>
 </mvc:View>

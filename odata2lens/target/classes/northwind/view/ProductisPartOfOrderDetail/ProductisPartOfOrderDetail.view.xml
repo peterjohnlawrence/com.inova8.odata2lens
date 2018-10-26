@@ -27,9 +27,6 @@
 						<Text text="{i18n>ProductisPartOfOrderDetail.discount}"/>
 					</Column>
 					<Column demandPopin="true" minScreenWidth="Tablet">
-						<Text text="{i18n>ProductisPartOfOrderDetail.isDefinedBy}"/>
-					</Column>
-					<Column demandPopin="true" minScreenWidth="Tablet">
 						<Text text="{i18n>ProductisPartOfOrderDetail.orderDetailUnitPrice}"/>
 					</Column>
 					<Column demandPopin="true" minScreenWidth="Tablet">
@@ -41,18 +38,21 @@
 					<Column demandPopin="true" minScreenWidth="Tablet">
 						<Text text="{i18n>ProductisPartOfOrderDetail.quantity}"/>
 					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>ProductisPartOfOrderDetail.seeAlso}"/>
+					</Column>
 				</columns>
 				<items>
 					<ColumnListItem id="template" type="Navigation" press="onPress">
 						<cells>
 							<rdf:TextResource path="dataModel>" entitySet="OrderDetail"/>
-  <rdf:TextLink text="{path:'dataModel>comment',type:'sap.ui.model.type.String' }" linkText="{i18n>OrderDetail.comment}"/>
-  <Text text="{path:'dataModel>discount',type:'sap.ui.model.type.Float' }"/>
-  <rdf:TextLink text="{path:'dataModel>isDefinedBy',type:'sap.ui.model.type.String' }" linkText="{i18n>OrderDetail.isDefinedBy}"/>
-  <Text text="{path:'dataModel>orderDetailUnitPrice',type:'sap.ui.model.type.Float' }"/>
-  <rdf:TextLink text="{path:'dataModel>orderNotation',type:'sap.ui.model.type.String' }" linkText="{i18n>OrderDetail.orderNotation}"/>
-  <rdf:TextLink text="{path:'dataModel>productNotation',type:'sap.ui.model.type.String' }" linkText="{i18n>OrderDetail.productNotation}"/>
-  <Text text="{path:'dataModel>quantity',type:'sap.ui.model.type.Integer' }"/>
+							<rdf:TextLink text="{path:'dataModel>comment',type:'sap.ui.model.type.String'}" linkText="{i18n>OrderDetail.comment}"/>
+							<Text text="{path:'dataModel>discount',type:'sap.ui.model.type.Float', formatOptions:{'style':'short','maxFractionDigits':2} }"/>
+							<Text text="{path:'dataModel>orderDetailUnitPrice',type:'sap.ui.model.type.Float', formatOptions:{'style':'short','maxFractionDigits':2} }"/>
+							<rdf:TextLink text="{path:'dataModel>orderNotation',type:'sap.ui.model.type.String'}" linkText="{i18n>OrderDetail.orderNotation}"/>
+							<rdf:TextLink text="{path:'dataModel>productNotation',type:'sap.ui.model.type.String'}" linkText="{i18n>OrderDetail.productNotation}"/>
+							<Text text="{path:'dataModel>quantity',type:'sap.ui.model.type.Integer' }"/>
+							<rdf:TextLink text="{path:'dataModel>seeAlso',type:'sap.ui.model.type.String'}" linkText="{i18n>OrderDetail.seeAlso}"/>
 						</cells>
 					</ColumnListItem>
 				</items>

@@ -135,6 +135,13 @@
 			]
 		}		
 		, {
+			"pattern": "ContractEmployeecontractEmployer/{objectId}:/navigation::?queryOptions:",
+			"name": "ContractEmployeecontractEmployer",
+			"target": [
+				"ContractEmployeecontractEmployer"
+			]
+		}		
+		, {
 			"pattern": "ContractEmployeeemployeeRegion/{objectId}:/navigation::?queryOptions:",
 			"name": "ContractEmployeeemployeeRegion",
 			"target": [
@@ -352,6 +359,13 @@
 			]
 		}		
 		, {
+			"pattern": "ParttimeEmployeeparttimeEmployer/{objectId}:/navigation::?queryOptions:",
+			"name": "ParttimeEmployeeparttimeEmployer",
+			"target": [
+				"ParttimeEmployeeparttimeEmployer"
+			]
+		}		
+		, {
 			"pattern": "ParttimeEmployeeterritory/{objectId}:/navigation::?queryOptions:",
 			"name": "ParttimeEmployeeterritory",
 			"target": [
@@ -502,7 +516,7 @@
 		"targets": {
 			"home": {
 				"viewName": "view/Home",
-				"viewPath": "NHS",
+				"viewPath": "northwind",
 				"viewId": "home",
 				"viewLevel": 1
 			},
@@ -601,6 +615,12 @@
 				"viewName": "view/ContractEmployeecontractCustomer/ContractEmployeecontractCustomer",
 				"viewPath":"northwind",
 				"viewId": "ContractEmployeecontractCustomer",
+				"viewLevel": 1
+			}	
+			, 	"ContractEmployeecontractEmployer": {
+				"viewName": "view/ContractEmployeecontractEmployer/ContractEmployeecontractEmployer",
+				"viewPath":"northwind",
+				"viewId": "ContractEmployeecontractEmployer",
 				"viewLevel": 1
 			}	
 			, 	"ContractEmployeeemployeeRegion": {
@@ -787,6 +807,12 @@
 				"viewName": "view/ParttimeEmployeemanagesOrder/ParttimeEmployeemanagesOrder",
 				"viewPath":"northwind",
 				"viewId": "ParttimeEmployeemanagesOrder",
+				"viewLevel": 1
+			}	
+			, 	"ParttimeEmployeeparttimeEmployer": {
+				"viewName": "view/ParttimeEmployeeparttimeEmployer/ParttimeEmployeeparttimeEmployer",
+				"viewPath":"northwind",
+				"viewId": "ParttimeEmployeeparttimeEmployer",
 				"viewLevel": 1
 			}	
 			, 	"ParttimeEmployeeterritory": {

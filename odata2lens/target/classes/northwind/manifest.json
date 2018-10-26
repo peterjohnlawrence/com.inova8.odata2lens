@@ -11,7 +11,7 @@
 		},
 		"dataSources": {
 			"dataService": {
-				"serviceUrl": "./../odata2sparql/northwind/",
+				"serviceUrl": "./../../odata2sparql/northwind/",
 				"odataVersion": "4.0",
 				"autoExpandSelect": true,
 				"operationMode": "Server",
@@ -24,10 +24,6 @@
 				"operationMode": "Server",
 				"synchronizationMode": "None"
 			}
-		},
-		"sourceTemplate": {
-			"id": "sap.ui.ui5-template-plugin.1worklist",
-			"version": "1.38.3"
 		}
 	},
 	"sap.ui": {
@@ -114,10 +110,6 @@
 			"resourceCache": {
 				"type": "sap.ui.model.json.JSONModel",
 				"uri": "model/resourceCache.json"
-			},
-			"tenancy": {
-				"type": "sap.ui.model.json.JSONModel",
-				"uri": "model/tenancy.json"
 			}
 		}
 	}

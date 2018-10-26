@@ -38,11 +38,11 @@
 					<ColumnListItem id="template" type="Navigation" press="onPress">
 						<cells>
 							<rdf:TextResource path="dataModel>" entitySet="Customer_Order"/>
-  <rdf:TextLink text="{path:'dataModel>customer',type:'sap.ui.model.type.String'}" linkText="{i18n>Customer_Order.customer}"/>
-  <rdf:TextLink text="{path:'dataModel>customer_Order_customerCity',type:'sap.ui.model.type.String'}" linkText="{i18n>Customer_Order.customer_Order_customerCity}"/>
-  <rdf:TextLink text="{path:'dataModel>customer_Order_customerCompanyName',type:'sap.ui.model.type.String'}" linkText="{i18n>Customer_Order.customer_Order_customerCompanyName}"/>
-  <rdf:TextLink text="{path:'dataModel>customer_Order_shipCity',type:'sap.ui.model.type.String'}" linkText="{i18n>Customer_Order.customer_Order_shipCity}"/>
-  <rdf:TextLink text="{path:'dataModel>order',type:'sap.ui.model.type.String'}" linkText="{i18n>Customer_Order.order}"/>
+							<rdf:TextLink text="{path:'dataModel>customer',type:'sap.ui.model.type.String'}" linkText="{i18n>Customer_Order.customer}"/>
+							<rdf:TextLink text="{path:'dataModel>customer_Order_customerCity',type:'sap.ui.model.type.String'}" linkText="{i18n>Customer_Order.customer_Order_customerCity}"/>
+							<rdf:TextLink text="{path:'dataModel>customer_Order_customerCompanyName',type:'sap.ui.model.type.String'}" linkText="{i18n>Customer_Order.customer_Order_customerCompanyName}"/>
+							<rdf:TextLink text="{path:'dataModel>customer_Order_shipCity',type:'sap.ui.model.type.String'}" linkText="{i18n>Customer_Order.customer_Order_shipCity}"/>
+							<rdf:TextLink text="{path:'dataModel>order',type:'sap.ui.model.type.String'}" linkText="{i18n>Customer_Order.order}"/>
 						</cells>
 					</ColumnListItem>
 				</items>

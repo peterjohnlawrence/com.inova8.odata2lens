@@ -1,28 +1,63 @@
-<mvc:View controllerName="com.inova8.lens.controller.Entity" xmlns="sap.m" xmlns:mvc="sap.ui.core.mvc"
-	xmlns:f="sap.ui.layout.form" xmlns:table="sap.ui.table" xmlns:rdf="com.inova8.lens.control">
-	<Page showHeader="true" id="page" navButtonPress="onNavBack" showNavButton="false" title="{i18n>OrderSummary.Title}"
-		busy="{entityView>/busy}" busyIndicatorDelay="{entityView>/delay}">
+<mvc:View controllerName="com.inova8.lens.controller.Entity360" xmlns="sap.m" xmlns:mvc="sap.ui.core.mvc" xmlns:l="sap.ui.layout"
+	xmlns:f="sap.ui.layout.form" xmlns:table="sap.ui.table" xmlns:rdf="com.inova8.lens.control" xmlns:html="http://www.w3.org/1999/xhtml"
+	xmlns:core="sap.ui.core">
+	<Page showHeader="true" id="page" navButtonPress="onNavBack" showNavButton="false" title="{i18n>OrderSummary.Title}" busy="{entityView>/busy}"
+		busyIndicatorDelay="{entityView>/delay}" >
 		<customHeader>
 			<Toolbar>
 				<ToolbarSpacer/>
 				<Title text="{i18n>OrderSummary.this}"/>
 				<rdf:TextResource path="dataModel>" entitySet="OrderSummary"/>
-				<Title text="{i18n>OrderSummary.Title}" />
+				<Title text="{i18n>OrderSummary.Title}"/>
 				<ToolbarSpacer/>
+				<ToggleButton id="toggleColumns" icon="sap-icon://hide" activeIcon="sap-icon://show" press="onSettingsPressed" visible="false"	>
+					<layoutData>
+						<OverflowToolbarLayoutData priority="NeverOverflow"/>
+					</layoutData>
+				</ToggleButton>
+				
 			</Toolbar>
 		</customHeader>
-		<content>
-			<f:SimpleForm class="editableForm" columnsL="1" columnsM="1" editable="true" emptySpanL="4" emptySpanM="4" 
-				labelSpanL="2" labelSpanM="2" layout="ResponsiveGridLayout" maxContainerCols="2" minWidth="1024" singleContainerFullSize="true">
-				<f:content>
-					<!--<Label text="{i18n>OrderSummary.this}" required="false"/><rdf:TextResource path="dataModel>" entitySet="OrderSummary"/>-->
-					<Label text="{i18n>OrderSummary.order}" required="false"/>   <rdf:TextLink text="{path:'dataModel>order',type:'sap.ui.model.type.String' }" linkText="{i18n>OrderSummary.order}"/>
-					<Label text="{i18n>OrderSummary.orderSummary_Value}" required="false"/>   <Text text="{path:'dataModel>orderSummary_Value',type:'sap.ui.model.type.Float' }"/>
-					<Label text="{i18n>OrderSummary.prod}" required="false"/>   <rdf:TextLink text="{path:'dataModel>prod',type:'sap.ui.model.type.String' }" linkText="{i18n>OrderSummary.prod}"/>
-					<Label text="{i18n>OrderSummary.orderSummary_order}" required="false"/><rdf:TextResource path="dataModel>orderSummary_order" entitySet="Order"/>		
-					<Label text="{i18n>OrderSummary.orderSummary_product}" required="false"/><rdf:TextResource path="dataModel>orderSummary_product" entitySet="Product"/>		
-				</f:content>
-			</f:SimpleForm>
-		</content>
+		<Table id="form360" inset="false" fixedLayout="true" class="multicolumnform" updateFinished="hideColumns">
+			<columns>
+				<Column hAlign="Right" width="200px">
+					<Text text=""/>
+				</Column>
+				<Column visible="true">
+				</Column>
+			</columns>
+			<items>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>OrderSummary.order}" required="false"/> 
+						<rdf:TextLink text="{path:'dataModel>order',type:'sap.ui.model.type.String' }" linkText="{i18n>OrderSummary.order}"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>OrderSummary.orderSummary_Value}" required="false"/> 
+						<Text text="{path:'dataModel>orderSummary_Value',type:'sap.ui.model.type.Float' }"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>OrderSummary.prod}" required="false"/> 
+						<rdf:TextLink text="{path:'dataModel>prod',type:'sap.ui.model.type.String' }" linkText="{i18n>OrderSummary.prod}"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>OrderSummary.orderSummary_order}" required="false"/> 
+						<rdf:TextResource path="dataModel>orderSummary_order" entitySet="Order"/>		
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>OrderSummary.orderSummary_product}" required="false"/> 
+						<rdf:TextResource path="dataModel>orderSummary_product" entitySet="Product"/>		
+					</cells>
+				</ColumnListItem>
+			</items>
+		</Table>
 	</Page>
 </mvc:View>

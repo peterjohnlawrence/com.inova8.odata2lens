@@ -11,6 +11,7 @@ public class EntityNavigationSet {
 	private String icon;
 	private String range;
 	private EntityType rangeType;
+	private String subTypeName;
 
 	public EntityNavigationSet(String name, String target, String label, String tooltip, String targetEntityType,
 			String range, String icon) {
@@ -66,6 +67,15 @@ public class EntityNavigationSet {
 	public void setRangeType(EntityType entityType) {
 		this.rangeType = entityType;
 
+	}
+
+	public void setSubTypeName(String subTypeName) {
+		this.subTypeName = subTypeName;
+		
+	}
+
+	public String getSubTypeName() {
+		return subTypeName;
 	}
 
 }

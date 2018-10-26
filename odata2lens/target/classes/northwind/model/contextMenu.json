@@ -119,10 +119,10 @@
 			, {
 				"type":"navigationSet",
 				"key": "isCategoryOf",
-				"text": "is category of",
+				"text": "Show Categorys Product",
 				"icon": "sap-icon://northwind/parttimeEmployee",
 				"target": "CategoryisCategoryOf",
-				"tooltip": "is category of",
+				"tooltip": "Show Categorys Product",
 				"visible": true 			}
 			]
 		}
@@ -141,10 +141,10 @@
 				}, {
 					"type":"navigationSet",
 					"key": "isCategoryOf",
-					"text": "is category of",
+					"text": "Show Categorys Product",
 					"icon": "sap-icon://northwind/parttimeEmployee",
 					"target": "CategoryisCategoryOf",
-					"tooltip": "is category of",
+					"tooltip": "Show Categorys Product",
 					"visible": true
 				}]
 			}
@@ -153,9 +153,9 @@
 	,
 	"ContractEmployee": {
 		"key": "ContractEmployee",
-		"text": "Contract employees",
+		"text": "ContractEmployees",
 		"target": "ContractEmployees",
-		"tooltip": "Show all Contract employees",
+		"tooltip": "Show all ContractEmployees",
 		"image": "./images/northwind/contractEmployee",
 		"icon": "sap-icon://northwind/contractEmployee",
 		"visible":true,
@@ -164,7 +164,7 @@
 		    "key": "graph",
 			"text": "Graph View",
 			"target": "graph",
-			"tooltip": "Contract employees Graph",
+			"tooltip": "ContractEmployees Graph",
 			"visible":true,
 			"parameters": {
 				"objectId": "ContractEmployee",
@@ -175,26 +175,17 @@
 		}, {
 			"type":"entitySet",
 			"key": "ContractEmployees",
-			"text": "Contract employees",
+			"text": "ContractEmployees",
 			"target": "ContractEmployees",
-			"tooltip": "Show all Contract employees",
+			"tooltip": "Show all ContractEmployees",
 			"visible":true
 		}, {
 			"type":"entitySet",
 			"key": "DashBoard",
 			"text": "DashBoard",
 			"target": "ContractEmployeesDashBoard",
-			"tooltip": "Show Contract employees DashBoard",
+			"tooltip": "Show ContractEmployees DashBoard",
 			"visible":true
-		}
-		,{
-			"type":"menuNavigation",
-			"key": "Employee",
-			"text": "▲ Employees",
-			"icon": "$parentEntitySet.icon",
-			"target": "Employee",
-			"tooltip": "Go up to Employees",
-			"visible": true
 		}
 		],
 		"entity": {
@@ -227,50 +218,69 @@
 			, {
 				"type":"navigationSet",
 				"key": "contractCustomer",
-				"text": "contract customer",
+				"text": "Show ContractEmployees Customer",
 				"icon": "sap-icon://northwind/customer",
 				"target": "ContractEmployeecontractCustomer",
-				"tooltip": "contract customer",
+				"tooltip": "Show ContractEmployees Customer",
+				"visible": true 			}
+			, {
+				"type":"navigationSet",
+				"key": "contractEmployer",
+				"text": "Show ContractEmployees Shipper",
+				"icon": "sap-icon://northwind/shipper",
+				"target": "ContractEmployeecontractEmployer",
+				"tooltip": "Show ContractEmployees Shipper",
 				"visible": true 			}
 			, {
 				"type":"navigationSet",
 				"key": "employeeRegion",
-				"text": "supports region",
+				"text": "Show ContractEmployees Region",
 				"icon": "sap-icon://northwind/region",
 				"target": "ContractEmployeeemployeeRegion",
-				"tooltip": "supports region",
+				"tooltip": "Show ContractEmployees Region",
 				"visible": true 			}
 			, {
 				"type":"navigationSet",
 				"key": "managesEmployee",
-				"text": "manages employee",
+				"text": "Show ContractEmployees Employee",
 				"icon": "sap-icon://northwind/employee",
 				"target": "ContractEmployeemanagesEmployee",
-				"tooltip": "manages employee",
+				"tooltip": "Show ContractEmployees Employee",
 				"visible": true 			}
 			, {
 				"type":"navigationSet",
 				"key": "managesOrder",
-				"text": "manages order",
+				"text": "Show ContractEmployees Order",
 				"icon": "sap-icon://northwind/order",
 				"target": "ContractEmployeemanagesOrder",
-				"tooltip": "manages order",
+				"tooltip": "Show ContractEmployees Order",
 				"visible": true 			}
 			, {
 				"type":"navigationSet",
 				"key": "territory",
-				"text": "operates within territory",
+				"text": "Show ContractEmployees Territory",
 				"icon": "sap-icon://northwind/territory",
 				"target": "ContractEmployeeterritory",
-				"tooltip": "operates within territory",
+				"tooltip": "Show ContractEmployees Territory",
+				"visible": true 			}
+			, {				
+				"type":"navigationProperty",
+				"key": "contractFavorite",
+				"text": "contractFavorite",
+				"icon": "sap-icon://northwind/parttimeEmployee",
+				"target": "Product",
+				"tooltip": "Show contractFavorite",
+				"parameters": {
+					"navigation": "contractFavorite"
+				},
 				"visible": true 			}
 			, {				
 				"type":"navigationProperty",
 				"key": "reportsTo",
-				"text": "reports to employee",
+				"text": "reportsTo",
 				"icon": "sap-icon://northwind/employee",
 				"target": "Employee",
-				"tooltip": "reports to employee",
+				"tooltip": "Show reportsTo",
 				"parameters": {
 					"navigation": "reportsTo"
 				},
@@ -292,10 +302,32 @@
 				}, {
 					"type":"navigationSet",
 					"key": "contractCustomer",
-					"text": "contract customer",
+					"text": "Show ContractEmployees Customer",
 					"icon": "sap-icon://northwind/customer",
 					"target": "ContractEmployeecontractCustomer",
-					"tooltip": "contract customer",
+					"tooltip": "Show ContractEmployees Customer",
+					"visible": true
+				}]
+			}
+		,
+			"contractEmployer": {
+				"target": "ContractEmployeecontractEmployer",
+				"icon": "sap-icon://northwind/contractEmployee",
+				"menu": [{
+					"type":"navigationSet",
+					"key": "graph",
+					"text": "Graph View",
+					"icon": "sap-icon://overview-chart",
+					"target": "navigationSetGraph",
+					"tooltip": "contractEmployer Graph",
+					"visible": true
+				}, {
+					"type":"navigationSet",
+					"key": "contractEmployer",
+					"text": "Show ContractEmployees Shipper",
+					"icon": "sap-icon://northwind/shipper",
+					"target": "ContractEmployeecontractEmployer",
+					"tooltip": "Show ContractEmployees Shipper",
 					"visible": true
 				}]
 			}
@@ -314,10 +346,10 @@
 				}, {
 					"type":"navigationSet",
 					"key": "employeeRegion",
-					"text": "supports region",
+					"text": "Show ContractEmployees Region",
 					"icon": "sap-icon://northwind/region",
 					"target": "ContractEmployeeemployeeRegion",
-					"tooltip": "supports region",
+					"tooltip": "Show ContractEmployees Region",
 					"visible": true
 				}]
 			}
@@ -336,10 +368,10 @@
 				}, {
 					"type":"navigationSet",
 					"key": "managesEmployee",
-					"text": "manages employee",
+					"text": "Show ContractEmployees Employee",
 					"icon": "sap-icon://northwind/employee",
 					"target": "ContractEmployeemanagesEmployee",
-					"tooltip": "manages employee",
+					"tooltip": "Show ContractEmployees Employee",
 					"visible": true
 				}]
 			}
@@ -358,10 +390,10 @@
 				}, {
 					"type":"navigationSet",
 					"key": "managesOrder",
-					"text": "manages order",
+					"text": "Show ContractEmployees Order",
 					"icon": "sap-icon://northwind/order",
 					"target": "ContractEmployeemanagesOrder",
-					"tooltip": "manages order",
+					"tooltip": "Show ContractEmployees Order",
 					"visible": true
 				}]
 			}
@@ -380,10 +412,10 @@
 				}, {
 					"type":"navigationSet",
 					"key": "territory",
-					"text": "operates within territory",
+					"text": "Show ContractEmployees Territory",
 					"icon": "sap-icon://northwind/territory",
 					"target": "ContractEmployeeterritory",
-					"tooltip": "operates within territory",
+					"tooltip": "Show ContractEmployees Territory",
 					"visible": true
 				}]
 			}
@@ -457,26 +489,26 @@
 			, {
 				"type":"navigationSet",
 				"key": "customerRegion",
-				"text": "is part of region",
+				"text": "Show Customers Region",
 				"icon": "sap-icon://northwind/region",
 				"target": "CustomercustomerRegion",
-				"tooltip": "is part of region",
+				"tooltip": "Show Customers Region",
 				"visible": true 			}
 			, {
 				"type":"navigationSet",
 				"key": "customer_customer_Order",
-				"text": "is referenced in customer_order",
+				"text": "Show Customers Customer_Order",
 				"icon": "sap-icon://northwind/Customer_Order",
 				"target": "Customercustomer_customer_Order",
-				"tooltip": "is referenced in customer_order",
+				"tooltip": "Show Customers Customer_Order",
 				"visible": true 			}
 			, {
 				"type":"navigationSet",
 				"key": "hasPlacedOrder",
-				"text": "has placed Order",
+				"text": "Show Customers Order",
 				"icon": "sap-icon://northwind/order",
 				"target": "CustomerhasPlacedOrder",
-				"tooltip": "has placed Order",
+				"tooltip": "Show Customers Order",
 				"visible": true 			}
 			]
 		}
@@ -495,10 +527,10 @@
 				}, {
 					"type":"navigationSet",
 					"key": "customerRegion",
-					"text": "is part of region",
+					"text": "Show Customers Region",
 					"icon": "sap-icon://northwind/region",
 					"target": "CustomercustomerRegion",
-					"tooltip": "is part of region",
+					"tooltip": "Show Customers Region",
 					"visible": true
 				}]
 			}
@@ -517,10 +549,10 @@
 				}, {
 					"type":"navigationSet",
 					"key": "customer_customer_Order",
-					"text": "is referenced in customer_order",
+					"text": "Show Customers Customer_Order",
 					"icon": "sap-icon://northwind/Customer_Order",
 					"target": "Customercustomer_customer_Order",
-					"tooltip": "is referenced in customer_order",
+					"tooltip": "Show Customers Customer_Order",
 					"visible": true
 				}]
 			}
@@ -539,10 +571,10 @@
 				}, {
 					"type":"navigationSet",
 					"key": "hasPlacedOrder",
-					"text": "has placed Order",
+					"text": "Show Customers Order",
 					"icon": "sap-icon://northwind/order",
 					"target": "CustomerhasPlacedOrder",
-					"tooltip": "has placed Order",
+					"tooltip": "Show Customers Order",
 					"visible": true
 				}]
 			}
@@ -619,7 +651,7 @@
 				"text": "customer_Order_customer",
 				"icon": "sap-icon://northwind/customer",
 				"target": "Customer",
-				"tooltip": "customer_Order_customer",
+				"tooltip": "Show customer_Order_customer",
 				"parameters": {
 					"navigation": "customer_Order_customer"
 				},
@@ -630,7 +662,7 @@
 				"text": "customer_Order_order",
 				"icon": "sap-icon://northwind/order",
 				"target": "Order",
-				"tooltip": "customer_Order_order",
+				"tooltip": "Show customer_Order_order",
 				"parameters": {
 					"navigation": "customer_Order_order"
 				},
@@ -677,24 +709,6 @@
 			"tooltip": "Show Employees DashBoard",
 			"visible":true
 		}
-		,{
-			"type":"menuNavigation",
-			"key": "ParttimeEmployee",
-			"text": "▼ Parttime employees",
-			"icon": "$childEntitySet.icon",
-			"target": "ParttimeEmployee",
-			"tooltip": "Go down to Parttime employees",
-			"visible": true
-		}
-		,{
-			"type":"menuNavigation",
-			"key": "ContractEmployee",
-			"text": "▼ Contract employees",
-			"icon": "$childEntitySet.icon",
-			"target": "ContractEmployee",
-			"tooltip": "Go down to Contract employees",
-			"visible": true
-		}
 		],
 		"entity": {
 			"target": "Employee",
@@ -726,42 +740,42 @@
 			, {
 				"type":"navigationSet",
 				"key": "employeeRegion",
-				"text": "supports region",
+				"text": "Show Employees Region",
 				"icon": "sap-icon://northwind/region",
 				"target": "EmployeeemployeeRegion",
-				"tooltip": "supports region",
+				"tooltip": "Show Employees Region",
 				"visible": true 			}
 			, {
 				"type":"navigationSet",
 				"key": "managesEmployee",
-				"text": "manages employee",
+				"text": "Show Employees Employee",
 				"icon": "sap-icon://northwind/employee",
 				"target": "EmployeemanagesEmployee",
-				"tooltip": "manages employee",
+				"tooltip": "Show Employees Employee",
 				"visible": true 			}
 			, {
 				"type":"navigationSet",
 				"key": "managesOrder",
-				"text": "manages order",
+				"text": "Show Employees Order",
 				"icon": "sap-icon://northwind/order",
 				"target": "EmployeemanagesOrder",
-				"tooltip": "manages order",
+				"tooltip": "Show Employees Order",
 				"visible": true 			}
 			, {
 				"type":"navigationSet",
 				"key": "territory",
-				"text": "operates within territory",
+				"text": "Show Employees Territory",
 				"icon": "sap-icon://northwind/territory",
 				"target": "Employeeterritory",
-				"tooltip": "operates within territory",
+				"tooltip": "Show Employees Territory",
 				"visible": true 			}
 			, {				
 				"type":"navigationProperty",
 				"key": "reportsTo",
-				"text": "reports to employee",
+				"text": "reportsTo",
 				"icon": "sap-icon://northwind/employee",
 				"target": "Employee",
-				"tooltip": "reports to employee",
+				"tooltip": "Show reportsTo",
 				"parameters": {
 					"navigation": "reportsTo"
 				},
@@ -783,10 +797,10 @@
 				}, {
 					"type":"navigationSet",
 					"key": "employeeRegion",
-					"text": "supports region",
+					"text": "Show Employees Region",
 					"icon": "sap-icon://northwind/region",
 					"target": "EmployeeemployeeRegion",
-					"tooltip": "supports region",
+					"tooltip": "Show Employees Region",
 					"visible": true
 				}]
 			}
@@ -805,10 +819,10 @@
 				}, {
 					"type":"navigationSet",
 					"key": "managesEmployee",
-					"text": "manages employee",
+					"text": "Show Employees Employee",
 					"icon": "sap-icon://northwind/employee",
 					"target": "EmployeemanagesEmployee",
-					"tooltip": "manages employee",
+					"tooltip": "Show Employees Employee",
 					"visible": true
 				}]
 			}
@@ -827,10 +841,10 @@
 				}, {
 					"type":"navigationSet",
 					"key": "managesOrder",
-					"text": "manages order",
+					"text": "Show Employees Order",
 					"icon": "sap-icon://northwind/order",
 					"target": "EmployeemanagesOrder",
-					"tooltip": "manages order",
+					"tooltip": "Show Employees Order",
 					"visible": true
 				}]
 			}
@@ -849,10 +863,10 @@
 				}, {
 					"type":"navigationSet",
 					"key": "territory",
-					"text": "operates within territory",
+					"text": "Show Employees Territory",
 					"icon": "sap-icon://northwind/territory",
 					"target": "Employeeterritory",
-					"tooltip": "operates within territory",
+					"tooltip": "Show Employees Territory",
 					"visible": true
 				}]
 			}
@@ -926,34 +940,34 @@
 			, {
 				"type":"navigationSet",
 				"key": "hasOrderDetail",
-				"text": "has order details",
+				"text": "Show Orders OrderDetail",
 				"icon": "sap-icon://northwind/orderDetail",
 				"target": "OrderhasOrderDetail",
-				"tooltip": "has order details",
+				"tooltip": "Show Orders OrderDetail",
 				"visible": true 			}
 			, {
 				"type":"navigationSet",
 				"key": "order_customer_Order",
-				"text": "is summarized in",
+				"text": "Show Orders Customer_Order",
 				"icon": "sap-icon://northwind/Customer_Order",
 				"target": "Orderorder_customer_Order",
-				"tooltip": "is summarized in",
+				"tooltip": "Show Orders Customer_Order",
 				"visible": true 			}
 			, {
 				"type":"navigationSet",
 				"key": "order_orderSummary",
-				"text": "is referenced in a order summary",
+				"text": "Show Orders OrderSummary",
 				"icon": "sap-icon://northwind/OrderSummary",
 				"target": "Orderorder_orderSummary",
-				"tooltip": "is referenced in a order summary",
+				"tooltip": "Show Orders OrderSummary",
 				"visible": true 			}
 			, {				
 				"type":"navigationProperty",
 				"key": "customer",
-				"text": "placed by customer",
+				"text": "customer",
 				"icon": "sap-icon://northwind/customer",
 				"target": "Customer",
-				"tooltip": "placed by customer",
+				"tooltip": "Show customer",
 				"parameters": {
 					"navigation": "customer"
 				},
@@ -961,10 +975,10 @@
 			, {				
 				"type":"navigationProperty",
 				"key": "employee",
-				"text": "is managed by",
+				"text": "employee",
 				"icon": "sap-icon://northwind/employee",
 				"target": "Employee",
-				"tooltip": "is managed by",
+				"tooltip": "Show employee",
 				"parameters": {
 					"navigation": "employee"
 				},
@@ -972,10 +986,10 @@
 			, {				
 				"type":"navigationProperty",
 				"key": "orderRegion",
-				"text": "is ordered in region",
+				"text": "orderRegion",
 				"icon": "sap-icon://northwind/region",
 				"target": "Region",
-				"tooltip": "is ordered in region",
+				"tooltip": "Show orderRegion",
 				"parameters": {
 					"navigation": "orderRegion"
 				},
@@ -983,10 +997,10 @@
 			, {				
 				"type":"navigationProperty",
 				"key": "shipVia",
-				"text": "is shipped by",
+				"text": "shipVia",
 				"icon": "sap-icon://northwind/shipper",
 				"target": "Shipper",
-				"tooltip": "is shipped by",
+				"tooltip": "Show shipVia",
 				"parameters": {
 					"navigation": "shipVia"
 				},
@@ -1008,10 +1022,10 @@
 				}, {
 					"type":"navigationSet",
 					"key": "hasOrderDetail",
-					"text": "has order details",
+					"text": "Show Orders OrderDetail",
 					"icon": "sap-icon://northwind/orderDetail",
 					"target": "OrderhasOrderDetail",
-					"tooltip": "has order details",
+					"tooltip": "Show Orders OrderDetail",
 					"visible": true
 				}]
 			}
@@ -1030,10 +1044,10 @@
 				}, {
 					"type":"navigationSet",
 					"key": "order_customer_Order",
-					"text": "is summarized in",
+					"text": "Show Orders Customer_Order",
 					"icon": "sap-icon://northwind/Customer_Order",
 					"target": "Orderorder_customer_Order",
-					"tooltip": "is summarized in",
+					"tooltip": "Show Orders Customer_Order",
 					"visible": true
 				}]
 			}
@@ -1052,10 +1066,10 @@
 				}, {
 					"type":"navigationSet",
 					"key": "order_orderSummary",
-					"text": "is referenced in a order summary",
+					"text": "Show Orders OrderSummary",
 					"icon": "sap-icon://northwind/OrderSummary",
 					"target": "Orderorder_orderSummary",
-					"tooltip": "is referenced in a order summary",
+					"tooltip": "Show Orders OrderSummary",
 					"visible": true
 				}]
 			}
@@ -1064,9 +1078,9 @@
 	,
 	"OrderDetail": {
 		"key": "OrderDetail",
-		"text": "Order details",
+		"text": "OrderDetails",
 		"target": "OrderDetails",
-		"tooltip": "Show all Order details",
+		"tooltip": "Show all OrderDetails",
 		"image": "./images/northwind/orderDetail.svg",
 		"icon": "sap-icon://northwind/orderDetail",
 		"visible":true,
@@ -1075,7 +1089,7 @@
 		    "key": "graph",
 			"text": "Graph View",
 			"target": "graph",
-			"tooltip": "Order details Graph",
+			"tooltip": "OrderDetails Graph",
 			"visible":true,
 			"parameters": {
 				"objectId": "OrderDetail",
@@ -1086,16 +1100,16 @@
 		}, {
 			"type":"entitySet",
 			"key": "OrderDetails",
-			"text": "Order details",
+			"text": "OrderDetails",
 			"target": "OrderDetails",
-			"tooltip": "Show all Order details",
+			"tooltip": "Show all OrderDetails",
 			"visible":true
 		}, {
 			"type":"entitySet",
 			"key": "DashBoard",
 			"text": "DashBoard",
 			"target": "OrderDetailsDashBoard",
-			"tooltip": "Show Order details DashBoard",
+			"tooltip": "Show OrderDetails DashBoard",
 			"visible":true
 		}
 		],
@@ -1129,10 +1143,10 @@
 			, {				
 				"type":"navigationProperty",
 				"key": "order",
-				"text": "is part of order",
+				"text": "order",
 				"icon": "sap-icon://northwind/order",
 				"target": "Order",
-				"tooltip": "is part of order",
+				"tooltip": "Show order",
 				"parameters": {
 					"navigation": "order"
 				},
@@ -1140,10 +1154,10 @@
 			, {				
 				"type":"navigationProperty",
 				"key": "product",
-				"text": "includes product",
+				"text": "product",
 				"icon": "sap-icon://northwind/parttimeEmployee",
 				"target": "Product",
-				"tooltip": "includes product",
+				"tooltip": "Show product",
 				"parameters": {
 					"navigation": "product"
 				},
@@ -1156,9 +1170,9 @@
 	,
 	"OrderSummary": {
 		"key": "OrderSummary",
-		"text": "Order summarys",
+		"text": "OrderSummarys",
 		"target": "OrderSummarys",
-		"tooltip": "Show all Order summarys",
+		"tooltip": "Show all OrderSummarys",
 		"image": "./images/northwind/OrderSummary.svg",
 		"icon": "sap-icon://northwind/OrderSummary",
 		"visible":false,
@@ -1167,7 +1181,7 @@
 		    "key": "graph",
 			"text": "Graph View",
 			"target": "graph",
-			"tooltip": "Order summarys Graph",
+			"tooltip": "OrderSummarys Graph",
 			"visible":false,
 			"parameters": {
 				"objectId": "OrderSummary",
@@ -1178,16 +1192,16 @@
 		}, {
 			"type":"entitySet",
 			"key": "OrderSummarys",
-			"text": "Order summarys",
+			"text": "OrderSummarys",
 			"target": "OrderSummarys",
-			"tooltip": "Show all Order summarys",
+			"tooltip": "Show all OrderSummarys",
 			"visible":false
 		}, {
 			"type":"entitySet",
 			"key": "DashBoard",
 			"text": "DashBoard",
 			"target": "OrderSummarysDashBoard",
-			"tooltip": "Show Order summarys DashBoard",
+			"tooltip": "Show OrderSummarys DashBoard",
 			"visible":false
 		}
 		],
@@ -1221,10 +1235,10 @@
 			, {				
 				"type":"navigationProperty",
 				"key": "orderSummary_order",
-				"text": "references order",
+				"text": "orderSummary_order",
 				"icon": "sap-icon://northwind/order",
 				"target": "Order",
-				"tooltip": "references order",
+				"tooltip": "Show orderSummary_order",
 				"parameters": {
 					"navigation": "orderSummary_order"
 				},
@@ -1232,10 +1246,10 @@
 			, {				
 				"type":"navigationProperty",
 				"key": "orderSummary_product",
-				"text": "references product",
+				"text": "orderSummary_product",
 				"icon": "sap-icon://northwind/parttimeEmployee",
 				"target": "Product",
-				"tooltip": "references product",
+				"tooltip": "Show orderSummary_product",
 				"parameters": {
 					"navigation": "orderSummary_product"
 				},
@@ -1248,9 +1262,9 @@
 	,
 	"ParttimeEmployee": {
 		"key": "ParttimeEmployee",
-		"text": "Parttime employees",
+		"text": "ParttimeEmployees",
 		"target": "ParttimeEmployees",
-		"tooltip": "Show all Parttime employees",
+		"tooltip": "Show all ParttimeEmployees",
 		"image": "./images/northwind/parttimeEmployee.svg",
 		"icon": "sap-icon://northwind/parttimeEmployee",
 		"visible":true,
@@ -1259,7 +1273,7 @@
 		    "key": "graph",
 			"text": "Graph View",
 			"target": "graph",
-			"tooltip": "Parttime employees Graph",
+			"tooltip": "ParttimeEmployees Graph",
 			"visible":true,
 			"parameters": {
 				"objectId": "ParttimeEmployee",
@@ -1270,26 +1284,17 @@
 		}, {
 			"type":"entitySet",
 			"key": "ParttimeEmployees",
-			"text": "Parttime employees",
+			"text": "ParttimeEmployees",
 			"target": "ParttimeEmployees",
-			"tooltip": "Show all Parttime employees",
+			"tooltip": "Show all ParttimeEmployees",
 			"visible":true
 		}, {
 			"type":"entitySet",
 			"key": "DashBoard",
 			"text": "DashBoard",
 			"target": "ParttimeEmployeesDashBoard",
-			"tooltip": "Show Parttime employees DashBoard",
+			"tooltip": "Show ParttimeEmployees DashBoard",
 			"visible":true
-		}
-		,{
-			"type":"menuNavigation",
-			"key": "Employee",
-			"text": "▲ Employees",
-			"icon": "$parentEntitySet.icon",
-			"target": "Employee",
-			"tooltip": "Go up to Employees",
-			"visible": true
 		}
 		],
 		"entity": {
@@ -1322,42 +1327,61 @@
 			, {
 				"type":"navigationSet",
 				"key": "employeeRegion",
-				"text": "supports region",
+				"text": "Show ParttimeEmployees Region",
 				"icon": "sap-icon://northwind/region",
 				"target": "ParttimeEmployeeemployeeRegion",
-				"tooltip": "supports region",
+				"tooltip": "Show ParttimeEmployees Region",
 				"visible": true 			}
 			, {
 				"type":"navigationSet",
 				"key": "managesEmployee",
-				"text": "manages employee",
+				"text": "Show ParttimeEmployees Employee",
 				"icon": "sap-icon://northwind/employee",
 				"target": "ParttimeEmployeemanagesEmployee",
-				"tooltip": "manages employee",
+				"tooltip": "Show ParttimeEmployees Employee",
 				"visible": true 			}
 			, {
 				"type":"navigationSet",
 				"key": "managesOrder",
-				"text": "manages order",
+				"text": "Show ParttimeEmployees Order",
 				"icon": "sap-icon://northwind/order",
 				"target": "ParttimeEmployeemanagesOrder",
-				"tooltip": "manages order",
+				"tooltip": "Show ParttimeEmployees Order",
+				"visible": true 			}
+			, {
+				"type":"navigationSet",
+				"key": "parttimeEmployer",
+				"text": "Show ParttimeEmployees Supplier",
+				"icon": "sap-icon://northwind/supplier",
+				"target": "ParttimeEmployeeparttimeEmployer",
+				"tooltip": "Show ParttimeEmployees Supplier",
 				"visible": true 			}
 			, {
 				"type":"navigationSet",
 				"key": "territory",
-				"text": "operates within territory",
+				"text": "Show ParttimeEmployees Territory",
 				"icon": "sap-icon://northwind/territory",
 				"target": "ParttimeEmployeeterritory",
-				"tooltip": "operates within territory",
+				"tooltip": "Show ParttimeEmployees Territory",
+				"visible": true 			}
+			, {				
+				"type":"navigationProperty",
+				"key": "parttimeFavorite",
+				"text": "parttimeFavorite",
+				"icon": "sap-icon://northwind/parttimeEmployee",
+				"target": "Product",
+				"tooltip": "Show parttimeFavorite",
+				"parameters": {
+					"navigation": "parttimeFavorite"
+				},
 				"visible": true 			}
 			, {				
 				"type":"navigationProperty",
 				"key": "reportsTo",
-				"text": "reports to employee",
+				"text": "reportsTo",
 				"icon": "sap-icon://northwind/employee",
 				"target": "Employee",
-				"tooltip": "reports to employee",
+				"tooltip": "Show reportsTo",
 				"parameters": {
 					"navigation": "reportsTo"
 				},
@@ -1379,10 +1403,10 @@
 				}, {
 					"type":"navigationSet",
 					"key": "employeeRegion",
-					"text": "supports region",
+					"text": "Show ParttimeEmployees Region",
 					"icon": "sap-icon://northwind/region",
 					"target": "ParttimeEmployeeemployeeRegion",
-					"tooltip": "supports region",
+					"tooltip": "Show ParttimeEmployees Region",
 					"visible": true
 				}]
 			}
@@ -1401,10 +1425,10 @@
 				}, {
 					"type":"navigationSet",
 					"key": "managesEmployee",
-					"text": "manages employee",
+					"text": "Show ParttimeEmployees Employee",
 					"icon": "sap-icon://northwind/employee",
 					"target": "ParttimeEmployeemanagesEmployee",
-					"tooltip": "manages employee",
+					"tooltip": "Show ParttimeEmployees Employee",
 					"visible": true
 				}]
 			}
@@ -1423,10 +1447,32 @@
 				}, {
 					"type":"navigationSet",
 					"key": "managesOrder",
-					"text": "manages order",
+					"text": "Show ParttimeEmployees Order",
 					"icon": "sap-icon://northwind/order",
 					"target": "ParttimeEmployeemanagesOrder",
-					"tooltip": "manages order",
+					"tooltip": "Show ParttimeEmployees Order",
+					"visible": true
+				}]
+			}
+		,
+			"parttimeEmployer": {
+				"target": "ParttimeEmployeeparttimeEmployer",
+				"icon": "sap-icon://northwind/parttimeEmployee",
+				"menu": [{
+					"type":"navigationSet",
+					"key": "graph",
+					"text": "Graph View",
+					"icon": "sap-icon://overview-chart",
+					"target": "navigationSetGraph",
+					"tooltip": "parttimeEmployer Graph",
+					"visible": true
+				}, {
+					"type":"navigationSet",
+					"key": "parttimeEmployer",
+					"text": "Show ParttimeEmployees Supplier",
+					"icon": "sap-icon://northwind/supplier",
+					"target": "ParttimeEmployeeparttimeEmployer",
+					"tooltip": "Show ParttimeEmployees Supplier",
 					"visible": true
 				}]
 			}
@@ -1445,10 +1491,10 @@
 				}, {
 					"type":"navigationSet",
 					"key": "territory",
-					"text": "operates within territory",
+					"text": "Show ParttimeEmployees Territory",
 					"icon": "sap-icon://northwind/territory",
 					"target": "ParttimeEmployeeterritory",
-					"tooltip": "operates within territory",
+					"tooltip": "Show ParttimeEmployees Territory",
 					"visible": true
 				}]
 			}
@@ -1522,26 +1568,26 @@
 			, {
 				"type":"navigationSet",
 				"key": "isPartOfOrderDetail",
-				"text": "is part of order detail",
+				"text": "Show Products OrderDetail",
 				"icon": "sap-icon://northwind/orderDetail",
 				"target": "ProductisPartOfOrderDetail",
-				"tooltip": "is part of order detail",
+				"tooltip": "Show Products OrderDetail",
 				"visible": true 			}
 			, {
 				"type":"navigationSet",
 				"key": "product_orderSummary",
-				"text": "is referenced in a order summary",
+				"text": "Show Products OrderSummary",
 				"icon": "sap-icon://northwind/OrderSummary",
 				"target": "Productproduct_orderSummary",
-				"tooltip": "is referenced in a order summary",
+				"tooltip": "Show Products OrderSummary",
 				"visible": true 			}
 			, {				
 				"type":"navigationProperty",
 				"key": "category",
-				"text": "is categorized as",
+				"text": "category",
 				"icon": "sap-icon://northwind/category",
 				"target": "Category",
-				"tooltip": "is categorized as",
+				"tooltip": "Show category",
 				"parameters": {
 					"navigation": "category"
 				},
@@ -1549,10 +1595,10 @@
 			, {				
 				"type":"navigationProperty",
 				"key": "supplier",
-				"text": "is supplied by",
+				"text": "supplier",
 				"icon": "sap-icon://northwind/supplier",
 				"target": "Supplier",
-				"tooltip": "is supplied by",
+				"tooltip": "Show supplier",
 				"parameters": {
 					"navigation": "supplier"
 				},
@@ -1574,10 +1620,10 @@
 				}, {
 					"type":"navigationSet",
 					"key": "isPartOfOrderDetail",
-					"text": "is part of order detail",
+					"text": "Show Products OrderDetail",
 					"icon": "sap-icon://northwind/orderDetail",
 					"target": "ProductisPartOfOrderDetail",
-					"tooltip": "is part of order detail",
+					"tooltip": "Show Products OrderDetail",
 					"visible": true
 				}]
 			}
@@ -1596,10 +1642,10 @@
 				}, {
 					"type":"navigationSet",
 					"key": "product_orderSummary",
-					"text": "is referenced in a order summary",
+					"text": "Show Products OrderSummary",
 					"icon": "sap-icon://northwind/OrderSummary",
 					"target": "Productproduct_orderSummary",
-					"tooltip": "is referenced in a order summary",
+					"tooltip": "Show Products OrderSummary",
 					"visible": true
 				}]
 			}
@@ -1743,10 +1789,10 @@
 			, {
 				"type":"navigationSet",
 				"key": "shipsOrder",
-				"text": "ships Order",
+				"text": "Show Shippers Order",
 				"icon": "sap-icon://northwind/order",
 				"target": "ShippershipsOrder",
-				"tooltip": "ships Order",
+				"tooltip": "Show Shippers Order",
 				"visible": true 			}
 			]
 		}
@@ -1765,10 +1811,10 @@
 				}, {
 					"type":"navigationSet",
 					"key": "shipsOrder",
-					"text": "ships Order",
+					"text": "Show Shippers Order",
 					"icon": "sap-icon://northwind/order",
 					"target": "ShippershipsOrder",
-					"tooltip": "ships Order",
+					"tooltip": "Show Shippers Order",
 					"visible": true
 				}]
 			}
@@ -1842,18 +1888,18 @@
 			, {
 				"type":"navigationSet",
 				"key": "supplierRegion",
-				"text": "supplies in region",
+				"text": "Show Suppliers Region",
 				"icon": "sap-icon://northwind/region",
 				"target": "SuppliersupplierRegion",
-				"tooltip": "supplies in region",
+				"tooltip": "Show Suppliers Region",
 				"visible": true 			}
 			, {
 				"type":"navigationSet",
 				"key": "suppliesProduct",
-				"text": "supplies product",
+				"text": "Show Suppliers Product",
 				"icon": "sap-icon://northwind/parttimeEmployee",
 				"target": "SuppliersuppliesProduct",
-				"tooltip": "supplies product",
+				"tooltip": "Show Suppliers Product",
 				"visible": true 			}
 			]
 		}
@@ -1872,10 +1918,10 @@
 				}, {
 					"type":"navigationSet",
 					"key": "supplierRegion",
-					"text": "supplies in region",
+					"text": "Show Suppliers Region",
 					"icon": "sap-icon://northwind/region",
 					"target": "SuppliersupplierRegion",
-					"tooltip": "supplies in region",
+					"tooltip": "Show Suppliers Region",
 					"visible": true
 				}]
 			}
@@ -1894,10 +1940,10 @@
 				}, {
 					"type":"navigationSet",
 					"key": "suppliesProduct",
-					"text": "supplies product",
+					"text": "Show Suppliers Product",
 					"icon": "sap-icon://northwind/parttimeEmployee",
 					"target": "SuppliersuppliesProduct",
-					"tooltip": "supplies product",
+					"tooltip": "Show Suppliers Product",
 					"visible": true
 				}]
 			}
@@ -1971,18 +2017,18 @@
 			, {
 				"type":"navigationSet",
 				"key": "territoryOf",
-				"text": "within which operates employee",
+				"text": "Show Territorys Employee",
 				"icon": "sap-icon://northwind/employee",
 				"target": "TerritoryterritoryOf",
-				"tooltip": "within which operates employee",
+				"tooltip": "Show Territorys Employee",
 				"visible": true 			}
 			, {
 				"type":"navigationSet",
 				"key": "territoryRegion",
-				"text": "is located within region",
+				"text": "Show Territorys Region",
 				"icon": "sap-icon://northwind/region",
 				"target": "TerritoryterritoryRegion",
-				"tooltip": "is located within region",
+				"tooltip": "Show Territorys Region",
 				"visible": true 			}
 			]
 		}
@@ -2001,10 +2047,10 @@
 				}, {
 					"type":"navigationSet",
 					"key": "territoryOf",
-					"text": "within which operates employee",
+					"text": "Show Territorys Employee",
 					"icon": "sap-icon://northwind/employee",
 					"target": "TerritoryterritoryOf",
-					"tooltip": "within which operates employee",
+					"tooltip": "Show Territorys Employee",
 					"visible": true
 				}]
 			}
@@ -2023,10 +2069,10 @@
 				}, {
 					"type":"navigationSet",
 					"key": "territoryRegion",
-					"text": "is located within region",
+					"text": "Show Territorys Region",
 					"icon": "sap-icon://northwind/region",
 					"target": "TerritoryterritoryRegion",
-					"tooltip": "is located within region",
+					"tooltip": "Show Territorys Region",
 					"visible": true
 				}]
 			}
@@ -2100,10 +2146,10 @@
 			, {
 				"type":"navigationSet",
 				"key": "usstateRegion",
-				"text": "usstate region",
+				"text": "Show USStates Region",
 				"icon": "sap-icon://northwind/region",
 				"target": "USStateusstateRegion",
-				"tooltip": "usstate region",
+				"tooltip": "Show USStates Region",
 				"visible": true 			}
 			]
 		}
@@ -2122,10 +2168,10 @@
 				}, {
 					"type":"navigationSet",
 					"key": "usstateRegion",
-					"text": "usstate region",
+					"text": "Show USStates Region",
 					"icon": "sap-icon://northwind/region",
 					"target": "USStateusstateRegion",
-					"tooltip": "usstate region",
+					"tooltip": "Show USStates Region",
 					"visible": true
 				}]
 			}

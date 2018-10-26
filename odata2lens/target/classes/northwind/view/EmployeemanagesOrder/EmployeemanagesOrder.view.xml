@@ -33,9 +33,6 @@
 						<Text text="{i18n>EmployeemanagesOrder.freight}"/>
 					</Column>
 					<Column demandPopin="true" minScreenWidth="Tablet">
-						<Text text="{i18n>EmployeemanagesOrder.isDefinedBy}"/>
-					</Column>
-					<Column demandPopin="true" minScreenWidth="Tablet">
 						<Text text="{i18n>EmployeemanagesOrder.lat}"/>
 					</Column>
 					<Column demandPopin="true" minScreenWidth="Tablet">
@@ -52,6 +49,9 @@
 					</Column>
 					<Column demandPopin="true" minScreenWidth="Tablet">
 						<Text text="{i18n>EmployeemanagesOrder.requiredDate}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>EmployeemanagesOrder.seeAlso}"/>
 					</Column>
 					<Column demandPopin="true" minScreenWidth="Tablet">
 						<Text text="{i18n>EmployeemanagesOrder.shipAddress}"/>
@@ -79,24 +79,24 @@
 					<ColumnListItem id="template" type="Navigation" press="onPress">
 						<cells>
 							<rdf:TextResource path="dataModel>" entitySet="Order"/>
-  <rdf:TextLink text="{path:'dataModel>comment',type:'sap.ui.model.type.String' }" linkText="{i18n>Order.comment}"/>
-  <rdf:TextLink text="{path:'dataModel>customerNotation',type:'sap.ui.model.type.String' }" linkText="{i18n>Order.customerNotation}"/>
-  <rdf:TextLink text="{path:'dataModel>employeeNotation',type:'sap.ui.model.type.String' }" linkText="{i18n>Order.employeeNotation}"/>
-  <rdf:TextLink text="{path:'dataModel>freight',type:'sap.ui.model.type.String' }" linkText="{i18n>Order.freight}"/>
-  <rdf:TextLink text="{path:'dataModel>isDefinedBy',type:'sap.ui.model.type.String' }" linkText="{i18n>Order.isDefinedBy}"/>
-  <Text text="{path:'dataModel>lat',type:'sap.ui.model.type.Float' }"/>
-  <rdf:TextLink text="{path:'dataModel>lat_long',type:'sap.ui.model.type.String' }" linkText="{i18n>Order.lat_long}"/>
-  <Text text="{path:'dataModel>long',type:'sap.ui.model.type.Float' }"/>
-  <Text text="{dataModel>orderDate}"/>
-  <rdf:TextLink text="{path:'dataModel>regionDescription',type:'sap.ui.model.type.String' }" linkText="{i18n>Order.regionDescription}"/>
-  <Text text="{dataModel>requiredDate}"/>
-  <rdf:TextLink text="{path:'dataModel>shipAddress',type:'sap.ui.model.type.String' }" linkText="{i18n>Order.shipAddress}"/>
-  <rdf:TextLink text="{path:'dataModel>shipCity',type:'sap.ui.model.type.String' }" linkText="{i18n>Order.shipCity}"/>
-  <rdf:TextLink text="{path:'dataModel>shipCountry',type:'sap.ui.model.type.String' }" linkText="{i18n>Order.shipCountry}"/>
-  <rdf:TextLink text="{path:'dataModel>shipName',type:'sap.ui.model.type.String' }" linkText="{i18n>Order.shipName}"/>
-  <rdf:TextLink text="{path:'dataModel>shipPostalCode',type:'sap.ui.model.type.String' }" linkText="{i18n>Order.shipPostalCode}"/>
-  <rdf:TextLink text="{path:'dataModel>shipViaNotation',type:'sap.ui.model.type.String' }" linkText="{i18n>Order.shipViaNotation}"/>
-  <Text text="{dataModel>shippedDate}"/>
+							<rdf:TextLink text="{path:'dataModel>comment',type:'sap.ui.model.type.String'}" linkText="{i18n>Order.comment}"/>
+							<rdf:TextLink text="{path:'dataModel>customerNotation',type:'sap.ui.model.type.String'}" linkText="{i18n>Order.customerNotation}"/>
+							<rdf:TextLink text="{path:'dataModel>employeeNotation',type:'sap.ui.model.type.String'}" linkText="{i18n>Order.employeeNotation}"/>
+							<rdf:TextLink text="{path:'dataModel>freight',type:'sap.ui.model.type.String'}" linkText="{i18n>Order.freight}"/>
+							<Text text="{path:'dataModel>lat',type:'sap.ui.model.type.Float', formatOptions:{'style':'short','maxFractionDigits':2} }"/>
+							<rdf:TextLink text="{path:'dataModel>lat_long',type:'sap.ui.model.type.String'}" linkText="{i18n>Order.lat_long}"/>
+							<Text text="{path:'dataModel>long',type:'sap.ui.model.type.Float', formatOptions:{'style':'short','maxFractionDigits':2} }"/>
+							<Text text="{dataModel>orderDate}"/>
+							<rdf:TextLink text="{path:'dataModel>regionDescription',type:'sap.ui.model.type.String'}" linkText="{i18n>Order.regionDescription}"/>
+							<Text text="{dataModel>requiredDate}"/>
+							<rdf:TextLink text="{path:'dataModel>seeAlso',type:'sap.ui.model.type.String'}" linkText="{i18n>Order.seeAlso}"/>
+							<rdf:TextLink text="{path:'dataModel>shipAddress',type:'sap.ui.model.type.String'}" linkText="{i18n>Order.shipAddress}"/>
+							<rdf:TextLink text="{path:'dataModel>shipCity',type:'sap.ui.model.type.String'}" linkText="{i18n>Order.shipCity}"/>
+							<rdf:TextLink text="{path:'dataModel>shipCountry',type:'sap.ui.model.type.String'}" linkText="{i18n>Order.shipCountry}"/>
+							<rdf:TextLink text="{path:'dataModel>shipName',type:'sap.ui.model.type.String'}" linkText="{i18n>Order.shipName}"/>
+							<rdf:TextLink text="{path:'dataModel>shipPostalCode',type:'sap.ui.model.type.String'}" linkText="{i18n>Order.shipPostalCode}"/>
+							<rdf:TextLink text="{path:'dataModel>shipViaNotation',type:'sap.ui.model.type.String'}" linkText="{i18n>Order.shipViaNotation}"/>
+							<Text text="{dataModel>shippedDate}"/>
 						</cells>
 					</ColumnListItem>
 				</items>

@@ -4,22 +4,34 @@ sequence, entity, entityIcon, image, target, targetIcon, type, targetEntity, tar
 	#set ($sequence = $sequence + 1)
 	#set ($numSoFar = 0)
 	#foreach($property in $entityType.entity.properties)
-$sequence, $entityType.entitySet.name, "sap-icon://expand-group", "./images/icons/category.png", $entityType.entitySet.target, "sap-icon://expand-group", Grid, $entityType.entitySet.name ,true ,$property.name, D, $property.range,$numSoFar,true, [] ,""
+	#if( $property.complex )
+		#if ( $property.complexRange.isProperty)
+		$sequence, $entityType.entitySet.name, "sap-icon://expand-group", "./images/icons/category.png", $entityType.entitySet.target, "sap-icon://expand-group", Grid, $entityType.entitySet.name ,true ,$property.name, S, $property.range,$numSoFar,$property.isNotFK, [] , $property.formatOptions
+		#else
+		$sequence, $entityType.entitySet.name, "sap-icon://expand-group", "./images/icons/category.png", $entityType.entitySet.target, "sap-icon://expand-group", Grid, $entityType.entitySet.name ,true ,$property.name, S, $property.range,$numSoFar,false, [] ,""
+		#end
+	#else
+		$sequence, $entityType.entitySet.name, "sap-icon://expand-group", "./images/icons/category.png", $entityType.entitySet.target, "sap-icon://expand-group", Grid, $entityType.entitySet.name ,true ,$property.name, D, $property.range,$numSoFar,$property.isNotFK, [] , $property.formatOptions	
+	#end
 	#set ($numSoFar = $numSoFar + 1  )
 	#end				
 	#foreach($navigationProperty in $entityType.entity.navigationProperties)
-$sequence, $entityType.entitySet.name, "sap-icon://expand-group", "./images/icons/category.png", $entityType.entitySet.target ,"sap-icon://expand-group",  Grid,$entityType.entitySet.name ,true, $navigationProperty.name, O, $navigationProperty.range, $numSoFar,false, [] ,""
+		$sequence, $entityType.entitySet.name, "sap-icon://expand-group", "./images/icons/category.png", $entityType.entitySet.target ,"sap-icon://expand-group",  Grid,$entityType.entitySet.name ,true, $navigationProperty.name, O, $navigationProperty.range, $numSoFar,false, [] ,""
 		#set ($numSoFar = $numSoFar + 1  )
 	#end	
 	#foreach($entityNavigationSet in $entityType.entity.navigationSet)
-$sequence, $entityType.entitySet.name, "sap-icon://expand-group","./images/icons/category.png", $entityType.entitySet.target ,"sap-icon://expand-group", Grid,  $entityType.entitySet.name ,true, $entityNavigationSet.name, C, $entityNavigationSet.range,$numSoFar,false, [Count],""
+		$sequence, $entityType.entitySet.name, "sap-icon://expand-group","./images/icons/category.png", $entityType.entitySet.target ,"sap-icon://expand-group", Grid,  $entityType.entitySet.name ,true, $entityNavigationSet.name, C, $entityNavigationSet.range,$numSoFar,false, [Count],""
 		#set ($numSoFar = $numSoFar + 1  )
 	#end	
 	
 	#set ($sequence = $sequence + 1)
 	#set ($numSoFar = 0)
 	#foreach($property in $entityType.entity.properties)
-$sequence, $entityType.entitySet.name, "sap-icon://expand-group","./images/icons/category.png", $entityType.entity.target , "sap-icon://expand-group",  Form, $entityType.entitySet.name ,true, $property.name, D, $property.range,$numSoFar,true, [] ,"" 
+	#if( $property.complex )
+		$sequence, $entityType.entitySet.name, "sap-icon://expand-group","./images/icons/category.png", $entityType.entity.target , "sap-icon://expand-group",  Form, $entityType.entitySet.name ,true, $property.name, S, $property.range,$numSoFar,$property.isNotFK, [] ,"" 
+	#else	
+		$sequence, $entityType.entitySet.name, "sap-icon://expand-group","./images/icons/category.png", $entityType.entity.target , "sap-icon://expand-group",  Form, $entityType.entitySet.name ,true, $property.name, D, $property.range,$numSoFar,$property.isNotFK, [] ,"" 
+	#end
 	#set ($numSoFar = $numSoFar + 1  )
 	#end				
 	#foreach($navigationProperty in $entityType.entity.navigationProperties)
@@ -27,7 +39,7 @@ $sequence, $entityType.entitySet.name, "sap-icon://expand-group","./images/icons
 		#set ($numSoFar = $numSoFar + 1  )
 	#end	
 	#foreach($entityNavigationSet in $entityType.entity.navigationSet)
-$sequence, $entityType.entitySet.name, "sap-icon://expand-group","./images/icons/category.png",$entityType.entity.target ,"sap-icon://expand-group", Form,  $entityType.entitySet.name ,true,$entityNavigationSet.name, C, $entityNavigationSet.range,$numSoFar,false, [List],""
+$sequence, $entityType.entitySet.name, "sap-icon://expand-group","./images/icons/category.png",$entityType.entity.target ,"sap-icon://expand-group", Form,  $entityType.entitySet.name ,true,$entityNavigationSet.name, C, $entityNavigationSet.range,$numSoFar,true, [List],""
 		#set ($numSoFar = $numSoFar + 1  )
 	#end	
 	
@@ -36,7 +48,15 @@ $sequence, $entityType.entitySet.name, "sap-icon://expand-group","./images/icons
 	#set ( $thisEntityType = $entityTypes.get($navigationSet.targetEntityType))
 	#set ($numSoFar = 0)
 	#foreach($property in $thisEntityType.entity.properties)
-$sequence, $entityType.entitySet.name, "sap-icon://expand-group","./images/icons/category.png", $entityType.entity.target$navigationSet.name , "sap-icon://expand-group", Grid,  $navigationSet.targetEntityType ,true,$property.name, D, $property.range,$numSoFar,true, [],""  
+		#if( $property.complex )
+		#if ( $property.complexRange.isProperty)
+			$sequence, $entityType.entitySet.name, "sap-icon://expand-group","./images/icons/category.png", $entityType.entity.target$navigationSet.name , "sap-icon://expand-group", Grid,  $navigationSet.targetEntityType ,true,$property.name, S, $property.range,$numSoFar,$property.isNotFK, [],$property.formatOptions 
+		#else
+			$sequence, $entityType.entitySet.name, "sap-icon://expand-group","./images/icons/category.png", $entityType.entity.target$navigationSet.name , "sap-icon://expand-group", Grid,  $navigationSet.targetEntityType ,true,$property.name, S, $property.range,$numSoFar,false, [],""  
+		#end
+	#else
+		$sequence, $entityType.entitySet.name, "sap-icon://expand-group","./images/icons/category.png", $entityType.entity.target$navigationSet.name , "sap-icon://expand-group", Grid,  $navigationSet.targetEntityType ,true,$property.name, D, $property.range,$numSoFar,$property.isNotFK, [], $property.formatOptions	 
+	#end
 	#set ($numSoFar = $numSoFar + 1  )
 	#end				
 	#foreach($navigationProperty in $thisEntityType.entity.navigationProperties)

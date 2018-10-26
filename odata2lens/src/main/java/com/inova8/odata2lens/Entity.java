@@ -1,5 +1,7 @@
 package com.inova8.odata2lens;
 
+import java.util.HashSet;
+import java.util.Set;
 import java.util.TreeMap;
 
 public class Entity {
@@ -12,6 +14,8 @@ public class Entity {
 	private  TreeMap<String,EntityNavigationSet> navigationSet;
 	private  TreeMap<String,NavigationProperty> navigationProperties;
 	private  TreeMap<String,Property> properties;
+	private Set<String> subTypeNames = new HashSet<String>();
+	private boolean hasPrimitiveProperties =false;
 	public Entity(String name, String target, String label, String tooltip, String targetIcon, TreeMap<String,EntityNavigationSet> entityNavigationSets,TreeMap<String,NavigationProperty> navigationProperties,TreeMap<String,Property> properties) {
 		this.name = name;
 		this.target = target;
@@ -51,4 +55,26 @@ public class Entity {
 	public TreeMap<String,Property> getProperties() {
 		return properties;
 	}
+
+	public Set<String> getSubTypeNames() {
+		return subTypeNames;
+	}
+	public Boolean getHasMultipleColumns() {
+		if ( subTypeNames.size() > 1)
+			return true;
+		else if(subTypeNames.size()==1 && this.hasPrimitiveProperties )
+			return true;
+		else 
+			return false;
+	}
+
+	public void hasPrimitiveProperties(boolean b) {
+		this.hasPrimitiveProperties = b;
+		
+	}
+	public Boolean getOwnProperties() {
+		return !(navigationSet.isEmpty() && navigationProperties.isEmpty() && properties.isEmpty() && !hasPrimitiveProperties );
+		
+	}
+	
 }

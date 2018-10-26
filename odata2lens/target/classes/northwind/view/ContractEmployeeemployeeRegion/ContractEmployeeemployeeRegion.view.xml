@@ -24,19 +24,19 @@
 						<Text text="{i18n>ContractEmployeeemployeeRegion.comment}"/>
 					</Column>
 					<Column demandPopin="true" minScreenWidth="Tablet">
-						<Text text="{i18n>ContractEmployeeemployeeRegion.isDefinedBy}"/>
+						<Text text="{i18n>ContractEmployeeemployeeRegion.regionDescription}"/>
 					</Column>
 					<Column demandPopin="true" minScreenWidth="Tablet">
-						<Text text="{i18n>ContractEmployeeemployeeRegion.regionDescription}"/>
+						<Text text="{i18n>ContractEmployeeemployeeRegion.seeAlso}"/>
 					</Column>
 				</columns>
 				<items>
 					<ColumnListItem id="template" type="Navigation" press="onPress">
 						<cells>
 							<rdf:TextResource path="dataModel>" entitySet="Region"/>
-  <rdf:TextLink text="{path:'dataModel>comment',type:'sap.ui.model.type.String' }" linkText="{i18n>Region.comment}"/>
-  <rdf:TextLink text="{path:'dataModel>isDefinedBy',type:'sap.ui.model.type.String' }" linkText="{i18n>Region.isDefinedBy}"/>
-  <rdf:TextLink text="{path:'dataModel>regionDescription',type:'sap.ui.model.type.String' }" linkText="{i18n>Region.regionDescription}"/>
+							<rdf:TextLink text="{path:'dataModel>comment',type:'sap.ui.model.type.String'}" linkText="{i18n>Region.comment}"/>
+							<rdf:TextLink text="{path:'dataModel>regionDescription',type:'sap.ui.model.type.String'}" linkText="{i18n>Region.regionDescription}"/>
+							<rdf:TextLink text="{path:'dataModel>seeAlso',type:'sap.ui.model.type.String'}" linkText="{i18n>Region.seeAlso}"/>
 						</cells>
 					</ColumnListItem>
 				</items>

@@ -54,9 +54,6 @@
 						<Text text="{i18n>ContractEmployeecontractCustomer.customerWebsite}"/>
 					</Column>
 					<Column demandPopin="true" minScreenWidth="Tablet">
-						<Text text="{i18n>ContractEmployeecontractCustomer.isDefinedBy}"/>
-					</Column>
-					<Column demandPopin="true" minScreenWidth="Tablet">
 						<Text text="{i18n>ContractEmployeecontractCustomer.lat}"/>
 					</Column>
 					<Column demandPopin="true" minScreenWidth="Tablet">
@@ -68,27 +65,30 @@
 					<Column demandPopin="true" minScreenWidth="Tablet">
 						<Text text="{i18n>ContractEmployeecontractCustomer.regionDescription}"/>
 					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>ContractEmployeecontractCustomer.seeAlso}"/>
+					</Column>
 				</columns>
 				<items>
 					<ColumnListItem id="template" type="Navigation" press="onPress">
 						<cells>
 							<rdf:TextResource path="dataModel>" entitySet="Customer"/>
-  <rdf:TextLink text="{path:'dataModel>comment',type:'sap.ui.model.type.String' }" linkText="{i18n>Customer.comment}"/>
-  <rdf:TextLink text="{path:'dataModel>customerAddress',type:'sap.ui.model.type.String' }" linkText="{i18n>Customer.customerAddress}"/>
-  <rdf:TextLink text="{path:'dataModel>customerCity',type:'sap.ui.model.type.String' }" linkText="{i18n>Customer.customerCity}"/>
-  <rdf:TextLink text="{path:'dataModel>customerCompanyName',type:'sap.ui.model.type.String' }" linkText="{i18n>Customer.customerCompanyName}"/>
-  <rdf:TextLink text="{path:'dataModel>customerContactName',type:'sap.ui.model.type.String' }" linkText="{i18n>Customer.customerContactName}"/>
-  <rdf:TextLink text="{path:'dataModel>customerContactTitle',type:'sap.ui.model.type.String' }" linkText="{i18n>Customer.customerContactTitle}"/>
-  <rdf:TextLink text="{path:'dataModel>customerCountry',type:'sap.ui.model.type.String' }" linkText="{i18n>Customer.customerCountry}"/>
-  <rdf:TextLink text="{path:'dataModel>customerFax',type:'sap.ui.model.type.String' }" linkText="{i18n>Customer.customerFax}"/>
-  <rdf:TextLink text="{path:'dataModel>customerPhone',type:'sap.ui.model.type.String' }" linkText="{i18n>Customer.customerPhone}"/>
-  <rdf:TextLink text="{path:'dataModel>customerPostalCode',type:'sap.ui.model.type.String' }" linkText="{i18n>Customer.customerPostalCode}"/>
-  <rdf:TextLink text="{path:'dataModel>customerWebsite',type:'sap.ui.model.type.String' }" linkText="{i18n>Customer.customerWebsite}"/>
-  <rdf:TextLink text="{path:'dataModel>isDefinedBy',type:'sap.ui.model.type.String' }" linkText="{i18n>Customer.isDefinedBy}"/>
-  <Text text="{path:'dataModel>lat',type:'sap.ui.model.type.Float' }"/>
-  <rdf:TextLink text="{path:'dataModel>lat_long',type:'sap.ui.model.type.String' }" linkText="{i18n>Customer.lat_long}"/>
-  <Text text="{path:'dataModel>long',type:'sap.ui.model.type.Float' }"/>
-  <rdf:TextLink text="{path:'dataModel>regionDescription',type:'sap.ui.model.type.String' }" linkText="{i18n>Customer.regionDescription}"/>
+							<rdf:TextLink text="{path:'dataModel>comment',type:'sap.ui.model.type.String'}" linkText="{i18n>Customer.comment}"/>
+							<rdf:TextLink text="{path:'dataModel>customerAddress',type:'sap.ui.model.type.String'}" linkText="{i18n>Customer.customerAddress}"/>
+							<rdf:TextLink text="{path:'dataModel>customerCity',type:'sap.ui.model.type.String'}" linkText="{i18n>Customer.customerCity}"/>
+							<rdf:TextLink text="{path:'dataModel>customerCompanyName',type:'sap.ui.model.type.String'}" linkText="{i18n>Customer.customerCompanyName}"/>
+							<rdf:TextLink text="{path:'dataModel>customerContactName',type:'sap.ui.model.type.String'}" linkText="{i18n>Customer.customerContactName}"/>
+							<rdf:TextLink text="{path:'dataModel>customerContactTitle',type:'sap.ui.model.type.String'}" linkText="{i18n>Customer.customerContactTitle}"/>
+							<rdf:TextLink text="{path:'dataModel>customerCountry',type:'sap.ui.model.type.String'}" linkText="{i18n>Customer.customerCountry}"/>
+							<rdf:TextLink text="{path:'dataModel>customerFax',type:'sap.ui.model.type.String'}" linkText="{i18n>Customer.customerFax}"/>
+							<rdf:TextLink text="{path:'dataModel>customerPhone',type:'sap.ui.model.type.String'}" linkText="{i18n>Customer.customerPhone}"/>
+							<rdf:TextLink text="{path:'dataModel>customerPostalCode',type:'sap.ui.model.type.String'}" linkText="{i18n>Customer.customerPostalCode}"/>
+							<rdf:TextLink text="{path:'dataModel>customerWebsite',type:'sap.ui.model.type.String'}" linkText="{i18n>Customer.customerWebsite}"/>
+							<Text text="{path:'dataModel>lat',type:'sap.ui.model.type.Float', formatOptions:{'style':'short','maxFractionDigits':2} }"/>
+							<rdf:TextLink text="{path:'dataModel>lat_long',type:'sap.ui.model.type.String'}" linkText="{i18n>Customer.lat_long}"/>
+							<Text text="{path:'dataModel>long',type:'sap.ui.model.type.Float', formatOptions:{'style':'short','maxFractionDigits':2} }"/>
+							<rdf:TextLink text="{path:'dataModel>regionDescription',type:'sap.ui.model.type.String'}" linkText="{i18n>Customer.regionDescription}"/>
+							<rdf:TextLink text="{path:'dataModel>seeAlso',type:'sap.ui.model.type.String'}" linkText="{i18n>Customer.seeAlso}"/>
 						</cells>
 					</ColumnListItem>
 				</items>

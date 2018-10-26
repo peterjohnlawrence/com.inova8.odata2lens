@@ -121,7 +121,7 @@
 		"targets": {
 			"home": {
 				"viewName": "view/Home",
-				"viewPath": "NHS",
+				"viewPath": "$schema",
 				"viewId": "home",
 				"viewLevel": 1
 			},

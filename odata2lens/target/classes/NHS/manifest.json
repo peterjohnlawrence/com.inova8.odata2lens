@@ -11,7 +11,7 @@
 		},
 		"dataSources": {
 			"dataService": {
-				"serviceUrl": "./../odata2sparql/NHS/",
+				"serviceUrl": "./../../odata2sparql/NHS/",
 				"odataVersion": "4.0",
 				"autoExpandSelect": true,
 				"operationMode": "Server",
@@ -24,10 +24,6 @@
 				"operationMode": "Server",
 				"synchronizationMode": "None"
 			}
-		},
-		"sourceTemplate": {
-			"id": "sap.ui.ui5-template-plugin.1worklist",
-			"version": "1.38.3"
 		}
 	},
 	"sap.ui": {
@@ -75,7 +71,7 @@
 			"i18n": {
 				"type": "sap.ui.model.resource.ResourceModel",
 				"settings": {
-					"bundleName": "apartment.NW.i18n.i18n"
+					"bundleName": "apartment.NHS.i18n.i18n"
 				}
 			},
 			"dataModel": {
@@ -112,10 +108,6 @@
 			},
 			"resourceCache": {
 				"type": "sap.ui.model.json.JSONModel"
-			},
-			"tenancy": {
-				"type": "sap.ui.model.json.JSONModel",
-				"uri": "model/tenancy.json"
 			}
 		}
 	}

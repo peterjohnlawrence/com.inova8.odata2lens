@@ -100,11 +100,15 @@ public class UITemplate {
 				break;
 			}
 		}
+		Float increment = (float) 0.0 ;
+		while(properties.containsKey(ordinal + increment)) {
+			increment = (float) (increment + 0.1) ;
+		}
 		if (currentOrdinal != null) {
-			PropertyTemplate propertyTemplate = new PropertyTemplate(property, propertyType, range, ordinal, visible,
+			PropertyTemplate propertyTemplate = new PropertyTemplate(property, propertyType, range, ordinal+ increment, visible,
 					aggregate, formatOptions);
 			properties.remove(currentOrdinal);
-			properties.put(ordinal, propertyTemplate);
+			properties.put(ordinal + increment, propertyTemplate);
 		}
 	}
 }

@@ -32,9 +32,9 @@
 					<ColumnListItem id="template" type="Navigation" press="onPress">
 						<cells>
 							<rdf:TextResource path="dataModel>" entitySet="OrderSummary"/>
-  <rdf:TextLink text="{path:'dataModel>order',type:'sap.ui.model.type.String'}" linkText="{i18n>OrderSummary.order}"/>
-  <Text text="{path:'dataModel>orderSummary_Value',type:'sap.ui.model.type.Float' }"/>
-  <rdf:TextLink text="{path:'dataModel>prod',type:'sap.ui.model.type.String'}" linkText="{i18n>OrderSummary.prod}"/>
+							<rdf:TextLink text="{path:'dataModel>order',type:'sap.ui.model.type.String'}" linkText="{i18n>OrderSummary.order}"/>
+							<Text text="{path:'dataModel>orderSummary_Value',type:'sap.ui.model.type.Float', formatOptions:{'style':'short','maxFractionDigits':2} }"/>
+							<rdf:TextLink text="{path:'dataModel>prod',type:'sap.ui.model.type.String'}" linkText="{i18n>OrderSummary.prod}"/>
 						</cells>
 					</ColumnListItem>
 				</items>

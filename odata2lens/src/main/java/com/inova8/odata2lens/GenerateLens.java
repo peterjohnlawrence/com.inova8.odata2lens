@@ -21,6 +21,7 @@ import org.apache.olingo.client.api.communication.response.ODataRetrieveResponse
 import org.apache.olingo.client.core.ODataClientFactory;
 import org.apache.olingo.commons.api.edm.Edm;
 import org.apache.olingo.commons.api.edm.EdmAnnotation;
+import org.apache.olingo.commons.api.edm.EdmComplexType;
 import org.apache.olingo.commons.api.edm.EdmEntityType;
 import org.apache.olingo.commons.api.edm.EdmFunction;
 import org.apache.olingo.commons.api.edm.EdmNavigationProperty;
@@ -34,15 +35,17 @@ import com.inova8.odata2lens.NavigationProperty;
 
 public class GenerateLens {
 	String workingPath;
+	static TreeMap<String, EntityType> entityTypes = new TreeMap<String, EntityType>();
+	static TreeMap<String, ComplexType> complexTypes = new TreeMap<String, ComplexType>();
 
 	public static void main(String[] args) throws IOException, ODataException {
-		for (String schemaName: args) {
+		for (String schemaName : args) {
 			generate(schemaName);
 		}
 	}
 
 	private static void generate(String schemaName) throws IOException, ODataException {
-		System.out.println("Generating " + schemaName );
+		System.out.println("Generating " + schemaName);
 		Edm edm = null;
 		edm = readEdm("http://localhost:8080/odata2sparql/" + schemaName);
 
@@ -54,16 +57,17 @@ public class GenerateLens {
 		(new File(getWorkingPath() + "\\" + schemaName + "\\" + "view")).mkdirs();
 		(new File(getWorkingPath() + "\\" + schemaName + "\\" + "i18n")).mkdirs();
 
-		TreeMap<String, EntityType> entityTypes = new TreeMap<String, EntityType>();
-		createMetadata(edm, schemaName, entityTypes);
-		generateUITemplate(schemaName, entityTypes);
-		TreeMap<String, UITemplate> uiTemplates = readUITemplate(schemaName, entityTypes);
-		generateRouting(schemaName, entityTypes);
-		generateContextMenu(schemaName, entityTypes, uiTemplates);
+		//		TreeMap<String, EntityType> entityTypes = new TreeMap<String, EntityType>();
+		//		TreeMap<String, ComplexType> complexTypes = new TreeMap<String, ComplexType>();
+		createMetadata(edm, schemaName);
+		generateUITemplate(schemaName);
+		TreeMap<String, UITemplate> uiTemplates = readUITemplate(schemaName);
+		generateRouting(schemaName);
+		generateContextMenu(schemaName, uiTemplates);
 		StringWriter i18nWriter = generateI18n();
-		generateEntitySet(schemaName, entityTypes, i18nWriter, uiTemplates);
-		generateEntity(schemaName, entityTypes, i18nWriter, uiTemplates);
-		generateEntityNavigationSet(schemaName, entityTypes, i18nWriter, uiTemplates);
+		generateEntitySet(schemaName, i18nWriter, uiTemplates);
+		generateEntity(schemaName, i18nWriter, uiTemplates);
+		generateEntityNavigationSet(schemaName, i18nWriter, uiTemplates);
 
 		FileWriter fw = new FileWriter(
 				new File(getWorkingPath() + "\\" + schemaName + "\\" + "i18n\\", "i18n.properties"));
@@ -72,8 +76,7 @@ public class GenerateLens {
 		System.out.println(schemaName + " generated");
 	}
 
-	private static TreeMap<String, UITemplate> readUITemplate(String schemaName,
-			TreeMap<String, EntityType> entityTypes) throws IOException {
+	private static TreeMap<String, UITemplate> readUITemplate(String schemaName) throws IOException {
 
 		BufferedReader uiTemplateReader = null;
 		TreeMap<String, UITemplate> uiTemplates = new TreeMap<String, UITemplate>();
@@ -203,10 +206,42 @@ public class GenerateLens {
 		return annotationStrings;
 	}
 
-	private static void createMetadata(Edm edm, String schemaName, TreeMap<String, EntityType> entityTypes)
-			throws IOException {
+	private static void createMetadata(Edm edm, String schemaName) throws IOException {
 
 		EdmSchema schema = edm.getSchema(schemaName);
+
+		for (EdmComplexType edmComplexType : schema.getComplexTypes()) {
+			ComplexType complexType = new ComplexType(edmComplexType.getName());
+			complexTypes.put(edmComplexType.getFullQualifiedName().toString(), complexType);
+			String subTypeName;
+			for (String propertyName : edmComplexType.getPropertyNames()) {
+				EdmProperty edmProperty = (EdmProperty) edmComplexType.getProperty(propertyName);
+				//String name, String label, String tooltip, String range, String formatOptions
+				subTypeName = getAnnotations("", edmProperty.getAnnotations()).get("odata.subType");
+				Property property = new Property(propertyName, propertyName, propertyName,
+						edmProperty.getType().getFullQualifiedName().toString(), null,false);
+				property.setSubTypeName(subTypeName);
+				complexType.getProperties().put(subTypeName, property);
+			}
+			for (String navigationPropertyName : edmComplexType.getNavigationPropertyNames()) {
+				EdmNavigationProperty edmNavigationProperty = edmComplexType.getNavigationProperty(navigationPropertyName);
+				subTypeName = getAnnotations("", edmNavigationProperty.getAnnotations()).get("odata.subType");
+				if (edmNavigationProperty.isCollection()) {
+					//String name, String target, String label, String tooltip, String targetEntityType,String range, String icon
+					EntityNavigationSet entityNavigationSet = new EntityNavigationSet(navigationPropertyName,navigationPropertyName,navigationPropertyName,navigationPropertyName,edmNavigationProperty.getType().getName(),
+							edmNavigationProperty.getType().getName(), "");
+					entityNavigationSet.setSubTypeName(subTypeName);
+					complexType.getNavigationSets().put(subTypeName,entityNavigationSet);
+				} else {
+					//String name, String label, String tooltip, String targetEntityType, String range,	String icon					
+					NavigationProperty navigationProperty = new NavigationProperty(navigationPropertyName,
+							navigationPropertyName, navigationPropertyName, edmNavigationProperty.getType().getName(),
+							edmNavigationProperty.getType().getName(), null);
+					navigationProperty.setSubTypeName(subTypeName);
+					complexType.getNavigationProperties().put(subTypeName, navigationProperty);
+				}
+			}
+		}
 		for (EdmEntityType edmEntityType : schema.getEntityTypes()) {
 			if (!isFunctionImport(schema.getFunctions(), edmEntityType)) {
 				HashMap<String, String> entityTypeAnnotations = getAnnotations(edmEntityType.getName(),
@@ -229,53 +264,63 @@ public class GenerateLens {
 				TreeMap<String, Property> properties = new TreeMap<String, Property>();
 				for (String propertyName : edmEntityType.getPropertyNames()) {
 					if (!propertyName.equals("subjectId") && !propertyName.equals("label")) {
-						EdmProperty property = (EdmProperty) edmEntityType.getProperty(propertyName);
+						EdmProperty edmProperty = (EdmProperty) edmEntityType.getProperty(propertyName);
 						HashMap<String, String> propertyAnnotations = getAnnotations(propertyName,
-								property.getAnnotations());
-						properties.put(propertyName, new Property(propertyName,
+								edmProperty.getAnnotations());
+						String type = edmProperty.getType().getFullQualifiedName().toString();
+
+						Property property = new Property(propertyName,
 								propertyAnnotations.containsKey("sap.label") ? propertyAnnotations.get("sap.label")
 										: propertyName,
 								propertyAnnotations.containsKey("sap.quickinfo")
 										? propertyAnnotations.get("sap.quickinfo")
 										: propertyName,
-								property.getType().getFullQualifiedName().toString(), null)
+										type, null,propertyAnnotations.containsKey("odata.FK")?true:false);
+						if (edmProperty.isPrimitive()) {
+							//primitiveType = edmProperty.getType().getFullQualifiedName().toString();
 
-						);
+						} else {
+							ComplexType complexType = complexTypes.get(type);
+							property.setComplexRange(complexType);
+						}
+						properties.put(propertyName, property);
 					}
 				}
 
 				for (String navigationPropertyName : edmEntityType.getNavigationPropertyNames()) {
-					EdmNavigationProperty navigationProperty = edmEntityType
+					EdmNavigationProperty edmNavigationProperty = edmEntityType
 							.getNavigationProperty(navigationPropertyName);
 					HashMap<String, String> navigationPropertyAnnotations = getAnnotations(navigationPropertyName,
-							navigationProperty.getAnnotations());
-					if (!isFunctionImport(schema.getFunctions(), navigationProperty.getType())
-							&& !isNavigationOutsideOfNamespace(schema.getEntityTypes(), navigationProperty.getType())) {
-						if (navigationProperty.isCollection()) {
-							entityNavigationSets.put(navigationPropertyName,
-									new EntityNavigationSet(navigationPropertyName,
-											edmEntityType.getName() + navigationPropertyName,
-											navigationPropertyAnnotations.containsKey("sap.label")
-													? navigationPropertyAnnotations.get("sap.label")
-													: "Show " + edmEntityType.getName() + "s "
-															+ navigationProperty.getType().getName(),
-											navigationPropertyAnnotations.containsKey("sap.quickinfo")
-													? navigationPropertyAnnotations.get("sap.quickinfo")
-													: "Show " + edmEntityType.getName() + "s "
-															+ navigationProperty.getType().getName(),
-											navigationProperty.getType().getName(),
-											navigationProperty.getType().getName(), ""));
+							edmNavigationProperty.getAnnotations());
+					if (!isFunctionImport(schema.getFunctions(), edmNavigationProperty.getType())
+							&& !isNavigationOutsideOfNamespace(schema.getEntityTypes(),
+									edmNavigationProperty.getType())) {
+						if (edmNavigationProperty.isCollection()) {
+							EntityNavigationSet entityNavigationSet = new EntityNavigationSet(navigationPropertyName,
+									edmEntityType.getName() + navigationPropertyName,
+									navigationPropertyAnnotations.containsKey("sap.label")
+											? navigationPropertyAnnotations.get("sap.label")
+											: "Show " + edmEntityType.getName() + "s "
+													+ edmNavigationProperty.getType().getName(),
+									navigationPropertyAnnotations.containsKey("sap.quickinfo")
+											? navigationPropertyAnnotations.get("sap.quickinfo")
+											: "Show " + edmEntityType.getName() + "s "
+													+ edmNavigationProperty.getType().getName(),
+									edmNavigationProperty.getType().getName(),
+									edmNavigationProperty.getType().getName(), "");
+
+							entityNavigationSets.put(navigationPropertyName, entityNavigationSet);
 						} else {
-							navigationProperties.put(navigationPropertyName,
-									new NavigationProperty(navigationPropertyName,
-											navigationPropertyAnnotations.containsKey("sap.label")
-													? navigationPropertyAnnotations.get("sap.label")
-													: navigationPropertyName,
-											navigationPropertyAnnotations.containsKey("sap.quickinfo")
-													? navigationPropertyAnnotations.get("sap.quickinfo")
-													: "Show " + navigationPropertyName,
-											navigationProperty.getType().getName(),
-											navigationProperty.getType().getName(), ""));
+							NavigationProperty navigationProperty = new NavigationProperty(navigationPropertyName,
+									navigationPropertyAnnotations.containsKey("sap.label")
+											? navigationPropertyAnnotations.get("sap.label")
+											: navigationPropertyName,
+									navigationPropertyAnnotations.containsKey("sap.quickinfo")
+											? navigationPropertyAnnotations.get("sap.quickinfo")
+											: "Show " + navigationPropertyName,
+									edmNavigationProperty.getType().getName(),
+									edmNavigationProperty.getType().getName(), "");
+							navigationProperties.put(navigationPropertyName, navigationProperty);
 						}
 					}
 				}
@@ -289,26 +334,41 @@ public class GenerateLens {
 				entityTypes.put(edmEntityType.getName(), new EntityType(entity, entitySet));
 			}
 		}
-		//Post process to identify parent and child entitySets
+		//Post process to identify parent and child entitySets, and sets of subTypes used in complex properties
 		for (EntityType entityType : entityTypes.values()) {
 			for (NavigationProperty navigationProperty : entityType.getEntity().getNavigationProperties().values()) {
-
 				navigationProperty.setRangeType(entityTypes.get(navigationProperty.getRange()));
-
 			}
 			for (EntityNavigationSet navigationSet : entityType.getEntity().getNavigationSet().values()) {
 				navigationSet.setRangeType(entityTypes.get(navigationSet.getRange()));
 			}
+			for ( Property property : entityType.getEntity().getProperties().values()) {
+				if (property.getComplex()) {
+					for ( Property complexProperty :property.getComplexRange().getProperties().values()) {
+						entityType.getEntity().getSubTypeNames().add(complexProperty.getSubTypeName());
+					}	
+					for ( NavigationProperty complexNavigationProperty :property.getComplexRange().getNavigationProperties().values()) {
+						entityType.getEntity().getSubTypeNames().add(complexNavigationProperty.getSubTypeName());
+					}	
+					for ( EntityNavigationSet complexNavigationSet :property.getComplexRange().getNavigationSets().values()) {
+						entityType.getEntity().getSubTypeNames().add(complexNavigationSet.getSubTypeName());
+					}
+				}else
+				{
+					entityType.getEntity().hasPrimitiveProperties(true);
+				}
+
+			}
 			EntitySet entitySet = entityType.getEntitySet();
-			if(!entitySet.getBaseTypes().isEmpty()) {
-				for( String baseType : entitySet.getBaseTypes()) {
-					if(entityTypes.containsKey(baseType)) {						
+			if (!entitySet.getBaseTypes().isEmpty()) {
+				for (String baseType : entitySet.getBaseTypes()) {
+					if (entityTypes.containsKey(baseType)) {
 						EntityType baseEntityType = entityTypes.get(baseType);
 						baseEntityType.getEntitySet().addChildEntitySet(entitySet);
 						entitySet.addParentEntitySet(baseEntityType.getEntitySet());
 					}
 				}
-			}	
+			}
 		}
 	}
 
@@ -327,7 +387,7 @@ public class GenerateLens {
 		return false;
 	}
 
-	private static void generateRouting(String schemaName, TreeMap<String, EntityType> entityTypes) throws IOException {
+	private static void generateRouting(String schemaName) throws IOException {
 
 		Template routingTemplate = null;
 
@@ -348,8 +408,7 @@ public class GenerateLens {
 
 	}
 
-	private static void generateUITemplate(String schemaName, TreeMap<String, EntityType> entityTypes)
-			throws IOException {
+	private static void generateUITemplate(String schemaName) throws IOException {
 
 		Template uiTemplate = null;
 
@@ -369,8 +428,8 @@ public class GenerateLens {
 		//System.out.println(uiWriter.toString());
 	}
 
-	private static void generateContextMenu(String schemaName, TreeMap<String, EntityType> entityTypes,
-			TreeMap<String, UITemplate> uiTemplates) throws IOException {
+	private static void generateContextMenu(String schemaName, TreeMap<String, UITemplate> uiTemplates)
+			throws IOException {
 
 		Template contextMenuTemplate = null;
 
@@ -390,8 +449,8 @@ public class GenerateLens {
 		//System.out.println(contextMenuWriter.toString());
 	}
 
-	private static void generateEntitySet(String schemaName, TreeMap<String, EntityType> entityTypes,
-			StringWriter i18nWriter, TreeMap<String, UITemplate> uiTemplates) throws IOException {
+	private static void generateEntitySet(String schemaName, StringWriter i18nWriter,
+			TreeMap<String, UITemplate> uiTemplates) throws IOException {
 
 		Template entitySetTemplate = null;
 		Template i18nTemplate = null;
@@ -406,6 +465,7 @@ public class GenerateLens {
 			entitySetContext.put("schema", schemaName);
 			entitySetContext.put("entity", entityType.getEntity());
 			entitySetContext.put("entitySet", entityType.getEntitySet());
+			entitySetContext.put("complexTypes", complexTypes);
 			entitySetContext.put("uiTemplate", uiTemplates.get(entityType.getEntitySet().getTarget()));
 			entitySetTemplate.merge(entitySetContext, entitySetWriter);
 
@@ -424,13 +484,13 @@ public class GenerateLens {
 
 	}
 
-	private static void generateEntity(String schemaName, TreeMap<String, EntityType> entityTypes,
-			StringWriter i18nWriter, TreeMap<String, UITemplate> uiTemplates) throws IOException {
+	private static void generateEntity(String schemaName, StringWriter i18nWriter,
+			TreeMap<String, UITemplate> uiTemplates) throws IOException {
 
 		Template entityTemplate = null;
 		Template i18nTemplate = null;
 
-		entityTemplate = Velocity.getTemplate("entity.vm");
+		entityTemplate = Velocity.getTemplate("entity360.vm");
 		i18nTemplate = Velocity.getTemplate("i18n.entity.vm");
 
 		for (EntityType entityType : entityTypes.values()) {
@@ -440,6 +500,7 @@ public class GenerateLens {
 			entityContext.put("schema", schemaName);
 			entityContext.put("entity", entityType.getEntity());
 			entityContext.put("entitySet", entityType.getEntitySet());
+			entityContext.put("complexTypes", complexTypes);
 			entityContext.put("uiTemplate", uiTemplates.get(entityType.getEntity().getTarget()));
 			entityTemplate.merge(entityContext, entityWriter);
 
@@ -456,8 +517,8 @@ public class GenerateLens {
 
 	}
 
-	private static void generateEntityNavigationSet(String schemaName, TreeMap<String, EntityType> entityTypes,
-			StringWriter i18nWriter, TreeMap<String, UITemplate> uiTemplates) throws IOException {
+	private static void generateEntityNavigationSet(String schemaName, StringWriter i18nWriter,
+			TreeMap<String, UITemplate> uiTemplates) throws IOException {
 
 		Template entityNavigationSetTemplate = null;
 		Template i18nTemplate = null;
@@ -478,6 +539,7 @@ public class GenerateLens {
 							entityTypes.get(entityNavigationSet.getTargetEntityType()).getEntity());
 					entityNavigationSetContext.put("entitySet",
 							entityTypes.get(entityNavigationSet.getTargetEntityType()).getEntitySet());
+					entityNavigationSetContext.put("complexTypes", complexTypes);
 					entityNavigationSetContext.put("entityNavigationSet", entityNavigationSet);
 					entityNavigationSetContext.put("uiTemplate", uiTemplates.get(entityNavigationSet.getTarget()));
 					entityNavigationSetTemplate.merge(entityNavigationSetContext, entityNavigationSetWriter);

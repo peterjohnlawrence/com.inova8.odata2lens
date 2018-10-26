@@ -1,48 +1,225 @@
-<mvc:View controllerName="com.inova8.lens.controller.Entity" xmlns="sap.m" xmlns:mvc="sap.ui.core.mvc"
-	xmlns:f="sap.ui.layout.form" xmlns:table="sap.ui.table" xmlns:rdf="com.inova8.lens.control">
-	<Page showHeader="true" id="page" navButtonPress="onNavBack" showNavButton="false" title="{i18n>ParttimeEmployee.Title}"
-		busy="{entityView>/busy}" busyIndicatorDelay="{entityView>/delay}">
+<mvc:View controllerName="com.inova8.lens.controller.Entity360" xmlns="sap.m" xmlns:mvc="sap.ui.core.mvc" xmlns:l="sap.ui.layout"
+	xmlns:f="sap.ui.layout.form" xmlns:table="sap.ui.table" xmlns:rdf="com.inova8.lens.control" xmlns:html="http://www.w3.org/1999/xhtml"
+	xmlns:core="sap.ui.core">
+	<Page showHeader="true" id="page" navButtonPress="onNavBack" showNavButton="false" title="{i18n>ParttimeEmployee.Title}" busy="{entityView>/busy}"
+		busyIndicatorDelay="{entityView>/delay}" >
 		<customHeader>
 			<Toolbar>
 				<ToolbarSpacer/>
 				<Title text="{i18n>ParttimeEmployee.this}"/>
 				<rdf:TextResource path="dataModel>" entitySet="ParttimeEmployee"/>
-				<Title text="{i18n>ParttimeEmployee.Title}" />
+				<Title text="{i18n>ParttimeEmployee.Title}"/>
 				<ToolbarSpacer/>
+				<ToggleButton id="toggleColumns" icon="sap-icon://hide" activeIcon="sap-icon://show" press="onSettingsPressed" visible="false"	>
+					<layoutData>
+						<OverflowToolbarLayoutData priority="NeverOverflow"/>
+					</layoutData>
+				</ToggleButton>
+				
 			</Toolbar>
 		</customHeader>
-		<content>
-			<f:SimpleForm class="editableForm" columnsL="1" columnsM="1" editable="true" emptySpanL="4" emptySpanM="4" 
-				labelSpanL="2" labelSpanM="2" layout="ResponsiveGridLayout" maxContainerCols="2" minWidth="1024" singleContainerFullSize="true">
-				<f:content>
-					<!--<Label text="{i18n>ParttimeEmployee.this}" required="false"/><rdf:TextResource path="dataModel>" entitySet="ParttimeEmployee"/>-->
-					<Label text="{i18n>ParttimeEmployee.birthDate}" required="false"/>   <Text text="{dataModel>birthDate}"/>
-					<Label text="{i18n>ParttimeEmployee.comment}" required="false"/>   <rdf:TextLink text="{path:'dataModel>comment',type:'sap.ui.model.type.String' }" linkText="{i18n>ParttimeEmployee.comment}"/>
-					<Label text="{i18n>ParttimeEmployee.employeeAddress}" required="false"/>   <rdf:TextLink text="{path:'dataModel>employeeAddress',type:'sap.ui.model.type.String' }" linkText="{i18n>ParttimeEmployee.employeeAddress}"/>
-					<Label text="{i18n>ParttimeEmployee.employeeCity}" required="false"/>   <rdf:TextLink text="{path:'dataModel>employeeCity',type:'sap.ui.model.type.String' }" linkText="{i18n>ParttimeEmployee.employeeCity}"/>
-					<Label text="{i18n>ParttimeEmployee.employeeCountry}" required="false"/>   <rdf:TextLink text="{path:'dataModel>employeeCountry',type:'sap.ui.model.type.String' }" linkText="{i18n>ParttimeEmployee.employeeCountry}"/>
-					<Label text="{i18n>ParttimeEmployee.employeeLinkedIn}" required="false"/>   <rdf:TextLink text="{path:'dataModel>employeeLinkedIn',type:'sap.ui.model.type.String' }" linkText="{i18n>ParttimeEmployee.employeeLinkedIn}"/>
-					<Label text="{i18n>ParttimeEmployee.employeePostalCode}" required="false"/>   <rdf:TextLink text="{path:'dataModel>employeePostalCode',type:'sap.ui.model.type.String' }" linkText="{i18n>ParttimeEmployee.employeePostalCode}"/>
-					<Label text="{i18n>ParttimeEmployee.extension}" required="false"/>   <rdf:TextLink text="{path:'dataModel>extension',type:'sap.ui.model.type.String' }" linkText="{i18n>ParttimeEmployee.extension}"/>
-					<Label text="{i18n>ParttimeEmployee.firstName}" required="false"/>   <rdf:TextLink text="{path:'dataModel>firstName',type:'sap.ui.model.type.String' }" linkText="{i18n>ParttimeEmployee.firstName}"/>
-					<Label text="{i18n>ParttimeEmployee.hireDate}" required="false"/>   <Text text="{dataModel>hireDate}"/>
-					<Label text="{i18n>ParttimeEmployee.homePhone}" required="false"/>   <rdf:TextLink text="{path:'dataModel>homePhone',type:'sap.ui.model.type.String' }" linkText="{i18n>ParttimeEmployee.homePhone}"/>
-					<Label text="{i18n>ParttimeEmployee.isDefinedBy}" required="false"/>   <rdf:TextLink text="{path:'dataModel>isDefinedBy',type:'sap.ui.model.type.String' }" linkText="{i18n>ParttimeEmployee.isDefinedBy}"/>
-					<Label text="{i18n>ParttimeEmployee.lastName}" required="false"/>   <rdf:TextLink text="{path:'dataModel>lastName',type:'sap.ui.model.type.String' }" linkText="{i18n>ParttimeEmployee.lastName}"/>
-					<Label text="{i18n>ParttimeEmployee.lat}" required="false"/>   <Text text="{path:'dataModel>lat',type:'sap.ui.model.type.Float' }"/>
-					<Label text="{i18n>ParttimeEmployee.lat_long}" required="false"/>   <rdf:TextLink text="{path:'dataModel>lat_long',type:'sap.ui.model.type.String' }" linkText="{i18n>ParttimeEmployee.lat_long}"/>
-					<Label text="{i18n>ParttimeEmployee.long}" required="false"/>   <Text text="{path:'dataModel>long',type:'sap.ui.model.type.Float' }"/>
-					<Label text="{i18n>ParttimeEmployee.notes}" required="false"/>   <rdf:TextLink text="{path:'dataModel>notes',type:'sap.ui.model.type.String' }" linkText="{i18n>ParttimeEmployee.notes}"/>
-					<Label text="{i18n>ParttimeEmployee.parttimeHours}" required="false"/>   <Text text="{dataModel>parttimeHours}"/>
-					<Label text="{i18n>ParttimeEmployee.photo}" required="false"/>   <rdf:TextLink text="{path:'dataModel>photo',type:'sap.ui.model.type.String' }" linkText="{i18n>ParttimeEmployee.photo}"/>
-					<Label text="{i18n>ParttimeEmployee.regionDescription}" required="false"/>   <rdf:TextLink text="{path:'dataModel>regionDescription',type:'sap.ui.model.type.String' }" linkText="{i18n>ParttimeEmployee.regionDescription}"/>
-					<Label text="{i18n>ParttimeEmployee.reportsToNotation}" required="false"/>   <rdf:TextLink text="{path:'dataModel>reportsToNotation',type:'sap.ui.model.type.String' }" linkText="{i18n>ParttimeEmployee.reportsToNotation}"/>
-					<Label text="{i18n>ParttimeEmployee.territoryNotation}" required="false"/>   <rdf:TextLink text="{path:'dataModel>territoryNotation',type:'sap.ui.model.type.String' }" linkText="{i18n>ParttimeEmployee.territoryNotation}"/>
-					<Label text="{i18n>ParttimeEmployee.title}" required="false"/>   <rdf:TextLink text="{path:'dataModel>title',type:'sap.ui.model.type.String' }" linkText="{i18n>ParttimeEmployee.title}"/>
-					<Label text="{i18n>ParttimeEmployee.titleOfCourtesy}" required="false"/>   <rdf:TextLink text="{path:'dataModel>titleOfCourtesy',type:'sap.ui.model.type.String' }" linkText="{i18n>ParttimeEmployee.titleOfCourtesy}"/>
-					<Label text="{i18n>ParttimeEmployee.reportsTo}" required="false"/><rdf:TextResource path="dataModel>reportsTo" entitySet="Employee"/>		
-				</f:content>
-			</f:SimpleForm>
-		</content>
+		<Table id="form360" inset="false" fixedLayout="true" class="multicolumnform" updateFinished="hideColumns">
+			<columns>
+				<Column hAlign="Right" width="200px">
+					<Text text=""/>
+				</Column>
+				<Column visible="true">
+				</Column>
+			</columns>
+			<items>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>ParttimeEmployee.birthDate}" required="false"/> 
+						<Text text="{dataModel>birthDate}"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>ParttimeEmployee.comment}" required="false"/> 
+						<rdf:TextLink text="{path:'dataModel>comment',type:'sap.ui.model.type.String' }" linkText="{i18n>ParttimeEmployee.comment}"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>ParttimeEmployee.employeeAddress}" required="false"/> 
+						<rdf:TextLink text="{path:'dataModel>employeeAddress',type:'sap.ui.model.type.String' }" linkText="{i18n>ParttimeEmployee.employeeAddress}"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>ParttimeEmployee.employeeCity}" required="false"/> 
+						<rdf:TextLink text="{path:'dataModel>employeeCity',type:'sap.ui.model.type.String' }" linkText="{i18n>ParttimeEmployee.employeeCity}"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>ParttimeEmployee.employeeCountry}" required="false"/> 
+						<rdf:TextLink text="{path:'dataModel>employeeCountry',type:'sap.ui.model.type.String' }" linkText="{i18n>ParttimeEmployee.employeeCountry}"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>ParttimeEmployee.employeeLinkedIn}" required="false"/> 
+						<rdf:TextLink text="{path:'dataModel>employeeLinkedIn',type:'sap.ui.model.type.String' }" linkText="{i18n>ParttimeEmployee.employeeLinkedIn}"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>ParttimeEmployee.employeePostalCode}" required="false"/> 
+						<rdf:TextLink text="{path:'dataModel>employeePostalCode',type:'sap.ui.model.type.String' }" linkText="{i18n>ParttimeEmployee.employeePostalCode}"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>ParttimeEmployee.extension}" required="false"/> 
+						<rdf:TextLink text="{path:'dataModel>extension',type:'sap.ui.model.type.String' }" linkText="{i18n>ParttimeEmployee.extension}"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>ParttimeEmployee.firstName}" required="false"/> 
+						<rdf:TextLink text="{path:'dataModel>firstName',type:'sap.ui.model.type.String' }" linkText="{i18n>ParttimeEmployee.firstName}"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>ParttimeEmployee.hireDate}" required="false"/> 
+						<Text text="{dataModel>hireDate}"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>ParttimeEmployee.homePhone}" required="false"/> 
+						<rdf:TextLink text="{path:'dataModel>homePhone',type:'sap.ui.model.type.String' }" linkText="{i18n>ParttimeEmployee.homePhone}"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>ParttimeEmployee.lastName}" required="false"/> 
+						<rdf:TextLink text="{path:'dataModel>lastName',type:'sap.ui.model.type.String' }" linkText="{i18n>ParttimeEmployee.lastName}"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>ParttimeEmployee.lat}" required="false"/> 
+						<Text text="{path:'dataModel>lat',type:'sap.ui.model.type.Float' }"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>ParttimeEmployee.lat_long}" required="false"/> 
+						<rdf:TextLink text="{path:'dataModel>lat_long',type:'sap.ui.model.type.String' }" linkText="{i18n>ParttimeEmployee.lat_long}"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>ParttimeEmployee.long}" required="false"/> 
+						<Text text="{path:'dataModel>long',type:'sap.ui.model.type.Float' }"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>ParttimeEmployee.notes}" required="false"/> 
+						<rdf:TextLink text="{path:'dataModel>notes',type:'sap.ui.model.type.String' }" linkText="{i18n>ParttimeEmployee.notes}"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>ParttimeEmployee.parttimeEmployeeSalary}" required="false"/> 
+						<Text text="{path:'dataModel>parttimeEmployeeSalary',type:'sap.ui.model.type.Float' }"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>ParttimeEmployee.parttimeHours}" required="false"/> 
+						<Text text="{dataModel>parttimeHours}"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>ParttimeEmployee.photo}" required="false"/> 
+						<rdf:TextLink text="{path:'dataModel>photo',type:'sap.ui.model.type.String' }" linkText="{i18n>ParttimeEmployee.photo}"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>ParttimeEmployee.regionDescription}" required="false"/> 
+						<rdf:TextLink text="{path:'dataModel>regionDescription',type:'sap.ui.model.type.String' }" linkText="{i18n>ParttimeEmployee.regionDescription}"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>ParttimeEmployee.reportsToNotation}" required="false"/> 
+						<rdf:TextLink text="{path:'dataModel>reportsToNotation',type:'sap.ui.model.type.String' }" linkText="{i18n>ParttimeEmployee.reportsToNotation}"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>ParttimeEmployee.seeAlso}" required="false"/> 
+						<rdf:TextLink text="{path:'dataModel>seeAlso',type:'sap.ui.model.type.String' }" linkText="{i18n>ParttimeEmployee.seeAlso}"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>ParttimeEmployee.territoryNotation}" required="false"/> 
+						<rdf:TextLink text="{path:'dataModel>territoryNotation',type:'sap.ui.model.type.String' }" linkText="{i18n>ParttimeEmployee.territoryNotation}"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>ParttimeEmployee.title}" required="false"/> 
+						<rdf:TextLink text="{path:'dataModel>title',type:'sap.ui.model.type.String' }" linkText="{i18n>ParttimeEmployee.title}"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>ParttimeEmployee.titleOfCourtesy}" required="false"/> 
+						<rdf:TextLink text="{path:'dataModel>titleOfCourtesy',type:'sap.ui.model.type.String' }" linkText="{i18n>ParttimeEmployee.titleOfCourtesy}"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>ParttimeEmployee.parttimeFavorite}" required="false"/> 
+						<rdf:TextResource path="dataModel>parttimeFavorite" entitySet="Product"/>		
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>ParttimeEmployee.reportsTo}" required="false"/> 
+						<rdf:TextResource path="dataModel>reportsTo" entitySet="Employee"/>		
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>ParttimeEmployee.employeeRegion}" required="false"/> 
+						<rdf:ListResource path="dataModel>employeeRegion" entitySet="Region"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>ParttimeEmployee.managesEmployee}" required="false"/> 
+						<rdf:ListResource path="dataModel>managesEmployee" entitySet="Employee"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>ParttimeEmployee.managesOrder}" required="false"/> 
+						<rdf:ListResource path="dataModel>managesOrder" entitySet="Order"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>ParttimeEmployee.parttimeEmployer}" required="false"/> 
+						<rdf:ListResource path="dataModel>parttimeEmployer" entitySet="Supplier"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>ParttimeEmployee.territory}" required="false"/> 
+						<rdf:ListResource path="dataModel>territory" entitySet="Territory"/>
+					</cells>
+				</ColumnListItem>
+			</items>
+		</Table>
 	</Page>
 </mvc:View>

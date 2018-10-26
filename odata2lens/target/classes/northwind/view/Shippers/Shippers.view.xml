@@ -22,7 +22,7 @@
 						<Text text="{i18n>Shippers.comment}"/>
 					</Column>
 					<Column demandPopin="true" minScreenWidth="Tablet">
-						<Text text="{i18n>Shippers.isDefinedBy}"/>
+						<Text text="{i18n>Shippers.seeAlso}"/>
 					</Column>
 					<Column demandPopin="true" minScreenWidth="Tablet">
 						<Text text="{i18n>Shippers.shipperCompanyName}"/>
@@ -35,10 +35,10 @@
 					<ColumnListItem id="template" type="Navigation" press="onPress">
 						<cells>
 							<rdf:TextResource path="dataModel>" entitySet="Shipper"/>
-  <rdf:TextLink text="{path:'dataModel>comment',type:'sap.ui.model.type.String'}" linkText="{i18n>Shipper.comment}"/>
-  <rdf:TextLink text="{path:'dataModel>isDefinedBy',type:'sap.ui.model.type.String'}" linkText="{i18n>Shipper.isDefinedBy}"/>
-  <rdf:TextLink text="{path:'dataModel>shipperCompanyName',type:'sap.ui.model.type.String'}" linkText="{i18n>Shipper.shipperCompanyName}"/>
-  <rdf:TextLink text="{path:'dataModel>shipperPhone',type:'sap.ui.model.type.String'}" linkText="{i18n>Shipper.shipperPhone}"/>
+							<rdf:TextLink text="{path:'dataModel>comment',type:'sap.ui.model.type.String'}" linkText="{i18n>Shipper.comment}"/>
+							<rdf:TextLink text="{path:'dataModel>seeAlso',type:'sap.ui.model.type.String'}" linkText="{i18n>Shipper.seeAlso}"/>
+							<rdf:TextLink text="{path:'dataModel>shipperCompanyName',type:'sap.ui.model.type.String'}" linkText="{i18n>Shipper.shipperCompanyName}"/>
+							<rdf:TextLink text="{path:'dataModel>shipperPhone',type:'sap.ui.model.type.String'}" linkText="{i18n>Shipper.shipperPhone}"/>
 						</cells>
 					</ColumnListItem>
 				</items>

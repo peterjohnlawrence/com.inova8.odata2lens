@@ -1,36 +1,123 @@
-<mvc:View controllerName="com.inova8.lens.controller.Entity" xmlns="sap.m" xmlns:mvc="sap.ui.core.mvc"
-	xmlns:f="sap.ui.layout.form" xmlns:table="sap.ui.table" xmlns:rdf="com.inova8.lens.control">
-	<Page showHeader="true" id="page" navButtonPress="onNavBack" showNavButton="false" title="{i18n>Product.Title}"
-		busy="{entityView>/busy}" busyIndicatorDelay="{entityView>/delay}">
+<mvc:View controllerName="com.inova8.lens.controller.Entity360" xmlns="sap.m" xmlns:mvc="sap.ui.core.mvc" xmlns:l="sap.ui.layout"
+	xmlns:f="sap.ui.layout.form" xmlns:table="sap.ui.table" xmlns:rdf="com.inova8.lens.control" xmlns:html="http://www.w3.org/1999/xhtml"
+	xmlns:core="sap.ui.core">
+	<Page showHeader="true" id="page" navButtonPress="onNavBack" showNavButton="false" title="{i18n>Product.Title}" busy="{entityView>/busy}"
+		busyIndicatorDelay="{entityView>/delay}" >
 		<customHeader>
 			<Toolbar>
 				<ToolbarSpacer/>
 				<Title text="{i18n>Product.this}"/>
 				<rdf:TextResource path="dataModel>" entitySet="Product"/>
-				<Title text="{i18n>Product.Title}" />
+				<Title text="{i18n>Product.Title}"/>
 				<ToolbarSpacer/>
+				<ToggleButton id="toggleColumns" icon="sap-icon://hide" activeIcon="sap-icon://show" press="onSettingsPressed" visible="false"	>
+					<layoutData>
+						<OverflowToolbarLayoutData priority="NeverOverflow"/>
+					</layoutData>
+				</ToggleButton>
+				
 			</Toolbar>
 		</customHeader>
-		<content>
-			<f:SimpleForm class="editableForm" columnsL="1" columnsM="1" editable="true" emptySpanL="4" emptySpanM="4" 
-				labelSpanL="2" labelSpanM="2" layout="ResponsiveGridLayout" maxContainerCols="2" minWidth="1024" singleContainerFullSize="true">
-				<f:content>
-					<!--<Label text="{i18n>Product.this}" required="false"/><rdf:TextResource path="dataModel>" entitySet="Product"/>-->
-					<Label text="{i18n>Product.categoryNotation}" required="false"/>   <rdf:TextLink text="{path:'dataModel>categoryNotation',type:'sap.ui.model.type.String' }" linkText="{i18n>Product.categoryNotation}"/>
-					<Label text="{i18n>Product.comment}" required="false"/>   <rdf:TextLink text="{path:'dataModel>comment',type:'sap.ui.model.type.String' }" linkText="{i18n>Product.comment}"/>
-					<Label text="{i18n>Product.discontinued}" required="false"/>   <Text text="{path:'dataModel>discontinued',type:'sap.ui.model.type.Boolean'}"/>  
-					<Label text="{i18n>Product.isDefinedBy}" required="false"/>   <rdf:TextLink text="{path:'dataModel>isDefinedBy',type:'sap.ui.model.type.String' }" linkText="{i18n>Product.isDefinedBy}"/>
-					<Label text="{i18n>Product.productName}" required="false"/>   <rdf:TextLink text="{path:'dataModel>productName',type:'sap.ui.model.type.String' }" linkText="{i18n>Product.productName}"/>
-					<Label text="{i18n>Product.productUnitPrice}" required="false"/>   <Text text="{path:'dataModel>productUnitPrice',type:'sap.ui.model.type.Float' }"/>
-					<Label text="{i18n>Product.quantityPerUnit}" required="false"/>   <rdf:TextLink text="{path:'dataModel>quantityPerUnit',type:'sap.ui.model.type.String' }" linkText="{i18n>Product.quantityPerUnit}"/>
-					<Label text="{i18n>Product.reorderLevel}" required="false"/>   <Text text="{path:'dataModel>reorderLevel',type:'sap.ui.model.type.Integer' }"/>
-					<Label text="{i18n>Product.supplierNotation}" required="false"/>   <rdf:TextLink text="{path:'dataModel>supplierNotation',type:'sap.ui.model.type.String' }" linkText="{i18n>Product.supplierNotation}"/>
-					<Label text="{i18n>Product.unitsInStock}" required="false"/>   <Text text="{path:'dataModel>unitsInStock',type:'sap.ui.model.type.Integer' }"/>
-					<Label text="{i18n>Product.unitsOnOrder}" required="false"/>   <Text text="{path:'dataModel>unitsOnOrder',type:'sap.ui.model.type.Integer' }"/>
-					<Label text="{i18n>Product.category}" required="false"/><rdf:TextResource path="dataModel>category" entitySet="Category"/>		
-					<Label text="{i18n>Product.supplier}" required="false"/><rdf:TextResource path="dataModel>supplier" entitySet="Supplier"/>		
-				</f:content>
-			</f:SimpleForm>
-		</content>
+		<Table id="form360" inset="false" fixedLayout="true" class="multicolumnform" updateFinished="hideColumns">
+			<columns>
+				<Column hAlign="Right" width="200px">
+					<Text text=""/>
+				</Column>
+				<Column visible="true">
+				</Column>
+			</columns>
+			<items>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>Product.categoryNotation}" required="false"/> 
+						<rdf:TextLink text="{path:'dataModel>categoryNotation',type:'sap.ui.model.type.String' }" linkText="{i18n>Product.categoryNotation}"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>Product.comment}" required="false"/> 
+						<rdf:TextLink text="{path:'dataModel>comment',type:'sap.ui.model.type.String' }" linkText="{i18n>Product.comment}"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>Product.discontinued}" required="false"/> 
+						<Text text="{path:'dataModel>discontinued',type:'sap.ui.model.type.Boolean'}"/>  
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>Product.productName}" required="false"/> 
+						<rdf:TextLink text="{path:'dataModel>productName',type:'sap.ui.model.type.String' }" linkText="{i18n>Product.productName}"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>Product.productUnitPrice}" required="false"/> 
+						<Text text="{path:'dataModel>productUnitPrice',type:'sap.ui.model.type.Float' }"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>Product.quantityPerUnit}" required="false"/> 
+						<rdf:TextLink text="{path:'dataModel>quantityPerUnit',type:'sap.ui.model.type.String' }" linkText="{i18n>Product.quantityPerUnit}"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>Product.reorderLevel}" required="false"/> 
+						<Text text="{path:'dataModel>reorderLevel',type:'sap.ui.model.type.Integer' }"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>Product.seeAlso}" required="false"/> 
+						<rdf:TextLink text="{path:'dataModel>seeAlso',type:'sap.ui.model.type.String' }" linkText="{i18n>Product.seeAlso}"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>Product.supplierNotation}" required="false"/> 
+						<rdf:TextLink text="{path:'dataModel>supplierNotation',type:'sap.ui.model.type.String' }" linkText="{i18n>Product.supplierNotation}"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>Product.unitsInStock}" required="false"/> 
+						<Text text="{path:'dataModel>unitsInStock',type:'sap.ui.model.type.Integer' }"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>Product.unitsOnOrder}" required="false"/> 
+						<Text text="{path:'dataModel>unitsOnOrder',type:'sap.ui.model.type.Integer' }"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>Product.category}" required="false"/> 
+						<rdf:TextResource path="dataModel>category" entitySet="Category"/>		
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>Product.supplier}" required="false"/> 
+						<rdf:TextResource path="dataModel>supplier" entitySet="Supplier"/>		
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>Product.isPartOfOrderDetail}" required="false"/> 
+						<rdf:ListResource path="dataModel>isPartOfOrderDetail" entitySet="OrderDetail"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>Product.product_orderSummary}" required="false"/> 
+						<rdf:ListResource path="dataModel>product_orderSummary" entitySet="OrderSummary"/>
+					</cells>
+				</ColumnListItem>
+			</items>
+		</Table>
 	</Page>
 </mvc:View>
