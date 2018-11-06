@@ -1,0 +1,91 @@
+<mvc:View controllerName="com.inova8.lens.controller.EntitySet360" xmlns="sap.m" xmlns:mvc="sap.ui.core.mvc" xmlns:layout="sap.ui.layout"
+	xmlns:rdf="com.inova8.lens.control" xmlns:core="sap.ui.core">
+	<Page showHeader="false" id="page" navButtonPress="onNavBack" showNavButton="true" title="{i18n>InstalledMobileApps.ViewTitle}">
+		<content>
+			<Table id="table360" inset="false" items="{ path: 'dataModel>/InstalledMobileApp' , sorter: { path: 'label', descending: false } 
+				}"
+				noDataText="{entitySetView>/tableNoDataText}" busyIndicatorDelay="{entitySetView>/tableBusyDelay}" growing="true" growingScrollToLoad="true"
+				updateFinished="onUpdateFinished"  fixedLayout="false">
+				<headerToolbar>
+					<Toolbar>
+						<ToolbarSpacer/>
+						<HBox id="sourceTitle" alignItems="Center">
+							<rdf:TextResource id="selectedResource" path="" entitySet=""/>
+						</HBox>
+						<Title id="pathTitle" text="{entitySetView>/navigationText}"/>
+						<HBox id="versionsTitle" alignItems="Center">
+							<Title text="(" required="false"/>
+							<ComboBox id="versionSelection" items="{ path: 'entitySetView>/versions' }" selectionChange="onVersionChange">
+								<core:Item key="{entitySetView>navigation}" text="{entityView>text}"/>
+							</ComboBox>
+							<Title text=")" required="false"/>
+						</HBox>
+						<Title id="tableHeader" text="{entitySetView>/entitySetTableTitle}"/>
+						<ToolbarSpacer/>
+						<SearchField id="searchField" tooltip="{i18n>search.searchTooltip}" search="onSearch" width="auto"></SearchField>
+					</Toolbar>
+				</headerToolbar>
+				<columns>
+					<Column >
+						<Text text="{i18n>InstalledMobileApps.this}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>InstalledMobileApps.InstalledMobileApp_CreatedDate}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>InstalledMobileApps.InstalledMobileApp_Id}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>InstalledMobileApps.InstalledMobileApp_IsDeleted}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>InstalledMobileApps.InstalledMobileApp_LastModifiedDate}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>InstalledMobileApps.InstalledMobileApp_Name}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>InstalledMobileApps.InstalledMobileApp_Status}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>InstalledMobileApps.InstalledMobileApp_SystemModstamp}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>InstalledMobileApps.InstalledMobileApp_Version}"/>
+					</Column>
+				</columns>
+				<items>
+					<ColumnListItem id="template360" type="Navigation" press="onPress">
+						<cells>
+							<rdf:TextResource path="dataModel>" entitySet="InstalledMobileApp"/>
+							<VBox>					
+							<Text text="{dataModel>InstalledMobileApp_CreatedDate/InstalledMobileApp_CreatedDate}"/>
+							</VBox>							
+							<VBox>					
+							<rdf:TextLink text="{path:'dataModel>InstalledMobileApp_Id/InstalledMobileApp_Id',type:'sap.ui.model.type.String'}" linkText="{i18n>InstalledMobileApp.InstalledMobileApp_Id/InstalledMobileApp_Id}"/>
+							</VBox>							
+							<VBox>					
+								<Text text="{path:'dataModel>InstalledMobileApp_IsDeleted/InstalledMobileApp_IsDeleted',type:'sap.ui.model.type.Boolean'}"/>  
+							</VBox>							
+							<VBox>					
+							<Text text="{dataModel>InstalledMobileApp_LastModifiedDate/InstalledMobileApp_LastModifiedDate}"/>
+							</VBox>							
+							<VBox>					
+							<rdf:TextLink text="{path:'dataModel>InstalledMobileApp_Name/InstalledMobileApp_Name',type:'sap.ui.model.type.String'}" linkText="{i18n>InstalledMobileApp.InstalledMobileApp_Name/InstalledMobileApp_Name}"/>
+							</VBox>							
+							<VBox>					
+							<rdf:TextLink text="{path:'dataModel>InstalledMobileApp_Status/InstalledMobileApp_Status',type:'sap.ui.model.type.String'}" linkText="{i18n>InstalledMobileApp.InstalledMobileApp_Status/InstalledMobileApp_Status}"/>
+							</VBox>							
+							<VBox>					
+							<Text text="{dataModel>InstalledMobileApp_SystemModstamp/InstalledMobileApp_SystemModstamp}"/>
+							</VBox>							
+							<VBox>					
+							<rdf:TextLink text="{path:'dataModel>InstalledMobileApp_Version/InstalledMobileApp_Version',type:'sap.ui.model.type.String'}" linkText="{i18n>InstalledMobileApp.InstalledMobileApp_Version/InstalledMobileApp_Version}"/>
+							</VBox>							
+						</cells>
+					</ColumnListItem>
+				</items>
+			</Table>
+		</content>
+	</Page>
+</mvc:View>

@@ -1,0 +1,196 @@
+<mvc:View controllerName="com.inova8.lens.controller.Entity360" xmlns="sap.m" xmlns:mvc="sap.ui.core.mvc" xmlns:l="sap.ui.layout"
+	xmlns:f="sap.ui.layout.form" xmlns:table="sap.ui.table" xmlns:rdf="com.inova8.lens.control" xmlns:html="http://www.w3.org/1999/xhtml"
+	xmlns:core="sap.ui.core">
+	<Page showHeader="true" id="page" navButtonPress="onNavBack" showNavButton="false" title="{i18n>EnvironmentHubInvitation.Title}" busy="{entityView>/busy}"
+		busyIndicatorDelay="{entityView>/delay}" >
+		<customHeader>
+			<Toolbar>
+				<ToolbarSpacer/>
+				<HBox id="sourceTitle" alignItems="Center">
+						<rdf:TextResource id="selectedResource" path="" entitySet=""/>
+				</HBox>	
+				<Title id="pathTitle" text="{entityView>/navigation}"/>
+				<HBox id="versionsTitle" alignItems="Center">
+					<Title text="(" required="false"/>
+					<ComboBox id="versionSelection" items="{ path: 'entityView>/versions' }" selectionChange="onVersionChange">
+						<core:Item key="{entityView>navigation}" text="{entityView>text}"/>
+					</ComboBox>
+					<Title text=")" required="false"/>
+				</HBox>
+				<Title text="{i18n>EnvironmentHubInvitation.this}"/>
+				<Title text="(" required="false"/>
+				<rdf:TextResource path="dataModel>" entitySet="EnvironmentHubInvitation"/>
+				<Title text=")" required="false"/>
+	
+				<ToolbarSpacer/>
+				<ToggleButton id="toggleColumns" icon="sap-icon://hide" activeIcon="sap-icon://show" press="onSettingsPressed" visible="false"	>
+					<layoutData>
+						<OverflowToolbarLayoutData priority="NeverOverflow"/>
+					</layoutData>
+				</ToggleButton>
+				
+			</Toolbar>
+		</customHeader>
+		<Table id="form360" inset="false" fixedLayout="true" class="multicolumnform" updateFinished="hideColumns">
+			<columns>
+				<Column hAlign="Right" width="200px">
+					<Text text=""/>
+				</Column>
+				<Column visible="true">
+				</Column>
+				<Column visible="true">
+					<Text text="EnvironmentHubInvitation"/>
+				</Column>
+			</columns>
+			<items>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>EnvironmentHubInvitation.EnvironmentHubInvitation_CreatedById}" required="false"/> 
+						<Text text=""/>
+						<rdf:ListResource path="dataModel>EnvironmentHubInvitation_CreatedById/sfdc_EnvironmentHubInvitation_CreatedById" entitySet="User"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>EnvironmentHubInvitation.EnvironmentHubInvitation_CreatedDate}" required="false"/> 
+						<Text text=""/>
+						<Text text="{dataModel>EnvironmentHubInvitation_CreatedDate/EnvironmentHubInvitation_CreatedDate}"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>EnvironmentHubInvitation.EnvironmentHubInvitation_EnvironmentHubId}" required="false"/> 
+						<Text text=""/>
+						<rdf:ListResource path="dataModel>EnvironmentHubInvitation_EnvironmentHubId/sfdc_EnvironmentHubInvitation_EnvironmentHubId" entitySet="EnvironmentHub"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>EnvironmentHubInvitation.EnvironmentHubInvitation_EnvironmentHubMemberDescription}" required="false"/> 
+						<Text text=""/>
+						<rdf:TextLink text="{path:'dataModel>EnvironmentHubInvitation_EnvironmentHubMemberDescription/EnvironmentHubInvitation_EnvironmentHubMemberDescription',type:'sap.ui.model.type.String' }" linkText="{i18n>EnvironmentHubInvitation.EnvironmentHubInvitation_EnvironmentHubMemberDescription/EnvironmentHubInvitation_EnvironmentHubMemberDescription}"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>EnvironmentHubInvitation.EnvironmentHubInvitation_EnvironmentHubMemberId}" required="false"/> 
+						<Text text=""/>
+						<rdf:ListResource path="dataModel>EnvironmentHubInvitation_EnvironmentHubMemberId/sfdc_EnvironmentHubInvitation_EnvironmentHubMemberId" entitySet="EnvironmentHubMember"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>EnvironmentHubInvitation.EnvironmentHubInvitation_FailureReason}" required="false"/> 
+						<Text text=""/>
+						<rdf:TextLink text="{path:'dataModel>EnvironmentHubInvitation_FailureReason/EnvironmentHubInvitation_FailureReason',type:'sap.ui.model.type.String' }" linkText="{i18n>EnvironmentHubInvitation.EnvironmentHubInvitation_FailureReason/EnvironmentHubInvitation_FailureReason}"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>EnvironmentHubInvitation.EnvironmentHubInvitation_Id}" required="false"/> 
+						<Text text=""/>
+						<rdf:TextLink text="{path:'dataModel>EnvironmentHubInvitation_Id/EnvironmentHubInvitation_Id',type:'sap.ui.model.type.String' }" linkText="{i18n>EnvironmentHubInvitation.EnvironmentHubInvitation_Id/EnvironmentHubInvitation_Id}"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>EnvironmentHubInvitation.EnvironmentHubInvitation_InviteeUserName}" required="false"/> 
+						<Text text=""/>
+						<rdf:TextLink text="{path:'dataModel>EnvironmentHubInvitation_InviteeUserName/EnvironmentHubInvitation_InviteeUserName',type:'sap.ui.model.type.String' }" linkText="{i18n>EnvironmentHubInvitation.EnvironmentHubInvitation_InviteeUserName/EnvironmentHubInvitation_InviteeUserName}"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>EnvironmentHubInvitation.EnvironmentHubInvitation_IsDeleted}" required="false"/> 
+						<Text text=""/>
+						<Text text="{path:'dataModel>EnvironmentHubInvitation_IsDeleted/EnvironmentHubInvitation_IsDeleted',type:'sap.ui.model.type.Boolean'}"/>  
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>EnvironmentHubInvitation.EnvironmentHubInvitation_IsExpired}" required="false"/> 
+						<Text text=""/>
+						<Text text="{path:'dataModel>EnvironmentHubInvitation_IsExpired/EnvironmentHubInvitation_IsExpired',type:'sap.ui.model.type.Boolean'}"/>  
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>EnvironmentHubInvitation.EnvironmentHubInvitation_LastModifiedById}" required="false"/> 
+						<Text text=""/>
+						<rdf:ListResource path="dataModel>EnvironmentHubInvitation_LastModifiedById/sfdc_EnvironmentHubInvitation_LastModifiedById" entitySet="User"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>EnvironmentHubInvitation.EnvironmentHubInvitation_LastModifiedDate}" required="false"/> 
+						<Text text=""/>
+						<Text text="{dataModel>EnvironmentHubInvitation_LastModifiedDate/EnvironmentHubInvitation_LastModifiedDate}"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>EnvironmentHubInvitation.EnvironmentHubInvitation_Name}" required="false"/> 
+						<Text text=""/>
+						<rdf:TextLink text="{path:'dataModel>EnvironmentHubInvitation_Name/EnvironmentHubInvitation_Name',type:'sap.ui.model.type.String' }" linkText="{i18n>EnvironmentHubInvitation.EnvironmentHubInvitation_Name/EnvironmentHubInvitation_Name}"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>EnvironmentHubInvitation.EnvironmentHubInvitation_ShouldAddRelatedOrgs}" required="false"/> 
+						<Text text=""/>
+						<Text text="{path:'dataModel>EnvironmentHubInvitation_ShouldAddRelatedOrgs/EnvironmentHubInvitation_ShouldAddRelatedOrgs',type:'sap.ui.model.type.Boolean'}"/>  
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>EnvironmentHubInvitation.EnvironmentHubInvitation_ShouldEnableSso}" required="false"/> 
+						<Text text=""/>
+						<Text text="{path:'dataModel>EnvironmentHubInvitation_ShouldEnableSso/EnvironmentHubInvitation_ShouldEnableSso',type:'sap.ui.model.type.Boolean'}"/>  
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>EnvironmentHubInvitation.EnvironmentHubInvitation_Status}" required="false"/> 
+						<Text text=""/>
+						<rdf:TextLink text="{path:'dataModel>EnvironmentHubInvitation_Status/EnvironmentHubInvitation_Status',type:'sap.ui.model.type.String' }" linkText="{i18n>EnvironmentHubInvitation.EnvironmentHubInvitation_Status/EnvironmentHubInvitation_Status}"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>EnvironmentHubInvitation.EnvironmentHubInvitation_SystemModstamp}" required="false"/> 
+						<Text text=""/>
+						<Text text="{dataModel>EnvironmentHubInvitation_SystemModstamp/EnvironmentHubInvitation_SystemModstamp}"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>EnvironmentHubInvitation.EnvironmentHubInvitation_CreatedById}" required="false"/> 
+						<rdf:ListResource path="dataModel>EnvironmentHubInvitation_CreatedById" entitySet="User"/>
+						<Text text=""/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>EnvironmentHubInvitation.EnvironmentHubInvitation_EnvironmentHubId}" required="false"/> 
+						<rdf:ListResource path="dataModel>EnvironmentHubInvitation_EnvironmentHubId" entitySet="EnvironmentHub"/>
+						<Text text=""/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>EnvironmentHubInvitation.EnvironmentHubInvitation_EnvironmentHubMemberId}" required="false"/> 
+						<rdf:ListResource path="dataModel>EnvironmentHubInvitation_EnvironmentHubMemberId" entitySet="EnvironmentHubMember"/>
+						<Text text=""/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>EnvironmentHubInvitation.EnvironmentHubInvitation_LastModifiedById}" required="false"/> 
+						<rdf:ListResource path="dataModel>EnvironmentHubInvitation_LastModifiedById" entitySet="User"/>
+						<Text text=""/>
+					</cells>
+				</ColumnListItem>
+			</items>
+		</Table>
+	</Page>
+</mvc:View>

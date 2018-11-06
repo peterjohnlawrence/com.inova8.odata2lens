@@ -1,0 +1,403 @@
+<mvc:View controllerName="com.inova8.lens.controller.EntitySet360" xmlns="sap.m" xmlns:mvc="sap.ui.core.mvc" xmlns:layout="sap.ui.layout"
+	xmlns:rdf="com.inova8.lens.control" xmlns:core="sap.ui.core">
+	<Page showHeader="false" id="page" navButtonPress="onNavBack" showNavButton="true" title="{i18n>Quotes.ViewTitle}">
+		<content>
+			<Table id="table360" inset="false" items="{ path: 'dataModel>/Quote' , sorter: { path: 'label', descending: false } 
+				}"
+				noDataText="{entitySetView>/tableNoDataText}" busyIndicatorDelay="{entitySetView>/tableBusyDelay}" growing="true" growingScrollToLoad="true"
+				updateFinished="onUpdateFinished"  fixedLayout="false">
+				<headerToolbar>
+					<Toolbar>
+						<ToolbarSpacer/>
+						<HBox id="sourceTitle" alignItems="Center">
+							<rdf:TextResource id="selectedResource" path="" entitySet=""/>
+						</HBox>
+						<Title id="pathTitle" text="{entitySetView>/navigationText}"/>
+						<HBox id="versionsTitle" alignItems="Center">
+							<Title text="(" required="false"/>
+							<ComboBox id="versionSelection" items="{ path: 'entitySetView>/versions' }" selectionChange="onVersionChange">
+								<core:Item key="{entitySetView>navigation}" text="{entityView>text}"/>
+							</ComboBox>
+							<Title text=")" required="false"/>
+						</HBox>
+						<Title id="tableHeader" text="{entitySetView>/entitySetTableTitle}"/>
+						<ToolbarSpacer/>
+						<SearchField id="searchField" tooltip="{i18n>search.searchTooltip}" search="onSearch" width="auto"></SearchField>
+					</Toolbar>
+				</headerToolbar>
+				<columns>
+					<Column >
+						<Text text="{i18n>Quotes.this}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>Quotes.Quote_AdditionalCity}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>Quotes.Quote_AdditionalCountry}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>Quotes.Quote_AdditionalGeocodeAccuracy}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>Quotes.Quote_AdditionalLatitude}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>Quotes.Quote_AdditionalLongitude}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>Quotes.Quote_AdditionalName}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>Quotes.Quote_AdditionalPostalCode}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>Quotes.Quote_AdditionalState}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>Quotes.Quote_AdditionalStreet}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>Quotes.Quote_BillingCity}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>Quotes.Quote_BillingCountry}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>Quotes.Quote_BillingGeocodeAccuracy}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>Quotes.Quote_BillingLatitude}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>Quotes.Quote_BillingLongitude}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>Quotes.Quote_BillingName}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>Quotes.Quote_BillingPostalCode}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>Quotes.Quote_BillingState}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>Quotes.Quote_BillingStreet}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>Quotes.Quote_CanCreateQuoteLineItems}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>Quotes.Quote_CreatedDate}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>Quotes.Quote_Description}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>Quotes.Quote_Discount}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>Quotes.Quote_Email}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>Quotes.Quote_ExpirationDate}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>Quotes.Quote_Fax}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>Quotes.Quote_GrandTotal}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>Quotes.Quote_Id}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>Quotes.Quote_IsDeleted}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>Quotes.Quote_IsSyncing}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>Quotes.Quote_LastModifiedDate}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>Quotes.Quote_LastReferencedDate}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>Quotes.Quote_LastViewedDate}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>Quotes.Quote_LineItemCount}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>Quotes.Quote_Name}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>Quotes.Quote_Phone}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>Quotes.Quote_QuoteNumber}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>Quotes.Quote_QuoteToCity}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>Quotes.Quote_QuoteToCountry}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>Quotes.Quote_QuoteToGeocodeAccuracy}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>Quotes.Quote_QuoteToLatitude}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>Quotes.Quote_QuoteToLongitude}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>Quotes.Quote_QuoteToName}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>Quotes.Quote_QuoteToPostalCode}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>Quotes.Quote_QuoteToState}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>Quotes.Quote_QuoteToStreet}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>Quotes.Quote_ShippingCity}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>Quotes.Quote_ShippingCountry}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>Quotes.Quote_ShippingGeocodeAccuracy}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>Quotes.Quote_ShippingHandling}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>Quotes.Quote_ShippingLatitude}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>Quotes.Quote_ShippingLongitude}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>Quotes.Quote_ShippingName}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>Quotes.Quote_ShippingPostalCode}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>Quotes.Quote_ShippingState}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>Quotes.Quote_ShippingStreet}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>Quotes.Quote_Status}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>Quotes.Quote_Subtotal}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>Quotes.Quote_SystemModstamp}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>Quotes.Quote_Tax}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>Quotes.Quote_TotalPrice}"/>
+					</Column>
+				</columns>
+				<items>
+					<ColumnListItem id="template360" type="Navigation" press="onPress">
+						<cells>
+							<rdf:TextResource path="dataModel>" entitySet="Quote"/>
+							<VBox>					
+							<rdf:TextLink text="{path:'dataModel>Quote_AdditionalCity/Quote_AdditionalCity',type:'sap.ui.model.type.String'}" linkText="{i18n>Quote.Quote_AdditionalCity/Quote_AdditionalCity}"/>
+							</VBox>							
+							<VBox>					
+							<rdf:TextLink text="{path:'dataModel>Quote_AdditionalCountry/Quote_AdditionalCountry',type:'sap.ui.model.type.String'}" linkText="{i18n>Quote.Quote_AdditionalCountry/Quote_AdditionalCountry}"/>
+							</VBox>							
+							<VBox>					
+							<rdf:TextLink text="{path:'dataModel>Quote_AdditionalGeocodeAccuracy/Quote_AdditionalGeocodeAccuracy',type:'sap.ui.model.type.String'}" linkText="{i18n>Quote.Quote_AdditionalGeocodeAccuracy/Quote_AdditionalGeocodeAccuracy}"/>
+							</VBox>							
+							<VBox>					
+							<Text text="{path:'dataModel>Quote_AdditionalLatitude/Quote_AdditionalLatitude',type:'sap.ui.model.type.Float', formatOptions:{'style':'short','maxFractionDigits':2} }"/>
+							</VBox>							
+							<VBox>					
+							<Text text="{path:'dataModel>Quote_AdditionalLongitude/Quote_AdditionalLongitude',type:'sap.ui.model.type.Float', formatOptions:{'style':'short','maxFractionDigits':2} }"/>
+							</VBox>							
+							<VBox>					
+							<rdf:TextLink text="{path:'dataModel>Quote_AdditionalName/Quote_AdditionalName',type:'sap.ui.model.type.String'}" linkText="{i18n>Quote.Quote_AdditionalName/Quote_AdditionalName}"/>
+							</VBox>							
+							<VBox>					
+							<rdf:TextLink text="{path:'dataModel>Quote_AdditionalPostalCode/Quote_AdditionalPostalCode',type:'sap.ui.model.type.String'}" linkText="{i18n>Quote.Quote_AdditionalPostalCode/Quote_AdditionalPostalCode}"/>
+							</VBox>							
+							<VBox>					
+							<rdf:TextLink text="{path:'dataModel>Quote_AdditionalState/Quote_AdditionalState',type:'sap.ui.model.type.String'}" linkText="{i18n>Quote.Quote_AdditionalState/Quote_AdditionalState}"/>
+							</VBox>							
+							<VBox>					
+							<rdf:TextLink text="{path:'dataModel>Quote_AdditionalStreet/Quote_AdditionalStreet',type:'sap.ui.model.type.String'}" linkText="{i18n>Quote.Quote_AdditionalStreet/Quote_AdditionalStreet}"/>
+							</VBox>							
+							<VBox>					
+							<rdf:TextLink text="{path:'dataModel>Quote_BillingCity/Quote_BillingCity',type:'sap.ui.model.type.String'}" linkText="{i18n>Quote.Quote_BillingCity/Quote_BillingCity}"/>
+							</VBox>							
+							<VBox>					
+							<rdf:TextLink text="{path:'dataModel>Quote_BillingCountry/Quote_BillingCountry',type:'sap.ui.model.type.String'}" linkText="{i18n>Quote.Quote_BillingCountry/Quote_BillingCountry}"/>
+							</VBox>							
+							<VBox>					
+							<rdf:TextLink text="{path:'dataModel>Quote_BillingGeocodeAccuracy/Quote_BillingGeocodeAccuracy',type:'sap.ui.model.type.String'}" linkText="{i18n>Quote.Quote_BillingGeocodeAccuracy/Quote_BillingGeocodeAccuracy}"/>
+							</VBox>							
+							<VBox>					
+							<Text text="{path:'dataModel>Quote_BillingLatitude/Quote_BillingLatitude',type:'sap.ui.model.type.Float', formatOptions:{'style':'short','maxFractionDigits':2} }"/>
+							</VBox>							
+							<VBox>					
+							<Text text="{path:'dataModel>Quote_BillingLongitude/Quote_BillingLongitude',type:'sap.ui.model.type.Float', formatOptions:{'style':'short','maxFractionDigits':2} }"/>
+							</VBox>							
+							<VBox>					
+							<rdf:TextLink text="{path:'dataModel>Quote_BillingName/Quote_BillingName',type:'sap.ui.model.type.String'}" linkText="{i18n>Quote.Quote_BillingName/Quote_BillingName}"/>
+							</VBox>							
+							<VBox>					
+							<rdf:TextLink text="{path:'dataModel>Quote_BillingPostalCode/Quote_BillingPostalCode',type:'sap.ui.model.type.String'}" linkText="{i18n>Quote.Quote_BillingPostalCode/Quote_BillingPostalCode}"/>
+							</VBox>							
+							<VBox>					
+							<rdf:TextLink text="{path:'dataModel>Quote_BillingState/Quote_BillingState',type:'sap.ui.model.type.String'}" linkText="{i18n>Quote.Quote_BillingState/Quote_BillingState}"/>
+							</VBox>							
+							<VBox>					
+							<rdf:TextLink text="{path:'dataModel>Quote_BillingStreet/Quote_BillingStreet',type:'sap.ui.model.type.String'}" linkText="{i18n>Quote.Quote_BillingStreet/Quote_BillingStreet}"/>
+							</VBox>							
+							<VBox>					
+								<Text text="{path:'dataModel>Quote_CanCreateQuoteLineItems/Quote_CanCreateQuoteLineItems',type:'sap.ui.model.type.Boolean'}"/>  
+							</VBox>							
+							<VBox>					
+							<Text text="{dataModel>Quote_CreatedDate/Quote_CreatedDate}"/>
+							</VBox>							
+							<VBox>					
+							<rdf:TextLink text="{path:'dataModel>Quote_Description/Quote_Description',type:'sap.ui.model.type.String'}" linkText="{i18n>Quote.Quote_Description/Quote_Description}"/>
+							</VBox>							
+							<VBox>					
+							<Text text="{path:'dataModel>Quote_Discount/Quote_Discount',type:'sap.ui.model.type.Float', formatOptions:{'style':'short','maxFractionDigits':2} }"/>
+							</VBox>							
+							<VBox>					
+							<rdf:TextLink text="{path:'dataModel>Quote_Email/Quote_Email',type:'sap.ui.model.type.String'}" linkText="{i18n>Quote.Quote_Email/Quote_Email}"/>
+							</VBox>							
+							<VBox>					
+							<Text text="{dataModel>Quote_ExpirationDate/Quote_ExpirationDate}"/>
+							</VBox>							
+							<VBox>					
+							<rdf:TextLink text="{path:'dataModel>Quote_Fax/Quote_Fax',type:'sap.ui.model.type.String'}" linkText="{i18n>Quote.Quote_Fax/Quote_Fax}"/>
+							</VBox>							
+							<VBox>					
+							<Text text="{path:'dataModel>Quote_GrandTotal/Quote_GrandTotal',type:'sap.ui.model.type.Float', formatOptions:{'style':'short','maxFractionDigits':2} }"/>
+							</VBox>							
+							<VBox>					
+							<rdf:TextLink text="{path:'dataModel>Quote_Id/Quote_Id',type:'sap.ui.model.type.String'}" linkText="{i18n>Quote.Quote_Id/Quote_Id}"/>
+							</VBox>							
+							<VBox>					
+								<Text text="{path:'dataModel>Quote_IsDeleted/Quote_IsDeleted',type:'sap.ui.model.type.Boolean'}"/>  
+							</VBox>							
+							<VBox>					
+								<Text text="{path:'dataModel>Quote_IsSyncing/Quote_IsSyncing',type:'sap.ui.model.type.Boolean'}"/>  
+							</VBox>							
+							<VBox>					
+							<Text text="{dataModel>Quote_LastModifiedDate/Quote_LastModifiedDate}"/>
+							</VBox>							
+							<VBox>					
+							<Text text="{dataModel>Quote_LastReferencedDate/Quote_LastReferencedDate}"/>
+							</VBox>							
+							<VBox>					
+							<Text text="{dataModel>Quote_LastViewedDate/Quote_LastViewedDate}"/>
+							</VBox>							
+							<VBox>					
+							<Text text="{path:'dataModel>Quote_LineItemCount/Quote_LineItemCount',type:'sap.ui.model.type.Integer' }"/>
+							</VBox>							
+							<VBox>					
+							<rdf:TextLink text="{path:'dataModel>Quote_Name/Quote_Name',type:'sap.ui.model.type.String'}" linkText="{i18n>Quote.Quote_Name/Quote_Name}"/>
+							</VBox>							
+							<VBox>					
+							<rdf:TextLink text="{path:'dataModel>Quote_Phone/Quote_Phone',type:'sap.ui.model.type.String'}" linkText="{i18n>Quote.Quote_Phone/Quote_Phone}"/>
+							</VBox>							
+							<VBox>					
+							<rdf:TextLink text="{path:'dataModel>Quote_QuoteNumber/Quote_QuoteNumber',type:'sap.ui.model.type.String'}" linkText="{i18n>Quote.Quote_QuoteNumber/Quote_QuoteNumber}"/>
+							</VBox>							
+							<VBox>					
+							<rdf:TextLink text="{path:'dataModel>Quote_QuoteToCity/Quote_QuoteToCity',type:'sap.ui.model.type.String'}" linkText="{i18n>Quote.Quote_QuoteToCity/Quote_QuoteToCity}"/>
+							</VBox>							
+							<VBox>					
+							<rdf:TextLink text="{path:'dataModel>Quote_QuoteToCountry/Quote_QuoteToCountry',type:'sap.ui.model.type.String'}" linkText="{i18n>Quote.Quote_QuoteToCountry/Quote_QuoteToCountry}"/>
+							</VBox>							
+							<VBox>					
+							<rdf:TextLink text="{path:'dataModel>Quote_QuoteToGeocodeAccuracy/Quote_QuoteToGeocodeAccuracy',type:'sap.ui.model.type.String'}" linkText="{i18n>Quote.Quote_QuoteToGeocodeAccuracy/Quote_QuoteToGeocodeAccuracy}"/>
+							</VBox>							
+							<VBox>					
+							<Text text="{path:'dataModel>Quote_QuoteToLatitude/Quote_QuoteToLatitude',type:'sap.ui.model.type.Float', formatOptions:{'style':'short','maxFractionDigits':2} }"/>
+							</VBox>							
+							<VBox>					
+							<Text text="{path:'dataModel>Quote_QuoteToLongitude/Quote_QuoteToLongitude',type:'sap.ui.model.type.Float', formatOptions:{'style':'short','maxFractionDigits':2} }"/>
+							</VBox>							
+							<VBox>					
+							<rdf:TextLink text="{path:'dataModel>Quote_QuoteToName/Quote_QuoteToName',type:'sap.ui.model.type.String'}" linkText="{i18n>Quote.Quote_QuoteToName/Quote_QuoteToName}"/>
+							</VBox>							
+							<VBox>					
+							<rdf:TextLink text="{path:'dataModel>Quote_QuoteToPostalCode/Quote_QuoteToPostalCode',type:'sap.ui.model.type.String'}" linkText="{i18n>Quote.Quote_QuoteToPostalCode/Quote_QuoteToPostalCode}"/>
+							</VBox>							
+							<VBox>					
+							<rdf:TextLink text="{path:'dataModel>Quote_QuoteToState/Quote_QuoteToState',type:'sap.ui.model.type.String'}" linkText="{i18n>Quote.Quote_QuoteToState/Quote_QuoteToState}"/>
+							</VBox>							
+							<VBox>					
+							<rdf:TextLink text="{path:'dataModel>Quote_QuoteToStreet/Quote_QuoteToStreet',type:'sap.ui.model.type.String'}" linkText="{i18n>Quote.Quote_QuoteToStreet/Quote_QuoteToStreet}"/>
+							</VBox>							
+							<VBox>					
+							<rdf:TextLink text="{path:'dataModel>Quote_ShippingCity/Quote_ShippingCity',type:'sap.ui.model.type.String'}" linkText="{i18n>Quote.Quote_ShippingCity/Quote_ShippingCity}"/>
+							</VBox>							
+							<VBox>					
+							<rdf:TextLink text="{path:'dataModel>Quote_ShippingCountry/Quote_ShippingCountry',type:'sap.ui.model.type.String'}" linkText="{i18n>Quote.Quote_ShippingCountry/Quote_ShippingCountry}"/>
+							</VBox>							
+							<VBox>					
+							<rdf:TextLink text="{path:'dataModel>Quote_ShippingGeocodeAccuracy/Quote_ShippingGeocodeAccuracy',type:'sap.ui.model.type.String'}" linkText="{i18n>Quote.Quote_ShippingGeocodeAccuracy/Quote_ShippingGeocodeAccuracy}"/>
+							</VBox>							
+							<VBox>					
+							<Text text="{path:'dataModel>Quote_ShippingHandling/Quote_ShippingHandling',type:'sap.ui.model.type.Float', formatOptions:{'style':'short','maxFractionDigits':2} }"/>
+							</VBox>							
+							<VBox>					
+							<Text text="{path:'dataModel>Quote_ShippingLatitude/Quote_ShippingLatitude',type:'sap.ui.model.type.Float', formatOptions:{'style':'short','maxFractionDigits':2} }"/>
+							</VBox>							
+							<VBox>					
+							<Text text="{path:'dataModel>Quote_ShippingLongitude/Quote_ShippingLongitude',type:'sap.ui.model.type.Float', formatOptions:{'style':'short','maxFractionDigits':2} }"/>
+							</VBox>							
+							<VBox>					
+							<rdf:TextLink text="{path:'dataModel>Quote_ShippingName/Quote_ShippingName',type:'sap.ui.model.type.String'}" linkText="{i18n>Quote.Quote_ShippingName/Quote_ShippingName}"/>
+							</VBox>							
+							<VBox>					
+							<rdf:TextLink text="{path:'dataModel>Quote_ShippingPostalCode/Quote_ShippingPostalCode',type:'sap.ui.model.type.String'}" linkText="{i18n>Quote.Quote_ShippingPostalCode/Quote_ShippingPostalCode}"/>
+							</VBox>							
+							<VBox>					
+							<rdf:TextLink text="{path:'dataModel>Quote_ShippingState/Quote_ShippingState',type:'sap.ui.model.type.String'}" linkText="{i18n>Quote.Quote_ShippingState/Quote_ShippingState}"/>
+							</VBox>							
+							<VBox>					
+							<rdf:TextLink text="{path:'dataModel>Quote_ShippingStreet/Quote_ShippingStreet',type:'sap.ui.model.type.String'}" linkText="{i18n>Quote.Quote_ShippingStreet/Quote_ShippingStreet}"/>
+							</VBox>							
+							<VBox>					
+							<rdf:TextLink text="{path:'dataModel>Quote_Status/Quote_Status',type:'sap.ui.model.type.String'}" linkText="{i18n>Quote.Quote_Status/Quote_Status}"/>
+							</VBox>							
+							<VBox>					
+							<Text text="{path:'dataModel>Quote_Subtotal/Quote_Subtotal',type:'sap.ui.model.type.Float', formatOptions:{'style':'short','maxFractionDigits':2} }"/>
+							</VBox>							
+							<VBox>					
+							<Text text="{dataModel>Quote_SystemModstamp/Quote_SystemModstamp}"/>
+							</VBox>							
+							<VBox>					
+							<Text text="{path:'dataModel>Quote_Tax/Quote_Tax',type:'sap.ui.model.type.Float', formatOptions:{'style':'short','maxFractionDigits':2} }"/>
+							</VBox>							
+							<VBox>					
+							<Text text="{path:'dataModel>Quote_TotalPrice/Quote_TotalPrice',type:'sap.ui.model.type.Float', formatOptions:{'style':'short','maxFractionDigits':2} }"/>
+							</VBox>							
+						</cells>
+					</ColumnListItem>
+				</items>
+			</Table>
+		</content>
+	</Page>
+</mvc:View>

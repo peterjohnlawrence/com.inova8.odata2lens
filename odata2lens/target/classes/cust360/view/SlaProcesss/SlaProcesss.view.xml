@@ -1,0 +1,115 @@
+<mvc:View controllerName="com.inova8.lens.controller.EntitySet360" xmlns="sap.m" xmlns:mvc="sap.ui.core.mvc" xmlns:layout="sap.ui.layout"
+	xmlns:rdf="com.inova8.lens.control" xmlns:core="sap.ui.core">
+	<Page showHeader="false" id="page" navButtonPress="onNavBack" showNavButton="true" title="{i18n>SlaProcesss.ViewTitle}">
+		<content>
+			<Table id="table360" inset="false" items="{ path: 'dataModel>/SlaProcess' , sorter: { path: 'label', descending: false } 
+				}"
+				noDataText="{entitySetView>/tableNoDataText}" busyIndicatorDelay="{entitySetView>/tableBusyDelay}" growing="true" growingScrollToLoad="true"
+				updateFinished="onUpdateFinished"  fixedLayout="false">
+				<headerToolbar>
+					<Toolbar>
+						<ToolbarSpacer/>
+						<HBox id="sourceTitle" alignItems="Center">
+							<rdf:TextResource id="selectedResource" path="" entitySet=""/>
+						</HBox>
+						<Title id="pathTitle" text="{entitySetView>/navigationText}"/>
+						<HBox id="versionsTitle" alignItems="Center">
+							<Title text="(" required="false"/>
+							<ComboBox id="versionSelection" items="{ path: 'entitySetView>/versions' }" selectionChange="onVersionChange">
+								<core:Item key="{entitySetView>navigation}" text="{entityView>text}"/>
+							</ComboBox>
+							<Title text=")" required="false"/>
+						</HBox>
+						<Title id="tableHeader" text="{entitySetView>/entitySetTableTitle}"/>
+						<ToolbarSpacer/>
+						<SearchField id="searchField" tooltip="{i18n>search.searchTooltip}" search="onSearch" width="auto"></SearchField>
+					</Toolbar>
+				</headerToolbar>
+				<columns>
+					<Column >
+						<Text text="{i18n>SlaProcesss.this}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>SlaProcesss.SlaProcess_CreatedDate}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>SlaProcesss.SlaProcess_Description}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>SlaProcesss.SlaProcess_Id}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>SlaProcesss.SlaProcess_IsActive}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>SlaProcesss.SlaProcess_IsDeleted}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>SlaProcesss.SlaProcess_LastModifiedDate}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>SlaProcesss.SlaProcess_LastViewedDate}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>SlaProcesss.SlaProcess_Name}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>SlaProcesss.SlaProcess_NameNorm}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>SlaProcesss.SlaProcess_SobjectType}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>SlaProcesss.SlaProcess_StartDateField}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>SlaProcesss.SlaProcess_SystemModstamp}"/>
+					</Column>
+				</columns>
+				<items>
+					<ColumnListItem id="template360" type="Navigation" press="onPress">
+						<cells>
+							<rdf:TextResource path="dataModel>" entitySet="SlaProcess"/>
+							<VBox>					
+							<Text text="{dataModel>SlaProcess_CreatedDate/SlaProcess_CreatedDate}"/>
+							</VBox>							
+							<VBox>					
+							<rdf:TextLink text="{path:'dataModel>SlaProcess_Description/SlaProcess_Description',type:'sap.ui.model.type.String'}" linkText="{i18n>SlaProcess.SlaProcess_Description/SlaProcess_Description}"/>
+							</VBox>							
+							<VBox>					
+							<rdf:TextLink text="{path:'dataModel>SlaProcess_Id/SlaProcess_Id',type:'sap.ui.model.type.String'}" linkText="{i18n>SlaProcess.SlaProcess_Id/SlaProcess_Id}"/>
+							</VBox>							
+							<VBox>					
+								<Text text="{path:'dataModel>SlaProcess_IsActive/SlaProcess_IsActive',type:'sap.ui.model.type.Boolean'}"/>  
+							</VBox>							
+							<VBox>					
+								<Text text="{path:'dataModel>SlaProcess_IsDeleted/SlaProcess_IsDeleted',type:'sap.ui.model.type.Boolean'}"/>  
+							</VBox>							
+							<VBox>					
+							<Text text="{dataModel>SlaProcess_LastModifiedDate/SlaProcess_LastModifiedDate}"/>
+							</VBox>							
+							<VBox>					
+							<Text text="{dataModel>SlaProcess_LastViewedDate/SlaProcess_LastViewedDate}"/>
+							</VBox>							
+							<VBox>					
+							<rdf:TextLink text="{path:'dataModel>SlaProcess_Name/SlaProcess_Name',type:'sap.ui.model.type.String'}" linkText="{i18n>SlaProcess.SlaProcess_Name/SlaProcess_Name}"/>
+							</VBox>							
+							<VBox>					
+							<rdf:TextLink text="{path:'dataModel>SlaProcess_NameNorm/SlaProcess_NameNorm',type:'sap.ui.model.type.String'}" linkText="{i18n>SlaProcess.SlaProcess_NameNorm/SlaProcess_NameNorm}"/>
+							</VBox>							
+							<VBox>					
+							<rdf:TextLink text="{path:'dataModel>SlaProcess_SobjectType/SlaProcess_SobjectType',type:'sap.ui.model.type.String'}" linkText="{i18n>SlaProcess.SlaProcess_SobjectType/SlaProcess_SobjectType}"/>
+							</VBox>							
+							<VBox>					
+							<rdf:TextLink text="{path:'dataModel>SlaProcess_StartDateField/SlaProcess_StartDateField',type:'sap.ui.model.type.String'}" linkText="{i18n>SlaProcess.SlaProcess_StartDateField/SlaProcess_StartDateField}"/>
+							</VBox>							
+							<VBox>					
+							<Text text="{dataModel>SlaProcess_SystemModstamp/SlaProcess_SystemModstamp}"/>
+							</VBox>							
+						</cells>
+					</ColumnListItem>
+				</items>
+			</Table>
+		</content>
+	</Page>
+</mvc:View>

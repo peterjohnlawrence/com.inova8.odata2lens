@@ -1,0 +1,145 @@
+<mvc:View controllerName="com.inova8.lens.controller.EntitySet360" xmlns="sap.m" xmlns:mvc="sap.ui.core.mvc" xmlns:layout="sap.ui.layout"
+	xmlns:rdf="com.inova8.lens.control" xmlns:core="sap.ui.core">
+	<Page showHeader="false" id="page" navButtonPress="onNavBack" showNavButton="true" title="{i18n>UserProvisioningConfigs.ViewTitle}">
+		<content>
+			<Table id="table360" inset="false" items="{ path: 'dataModel>/UserProvisioningConfig' , sorter: { path: 'label', descending: false } 
+				}"
+				noDataText="{entitySetView>/tableNoDataText}" busyIndicatorDelay="{entitySetView>/tableBusyDelay}" growing="true" growingScrollToLoad="true"
+				updateFinished="onUpdateFinished"  fixedLayout="false">
+				<headerToolbar>
+					<Toolbar>
+						<ToolbarSpacer/>
+						<HBox id="sourceTitle" alignItems="Center">
+							<rdf:TextResource id="selectedResource" path="" entitySet=""/>
+						</HBox>
+						<Title id="pathTitle" text="{entitySetView>/navigationText}"/>
+						<HBox id="versionsTitle" alignItems="Center">
+							<Title text="(" required="false"/>
+							<ComboBox id="versionSelection" items="{ path: 'entitySetView>/versions' }" selectionChange="onVersionChange">
+								<core:Item key="{entitySetView>navigation}" text="{entityView>text}"/>
+							</ComboBox>
+							<Title text=")" required="false"/>
+						</HBox>
+						<Title id="tableHeader" text="{entitySetView>/entitySetTableTitle}"/>
+						<ToolbarSpacer/>
+						<SearchField id="searchField" tooltip="{i18n>search.searchTooltip}" search="onSearch" width="auto"></SearchField>
+					</Toolbar>
+				</headerToolbar>
+				<columns>
+					<Column >
+						<Text text="{i18n>UserProvisioningConfigs.this}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>UserProvisioningConfigs.UserProvisioningConfig_ApprovalRequired}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>UserProvisioningConfigs.UserProvisioningConfig_CreatedDate}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>UserProvisioningConfigs.UserProvisioningConfig_DeveloperName}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>UserProvisioningConfigs.UserProvisioningConfig_Enabled}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>UserProvisioningConfigs.UserProvisioningConfig_EnabledOperations}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>UserProvisioningConfigs.UserProvisioningConfig_Id}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>UserProvisioningConfigs.UserProvisioningConfig_IsDeleted}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>UserProvisioningConfigs.UserProvisioningConfig_Language}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>UserProvisioningConfigs.UserProvisioningConfig_LastModifiedDate}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>UserProvisioningConfigs.UserProvisioningConfig_LastReconDateTime}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>UserProvisioningConfigs.UserProvisioningConfig_MasterLabel}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>UserProvisioningConfigs.UserProvisioningConfig_NamespacePrefix}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>UserProvisioningConfigs.UserProvisioningConfig_Notes}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>UserProvisioningConfigs.UserProvisioningConfig_OnUpdateAttributes}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>UserProvisioningConfigs.UserProvisioningConfig_ReconFilter}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>UserProvisioningConfigs.UserProvisioningConfig_SystemModstamp}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>UserProvisioningConfigs.UserProvisioningConfig_UserAccountMapping}"/>
+					</Column>
+				</columns>
+				<items>
+					<ColumnListItem id="template360" type="Navigation" press="onPress">
+						<cells>
+							<rdf:TextResource path="dataModel>" entitySet="UserProvisioningConfig"/>
+							<VBox>					
+							<rdf:TextLink text="{path:'dataModel>UserProvisioningConfig_ApprovalRequired/UserProvisioningConfig_ApprovalRequired',type:'sap.ui.model.type.String'}" linkText="{i18n>UserProvisioningConfig.UserProvisioningConfig_ApprovalRequired/UserProvisioningConfig_ApprovalRequired}"/>
+							</VBox>							
+							<VBox>					
+							<Text text="{dataModel>UserProvisioningConfig_CreatedDate/UserProvisioningConfig_CreatedDate}"/>
+							</VBox>							
+							<VBox>					
+							<rdf:TextLink text="{path:'dataModel>UserProvisioningConfig_DeveloperName/UserProvisioningConfig_DeveloperName',type:'sap.ui.model.type.String'}" linkText="{i18n>UserProvisioningConfig.UserProvisioningConfig_DeveloperName/UserProvisioningConfig_DeveloperName}"/>
+							</VBox>							
+							<VBox>					
+								<Text text="{path:'dataModel>UserProvisioningConfig_Enabled/UserProvisioningConfig_Enabled',type:'sap.ui.model.type.Boolean'}"/>  
+							</VBox>							
+							<VBox>					
+							<rdf:TextLink text="{path:'dataModel>UserProvisioningConfig_EnabledOperations/UserProvisioningConfig_EnabledOperations',type:'sap.ui.model.type.String'}" linkText="{i18n>UserProvisioningConfig.UserProvisioningConfig_EnabledOperations/UserProvisioningConfig_EnabledOperations}"/>
+							</VBox>							
+							<VBox>					
+							<rdf:TextLink text="{path:'dataModel>UserProvisioningConfig_Id/UserProvisioningConfig_Id',type:'sap.ui.model.type.String'}" linkText="{i18n>UserProvisioningConfig.UserProvisioningConfig_Id/UserProvisioningConfig_Id}"/>
+							</VBox>							
+							<VBox>					
+								<Text text="{path:'dataModel>UserProvisioningConfig_IsDeleted/UserProvisioningConfig_IsDeleted',type:'sap.ui.model.type.Boolean'}"/>  
+							</VBox>							
+							<VBox>					
+							<rdf:TextLink text="{path:'dataModel>UserProvisioningConfig_Language/UserProvisioningConfig_Language',type:'sap.ui.model.type.String'}" linkText="{i18n>UserProvisioningConfig.UserProvisioningConfig_Language/UserProvisioningConfig_Language}"/>
+							</VBox>							
+							<VBox>					
+							<Text text="{dataModel>UserProvisioningConfig_LastModifiedDate/UserProvisioningConfig_LastModifiedDate}"/>
+							</VBox>							
+							<VBox>					
+							<Text text="{dataModel>UserProvisioningConfig_LastReconDateTime/UserProvisioningConfig_LastReconDateTime}"/>
+							</VBox>							
+							<VBox>					
+							<rdf:TextLink text="{path:'dataModel>UserProvisioningConfig_MasterLabel/UserProvisioningConfig_MasterLabel',type:'sap.ui.model.type.String'}" linkText="{i18n>UserProvisioningConfig.UserProvisioningConfig_MasterLabel/UserProvisioningConfig_MasterLabel}"/>
+							</VBox>							
+							<VBox>					
+							<rdf:TextLink text="{path:'dataModel>UserProvisioningConfig_NamespacePrefix/UserProvisioningConfig_NamespacePrefix',type:'sap.ui.model.type.String'}" linkText="{i18n>UserProvisioningConfig.UserProvisioningConfig_NamespacePrefix/UserProvisioningConfig_NamespacePrefix}"/>
+							</VBox>							
+							<VBox>					
+							<rdf:TextLink text="{path:'dataModel>UserProvisioningConfig_Notes/UserProvisioningConfig_Notes',type:'sap.ui.model.type.String'}" linkText="{i18n>UserProvisioningConfig.UserProvisioningConfig_Notes/UserProvisioningConfig_Notes}"/>
+							</VBox>							
+							<VBox>					
+							<rdf:TextLink text="{path:'dataModel>UserProvisioningConfig_OnUpdateAttributes/UserProvisioningConfig_OnUpdateAttributes',type:'sap.ui.model.type.String'}" linkText="{i18n>UserProvisioningConfig.UserProvisioningConfig_OnUpdateAttributes/UserProvisioningConfig_OnUpdateAttributes}"/>
+							</VBox>							
+							<VBox>					
+							<rdf:TextLink text="{path:'dataModel>UserProvisioningConfig_ReconFilter/UserProvisioningConfig_ReconFilter',type:'sap.ui.model.type.String'}" linkText="{i18n>UserProvisioningConfig.UserProvisioningConfig_ReconFilter/UserProvisioningConfig_ReconFilter}"/>
+							</VBox>							
+							<VBox>					
+							<Text text="{dataModel>UserProvisioningConfig_SystemModstamp/UserProvisioningConfig_SystemModstamp}"/>
+							</VBox>							
+							<VBox>					
+							<rdf:TextLink text="{path:'dataModel>UserProvisioningConfig_UserAccountMapping/UserProvisioningConfig_UserAccountMapping',type:'sap.ui.model.type.String'}" linkText="{i18n>UserProvisioningConfig.UserProvisioningConfig_UserAccountMapping/UserProvisioningConfig_UserAccountMapping}"/>
+							</VBox>							
+						</cells>
+					</ColumnListItem>
+				</items>
+			</Table>
+		</content>
+	</Page>
+</mvc:View>

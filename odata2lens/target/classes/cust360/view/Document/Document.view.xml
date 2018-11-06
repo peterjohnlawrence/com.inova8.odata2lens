@@ -1,0 +1,259 @@
+<mvc:View controllerName="com.inova8.lens.controller.Entity360" xmlns="sap.m" xmlns:mvc="sap.ui.core.mvc" xmlns:l="sap.ui.layout"
+	xmlns:f="sap.ui.layout.form" xmlns:table="sap.ui.table" xmlns:rdf="com.inova8.lens.control" xmlns:html="http://www.w3.org/1999/xhtml"
+	xmlns:core="sap.ui.core">
+	<Page showHeader="true" id="page" navButtonPress="onNavBack" showNavButton="false" title="{i18n>Document.Title}" busy="{entityView>/busy}"
+		busyIndicatorDelay="{entityView>/delay}" >
+		<customHeader>
+			<Toolbar>
+				<ToolbarSpacer/>
+				<HBox id="sourceTitle" alignItems="Center">
+						<rdf:TextResource id="selectedResource" path="" entitySet=""/>
+				</HBox>	
+				<Title id="pathTitle" text="{entityView>/navigation}"/>
+				<HBox id="versionsTitle" alignItems="Center">
+					<Title text="(" required="false"/>
+					<ComboBox id="versionSelection" items="{ path: 'entityView>/versions' }" selectionChange="onVersionChange">
+						<core:Item key="{entityView>navigation}" text="{entityView>text}"/>
+					</ComboBox>
+					<Title text=")" required="false"/>
+				</HBox>
+				<Title text="{i18n>Document.this}"/>
+				<Title text="(" required="false"/>
+				<rdf:TextResource path="dataModel>" entitySet="Document"/>
+				<Title text=")" required="false"/>
+	
+				<ToolbarSpacer/>
+				<ToggleButton id="toggleColumns" icon="sap-icon://hide" activeIcon="sap-icon://show" press="onSettingsPressed" visible="false"	>
+					<layoutData>
+						<OverflowToolbarLayoutData priority="NeverOverflow"/>
+					</layoutData>
+				</ToggleButton>
+				
+			</Toolbar>
+		</customHeader>
+		<Table id="form360" inset="false" fixedLayout="true" class="multicolumnform" updateFinished="hideColumns">
+			<columns>
+				<Column hAlign="Right" width="200px">
+					<Text text=""/>
+				</Column>
+				<Column visible="true">
+				</Column>
+				<Column visible="true">
+					<Text text="Document"/>
+				</Column>
+			</columns>
+			<items>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>Document.DocumentAttachmentMap_DocumentId_Inverse}" required="false"/> 
+						<Text text=""/>
+						<rdf:ListResource path="dataModel>DocumentAttachmentMap_DocumentId_Inverse/sfdc_DocumentAttachmentMap_DocumentId_Inverse" entitySet="DocumentAttachmentMap"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>Document.Document_AuthorId}" required="false"/> 
+						<Text text=""/>
+						<rdf:ListResource path="dataModel>Document_AuthorId/sfdc_Document_AuthorId" entitySet="User"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>Document.Document_Body}" required="false"/> 
+						<Text text=""/>
+						<Text text="{dataModel>Document_Body/Document_Body}"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>Document.Document_BodyLength}" required="false"/> 
+						<Text text=""/>
+						<Text text="{path:'dataModel>Document_BodyLength/Document_BodyLength',type:'sap.ui.model.type.Integer' }"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>Document.Document_ContentType}" required="false"/> 
+						<Text text=""/>
+						<rdf:TextLink text="{path:'dataModel>Document_ContentType/Document_ContentType',type:'sap.ui.model.type.String' }" linkText="{i18n>Document.Document_ContentType/Document_ContentType}"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>Document.Document_CreatedById}" required="false"/> 
+						<Text text=""/>
+						<rdf:ListResource path="dataModel>Document_CreatedById/sfdc_Document_CreatedById" entitySet="User"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>Document.Document_CreatedDate}" required="false"/> 
+						<Text text=""/>
+						<Text text="{dataModel>Document_CreatedDate/Document_CreatedDate}"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>Document.Document_Description}" required="false"/> 
+						<Text text=""/>
+						<rdf:TextLink text="{path:'dataModel>Document_Description/Document_Description',type:'sap.ui.model.type.String' }" linkText="{i18n>Document.Document_Description/Document_Description}"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>Document.Document_DeveloperName}" required="false"/> 
+						<Text text=""/>
+						<rdf:TextLink text="{path:'dataModel>Document_DeveloperName/Document_DeveloperName',type:'sap.ui.model.type.String' }" linkText="{i18n>Document.Document_DeveloperName/Document_DeveloperName}"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>Document.Document_FolderId}" required="false"/> 
+						<Text text=""/>
+						<rdf:ListResource path="dataModel>Document_FolderId/sfdc_Document_FolderId" entitySet="Folder"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>Document.Document_Id}" required="false"/> 
+						<Text text=""/>
+						<rdf:TextLink text="{path:'dataModel>Document_Id/Document_Id',type:'sap.ui.model.type.String' }" linkText="{i18n>Document.Document_Id/Document_Id}"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>Document.Document_IsBodySearchable}" required="false"/> 
+						<Text text=""/>
+						<Text text="{path:'dataModel>Document_IsBodySearchable/Document_IsBodySearchable',type:'sap.ui.model.type.Boolean'}"/>  
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>Document.Document_IsDeleted}" required="false"/> 
+						<Text text=""/>
+						<Text text="{path:'dataModel>Document_IsDeleted/Document_IsDeleted',type:'sap.ui.model.type.Boolean'}"/>  
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>Document.Document_IsInternalUseOnly}" required="false"/> 
+						<Text text=""/>
+						<Text text="{path:'dataModel>Document_IsInternalUseOnly/Document_IsInternalUseOnly',type:'sap.ui.model.type.Boolean'}"/>  
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>Document.Document_IsPublic}" required="false"/> 
+						<Text text=""/>
+						<Text text="{path:'dataModel>Document_IsPublic/Document_IsPublic',type:'sap.ui.model.type.Boolean'}"/>  
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>Document.Document_Keywords}" required="false"/> 
+						<Text text=""/>
+						<rdf:TextLink text="{path:'dataModel>Document_Keywords/Document_Keywords',type:'sap.ui.model.type.String' }" linkText="{i18n>Document.Document_Keywords/Document_Keywords}"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>Document.Document_LastModifiedById}" required="false"/> 
+						<Text text=""/>
+						<rdf:ListResource path="dataModel>Document_LastModifiedById/sfdc_Document_LastModifiedById" entitySet="User"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>Document.Document_LastModifiedDate}" required="false"/> 
+						<Text text=""/>
+						<Text text="{dataModel>Document_LastModifiedDate/Document_LastModifiedDate}"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>Document.Document_LastReferencedDate}" required="false"/> 
+						<Text text=""/>
+						<Text text="{dataModel>Document_LastReferencedDate/Document_LastReferencedDate}"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>Document.Document_LastViewedDate}" required="false"/> 
+						<Text text=""/>
+						<Text text="{dataModel>Document_LastViewedDate/Document_LastViewedDate}"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>Document.Document_Name}" required="false"/> 
+						<Text text=""/>
+						<rdf:TextLink text="{path:'dataModel>Document_Name/Document_Name',type:'sap.ui.model.type.String' }" linkText="{i18n>Document.Document_Name/Document_Name}"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>Document.Document_NamespacePrefix}" required="false"/> 
+						<Text text=""/>
+						<rdf:TextLink text="{path:'dataModel>Document_NamespacePrefix/Document_NamespacePrefix',type:'sap.ui.model.type.String' }" linkText="{i18n>Document.Document_NamespacePrefix/Document_NamespacePrefix}"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>Document.Document_SystemModstamp}" required="false"/> 
+						<Text text=""/>
+						<Text text="{dataModel>Document_SystemModstamp/Document_SystemModstamp}"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>Document.Document_Type}" required="false"/> 
+						<Text text=""/>
+						<rdf:TextLink text="{path:'dataModel>Document_Type/Document_Type',type:'sap.ui.model.type.String' }" linkText="{i18n>Document.Document_Type/Document_Type}"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>Document.Document_Url}" required="false"/> 
+						<Text text=""/>
+						<rdf:TextLink text="{path:'dataModel>Document_Url/Document_Url',type:'sap.ui.model.type.String' }" linkText="{i18n>Document.Document_Url/Document_Url}"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>Document.DocumentAttachmentMap_DocumentId_Inverse}" required="false"/> 
+						<rdf:ListResource path="dataModel>DocumentAttachmentMap_DocumentId_Inverse" entitySet="DocumentAttachmentMap"/>
+						<Text text=""/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>Document.Document_AuthorId}" required="false"/> 
+						<rdf:ListResource path="dataModel>Document_AuthorId" entitySet="User"/>
+						<Text text=""/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>Document.Document_CreatedById}" required="false"/> 
+						<rdf:ListResource path="dataModel>Document_CreatedById" entitySet="User"/>
+						<Text text=""/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>Document.Document_FolderId}" required="false"/> 
+						<rdf:ListResource path="dataModel>Document_FolderId" entitySet="Folder"/>
+						<Text text=""/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>Document.Document_LastModifiedById}" required="false"/> 
+						<rdf:ListResource path="dataModel>Document_LastModifiedById" entitySet="User"/>
+						<Text text=""/>
+					</cells>
+				</ColumnListItem>
+			</items>
+		</Table>
+	</Page>
+</mvc:View>

@@ -1,0 +1,287 @@
+<mvc:View controllerName="com.inova8.lens.controller.Entity360" xmlns="sap.m" xmlns:mvc="sap.ui.core.mvc" xmlns:l="sap.ui.layout"
+	xmlns:f="sap.ui.layout.form" xmlns:table="sap.ui.table" xmlns:rdf="com.inova8.lens.control" xmlns:html="http://www.w3.org/1999/xhtml"
+	xmlns:core="sap.ui.core">
+	<Page showHeader="true" id="page" navButtonPress="onNavBack" showNavButton="false" title="{i18n>ExternalSocialAccount.Title}" busy="{entityView>/busy}"
+		busyIndicatorDelay="{entityView>/delay}" >
+		<customHeader>
+			<Toolbar>
+				<ToolbarSpacer/>
+				<HBox id="sourceTitle" alignItems="Center">
+						<rdf:TextResource id="selectedResource" path="" entitySet=""/>
+				</HBox>	
+				<Title id="pathTitle" text="{entityView>/navigation}"/>
+				<HBox id="versionsTitle" alignItems="Center">
+					<Title text="(" required="false"/>
+					<ComboBox id="versionSelection" items="{ path: 'entityView>/versions' }" selectionChange="onVersionChange">
+						<core:Item key="{entityView>navigation}" text="{entityView>text}"/>
+					</ComboBox>
+					<Title text=")" required="false"/>
+				</HBox>
+				<Title text="{i18n>ExternalSocialAccount.this}"/>
+				<Title text="(" required="false"/>
+				<rdf:TextResource path="dataModel>" entitySet="ExternalSocialAccount"/>
+				<Title text=")" required="false"/>
+	
+				<ToolbarSpacer/>
+				<ToggleButton id="toggleColumns" icon="sap-icon://hide" activeIcon="sap-icon://show" press="onSettingsPressed" visible="false"	>
+					<layoutData>
+						<OverflowToolbarLayoutData priority="NeverOverflow"/>
+					</layoutData>
+				</ToggleButton>
+				
+			</Toolbar>
+		</customHeader>
+		<Table id="form360" inset="false" fixedLayout="true" class="multicolumnform" updateFinished="hideColumns">
+			<columns>
+				<Column hAlign="Right" width="200px">
+					<Text text=""/>
+				</Column>
+				<Column visible="true">
+				</Column>
+				<Column visible="true">
+					<Text text="ExternalSocialAccount"/>
+				</Column>
+			</columns>
+			<items>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>ExternalSocialAccount.ExternalSocialAccount_AuthorizedBy}" required="false"/> 
+						<Text text=""/>
+						<rdf:TextLink text="{path:'dataModel>ExternalSocialAccount_AuthorizedBy/ExternalSocialAccount_AuthorizedBy',type:'sap.ui.model.type.String' }" linkText="{i18n>ExternalSocialAccount.ExternalSocialAccount_AuthorizedBy/ExternalSocialAccount_AuthorizedBy}"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>ExternalSocialAccount.ExternalSocialAccount_CreatedById}" required="false"/> 
+						<Text text=""/>
+						<rdf:ListResource path="dataModel>ExternalSocialAccount_CreatedById/sfdc_ExternalSocialAccount_CreatedById" entitySet="User"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>ExternalSocialAccount.ExternalSocialAccount_CreatedDate}" required="false"/> 
+						<Text text=""/>
+						<Text text="{dataModel>ExternalSocialAccount_CreatedDate/ExternalSocialAccount_CreatedDate}"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>ExternalSocialAccount.ExternalSocialAccount_DataSourceId}" required="false"/> 
+						<Text text=""/>
+						<rdf:TextLink text="{path:'dataModel>ExternalSocialAccount_DataSourceId/ExternalSocialAccount_DataSourceId',type:'sap.ui.model.type.String' }" linkText="{i18n>ExternalSocialAccount.ExternalSocialAccount_DataSourceId/ExternalSocialAccount_DataSourceId}"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>ExternalSocialAccount.ExternalSocialAccount_DefaultResponseAccountId}" required="false"/> 
+						<Text text=""/>
+						<rdf:ListResource path="dataModel>ExternalSocialAccount_DefaultResponseAccountId/sfdc_ExternalSocialAccount_DefaultResponseAccountId" entitySet="ExternalSocialAccount"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>ExternalSocialAccount.ExternalSocialAccount_DefaultResponseAccountId_Inverse}" required="false"/> 
+						<Text text=""/>
+						<rdf:ListResource path="dataModel>ExternalSocialAccount_DefaultResponseAccountId_Inverse/sfdc_ExternalSocialAccount_DefaultResponseAccountId_Inverse" entitySet="ExternalSocialAccount"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>ExternalSocialAccount.ExternalSocialAccount_DeveloperName}" required="false"/> 
+						<Text text=""/>
+						<rdf:TextLink text="{path:'dataModel>ExternalSocialAccount_DeveloperName/ExternalSocialAccount_DeveloperName',type:'sap.ui.model.type.String' }" linkText="{i18n>ExternalSocialAccount.ExternalSocialAccount_DeveloperName/ExternalSocialAccount_DeveloperName}"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>ExternalSocialAccount.ExternalSocialAccount_ExternalAccountId}" required="false"/> 
+						<Text text=""/>
+						<rdf:TextLink text="{path:'dataModel>ExternalSocialAccount_ExternalAccountId/ExternalSocialAccount_ExternalAccountId',type:'sap.ui.model.type.String' }" linkText="{i18n>ExternalSocialAccount.ExternalSocialAccount_ExternalAccountId/ExternalSocialAccount_ExternalAccountId}"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>ExternalSocialAccount.ExternalSocialAccount_ExternalPictureURL}" required="false"/> 
+						<Text text=""/>
+						<rdf:TextLink text="{path:'dataModel>ExternalSocialAccount_ExternalPictureURL/ExternalSocialAccount_ExternalPictureURL',type:'sap.ui.model.type.String' }" linkText="{i18n>ExternalSocialAccount.ExternalSocialAccount_ExternalPictureURL/ExternalSocialAccount_ExternalPictureURL}"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>ExternalSocialAccount.ExternalSocialAccount_Id}" required="false"/> 
+						<Text text=""/>
+						<rdf:TextLink text="{path:'dataModel>ExternalSocialAccount_Id/ExternalSocialAccount_Id',type:'sap.ui.model.type.String' }" linkText="{i18n>ExternalSocialAccount.ExternalSocialAccount_Id/ExternalSocialAccount_Id}"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>ExternalSocialAccount.ExternalSocialAccount_IsActive}" required="false"/> 
+						<Text text=""/>
+						<Text text="{path:'dataModel>ExternalSocialAccount_IsActive/ExternalSocialAccount_IsActive',type:'sap.ui.model.type.Boolean'}"/>  
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>ExternalSocialAccount.ExternalSocialAccount_IsAuthenticated}" required="false"/> 
+						<Text text=""/>
+						<Text text="{path:'dataModel>ExternalSocialAccount_IsAuthenticated/ExternalSocialAccount_IsAuthenticated',type:'sap.ui.model.type.Boolean'}"/>  
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>ExternalSocialAccount.ExternalSocialAccount_IsCaseCreationEnabled}" required="false"/> 
+						<Text text=""/>
+						<Text text="{path:'dataModel>ExternalSocialAccount_IsCaseCreationEnabled/ExternalSocialAccount_IsCaseCreationEnabled',type:'sap.ui.model.type.Boolean'}"/>  
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>ExternalSocialAccount.ExternalSocialAccount_IsDataSourceActive}" required="false"/> 
+						<Text text=""/>
+						<Text text="{path:'dataModel>ExternalSocialAccount_IsDataSourceActive/ExternalSocialAccount_IsDataSourceActive',type:'sap.ui.model.type.Boolean'}"/>  
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>ExternalSocialAccount.ExternalSocialAccount_IsDeleted}" required="false"/> 
+						<Text text=""/>
+						<Text text="{path:'dataModel>ExternalSocialAccount_IsDeleted/ExternalSocialAccount_IsDeleted',type:'sap.ui.model.type.Boolean'}"/>  
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>ExternalSocialAccount.ExternalSocialAccount_Language}" required="false"/> 
+						<Text text=""/>
+						<rdf:TextLink text="{path:'dataModel>ExternalSocialAccount_Language/ExternalSocialAccount_Language',type:'sap.ui.model.type.String' }" linkText="{i18n>ExternalSocialAccount.ExternalSocialAccount_Language/ExternalSocialAccount_Language}"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>ExternalSocialAccount.ExternalSocialAccount_LastModifiedById}" required="false"/> 
+						<Text text=""/>
+						<rdf:ListResource path="dataModel>ExternalSocialAccount_LastModifiedById/sfdc_ExternalSocialAccount_LastModifiedById" entitySet="User"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>ExternalSocialAccount.ExternalSocialAccount_LastModifiedDate}" required="false"/> 
+						<Text text=""/>
+						<Text text="{dataModel>ExternalSocialAccount_LastModifiedDate/ExternalSocialAccount_LastModifiedDate}"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>ExternalSocialAccount.ExternalSocialAccount_MasterLabel}" required="false"/> 
+						<Text text=""/>
+						<rdf:TextLink text="{path:'dataModel>ExternalSocialAccount_MasterLabel/ExternalSocialAccount_MasterLabel',type:'sap.ui.model.type.String' }" linkText="{i18n>ExternalSocialAccount.ExternalSocialAccount_MasterLabel/ExternalSocialAccount_MasterLabel}"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>ExternalSocialAccount.ExternalSocialAccount_ProfileUrl}" required="false"/> 
+						<Text text=""/>
+						<rdf:TextLink text="{path:'dataModel>ExternalSocialAccount_ProfileUrl/ExternalSocialAccount_ProfileUrl',type:'sap.ui.model.type.String' }" linkText="{i18n>ExternalSocialAccount.ExternalSocialAccount_ProfileUrl/ExternalSocialAccount_ProfileUrl}"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>ExternalSocialAccount.ExternalSocialAccount_Provider}" required="false"/> 
+						<Text text=""/>
+						<rdf:TextLink text="{path:'dataModel>ExternalSocialAccount_Provider/ExternalSocialAccount_Provider',type:'sap.ui.model.type.String' }" linkText="{i18n>ExternalSocialAccount.ExternalSocialAccount_Provider/ExternalSocialAccount_Provider}"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>ExternalSocialAccount.ExternalSocialAccount_ProviderUserId}" required="false"/> 
+						<Text text=""/>
+						<rdf:TextLink text="{path:'dataModel>ExternalSocialAccount_ProviderUserId/ExternalSocialAccount_ProviderUserId',type:'sap.ui.model.type.String' }" linkText="{i18n>ExternalSocialAccount.ExternalSocialAccount_ProviderUserId/ExternalSocialAccount_ProviderUserId}"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>ExternalSocialAccount.ExternalSocialAccount_RuleId}" required="false"/> 
+						<Text text=""/>
+						<rdf:TextLink text="{path:'dataModel>ExternalSocialAccount_RuleId/ExternalSocialAccount_RuleId',type:'sap.ui.model.type.String' }" linkText="{i18n>ExternalSocialAccount.ExternalSocialAccount_RuleId/ExternalSocialAccount_RuleId}"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>ExternalSocialAccount.ExternalSocialAccount_SocialPropertyId}" required="false"/> 
+						<Text text=""/>
+						<rdf:TextLink text="{path:'dataModel>ExternalSocialAccount_SocialPropertyId/ExternalSocialAccount_SocialPropertyId',type:'sap.ui.model.type.String' }" linkText="{i18n>ExternalSocialAccount.ExternalSocialAccount_SocialPropertyId/ExternalSocialAccount_SocialPropertyId}"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>ExternalSocialAccount.ExternalSocialAccount_SystemModstamp}" required="false"/> 
+						<Text text=""/>
+						<Text text="{dataModel>ExternalSocialAccount_SystemModstamp/ExternalSocialAccount_SystemModstamp}"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>ExternalSocialAccount.ExternalSocialAccount_TopicId}" required="false"/> 
+						<Text text=""/>
+						<rdf:TextLink text="{path:'dataModel>ExternalSocialAccount_TopicId/ExternalSocialAccount_TopicId',type:'sap.ui.model.type.String' }" linkText="{i18n>ExternalSocialAccount.ExternalSocialAccount_TopicId/ExternalSocialAccount_TopicId}"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>ExternalSocialAccount.ExternalSocialAccount_UniqueName}" required="false"/> 
+						<Text text=""/>
+						<rdf:TextLink text="{path:'dataModel>ExternalSocialAccount_UniqueName/ExternalSocialAccount_UniqueName',type:'sap.ui.model.type.String' }" linkText="{i18n>ExternalSocialAccount.ExternalSocialAccount_UniqueName/ExternalSocialAccount_UniqueName}"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>ExternalSocialAccount.ExternalSocialAccount_Username}" required="false"/> 
+						<Text text=""/>
+						<rdf:TextLink text="{path:'dataModel>ExternalSocialAccount_Username/ExternalSocialAccount_Username',type:'sap.ui.model.type.String' }" linkText="{i18n>ExternalSocialAccount.ExternalSocialAccount_Username/ExternalSocialAccount_Username}"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>ExternalSocialAccount.SocialPost_OutboundSocialAccountId_Inverse}" required="false"/> 
+						<Text text=""/>
+						<rdf:ListResource path="dataModel>SocialPost_OutboundSocialAccountId_Inverse/sfdc_SocialPost_OutboundSocialAccountId_Inverse" entitySet="SocialPost"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>ExternalSocialAccount.ExternalSocialAccount_CreatedById}" required="false"/> 
+						<rdf:ListResource path="dataModel>ExternalSocialAccount_CreatedById" entitySet="User"/>
+						<Text text=""/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>ExternalSocialAccount.ExternalSocialAccount_DefaultResponseAccountId}" required="false"/> 
+						<rdf:ListResource path="dataModel>ExternalSocialAccount_DefaultResponseAccountId" entitySet="ExternalSocialAccount"/>
+						<Text text=""/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>ExternalSocialAccount.ExternalSocialAccount_DefaultResponseAccountId_Inverse}" required="false"/> 
+						<rdf:ListResource path="dataModel>ExternalSocialAccount_DefaultResponseAccountId_Inverse" entitySet="ExternalSocialAccount"/>
+						<Text text=""/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>ExternalSocialAccount.ExternalSocialAccount_LastModifiedById}" required="false"/> 
+						<rdf:ListResource path="dataModel>ExternalSocialAccount_LastModifiedById" entitySet="User"/>
+						<Text text=""/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>ExternalSocialAccount.SocialPost_OutboundSocialAccountId_Inverse}" required="false"/> 
+						<rdf:ListResource path="dataModel>SocialPost_OutboundSocialAccountId_Inverse" entitySet="SocialPost"/>
+						<Text text=""/>
+					</cells>
+				</ColumnListItem>
+			</items>
+		</Table>
+	</Page>
+</mvc:View>

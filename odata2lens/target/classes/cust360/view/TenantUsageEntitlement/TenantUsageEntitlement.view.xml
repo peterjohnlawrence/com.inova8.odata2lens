@@ -1,0 +1,196 @@
+<mvc:View controllerName="com.inova8.lens.controller.Entity360" xmlns="sap.m" xmlns:mvc="sap.ui.core.mvc" xmlns:l="sap.ui.layout"
+	xmlns:f="sap.ui.layout.form" xmlns:table="sap.ui.table" xmlns:rdf="com.inova8.lens.control" xmlns:html="http://www.w3.org/1999/xhtml"
+	xmlns:core="sap.ui.core">
+	<Page showHeader="true" id="page" navButtonPress="onNavBack" showNavButton="false" title="{i18n>TenantUsageEntitlement.Title}" busy="{entityView>/busy}"
+		busyIndicatorDelay="{entityView>/delay}" >
+		<customHeader>
+			<Toolbar>
+				<ToolbarSpacer/>
+				<HBox id="sourceTitle" alignItems="Center">
+						<rdf:TextResource id="selectedResource" path="" entitySet=""/>
+				</HBox>	
+				<Title id="pathTitle" text="{entityView>/navigation}"/>
+				<HBox id="versionsTitle" alignItems="Center">
+					<Title text="(" required="false"/>
+					<ComboBox id="versionSelection" items="{ path: 'entityView>/versions' }" selectionChange="onVersionChange">
+						<core:Item key="{entityView>navigation}" text="{entityView>text}"/>
+					</ComboBox>
+					<Title text=")" required="false"/>
+				</HBox>
+				<Title text="{i18n>TenantUsageEntitlement.this}"/>
+				<Title text="(" required="false"/>
+				<rdf:TextResource path="dataModel>" entitySet="TenantUsageEntitlement"/>
+				<Title text=")" required="false"/>
+	
+				<ToolbarSpacer/>
+				<ToggleButton id="toggleColumns" icon="sap-icon://hide" activeIcon="sap-icon://show" press="onSettingsPressed" visible="false"	>
+					<layoutData>
+						<OverflowToolbarLayoutData priority="NeverOverflow"/>
+					</layoutData>
+				</ToggleButton>
+				
+			</Toolbar>
+		</customHeader>
+		<Table id="form360" inset="false" fixedLayout="true" class="multicolumnform" updateFinished="hideColumns">
+			<columns>
+				<Column hAlign="Right" width="200px">
+					<Text text=""/>
+				</Column>
+				<Column visible="true">
+				</Column>
+				<Column visible="true">
+					<Text text="TenantUsageEntitlement"/>
+				</Column>
+			</columns>
+			<items>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>TenantUsageEntitlement.TenantUsageEntitlement_AmountUsed}" required="false"/> 
+						<Text text=""/>
+						<Text text="{path:'dataModel>TenantUsageEntitlement_AmountUsed/TenantUsageEntitlement_AmountUsed',type:'sap.ui.model.type.Float', formatOptions:{'style':'short','maxFractionDigits':2} }"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>TenantUsageEntitlement.TenantUsageEntitlement_CreatedById}" required="false"/> 
+						<Text text=""/>
+						<rdf:ListResource path="dataModel>TenantUsageEntitlement_CreatedById/sfdc_TenantUsageEntitlement_CreatedById" entitySet="User"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>TenantUsageEntitlement.TenantUsageEntitlement_CreatedDate}" required="false"/> 
+						<Text text=""/>
+						<Text text="{dataModel>TenantUsageEntitlement_CreatedDate/TenantUsageEntitlement_CreatedDate}"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>TenantUsageEntitlement.TenantUsageEntitlement_CurrentAmountAllowed}" required="false"/> 
+						<Text text=""/>
+						<Text text="{path:'dataModel>TenantUsageEntitlement_CurrentAmountAllowed/TenantUsageEntitlement_CurrentAmountAllowed',type:'sap.ui.model.type.Float', formatOptions:{'style':'short','maxFractionDigits':2} }"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>TenantUsageEntitlement.TenantUsageEntitlement_EndDate}" required="false"/> 
+						<Text text=""/>
+						<Text text="{dataModel>TenantUsageEntitlement_EndDate/TenantUsageEntitlement_EndDate}"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>TenantUsageEntitlement.TenantUsageEntitlement_Frequency}" required="false"/> 
+						<Text text=""/>
+						<rdf:TextLink text="{path:'dataModel>TenantUsageEntitlement_Frequency/TenantUsageEntitlement_Frequency',type:'sap.ui.model.type.String' }" linkText="{i18n>TenantUsageEntitlement.TenantUsageEntitlement_Frequency/TenantUsageEntitlement_Frequency}"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>TenantUsageEntitlement.TenantUsageEntitlement_HasRollover}" required="false"/> 
+						<Text text=""/>
+						<Text text="{path:'dataModel>TenantUsageEntitlement_HasRollover/TenantUsageEntitlement_HasRollover',type:'sap.ui.model.type.Boolean'}"/>  
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>TenantUsageEntitlement.TenantUsageEntitlement_Id}" required="false"/> 
+						<Text text=""/>
+						<rdf:TextLink text="{path:'dataModel>TenantUsageEntitlement_Id/TenantUsageEntitlement_Id',type:'sap.ui.model.type.String' }" linkText="{i18n>TenantUsageEntitlement.TenantUsageEntitlement_Id/TenantUsageEntitlement_Id}"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>TenantUsageEntitlement.TenantUsageEntitlement_IsDeleted}" required="false"/> 
+						<Text text=""/>
+						<Text text="{path:'dataModel>TenantUsageEntitlement_IsDeleted/TenantUsageEntitlement_IsDeleted',type:'sap.ui.model.type.Boolean'}"/>  
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>TenantUsageEntitlement.TenantUsageEntitlement_IsPersistentResource}" required="false"/> 
+						<Text text=""/>
+						<Text text="{path:'dataModel>TenantUsageEntitlement_IsPersistentResource/TenantUsageEntitlement_IsPersistentResource',type:'sap.ui.model.type.Boolean'}"/>  
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>TenantUsageEntitlement.TenantUsageEntitlement_LastModifiedById}" required="false"/> 
+						<Text text=""/>
+						<rdf:ListResource path="dataModel>TenantUsageEntitlement_LastModifiedById/sfdc_TenantUsageEntitlement_LastModifiedById" entitySet="User"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>TenantUsageEntitlement.TenantUsageEntitlement_LastModifiedDate}" required="false"/> 
+						<Text text=""/>
+						<Text text="{dataModel>TenantUsageEntitlement_LastModifiedDate/TenantUsageEntitlement_LastModifiedDate}"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>TenantUsageEntitlement.TenantUsageEntitlement_MasterLabel}" required="false"/> 
+						<Text text=""/>
+						<rdf:TextLink text="{path:'dataModel>TenantUsageEntitlement_MasterLabel/TenantUsageEntitlement_MasterLabel',type:'sap.ui.model.type.String' }" linkText="{i18n>TenantUsageEntitlement.TenantUsageEntitlement_MasterLabel/TenantUsageEntitlement_MasterLabel}"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>TenantUsageEntitlement.TenantUsageEntitlement_OverageGrace}" required="false"/> 
+						<Text text=""/>
+						<Text text="{path:'dataModel>TenantUsageEntitlement_OverageGrace/TenantUsageEntitlement_OverageGrace',type:'sap.ui.model.type.Float', formatOptions:{'style':'short','maxFractionDigits':2} }"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>TenantUsageEntitlement.TenantUsageEntitlement_ResourceGroupKey}" required="false"/> 
+						<Text text=""/>
+						<rdf:TextLink text="{path:'dataModel>TenantUsageEntitlement_ResourceGroupKey/TenantUsageEntitlement_ResourceGroupKey',type:'sap.ui.model.type.String' }" linkText="{i18n>TenantUsageEntitlement.TenantUsageEntitlement_ResourceGroupKey/TenantUsageEntitlement_ResourceGroupKey}"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>TenantUsageEntitlement.TenantUsageEntitlement_Setting}" required="false"/> 
+						<Text text=""/>
+						<rdf:TextLink text="{path:'dataModel>TenantUsageEntitlement_Setting/TenantUsageEntitlement_Setting',type:'sap.ui.model.type.String' }" linkText="{i18n>TenantUsageEntitlement.TenantUsageEntitlement_Setting/TenantUsageEntitlement_Setting}"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>TenantUsageEntitlement.TenantUsageEntitlement_StartDate}" required="false"/> 
+						<Text text=""/>
+						<Text text="{dataModel>TenantUsageEntitlement_StartDate/TenantUsageEntitlement_StartDate}"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>TenantUsageEntitlement.TenantUsageEntitlement_SystemModstamp}" required="false"/> 
+						<Text text=""/>
+						<Text text="{dataModel>TenantUsageEntitlement_SystemModstamp/TenantUsageEntitlement_SystemModstamp}"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>TenantUsageEntitlement.TenantUsageEntitlement_UsageDate}" required="false"/> 
+						<Text text=""/>
+						<Text text="{dataModel>TenantUsageEntitlement_UsageDate/TenantUsageEntitlement_UsageDate}"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>TenantUsageEntitlement.TenantUsageEntitlement_CreatedById}" required="false"/> 
+						<rdf:ListResource path="dataModel>TenantUsageEntitlement_CreatedById" entitySet="User"/>
+						<Text text=""/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>TenantUsageEntitlement.TenantUsageEntitlement_LastModifiedById}" required="false"/> 
+						<rdf:ListResource path="dataModel>TenantUsageEntitlement_LastModifiedById" entitySet="User"/>
+						<Text text=""/>
+					</cells>
+				</ColumnListItem>
+			</items>
+		</Table>
+	</Page>
+</mvc:View>

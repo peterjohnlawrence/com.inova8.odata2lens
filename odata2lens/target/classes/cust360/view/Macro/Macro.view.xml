@@ -1,0 +1,217 @@
+<mvc:View controllerName="com.inova8.lens.controller.Entity360" xmlns="sap.m" xmlns:mvc="sap.ui.core.mvc" xmlns:l="sap.ui.layout"
+	xmlns:f="sap.ui.layout.form" xmlns:table="sap.ui.table" xmlns:rdf="com.inova8.lens.control" xmlns:html="http://www.w3.org/1999/xhtml"
+	xmlns:core="sap.ui.core">
+	<Page showHeader="true" id="page" navButtonPress="onNavBack" showNavButton="false" title="{i18n>Macro.Title}" busy="{entityView>/busy}"
+		busyIndicatorDelay="{entityView>/delay}" >
+		<customHeader>
+			<Toolbar>
+				<ToolbarSpacer/>
+				<HBox id="sourceTitle" alignItems="Center">
+						<rdf:TextResource id="selectedResource" path="" entitySet=""/>
+				</HBox>	
+				<Title id="pathTitle" text="{entityView>/navigation}"/>
+				<HBox id="versionsTitle" alignItems="Center">
+					<Title text="(" required="false"/>
+					<ComboBox id="versionSelection" items="{ path: 'entityView>/versions' }" selectionChange="onVersionChange">
+						<core:Item key="{entityView>navigation}" text="{entityView>text}"/>
+					</ComboBox>
+					<Title text=")" required="false"/>
+				</HBox>
+				<Title text="{i18n>Macro.this}"/>
+				<Title text="(" required="false"/>
+				<rdf:TextResource path="dataModel>" entitySet="Macro"/>
+				<Title text=")" required="false"/>
+	
+				<ToolbarSpacer/>
+				<ToggleButton id="toggleColumns" icon="sap-icon://hide" activeIcon="sap-icon://show" press="onSettingsPressed" visible="false"	>
+					<layoutData>
+						<OverflowToolbarLayoutData priority="NeverOverflow"/>
+					</layoutData>
+				</ToggleButton>
+				
+			</Toolbar>
+		</customHeader>
+		<Table id="form360" inset="false" fixedLayout="true" class="multicolumnform" updateFinished="hideColumns">
+			<columns>
+				<Column hAlign="Right" width="200px">
+					<Text text=""/>
+				</Column>
+				<Column visible="true">
+				</Column>
+				<Column visible="true">
+					<Text text="Macro"/>
+				</Column>
+			</columns>
+			<items>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>Macro.MacroHistory_MacroId_Inverse}" required="false"/> 
+						<Text text=""/>
+						<rdf:ListResource path="dataModel>MacroHistory_MacroId_Inverse/sfdc_MacroHistory_MacroId_Inverse" entitySet="MacroHistory"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>Macro.MacroInstruction_MacroId_Inverse}" required="false"/> 
+						<Text text=""/>
+						<rdf:ListResource path="dataModel>MacroInstruction_MacroId_Inverse/sfdc_MacroInstruction_MacroId_Inverse" entitySet="MacroInstruction"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>Macro.MacroShare_ParentId_Inverse}" required="false"/> 
+						<Text text=""/>
+						<rdf:ListResource path="dataModel>MacroShare_ParentId_Inverse/sfdc_MacroShare_ParentId_Inverse" entitySet="MacroShare"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>Macro.Macro_CreatedById}" required="false"/> 
+						<Text text=""/>
+						<rdf:ListResource path="dataModel>Macro_CreatedById/sfdc_Macro_CreatedById" entitySet="User"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>Macro.Macro_CreatedDate}" required="false"/> 
+						<Text text=""/>
+						<Text text="{dataModel>Macro_CreatedDate/Macro_CreatedDate}"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>Macro.Macro_Description}" required="false"/> 
+						<Text text=""/>
+						<rdf:TextLink text="{path:'dataModel>Macro_Description/Macro_Description',type:'sap.ui.model.type.String' }" linkText="{i18n>Macro.Macro_Description/Macro_Description}"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>Macro.Macro_Id}" required="false"/> 
+						<Text text=""/>
+						<rdf:TextLink text="{path:'dataModel>Macro_Id/Macro_Id',type:'sap.ui.model.type.String' }" linkText="{i18n>Macro.Macro_Id/Macro_Id}"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>Macro.Macro_IsAlohaSupported}" required="false"/> 
+						<Text text=""/>
+						<Text text="{path:'dataModel>Macro_IsAlohaSupported/Macro_IsAlohaSupported',type:'sap.ui.model.type.Boolean'}"/>  
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>Macro.Macro_IsDeleted}" required="false"/> 
+						<Text text=""/>
+						<Text text="{path:'dataModel>Macro_IsDeleted/Macro_IsDeleted',type:'sap.ui.model.type.Boolean'}"/>  
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>Macro.Macro_IsLightningSupported}" required="false"/> 
+						<Text text=""/>
+						<Text text="{path:'dataModel>Macro_IsLightningSupported/Macro_IsLightningSupported',type:'sap.ui.model.type.Boolean'}"/>  
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>Macro.Macro_LastModifiedById}" required="false"/> 
+						<Text text=""/>
+						<rdf:ListResource path="dataModel>Macro_LastModifiedById/sfdc_Macro_LastModifiedById" entitySet="User"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>Macro.Macro_LastModifiedDate}" required="false"/> 
+						<Text text=""/>
+						<Text text="{dataModel>Macro_LastModifiedDate/Macro_LastModifiedDate}"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>Macro.Macro_LastReferencedDate}" required="false"/> 
+						<Text text=""/>
+						<Text text="{dataModel>Macro_LastReferencedDate/Macro_LastReferencedDate}"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>Macro.Macro_LastViewedDate}" required="false"/> 
+						<Text text=""/>
+						<Text text="{dataModel>Macro_LastViewedDate/Macro_LastViewedDate}"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>Macro.Macro_Name}" required="false"/> 
+						<Text text=""/>
+						<rdf:TextLink text="{path:'dataModel>Macro_Name/Macro_Name',type:'sap.ui.model.type.String' }" linkText="{i18n>Macro.Macro_Name/Macro_Name}"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>Macro.Macro_OwnerId}" required="false"/> 
+						<Text text=""/>
+						<rdf:ListResource path="dataModel>Macro_OwnerId/sfdc_Macro_OwnerId" entitySet="Group"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>Macro.Macro_StartingContext}" required="false"/> 
+						<Text text=""/>
+						<rdf:TextLink text="{path:'dataModel>Macro_StartingContext/Macro_StartingContext',type:'sap.ui.model.type.String' }" linkText="{i18n>Macro.Macro_StartingContext/Macro_StartingContext}"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>Macro.Macro_SystemModstamp}" required="false"/> 
+						<Text text=""/>
+						<Text text="{dataModel>Macro_SystemModstamp/Macro_SystemModstamp}"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>Macro.MacroHistory_MacroId_Inverse}" required="false"/> 
+						<rdf:ListResource path="dataModel>MacroHistory_MacroId_Inverse" entitySet="MacroHistory"/>
+						<Text text=""/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>Macro.MacroInstruction_MacroId_Inverse}" required="false"/> 
+						<rdf:ListResource path="dataModel>MacroInstruction_MacroId_Inverse" entitySet="MacroInstruction"/>
+						<Text text=""/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>Macro.MacroShare_ParentId_Inverse}" required="false"/> 
+						<rdf:ListResource path="dataModel>MacroShare_ParentId_Inverse" entitySet="MacroShare"/>
+						<Text text=""/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>Macro.Macro_CreatedById}" required="false"/> 
+						<rdf:ListResource path="dataModel>Macro_CreatedById" entitySet="User"/>
+						<Text text=""/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>Macro.Macro_LastModifiedById}" required="false"/> 
+						<rdf:ListResource path="dataModel>Macro_LastModifiedById" entitySet="User"/>
+						<Text text=""/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>Macro.Macro_OwnerId}" required="false"/> 
+						<rdf:ListResource path="dataModel>Macro_OwnerId" entitySet="Group"/>
+						<Text text=""/>
+					</cells>
+				</ColumnListItem>
+			</items>
+		</Table>
+	</Page>
+</mvc:View>

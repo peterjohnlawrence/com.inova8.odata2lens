@@ -1,0 +1,139 @@
+<mvc:View controllerName="com.inova8.lens.controller.EntitySet360" xmlns="sap.m" xmlns:mvc="sap.ui.core.mvc" xmlns:layout="sap.ui.layout"
+	xmlns:rdf="com.inova8.lens.control" xmlns:core="sap.ui.core">
+	<Page showHeader="false" id="page" navButtonPress="onNavBack" showNavButton="true" title="{i18n>ServiceProviders.ViewTitle}">
+		<content>
+			<Table id="table360" inset="false" items="{ path: 'dataModel>/ServiceProvider' , sorter: { path: 'label', descending: false } 
+				}"
+				noDataText="{entitySetView>/tableNoDataText}" busyIndicatorDelay="{entitySetView>/tableBusyDelay}" growing="true" growingScrollToLoad="true"
+				updateFinished="onUpdateFinished"  fixedLayout="false">
+				<headerToolbar>
+					<Toolbar>
+						<ToolbarSpacer/>
+						<HBox id="sourceTitle" alignItems="Center">
+							<rdf:TextResource id="selectedResource" path="" entitySet=""/>
+						</HBox>
+						<Title id="pathTitle" text="{entitySetView>/navigationText}"/>
+						<HBox id="versionsTitle" alignItems="Center">
+							<Title text="(" required="false"/>
+							<ComboBox id="versionSelection" items="{ path: 'entitySetView>/versions' }" selectionChange="onVersionChange">
+								<core:Item key="{entitySetView>navigation}" text="{entityView>text}"/>
+							</ComboBox>
+							<Title text=")" required="false"/>
+						</HBox>
+						<Title id="tableHeader" text="{entitySetView>/entitySetTableTitle}"/>
+						<ToolbarSpacer/>
+						<SearchField id="searchField" tooltip="{i18n>search.searchTooltip}" search="onSearch" width="auto"></SearchField>
+					</Toolbar>
+				</headerToolbar>
+				<columns>
+					<Column >
+						<Text text="{i18n>ServiceProviders.this}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>ServiceProviders.ServiceProvider_AcsUrl}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>ServiceProviders.ServiceProvider_CreatedDate}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>ServiceProviders.ServiceProvider_EncryptionCertificate}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>ServiceProviders.ServiceProvider_EncryptionType}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>ServiceProviders.ServiceProvider_Id}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>ServiceProviders.ServiceProvider_Issuer}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>ServiceProviders.ServiceProvider_Name}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>ServiceProviders.ServiceProvider_NameIdFormat}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>ServiceProviders.ServiceProvider_SamlEntityUrl}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>ServiceProviders.ServiceProvider_SingleLogoutBinding}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>ServiceProviders.ServiceProvider_SingleLogoutUrl}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>ServiceProviders.ServiceProvider_SpCertificate}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>ServiceProviders.ServiceProvider_StartUrl}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>ServiceProviders.ServiceProvider_SubjectCustomAttr}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>ServiceProviders.ServiceProvider_SubjectType}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>ServiceProviders.ServiceProvider_SystemModstamp}"/>
+					</Column>
+				</columns>
+				<items>
+					<ColumnListItem id="template360" type="Navigation" press="onPress">
+						<cells>
+							<rdf:TextResource path="dataModel>" entitySet="ServiceProvider"/>
+							<VBox>					
+							<rdf:TextLink text="{path:'dataModel>ServiceProvider_AcsUrl/ServiceProvider_AcsUrl',type:'sap.ui.model.type.String'}" linkText="{i18n>ServiceProvider.ServiceProvider_AcsUrl/ServiceProvider_AcsUrl}"/>
+							</VBox>							
+							<VBox>					
+							<Text text="{dataModel>ServiceProvider_CreatedDate/ServiceProvider_CreatedDate}"/>
+							</VBox>							
+							<VBox>					
+							<rdf:TextLink text="{path:'dataModel>ServiceProvider_EncryptionCertificate/ServiceProvider_EncryptionCertificate',type:'sap.ui.model.type.String'}" linkText="{i18n>ServiceProvider.ServiceProvider_EncryptionCertificate/ServiceProvider_EncryptionCertificate}"/>
+							</VBox>							
+							<VBox>					
+							<rdf:TextLink text="{path:'dataModel>ServiceProvider_EncryptionType/ServiceProvider_EncryptionType',type:'sap.ui.model.type.String'}" linkText="{i18n>ServiceProvider.ServiceProvider_EncryptionType/ServiceProvider_EncryptionType}"/>
+							</VBox>							
+							<VBox>					
+							<rdf:TextLink text="{path:'dataModel>ServiceProvider_Id/ServiceProvider_Id',type:'sap.ui.model.type.String'}" linkText="{i18n>ServiceProvider.ServiceProvider_Id/ServiceProvider_Id}"/>
+							</VBox>							
+							<VBox>					
+							<rdf:TextLink text="{path:'dataModel>ServiceProvider_Issuer/ServiceProvider_Issuer',type:'sap.ui.model.type.String'}" linkText="{i18n>ServiceProvider.ServiceProvider_Issuer/ServiceProvider_Issuer}"/>
+							</VBox>							
+							<VBox>					
+							<rdf:TextLink text="{path:'dataModel>ServiceProvider_Name/ServiceProvider_Name',type:'sap.ui.model.type.String'}" linkText="{i18n>ServiceProvider.ServiceProvider_Name/ServiceProvider_Name}"/>
+							</VBox>							
+							<VBox>					
+							<rdf:TextLink text="{path:'dataModel>ServiceProvider_NameIdFormat/ServiceProvider_NameIdFormat',type:'sap.ui.model.type.String'}" linkText="{i18n>ServiceProvider.ServiceProvider_NameIdFormat/ServiceProvider_NameIdFormat}"/>
+							</VBox>							
+							<VBox>					
+							<rdf:TextLink text="{path:'dataModel>ServiceProvider_SamlEntityUrl/ServiceProvider_SamlEntityUrl',type:'sap.ui.model.type.String'}" linkText="{i18n>ServiceProvider.ServiceProvider_SamlEntityUrl/ServiceProvider_SamlEntityUrl}"/>
+							</VBox>							
+							<VBox>					
+							<rdf:TextLink text="{path:'dataModel>ServiceProvider_SingleLogoutBinding/ServiceProvider_SingleLogoutBinding',type:'sap.ui.model.type.String'}" linkText="{i18n>ServiceProvider.ServiceProvider_SingleLogoutBinding/ServiceProvider_SingleLogoutBinding}"/>
+							</VBox>							
+							<VBox>					
+							<rdf:TextLink text="{path:'dataModel>ServiceProvider_SingleLogoutUrl/ServiceProvider_SingleLogoutUrl',type:'sap.ui.model.type.String'}" linkText="{i18n>ServiceProvider.ServiceProvider_SingleLogoutUrl/ServiceProvider_SingleLogoutUrl}"/>
+							</VBox>							
+							<VBox>					
+							<rdf:TextLink text="{path:'dataModel>ServiceProvider_SpCertificate/ServiceProvider_SpCertificate',type:'sap.ui.model.type.String'}" linkText="{i18n>ServiceProvider.ServiceProvider_SpCertificate/ServiceProvider_SpCertificate}"/>
+							</VBox>							
+							<VBox>					
+							<rdf:TextLink text="{path:'dataModel>ServiceProvider_StartUrl/ServiceProvider_StartUrl',type:'sap.ui.model.type.String'}" linkText="{i18n>ServiceProvider.ServiceProvider_StartUrl/ServiceProvider_StartUrl}"/>
+							</VBox>							
+							<VBox>					
+							<rdf:TextLink text="{path:'dataModel>ServiceProvider_SubjectCustomAttr/ServiceProvider_SubjectCustomAttr',type:'sap.ui.model.type.String'}" linkText="{i18n>ServiceProvider.ServiceProvider_SubjectCustomAttr/ServiceProvider_SubjectCustomAttr}"/>
+							</VBox>							
+							<VBox>					
+							<rdf:TextLink text="{path:'dataModel>ServiceProvider_SubjectType/ServiceProvider_SubjectType',type:'sap.ui.model.type.String'}" linkText="{i18n>ServiceProvider.ServiceProvider_SubjectType/ServiceProvider_SubjectType}"/>
+							</VBox>							
+							<VBox>					
+							<Text text="{dataModel>ServiceProvider_SystemModstamp/ServiceProvider_SystemModstamp}"/>
+							</VBox>							
+						</cells>
+					</ColumnListItem>
+				</items>
+			</Table>
+		</content>
+	</Page>
+</mvc:View>

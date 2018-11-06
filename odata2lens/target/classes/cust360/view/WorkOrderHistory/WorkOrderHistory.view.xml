@@ -1,0 +1,119 @@
+<mvc:View controllerName="com.inova8.lens.controller.Entity360" xmlns="sap.m" xmlns:mvc="sap.ui.core.mvc" xmlns:l="sap.ui.layout"
+	xmlns:f="sap.ui.layout.form" xmlns:table="sap.ui.table" xmlns:rdf="com.inova8.lens.control" xmlns:html="http://www.w3.org/1999/xhtml"
+	xmlns:core="sap.ui.core">
+	<Page showHeader="true" id="page" navButtonPress="onNavBack" showNavButton="false" title="{i18n>WorkOrderHistory.Title}" busy="{entityView>/busy}"
+		busyIndicatorDelay="{entityView>/delay}" >
+		<customHeader>
+			<Toolbar>
+				<ToolbarSpacer/>
+				<HBox id="sourceTitle" alignItems="Center">
+						<rdf:TextResource id="selectedResource" path="" entitySet=""/>
+				</HBox>	
+				<Title id="pathTitle" text="{entityView>/navigation}"/>
+				<HBox id="versionsTitle" alignItems="Center">
+					<Title text="(" required="false"/>
+					<ComboBox id="versionSelection" items="{ path: 'entityView>/versions' }" selectionChange="onVersionChange">
+						<core:Item key="{entityView>navigation}" text="{entityView>text}"/>
+					</ComboBox>
+					<Title text=")" required="false"/>
+				</HBox>
+				<Title text="{i18n>WorkOrderHistory.this}"/>
+				<Title text="(" required="false"/>
+				<rdf:TextResource path="dataModel>" entitySet="WorkOrderHistory"/>
+				<Title text=")" required="false"/>
+	
+				<ToolbarSpacer/>
+				<ToggleButton id="toggleColumns" icon="sap-icon://hide" activeIcon="sap-icon://show" press="onSettingsPressed" visible="false"	>
+					<layoutData>
+						<OverflowToolbarLayoutData priority="NeverOverflow"/>
+					</layoutData>
+				</ToggleButton>
+				
+			</Toolbar>
+		</customHeader>
+		<Table id="form360" inset="false" fixedLayout="true" class="multicolumnform" updateFinished="hideColumns">
+			<columns>
+				<Column hAlign="Right" width="200px">
+					<Text text=""/>
+				</Column>
+				<Column visible="true">
+				</Column>
+				<Column visible="true">
+					<Text text="WorkOrderHistory"/>
+				</Column>
+			</columns>
+			<items>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>WorkOrderHistory.WorkOrderHistory_CreatedById}" required="false"/> 
+						<Text text=""/>
+						<rdf:ListResource path="dataModel>WorkOrderHistory_CreatedById/sfdc_WorkOrderHistory_CreatedById" entitySet="User"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>WorkOrderHistory.WorkOrderHistory_CreatedDate}" required="false"/> 
+						<Text text=""/>
+						<Text text="{dataModel>WorkOrderHistory_CreatedDate/WorkOrderHistory_CreatedDate}"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>WorkOrderHistory.WorkOrderHistory_Field}" required="false"/> 
+						<Text text=""/>
+						<rdf:TextLink text="{path:'dataModel>WorkOrderHistory_Field/WorkOrderHistory_Field',type:'sap.ui.model.type.String' }" linkText="{i18n>WorkOrderHistory.WorkOrderHistory_Field/WorkOrderHistory_Field}"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>WorkOrderHistory.WorkOrderHistory_Id}" required="false"/> 
+						<Text text=""/>
+						<rdf:TextLink text="{path:'dataModel>WorkOrderHistory_Id/WorkOrderHistory_Id',type:'sap.ui.model.type.String' }" linkText="{i18n>WorkOrderHistory.WorkOrderHistory_Id/WorkOrderHistory_Id}"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>WorkOrderHistory.WorkOrderHistory_IsDeleted}" required="false"/> 
+						<Text text=""/>
+						<Text text="{path:'dataModel>WorkOrderHistory_IsDeleted/WorkOrderHistory_IsDeleted',type:'sap.ui.model.type.Boolean'}"/>  
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>WorkOrderHistory.WorkOrderHistory_NewValue}" required="false"/> 
+						<Text text=""/>
+						<rdf:TextLink text="{path:'dataModel>WorkOrderHistory_NewValue/WorkOrderHistory_NewValue',type:'sap.ui.model.type.String' }" linkText="{i18n>WorkOrderHistory.WorkOrderHistory_NewValue/WorkOrderHistory_NewValue}"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>WorkOrderHistory.WorkOrderHistory_OldValue}" required="false"/> 
+						<Text text=""/>
+						<rdf:TextLink text="{path:'dataModel>WorkOrderHistory_OldValue/WorkOrderHistory_OldValue',type:'sap.ui.model.type.String' }" linkText="{i18n>WorkOrderHistory.WorkOrderHistory_OldValue/WorkOrderHistory_OldValue}"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>WorkOrderHistory.WorkOrderHistory_WorkOrderId}" required="false"/> 
+						<Text text=""/>
+						<rdf:ListResource path="dataModel>WorkOrderHistory_WorkOrderId/sfdc_WorkOrderHistory_WorkOrderId" entitySet="WorkOrder"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>WorkOrderHistory.WorkOrderHistory_CreatedById}" required="false"/> 
+						<rdf:ListResource path="dataModel>WorkOrderHistory_CreatedById" entitySet="User"/>
+						<Text text=""/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>WorkOrderHistory.WorkOrderHistory_WorkOrderId}" required="false"/> 
+						<rdf:ListResource path="dataModel>WorkOrderHistory_WorkOrderId" entitySet="WorkOrder"/>
+						<Text text=""/>
+					</cells>
+				</ColumnListItem>
+			</items>
+		</Table>
+	</Page>
+</mvc:View>

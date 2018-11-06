@@ -1,0 +1,133 @@
+<mvc:View controllerName="com.inova8.lens.controller.EntitySet360" xmlns="sap.m" xmlns:mvc="sap.ui.core.mvc" xmlns:layout="sap.ui.layout"
+	xmlns:rdf="com.inova8.lens.control" xmlns:core="sap.ui.core">
+	<Page showHeader="false" id="page" navButtonPress="onNavBack" showNavButton="true" title="{i18n>AuthConfigs.ViewTitle}">
+		<content>
+			<Table id="table360" inset="false" items="{ path: 'dataModel>/AuthConfig' , sorter: { path: 'label', descending: false } 
+				}"
+				noDataText="{entitySetView>/tableNoDataText}" busyIndicatorDelay="{entitySetView>/tableBusyDelay}" growing="true" growingScrollToLoad="true"
+				updateFinished="onUpdateFinished"  fixedLayout="false">
+				<headerToolbar>
+					<Toolbar>
+						<ToolbarSpacer/>
+						<HBox id="sourceTitle" alignItems="Center">
+							<rdf:TextResource id="selectedResource" path="" entitySet=""/>
+						</HBox>
+						<Title id="pathTitle" text="{entitySetView>/navigationText}"/>
+						<HBox id="versionsTitle" alignItems="Center">
+							<Title text="(" required="false"/>
+							<ComboBox id="versionSelection" items="{ path: 'entitySetView>/versions' }" selectionChange="onVersionChange">
+								<core:Item key="{entitySetView>navigation}" text="{entityView>text}"/>
+							</ComboBox>
+							<Title text=")" required="false"/>
+						</HBox>
+						<Title id="tableHeader" text="{entitySetView>/entitySetTableTitle}"/>
+						<ToolbarSpacer/>
+						<SearchField id="searchField" tooltip="{i18n>search.searchTooltip}" search="onSearch" width="auto"></SearchField>
+					</Toolbar>
+				</headerToolbar>
+				<columns>
+					<Column >
+						<Text text="{i18n>AuthConfigs.this}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>AuthConfigs.AuthConfig_AuthOptionsAuthProvider}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>AuthConfigs.AuthConfig_AuthOptionsSaml}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>AuthConfigs.AuthConfig_AuthOptionsUsernamePassword}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>AuthConfigs.AuthConfig_CreatedDate}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>AuthConfigs.AuthConfig_DeveloperName}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>AuthConfigs.AuthConfig_Id}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>AuthConfigs.AuthConfig_IsActive}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>AuthConfigs.AuthConfig_IsDeleted}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>AuthConfigs.AuthConfig_Language}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>AuthConfigs.AuthConfig_LastModifiedDate}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>AuthConfigs.AuthConfig_MasterLabel}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>AuthConfigs.AuthConfig_NamespacePrefix}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>AuthConfigs.AuthConfig_SystemModstamp}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>AuthConfigs.AuthConfig_Type}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>AuthConfigs.AuthConfig_Url}"/>
+					</Column>
+				</columns>
+				<items>
+					<ColumnListItem id="template360" type="Navigation" press="onPress">
+						<cells>
+							<rdf:TextResource path="dataModel>" entitySet="AuthConfig"/>
+							<VBox>					
+								<Text text="{path:'dataModel>AuthConfig_AuthOptionsAuthProvider/AuthConfig_AuthOptionsAuthProvider',type:'sap.ui.model.type.Boolean'}"/>  
+							</VBox>							
+							<VBox>					
+								<Text text="{path:'dataModel>AuthConfig_AuthOptionsSaml/AuthConfig_AuthOptionsSaml',type:'sap.ui.model.type.Boolean'}"/>  
+							</VBox>							
+							<VBox>					
+								<Text text="{path:'dataModel>AuthConfig_AuthOptionsUsernamePassword/AuthConfig_AuthOptionsUsernamePassword',type:'sap.ui.model.type.Boolean'}"/>  
+							</VBox>							
+							<VBox>					
+							<Text text="{dataModel>AuthConfig_CreatedDate/AuthConfig_CreatedDate}"/>
+							</VBox>							
+							<VBox>					
+							<rdf:TextLink text="{path:'dataModel>AuthConfig_DeveloperName/AuthConfig_DeveloperName',type:'sap.ui.model.type.String'}" linkText="{i18n>AuthConfig.AuthConfig_DeveloperName/AuthConfig_DeveloperName}"/>
+							</VBox>							
+							<VBox>					
+							<rdf:TextLink text="{path:'dataModel>AuthConfig_Id/AuthConfig_Id',type:'sap.ui.model.type.String'}" linkText="{i18n>AuthConfig.AuthConfig_Id/AuthConfig_Id}"/>
+							</VBox>							
+							<VBox>					
+								<Text text="{path:'dataModel>AuthConfig_IsActive/AuthConfig_IsActive',type:'sap.ui.model.type.Boolean'}"/>  
+							</VBox>							
+							<VBox>					
+								<Text text="{path:'dataModel>AuthConfig_IsDeleted/AuthConfig_IsDeleted',type:'sap.ui.model.type.Boolean'}"/>  
+							</VBox>							
+							<VBox>					
+							<rdf:TextLink text="{path:'dataModel>AuthConfig_Language/AuthConfig_Language',type:'sap.ui.model.type.String'}" linkText="{i18n>AuthConfig.AuthConfig_Language/AuthConfig_Language}"/>
+							</VBox>							
+							<VBox>					
+							<Text text="{dataModel>AuthConfig_LastModifiedDate/AuthConfig_LastModifiedDate}"/>
+							</VBox>							
+							<VBox>					
+							<rdf:TextLink text="{path:'dataModel>AuthConfig_MasterLabel/AuthConfig_MasterLabel',type:'sap.ui.model.type.String'}" linkText="{i18n>AuthConfig.AuthConfig_MasterLabel/AuthConfig_MasterLabel}"/>
+							</VBox>							
+							<VBox>					
+							<rdf:TextLink text="{path:'dataModel>AuthConfig_NamespacePrefix/AuthConfig_NamespacePrefix',type:'sap.ui.model.type.String'}" linkText="{i18n>AuthConfig.AuthConfig_NamespacePrefix/AuthConfig_NamespacePrefix}"/>
+							</VBox>							
+							<VBox>					
+							<Text text="{dataModel>AuthConfig_SystemModstamp/AuthConfig_SystemModstamp}"/>
+							</VBox>							
+							<VBox>					
+							<rdf:TextLink text="{path:'dataModel>AuthConfig_Type/AuthConfig_Type',type:'sap.ui.model.type.String'}" linkText="{i18n>AuthConfig.AuthConfig_Type/AuthConfig_Type}"/>
+							</VBox>							
+							<VBox>					
+							<rdf:TextLink text="{path:'dataModel>AuthConfig_Url/AuthConfig_Url',type:'sap.ui.model.type.String'}" linkText="{i18n>AuthConfig.AuthConfig_Url/AuthConfig_Url}"/>
+							</VBox>							
+						</cells>
+					</ColumnListItem>
+				</items>
+			</Table>
+		</content>
+	</Page>
+</mvc:View>

@@ -1,0 +1,126 @@
+<mvc:View controllerName="com.inova8.lens.controller.Entity360" xmlns="sap.m" xmlns:mvc="sap.ui.core.mvc" xmlns:l="sap.ui.layout"
+	xmlns:f="sap.ui.layout.form" xmlns:table="sap.ui.table" xmlns:rdf="com.inova8.lens.control" xmlns:html="http://www.w3.org/1999/xhtml"
+	xmlns:core="sap.ui.core">
+	<Page showHeader="true" id="page" navButtonPress="onNavBack" showNavButton="false" title="{i18n>StreamingChannelShare.Title}" busy="{entityView>/busy}"
+		busyIndicatorDelay="{entityView>/delay}" >
+		<customHeader>
+			<Toolbar>
+				<ToolbarSpacer/>
+				<HBox id="sourceTitle" alignItems="Center">
+						<rdf:TextResource id="selectedResource" path="" entitySet=""/>
+				</HBox>	
+				<Title id="pathTitle" text="{entityView>/navigation}"/>
+				<HBox id="versionsTitle" alignItems="Center">
+					<Title text="(" required="false"/>
+					<ComboBox id="versionSelection" items="{ path: 'entityView>/versions' }" selectionChange="onVersionChange">
+						<core:Item key="{entityView>navigation}" text="{entityView>text}"/>
+					</ComboBox>
+					<Title text=")" required="false"/>
+				</HBox>
+				<Title text="{i18n>StreamingChannelShare.this}"/>
+				<Title text="(" required="false"/>
+				<rdf:TextResource path="dataModel>" entitySet="StreamingChannelShare"/>
+				<Title text=")" required="false"/>
+	
+				<ToolbarSpacer/>
+				<ToggleButton id="toggleColumns" icon="sap-icon://hide" activeIcon="sap-icon://show" press="onSettingsPressed" visible="false"	>
+					<layoutData>
+						<OverflowToolbarLayoutData priority="NeverOverflow"/>
+					</layoutData>
+				</ToggleButton>
+				
+			</Toolbar>
+		</customHeader>
+		<Table id="form360" inset="false" fixedLayout="true" class="multicolumnform" updateFinished="hideColumns">
+			<columns>
+				<Column hAlign="Right" width="200px">
+					<Text text=""/>
+				</Column>
+				<Column visible="true">
+				</Column>
+				<Column visible="true">
+					<Text text="StreamingChannelShare"/>
+				</Column>
+			</columns>
+			<items>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>StreamingChannelShare.StreamingChannelShare_AccessLevel}" required="false"/> 
+						<Text text=""/>
+						<rdf:TextLink text="{path:'dataModel>StreamingChannelShare_AccessLevel/StreamingChannelShare_AccessLevel',type:'sap.ui.model.type.String' }" linkText="{i18n>StreamingChannelShare.StreamingChannelShare_AccessLevel/StreamingChannelShare_AccessLevel}"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>StreamingChannelShare.StreamingChannelShare_Id}" required="false"/> 
+						<Text text=""/>
+						<rdf:TextLink text="{path:'dataModel>StreamingChannelShare_Id/StreamingChannelShare_Id',type:'sap.ui.model.type.String' }" linkText="{i18n>StreamingChannelShare.StreamingChannelShare_Id/StreamingChannelShare_Id}"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>StreamingChannelShare.StreamingChannelShare_IsDeleted}" required="false"/> 
+						<Text text=""/>
+						<Text text="{path:'dataModel>StreamingChannelShare_IsDeleted/StreamingChannelShare_IsDeleted',type:'sap.ui.model.type.Boolean'}"/>  
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>StreamingChannelShare.StreamingChannelShare_LastModifiedById}" required="false"/> 
+						<Text text=""/>
+						<rdf:ListResource path="dataModel>StreamingChannelShare_LastModifiedById/sfdc_StreamingChannelShare_LastModifiedById" entitySet="User"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>StreamingChannelShare.StreamingChannelShare_LastModifiedDate}" required="false"/> 
+						<Text text=""/>
+						<Text text="{dataModel>StreamingChannelShare_LastModifiedDate/StreamingChannelShare_LastModifiedDate}"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>StreamingChannelShare.StreamingChannelShare_ParentId}" required="false"/> 
+						<Text text=""/>
+						<rdf:ListResource path="dataModel>StreamingChannelShare_ParentId/sfdc_StreamingChannelShare_ParentId" entitySet="StreamingChannel"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>StreamingChannelShare.StreamingChannelShare_RowCause}" required="false"/> 
+						<Text text=""/>
+						<rdf:TextLink text="{path:'dataModel>StreamingChannelShare_RowCause/StreamingChannelShare_RowCause',type:'sap.ui.model.type.String' }" linkText="{i18n>StreamingChannelShare.StreamingChannelShare_RowCause/StreamingChannelShare_RowCause}"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>StreamingChannelShare.StreamingChannelShare_UserOrGroupId}" required="false"/> 
+						<Text text=""/>
+						<rdf:ListResource path="dataModel>StreamingChannelShare_UserOrGroupId/sfdc_StreamingChannelShare_UserOrGroupId" entitySet="Group"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>StreamingChannelShare.StreamingChannelShare_LastModifiedById}" required="false"/> 
+						<rdf:ListResource path="dataModel>StreamingChannelShare_LastModifiedById" entitySet="User"/>
+						<Text text=""/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>StreamingChannelShare.StreamingChannelShare_ParentId}" required="false"/> 
+						<rdf:ListResource path="dataModel>StreamingChannelShare_ParentId" entitySet="StreamingChannel"/>
+						<Text text=""/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>StreamingChannelShare.StreamingChannelShare_UserOrGroupId}" required="false"/> 
+						<rdf:ListResource path="dataModel>StreamingChannelShare_UserOrGroupId" entitySet="Group"/>
+						<Text text=""/>
+					</cells>
+				</ColumnListItem>
+			</items>
+		</Table>
+	</Page>
+</mvc:View>

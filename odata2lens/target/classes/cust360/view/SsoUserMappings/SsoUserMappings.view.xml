@@ -1,0 +1,91 @@
+<mvc:View controllerName="com.inova8.lens.controller.EntitySet360" xmlns="sap.m" xmlns:mvc="sap.ui.core.mvc" xmlns:layout="sap.ui.layout"
+	xmlns:rdf="com.inova8.lens.control" xmlns:core="sap.ui.core">
+	<Page showHeader="false" id="page" navButtonPress="onNavBack" showNavButton="true" title="{i18n>SsoUserMappings.ViewTitle}">
+		<content>
+			<Table id="table360" inset="false" items="{ path: 'dataModel>/SsoUserMapping' , sorter: { path: 'label', descending: false } 
+				}"
+				noDataText="{entitySetView>/tableNoDataText}" busyIndicatorDelay="{entitySetView>/tableBusyDelay}" growing="true" growingScrollToLoad="true"
+				updateFinished="onUpdateFinished"  fixedLayout="false">
+				<headerToolbar>
+					<Toolbar>
+						<ToolbarSpacer/>
+						<HBox id="sourceTitle" alignItems="Center">
+							<rdf:TextResource id="selectedResource" path="" entitySet=""/>
+						</HBox>
+						<Title id="pathTitle" text="{entitySetView>/navigationText}"/>
+						<HBox id="versionsTitle" alignItems="Center">
+							<Title text="(" required="false"/>
+							<ComboBox id="versionSelection" items="{ path: 'entitySetView>/versions' }" selectionChange="onVersionChange">
+								<core:Item key="{entitySetView>navigation}" text="{entityView>text}"/>
+							</ComboBox>
+							<Title text=")" required="false"/>
+						</HBox>
+						<Title id="tableHeader" text="{entitySetView>/entitySetTableTitle}"/>
+						<ToolbarSpacer/>
+						<SearchField id="searchField" tooltip="{i18n>search.searchTooltip}" search="onSearch" width="auto"></SearchField>
+					</Toolbar>
+				</headerToolbar>
+				<columns>
+					<Column >
+						<Text text="{i18n>SsoUserMappings.this}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>SsoUserMappings.SsoUserMapping_CreatedDate}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>SsoUserMappings.SsoUserMapping_Id}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>SsoUserMappings.SsoUserMapping_IsDeleted}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>SsoUserMappings.SsoUserMapping_LastModifiedDate}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>SsoUserMappings.SsoUserMapping_MemberUserId}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>SsoUserMappings.SsoUserMapping_MemberUserName}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>SsoUserMappings.SsoUserMapping_Name}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>SsoUserMappings.SsoUserMapping_SystemModstamp}"/>
+					</Column>
+				</columns>
+				<items>
+					<ColumnListItem id="template360" type="Navigation" press="onPress">
+						<cells>
+							<rdf:TextResource path="dataModel>" entitySet="SsoUserMapping"/>
+							<VBox>					
+							<Text text="{dataModel>SsoUserMapping_CreatedDate/SsoUserMapping_CreatedDate}"/>
+							</VBox>							
+							<VBox>					
+							<rdf:TextLink text="{path:'dataModel>SsoUserMapping_Id/SsoUserMapping_Id',type:'sap.ui.model.type.String'}" linkText="{i18n>SsoUserMapping.SsoUserMapping_Id/SsoUserMapping_Id}"/>
+							</VBox>							
+							<VBox>					
+								<Text text="{path:'dataModel>SsoUserMapping_IsDeleted/SsoUserMapping_IsDeleted',type:'sap.ui.model.type.Boolean'}"/>  
+							</VBox>							
+							<VBox>					
+							<Text text="{dataModel>SsoUserMapping_LastModifiedDate/SsoUserMapping_LastModifiedDate}"/>
+							</VBox>							
+							<VBox>					
+							<rdf:TextLink text="{path:'dataModel>SsoUserMapping_MemberUserId/SsoUserMapping_MemberUserId',type:'sap.ui.model.type.String'}" linkText="{i18n>SsoUserMapping.SsoUserMapping_MemberUserId/SsoUserMapping_MemberUserId}"/>
+							</VBox>							
+							<VBox>					
+							<rdf:TextLink text="{path:'dataModel>SsoUserMapping_MemberUserName/SsoUserMapping_MemberUserName',type:'sap.ui.model.type.String'}" linkText="{i18n>SsoUserMapping.SsoUserMapping_MemberUserName/SsoUserMapping_MemberUserName}"/>
+							</VBox>							
+							<VBox>					
+							<rdf:TextLink text="{path:'dataModel>SsoUserMapping_Name/SsoUserMapping_Name',type:'sap.ui.model.type.String'}" linkText="{i18n>SsoUserMapping.SsoUserMapping_Name/SsoUserMapping_Name}"/>
+							</VBox>							
+							<VBox>					
+							<Text text="{dataModel>SsoUserMapping_SystemModstamp/SsoUserMapping_SystemModstamp}"/>
+							</VBox>							
+						</cells>
+					</ColumnListItem>
+				</items>
+			</Table>
+		</content>
+	</Page>
+</mvc:View>

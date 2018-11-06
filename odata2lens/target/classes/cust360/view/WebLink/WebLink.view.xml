@@ -1,0 +1,280 @@
+<mvc:View controllerName="com.inova8.lens.controller.Entity360" xmlns="sap.m" xmlns:mvc="sap.ui.core.mvc" xmlns:l="sap.ui.layout"
+	xmlns:f="sap.ui.layout.form" xmlns:table="sap.ui.table" xmlns:rdf="com.inova8.lens.control" xmlns:html="http://www.w3.org/1999/xhtml"
+	xmlns:core="sap.ui.core">
+	<Page showHeader="true" id="page" navButtonPress="onNavBack" showNavButton="false" title="{i18n>WebLink.Title}" busy="{entityView>/busy}"
+		busyIndicatorDelay="{entityView>/delay}" >
+		<customHeader>
+			<Toolbar>
+				<ToolbarSpacer/>
+				<HBox id="sourceTitle" alignItems="Center">
+						<rdf:TextResource id="selectedResource" path="" entitySet=""/>
+				</HBox>	
+				<Title id="pathTitle" text="{entityView>/navigation}"/>
+				<HBox id="versionsTitle" alignItems="Center">
+					<Title text="(" required="false"/>
+					<ComboBox id="versionSelection" items="{ path: 'entityView>/versions' }" selectionChange="onVersionChange">
+						<core:Item key="{entityView>navigation}" text="{entityView>text}"/>
+					</ComboBox>
+					<Title text=")" required="false"/>
+				</HBox>
+				<Title text="{i18n>WebLink.this}"/>
+				<Title text="(" required="false"/>
+				<rdf:TextResource path="dataModel>" entitySet="WebLink"/>
+				<Title text=")" required="false"/>
+	
+				<ToolbarSpacer/>
+				<ToggleButton id="toggleColumns" icon="sap-icon://hide" activeIcon="sap-icon://show" press="onSettingsPressed" visible="false"	>
+					<layoutData>
+						<OverflowToolbarLayoutData priority="NeverOverflow"/>
+					</layoutData>
+				</ToggleButton>
+				
+			</Toolbar>
+		</customHeader>
+		<Table id="form360" inset="false" fixedLayout="true" class="multicolumnform" updateFinished="hideColumns">
+			<columns>
+				<Column hAlign="Right" width="200px">
+					<Text text=""/>
+				</Column>
+				<Column visible="true">
+				</Column>
+				<Column visible="true">
+					<Text text="WebLink"/>
+				</Column>
+			</columns>
+			<items>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>WebLink.WebLinkLocalization_WebLinkId_Inverse}" required="false"/> 
+						<Text text=""/>
+						<rdf:ListResource path="dataModel>WebLinkLocalization_WebLinkId_Inverse/sfdc_WebLinkLocalization_WebLinkId_Inverse" entitySet="WebLinkLocalization"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>WebLink.WebLink_CreatedById}" required="false"/> 
+						<Text text=""/>
+						<rdf:ListResource path="dataModel>WebLink_CreatedById/sfdc_WebLink_CreatedById" entitySet="User"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>WebLink.WebLink_CreatedDate}" required="false"/> 
+						<Text text=""/>
+						<Text text="{dataModel>WebLink_CreatedDate/WebLink_CreatedDate}"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>WebLink.WebLink_Description}" required="false"/> 
+						<Text text=""/>
+						<rdf:TextLink text="{path:'dataModel>WebLink_Description/WebLink_Description',type:'sap.ui.model.type.String' }" linkText="{i18n>WebLink.WebLink_Description/WebLink_Description}"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>WebLink.WebLink_DisplayType}" required="false"/> 
+						<Text text=""/>
+						<rdf:TextLink text="{path:'dataModel>WebLink_DisplayType/WebLink_DisplayType',type:'sap.ui.model.type.String' }" linkText="{i18n>WebLink.WebLink_DisplayType/WebLink_DisplayType}"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>WebLink.WebLink_EncodingKey}" required="false"/> 
+						<Text text=""/>
+						<rdf:TextLink text="{path:'dataModel>WebLink_EncodingKey/WebLink_EncodingKey',type:'sap.ui.model.type.String' }" linkText="{i18n>WebLink.WebLink_EncodingKey/WebLink_EncodingKey}"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>WebLink.WebLink_HasMenubar}" required="false"/> 
+						<Text text=""/>
+						<Text text="{path:'dataModel>WebLink_HasMenubar/WebLink_HasMenubar',type:'sap.ui.model.type.Boolean'}"/>  
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>WebLink.WebLink_HasScrollbars}" required="false"/> 
+						<Text text=""/>
+						<Text text="{path:'dataModel>WebLink_HasScrollbars/WebLink_HasScrollbars',type:'sap.ui.model.type.Boolean'}"/>  
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>WebLink.WebLink_HasToolbar}" required="false"/> 
+						<Text text=""/>
+						<Text text="{path:'dataModel>WebLink_HasToolbar/WebLink_HasToolbar',type:'sap.ui.model.type.Boolean'}"/>  
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>WebLink.WebLink_Height}" required="false"/> 
+						<Text text=""/>
+						<Text text="{path:'dataModel>WebLink_Height/WebLink_Height',type:'sap.ui.model.type.Integer' }"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>WebLink.WebLink_Id}" required="false"/> 
+						<Text text=""/>
+						<rdf:TextLink text="{path:'dataModel>WebLink_Id/WebLink_Id',type:'sap.ui.model.type.String' }" linkText="{i18n>WebLink.WebLink_Id/WebLink_Id}"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>WebLink.WebLink_IsProtected}" required="false"/> 
+						<Text text=""/>
+						<Text text="{path:'dataModel>WebLink_IsProtected/WebLink_IsProtected',type:'sap.ui.model.type.Boolean'}"/>  
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>WebLink.WebLink_IsResizable}" required="false"/> 
+						<Text text=""/>
+						<Text text="{path:'dataModel>WebLink_IsResizable/WebLink_IsResizable',type:'sap.ui.model.type.Boolean'}"/>  
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>WebLink.WebLink_LastModifiedById}" required="false"/> 
+						<Text text=""/>
+						<rdf:ListResource path="dataModel>WebLink_LastModifiedById/sfdc_WebLink_LastModifiedById" entitySet="User"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>WebLink.WebLink_LastModifiedDate}" required="false"/> 
+						<Text text=""/>
+						<Text text="{dataModel>WebLink_LastModifiedDate/WebLink_LastModifiedDate}"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>WebLink.WebLink_LinkType}" required="false"/> 
+						<Text text=""/>
+						<rdf:TextLink text="{path:'dataModel>WebLink_LinkType/WebLink_LinkType',type:'sap.ui.model.type.String' }" linkText="{i18n>WebLink.WebLink_LinkType/WebLink_LinkType}"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>WebLink.WebLink_MasterLabel}" required="false"/> 
+						<Text text=""/>
+						<rdf:TextLink text="{path:'dataModel>WebLink_MasterLabel/WebLink_MasterLabel',type:'sap.ui.model.type.String' }" linkText="{i18n>WebLink.WebLink_MasterLabel/WebLink_MasterLabel}"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>WebLink.WebLink_Name}" required="false"/> 
+						<Text text=""/>
+						<rdf:TextLink text="{path:'dataModel>WebLink_Name/WebLink_Name',type:'sap.ui.model.type.String' }" linkText="{i18n>WebLink.WebLink_Name/WebLink_Name}"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>WebLink.WebLink_NamespacePrefix}" required="false"/> 
+						<Text text=""/>
+						<rdf:TextLink text="{path:'dataModel>WebLink_NamespacePrefix/WebLink_NamespacePrefix',type:'sap.ui.model.type.String' }" linkText="{i18n>WebLink.WebLink_NamespacePrefix/WebLink_NamespacePrefix}"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>WebLink.WebLink_OpenType}" required="false"/> 
+						<Text text=""/>
+						<rdf:TextLink text="{path:'dataModel>WebLink_OpenType/WebLink_OpenType',type:'sap.ui.model.type.String' }" linkText="{i18n>WebLink.WebLink_OpenType/WebLink_OpenType}"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>WebLink.WebLink_PageOrSobjectType}" required="false"/> 
+						<Text text=""/>
+						<rdf:TextLink text="{path:'dataModel>WebLink_PageOrSobjectType/WebLink_PageOrSobjectType',type:'sap.ui.model.type.String' }" linkText="{i18n>WebLink.WebLink_PageOrSobjectType/WebLink_PageOrSobjectType}"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>WebLink.WebLink_Position}" required="false"/> 
+						<Text text=""/>
+						<rdf:TextLink text="{path:'dataModel>WebLink_Position/WebLink_Position',type:'sap.ui.model.type.String' }" linkText="{i18n>WebLink.WebLink_Position/WebLink_Position}"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>WebLink.WebLink_RequireRowSelection}" required="false"/> 
+						<Text text=""/>
+						<Text text="{path:'dataModel>WebLink_RequireRowSelection/WebLink_RequireRowSelection',type:'sap.ui.model.type.Boolean'}"/>  
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>WebLink.WebLink_ScontrolId}" required="false"/> 
+						<Text text=""/>
+						<rdf:ListResource path="dataModel>WebLink_ScontrolId/sfdc_WebLink_ScontrolId" entitySet="ApexPage"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>WebLink.WebLink_ShowsLocation}" required="false"/> 
+						<Text text=""/>
+						<Text text="{path:'dataModel>WebLink_ShowsLocation/WebLink_ShowsLocation',type:'sap.ui.model.type.Boolean'}"/>  
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>WebLink.WebLink_ShowsStatus}" required="false"/> 
+						<Text text=""/>
+						<Text text="{path:'dataModel>WebLink_ShowsStatus/WebLink_ShowsStatus',type:'sap.ui.model.type.Boolean'}"/>  
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>WebLink.WebLink_SystemModstamp}" required="false"/> 
+						<Text text=""/>
+						<Text text="{dataModel>WebLink_SystemModstamp/WebLink_SystemModstamp}"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>WebLink.WebLink_Url}" required="false"/> 
+						<Text text=""/>
+						<rdf:TextLink text="{path:'dataModel>WebLink_Url/WebLink_Url',type:'sap.ui.model.type.String' }" linkText="{i18n>WebLink.WebLink_Url/WebLink_Url}"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>WebLink.WebLink_Width}" required="false"/> 
+						<Text text=""/>
+						<Text text="{path:'dataModel>WebLink_Width/WebLink_Width',type:'sap.ui.model.type.Integer' }"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>WebLink.WebLinkLocalization_WebLinkId_Inverse}" required="false"/> 
+						<rdf:ListResource path="dataModel>WebLinkLocalization_WebLinkId_Inverse" entitySet="WebLinkLocalization"/>
+						<Text text=""/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>WebLink.WebLink_CreatedById}" required="false"/> 
+						<rdf:ListResource path="dataModel>WebLink_CreatedById" entitySet="User"/>
+						<Text text=""/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>WebLink.WebLink_LastModifiedById}" required="false"/> 
+						<rdf:ListResource path="dataModel>WebLink_LastModifiedById" entitySet="User"/>
+						<Text text=""/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>WebLink.WebLink_ScontrolId}" required="false"/> 
+						<rdf:ListResource path="dataModel>WebLink_ScontrolId" entitySet="ApexPage"/>
+						<Text text=""/>
+					</cells>
+				</ColumnListItem>
+			</items>
+		</Table>
+	</Page>
+</mvc:View>

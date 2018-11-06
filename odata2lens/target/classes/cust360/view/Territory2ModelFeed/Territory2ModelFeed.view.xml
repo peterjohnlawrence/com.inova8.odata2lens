@@ -1,0 +1,189 @@
+<mvc:View controllerName="com.inova8.lens.controller.Entity360" xmlns="sap.m" xmlns:mvc="sap.ui.core.mvc" xmlns:l="sap.ui.layout"
+	xmlns:f="sap.ui.layout.form" xmlns:table="sap.ui.table" xmlns:rdf="com.inova8.lens.control" xmlns:html="http://www.w3.org/1999/xhtml"
+	xmlns:core="sap.ui.core">
+	<Page showHeader="true" id="page" navButtonPress="onNavBack" showNavButton="false" title="{i18n>Territory2ModelFeed.Title}" busy="{entityView>/busy}"
+		busyIndicatorDelay="{entityView>/delay}" >
+		<customHeader>
+			<Toolbar>
+				<ToolbarSpacer/>
+				<HBox id="sourceTitle" alignItems="Center">
+						<rdf:TextResource id="selectedResource" path="" entitySet=""/>
+				</HBox>	
+				<Title id="pathTitle" text="{entityView>/navigation}"/>
+				<HBox id="versionsTitle" alignItems="Center">
+					<Title text="(" required="false"/>
+					<ComboBox id="versionSelection" items="{ path: 'entityView>/versions' }" selectionChange="onVersionChange">
+						<core:Item key="{entityView>navigation}" text="{entityView>text}"/>
+					</ComboBox>
+					<Title text=")" required="false"/>
+				</HBox>
+				<Title text="{i18n>Territory2ModelFeed.this}"/>
+				<Title text="(" required="false"/>
+				<rdf:TextResource path="dataModel>" entitySet="Territory2ModelFeed"/>
+				<Title text=")" required="false"/>
+	
+				<ToolbarSpacer/>
+				<ToggleButton id="toggleColumns" icon="sap-icon://hide" activeIcon="sap-icon://show" press="onSettingsPressed" visible="false"	>
+					<layoutData>
+						<OverflowToolbarLayoutData priority="NeverOverflow"/>
+					</layoutData>
+				</ToggleButton>
+				
+			</Toolbar>
+		</customHeader>
+		<Table id="form360" inset="false" fixedLayout="true" class="multicolumnform" updateFinished="hideColumns">
+			<columns>
+				<Column hAlign="Right" width="200px">
+					<Text text=""/>
+				</Column>
+				<Column visible="true">
+				</Column>
+				<Column visible="true">
+					<Text text="Territory2ModelFeed"/>
+				</Column>
+			</columns>
+			<items>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>Territory2ModelFeed.Territory2ModelFeed_Body}" required="false"/> 
+						<Text text=""/>
+						<rdf:TextLink text="{path:'dataModel>Territory2ModelFeed_Body/Territory2ModelFeed_Body',type:'sap.ui.model.type.String' }" linkText="{i18n>Territory2ModelFeed.Territory2ModelFeed_Body/Territory2ModelFeed_Body}"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>Territory2ModelFeed.Territory2ModelFeed_CommentCount}" required="false"/> 
+						<Text text=""/>
+						<Text text="{path:'dataModel>Territory2ModelFeed_CommentCount/Territory2ModelFeed_CommentCount',type:'sap.ui.model.type.Integer' }"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>Territory2ModelFeed.Territory2ModelFeed_CreatedById}" required="false"/> 
+						<Text text=""/>
+						<rdf:ListResource path="dataModel>Territory2ModelFeed_CreatedById/sfdc_Territory2ModelFeed_CreatedById" entitySet="User"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>Territory2ModelFeed.Territory2ModelFeed_CreatedDate}" required="false"/> 
+						<Text text=""/>
+						<Text text="{dataModel>Territory2ModelFeed_CreatedDate/Territory2ModelFeed_CreatedDate}"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>Territory2ModelFeed.Territory2ModelFeed_Id}" required="false"/> 
+						<Text text=""/>
+						<rdf:TextLink text="{path:'dataModel>Territory2ModelFeed_Id/Territory2ModelFeed_Id',type:'sap.ui.model.type.String' }" linkText="{i18n>Territory2ModelFeed.Territory2ModelFeed_Id/Territory2ModelFeed_Id}"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>Territory2ModelFeed.Territory2ModelFeed_InsertedById}" required="false"/> 
+						<Text text=""/>
+						<rdf:ListResource path="dataModel>Territory2ModelFeed_InsertedById/sfdc_Territory2ModelFeed_InsertedById" entitySet="User"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>Territory2ModelFeed.Territory2ModelFeed_IsDeleted}" required="false"/> 
+						<Text text=""/>
+						<Text text="{path:'dataModel>Territory2ModelFeed_IsDeleted/Territory2ModelFeed_IsDeleted',type:'sap.ui.model.type.Boolean'}"/>  
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>Territory2ModelFeed.Territory2ModelFeed_IsRichText}" required="false"/> 
+						<Text text=""/>
+						<Text text="{path:'dataModel>Territory2ModelFeed_IsRichText/Territory2ModelFeed_IsRichText',type:'sap.ui.model.type.Boolean'}"/>  
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>Territory2ModelFeed.Territory2ModelFeed_LastModifiedDate}" required="false"/> 
+						<Text text=""/>
+						<Text text="{dataModel>Territory2ModelFeed_LastModifiedDate/Territory2ModelFeed_LastModifiedDate}"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>Territory2ModelFeed.Territory2ModelFeed_LikeCount}" required="false"/> 
+						<Text text=""/>
+						<Text text="{path:'dataModel>Territory2ModelFeed_LikeCount/Territory2ModelFeed_LikeCount',type:'sap.ui.model.type.Integer' }"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>Territory2ModelFeed.Territory2ModelFeed_LinkUrl}" required="false"/> 
+						<Text text=""/>
+						<rdf:TextLink text="{path:'dataModel>Territory2ModelFeed_LinkUrl/Territory2ModelFeed_LinkUrl',type:'sap.ui.model.type.String' }" linkText="{i18n>Territory2ModelFeed.Territory2ModelFeed_LinkUrl/Territory2ModelFeed_LinkUrl}"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>Territory2ModelFeed.Territory2ModelFeed_ParentId}" required="false"/> 
+						<Text text=""/>
+						<rdf:ListResource path="dataModel>Territory2ModelFeed_ParentId/sfdc_Territory2ModelFeed_ParentId" entitySet="Territory2Model"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>Territory2ModelFeed.Territory2ModelFeed_RelatedRecordId}" required="false"/> 
+						<Text text=""/>
+						<rdf:ListResource path="dataModel>Territory2ModelFeed_RelatedRecordId/sfdc_Territory2ModelFeed_RelatedRecordId" entitySet="ContentVersion"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>Territory2ModelFeed.Territory2ModelFeed_SystemModstamp}" required="false"/> 
+						<Text text=""/>
+						<Text text="{dataModel>Territory2ModelFeed_SystemModstamp/Territory2ModelFeed_SystemModstamp}"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>Territory2ModelFeed.Territory2ModelFeed_Title}" required="false"/> 
+						<Text text=""/>
+						<rdf:TextLink text="{path:'dataModel>Territory2ModelFeed_Title/Territory2ModelFeed_Title',type:'sap.ui.model.type.String' }" linkText="{i18n>Territory2ModelFeed.Territory2ModelFeed_Title/Territory2ModelFeed_Title}"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>Territory2ModelFeed.Territory2ModelFeed_Type}" required="false"/> 
+						<Text text=""/>
+						<rdf:TextLink text="{path:'dataModel>Territory2ModelFeed_Type/Territory2ModelFeed_Type',type:'sap.ui.model.type.String' }" linkText="{i18n>Territory2ModelFeed.Territory2ModelFeed_Type/Territory2ModelFeed_Type}"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>Territory2ModelFeed.Territory2ModelFeed_CreatedById}" required="false"/> 
+						<rdf:ListResource path="dataModel>Territory2ModelFeed_CreatedById" entitySet="User"/>
+						<Text text=""/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>Territory2ModelFeed.Territory2ModelFeed_InsertedById}" required="false"/> 
+						<rdf:ListResource path="dataModel>Territory2ModelFeed_InsertedById" entitySet="User"/>
+						<Text text=""/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>Territory2ModelFeed.Territory2ModelFeed_ParentId}" required="false"/> 
+						<rdf:ListResource path="dataModel>Territory2ModelFeed_ParentId" entitySet="Territory2Model"/>
+						<Text text=""/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>Territory2ModelFeed.Territory2ModelFeed_RelatedRecordId}" required="false"/> 
+						<rdf:ListResource path="dataModel>Territory2ModelFeed_RelatedRecordId" entitySet="ContentVersion"/>
+						<Text text=""/>
+					</cells>
+				</ColumnListItem>
+			</items>
+		</Table>
+	</Page>
+</mvc:View>

@@ -1,0 +1,161 @@
+<mvc:View controllerName="com.inova8.lens.controller.Entity360" xmlns="sap.m" xmlns:mvc="sap.ui.core.mvc" xmlns:l="sap.ui.layout"
+	xmlns:f="sap.ui.layout.form" xmlns:table="sap.ui.table" xmlns:rdf="com.inova8.lens.control" xmlns:html="http://www.w3.org/1999/xhtml"
+	xmlns:core="sap.ui.core">
+	<Page showHeader="true" id="page" navButtonPress="onNavBack" showNavButton="false" title="{i18n>EventRelation.Title}" busy="{entityView>/busy}"
+		busyIndicatorDelay="{entityView>/delay}" >
+		<customHeader>
+			<Toolbar>
+				<ToolbarSpacer/>
+				<HBox id="sourceTitle" alignItems="Center">
+						<rdf:TextResource id="selectedResource" path="" entitySet=""/>
+				</HBox>	
+				<Title id="pathTitle" text="{entityView>/navigation}"/>
+				<HBox id="versionsTitle" alignItems="Center">
+					<Title text="(" required="false"/>
+					<ComboBox id="versionSelection" items="{ path: 'entityView>/versions' }" selectionChange="onVersionChange">
+						<core:Item key="{entityView>navigation}" text="{entityView>text}"/>
+					</ComboBox>
+					<Title text=")" required="false"/>
+				</HBox>
+				<Title text="{i18n>EventRelation.this}"/>
+				<Title text="(" required="false"/>
+				<rdf:TextResource path="dataModel>" entitySet="EventRelation"/>
+				<Title text=")" required="false"/>
+	
+				<ToolbarSpacer/>
+				<ToggleButton id="toggleColumns" icon="sap-icon://hide" activeIcon="sap-icon://show" press="onSettingsPressed" visible="false"	>
+					<layoutData>
+						<OverflowToolbarLayoutData priority="NeverOverflow"/>
+					</layoutData>
+				</ToggleButton>
+				
+			</Toolbar>
+		</customHeader>
+		<Table id="form360" inset="false" fixedLayout="true" class="multicolumnform" updateFinished="hideColumns">
+			<columns>
+				<Column hAlign="Right" width="200px">
+					<Text text=""/>
+				</Column>
+				<Column visible="true">
+				</Column>
+				<Column visible="true">
+					<Text text="EventRelation"/>
+				</Column>
+			</columns>
+			<items>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>EventRelation.EventRelation_CreatedById}" required="false"/> 
+						<Text text=""/>
+						<rdf:ListResource path="dataModel>EventRelation_CreatedById/sfdc_EventRelation_CreatedById" entitySet="User"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>EventRelation.EventRelation_CreatedDate}" required="false"/> 
+						<Text text=""/>
+						<Text text="{dataModel>EventRelation_CreatedDate/EventRelation_CreatedDate}"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>EventRelation.EventRelation_EventId}" required="false"/> 
+						<Text text=""/>
+						<rdf:ListResource path="dataModel>EventRelation_EventId/sfdc_EventRelation_EventId" entitySet="Event"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>EventRelation.EventRelation_Id}" required="false"/> 
+						<Text text=""/>
+						<rdf:TextLink text="{path:'dataModel>EventRelation_Id/EventRelation_Id',type:'sap.ui.model.type.String' }" linkText="{i18n>EventRelation.EventRelation_Id/EventRelation_Id}"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>EventRelation.EventRelation_IsDeleted}" required="false"/> 
+						<Text text=""/>
+						<Text text="{path:'dataModel>EventRelation_IsDeleted/EventRelation_IsDeleted',type:'sap.ui.model.type.Boolean'}"/>  
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>EventRelation.EventRelation_LastModifiedById}" required="false"/> 
+						<Text text=""/>
+						<rdf:ListResource path="dataModel>EventRelation_LastModifiedById/sfdc_EventRelation_LastModifiedById" entitySet="User"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>EventRelation.EventRelation_LastModifiedDate}" required="false"/> 
+						<Text text=""/>
+						<Text text="{dataModel>EventRelation_LastModifiedDate/EventRelation_LastModifiedDate}"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>EventRelation.EventRelation_RelationId}" required="false"/> 
+						<Text text=""/>
+						<rdf:ListResource path="dataModel>EventRelation_RelationId/sfdc_EventRelation_RelationId" entitySet="Contact"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>EventRelation.EventRelation_RespondedDate}" required="false"/> 
+						<Text text=""/>
+						<Text text="{dataModel>EventRelation_RespondedDate/EventRelation_RespondedDate}"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>EventRelation.EventRelation_Response}" required="false"/> 
+						<Text text=""/>
+						<rdf:TextLink text="{path:'dataModel>EventRelation_Response/EventRelation_Response',type:'sap.ui.model.type.String' }" linkText="{i18n>EventRelation.EventRelation_Response/EventRelation_Response}"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>EventRelation.EventRelation_Status}" required="false"/> 
+						<Text text=""/>
+						<rdf:TextLink text="{path:'dataModel>EventRelation_Status/EventRelation_Status',type:'sap.ui.model.type.String' }" linkText="{i18n>EventRelation.EventRelation_Status/EventRelation_Status}"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>EventRelation.EventRelation_SystemModstamp}" required="false"/> 
+						<Text text=""/>
+						<Text text="{dataModel>EventRelation_SystemModstamp/EventRelation_SystemModstamp}"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>EventRelation.EventRelation_CreatedById}" required="false"/> 
+						<rdf:ListResource path="dataModel>EventRelation_CreatedById" entitySet="User"/>
+						<Text text=""/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>EventRelation.EventRelation_EventId}" required="false"/> 
+						<rdf:ListResource path="dataModel>EventRelation_EventId" entitySet="Event"/>
+						<Text text=""/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>EventRelation.EventRelation_LastModifiedById}" required="false"/> 
+						<rdf:ListResource path="dataModel>EventRelation_LastModifiedById" entitySet="User"/>
+						<Text text=""/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>EventRelation.EventRelation_RelationId}" required="false"/> 
+						<rdf:ListResource path="dataModel>EventRelation_RelationId" entitySet="Contact"/>
+						<Text text=""/>
+					</cells>
+				</ColumnListItem>
+			</items>
+		</Table>
+	</Page>
+</mvc:View>

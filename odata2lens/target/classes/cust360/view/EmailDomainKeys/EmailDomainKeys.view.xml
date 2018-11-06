@@ -1,0 +1,109 @@
+<mvc:View controllerName="com.inova8.lens.controller.EntitySet360" xmlns="sap.m" xmlns:mvc="sap.ui.core.mvc" xmlns:layout="sap.ui.layout"
+	xmlns:rdf="com.inova8.lens.control" xmlns:core="sap.ui.core">
+	<Page showHeader="false" id="page" navButtonPress="onNavBack" showNavButton="true" title="{i18n>EmailDomainKeys.ViewTitle}">
+		<content>
+			<Table id="table360" inset="false" items="{ path: 'dataModel>/EmailDomainKey' , sorter: { path: 'label', descending: false } 
+				}"
+				noDataText="{entitySetView>/tableNoDataText}" busyIndicatorDelay="{entitySetView>/tableBusyDelay}" growing="true" growingScrollToLoad="true"
+				updateFinished="onUpdateFinished"  fixedLayout="false">
+				<headerToolbar>
+					<Toolbar>
+						<ToolbarSpacer/>
+						<HBox id="sourceTitle" alignItems="Center">
+							<rdf:TextResource id="selectedResource" path="" entitySet=""/>
+						</HBox>
+						<Title id="pathTitle" text="{entitySetView>/navigationText}"/>
+						<HBox id="versionsTitle" alignItems="Center">
+							<Title text="(" required="false"/>
+							<ComboBox id="versionSelection" items="{ path: 'entitySetView>/versions' }" selectionChange="onVersionChange">
+								<core:Item key="{entitySetView>navigation}" text="{entityView>text}"/>
+							</ComboBox>
+							<Title text=")" required="false"/>
+						</HBox>
+						<Title id="tableHeader" text="{entitySetView>/entitySetTableTitle}"/>
+						<ToolbarSpacer/>
+						<SearchField id="searchField" tooltip="{i18n>search.searchTooltip}" search="onSearch" width="auto"></SearchField>
+					</Toolbar>
+				</headerToolbar>
+				<columns>
+					<Column >
+						<Text text="{i18n>EmailDomainKeys.this}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>EmailDomainKeys.EmailDomainKey_CreatedDate}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>EmailDomainKeys.EmailDomainKey_Domain}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>EmailDomainKeys.EmailDomainKey_DomainMatch}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>EmailDomainKeys.EmailDomainKey_Id}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>EmailDomainKeys.EmailDomainKey_IsActive}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>EmailDomainKeys.EmailDomainKey_IsDeleted}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>EmailDomainKeys.EmailDomainKey_LastModifiedDate}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>EmailDomainKeys.EmailDomainKey_PrivateKey}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>EmailDomainKeys.EmailDomainKey_PublicKey}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>EmailDomainKeys.EmailDomainKey_Selector}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>EmailDomainKeys.EmailDomainKey_SystemModstamp}"/>
+					</Column>
+				</columns>
+				<items>
+					<ColumnListItem id="template360" type="Navigation" press="onPress">
+						<cells>
+							<rdf:TextResource path="dataModel>" entitySet="EmailDomainKey"/>
+							<VBox>					
+							<Text text="{dataModel>EmailDomainKey_CreatedDate/EmailDomainKey_CreatedDate}"/>
+							</VBox>							
+							<VBox>					
+							<rdf:TextLink text="{path:'dataModel>EmailDomainKey_Domain/EmailDomainKey_Domain',type:'sap.ui.model.type.String'}" linkText="{i18n>EmailDomainKey.EmailDomainKey_Domain/EmailDomainKey_Domain}"/>
+							</VBox>							
+							<VBox>					
+							<rdf:TextLink text="{path:'dataModel>EmailDomainKey_DomainMatch/EmailDomainKey_DomainMatch',type:'sap.ui.model.type.String'}" linkText="{i18n>EmailDomainKey.EmailDomainKey_DomainMatch/EmailDomainKey_DomainMatch}"/>
+							</VBox>							
+							<VBox>					
+							<rdf:TextLink text="{path:'dataModel>EmailDomainKey_Id/EmailDomainKey_Id',type:'sap.ui.model.type.String'}" linkText="{i18n>EmailDomainKey.EmailDomainKey_Id/EmailDomainKey_Id}"/>
+							</VBox>							
+							<VBox>					
+								<Text text="{path:'dataModel>EmailDomainKey_IsActive/EmailDomainKey_IsActive',type:'sap.ui.model.type.Boolean'}"/>  
+							</VBox>							
+							<VBox>					
+								<Text text="{path:'dataModel>EmailDomainKey_IsDeleted/EmailDomainKey_IsDeleted',type:'sap.ui.model.type.Boolean'}"/>  
+							</VBox>							
+							<VBox>					
+							<Text text="{dataModel>EmailDomainKey_LastModifiedDate/EmailDomainKey_LastModifiedDate}"/>
+							</VBox>							
+							<VBox>					
+							<rdf:TextLink text="{path:'dataModel>EmailDomainKey_PrivateKey/EmailDomainKey_PrivateKey',type:'sap.ui.model.type.String'}" linkText="{i18n>EmailDomainKey.EmailDomainKey_PrivateKey/EmailDomainKey_PrivateKey}"/>
+							</VBox>							
+							<VBox>					
+							<rdf:TextLink text="{path:'dataModel>EmailDomainKey_PublicKey/EmailDomainKey_PublicKey',type:'sap.ui.model.type.String'}" linkText="{i18n>EmailDomainKey.EmailDomainKey_PublicKey/EmailDomainKey_PublicKey}"/>
+							</VBox>							
+							<VBox>					
+							<rdf:TextLink text="{path:'dataModel>EmailDomainKey_Selector/EmailDomainKey_Selector',type:'sap.ui.model.type.String'}" linkText="{i18n>EmailDomainKey.EmailDomainKey_Selector/EmailDomainKey_Selector}"/>
+							</VBox>							
+							<VBox>					
+							<Text text="{dataModel>EmailDomainKey_SystemModstamp/EmailDomainKey_SystemModstamp}"/>
+							</VBox>							
+						</cells>
+					</ColumnListItem>
+				</items>
+			</Table>
+		</content>
+	</Page>
+</mvc:View>

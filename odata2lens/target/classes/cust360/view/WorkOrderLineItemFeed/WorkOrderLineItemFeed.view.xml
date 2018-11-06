@@ -1,0 +1,189 @@
+<mvc:View controllerName="com.inova8.lens.controller.Entity360" xmlns="sap.m" xmlns:mvc="sap.ui.core.mvc" xmlns:l="sap.ui.layout"
+	xmlns:f="sap.ui.layout.form" xmlns:table="sap.ui.table" xmlns:rdf="com.inova8.lens.control" xmlns:html="http://www.w3.org/1999/xhtml"
+	xmlns:core="sap.ui.core">
+	<Page showHeader="true" id="page" navButtonPress="onNavBack" showNavButton="false" title="{i18n>WorkOrderLineItemFeed.Title}" busy="{entityView>/busy}"
+		busyIndicatorDelay="{entityView>/delay}" >
+		<customHeader>
+			<Toolbar>
+				<ToolbarSpacer/>
+				<HBox id="sourceTitle" alignItems="Center">
+						<rdf:TextResource id="selectedResource" path="" entitySet=""/>
+				</HBox>	
+				<Title id="pathTitle" text="{entityView>/navigation}"/>
+				<HBox id="versionsTitle" alignItems="Center">
+					<Title text="(" required="false"/>
+					<ComboBox id="versionSelection" items="{ path: 'entityView>/versions' }" selectionChange="onVersionChange">
+						<core:Item key="{entityView>navigation}" text="{entityView>text}"/>
+					</ComboBox>
+					<Title text=")" required="false"/>
+				</HBox>
+				<Title text="{i18n>WorkOrderLineItemFeed.this}"/>
+				<Title text="(" required="false"/>
+				<rdf:TextResource path="dataModel>" entitySet="WorkOrderLineItemFeed"/>
+				<Title text=")" required="false"/>
+	
+				<ToolbarSpacer/>
+				<ToggleButton id="toggleColumns" icon="sap-icon://hide" activeIcon="sap-icon://show" press="onSettingsPressed" visible="false"	>
+					<layoutData>
+						<OverflowToolbarLayoutData priority="NeverOverflow"/>
+					</layoutData>
+				</ToggleButton>
+				
+			</Toolbar>
+		</customHeader>
+		<Table id="form360" inset="false" fixedLayout="true" class="multicolumnform" updateFinished="hideColumns">
+			<columns>
+				<Column hAlign="Right" width="200px">
+					<Text text=""/>
+				</Column>
+				<Column visible="true">
+				</Column>
+				<Column visible="true">
+					<Text text="WorkOrderLineItemFeed"/>
+				</Column>
+			</columns>
+			<items>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>WorkOrderLineItemFeed.WorkOrderLineItemFeed_Body}" required="false"/> 
+						<Text text=""/>
+						<rdf:TextLink text="{path:'dataModel>WorkOrderLineItemFeed_Body/WorkOrderLineItemFeed_Body',type:'sap.ui.model.type.String' }" linkText="{i18n>WorkOrderLineItemFeed.WorkOrderLineItemFeed_Body/WorkOrderLineItemFeed_Body}"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>WorkOrderLineItemFeed.WorkOrderLineItemFeed_CommentCount}" required="false"/> 
+						<Text text=""/>
+						<Text text="{path:'dataModel>WorkOrderLineItemFeed_CommentCount/WorkOrderLineItemFeed_CommentCount',type:'sap.ui.model.type.Integer' }"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>WorkOrderLineItemFeed.WorkOrderLineItemFeed_CreatedById}" required="false"/> 
+						<Text text=""/>
+						<rdf:ListResource path="dataModel>WorkOrderLineItemFeed_CreatedById/sfdc_WorkOrderLineItemFeed_CreatedById" entitySet="User"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>WorkOrderLineItemFeed.WorkOrderLineItemFeed_CreatedDate}" required="false"/> 
+						<Text text=""/>
+						<Text text="{dataModel>WorkOrderLineItemFeed_CreatedDate/WorkOrderLineItemFeed_CreatedDate}"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>WorkOrderLineItemFeed.WorkOrderLineItemFeed_Id}" required="false"/> 
+						<Text text=""/>
+						<rdf:TextLink text="{path:'dataModel>WorkOrderLineItemFeed_Id/WorkOrderLineItemFeed_Id',type:'sap.ui.model.type.String' }" linkText="{i18n>WorkOrderLineItemFeed.WorkOrderLineItemFeed_Id/WorkOrderLineItemFeed_Id}"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>WorkOrderLineItemFeed.WorkOrderLineItemFeed_InsertedById}" required="false"/> 
+						<Text text=""/>
+						<rdf:ListResource path="dataModel>WorkOrderLineItemFeed_InsertedById/sfdc_WorkOrderLineItemFeed_InsertedById" entitySet="User"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>WorkOrderLineItemFeed.WorkOrderLineItemFeed_IsDeleted}" required="false"/> 
+						<Text text=""/>
+						<Text text="{path:'dataModel>WorkOrderLineItemFeed_IsDeleted/WorkOrderLineItemFeed_IsDeleted',type:'sap.ui.model.type.Boolean'}"/>  
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>WorkOrderLineItemFeed.WorkOrderLineItemFeed_IsRichText}" required="false"/> 
+						<Text text=""/>
+						<Text text="{path:'dataModel>WorkOrderLineItemFeed_IsRichText/WorkOrderLineItemFeed_IsRichText',type:'sap.ui.model.type.Boolean'}"/>  
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>WorkOrderLineItemFeed.WorkOrderLineItemFeed_LastModifiedDate}" required="false"/> 
+						<Text text=""/>
+						<Text text="{dataModel>WorkOrderLineItemFeed_LastModifiedDate/WorkOrderLineItemFeed_LastModifiedDate}"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>WorkOrderLineItemFeed.WorkOrderLineItemFeed_LikeCount}" required="false"/> 
+						<Text text=""/>
+						<Text text="{path:'dataModel>WorkOrderLineItemFeed_LikeCount/WorkOrderLineItemFeed_LikeCount',type:'sap.ui.model.type.Integer' }"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>WorkOrderLineItemFeed.WorkOrderLineItemFeed_LinkUrl}" required="false"/> 
+						<Text text=""/>
+						<rdf:TextLink text="{path:'dataModel>WorkOrderLineItemFeed_LinkUrl/WorkOrderLineItemFeed_LinkUrl',type:'sap.ui.model.type.String' }" linkText="{i18n>WorkOrderLineItemFeed.WorkOrderLineItemFeed_LinkUrl/WorkOrderLineItemFeed_LinkUrl}"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>WorkOrderLineItemFeed.WorkOrderLineItemFeed_ParentId}" required="false"/> 
+						<Text text=""/>
+						<rdf:ListResource path="dataModel>WorkOrderLineItemFeed_ParentId/sfdc_WorkOrderLineItemFeed_ParentId" entitySet="WorkOrderLineItem"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>WorkOrderLineItemFeed.WorkOrderLineItemFeed_RelatedRecordId}" required="false"/> 
+						<Text text=""/>
+						<rdf:ListResource path="dataModel>WorkOrderLineItemFeed_RelatedRecordId/sfdc_WorkOrderLineItemFeed_RelatedRecordId" entitySet="ContentVersion"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>WorkOrderLineItemFeed.WorkOrderLineItemFeed_SystemModstamp}" required="false"/> 
+						<Text text=""/>
+						<Text text="{dataModel>WorkOrderLineItemFeed_SystemModstamp/WorkOrderLineItemFeed_SystemModstamp}"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>WorkOrderLineItemFeed.WorkOrderLineItemFeed_Title}" required="false"/> 
+						<Text text=""/>
+						<rdf:TextLink text="{path:'dataModel>WorkOrderLineItemFeed_Title/WorkOrderLineItemFeed_Title',type:'sap.ui.model.type.String' }" linkText="{i18n>WorkOrderLineItemFeed.WorkOrderLineItemFeed_Title/WorkOrderLineItemFeed_Title}"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>WorkOrderLineItemFeed.WorkOrderLineItemFeed_Type}" required="false"/> 
+						<Text text=""/>
+						<rdf:TextLink text="{path:'dataModel>WorkOrderLineItemFeed_Type/WorkOrderLineItemFeed_Type',type:'sap.ui.model.type.String' }" linkText="{i18n>WorkOrderLineItemFeed.WorkOrderLineItemFeed_Type/WorkOrderLineItemFeed_Type}"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>WorkOrderLineItemFeed.WorkOrderLineItemFeed_CreatedById}" required="false"/> 
+						<rdf:ListResource path="dataModel>WorkOrderLineItemFeed_CreatedById" entitySet="User"/>
+						<Text text=""/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>WorkOrderLineItemFeed.WorkOrderLineItemFeed_InsertedById}" required="false"/> 
+						<rdf:ListResource path="dataModel>WorkOrderLineItemFeed_InsertedById" entitySet="User"/>
+						<Text text=""/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>WorkOrderLineItemFeed.WorkOrderLineItemFeed_ParentId}" required="false"/> 
+						<rdf:ListResource path="dataModel>WorkOrderLineItemFeed_ParentId" entitySet="WorkOrderLineItem"/>
+						<Text text=""/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>WorkOrderLineItemFeed.WorkOrderLineItemFeed_RelatedRecordId}" required="false"/> 
+						<rdf:ListResource path="dataModel>WorkOrderLineItemFeed_RelatedRecordId" entitySet="ContentVersion"/>
+						<Text text=""/>
+					</cells>
+				</ColumnListItem>
+			</items>
+		</Table>
+	</Page>
+</mvc:View>

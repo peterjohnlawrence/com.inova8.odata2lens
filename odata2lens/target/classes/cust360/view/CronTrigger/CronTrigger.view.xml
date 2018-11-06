@@ -1,0 +1,175 @@
+<mvc:View controllerName="com.inova8.lens.controller.Entity360" xmlns="sap.m" xmlns:mvc="sap.ui.core.mvc" xmlns:l="sap.ui.layout"
+	xmlns:f="sap.ui.layout.form" xmlns:table="sap.ui.table" xmlns:rdf="com.inova8.lens.control" xmlns:html="http://www.w3.org/1999/xhtml"
+	xmlns:core="sap.ui.core">
+	<Page showHeader="true" id="page" navButtonPress="onNavBack" showNavButton="false" title="{i18n>CronTrigger.Title}" busy="{entityView>/busy}"
+		busyIndicatorDelay="{entityView>/delay}" >
+		<customHeader>
+			<Toolbar>
+				<ToolbarSpacer/>
+				<HBox id="sourceTitle" alignItems="Center">
+						<rdf:TextResource id="selectedResource" path="" entitySet=""/>
+				</HBox>	
+				<Title id="pathTitle" text="{entityView>/navigation}"/>
+				<HBox id="versionsTitle" alignItems="Center">
+					<Title text="(" required="false"/>
+					<ComboBox id="versionSelection" items="{ path: 'entityView>/versions' }" selectionChange="onVersionChange">
+						<core:Item key="{entityView>navigation}" text="{entityView>text}"/>
+					</ComboBox>
+					<Title text=")" required="false"/>
+				</HBox>
+				<Title text="{i18n>CronTrigger.this}"/>
+				<Title text="(" required="false"/>
+				<rdf:TextResource path="dataModel>" entitySet="CronTrigger"/>
+				<Title text=")" required="false"/>
+	
+				<ToolbarSpacer/>
+				<ToggleButton id="toggleColumns" icon="sap-icon://hide" activeIcon="sap-icon://show" press="onSettingsPressed" visible="false"	>
+					<layoutData>
+						<OverflowToolbarLayoutData priority="NeverOverflow"/>
+					</layoutData>
+				</ToggleButton>
+				
+			</Toolbar>
+		</customHeader>
+		<Table id="form360" inset="false" fixedLayout="true" class="multicolumnform" updateFinished="hideColumns">
+			<columns>
+				<Column hAlign="Right" width="200px">
+					<Text text=""/>
+				</Column>
+				<Column visible="true">
+				</Column>
+				<Column visible="true">
+					<Text text="CronTrigger"/>
+				</Column>
+			</columns>
+			<items>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>CronTrigger.CronTrigger_CreatedById}" required="false"/> 
+						<Text text=""/>
+						<rdf:ListResource path="dataModel>CronTrigger_CreatedById/sfdc_CronTrigger_CreatedById" entitySet="User"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>CronTrigger.CronTrigger_CreatedDate}" required="false"/> 
+						<Text text=""/>
+						<Text text="{dataModel>CronTrigger_CreatedDate/CronTrigger_CreatedDate}"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>CronTrigger.CronTrigger_CronExpression}" required="false"/> 
+						<Text text=""/>
+						<rdf:TextLink text="{path:'dataModel>CronTrigger_CronExpression/CronTrigger_CronExpression',type:'sap.ui.model.type.String' }" linkText="{i18n>CronTrigger.CronTrigger_CronExpression/CronTrigger_CronExpression}"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>CronTrigger.CronTrigger_CronJobDetailId}" required="false"/> 
+						<Text text=""/>
+						<rdf:ListResource path="dataModel>CronTrigger_CronJobDetailId/sfdc_CronTrigger_CronJobDetailId" entitySet="CronJobDetail"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>CronTrigger.CronTrigger_EndTime}" required="false"/> 
+						<Text text=""/>
+						<Text text="{dataModel>CronTrigger_EndTime/CronTrigger_EndTime}"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>CronTrigger.CronTrigger_Id}" required="false"/> 
+						<Text text=""/>
+						<rdf:TextLink text="{path:'dataModel>CronTrigger_Id/CronTrigger_Id',type:'sap.ui.model.type.String' }" linkText="{i18n>CronTrigger.CronTrigger_Id/CronTrigger_Id}"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>CronTrigger.CronTrigger_LastModifiedById}" required="false"/> 
+						<Text text=""/>
+						<rdf:ListResource path="dataModel>CronTrigger_LastModifiedById/sfdc_CronTrigger_LastModifiedById" entitySet="User"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>CronTrigger.CronTrigger_NextFireTime}" required="false"/> 
+						<Text text=""/>
+						<Text text="{dataModel>CronTrigger_NextFireTime/CronTrigger_NextFireTime}"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>CronTrigger.CronTrigger_OwnerId}" required="false"/> 
+						<Text text=""/>
+						<rdf:ListResource path="dataModel>CronTrigger_OwnerId/sfdc_CronTrigger_OwnerId" entitySet="User"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>CronTrigger.CronTrigger_PreviousFireTime}" required="false"/> 
+						<Text text=""/>
+						<Text text="{dataModel>CronTrigger_PreviousFireTime/CronTrigger_PreviousFireTime}"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>CronTrigger.CronTrigger_StartTime}" required="false"/> 
+						<Text text=""/>
+						<Text text="{dataModel>CronTrigger_StartTime/CronTrigger_StartTime}"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>CronTrigger.CronTrigger_State}" required="false"/> 
+						<Text text=""/>
+						<rdf:TextLink text="{path:'dataModel>CronTrigger_State/CronTrigger_State',type:'sap.ui.model.type.String' }" linkText="{i18n>CronTrigger.CronTrigger_State/CronTrigger_State}"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>CronTrigger.CronTrigger_TimeZoneSidKey}" required="false"/> 
+						<Text text=""/>
+						<rdf:TextLink text="{path:'dataModel>CronTrigger_TimeZoneSidKey/CronTrigger_TimeZoneSidKey',type:'sap.ui.model.type.String' }" linkText="{i18n>CronTrigger.CronTrigger_TimeZoneSidKey/CronTrigger_TimeZoneSidKey}"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>CronTrigger.CronTrigger_TimesTriggered}" required="false"/> 
+						<Text text=""/>
+						<Text text="{path:'dataModel>CronTrigger_TimesTriggered/CronTrigger_TimesTriggered',type:'sap.ui.model.type.Integer' }"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>CronTrigger.CronTrigger_CreatedById}" required="false"/> 
+						<rdf:ListResource path="dataModel>CronTrigger_CreatedById" entitySet="User"/>
+						<Text text=""/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>CronTrigger.CronTrigger_CronJobDetailId}" required="false"/> 
+						<rdf:ListResource path="dataModel>CronTrigger_CronJobDetailId" entitySet="CronJobDetail"/>
+						<Text text=""/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>CronTrigger.CronTrigger_LastModifiedById}" required="false"/> 
+						<rdf:ListResource path="dataModel>CronTrigger_LastModifiedById" entitySet="User"/>
+						<Text text=""/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>CronTrigger.CronTrigger_OwnerId}" required="false"/> 
+						<rdf:ListResource path="dataModel>CronTrigger_OwnerId" entitySet="User"/>
+						<Text text=""/>
+					</cells>
+				</ColumnListItem>
+			</items>
+		</Table>
+	</Page>
+</mvc:View>

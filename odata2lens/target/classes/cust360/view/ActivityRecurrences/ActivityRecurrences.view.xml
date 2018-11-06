@@ -1,0 +1,151 @@
+<mvc:View controllerName="com.inova8.lens.controller.EntitySet360" xmlns="sap.m" xmlns:mvc="sap.ui.core.mvc" xmlns:layout="sap.ui.layout"
+	xmlns:rdf="com.inova8.lens.control" xmlns:core="sap.ui.core">
+	<Page showHeader="false" id="page" navButtonPress="onNavBack" showNavButton="true" title="{i18n>ActivityRecurrences.ViewTitle}">
+		<content>
+			<Table id="table360" inset="false" items="{ path: 'dataModel>/ActivityRecurrence' , sorter: { path: 'label', descending: false } 
+				}"
+				noDataText="{entitySetView>/tableNoDataText}" busyIndicatorDelay="{entitySetView>/tableBusyDelay}" growing="true" growingScrollToLoad="true"
+				updateFinished="onUpdateFinished"  fixedLayout="false">
+				<headerToolbar>
+					<Toolbar>
+						<ToolbarSpacer/>
+						<HBox id="sourceTitle" alignItems="Center">
+							<rdf:TextResource id="selectedResource" path="" entitySet=""/>
+						</HBox>
+						<Title id="pathTitle" text="{entitySetView>/navigationText}"/>
+						<HBox id="versionsTitle" alignItems="Center">
+							<Title text="(" required="false"/>
+							<ComboBox id="versionSelection" items="{ path: 'entitySetView>/versions' }" selectionChange="onVersionChange">
+								<core:Item key="{entitySetView>navigation}" text="{entityView>text}"/>
+							</ComboBox>
+							<Title text=")" required="false"/>
+						</HBox>
+						<Title id="tableHeader" text="{entitySetView>/entitySetTableTitle}"/>
+						<ToolbarSpacer/>
+						<SearchField id="searchField" tooltip="{i18n>search.searchTooltip}" search="onSearch" width="auto"></SearchField>
+					</Toolbar>
+				</headerToolbar>
+				<columns>
+					<Column >
+						<Text text="{i18n>ActivityRecurrences.this}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>ActivityRecurrences.ActivityRecurrence_Attendees}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>ActivityRecurrences.ActivityRecurrence_CreatedDate}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>ActivityRecurrences.ActivityRecurrence_DurationMinutes}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>ActivityRecurrences.ActivityRecurrence_EndDateTime}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>ActivityRecurrences.ActivityRecurrence_Id}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>ActivityRecurrences.ActivityRecurrence_IsDeleted}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>ActivityRecurrences.ActivityRecurrence_LastModifiedDate}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>ActivityRecurrences.ActivityRecurrence_LastProjectedDate}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>ActivityRecurrences.ActivityRecurrence_Location}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>ActivityRecurrences.ActivityRecurrence_Name}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>ActivityRecurrences.ActivityRecurrence_PatternVersion}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>ActivityRecurrences.ActivityRecurrence_RecurrenceFieldJson}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>ActivityRecurrences.ActivityRecurrence_RecurrencePatternText}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>ActivityRecurrences.ActivityRecurrence_ReminderMinutes}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>ActivityRecurrences.ActivityRecurrence_StartDateTime}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>ActivityRecurrences.ActivityRecurrence_Subject}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>ActivityRecurrences.ActivityRecurrence_Summary}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>ActivityRecurrences.ActivityRecurrence_SystemModstamp}"/>
+					</Column>
+				</columns>
+				<items>
+					<ColumnListItem id="template360" type="Navigation" press="onPress">
+						<cells>
+							<rdf:TextResource path="dataModel>" entitySet="ActivityRecurrence"/>
+							<VBox>					
+							<rdf:TextLink text="{path:'dataModel>ActivityRecurrence_Attendees/ActivityRecurrence_Attendees',type:'sap.ui.model.type.String'}" linkText="{i18n>ActivityRecurrence.ActivityRecurrence_Attendees/ActivityRecurrence_Attendees}"/>
+							</VBox>							
+							<VBox>					
+							<Text text="{dataModel>ActivityRecurrence_CreatedDate/ActivityRecurrence_CreatedDate}"/>
+							</VBox>							
+							<VBox>					
+							<Text text="{path:'dataModel>ActivityRecurrence_DurationMinutes/ActivityRecurrence_DurationMinutes',type:'sap.ui.model.type.Integer' }"/>
+							</VBox>							
+							<VBox>					
+							<Text text="{dataModel>ActivityRecurrence_EndDateTime/ActivityRecurrence_EndDateTime}"/>
+							</VBox>							
+							<VBox>					
+							<rdf:TextLink text="{path:'dataModel>ActivityRecurrence_Id/ActivityRecurrence_Id',type:'sap.ui.model.type.String'}" linkText="{i18n>ActivityRecurrence.ActivityRecurrence_Id/ActivityRecurrence_Id}"/>
+							</VBox>							
+							<VBox>					
+								<Text text="{path:'dataModel>ActivityRecurrence_IsDeleted/ActivityRecurrence_IsDeleted',type:'sap.ui.model.type.Boolean'}"/>  
+							</VBox>							
+							<VBox>					
+							<Text text="{dataModel>ActivityRecurrence_LastModifiedDate/ActivityRecurrence_LastModifiedDate}"/>
+							</VBox>							
+							<VBox>					
+							<Text text="{dataModel>ActivityRecurrence_LastProjectedDate/ActivityRecurrence_LastProjectedDate}"/>
+							</VBox>							
+							<VBox>					
+							<rdf:TextLink text="{path:'dataModel>ActivityRecurrence_Location/ActivityRecurrence_Location',type:'sap.ui.model.type.String'}" linkText="{i18n>ActivityRecurrence.ActivityRecurrence_Location/ActivityRecurrence_Location}"/>
+							</VBox>							
+							<VBox>					
+							<rdf:TextLink text="{path:'dataModel>ActivityRecurrence_Name/ActivityRecurrence_Name',type:'sap.ui.model.type.String'}" linkText="{i18n>ActivityRecurrence.ActivityRecurrence_Name/ActivityRecurrence_Name}"/>
+							</VBox>							
+							<VBox>					
+							<rdf:TextLink text="{path:'dataModel>ActivityRecurrence_PatternVersion/ActivityRecurrence_PatternVersion',type:'sap.ui.model.type.String'}" linkText="{i18n>ActivityRecurrence.ActivityRecurrence_PatternVersion/ActivityRecurrence_PatternVersion}"/>
+							</VBox>							
+							<VBox>					
+							<rdf:TextLink text="{path:'dataModel>ActivityRecurrence_RecurrenceFieldJson/ActivityRecurrence_RecurrenceFieldJson',type:'sap.ui.model.type.String'}" linkText="{i18n>ActivityRecurrence.ActivityRecurrence_RecurrenceFieldJson/ActivityRecurrence_RecurrenceFieldJson}"/>
+							</VBox>							
+							<VBox>					
+							<rdf:TextLink text="{path:'dataModel>ActivityRecurrence_RecurrencePatternText/ActivityRecurrence_RecurrencePatternText',type:'sap.ui.model.type.String'}" linkText="{i18n>ActivityRecurrence.ActivityRecurrence_RecurrencePatternText/ActivityRecurrence_RecurrencePatternText}"/>
+							</VBox>							
+							<VBox>					
+							<Text text="{path:'dataModel>ActivityRecurrence_ReminderMinutes/ActivityRecurrence_ReminderMinutes',type:'sap.ui.model.type.Integer' }"/>
+							</VBox>							
+							<VBox>					
+							<Text text="{dataModel>ActivityRecurrence_StartDateTime/ActivityRecurrence_StartDateTime}"/>
+							</VBox>							
+							<VBox>					
+							<rdf:TextLink text="{path:'dataModel>ActivityRecurrence_Subject/ActivityRecurrence_Subject',type:'sap.ui.model.type.String'}" linkText="{i18n>ActivityRecurrence.ActivityRecurrence_Subject/ActivityRecurrence_Subject}"/>
+							</VBox>							
+							<VBox>					
+							<rdf:TextLink text="{path:'dataModel>ActivityRecurrence_Summary/ActivityRecurrence_Summary',type:'sap.ui.model.type.String'}" linkText="{i18n>ActivityRecurrence.ActivityRecurrence_Summary/ActivityRecurrence_Summary}"/>
+							</VBox>							
+							<VBox>					
+							<Text text="{dataModel>ActivityRecurrence_SystemModstamp/ActivityRecurrence_SystemModstamp}"/>
+							</VBox>							
+						</cells>
+					</ColumnListItem>
+				</items>
+			</Table>
+		</content>
+	</Page>
+</mvc:View>

@@ -1,0 +1,133 @@
+<mvc:View controllerName="com.inova8.lens.controller.EntitySet360" xmlns="sap.m" xmlns:mvc="sap.ui.core.mvc" xmlns:layout="sap.ui.layout"
+	xmlns:rdf="com.inova8.lens.control" xmlns:core="sap.ui.core">
+	<Page showHeader="false" id="page" navButtonPress="onNavBack" showNavButton="true" title="{i18n>MatchingRules.ViewTitle}">
+		<content>
+			<Table id="table360" inset="false" items="{ path: 'dataModel>/MatchingRule' , sorter: { path: 'label', descending: false } 
+				}"
+				noDataText="{entitySetView>/tableNoDataText}" busyIndicatorDelay="{entitySetView>/tableBusyDelay}" growing="true" growingScrollToLoad="true"
+				updateFinished="onUpdateFinished"  fixedLayout="false">
+				<headerToolbar>
+					<Toolbar>
+						<ToolbarSpacer/>
+						<HBox id="sourceTitle" alignItems="Center">
+							<rdf:TextResource id="selectedResource" path="" entitySet=""/>
+						</HBox>
+						<Title id="pathTitle" text="{entitySetView>/navigationText}"/>
+						<HBox id="versionsTitle" alignItems="Center">
+							<Title text="(" required="false"/>
+							<ComboBox id="versionSelection" items="{ path: 'entitySetView>/versions' }" selectionChange="onVersionChange">
+								<core:Item key="{entitySetView>navigation}" text="{entityView>text}"/>
+							</ComboBox>
+							<Title text=")" required="false"/>
+						</HBox>
+						<Title id="tableHeader" text="{entitySetView>/entitySetTableTitle}"/>
+						<ToolbarSpacer/>
+						<SearchField id="searchField" tooltip="{i18n>search.searchTooltip}" search="onSearch" width="auto"></SearchField>
+					</Toolbar>
+				</headerToolbar>
+				<columns>
+					<Column >
+						<Text text="{i18n>MatchingRules.this}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>MatchingRules.MatchingRule_BooleanFilter}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>MatchingRules.MatchingRule_CreatedDate}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>MatchingRules.MatchingRule_Description}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>MatchingRules.MatchingRule_DeveloperName}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>MatchingRules.MatchingRule_Id}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>MatchingRules.MatchingRule_IsDeleted}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>MatchingRules.MatchingRule_Language}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>MatchingRules.MatchingRule_LastModifiedDate}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>MatchingRules.MatchingRule_MasterLabel}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>MatchingRules.MatchingRule_MatchEngine}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>MatchingRules.MatchingRule_NamespacePrefix}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>MatchingRules.MatchingRule_RuleStatus}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>MatchingRules.MatchingRule_SobjectSubtype}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>MatchingRules.MatchingRule_SobjectType}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>MatchingRules.MatchingRule_SystemModstamp}"/>
+					</Column>
+				</columns>
+				<items>
+					<ColumnListItem id="template360" type="Navigation" press="onPress">
+						<cells>
+							<rdf:TextResource path="dataModel>" entitySet="MatchingRule"/>
+							<VBox>					
+							<rdf:TextLink text="{path:'dataModel>MatchingRule_BooleanFilter/MatchingRule_BooleanFilter',type:'sap.ui.model.type.String'}" linkText="{i18n>MatchingRule.MatchingRule_BooleanFilter/MatchingRule_BooleanFilter}"/>
+							</VBox>							
+							<VBox>					
+							<Text text="{dataModel>MatchingRule_CreatedDate/MatchingRule_CreatedDate}"/>
+							</VBox>							
+							<VBox>					
+							<rdf:TextLink text="{path:'dataModel>MatchingRule_Description/MatchingRule_Description',type:'sap.ui.model.type.String'}" linkText="{i18n>MatchingRule.MatchingRule_Description/MatchingRule_Description}"/>
+							</VBox>							
+							<VBox>					
+							<rdf:TextLink text="{path:'dataModel>MatchingRule_DeveloperName/MatchingRule_DeveloperName',type:'sap.ui.model.type.String'}" linkText="{i18n>MatchingRule.MatchingRule_DeveloperName/MatchingRule_DeveloperName}"/>
+							</VBox>							
+							<VBox>					
+							<rdf:TextLink text="{path:'dataModel>MatchingRule_Id/MatchingRule_Id',type:'sap.ui.model.type.String'}" linkText="{i18n>MatchingRule.MatchingRule_Id/MatchingRule_Id}"/>
+							</VBox>							
+							<VBox>					
+								<Text text="{path:'dataModel>MatchingRule_IsDeleted/MatchingRule_IsDeleted',type:'sap.ui.model.type.Boolean'}"/>  
+							</VBox>							
+							<VBox>					
+							<rdf:TextLink text="{path:'dataModel>MatchingRule_Language/MatchingRule_Language',type:'sap.ui.model.type.String'}" linkText="{i18n>MatchingRule.MatchingRule_Language/MatchingRule_Language}"/>
+							</VBox>							
+							<VBox>					
+							<Text text="{dataModel>MatchingRule_LastModifiedDate/MatchingRule_LastModifiedDate}"/>
+							</VBox>							
+							<VBox>					
+							<rdf:TextLink text="{path:'dataModel>MatchingRule_MasterLabel/MatchingRule_MasterLabel',type:'sap.ui.model.type.String'}" linkText="{i18n>MatchingRule.MatchingRule_MasterLabel/MatchingRule_MasterLabel}"/>
+							</VBox>							
+							<VBox>					
+							<rdf:TextLink text="{path:'dataModel>MatchingRule_MatchEngine/MatchingRule_MatchEngine',type:'sap.ui.model.type.String'}" linkText="{i18n>MatchingRule.MatchingRule_MatchEngine/MatchingRule_MatchEngine}"/>
+							</VBox>							
+							<VBox>					
+							<rdf:TextLink text="{path:'dataModel>MatchingRule_NamespacePrefix/MatchingRule_NamespacePrefix',type:'sap.ui.model.type.String'}" linkText="{i18n>MatchingRule.MatchingRule_NamespacePrefix/MatchingRule_NamespacePrefix}"/>
+							</VBox>							
+							<VBox>					
+							<rdf:TextLink text="{path:'dataModel>MatchingRule_RuleStatus/MatchingRule_RuleStatus',type:'sap.ui.model.type.String'}" linkText="{i18n>MatchingRule.MatchingRule_RuleStatus/MatchingRule_RuleStatus}"/>
+							</VBox>							
+							<VBox>					
+							<rdf:TextLink text="{path:'dataModel>MatchingRule_SobjectSubtype/MatchingRule_SobjectSubtype',type:'sap.ui.model.type.String'}" linkText="{i18n>MatchingRule.MatchingRule_SobjectSubtype/MatchingRule_SobjectSubtype}"/>
+							</VBox>							
+							<VBox>					
+							<rdf:TextLink text="{path:'dataModel>MatchingRule_SobjectType/MatchingRule_SobjectType',type:'sap.ui.model.type.String'}" linkText="{i18n>MatchingRule.MatchingRule_SobjectType/MatchingRule_SobjectType}"/>
+							</VBox>							
+							<VBox>					
+							<Text text="{dataModel>MatchingRule_SystemModstamp/MatchingRule_SystemModstamp}"/>
+							</VBox>							
+						</cells>
+					</ColumnListItem>
+				</items>
+			</Table>
+		</content>
+	</Page>
+</mvc:View>

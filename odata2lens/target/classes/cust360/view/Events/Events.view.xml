@@ -1,0 +1,241 @@
+<mvc:View controllerName="com.inova8.lens.controller.EntitySet360" xmlns="sap.m" xmlns:mvc="sap.ui.core.mvc" xmlns:layout="sap.ui.layout"
+	xmlns:rdf="com.inova8.lens.control" xmlns:core="sap.ui.core">
+	<Page showHeader="false" id="page" navButtonPress="onNavBack" showNavButton="true" title="{i18n>Events.ViewTitle}">
+		<content>
+			<Table id="table360" inset="false" items="{ path: 'dataModel>/Event' , sorter: { path: 'label', descending: false } 
+				}"
+				noDataText="{entitySetView>/tableNoDataText}" busyIndicatorDelay="{entitySetView>/tableBusyDelay}" growing="true" growingScrollToLoad="true"
+				updateFinished="onUpdateFinished"  fixedLayout="false">
+				<headerToolbar>
+					<Toolbar>
+						<ToolbarSpacer/>
+						<HBox id="sourceTitle" alignItems="Center">
+							<rdf:TextResource id="selectedResource" path="" entitySet=""/>
+						</HBox>
+						<Title id="pathTitle" text="{entitySetView>/navigationText}"/>
+						<HBox id="versionsTitle" alignItems="Center">
+							<Title text="(" required="false"/>
+							<ComboBox id="versionSelection" items="{ path: 'entitySetView>/versions' }" selectionChange="onVersionChange">
+								<core:Item key="{entitySetView>navigation}" text="{entityView>text}"/>
+							</ComboBox>
+							<Title text=")" required="false"/>
+						</HBox>
+						<Title id="tableHeader" text="{entitySetView>/entitySetTableTitle}"/>
+						<ToolbarSpacer/>
+						<SearchField id="searchField" tooltip="{i18n>search.searchTooltip}" search="onSearch" width="auto"></SearchField>
+					</Toolbar>
+				</headerToolbar>
+				<columns>
+					<Column >
+						<Text text="{i18n>Events.this}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>Events.Event_ActivityDate}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>Events.Event_ActivityDateTime}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>Events.Event_CreatedDate}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>Events.Event_Description}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>Events.Event_DurationInMinutes}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>Events.Event_EndDateTime}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>Events.Event_EventSubtype}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>Events.Event_GroupEventType}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>Events.Event_Id}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>Events.Event_IsAllDayEvent}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>Events.Event_IsArchived}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>Events.Event_IsChild}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>Events.Event_IsDeleted}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>Events.Event_IsGroupEvent}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>Events.Event_IsPrivate}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>Events.Event_IsRecurrence}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>Events.Event_IsReminderSet}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>Events.Event_LastModifiedDate}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>Events.Event_Location}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>Events.Event_RecurrenceDayOfMonth}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>Events.Event_RecurrenceDayOfWeekMask}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>Events.Event_RecurrenceEndDateOnly}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>Events.Event_RecurrenceInstance}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>Events.Event_RecurrenceInterval}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>Events.Event_RecurrenceMonthOfYear}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>Events.Event_RecurrenceStartDateTime}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>Events.Event_RecurrenceTimeZoneSidKey}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>Events.Event_RecurrenceType}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>Events.Event_ReminderDateTime}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>Events.Event_ShowAs}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>Events.Event_StartDateTime}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>Events.Event_Subject}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>Events.Event_SystemModstamp}"/>
+					</Column>
+				</columns>
+				<items>
+					<ColumnListItem id="template360" type="Navigation" press="onPress">
+						<cells>
+							<rdf:TextResource path="dataModel>" entitySet="Event"/>
+							<VBox>					
+							<Text text="{dataModel>Event_ActivityDate/Event_ActivityDate}"/>
+							</VBox>							
+							<VBox>					
+							<Text text="{dataModel>Event_ActivityDateTime/Event_ActivityDateTime}"/>
+							</VBox>							
+							<VBox>					
+							<Text text="{dataModel>Event_CreatedDate/Event_CreatedDate}"/>
+							</VBox>							
+							<VBox>					
+							<rdf:TextLink text="{path:'dataModel>Event_Description/Event_Description',type:'sap.ui.model.type.String'}" linkText="{i18n>Event.Event_Description/Event_Description}"/>
+							</VBox>							
+							<VBox>					
+							<Text text="{path:'dataModel>Event_DurationInMinutes/Event_DurationInMinutes',type:'sap.ui.model.type.Integer' }"/>
+							</VBox>							
+							<VBox>					
+							<Text text="{dataModel>Event_EndDateTime/Event_EndDateTime}"/>
+							</VBox>							
+							<VBox>					
+							<rdf:TextLink text="{path:'dataModel>Event_EventSubtype/Event_EventSubtype',type:'sap.ui.model.type.String'}" linkText="{i18n>Event.Event_EventSubtype/Event_EventSubtype}"/>
+							</VBox>							
+							<VBox>					
+							<rdf:TextLink text="{path:'dataModel>Event_GroupEventType/Event_GroupEventType',type:'sap.ui.model.type.String'}" linkText="{i18n>Event.Event_GroupEventType/Event_GroupEventType}"/>
+							</VBox>							
+							<VBox>					
+							<rdf:TextLink text="{path:'dataModel>Event_Id/Event_Id',type:'sap.ui.model.type.String'}" linkText="{i18n>Event.Event_Id/Event_Id}"/>
+							</VBox>							
+							<VBox>					
+								<Text text="{path:'dataModel>Event_IsAllDayEvent/Event_IsAllDayEvent',type:'sap.ui.model.type.Boolean'}"/>  
+							</VBox>							
+							<VBox>					
+								<Text text="{path:'dataModel>Event_IsArchived/Event_IsArchived',type:'sap.ui.model.type.Boolean'}"/>  
+							</VBox>							
+							<VBox>					
+								<Text text="{path:'dataModel>Event_IsChild/Event_IsChild',type:'sap.ui.model.type.Boolean'}"/>  
+							</VBox>							
+							<VBox>					
+								<Text text="{path:'dataModel>Event_IsDeleted/Event_IsDeleted',type:'sap.ui.model.type.Boolean'}"/>  
+							</VBox>							
+							<VBox>					
+								<Text text="{path:'dataModel>Event_IsGroupEvent/Event_IsGroupEvent',type:'sap.ui.model.type.Boolean'}"/>  
+							</VBox>							
+							<VBox>					
+								<Text text="{path:'dataModel>Event_IsPrivate/Event_IsPrivate',type:'sap.ui.model.type.Boolean'}"/>  
+							</VBox>							
+							<VBox>					
+								<Text text="{path:'dataModel>Event_IsRecurrence/Event_IsRecurrence',type:'sap.ui.model.type.Boolean'}"/>  
+							</VBox>							
+							<VBox>					
+								<Text text="{path:'dataModel>Event_IsReminderSet/Event_IsReminderSet',type:'sap.ui.model.type.Boolean'}"/>  
+							</VBox>							
+							<VBox>					
+							<Text text="{dataModel>Event_LastModifiedDate/Event_LastModifiedDate}"/>
+							</VBox>							
+							<VBox>					
+							<rdf:TextLink text="{path:'dataModel>Event_Location/Event_Location',type:'sap.ui.model.type.String'}" linkText="{i18n>Event.Event_Location/Event_Location}"/>
+							</VBox>							
+							<VBox>					
+							<Text text="{path:'dataModel>Event_RecurrenceDayOfMonth/Event_RecurrenceDayOfMonth',type:'sap.ui.model.type.Integer' }"/>
+							</VBox>							
+							<VBox>					
+							<Text text="{path:'dataModel>Event_RecurrenceDayOfWeekMask/Event_RecurrenceDayOfWeekMask',type:'sap.ui.model.type.Integer' }"/>
+							</VBox>							
+							<VBox>					
+							<Text text="{dataModel>Event_RecurrenceEndDateOnly/Event_RecurrenceEndDateOnly}"/>
+							</VBox>							
+							<VBox>					
+							<rdf:TextLink text="{path:'dataModel>Event_RecurrenceInstance/Event_RecurrenceInstance',type:'sap.ui.model.type.String'}" linkText="{i18n>Event.Event_RecurrenceInstance/Event_RecurrenceInstance}"/>
+							</VBox>							
+							<VBox>					
+							<Text text="{path:'dataModel>Event_RecurrenceInterval/Event_RecurrenceInterval',type:'sap.ui.model.type.Integer' }"/>
+							</VBox>							
+							<VBox>					
+							<rdf:TextLink text="{path:'dataModel>Event_RecurrenceMonthOfYear/Event_RecurrenceMonthOfYear',type:'sap.ui.model.type.String'}" linkText="{i18n>Event.Event_RecurrenceMonthOfYear/Event_RecurrenceMonthOfYear}"/>
+							</VBox>							
+							<VBox>					
+							<Text text="{dataModel>Event_RecurrenceStartDateTime/Event_RecurrenceStartDateTime}"/>
+							</VBox>							
+							<VBox>					
+							<rdf:TextLink text="{path:'dataModel>Event_RecurrenceTimeZoneSidKey/Event_RecurrenceTimeZoneSidKey',type:'sap.ui.model.type.String'}" linkText="{i18n>Event.Event_RecurrenceTimeZoneSidKey/Event_RecurrenceTimeZoneSidKey}"/>
+							</VBox>							
+							<VBox>					
+							<rdf:TextLink text="{path:'dataModel>Event_RecurrenceType/Event_RecurrenceType',type:'sap.ui.model.type.String'}" linkText="{i18n>Event.Event_RecurrenceType/Event_RecurrenceType}"/>
+							</VBox>							
+							<VBox>					
+							<Text text="{dataModel>Event_ReminderDateTime/Event_ReminderDateTime}"/>
+							</VBox>							
+							<VBox>					
+							<rdf:TextLink text="{path:'dataModel>Event_ShowAs/Event_ShowAs',type:'sap.ui.model.type.String'}" linkText="{i18n>Event.Event_ShowAs/Event_ShowAs}"/>
+							</VBox>							
+							<VBox>					
+							<Text text="{dataModel>Event_StartDateTime/Event_StartDateTime}"/>
+							</VBox>							
+							<VBox>					
+							<rdf:TextLink text="{path:'dataModel>Event_Subject/Event_Subject',type:'sap.ui.model.type.String'}" linkText="{i18n>Event.Event_Subject/Event_Subject}"/>
+							</VBox>							
+							<VBox>					
+							<Text text="{dataModel>Event_SystemModstamp/Event_SystemModstamp}"/>
+							</VBox>							
+						</cells>
+					</ColumnListItem>
+				</items>
+			</Table>
+		</content>
+	</Page>
+</mvc:View>

@@ -1,0 +1,79 @@
+<mvc:View controllerName="com.inova8.lens.controller.EntitySet360" xmlns="sap.m" xmlns:mvc="sap.ui.core.mvc" xmlns:layout="sap.ui.layout"
+	xmlns:rdf="com.inova8.lens.control" xmlns:core="sap.ui.core">
+	<Page showHeader="false" id="page" navButtonPress="onNavBack" showNavButton="true" title="{i18n>CollaborationGroupMemberRequests.ViewTitle}">
+		<content>
+			<Table id="table360" inset="false" items="{ path: 'dataModel>/CollaborationGroupMemberRequest' , sorter: { path: 'label', descending: false } 
+				}"
+				noDataText="{entitySetView>/tableNoDataText}" busyIndicatorDelay="{entitySetView>/tableBusyDelay}" growing="true" growingScrollToLoad="true"
+				updateFinished="onUpdateFinished"  fixedLayout="false">
+				<headerToolbar>
+					<Toolbar>
+						<ToolbarSpacer/>
+						<HBox id="sourceTitle" alignItems="Center">
+							<rdf:TextResource id="selectedResource" path="" entitySet=""/>
+						</HBox>
+						<Title id="pathTitle" text="{entitySetView>/navigationText}"/>
+						<HBox id="versionsTitle" alignItems="Center">
+							<Title text="(" required="false"/>
+							<ComboBox id="versionSelection" items="{ path: 'entitySetView>/versions' }" selectionChange="onVersionChange">
+								<core:Item key="{entitySetView>navigation}" text="{entityView>text}"/>
+							</ComboBox>
+							<Title text=")" required="false"/>
+						</HBox>
+						<Title id="tableHeader" text="{entitySetView>/entitySetTableTitle}"/>
+						<ToolbarSpacer/>
+						<SearchField id="searchField" tooltip="{i18n>search.searchTooltip}" search="onSearch" width="auto"></SearchField>
+					</Toolbar>
+				</headerToolbar>
+				<columns>
+					<Column >
+						<Text text="{i18n>CollaborationGroupMemberRequests.this}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>CollaborationGroupMemberRequests.CollaborationGroupMemberRequest_CreatedDate}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>CollaborationGroupMemberRequests.CollaborationGroupMemberRequest_Id}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>CollaborationGroupMemberRequests.CollaborationGroupMemberRequest_LastModifiedDate}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>CollaborationGroupMemberRequests.CollaborationGroupMemberRequest_ResponseMessage}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>CollaborationGroupMemberRequests.CollaborationGroupMemberRequest_Status}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>CollaborationGroupMemberRequests.CollaborationGroupMemberRequest_SystemModstamp}"/>
+					</Column>
+				</columns>
+				<items>
+					<ColumnListItem id="template360" type="Navigation" press="onPress">
+						<cells>
+							<rdf:TextResource path="dataModel>" entitySet="CollaborationGroupMemberRequest"/>
+							<VBox>					
+							<Text text="{dataModel>CollaborationGroupMemberRequest_CreatedDate/CollaborationGroupMemberRequest_CreatedDate}"/>
+							</VBox>							
+							<VBox>					
+							<rdf:TextLink text="{path:'dataModel>CollaborationGroupMemberRequest_Id/CollaborationGroupMemberRequest_Id',type:'sap.ui.model.type.String'}" linkText="{i18n>CollaborationGroupMemberRequest.CollaborationGroupMemberRequest_Id/CollaborationGroupMemberRequest_Id}"/>
+							</VBox>							
+							<VBox>					
+							<Text text="{dataModel>CollaborationGroupMemberRequest_LastModifiedDate/CollaborationGroupMemberRequest_LastModifiedDate}"/>
+							</VBox>							
+							<VBox>					
+							<rdf:TextLink text="{path:'dataModel>CollaborationGroupMemberRequest_ResponseMessage/CollaborationGroupMemberRequest_ResponseMessage',type:'sap.ui.model.type.String'}" linkText="{i18n>CollaborationGroupMemberRequest.CollaborationGroupMemberRequest_ResponseMessage/CollaborationGroupMemberRequest_ResponseMessage}"/>
+							</VBox>							
+							<VBox>					
+							<rdf:TextLink text="{path:'dataModel>CollaborationGroupMemberRequest_Status/CollaborationGroupMemberRequest_Status',type:'sap.ui.model.type.String'}" linkText="{i18n>CollaborationGroupMemberRequest.CollaborationGroupMemberRequest_Status/CollaborationGroupMemberRequest_Status}"/>
+							</VBox>							
+							<VBox>					
+							<Text text="{dataModel>CollaborationGroupMemberRequest_SystemModstamp/CollaborationGroupMemberRequest_SystemModstamp}"/>
+							</VBox>							
+						</cells>
+					</ColumnListItem>
+				</items>
+			</Table>
+		</content>
+	</Page>
+</mvc:View>

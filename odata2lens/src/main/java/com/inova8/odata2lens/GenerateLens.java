@@ -67,7 +67,7 @@ public class GenerateLens {
 		StringWriter i18nWriter = generateI18n();
 		generateEntitySet(schemaName, i18nWriter, uiTemplates);
 		generateEntity(schemaName, i18nWriter, uiTemplates);
-		generateEntityNavigationSet(schemaName, i18nWriter, uiTemplates);
+		//generateEntityNavigationSet(schemaName, i18nWriter, uiTemplates);
 
 		FileWriter fw = new FileWriter(
 				new File(getWorkingPath() + "\\" + schemaName + "\\" + "i18n\\", "i18n.properties"));
@@ -231,6 +231,7 @@ public class GenerateLens {
 					EntityNavigationSet entityNavigationSet = new EntityNavigationSet(navigationPropertyName,navigationPropertyName,navigationPropertyName,navigationPropertyName,edmNavigationProperty.getType().getName(),
 							edmNavigationProperty.getType().getName(), "");
 					entityNavigationSet.setSubTypeName(subTypeName);
+					//entityNavigationSet.setRangeType( );
 					complexType.getNavigationSets().put(subTypeName,entityNavigationSet);
 				} else {
 					//String name, String label, String tooltip, String targetEntityType, String range,	String icon					
@@ -238,6 +239,7 @@ public class GenerateLens {
 							navigationPropertyName, navigationPropertyName, edmNavigationProperty.getType().getName(),
 							edmNavigationProperty.getType().getName(), null);
 					navigationProperty.setSubTypeName(subTypeName);
+					//navigationProperty.setRangeType(subTypeName);
 					complexType.getNavigationProperties().put(subTypeName, navigationProperty);
 				}
 			}
@@ -349,9 +351,11 @@ public class GenerateLens {
 					}	
 					for ( NavigationProperty complexNavigationProperty :property.getComplexRange().getNavigationProperties().values()) {
 						entityType.getEntity().getSubTypeNames().add(complexNavigationProperty.getSubTypeName());
+						complexNavigationProperty.setRangeType(entityType);
 					}	
 					for ( EntityNavigationSet complexNavigationSet :property.getComplexRange().getNavigationSets().values()) {
 						entityType.getEntity().getSubTypeNames().add(complexNavigationSet.getSubTypeName());
+						complexNavigationSet.setRangeType(entityTypes.get(complexNavigationSet.getRange()));
 					}
 				}else
 				{
@@ -455,7 +459,7 @@ public class GenerateLens {
 		Template entitySetTemplate = null;
 		Template i18nTemplate = null;
 
-		entitySetTemplate = Velocity.getTemplate("entitySet.vm");
+		entitySetTemplate = Velocity.getTemplate("entitySet360.vm");
 		i18nTemplate = Velocity.getTemplate("i18n.entitySet.vm");
 
 		for (EntityType entityType : entityTypes.values()) {

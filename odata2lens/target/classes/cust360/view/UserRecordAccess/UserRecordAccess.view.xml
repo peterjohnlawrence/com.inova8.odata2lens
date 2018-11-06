@@ -1,0 +1,119 @@
+<mvc:View controllerName="com.inova8.lens.controller.Entity360" xmlns="sap.m" xmlns:mvc="sap.ui.core.mvc" xmlns:l="sap.ui.layout"
+	xmlns:f="sap.ui.layout.form" xmlns:table="sap.ui.table" xmlns:rdf="com.inova8.lens.control" xmlns:html="http://www.w3.org/1999/xhtml"
+	xmlns:core="sap.ui.core">
+	<Page showHeader="true" id="page" navButtonPress="onNavBack" showNavButton="false" title="{i18n>UserRecordAccess.Title}" busy="{entityView>/busy}"
+		busyIndicatorDelay="{entityView>/delay}" >
+		<customHeader>
+			<Toolbar>
+				<ToolbarSpacer/>
+				<HBox id="sourceTitle" alignItems="Center">
+						<rdf:TextResource id="selectedResource" path="" entitySet=""/>
+				</HBox>	
+				<Title id="pathTitle" text="{entityView>/navigation}"/>
+				<HBox id="versionsTitle" alignItems="Center">
+					<Title text="(" required="false"/>
+					<ComboBox id="versionSelection" items="{ path: 'entityView>/versions' }" selectionChange="onVersionChange">
+						<core:Item key="{entityView>navigation}" text="{entityView>text}"/>
+					</ComboBox>
+					<Title text=")" required="false"/>
+				</HBox>
+				<Title text="{i18n>UserRecordAccess.this}"/>
+				<Title text="(" required="false"/>
+				<rdf:TextResource path="dataModel>" entitySet="UserRecordAccess"/>
+				<Title text=")" required="false"/>
+	
+				<ToolbarSpacer/>
+				<ToggleButton id="toggleColumns" icon="sap-icon://hide" activeIcon="sap-icon://show" press="onSettingsPressed" visible="false"	>
+					<layoutData>
+						<OverflowToolbarLayoutData priority="NeverOverflow"/>
+					</layoutData>
+				</ToggleButton>
+				
+			</Toolbar>
+		</customHeader>
+		<Table id="form360" inset="false" fixedLayout="true" class="multicolumnform" updateFinished="hideColumns">
+			<columns>
+				<Column hAlign="Right" width="200px">
+					<Text text=""/>
+				</Column>
+				<Column visible="true">
+				</Column>
+				<Column visible="true">
+					<Text text="UserRecordAccess"/>
+				</Column>
+			</columns>
+			<items>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>UserRecordAccess.UserRecordAccess_HasAllAccess}" required="false"/> 
+						<Text text=""/>
+						<Text text="{path:'dataModel>UserRecordAccess_HasAllAccess/UserRecordAccess_HasAllAccess',type:'sap.ui.model.type.Boolean'}"/>  
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>UserRecordAccess.UserRecordAccess_HasDeleteAccess}" required="false"/> 
+						<Text text=""/>
+						<Text text="{path:'dataModel>UserRecordAccess_HasDeleteAccess/UserRecordAccess_HasDeleteAccess',type:'sap.ui.model.type.Boolean'}"/>  
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>UserRecordAccess.UserRecordAccess_HasEditAccess}" required="false"/> 
+						<Text text=""/>
+						<Text text="{path:'dataModel>UserRecordAccess_HasEditAccess/UserRecordAccess_HasEditAccess',type:'sap.ui.model.type.Boolean'}"/>  
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>UserRecordAccess.UserRecordAccess_HasReadAccess}" required="false"/> 
+						<Text text=""/>
+						<Text text="{path:'dataModel>UserRecordAccess_HasReadAccess/UserRecordAccess_HasReadAccess',type:'sap.ui.model.type.Boolean'}"/>  
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>UserRecordAccess.UserRecordAccess_HasTransferAccess}" required="false"/> 
+						<Text text=""/>
+						<Text text="{path:'dataModel>UserRecordAccess_HasTransferAccess/UserRecordAccess_HasTransferAccess',type:'sap.ui.model.type.Boolean'}"/>  
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>UserRecordAccess.UserRecordAccess_Id}" required="false"/> 
+						<Text text=""/>
+						<rdf:TextLink text="{path:'dataModel>UserRecordAccess_Id/UserRecordAccess_Id',type:'sap.ui.model.type.String' }" linkText="{i18n>UserRecordAccess.UserRecordAccess_Id/UserRecordAccess_Id}"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>UserRecordAccess.UserRecordAccess_MaxAccessLevel}" required="false"/> 
+						<Text text=""/>
+						<rdf:TextLink text="{path:'dataModel>UserRecordAccess_MaxAccessLevel/UserRecordAccess_MaxAccessLevel',type:'sap.ui.model.type.String' }" linkText="{i18n>UserRecordAccess.UserRecordAccess_MaxAccessLevel/UserRecordAccess_MaxAccessLevel}"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>UserRecordAccess.UserRecordAccess_RecordId}" required="false"/> 
+						<Text text=""/>
+						<rdf:TextLink text="{path:'dataModel>UserRecordAccess_RecordId/UserRecordAccess_RecordId',type:'sap.ui.model.type.String' }" linkText="{i18n>UserRecordAccess.UserRecordAccess_RecordId/UserRecordAccess_RecordId}"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>UserRecordAccess.UserRecordAccess_UserId}" required="false"/> 
+						<Text text=""/>
+						<rdf:ListResource path="dataModel>UserRecordAccess_UserId/sfdc_UserRecordAccess_UserId" entitySet="User"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>UserRecordAccess.UserRecordAccess_UserId}" required="false"/> 
+						<rdf:ListResource path="dataModel>UserRecordAccess_UserId" entitySet="User"/>
+						<Text text=""/>
+					</cells>
+				</ColumnListItem>
+			</items>
+		</Table>
+	</Page>
+</mvc:View>

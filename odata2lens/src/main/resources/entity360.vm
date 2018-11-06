@@ -1,0 +1,130 @@
+#macro( entitymaptypes  $propertyObject $target )
+#set( $property =  $propertyObject.property)
+#set( $range =  $propertyObject.range)
+#set( $formatOptions =  $propertyObject.formatOptions)
+  #if ($range == "Edm.Binary")						<Text text="{dataModel>$property}"/>
+  #elseif ($range == "Edm.Boolean")						<Text text="{path:'dataModel>$property',type:'sap.ui.model.type.Boolean'}"/>  
+  #elseif ($range == "Edm.Byte")						<Text text="{dataModel>$property}"/>
+  #elseif ($range == "Edm.SByte")						<Text text="{dataModel>$property}"/>
+  #elseif ($range == "Edm.Date")						<Text text="{dataModel>$property}"/>
+  #elseif ($range == "Edm.DateTimeOffset")						<Text text="{dataModel>$property}"/>
+  #elseif ($range == "Edm.TimeOfDay")						<Text text="{dataModel>$property}"/>
+  #elseif ($range == "Edm.Duration")						<Text text="{dataModel>$property}"/>
+  #elseif ($range == "Edm.Decimal")						<Text text="{dataModel>$property}"/>
+  #elseif ($range == "Edm.Single")						<Text text="{dataModel>$property}"/>
+  #elseif ($range == "Edm.Double")						<Text text="{path:'dataModel>$property',type:'sap.ui.model.type.Float'$!formatOptions }"/>
+  #elseif ($range == "Edm.Guid")						<Text text="{path:'dataModel>$property',type:'sap.ui.model.type.String'}"/>
+  #elseif ($range == "Edm.Int16")						<Text text="{path:'dataModel>$property',type:'sap.ui.model.type.Integer'$!formatOptions }"/>
+  #elseif ($range == "Edm.Int32")						<Text text="{path:'dataModel>$property',type:'sap.ui.model.type.Integer'$!formatOptions }"/>
+  #elseif ($range == "Edm.Int64")						<Text text="{path:'dataModel>$property',type:'sap.ui.model.type.Integer'$!formatOptions}"/>
+  #elseif ($range == "Edm.String")						<rdf:TextLink text="{path:'dataModel>$property',type:'sap.ui.model.type.String' }" linkText="{i18n>$target.$property}"/>
+  #elseif ($range == "Edm.Stream")						<Text text="{dataModel>$property}"/>
+  #elseif ($range == "Edm.Geography")						<Text text="{dataModel>$property}"/>
+  #elseif ($range == "Edm.GeographyPoint")						<Text text="{dataModel>$property}"/>
+  #elseif ($range == "Edm.GeographyLineString")						<Text text="{dataModel>$property}"/>
+  #elseif ($range == "Edm.GeographyPolygon")						<Text text="{dataModel>$property}"/>
+  #elseif ($range == "Edm.GeographyMultiPoint")						<Text text="{dataModel>$property}"/>
+  #elseif ($range == "Edm.GeographyMultiLineString")						<Text text="{dataModel>$property}"/>
+  #elseif ($range == "Edm.GeographyMultiPolygon")						<Text text="{dataModel>$property}"/>
+  #elseif ($range == "Edm.GeographyCollection")						<Text text="{dataModel>$property}"/>
+  #elseif ($range == "Edm.Geometry")						<Text text="{dataModel>$property}"/>
+  #elseif ($range == "Edm.GeometryPoint")						<Text text="{dataModel>$property}"/>
+  #elseif ($range == "Edm.GeometryLineString")						<Text text="{dataModel>$property}"/>
+  #elseif ($range == "Edm.GeometryPolygon")						<Text text="{dataModel>$property}"/>
+  #elseif ($range == "Edm.GeometryMultiPoint")						<Text text="{dataModel>$property}"/>
+  #elseif ($range == "Edm.GeometryMultiLineString")						<Text text="{dataModel>$property}"/>
+  #elseif ($range == "Edm.GeometryMultiPolygon")						<Text text="{dataModel>$property}"/>
+  #elseif ($range == "Edm.GeometryCollection")						<Text text="{dataModel>$property}"/>
+  #else
+  #end 
+#end
+#set ($ViewTitle	= "ViewTitle") 
+#set ($This	= "this") 
+#set ($SearchTooltip	= "SearchTooltip") 
+<mvc:View controllerName="com.inova8.lens.controller.Entity360" xmlns="sap.m" xmlns:mvc="sap.ui.core.mvc" xmlns:l="sap.ui.layout"
+	xmlns:f="sap.ui.layout.form" xmlns:table="sap.ui.table" xmlns:rdf="com.inova8.lens.control" xmlns:html="http://www.w3.org/1999/xhtml"
+	xmlns:core="sap.ui.core">
+	<Page showHeader="true" id="page" navButtonPress="onNavBack" showNavButton="false" title="{i18n>$entity.target#[[.Title]]#}" busy="{entityView>/busy}"
+		busyIndicatorDelay="{entityView>/delay}" >
+		<customHeader>
+			<Toolbar>
+				<ToolbarSpacer/>
+				<HBox id="sourceTitle" alignItems="Center">
+						<rdf:TextResource id="selectedResource" path="" entitySet=""/>
+				</HBox>	
+				<Title id="pathTitle" text="{entityView>/navigation}"/>
+				<HBox id="versionsTitle" alignItems="Center">
+					<Title text="(" required="false"/>
+					<ComboBox id="versionSelection" items="{ path: 'entityView>/versions' }" selectionChange="onVersionChange">
+						<core:Item key="{entityView>navigation}" text="{entityView>text}"/>
+					</ComboBox>
+					<Title text=")" required="false"/>
+				</HBox>
+				<Title text="{i18n>$entity.target.$This}"/>
+				<Title text="(" required="false"/>
+				<rdf:TextResource path="dataModel>" entitySet="$entity.name"/>
+				<Title text=")" required="false"/>
+	
+				<ToolbarSpacer/>
+				<ToggleButton id="toggleColumns" icon="sap-icon://hide" activeIcon="sap-icon://show" press="onSettingsPressed"#if($entity.hasMultipleColumns) visible="true"#else visible="false"#end	>
+					<layoutData>
+						<OverflowToolbarLayoutData priority="NeverOverflow"/>
+					</layoutData>
+				</ToggleButton>
+				
+			</Toolbar>
+		</customHeader>
+		<Table id="form360" inset="false" fixedLayout="true" class="multicolumnform" updateFinished="hideColumns">
+			<columns>
+				<Column hAlign="Right" width="200px">
+					<Text text=""/>
+				</Column>
+				#if($entity.ownProperties)
+				<Column visible="true">
+				</Column>
+				#end
+				#foreach($subTypeName in $entity.subTypeNames)
+				<Column visible="true">
+					<Text text="$subTypeName"/>
+				</Column>
+				#end	
+			</columns>
+			<items>
+			#foreach($property in $uiTemplate.properties)
+				#if($property.visible)
+				#set( $complexTypeName =  $property.range)
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>$entity.target.$property.property}" required="false"/> 
+					#if($entity.ownProperties)
+						#if($property.propertyType == "D")
+						#entitymaptypes( $property $entity.target  ) 
+						#elseif ($property.propertyType == "O")
+						<rdf:TextResource path="dataModel>$property.property" entitySet="$property.range"/>		
+						#elseif ($property.propertyType == "C")
+						<rdf:ListResource path="dataModel>$property.property" entitySet="$property.range"/>
+						#elseif ($property.propertyType == "S")
+						<Text text=""/>
+						#end
+					#end
+					#foreach($subTypeName in $entity.subTypeNames)
+						#set( $complexType = $complexTypes.get($complexTypeName))
+						#set( $complexProperty = $complexType.getPropertyTemplate($subTypeName))
+						#if($complexProperty.propertyType == "D")
+						#entitymaptypes( $complexProperty $entity.target  ) 
+						#elseif ($complexProperty.propertyType == "O")
+						<rdf:TextResource path="dataModel>$complexProperty.property" entitySet="$complexProperty.range"/>		
+						#elseif ($complexProperty.propertyType == "C")
+						<rdf:ListResource path="dataModel>$complexProperty.property" entitySet="$complexProperty.range"/>
+						#else
+						<Text text=""/>
+						#end	
+					#end	
+					</cells>
+				</ColumnListItem>
+				#end					
+			#end
+			</items>
+		</Table>
+	</Page>
+</mvc:View>

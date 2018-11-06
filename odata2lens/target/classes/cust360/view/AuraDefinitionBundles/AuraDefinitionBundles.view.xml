@@ -1,0 +1,109 @@
+<mvc:View controllerName="com.inova8.lens.controller.EntitySet360" xmlns="sap.m" xmlns:mvc="sap.ui.core.mvc" xmlns:layout="sap.ui.layout"
+	xmlns:rdf="com.inova8.lens.control" xmlns:core="sap.ui.core">
+	<Page showHeader="false" id="page" navButtonPress="onNavBack" showNavButton="true" title="{i18n>AuraDefinitionBundles.ViewTitle}">
+		<content>
+			<Table id="table360" inset="false" items="{ path: 'dataModel>/AuraDefinitionBundle' , sorter: { path: 'label', descending: false } 
+				}"
+				noDataText="{entitySetView>/tableNoDataText}" busyIndicatorDelay="{entitySetView>/tableBusyDelay}" growing="true" growingScrollToLoad="true"
+				updateFinished="onUpdateFinished"  fixedLayout="false">
+				<headerToolbar>
+					<Toolbar>
+						<ToolbarSpacer/>
+						<HBox id="sourceTitle" alignItems="Center">
+							<rdf:TextResource id="selectedResource" path="" entitySet=""/>
+						</HBox>
+						<Title id="pathTitle" text="{entitySetView>/navigationText}"/>
+						<HBox id="versionsTitle" alignItems="Center">
+							<Title text="(" required="false"/>
+							<ComboBox id="versionSelection" items="{ path: 'entitySetView>/versions' }" selectionChange="onVersionChange">
+								<core:Item key="{entitySetView>navigation}" text="{entityView>text}"/>
+							</ComboBox>
+							<Title text=")" required="false"/>
+						</HBox>
+						<Title id="tableHeader" text="{entitySetView>/entitySetTableTitle}"/>
+						<ToolbarSpacer/>
+						<SearchField id="searchField" tooltip="{i18n>search.searchTooltip}" search="onSearch" width="auto"></SearchField>
+					</Toolbar>
+				</headerToolbar>
+				<columns>
+					<Column >
+						<Text text="{i18n>AuraDefinitionBundles.this}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>AuraDefinitionBundles.AuraDefinitionBundle_ApiVersion}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>AuraDefinitionBundles.AuraDefinitionBundle_CreatedDate}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>AuraDefinitionBundles.AuraDefinitionBundle_Description}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>AuraDefinitionBundles.AuraDefinitionBundle_DeveloperName}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>AuraDefinitionBundles.AuraDefinitionBundle_Id}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>AuraDefinitionBundles.AuraDefinitionBundle_IsDeleted}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>AuraDefinitionBundles.AuraDefinitionBundle_Language}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>AuraDefinitionBundles.AuraDefinitionBundle_LastModifiedDate}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>AuraDefinitionBundles.AuraDefinitionBundle_MasterLabel}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>AuraDefinitionBundles.AuraDefinitionBundle_NamespacePrefix}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>AuraDefinitionBundles.AuraDefinitionBundle_SystemModstamp}"/>
+					</Column>
+				</columns>
+				<items>
+					<ColumnListItem id="template360" type="Navigation" press="onPress">
+						<cells>
+							<rdf:TextResource path="dataModel>" entitySet="AuraDefinitionBundle"/>
+							<VBox>					
+							<Text text="{path:'dataModel>AuraDefinitionBundle_ApiVersion/AuraDefinitionBundle_ApiVersion',type:'sap.ui.model.type.Float', formatOptions:{'style':'short','maxFractionDigits':2} }"/>
+							</VBox>							
+							<VBox>					
+							<Text text="{dataModel>AuraDefinitionBundle_CreatedDate/AuraDefinitionBundle_CreatedDate}"/>
+							</VBox>							
+							<VBox>					
+							<rdf:TextLink text="{path:'dataModel>AuraDefinitionBundle_Description/AuraDefinitionBundle_Description',type:'sap.ui.model.type.String'}" linkText="{i18n>AuraDefinitionBundle.AuraDefinitionBundle_Description/AuraDefinitionBundle_Description}"/>
+							</VBox>							
+							<VBox>					
+							<rdf:TextLink text="{path:'dataModel>AuraDefinitionBundle_DeveloperName/AuraDefinitionBundle_DeveloperName',type:'sap.ui.model.type.String'}" linkText="{i18n>AuraDefinitionBundle.AuraDefinitionBundle_DeveloperName/AuraDefinitionBundle_DeveloperName}"/>
+							</VBox>							
+							<VBox>					
+							<rdf:TextLink text="{path:'dataModel>AuraDefinitionBundle_Id/AuraDefinitionBundle_Id',type:'sap.ui.model.type.String'}" linkText="{i18n>AuraDefinitionBundle.AuraDefinitionBundle_Id/AuraDefinitionBundle_Id}"/>
+							</VBox>							
+							<VBox>					
+								<Text text="{path:'dataModel>AuraDefinitionBundle_IsDeleted/AuraDefinitionBundle_IsDeleted',type:'sap.ui.model.type.Boolean'}"/>  
+							</VBox>							
+							<VBox>					
+							<rdf:TextLink text="{path:'dataModel>AuraDefinitionBundle_Language/AuraDefinitionBundle_Language',type:'sap.ui.model.type.String'}" linkText="{i18n>AuraDefinitionBundle.AuraDefinitionBundle_Language/AuraDefinitionBundle_Language}"/>
+							</VBox>							
+							<VBox>					
+							<Text text="{dataModel>AuraDefinitionBundle_LastModifiedDate/AuraDefinitionBundle_LastModifiedDate}"/>
+							</VBox>							
+							<VBox>					
+							<rdf:TextLink text="{path:'dataModel>AuraDefinitionBundle_MasterLabel/AuraDefinitionBundle_MasterLabel',type:'sap.ui.model.type.String'}" linkText="{i18n>AuraDefinitionBundle.AuraDefinitionBundle_MasterLabel/AuraDefinitionBundle_MasterLabel}"/>
+							</VBox>							
+							<VBox>					
+							<rdf:TextLink text="{path:'dataModel>AuraDefinitionBundle_NamespacePrefix/AuraDefinitionBundle_NamespacePrefix',type:'sap.ui.model.type.String'}" linkText="{i18n>AuraDefinitionBundle.AuraDefinitionBundle_NamespacePrefix/AuraDefinitionBundle_NamespacePrefix}"/>
+							</VBox>							
+							<VBox>					
+							<Text text="{dataModel>AuraDefinitionBundle_SystemModstamp/AuraDefinitionBundle_SystemModstamp}"/>
+							</VBox>							
+						</cells>
+					</ColumnListItem>
+				</items>
+			</Table>
+		</content>
+	</Page>
+</mvc:View>

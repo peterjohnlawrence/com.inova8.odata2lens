@@ -6,9 +6,22 @@
 		<customHeader>
 			<Toolbar>
 				<ToolbarSpacer/>
+				<HBox id="sourceTitle" alignItems="Center">
+						<rdf:TextResource id="selectedResource" path="" entitySet=""/>
+				</HBox>	
+				<Title id="pathTitle" text="{entityView>/navigation}"/>
+				<HBox id="versionsTitle" alignItems="Center">
+					<Title text="(" required="false"/>
+					<ComboBox id="versionSelection" items="{ path: 'entityView>/versions' }" selectionChange="onVersionChange">
+						<core:Item key="{entityView>navigation}" text="{entityView>text}"/>
+					</ComboBox>
+					<Title text=")" required="false"/>
+				</HBox>
 				<Title text="{i18n>Employee.this}"/>
+				<Title text="(" required="false"/>
 				<rdf:TextResource path="dataModel>" entitySet="Employee"/>
-				<Title text="{i18n>Employee.Title}"/>
+				<Title text=")" required="false"/>
+	
 				<ToolbarSpacer/>
 				<ToggleButton id="toggleColumns" icon="sap-icon://hide" activeIcon="sap-icon://show" press="onSettingsPressed" visible="true"	>
 					<layoutData>
@@ -26,10 +39,10 @@
 				<Column visible="true">
 				</Column>
 				<Column visible="true">
-					<Text text="ContractEmployee"/>
+					<Text text="SystemBEmployee"/>
 				</Column>
 				<Column visible="true">
-					<Text text="ParttimeEmployee"/>
+					<Text text="SystemAEmployee"/>
 				</Column>
 			</columns>
 			<items>
@@ -93,16 +106,16 @@
 					<cells>
 						<Label text="{i18n>Employee.employeeSalary}" required="false"/> 
 						<Text text=""/>
-						<Text text="{path:'dataModel>employeeSalary/contractEmployeeSalary',type:'sap.ui.model.type.Float', formatOptions:{'style':'short','maxFractionDigits':2} }"/>
-						<Text text="{path:'dataModel>employeeSalary/parttimeEmployeeSalary',type:'sap.ui.model.type.Float', formatOptions:{'style':'short','maxFractionDigits':2} }"/>
+						<Text text="{path:'dataModel>employeeSalary/systemBEmployeeSalary',type:'sap.ui.model.type.Float', formatOptions:{'style':'short','maxFractionDigits':2} }"/>
+						<Text text="{path:'dataModel>employeeSalary/systemAEmployeeSalary',type:'sap.ui.model.type.Float', formatOptions:{'style':'short','maxFractionDigits':2} }"/>
 					</cells>
 				</ColumnListItem>
 				<ColumnListItem >
 					<cells>
 						<Label text="{i18n>Employee.employer}" required="false"/> 
 						<Text text=""/>
-						<rdf:ListResource path="dataModel>employer/contractEmployer" entitySet="Shipper"/>
-						<rdf:ListResource path="dataModel>employer/parttimeEmployer" entitySet="Supplier"/>
+						<rdf:ListResource path="dataModel>employer/systemBEmployer" entitySet="Supplier"/>
+						<rdf:ListResource path="dataModel>employer/systemAEmployer" entitySet="Supplier"/>
 					</cells>
 				</ColumnListItem>
 				<ColumnListItem >
@@ -117,8 +130,8 @@
 					<cells>
 						<Label text="{i18n>Employee.favorite}" required="false"/> 
 						<Text text=""/>
-						<rdf:TextResource path="dataModel>favorite/contractFavorite" entitySet="Product"/>		
-						<rdf:TextResource path="dataModel>favorite/parttimeFavorite" entitySet="Product"/>		
+						<rdf:TextResource path="dataModel>favorite/systemBFavorite" entitySet="Product"/>		
+						<rdf:TextResource path="dataModel>favorite/systemAFavorite" entitySet="Product"/>		
 					</cells>
 				</ColumnListItem>
 				<ColumnListItem >

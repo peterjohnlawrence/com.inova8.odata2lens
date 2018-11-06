@@ -1,0 +1,483 @@
+<mvc:View controllerName="com.inova8.lens.controller.Entity360" xmlns="sap.m" xmlns:mvc="sap.ui.core.mvc" xmlns:l="sap.ui.layout"
+	xmlns:f="sap.ui.layout.form" xmlns:table="sap.ui.table" xmlns:rdf="com.inova8.lens.control" xmlns:html="http://www.w3.org/1999/xhtml"
+	xmlns:core="sap.ui.core">
+	<Page showHeader="true" id="page" navButtonPress="onNavBack" showNavButton="false" title="{i18n>FieldDefinition.Title}" busy="{entityView>/busy}"
+		busyIndicatorDelay="{entityView>/delay}" >
+		<customHeader>
+			<Toolbar>
+				<ToolbarSpacer/>
+				<HBox id="sourceTitle" alignItems="Center">
+						<rdf:TextResource id="selectedResource" path="" entitySet=""/>
+				</HBox>	
+				<Title id="pathTitle" text="{entityView>/navigation}"/>
+				<HBox id="versionsTitle" alignItems="Center">
+					<Title text="(" required="false"/>
+					<ComboBox id="versionSelection" items="{ path: 'entityView>/versions' }" selectionChange="onVersionChange">
+						<core:Item key="{entityView>navigation}" text="{entityView>text}"/>
+					</ComboBox>
+					<Title text=")" required="false"/>
+				</HBox>
+				<Title text="{i18n>FieldDefinition.this}"/>
+				<Title text="(" required="false"/>
+				<rdf:TextResource path="dataModel>" entitySet="FieldDefinition"/>
+				<Title text=")" required="false"/>
+	
+				<ToolbarSpacer/>
+				<ToggleButton id="toggleColumns" icon="sap-icon://hide" activeIcon="sap-icon://show" press="onSettingsPressed" visible="false"	>
+					<layoutData>
+						<OverflowToolbarLayoutData priority="NeverOverflow"/>
+					</layoutData>
+				</ToggleButton>
+				
+			</Toolbar>
+		</customHeader>
+		<Table id="form360" inset="false" fixedLayout="true" class="multicolumnform" updateFinished="hideColumns">
+			<columns>
+				<Column hAlign="Right" width="200px">
+					<Text text=""/>
+				</Column>
+				<Column visible="true">
+				</Column>
+				<Column visible="true">
+					<Text text="FieldDefinition"/>
+				</Column>
+			</columns>
+			<items>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>FieldDefinition.EntityParticle_FieldDefinitionId_Inverse}" required="false"/> 
+						<Text text=""/>
+						<rdf:ListResource path="dataModel>EntityParticle_FieldDefinitionId_Inverse/sfdc_EntityParticle_FieldDefinitionId_Inverse" entitySet="EntityParticle"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>FieldDefinition.FieldDefinition_BusinessOwnerId}" required="false"/> 
+						<Text text=""/>
+						<rdf:ListResource path="dataModel>FieldDefinition_BusinessOwnerId/sfdc_FieldDefinition_BusinessOwnerId" entitySet="Group"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>FieldDefinition.FieldDefinition_BusinessStatus}" required="false"/> 
+						<Text text=""/>
+						<rdf:TextLink text="{path:'dataModel>FieldDefinition_BusinessStatus/FieldDefinition_BusinessStatus',type:'sap.ui.model.type.String' }" linkText="{i18n>FieldDefinition.FieldDefinition_BusinessStatus/FieldDefinition_BusinessStatus}"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>FieldDefinition.FieldDefinition_ControllingFieldDefinitionId}" required="false"/> 
+						<Text text=""/>
+						<rdf:ListResource path="dataModel>FieldDefinition_ControllingFieldDefinitionId/sfdc_FieldDefinition_ControllingFieldDefinitionId" entitySet="FieldDefinition"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>FieldDefinition.FieldDefinition_ControllingFieldDefinitionId_Inverse}" required="false"/> 
+						<Text text=""/>
+						<rdf:ListResource path="dataModel>FieldDefinition_ControllingFieldDefinitionId_Inverse/sfdc_FieldDefinition_ControllingFieldDefinitionId_Inverse" entitySet="FieldDefinition"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>FieldDefinition.FieldDefinition_DataType}" required="false"/> 
+						<Text text=""/>
+						<rdf:TextLink text="{path:'dataModel>FieldDefinition_DataType/FieldDefinition_DataType',type:'sap.ui.model.type.String' }" linkText="{i18n>FieldDefinition.FieldDefinition_DataType/FieldDefinition_DataType}"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>FieldDefinition.FieldDefinition_Description}" required="false"/> 
+						<Text text=""/>
+						<rdf:TextLink text="{path:'dataModel>FieldDefinition_Description/FieldDefinition_Description',type:'sap.ui.model.type.String' }" linkText="{i18n>FieldDefinition.FieldDefinition_Description/FieldDefinition_Description}"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>FieldDefinition.FieldDefinition_DeveloperName}" required="false"/> 
+						<Text text=""/>
+						<rdf:TextLink text="{path:'dataModel>FieldDefinition_DeveloperName/FieldDefinition_DeveloperName',type:'sap.ui.model.type.String' }" linkText="{i18n>FieldDefinition.FieldDefinition_DeveloperName/FieldDefinition_DeveloperName}"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>FieldDefinition.FieldDefinition_DurableId}" required="false"/> 
+						<Text text=""/>
+						<rdf:TextLink text="{path:'dataModel>FieldDefinition_DurableId/FieldDefinition_DurableId',type:'sap.ui.model.type.String' }" linkText="{i18n>FieldDefinition.FieldDefinition_DurableId/FieldDefinition_DurableId}"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>FieldDefinition.FieldDefinition_EntityDefinitionId}" required="false"/> 
+						<Text text=""/>
+						<rdf:ListResource path="dataModel>FieldDefinition_EntityDefinitionId/sfdc_FieldDefinition_EntityDefinitionId" entitySet="EntityDefinition"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>FieldDefinition.FieldDefinition_ExtraTypeInfo}" required="false"/> 
+						<Text text=""/>
+						<rdf:TextLink text="{path:'dataModel>FieldDefinition_ExtraTypeInfo/FieldDefinition_ExtraTypeInfo',type:'sap.ui.model.type.String' }" linkText="{i18n>FieldDefinition.FieldDefinition_ExtraTypeInfo/FieldDefinition_ExtraTypeInfo}"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>FieldDefinition.FieldDefinition_Id}" required="false"/> 
+						<Text text=""/>
+						<rdf:TextLink text="{path:'dataModel>FieldDefinition_Id/FieldDefinition_Id',type:'sap.ui.model.type.String' }" linkText="{i18n>FieldDefinition.FieldDefinition_Id/FieldDefinition_Id}"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>FieldDefinition.FieldDefinition_IsApiFilterable}" required="false"/> 
+						<Text text=""/>
+						<Text text="{path:'dataModel>FieldDefinition_IsApiFilterable/FieldDefinition_IsApiFilterable',type:'sap.ui.model.type.Boolean'}"/>  
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>FieldDefinition.FieldDefinition_IsApiGroupable}" required="false"/> 
+						<Text text=""/>
+						<Text text="{path:'dataModel>FieldDefinition_IsApiGroupable/FieldDefinition_IsApiGroupable',type:'sap.ui.model.type.Boolean'}"/>  
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>FieldDefinition.FieldDefinition_IsApiSortable}" required="false"/> 
+						<Text text=""/>
+						<Text text="{path:'dataModel>FieldDefinition_IsApiSortable/FieldDefinition_IsApiSortable',type:'sap.ui.model.type.Boolean'}"/>  
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>FieldDefinition.FieldDefinition_IsCalculated}" required="false"/> 
+						<Text text=""/>
+						<Text text="{path:'dataModel>FieldDefinition_IsCalculated/FieldDefinition_IsCalculated',type:'sap.ui.model.type.Boolean'}"/>  
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>FieldDefinition.FieldDefinition_IsCompactLayoutable}" required="false"/> 
+						<Text text=""/>
+						<Text text="{path:'dataModel>FieldDefinition_IsCompactLayoutable/FieldDefinition_IsCompactLayoutable',type:'sap.ui.model.type.Boolean'}"/>  
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>FieldDefinition.FieldDefinition_IsCompound}" required="false"/> 
+						<Text text=""/>
+						<Text text="{path:'dataModel>FieldDefinition_IsCompound/FieldDefinition_IsCompound',type:'sap.ui.model.type.Boolean'}"/>  
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>FieldDefinition.FieldDefinition_IsFieldHistoryTracked}" required="false"/> 
+						<Text text=""/>
+						<Text text="{path:'dataModel>FieldDefinition_IsFieldHistoryTracked/FieldDefinition_IsFieldHistoryTracked',type:'sap.ui.model.type.Boolean'}"/>  
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>FieldDefinition.FieldDefinition_IsHighScaleNumber}" required="false"/> 
+						<Text text=""/>
+						<Text text="{path:'dataModel>FieldDefinition_IsHighScaleNumber/FieldDefinition_IsHighScaleNumber',type:'sap.ui.model.type.Boolean'}"/>  
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>FieldDefinition.FieldDefinition_IsHtmlFormatted}" required="false"/> 
+						<Text text=""/>
+						<Text text="{path:'dataModel>FieldDefinition_IsHtmlFormatted/FieldDefinition_IsHtmlFormatted',type:'sap.ui.model.type.Boolean'}"/>  
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>FieldDefinition.FieldDefinition_IsIndexed}" required="false"/> 
+						<Text text=""/>
+						<Text text="{path:'dataModel>FieldDefinition_IsIndexed/FieldDefinition_IsIndexed',type:'sap.ui.model.type.Boolean'}"/>  
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>FieldDefinition.FieldDefinition_IsListFilterable}" required="false"/> 
+						<Text text=""/>
+						<Text text="{path:'dataModel>FieldDefinition_IsListFilterable/FieldDefinition_IsListFilterable',type:'sap.ui.model.type.Boolean'}"/>  
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>FieldDefinition.FieldDefinition_IsListSortable}" required="false"/> 
+						<Text text=""/>
+						<Text text="{path:'dataModel>FieldDefinition_IsListSortable/FieldDefinition_IsListSortable',type:'sap.ui.model.type.Boolean'}"/>  
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>FieldDefinition.FieldDefinition_IsListVisible}" required="false"/> 
+						<Text text=""/>
+						<Text text="{path:'dataModel>FieldDefinition_IsListVisible/FieldDefinition_IsListVisible',type:'sap.ui.model.type.Boolean'}"/>  
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>FieldDefinition.FieldDefinition_IsNameField}" required="false"/> 
+						<Text text=""/>
+						<Text text="{path:'dataModel>FieldDefinition_IsNameField/FieldDefinition_IsNameField',type:'sap.ui.model.type.Boolean'}"/>  
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>FieldDefinition.FieldDefinition_IsNillable}" required="false"/> 
+						<Text text=""/>
+						<Text text="{path:'dataModel>FieldDefinition_IsNillable/FieldDefinition_IsNillable',type:'sap.ui.model.type.Boolean'}"/>  
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>FieldDefinition.FieldDefinition_IsPolymorphicForeignKey}" required="false"/> 
+						<Text text=""/>
+						<Text text="{path:'dataModel>FieldDefinition_IsPolymorphicForeignKey/FieldDefinition_IsPolymorphicForeignKey',type:'sap.ui.model.type.Boolean'}"/>  
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>FieldDefinition.FieldDefinition_IsSearchPrefilterable}" required="false"/> 
+						<Text text=""/>
+						<Text text="{path:'dataModel>FieldDefinition_IsSearchPrefilterable/FieldDefinition_IsSearchPrefilterable',type:'sap.ui.model.type.Boolean'}"/>  
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>FieldDefinition.FieldDefinition_IsWorkflowFilterable}" required="false"/> 
+						<Text text=""/>
+						<Text text="{path:'dataModel>FieldDefinition_IsWorkflowFilterable/FieldDefinition_IsWorkflowFilterable',type:'sap.ui.model.type.Boolean'}"/>  
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>FieldDefinition.FieldDefinition_Label}" required="false"/> 
+						<Text text=""/>
+						<rdf:TextLink text="{path:'dataModel>FieldDefinition_Label/FieldDefinition_Label',type:'sap.ui.model.type.String' }" linkText="{i18n>FieldDefinition.FieldDefinition_Label/FieldDefinition_Label}"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>FieldDefinition.FieldDefinition_LastModifiedById}" required="false"/> 
+						<Text text=""/>
+						<rdf:ListResource path="dataModel>FieldDefinition_LastModifiedById/sfdc_FieldDefinition_LastModifiedById" entitySet="User"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>FieldDefinition.FieldDefinition_LastModifiedDate}" required="false"/> 
+						<Text text=""/>
+						<Text text="{dataModel>FieldDefinition_LastModifiedDate/FieldDefinition_LastModifiedDate}"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>FieldDefinition.FieldDefinition_Length}" required="false"/> 
+						<Text text=""/>
+						<Text text="{path:'dataModel>FieldDefinition_Length/FieldDefinition_Length',type:'sap.ui.model.type.Integer' }"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>FieldDefinition.FieldDefinition_MasterLabel}" required="false"/> 
+						<Text text=""/>
+						<rdf:TextLink text="{path:'dataModel>FieldDefinition_MasterLabel/FieldDefinition_MasterLabel',type:'sap.ui.model.type.String' }" linkText="{i18n>FieldDefinition.FieldDefinition_MasterLabel/FieldDefinition_MasterLabel}"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>FieldDefinition.FieldDefinition_NamespacePrefix}" required="false"/> 
+						<Text text=""/>
+						<rdf:TextLink text="{path:'dataModel>FieldDefinition_NamespacePrefix/FieldDefinition_NamespacePrefix',type:'sap.ui.model.type.String' }" linkText="{i18n>FieldDefinition.FieldDefinition_NamespacePrefix/FieldDefinition_NamespacePrefix}"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>FieldDefinition.FieldDefinition_Precision}" required="false"/> 
+						<Text text=""/>
+						<Text text="{path:'dataModel>FieldDefinition_Precision/FieldDefinition_Precision',type:'sap.ui.model.type.Integer' }"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>FieldDefinition.FieldDefinition_PublisherId}" required="false"/> 
+						<Text text=""/>
+						<rdf:ListResource path="dataModel>FieldDefinition_PublisherId/sfdc_FieldDefinition_PublisherId" entitySet="Publisher"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>FieldDefinition.FieldDefinition_QualifiedApiName}" required="false"/> 
+						<Text text=""/>
+						<rdf:TextLink text="{path:'dataModel>FieldDefinition_QualifiedApiName/FieldDefinition_QualifiedApiName',type:'sap.ui.model.type.String' }" linkText="{i18n>FieldDefinition.FieldDefinition_QualifiedApiName/FieldDefinition_QualifiedApiName}"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>FieldDefinition.FieldDefinition_ReferenceTargetField}" required="false"/> 
+						<Text text=""/>
+						<rdf:TextLink text="{path:'dataModel>FieldDefinition_ReferenceTargetField/FieldDefinition_ReferenceTargetField',type:'sap.ui.model.type.String' }" linkText="{i18n>FieldDefinition.FieldDefinition_ReferenceTargetField/FieldDefinition_ReferenceTargetField}"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>FieldDefinition.FieldDefinition_RelationshipName}" required="false"/> 
+						<Text text=""/>
+						<rdf:TextLink text="{path:'dataModel>FieldDefinition_RelationshipName/FieldDefinition_RelationshipName',type:'sap.ui.model.type.String' }" linkText="{i18n>FieldDefinition.FieldDefinition_RelationshipName/FieldDefinition_RelationshipName}"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>FieldDefinition.FieldDefinition_RunningUserFieldAccessId}" required="false"/> 
+						<Text text=""/>
+						<rdf:ListResource path="dataModel>FieldDefinition_RunningUserFieldAccessId/sfdc_FieldDefinition_RunningUserFieldAccessId" entitySet="UserFieldAccess"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>FieldDefinition.FieldDefinition_Scale}" required="false"/> 
+						<Text text=""/>
+						<Text text="{path:'dataModel>FieldDefinition_Scale/FieldDefinition_Scale',type:'sap.ui.model.type.Integer' }"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>FieldDefinition.FieldDefinition_SecurityClassification}" required="false"/> 
+						<Text text=""/>
+						<rdf:TextLink text="{path:'dataModel>FieldDefinition_SecurityClassification/FieldDefinition_SecurityClassification',type:'sap.ui.model.type.String' }" linkText="{i18n>FieldDefinition.FieldDefinition_SecurityClassification/FieldDefinition_SecurityClassification}"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>FieldDefinition.FieldDefinition_ServiceDataTypeId}" required="false"/> 
+						<Text text=""/>
+						<rdf:ListResource path="dataModel>FieldDefinition_ServiceDataTypeId/sfdc_FieldDefinition_ServiceDataTypeId" entitySet="DataType"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>FieldDefinition.FieldDefinition_ValueTypeId}" required="false"/> 
+						<Text text=""/>
+						<rdf:ListResource path="dataModel>FieldDefinition_ValueTypeId/sfdc_FieldDefinition_ValueTypeId" entitySet="DataType"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>FieldDefinition.RelationshipDomain_FieldId_Inverse}" required="false"/> 
+						<Text text=""/>
+						<rdf:ListResource path="dataModel>RelationshipDomain_FieldId_Inverse/sfdc_RelationshipDomain_FieldId_Inverse" entitySet="RelationshipDomain"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>FieldDefinition.RelationshipInfo_FieldId_Inverse}" required="false"/> 
+						<Text text=""/>
+						<rdf:ListResource path="dataModel>RelationshipInfo_FieldId_Inverse/sfdc_RelationshipInfo_FieldId_Inverse" entitySet="RelationshipInfo"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>FieldDefinition.UserFieldAccess_FieldDefinitionId_Inverse}" required="false"/> 
+						<Text text=""/>
+						<rdf:ListResource path="dataModel>UserFieldAccess_FieldDefinitionId_Inverse/sfdc_UserFieldAccess_FieldDefinitionId_Inverse" entitySet="UserFieldAccess"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>FieldDefinition.EntityParticle_FieldDefinitionId_Inverse}" required="false"/> 
+						<rdf:ListResource path="dataModel>EntityParticle_FieldDefinitionId_Inverse" entitySet="EntityParticle"/>
+						<Text text=""/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>FieldDefinition.FieldDefinition_BusinessOwnerId}" required="false"/> 
+						<rdf:ListResource path="dataModel>FieldDefinition_BusinessOwnerId" entitySet="Group"/>
+						<Text text=""/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>FieldDefinition.FieldDefinition_ControllingFieldDefinitionId}" required="false"/> 
+						<rdf:ListResource path="dataModel>FieldDefinition_ControllingFieldDefinitionId" entitySet="FieldDefinition"/>
+						<Text text=""/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>FieldDefinition.FieldDefinition_ControllingFieldDefinitionId_Inverse}" required="false"/> 
+						<rdf:ListResource path="dataModel>FieldDefinition_ControllingFieldDefinitionId_Inverse" entitySet="FieldDefinition"/>
+						<Text text=""/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>FieldDefinition.FieldDefinition_EntityDefinitionId}" required="false"/> 
+						<rdf:ListResource path="dataModel>FieldDefinition_EntityDefinitionId" entitySet="EntityDefinition"/>
+						<Text text=""/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>FieldDefinition.FieldDefinition_LastModifiedById}" required="false"/> 
+						<rdf:ListResource path="dataModel>FieldDefinition_LastModifiedById" entitySet="User"/>
+						<Text text=""/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>FieldDefinition.FieldDefinition_PublisherId}" required="false"/> 
+						<rdf:ListResource path="dataModel>FieldDefinition_PublisherId" entitySet="Publisher"/>
+						<Text text=""/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>FieldDefinition.FieldDefinition_RunningUserFieldAccessId}" required="false"/> 
+						<rdf:ListResource path="dataModel>FieldDefinition_RunningUserFieldAccessId" entitySet="UserFieldAccess"/>
+						<Text text=""/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>FieldDefinition.FieldDefinition_ServiceDataTypeId}" required="false"/> 
+						<rdf:ListResource path="dataModel>FieldDefinition_ServiceDataTypeId" entitySet="DataType"/>
+						<Text text=""/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>FieldDefinition.FieldDefinition_ValueTypeId}" required="false"/> 
+						<rdf:ListResource path="dataModel>FieldDefinition_ValueTypeId" entitySet="DataType"/>
+						<Text text=""/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>FieldDefinition.RelationshipDomain_FieldId_Inverse}" required="false"/> 
+						<rdf:ListResource path="dataModel>RelationshipDomain_FieldId_Inverse" entitySet="RelationshipDomain"/>
+						<Text text=""/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>FieldDefinition.RelationshipInfo_FieldId_Inverse}" required="false"/> 
+						<rdf:ListResource path="dataModel>RelationshipInfo_FieldId_Inverse" entitySet="RelationshipInfo"/>
+						<Text text=""/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>FieldDefinition.UserFieldAccess_FieldDefinitionId_Inverse}" required="false"/> 
+						<rdf:ListResource path="dataModel>UserFieldAccess_FieldDefinitionId_Inverse" entitySet="UserFieldAccess"/>
+						<Text text=""/>
+					</cells>
+				</ColumnListItem>
+			</items>
+		</Table>
+	</Page>
+</mvc:View>

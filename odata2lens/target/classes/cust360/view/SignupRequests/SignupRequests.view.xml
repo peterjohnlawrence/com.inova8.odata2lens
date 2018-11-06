@@ -1,0 +1,235 @@
+<mvc:View controllerName="com.inova8.lens.controller.EntitySet360" xmlns="sap.m" xmlns:mvc="sap.ui.core.mvc" xmlns:layout="sap.ui.layout"
+	xmlns:rdf="com.inova8.lens.control" xmlns:core="sap.ui.core">
+	<Page showHeader="false" id="page" navButtonPress="onNavBack" showNavButton="true" title="{i18n>SignupRequests.ViewTitle}">
+		<content>
+			<Table id="table360" inset="false" items="{ path: 'dataModel>/SignupRequest' , sorter: { path: 'label', descending: false } 
+				}"
+				noDataText="{entitySetView>/tableNoDataText}" busyIndicatorDelay="{entitySetView>/tableBusyDelay}" growing="true" growingScrollToLoad="true"
+				updateFinished="onUpdateFinished"  fixedLayout="false">
+				<headerToolbar>
+					<Toolbar>
+						<ToolbarSpacer/>
+						<HBox id="sourceTitle" alignItems="Center">
+							<rdf:TextResource id="selectedResource" path="" entitySet=""/>
+						</HBox>
+						<Title id="pathTitle" text="{entitySetView>/navigationText}"/>
+						<HBox id="versionsTitle" alignItems="Center">
+							<Title text="(" required="false"/>
+							<ComboBox id="versionSelection" items="{ path: 'entitySetView>/versions' }" selectionChange="onVersionChange">
+								<core:Item key="{entitySetView>navigation}" text="{entityView>text}"/>
+							</ComboBox>
+							<Title text=")" required="false"/>
+						</HBox>
+						<Title id="tableHeader" text="{entitySetView>/entitySetTableTitle}"/>
+						<ToolbarSpacer/>
+						<SearchField id="searchField" tooltip="{i18n>search.searchTooltip}" search="onSearch" width="auto"></SearchField>
+					</Toolbar>
+				</headerToolbar>
+				<columns>
+					<Column >
+						<Text text="{i18n>SignupRequests.this}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>SignupRequests.SignupRequest_AuthCode}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>SignupRequests.SignupRequest_CloneFromOrg}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>SignupRequests.SignupRequest_Company}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>SignupRequests.SignupRequest_ConnectedAppCallbackUrl}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>SignupRequests.SignupRequest_ConnectedAppConsumerKey}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>SignupRequests.SignupRequest_Country}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>SignupRequests.SignupRequest_CreatedDate}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>SignupRequests.SignupRequest_CreatedOrgId}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>SignupRequests.SignupRequest_CreatedOrgInstance}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>SignupRequests.SignupRequest_Edition}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>SignupRequests.SignupRequest_ErrorCode}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>SignupRequests.SignupRequest_FirstName}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>SignupRequests.SignupRequest_Id}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>SignupRequests.SignupRequest_IsDeleted}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>SignupRequests.SignupRequest_IsSignupEmailSuppressed}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>SignupRequests.SignupRequest_IsTso}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>SignupRequests.SignupRequest_LastModifiedDate}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>SignupRequests.SignupRequest_LastName}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>SignupRequests.SignupRequest_Name}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>SignupRequests.SignupRequest_PreferredLanguage}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>SignupRequests.SignupRequest_ResolvedTemplateId}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>SignupRequests.SignupRequest_ShouldConnectToEnvHub}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>SignupRequests.SignupRequest_SignupEmail}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>SignupRequests.SignupRequest_SignupSource}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>SignupRequests.SignupRequest_Status}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>SignupRequests.SignupRequest_Subdomain}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>SignupRequests.SignupRequest_SystemModstamp}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>SignupRequests.SignupRequest_TemplateDescription}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>SignupRequests.SignupRequest_TemplateId}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>SignupRequests.SignupRequest_TrialDays}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>SignupRequests.SignupRequest_TrialSourceOrgId}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>SignupRequests.SignupRequest_Username}"/>
+					</Column>
+				</columns>
+				<items>
+					<ColumnListItem id="template360" type="Navigation" press="onPress">
+						<cells>
+							<rdf:TextResource path="dataModel>" entitySet="SignupRequest"/>
+							<VBox>					
+							<rdf:TextLink text="{path:'dataModel>SignupRequest_AuthCode/SignupRequest_AuthCode',type:'sap.ui.model.type.String'}" linkText="{i18n>SignupRequest.SignupRequest_AuthCode/SignupRequest_AuthCode}"/>
+							</VBox>							
+							<VBox>					
+							<rdf:TextLink text="{path:'dataModel>SignupRequest_CloneFromOrg/SignupRequest_CloneFromOrg',type:'sap.ui.model.type.String'}" linkText="{i18n>SignupRequest.SignupRequest_CloneFromOrg/SignupRequest_CloneFromOrg}"/>
+							</VBox>							
+							<VBox>					
+							<rdf:TextLink text="{path:'dataModel>SignupRequest_Company/SignupRequest_Company',type:'sap.ui.model.type.String'}" linkText="{i18n>SignupRequest.SignupRequest_Company/SignupRequest_Company}"/>
+							</VBox>							
+							<VBox>					
+							<rdf:TextLink text="{path:'dataModel>SignupRequest_ConnectedAppCallbackUrl/SignupRequest_ConnectedAppCallbackUrl',type:'sap.ui.model.type.String'}" linkText="{i18n>SignupRequest.SignupRequest_ConnectedAppCallbackUrl/SignupRequest_ConnectedAppCallbackUrl}"/>
+							</VBox>							
+							<VBox>					
+							<rdf:TextLink text="{path:'dataModel>SignupRequest_ConnectedAppConsumerKey/SignupRequest_ConnectedAppConsumerKey',type:'sap.ui.model.type.String'}" linkText="{i18n>SignupRequest.SignupRequest_ConnectedAppConsumerKey/SignupRequest_ConnectedAppConsumerKey}"/>
+							</VBox>							
+							<VBox>					
+							<rdf:TextLink text="{path:'dataModel>SignupRequest_Country/SignupRequest_Country',type:'sap.ui.model.type.String'}" linkText="{i18n>SignupRequest.SignupRequest_Country/SignupRequest_Country}"/>
+							</VBox>							
+							<VBox>					
+							<Text text="{dataModel>SignupRequest_CreatedDate/SignupRequest_CreatedDate}"/>
+							</VBox>							
+							<VBox>					
+							<rdf:TextLink text="{path:'dataModel>SignupRequest_CreatedOrgId/SignupRequest_CreatedOrgId',type:'sap.ui.model.type.String'}" linkText="{i18n>SignupRequest.SignupRequest_CreatedOrgId/SignupRequest_CreatedOrgId}"/>
+							</VBox>							
+							<VBox>					
+							<rdf:TextLink text="{path:'dataModel>SignupRequest_CreatedOrgInstance/SignupRequest_CreatedOrgInstance',type:'sap.ui.model.type.String'}" linkText="{i18n>SignupRequest.SignupRequest_CreatedOrgInstance/SignupRequest_CreatedOrgInstance}"/>
+							</VBox>							
+							<VBox>					
+							<rdf:TextLink text="{path:'dataModel>SignupRequest_Edition/SignupRequest_Edition',type:'sap.ui.model.type.String'}" linkText="{i18n>SignupRequest.SignupRequest_Edition/SignupRequest_Edition}"/>
+							</VBox>							
+							<VBox>					
+							<rdf:TextLink text="{path:'dataModel>SignupRequest_ErrorCode/SignupRequest_ErrorCode',type:'sap.ui.model.type.String'}" linkText="{i18n>SignupRequest.SignupRequest_ErrorCode/SignupRequest_ErrorCode}"/>
+							</VBox>							
+							<VBox>					
+							<rdf:TextLink text="{path:'dataModel>SignupRequest_FirstName/SignupRequest_FirstName',type:'sap.ui.model.type.String'}" linkText="{i18n>SignupRequest.SignupRequest_FirstName/SignupRequest_FirstName}"/>
+							</VBox>							
+							<VBox>					
+							<rdf:TextLink text="{path:'dataModel>SignupRequest_Id/SignupRequest_Id',type:'sap.ui.model.type.String'}" linkText="{i18n>SignupRequest.SignupRequest_Id/SignupRequest_Id}"/>
+							</VBox>							
+							<VBox>					
+								<Text text="{path:'dataModel>SignupRequest_IsDeleted/SignupRequest_IsDeleted',type:'sap.ui.model.type.Boolean'}"/>  
+							</VBox>							
+							<VBox>					
+								<Text text="{path:'dataModel>SignupRequest_IsSignupEmailSuppressed/SignupRequest_IsSignupEmailSuppressed',type:'sap.ui.model.type.Boolean'}"/>  
+							</VBox>							
+							<VBox>					
+								<Text text="{path:'dataModel>SignupRequest_IsTso/SignupRequest_IsTso',type:'sap.ui.model.type.Boolean'}"/>  
+							</VBox>							
+							<VBox>					
+							<Text text="{dataModel>SignupRequest_LastModifiedDate/SignupRequest_LastModifiedDate}"/>
+							</VBox>							
+							<VBox>					
+							<rdf:TextLink text="{path:'dataModel>SignupRequest_LastName/SignupRequest_LastName',type:'sap.ui.model.type.String'}" linkText="{i18n>SignupRequest.SignupRequest_LastName/SignupRequest_LastName}"/>
+							</VBox>							
+							<VBox>					
+							<rdf:TextLink text="{path:'dataModel>SignupRequest_Name/SignupRequest_Name',type:'sap.ui.model.type.String'}" linkText="{i18n>SignupRequest.SignupRequest_Name/SignupRequest_Name}"/>
+							</VBox>							
+							<VBox>					
+							<rdf:TextLink text="{path:'dataModel>SignupRequest_PreferredLanguage/SignupRequest_PreferredLanguage',type:'sap.ui.model.type.String'}" linkText="{i18n>SignupRequest.SignupRequest_PreferredLanguage/SignupRequest_PreferredLanguage}"/>
+							</VBox>							
+							<VBox>					
+							<rdf:TextLink text="{path:'dataModel>SignupRequest_ResolvedTemplateId/SignupRequest_ResolvedTemplateId',type:'sap.ui.model.type.String'}" linkText="{i18n>SignupRequest.SignupRequest_ResolvedTemplateId/SignupRequest_ResolvedTemplateId}"/>
+							</VBox>							
+							<VBox>					
+								<Text text="{path:'dataModel>SignupRequest_ShouldConnectToEnvHub/SignupRequest_ShouldConnectToEnvHub',type:'sap.ui.model.type.Boolean'}"/>  
+							</VBox>							
+							<VBox>					
+							<rdf:TextLink text="{path:'dataModel>SignupRequest_SignupEmail/SignupRequest_SignupEmail',type:'sap.ui.model.type.String'}" linkText="{i18n>SignupRequest.SignupRequest_SignupEmail/SignupRequest_SignupEmail}"/>
+							</VBox>							
+							<VBox>					
+							<rdf:TextLink text="{path:'dataModel>SignupRequest_SignupSource/SignupRequest_SignupSource',type:'sap.ui.model.type.String'}" linkText="{i18n>SignupRequest.SignupRequest_SignupSource/SignupRequest_SignupSource}"/>
+							</VBox>							
+							<VBox>					
+							<rdf:TextLink text="{path:'dataModel>SignupRequest_Status/SignupRequest_Status',type:'sap.ui.model.type.String'}" linkText="{i18n>SignupRequest.SignupRequest_Status/SignupRequest_Status}"/>
+							</VBox>							
+							<VBox>					
+							<rdf:TextLink text="{path:'dataModel>SignupRequest_Subdomain/SignupRequest_Subdomain',type:'sap.ui.model.type.String'}" linkText="{i18n>SignupRequest.SignupRequest_Subdomain/SignupRequest_Subdomain}"/>
+							</VBox>							
+							<VBox>					
+							<Text text="{dataModel>SignupRequest_SystemModstamp/SignupRequest_SystemModstamp}"/>
+							</VBox>							
+							<VBox>					
+							<rdf:TextLink text="{path:'dataModel>SignupRequest_TemplateDescription/SignupRequest_TemplateDescription',type:'sap.ui.model.type.String'}" linkText="{i18n>SignupRequest.SignupRequest_TemplateDescription/SignupRequest_TemplateDescription}"/>
+							</VBox>							
+							<VBox>					
+							<rdf:TextLink text="{path:'dataModel>SignupRequest_TemplateId/SignupRequest_TemplateId',type:'sap.ui.model.type.String'}" linkText="{i18n>SignupRequest.SignupRequest_TemplateId/SignupRequest_TemplateId}"/>
+							</VBox>							
+							<VBox>					
+							<Text text="{path:'dataModel>SignupRequest_TrialDays/SignupRequest_TrialDays',type:'sap.ui.model.type.Integer' }"/>
+							</VBox>							
+							<VBox>					
+							<rdf:TextLink text="{path:'dataModel>SignupRequest_TrialSourceOrgId/SignupRequest_TrialSourceOrgId',type:'sap.ui.model.type.String'}" linkText="{i18n>SignupRequest.SignupRequest_TrialSourceOrgId/SignupRequest_TrialSourceOrgId}"/>
+							</VBox>							
+							<VBox>					
+							<rdf:TextLink text="{path:'dataModel>SignupRequest_Username/SignupRequest_Username',type:'sap.ui.model.type.String'}" linkText="{i18n>SignupRequest.SignupRequest_Username/SignupRequest_Username}"/>
+							</VBox>							
+						</cells>
+					</ColumnListItem>
+				</items>
+			</Table>
+		</content>
+	</Page>
+</mvc:View>

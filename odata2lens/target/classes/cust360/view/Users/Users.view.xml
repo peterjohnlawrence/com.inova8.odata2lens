@@ -1,0 +1,895 @@
+<mvc:View controllerName="com.inova8.lens.controller.EntitySet360" xmlns="sap.m" xmlns:mvc="sap.ui.core.mvc" xmlns:layout="sap.ui.layout"
+	xmlns:rdf="com.inova8.lens.control" xmlns:core="sap.ui.core">
+	<Page showHeader="false" id="page" navButtonPress="onNavBack" showNavButton="true" title="{i18n>Users.ViewTitle}">
+		<content>
+			<Table id="table360" inset="false" items="{ path: 'dataModel>/User' , sorter: { path: 'label', descending: false } 
+				}"
+				noDataText="{entitySetView>/tableNoDataText}" busyIndicatorDelay="{entitySetView>/tableBusyDelay}" growing="true" growingScrollToLoad="true"
+				updateFinished="onUpdateFinished"  fixedLayout="false">
+				<headerToolbar>
+					<Toolbar>
+						<ToolbarSpacer/>
+						<HBox id="sourceTitle" alignItems="Center">
+							<rdf:TextResource id="selectedResource" path="" entitySet=""/>
+						</HBox>
+						<Title id="pathTitle" text="{entitySetView>/navigationText}"/>
+						<HBox id="versionsTitle" alignItems="Center">
+							<Title text="(" required="false"/>
+							<ComboBox id="versionSelection" items="{ path: 'entitySetView>/versions' }" selectionChange="onVersionChange">
+								<core:Item key="{entitySetView>navigation}" text="{entityView>text}"/>
+							</ComboBox>
+							<Title text=")" required="false"/>
+						</HBox>
+						<Title id="tableHeader" text="{entitySetView>/entitySetTableTitle}"/>
+						<ToolbarSpacer/>
+						<SearchField id="searchField" tooltip="{i18n>search.searchTooltip}" search="onSearch" width="auto"></SearchField>
+					</Toolbar>
+				</headerToolbar>
+				<columns>
+					<Column >
+						<Text text="{i18n>Users.this}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>Users.User_AboutMe}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>Users.User_Alias}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>Users.User_BadgeText}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>Users.User_BannerPhotoUrl}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>Users.User_City}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>Users.User_CommunityNickname}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>Users.User_CompanyName}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>Users.User_Country}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>Users.User_CreatedDate}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>Users.User_DefaultGroupNotificationFrequency}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>Users.User_Department}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>Users.User_DigestFrequency}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>Users.User_Division}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>Users.User_Email}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>Users.User_EmailEncodingKey}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>Users.User_EmailPreferencesAutoBcc}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>Users.User_EmailPreferencesAutoBccStayInTouch}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>Users.User_EmailPreferencesStayInTouchReminder}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>Users.User_EmployeeNumber}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>Users.User_Extension}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>Users.User_Fax}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>Users.User_FederationIdentifier}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>Users.User_FirstName}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>Users.User_ForecastEnabled}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>Users.User_FullPhotoUrl}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>Users.User_GeocodeAccuracy}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>Users.User_Id}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>Users.User_IsActive}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>Users.User_IsExtIndicatorVisible}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>Users.User_IsProfilePhotoActive}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>Users.User_LanguageLocaleKey}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>Users.User_LastLoginDate}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>Users.User_LastModifiedDate}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>Users.User_LastName}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>Users.User_LastPasswordChangeDate}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>Users.User_LastReferencedDate}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>Users.User_LastViewedDate}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>Users.User_Latitude}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>Users.User_LocaleSidKey}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>Users.User_Longitude}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>Users.User_MediumBannerPhotoUrl}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>Users.User_MediumPhotoUrl}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>Users.User_MobilePhone}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>Users.User_Name}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>Users.User_OfflinePdaTrialExpirationDate}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>Users.User_OfflineTrialExpirationDate}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>Users.User_OutOfOfficeMessage}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>Users.User_Phone}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>Users.User_PostalCode}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>Users.User_ReceivesAdminInfoEmails}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>Users.User_ReceivesInfoEmails}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>Users.User_SenderEmail}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>Users.User_SenderName}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>Users.User_Signature}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>Users.User_SmallBannerPhotoUrl}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>Users.User_SmallPhotoUrl}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>Users.User_State}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>Users.User_StayInTouchNote}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>Users.User_StayInTouchSignature}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>Users.User_StayInTouchSubject}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>Users.User_Street}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>Users.User_SystemModstamp}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>Users.User_TimeZoneSidKey}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>Users.User_Title}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>Users.User_UserPermissionsAvantgoUser}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>Users.User_UserPermissionsCallCenterAutoLogin}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>Users.User_UserPermissionsInteractionUser}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>Users.User_UserPermissionsMarketingUser}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>Users.User_UserPermissionsMobileUser}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>Users.User_UserPermissionsOfflineUser}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>Users.User_UserPermissionsSFContentUser}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>Users.User_UserPermissionsSupportUser}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>Users.User_UserPreferencesActivityRemindersPopup}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>Users.User_UserPreferencesApexPagesDeveloperMode}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>Users.User_UserPreferencesCacheDiagnostics}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>Users.User_UserPreferencesContentEmailAsAndWhen}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>Users.User_UserPreferencesContentNoEmail}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>Users.User_UserPreferencesCreateLEXAppsWTShown}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>Users.User_UserPreferencesDisCommentAfterLikeEmail}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>Users.User_UserPreferencesDisMentionsCommentEmail}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>Users.User_UserPreferencesDisProfPostCommentEmail}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>Users.User_UserPreferencesDisableAllFeedsEmail}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>Users.User_UserPreferencesDisableBookmarkEmail}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>Users.User_UserPreferencesDisableChangeCommentEmail}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>Users.User_UserPreferencesDisableEndorsementEmail}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>Users.User_UserPreferencesDisableFileShareNotificationsForApi}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>Users.User_UserPreferencesDisableFollowersEmail}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>Users.User_UserPreferencesDisableLaterCommentEmail}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>Users.User_UserPreferencesDisableLikeEmail}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>Users.User_UserPreferencesDisableMentionsPostEmail}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>Users.User_UserPreferencesDisableMessageEmail}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>Users.User_UserPreferencesDisableProfilePostEmail}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>Users.User_UserPreferencesDisableSharePostEmail}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>Users.User_UserPreferencesEnableAutoSubForFeeds}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>Users.User_UserPreferencesEventRemindersCheckboxDefault}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>Users.User_UserPreferencesExcludeMailAppAttachments}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>Users.User_UserPreferencesFavoritesShowTopFavorites}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>Users.User_UserPreferencesFavoritesWTShown}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>Users.User_UserPreferencesGlobalNavBarWTShown}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>Users.User_UserPreferencesGlobalNavGridMenuWTShown}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>Users.User_UserPreferencesHideBiggerPhotoCallout}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>Users.User_UserPreferencesHideCSNDesktopTask}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>Users.User_UserPreferencesHideCSNGetChatterMobileTask}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>Users.User_UserPreferencesHideChatterOnboardingSplash}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>Users.User_UserPreferencesHideEndUserOnboardingAssistantModal}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>Users.User_UserPreferencesHideLightningMigrationModal}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>Users.User_UserPreferencesHideS1BrowserUI}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>Users.User_UserPreferencesHideSecondChatterOnboardingSplash}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>Users.User_UserPreferencesHideSfxWelcomeMat}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>Users.User_UserPreferencesLightningExperiencePreferred}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>Users.User_UserPreferencesPathAssistantCollapsed}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>Users.User_UserPreferencesPreviewLightning}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>Users.User_UserPreferencesRecordHomeReservedWTShown}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>Users.User_UserPreferencesRecordHomeSectionCollapseWTShown}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>Users.User_UserPreferencesReminderSoundOff}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>Users.User_UserPreferencesShowCityToExternalUsers}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>Users.User_UserPreferencesShowCityToGuestUsers}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>Users.User_UserPreferencesShowCountryToExternalUsers}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>Users.User_UserPreferencesShowCountryToGuestUsers}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>Users.User_UserPreferencesShowEmailToExternalUsers}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>Users.User_UserPreferencesShowEmailToGuestUsers}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>Users.User_UserPreferencesShowFaxToExternalUsers}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>Users.User_UserPreferencesShowFaxToGuestUsers}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>Users.User_UserPreferencesShowManagerToExternalUsers}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>Users.User_UserPreferencesShowManagerToGuestUsers}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>Users.User_UserPreferencesShowMobilePhoneToExternalUsers}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>Users.User_UserPreferencesShowMobilePhoneToGuestUsers}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>Users.User_UserPreferencesShowPostalCodeToExternalUsers}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>Users.User_UserPreferencesShowPostalCodeToGuestUsers}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>Users.User_UserPreferencesShowProfilePicToGuestUsers}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>Users.User_UserPreferencesShowStateToExternalUsers}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>Users.User_UserPreferencesShowStateToGuestUsers}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>Users.User_UserPreferencesShowStreetAddressToExternalUsers}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>Users.User_UserPreferencesShowStreetAddressToGuestUsers}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>Users.User_UserPreferencesShowTitleToExternalUsers}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>Users.User_UserPreferencesShowTitleToGuestUsers}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>Users.User_UserPreferencesShowWorkPhoneToExternalUsers}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>Users.User_UserPreferencesShowWorkPhoneToGuestUsers}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>Users.User_UserPreferencesSortFeedByComment}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>Users.User_UserPreferencesTaskRemindersCheckboxDefault}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>Users.User_UserType}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>Users.User_Username}"/>
+					</Column>
+				</columns>
+				<items>
+					<ColumnListItem id="template360" type="Navigation" press="onPress">
+						<cells>
+							<rdf:TextResource path="dataModel>" entitySet="User"/>
+							<VBox>					
+							<rdf:TextLink text="{path:'dataModel>User_AboutMe/User_AboutMe',type:'sap.ui.model.type.String'}" linkText="{i18n>User.User_AboutMe/User_AboutMe}"/>
+							</VBox>							
+							<VBox>					
+							<rdf:TextLink text="{path:'dataModel>User_Alias/User_Alias',type:'sap.ui.model.type.String'}" linkText="{i18n>User.User_Alias/User_Alias}"/>
+							</VBox>							
+							<VBox>					
+							<rdf:TextLink text="{path:'dataModel>User_BadgeText/User_BadgeText',type:'sap.ui.model.type.String'}" linkText="{i18n>User.User_BadgeText/User_BadgeText}"/>
+							</VBox>							
+							<VBox>					
+							<rdf:TextLink text="{path:'dataModel>User_BannerPhotoUrl/User_BannerPhotoUrl',type:'sap.ui.model.type.String'}" linkText="{i18n>User.User_BannerPhotoUrl/User_BannerPhotoUrl}"/>
+							</VBox>							
+							<VBox>					
+							<rdf:TextLink text="{path:'dataModel>User_City/User_City',type:'sap.ui.model.type.String'}" linkText="{i18n>User.User_City/User_City}"/>
+							</VBox>							
+							<VBox>					
+							<rdf:TextLink text="{path:'dataModel>User_CommunityNickname/User_CommunityNickname',type:'sap.ui.model.type.String'}" linkText="{i18n>User.User_CommunityNickname/User_CommunityNickname}"/>
+							</VBox>							
+							<VBox>					
+							<rdf:TextLink text="{path:'dataModel>User_CompanyName/User_CompanyName',type:'sap.ui.model.type.String'}" linkText="{i18n>User.User_CompanyName/User_CompanyName}"/>
+							</VBox>							
+							<VBox>					
+							<rdf:TextLink text="{path:'dataModel>User_Country/User_Country',type:'sap.ui.model.type.String'}" linkText="{i18n>User.User_Country/User_Country}"/>
+							</VBox>							
+							<VBox>					
+							<Text text="{dataModel>User_CreatedDate/User_CreatedDate}"/>
+							</VBox>							
+							<VBox>					
+							<rdf:TextLink text="{path:'dataModel>User_DefaultGroupNotificationFrequency/User_DefaultGroupNotificationFrequency',type:'sap.ui.model.type.String'}" linkText="{i18n>User.User_DefaultGroupNotificationFrequency/User_DefaultGroupNotificationFrequency}"/>
+							</VBox>							
+							<VBox>					
+							<rdf:TextLink text="{path:'dataModel>User_Department/User_Department',type:'sap.ui.model.type.String'}" linkText="{i18n>User.User_Department/User_Department}"/>
+							</VBox>							
+							<VBox>					
+							<rdf:TextLink text="{path:'dataModel>User_DigestFrequency/User_DigestFrequency',type:'sap.ui.model.type.String'}" linkText="{i18n>User.User_DigestFrequency/User_DigestFrequency}"/>
+							</VBox>							
+							<VBox>					
+							<rdf:TextLink text="{path:'dataModel>User_Division/User_Division',type:'sap.ui.model.type.String'}" linkText="{i18n>User.User_Division/User_Division}"/>
+							</VBox>							
+							<VBox>					
+							<rdf:TextLink text="{path:'dataModel>User_Email/User_Email',type:'sap.ui.model.type.String'}" linkText="{i18n>User.User_Email/User_Email}"/>
+							</VBox>							
+							<VBox>					
+							<rdf:TextLink text="{path:'dataModel>User_EmailEncodingKey/User_EmailEncodingKey',type:'sap.ui.model.type.String'}" linkText="{i18n>User.User_EmailEncodingKey/User_EmailEncodingKey}"/>
+							</VBox>							
+							<VBox>					
+								<Text text="{path:'dataModel>User_EmailPreferencesAutoBcc/User_EmailPreferencesAutoBcc',type:'sap.ui.model.type.Boolean'}"/>  
+							</VBox>							
+							<VBox>					
+								<Text text="{path:'dataModel>User_EmailPreferencesAutoBccStayInTouch/User_EmailPreferencesAutoBccStayInTouch',type:'sap.ui.model.type.Boolean'}"/>  
+							</VBox>							
+							<VBox>					
+								<Text text="{path:'dataModel>User_EmailPreferencesStayInTouchReminder/User_EmailPreferencesStayInTouchReminder',type:'sap.ui.model.type.Boolean'}"/>  
+							</VBox>							
+							<VBox>					
+							<rdf:TextLink text="{path:'dataModel>User_EmployeeNumber/User_EmployeeNumber',type:'sap.ui.model.type.String'}" linkText="{i18n>User.User_EmployeeNumber/User_EmployeeNumber}"/>
+							</VBox>							
+							<VBox>					
+							<rdf:TextLink text="{path:'dataModel>User_Extension/User_Extension',type:'sap.ui.model.type.String'}" linkText="{i18n>User.User_Extension/User_Extension}"/>
+							</VBox>							
+							<VBox>					
+							<rdf:TextLink text="{path:'dataModel>User_Fax/User_Fax',type:'sap.ui.model.type.String'}" linkText="{i18n>User.User_Fax/User_Fax}"/>
+							</VBox>							
+							<VBox>					
+							<rdf:TextLink text="{path:'dataModel>User_FederationIdentifier/User_FederationIdentifier',type:'sap.ui.model.type.String'}" linkText="{i18n>User.User_FederationIdentifier/User_FederationIdentifier}"/>
+							</VBox>							
+							<VBox>					
+							<rdf:TextLink text="{path:'dataModel>User_FirstName/User_FirstName',type:'sap.ui.model.type.String'}" linkText="{i18n>User.User_FirstName/User_FirstName}"/>
+							</VBox>							
+							<VBox>					
+								<Text text="{path:'dataModel>User_ForecastEnabled/User_ForecastEnabled',type:'sap.ui.model.type.Boolean'}"/>  
+							</VBox>							
+							<VBox>					
+							<rdf:TextLink text="{path:'dataModel>User_FullPhotoUrl/User_FullPhotoUrl',type:'sap.ui.model.type.String'}" linkText="{i18n>User.User_FullPhotoUrl/User_FullPhotoUrl}"/>
+							</VBox>							
+							<VBox>					
+							<rdf:TextLink text="{path:'dataModel>User_GeocodeAccuracy/User_GeocodeAccuracy',type:'sap.ui.model.type.String'}" linkText="{i18n>User.User_GeocodeAccuracy/User_GeocodeAccuracy}"/>
+							</VBox>							
+							<VBox>					
+							<rdf:TextLink text="{path:'dataModel>User_Id/User_Id',type:'sap.ui.model.type.String'}" linkText="{i18n>User.User_Id/User_Id}"/>
+							</VBox>							
+							<VBox>					
+								<Text text="{path:'dataModel>User_IsActive/User_IsActive',type:'sap.ui.model.type.Boolean'}"/>  
+							</VBox>							
+							<VBox>					
+								<Text text="{path:'dataModel>User_IsExtIndicatorVisible/User_IsExtIndicatorVisible',type:'sap.ui.model.type.Boolean'}"/>  
+							</VBox>							
+							<VBox>					
+								<Text text="{path:'dataModel>User_IsProfilePhotoActive/User_IsProfilePhotoActive',type:'sap.ui.model.type.Boolean'}"/>  
+							</VBox>							
+							<VBox>					
+							<rdf:TextLink text="{path:'dataModel>User_LanguageLocaleKey/User_LanguageLocaleKey',type:'sap.ui.model.type.String'}" linkText="{i18n>User.User_LanguageLocaleKey/User_LanguageLocaleKey}"/>
+							</VBox>							
+							<VBox>					
+							<Text text="{dataModel>User_LastLoginDate/User_LastLoginDate}"/>
+							</VBox>							
+							<VBox>					
+							<Text text="{dataModel>User_LastModifiedDate/User_LastModifiedDate}"/>
+							</VBox>							
+							<VBox>					
+							<rdf:TextLink text="{path:'dataModel>User_LastName/User_LastName',type:'sap.ui.model.type.String'}" linkText="{i18n>User.User_LastName/User_LastName}"/>
+							</VBox>							
+							<VBox>					
+							<Text text="{dataModel>User_LastPasswordChangeDate/User_LastPasswordChangeDate}"/>
+							</VBox>							
+							<VBox>					
+							<Text text="{dataModel>User_LastReferencedDate/User_LastReferencedDate}"/>
+							</VBox>							
+							<VBox>					
+							<Text text="{dataModel>User_LastViewedDate/User_LastViewedDate}"/>
+							</VBox>							
+							<VBox>					
+							<Text text="{path:'dataModel>User_Latitude/User_Latitude',type:'sap.ui.model.type.Float', formatOptions:{'style':'short','maxFractionDigits':2} }"/>
+							</VBox>							
+							<VBox>					
+							<rdf:TextLink text="{path:'dataModel>User_LocaleSidKey/User_LocaleSidKey',type:'sap.ui.model.type.String'}" linkText="{i18n>User.User_LocaleSidKey/User_LocaleSidKey}"/>
+							</VBox>							
+							<VBox>					
+							<Text text="{path:'dataModel>User_Longitude/User_Longitude',type:'sap.ui.model.type.Float', formatOptions:{'style':'short','maxFractionDigits':2} }"/>
+							</VBox>							
+							<VBox>					
+							<rdf:TextLink text="{path:'dataModel>User_MediumBannerPhotoUrl/User_MediumBannerPhotoUrl',type:'sap.ui.model.type.String'}" linkText="{i18n>User.User_MediumBannerPhotoUrl/User_MediumBannerPhotoUrl}"/>
+							</VBox>							
+							<VBox>					
+							<rdf:TextLink text="{path:'dataModel>User_MediumPhotoUrl/User_MediumPhotoUrl',type:'sap.ui.model.type.String'}" linkText="{i18n>User.User_MediumPhotoUrl/User_MediumPhotoUrl}"/>
+							</VBox>							
+							<VBox>					
+							<rdf:TextLink text="{path:'dataModel>User_MobilePhone/User_MobilePhone',type:'sap.ui.model.type.String'}" linkText="{i18n>User.User_MobilePhone/User_MobilePhone}"/>
+							</VBox>							
+							<VBox>					
+							<rdf:TextLink text="{path:'dataModel>User_Name/User_Name',type:'sap.ui.model.type.String'}" linkText="{i18n>User.User_Name/User_Name}"/>
+							</VBox>							
+							<VBox>					
+							<Text text="{dataModel>User_OfflinePdaTrialExpirationDate/User_OfflinePdaTrialExpirationDate}"/>
+							</VBox>							
+							<VBox>					
+							<Text text="{dataModel>User_OfflineTrialExpirationDate/User_OfflineTrialExpirationDate}"/>
+							</VBox>							
+							<VBox>					
+							<rdf:TextLink text="{path:'dataModel>User_OutOfOfficeMessage/User_OutOfOfficeMessage',type:'sap.ui.model.type.String'}" linkText="{i18n>User.User_OutOfOfficeMessage/User_OutOfOfficeMessage}"/>
+							</VBox>							
+							<VBox>					
+							<rdf:TextLink text="{path:'dataModel>User_Phone/User_Phone',type:'sap.ui.model.type.String'}" linkText="{i18n>User.User_Phone/User_Phone}"/>
+							</VBox>							
+							<VBox>					
+							<rdf:TextLink text="{path:'dataModel>User_PostalCode/User_PostalCode',type:'sap.ui.model.type.String'}" linkText="{i18n>User.User_PostalCode/User_PostalCode}"/>
+							</VBox>							
+							<VBox>					
+								<Text text="{path:'dataModel>User_ReceivesAdminInfoEmails/User_ReceivesAdminInfoEmails',type:'sap.ui.model.type.Boolean'}"/>  
+							</VBox>							
+							<VBox>					
+								<Text text="{path:'dataModel>User_ReceivesInfoEmails/User_ReceivesInfoEmails',type:'sap.ui.model.type.Boolean'}"/>  
+							</VBox>							
+							<VBox>					
+							<rdf:TextLink text="{path:'dataModel>User_SenderEmail/User_SenderEmail',type:'sap.ui.model.type.String'}" linkText="{i18n>User.User_SenderEmail/User_SenderEmail}"/>
+							</VBox>							
+							<VBox>					
+							<rdf:TextLink text="{path:'dataModel>User_SenderName/User_SenderName',type:'sap.ui.model.type.String'}" linkText="{i18n>User.User_SenderName/User_SenderName}"/>
+							</VBox>							
+							<VBox>					
+							<rdf:TextLink text="{path:'dataModel>User_Signature/User_Signature',type:'sap.ui.model.type.String'}" linkText="{i18n>User.User_Signature/User_Signature}"/>
+							</VBox>							
+							<VBox>					
+							<rdf:TextLink text="{path:'dataModel>User_SmallBannerPhotoUrl/User_SmallBannerPhotoUrl',type:'sap.ui.model.type.String'}" linkText="{i18n>User.User_SmallBannerPhotoUrl/User_SmallBannerPhotoUrl}"/>
+							</VBox>							
+							<VBox>					
+							<rdf:TextLink text="{path:'dataModel>User_SmallPhotoUrl/User_SmallPhotoUrl',type:'sap.ui.model.type.String'}" linkText="{i18n>User.User_SmallPhotoUrl/User_SmallPhotoUrl}"/>
+							</VBox>							
+							<VBox>					
+							<rdf:TextLink text="{path:'dataModel>User_State/User_State',type:'sap.ui.model.type.String'}" linkText="{i18n>User.User_State/User_State}"/>
+							</VBox>							
+							<VBox>					
+							<rdf:TextLink text="{path:'dataModel>User_StayInTouchNote/User_StayInTouchNote',type:'sap.ui.model.type.String'}" linkText="{i18n>User.User_StayInTouchNote/User_StayInTouchNote}"/>
+							</VBox>							
+							<VBox>					
+							<rdf:TextLink text="{path:'dataModel>User_StayInTouchSignature/User_StayInTouchSignature',type:'sap.ui.model.type.String'}" linkText="{i18n>User.User_StayInTouchSignature/User_StayInTouchSignature}"/>
+							</VBox>							
+							<VBox>					
+							<rdf:TextLink text="{path:'dataModel>User_StayInTouchSubject/User_StayInTouchSubject',type:'sap.ui.model.type.String'}" linkText="{i18n>User.User_StayInTouchSubject/User_StayInTouchSubject}"/>
+							</VBox>							
+							<VBox>					
+							<rdf:TextLink text="{path:'dataModel>User_Street/User_Street',type:'sap.ui.model.type.String'}" linkText="{i18n>User.User_Street/User_Street}"/>
+							</VBox>							
+							<VBox>					
+							<Text text="{dataModel>User_SystemModstamp/User_SystemModstamp}"/>
+							</VBox>							
+							<VBox>					
+							<rdf:TextLink text="{path:'dataModel>User_TimeZoneSidKey/User_TimeZoneSidKey',type:'sap.ui.model.type.String'}" linkText="{i18n>User.User_TimeZoneSidKey/User_TimeZoneSidKey}"/>
+							</VBox>							
+							<VBox>					
+							<rdf:TextLink text="{path:'dataModel>User_Title/User_Title',type:'sap.ui.model.type.String'}" linkText="{i18n>User.User_Title/User_Title}"/>
+							</VBox>							
+							<VBox>					
+								<Text text="{path:'dataModel>User_UserPermissionsAvantgoUser/User_UserPermissionsAvantgoUser',type:'sap.ui.model.type.Boolean'}"/>  
+							</VBox>							
+							<VBox>					
+								<Text text="{path:'dataModel>User_UserPermissionsCallCenterAutoLogin/User_UserPermissionsCallCenterAutoLogin',type:'sap.ui.model.type.Boolean'}"/>  
+							</VBox>							
+							<VBox>					
+								<Text text="{path:'dataModel>User_UserPermissionsInteractionUser/User_UserPermissionsInteractionUser',type:'sap.ui.model.type.Boolean'}"/>  
+							</VBox>							
+							<VBox>					
+								<Text text="{path:'dataModel>User_UserPermissionsMarketingUser/User_UserPermissionsMarketingUser',type:'sap.ui.model.type.Boolean'}"/>  
+							</VBox>							
+							<VBox>					
+								<Text text="{path:'dataModel>User_UserPermissionsMobileUser/User_UserPermissionsMobileUser',type:'sap.ui.model.type.Boolean'}"/>  
+							</VBox>							
+							<VBox>					
+								<Text text="{path:'dataModel>User_UserPermissionsOfflineUser/User_UserPermissionsOfflineUser',type:'sap.ui.model.type.Boolean'}"/>  
+							</VBox>							
+							<VBox>					
+								<Text text="{path:'dataModel>User_UserPermissionsSFContentUser/User_UserPermissionsSFContentUser',type:'sap.ui.model.type.Boolean'}"/>  
+							</VBox>							
+							<VBox>					
+								<Text text="{path:'dataModel>User_UserPermissionsSupportUser/User_UserPermissionsSupportUser',type:'sap.ui.model.type.Boolean'}"/>  
+							</VBox>							
+							<VBox>					
+								<Text text="{path:'dataModel>User_UserPreferencesActivityRemindersPopup/User_UserPreferencesActivityRemindersPopup',type:'sap.ui.model.type.Boolean'}"/>  
+							</VBox>							
+							<VBox>					
+								<Text text="{path:'dataModel>User_UserPreferencesApexPagesDeveloperMode/User_UserPreferencesApexPagesDeveloperMode',type:'sap.ui.model.type.Boolean'}"/>  
+							</VBox>							
+							<VBox>					
+								<Text text="{path:'dataModel>User_UserPreferencesCacheDiagnostics/User_UserPreferencesCacheDiagnostics',type:'sap.ui.model.type.Boolean'}"/>  
+							</VBox>							
+							<VBox>					
+								<Text text="{path:'dataModel>User_UserPreferencesContentEmailAsAndWhen/User_UserPreferencesContentEmailAsAndWhen',type:'sap.ui.model.type.Boolean'}"/>  
+							</VBox>							
+							<VBox>					
+								<Text text="{path:'dataModel>User_UserPreferencesContentNoEmail/User_UserPreferencesContentNoEmail',type:'sap.ui.model.type.Boolean'}"/>  
+							</VBox>							
+							<VBox>					
+								<Text text="{path:'dataModel>User_UserPreferencesCreateLEXAppsWTShown/User_UserPreferencesCreateLEXAppsWTShown',type:'sap.ui.model.type.Boolean'}"/>  
+							</VBox>							
+							<VBox>					
+								<Text text="{path:'dataModel>User_UserPreferencesDisCommentAfterLikeEmail/User_UserPreferencesDisCommentAfterLikeEmail',type:'sap.ui.model.type.Boolean'}"/>  
+							</VBox>							
+							<VBox>					
+								<Text text="{path:'dataModel>User_UserPreferencesDisMentionsCommentEmail/User_UserPreferencesDisMentionsCommentEmail',type:'sap.ui.model.type.Boolean'}"/>  
+							</VBox>							
+							<VBox>					
+								<Text text="{path:'dataModel>User_UserPreferencesDisProfPostCommentEmail/User_UserPreferencesDisProfPostCommentEmail',type:'sap.ui.model.type.Boolean'}"/>  
+							</VBox>							
+							<VBox>					
+								<Text text="{path:'dataModel>User_UserPreferencesDisableAllFeedsEmail/User_UserPreferencesDisableAllFeedsEmail',type:'sap.ui.model.type.Boolean'}"/>  
+							</VBox>							
+							<VBox>					
+								<Text text="{path:'dataModel>User_UserPreferencesDisableBookmarkEmail/User_UserPreferencesDisableBookmarkEmail',type:'sap.ui.model.type.Boolean'}"/>  
+							</VBox>							
+							<VBox>					
+								<Text text="{path:'dataModel>User_UserPreferencesDisableChangeCommentEmail/User_UserPreferencesDisableChangeCommentEmail',type:'sap.ui.model.type.Boolean'}"/>  
+							</VBox>							
+							<VBox>					
+								<Text text="{path:'dataModel>User_UserPreferencesDisableEndorsementEmail/User_UserPreferencesDisableEndorsementEmail',type:'sap.ui.model.type.Boolean'}"/>  
+							</VBox>							
+							<VBox>					
+								<Text text="{path:'dataModel>User_UserPreferencesDisableFileShareNotificationsForApi/User_UserPreferencesDisableFileShareNotificationsForApi',type:'sap.ui.model.type.Boolean'}"/>  
+							</VBox>							
+							<VBox>					
+								<Text text="{path:'dataModel>User_UserPreferencesDisableFollowersEmail/User_UserPreferencesDisableFollowersEmail',type:'sap.ui.model.type.Boolean'}"/>  
+							</VBox>							
+							<VBox>					
+								<Text text="{path:'dataModel>User_UserPreferencesDisableLaterCommentEmail/User_UserPreferencesDisableLaterCommentEmail',type:'sap.ui.model.type.Boolean'}"/>  
+							</VBox>							
+							<VBox>					
+								<Text text="{path:'dataModel>User_UserPreferencesDisableLikeEmail/User_UserPreferencesDisableLikeEmail',type:'sap.ui.model.type.Boolean'}"/>  
+							</VBox>							
+							<VBox>					
+								<Text text="{path:'dataModel>User_UserPreferencesDisableMentionsPostEmail/User_UserPreferencesDisableMentionsPostEmail',type:'sap.ui.model.type.Boolean'}"/>  
+							</VBox>							
+							<VBox>					
+								<Text text="{path:'dataModel>User_UserPreferencesDisableMessageEmail/User_UserPreferencesDisableMessageEmail',type:'sap.ui.model.type.Boolean'}"/>  
+							</VBox>							
+							<VBox>					
+								<Text text="{path:'dataModel>User_UserPreferencesDisableProfilePostEmail/User_UserPreferencesDisableProfilePostEmail',type:'sap.ui.model.type.Boolean'}"/>  
+							</VBox>							
+							<VBox>					
+								<Text text="{path:'dataModel>User_UserPreferencesDisableSharePostEmail/User_UserPreferencesDisableSharePostEmail',type:'sap.ui.model.type.Boolean'}"/>  
+							</VBox>							
+							<VBox>					
+								<Text text="{path:'dataModel>User_UserPreferencesEnableAutoSubForFeeds/User_UserPreferencesEnableAutoSubForFeeds',type:'sap.ui.model.type.Boolean'}"/>  
+							</VBox>							
+							<VBox>					
+								<Text text="{path:'dataModel>User_UserPreferencesEventRemindersCheckboxDefault/User_UserPreferencesEventRemindersCheckboxDefault',type:'sap.ui.model.type.Boolean'}"/>  
+							</VBox>							
+							<VBox>					
+								<Text text="{path:'dataModel>User_UserPreferencesExcludeMailAppAttachments/User_UserPreferencesExcludeMailAppAttachments',type:'sap.ui.model.type.Boolean'}"/>  
+							</VBox>							
+							<VBox>					
+								<Text text="{path:'dataModel>User_UserPreferencesFavoritesShowTopFavorites/User_UserPreferencesFavoritesShowTopFavorites',type:'sap.ui.model.type.Boolean'}"/>  
+							</VBox>							
+							<VBox>					
+								<Text text="{path:'dataModel>User_UserPreferencesFavoritesWTShown/User_UserPreferencesFavoritesWTShown',type:'sap.ui.model.type.Boolean'}"/>  
+							</VBox>							
+							<VBox>					
+								<Text text="{path:'dataModel>User_UserPreferencesGlobalNavBarWTShown/User_UserPreferencesGlobalNavBarWTShown',type:'sap.ui.model.type.Boolean'}"/>  
+							</VBox>							
+							<VBox>					
+								<Text text="{path:'dataModel>User_UserPreferencesGlobalNavGridMenuWTShown/User_UserPreferencesGlobalNavGridMenuWTShown',type:'sap.ui.model.type.Boolean'}"/>  
+							</VBox>							
+							<VBox>					
+								<Text text="{path:'dataModel>User_UserPreferencesHideBiggerPhotoCallout/User_UserPreferencesHideBiggerPhotoCallout',type:'sap.ui.model.type.Boolean'}"/>  
+							</VBox>							
+							<VBox>					
+								<Text text="{path:'dataModel>User_UserPreferencesHideCSNDesktopTask/User_UserPreferencesHideCSNDesktopTask',type:'sap.ui.model.type.Boolean'}"/>  
+							</VBox>							
+							<VBox>					
+								<Text text="{path:'dataModel>User_UserPreferencesHideCSNGetChatterMobileTask/User_UserPreferencesHideCSNGetChatterMobileTask',type:'sap.ui.model.type.Boolean'}"/>  
+							</VBox>							
+							<VBox>					
+								<Text text="{path:'dataModel>User_UserPreferencesHideChatterOnboardingSplash/User_UserPreferencesHideChatterOnboardingSplash',type:'sap.ui.model.type.Boolean'}"/>  
+							</VBox>							
+							<VBox>					
+								<Text text="{path:'dataModel>User_UserPreferencesHideEndUserOnboardingAssistantModal/User_UserPreferencesHideEndUserOnboardingAssistantModal',type:'sap.ui.model.type.Boolean'}"/>  
+							</VBox>							
+							<VBox>					
+								<Text text="{path:'dataModel>User_UserPreferencesHideLightningMigrationModal/User_UserPreferencesHideLightningMigrationModal',type:'sap.ui.model.type.Boolean'}"/>  
+							</VBox>							
+							<VBox>					
+								<Text text="{path:'dataModel>User_UserPreferencesHideS1BrowserUI/User_UserPreferencesHideS1BrowserUI',type:'sap.ui.model.type.Boolean'}"/>  
+							</VBox>							
+							<VBox>					
+								<Text text="{path:'dataModel>User_UserPreferencesHideSecondChatterOnboardingSplash/User_UserPreferencesHideSecondChatterOnboardingSplash',type:'sap.ui.model.type.Boolean'}"/>  
+							</VBox>							
+							<VBox>					
+								<Text text="{path:'dataModel>User_UserPreferencesHideSfxWelcomeMat/User_UserPreferencesHideSfxWelcomeMat',type:'sap.ui.model.type.Boolean'}"/>  
+							</VBox>							
+							<VBox>					
+								<Text text="{path:'dataModel>User_UserPreferencesLightningExperiencePreferred/User_UserPreferencesLightningExperiencePreferred',type:'sap.ui.model.type.Boolean'}"/>  
+							</VBox>							
+							<VBox>					
+								<Text text="{path:'dataModel>User_UserPreferencesPathAssistantCollapsed/User_UserPreferencesPathAssistantCollapsed',type:'sap.ui.model.type.Boolean'}"/>  
+							</VBox>							
+							<VBox>					
+								<Text text="{path:'dataModel>User_UserPreferencesPreviewLightning/User_UserPreferencesPreviewLightning',type:'sap.ui.model.type.Boolean'}"/>  
+							</VBox>							
+							<VBox>					
+								<Text text="{path:'dataModel>User_UserPreferencesRecordHomeReservedWTShown/User_UserPreferencesRecordHomeReservedWTShown',type:'sap.ui.model.type.Boolean'}"/>  
+							</VBox>							
+							<VBox>					
+								<Text text="{path:'dataModel>User_UserPreferencesRecordHomeSectionCollapseWTShown/User_UserPreferencesRecordHomeSectionCollapseWTShown',type:'sap.ui.model.type.Boolean'}"/>  
+							</VBox>							
+							<VBox>					
+								<Text text="{path:'dataModel>User_UserPreferencesReminderSoundOff/User_UserPreferencesReminderSoundOff',type:'sap.ui.model.type.Boolean'}"/>  
+							</VBox>							
+							<VBox>					
+								<Text text="{path:'dataModel>User_UserPreferencesShowCityToExternalUsers/User_UserPreferencesShowCityToExternalUsers',type:'sap.ui.model.type.Boolean'}"/>  
+							</VBox>							
+							<VBox>					
+								<Text text="{path:'dataModel>User_UserPreferencesShowCityToGuestUsers/User_UserPreferencesShowCityToGuestUsers',type:'sap.ui.model.type.Boolean'}"/>  
+							</VBox>							
+							<VBox>					
+								<Text text="{path:'dataModel>User_UserPreferencesShowCountryToExternalUsers/User_UserPreferencesShowCountryToExternalUsers',type:'sap.ui.model.type.Boolean'}"/>  
+							</VBox>							
+							<VBox>					
+								<Text text="{path:'dataModel>User_UserPreferencesShowCountryToGuestUsers/User_UserPreferencesShowCountryToGuestUsers',type:'sap.ui.model.type.Boolean'}"/>  
+							</VBox>							
+							<VBox>					
+								<Text text="{path:'dataModel>User_UserPreferencesShowEmailToExternalUsers/User_UserPreferencesShowEmailToExternalUsers',type:'sap.ui.model.type.Boolean'}"/>  
+							</VBox>							
+							<VBox>					
+								<Text text="{path:'dataModel>User_UserPreferencesShowEmailToGuestUsers/User_UserPreferencesShowEmailToGuestUsers',type:'sap.ui.model.type.Boolean'}"/>  
+							</VBox>							
+							<VBox>					
+								<Text text="{path:'dataModel>User_UserPreferencesShowFaxToExternalUsers/User_UserPreferencesShowFaxToExternalUsers',type:'sap.ui.model.type.Boolean'}"/>  
+							</VBox>							
+							<VBox>					
+								<Text text="{path:'dataModel>User_UserPreferencesShowFaxToGuestUsers/User_UserPreferencesShowFaxToGuestUsers',type:'sap.ui.model.type.Boolean'}"/>  
+							</VBox>							
+							<VBox>					
+								<Text text="{path:'dataModel>User_UserPreferencesShowManagerToExternalUsers/User_UserPreferencesShowManagerToExternalUsers',type:'sap.ui.model.type.Boolean'}"/>  
+							</VBox>							
+							<VBox>					
+								<Text text="{path:'dataModel>User_UserPreferencesShowManagerToGuestUsers/User_UserPreferencesShowManagerToGuestUsers',type:'sap.ui.model.type.Boolean'}"/>  
+							</VBox>							
+							<VBox>					
+								<Text text="{path:'dataModel>User_UserPreferencesShowMobilePhoneToExternalUsers/User_UserPreferencesShowMobilePhoneToExternalUsers',type:'sap.ui.model.type.Boolean'}"/>  
+							</VBox>							
+							<VBox>					
+								<Text text="{path:'dataModel>User_UserPreferencesShowMobilePhoneToGuestUsers/User_UserPreferencesShowMobilePhoneToGuestUsers',type:'sap.ui.model.type.Boolean'}"/>  
+							</VBox>							
+							<VBox>					
+								<Text text="{path:'dataModel>User_UserPreferencesShowPostalCodeToExternalUsers/User_UserPreferencesShowPostalCodeToExternalUsers',type:'sap.ui.model.type.Boolean'}"/>  
+							</VBox>							
+							<VBox>					
+								<Text text="{path:'dataModel>User_UserPreferencesShowPostalCodeToGuestUsers/User_UserPreferencesShowPostalCodeToGuestUsers',type:'sap.ui.model.type.Boolean'}"/>  
+							</VBox>							
+							<VBox>					
+								<Text text="{path:'dataModel>User_UserPreferencesShowProfilePicToGuestUsers/User_UserPreferencesShowProfilePicToGuestUsers',type:'sap.ui.model.type.Boolean'}"/>  
+							</VBox>							
+							<VBox>					
+								<Text text="{path:'dataModel>User_UserPreferencesShowStateToExternalUsers/User_UserPreferencesShowStateToExternalUsers',type:'sap.ui.model.type.Boolean'}"/>  
+							</VBox>							
+							<VBox>					
+								<Text text="{path:'dataModel>User_UserPreferencesShowStateToGuestUsers/User_UserPreferencesShowStateToGuestUsers',type:'sap.ui.model.type.Boolean'}"/>  
+							</VBox>							
+							<VBox>					
+								<Text text="{path:'dataModel>User_UserPreferencesShowStreetAddressToExternalUsers/User_UserPreferencesShowStreetAddressToExternalUsers',type:'sap.ui.model.type.Boolean'}"/>  
+							</VBox>							
+							<VBox>					
+								<Text text="{path:'dataModel>User_UserPreferencesShowStreetAddressToGuestUsers/User_UserPreferencesShowStreetAddressToGuestUsers',type:'sap.ui.model.type.Boolean'}"/>  
+							</VBox>							
+							<VBox>					
+								<Text text="{path:'dataModel>User_UserPreferencesShowTitleToExternalUsers/User_UserPreferencesShowTitleToExternalUsers',type:'sap.ui.model.type.Boolean'}"/>  
+							</VBox>							
+							<VBox>					
+								<Text text="{path:'dataModel>User_UserPreferencesShowTitleToGuestUsers/User_UserPreferencesShowTitleToGuestUsers',type:'sap.ui.model.type.Boolean'}"/>  
+							</VBox>							
+							<VBox>					
+								<Text text="{path:'dataModel>User_UserPreferencesShowWorkPhoneToExternalUsers/User_UserPreferencesShowWorkPhoneToExternalUsers',type:'sap.ui.model.type.Boolean'}"/>  
+							</VBox>							
+							<VBox>					
+								<Text text="{path:'dataModel>User_UserPreferencesShowWorkPhoneToGuestUsers/User_UserPreferencesShowWorkPhoneToGuestUsers',type:'sap.ui.model.type.Boolean'}"/>  
+							</VBox>							
+							<VBox>					
+								<Text text="{path:'dataModel>User_UserPreferencesSortFeedByComment/User_UserPreferencesSortFeedByComment',type:'sap.ui.model.type.Boolean'}"/>  
+							</VBox>							
+							<VBox>					
+								<Text text="{path:'dataModel>User_UserPreferencesTaskRemindersCheckboxDefault/User_UserPreferencesTaskRemindersCheckboxDefault',type:'sap.ui.model.type.Boolean'}"/>  
+							</VBox>							
+							<VBox>					
+							<rdf:TextLink text="{path:'dataModel>User_UserType/User_UserType',type:'sap.ui.model.type.String'}" linkText="{i18n>User.User_UserType/User_UserType}"/>
+							</VBox>							
+							<VBox>					
+							<rdf:TextLink text="{path:'dataModel>User_Username/User_Username',type:'sap.ui.model.type.String'}" linkText="{i18n>User.User_Username/User_Username}"/>
+							</VBox>							
+						</cells>
+					</ColumnListItem>
+				</items>
+			</Table>
+		</content>
+	</Page>
+</mvc:View>

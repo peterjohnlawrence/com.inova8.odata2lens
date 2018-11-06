@@ -1,0 +1,154 @@
+<mvc:View controllerName="com.inova8.lens.controller.Entity360" xmlns="sap.m" xmlns:mvc="sap.ui.core.mvc" xmlns:l="sap.ui.layout"
+	xmlns:f="sap.ui.layout.form" xmlns:table="sap.ui.table" xmlns:rdf="com.inova8.lens.control" xmlns:html="http://www.w3.org/1999/xhtml"
+	xmlns:core="sap.ui.core">
+	<Page showHeader="true" id="page" navButtonPress="onNavBack" showNavButton="false" title="{i18n>ApexLog.Title}" busy="{entityView>/busy}"
+		busyIndicatorDelay="{entityView>/delay}" >
+		<customHeader>
+			<Toolbar>
+				<ToolbarSpacer/>
+				<HBox id="sourceTitle" alignItems="Center">
+						<rdf:TextResource id="selectedResource" path="" entitySet=""/>
+				</HBox>	
+				<Title id="pathTitle" text="{entityView>/navigation}"/>
+				<HBox id="versionsTitle" alignItems="Center">
+					<Title text="(" required="false"/>
+					<ComboBox id="versionSelection" items="{ path: 'entityView>/versions' }" selectionChange="onVersionChange">
+						<core:Item key="{entityView>navigation}" text="{entityView>text}"/>
+					</ComboBox>
+					<Title text=")" required="false"/>
+				</HBox>
+				<Title text="{i18n>ApexLog.this}"/>
+				<Title text="(" required="false"/>
+				<rdf:TextResource path="dataModel>" entitySet="ApexLog"/>
+				<Title text=")" required="false"/>
+	
+				<ToolbarSpacer/>
+				<ToggleButton id="toggleColumns" icon="sap-icon://hide" activeIcon="sap-icon://show" press="onSettingsPressed" visible="false"	>
+					<layoutData>
+						<OverflowToolbarLayoutData priority="NeverOverflow"/>
+					</layoutData>
+				</ToggleButton>
+				
+			</Toolbar>
+		</customHeader>
+		<Table id="form360" inset="false" fixedLayout="true" class="multicolumnform" updateFinished="hideColumns">
+			<columns>
+				<Column hAlign="Right" width="200px">
+					<Text text=""/>
+				</Column>
+				<Column visible="true">
+				</Column>
+				<Column visible="true">
+					<Text text="ApexLog"/>
+				</Column>
+			</columns>
+			<items>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>ApexLog.ApexLog_Application}" required="false"/> 
+						<Text text=""/>
+						<rdf:TextLink text="{path:'dataModel>ApexLog_Application/ApexLog_Application',type:'sap.ui.model.type.String' }" linkText="{i18n>ApexLog.ApexLog_Application/ApexLog_Application}"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>ApexLog.ApexLog_DurationMilliseconds}" required="false"/> 
+						<Text text=""/>
+						<Text text="{path:'dataModel>ApexLog_DurationMilliseconds/ApexLog_DurationMilliseconds',type:'sap.ui.model.type.Integer' }"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>ApexLog.ApexLog_Id}" required="false"/> 
+						<Text text=""/>
+						<rdf:TextLink text="{path:'dataModel>ApexLog_Id/ApexLog_Id',type:'sap.ui.model.type.String' }" linkText="{i18n>ApexLog.ApexLog_Id/ApexLog_Id}"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>ApexLog.ApexLog_LastModifiedDate}" required="false"/> 
+						<Text text=""/>
+						<Text text="{dataModel>ApexLog_LastModifiedDate/ApexLog_LastModifiedDate}"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>ApexLog.ApexLog_Location}" required="false"/> 
+						<Text text=""/>
+						<rdf:TextLink text="{path:'dataModel>ApexLog_Location/ApexLog_Location',type:'sap.ui.model.type.String' }" linkText="{i18n>ApexLog.ApexLog_Location/ApexLog_Location}"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>ApexLog.ApexLog_LogLength}" required="false"/> 
+						<Text text=""/>
+						<Text text="{path:'dataModel>ApexLog_LogLength/ApexLog_LogLength',type:'sap.ui.model.type.Integer' }"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>ApexLog.ApexLog_LogUserId}" required="false"/> 
+						<Text text=""/>
+						<rdf:ListResource path="dataModel>ApexLog_LogUserId/sfdc_ApexLog_LogUserId" entitySet="User"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>ApexLog.ApexLog_Operation}" required="false"/> 
+						<Text text=""/>
+						<rdf:TextLink text="{path:'dataModel>ApexLog_Operation/ApexLog_Operation',type:'sap.ui.model.type.String' }" linkText="{i18n>ApexLog.ApexLog_Operation/ApexLog_Operation}"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>ApexLog.ApexLog_Request}" required="false"/> 
+						<Text text=""/>
+						<rdf:TextLink text="{path:'dataModel>ApexLog_Request/ApexLog_Request',type:'sap.ui.model.type.String' }" linkText="{i18n>ApexLog.ApexLog_Request/ApexLog_Request}"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>ApexLog.ApexLog_StartTime}" required="false"/> 
+						<Text text=""/>
+						<Text text="{dataModel>ApexLog_StartTime/ApexLog_StartTime}"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>ApexLog.ApexLog_Status}" required="false"/> 
+						<Text text=""/>
+						<rdf:TextLink text="{path:'dataModel>ApexLog_Status/ApexLog_Status',type:'sap.ui.model.type.String' }" linkText="{i18n>ApexLog.ApexLog_Status/ApexLog_Status}"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>ApexLog.ApexLog_SystemModstamp}" required="false"/> 
+						<Text text=""/>
+						<Text text="{dataModel>ApexLog_SystemModstamp/ApexLog_SystemModstamp}"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>ApexLog.ApexTestResult_ApexLogId_Inverse}" required="false"/> 
+						<Text text=""/>
+						<rdf:ListResource path="dataModel>ApexTestResult_ApexLogId_Inverse/sfdc_ApexTestResult_ApexLogId_Inverse" entitySet="ApexTestResult"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>ApexLog.ApexLog_LogUserId}" required="false"/> 
+						<rdf:ListResource path="dataModel>ApexLog_LogUserId" entitySet="User"/>
+						<Text text=""/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>ApexLog.ApexTestResult_ApexLogId_Inverse}" required="false"/> 
+						<rdf:ListResource path="dataModel>ApexTestResult_ApexLogId_Inverse" entitySet="ApexTestResult"/>
+						<Text text=""/>
+					</cells>
+				</ColumnListItem>
+			</items>
+		</Table>
+	</Page>
+</mvc:View>

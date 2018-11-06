@@ -1,0 +1,525 @@
+<mvc:View controllerName="com.inova8.lens.controller.Entity360" xmlns="sap.m" xmlns:mvc="sap.ui.core.mvc" xmlns:l="sap.ui.layout"
+	xmlns:f="sap.ui.layout.form" xmlns:table="sap.ui.table" xmlns:rdf="com.inova8.lens.control" xmlns:html="http://www.w3.org/1999/xhtml"
+	xmlns:core="sap.ui.core">
+	<Page showHeader="true" id="page" navButtonPress="onNavBack" showNavButton="false" title="{i18n>EntityDefinition.Title}" busy="{entityView>/busy}"
+		busyIndicatorDelay="{entityView>/delay}" >
+		<customHeader>
+			<Toolbar>
+				<ToolbarSpacer/>
+				<HBox id="sourceTitle" alignItems="Center">
+						<rdf:TextResource id="selectedResource" path="" entitySet=""/>
+				</HBox>	
+				<Title id="pathTitle" text="{entityView>/navigation}"/>
+				<HBox id="versionsTitle" alignItems="Center">
+					<Title text="(" required="false"/>
+					<ComboBox id="versionSelection" items="{ path: 'entityView>/versions' }" selectionChange="onVersionChange">
+						<core:Item key="{entityView>navigation}" text="{entityView>text}"/>
+					</ComboBox>
+					<Title text=")" required="false"/>
+				</HBox>
+				<Title text="{i18n>EntityDefinition.this}"/>
+				<Title text="(" required="false"/>
+				<rdf:TextResource path="dataModel>" entitySet="EntityDefinition"/>
+				<Title text=")" required="false"/>
+	
+				<ToolbarSpacer/>
+				<ToggleButton id="toggleColumns" icon="sap-icon://hide" activeIcon="sap-icon://show" press="onSettingsPressed" visible="false"	>
+					<layoutData>
+						<OverflowToolbarLayoutData priority="NeverOverflow"/>
+					</layoutData>
+				</ToggleButton>
+				
+			</Toolbar>
+		</customHeader>
+		<Table id="form360" inset="false" fixedLayout="true" class="multicolumnform" updateFinished="hideColumns">
+			<columns>
+				<Column hAlign="Right" width="200px">
+					<Text text=""/>
+				</Column>
+				<Column visible="true">
+				</Column>
+				<Column visible="true">
+					<Text text="EntityDefinition"/>
+				</Column>
+			</columns>
+			<items>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>EntityDefinition.EntityDefinition_DataStewardId}" required="false"/> 
+						<Text text=""/>
+						<rdf:ListResource path="dataModel>EntityDefinition_DataStewardId/sfdc_EntityDefinition_DataStewardId" entitySet="Group"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>EntityDefinition.EntityDefinition_DefaultCompactLayoutId}" required="false"/> 
+						<Text text=""/>
+						<rdf:TextLink text="{path:'dataModel>EntityDefinition_DefaultCompactLayoutId/EntityDefinition_DefaultCompactLayoutId',type:'sap.ui.model.type.String' }" linkText="{i18n>EntityDefinition.EntityDefinition_DefaultCompactLayoutId/EntityDefinition_DefaultCompactLayoutId}"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>EntityDefinition.EntityDefinition_DetailUrl}" required="false"/> 
+						<Text text=""/>
+						<rdf:TextLink text="{path:'dataModel>EntityDefinition_DetailUrl/EntityDefinition_DetailUrl',type:'sap.ui.model.type.String' }" linkText="{i18n>EntityDefinition.EntityDefinition_DetailUrl/EntityDefinition_DetailUrl}"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>EntityDefinition.EntityDefinition_DeveloperName}" required="false"/> 
+						<Text text=""/>
+						<rdf:TextLink text="{path:'dataModel>EntityDefinition_DeveloperName/EntityDefinition_DeveloperName',type:'sap.ui.model.type.String' }" linkText="{i18n>EntityDefinition.EntityDefinition_DeveloperName/EntityDefinition_DeveloperName}"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>EntityDefinition.EntityDefinition_DurableId}" required="false"/> 
+						<Text text=""/>
+						<rdf:TextLink text="{path:'dataModel>EntityDefinition_DurableId/EntityDefinition_DurableId',type:'sap.ui.model.type.String' }" linkText="{i18n>EntityDefinition.EntityDefinition_DurableId/EntityDefinition_DurableId}"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>EntityDefinition.EntityDefinition_EditDefinitionUrl}" required="false"/> 
+						<Text text=""/>
+						<rdf:TextLink text="{path:'dataModel>EntityDefinition_EditDefinitionUrl/EntityDefinition_EditDefinitionUrl',type:'sap.ui.model.type.String' }" linkText="{i18n>EntityDefinition.EntityDefinition_EditDefinitionUrl/EntityDefinition_EditDefinitionUrl}"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>EntityDefinition.EntityDefinition_EditUrl}" required="false"/> 
+						<Text text=""/>
+						<rdf:TextLink text="{path:'dataModel>EntityDefinition_EditUrl/EntityDefinition_EditUrl',type:'sap.ui.model.type.String' }" linkText="{i18n>EntityDefinition.EntityDefinition_EditUrl/EntityDefinition_EditUrl}"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>EntityDefinition.EntityDefinition_ExternalSharingModel}" required="false"/> 
+						<Text text=""/>
+						<rdf:TextLink text="{path:'dataModel>EntityDefinition_ExternalSharingModel/EntityDefinition_ExternalSharingModel',type:'sap.ui.model.type.String' }" linkText="{i18n>EntityDefinition.EntityDefinition_ExternalSharingModel/EntityDefinition_ExternalSharingModel}"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>EntityDefinition.EntityDefinition_HasSubtypes}" required="false"/> 
+						<Text text=""/>
+						<Text text="{path:'dataModel>EntityDefinition_HasSubtypes/EntityDefinition_HasSubtypes',type:'sap.ui.model.type.Boolean'}"/>  
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>EntityDefinition.EntityDefinition_HelpSettingPageName}" required="false"/> 
+						<Text text=""/>
+						<rdf:TextLink text="{path:'dataModel>EntityDefinition_HelpSettingPageName/EntityDefinition_HelpSettingPageName',type:'sap.ui.model.type.String' }" linkText="{i18n>EntityDefinition.EntityDefinition_HelpSettingPageName/EntityDefinition_HelpSettingPageName}"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>EntityDefinition.EntityDefinition_HelpSettingPageUrl}" required="false"/> 
+						<Text text=""/>
+						<rdf:TextLink text="{path:'dataModel>EntityDefinition_HelpSettingPageUrl/EntityDefinition_HelpSettingPageUrl',type:'sap.ui.model.type.String' }" linkText="{i18n>EntityDefinition.EntityDefinition_HelpSettingPageUrl/EntityDefinition_HelpSettingPageUrl}"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>EntityDefinition.EntityDefinition_Id}" required="false"/> 
+						<Text text=""/>
+						<rdf:TextLink text="{path:'dataModel>EntityDefinition_Id/EntityDefinition_Id',type:'sap.ui.model.type.String' }" linkText="{i18n>EntityDefinition.EntityDefinition_Id/EntityDefinition_Id}"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>EntityDefinition.EntityDefinition_InternalSharingModel}" required="false"/> 
+						<Text text=""/>
+						<rdf:TextLink text="{path:'dataModel>EntityDefinition_InternalSharingModel/EntityDefinition_InternalSharingModel',type:'sap.ui.model.type.String' }" linkText="{i18n>EntityDefinition.EntityDefinition_InternalSharingModel/EntityDefinition_InternalSharingModel}"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>EntityDefinition.EntityDefinition_IsApexTriggerable}" required="false"/> 
+						<Text text=""/>
+						<Text text="{path:'dataModel>EntityDefinition_IsApexTriggerable/EntityDefinition_IsApexTriggerable',type:'sap.ui.model.type.Boolean'}"/>  
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>EntityDefinition.EntityDefinition_IsAutoActivityCaptureEnabled}" required="false"/> 
+						<Text text=""/>
+						<Text text="{path:'dataModel>EntityDefinition_IsAutoActivityCaptureEnabled/EntityDefinition_IsAutoActivityCaptureEnabled',type:'sap.ui.model.type.Boolean'}"/>  
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>EntityDefinition.EntityDefinition_IsCompactLayoutable}" required="false"/> 
+						<Text text=""/>
+						<Text text="{path:'dataModel>EntityDefinition_IsCompactLayoutable/EntityDefinition_IsCompactLayoutable',type:'sap.ui.model.type.Boolean'}"/>  
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>EntityDefinition.EntityDefinition_IsCustomSetting}" required="false"/> 
+						<Text text=""/>
+						<Text text="{path:'dataModel>EntityDefinition_IsCustomSetting/EntityDefinition_IsCustomSetting',type:'sap.ui.model.type.Boolean'}"/>  
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>EntityDefinition.EntityDefinition_IsCustomizable}" required="false"/> 
+						<Text text=""/>
+						<Text text="{path:'dataModel>EntityDefinition_IsCustomizable/EntityDefinition_IsCustomizable',type:'sap.ui.model.type.Boolean'}"/>  
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>EntityDefinition.EntityDefinition_IsDeprecatedAndHidden}" required="false"/> 
+						<Text text=""/>
+						<Text text="{path:'dataModel>EntityDefinition_IsDeprecatedAndHidden/EntityDefinition_IsDeprecatedAndHidden',type:'sap.ui.model.type.Boolean'}"/>  
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>EntityDefinition.EntityDefinition_IsEverCreatable}" required="false"/> 
+						<Text text=""/>
+						<Text text="{path:'dataModel>EntityDefinition_IsEverCreatable/EntityDefinition_IsEverCreatable',type:'sap.ui.model.type.Boolean'}"/>  
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>EntityDefinition.EntityDefinition_IsEverDeletable}" required="false"/> 
+						<Text text=""/>
+						<Text text="{path:'dataModel>EntityDefinition_IsEverDeletable/EntityDefinition_IsEverDeletable',type:'sap.ui.model.type.Boolean'}"/>  
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>EntityDefinition.EntityDefinition_IsEverUpdatable}" required="false"/> 
+						<Text text=""/>
+						<Text text="{path:'dataModel>EntityDefinition_IsEverUpdatable/EntityDefinition_IsEverUpdatable',type:'sap.ui.model.type.Boolean'}"/>  
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>EntityDefinition.EntityDefinition_IsFeedEnabled}" required="false"/> 
+						<Text text=""/>
+						<Text text="{path:'dataModel>EntityDefinition_IsFeedEnabled/EntityDefinition_IsFeedEnabled',type:'sap.ui.model.type.Boolean'}"/>  
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>EntityDefinition.EntityDefinition_IsIdEnabled}" required="false"/> 
+						<Text text=""/>
+						<Text text="{path:'dataModel>EntityDefinition_IsIdEnabled/EntityDefinition_IsIdEnabled',type:'sap.ui.model.type.Boolean'}"/>  
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>EntityDefinition.EntityDefinition_IsLayoutable}" required="false"/> 
+						<Text text=""/>
+						<Text text="{path:'dataModel>EntityDefinition_IsLayoutable/EntityDefinition_IsLayoutable',type:'sap.ui.model.type.Boolean'}"/>  
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>EntityDefinition.EntityDefinition_IsMruEnabled}" required="false"/> 
+						<Text text=""/>
+						<Text text="{path:'dataModel>EntityDefinition_IsMruEnabled/EntityDefinition_IsMruEnabled',type:'sap.ui.model.type.Boolean'}"/>  
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>EntityDefinition.EntityDefinition_IsProcessEnabled}" required="false"/> 
+						<Text text=""/>
+						<Text text="{path:'dataModel>EntityDefinition_IsProcessEnabled/EntityDefinition_IsProcessEnabled',type:'sap.ui.model.type.Boolean'}"/>  
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>EntityDefinition.EntityDefinition_IsQueryable}" required="false"/> 
+						<Text text=""/>
+						<Text text="{path:'dataModel>EntityDefinition_IsQueryable/EntityDefinition_IsQueryable',type:'sap.ui.model.type.Boolean'}"/>  
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>EntityDefinition.EntityDefinition_IsReplicateable}" required="false"/> 
+						<Text text=""/>
+						<Text text="{path:'dataModel>EntityDefinition_IsReplicateable/EntityDefinition_IsReplicateable',type:'sap.ui.model.type.Boolean'}"/>  
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>EntityDefinition.EntityDefinition_IsRetrieveable}" required="false"/> 
+						<Text text=""/>
+						<Text text="{path:'dataModel>EntityDefinition_IsRetrieveable/EntityDefinition_IsRetrieveable',type:'sap.ui.model.type.Boolean'}"/>  
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>EntityDefinition.EntityDefinition_IsSearchLayoutable}" required="false"/> 
+						<Text text=""/>
+						<Text text="{path:'dataModel>EntityDefinition_IsSearchLayoutable/EntityDefinition_IsSearchLayoutable',type:'sap.ui.model.type.Boolean'}"/>  
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>EntityDefinition.EntityDefinition_IsSearchable}" required="false"/> 
+						<Text text=""/>
+						<Text text="{path:'dataModel>EntityDefinition_IsSearchable/EntityDefinition_IsSearchable',type:'sap.ui.model.type.Boolean'}"/>  
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>EntityDefinition.EntityDefinition_IsSubtype}" required="false"/> 
+						<Text text=""/>
+						<Text text="{path:'dataModel>EntityDefinition_IsSubtype/EntityDefinition_IsSubtype',type:'sap.ui.model.type.Boolean'}"/>  
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>EntityDefinition.EntityDefinition_IsTriggerable}" required="false"/> 
+						<Text text=""/>
+						<Text text="{path:'dataModel>EntityDefinition_IsTriggerable/EntityDefinition_IsTriggerable',type:'sap.ui.model.type.Boolean'}"/>  
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>EntityDefinition.EntityDefinition_IsWorkflowEnabled}" required="false"/> 
+						<Text text=""/>
+						<Text text="{path:'dataModel>EntityDefinition_IsWorkflowEnabled/EntityDefinition_IsWorkflowEnabled',type:'sap.ui.model.type.Boolean'}"/>  
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>EntityDefinition.EntityDefinition_KeyPrefix}" required="false"/> 
+						<Text text=""/>
+						<rdf:TextLink text="{path:'dataModel>EntityDefinition_KeyPrefix/EntityDefinition_KeyPrefix',type:'sap.ui.model.type.String' }" linkText="{i18n>EntityDefinition.EntityDefinition_KeyPrefix/EntityDefinition_KeyPrefix}"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>EntityDefinition.EntityDefinition_Label}" required="false"/> 
+						<Text text=""/>
+						<rdf:TextLink text="{path:'dataModel>EntityDefinition_Label/EntityDefinition_Label',type:'sap.ui.model.type.String' }" linkText="{i18n>EntityDefinition.EntityDefinition_Label/EntityDefinition_Label}"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>EntityDefinition.EntityDefinition_LastModifiedById}" required="false"/> 
+						<Text text=""/>
+						<rdf:ListResource path="dataModel>EntityDefinition_LastModifiedById/sfdc_EntityDefinition_LastModifiedById" entitySet="User"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>EntityDefinition.EntityDefinition_LastModifiedDate}" required="false"/> 
+						<Text text=""/>
+						<Text text="{dataModel>EntityDefinition_LastModifiedDate/EntityDefinition_LastModifiedDate}"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>EntityDefinition.EntityDefinition_MasterLabel}" required="false"/> 
+						<Text text=""/>
+						<rdf:TextLink text="{path:'dataModel>EntityDefinition_MasterLabel/EntityDefinition_MasterLabel',type:'sap.ui.model.type.String' }" linkText="{i18n>EntityDefinition.EntityDefinition_MasterLabel/EntityDefinition_MasterLabel}"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>EntityDefinition.EntityDefinition_NamespacePrefix}" required="false"/> 
+						<Text text=""/>
+						<rdf:TextLink text="{path:'dataModel>EntityDefinition_NamespacePrefix/EntityDefinition_NamespacePrefix',type:'sap.ui.model.type.String' }" linkText="{i18n>EntityDefinition.EntityDefinition_NamespacePrefix/EntityDefinition_NamespacePrefix}"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>EntityDefinition.EntityDefinition_NewUrl}" required="false"/> 
+						<Text text=""/>
+						<rdf:TextLink text="{path:'dataModel>EntityDefinition_NewUrl/EntityDefinition_NewUrl',type:'sap.ui.model.type.String' }" linkText="{i18n>EntityDefinition.EntityDefinition_NewUrl/EntityDefinition_NewUrl}"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>EntityDefinition.EntityDefinition_PluralLabel}" required="false"/> 
+						<Text text=""/>
+						<rdf:TextLink text="{path:'dataModel>EntityDefinition_PluralLabel/EntityDefinition_PluralLabel',type:'sap.ui.model.type.String' }" linkText="{i18n>EntityDefinition.EntityDefinition_PluralLabel/EntityDefinition_PluralLabel}"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>EntityDefinition.EntityDefinition_PublisherId}" required="false"/> 
+						<Text text=""/>
+						<rdf:ListResource path="dataModel>EntityDefinition_PublisherId/sfdc_EntityDefinition_PublisherId" entitySet="Publisher"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>EntityDefinition.EntityDefinition_QualifiedApiName}" required="false"/> 
+						<Text text=""/>
+						<rdf:TextLink text="{path:'dataModel>EntityDefinition_QualifiedApiName/EntityDefinition_QualifiedApiName',type:'sap.ui.model.type.String' }" linkText="{i18n>EntityDefinition.EntityDefinition_QualifiedApiName/EntityDefinition_QualifiedApiName}"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>EntityDefinition.EntityDefinition_RunningUserEntityAccessId}" required="false"/> 
+						<Text text=""/>
+						<rdf:ListResource path="dataModel>EntityDefinition_RunningUserEntityAccessId/sfdc_EntityDefinition_RunningUserEntityAccessId" entitySet="UserEntityAccess"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>EntityDefinition.EntityParticle_EntityDefinitionId_Inverse}" required="false"/> 
+						<Text text=""/>
+						<rdf:ListResource path="dataModel>EntityParticle_EntityDefinitionId_Inverse/sfdc_EntityParticle_EntityDefinitionId_Inverse" entitySet="EntityParticle"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>EntityDefinition.FieldDefinition_EntityDefinitionId_Inverse}" required="false"/> 
+						<Text text=""/>
+						<rdf:ListResource path="dataModel>FieldDefinition_EntityDefinitionId_Inverse/sfdc_FieldDefinition_EntityDefinitionId_Inverse" entitySet="FieldDefinition"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>EntityDefinition.OwnerChangeOptionInfo_EntityDefinitionId_Inverse}" required="false"/> 
+						<Text text=""/>
+						<rdf:ListResource path="dataModel>OwnerChangeOptionInfo_EntityDefinitionId_Inverse/sfdc_OwnerChangeOptionInfo_EntityDefinitionId_Inverse" entitySet="OwnerChangeOptionInfo"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>EntityDefinition.RelationshipDomain_ChildSobjectId_Inverse}" required="false"/> 
+						<Text text=""/>
+						<rdf:ListResource path="dataModel>RelationshipDomain_ChildSobjectId_Inverse/sfdc_RelationshipDomain_ChildSobjectId_Inverse" entitySet="RelationshipDomain"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>EntityDefinition.RelationshipDomain_ParentSobjectId_Inverse}" required="false"/> 
+						<Text text=""/>
+						<rdf:ListResource path="dataModel>RelationshipDomain_ParentSobjectId_Inverse/sfdc_RelationshipDomain_ParentSobjectId_Inverse" entitySet="RelationshipDomain"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>EntityDefinition.RelationshipInfo_ChildSobjectId_Inverse}" required="false"/> 
+						<Text text=""/>
+						<rdf:ListResource path="dataModel>RelationshipInfo_ChildSobjectId_Inverse/sfdc_RelationshipInfo_ChildSobjectId_Inverse" entitySet="RelationshipInfo"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>EntityDefinition.SearchLayout_EntityDefinitionId_Inverse}" required="false"/> 
+						<Text text=""/>
+						<rdf:ListResource path="dataModel>SearchLayout_EntityDefinitionId_Inverse/sfdc_SearchLayout_EntityDefinitionId_Inverse" entitySet="SearchLayout"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>EntityDefinition.UserEntityAccess_EntityDefinitionId_Inverse}" required="false"/> 
+						<Text text=""/>
+						<rdf:ListResource path="dataModel>UserEntityAccess_EntityDefinitionId_Inverse/sfdc_UserEntityAccess_EntityDefinitionId_Inverse" entitySet="UserEntityAccess"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>EntityDefinition.UserFieldAccess_EntityDefinitionId_Inverse}" required="false"/> 
+						<Text text=""/>
+						<rdf:ListResource path="dataModel>UserFieldAccess_EntityDefinitionId_Inverse/sfdc_UserFieldAccess_EntityDefinitionId_Inverse" entitySet="UserFieldAccess"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>EntityDefinition.EntityDefinition_DataStewardId}" required="false"/> 
+						<rdf:ListResource path="dataModel>EntityDefinition_DataStewardId" entitySet="Group"/>
+						<Text text=""/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>EntityDefinition.EntityDefinition_LastModifiedById}" required="false"/> 
+						<rdf:ListResource path="dataModel>EntityDefinition_LastModifiedById" entitySet="User"/>
+						<Text text=""/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>EntityDefinition.EntityDefinition_PublisherId}" required="false"/> 
+						<rdf:ListResource path="dataModel>EntityDefinition_PublisherId" entitySet="Publisher"/>
+						<Text text=""/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>EntityDefinition.EntityDefinition_RunningUserEntityAccessId}" required="false"/> 
+						<rdf:ListResource path="dataModel>EntityDefinition_RunningUserEntityAccessId" entitySet="UserEntityAccess"/>
+						<Text text=""/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>EntityDefinition.EntityParticle_EntityDefinitionId_Inverse}" required="false"/> 
+						<rdf:ListResource path="dataModel>EntityParticle_EntityDefinitionId_Inverse" entitySet="EntityParticle"/>
+						<Text text=""/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>EntityDefinition.FieldDefinition_EntityDefinitionId_Inverse}" required="false"/> 
+						<rdf:ListResource path="dataModel>FieldDefinition_EntityDefinitionId_Inverse" entitySet="FieldDefinition"/>
+						<Text text=""/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>EntityDefinition.OwnerChangeOptionInfo_EntityDefinitionId_Inverse}" required="false"/> 
+						<rdf:ListResource path="dataModel>OwnerChangeOptionInfo_EntityDefinitionId_Inverse" entitySet="OwnerChangeOptionInfo"/>
+						<Text text=""/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>EntityDefinition.RelationshipDomain_ChildSobjectId_Inverse}" required="false"/> 
+						<rdf:ListResource path="dataModel>RelationshipDomain_ChildSobjectId_Inverse" entitySet="RelationshipDomain"/>
+						<Text text=""/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>EntityDefinition.RelationshipDomain_ParentSobjectId_Inverse}" required="false"/> 
+						<rdf:ListResource path="dataModel>RelationshipDomain_ParentSobjectId_Inverse" entitySet="RelationshipDomain"/>
+						<Text text=""/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>EntityDefinition.RelationshipInfo_ChildSobjectId_Inverse}" required="false"/> 
+						<rdf:ListResource path="dataModel>RelationshipInfo_ChildSobjectId_Inverse" entitySet="RelationshipInfo"/>
+						<Text text=""/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>EntityDefinition.SearchLayout_EntityDefinitionId_Inverse}" required="false"/> 
+						<rdf:ListResource path="dataModel>SearchLayout_EntityDefinitionId_Inverse" entitySet="SearchLayout"/>
+						<Text text=""/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>EntityDefinition.UserEntityAccess_EntityDefinitionId_Inverse}" required="false"/> 
+						<rdf:ListResource path="dataModel>UserEntityAccess_EntityDefinitionId_Inverse" entitySet="UserEntityAccess"/>
+						<Text text=""/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>EntityDefinition.UserFieldAccess_EntityDefinitionId_Inverse}" required="false"/> 
+						<rdf:ListResource path="dataModel>UserFieldAccess_EntityDefinitionId_Inverse" entitySet="UserFieldAccess"/>
+						<Text text=""/>
+					</cells>
+				</ColumnListItem>
+			</items>
+		</Table>
+	</Page>
+</mvc:View>

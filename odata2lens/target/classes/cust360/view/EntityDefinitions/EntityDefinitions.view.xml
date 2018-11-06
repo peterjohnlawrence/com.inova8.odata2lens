@@ -1,0 +1,295 @@
+<mvc:View controllerName="com.inova8.lens.controller.EntitySet360" xmlns="sap.m" xmlns:mvc="sap.ui.core.mvc" xmlns:layout="sap.ui.layout"
+	xmlns:rdf="com.inova8.lens.control" xmlns:core="sap.ui.core">
+	<Page showHeader="false" id="page" navButtonPress="onNavBack" showNavButton="true" title="{i18n>EntityDefinitions.ViewTitle}">
+		<content>
+			<Table id="table360" inset="false" items="{ path: 'dataModel>/EntityDefinition' , sorter: { path: 'label', descending: false } 
+				}"
+				noDataText="{entitySetView>/tableNoDataText}" busyIndicatorDelay="{entitySetView>/tableBusyDelay}" growing="true" growingScrollToLoad="true"
+				updateFinished="onUpdateFinished"  fixedLayout="false">
+				<headerToolbar>
+					<Toolbar>
+						<ToolbarSpacer/>
+						<HBox id="sourceTitle" alignItems="Center">
+							<rdf:TextResource id="selectedResource" path="" entitySet=""/>
+						</HBox>
+						<Title id="pathTitle" text="{entitySetView>/navigationText}"/>
+						<HBox id="versionsTitle" alignItems="Center">
+							<Title text="(" required="false"/>
+							<ComboBox id="versionSelection" items="{ path: 'entitySetView>/versions' }" selectionChange="onVersionChange">
+								<core:Item key="{entitySetView>navigation}" text="{entityView>text}"/>
+							</ComboBox>
+							<Title text=")" required="false"/>
+						</HBox>
+						<Title id="tableHeader" text="{entitySetView>/entitySetTableTitle}"/>
+						<ToolbarSpacer/>
+						<SearchField id="searchField" tooltip="{i18n>search.searchTooltip}" search="onSearch" width="auto"></SearchField>
+					</Toolbar>
+				</headerToolbar>
+				<columns>
+					<Column >
+						<Text text="{i18n>EntityDefinitions.this}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>EntityDefinitions.EntityDefinition_DefaultCompactLayoutId}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>EntityDefinitions.EntityDefinition_DetailUrl}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>EntityDefinitions.EntityDefinition_DeveloperName}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>EntityDefinitions.EntityDefinition_DurableId}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>EntityDefinitions.EntityDefinition_EditDefinitionUrl}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>EntityDefinitions.EntityDefinition_EditUrl}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>EntityDefinitions.EntityDefinition_ExternalSharingModel}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>EntityDefinitions.EntityDefinition_HasSubtypes}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>EntityDefinitions.EntityDefinition_HelpSettingPageName}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>EntityDefinitions.EntityDefinition_HelpSettingPageUrl}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>EntityDefinitions.EntityDefinition_Id}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>EntityDefinitions.EntityDefinition_InternalSharingModel}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>EntityDefinitions.EntityDefinition_IsApexTriggerable}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>EntityDefinitions.EntityDefinition_IsAutoActivityCaptureEnabled}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>EntityDefinitions.EntityDefinition_IsCompactLayoutable}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>EntityDefinitions.EntityDefinition_IsCustomSetting}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>EntityDefinitions.EntityDefinition_IsCustomizable}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>EntityDefinitions.EntityDefinition_IsDeprecatedAndHidden}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>EntityDefinitions.EntityDefinition_IsEverCreatable}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>EntityDefinitions.EntityDefinition_IsEverDeletable}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>EntityDefinitions.EntityDefinition_IsEverUpdatable}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>EntityDefinitions.EntityDefinition_IsFeedEnabled}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>EntityDefinitions.EntityDefinition_IsIdEnabled}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>EntityDefinitions.EntityDefinition_IsLayoutable}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>EntityDefinitions.EntityDefinition_IsMruEnabled}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>EntityDefinitions.EntityDefinition_IsProcessEnabled}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>EntityDefinitions.EntityDefinition_IsQueryable}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>EntityDefinitions.EntityDefinition_IsReplicateable}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>EntityDefinitions.EntityDefinition_IsRetrieveable}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>EntityDefinitions.EntityDefinition_IsSearchLayoutable}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>EntityDefinitions.EntityDefinition_IsSearchable}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>EntityDefinitions.EntityDefinition_IsSubtype}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>EntityDefinitions.EntityDefinition_IsTriggerable}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>EntityDefinitions.EntityDefinition_IsWorkflowEnabled}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>EntityDefinitions.EntityDefinition_KeyPrefix}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>EntityDefinitions.EntityDefinition_Label}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>EntityDefinitions.EntityDefinition_LastModifiedDate}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>EntityDefinitions.EntityDefinition_MasterLabel}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>EntityDefinitions.EntityDefinition_NamespacePrefix}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>EntityDefinitions.EntityDefinition_NewUrl}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>EntityDefinitions.EntityDefinition_PluralLabel}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>EntityDefinitions.EntityDefinition_QualifiedApiName}"/>
+					</Column>
+				</columns>
+				<items>
+					<ColumnListItem id="template360" type="Navigation" press="onPress">
+						<cells>
+							<rdf:TextResource path="dataModel>" entitySet="EntityDefinition"/>
+							<VBox>					
+							<rdf:TextLink text="{path:'dataModel>EntityDefinition_DefaultCompactLayoutId/EntityDefinition_DefaultCompactLayoutId',type:'sap.ui.model.type.String'}" linkText="{i18n>EntityDefinition.EntityDefinition_DefaultCompactLayoutId/EntityDefinition_DefaultCompactLayoutId}"/>
+							</VBox>							
+							<VBox>					
+							<rdf:TextLink text="{path:'dataModel>EntityDefinition_DetailUrl/EntityDefinition_DetailUrl',type:'sap.ui.model.type.String'}" linkText="{i18n>EntityDefinition.EntityDefinition_DetailUrl/EntityDefinition_DetailUrl}"/>
+							</VBox>							
+							<VBox>					
+							<rdf:TextLink text="{path:'dataModel>EntityDefinition_DeveloperName/EntityDefinition_DeveloperName',type:'sap.ui.model.type.String'}" linkText="{i18n>EntityDefinition.EntityDefinition_DeveloperName/EntityDefinition_DeveloperName}"/>
+							</VBox>							
+							<VBox>					
+							<rdf:TextLink text="{path:'dataModel>EntityDefinition_DurableId/EntityDefinition_DurableId',type:'sap.ui.model.type.String'}" linkText="{i18n>EntityDefinition.EntityDefinition_DurableId/EntityDefinition_DurableId}"/>
+							</VBox>							
+							<VBox>					
+							<rdf:TextLink text="{path:'dataModel>EntityDefinition_EditDefinitionUrl/EntityDefinition_EditDefinitionUrl',type:'sap.ui.model.type.String'}" linkText="{i18n>EntityDefinition.EntityDefinition_EditDefinitionUrl/EntityDefinition_EditDefinitionUrl}"/>
+							</VBox>							
+							<VBox>					
+							<rdf:TextLink text="{path:'dataModel>EntityDefinition_EditUrl/EntityDefinition_EditUrl',type:'sap.ui.model.type.String'}" linkText="{i18n>EntityDefinition.EntityDefinition_EditUrl/EntityDefinition_EditUrl}"/>
+							</VBox>							
+							<VBox>					
+							<rdf:TextLink text="{path:'dataModel>EntityDefinition_ExternalSharingModel/EntityDefinition_ExternalSharingModel',type:'sap.ui.model.type.String'}" linkText="{i18n>EntityDefinition.EntityDefinition_ExternalSharingModel/EntityDefinition_ExternalSharingModel}"/>
+							</VBox>							
+							<VBox>					
+								<Text text="{path:'dataModel>EntityDefinition_HasSubtypes/EntityDefinition_HasSubtypes',type:'sap.ui.model.type.Boolean'}"/>  
+							</VBox>							
+							<VBox>					
+							<rdf:TextLink text="{path:'dataModel>EntityDefinition_HelpSettingPageName/EntityDefinition_HelpSettingPageName',type:'sap.ui.model.type.String'}" linkText="{i18n>EntityDefinition.EntityDefinition_HelpSettingPageName/EntityDefinition_HelpSettingPageName}"/>
+							</VBox>							
+							<VBox>					
+							<rdf:TextLink text="{path:'dataModel>EntityDefinition_HelpSettingPageUrl/EntityDefinition_HelpSettingPageUrl',type:'sap.ui.model.type.String'}" linkText="{i18n>EntityDefinition.EntityDefinition_HelpSettingPageUrl/EntityDefinition_HelpSettingPageUrl}"/>
+							</VBox>							
+							<VBox>					
+							<rdf:TextLink text="{path:'dataModel>EntityDefinition_Id/EntityDefinition_Id',type:'sap.ui.model.type.String'}" linkText="{i18n>EntityDefinition.EntityDefinition_Id/EntityDefinition_Id}"/>
+							</VBox>							
+							<VBox>					
+							<rdf:TextLink text="{path:'dataModel>EntityDefinition_InternalSharingModel/EntityDefinition_InternalSharingModel',type:'sap.ui.model.type.String'}" linkText="{i18n>EntityDefinition.EntityDefinition_InternalSharingModel/EntityDefinition_InternalSharingModel}"/>
+							</VBox>							
+							<VBox>					
+								<Text text="{path:'dataModel>EntityDefinition_IsApexTriggerable/EntityDefinition_IsApexTriggerable',type:'sap.ui.model.type.Boolean'}"/>  
+							</VBox>							
+							<VBox>					
+								<Text text="{path:'dataModel>EntityDefinition_IsAutoActivityCaptureEnabled/EntityDefinition_IsAutoActivityCaptureEnabled',type:'sap.ui.model.type.Boolean'}"/>  
+							</VBox>							
+							<VBox>					
+								<Text text="{path:'dataModel>EntityDefinition_IsCompactLayoutable/EntityDefinition_IsCompactLayoutable',type:'sap.ui.model.type.Boolean'}"/>  
+							</VBox>							
+							<VBox>					
+								<Text text="{path:'dataModel>EntityDefinition_IsCustomSetting/EntityDefinition_IsCustomSetting',type:'sap.ui.model.type.Boolean'}"/>  
+							</VBox>							
+							<VBox>					
+								<Text text="{path:'dataModel>EntityDefinition_IsCustomizable/EntityDefinition_IsCustomizable',type:'sap.ui.model.type.Boolean'}"/>  
+							</VBox>							
+							<VBox>					
+								<Text text="{path:'dataModel>EntityDefinition_IsDeprecatedAndHidden/EntityDefinition_IsDeprecatedAndHidden',type:'sap.ui.model.type.Boolean'}"/>  
+							</VBox>							
+							<VBox>					
+								<Text text="{path:'dataModel>EntityDefinition_IsEverCreatable/EntityDefinition_IsEverCreatable',type:'sap.ui.model.type.Boolean'}"/>  
+							</VBox>							
+							<VBox>					
+								<Text text="{path:'dataModel>EntityDefinition_IsEverDeletable/EntityDefinition_IsEverDeletable',type:'sap.ui.model.type.Boolean'}"/>  
+							</VBox>							
+							<VBox>					
+								<Text text="{path:'dataModel>EntityDefinition_IsEverUpdatable/EntityDefinition_IsEverUpdatable',type:'sap.ui.model.type.Boolean'}"/>  
+							</VBox>							
+							<VBox>					
+								<Text text="{path:'dataModel>EntityDefinition_IsFeedEnabled/EntityDefinition_IsFeedEnabled',type:'sap.ui.model.type.Boolean'}"/>  
+							</VBox>							
+							<VBox>					
+								<Text text="{path:'dataModel>EntityDefinition_IsIdEnabled/EntityDefinition_IsIdEnabled',type:'sap.ui.model.type.Boolean'}"/>  
+							</VBox>							
+							<VBox>					
+								<Text text="{path:'dataModel>EntityDefinition_IsLayoutable/EntityDefinition_IsLayoutable',type:'sap.ui.model.type.Boolean'}"/>  
+							</VBox>							
+							<VBox>					
+								<Text text="{path:'dataModel>EntityDefinition_IsMruEnabled/EntityDefinition_IsMruEnabled',type:'sap.ui.model.type.Boolean'}"/>  
+							</VBox>							
+							<VBox>					
+								<Text text="{path:'dataModel>EntityDefinition_IsProcessEnabled/EntityDefinition_IsProcessEnabled',type:'sap.ui.model.type.Boolean'}"/>  
+							</VBox>							
+							<VBox>					
+								<Text text="{path:'dataModel>EntityDefinition_IsQueryable/EntityDefinition_IsQueryable',type:'sap.ui.model.type.Boolean'}"/>  
+							</VBox>							
+							<VBox>					
+								<Text text="{path:'dataModel>EntityDefinition_IsReplicateable/EntityDefinition_IsReplicateable',type:'sap.ui.model.type.Boolean'}"/>  
+							</VBox>							
+							<VBox>					
+								<Text text="{path:'dataModel>EntityDefinition_IsRetrieveable/EntityDefinition_IsRetrieveable',type:'sap.ui.model.type.Boolean'}"/>  
+							</VBox>							
+							<VBox>					
+								<Text text="{path:'dataModel>EntityDefinition_IsSearchLayoutable/EntityDefinition_IsSearchLayoutable',type:'sap.ui.model.type.Boolean'}"/>  
+							</VBox>							
+							<VBox>					
+								<Text text="{path:'dataModel>EntityDefinition_IsSearchable/EntityDefinition_IsSearchable',type:'sap.ui.model.type.Boolean'}"/>  
+							</VBox>							
+							<VBox>					
+								<Text text="{path:'dataModel>EntityDefinition_IsSubtype/EntityDefinition_IsSubtype',type:'sap.ui.model.type.Boolean'}"/>  
+							</VBox>							
+							<VBox>					
+								<Text text="{path:'dataModel>EntityDefinition_IsTriggerable/EntityDefinition_IsTriggerable',type:'sap.ui.model.type.Boolean'}"/>  
+							</VBox>							
+							<VBox>					
+								<Text text="{path:'dataModel>EntityDefinition_IsWorkflowEnabled/EntityDefinition_IsWorkflowEnabled',type:'sap.ui.model.type.Boolean'}"/>  
+							</VBox>							
+							<VBox>					
+							<rdf:TextLink text="{path:'dataModel>EntityDefinition_KeyPrefix/EntityDefinition_KeyPrefix',type:'sap.ui.model.type.String'}" linkText="{i18n>EntityDefinition.EntityDefinition_KeyPrefix/EntityDefinition_KeyPrefix}"/>
+							</VBox>							
+							<VBox>					
+							<rdf:TextLink text="{path:'dataModel>EntityDefinition_Label/EntityDefinition_Label',type:'sap.ui.model.type.String'}" linkText="{i18n>EntityDefinition.EntityDefinition_Label/EntityDefinition_Label}"/>
+							</VBox>							
+							<VBox>					
+							<Text text="{dataModel>EntityDefinition_LastModifiedDate/EntityDefinition_LastModifiedDate}"/>
+							</VBox>							
+							<VBox>					
+							<rdf:TextLink text="{path:'dataModel>EntityDefinition_MasterLabel/EntityDefinition_MasterLabel',type:'sap.ui.model.type.String'}" linkText="{i18n>EntityDefinition.EntityDefinition_MasterLabel/EntityDefinition_MasterLabel}"/>
+							</VBox>							
+							<VBox>					
+							<rdf:TextLink text="{path:'dataModel>EntityDefinition_NamespacePrefix/EntityDefinition_NamespacePrefix',type:'sap.ui.model.type.String'}" linkText="{i18n>EntityDefinition.EntityDefinition_NamespacePrefix/EntityDefinition_NamespacePrefix}"/>
+							</VBox>							
+							<VBox>					
+							<rdf:TextLink text="{path:'dataModel>EntityDefinition_NewUrl/EntityDefinition_NewUrl',type:'sap.ui.model.type.String'}" linkText="{i18n>EntityDefinition.EntityDefinition_NewUrl/EntityDefinition_NewUrl}"/>
+							</VBox>							
+							<VBox>					
+							<rdf:TextLink text="{path:'dataModel>EntityDefinition_PluralLabel/EntityDefinition_PluralLabel',type:'sap.ui.model.type.String'}" linkText="{i18n>EntityDefinition.EntityDefinition_PluralLabel/EntityDefinition_PluralLabel}"/>
+							</VBox>							
+							<VBox>					
+							<rdf:TextLink text="{path:'dataModel>EntityDefinition_QualifiedApiName/EntityDefinition_QualifiedApiName',type:'sap.ui.model.type.String'}" linkText="{i18n>EntityDefinition.EntityDefinition_QualifiedApiName/EntityDefinition_QualifiedApiName}"/>
+							</VBox>							
+						</cells>
+					</ColumnListItem>
+				</items>
+			</Table>
+		</content>
+	</Page>
+</mvc:View>

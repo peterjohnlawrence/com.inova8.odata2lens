@@ -1,0 +1,301 @@
+<mvc:View controllerName="com.inova8.lens.controller.Entity360" xmlns="sap.m" xmlns:mvc="sap.ui.core.mvc" xmlns:l="sap.ui.layout"
+	xmlns:f="sap.ui.layout.form" xmlns:table="sap.ui.table" xmlns:rdf="com.inova8.lens.control" xmlns:html="http://www.w3.org/1999/xhtml"
+	xmlns:core="sap.ui.core">
+	<Page showHeader="true" id="page" navButtonPress="onNavBack" showNavButton="false" title="{i18n>Dashboard.Title}" busy="{entityView>/busy}"
+		busyIndicatorDelay="{entityView>/delay}" >
+		<customHeader>
+			<Toolbar>
+				<ToolbarSpacer/>
+				<HBox id="sourceTitle" alignItems="Center">
+						<rdf:TextResource id="selectedResource" path="" entitySet=""/>
+				</HBox>	
+				<Title id="pathTitle" text="{entityView>/navigation}"/>
+				<HBox id="versionsTitle" alignItems="Center">
+					<Title text="(" required="false"/>
+					<ComboBox id="versionSelection" items="{ path: 'entityView>/versions' }" selectionChange="onVersionChange">
+						<core:Item key="{entityView>navigation}" text="{entityView>text}"/>
+					</ComboBox>
+					<Title text=")" required="false"/>
+				</HBox>
+				<Title text="{i18n>Dashboard.this}"/>
+				<Title text="(" required="false"/>
+				<rdf:TextResource path="dataModel>" entitySet="Dashboard"/>
+				<Title text=")" required="false"/>
+	
+				<ToolbarSpacer/>
+				<ToggleButton id="toggleColumns" icon="sap-icon://hide" activeIcon="sap-icon://show" press="onSettingsPressed" visible="false"	>
+					<layoutData>
+						<OverflowToolbarLayoutData priority="NeverOverflow"/>
+					</layoutData>
+				</ToggleButton>
+				
+			</Toolbar>
+		</customHeader>
+		<Table id="form360" inset="false" fixedLayout="true" class="multicolumnform" updateFinished="hideColumns">
+			<columns>
+				<Column hAlign="Right" width="200px">
+					<Text text=""/>
+				</Column>
+				<Column visible="true">
+				</Column>
+				<Column visible="true">
+					<Text text="Dashboard"/>
+				</Column>
+			</columns>
+			<items>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>Dashboard.DashboardComponent_DashboardId_Inverse}" required="false"/> 
+						<Text text=""/>
+						<rdf:ListResource path="dataModel>DashboardComponent_DashboardId_Inverse/sfdc_DashboardComponent_DashboardId_Inverse" entitySet="DashboardComponent"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>Dashboard.DashboardFeed_ParentId_Inverse}" required="false"/> 
+						<Text text=""/>
+						<rdf:ListResource path="dataModel>DashboardFeed_ParentId_Inverse/sfdc_DashboardFeed_ParentId_Inverse" entitySet="DashboardFeed"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>Dashboard.Dashboard_BackgroundDirection}" required="false"/> 
+						<Text text=""/>
+						<rdf:TextLink text="{path:'dataModel>Dashboard_BackgroundDirection/Dashboard_BackgroundDirection',type:'sap.ui.model.type.String' }" linkText="{i18n>Dashboard.Dashboard_BackgroundDirection/Dashboard_BackgroundDirection}"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>Dashboard.Dashboard_BackgroundEnd}" required="false"/> 
+						<Text text=""/>
+						<Text text="{path:'dataModel>Dashboard_BackgroundEnd/Dashboard_BackgroundEnd',type:'sap.ui.model.type.Integer' }"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>Dashboard.Dashboard_BackgroundStart}" required="false"/> 
+						<Text text=""/>
+						<Text text="{path:'dataModel>Dashboard_BackgroundStart/Dashboard_BackgroundStart',type:'sap.ui.model.type.Integer' }"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>Dashboard.Dashboard_CreatedById}" required="false"/> 
+						<Text text=""/>
+						<rdf:ListResource path="dataModel>Dashboard_CreatedById/sfdc_Dashboard_CreatedById" entitySet="User"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>Dashboard.Dashboard_CreatedDate}" required="false"/> 
+						<Text text=""/>
+						<Text text="{dataModel>Dashboard_CreatedDate/Dashboard_CreatedDate}"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>Dashboard.Dashboard_DashboardResultRefreshedDate}" required="false"/> 
+						<Text text=""/>
+						<rdf:TextLink text="{path:'dataModel>Dashboard_DashboardResultRefreshedDate/Dashboard_DashboardResultRefreshedDate',type:'sap.ui.model.type.String' }" linkText="{i18n>Dashboard.Dashboard_DashboardResultRefreshedDate/Dashboard_DashboardResultRefreshedDate}"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>Dashboard.Dashboard_DashboardResultRunningUser}" required="false"/> 
+						<Text text=""/>
+						<rdf:TextLink text="{path:'dataModel>Dashboard_DashboardResultRunningUser/Dashboard_DashboardResultRunningUser',type:'sap.ui.model.type.String' }" linkText="{i18n>Dashboard.Dashboard_DashboardResultRunningUser/Dashboard_DashboardResultRunningUser}"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>Dashboard.Dashboard_Description}" required="false"/> 
+						<Text text=""/>
+						<rdf:TextLink text="{path:'dataModel>Dashboard_Description/Dashboard_Description',type:'sap.ui.model.type.String' }" linkText="{i18n>Dashboard.Dashboard_Description/Dashboard_Description}"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>Dashboard.Dashboard_DeveloperName}" required="false"/> 
+						<Text text=""/>
+						<rdf:TextLink text="{path:'dataModel>Dashboard_DeveloperName/Dashboard_DeveloperName',type:'sap.ui.model.type.String' }" linkText="{i18n>Dashboard.Dashboard_DeveloperName/Dashboard_DeveloperName}"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>Dashboard.Dashboard_FolderId}" required="false"/> 
+						<Text text=""/>
+						<rdf:ListResource path="dataModel>Dashboard_FolderId/sfdc_Dashboard_FolderId" entitySet="Folder"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>Dashboard.Dashboard_FolderName}" required="false"/> 
+						<Text text=""/>
+						<rdf:TextLink text="{path:'dataModel>Dashboard_FolderName/Dashboard_FolderName',type:'sap.ui.model.type.String' }" linkText="{i18n>Dashboard.Dashboard_FolderName/Dashboard_FolderName}"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>Dashboard.Dashboard_Id}" required="false"/> 
+						<Text text=""/>
+						<rdf:TextLink text="{path:'dataModel>Dashboard_Id/Dashboard_Id',type:'sap.ui.model.type.String' }" linkText="{i18n>Dashboard.Dashboard_Id/Dashboard_Id}"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>Dashboard.Dashboard_IsDeleted}" required="false"/> 
+						<Text text=""/>
+						<Text text="{path:'dataModel>Dashboard_IsDeleted/Dashboard_IsDeleted',type:'sap.ui.model.type.Boolean'}"/>  
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>Dashboard.Dashboard_LastModifiedById}" required="false"/> 
+						<Text text=""/>
+						<rdf:ListResource path="dataModel>Dashboard_LastModifiedById/sfdc_Dashboard_LastModifiedById" entitySet="User"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>Dashboard.Dashboard_LastModifiedDate}" required="false"/> 
+						<Text text=""/>
+						<Text text="{dataModel>Dashboard_LastModifiedDate/Dashboard_LastModifiedDate}"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>Dashboard.Dashboard_LastReferencedDate}" required="false"/> 
+						<Text text=""/>
+						<Text text="{dataModel>Dashboard_LastReferencedDate/Dashboard_LastReferencedDate}"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>Dashboard.Dashboard_LastViewedDate}" required="false"/> 
+						<Text text=""/>
+						<Text text="{dataModel>Dashboard_LastViewedDate/Dashboard_LastViewedDate}"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>Dashboard.Dashboard_LeftSize}" required="false"/> 
+						<Text text=""/>
+						<rdf:TextLink text="{path:'dataModel>Dashboard_LeftSize/Dashboard_LeftSize',type:'sap.ui.model.type.String' }" linkText="{i18n>Dashboard.Dashboard_LeftSize/Dashboard_LeftSize}"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>Dashboard.Dashboard_MiddleSize}" required="false"/> 
+						<Text text=""/>
+						<rdf:TextLink text="{path:'dataModel>Dashboard_MiddleSize/Dashboard_MiddleSize',type:'sap.ui.model.type.String' }" linkText="{i18n>Dashboard.Dashboard_MiddleSize/Dashboard_MiddleSize}"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>Dashboard.Dashboard_NamespacePrefix}" required="false"/> 
+						<Text text=""/>
+						<rdf:TextLink text="{path:'dataModel>Dashboard_NamespacePrefix/Dashboard_NamespacePrefix',type:'sap.ui.model.type.String' }" linkText="{i18n>Dashboard.Dashboard_NamespacePrefix/Dashboard_NamespacePrefix}"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>Dashboard.Dashboard_RightSize}" required="false"/> 
+						<Text text=""/>
+						<rdf:TextLink text="{path:'dataModel>Dashboard_RightSize/Dashboard_RightSize',type:'sap.ui.model.type.String' }" linkText="{i18n>Dashboard.Dashboard_RightSize/Dashboard_RightSize}"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>Dashboard.Dashboard_RunningUserId}" required="false"/> 
+						<Text text=""/>
+						<rdf:ListResource path="dataModel>Dashboard_RunningUserId/sfdc_Dashboard_RunningUserId" entitySet="User"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>Dashboard.Dashboard_SystemModstamp}" required="false"/> 
+						<Text text=""/>
+						<Text text="{dataModel>Dashboard_SystemModstamp/Dashboard_SystemModstamp}"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>Dashboard.Dashboard_TextColor}" required="false"/> 
+						<Text text=""/>
+						<Text text="{path:'dataModel>Dashboard_TextColor/Dashboard_TextColor',type:'sap.ui.model.type.Integer' }"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>Dashboard.Dashboard_Title}" required="false"/> 
+						<Text text=""/>
+						<rdf:TextLink text="{path:'dataModel>Dashboard_Title/Dashboard_Title',type:'sap.ui.model.type.String' }" linkText="{i18n>Dashboard.Dashboard_Title/Dashboard_Title}"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>Dashboard.Dashboard_TitleColor}" required="false"/> 
+						<Text text=""/>
+						<Text text="{path:'dataModel>Dashboard_TitleColor/Dashboard_TitleColor',type:'sap.ui.model.type.Integer' }"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>Dashboard.Dashboard_TitleSize}" required="false"/> 
+						<Text text=""/>
+						<Text text="{path:'dataModel>Dashboard_TitleSize/Dashboard_TitleSize',type:'sap.ui.model.type.Integer' }"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>Dashboard.Dashboard_Type}" required="false"/> 
+						<Text text=""/>
+						<rdf:TextLink text="{path:'dataModel>Dashboard_Type/Dashboard_Type',type:'sap.ui.model.type.String' }" linkText="{i18n>Dashboard.Dashboard_Type/Dashboard_Type}"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>Dashboard.DashboardComponent_DashboardId_Inverse}" required="false"/> 
+						<rdf:ListResource path="dataModel>DashboardComponent_DashboardId_Inverse" entitySet="DashboardComponent"/>
+						<Text text=""/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>Dashboard.DashboardFeed_ParentId_Inverse}" required="false"/> 
+						<rdf:ListResource path="dataModel>DashboardFeed_ParentId_Inverse" entitySet="DashboardFeed"/>
+						<Text text=""/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>Dashboard.Dashboard_CreatedById}" required="false"/> 
+						<rdf:ListResource path="dataModel>Dashboard_CreatedById" entitySet="User"/>
+						<Text text=""/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>Dashboard.Dashboard_FolderId}" required="false"/> 
+						<rdf:ListResource path="dataModel>Dashboard_FolderId" entitySet="Folder"/>
+						<Text text=""/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>Dashboard.Dashboard_LastModifiedById}" required="false"/> 
+						<rdf:ListResource path="dataModel>Dashboard_LastModifiedById" entitySet="User"/>
+						<Text text=""/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>Dashboard.Dashboard_RunningUserId}" required="false"/> 
+						<rdf:ListResource path="dataModel>Dashboard_RunningUserId" entitySet="User"/>
+						<Text text=""/>
+					</cells>
+				</ColumnListItem>
+			</items>
+		</Table>
+	</Page>
+</mvc:View>

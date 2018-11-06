@@ -1,0 +1,271 @@
+<mvc:View controllerName="com.inova8.lens.controller.EntitySet360" xmlns="sap.m" xmlns:mvc="sap.ui.core.mvc" xmlns:layout="sap.ui.layout"
+	xmlns:rdf="com.inova8.lens.control" xmlns:core="sap.ui.core">
+	<Page showHeader="false" id="page" navButtonPress="onNavBack" showNavButton="true" title="{i18n>Accounts.ViewTitle}">
+		<content>
+			<Table id="table360" inset="false" items="{ path: 'dataModel>/Account' , sorter: { path: 'label', descending: false } 
+				}"
+				noDataText="{entitySetView>/tableNoDataText}" busyIndicatorDelay="{entitySetView>/tableBusyDelay}" growing="true" growingScrollToLoad="true"
+				updateFinished="onUpdateFinished"  fixedLayout="false">
+				<headerToolbar>
+					<Toolbar>
+						<ToolbarSpacer/>
+						<HBox id="sourceTitle" alignItems="Center">
+							<rdf:TextResource id="selectedResource" path="" entitySet=""/>
+						</HBox>
+						<Title id="pathTitle" text="{entitySetView>/navigationText}"/>
+						<HBox id="versionsTitle" alignItems="Center">
+							<Title text="(" required="false"/>
+							<ComboBox id="versionSelection" items="{ path: 'entitySetView>/versions' }" selectionChange="onVersionChange">
+								<core:Item key="{entitySetView>navigation}" text="{entityView>text}"/>
+							</ComboBox>
+							<Title text=")" required="false"/>
+						</HBox>
+						<Title id="tableHeader" text="{entitySetView>/entitySetTableTitle}"/>
+						<ToolbarSpacer/>
+						<SearchField id="searchField" tooltip="{i18n>search.searchTooltip}" search="onSearch" width="auto"></SearchField>
+					</Toolbar>
+				</headerToolbar>
+				<columns>
+					<Column >
+						<Text text="{i18n>Accounts.this}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>Accounts.Account_AccountSource}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>Accounts.Account_AnnualRevenue}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>Accounts.Account_BillingCity}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>Accounts.Account_BillingCountry}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>Accounts.Account_BillingGeocodeAccuracy}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>Accounts.Account_BillingLatitude}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>Accounts.Account_BillingLongitude}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>Accounts.Account_BillingPostalCode}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>Accounts.Account_BillingState}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>Accounts.Account_BillingStreet}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>Accounts.Account_CreatedDate}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>Accounts.Account_Description}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>Accounts.Account_Fax}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>Accounts.Account_Id}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>Accounts.Account_Industry}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>Accounts.Account_IsDeleted}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>Accounts.Account_Jigsaw}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>Accounts.Account_JigsawCompanyId}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>Accounts.Account_LastActivityDate}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>Accounts.Account_LastModifiedDate}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>Accounts.Account_LastReferencedDate}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>Accounts.Account_LastViewedDate}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>Accounts.Account_Name}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>Accounts.Account_NumberOfEmployees}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>Accounts.Account_Phone}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>Accounts.Account_PhotoUrl}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>Accounts.Account_ShippingCity}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>Accounts.Account_ShippingCountry}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>Accounts.Account_ShippingGeocodeAccuracy}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>Accounts.Account_ShippingLatitude}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>Accounts.Account_ShippingLongitude}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>Accounts.Account_ShippingPostalCode}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>Accounts.Account_ShippingState}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>Accounts.Account_ShippingStreet}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>Accounts.Account_SicDesc}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>Accounts.Account_SystemModstamp}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>Accounts.Account_Type}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>Accounts.Account_Website}"/>
+					</Column>
+				</columns>
+				<items>
+					<ColumnListItem id="template360" type="Navigation" press="onPress">
+						<cells>
+							<rdf:TextResource path="dataModel>" entitySet="Account"/>
+							<VBox>					
+							<rdf:TextLink text="{path:'dataModel>Account_AccountSource/Account_AccountSource',type:'sap.ui.model.type.String'}" linkText="{i18n>Account.Account_AccountSource/Account_AccountSource}"/>
+							</VBox>							
+							<VBox>					
+							<Text text="{path:'dataModel>Account_AnnualRevenue/Account_AnnualRevenue',type:'sap.ui.model.type.Float', formatOptions:{'style':'short','maxFractionDigits':2} }"/>
+							</VBox>							
+							<VBox>					
+							<rdf:TextLink text="{path:'dataModel>Account_BillingCity/Account_BillingCity',type:'sap.ui.model.type.String'}" linkText="{i18n>Account.Account_BillingCity/Account_BillingCity}"/>
+							</VBox>							
+							<VBox>					
+							<rdf:TextLink text="{path:'dataModel>Account_BillingCountry/Account_BillingCountry',type:'sap.ui.model.type.String'}" linkText="{i18n>Account.Account_BillingCountry/Account_BillingCountry}"/>
+							</VBox>							
+							<VBox>					
+							<rdf:TextLink text="{path:'dataModel>Account_BillingGeocodeAccuracy/Account_BillingGeocodeAccuracy',type:'sap.ui.model.type.String'}" linkText="{i18n>Account.Account_BillingGeocodeAccuracy/Account_BillingGeocodeAccuracy}"/>
+							</VBox>							
+							<VBox>					
+							<Text text="{path:'dataModel>Account_BillingLatitude/Account_BillingLatitude',type:'sap.ui.model.type.Float', formatOptions:{'style':'short','maxFractionDigits':2} }"/>
+							</VBox>							
+							<VBox>					
+							<Text text="{path:'dataModel>Account_BillingLongitude/Account_BillingLongitude',type:'sap.ui.model.type.Float', formatOptions:{'style':'short','maxFractionDigits':2} }"/>
+							</VBox>							
+							<VBox>					
+							<rdf:TextLink text="{path:'dataModel>Account_BillingPostalCode/Account_BillingPostalCode',type:'sap.ui.model.type.String'}" linkText="{i18n>Account.Account_BillingPostalCode/Account_BillingPostalCode}"/>
+							</VBox>							
+							<VBox>					
+							<rdf:TextLink text="{path:'dataModel>Account_BillingState/Account_BillingState',type:'sap.ui.model.type.String'}" linkText="{i18n>Account.Account_BillingState/Account_BillingState}"/>
+							</VBox>							
+							<VBox>					
+							<rdf:TextLink text="{path:'dataModel>Account_BillingStreet/Account_BillingStreet',type:'sap.ui.model.type.String'}" linkText="{i18n>Account.Account_BillingStreet/Account_BillingStreet}"/>
+							</VBox>							
+							<VBox>					
+							<Text text="{dataModel>Account_CreatedDate/Account_CreatedDate}"/>
+							</VBox>							
+							<VBox>					
+							<rdf:TextLink text="{path:'dataModel>Account_Description/Account_Description',type:'sap.ui.model.type.String'}" linkText="{i18n>Account.Account_Description/Account_Description}"/>
+							</VBox>							
+							<VBox>					
+							<rdf:TextLink text="{path:'dataModel>Account_Fax/Account_Fax',type:'sap.ui.model.type.String'}" linkText="{i18n>Account.Account_Fax/Account_Fax}"/>
+							</VBox>							
+							<VBox>					
+							<rdf:TextLink text="{path:'dataModel>Account_Id/Account_Id',type:'sap.ui.model.type.String'}" linkText="{i18n>Account.Account_Id/Account_Id}"/>
+							</VBox>							
+							<VBox>					
+							<rdf:TextLink text="{path:'dataModel>Account_Industry/Account_Industry',type:'sap.ui.model.type.String'}" linkText="{i18n>Account.Account_Industry/Account_Industry}"/>
+							</VBox>							
+							<VBox>					
+								<Text text="{path:'dataModel>Account_IsDeleted/Account_IsDeleted',type:'sap.ui.model.type.Boolean'}"/>  
+							</VBox>							
+							<VBox>					
+							<rdf:TextLink text="{path:'dataModel>Account_Jigsaw/Account_Jigsaw',type:'sap.ui.model.type.String'}" linkText="{i18n>Account.Account_Jigsaw/Account_Jigsaw}"/>
+							</VBox>							
+							<VBox>					
+							<rdf:TextLink text="{path:'dataModel>Account_JigsawCompanyId/Account_JigsawCompanyId',type:'sap.ui.model.type.String'}" linkText="{i18n>Account.Account_JigsawCompanyId/Account_JigsawCompanyId}"/>
+							</VBox>							
+							<VBox>					
+							<Text text="{dataModel>Account_LastActivityDate/Account_LastActivityDate}"/>
+							</VBox>							
+							<VBox>					
+							<Text text="{dataModel>Account_LastModifiedDate/Account_LastModifiedDate}"/>
+							</VBox>							
+							<VBox>					
+							<Text text="{dataModel>Account_LastReferencedDate/Account_LastReferencedDate}"/>
+							</VBox>							
+							<VBox>					
+							<Text text="{dataModel>Account_LastViewedDate/Account_LastViewedDate}"/>
+							</VBox>							
+							<VBox>					
+							<rdf:TextLink text="{path:'dataModel>Account_Name/Account_Name',type:'sap.ui.model.type.String'}" linkText="{i18n>Account.Account_Name/Account_Name}"/>
+							</VBox>							
+							<VBox>					
+							<Text text="{path:'dataModel>Account_NumberOfEmployees/Account_NumberOfEmployees',type:'sap.ui.model.type.Integer' }"/>
+							</VBox>							
+							<VBox>					
+							<rdf:TextLink text="{path:'dataModel>Account_Phone/Account_Phone',type:'sap.ui.model.type.String'}" linkText="{i18n>Account.Account_Phone/Account_Phone}"/>
+							</VBox>							
+							<VBox>					
+							<rdf:TextLink text="{path:'dataModel>Account_PhotoUrl/Account_PhotoUrl',type:'sap.ui.model.type.String'}" linkText="{i18n>Account.Account_PhotoUrl/Account_PhotoUrl}"/>
+							</VBox>							
+							<VBox>					
+							<rdf:TextLink text="{path:'dataModel>Account_ShippingCity/Account_ShippingCity',type:'sap.ui.model.type.String'}" linkText="{i18n>Account.Account_ShippingCity/Account_ShippingCity}"/>
+							</VBox>							
+							<VBox>					
+							<rdf:TextLink text="{path:'dataModel>Account_ShippingCountry/Account_ShippingCountry',type:'sap.ui.model.type.String'}" linkText="{i18n>Account.Account_ShippingCountry/Account_ShippingCountry}"/>
+							</VBox>							
+							<VBox>					
+							<rdf:TextLink text="{path:'dataModel>Account_ShippingGeocodeAccuracy/Account_ShippingGeocodeAccuracy',type:'sap.ui.model.type.String'}" linkText="{i18n>Account.Account_ShippingGeocodeAccuracy/Account_ShippingGeocodeAccuracy}"/>
+							</VBox>							
+							<VBox>					
+							<Text text="{path:'dataModel>Account_ShippingLatitude/Account_ShippingLatitude',type:'sap.ui.model.type.Float', formatOptions:{'style':'short','maxFractionDigits':2} }"/>
+							</VBox>							
+							<VBox>					
+							<Text text="{path:'dataModel>Account_ShippingLongitude/Account_ShippingLongitude',type:'sap.ui.model.type.Float', formatOptions:{'style':'short','maxFractionDigits':2} }"/>
+							</VBox>							
+							<VBox>					
+							<rdf:TextLink text="{path:'dataModel>Account_ShippingPostalCode/Account_ShippingPostalCode',type:'sap.ui.model.type.String'}" linkText="{i18n>Account.Account_ShippingPostalCode/Account_ShippingPostalCode}"/>
+							</VBox>							
+							<VBox>					
+							<rdf:TextLink text="{path:'dataModel>Account_ShippingState/Account_ShippingState',type:'sap.ui.model.type.String'}" linkText="{i18n>Account.Account_ShippingState/Account_ShippingState}"/>
+							</VBox>							
+							<VBox>					
+							<rdf:TextLink text="{path:'dataModel>Account_ShippingStreet/Account_ShippingStreet',type:'sap.ui.model.type.String'}" linkText="{i18n>Account.Account_ShippingStreet/Account_ShippingStreet}"/>
+							</VBox>							
+							<VBox>					
+							<rdf:TextLink text="{path:'dataModel>Account_SicDesc/Account_SicDesc',type:'sap.ui.model.type.String'}" linkText="{i18n>Account.Account_SicDesc/Account_SicDesc}"/>
+							</VBox>							
+							<VBox>					
+							<Text text="{dataModel>Account_SystemModstamp/Account_SystemModstamp}"/>
+							</VBox>							
+							<VBox>					
+							<rdf:TextLink text="{path:'dataModel>Account_Type/Account_Type',type:'sap.ui.model.type.String'}" linkText="{i18n>Account.Account_Type/Account_Type}"/>
+							</VBox>							
+							<VBox>					
+							<rdf:TextLink text="{path:'dataModel>Account_Website/Account_Website',type:'sap.ui.model.type.String'}" linkText="{i18n>Account.Account_Website/Account_Website}"/>
+							</VBox>							
+						</cells>
+					</ColumnListItem>
+				</items>
+			</Table>
+		</content>
+	</Page>
+</mvc:View>

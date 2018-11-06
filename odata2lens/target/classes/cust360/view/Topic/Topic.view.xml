@@ -1,0 +1,161 @@
+<mvc:View controllerName="com.inova8.lens.controller.Entity360" xmlns="sap.m" xmlns:mvc="sap.ui.core.mvc" xmlns:l="sap.ui.layout"
+	xmlns:f="sap.ui.layout.form" xmlns:table="sap.ui.table" xmlns:rdf="com.inova8.lens.control" xmlns:html="http://www.w3.org/1999/xhtml"
+	xmlns:core="sap.ui.core">
+	<Page showHeader="true" id="page" navButtonPress="onNavBack" showNavButton="false" title="{i18n>Topic.Title}" busy="{entityView>/busy}"
+		busyIndicatorDelay="{entityView>/delay}" >
+		<customHeader>
+			<Toolbar>
+				<ToolbarSpacer/>
+				<HBox id="sourceTitle" alignItems="Center">
+						<rdf:TextResource id="selectedResource" path="" entitySet=""/>
+				</HBox>	
+				<Title id="pathTitle" text="{entityView>/navigation}"/>
+				<HBox id="versionsTitle" alignItems="Center">
+					<Title text="(" required="false"/>
+					<ComboBox id="versionSelection" items="{ path: 'entityView>/versions' }" selectionChange="onVersionChange">
+						<core:Item key="{entityView>navigation}" text="{entityView>text}"/>
+					</ComboBox>
+					<Title text=")" required="false"/>
+				</HBox>
+				<Title text="{i18n>Topic.this}"/>
+				<Title text="(" required="false"/>
+				<rdf:TextResource path="dataModel>" entitySet="Topic"/>
+				<Title text=")" required="false"/>
+	
+				<ToolbarSpacer/>
+				<ToggleButton id="toggleColumns" icon="sap-icon://hide" activeIcon="sap-icon://show" press="onSettingsPressed" visible="false"	>
+					<layoutData>
+						<OverflowToolbarLayoutData priority="NeverOverflow"/>
+					</layoutData>
+				</ToggleButton>
+				
+			</Toolbar>
+		</customHeader>
+		<Table id="form360" inset="false" fixedLayout="true" class="multicolumnform" updateFinished="hideColumns">
+			<columns>
+				<Column hAlign="Right" width="200px">
+					<Text text=""/>
+				</Column>
+				<Column visible="true">
+				</Column>
+				<Column visible="true">
+					<Text text="Topic"/>
+				</Column>
+			</columns>
+			<items>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>Topic.KnowledgeableUser_TopicId_Inverse}" required="false"/> 
+						<Text text=""/>
+						<rdf:ListResource path="dataModel>KnowledgeableUser_TopicId_Inverse/sfdc_KnowledgeableUser_TopicId_Inverse" entitySet="KnowledgeableUser"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>Topic.TopicAssignment_TopicId_Inverse}" required="false"/> 
+						<Text text=""/>
+						<rdf:ListResource path="dataModel>TopicAssignment_TopicId_Inverse/sfdc_TopicAssignment_TopicId_Inverse" entitySet="TopicAssignment"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>Topic.TopicFeed_ParentId_Inverse}" required="false"/> 
+						<Text text=""/>
+						<rdf:ListResource path="dataModel>TopicFeed_ParentId_Inverse/sfdc_TopicFeed_ParentId_Inverse" entitySet="TopicFeed"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>Topic.TopicLocalization_ParentId_Inverse}" required="false"/> 
+						<Text text=""/>
+						<rdf:ListResource path="dataModel>TopicLocalization_ParentId_Inverse/sfdc_TopicLocalization_ParentId_Inverse" entitySet="TopicLocalization"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>Topic.Topic_CreatedById}" required="false"/> 
+						<Text text=""/>
+						<rdf:ListResource path="dataModel>Topic_CreatedById/sfdc_Topic_CreatedById" entitySet="User"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>Topic.Topic_CreatedDate}" required="false"/> 
+						<Text text=""/>
+						<Text text="{dataModel>Topic_CreatedDate/Topic_CreatedDate}"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>Topic.Topic_Description}" required="false"/> 
+						<Text text=""/>
+						<rdf:TextLink text="{path:'dataModel>Topic_Description/Topic_Description',type:'sap.ui.model.type.String' }" linkText="{i18n>Topic.Topic_Description/Topic_Description}"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>Topic.Topic_Id}" required="false"/> 
+						<Text text=""/>
+						<rdf:TextLink text="{path:'dataModel>Topic_Id/Topic_Id',type:'sap.ui.model.type.String' }" linkText="{i18n>Topic.Topic_Id/Topic_Id}"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>Topic.Topic_Name}" required="false"/> 
+						<Text text=""/>
+						<rdf:TextLink text="{path:'dataModel>Topic_Name/Topic_Name',type:'sap.ui.model.type.String' }" linkText="{i18n>Topic.Topic_Name/Topic_Name}"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>Topic.Topic_SystemModstamp}" required="false"/> 
+						<Text text=""/>
+						<Text text="{dataModel>Topic_SystemModstamp/Topic_SystemModstamp}"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>Topic.Topic_TalkingAbout}" required="false"/> 
+						<Text text=""/>
+						<Text text="{path:'dataModel>Topic_TalkingAbout/Topic_TalkingAbout',type:'sap.ui.model.type.Integer' }"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>Topic.KnowledgeableUser_TopicId_Inverse}" required="false"/> 
+						<rdf:ListResource path="dataModel>KnowledgeableUser_TopicId_Inverse" entitySet="KnowledgeableUser"/>
+						<Text text=""/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>Topic.TopicAssignment_TopicId_Inverse}" required="false"/> 
+						<rdf:ListResource path="dataModel>TopicAssignment_TopicId_Inverse" entitySet="TopicAssignment"/>
+						<Text text=""/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>Topic.TopicFeed_ParentId_Inverse}" required="false"/> 
+						<rdf:ListResource path="dataModel>TopicFeed_ParentId_Inverse" entitySet="TopicFeed"/>
+						<Text text=""/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>Topic.TopicLocalization_ParentId_Inverse}" required="false"/> 
+						<rdf:ListResource path="dataModel>TopicLocalization_ParentId_Inverse" entitySet="TopicLocalization"/>
+						<Text text=""/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>Topic.Topic_CreatedById}" required="false"/> 
+						<rdf:ListResource path="dataModel>Topic_CreatedById" entitySet="User"/>
+						<Text text=""/>
+					</cells>
+				</ColumnListItem>
+			</items>
+		</Table>
+	</Page>
+</mvc:View>

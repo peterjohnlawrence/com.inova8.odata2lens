@@ -1,0 +1,133 @@
+<mvc:View controllerName="com.inova8.lens.controller.EntitySet360" xmlns="sap.m" xmlns:mvc="sap.ui.core.mvc" xmlns:layout="sap.ui.layout"
+	xmlns:rdf="com.inova8.lens.control" xmlns:core="sap.ui.core">
+	<Page showHeader="false" id="page" navButtonPress="onNavBack" showNavButton="true" title="{i18n>sfLma__Package_Version__cs.ViewTitle}">
+		<content>
+			<Table id="table360" inset="false" items="{ path: 'dataModel>/sfLma__Package_Version__c' , sorter: { path: 'label', descending: false } 
+				}"
+				noDataText="{entitySetView>/tableNoDataText}" busyIndicatorDelay="{entitySetView>/tableBusyDelay}" growing="true" growingScrollToLoad="true"
+				updateFinished="onUpdateFinished"  fixedLayout="false">
+				<headerToolbar>
+					<Toolbar>
+						<ToolbarSpacer/>
+						<HBox id="sourceTitle" alignItems="Center">
+							<rdf:TextResource id="selectedResource" path="" entitySet=""/>
+						</HBox>
+						<Title id="pathTitle" text="{entitySetView>/navigationText}"/>
+						<HBox id="versionsTitle" alignItems="Center">
+							<Title text="(" required="false"/>
+							<ComboBox id="versionSelection" items="{ path: 'entitySetView>/versions' }" selectionChange="onVersionChange">
+								<core:Item key="{entitySetView>navigation}" text="{entityView>text}"/>
+							</ComboBox>
+							<Title text=")" required="false"/>
+						</HBox>
+						<Title id="tableHeader" text="{entitySetView>/entitySetTableTitle}"/>
+						<ToolbarSpacer/>
+						<SearchField id="searchField" tooltip="{i18n>search.searchTooltip}" search="onSearch" width="auto"></SearchField>
+					</Toolbar>
+				</headerToolbar>
+				<columns>
+					<Column >
+						<Text text="{i18n>sfLma__Package_Version__cs.this}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>sfLma__Package_Version__cs.sfLma__Package_Version__c_CreatedDate}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>sfLma__Package_Version__cs.sfLma__Package_Version__c_Id}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>sfLma__Package_Version__cs.sfLma__Package_Version__c_IsDeleted}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>sfLma__Package_Version__cs.sfLma__Package_Version__c_LastActivityDate}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>sfLma__Package_Version__cs.sfLma__Package_Version__c_LastModifiedDate}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>sfLma__Package_Version__cs.sfLma__Package_Version__c_LastReferencedDate}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>sfLma__Package_Version__cs.sfLma__Package_Version__c_LastViewedDate}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>sfLma__Package_Version__cs.sfLma__Package_Version__c_Name}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>sfLma__Package_Version__cs.sfLma__Package_Version__c_SystemModstamp}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>sfLma__Package_Version__cs.sfLma__Package_Version__c_sfLma__Help__c}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>sfLma__Package_Version__cs.sfLma__Package_Version__c_sfLma__Is_Beta__c}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>sfLma__Package_Version__cs.sfLma__Package_Version__c_sfLma__Release_Date__c}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>sfLma__Package_Version__cs.sfLma__Package_Version__c_sfLma__Sequence__c}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>sfLma__Package_Version__cs.sfLma__Package_Version__c_sfLma__Version_ID__c}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>sfLma__Package_Version__cs.sfLma__Package_Version__c_sfLma__Version__c}"/>
+					</Column>
+				</columns>
+				<items>
+					<ColumnListItem id="template360" type="Navigation" press="onPress">
+						<cells>
+							<rdf:TextResource path="dataModel>" entitySet="sfLma__Package_Version__c"/>
+							<VBox>					
+							<Text text="{dataModel>sfLma__Package_Version__c_CreatedDate/sfLma__Package_Version__c_CreatedDate}"/>
+							</VBox>							
+							<VBox>					
+							<rdf:TextLink text="{path:'dataModel>sfLma__Package_Version__c_Id/sfLma__Package_Version__c_Id',type:'sap.ui.model.type.String'}" linkText="{i18n>sfLma__Package_Version__c.sfLma__Package_Version__c_Id/sfLma__Package_Version__c_Id}"/>
+							</VBox>							
+							<VBox>					
+								<Text text="{path:'dataModel>sfLma__Package_Version__c_IsDeleted/sfLma__Package_Version__c_IsDeleted',type:'sap.ui.model.type.Boolean'}"/>  
+							</VBox>							
+							<VBox>					
+							<Text text="{dataModel>sfLma__Package_Version__c_LastActivityDate/sfLma__Package_Version__c_LastActivityDate}"/>
+							</VBox>							
+							<VBox>					
+							<Text text="{dataModel>sfLma__Package_Version__c_LastModifiedDate/sfLma__Package_Version__c_LastModifiedDate}"/>
+							</VBox>							
+							<VBox>					
+							<Text text="{dataModel>sfLma__Package_Version__c_LastReferencedDate/sfLma__Package_Version__c_LastReferencedDate}"/>
+							</VBox>							
+							<VBox>					
+							<Text text="{dataModel>sfLma__Package_Version__c_LastViewedDate/sfLma__Package_Version__c_LastViewedDate}"/>
+							</VBox>							
+							<VBox>					
+							<rdf:TextLink text="{path:'dataModel>sfLma__Package_Version__c_Name/sfLma__Package_Version__c_Name',type:'sap.ui.model.type.String'}" linkText="{i18n>sfLma__Package_Version__c.sfLma__Package_Version__c_Name/sfLma__Package_Version__c_Name}"/>
+							</VBox>							
+							<VBox>					
+							<Text text="{dataModel>sfLma__Package_Version__c_SystemModstamp/sfLma__Package_Version__c_SystemModstamp}"/>
+							</VBox>							
+							<VBox>					
+							<rdf:TextLink text="{path:'dataModel>sfLma__Package_Version__c_sfLma__Help__c/sfLma__Package_Version__c_sfLma__Help__c',type:'sap.ui.model.type.String'}" linkText="{i18n>sfLma__Package_Version__c.sfLma__Package_Version__c_sfLma__Help__c/sfLma__Package_Version__c_sfLma__Help__c}"/>
+							</VBox>							
+							<VBox>					
+								<Text text="{path:'dataModel>sfLma__Package_Version__c_sfLma__Is_Beta__c/sfLma__Package_Version__c_sfLma__Is_Beta__c',type:'sap.ui.model.type.Boolean'}"/>  
+							</VBox>							
+							<VBox>					
+							<Text text="{dataModel>sfLma__Package_Version__c_sfLma__Release_Date__c/sfLma__Package_Version__c_sfLma__Release_Date__c}"/>
+							</VBox>							
+							<VBox>					
+							<Text text="{path:'dataModel>sfLma__Package_Version__c_sfLma__Sequence__c/sfLma__Package_Version__c_sfLma__Sequence__c',type:'sap.ui.model.type.Float', formatOptions:{'style':'short','maxFractionDigits':2} }"/>
+							</VBox>							
+							<VBox>					
+							<rdf:TextLink text="{path:'dataModel>sfLma__Package_Version__c_sfLma__Version_ID__c/sfLma__Package_Version__c_sfLma__Version_ID__c',type:'sap.ui.model.type.String'}" linkText="{i18n>sfLma__Package_Version__c.sfLma__Package_Version__c_sfLma__Version_ID__c/sfLma__Package_Version__c_sfLma__Version_ID__c}"/>
+							</VBox>							
+							<VBox>					
+							<rdf:TextLink text="{path:'dataModel>sfLma__Package_Version__c_sfLma__Version__c/sfLma__Package_Version__c_sfLma__Version__c',type:'sap.ui.model.type.String'}" linkText="{i18n>sfLma__Package_Version__c.sfLma__Package_Version__c_sfLma__Version__c/sfLma__Package_Version__c_sfLma__Version__c}"/>
+							</VBox>							
+						</cells>
+					</ColumnListItem>
+				</items>
+			</Table>
+		</content>
+	</Page>
+</mvc:View>

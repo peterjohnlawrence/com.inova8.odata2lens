@@ -1,0 +1,308 @@
+<mvc:View controllerName="com.inova8.lens.controller.Entity360" xmlns="sap.m" xmlns:mvc="sap.ui.core.mvc" xmlns:l="sap.ui.layout"
+	xmlns:f="sap.ui.layout.form" xmlns:table="sap.ui.table" xmlns:rdf="com.inova8.lens.control" xmlns:html="http://www.w3.org/1999/xhtml"
+	xmlns:core="sap.ui.core">
+	<Page showHeader="true" id="page" navButtonPress="onNavBack" showNavButton="false" title="{i18n>ForecastingItem.Title}" busy="{entityView>/busy}"
+		busyIndicatorDelay="{entityView>/delay}" >
+		<customHeader>
+			<Toolbar>
+				<ToolbarSpacer/>
+				<HBox id="sourceTitle" alignItems="Center">
+						<rdf:TextResource id="selectedResource" path="" entitySet=""/>
+				</HBox>	
+				<Title id="pathTitle" text="{entityView>/navigation}"/>
+				<HBox id="versionsTitle" alignItems="Center">
+					<Title text="(" required="false"/>
+					<ComboBox id="versionSelection" items="{ path: 'entityView>/versions' }" selectionChange="onVersionChange">
+						<core:Item key="{entityView>navigation}" text="{entityView>text}"/>
+					</ComboBox>
+					<Title text=")" required="false"/>
+				</HBox>
+				<Title text="{i18n>ForecastingItem.this}"/>
+				<Title text="(" required="false"/>
+				<rdf:TextResource path="dataModel>" entitySet="ForecastingItem"/>
+				<Title text=")" required="false"/>
+	
+				<ToolbarSpacer/>
+				<ToggleButton id="toggleColumns" icon="sap-icon://hide" activeIcon="sap-icon://show" press="onSettingsPressed" visible="false"	>
+					<layoutData>
+						<OverflowToolbarLayoutData priority="NeverOverflow"/>
+					</layoutData>
+				</ToggleButton>
+				
+			</Toolbar>
+		</customHeader>
+		<Table id="form360" inset="false" fixedLayout="true" class="multicolumnform" updateFinished="hideColumns">
+			<columns>
+				<Column hAlign="Right" width="200px">
+					<Text text=""/>
+				</Column>
+				<Column visible="true">
+				</Column>
+				<Column visible="true">
+					<Text text="ForecastingItem"/>
+				</Column>
+			</columns>
+			<items>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>ForecastingItem.ForecastingAdjustment_ForecastingItemId_Inverse}" required="false"/> 
+						<Text text=""/>
+						<rdf:ListResource path="dataModel>ForecastingAdjustment_ForecastingItemId_Inverse/sfdc_ForecastingAdjustment_ForecastingItemId_Inverse" entitySet="ForecastingAdjustment"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>ForecastingItem.ForecastingFact_ForecastingItemId_Inverse}" required="false"/> 
+						<Text text=""/>
+						<rdf:ListResource path="dataModel>ForecastingFact_ForecastingItemId_Inverse/sfdc_ForecastingFact_ForecastingItemId_Inverse" entitySet="ForecastingFact"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>ForecastingItem.ForecastingItem_AmountWithoutAdjustments}" required="false"/> 
+						<Text text=""/>
+						<Text text="{path:'dataModel>ForecastingItem_AmountWithoutAdjustments/ForecastingItem_AmountWithoutAdjustments',type:'sap.ui.model.type.Float', formatOptions:{'style':'short','maxFractionDigits':2} }"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>ForecastingItem.ForecastingItem_AmountWithoutManagerAdjustment}" required="false"/> 
+						<Text text=""/>
+						<Text text="{path:'dataModel>ForecastingItem_AmountWithoutManagerAdjustment/ForecastingItem_AmountWithoutManagerAdjustment',type:'sap.ui.model.type.Float', formatOptions:{'style':'short','maxFractionDigits':2} }"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>ForecastingItem.ForecastingItem_AmountWithoutOwnerAdjustment}" required="false"/> 
+						<Text text=""/>
+						<Text text="{path:'dataModel>ForecastingItem_AmountWithoutOwnerAdjustment/ForecastingItem_AmountWithoutOwnerAdjustment',type:'sap.ui.model.type.Float', formatOptions:{'style':'short','maxFractionDigits':2} }"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>ForecastingItem.ForecastingItem_ForecastAmount}" required="false"/> 
+						<Text text=""/>
+						<Text text="{path:'dataModel>ForecastingItem_ForecastAmount/ForecastingItem_ForecastAmount',type:'sap.ui.model.type.Float', formatOptions:{'style':'short','maxFractionDigits':2} }"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>ForecastingItem.ForecastingItem_ForecastCategoryName}" required="false"/> 
+						<Text text=""/>
+						<rdf:TextLink text="{path:'dataModel>ForecastingItem_ForecastCategoryName/ForecastingItem_ForecastCategoryName',type:'sap.ui.model.type.String' }" linkText="{i18n>ForecastingItem.ForecastingItem_ForecastCategoryName/ForecastingItem_ForecastCategoryName}"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>ForecastingItem.ForecastingItem_ForecastQuantity}" required="false"/> 
+						<Text text=""/>
+						<Text text="{path:'dataModel>ForecastingItem_ForecastQuantity/ForecastingItem_ForecastQuantity',type:'sap.ui.model.type.Float', formatOptions:{'style':'short','maxFractionDigits':2} }"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>ForecastingItem.ForecastingItem_ForecastingItemCategory}" required="false"/> 
+						<Text text=""/>
+						<rdf:TextLink text="{path:'dataModel>ForecastingItem_ForecastingItemCategory/ForecastingItem_ForecastingItemCategory',type:'sap.ui.model.type.String' }" linkText="{i18n>ForecastingItem.ForecastingItem_ForecastingItemCategory/ForecastingItem_ForecastingItemCategory}"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>ForecastingItem.ForecastingItem_ForecastingTypeId}" required="false"/> 
+						<Text text=""/>
+						<rdf:ListResource path="dataModel>ForecastingItem_ForecastingTypeId/sfdc_ForecastingItem_ForecastingTypeId" entitySet="ForecastingType"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>ForecastingItem.ForecastingItem_HasAdjustment}" required="false"/> 
+						<Text text=""/>
+						<Text text="{path:'dataModel>ForecastingItem_HasAdjustment/ForecastingItem_HasAdjustment',type:'sap.ui.model.type.Boolean'}"/>  
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>ForecastingItem.ForecastingItem_HasOwnerAdjustment}" required="false"/> 
+						<Text text=""/>
+						<Text text="{path:'dataModel>ForecastingItem_HasOwnerAdjustment/ForecastingItem_HasOwnerAdjustment',type:'sap.ui.model.type.Boolean'}"/>  
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>ForecastingItem.ForecastingItem_Id}" required="false"/> 
+						<Text text=""/>
+						<rdf:TextLink text="{path:'dataModel>ForecastingItem_Id/ForecastingItem_Id',type:'sap.ui.model.type.String' }" linkText="{i18n>ForecastingItem.ForecastingItem_Id/ForecastingItem_Id}"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>ForecastingItem.ForecastingItem_IsAmount}" required="false"/> 
+						<Text text=""/>
+						<Text text="{path:'dataModel>ForecastingItem_IsAmount/ForecastingItem_IsAmount',type:'sap.ui.model.type.Boolean'}"/>  
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>ForecastingItem.ForecastingItem_IsQuantity}" required="false"/> 
+						<Text text=""/>
+						<Text text="{path:'dataModel>ForecastingItem_IsQuantity/ForecastingItem_IsQuantity',type:'sap.ui.model.type.Boolean'}"/>  
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>ForecastingItem.ForecastingItem_IsUpToDate}" required="false"/> 
+						<Text text=""/>
+						<Text text="{path:'dataModel>ForecastingItem_IsUpToDate/ForecastingItem_IsUpToDate',type:'sap.ui.model.type.Boolean'}"/>  
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>ForecastingItem.ForecastingItem_OwnerId}" required="false"/> 
+						<Text text=""/>
+						<rdf:ListResource path="dataModel>ForecastingItem_OwnerId/sfdc_ForecastingItem_OwnerId" entitySet="User"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>ForecastingItem.ForecastingItem_OwnerOnlyAmount}" required="false"/> 
+						<Text text=""/>
+						<Text text="{path:'dataModel>ForecastingItem_OwnerOnlyAmount/ForecastingItem_OwnerOnlyAmount',type:'sap.ui.model.type.Float', formatOptions:{'style':'short','maxFractionDigits':2} }"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>ForecastingItem.ForecastingItem_OwnerOnlyQuantity}" required="false"/> 
+						<Text text=""/>
+						<Text text="{path:'dataModel>ForecastingItem_OwnerOnlyQuantity/ForecastingItem_OwnerOnlyQuantity',type:'sap.ui.model.type.Float', formatOptions:{'style':'short','maxFractionDigits':2} }"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>ForecastingItem.ForecastingItem_ParentForecastingItemId}" required="false"/> 
+						<Text text=""/>
+						<rdf:ListResource path="dataModel>ForecastingItem_ParentForecastingItemId/sfdc_ForecastingItem_ParentForecastingItemId" entitySet="ForecastingItem"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>ForecastingItem.ForecastingItem_ParentForecastingItemId_Inverse}" required="false"/> 
+						<Text text=""/>
+						<rdf:ListResource path="dataModel>ForecastingItem_ParentForecastingItemId_Inverse/sfdc_ForecastingItem_ParentForecastingItemId_Inverse" entitySet="ForecastingItem"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>ForecastingItem.ForecastingItem_PeriodId}" required="false"/> 
+						<Text text=""/>
+						<rdf:ListResource path="dataModel>ForecastingItem_PeriodId/sfdc_ForecastingItem_PeriodId" entitySet="Period"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>ForecastingItem.ForecastingItem_ProductFamily}" required="false"/> 
+						<Text text=""/>
+						<rdf:TextLink text="{path:'dataModel>ForecastingItem_ProductFamily/ForecastingItem_ProductFamily',type:'sap.ui.model.type.String' }" linkText="{i18n>ForecastingItem.ForecastingItem_ProductFamily/ForecastingItem_ProductFamily}"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>ForecastingItem.ForecastingItem_QuantityWithoutAdjustments}" required="false"/> 
+						<Text text=""/>
+						<Text text="{path:'dataModel>ForecastingItem_QuantityWithoutAdjustments/ForecastingItem_QuantityWithoutAdjustments',type:'sap.ui.model.type.Float', formatOptions:{'style':'short','maxFractionDigits':2} }"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>ForecastingItem.ForecastingItem_QuantityWithoutManagerAdjustment}" required="false"/> 
+						<Text text=""/>
+						<Text text="{path:'dataModel>ForecastingItem_QuantityWithoutManagerAdjustment/ForecastingItem_QuantityWithoutManagerAdjustment',type:'sap.ui.model.type.Float', formatOptions:{'style':'short','maxFractionDigits':2} }"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>ForecastingItem.ForecastingItem_QuantityWithoutOwnerAdjustment}" required="false"/> 
+						<Text text=""/>
+						<Text text="{path:'dataModel>ForecastingItem_QuantityWithoutOwnerAdjustment/ForecastingItem_QuantityWithoutOwnerAdjustment',type:'sap.ui.model.type.Float', formatOptions:{'style':'short','maxFractionDigits':2} }"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>ForecastingItem.ForecastingItem_SubordinateOverrides}" required="false"/> 
+						<Text text=""/>
+						<Text text="{path:'dataModel>ForecastingItem_SubordinateOverrides/ForecastingItem_SubordinateOverrides',type:'sap.ui.model.type.Integer' }"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>ForecastingItem.ForecastingItem_SystemModstamp}" required="false"/> 
+						<Text text=""/>
+						<Text text="{dataModel>ForecastingItem_SystemModstamp/ForecastingItem_SystemModstamp}"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>ForecastingItem.ForecastingOwnerAdjustment_ForecastingItemId_Inverse}" required="false"/> 
+						<Text text=""/>
+						<rdf:ListResource path="dataModel>ForecastingOwnerAdjustment_ForecastingItemId_Inverse/sfdc_ForecastingOwnerAdjustment_ForecastingItemId_Inverse" entitySet="ForecastingOwnerAdjustment"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>ForecastingItem.ForecastingAdjustment_ForecastingItemId_Inverse}" required="false"/> 
+						<rdf:ListResource path="dataModel>ForecastingAdjustment_ForecastingItemId_Inverse" entitySet="ForecastingAdjustment"/>
+						<Text text=""/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>ForecastingItem.ForecastingFact_ForecastingItemId_Inverse}" required="false"/> 
+						<rdf:ListResource path="dataModel>ForecastingFact_ForecastingItemId_Inverse" entitySet="ForecastingFact"/>
+						<Text text=""/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>ForecastingItem.ForecastingItem_ForecastingTypeId}" required="false"/> 
+						<rdf:ListResource path="dataModel>ForecastingItem_ForecastingTypeId" entitySet="ForecastingType"/>
+						<Text text=""/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>ForecastingItem.ForecastingItem_OwnerId}" required="false"/> 
+						<rdf:ListResource path="dataModel>ForecastingItem_OwnerId" entitySet="User"/>
+						<Text text=""/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>ForecastingItem.ForecastingItem_ParentForecastingItemId}" required="false"/> 
+						<rdf:ListResource path="dataModel>ForecastingItem_ParentForecastingItemId" entitySet="ForecastingItem"/>
+						<Text text=""/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>ForecastingItem.ForecastingItem_ParentForecastingItemId_Inverse}" required="false"/> 
+						<rdf:ListResource path="dataModel>ForecastingItem_ParentForecastingItemId_Inverse" entitySet="ForecastingItem"/>
+						<Text text=""/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>ForecastingItem.ForecastingItem_PeriodId}" required="false"/> 
+						<rdf:ListResource path="dataModel>ForecastingItem_PeriodId" entitySet="Period"/>
+						<Text text=""/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>ForecastingItem.ForecastingOwnerAdjustment_ForecastingItemId_Inverse}" required="false"/> 
+						<rdf:ListResource path="dataModel>ForecastingOwnerAdjustment_ForecastingItemId_Inverse" entitySet="ForecastingOwnerAdjustment"/>
+						<Text text=""/>
+					</cells>
+				</ColumnListItem>
+			</items>
+		</Table>
+	</Page>
+</mvc:View>

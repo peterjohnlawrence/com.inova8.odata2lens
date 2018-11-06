@@ -1,0 +1,315 @@
+<mvc:View controllerName="com.inova8.lens.controller.Entity360" xmlns="sap.m" xmlns:mvc="sap.ui.core.mvc" xmlns:l="sap.ui.layout"
+	xmlns:f="sap.ui.layout.form" xmlns:table="sap.ui.table" xmlns:rdf="com.inova8.lens.control" xmlns:html="http://www.w3.org/1999/xhtml"
+	xmlns:core="sap.ui.core">
+	<Page showHeader="true" id="page" navButtonPress="onNavBack" showNavButton="false" title="{i18n>ConnectedApplication.Title}" busy="{entityView>/busy}"
+		busyIndicatorDelay="{entityView>/delay}" >
+		<customHeader>
+			<Toolbar>
+				<ToolbarSpacer/>
+				<HBox id="sourceTitle" alignItems="Center">
+						<rdf:TextResource id="selectedResource" path="" entitySet=""/>
+				</HBox>	
+				<Title id="pathTitle" text="{entityView>/navigation}"/>
+				<HBox id="versionsTitle" alignItems="Center">
+					<Title text="(" required="false"/>
+					<ComboBox id="versionSelection" items="{ path: 'entityView>/versions' }" selectionChange="onVersionChange">
+						<core:Item key="{entityView>navigation}" text="{entityView>text}"/>
+					</ComboBox>
+					<Title text=")" required="false"/>
+				</HBox>
+				<Title text="{i18n>ConnectedApplication.this}"/>
+				<Title text="(" required="false"/>
+				<rdf:TextResource path="dataModel>" entitySet="ConnectedApplication"/>
+				<Title text=")" required="false"/>
+	
+				<ToolbarSpacer/>
+				<ToggleButton id="toggleColumns" icon="sap-icon://hide" activeIcon="sap-icon://show" press="onSettingsPressed" visible="false"	>
+					<layoutData>
+						<OverflowToolbarLayoutData priority="NeverOverflow"/>
+					</layoutData>
+				</ToggleButton>
+				
+			</Toolbar>
+		</customHeader>
+		<Table id="form360" inset="false" fixedLayout="true" class="multicolumnform" updateFinished="hideColumns">
+			<columns>
+				<Column hAlign="Right" width="200px">
+					<Text text=""/>
+				</Column>
+				<Column visible="true">
+				</Column>
+				<Column visible="true">
+					<Text text="ConnectedApplication"/>
+				</Column>
+			</columns>
+			<items>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>ConnectedApplication.AssetTokenEvent_ConnectedAppId_Inverse}" required="false"/> 
+						<Text text=""/>
+						<rdf:ListResource path="dataModel>AssetTokenEvent_ConnectedAppId_Inverse/sfdc_AssetTokenEvent_ConnectedAppId_Inverse" entitySet="AssetTokenEvent"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>ConnectedApplication.ConnectedApplication_CreatedById}" required="false"/> 
+						<Text text=""/>
+						<rdf:ListResource path="dataModel>ConnectedApplication_CreatedById/sfdc_ConnectedApplication_CreatedById" entitySet="User"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>ConnectedApplication.ConnectedApplication_CreatedDate}" required="false"/> 
+						<Text text=""/>
+						<Text text="{dataModel>ConnectedApplication_CreatedDate/ConnectedApplication_CreatedDate}"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>ConnectedApplication.ConnectedApplication_Id}" required="false"/> 
+						<Text text=""/>
+						<rdf:TextLink text="{path:'dataModel>ConnectedApplication_Id/ConnectedApplication_Id',type:'sap.ui.model.type.String' }" linkText="{i18n>ConnectedApplication.ConnectedApplication_Id/ConnectedApplication_Id}"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>ConnectedApplication.ConnectedApplication_LastModifiedById}" required="false"/> 
+						<Text text=""/>
+						<rdf:ListResource path="dataModel>ConnectedApplication_LastModifiedById/sfdc_ConnectedApplication_LastModifiedById" entitySet="User"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>ConnectedApplication.ConnectedApplication_LastModifiedDate}" required="false"/> 
+						<Text text=""/>
+						<Text text="{dataModel>ConnectedApplication_LastModifiedDate/ConnectedApplication_LastModifiedDate}"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>ConnectedApplication.ConnectedApplication_MobileSessionTimeout}" required="false"/> 
+						<Text text=""/>
+						<rdf:TextLink text="{path:'dataModel>ConnectedApplication_MobileSessionTimeout/ConnectedApplication_MobileSessionTimeout',type:'sap.ui.model.type.String' }" linkText="{i18n>ConnectedApplication.ConnectedApplication_MobileSessionTimeout/ConnectedApplication_MobileSessionTimeout}"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>ConnectedApplication.ConnectedApplication_MobileStartUrl}" required="false"/> 
+						<Text text=""/>
+						<rdf:TextLink text="{path:'dataModel>ConnectedApplication_MobileStartUrl/ConnectedApplication_MobileStartUrl',type:'sap.ui.model.type.String' }" linkText="{i18n>ConnectedApplication.ConnectedApplication_MobileStartUrl/ConnectedApplication_MobileStartUrl}"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>ConnectedApplication.ConnectedApplication_Name}" required="false"/> 
+						<Text text=""/>
+						<rdf:TextLink text="{path:'dataModel>ConnectedApplication_Name/ConnectedApplication_Name',type:'sap.ui.model.type.String' }" linkText="{i18n>ConnectedApplication.ConnectedApplication_Name/ConnectedApplication_Name}"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>ConnectedApplication.ConnectedApplication_OptionsAllowAdminApprovedUsersOnly}" required="false"/> 
+						<Text text=""/>
+						<Text text="{path:'dataModel>ConnectedApplication_OptionsAllowAdminApprovedUsersOnly/ConnectedApplication_OptionsAllowAdminApprovedUsersOnly',type:'sap.ui.model.type.Boolean'}"/>  
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>ConnectedApplication.ConnectedApplication_OptionsHasSessionLevelPolicy}" required="false"/> 
+						<Text text=""/>
+						<Text text="{path:'dataModel>ConnectedApplication_OptionsHasSessionLevelPolicy/ConnectedApplication_OptionsHasSessionLevelPolicy',type:'sap.ui.model.type.Boolean'}"/>  
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>ConnectedApplication.ConnectedApplication_OptionsIsInternal}" required="false"/> 
+						<Text text=""/>
+						<Text text="{path:'dataModel>ConnectedApplication_OptionsIsInternal/ConnectedApplication_OptionsIsInternal',type:'sap.ui.model.type.Boolean'}"/>  
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>ConnectedApplication.ConnectedApplication_OptionsRefreshTokenValidityMetric}" required="false"/> 
+						<Text text=""/>
+						<Text text="{path:'dataModel>ConnectedApplication_OptionsRefreshTokenValidityMetric/ConnectedApplication_OptionsRefreshTokenValidityMetric',type:'sap.ui.model.type.Boolean'}"/>  
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>ConnectedApplication.ConnectedApplication_PinLength}" required="false"/> 
+						<Text text=""/>
+						<rdf:TextLink text="{path:'dataModel>ConnectedApplication_PinLength/ConnectedApplication_PinLength',type:'sap.ui.model.type.String' }" linkText="{i18n>ConnectedApplication.ConnectedApplication_PinLength/ConnectedApplication_PinLength}"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>ConnectedApplication.ConnectedApplication_RefreshTokenValidityPeriod}" required="false"/> 
+						<Text text=""/>
+						<Text text="{path:'dataModel>ConnectedApplication_RefreshTokenValidityPeriod/ConnectedApplication_RefreshTokenValidityPeriod',type:'sap.ui.model.type.Integer' }"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>ConnectedApplication.ConnectedApplication_StartUrl}" required="false"/> 
+						<Text text=""/>
+						<rdf:TextLink text="{path:'dataModel>ConnectedApplication_StartUrl/ConnectedApplication_StartUrl',type:'sap.ui.model.type.String' }" linkText="{i18n>ConnectedApplication.ConnectedApplication_StartUrl/ConnectedApplication_StartUrl}"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>ConnectedApplication.ConnectedApplication_SystemModstamp}" required="false"/> 
+						<Text text=""/>
+						<Text text="{dataModel>ConnectedApplication_SystemModstamp/ConnectedApplication_SystemModstamp}"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>ConnectedApplication.IdpEventLog_AppId_Inverse}" required="false"/> 
+						<Text text=""/>
+						<rdf:ListResource path="dataModel>IdpEventLog_AppId_Inverse/sfdc_IdpEventLog_AppId_Inverse" entitySet="IdpEventLog"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>ConnectedApplication.InstalledMobileApp_ConnectedApplicationId_Inverse}" required="false"/> 
+						<Text text=""/>
+						<rdf:ListResource path="dataModel>InstalledMobileApp_ConnectedApplicationId_Inverse/sfdc_InstalledMobileApp_ConnectedApplicationId_Inverse" entitySet="InstalledMobileApp"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>ConnectedApplication.ServiceProvider_ConnectivityId_Inverse}" required="false"/> 
+						<Text text=""/>
+						<rdf:ListResource path="dataModel>ServiceProvider_ConnectivityId_Inverse/sfdc_ServiceProvider_ConnectivityId_Inverse" entitySet="ServiceProvider"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>ConnectedApplication.UserAppMenuCustomization_ApplicationId_Inverse}" required="false"/> 
+						<Text text=""/>
+						<rdf:ListResource path="dataModel>UserAppMenuCustomization_ApplicationId_Inverse/sfdc_UserAppMenuCustomization_ApplicationId_Inverse" entitySet="UserAppMenuCustomization"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>ConnectedApplication.UserProvAccountStaging_ConnectedAppId_Inverse}" required="false"/> 
+						<Text text=""/>
+						<rdf:ListResource path="dataModel>UserProvAccountStaging_ConnectedAppId_Inverse/sfdc_UserProvAccountStaging_ConnectedAppId_Inverse" entitySet="UserProvAccountStaging"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>ConnectedApplication.UserProvAccount_ConnectedAppId_Inverse}" required="false"/> 
+						<Text text=""/>
+						<rdf:ListResource path="dataModel>UserProvAccount_ConnectedAppId_Inverse/sfdc_UserProvAccount_ConnectedAppId_Inverse" entitySet="UserProvAccount"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>ConnectedApplication.UserProvisioningConfig_ConnectedAppId_Inverse}" required="false"/> 
+						<Text text=""/>
+						<rdf:ListResource path="dataModel>UserProvisioningConfig_ConnectedAppId_Inverse/sfdc_UserProvisioningConfig_ConnectedAppId_Inverse" entitySet="UserProvisioningConfig"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>ConnectedApplication.UserProvisioningRequest_ConnectedAppId_Inverse}" required="false"/> 
+						<Text text=""/>
+						<rdf:ListResource path="dataModel>UserProvisioningRequest_ConnectedAppId_Inverse/sfdc_UserProvisioningRequest_ConnectedAppId_Inverse" entitySet="UserProvisioningRequest"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>ConnectedApplication.VerificationHistory_ResourceId_Inverse}" required="false"/> 
+						<Text text=""/>
+						<rdf:ListResource path="dataModel>VerificationHistory_ResourceId_Inverse/sfdc_VerificationHistory_ResourceId_Inverse" entitySet="VerificationHistory"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>ConnectedApplication.AssetTokenEvent_ConnectedAppId_Inverse}" required="false"/> 
+						<rdf:ListResource path="dataModel>AssetTokenEvent_ConnectedAppId_Inverse" entitySet="AssetTokenEvent"/>
+						<Text text=""/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>ConnectedApplication.ConnectedApplication_CreatedById}" required="false"/> 
+						<rdf:ListResource path="dataModel>ConnectedApplication_CreatedById" entitySet="User"/>
+						<Text text=""/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>ConnectedApplication.ConnectedApplication_LastModifiedById}" required="false"/> 
+						<rdf:ListResource path="dataModel>ConnectedApplication_LastModifiedById" entitySet="User"/>
+						<Text text=""/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>ConnectedApplication.IdpEventLog_AppId_Inverse}" required="false"/> 
+						<rdf:ListResource path="dataModel>IdpEventLog_AppId_Inverse" entitySet="IdpEventLog"/>
+						<Text text=""/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>ConnectedApplication.InstalledMobileApp_ConnectedApplicationId_Inverse}" required="false"/> 
+						<rdf:ListResource path="dataModel>InstalledMobileApp_ConnectedApplicationId_Inverse" entitySet="InstalledMobileApp"/>
+						<Text text=""/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>ConnectedApplication.ServiceProvider_ConnectivityId_Inverse}" required="false"/> 
+						<rdf:ListResource path="dataModel>ServiceProvider_ConnectivityId_Inverse" entitySet="ServiceProvider"/>
+						<Text text=""/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>ConnectedApplication.UserAppMenuCustomization_ApplicationId_Inverse}" required="false"/> 
+						<rdf:ListResource path="dataModel>UserAppMenuCustomization_ApplicationId_Inverse" entitySet="UserAppMenuCustomization"/>
+						<Text text=""/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>ConnectedApplication.UserProvAccountStaging_ConnectedAppId_Inverse}" required="false"/> 
+						<rdf:ListResource path="dataModel>UserProvAccountStaging_ConnectedAppId_Inverse" entitySet="UserProvAccountStaging"/>
+						<Text text=""/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>ConnectedApplication.UserProvAccount_ConnectedAppId_Inverse}" required="false"/> 
+						<rdf:ListResource path="dataModel>UserProvAccount_ConnectedAppId_Inverse" entitySet="UserProvAccount"/>
+						<Text text=""/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>ConnectedApplication.UserProvisioningConfig_ConnectedAppId_Inverse}" required="false"/> 
+						<rdf:ListResource path="dataModel>UserProvisioningConfig_ConnectedAppId_Inverse" entitySet="UserProvisioningConfig"/>
+						<Text text=""/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>ConnectedApplication.UserProvisioningRequest_ConnectedAppId_Inverse}" required="false"/> 
+						<rdf:ListResource path="dataModel>UserProvisioningRequest_ConnectedAppId_Inverse" entitySet="UserProvisioningRequest"/>
+						<Text text=""/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>ConnectedApplication.VerificationHistory_ResourceId_Inverse}" required="false"/> 
+						<rdf:ListResource path="dataModel>VerificationHistory_ResourceId_Inverse" entitySet="VerificationHistory"/>
+						<Text text=""/>
+					</cells>
+				</ColumnListItem>
+			</items>
+		</Table>
+	</Page>
+</mvc:View>

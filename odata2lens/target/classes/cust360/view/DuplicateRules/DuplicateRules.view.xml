@@ -1,0 +1,121 @@
+<mvc:View controllerName="com.inova8.lens.controller.EntitySet360" xmlns="sap.m" xmlns:mvc="sap.ui.core.mvc" xmlns:layout="sap.ui.layout"
+	xmlns:rdf="com.inova8.lens.control" xmlns:core="sap.ui.core">
+	<Page showHeader="false" id="page" navButtonPress="onNavBack" showNavButton="true" title="{i18n>DuplicateRules.ViewTitle}">
+		<content>
+			<Table id="table360" inset="false" items="{ path: 'dataModel>/DuplicateRule' , sorter: { path: 'label', descending: false } 
+				}"
+				noDataText="{entitySetView>/tableNoDataText}" busyIndicatorDelay="{entitySetView>/tableBusyDelay}" growing="true" growingScrollToLoad="true"
+				updateFinished="onUpdateFinished"  fixedLayout="false">
+				<headerToolbar>
+					<Toolbar>
+						<ToolbarSpacer/>
+						<HBox id="sourceTitle" alignItems="Center">
+							<rdf:TextResource id="selectedResource" path="" entitySet=""/>
+						</HBox>
+						<Title id="pathTitle" text="{entitySetView>/navigationText}"/>
+						<HBox id="versionsTitle" alignItems="Center">
+							<Title text="(" required="false"/>
+							<ComboBox id="versionSelection" items="{ path: 'entitySetView>/versions' }" selectionChange="onVersionChange">
+								<core:Item key="{entitySetView>navigation}" text="{entityView>text}"/>
+							</ComboBox>
+							<Title text=")" required="false"/>
+						</HBox>
+						<Title id="tableHeader" text="{entitySetView>/entitySetTableTitle}"/>
+						<ToolbarSpacer/>
+						<SearchField id="searchField" tooltip="{i18n>search.searchTooltip}" search="onSearch" width="auto"></SearchField>
+					</Toolbar>
+				</headerToolbar>
+				<columns>
+					<Column >
+						<Text text="{i18n>DuplicateRules.this}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>DuplicateRules.DuplicateRule_CreatedDate}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>DuplicateRules.DuplicateRule_DeveloperName}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>DuplicateRules.DuplicateRule_Id}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>DuplicateRules.DuplicateRule_IsActive}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>DuplicateRules.DuplicateRule_IsDeleted}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>DuplicateRules.DuplicateRule_Language}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>DuplicateRules.DuplicateRule_LastModifiedDate}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>DuplicateRules.DuplicateRule_LastViewedDate}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>DuplicateRules.DuplicateRule_MasterLabel}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>DuplicateRules.DuplicateRule_NamespacePrefix}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>DuplicateRules.DuplicateRule_SobjectSubtype}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>DuplicateRules.DuplicateRule_SobjectType}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>DuplicateRules.DuplicateRule_SystemModstamp}"/>
+					</Column>
+				</columns>
+				<items>
+					<ColumnListItem id="template360" type="Navigation" press="onPress">
+						<cells>
+							<rdf:TextResource path="dataModel>" entitySet="DuplicateRule"/>
+							<VBox>					
+							<Text text="{dataModel>DuplicateRule_CreatedDate/DuplicateRule_CreatedDate}"/>
+							</VBox>							
+							<VBox>					
+							<rdf:TextLink text="{path:'dataModel>DuplicateRule_DeveloperName/DuplicateRule_DeveloperName',type:'sap.ui.model.type.String'}" linkText="{i18n>DuplicateRule.DuplicateRule_DeveloperName/DuplicateRule_DeveloperName}"/>
+							</VBox>							
+							<VBox>					
+							<rdf:TextLink text="{path:'dataModel>DuplicateRule_Id/DuplicateRule_Id',type:'sap.ui.model.type.String'}" linkText="{i18n>DuplicateRule.DuplicateRule_Id/DuplicateRule_Id}"/>
+							</VBox>							
+							<VBox>					
+								<Text text="{path:'dataModel>DuplicateRule_IsActive/DuplicateRule_IsActive',type:'sap.ui.model.type.Boolean'}"/>  
+							</VBox>							
+							<VBox>					
+								<Text text="{path:'dataModel>DuplicateRule_IsDeleted/DuplicateRule_IsDeleted',type:'sap.ui.model.type.Boolean'}"/>  
+							</VBox>							
+							<VBox>					
+							<rdf:TextLink text="{path:'dataModel>DuplicateRule_Language/DuplicateRule_Language',type:'sap.ui.model.type.String'}" linkText="{i18n>DuplicateRule.DuplicateRule_Language/DuplicateRule_Language}"/>
+							</VBox>							
+							<VBox>					
+							<Text text="{dataModel>DuplicateRule_LastModifiedDate/DuplicateRule_LastModifiedDate}"/>
+							</VBox>							
+							<VBox>					
+							<Text text="{dataModel>DuplicateRule_LastViewedDate/DuplicateRule_LastViewedDate}"/>
+							</VBox>							
+							<VBox>					
+							<rdf:TextLink text="{path:'dataModel>DuplicateRule_MasterLabel/DuplicateRule_MasterLabel',type:'sap.ui.model.type.String'}" linkText="{i18n>DuplicateRule.DuplicateRule_MasterLabel/DuplicateRule_MasterLabel}"/>
+							</VBox>							
+							<VBox>					
+							<rdf:TextLink text="{path:'dataModel>DuplicateRule_NamespacePrefix/DuplicateRule_NamespacePrefix',type:'sap.ui.model.type.String'}" linkText="{i18n>DuplicateRule.DuplicateRule_NamespacePrefix/DuplicateRule_NamespacePrefix}"/>
+							</VBox>							
+							<VBox>					
+							<rdf:TextLink text="{path:'dataModel>DuplicateRule_SobjectSubtype/DuplicateRule_SobjectSubtype',type:'sap.ui.model.type.String'}" linkText="{i18n>DuplicateRule.DuplicateRule_SobjectSubtype/DuplicateRule_SobjectSubtype}"/>
+							</VBox>							
+							<VBox>					
+							<rdf:TextLink text="{path:'dataModel>DuplicateRule_SobjectType/DuplicateRule_SobjectType',type:'sap.ui.model.type.String'}" linkText="{i18n>DuplicateRule.DuplicateRule_SobjectType/DuplicateRule_SobjectType}"/>
+							</VBox>							
+							<VBox>					
+							<Text text="{dataModel>DuplicateRule_SystemModstamp/DuplicateRule_SystemModstamp}"/>
+							</VBox>							
+						</cells>
+					</ColumnListItem>
+				</items>
+			</Table>
+		</content>
+	</Page>
+</mvc:View>

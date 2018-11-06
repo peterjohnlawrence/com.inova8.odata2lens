@@ -1,0 +1,140 @@
+<mvc:View controllerName="com.inova8.lens.controller.Entity360" xmlns="sap.m" xmlns:mvc="sap.ui.core.mvc" xmlns:l="sap.ui.layout"
+	xmlns:f="sap.ui.layout.form" xmlns:table="sap.ui.table" xmlns:rdf="com.inova8.lens.control" xmlns:html="http://www.w3.org/1999/xhtml"
+	xmlns:core="sap.ui.core">
+	<Page showHeader="true" id="page" navButtonPress="onNavBack" showNavButton="false" title="{i18n>ForecastingUserPreference.Title}" busy="{entityView>/busy}"
+		busyIndicatorDelay="{entityView>/delay}" >
+		<customHeader>
+			<Toolbar>
+				<ToolbarSpacer/>
+				<HBox id="sourceTitle" alignItems="Center">
+						<rdf:TextResource id="selectedResource" path="" entitySet=""/>
+				</HBox>	
+				<Title id="pathTitle" text="{entityView>/navigation}"/>
+				<HBox id="versionsTitle" alignItems="Center">
+					<Title text="(" required="false"/>
+					<ComboBox id="versionSelection" items="{ path: 'entityView>/versions' }" selectionChange="onVersionChange">
+						<core:Item key="{entityView>navigation}" text="{entityView>text}"/>
+					</ComboBox>
+					<Title text=")" required="false"/>
+				</HBox>
+				<Title text="{i18n>ForecastingUserPreference.this}"/>
+				<Title text="(" required="false"/>
+				<rdf:TextResource path="dataModel>" entitySet="ForecastingUserPreference"/>
+				<Title text=")" required="false"/>
+	
+				<ToolbarSpacer/>
+				<ToggleButton id="toggleColumns" icon="sap-icon://hide" activeIcon="sap-icon://show" press="onSettingsPressed" visible="false"	>
+					<layoutData>
+						<OverflowToolbarLayoutData priority="NeverOverflow"/>
+					</layoutData>
+				</ToggleButton>
+				
+			</Toolbar>
+		</customHeader>
+		<Table id="form360" inset="false" fixedLayout="true" class="multicolumnform" updateFinished="hideColumns">
+			<columns>
+				<Column hAlign="Right" width="200px">
+					<Text text=""/>
+				</Column>
+				<Column visible="true">
+				</Column>
+				<Column visible="true">
+					<Text text="ForecastingUserPreference"/>
+				</Column>
+			</columns>
+			<items>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>ForecastingUserPreference.ForecastingUserPreference_ExternalId}" required="false"/> 
+						<Text text=""/>
+						<rdf:TextLink text="{path:'dataModel>ForecastingUserPreference_ExternalId/ForecastingUserPreference_ExternalId',type:'sap.ui.model.type.String' }" linkText="{i18n>ForecastingUserPreference.ForecastingUserPreference_ExternalId/ForecastingUserPreference_ExternalId}"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>ForecastingUserPreference.ForecastingUserPreference_ForecastingDisplayedTypeId}" required="false"/> 
+						<Text text=""/>
+						<rdf:ListResource path="dataModel>ForecastingUserPreference_ForecastingDisplayedTypeId/sfdc_ForecastingUserPreference_ForecastingDisplayedTypeId" entitySet="ForecastingType"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>ForecastingUserPreference.ForecastingUserPreference_ForecastingPeriodDuration}" required="false"/> 
+						<Text text=""/>
+						<Text text="{path:'dataModel>ForecastingUserPreference_ForecastingPeriodDuration/ForecastingUserPreference_ForecastingPeriodDuration',type:'sap.ui.model.type.Integer' }"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>ForecastingUserPreference.ForecastingUserPreference_ForecastingPeriodType}" required="false"/> 
+						<Text text=""/>
+						<rdf:TextLink text="{path:'dataModel>ForecastingUserPreference_ForecastingPeriodType/ForecastingUserPreference_ForecastingPeriodType',type:'sap.ui.model.type.String' }" linkText="{i18n>ForecastingUserPreference.ForecastingUserPreference_ForecastingPeriodType/ForecastingUserPreference_ForecastingPeriodType}"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>ForecastingUserPreference.ForecastingUserPreference_ForecastingStartPeriod}" required="false"/> 
+						<Text text=""/>
+						<Text text="{path:'dataModel>ForecastingUserPreference_ForecastingStartPeriod/ForecastingUserPreference_ForecastingStartPeriod',type:'sap.ui.model.type.Integer' }"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>ForecastingUserPreference.ForecastingUserPreference_ForecastingViewCurrency}" required="false"/> 
+						<Text text=""/>
+						<rdf:TextLink text="{path:'dataModel>ForecastingUserPreference_ForecastingViewCurrency/ForecastingUserPreference_ForecastingViewCurrency',type:'sap.ui.model.type.String' }" linkText="{i18n>ForecastingUserPreference.ForecastingUserPreference_ForecastingViewCurrency/ForecastingUserPreference_ForecastingViewCurrency}"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>ForecastingUserPreference.ForecastingUserPreference_Id}" required="false"/> 
+						<Text text=""/>
+						<rdf:TextLink text="{path:'dataModel>ForecastingUserPreference_Id/ForecastingUserPreference_Id',type:'sap.ui.model.type.String' }" linkText="{i18n>ForecastingUserPreference.ForecastingUserPreference_Id/ForecastingUserPreference_Id}"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>ForecastingUserPreference.ForecastingUserPreference_IsForecastingHideZeroRows}" required="false"/> 
+						<Text text=""/>
+						<Text text="{path:'dataModel>ForecastingUserPreference_IsForecastingHideZeroRows/ForecastingUserPreference_IsForecastingHideZeroRows',type:'sap.ui.model.type.Boolean'}"/>  
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>ForecastingUserPreference.ForecastingUserPreference_IsForecastingShowQuantity}" required="false"/> 
+						<Text text=""/>
+						<Text text="{path:'dataModel>ForecastingUserPreference_IsForecastingShowQuantity/ForecastingUserPreference_IsForecastingShowQuantity',type:'sap.ui.model.type.Boolean'}"/>  
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>ForecastingUserPreference.ForecastingUserPreference_IsHideForecastingGuidedTour}" required="false"/> 
+						<Text text=""/>
+						<Text text="{path:'dataModel>ForecastingUserPreference_IsHideForecastingGuidedTour/ForecastingUserPreference_IsHideForecastingGuidedTour',type:'sap.ui.model.type.Boolean'}"/>  
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>ForecastingUserPreference.ForecastingUserPreference_IsHideForecastingQuotaColumn}" required="false"/> 
+						<Text text=""/>
+						<Text text="{path:'dataModel>ForecastingUserPreference_IsHideForecastingQuotaColumn/ForecastingUserPreference_IsHideForecastingQuotaColumn',type:'sap.ui.model.type.Boolean'}"/>  
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>ForecastingUserPreference.ForecastingUserPreference_IsShowForecastingQuotaAttainment}" required="false"/> 
+						<Text text=""/>
+						<Text text="{path:'dataModel>ForecastingUserPreference_IsShowForecastingQuotaAttainment/ForecastingUserPreference_IsShowForecastingQuotaAttainment',type:'sap.ui.model.type.Boolean'}"/>  
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>ForecastingUserPreference.ForecastingUserPreference_ForecastingDisplayedTypeId}" required="false"/> 
+						<rdf:ListResource path="dataModel>ForecastingUserPreference_ForecastingDisplayedTypeId" entitySet="ForecastingType"/>
+						<Text text=""/>
+					</cells>
+				</ColumnListItem>
+			</items>
+		</Table>
+	</Page>
+</mvc:View>

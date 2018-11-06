@@ -1,0 +1,85 @@
+<mvc:View controllerName="com.inova8.lens.controller.EntitySet360" xmlns="sap.m" xmlns:mvc="sap.ui.core.mvc" xmlns:layout="sap.ui.layout"
+	xmlns:rdf="com.inova8.lens.control" xmlns:core="sap.ui.core">
+	<Page showHeader="false" id="page" navButtonPress="onNavBack" showNavButton="true" title="{i18n>ForecastingCategoryMappings.ViewTitle}">
+		<content>
+			<Table id="table360" inset="false" items="{ path: 'dataModel>/ForecastingCategoryMapping' , sorter: { path: 'label', descending: false } 
+				}"
+				noDataText="{entitySetView>/tableNoDataText}" busyIndicatorDelay="{entitySetView>/tableBusyDelay}" growing="true" growingScrollToLoad="true"
+				updateFinished="onUpdateFinished"  fixedLayout="false">
+				<headerToolbar>
+					<Toolbar>
+						<ToolbarSpacer/>
+						<HBox id="sourceTitle" alignItems="Center">
+							<rdf:TextResource id="selectedResource" path="" entitySet=""/>
+						</HBox>
+						<Title id="pathTitle" text="{entitySetView>/navigationText}"/>
+						<HBox id="versionsTitle" alignItems="Center">
+							<Title text="(" required="false"/>
+							<ComboBox id="versionSelection" items="{ path: 'entitySetView>/versions' }" selectionChange="onVersionChange">
+								<core:Item key="{entitySetView>navigation}" text="{entityView>text}"/>
+							</ComboBox>
+							<Title text=")" required="false"/>
+						</HBox>
+						<Title id="tableHeader" text="{entitySetView>/entitySetTableTitle}"/>
+						<ToolbarSpacer/>
+						<SearchField id="searchField" tooltip="{i18n>search.searchTooltip}" search="onSearch" width="auto"></SearchField>
+					</Toolbar>
+				</headerToolbar>
+				<columns>
+					<Column >
+						<Text text="{i18n>ForecastingCategoryMappings.this}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>ForecastingCategoryMappings.ForecastingCategoryMapping_CreatedDate}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>ForecastingCategoryMappings.ForecastingCategoryMapping_ForecastingItemCategory}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>ForecastingCategoryMappings.ForecastingCategoryMapping_Id}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>ForecastingCategoryMappings.ForecastingCategoryMapping_IsDeleted}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>ForecastingCategoryMappings.ForecastingCategoryMapping_LastModifiedDate}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>ForecastingCategoryMappings.ForecastingCategoryMapping_SourceCategory}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>ForecastingCategoryMappings.ForecastingCategoryMapping_SystemModstamp}"/>
+					</Column>
+				</columns>
+				<items>
+					<ColumnListItem id="template360" type="Navigation" press="onPress">
+						<cells>
+							<rdf:TextResource path="dataModel>" entitySet="ForecastingCategoryMapping"/>
+							<VBox>					
+							<Text text="{dataModel>ForecastingCategoryMapping_CreatedDate/ForecastingCategoryMapping_CreatedDate}"/>
+							</VBox>							
+							<VBox>					
+							<rdf:TextLink text="{path:'dataModel>ForecastingCategoryMapping_ForecastingItemCategory/ForecastingCategoryMapping_ForecastingItemCategory',type:'sap.ui.model.type.String'}" linkText="{i18n>ForecastingCategoryMapping.ForecastingCategoryMapping_ForecastingItemCategory/ForecastingCategoryMapping_ForecastingItemCategory}"/>
+							</VBox>							
+							<VBox>					
+							<rdf:TextLink text="{path:'dataModel>ForecastingCategoryMapping_Id/ForecastingCategoryMapping_Id',type:'sap.ui.model.type.String'}" linkText="{i18n>ForecastingCategoryMapping.ForecastingCategoryMapping_Id/ForecastingCategoryMapping_Id}"/>
+							</VBox>							
+							<VBox>					
+								<Text text="{path:'dataModel>ForecastingCategoryMapping_IsDeleted/ForecastingCategoryMapping_IsDeleted',type:'sap.ui.model.type.Boolean'}"/>  
+							</VBox>							
+							<VBox>					
+							<Text text="{dataModel>ForecastingCategoryMapping_LastModifiedDate/ForecastingCategoryMapping_LastModifiedDate}"/>
+							</VBox>							
+							<VBox>					
+							<rdf:TextLink text="{path:'dataModel>ForecastingCategoryMapping_SourceCategory/ForecastingCategoryMapping_SourceCategory',type:'sap.ui.model.type.String'}" linkText="{i18n>ForecastingCategoryMapping.ForecastingCategoryMapping_SourceCategory/ForecastingCategoryMapping_SourceCategory}"/>
+							</VBox>							
+							<VBox>					
+							<Text text="{dataModel>ForecastingCategoryMapping_SystemModstamp/ForecastingCategoryMapping_SystemModstamp}"/>
+							</VBox>							
+						</cells>
+					</ColumnListItem>
+				</items>
+			</Table>
+		</content>
+	</Page>
+</mvc:View>

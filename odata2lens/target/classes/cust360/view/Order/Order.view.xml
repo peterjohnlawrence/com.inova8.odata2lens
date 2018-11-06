@@ -1,0 +1,532 @@
+<mvc:View controllerName="com.inova8.lens.controller.Entity360" xmlns="sap.m" xmlns:mvc="sap.ui.core.mvc" xmlns:l="sap.ui.layout"
+	xmlns:f="sap.ui.layout.form" xmlns:table="sap.ui.table" xmlns:rdf="com.inova8.lens.control" xmlns:html="http://www.w3.org/1999/xhtml"
+	xmlns:core="sap.ui.core">
+	<Page showHeader="true" id="page" navButtonPress="onNavBack" showNavButton="false" title="{i18n>Order.Title}" busy="{entityView>/busy}"
+		busyIndicatorDelay="{entityView>/delay}" >
+		<customHeader>
+			<Toolbar>
+				<ToolbarSpacer/>
+				<HBox id="sourceTitle" alignItems="Center">
+						<rdf:TextResource id="selectedResource" path="" entitySet=""/>
+				</HBox>	
+				<Title id="pathTitle" text="{entityView>/navigation}"/>
+				<HBox id="versionsTitle" alignItems="Center">
+					<Title text="(" required="false"/>
+					<ComboBox id="versionSelection" items="{ path: 'entityView>/versions' }" selectionChange="onVersionChange">
+						<core:Item key="{entityView>navigation}" text="{entityView>text}"/>
+					</ComboBox>
+					<Title text=")" required="false"/>
+				</HBox>
+				<Title text="{i18n>Order.this}"/>
+				<Title text="(" required="false"/>
+				<rdf:TextResource path="dataModel>" entitySet="Order"/>
+				<Title text=")" required="false"/>
+	
+				<ToolbarSpacer/>
+				<ToggleButton id="toggleColumns" icon="sap-icon://hide" activeIcon="sap-icon://show" press="onSettingsPressed" visible="false"	>
+					<layoutData>
+						<OverflowToolbarLayoutData priority="NeverOverflow"/>
+					</layoutData>
+				</ToggleButton>
+				
+			</Toolbar>
+		</customHeader>
+		<Table id="form360" inset="false" fixedLayout="true" class="multicolumnform" updateFinished="hideColumns">
+			<columns>
+				<Column hAlign="Right" width="200px">
+					<Text text=""/>
+				</Column>
+				<Column visible="true">
+				</Column>
+				<Column visible="true">
+					<Text text="Order"/>
+				</Column>
+			</columns>
+			<items>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>Order.OrderFeed_ParentId_Inverse}" required="false"/> 
+						<Text text=""/>
+						<rdf:ListResource path="dataModel>OrderFeed_ParentId_Inverse/sfdc_OrderFeed_ParentId_Inverse" entitySet="OrderFeed"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>Order.OrderHistory_OrderId_Inverse}" required="false"/> 
+						<Text text=""/>
+						<rdf:ListResource path="dataModel>OrderHistory_OrderId_Inverse/sfdc_OrderHistory_OrderId_Inverse" entitySet="OrderHistory"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>Order.OrderItem_OrderId_Inverse}" required="false"/> 
+						<Text text=""/>
+						<rdf:ListResource path="dataModel>OrderItem_OrderId_Inverse/sfdc_OrderItem_OrderId_Inverse" entitySet="OrderItem"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>Order.OrderShare_OrderId_Inverse}" required="false"/> 
+						<Text text=""/>
+						<rdf:ListResource path="dataModel>OrderShare_OrderId_Inverse/sfdc_OrderShare_OrderId_Inverse" entitySet="OrderShare"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>Order.Order_AccountId}" required="false"/> 
+						<Text text=""/>
+						<rdf:ListResource path="dataModel>Order_AccountId/sfdc_Order_AccountId" entitySet="Account"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>Order.Order_ActivatedById}" required="false"/> 
+						<Text text=""/>
+						<rdf:ListResource path="dataModel>Order_ActivatedById/sfdc_Order_ActivatedById" entitySet="User"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>Order.Order_ActivatedDate}" required="false"/> 
+						<Text text=""/>
+						<Text text="{dataModel>Order_ActivatedDate/Order_ActivatedDate}"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>Order.Order_BillingAddress}" required="false"/> 
+						<Text text=""/>
+						<rdf:ListResource path="dataModel>Order_BillingAddress/sfdc_Order_BillingAddress" entitySet="Address"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>Order.Order_BillingCity}" required="false"/> 
+						<Text text=""/>
+						<rdf:TextLink text="{path:'dataModel>Order_BillingCity/Order_BillingCity',type:'sap.ui.model.type.String' }" linkText="{i18n>Order.Order_BillingCity/Order_BillingCity}"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>Order.Order_BillingCountry}" required="false"/> 
+						<Text text=""/>
+						<rdf:TextLink text="{path:'dataModel>Order_BillingCountry/Order_BillingCountry',type:'sap.ui.model.type.String' }" linkText="{i18n>Order.Order_BillingCountry/Order_BillingCountry}"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>Order.Order_BillingGeocodeAccuracy}" required="false"/> 
+						<Text text=""/>
+						<rdf:TextLink text="{path:'dataModel>Order_BillingGeocodeAccuracy/Order_BillingGeocodeAccuracy',type:'sap.ui.model.type.String' }" linkText="{i18n>Order.Order_BillingGeocodeAccuracy/Order_BillingGeocodeAccuracy}"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>Order.Order_BillingLatitude}" required="false"/> 
+						<Text text=""/>
+						<Text text="{path:'dataModel>Order_BillingLatitude/Order_BillingLatitude',type:'sap.ui.model.type.Float', formatOptions:{'style':'short','maxFractionDigits':2} }"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>Order.Order_BillingLongitude}" required="false"/> 
+						<Text text=""/>
+						<Text text="{path:'dataModel>Order_BillingLongitude/Order_BillingLongitude',type:'sap.ui.model.type.Float', formatOptions:{'style':'short','maxFractionDigits':2} }"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>Order.Order_BillingPostalCode}" required="false"/> 
+						<Text text=""/>
+						<rdf:TextLink text="{path:'dataModel>Order_BillingPostalCode/Order_BillingPostalCode',type:'sap.ui.model.type.String' }" linkText="{i18n>Order.Order_BillingPostalCode/Order_BillingPostalCode}"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>Order.Order_BillingState}" required="false"/> 
+						<Text text=""/>
+						<rdf:TextLink text="{path:'dataModel>Order_BillingState/Order_BillingState',type:'sap.ui.model.type.String' }" linkText="{i18n>Order.Order_BillingState/Order_BillingState}"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>Order.Order_BillingStreet}" required="false"/> 
+						<Text text=""/>
+						<rdf:TextLink text="{path:'dataModel>Order_BillingStreet/Order_BillingStreet',type:'sap.ui.model.type.String' }" linkText="{i18n>Order.Order_BillingStreet/Order_BillingStreet}"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>Order.Order_CompanyAuthorizedById}" required="false"/> 
+						<Text text=""/>
+						<rdf:ListResource path="dataModel>Order_CompanyAuthorizedById/sfdc_Order_CompanyAuthorizedById" entitySet="User"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>Order.Order_ContractId}" required="false"/> 
+						<Text text=""/>
+						<rdf:ListResource path="dataModel>Order_ContractId/sfdc_Order_ContractId" entitySet="Contract"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>Order.Order_CreatedById}" required="false"/> 
+						<Text text=""/>
+						<rdf:ListResource path="dataModel>Order_CreatedById/sfdc_Order_CreatedById" entitySet="User"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>Order.Order_CreatedDate}" required="false"/> 
+						<Text text=""/>
+						<Text text="{dataModel>Order_CreatedDate/Order_CreatedDate}"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>Order.Order_CustomerAuthorizedById}" required="false"/> 
+						<Text text=""/>
+						<rdf:ListResource path="dataModel>Order_CustomerAuthorizedById/sfdc_Order_CustomerAuthorizedById" entitySet="Contact"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>Order.Order_Description}" required="false"/> 
+						<Text text=""/>
+						<rdf:TextLink text="{path:'dataModel>Order_Description/Order_Description',type:'sap.ui.model.type.String' }" linkText="{i18n>Order.Order_Description/Order_Description}"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>Order.Order_EffectiveDate}" required="false"/> 
+						<Text text=""/>
+						<Text text="{dataModel>Order_EffectiveDate/Order_EffectiveDate}"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>Order.Order_EndDate}" required="false"/> 
+						<Text text=""/>
+						<Text text="{dataModel>Order_EndDate/Order_EndDate}"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>Order.Order_Id}" required="false"/> 
+						<Text text=""/>
+						<rdf:TextLink text="{path:'dataModel>Order_Id/Order_Id',type:'sap.ui.model.type.String' }" linkText="{i18n>Order.Order_Id/Order_Id}"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>Order.Order_IsDeleted}" required="false"/> 
+						<Text text=""/>
+						<Text text="{path:'dataModel>Order_IsDeleted/Order_IsDeleted',type:'sap.ui.model.type.Boolean'}"/>  
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>Order.Order_IsReductionOrder}" required="false"/> 
+						<Text text=""/>
+						<Text text="{path:'dataModel>Order_IsReductionOrder/Order_IsReductionOrder',type:'sap.ui.model.type.Boolean'}"/>  
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>Order.Order_LastModifiedById}" required="false"/> 
+						<Text text=""/>
+						<rdf:ListResource path="dataModel>Order_LastModifiedById/sfdc_Order_LastModifiedById" entitySet="User"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>Order.Order_LastModifiedDate}" required="false"/> 
+						<Text text=""/>
+						<Text text="{dataModel>Order_LastModifiedDate/Order_LastModifiedDate}"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>Order.Order_LastReferencedDate}" required="false"/> 
+						<Text text=""/>
+						<Text text="{dataModel>Order_LastReferencedDate/Order_LastReferencedDate}"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>Order.Order_LastViewedDate}" required="false"/> 
+						<Text text=""/>
+						<Text text="{dataModel>Order_LastViewedDate/Order_LastViewedDate}"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>Order.Order_OrderNumber}" required="false"/> 
+						<Text text=""/>
+						<rdf:TextLink text="{path:'dataModel>Order_OrderNumber/Order_OrderNumber',type:'sap.ui.model.type.String' }" linkText="{i18n>Order.Order_OrderNumber/Order_OrderNumber}"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>Order.Order_OriginalOrderId}" required="false"/> 
+						<Text text=""/>
+						<rdf:ListResource path="dataModel>Order_OriginalOrderId/sfdc_Order_OriginalOrderId" entitySet="Order"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>Order.Order_OriginalOrderId_Inverse}" required="false"/> 
+						<Text text=""/>
+						<rdf:ListResource path="dataModel>Order_OriginalOrderId_Inverse/sfdc_Order_OriginalOrderId_Inverse" entitySet="Order"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>Order.Order_OwnerId}" required="false"/> 
+						<Text text=""/>
+						<rdf:ListResource path="dataModel>Order_OwnerId/sfdc_Order_OwnerId" entitySet="Group"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>Order.Order_Pricebook2Id}" required="false"/> 
+						<Text text=""/>
+						<rdf:ListResource path="dataModel>Order_Pricebook2Id/sfdc_Order_Pricebook2Id" entitySet="Pricebook2"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>Order.Order_ShippingAddress}" required="false"/> 
+						<Text text=""/>
+						<rdf:ListResource path="dataModel>Order_ShippingAddress/sfdc_Order_ShippingAddress" entitySet="Address"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>Order.Order_ShippingCity}" required="false"/> 
+						<Text text=""/>
+						<rdf:TextLink text="{path:'dataModel>Order_ShippingCity/Order_ShippingCity',type:'sap.ui.model.type.String' }" linkText="{i18n>Order.Order_ShippingCity/Order_ShippingCity}"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>Order.Order_ShippingCountry}" required="false"/> 
+						<Text text=""/>
+						<rdf:TextLink text="{path:'dataModel>Order_ShippingCountry/Order_ShippingCountry',type:'sap.ui.model.type.String' }" linkText="{i18n>Order.Order_ShippingCountry/Order_ShippingCountry}"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>Order.Order_ShippingGeocodeAccuracy}" required="false"/> 
+						<Text text=""/>
+						<rdf:TextLink text="{path:'dataModel>Order_ShippingGeocodeAccuracy/Order_ShippingGeocodeAccuracy',type:'sap.ui.model.type.String' }" linkText="{i18n>Order.Order_ShippingGeocodeAccuracy/Order_ShippingGeocodeAccuracy}"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>Order.Order_ShippingLatitude}" required="false"/> 
+						<Text text=""/>
+						<Text text="{path:'dataModel>Order_ShippingLatitude/Order_ShippingLatitude',type:'sap.ui.model.type.Float', formatOptions:{'style':'short','maxFractionDigits':2} }"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>Order.Order_ShippingLongitude}" required="false"/> 
+						<Text text=""/>
+						<Text text="{path:'dataModel>Order_ShippingLongitude/Order_ShippingLongitude',type:'sap.ui.model.type.Float', formatOptions:{'style':'short','maxFractionDigits':2} }"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>Order.Order_ShippingPostalCode}" required="false"/> 
+						<Text text=""/>
+						<rdf:TextLink text="{path:'dataModel>Order_ShippingPostalCode/Order_ShippingPostalCode',type:'sap.ui.model.type.String' }" linkText="{i18n>Order.Order_ShippingPostalCode/Order_ShippingPostalCode}"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>Order.Order_ShippingState}" required="false"/> 
+						<Text text=""/>
+						<rdf:TextLink text="{path:'dataModel>Order_ShippingState/Order_ShippingState',type:'sap.ui.model.type.String' }" linkText="{i18n>Order.Order_ShippingState/Order_ShippingState}"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>Order.Order_ShippingStreet}" required="false"/> 
+						<Text text=""/>
+						<rdf:TextLink text="{path:'dataModel>Order_ShippingStreet/Order_ShippingStreet',type:'sap.ui.model.type.String' }" linkText="{i18n>Order.Order_ShippingStreet/Order_ShippingStreet}"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>Order.Order_Status}" required="false"/> 
+						<Text text=""/>
+						<rdf:TextLink text="{path:'dataModel>Order_Status/Order_Status',type:'sap.ui.model.type.String' }" linkText="{i18n>Order.Order_Status/Order_Status}"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>Order.Order_StatusCode}" required="false"/> 
+						<Text text=""/>
+						<rdf:TextLink text="{path:'dataModel>Order_StatusCode/Order_StatusCode',type:'sap.ui.model.type.String' }" linkText="{i18n>Order.Order_StatusCode/Order_StatusCode}"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>Order.Order_SystemModstamp}" required="false"/> 
+						<Text text=""/>
+						<Text text="{dataModel>Order_SystemModstamp/Order_SystemModstamp}"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>Order.Order_TotalAmount}" required="false"/> 
+						<Text text=""/>
+						<Text text="{path:'dataModel>Order_TotalAmount/Order_TotalAmount',type:'sap.ui.model.type.Float', formatOptions:{'style':'short','maxFractionDigits':2} }"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>Order.Order_Type}" required="false"/> 
+						<Text text=""/>
+						<rdf:TextLink text="{path:'dataModel>Order_Type/Order_Type',type:'sap.ui.model.type.String' }" linkText="{i18n>Order.Order_Type/Order_Type}"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>Order.WorkOrderLineItem_OrderId_Inverse}" required="false"/> 
+						<Text text=""/>
+						<rdf:ListResource path="dataModel>WorkOrderLineItem_OrderId_Inverse/sfdc_WorkOrderLineItem_OrderId_Inverse" entitySet="WorkOrderLineItem"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>Order.OrderFeed_ParentId_Inverse}" required="false"/> 
+						<rdf:ListResource path="dataModel>OrderFeed_ParentId_Inverse" entitySet="OrderFeed"/>
+						<Text text=""/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>Order.OrderHistory_OrderId_Inverse}" required="false"/> 
+						<rdf:ListResource path="dataModel>OrderHistory_OrderId_Inverse" entitySet="OrderHistory"/>
+						<Text text=""/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>Order.OrderItem_OrderId_Inverse}" required="false"/> 
+						<rdf:ListResource path="dataModel>OrderItem_OrderId_Inverse" entitySet="OrderItem"/>
+						<Text text=""/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>Order.OrderShare_OrderId_Inverse}" required="false"/> 
+						<rdf:ListResource path="dataModel>OrderShare_OrderId_Inverse" entitySet="OrderShare"/>
+						<Text text=""/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>Order.Order_AccountId}" required="false"/> 
+						<rdf:ListResource path="dataModel>Order_AccountId" entitySet="Account"/>
+						<Text text=""/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>Order.Order_ActivatedById}" required="false"/> 
+						<rdf:ListResource path="dataModel>Order_ActivatedById" entitySet="User"/>
+						<Text text=""/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>Order.Order_BillingAddress}" required="false"/> 
+						<rdf:ListResource path="dataModel>Order_BillingAddress" entitySet="Address"/>
+						<Text text=""/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>Order.Order_CompanyAuthorizedById}" required="false"/> 
+						<rdf:ListResource path="dataModel>Order_CompanyAuthorizedById" entitySet="User"/>
+						<Text text=""/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>Order.Order_ContractId}" required="false"/> 
+						<rdf:ListResource path="dataModel>Order_ContractId" entitySet="Contract"/>
+						<Text text=""/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>Order.Order_CreatedById}" required="false"/> 
+						<rdf:ListResource path="dataModel>Order_CreatedById" entitySet="User"/>
+						<Text text=""/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>Order.Order_CustomerAuthorizedById}" required="false"/> 
+						<rdf:ListResource path="dataModel>Order_CustomerAuthorizedById" entitySet="Contact"/>
+						<Text text=""/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>Order.Order_LastModifiedById}" required="false"/> 
+						<rdf:ListResource path="dataModel>Order_LastModifiedById" entitySet="User"/>
+						<Text text=""/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>Order.Order_OriginalOrderId}" required="false"/> 
+						<rdf:ListResource path="dataModel>Order_OriginalOrderId" entitySet="Order"/>
+						<Text text=""/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>Order.Order_OriginalOrderId_Inverse}" required="false"/> 
+						<rdf:ListResource path="dataModel>Order_OriginalOrderId_Inverse" entitySet="Order"/>
+						<Text text=""/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>Order.Order_OwnerId}" required="false"/> 
+						<rdf:ListResource path="dataModel>Order_OwnerId" entitySet="Group"/>
+						<Text text=""/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>Order.Order_Pricebook2Id}" required="false"/> 
+						<rdf:ListResource path="dataModel>Order_Pricebook2Id" entitySet="Pricebook2"/>
+						<Text text=""/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>Order.Order_ShippingAddress}" required="false"/> 
+						<rdf:ListResource path="dataModel>Order_ShippingAddress" entitySet="Address"/>
+						<Text text=""/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>Order.WorkOrderLineItem_OrderId_Inverse}" required="false"/> 
+						<rdf:ListResource path="dataModel>WorkOrderLineItem_OrderId_Inverse" entitySet="WorkOrderLineItem"/>
+						<Text text=""/>
+					</cells>
+				</ColumnListItem>
+			</items>
+		</Table>
+	</Page>
+</mvc:View>

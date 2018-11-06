@@ -1,0 +1,277 @@
+<mvc:View controllerName="com.inova8.lens.controller.EntitySet360" xmlns="sap.m" xmlns:mvc="sap.ui.core.mvc" xmlns:layout="sap.ui.layout"
+	xmlns:rdf="com.inova8.lens.control" xmlns:core="sap.ui.core">
+	<Page showHeader="false" id="page" navButtonPress="onNavBack" showNavButton="true" title="{i18n>WorkOrders.ViewTitle}">
+		<content>
+			<Table id="table360" inset="false" items="{ path: 'dataModel>/WorkOrder' , sorter: { path: 'label', descending: false } 
+				}"
+				noDataText="{entitySetView>/tableNoDataText}" busyIndicatorDelay="{entitySetView>/tableBusyDelay}" growing="true" growingScrollToLoad="true"
+				updateFinished="onUpdateFinished"  fixedLayout="false">
+				<headerToolbar>
+					<Toolbar>
+						<ToolbarSpacer/>
+						<HBox id="sourceTitle" alignItems="Center">
+							<rdf:TextResource id="selectedResource" path="" entitySet=""/>
+						</HBox>
+						<Title id="pathTitle" text="{entitySetView>/navigationText}"/>
+						<HBox id="versionsTitle" alignItems="Center">
+							<Title text="(" required="false"/>
+							<ComboBox id="versionSelection" items="{ path: 'entitySetView>/versions' }" selectionChange="onVersionChange">
+								<core:Item key="{entitySetView>navigation}" text="{entityView>text}"/>
+							</ComboBox>
+							<Title text=")" required="false"/>
+						</HBox>
+						<Title id="tableHeader" text="{entitySetView>/entitySetTableTitle}"/>
+						<ToolbarSpacer/>
+						<SearchField id="searchField" tooltip="{i18n>search.searchTooltip}" search="onSearch" width="auto"></SearchField>
+					</Toolbar>
+				</headerToolbar>
+				<columns>
+					<Column >
+						<Text text="{i18n>WorkOrders.this}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>WorkOrders.WorkOrder_City}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>WorkOrders.WorkOrder_Country}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>WorkOrders.WorkOrder_CreatedDate}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>WorkOrders.WorkOrder_Description}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>WorkOrders.WorkOrder_Discount}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>WorkOrders.WorkOrder_Duration}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>WorkOrders.WorkOrder_DurationInMinutes}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>WorkOrders.WorkOrder_DurationType}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>WorkOrders.WorkOrder_EndDate}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>WorkOrders.WorkOrder_GeocodeAccuracy}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>WorkOrders.WorkOrder_GrandTotal}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>WorkOrders.WorkOrder_Id}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>WorkOrders.WorkOrder_IsClosed}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>WorkOrders.WorkOrder_IsDeleted}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>WorkOrders.WorkOrder_IsStopped}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>WorkOrders.WorkOrder_LastModifiedDate}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>WorkOrders.WorkOrder_LastReferencedDate}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>WorkOrders.WorkOrder_LastViewedDate}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>WorkOrders.WorkOrder_Latitude}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>WorkOrders.WorkOrder_LineItemCount}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>WorkOrders.WorkOrder_Longitude}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>WorkOrders.WorkOrder_MilestoneStatus}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>WorkOrders.WorkOrder_PostalCode}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>WorkOrders.WorkOrder_Priority}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>WorkOrders.WorkOrder_ServiceAppointmentCount}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>WorkOrders.WorkOrder_SlaExitDate}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>WorkOrders.WorkOrder_SlaStartDate}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>WorkOrders.WorkOrder_StartDate}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>WorkOrders.WorkOrder_State}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>WorkOrders.WorkOrder_Status}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>WorkOrders.WorkOrder_StatusCategory}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>WorkOrders.WorkOrder_StopStartDate}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>WorkOrders.WorkOrder_Street}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>WorkOrders.WorkOrder_Subject}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>WorkOrders.WorkOrder_Subtotal}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>WorkOrders.WorkOrder_SystemModstamp}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>WorkOrders.WorkOrder_Tax}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>WorkOrders.WorkOrder_TotalPrice}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>WorkOrders.WorkOrder_WorkOrderNumber}"/>
+					</Column>
+				</columns>
+				<items>
+					<ColumnListItem id="template360" type="Navigation" press="onPress">
+						<cells>
+							<rdf:TextResource path="dataModel>" entitySet="WorkOrder"/>
+							<VBox>					
+							<rdf:TextLink text="{path:'dataModel>WorkOrder_City/WorkOrder_City',type:'sap.ui.model.type.String'}" linkText="{i18n>WorkOrder.WorkOrder_City/WorkOrder_City}"/>
+							</VBox>							
+							<VBox>					
+							<rdf:TextLink text="{path:'dataModel>WorkOrder_Country/WorkOrder_Country',type:'sap.ui.model.type.String'}" linkText="{i18n>WorkOrder.WorkOrder_Country/WorkOrder_Country}"/>
+							</VBox>							
+							<VBox>					
+							<Text text="{dataModel>WorkOrder_CreatedDate/WorkOrder_CreatedDate}"/>
+							</VBox>							
+							<VBox>					
+							<rdf:TextLink text="{path:'dataModel>WorkOrder_Description/WorkOrder_Description',type:'sap.ui.model.type.String'}" linkText="{i18n>WorkOrder.WorkOrder_Description/WorkOrder_Description}"/>
+							</VBox>							
+							<VBox>					
+							<Text text="{path:'dataModel>WorkOrder_Discount/WorkOrder_Discount',type:'sap.ui.model.type.Float', formatOptions:{'style':'short','maxFractionDigits':2} }"/>
+							</VBox>							
+							<VBox>					
+							<Text text="{path:'dataModel>WorkOrder_Duration/WorkOrder_Duration',type:'sap.ui.model.type.Float', formatOptions:{'style':'short','maxFractionDigits':2} }"/>
+							</VBox>							
+							<VBox>					
+							<Text text="{path:'dataModel>WorkOrder_DurationInMinutes/WorkOrder_DurationInMinutes',type:'sap.ui.model.type.Float', formatOptions:{'style':'short','maxFractionDigits':2} }"/>
+							</VBox>							
+							<VBox>					
+							<rdf:TextLink text="{path:'dataModel>WorkOrder_DurationType/WorkOrder_DurationType',type:'sap.ui.model.type.String'}" linkText="{i18n>WorkOrder.WorkOrder_DurationType/WorkOrder_DurationType}"/>
+							</VBox>							
+							<VBox>					
+							<Text text="{dataModel>WorkOrder_EndDate/WorkOrder_EndDate}"/>
+							</VBox>							
+							<VBox>					
+							<rdf:TextLink text="{path:'dataModel>WorkOrder_GeocodeAccuracy/WorkOrder_GeocodeAccuracy',type:'sap.ui.model.type.String'}" linkText="{i18n>WorkOrder.WorkOrder_GeocodeAccuracy/WorkOrder_GeocodeAccuracy}"/>
+							</VBox>							
+							<VBox>					
+							<Text text="{path:'dataModel>WorkOrder_GrandTotal/WorkOrder_GrandTotal',type:'sap.ui.model.type.Float', formatOptions:{'style':'short','maxFractionDigits':2} }"/>
+							</VBox>							
+							<VBox>					
+							<rdf:TextLink text="{path:'dataModel>WorkOrder_Id/WorkOrder_Id',type:'sap.ui.model.type.String'}" linkText="{i18n>WorkOrder.WorkOrder_Id/WorkOrder_Id}"/>
+							</VBox>							
+							<VBox>					
+								<Text text="{path:'dataModel>WorkOrder_IsClosed/WorkOrder_IsClosed',type:'sap.ui.model.type.Boolean'}"/>  
+							</VBox>							
+							<VBox>					
+								<Text text="{path:'dataModel>WorkOrder_IsDeleted/WorkOrder_IsDeleted',type:'sap.ui.model.type.Boolean'}"/>  
+							</VBox>							
+							<VBox>					
+								<Text text="{path:'dataModel>WorkOrder_IsStopped/WorkOrder_IsStopped',type:'sap.ui.model.type.Boolean'}"/>  
+							</VBox>							
+							<VBox>					
+							<Text text="{dataModel>WorkOrder_LastModifiedDate/WorkOrder_LastModifiedDate}"/>
+							</VBox>							
+							<VBox>					
+							<Text text="{dataModel>WorkOrder_LastReferencedDate/WorkOrder_LastReferencedDate}"/>
+							</VBox>							
+							<VBox>					
+							<Text text="{dataModel>WorkOrder_LastViewedDate/WorkOrder_LastViewedDate}"/>
+							</VBox>							
+							<VBox>					
+							<Text text="{path:'dataModel>WorkOrder_Latitude/WorkOrder_Latitude',type:'sap.ui.model.type.Float', formatOptions:{'style':'short','maxFractionDigits':2} }"/>
+							</VBox>							
+							<VBox>					
+							<Text text="{path:'dataModel>WorkOrder_LineItemCount/WorkOrder_LineItemCount',type:'sap.ui.model.type.Integer' }"/>
+							</VBox>							
+							<VBox>					
+							<Text text="{path:'dataModel>WorkOrder_Longitude/WorkOrder_Longitude',type:'sap.ui.model.type.Float', formatOptions:{'style':'short','maxFractionDigits':2} }"/>
+							</VBox>							
+							<VBox>					
+							<rdf:TextLink text="{path:'dataModel>WorkOrder_MilestoneStatus/WorkOrder_MilestoneStatus',type:'sap.ui.model.type.String'}" linkText="{i18n>WorkOrder.WorkOrder_MilestoneStatus/WorkOrder_MilestoneStatus}"/>
+							</VBox>							
+							<VBox>					
+							<rdf:TextLink text="{path:'dataModel>WorkOrder_PostalCode/WorkOrder_PostalCode',type:'sap.ui.model.type.String'}" linkText="{i18n>WorkOrder.WorkOrder_PostalCode/WorkOrder_PostalCode}"/>
+							</VBox>							
+							<VBox>					
+							<rdf:TextLink text="{path:'dataModel>WorkOrder_Priority/WorkOrder_Priority',type:'sap.ui.model.type.String'}" linkText="{i18n>WorkOrder.WorkOrder_Priority/WorkOrder_Priority}"/>
+							</VBox>							
+							<VBox>					
+							<Text text="{path:'dataModel>WorkOrder_ServiceAppointmentCount/WorkOrder_ServiceAppointmentCount',type:'sap.ui.model.type.Integer' }"/>
+							</VBox>							
+							<VBox>					
+							<Text text="{dataModel>WorkOrder_SlaExitDate/WorkOrder_SlaExitDate}"/>
+							</VBox>							
+							<VBox>					
+							<Text text="{dataModel>WorkOrder_SlaStartDate/WorkOrder_SlaStartDate}"/>
+							</VBox>							
+							<VBox>					
+							<Text text="{dataModel>WorkOrder_StartDate/WorkOrder_StartDate}"/>
+							</VBox>							
+							<VBox>					
+							<rdf:TextLink text="{path:'dataModel>WorkOrder_State/WorkOrder_State',type:'sap.ui.model.type.String'}" linkText="{i18n>WorkOrder.WorkOrder_State/WorkOrder_State}"/>
+							</VBox>							
+							<VBox>					
+							<rdf:TextLink text="{path:'dataModel>WorkOrder_Status/WorkOrder_Status',type:'sap.ui.model.type.String'}" linkText="{i18n>WorkOrder.WorkOrder_Status/WorkOrder_Status}"/>
+							</VBox>							
+							<VBox>					
+							<rdf:TextLink text="{path:'dataModel>WorkOrder_StatusCategory/WorkOrder_StatusCategory',type:'sap.ui.model.type.String'}" linkText="{i18n>WorkOrder.WorkOrder_StatusCategory/WorkOrder_StatusCategory}"/>
+							</VBox>							
+							<VBox>					
+							<Text text="{dataModel>WorkOrder_StopStartDate/WorkOrder_StopStartDate}"/>
+							</VBox>							
+							<VBox>					
+							<rdf:TextLink text="{path:'dataModel>WorkOrder_Street/WorkOrder_Street',type:'sap.ui.model.type.String'}" linkText="{i18n>WorkOrder.WorkOrder_Street/WorkOrder_Street}"/>
+							</VBox>							
+							<VBox>					
+							<rdf:TextLink text="{path:'dataModel>WorkOrder_Subject/WorkOrder_Subject',type:'sap.ui.model.type.String'}" linkText="{i18n>WorkOrder.WorkOrder_Subject/WorkOrder_Subject}"/>
+							</VBox>							
+							<VBox>					
+							<Text text="{path:'dataModel>WorkOrder_Subtotal/WorkOrder_Subtotal',type:'sap.ui.model.type.Float', formatOptions:{'style':'short','maxFractionDigits':2} }"/>
+							</VBox>							
+							<VBox>					
+							<Text text="{dataModel>WorkOrder_SystemModstamp/WorkOrder_SystemModstamp}"/>
+							</VBox>							
+							<VBox>					
+							<Text text="{path:'dataModel>WorkOrder_Tax/WorkOrder_Tax',type:'sap.ui.model.type.Float', formatOptions:{'style':'short','maxFractionDigits':2} }"/>
+							</VBox>							
+							<VBox>					
+							<Text text="{path:'dataModel>WorkOrder_TotalPrice/WorkOrder_TotalPrice',type:'sap.ui.model.type.Float', formatOptions:{'style':'short','maxFractionDigits':2} }"/>
+							</VBox>							
+							<VBox>					
+							<rdf:TextLink text="{path:'dataModel>WorkOrder_WorkOrderNumber/WorkOrder_WorkOrderNumber',type:'sap.ui.model.type.String'}" linkText="{i18n>WorkOrder.WorkOrder_WorkOrderNumber/WorkOrder_WorkOrderNumber}"/>
+							</VBox>							
+						</cells>
+					</ColumnListItem>
+				</items>
+			</Table>
+		</content>
+	</Page>
+</mvc:View>

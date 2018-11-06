@@ -1,0 +1,139 @@
+<mvc:View controllerName="com.inova8.lens.controller.EntitySet360" xmlns="sap.m" xmlns:mvc="sap.ui.core.mvc" xmlns:layout="sap.ui.layout"
+	xmlns:rdf="com.inova8.lens.control" xmlns:core="sap.ui.core">
+	<Page showHeader="false" id="page" navButtonPress="onNavBack" showNavButton="true" title="{i18n>SearchActivitys.ViewTitle}">
+		<content>
+			<Table id="table360" inset="false" items="{ path: 'dataModel>/SearchActivity' , sorter: { path: 'label', descending: false } 
+				}"
+				noDataText="{entitySetView>/tableNoDataText}" busyIndicatorDelay="{entitySetView>/tableBusyDelay}" growing="true" growingScrollToLoad="true"
+				updateFinished="onUpdateFinished"  fixedLayout="false">
+				<headerToolbar>
+					<Toolbar>
+						<ToolbarSpacer/>
+						<HBox id="sourceTitle" alignItems="Center">
+							<rdf:TextResource id="selectedResource" path="" entitySet=""/>
+						</HBox>
+						<Title id="pathTitle" text="{entitySetView>/navigationText}"/>
+						<HBox id="versionsTitle" alignItems="Center">
+							<Title text="(" required="false"/>
+							<ComboBox id="versionSelection" items="{ path: 'entitySetView>/versions' }" selectionChange="onVersionChange">
+								<core:Item key="{entitySetView>navigation}" text="{entityView>text}"/>
+							</ComboBox>
+							<Title text=")" required="false"/>
+						</HBox>
+						<Title id="tableHeader" text="{entitySetView>/entitySetTableTitle}"/>
+						<ToolbarSpacer/>
+						<SearchField id="searchField" tooltip="{i18n>search.searchTooltip}" search="onSearch" width="auto"></SearchField>
+					</Toolbar>
+				</headerToolbar>
+				<columns>
+					<Column >
+						<Text text="{i18n>SearchActivitys.this}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>SearchActivitys.SearchActivity_AvgNumResults}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>SearchActivitys.SearchActivity_ClickRank}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>SearchActivitys.SearchActivity_ClickedRecordName}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>SearchActivitys.SearchActivity_CountQueries}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>SearchActivitys.SearchActivity_CountUsers}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>SearchActivitys.SearchActivity_CreatedDate}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>SearchActivitys.SearchActivity_Id}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>SearchActivitys.SearchActivity_IsDeleted}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>SearchActivitys.SearchActivity_KbChannel}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>SearchActivitys.SearchActivity_LastModifiedDate}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>SearchActivitys.SearchActivity_Name}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>SearchActivitys.SearchActivity_Period}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>SearchActivitys.SearchActivity_QueryDate}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>SearchActivitys.SearchActivity_QueryLanguage}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>SearchActivitys.SearchActivity_SearchTerm}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>SearchActivitys.SearchActivity_SystemModstamp}"/>
+					</Column>
+				</columns>
+				<items>
+					<ColumnListItem id="template360" type="Navigation" press="onPress">
+						<cells>
+							<rdf:TextResource path="dataModel>" entitySet="SearchActivity"/>
+							<VBox>					
+							<Text text="{path:'dataModel>SearchActivity_AvgNumResults/SearchActivity_AvgNumResults',type:'sap.ui.model.type.Float', formatOptions:{'style':'short','maxFractionDigits':2} }"/>
+							</VBox>							
+							<VBox>					
+							<Text text="{path:'dataModel>SearchActivity_ClickRank/SearchActivity_ClickRank',type:'sap.ui.model.type.Float', formatOptions:{'style':'short','maxFractionDigits':2} }"/>
+							</VBox>							
+							<VBox>					
+							<rdf:TextLink text="{path:'dataModel>SearchActivity_ClickedRecordName/SearchActivity_ClickedRecordName',type:'sap.ui.model.type.String'}" linkText="{i18n>SearchActivity.SearchActivity_ClickedRecordName/SearchActivity_ClickedRecordName}"/>
+							</VBox>							
+							<VBox>					
+							<Text text="{path:'dataModel>SearchActivity_CountQueries/SearchActivity_CountQueries',type:'sap.ui.model.type.Integer' }"/>
+							</VBox>							
+							<VBox>					
+							<Text text="{path:'dataModel>SearchActivity_CountUsers/SearchActivity_CountUsers',type:'sap.ui.model.type.Integer' }"/>
+							</VBox>							
+							<VBox>					
+							<Text text="{dataModel>SearchActivity_CreatedDate/SearchActivity_CreatedDate}"/>
+							</VBox>							
+							<VBox>					
+							<rdf:TextLink text="{path:'dataModel>SearchActivity_Id/SearchActivity_Id',type:'sap.ui.model.type.String'}" linkText="{i18n>SearchActivity.SearchActivity_Id/SearchActivity_Id}"/>
+							</VBox>							
+							<VBox>					
+								<Text text="{path:'dataModel>SearchActivity_IsDeleted/SearchActivity_IsDeleted',type:'sap.ui.model.type.Boolean'}"/>  
+							</VBox>							
+							<VBox>					
+							<rdf:TextLink text="{path:'dataModel>SearchActivity_KbChannel/SearchActivity_KbChannel',type:'sap.ui.model.type.String'}" linkText="{i18n>SearchActivity.SearchActivity_KbChannel/SearchActivity_KbChannel}"/>
+							</VBox>							
+							<VBox>					
+							<Text text="{dataModel>SearchActivity_LastModifiedDate/SearchActivity_LastModifiedDate}"/>
+							</VBox>							
+							<VBox>					
+							<rdf:TextLink text="{path:'dataModel>SearchActivity_Name/SearchActivity_Name',type:'sap.ui.model.type.String'}" linkText="{i18n>SearchActivity.SearchActivity_Name/SearchActivity_Name}"/>
+							</VBox>							
+							<VBox>					
+							<rdf:TextLink text="{path:'dataModel>SearchActivity_Period/SearchActivity_Period',type:'sap.ui.model.type.String'}" linkText="{i18n>SearchActivity.SearchActivity_Period/SearchActivity_Period}"/>
+							</VBox>							
+							<VBox>					
+							<Text text="{dataModel>SearchActivity_QueryDate/SearchActivity_QueryDate}"/>
+							</VBox>							
+							<VBox>					
+							<rdf:TextLink text="{path:'dataModel>SearchActivity_QueryLanguage/SearchActivity_QueryLanguage',type:'sap.ui.model.type.String'}" linkText="{i18n>SearchActivity.SearchActivity_QueryLanguage/SearchActivity_QueryLanguage}"/>
+							</VBox>							
+							<VBox>					
+							<rdf:TextLink text="{path:'dataModel>SearchActivity_SearchTerm/SearchActivity_SearchTerm',type:'sap.ui.model.type.String'}" linkText="{i18n>SearchActivity.SearchActivity_SearchTerm/SearchActivity_SearchTerm}"/>
+							</VBox>							
+							<VBox>					
+							<Text text="{dataModel>SearchActivity_SystemModstamp/SearchActivity_SystemModstamp}"/>
+							</VBox>							
+						</cells>
+					</ColumnListItem>
+				</items>
+			</Table>
+		</content>
+	</Page>
+</mvc:View>

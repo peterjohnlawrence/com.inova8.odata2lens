@@ -1,0 +1,203 @@
+<mvc:View controllerName="com.inova8.lens.controller.Entity360" xmlns="sap.m" xmlns:mvc="sap.ui.core.mvc" xmlns:l="sap.ui.layout"
+	xmlns:f="sap.ui.layout.form" xmlns:table="sap.ui.table" xmlns:rdf="com.inova8.lens.control" xmlns:html="http://www.w3.org/1999/xhtml"
+	xmlns:core="sap.ui.core">
+	<Page showHeader="true" id="page" navButtonPress="onNavBack" showNavButton="false" title="{i18n>Scontrol.Title}" busy="{entityView>/busy}"
+		busyIndicatorDelay="{entityView>/delay}" >
+		<customHeader>
+			<Toolbar>
+				<ToolbarSpacer/>
+				<HBox id="sourceTitle" alignItems="Center">
+						<rdf:TextResource id="selectedResource" path="" entitySet=""/>
+				</HBox>	
+				<Title id="pathTitle" text="{entityView>/navigation}"/>
+				<HBox id="versionsTitle" alignItems="Center">
+					<Title text="(" required="false"/>
+					<ComboBox id="versionSelection" items="{ path: 'entityView>/versions' }" selectionChange="onVersionChange">
+						<core:Item key="{entityView>navigation}" text="{entityView>text}"/>
+					</ComboBox>
+					<Title text=")" required="false"/>
+				</HBox>
+				<Title text="{i18n>Scontrol.this}"/>
+				<Title text="(" required="false"/>
+				<rdf:TextResource path="dataModel>" entitySet="Scontrol"/>
+				<Title text=")" required="false"/>
+	
+				<ToolbarSpacer/>
+				<ToggleButton id="toggleColumns" icon="sap-icon://hide" activeIcon="sap-icon://show" press="onSettingsPressed" visible="false"	>
+					<layoutData>
+						<OverflowToolbarLayoutData priority="NeverOverflow"/>
+					</layoutData>
+				</ToggleButton>
+				
+			</Toolbar>
+		</customHeader>
+		<Table id="form360" inset="false" fixedLayout="true" class="multicolumnform" updateFinished="hideColumns">
+			<columns>
+				<Column hAlign="Right" width="200px">
+					<Text text=""/>
+				</Column>
+				<Column visible="true">
+				</Column>
+				<Column visible="true">
+					<Text text="Scontrol"/>
+				</Column>
+			</columns>
+			<items>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>Scontrol.ScontrolLocalization_ScontrolId_Inverse}" required="false"/> 
+						<Text text=""/>
+						<rdf:ListResource path="dataModel>ScontrolLocalization_ScontrolId_Inverse/sfdc_ScontrolLocalization_ScontrolId_Inverse" entitySet="ScontrolLocalization"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>Scontrol.Scontrol_Binary}" required="false"/> 
+						<Text text=""/>
+						<Text text="{dataModel>Scontrol_Binary/Scontrol_Binary}"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>Scontrol.Scontrol_BodyLength}" required="false"/> 
+						<Text text=""/>
+						<Text text="{path:'dataModel>Scontrol_BodyLength/Scontrol_BodyLength',type:'sap.ui.model.type.Integer' }"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>Scontrol.Scontrol_ContentSource}" required="false"/> 
+						<Text text=""/>
+						<rdf:TextLink text="{path:'dataModel>Scontrol_ContentSource/Scontrol_ContentSource',type:'sap.ui.model.type.String' }" linkText="{i18n>Scontrol.Scontrol_ContentSource/Scontrol_ContentSource}"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>Scontrol.Scontrol_CreatedById}" required="false"/> 
+						<Text text=""/>
+						<rdf:ListResource path="dataModel>Scontrol_CreatedById/sfdc_Scontrol_CreatedById" entitySet="User"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>Scontrol.Scontrol_CreatedDate}" required="false"/> 
+						<Text text=""/>
+						<Text text="{dataModel>Scontrol_CreatedDate/Scontrol_CreatedDate}"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>Scontrol.Scontrol_Description}" required="false"/> 
+						<Text text=""/>
+						<rdf:TextLink text="{path:'dataModel>Scontrol_Description/Scontrol_Description',type:'sap.ui.model.type.String' }" linkText="{i18n>Scontrol.Scontrol_Description/Scontrol_Description}"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>Scontrol.Scontrol_DeveloperName}" required="false"/> 
+						<Text text=""/>
+						<rdf:TextLink text="{path:'dataModel>Scontrol_DeveloperName/Scontrol_DeveloperName',type:'sap.ui.model.type.String' }" linkText="{i18n>Scontrol.Scontrol_DeveloperName/Scontrol_DeveloperName}"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>Scontrol.Scontrol_EncodingKey}" required="false"/> 
+						<Text text=""/>
+						<rdf:TextLink text="{path:'dataModel>Scontrol_EncodingKey/Scontrol_EncodingKey',type:'sap.ui.model.type.String' }" linkText="{i18n>Scontrol.Scontrol_EncodingKey/Scontrol_EncodingKey}"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>Scontrol.Scontrol_Filename}" required="false"/> 
+						<Text text=""/>
+						<rdf:TextLink text="{path:'dataModel>Scontrol_Filename/Scontrol_Filename',type:'sap.ui.model.type.String' }" linkText="{i18n>Scontrol.Scontrol_Filename/Scontrol_Filename}"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>Scontrol.Scontrol_HtmlWrapper}" required="false"/> 
+						<Text text=""/>
+						<rdf:TextLink text="{path:'dataModel>Scontrol_HtmlWrapper/Scontrol_HtmlWrapper',type:'sap.ui.model.type.String' }" linkText="{i18n>Scontrol.Scontrol_HtmlWrapper/Scontrol_HtmlWrapper}"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>Scontrol.Scontrol_Id}" required="false"/> 
+						<Text text=""/>
+						<rdf:TextLink text="{path:'dataModel>Scontrol_Id/Scontrol_Id',type:'sap.ui.model.type.String' }" linkText="{i18n>Scontrol.Scontrol_Id/Scontrol_Id}"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>Scontrol.Scontrol_IsDeleted}" required="false"/> 
+						<Text text=""/>
+						<Text text="{path:'dataModel>Scontrol_IsDeleted/Scontrol_IsDeleted',type:'sap.ui.model.type.Boolean'}"/>  
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>Scontrol.Scontrol_LastModifiedById}" required="false"/> 
+						<Text text=""/>
+						<rdf:ListResource path="dataModel>Scontrol_LastModifiedById/sfdc_Scontrol_LastModifiedById" entitySet="User"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>Scontrol.Scontrol_LastModifiedDate}" required="false"/> 
+						<Text text=""/>
+						<Text text="{dataModel>Scontrol_LastModifiedDate/Scontrol_LastModifiedDate}"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>Scontrol.Scontrol_Name}" required="false"/> 
+						<Text text=""/>
+						<rdf:TextLink text="{path:'dataModel>Scontrol_Name/Scontrol_Name',type:'sap.ui.model.type.String' }" linkText="{i18n>Scontrol.Scontrol_Name/Scontrol_Name}"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>Scontrol.Scontrol_NamespacePrefix}" required="false"/> 
+						<Text text=""/>
+						<rdf:TextLink text="{path:'dataModel>Scontrol_NamespacePrefix/Scontrol_NamespacePrefix',type:'sap.ui.model.type.String' }" linkText="{i18n>Scontrol.Scontrol_NamespacePrefix/Scontrol_NamespacePrefix}"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>Scontrol.Scontrol_SupportsCaching}" required="false"/> 
+						<Text text=""/>
+						<Text text="{path:'dataModel>Scontrol_SupportsCaching/Scontrol_SupportsCaching',type:'sap.ui.model.type.Boolean'}"/>  
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>Scontrol.Scontrol_SystemModstamp}" required="false"/> 
+						<Text text=""/>
+						<Text text="{dataModel>Scontrol_SystemModstamp/Scontrol_SystemModstamp}"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>Scontrol.ScontrolLocalization_ScontrolId_Inverse}" required="false"/> 
+						<rdf:ListResource path="dataModel>ScontrolLocalization_ScontrolId_Inverse" entitySet="ScontrolLocalization"/>
+						<Text text=""/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>Scontrol.Scontrol_CreatedById}" required="false"/> 
+						<rdf:ListResource path="dataModel>Scontrol_CreatedById" entitySet="User"/>
+						<Text text=""/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>Scontrol.Scontrol_LastModifiedById}" required="false"/> 
+						<rdf:ListResource path="dataModel>Scontrol_LastModifiedById" entitySet="User"/>
+						<Text text=""/>
+					</cells>
+				</ColumnListItem>
+			</items>
+		</Table>
+	</Page>
+</mvc:View>

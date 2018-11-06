@@ -1,0 +1,168 @@
+<mvc:View controllerName="com.inova8.lens.controller.Entity360" xmlns="sap.m" xmlns:mvc="sap.ui.core.mvc" xmlns:l="sap.ui.layout"
+	xmlns:f="sap.ui.layout.form" xmlns:table="sap.ui.table" xmlns:rdf="com.inova8.lens.control" xmlns:html="http://www.w3.org/1999/xhtml"
+	xmlns:core="sap.ui.core">
+	<Page showHeader="true" id="page" navButtonPress="onNavBack" showNavButton="false" title="{i18n>DuplicateRecordSet.Title}" busy="{entityView>/busy}"
+		busyIndicatorDelay="{entityView>/delay}" >
+		<customHeader>
+			<Toolbar>
+				<ToolbarSpacer/>
+				<HBox id="sourceTitle" alignItems="Center">
+						<rdf:TextResource id="selectedResource" path="" entitySet=""/>
+				</HBox>	
+				<Title id="pathTitle" text="{entityView>/navigation}"/>
+				<HBox id="versionsTitle" alignItems="Center">
+					<Title text="(" required="false"/>
+					<ComboBox id="versionSelection" items="{ path: 'entityView>/versions' }" selectionChange="onVersionChange">
+						<core:Item key="{entityView>navigation}" text="{entityView>text}"/>
+					</ComboBox>
+					<Title text=")" required="false"/>
+				</HBox>
+				<Title text="{i18n>DuplicateRecordSet.this}"/>
+				<Title text="(" required="false"/>
+				<rdf:TextResource path="dataModel>" entitySet="DuplicateRecordSet"/>
+				<Title text=")" required="false"/>
+	
+				<ToolbarSpacer/>
+				<ToggleButton id="toggleColumns" icon="sap-icon://hide" activeIcon="sap-icon://show" press="onSettingsPressed" visible="false"	>
+					<layoutData>
+						<OverflowToolbarLayoutData priority="NeverOverflow"/>
+					</layoutData>
+				</ToggleButton>
+				
+			</Toolbar>
+		</customHeader>
+		<Table id="form360" inset="false" fixedLayout="true" class="multicolumnform" updateFinished="hideColumns">
+			<columns>
+				<Column hAlign="Right" width="200px">
+					<Text text=""/>
+				</Column>
+				<Column visible="true">
+				</Column>
+				<Column visible="true">
+					<Text text="DuplicateRecordSet"/>
+				</Column>
+			</columns>
+			<items>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>DuplicateRecordSet.DuplicateRecordItem_DuplicateRecordSetId_Inverse}" required="false"/> 
+						<Text text=""/>
+						<rdf:ListResource path="dataModel>DuplicateRecordItem_DuplicateRecordSetId_Inverse/sfdc_DuplicateRecordItem_DuplicateRecordSetId_Inverse" entitySet="DuplicateRecordItem"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>DuplicateRecordSet.DuplicateRecordSet_CreatedById}" required="false"/> 
+						<Text text=""/>
+						<rdf:ListResource path="dataModel>DuplicateRecordSet_CreatedById/sfdc_DuplicateRecordSet_CreatedById" entitySet="User"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>DuplicateRecordSet.DuplicateRecordSet_CreatedDate}" required="false"/> 
+						<Text text=""/>
+						<Text text="{dataModel>DuplicateRecordSet_CreatedDate/DuplicateRecordSet_CreatedDate}"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>DuplicateRecordSet.DuplicateRecordSet_DuplicateRuleId}" required="false"/> 
+						<Text text=""/>
+						<rdf:ListResource path="dataModel>DuplicateRecordSet_DuplicateRuleId/sfdc_DuplicateRecordSet_DuplicateRuleId" entitySet="DuplicateRule"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>DuplicateRecordSet.DuplicateRecordSet_Id}" required="false"/> 
+						<Text text=""/>
+						<rdf:TextLink text="{path:'dataModel>DuplicateRecordSet_Id/DuplicateRecordSet_Id',type:'sap.ui.model.type.String' }" linkText="{i18n>DuplicateRecordSet.DuplicateRecordSet_Id/DuplicateRecordSet_Id}"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>DuplicateRecordSet.DuplicateRecordSet_IsDeleted}" required="false"/> 
+						<Text text=""/>
+						<Text text="{path:'dataModel>DuplicateRecordSet_IsDeleted/DuplicateRecordSet_IsDeleted',type:'sap.ui.model.type.Boolean'}"/>  
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>DuplicateRecordSet.DuplicateRecordSet_LastModifiedById}" required="false"/> 
+						<Text text=""/>
+						<rdf:ListResource path="dataModel>DuplicateRecordSet_LastModifiedById/sfdc_DuplicateRecordSet_LastModifiedById" entitySet="User"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>DuplicateRecordSet.DuplicateRecordSet_LastModifiedDate}" required="false"/> 
+						<Text text=""/>
+						<Text text="{dataModel>DuplicateRecordSet_LastModifiedDate/DuplicateRecordSet_LastModifiedDate}"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>DuplicateRecordSet.DuplicateRecordSet_LastReferencedDate}" required="false"/> 
+						<Text text=""/>
+						<Text text="{dataModel>DuplicateRecordSet_LastReferencedDate/DuplicateRecordSet_LastReferencedDate}"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>DuplicateRecordSet.DuplicateRecordSet_LastViewedDate}" required="false"/> 
+						<Text text=""/>
+						<Text text="{dataModel>DuplicateRecordSet_LastViewedDate/DuplicateRecordSet_LastViewedDate}"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>DuplicateRecordSet.DuplicateRecordSet_Name}" required="false"/> 
+						<Text text=""/>
+						<rdf:TextLink text="{path:'dataModel>DuplicateRecordSet_Name/DuplicateRecordSet_Name',type:'sap.ui.model.type.String' }" linkText="{i18n>DuplicateRecordSet.DuplicateRecordSet_Name/DuplicateRecordSet_Name}"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>DuplicateRecordSet.DuplicateRecordSet_RecordCount}" required="false"/> 
+						<Text text=""/>
+						<Text text="{path:'dataModel>DuplicateRecordSet_RecordCount/DuplicateRecordSet_RecordCount',type:'sap.ui.model.type.Integer' }"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>DuplicateRecordSet.DuplicateRecordSet_SystemModstamp}" required="false"/> 
+						<Text text=""/>
+						<Text text="{dataModel>DuplicateRecordSet_SystemModstamp/DuplicateRecordSet_SystemModstamp}"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>DuplicateRecordSet.DuplicateRecordItem_DuplicateRecordSetId_Inverse}" required="false"/> 
+						<rdf:ListResource path="dataModel>DuplicateRecordItem_DuplicateRecordSetId_Inverse" entitySet="DuplicateRecordItem"/>
+						<Text text=""/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>DuplicateRecordSet.DuplicateRecordSet_CreatedById}" required="false"/> 
+						<rdf:ListResource path="dataModel>DuplicateRecordSet_CreatedById" entitySet="User"/>
+						<Text text=""/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>DuplicateRecordSet.DuplicateRecordSet_DuplicateRuleId}" required="false"/> 
+						<rdf:ListResource path="dataModel>DuplicateRecordSet_DuplicateRuleId" entitySet="DuplicateRule"/>
+						<Text text=""/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>DuplicateRecordSet.DuplicateRecordSet_LastModifiedById}" required="false"/> 
+						<rdf:ListResource path="dataModel>DuplicateRecordSet_LastModifiedById" entitySet="User"/>
+						<Text text=""/>
+					</cells>
+				</ColumnListItem>
+			</items>
+		</Table>
+	</Page>
+</mvc:View>

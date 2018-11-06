@@ -1,0 +1,189 @@
+<mvc:View controllerName="com.inova8.lens.controller.Entity360" xmlns="sap.m" xmlns:mvc="sap.ui.core.mvc" xmlns:l="sap.ui.layout"
+	xmlns:f="sap.ui.layout.form" xmlns:table="sap.ui.table" xmlns:rdf="com.inova8.lens.control" xmlns:html="http://www.w3.org/1999/xhtml"
+	xmlns:core="sap.ui.core">
+	<Page showHeader="true" id="page" navButtonPress="onNavBack" showNavButton="false" title="{i18n>SiteFeed.Title}" busy="{entityView>/busy}"
+		busyIndicatorDelay="{entityView>/delay}" >
+		<customHeader>
+			<Toolbar>
+				<ToolbarSpacer/>
+				<HBox id="sourceTitle" alignItems="Center">
+						<rdf:TextResource id="selectedResource" path="" entitySet=""/>
+				</HBox>	
+				<Title id="pathTitle" text="{entityView>/navigation}"/>
+				<HBox id="versionsTitle" alignItems="Center">
+					<Title text="(" required="false"/>
+					<ComboBox id="versionSelection" items="{ path: 'entityView>/versions' }" selectionChange="onVersionChange">
+						<core:Item key="{entityView>navigation}" text="{entityView>text}"/>
+					</ComboBox>
+					<Title text=")" required="false"/>
+				</HBox>
+				<Title text="{i18n>SiteFeed.this}"/>
+				<Title text="(" required="false"/>
+				<rdf:TextResource path="dataModel>" entitySet="SiteFeed"/>
+				<Title text=")" required="false"/>
+	
+				<ToolbarSpacer/>
+				<ToggleButton id="toggleColumns" icon="sap-icon://hide" activeIcon="sap-icon://show" press="onSettingsPressed" visible="false"	>
+					<layoutData>
+						<OverflowToolbarLayoutData priority="NeverOverflow"/>
+					</layoutData>
+				</ToggleButton>
+				
+			</Toolbar>
+		</customHeader>
+		<Table id="form360" inset="false" fixedLayout="true" class="multicolumnform" updateFinished="hideColumns">
+			<columns>
+				<Column hAlign="Right" width="200px">
+					<Text text=""/>
+				</Column>
+				<Column visible="true">
+				</Column>
+				<Column visible="true">
+					<Text text="SiteFeed"/>
+				</Column>
+			</columns>
+			<items>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>SiteFeed.SiteFeed_Body}" required="false"/> 
+						<Text text=""/>
+						<rdf:TextLink text="{path:'dataModel>SiteFeed_Body/SiteFeed_Body',type:'sap.ui.model.type.String' }" linkText="{i18n>SiteFeed.SiteFeed_Body/SiteFeed_Body}"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>SiteFeed.SiteFeed_CommentCount}" required="false"/> 
+						<Text text=""/>
+						<Text text="{path:'dataModel>SiteFeed_CommentCount/SiteFeed_CommentCount',type:'sap.ui.model.type.Integer' }"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>SiteFeed.SiteFeed_CreatedById}" required="false"/> 
+						<Text text=""/>
+						<rdf:ListResource path="dataModel>SiteFeed_CreatedById/sfdc_SiteFeed_CreatedById" entitySet="User"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>SiteFeed.SiteFeed_CreatedDate}" required="false"/> 
+						<Text text=""/>
+						<Text text="{dataModel>SiteFeed_CreatedDate/SiteFeed_CreatedDate}"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>SiteFeed.SiteFeed_Id}" required="false"/> 
+						<Text text=""/>
+						<rdf:TextLink text="{path:'dataModel>SiteFeed_Id/SiteFeed_Id',type:'sap.ui.model.type.String' }" linkText="{i18n>SiteFeed.SiteFeed_Id/SiteFeed_Id}"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>SiteFeed.SiteFeed_InsertedById}" required="false"/> 
+						<Text text=""/>
+						<rdf:ListResource path="dataModel>SiteFeed_InsertedById/sfdc_SiteFeed_InsertedById" entitySet="User"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>SiteFeed.SiteFeed_IsDeleted}" required="false"/> 
+						<Text text=""/>
+						<Text text="{path:'dataModel>SiteFeed_IsDeleted/SiteFeed_IsDeleted',type:'sap.ui.model.type.Boolean'}"/>  
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>SiteFeed.SiteFeed_IsRichText}" required="false"/> 
+						<Text text=""/>
+						<Text text="{path:'dataModel>SiteFeed_IsRichText/SiteFeed_IsRichText',type:'sap.ui.model.type.Boolean'}"/>  
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>SiteFeed.SiteFeed_LastModifiedDate}" required="false"/> 
+						<Text text=""/>
+						<Text text="{dataModel>SiteFeed_LastModifiedDate/SiteFeed_LastModifiedDate}"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>SiteFeed.SiteFeed_LikeCount}" required="false"/> 
+						<Text text=""/>
+						<Text text="{path:'dataModel>SiteFeed_LikeCount/SiteFeed_LikeCount',type:'sap.ui.model.type.Integer' }"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>SiteFeed.SiteFeed_LinkUrl}" required="false"/> 
+						<Text text=""/>
+						<rdf:TextLink text="{path:'dataModel>SiteFeed_LinkUrl/SiteFeed_LinkUrl',type:'sap.ui.model.type.String' }" linkText="{i18n>SiteFeed.SiteFeed_LinkUrl/SiteFeed_LinkUrl}"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>SiteFeed.SiteFeed_ParentId}" required="false"/> 
+						<Text text=""/>
+						<rdf:ListResource path="dataModel>SiteFeed_ParentId/sfdc_SiteFeed_ParentId" entitySet="Site"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>SiteFeed.SiteFeed_RelatedRecordId}" required="false"/> 
+						<Text text=""/>
+						<rdf:ListResource path="dataModel>SiteFeed_RelatedRecordId/sfdc_SiteFeed_RelatedRecordId" entitySet="ContentVersion"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>SiteFeed.SiteFeed_SystemModstamp}" required="false"/> 
+						<Text text=""/>
+						<Text text="{dataModel>SiteFeed_SystemModstamp/SiteFeed_SystemModstamp}"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>SiteFeed.SiteFeed_Title}" required="false"/> 
+						<Text text=""/>
+						<rdf:TextLink text="{path:'dataModel>SiteFeed_Title/SiteFeed_Title',type:'sap.ui.model.type.String' }" linkText="{i18n>SiteFeed.SiteFeed_Title/SiteFeed_Title}"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>SiteFeed.SiteFeed_Type}" required="false"/> 
+						<Text text=""/>
+						<rdf:TextLink text="{path:'dataModel>SiteFeed_Type/SiteFeed_Type',type:'sap.ui.model.type.String' }" linkText="{i18n>SiteFeed.SiteFeed_Type/SiteFeed_Type}"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>SiteFeed.SiteFeed_CreatedById}" required="false"/> 
+						<rdf:ListResource path="dataModel>SiteFeed_CreatedById" entitySet="User"/>
+						<Text text=""/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>SiteFeed.SiteFeed_InsertedById}" required="false"/> 
+						<rdf:ListResource path="dataModel>SiteFeed_InsertedById" entitySet="User"/>
+						<Text text=""/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>SiteFeed.SiteFeed_ParentId}" required="false"/> 
+						<rdf:ListResource path="dataModel>SiteFeed_ParentId" entitySet="Site"/>
+						<Text text=""/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>SiteFeed.SiteFeed_RelatedRecordId}" required="false"/> 
+						<rdf:ListResource path="dataModel>SiteFeed_RelatedRecordId" entitySet="ContentVersion"/>
+						<Text text=""/>
+					</cells>
+				</ColumnListItem>
+			</items>
+		</Table>
+	</Page>
+</mvc:View>

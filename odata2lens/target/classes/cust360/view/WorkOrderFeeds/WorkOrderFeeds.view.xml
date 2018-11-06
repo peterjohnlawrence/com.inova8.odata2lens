@@ -1,0 +1,115 @@
+<mvc:View controllerName="com.inova8.lens.controller.EntitySet360" xmlns="sap.m" xmlns:mvc="sap.ui.core.mvc" xmlns:layout="sap.ui.layout"
+	xmlns:rdf="com.inova8.lens.control" xmlns:core="sap.ui.core">
+	<Page showHeader="false" id="page" navButtonPress="onNavBack" showNavButton="true" title="{i18n>WorkOrderFeeds.ViewTitle}">
+		<content>
+			<Table id="table360" inset="false" items="{ path: 'dataModel>/WorkOrderFeed' , sorter: { path: 'label', descending: false } 
+				}"
+				noDataText="{entitySetView>/tableNoDataText}" busyIndicatorDelay="{entitySetView>/tableBusyDelay}" growing="true" growingScrollToLoad="true"
+				updateFinished="onUpdateFinished"  fixedLayout="false">
+				<headerToolbar>
+					<Toolbar>
+						<ToolbarSpacer/>
+						<HBox id="sourceTitle" alignItems="Center">
+							<rdf:TextResource id="selectedResource" path="" entitySet=""/>
+						</HBox>
+						<Title id="pathTitle" text="{entitySetView>/navigationText}"/>
+						<HBox id="versionsTitle" alignItems="Center">
+							<Title text="(" required="false"/>
+							<ComboBox id="versionSelection" items="{ path: 'entitySetView>/versions' }" selectionChange="onVersionChange">
+								<core:Item key="{entitySetView>navigation}" text="{entityView>text}"/>
+							</ComboBox>
+							<Title text=")" required="false"/>
+						</HBox>
+						<Title id="tableHeader" text="{entitySetView>/entitySetTableTitle}"/>
+						<ToolbarSpacer/>
+						<SearchField id="searchField" tooltip="{i18n>search.searchTooltip}" search="onSearch" width="auto"></SearchField>
+					</Toolbar>
+				</headerToolbar>
+				<columns>
+					<Column >
+						<Text text="{i18n>WorkOrderFeeds.this}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>WorkOrderFeeds.WorkOrderFeed_Body}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>WorkOrderFeeds.WorkOrderFeed_CommentCount}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>WorkOrderFeeds.WorkOrderFeed_CreatedDate}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>WorkOrderFeeds.WorkOrderFeed_Id}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>WorkOrderFeeds.WorkOrderFeed_IsDeleted}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>WorkOrderFeeds.WorkOrderFeed_IsRichText}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>WorkOrderFeeds.WorkOrderFeed_LastModifiedDate}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>WorkOrderFeeds.WorkOrderFeed_LikeCount}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>WorkOrderFeeds.WorkOrderFeed_LinkUrl}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>WorkOrderFeeds.WorkOrderFeed_SystemModstamp}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>WorkOrderFeeds.WorkOrderFeed_Title}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>WorkOrderFeeds.WorkOrderFeed_Type}"/>
+					</Column>
+				</columns>
+				<items>
+					<ColumnListItem id="template360" type="Navigation" press="onPress">
+						<cells>
+							<rdf:TextResource path="dataModel>" entitySet="WorkOrderFeed"/>
+							<VBox>					
+							<rdf:TextLink text="{path:'dataModel>WorkOrderFeed_Body/WorkOrderFeed_Body',type:'sap.ui.model.type.String'}" linkText="{i18n>WorkOrderFeed.WorkOrderFeed_Body/WorkOrderFeed_Body}"/>
+							</VBox>							
+							<VBox>					
+							<Text text="{path:'dataModel>WorkOrderFeed_CommentCount/WorkOrderFeed_CommentCount',type:'sap.ui.model.type.Integer' }"/>
+							</VBox>							
+							<VBox>					
+							<Text text="{dataModel>WorkOrderFeed_CreatedDate/WorkOrderFeed_CreatedDate}"/>
+							</VBox>							
+							<VBox>					
+							<rdf:TextLink text="{path:'dataModel>WorkOrderFeed_Id/WorkOrderFeed_Id',type:'sap.ui.model.type.String'}" linkText="{i18n>WorkOrderFeed.WorkOrderFeed_Id/WorkOrderFeed_Id}"/>
+							</VBox>							
+							<VBox>					
+								<Text text="{path:'dataModel>WorkOrderFeed_IsDeleted/WorkOrderFeed_IsDeleted',type:'sap.ui.model.type.Boolean'}"/>  
+							</VBox>							
+							<VBox>					
+								<Text text="{path:'dataModel>WorkOrderFeed_IsRichText/WorkOrderFeed_IsRichText',type:'sap.ui.model.type.Boolean'}"/>  
+							</VBox>							
+							<VBox>					
+							<Text text="{dataModel>WorkOrderFeed_LastModifiedDate/WorkOrderFeed_LastModifiedDate}"/>
+							</VBox>							
+							<VBox>					
+							<Text text="{path:'dataModel>WorkOrderFeed_LikeCount/WorkOrderFeed_LikeCount',type:'sap.ui.model.type.Integer' }"/>
+							</VBox>							
+							<VBox>					
+							<rdf:TextLink text="{path:'dataModel>WorkOrderFeed_LinkUrl/WorkOrderFeed_LinkUrl',type:'sap.ui.model.type.String'}" linkText="{i18n>WorkOrderFeed.WorkOrderFeed_LinkUrl/WorkOrderFeed_LinkUrl}"/>
+							</VBox>							
+							<VBox>					
+							<Text text="{dataModel>WorkOrderFeed_SystemModstamp/WorkOrderFeed_SystemModstamp}"/>
+							</VBox>							
+							<VBox>					
+							<rdf:TextLink text="{path:'dataModel>WorkOrderFeed_Title/WorkOrderFeed_Title',type:'sap.ui.model.type.String'}" linkText="{i18n>WorkOrderFeed.WorkOrderFeed_Title/WorkOrderFeed_Title}"/>
+							</VBox>							
+							<VBox>					
+							<rdf:TextLink text="{path:'dataModel>WorkOrderFeed_Type/WorkOrderFeed_Type',type:'sap.ui.model.type.String'}" linkText="{i18n>WorkOrderFeed.WorkOrderFeed_Type/WorkOrderFeed_Type}"/>
+							</VBox>							
+						</cells>
+					</ColumnListItem>
+				</items>
+			</Table>
+		</content>
+	</Page>
+</mvc:View>

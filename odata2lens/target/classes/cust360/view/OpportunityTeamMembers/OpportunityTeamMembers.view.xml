@@ -1,0 +1,103 @@
+<mvc:View controllerName="com.inova8.lens.controller.EntitySet360" xmlns="sap.m" xmlns:mvc="sap.ui.core.mvc" xmlns:layout="sap.ui.layout"
+	xmlns:rdf="com.inova8.lens.control" xmlns:core="sap.ui.core">
+	<Page showHeader="false" id="page" navButtonPress="onNavBack" showNavButton="true" title="{i18n>OpportunityTeamMembers.ViewTitle}">
+		<content>
+			<Table id="table360" inset="false" items="{ path: 'dataModel>/OpportunityTeamMember' , sorter: { path: 'label', descending: false } 
+				}"
+				noDataText="{entitySetView>/tableNoDataText}" busyIndicatorDelay="{entitySetView>/tableBusyDelay}" growing="true" growingScrollToLoad="true"
+				updateFinished="onUpdateFinished"  fixedLayout="false">
+				<headerToolbar>
+					<Toolbar>
+						<ToolbarSpacer/>
+						<HBox id="sourceTitle" alignItems="Center">
+							<rdf:TextResource id="selectedResource" path="" entitySet=""/>
+						</HBox>
+						<Title id="pathTitle" text="{entitySetView>/navigationText}"/>
+						<HBox id="versionsTitle" alignItems="Center">
+							<Title text="(" required="false"/>
+							<ComboBox id="versionSelection" items="{ path: 'entitySetView>/versions' }" selectionChange="onVersionChange">
+								<core:Item key="{entitySetView>navigation}" text="{entityView>text}"/>
+							</ComboBox>
+							<Title text=")" required="false"/>
+						</HBox>
+						<Title id="tableHeader" text="{entitySetView>/entitySetTableTitle}"/>
+						<ToolbarSpacer/>
+						<SearchField id="searchField" tooltip="{i18n>search.searchTooltip}" search="onSearch" width="auto"></SearchField>
+					</Toolbar>
+				</headerToolbar>
+				<columns>
+					<Column >
+						<Text text="{i18n>OpportunityTeamMembers.this}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>OpportunityTeamMembers.OpportunityTeamMember_CreatedDate}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>OpportunityTeamMembers.OpportunityTeamMember_Id}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>OpportunityTeamMembers.OpportunityTeamMember_IsDeleted}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>OpportunityTeamMembers.OpportunityTeamMember_LastModifiedDate}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>OpportunityTeamMembers.OpportunityTeamMember_Name}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>OpportunityTeamMembers.OpportunityTeamMember_OpportunityAccessLevel}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>OpportunityTeamMembers.OpportunityTeamMember_PhotoUrl}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>OpportunityTeamMembers.OpportunityTeamMember_SystemModstamp}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>OpportunityTeamMembers.OpportunityTeamMember_TeamMemberRole}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>OpportunityTeamMembers.OpportunityTeamMember_Title}"/>
+					</Column>
+				</columns>
+				<items>
+					<ColumnListItem id="template360" type="Navigation" press="onPress">
+						<cells>
+							<rdf:TextResource path="dataModel>" entitySet="OpportunityTeamMember"/>
+							<VBox>					
+							<Text text="{dataModel>OpportunityTeamMember_CreatedDate/OpportunityTeamMember_CreatedDate}"/>
+							</VBox>							
+							<VBox>					
+							<rdf:TextLink text="{path:'dataModel>OpportunityTeamMember_Id/OpportunityTeamMember_Id',type:'sap.ui.model.type.String'}" linkText="{i18n>OpportunityTeamMember.OpportunityTeamMember_Id/OpportunityTeamMember_Id}"/>
+							</VBox>							
+							<VBox>					
+								<Text text="{path:'dataModel>OpportunityTeamMember_IsDeleted/OpportunityTeamMember_IsDeleted',type:'sap.ui.model.type.Boolean'}"/>  
+							</VBox>							
+							<VBox>					
+							<Text text="{dataModel>OpportunityTeamMember_LastModifiedDate/OpportunityTeamMember_LastModifiedDate}"/>
+							</VBox>							
+							<VBox>					
+							<rdf:TextLink text="{path:'dataModel>OpportunityTeamMember_Name/OpportunityTeamMember_Name',type:'sap.ui.model.type.String'}" linkText="{i18n>OpportunityTeamMember.OpportunityTeamMember_Name/OpportunityTeamMember_Name}"/>
+							</VBox>							
+							<VBox>					
+							<rdf:TextLink text="{path:'dataModel>OpportunityTeamMember_OpportunityAccessLevel/OpportunityTeamMember_OpportunityAccessLevel',type:'sap.ui.model.type.String'}" linkText="{i18n>OpportunityTeamMember.OpportunityTeamMember_OpportunityAccessLevel/OpportunityTeamMember_OpportunityAccessLevel}"/>
+							</VBox>							
+							<VBox>					
+							<rdf:TextLink text="{path:'dataModel>OpportunityTeamMember_PhotoUrl/OpportunityTeamMember_PhotoUrl',type:'sap.ui.model.type.String'}" linkText="{i18n>OpportunityTeamMember.OpportunityTeamMember_PhotoUrl/OpportunityTeamMember_PhotoUrl}"/>
+							</VBox>							
+							<VBox>					
+							<Text text="{dataModel>OpportunityTeamMember_SystemModstamp/OpportunityTeamMember_SystemModstamp}"/>
+							</VBox>							
+							<VBox>					
+							<rdf:TextLink text="{path:'dataModel>OpportunityTeamMember_TeamMemberRole/OpportunityTeamMember_TeamMemberRole',type:'sap.ui.model.type.String'}" linkText="{i18n>OpportunityTeamMember.OpportunityTeamMember_TeamMemberRole/OpportunityTeamMember_TeamMemberRole}"/>
+							</VBox>							
+							<VBox>					
+							<rdf:TextLink text="{path:'dataModel>OpportunityTeamMember_Title/OpportunityTeamMember_Title',type:'sap.ui.model.type.String'}" linkText="{i18n>OpportunityTeamMember.OpportunityTeamMember_Title/OpportunityTeamMember_Title}"/>
+							</VBox>							
+						</cells>
+					</ColumnListItem>
+				</items>
+			</Table>
+		</content>
+	</Page>
+</mvc:View>

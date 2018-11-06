@@ -1,43 +1,250 @@
-<mvc:View controllerName="com.inova8.lens.controller.Entity" xmlns="sap.m" xmlns:mvc="sap.ui.core.mvc"
-	xmlns:f="sap.ui.layout.form" xmlns:table="sap.ui.table" xmlns:rdf="com.inova8.lens.control">
-	<Page showHeader="true" id="page" navButtonPress="onNavBack" showNavButton="false" title="{i18n>GP_Practice.Title}"
-		busy="{entityView>/busy}" busyIndicatorDelay="{entityView>/delay}">
+<mvc:View controllerName="com.inova8.lens.controller.Entity360" xmlns="sap.m" xmlns:mvc="sap.ui.core.mvc" xmlns:l="sap.ui.layout"
+	xmlns:f="sap.ui.layout.form" xmlns:table="sap.ui.table" xmlns:rdf="com.inova8.lens.control" xmlns:html="http://www.w3.org/1999/xhtml"
+	xmlns:core="sap.ui.core">
+	<Page showHeader="true" id="page" navButtonPress="onNavBack" showNavButton="false" title="{i18n>GP_Practice.Title}" busy="{entityView>/busy}"
+		busyIndicatorDelay="{entityView>/delay}" >
 		<customHeader>
 			<Toolbar>
 				<ToolbarSpacer/>
+				<HBox id="sourceTitle" alignItems="Center">
+						<rdf:TextResource id="selectedResource" path="" entitySet=""/>
+				</HBox>	
+				<Title id="pathTitle" text="{entityView>/navigation}"/>
+				<HBox id="versionsTitle" alignItems="Center">
+					<Title text="(" required="false"/>
+					<ComboBox id="versionSelection" items="{ path: 'entityView>/versions' }" selectionChange="onVersionChange">
+						<core:Item key="{entityView>navigation}" text="{entityView>text}"/>
+					</ComboBox>
+					<Title text=")" required="false"/>
+				</HBox>
 				<Title text="{i18n>GP_Practice.this}"/>
+				<Title text="(" required="false"/>
 				<rdf:TextResource path="dataModel>" entitySet="GP_Practice"/>
-				<Title text="{i18n>GP_Practice.Title}" />
+				<Title text=")" required="false"/>
+	
 				<ToolbarSpacer/>
+				<ToggleButton id="toggleColumns" icon="sap-icon://hide" activeIcon="sap-icon://show" press="onSettingsPressed" visible="false"	>
+					<layoutData>
+						<OverflowToolbarLayoutData priority="NeverOverflow"/>
+					</layoutData>
+				</ToggleButton>
+				
 			</Toolbar>
 		</customHeader>
-		<content>
-			<f:SimpleForm class="editableForm" columnsL="1" columnsM="1" editable="true" emptySpanL="4" emptySpanM="4" 
-				labelSpanL="2" labelSpanM="2" layout="ResponsiveGridLayout" maxContainerCols="2" minWidth="1024" singleContainerFullSize="true">
-				<f:content>
-					<!--<Label text="{i18n>GP_Practice.this}" required="false"/><rdf:TextResource path="dataModel>" entitySet="GP_Practice"/>-->
-					<Label text="{i18n>GP_Practice.GP_Practice_Address_Line_1}" required="false"/>   <rdf:TextLink text="{path:'dataModel>GP_Practice_Address_Line_1',type:'sap.ui.model.type.String' }" linkText="{i18n>GP_Practice.GP_Practice_Address_Line_1}"/>
-					<Label text="{i18n>GP_Practice.GP_Practice_Address_Line_2}" required="false"/>   <rdf:TextLink text="{path:'dataModel>GP_Practice_Address_Line_2',type:'sap.ui.model.type.String' }" linkText="{i18n>GP_Practice.GP_Practice_Address_Line_2}"/>
-					<Label text="{i18n>GP_Practice.GP_Practice_Address_Line_3}" required="false"/>   <rdf:TextLink text="{path:'dataModel>GP_Practice_Address_Line_3',type:'sap.ui.model.type.String' }" linkText="{i18n>GP_Practice.GP_Practice_Address_Line_3}"/>
-					<Label text="{i18n>GP_Practice.GP_Practice_Address_Line_4}" required="false"/>   <rdf:TextLink text="{path:'dataModel>GP_Practice_Address_Line_4',type:'sap.ui.model.type.String' }" linkText="{i18n>GP_Practice.GP_Practice_Address_Line_4}"/>
-					<Label text="{i18n>GP_Practice.GP_Practice_Address_Line_5}" required="false"/>   <rdf:TextLink text="{path:'dataModel>GP_Practice_Address_Line_5',type:'sap.ui.model.type.String' }" linkText="{i18n>GP_Practice.GP_Practice_Address_Line_5}"/>
-					<Label text="{i18n>GP_Practice.GP_Practice_Close_Date}" required="false"/>   <Text text="{dataModel>GP_Practice_Close_Date}"/>
-					<Label text="{i18n>GP_Practice.GP_Practice_Contact_Telephone_Number}" required="false"/>   <rdf:TextLink text="{path:'dataModel>GP_Practice_Contact_Telephone_Number',type:'sap.ui.model.type.String' }" linkText="{i18n>GP_Practice.GP_Practice_Contact_Telephone_Number}"/>
-					<Label text="{i18n>GP_Practice.GP_Practice_Join_Provider_Purchaser_Date}" required="false"/>   <Text text="{dataModel>GP_Practice_Join_Provider_Purchaser_Date}"/>
-					<Label text="{i18n>GP_Practice.GP_Practice_Left_Provider_Purchaser_Date}" required="false"/>   <Text text="{dataModel>GP_Practice_Left_Provider_Purchaser_Date}"/>
-					<Label text="{i18n>GP_Practice.GP_Practice_Name}" required="false"/>   <rdf:TextLink text="{path:'dataModel>GP_Practice_Name',type:'sap.ui.model.type.String' }" linkText="{i18n>GP_Practice.GP_Practice_Name}"/>
-					<Label text="{i18n>GP_Practice.GP_Practice_Number_Of_Patients}" required="false"/>   <Text text="{path:'dataModel>GP_Practice_Number_Of_Patients',type:'sap.ui.model.type.Integer' }"/>
-					<Label text="{i18n>GP_Practice.GP_Practice_Open_Date}" required="false"/>   <Text text="{dataModel>GP_Practice_Open_Date}"/>
-					<Label text="{i18n>GP_Practice.GP_Practice_Organisation_Code}" required="false"/>   <rdf:TextLink text="{path:'dataModel>GP_Practice_Organisation_Code',type:'sap.ui.model.type.String' }" linkText="{i18n>GP_Practice.GP_Practice_Organisation_Code}"/>
-					<Label text="{i18n>GP_Practice.GP_Practice_Postcode}" required="false"/>   <rdf:TextLink text="{path:'dataModel>GP_Practice_Postcode',type:'sap.ui.model.type.String' }" linkText="{i18n>GP_Practice.GP_Practice_Postcode}"/>
-					<Label text="{i18n>GP_Practice.alt}" required="false"/>   <rdf:TextLink text="{path:'dataModel>alt',type:'sap.ui.model.type.String' }" linkText="{i18n>GP_Practice.alt}"/>
-					<Label text="{i18n>GP_Practice.lat}" required="false"/>   <rdf:TextLink text="{path:'dataModel>lat',type:'sap.ui.model.type.String' }" linkText="{i18n>GP_Practice.lat}"/>
-					<Label text="{i18n>GP_Practice.lat_long}" required="false"/>   <rdf:TextLink text="{path:'dataModel>lat_long',type:'sap.ui.model.type.String' }" linkText="{i18n>GP_Practice.lat_long}"/>
-					<Label text="{i18n>GP_Practice.long}" required="false"/>   <rdf:TextLink text="{path:'dataModel>long',type:'sap.ui.model.type.String' }" linkText="{i18n>GP_Practice.long}"/>
-					<Label text="{i18n>GP_Practice.GP_Practice_Commissioner}" required="false"/><rdf:TextResource path="dataModel>GP_Practice_Commissioner" entitySet="Clinical_Commissioning_Group"/>		
-					<Label text="{i18n>GP_Practice.GP_Practice_Provider_Purchaser}" required="false"/><rdf:TextResource path="dataModel>GP_Practice_Provider_Purchaser" entitySet="Provider_Purchaser"/>		
-				</f:content>
-			</f:SimpleForm>
-		</content>
+		<Table id="form360" inset="false" fixedLayout="true" class="multicolumnform" updateFinished="hideColumns">
+			<columns>
+				<Column hAlign="Right" width="200px">
+					<Text text=""/>
+				</Column>
+				<Column visible="true">
+				</Column>
+			</columns>
+			<items>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>GP_Practice.GP_Practice_Address_Line_1}" required="false"/> 
+						<rdf:TextLink text="{path:'dataModel>GP_Practice_Address_Line_1',type:'sap.ui.model.type.String' }" linkText="{i18n>GP_Practice.GP_Practice_Address_Line_1}"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>GP_Practice.GP_Practice_Address_Line_2}" required="false"/> 
+						<rdf:TextLink text="{path:'dataModel>GP_Practice_Address_Line_2',type:'sap.ui.model.type.String' }" linkText="{i18n>GP_Practice.GP_Practice_Address_Line_2}"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>GP_Practice.GP_Practice_Address_Line_3}" required="false"/> 
+						<rdf:TextLink text="{path:'dataModel>GP_Practice_Address_Line_3',type:'sap.ui.model.type.String' }" linkText="{i18n>GP_Practice.GP_Practice_Address_Line_3}"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>GP_Practice.GP_Practice_Address_Line_4}" required="false"/> 
+						<rdf:TextLink text="{path:'dataModel>GP_Practice_Address_Line_4',type:'sap.ui.model.type.String' }" linkText="{i18n>GP_Practice.GP_Practice_Address_Line_4}"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>GP_Practice.GP_Practice_Address_Line_5}" required="false"/> 
+						<rdf:TextLink text="{path:'dataModel>GP_Practice_Address_Line_5',type:'sap.ui.model.type.String' }" linkText="{i18n>GP_Practice.GP_Practice_Address_Line_5}"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>GP_Practice.GP_Practice_Close_Date}" required="false"/> 
+						<Text text="{dataModel>GP_Practice_Close_Date}"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>GP_Practice.GP_Practice_Contact_Telephone_Number}" required="false"/> 
+						<rdf:TextLink text="{path:'dataModel>GP_Practice_Contact_Telephone_Number',type:'sap.ui.model.type.String' }" linkText="{i18n>GP_Practice.GP_Practice_Contact_Telephone_Number}"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>GP_Practice.GP_Practice_Join_Provider_Purchaser_Date}" required="false"/> 
+						<Text text="{dataModel>GP_Practice_Join_Provider_Purchaser_Date}"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>GP_Practice.GP_Practice_Left_Provider_Purchaser_Date}" required="false"/> 
+						<Text text="{dataModel>GP_Practice_Left_Provider_Purchaser_Date}"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>GP_Practice.GP_Practice_Name}" required="false"/> 
+						<rdf:TextLink text="{path:'dataModel>GP_Practice_Name',type:'sap.ui.model.type.String' }" linkText="{i18n>GP_Practice.GP_Practice_Name}"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>GP_Practice.GP_Practice_Number_Of_Patients}" required="false"/> 
+						<Text text="{path:'dataModel>GP_Practice_Number_Of_Patients',type:'sap.ui.model.type.Integer' }"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>GP_Practice.GP_Practice_Open_Date}" required="false"/> 
+						<Text text="{dataModel>GP_Practice_Open_Date}"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>GP_Practice.GP_Practice_Organisation_Code}" required="false"/> 
+						<rdf:TextLink text="{path:'dataModel>GP_Practice_Organisation_Code',type:'sap.ui.model.type.String' }" linkText="{i18n>GP_Practice.GP_Practice_Organisation_Code}"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>GP_Practice.GP_Practice_Postcode}" required="false"/> 
+						<rdf:TextLink text="{path:'dataModel>GP_Practice_Postcode',type:'sap.ui.model.type.String' }" linkText="{i18n>GP_Practice.GP_Practice_Postcode}"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>GP_Practice.alt}" required="false"/> 
+						<rdf:TextLink text="{path:'dataModel>alt',type:'sap.ui.model.type.String' }" linkText="{i18n>GP_Practice.alt}"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>GP_Practice.lat}" required="false"/> 
+						<rdf:TextLink text="{path:'dataModel>lat',type:'sap.ui.model.type.String' }" linkText="{i18n>GP_Practice.lat}"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>GP_Practice.lat_long}" required="false"/> 
+						<rdf:TextLink text="{path:'dataModel>lat_long',type:'sap.ui.model.type.String' }" linkText="{i18n>GP_Practice.lat_long}"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>GP_Practice.long}" required="false"/> 
+						<rdf:TextLink text="{path:'dataModel>long',type:'sap.ui.model.type.String' }" linkText="{i18n>GP_Practice.long}"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>GP_Practice.GP_Practice_Commissioner}" required="false"/> 
+						<rdf:TextResource path="dataModel>GP_Practice_Commissioner" entitySet="Clinical_Commissioning_Group"/>		
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>GP_Practice.GP_Practice_Provider_Purchaser}" required="false"/> 
+						<rdf:TextResource path="dataModel>GP_Practice_Provider_Purchaser" entitySet="Provider_Purchaser"/>		
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>GP_Practice.GP_Branch_Surgery_Parent_Organisation_Code_inverse}" required="false"/> 
+						<rdf:ListResource path="dataModel>GP_Branch_Surgery_Parent_Organisation_Code_inverse" entitySet="GP_Branch_Surgery"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>GP_Practice.GP_Practice_Amended_Record_Indicator}" required="false"/> 
+						<rdf:ListResource path="dataModel>GP_Practice_Amended_Record_Indicator" entitySet="Amended_Record_Indicator"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>GP_Practice.GP_Practice_High_Level_Health_Geography}" required="false"/> 
+						<rdf:ListResource path="dataModel>GP_Practice_High_Level_Health_Geography" entitySet="Geographical_Region"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>GP_Practice.GP_Practice_National_Grouping}" required="false"/> 
+						<rdf:ListResource path="dataModel>GP_Practice_National_Grouping" entitySet="Geographical_Region"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>GP_Practice.GP_Practice_Organisation_Sub_Type_Code}" required="false"/> 
+						<rdf:ListResource path="dataModel>GP_Practice_Organisation_Sub_Type_Code" entitySet="Organisation_Sub_Type"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>GP_Practice.GP_Practice_Prescribing_Setting}" required="false"/> 
+						<rdf:ListResource path="dataModel>GP_Practice_Prescribing_Setting" entitySet="Prescribing_Setting"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>GP_Practice.GP_Practice_Status_Code}" required="false"/> 
+						<rdf:ListResource path="dataModel>GP_Practice_Status_Code" entitySet="Status"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>GP_Practice.General_Dental_Practice_Parent_Organisation_Code_inverse}" required="false"/> 
+						<rdf:ListResource path="dataModel>General_Dental_Practice_Parent_Organisation_Code_inverse" entitySet="General_Dental_Practice"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>GP_Practice.General_Practitioner_Membership_Parent_Organisation_Code_inverse}" required="false"/> 
+						<rdf:ListResource path="dataModel>General_Practitioner_Membership_Parent_Organisation_Code_inverse" entitySet="General_Practitioner_Membership"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>GP_Practice.General_Practitioner_Parent_Organisation_Code_inverse}" required="false"/> 
+						<rdf:ListResource path="dataModel>General_Practitioner_Parent_Organisation_Code_inverse" entitySet="General_Practitioner"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>GP_Practice.Nurse_Prescriber_Parent_Organisation_Code_inverse}" required="false"/> 
+						<rdf:ListResource path="dataModel>Nurse_Prescriber_Parent_Organisation_Code_inverse" entitySet="Nurse_Prescriber"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>GP_Practice.Practice_Membership_Organisation_Code_inverse}" required="false"/> 
+						<rdf:ListResource path="dataModel>Practice_Membership_Organisation_Code_inverse" entitySet="Practice_Membership"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>GP_Practice.Practice_Membership_Parent_Organisation_Code_inverse}" required="false"/> 
+						<rdf:ListResource path="dataModel>Practice_Membership_Parent_Organisation_Code_inverse" entitySet="Practice_Membership"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>GP_Practice.Prescription_Order_PRACTICE_inverse}" required="false"/> 
+						<rdf:ListResource path="dataModel>Prescription_Order_PRACTICE_inverse" entitySet="Prescription_Order"/>
+					</cells>
+				</ColumnListItem>
+			</items>
+		</Table>
 	</Page>
 </mvc:View>

@@ -1,0 +1,139 @@
+<mvc:View controllerName="com.inova8.lens.controller.EntitySet360" xmlns="sap.m" xmlns:mvc="sap.ui.core.mvc" xmlns:layout="sap.ui.layout"
+	xmlns:rdf="com.inova8.lens.control" xmlns:core="sap.ui.core">
+	<Page showHeader="false" id="page" navButtonPress="onNavBack" showNavButton="true" title="{i18n>SystemAEmployees.ViewTitle}">
+		<content>
+			<Table id="table360" inset="false" items="{ path: 'dataModel>/SystemAEmployee' , sorter: { path: 'label', descending: false } 
+				}"
+				noDataText="{entitySetView>/tableNoDataText}" busyIndicatorDelay="{entitySetView>/tableBusyDelay}" growing="true" growingScrollToLoad="true"
+				updateFinished="onUpdateFinished"  fixedLayout="false">
+				<headerToolbar>
+					<Toolbar>
+						<ToolbarSpacer/>
+						<HBox id="sourceTitle" alignItems="Center">
+							<rdf:TextResource id="selectedResource" path="" entitySet=""/>
+						</HBox>
+						<Title id="pathTitle" text="{entitySetView>/navigationText}"/>
+						<HBox id="versionsTitle" alignItems="Center">
+							<Title text="(" required="false"/>
+							<ComboBox id="versionSelection" items="{ path: 'entitySetView>/versions' }" selectionChange="onVersionChange">
+								<core:Item key="{entitySetView>navigation}" text="{entityView>text}"/>
+							</ComboBox>
+							<Title text=")" required="false"/>
+						</HBox>
+						<Title id="tableHeader" text="{entitySetView>/entitySetTableTitle}"/>
+						<ToolbarSpacer/>
+						<SearchField id="searchField" tooltip="{i18n>search.searchTooltip}" search="onSearch" width="auto"></SearchField>
+					</Toolbar>
+				</headerToolbar>
+				<columns>
+					<Column >
+						<Text text="{i18n>SystemAEmployees.this}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>SystemAEmployees.birthDate}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>SystemAEmployees.comment}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>SystemAEmployees.employeeAddress}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>SystemAEmployees.employeeCity}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>SystemAEmployees.employeeCountry}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>SystemAEmployees.employeeLinkedIn}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>SystemAEmployees.employeePostalCode}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>SystemAEmployees.extension}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>SystemAEmployees.firstName}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>SystemAEmployees.hireDate}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>SystemAEmployees.homePhone}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>SystemAEmployees.lastName}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>SystemAEmployees.lat}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>SystemAEmployees.lat_long}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>SystemAEmployees.long}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>SystemAEmployees.notes}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>SystemAEmployees.photo}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>SystemAEmployees.regionDescription}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>SystemAEmployees.reportsToNotation}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>SystemAEmployees.seeAlso}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>SystemAEmployees.systemAEmployeeSalary}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>SystemAEmployees.territoryNotation}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>SystemAEmployees.title}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>SystemAEmployees.titleOfCourtesy}"/>
+					</Column>
+				</columns>
+				<items>
+					<ColumnListItem id="template360" type="Navigation" press="onPress">
+						<cells>
+							<rdf:TextResource path="dataModel>" entitySet="SystemAEmployee"/>
+							<Text text="{dataModel>birthDate}"/>
+							<rdf:TextLink text="{path:'dataModel>comment',type:'sap.ui.model.type.String'}" linkText="{i18n>SystemAEmployee.comment}"/>
+							<rdf:TextLink text="{path:'dataModel>employeeAddress',type:'sap.ui.model.type.String'}" linkText="{i18n>SystemAEmployee.employeeAddress}"/>
+							<rdf:TextLink text="{path:'dataModel>employeeCity',type:'sap.ui.model.type.String'}" linkText="{i18n>SystemAEmployee.employeeCity}"/>
+							<rdf:TextLink text="{path:'dataModel>employeeCountry',type:'sap.ui.model.type.String'}" linkText="{i18n>SystemAEmployee.employeeCountry}"/>
+							<rdf:TextLink text="{path:'dataModel>employeeLinkedIn',type:'sap.ui.model.type.String'}" linkText="{i18n>SystemAEmployee.employeeLinkedIn}"/>
+							<rdf:TextLink text="{path:'dataModel>employeePostalCode',type:'sap.ui.model.type.String'}" linkText="{i18n>SystemAEmployee.employeePostalCode}"/>
+							<rdf:TextLink text="{path:'dataModel>extension',type:'sap.ui.model.type.String'}" linkText="{i18n>SystemAEmployee.extension}"/>
+							<rdf:TextLink text="{path:'dataModel>firstName',type:'sap.ui.model.type.String'}" linkText="{i18n>SystemAEmployee.firstName}"/>
+							<Text text="{dataModel>hireDate}"/>
+							<rdf:TextLink text="{path:'dataModel>homePhone',type:'sap.ui.model.type.String'}" linkText="{i18n>SystemAEmployee.homePhone}"/>
+							<rdf:TextLink text="{path:'dataModel>lastName',type:'sap.ui.model.type.String'}" linkText="{i18n>SystemAEmployee.lastName}"/>
+							<Text text="{path:'dataModel>lat',type:'sap.ui.model.type.Float', formatOptions:{'style':'short','maxFractionDigits':2} }"/>
+							<rdf:TextLink text="{path:'dataModel>lat_long',type:'sap.ui.model.type.String'}" linkText="{i18n>SystemAEmployee.lat_long}"/>
+							<Text text="{path:'dataModel>long',type:'sap.ui.model.type.Float', formatOptions:{'style':'short','maxFractionDigits':2} }"/>
+							<rdf:TextLink text="{path:'dataModel>notes',type:'sap.ui.model.type.String'}" linkText="{i18n>SystemAEmployee.notes}"/>
+							<rdf:TextLink text="{path:'dataModel>photo',type:'sap.ui.model.type.String'}" linkText="{i18n>SystemAEmployee.photo}"/>
+							<rdf:TextLink text="{path:'dataModel>regionDescription',type:'sap.ui.model.type.String'}" linkText="{i18n>SystemAEmployee.regionDescription}"/>
+							<rdf:TextLink text="{path:'dataModel>reportsToNotation',type:'sap.ui.model.type.String'}" linkText="{i18n>SystemAEmployee.reportsToNotation}"/>
+							<rdf:TextLink text="{path:'dataModel>seeAlso',type:'sap.ui.model.type.String'}" linkText="{i18n>SystemAEmployee.seeAlso}"/>
+							<Text text="{path:'dataModel>systemAEmployeeSalary',type:'sap.ui.model.type.Float', formatOptions:{'style':'short','maxFractionDigits':2} }"/>
+							<rdf:TextLink text="{path:'dataModel>territoryNotation',type:'sap.ui.model.type.String'}" linkText="{i18n>SystemAEmployee.territoryNotation}"/>
+							<rdf:TextLink text="{path:'dataModel>title',type:'sap.ui.model.type.String'}" linkText="{i18n>SystemAEmployee.title}"/>
+							<rdf:TextLink text="{path:'dataModel>titleOfCourtesy',type:'sap.ui.model.type.String'}" linkText="{i18n>SystemAEmployee.titleOfCourtesy}"/>
+						</cells>
+					</ColumnListItem>
+				</items>
+			</Table>
+		</content>
+	</Page>
+</mvc:View>

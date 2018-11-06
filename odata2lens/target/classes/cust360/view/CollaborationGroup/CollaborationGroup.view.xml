@@ -1,0 +1,343 @@
+<mvc:View controllerName="com.inova8.lens.controller.Entity360" xmlns="sap.m" xmlns:mvc="sap.ui.core.mvc" xmlns:l="sap.ui.layout"
+	xmlns:f="sap.ui.layout.form" xmlns:table="sap.ui.table" xmlns:rdf="com.inova8.lens.control" xmlns:html="http://www.w3.org/1999/xhtml"
+	xmlns:core="sap.ui.core">
+	<Page showHeader="true" id="page" navButtonPress="onNavBack" showNavButton="false" title="{i18n>CollaborationGroup.Title}" busy="{entityView>/busy}"
+		busyIndicatorDelay="{entityView>/delay}" >
+		<customHeader>
+			<Toolbar>
+				<ToolbarSpacer/>
+				<HBox id="sourceTitle" alignItems="Center">
+						<rdf:TextResource id="selectedResource" path="" entitySet=""/>
+				</HBox>	
+				<Title id="pathTitle" text="{entityView>/navigation}"/>
+				<HBox id="versionsTitle" alignItems="Center">
+					<Title text="(" required="false"/>
+					<ComboBox id="versionSelection" items="{ path: 'entityView>/versions' }" selectionChange="onVersionChange">
+						<core:Item key="{entityView>navigation}" text="{entityView>text}"/>
+					</ComboBox>
+					<Title text=")" required="false"/>
+				</HBox>
+				<Title text="{i18n>CollaborationGroup.this}"/>
+				<Title text="(" required="false"/>
+				<rdf:TextResource path="dataModel>" entitySet="CollaborationGroup"/>
+				<Title text=")" required="false"/>
+	
+				<ToolbarSpacer/>
+				<ToggleButton id="toggleColumns" icon="sap-icon://hide" activeIcon="sap-icon://show" press="onSettingsPressed" visible="false"	>
+					<layoutData>
+						<OverflowToolbarLayoutData priority="NeverOverflow"/>
+					</layoutData>
+				</ToggleButton>
+				
+			</Toolbar>
+		</customHeader>
+		<Table id="form360" inset="false" fixedLayout="true" class="multicolumnform" updateFinished="hideColumns">
+			<columns>
+				<Column hAlign="Right" width="200px">
+					<Text text=""/>
+				</Column>
+				<Column visible="true">
+				</Column>
+				<Column visible="true">
+					<Text text="CollaborationGroup"/>
+				</Column>
+			</columns>
+			<items>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>CollaborationGroup.Announcement_ParentId_Inverse}" required="false"/> 
+						<Text text=""/>
+						<rdf:ListResource path="dataModel>Announcement_ParentId_Inverse/sfdc_Announcement_ParentId_Inverse" entitySet="Announcement"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>CollaborationGroup.CollaborationGroupFeed_ParentId_Inverse}" required="false"/> 
+						<Text text=""/>
+						<rdf:ListResource path="dataModel>CollaborationGroupFeed_ParentId_Inverse/sfdc_CollaborationGroupFeed_ParentId_Inverse" entitySet="CollaborationGroupFeed"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>CollaborationGroup.CollaborationGroupMemberRequest_CollaborationGroupId_Inverse}" required="false"/> 
+						<Text text=""/>
+						<rdf:ListResource path="dataModel>CollaborationGroupMemberRequest_CollaborationGroupId_Inverse/sfdc_CollaborationGroupMemberRequest_CollaborationGroupId_Inverse" entitySet="CollaborationGroupMemberRequest"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>CollaborationGroup.CollaborationGroupMember_CollaborationGroupId_Inverse}" required="false"/> 
+						<Text text=""/>
+						<rdf:ListResource path="dataModel>CollaborationGroupMember_CollaborationGroupId_Inverse/sfdc_CollaborationGroupMember_CollaborationGroupId_Inverse" entitySet="CollaborationGroupMember"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>CollaborationGroup.CollaborationGroupRecord_CollaborationGroupId_Inverse}" required="false"/> 
+						<Text text=""/>
+						<rdf:ListResource path="dataModel>CollaborationGroupRecord_CollaborationGroupId_Inverse/sfdc_CollaborationGroupRecord_CollaborationGroupId_Inverse" entitySet="CollaborationGroupRecord"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>CollaborationGroup.CollaborationGroup_AnnouncementId}" required="false"/> 
+						<Text text=""/>
+						<rdf:ListResource path="dataModel>CollaborationGroup_AnnouncementId/sfdc_CollaborationGroup_AnnouncementId" entitySet="Announcement"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>CollaborationGroup.CollaborationGroup_BannerPhotoUrl}" required="false"/> 
+						<Text text=""/>
+						<rdf:TextLink text="{path:'dataModel>CollaborationGroup_BannerPhotoUrl/CollaborationGroup_BannerPhotoUrl',type:'sap.ui.model.type.String' }" linkText="{i18n>CollaborationGroup.CollaborationGroup_BannerPhotoUrl/CollaborationGroup_BannerPhotoUrl}"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>CollaborationGroup.CollaborationGroup_CanHaveGuests}" required="false"/> 
+						<Text text=""/>
+						<Text text="{path:'dataModel>CollaborationGroup_CanHaveGuests/CollaborationGroup_CanHaveGuests',type:'sap.ui.model.type.Boolean'}"/>  
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>CollaborationGroup.CollaborationGroup_CollaborationType}" required="false"/> 
+						<Text text=""/>
+						<rdf:TextLink text="{path:'dataModel>CollaborationGroup_CollaborationType/CollaborationGroup_CollaborationType',type:'sap.ui.model.type.String' }" linkText="{i18n>CollaborationGroup.CollaborationGroup_CollaborationType/CollaborationGroup_CollaborationType}"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>CollaborationGroup.CollaborationGroup_CreatedById}" required="false"/> 
+						<Text text=""/>
+						<rdf:ListResource path="dataModel>CollaborationGroup_CreatedById/sfdc_CollaborationGroup_CreatedById" entitySet="User"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>CollaborationGroup.CollaborationGroup_CreatedDate}" required="false"/> 
+						<Text text=""/>
+						<Text text="{dataModel>CollaborationGroup_CreatedDate/CollaborationGroup_CreatedDate}"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>CollaborationGroup.CollaborationGroup_Description}" required="false"/> 
+						<Text text=""/>
+						<rdf:TextLink text="{path:'dataModel>CollaborationGroup_Description/CollaborationGroup_Description',type:'sap.ui.model.type.String' }" linkText="{i18n>CollaborationGroup.CollaborationGroup_Description/CollaborationGroup_Description}"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>CollaborationGroup.CollaborationGroup_FullPhotoUrl}" required="false"/> 
+						<Text text=""/>
+						<rdf:TextLink text="{path:'dataModel>CollaborationGroup_FullPhotoUrl/CollaborationGroup_FullPhotoUrl',type:'sap.ui.model.type.String' }" linkText="{i18n>CollaborationGroup.CollaborationGroup_FullPhotoUrl/CollaborationGroup_FullPhotoUrl}"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>CollaborationGroup.CollaborationGroup_HasPrivateFieldsAccess}" required="false"/> 
+						<Text text=""/>
+						<Text text="{path:'dataModel>CollaborationGroup_HasPrivateFieldsAccess/CollaborationGroup_HasPrivateFieldsAccess',type:'sap.ui.model.type.Boolean'}"/>  
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>CollaborationGroup.CollaborationGroup_Id}" required="false"/> 
+						<Text text=""/>
+						<rdf:TextLink text="{path:'dataModel>CollaborationGroup_Id/CollaborationGroup_Id',type:'sap.ui.model.type.String' }" linkText="{i18n>CollaborationGroup.CollaborationGroup_Id/CollaborationGroup_Id}"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>CollaborationGroup.CollaborationGroup_InformationBody}" required="false"/> 
+						<Text text=""/>
+						<rdf:TextLink text="{path:'dataModel>CollaborationGroup_InformationBody/CollaborationGroup_InformationBody',type:'sap.ui.model.type.String' }" linkText="{i18n>CollaborationGroup.CollaborationGroup_InformationBody/CollaborationGroup_InformationBody}"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>CollaborationGroup.CollaborationGroup_InformationTitle}" required="false"/> 
+						<Text text=""/>
+						<rdf:TextLink text="{path:'dataModel>CollaborationGroup_InformationTitle/CollaborationGroup_InformationTitle',type:'sap.ui.model.type.String' }" linkText="{i18n>CollaborationGroup.CollaborationGroup_InformationTitle/CollaborationGroup_InformationTitle}"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>CollaborationGroup.CollaborationGroup_IsArchived}" required="false"/> 
+						<Text text=""/>
+						<Text text="{path:'dataModel>CollaborationGroup_IsArchived/CollaborationGroup_IsArchived',type:'sap.ui.model.type.Boolean'}"/>  
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>CollaborationGroup.CollaborationGroup_IsAutoArchiveDisabled}" required="false"/> 
+						<Text text=""/>
+						<Text text="{path:'dataModel>CollaborationGroup_IsAutoArchiveDisabled/CollaborationGroup_IsAutoArchiveDisabled',type:'sap.ui.model.type.Boolean'}"/>  
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>CollaborationGroup.CollaborationGroup_IsBroadcast}" required="false"/> 
+						<Text text=""/>
+						<Text text="{path:'dataModel>CollaborationGroup_IsBroadcast/CollaborationGroup_IsBroadcast',type:'sap.ui.model.type.Boolean'}"/>  
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>CollaborationGroup.CollaborationGroup_LastFeedModifiedDate}" required="false"/> 
+						<Text text=""/>
+						<Text text="{dataModel>CollaborationGroup_LastFeedModifiedDate/CollaborationGroup_LastFeedModifiedDate}"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>CollaborationGroup.CollaborationGroup_LastModifiedById}" required="false"/> 
+						<Text text=""/>
+						<rdf:ListResource path="dataModel>CollaborationGroup_LastModifiedById/sfdc_CollaborationGroup_LastModifiedById" entitySet="User"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>CollaborationGroup.CollaborationGroup_LastModifiedDate}" required="false"/> 
+						<Text text=""/>
+						<Text text="{dataModel>CollaborationGroup_LastModifiedDate/CollaborationGroup_LastModifiedDate}"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>CollaborationGroup.CollaborationGroup_LastReferencedDate}" required="false"/> 
+						<Text text=""/>
+						<Text text="{dataModel>CollaborationGroup_LastReferencedDate/CollaborationGroup_LastReferencedDate}"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>CollaborationGroup.CollaborationGroup_LastViewedDate}" required="false"/> 
+						<Text text=""/>
+						<Text text="{dataModel>CollaborationGroup_LastViewedDate/CollaborationGroup_LastViewedDate}"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>CollaborationGroup.CollaborationGroup_MediumPhotoUrl}" required="false"/> 
+						<Text text=""/>
+						<rdf:TextLink text="{path:'dataModel>CollaborationGroup_MediumPhotoUrl/CollaborationGroup_MediumPhotoUrl',type:'sap.ui.model.type.String' }" linkText="{i18n>CollaborationGroup.CollaborationGroup_MediumPhotoUrl/CollaborationGroup_MediumPhotoUrl}"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>CollaborationGroup.CollaborationGroup_MemberCount}" required="false"/> 
+						<Text text=""/>
+						<Text text="{path:'dataModel>CollaborationGroup_MemberCount/CollaborationGroup_MemberCount',type:'sap.ui.model.type.Integer' }"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>CollaborationGroup.CollaborationGroup_Name}" required="false"/> 
+						<Text text=""/>
+						<rdf:TextLink text="{path:'dataModel>CollaborationGroup_Name/CollaborationGroup_Name',type:'sap.ui.model.type.String' }" linkText="{i18n>CollaborationGroup.CollaborationGroup_Name/CollaborationGroup_Name}"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>CollaborationGroup.CollaborationGroup_OwnerId}" required="false"/> 
+						<Text text=""/>
+						<rdf:ListResource path="dataModel>CollaborationGroup_OwnerId/sfdc_CollaborationGroup_OwnerId" entitySet="User"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>CollaborationGroup.CollaborationGroup_SmallPhotoUrl}" required="false"/> 
+						<Text text=""/>
+						<rdf:TextLink text="{path:'dataModel>CollaborationGroup_SmallPhotoUrl/CollaborationGroup_SmallPhotoUrl',type:'sap.ui.model.type.String' }" linkText="{i18n>CollaborationGroup.CollaborationGroup_SmallPhotoUrl/CollaborationGroup_SmallPhotoUrl}"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>CollaborationGroup.CollaborationGroup_SystemModstamp}" required="false"/> 
+						<Text text=""/>
+						<Text text="{dataModel>CollaborationGroup_SystemModstamp/CollaborationGroup_SystemModstamp}"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>CollaborationGroup.CollaborationInvitation_SharedEntityId_Inverse}" required="false"/> 
+						<Text text=""/>
+						<rdf:ListResource path="dataModel>CollaborationInvitation_SharedEntityId_Inverse/sfdc_CollaborationInvitation_SharedEntityId_Inverse" entitySet="CollaborationInvitation"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>CollaborationGroup.Announcement_ParentId_Inverse}" required="false"/> 
+						<rdf:ListResource path="dataModel>Announcement_ParentId_Inverse" entitySet="Announcement"/>
+						<Text text=""/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>CollaborationGroup.CollaborationGroupFeed_ParentId_Inverse}" required="false"/> 
+						<rdf:ListResource path="dataModel>CollaborationGroupFeed_ParentId_Inverse" entitySet="CollaborationGroupFeed"/>
+						<Text text=""/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>CollaborationGroup.CollaborationGroupMemberRequest_CollaborationGroupId_Inverse}" required="false"/> 
+						<rdf:ListResource path="dataModel>CollaborationGroupMemberRequest_CollaborationGroupId_Inverse" entitySet="CollaborationGroupMemberRequest"/>
+						<Text text=""/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>CollaborationGroup.CollaborationGroupMember_CollaborationGroupId_Inverse}" required="false"/> 
+						<rdf:ListResource path="dataModel>CollaborationGroupMember_CollaborationGroupId_Inverse" entitySet="CollaborationGroupMember"/>
+						<Text text=""/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>CollaborationGroup.CollaborationGroupRecord_CollaborationGroupId_Inverse}" required="false"/> 
+						<rdf:ListResource path="dataModel>CollaborationGroupRecord_CollaborationGroupId_Inverse" entitySet="CollaborationGroupRecord"/>
+						<Text text=""/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>CollaborationGroup.CollaborationGroup_AnnouncementId}" required="false"/> 
+						<rdf:ListResource path="dataModel>CollaborationGroup_AnnouncementId" entitySet="Announcement"/>
+						<Text text=""/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>CollaborationGroup.CollaborationGroup_CreatedById}" required="false"/> 
+						<rdf:ListResource path="dataModel>CollaborationGroup_CreatedById" entitySet="User"/>
+						<Text text=""/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>CollaborationGroup.CollaborationGroup_LastModifiedById}" required="false"/> 
+						<rdf:ListResource path="dataModel>CollaborationGroup_LastModifiedById" entitySet="User"/>
+						<Text text=""/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>CollaborationGroup.CollaborationGroup_OwnerId}" required="false"/> 
+						<rdf:ListResource path="dataModel>CollaborationGroup_OwnerId" entitySet="User"/>
+						<Text text=""/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>CollaborationGroup.CollaborationInvitation_SharedEntityId_Inverse}" required="false"/> 
+						<rdf:ListResource path="dataModel>CollaborationInvitation_SharedEntityId_Inverse" entitySet="CollaborationInvitation"/>
+						<Text text=""/>
+					</cells>
+				</ColumnListItem>
+			</items>
+		</Table>
+	</Page>
+</mvc:View>

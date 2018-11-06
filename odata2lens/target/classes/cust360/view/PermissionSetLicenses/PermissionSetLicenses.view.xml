@@ -1,0 +1,1141 @@
+<mvc:View controllerName="com.inova8.lens.controller.EntitySet360" xmlns="sap.m" xmlns:mvc="sap.ui.core.mvc" xmlns:layout="sap.ui.layout"
+	xmlns:rdf="com.inova8.lens.control" xmlns:core="sap.ui.core">
+	<Page showHeader="false" id="page" navButtonPress="onNavBack" showNavButton="true" title="{i18n>PermissionSetLicenses.ViewTitle}">
+		<content>
+			<Table id="table360" inset="false" items="{ path: 'dataModel>/PermissionSetLicense' , sorter: { path: 'label', descending: false } 
+				}"
+				noDataText="{entitySetView>/tableNoDataText}" busyIndicatorDelay="{entitySetView>/tableBusyDelay}" growing="true" growingScrollToLoad="true"
+				updateFinished="onUpdateFinished"  fixedLayout="false">
+				<headerToolbar>
+					<Toolbar>
+						<ToolbarSpacer/>
+						<HBox id="sourceTitle" alignItems="Center">
+							<rdf:TextResource id="selectedResource" path="" entitySet=""/>
+						</HBox>
+						<Title id="pathTitle" text="{entitySetView>/navigationText}"/>
+						<HBox id="versionsTitle" alignItems="Center">
+							<Title text="(" required="false"/>
+							<ComboBox id="versionSelection" items="{ path: 'entitySetView>/versions' }" selectionChange="onVersionChange">
+								<core:Item key="{entitySetView>navigation}" text="{entityView>text}"/>
+							</ComboBox>
+							<Title text=")" required="false"/>
+						</HBox>
+						<Title id="tableHeader" text="{entitySetView>/entitySetTableTitle}"/>
+						<ToolbarSpacer/>
+						<SearchField id="searchField" tooltip="{i18n>search.searchTooltip}" search="onSearch" width="auto"></SearchField>
+					</Toolbar>
+				</headerToolbar>
+				<columns>
+					<Column >
+						<Text text="{i18n>PermissionSetLicenses.this}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>PermissionSetLicenses.PermissionSetLicense_CreatedDate}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>PermissionSetLicenses.PermissionSetLicense_DeveloperName}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>PermissionSetLicenses.PermissionSetLicense_ExpirationDate}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>PermissionSetLicenses.PermissionSetLicense_Id}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>PermissionSetLicenses.PermissionSetLicense_IsDeleted}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>PermissionSetLicenses.PermissionSetLicense_Language}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>PermissionSetLicenses.PermissionSetLicense_LastModifiedDate}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>PermissionSetLicenses.PermissionSetLicense_MasterLabel}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>PermissionSetLicenses.PermissionSetLicense_MaximumPermissionsAccessCMC}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>PermissionSetLicenses.PermissionSetLicense_MaximumPermissionsActivateContract}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>PermissionSetLicenses.PermissionSetLicense_MaximumPermissionsActivateOrder}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>PermissionSetLicenses.PermissionSetLicense_MaximumPermissionsAddDirectMessageMembers}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>PermissionSetLicenses.PermissionSetLicense_MaximumPermissionsAllowLightningLogin}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>PermissionSetLicenses.PermissionSetLicense_MaximumPermissionsAllowViewEditConvertedLeads}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>PermissionSetLicenses.PermissionSetLicense_MaximumPermissionsApiEnabled}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>PermissionSetLicenses.PermissionSetLicense_MaximumPermissionsApiUserOnly}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>PermissionSetLicenses.PermissionSetLicense_MaximumPermissionsAssignPermissionSets}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>PermissionSetLicenses.PermissionSetLicense_MaximumPermissionsAssignTopics}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>PermissionSetLicenses.PermissionSetLicense_MaximumPermissionsAuthorApex}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>PermissionSetLicenses.PermissionSetLicense_MaximumPermissionsBulkApiHardDelete}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>PermissionSetLicenses.PermissionSetLicense_MaximumPermissionsBulkMacrosAllowed}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>PermissionSetLicenses.PermissionSetLicense_MaximumPermissionsCampaignInfluence2}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>PermissionSetLicenses.PermissionSetLicense_MaximumPermissionsCanApproveFeedPost}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>PermissionSetLicenses.PermissionSetLicense_MaximumPermissionsCanInsertFeedSystemFields}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>PermissionSetLicenses.PermissionSetLicense_MaximumPermissionsCanUseNewDashboardBuilder}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>PermissionSetLicenses.PermissionSetLicense_MaximumPermissionsCanVerifyComment}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>PermissionSetLicenses.PermissionSetLicense_MaximumPermissionsChatterComposeUiCodesnippet}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>PermissionSetLicenses.PermissionSetLicense_MaximumPermissionsChatterEditOwnPost}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>PermissionSetLicenses.PermissionSetLicense_MaximumPermissionsChatterEditOwnRecordPost}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>PermissionSetLicenses.PermissionSetLicense_MaximumPermissionsChatterFileLink}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>PermissionSetLicenses.PermissionSetLicense_MaximumPermissionsChatterForSharePoint}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>PermissionSetLicenses.PermissionSetLicense_MaximumPermissionsChatterInternalUser}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>PermissionSetLicenses.PermissionSetLicense_MaximumPermissionsChatterInviteExternalUsers}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>PermissionSetLicenses.PermissionSetLicense_MaximumPermissionsChatterOwnGroups}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>PermissionSetLicenses.PermissionSetLicense_MaximumPermissionsConfigCustomRecs}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>PermissionSetLicenses.PermissionSetLicense_MaximumPermissionsConnectOrgToEnvironmentHub}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>PermissionSetLicenses.PermissionSetLicense_MaximumPermissionsContentAdministrator}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>PermissionSetLicenses.PermissionSetLicense_MaximumPermissionsContentWorkspaces}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>PermissionSetLicenses.PermissionSetLicense_MaximumPermissionsConvertLeads}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>PermissionSetLicenses.PermissionSetLicense_MaximumPermissionsCreateCustomizeFilters}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>PermissionSetLicenses.PermissionSetLicense_MaximumPermissionsCreatePackaging}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>PermissionSetLicenses.PermissionSetLicense_MaximumPermissionsCreateTopics}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>PermissionSetLicenses.PermissionSetLicense_MaximumPermissionsCreateWorkspaces}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>PermissionSetLicenses.PermissionSetLicense_MaximumPermissionsCustomMobileAppsAccess}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>PermissionSetLicenses.PermissionSetLicense_MaximumPermissionsCustomSidebarOnAllPages}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>PermissionSetLicenses.PermissionSetLicense_MaximumPermissionsCustomizeApplication}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>PermissionSetLicenses.PermissionSetLicense_MaximumPermissionsDataExport}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>PermissionSetLicenses.PermissionSetLicense_MaximumPermissionsDelegatedTwoFactor}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>PermissionSetLicenses.PermissionSetLicense_MaximumPermissionsDeleteActivatedContract}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>PermissionSetLicenses.PermissionSetLicense_MaximumPermissionsDeleteTopics}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>PermissionSetLicenses.PermissionSetLicense_MaximumPermissionsDistributeFromPersWksp}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>PermissionSetLicenses.PermissionSetLicense_MaximumPermissionsEditActivatedOrders}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>PermissionSetLicenses.PermissionSetLicense_MaximumPermissionsEditBrandTemplates}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>PermissionSetLicenses.PermissionSetLicense_MaximumPermissionsEditCaseComments}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>PermissionSetLicenses.PermissionSetLicense_MaximumPermissionsEditEvent}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>PermissionSetLicenses.PermissionSetLicense_MaximumPermissionsEditHtmlTemplates}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>PermissionSetLicenses.PermissionSetLicense_MaximumPermissionsEditOppLineItemUnitPrice}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>PermissionSetLicenses.PermissionSetLicense_MaximumPermissionsEditPublicDocuments}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>PermissionSetLicenses.PermissionSetLicense_MaximumPermissionsEditPublicFilters}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>PermissionSetLicenses.PermissionSetLicense_MaximumPermissionsEditPublicTemplates}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>PermissionSetLicenses.PermissionSetLicense_MaximumPermissionsEditReadonlyFields}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>PermissionSetLicenses.PermissionSetLicense_MaximumPermissionsEditReports}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>PermissionSetLicenses.PermissionSetLicense_MaximumPermissionsEditTask}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>PermissionSetLicenses.PermissionSetLicense_MaximumPermissionsEditTopics}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>PermissionSetLicenses.PermissionSetLicense_MaximumPermissionsEmailAdministration}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>PermissionSetLicenses.PermissionSetLicense_MaximumPermissionsEmailMass}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>PermissionSetLicenses.PermissionSetLicense_MaximumPermissionsEmailSingle}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>PermissionSetLicenses.PermissionSetLicense_MaximumPermissionsEmailTemplateManagement}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>PermissionSetLicenses.PermissionSetLicense_MaximumPermissionsEnableCommunityAppLauncher}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>PermissionSetLicenses.PermissionSetLicense_MaximumPermissionsEnableNotifications}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>PermissionSetLicenses.PermissionSetLicense_MaximumPermissionsExportReport}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>PermissionSetLicenses.PermissionSetLicense_MaximumPermissionsFeedPinning}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>PermissionSetLicenses.PermissionSetLicense_MaximumPermissionsFlowUFLRequired}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>PermissionSetLicenses.PermissionSetLicense_MaximumPermissionsForceTwoFactor}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>PermissionSetLicenses.PermissionSetLicense_MaximumPermissionsGovernNetworks}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>PermissionSetLicenses.PermissionSetLicense_MaximumPermissionsHideReadByList}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>PermissionSetLicenses.PermissionSetLicense_MaximumPermissionsIdentityConnect}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>PermissionSetLicenses.PermissionSetLicense_MaximumPermissionsIdentityEnabled}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>PermissionSetLicenses.PermissionSetLicense_MaximumPermissionsImportCustomObjects}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>PermissionSetLicenses.PermissionSetLicense_MaximumPermissionsImportLeads}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>PermissionSetLicenses.PermissionSetLicense_MaximumPermissionsImportPersonal}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>PermissionSetLicenses.PermissionSetLicense_MaximumPermissionsInboundMigrationToolsUser}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>PermissionSetLicenses.PermissionSetLicense_MaximumPermissionsInstallPackaging}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>PermissionSetLicenses.PermissionSetLicense_MaximumPermissionsLightningConsoleAllowedForUser}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>PermissionSetLicenses.PermissionSetLicense_MaximumPermissionsLightningExperienceUser}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>PermissionSetLicenses.PermissionSetLicense_MaximumPermissionsListEmailSend}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>PermissionSetLicenses.PermissionSetLicense_MaximumPermissionsManageAnalyticSnapshots}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>PermissionSetLicenses.PermissionSetLicense_MaximumPermissionsManageAuthProviders}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>PermissionSetLicenses.PermissionSetLicense_MaximumPermissionsManageBusinessHourHolidays}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>PermissionSetLicenses.PermissionSetLicense_MaximumPermissionsManageCallCenters}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>PermissionSetLicenses.PermissionSetLicense_MaximumPermissionsManageCases}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>PermissionSetLicenses.PermissionSetLicense_MaximumPermissionsManageCategories}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>PermissionSetLicenses.PermissionSetLicense_MaximumPermissionsManageCertificates}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>PermissionSetLicenses.PermissionSetLicense_MaximumPermissionsManageChatterMessages}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>PermissionSetLicenses.PermissionSetLicense_MaximumPermissionsManageContentPermissions}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>PermissionSetLicenses.PermissionSetLicense_MaximumPermissionsManageContentProperties}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>PermissionSetLicenses.PermissionSetLicense_MaximumPermissionsManageContentTypes}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>PermissionSetLicenses.PermissionSetLicense_MaximumPermissionsManageCustomPermissions}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>PermissionSetLicenses.PermissionSetLicense_MaximumPermissionsManageCustomReportTypes}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>PermissionSetLicenses.PermissionSetLicense_MaximumPermissionsManageDashboards}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>PermissionSetLicenses.PermissionSetLicense_MaximumPermissionsManageDataCategories}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>PermissionSetLicenses.PermissionSetLicense_MaximumPermissionsManageDataIntegrations}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>PermissionSetLicenses.PermissionSetLicense_MaximumPermissionsManageEmailClientConfig}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>PermissionSetLicenses.PermissionSetLicense_MaximumPermissionsManageEntitlements}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>PermissionSetLicenses.PermissionSetLicense_MaximumPermissionsManageExchangeConfig}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>PermissionSetLicenses.PermissionSetLicense_MaximumPermissionsManageHealthCheck}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>PermissionSetLicenses.PermissionSetLicense_MaximumPermissionsManageInteraction}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>PermissionSetLicenses.PermissionSetLicense_MaximumPermissionsManageInternalUsers}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>PermissionSetLicenses.PermissionSetLicense_MaximumPermissionsManageIpAddresses}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>PermissionSetLicenses.PermissionSetLicense_MaximumPermissionsManageLeads}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>PermissionSetLicenses.PermissionSetLicense_MaximumPermissionsManageLoginAccessPolicies}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>PermissionSetLicenses.PermissionSetLicense_MaximumPermissionsManageMobile}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>PermissionSetLicenses.PermissionSetLicense_MaximumPermissionsManageNetworks}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>PermissionSetLicenses.PermissionSetLicense_MaximumPermissionsManagePasswordPolicies}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>PermissionSetLicenses.PermissionSetLicense_MaximumPermissionsManageProfilesPermissionsets}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>PermissionSetLicenses.PermissionSetLicense_MaximumPermissionsManagePvtRptsAndDashbds}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>PermissionSetLicenses.PermissionSetLicense_MaximumPermissionsManageQuotas}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>PermissionSetLicenses.PermissionSetLicense_MaximumPermissionsManageRealm}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>PermissionSetLicenses.PermissionSetLicense_MaximumPermissionsManageRemoteAccess}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>PermissionSetLicenses.PermissionSetLicense_MaximumPermissionsManageRoles}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>PermissionSetLicenses.PermissionSetLicense_MaximumPermissionsManageSandboxes}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>PermissionSetLicenses.PermissionSetLicense_MaximumPermissionsManageSessionPermissionSets}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>PermissionSetLicenses.PermissionSetLicense_MaximumPermissionsManageSharing}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>PermissionSetLicenses.PermissionSetLicense_MaximumPermissionsManageSolutions}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>PermissionSetLicenses.PermissionSetLicense_MaximumPermissionsManageSynonyms}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>PermissionSetLicenses.PermissionSetLicense_MaximumPermissionsManageTerritories}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>PermissionSetLicenses.PermissionSetLicense_MaximumPermissionsManageTranslation}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>PermissionSetLicenses.PermissionSetLicense_MaximumPermissionsManageTwoFactor}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>PermissionSetLicenses.PermissionSetLicense_MaximumPermissionsManageUnlistedGroups}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>PermissionSetLicenses.PermissionSetLicense_MaximumPermissionsManageUsers}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>PermissionSetLicenses.PermissionSetLicense_MaximumPermissionsMassInlineEdit}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>PermissionSetLicenses.PermissionSetLicense_MaximumPermissionsMergeTopics}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>PermissionSetLicenses.PermissionSetLicense_MaximumPermissionsModerateChatter}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>PermissionSetLicenses.PermissionSetLicense_MaximumPermissionsModerateNetworkUsers}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>PermissionSetLicenses.PermissionSetLicense_MaximumPermissionsModifyAllData}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>PermissionSetLicenses.PermissionSetLicense_MaximumPermissionsNewReportBuilder}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>PermissionSetLicenses.PermissionSetLicense_MaximumPermissionsOutboundMigrationToolsUser}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>PermissionSetLicenses.PermissionSetLicense_MaximumPermissionsOverrideForecasts}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>PermissionSetLicenses.PermissionSetLicense_MaximumPermissionsPackaging2}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>PermissionSetLicenses.PermissionSetLicense_MaximumPermissionsPasswordNeverExpires}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>PermissionSetLicenses.PermissionSetLicense_MaximumPermissionsPreventClassicExperience}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>PermissionSetLicenses.PermissionSetLicense_MaximumPermissionsPublicTwitterResponse}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>PermissionSetLicenses.PermissionSetLicense_MaximumPermissionsPublishPackaging}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>PermissionSetLicenses.PermissionSetLicense_MaximumPermissionsRemoveDirectMessageMembers}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>PermissionSetLicenses.PermissionSetLicense_MaximumPermissionsResetPasswords}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>PermissionSetLicenses.PermissionSetLicense_MaximumPermissionsRunFlow}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>PermissionSetLicenses.PermissionSetLicense_MaximumPermissionsRunReports}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>PermissionSetLicenses.PermissionSetLicense_MaximumPermissionsSalesConsole}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>PermissionSetLicenses.PermissionSetLicense_MaximumPermissionsScheduleJob}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>PermissionSetLicenses.PermissionSetLicense_MaximumPermissionsScheduleReports}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>PermissionSetLicenses.PermissionSetLicense_MaximumPermissionsScsRequireApproval}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>PermissionSetLicenses.PermissionSetLicense_MaximumPermissionsSelectFilesFromSalesforce}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>PermissionSetLicenses.PermissionSetLicense_MaximumPermissionsSendAnnouncementEmails}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>PermissionSetLicenses.PermissionSetLicense_MaximumPermissionsSendSitRequests}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>PermissionSetLicenses.PermissionSetLicense_MaximumPermissionsShowCompanyNameAsUserBadge}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>PermissionSetLicenses.PermissionSetLicense_MaximumPermissionsSolutionImport}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>PermissionSetLicenses.PermissionSetLicense_MaximumPermissionsSubmitMacrosAllowed}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>PermissionSetLicenses.PermissionSetLicense_MaximumPermissionsSubscribeToLightningReports}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>PermissionSetLicenses.PermissionSetLicense_MaximumPermissionsTransferAnyCase}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>PermissionSetLicenses.PermissionSetLicense_MaximumPermissionsTransferAnyEntity}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>PermissionSetLicenses.PermissionSetLicense_MaximumPermissionsTransferAnyLead}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>PermissionSetLicenses.PermissionSetLicense_MaximumPermissionsTwoFactorApi}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>PermissionSetLicenses.PermissionSetLicense_MaximumPermissionsUseTeamReassignWizards}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>PermissionSetLicenses.PermissionSetLicense_MaximumPermissionsUseWebLink}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>PermissionSetLicenses.PermissionSetLicense_MaximumPermissionsViewAllActivities}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>PermissionSetLicenses.PermissionSetLicense_MaximumPermissionsViewAllData}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>PermissionSetLicenses.PermissionSetLicense_MaximumPermissionsViewAllForecasts}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>PermissionSetLicenses.PermissionSetLicense_MaximumPermissionsViewAllUsers}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>PermissionSetLicenses.PermissionSetLicense_MaximumPermissionsViewAndDebugManagedApex}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>PermissionSetLicenses.PermissionSetLicense_MaximumPermissionsViewContent}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>PermissionSetLicenses.PermissionSetLicense_MaximumPermissionsViewDataAssessment}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>PermissionSetLicenses.PermissionSetLicense_MaximumPermissionsViewDataCategories}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>PermissionSetLicenses.PermissionSetLicense_MaximumPermissionsViewEncryptedData}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>PermissionSetLicenses.PermissionSetLicense_MaximumPermissionsViewEventLogFiles}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>PermissionSetLicenses.PermissionSetLicense_MaximumPermissionsViewHealthCheck}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>PermissionSetLicenses.PermissionSetLicense_MaximumPermissionsViewHelpLink}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>PermissionSetLicenses.PermissionSetLicense_MaximumPermissionsViewMyTeamsDashboards}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>PermissionSetLicenses.PermissionSetLicense_MaximumPermissionsViewSetup}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>PermissionSetLicenses.PermissionSetLicense_PermissionSetLicenseKey}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>PermissionSetLicenses.PermissionSetLicense_Status}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>PermissionSetLicenses.PermissionSetLicense_SystemModstamp}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>PermissionSetLicenses.PermissionSetLicense_TotalLicenses}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>PermissionSetLicenses.PermissionSetLicense_UsedLicenses}"/>
+					</Column>
+				</columns>
+				<items>
+					<ColumnListItem id="template360" type="Navigation" press="onPress">
+						<cells>
+							<rdf:TextResource path="dataModel>" entitySet="PermissionSetLicense"/>
+							<VBox>					
+							<Text text="{dataModel>PermissionSetLicense_CreatedDate/PermissionSetLicense_CreatedDate}"/>
+							</VBox>							
+							<VBox>					
+							<rdf:TextLink text="{path:'dataModel>PermissionSetLicense_DeveloperName/PermissionSetLicense_DeveloperName',type:'sap.ui.model.type.String'}" linkText="{i18n>PermissionSetLicense.PermissionSetLicense_DeveloperName/PermissionSetLicense_DeveloperName}"/>
+							</VBox>							
+							<VBox>					
+							<Text text="{dataModel>PermissionSetLicense_ExpirationDate/PermissionSetLicense_ExpirationDate}"/>
+							</VBox>							
+							<VBox>					
+							<rdf:TextLink text="{path:'dataModel>PermissionSetLicense_Id/PermissionSetLicense_Id',type:'sap.ui.model.type.String'}" linkText="{i18n>PermissionSetLicense.PermissionSetLicense_Id/PermissionSetLicense_Id}"/>
+							</VBox>							
+							<VBox>					
+								<Text text="{path:'dataModel>PermissionSetLicense_IsDeleted/PermissionSetLicense_IsDeleted',type:'sap.ui.model.type.Boolean'}"/>  
+							</VBox>							
+							<VBox>					
+							<rdf:TextLink text="{path:'dataModel>PermissionSetLicense_Language/PermissionSetLicense_Language',type:'sap.ui.model.type.String'}" linkText="{i18n>PermissionSetLicense.PermissionSetLicense_Language/PermissionSetLicense_Language}"/>
+							</VBox>							
+							<VBox>					
+							<Text text="{dataModel>PermissionSetLicense_LastModifiedDate/PermissionSetLicense_LastModifiedDate}"/>
+							</VBox>							
+							<VBox>					
+							<rdf:TextLink text="{path:'dataModel>PermissionSetLicense_MasterLabel/PermissionSetLicense_MasterLabel',type:'sap.ui.model.type.String'}" linkText="{i18n>PermissionSetLicense.PermissionSetLicense_MasterLabel/PermissionSetLicense_MasterLabel}"/>
+							</VBox>							
+							<VBox>					
+								<Text text="{path:'dataModel>PermissionSetLicense_MaximumPermissionsAccessCMC/PermissionSetLicense_MaximumPermissionsAccessCMC',type:'sap.ui.model.type.Boolean'}"/>  
+							</VBox>							
+							<VBox>					
+								<Text text="{path:'dataModel>PermissionSetLicense_MaximumPermissionsActivateContract/PermissionSetLicense_MaximumPermissionsActivateContract',type:'sap.ui.model.type.Boolean'}"/>  
+							</VBox>							
+							<VBox>					
+								<Text text="{path:'dataModel>PermissionSetLicense_MaximumPermissionsActivateOrder/PermissionSetLicense_MaximumPermissionsActivateOrder',type:'sap.ui.model.type.Boolean'}"/>  
+							</VBox>							
+							<VBox>					
+								<Text text="{path:'dataModel>PermissionSetLicense_MaximumPermissionsAddDirectMessageMembers/PermissionSetLicense_MaximumPermissionsAddDirectMessageMembers',type:'sap.ui.model.type.Boolean'}"/>  
+							</VBox>							
+							<VBox>					
+								<Text text="{path:'dataModel>PermissionSetLicense_MaximumPermissionsAllowLightningLogin/PermissionSetLicense_MaximumPermissionsAllowLightningLogin',type:'sap.ui.model.type.Boolean'}"/>  
+							</VBox>							
+							<VBox>					
+								<Text text="{path:'dataModel>PermissionSetLicense_MaximumPermissionsAllowViewEditConvertedLeads/PermissionSetLicense_MaximumPermissionsAllowViewEditConvertedLeads',type:'sap.ui.model.type.Boolean'}"/>  
+							</VBox>							
+							<VBox>					
+								<Text text="{path:'dataModel>PermissionSetLicense_MaximumPermissionsApiEnabled/PermissionSetLicense_MaximumPermissionsApiEnabled',type:'sap.ui.model.type.Boolean'}"/>  
+							</VBox>							
+							<VBox>					
+								<Text text="{path:'dataModel>PermissionSetLicense_MaximumPermissionsApiUserOnly/PermissionSetLicense_MaximumPermissionsApiUserOnly',type:'sap.ui.model.type.Boolean'}"/>  
+							</VBox>							
+							<VBox>					
+								<Text text="{path:'dataModel>PermissionSetLicense_MaximumPermissionsAssignPermissionSets/PermissionSetLicense_MaximumPermissionsAssignPermissionSets',type:'sap.ui.model.type.Boolean'}"/>  
+							</VBox>							
+							<VBox>					
+								<Text text="{path:'dataModel>PermissionSetLicense_MaximumPermissionsAssignTopics/PermissionSetLicense_MaximumPermissionsAssignTopics',type:'sap.ui.model.type.Boolean'}"/>  
+							</VBox>							
+							<VBox>					
+								<Text text="{path:'dataModel>PermissionSetLicense_MaximumPermissionsAuthorApex/PermissionSetLicense_MaximumPermissionsAuthorApex',type:'sap.ui.model.type.Boolean'}"/>  
+							</VBox>							
+							<VBox>					
+								<Text text="{path:'dataModel>PermissionSetLicense_MaximumPermissionsBulkApiHardDelete/PermissionSetLicense_MaximumPermissionsBulkApiHardDelete',type:'sap.ui.model.type.Boolean'}"/>  
+							</VBox>							
+							<VBox>					
+								<Text text="{path:'dataModel>PermissionSetLicense_MaximumPermissionsBulkMacrosAllowed/PermissionSetLicense_MaximumPermissionsBulkMacrosAllowed',type:'sap.ui.model.type.Boolean'}"/>  
+							</VBox>							
+							<VBox>					
+								<Text text="{path:'dataModel>PermissionSetLicense_MaximumPermissionsCampaignInfluence2/PermissionSetLicense_MaximumPermissionsCampaignInfluence2',type:'sap.ui.model.type.Boolean'}"/>  
+							</VBox>							
+							<VBox>					
+								<Text text="{path:'dataModel>PermissionSetLicense_MaximumPermissionsCanApproveFeedPost/PermissionSetLicense_MaximumPermissionsCanApproveFeedPost',type:'sap.ui.model.type.Boolean'}"/>  
+							</VBox>							
+							<VBox>					
+								<Text text="{path:'dataModel>PermissionSetLicense_MaximumPermissionsCanInsertFeedSystemFields/PermissionSetLicense_MaximumPermissionsCanInsertFeedSystemFields',type:'sap.ui.model.type.Boolean'}"/>  
+							</VBox>							
+							<VBox>					
+								<Text text="{path:'dataModel>PermissionSetLicense_MaximumPermissionsCanUseNewDashboardBuilder/PermissionSetLicense_MaximumPermissionsCanUseNewDashboardBuilder',type:'sap.ui.model.type.Boolean'}"/>  
+							</VBox>							
+							<VBox>					
+								<Text text="{path:'dataModel>PermissionSetLicense_MaximumPermissionsCanVerifyComment/PermissionSetLicense_MaximumPermissionsCanVerifyComment',type:'sap.ui.model.type.Boolean'}"/>  
+							</VBox>							
+							<VBox>					
+								<Text text="{path:'dataModel>PermissionSetLicense_MaximumPermissionsChatterComposeUiCodesnippet/PermissionSetLicense_MaximumPermissionsChatterComposeUiCodesnippet',type:'sap.ui.model.type.Boolean'}"/>  
+							</VBox>							
+							<VBox>					
+								<Text text="{path:'dataModel>PermissionSetLicense_MaximumPermissionsChatterEditOwnPost/PermissionSetLicense_MaximumPermissionsChatterEditOwnPost',type:'sap.ui.model.type.Boolean'}"/>  
+							</VBox>							
+							<VBox>					
+								<Text text="{path:'dataModel>PermissionSetLicense_MaximumPermissionsChatterEditOwnRecordPost/PermissionSetLicense_MaximumPermissionsChatterEditOwnRecordPost',type:'sap.ui.model.type.Boolean'}"/>  
+							</VBox>							
+							<VBox>					
+								<Text text="{path:'dataModel>PermissionSetLicense_MaximumPermissionsChatterFileLink/PermissionSetLicense_MaximumPermissionsChatterFileLink',type:'sap.ui.model.type.Boolean'}"/>  
+							</VBox>							
+							<VBox>					
+								<Text text="{path:'dataModel>PermissionSetLicense_MaximumPermissionsChatterForSharePoint/PermissionSetLicense_MaximumPermissionsChatterForSharePoint',type:'sap.ui.model.type.Boolean'}"/>  
+							</VBox>							
+							<VBox>					
+								<Text text="{path:'dataModel>PermissionSetLicense_MaximumPermissionsChatterInternalUser/PermissionSetLicense_MaximumPermissionsChatterInternalUser',type:'sap.ui.model.type.Boolean'}"/>  
+							</VBox>							
+							<VBox>					
+								<Text text="{path:'dataModel>PermissionSetLicense_MaximumPermissionsChatterInviteExternalUsers/PermissionSetLicense_MaximumPermissionsChatterInviteExternalUsers',type:'sap.ui.model.type.Boolean'}"/>  
+							</VBox>							
+							<VBox>					
+								<Text text="{path:'dataModel>PermissionSetLicense_MaximumPermissionsChatterOwnGroups/PermissionSetLicense_MaximumPermissionsChatterOwnGroups',type:'sap.ui.model.type.Boolean'}"/>  
+							</VBox>							
+							<VBox>					
+								<Text text="{path:'dataModel>PermissionSetLicense_MaximumPermissionsConfigCustomRecs/PermissionSetLicense_MaximumPermissionsConfigCustomRecs',type:'sap.ui.model.type.Boolean'}"/>  
+							</VBox>							
+							<VBox>					
+								<Text text="{path:'dataModel>PermissionSetLicense_MaximumPermissionsConnectOrgToEnvironmentHub/PermissionSetLicense_MaximumPermissionsConnectOrgToEnvironmentHub',type:'sap.ui.model.type.Boolean'}"/>  
+							</VBox>							
+							<VBox>					
+								<Text text="{path:'dataModel>PermissionSetLicense_MaximumPermissionsContentAdministrator/PermissionSetLicense_MaximumPermissionsContentAdministrator',type:'sap.ui.model.type.Boolean'}"/>  
+							</VBox>							
+							<VBox>					
+								<Text text="{path:'dataModel>PermissionSetLicense_MaximumPermissionsContentWorkspaces/PermissionSetLicense_MaximumPermissionsContentWorkspaces',type:'sap.ui.model.type.Boolean'}"/>  
+							</VBox>							
+							<VBox>					
+								<Text text="{path:'dataModel>PermissionSetLicense_MaximumPermissionsConvertLeads/PermissionSetLicense_MaximumPermissionsConvertLeads',type:'sap.ui.model.type.Boolean'}"/>  
+							</VBox>							
+							<VBox>					
+								<Text text="{path:'dataModel>PermissionSetLicense_MaximumPermissionsCreateCustomizeFilters/PermissionSetLicense_MaximumPermissionsCreateCustomizeFilters',type:'sap.ui.model.type.Boolean'}"/>  
+							</VBox>							
+							<VBox>					
+								<Text text="{path:'dataModel>PermissionSetLicense_MaximumPermissionsCreatePackaging/PermissionSetLicense_MaximumPermissionsCreatePackaging',type:'sap.ui.model.type.Boolean'}"/>  
+							</VBox>							
+							<VBox>					
+								<Text text="{path:'dataModel>PermissionSetLicense_MaximumPermissionsCreateTopics/PermissionSetLicense_MaximumPermissionsCreateTopics',type:'sap.ui.model.type.Boolean'}"/>  
+							</VBox>							
+							<VBox>					
+								<Text text="{path:'dataModel>PermissionSetLicense_MaximumPermissionsCreateWorkspaces/PermissionSetLicense_MaximumPermissionsCreateWorkspaces',type:'sap.ui.model.type.Boolean'}"/>  
+							</VBox>							
+							<VBox>					
+								<Text text="{path:'dataModel>PermissionSetLicense_MaximumPermissionsCustomMobileAppsAccess/PermissionSetLicense_MaximumPermissionsCustomMobileAppsAccess',type:'sap.ui.model.type.Boolean'}"/>  
+							</VBox>							
+							<VBox>					
+								<Text text="{path:'dataModel>PermissionSetLicense_MaximumPermissionsCustomSidebarOnAllPages/PermissionSetLicense_MaximumPermissionsCustomSidebarOnAllPages',type:'sap.ui.model.type.Boolean'}"/>  
+							</VBox>							
+							<VBox>					
+								<Text text="{path:'dataModel>PermissionSetLicense_MaximumPermissionsCustomizeApplication/PermissionSetLicense_MaximumPermissionsCustomizeApplication',type:'sap.ui.model.type.Boolean'}"/>  
+							</VBox>							
+							<VBox>					
+								<Text text="{path:'dataModel>PermissionSetLicense_MaximumPermissionsDataExport/PermissionSetLicense_MaximumPermissionsDataExport',type:'sap.ui.model.type.Boolean'}"/>  
+							</VBox>							
+							<VBox>					
+								<Text text="{path:'dataModel>PermissionSetLicense_MaximumPermissionsDelegatedTwoFactor/PermissionSetLicense_MaximumPermissionsDelegatedTwoFactor',type:'sap.ui.model.type.Boolean'}"/>  
+							</VBox>							
+							<VBox>					
+								<Text text="{path:'dataModel>PermissionSetLicense_MaximumPermissionsDeleteActivatedContract/PermissionSetLicense_MaximumPermissionsDeleteActivatedContract',type:'sap.ui.model.type.Boolean'}"/>  
+							</VBox>							
+							<VBox>					
+								<Text text="{path:'dataModel>PermissionSetLicense_MaximumPermissionsDeleteTopics/PermissionSetLicense_MaximumPermissionsDeleteTopics',type:'sap.ui.model.type.Boolean'}"/>  
+							</VBox>							
+							<VBox>					
+								<Text text="{path:'dataModel>PermissionSetLicense_MaximumPermissionsDistributeFromPersWksp/PermissionSetLicense_MaximumPermissionsDistributeFromPersWksp',type:'sap.ui.model.type.Boolean'}"/>  
+							</VBox>							
+							<VBox>					
+								<Text text="{path:'dataModel>PermissionSetLicense_MaximumPermissionsEditActivatedOrders/PermissionSetLicense_MaximumPermissionsEditActivatedOrders',type:'sap.ui.model.type.Boolean'}"/>  
+							</VBox>							
+							<VBox>					
+								<Text text="{path:'dataModel>PermissionSetLicense_MaximumPermissionsEditBrandTemplates/PermissionSetLicense_MaximumPermissionsEditBrandTemplates',type:'sap.ui.model.type.Boolean'}"/>  
+							</VBox>							
+							<VBox>					
+								<Text text="{path:'dataModel>PermissionSetLicense_MaximumPermissionsEditCaseComments/PermissionSetLicense_MaximumPermissionsEditCaseComments',type:'sap.ui.model.type.Boolean'}"/>  
+							</VBox>							
+							<VBox>					
+								<Text text="{path:'dataModel>PermissionSetLicense_MaximumPermissionsEditEvent/PermissionSetLicense_MaximumPermissionsEditEvent',type:'sap.ui.model.type.Boolean'}"/>  
+							</VBox>							
+							<VBox>					
+								<Text text="{path:'dataModel>PermissionSetLicense_MaximumPermissionsEditHtmlTemplates/PermissionSetLicense_MaximumPermissionsEditHtmlTemplates',type:'sap.ui.model.type.Boolean'}"/>  
+							</VBox>							
+							<VBox>					
+								<Text text="{path:'dataModel>PermissionSetLicense_MaximumPermissionsEditOppLineItemUnitPrice/PermissionSetLicense_MaximumPermissionsEditOppLineItemUnitPrice',type:'sap.ui.model.type.Boolean'}"/>  
+							</VBox>							
+							<VBox>					
+								<Text text="{path:'dataModel>PermissionSetLicense_MaximumPermissionsEditPublicDocuments/PermissionSetLicense_MaximumPermissionsEditPublicDocuments',type:'sap.ui.model.type.Boolean'}"/>  
+							</VBox>							
+							<VBox>					
+								<Text text="{path:'dataModel>PermissionSetLicense_MaximumPermissionsEditPublicFilters/PermissionSetLicense_MaximumPermissionsEditPublicFilters',type:'sap.ui.model.type.Boolean'}"/>  
+							</VBox>							
+							<VBox>					
+								<Text text="{path:'dataModel>PermissionSetLicense_MaximumPermissionsEditPublicTemplates/PermissionSetLicense_MaximumPermissionsEditPublicTemplates',type:'sap.ui.model.type.Boolean'}"/>  
+							</VBox>							
+							<VBox>					
+								<Text text="{path:'dataModel>PermissionSetLicense_MaximumPermissionsEditReadonlyFields/PermissionSetLicense_MaximumPermissionsEditReadonlyFields',type:'sap.ui.model.type.Boolean'}"/>  
+							</VBox>							
+							<VBox>					
+								<Text text="{path:'dataModel>PermissionSetLicense_MaximumPermissionsEditReports/PermissionSetLicense_MaximumPermissionsEditReports',type:'sap.ui.model.type.Boolean'}"/>  
+							</VBox>							
+							<VBox>					
+								<Text text="{path:'dataModel>PermissionSetLicense_MaximumPermissionsEditTask/PermissionSetLicense_MaximumPermissionsEditTask',type:'sap.ui.model.type.Boolean'}"/>  
+							</VBox>							
+							<VBox>					
+								<Text text="{path:'dataModel>PermissionSetLicense_MaximumPermissionsEditTopics/PermissionSetLicense_MaximumPermissionsEditTopics',type:'sap.ui.model.type.Boolean'}"/>  
+							</VBox>							
+							<VBox>					
+								<Text text="{path:'dataModel>PermissionSetLicense_MaximumPermissionsEmailAdministration/PermissionSetLicense_MaximumPermissionsEmailAdministration',type:'sap.ui.model.type.Boolean'}"/>  
+							</VBox>							
+							<VBox>					
+								<Text text="{path:'dataModel>PermissionSetLicense_MaximumPermissionsEmailMass/PermissionSetLicense_MaximumPermissionsEmailMass',type:'sap.ui.model.type.Boolean'}"/>  
+							</VBox>							
+							<VBox>					
+								<Text text="{path:'dataModel>PermissionSetLicense_MaximumPermissionsEmailSingle/PermissionSetLicense_MaximumPermissionsEmailSingle',type:'sap.ui.model.type.Boolean'}"/>  
+							</VBox>							
+							<VBox>					
+								<Text text="{path:'dataModel>PermissionSetLicense_MaximumPermissionsEmailTemplateManagement/PermissionSetLicense_MaximumPermissionsEmailTemplateManagement',type:'sap.ui.model.type.Boolean'}"/>  
+							</VBox>							
+							<VBox>					
+								<Text text="{path:'dataModel>PermissionSetLicense_MaximumPermissionsEnableCommunityAppLauncher/PermissionSetLicense_MaximumPermissionsEnableCommunityAppLauncher',type:'sap.ui.model.type.Boolean'}"/>  
+							</VBox>							
+							<VBox>					
+								<Text text="{path:'dataModel>PermissionSetLicense_MaximumPermissionsEnableNotifications/PermissionSetLicense_MaximumPermissionsEnableNotifications',type:'sap.ui.model.type.Boolean'}"/>  
+							</VBox>							
+							<VBox>					
+								<Text text="{path:'dataModel>PermissionSetLicense_MaximumPermissionsExportReport/PermissionSetLicense_MaximumPermissionsExportReport',type:'sap.ui.model.type.Boolean'}"/>  
+							</VBox>							
+							<VBox>					
+								<Text text="{path:'dataModel>PermissionSetLicense_MaximumPermissionsFeedPinning/PermissionSetLicense_MaximumPermissionsFeedPinning',type:'sap.ui.model.type.Boolean'}"/>  
+							</VBox>							
+							<VBox>					
+								<Text text="{path:'dataModel>PermissionSetLicense_MaximumPermissionsFlowUFLRequired/PermissionSetLicense_MaximumPermissionsFlowUFLRequired',type:'sap.ui.model.type.Boolean'}"/>  
+							</VBox>							
+							<VBox>					
+								<Text text="{path:'dataModel>PermissionSetLicense_MaximumPermissionsForceTwoFactor/PermissionSetLicense_MaximumPermissionsForceTwoFactor',type:'sap.ui.model.type.Boolean'}"/>  
+							</VBox>							
+							<VBox>					
+								<Text text="{path:'dataModel>PermissionSetLicense_MaximumPermissionsGovernNetworks/PermissionSetLicense_MaximumPermissionsGovernNetworks',type:'sap.ui.model.type.Boolean'}"/>  
+							</VBox>							
+							<VBox>					
+								<Text text="{path:'dataModel>PermissionSetLicense_MaximumPermissionsHideReadByList/PermissionSetLicense_MaximumPermissionsHideReadByList',type:'sap.ui.model.type.Boolean'}"/>  
+							</VBox>							
+							<VBox>					
+								<Text text="{path:'dataModel>PermissionSetLicense_MaximumPermissionsIdentityConnect/PermissionSetLicense_MaximumPermissionsIdentityConnect',type:'sap.ui.model.type.Boolean'}"/>  
+							</VBox>							
+							<VBox>					
+								<Text text="{path:'dataModel>PermissionSetLicense_MaximumPermissionsIdentityEnabled/PermissionSetLicense_MaximumPermissionsIdentityEnabled',type:'sap.ui.model.type.Boolean'}"/>  
+							</VBox>							
+							<VBox>					
+								<Text text="{path:'dataModel>PermissionSetLicense_MaximumPermissionsImportCustomObjects/PermissionSetLicense_MaximumPermissionsImportCustomObjects',type:'sap.ui.model.type.Boolean'}"/>  
+							</VBox>							
+							<VBox>					
+								<Text text="{path:'dataModel>PermissionSetLicense_MaximumPermissionsImportLeads/PermissionSetLicense_MaximumPermissionsImportLeads',type:'sap.ui.model.type.Boolean'}"/>  
+							</VBox>							
+							<VBox>					
+								<Text text="{path:'dataModel>PermissionSetLicense_MaximumPermissionsImportPersonal/PermissionSetLicense_MaximumPermissionsImportPersonal',type:'sap.ui.model.type.Boolean'}"/>  
+							</VBox>							
+							<VBox>					
+								<Text text="{path:'dataModel>PermissionSetLicense_MaximumPermissionsInboundMigrationToolsUser/PermissionSetLicense_MaximumPermissionsInboundMigrationToolsUser',type:'sap.ui.model.type.Boolean'}"/>  
+							</VBox>							
+							<VBox>					
+								<Text text="{path:'dataModel>PermissionSetLicense_MaximumPermissionsInstallPackaging/PermissionSetLicense_MaximumPermissionsInstallPackaging',type:'sap.ui.model.type.Boolean'}"/>  
+							</VBox>							
+							<VBox>					
+								<Text text="{path:'dataModel>PermissionSetLicense_MaximumPermissionsLightningConsoleAllowedForUser/PermissionSetLicense_MaximumPermissionsLightningConsoleAllowedForUser',type:'sap.ui.model.type.Boolean'}"/>  
+							</VBox>							
+							<VBox>					
+								<Text text="{path:'dataModel>PermissionSetLicense_MaximumPermissionsLightningExperienceUser/PermissionSetLicense_MaximumPermissionsLightningExperienceUser',type:'sap.ui.model.type.Boolean'}"/>  
+							</VBox>							
+							<VBox>					
+								<Text text="{path:'dataModel>PermissionSetLicense_MaximumPermissionsListEmailSend/PermissionSetLicense_MaximumPermissionsListEmailSend',type:'sap.ui.model.type.Boolean'}"/>  
+							</VBox>							
+							<VBox>					
+								<Text text="{path:'dataModel>PermissionSetLicense_MaximumPermissionsManageAnalyticSnapshots/PermissionSetLicense_MaximumPermissionsManageAnalyticSnapshots',type:'sap.ui.model.type.Boolean'}"/>  
+							</VBox>							
+							<VBox>					
+								<Text text="{path:'dataModel>PermissionSetLicense_MaximumPermissionsManageAuthProviders/PermissionSetLicense_MaximumPermissionsManageAuthProviders',type:'sap.ui.model.type.Boolean'}"/>  
+							</VBox>							
+							<VBox>					
+								<Text text="{path:'dataModel>PermissionSetLicense_MaximumPermissionsManageBusinessHourHolidays/PermissionSetLicense_MaximumPermissionsManageBusinessHourHolidays',type:'sap.ui.model.type.Boolean'}"/>  
+							</VBox>							
+							<VBox>					
+								<Text text="{path:'dataModel>PermissionSetLicense_MaximumPermissionsManageCallCenters/PermissionSetLicense_MaximumPermissionsManageCallCenters',type:'sap.ui.model.type.Boolean'}"/>  
+							</VBox>							
+							<VBox>					
+								<Text text="{path:'dataModel>PermissionSetLicense_MaximumPermissionsManageCases/PermissionSetLicense_MaximumPermissionsManageCases',type:'sap.ui.model.type.Boolean'}"/>  
+							</VBox>							
+							<VBox>					
+								<Text text="{path:'dataModel>PermissionSetLicense_MaximumPermissionsManageCategories/PermissionSetLicense_MaximumPermissionsManageCategories',type:'sap.ui.model.type.Boolean'}"/>  
+							</VBox>							
+							<VBox>					
+								<Text text="{path:'dataModel>PermissionSetLicense_MaximumPermissionsManageCertificates/PermissionSetLicense_MaximumPermissionsManageCertificates',type:'sap.ui.model.type.Boolean'}"/>  
+							</VBox>							
+							<VBox>					
+								<Text text="{path:'dataModel>PermissionSetLicense_MaximumPermissionsManageChatterMessages/PermissionSetLicense_MaximumPermissionsManageChatterMessages',type:'sap.ui.model.type.Boolean'}"/>  
+							</VBox>							
+							<VBox>					
+								<Text text="{path:'dataModel>PermissionSetLicense_MaximumPermissionsManageContentPermissions/PermissionSetLicense_MaximumPermissionsManageContentPermissions',type:'sap.ui.model.type.Boolean'}"/>  
+							</VBox>							
+							<VBox>					
+								<Text text="{path:'dataModel>PermissionSetLicense_MaximumPermissionsManageContentProperties/PermissionSetLicense_MaximumPermissionsManageContentProperties',type:'sap.ui.model.type.Boolean'}"/>  
+							</VBox>							
+							<VBox>					
+								<Text text="{path:'dataModel>PermissionSetLicense_MaximumPermissionsManageContentTypes/PermissionSetLicense_MaximumPermissionsManageContentTypes',type:'sap.ui.model.type.Boolean'}"/>  
+							</VBox>							
+							<VBox>					
+								<Text text="{path:'dataModel>PermissionSetLicense_MaximumPermissionsManageCustomPermissions/PermissionSetLicense_MaximumPermissionsManageCustomPermissions',type:'sap.ui.model.type.Boolean'}"/>  
+							</VBox>							
+							<VBox>					
+								<Text text="{path:'dataModel>PermissionSetLicense_MaximumPermissionsManageCustomReportTypes/PermissionSetLicense_MaximumPermissionsManageCustomReportTypes',type:'sap.ui.model.type.Boolean'}"/>  
+							</VBox>							
+							<VBox>					
+								<Text text="{path:'dataModel>PermissionSetLicense_MaximumPermissionsManageDashboards/PermissionSetLicense_MaximumPermissionsManageDashboards',type:'sap.ui.model.type.Boolean'}"/>  
+							</VBox>							
+							<VBox>					
+								<Text text="{path:'dataModel>PermissionSetLicense_MaximumPermissionsManageDataCategories/PermissionSetLicense_MaximumPermissionsManageDataCategories',type:'sap.ui.model.type.Boolean'}"/>  
+							</VBox>							
+							<VBox>					
+								<Text text="{path:'dataModel>PermissionSetLicense_MaximumPermissionsManageDataIntegrations/PermissionSetLicense_MaximumPermissionsManageDataIntegrations',type:'sap.ui.model.type.Boolean'}"/>  
+							</VBox>							
+							<VBox>					
+								<Text text="{path:'dataModel>PermissionSetLicense_MaximumPermissionsManageEmailClientConfig/PermissionSetLicense_MaximumPermissionsManageEmailClientConfig',type:'sap.ui.model.type.Boolean'}"/>  
+							</VBox>							
+							<VBox>					
+								<Text text="{path:'dataModel>PermissionSetLicense_MaximumPermissionsManageEntitlements/PermissionSetLicense_MaximumPermissionsManageEntitlements',type:'sap.ui.model.type.Boolean'}"/>  
+							</VBox>							
+							<VBox>					
+								<Text text="{path:'dataModel>PermissionSetLicense_MaximumPermissionsManageExchangeConfig/PermissionSetLicense_MaximumPermissionsManageExchangeConfig',type:'sap.ui.model.type.Boolean'}"/>  
+							</VBox>							
+							<VBox>					
+								<Text text="{path:'dataModel>PermissionSetLicense_MaximumPermissionsManageHealthCheck/PermissionSetLicense_MaximumPermissionsManageHealthCheck',type:'sap.ui.model.type.Boolean'}"/>  
+							</VBox>							
+							<VBox>					
+								<Text text="{path:'dataModel>PermissionSetLicense_MaximumPermissionsManageInteraction/PermissionSetLicense_MaximumPermissionsManageInteraction',type:'sap.ui.model.type.Boolean'}"/>  
+							</VBox>							
+							<VBox>					
+								<Text text="{path:'dataModel>PermissionSetLicense_MaximumPermissionsManageInternalUsers/PermissionSetLicense_MaximumPermissionsManageInternalUsers',type:'sap.ui.model.type.Boolean'}"/>  
+							</VBox>							
+							<VBox>					
+								<Text text="{path:'dataModel>PermissionSetLicense_MaximumPermissionsManageIpAddresses/PermissionSetLicense_MaximumPermissionsManageIpAddresses',type:'sap.ui.model.type.Boolean'}"/>  
+							</VBox>							
+							<VBox>					
+								<Text text="{path:'dataModel>PermissionSetLicense_MaximumPermissionsManageLeads/PermissionSetLicense_MaximumPermissionsManageLeads',type:'sap.ui.model.type.Boolean'}"/>  
+							</VBox>							
+							<VBox>					
+								<Text text="{path:'dataModel>PermissionSetLicense_MaximumPermissionsManageLoginAccessPolicies/PermissionSetLicense_MaximumPermissionsManageLoginAccessPolicies',type:'sap.ui.model.type.Boolean'}"/>  
+							</VBox>							
+							<VBox>					
+								<Text text="{path:'dataModel>PermissionSetLicense_MaximumPermissionsManageMobile/PermissionSetLicense_MaximumPermissionsManageMobile',type:'sap.ui.model.type.Boolean'}"/>  
+							</VBox>							
+							<VBox>					
+								<Text text="{path:'dataModel>PermissionSetLicense_MaximumPermissionsManageNetworks/PermissionSetLicense_MaximumPermissionsManageNetworks',type:'sap.ui.model.type.Boolean'}"/>  
+							</VBox>							
+							<VBox>					
+								<Text text="{path:'dataModel>PermissionSetLicense_MaximumPermissionsManagePasswordPolicies/PermissionSetLicense_MaximumPermissionsManagePasswordPolicies',type:'sap.ui.model.type.Boolean'}"/>  
+							</VBox>							
+							<VBox>					
+								<Text text="{path:'dataModel>PermissionSetLicense_MaximumPermissionsManageProfilesPermissionsets/PermissionSetLicense_MaximumPermissionsManageProfilesPermissionsets',type:'sap.ui.model.type.Boolean'}"/>  
+							</VBox>							
+							<VBox>					
+								<Text text="{path:'dataModel>PermissionSetLicense_MaximumPermissionsManagePvtRptsAndDashbds/PermissionSetLicense_MaximumPermissionsManagePvtRptsAndDashbds',type:'sap.ui.model.type.Boolean'}"/>  
+							</VBox>							
+							<VBox>					
+								<Text text="{path:'dataModel>PermissionSetLicense_MaximumPermissionsManageQuotas/PermissionSetLicense_MaximumPermissionsManageQuotas',type:'sap.ui.model.type.Boolean'}"/>  
+							</VBox>							
+							<VBox>					
+								<Text text="{path:'dataModel>PermissionSetLicense_MaximumPermissionsManageRealm/PermissionSetLicense_MaximumPermissionsManageRealm',type:'sap.ui.model.type.Boolean'}"/>  
+							</VBox>							
+							<VBox>					
+								<Text text="{path:'dataModel>PermissionSetLicense_MaximumPermissionsManageRemoteAccess/PermissionSetLicense_MaximumPermissionsManageRemoteAccess',type:'sap.ui.model.type.Boolean'}"/>  
+							</VBox>							
+							<VBox>					
+								<Text text="{path:'dataModel>PermissionSetLicense_MaximumPermissionsManageRoles/PermissionSetLicense_MaximumPermissionsManageRoles',type:'sap.ui.model.type.Boolean'}"/>  
+							</VBox>							
+							<VBox>					
+								<Text text="{path:'dataModel>PermissionSetLicense_MaximumPermissionsManageSandboxes/PermissionSetLicense_MaximumPermissionsManageSandboxes',type:'sap.ui.model.type.Boolean'}"/>  
+							</VBox>							
+							<VBox>					
+								<Text text="{path:'dataModel>PermissionSetLicense_MaximumPermissionsManageSessionPermissionSets/PermissionSetLicense_MaximumPermissionsManageSessionPermissionSets',type:'sap.ui.model.type.Boolean'}"/>  
+							</VBox>							
+							<VBox>					
+								<Text text="{path:'dataModel>PermissionSetLicense_MaximumPermissionsManageSharing/PermissionSetLicense_MaximumPermissionsManageSharing',type:'sap.ui.model.type.Boolean'}"/>  
+							</VBox>							
+							<VBox>					
+								<Text text="{path:'dataModel>PermissionSetLicense_MaximumPermissionsManageSolutions/PermissionSetLicense_MaximumPermissionsManageSolutions',type:'sap.ui.model.type.Boolean'}"/>  
+							</VBox>							
+							<VBox>					
+								<Text text="{path:'dataModel>PermissionSetLicense_MaximumPermissionsManageSynonyms/PermissionSetLicense_MaximumPermissionsManageSynonyms',type:'sap.ui.model.type.Boolean'}"/>  
+							</VBox>							
+							<VBox>					
+								<Text text="{path:'dataModel>PermissionSetLicense_MaximumPermissionsManageTerritories/PermissionSetLicense_MaximumPermissionsManageTerritories',type:'sap.ui.model.type.Boolean'}"/>  
+							</VBox>							
+							<VBox>					
+								<Text text="{path:'dataModel>PermissionSetLicense_MaximumPermissionsManageTranslation/PermissionSetLicense_MaximumPermissionsManageTranslation',type:'sap.ui.model.type.Boolean'}"/>  
+							</VBox>							
+							<VBox>					
+								<Text text="{path:'dataModel>PermissionSetLicense_MaximumPermissionsManageTwoFactor/PermissionSetLicense_MaximumPermissionsManageTwoFactor',type:'sap.ui.model.type.Boolean'}"/>  
+							</VBox>							
+							<VBox>					
+								<Text text="{path:'dataModel>PermissionSetLicense_MaximumPermissionsManageUnlistedGroups/PermissionSetLicense_MaximumPermissionsManageUnlistedGroups',type:'sap.ui.model.type.Boolean'}"/>  
+							</VBox>							
+							<VBox>					
+								<Text text="{path:'dataModel>PermissionSetLicense_MaximumPermissionsManageUsers/PermissionSetLicense_MaximumPermissionsManageUsers',type:'sap.ui.model.type.Boolean'}"/>  
+							</VBox>							
+							<VBox>					
+								<Text text="{path:'dataModel>PermissionSetLicense_MaximumPermissionsMassInlineEdit/PermissionSetLicense_MaximumPermissionsMassInlineEdit',type:'sap.ui.model.type.Boolean'}"/>  
+							</VBox>							
+							<VBox>					
+								<Text text="{path:'dataModel>PermissionSetLicense_MaximumPermissionsMergeTopics/PermissionSetLicense_MaximumPermissionsMergeTopics',type:'sap.ui.model.type.Boolean'}"/>  
+							</VBox>							
+							<VBox>					
+								<Text text="{path:'dataModel>PermissionSetLicense_MaximumPermissionsModerateChatter/PermissionSetLicense_MaximumPermissionsModerateChatter',type:'sap.ui.model.type.Boolean'}"/>  
+							</VBox>							
+							<VBox>					
+								<Text text="{path:'dataModel>PermissionSetLicense_MaximumPermissionsModerateNetworkUsers/PermissionSetLicense_MaximumPermissionsModerateNetworkUsers',type:'sap.ui.model.type.Boolean'}"/>  
+							</VBox>							
+							<VBox>					
+								<Text text="{path:'dataModel>PermissionSetLicense_MaximumPermissionsModifyAllData/PermissionSetLicense_MaximumPermissionsModifyAllData',type:'sap.ui.model.type.Boolean'}"/>  
+							</VBox>							
+							<VBox>					
+								<Text text="{path:'dataModel>PermissionSetLicense_MaximumPermissionsNewReportBuilder/PermissionSetLicense_MaximumPermissionsNewReportBuilder',type:'sap.ui.model.type.Boolean'}"/>  
+							</VBox>							
+							<VBox>					
+								<Text text="{path:'dataModel>PermissionSetLicense_MaximumPermissionsOutboundMigrationToolsUser/PermissionSetLicense_MaximumPermissionsOutboundMigrationToolsUser',type:'sap.ui.model.type.Boolean'}"/>  
+							</VBox>							
+							<VBox>					
+								<Text text="{path:'dataModel>PermissionSetLicense_MaximumPermissionsOverrideForecasts/PermissionSetLicense_MaximumPermissionsOverrideForecasts',type:'sap.ui.model.type.Boolean'}"/>  
+							</VBox>							
+							<VBox>					
+								<Text text="{path:'dataModel>PermissionSetLicense_MaximumPermissionsPackaging2/PermissionSetLicense_MaximumPermissionsPackaging2',type:'sap.ui.model.type.Boolean'}"/>  
+							</VBox>							
+							<VBox>					
+								<Text text="{path:'dataModel>PermissionSetLicense_MaximumPermissionsPasswordNeverExpires/PermissionSetLicense_MaximumPermissionsPasswordNeverExpires',type:'sap.ui.model.type.Boolean'}"/>  
+							</VBox>							
+							<VBox>					
+								<Text text="{path:'dataModel>PermissionSetLicense_MaximumPermissionsPreventClassicExperience/PermissionSetLicense_MaximumPermissionsPreventClassicExperience',type:'sap.ui.model.type.Boolean'}"/>  
+							</VBox>							
+							<VBox>					
+								<Text text="{path:'dataModel>PermissionSetLicense_MaximumPermissionsPublicTwitterResponse/PermissionSetLicense_MaximumPermissionsPublicTwitterResponse',type:'sap.ui.model.type.Boolean'}"/>  
+							</VBox>							
+							<VBox>					
+								<Text text="{path:'dataModel>PermissionSetLicense_MaximumPermissionsPublishPackaging/PermissionSetLicense_MaximumPermissionsPublishPackaging',type:'sap.ui.model.type.Boolean'}"/>  
+							</VBox>							
+							<VBox>					
+								<Text text="{path:'dataModel>PermissionSetLicense_MaximumPermissionsRemoveDirectMessageMembers/PermissionSetLicense_MaximumPermissionsRemoveDirectMessageMembers',type:'sap.ui.model.type.Boolean'}"/>  
+							</VBox>							
+							<VBox>					
+								<Text text="{path:'dataModel>PermissionSetLicense_MaximumPermissionsResetPasswords/PermissionSetLicense_MaximumPermissionsResetPasswords',type:'sap.ui.model.type.Boolean'}"/>  
+							</VBox>							
+							<VBox>					
+								<Text text="{path:'dataModel>PermissionSetLicense_MaximumPermissionsRunFlow/PermissionSetLicense_MaximumPermissionsRunFlow',type:'sap.ui.model.type.Boolean'}"/>  
+							</VBox>							
+							<VBox>					
+								<Text text="{path:'dataModel>PermissionSetLicense_MaximumPermissionsRunReports/PermissionSetLicense_MaximumPermissionsRunReports',type:'sap.ui.model.type.Boolean'}"/>  
+							</VBox>							
+							<VBox>					
+								<Text text="{path:'dataModel>PermissionSetLicense_MaximumPermissionsSalesConsole/PermissionSetLicense_MaximumPermissionsSalesConsole',type:'sap.ui.model.type.Boolean'}"/>  
+							</VBox>							
+							<VBox>					
+								<Text text="{path:'dataModel>PermissionSetLicense_MaximumPermissionsScheduleJob/PermissionSetLicense_MaximumPermissionsScheduleJob',type:'sap.ui.model.type.Boolean'}"/>  
+							</VBox>							
+							<VBox>					
+								<Text text="{path:'dataModel>PermissionSetLicense_MaximumPermissionsScheduleReports/PermissionSetLicense_MaximumPermissionsScheduleReports',type:'sap.ui.model.type.Boolean'}"/>  
+							</VBox>							
+							<VBox>					
+								<Text text="{path:'dataModel>PermissionSetLicense_MaximumPermissionsScsRequireApproval/PermissionSetLicense_MaximumPermissionsScsRequireApproval',type:'sap.ui.model.type.Boolean'}"/>  
+							</VBox>							
+							<VBox>					
+								<Text text="{path:'dataModel>PermissionSetLicense_MaximumPermissionsSelectFilesFromSalesforce/PermissionSetLicense_MaximumPermissionsSelectFilesFromSalesforce',type:'sap.ui.model.type.Boolean'}"/>  
+							</VBox>							
+							<VBox>					
+								<Text text="{path:'dataModel>PermissionSetLicense_MaximumPermissionsSendAnnouncementEmails/PermissionSetLicense_MaximumPermissionsSendAnnouncementEmails',type:'sap.ui.model.type.Boolean'}"/>  
+							</VBox>							
+							<VBox>					
+								<Text text="{path:'dataModel>PermissionSetLicense_MaximumPermissionsSendSitRequests/PermissionSetLicense_MaximumPermissionsSendSitRequests',type:'sap.ui.model.type.Boolean'}"/>  
+							</VBox>							
+							<VBox>					
+								<Text text="{path:'dataModel>PermissionSetLicense_MaximumPermissionsShowCompanyNameAsUserBadge/PermissionSetLicense_MaximumPermissionsShowCompanyNameAsUserBadge',type:'sap.ui.model.type.Boolean'}"/>  
+							</VBox>							
+							<VBox>					
+								<Text text="{path:'dataModel>PermissionSetLicense_MaximumPermissionsSolutionImport/PermissionSetLicense_MaximumPermissionsSolutionImport',type:'sap.ui.model.type.Boolean'}"/>  
+							</VBox>							
+							<VBox>					
+								<Text text="{path:'dataModel>PermissionSetLicense_MaximumPermissionsSubmitMacrosAllowed/PermissionSetLicense_MaximumPermissionsSubmitMacrosAllowed',type:'sap.ui.model.type.Boolean'}"/>  
+							</VBox>							
+							<VBox>					
+								<Text text="{path:'dataModel>PermissionSetLicense_MaximumPermissionsSubscribeToLightningReports/PermissionSetLicense_MaximumPermissionsSubscribeToLightningReports',type:'sap.ui.model.type.Boolean'}"/>  
+							</VBox>							
+							<VBox>					
+								<Text text="{path:'dataModel>PermissionSetLicense_MaximumPermissionsTransferAnyCase/PermissionSetLicense_MaximumPermissionsTransferAnyCase',type:'sap.ui.model.type.Boolean'}"/>  
+							</VBox>							
+							<VBox>					
+								<Text text="{path:'dataModel>PermissionSetLicense_MaximumPermissionsTransferAnyEntity/PermissionSetLicense_MaximumPermissionsTransferAnyEntity',type:'sap.ui.model.type.Boolean'}"/>  
+							</VBox>							
+							<VBox>					
+								<Text text="{path:'dataModel>PermissionSetLicense_MaximumPermissionsTransferAnyLead/PermissionSetLicense_MaximumPermissionsTransferAnyLead',type:'sap.ui.model.type.Boolean'}"/>  
+							</VBox>							
+							<VBox>					
+								<Text text="{path:'dataModel>PermissionSetLicense_MaximumPermissionsTwoFactorApi/PermissionSetLicense_MaximumPermissionsTwoFactorApi',type:'sap.ui.model.type.Boolean'}"/>  
+							</VBox>							
+							<VBox>					
+								<Text text="{path:'dataModel>PermissionSetLicense_MaximumPermissionsUseTeamReassignWizards/PermissionSetLicense_MaximumPermissionsUseTeamReassignWizards',type:'sap.ui.model.type.Boolean'}"/>  
+							</VBox>							
+							<VBox>					
+								<Text text="{path:'dataModel>PermissionSetLicense_MaximumPermissionsUseWebLink/PermissionSetLicense_MaximumPermissionsUseWebLink',type:'sap.ui.model.type.Boolean'}"/>  
+							</VBox>							
+							<VBox>					
+								<Text text="{path:'dataModel>PermissionSetLicense_MaximumPermissionsViewAllActivities/PermissionSetLicense_MaximumPermissionsViewAllActivities',type:'sap.ui.model.type.Boolean'}"/>  
+							</VBox>							
+							<VBox>					
+								<Text text="{path:'dataModel>PermissionSetLicense_MaximumPermissionsViewAllData/PermissionSetLicense_MaximumPermissionsViewAllData',type:'sap.ui.model.type.Boolean'}"/>  
+							</VBox>							
+							<VBox>					
+								<Text text="{path:'dataModel>PermissionSetLicense_MaximumPermissionsViewAllForecasts/PermissionSetLicense_MaximumPermissionsViewAllForecasts',type:'sap.ui.model.type.Boolean'}"/>  
+							</VBox>							
+							<VBox>					
+								<Text text="{path:'dataModel>PermissionSetLicense_MaximumPermissionsViewAllUsers/PermissionSetLicense_MaximumPermissionsViewAllUsers',type:'sap.ui.model.type.Boolean'}"/>  
+							</VBox>							
+							<VBox>					
+								<Text text="{path:'dataModel>PermissionSetLicense_MaximumPermissionsViewAndDebugManagedApex/PermissionSetLicense_MaximumPermissionsViewAndDebugManagedApex',type:'sap.ui.model.type.Boolean'}"/>  
+							</VBox>							
+							<VBox>					
+								<Text text="{path:'dataModel>PermissionSetLicense_MaximumPermissionsViewContent/PermissionSetLicense_MaximumPermissionsViewContent',type:'sap.ui.model.type.Boolean'}"/>  
+							</VBox>							
+							<VBox>					
+								<Text text="{path:'dataModel>PermissionSetLicense_MaximumPermissionsViewDataAssessment/PermissionSetLicense_MaximumPermissionsViewDataAssessment',type:'sap.ui.model.type.Boolean'}"/>  
+							</VBox>							
+							<VBox>					
+								<Text text="{path:'dataModel>PermissionSetLicense_MaximumPermissionsViewDataCategories/PermissionSetLicense_MaximumPermissionsViewDataCategories',type:'sap.ui.model.type.Boolean'}"/>  
+							</VBox>							
+							<VBox>					
+								<Text text="{path:'dataModel>PermissionSetLicense_MaximumPermissionsViewEncryptedData/PermissionSetLicense_MaximumPermissionsViewEncryptedData',type:'sap.ui.model.type.Boolean'}"/>  
+							</VBox>							
+							<VBox>					
+								<Text text="{path:'dataModel>PermissionSetLicense_MaximumPermissionsViewEventLogFiles/PermissionSetLicense_MaximumPermissionsViewEventLogFiles',type:'sap.ui.model.type.Boolean'}"/>  
+							</VBox>							
+							<VBox>					
+								<Text text="{path:'dataModel>PermissionSetLicense_MaximumPermissionsViewHealthCheck/PermissionSetLicense_MaximumPermissionsViewHealthCheck',type:'sap.ui.model.type.Boolean'}"/>  
+							</VBox>							
+							<VBox>					
+								<Text text="{path:'dataModel>PermissionSetLicense_MaximumPermissionsViewHelpLink/PermissionSetLicense_MaximumPermissionsViewHelpLink',type:'sap.ui.model.type.Boolean'}"/>  
+							</VBox>							
+							<VBox>					
+								<Text text="{path:'dataModel>PermissionSetLicense_MaximumPermissionsViewMyTeamsDashboards/PermissionSetLicense_MaximumPermissionsViewMyTeamsDashboards',type:'sap.ui.model.type.Boolean'}"/>  
+							</VBox>							
+							<VBox>					
+								<Text text="{path:'dataModel>PermissionSetLicense_MaximumPermissionsViewSetup/PermissionSetLicense_MaximumPermissionsViewSetup',type:'sap.ui.model.type.Boolean'}"/>  
+							</VBox>							
+							<VBox>					
+							<rdf:TextLink text="{path:'dataModel>PermissionSetLicense_PermissionSetLicenseKey/PermissionSetLicense_PermissionSetLicenseKey',type:'sap.ui.model.type.String'}" linkText="{i18n>PermissionSetLicense.PermissionSetLicense_PermissionSetLicenseKey/PermissionSetLicense_PermissionSetLicenseKey}"/>
+							</VBox>							
+							<VBox>					
+							<rdf:TextLink text="{path:'dataModel>PermissionSetLicense_Status/PermissionSetLicense_Status',type:'sap.ui.model.type.String'}" linkText="{i18n>PermissionSetLicense.PermissionSetLicense_Status/PermissionSetLicense_Status}"/>
+							</VBox>							
+							<VBox>					
+							<Text text="{dataModel>PermissionSetLicense_SystemModstamp/PermissionSetLicense_SystemModstamp}"/>
+							</VBox>							
+							<VBox>					
+							<Text text="{path:'dataModel>PermissionSetLicense_TotalLicenses/PermissionSetLicense_TotalLicenses',type:'sap.ui.model.type.Integer' }"/>
+							</VBox>							
+							<VBox>					
+							<Text text="{path:'dataModel>PermissionSetLicense_UsedLicenses/PermissionSetLicense_UsedLicenses',type:'sap.ui.model.type.Integer' }"/>
+							</VBox>							
+						</cells>
+					</ColumnListItem>
+				</items>
+			</Table>
+		</content>
+	</Page>
+</mvc:View>

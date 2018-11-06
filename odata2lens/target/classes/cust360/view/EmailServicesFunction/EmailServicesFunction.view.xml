@@ -1,0 +1,231 @@
+<mvc:View controllerName="com.inova8.lens.controller.Entity360" xmlns="sap.m" xmlns:mvc="sap.ui.core.mvc" xmlns:l="sap.ui.layout"
+	xmlns:f="sap.ui.layout.form" xmlns:table="sap.ui.table" xmlns:rdf="com.inova8.lens.control" xmlns:html="http://www.w3.org/1999/xhtml"
+	xmlns:core="sap.ui.core">
+	<Page showHeader="true" id="page" navButtonPress="onNavBack" showNavButton="false" title="{i18n>EmailServicesFunction.Title}" busy="{entityView>/busy}"
+		busyIndicatorDelay="{entityView>/delay}" >
+		<customHeader>
+			<Toolbar>
+				<ToolbarSpacer/>
+				<HBox id="sourceTitle" alignItems="Center">
+						<rdf:TextResource id="selectedResource" path="" entitySet=""/>
+				</HBox>	
+				<Title id="pathTitle" text="{entityView>/navigation}"/>
+				<HBox id="versionsTitle" alignItems="Center">
+					<Title text="(" required="false"/>
+					<ComboBox id="versionSelection" items="{ path: 'entityView>/versions' }" selectionChange="onVersionChange">
+						<core:Item key="{entityView>navigation}" text="{entityView>text}"/>
+					</ComboBox>
+					<Title text=")" required="false"/>
+				</HBox>
+				<Title text="{i18n>EmailServicesFunction.this}"/>
+				<Title text="(" required="false"/>
+				<rdf:TextResource path="dataModel>" entitySet="EmailServicesFunction"/>
+				<Title text=")" required="false"/>
+	
+				<ToolbarSpacer/>
+				<ToggleButton id="toggleColumns" icon="sap-icon://hide" activeIcon="sap-icon://show" press="onSettingsPressed" visible="false"	>
+					<layoutData>
+						<OverflowToolbarLayoutData priority="NeverOverflow"/>
+					</layoutData>
+				</ToggleButton>
+				
+			</Toolbar>
+		</customHeader>
+		<Table id="form360" inset="false" fixedLayout="true" class="multicolumnform" updateFinished="hideColumns">
+			<columns>
+				<Column hAlign="Right" width="200px">
+					<Text text=""/>
+				</Column>
+				<Column visible="true">
+				</Column>
+				<Column visible="true">
+					<Text text="EmailServicesFunction"/>
+				</Column>
+			</columns>
+			<items>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>EmailServicesFunction.EmailServicesAddress_FunctionId_Inverse}" required="false"/> 
+						<Text text=""/>
+						<rdf:ListResource path="dataModel>EmailServicesAddress_FunctionId_Inverse/sfdc_EmailServicesAddress_FunctionId_Inverse" entitySet="EmailServicesAddress"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>EmailServicesFunction.EmailServicesFunction_AddressInactiveAction}" required="false"/> 
+						<Text text=""/>
+						<rdf:TextLink text="{path:'dataModel>EmailServicesFunction_AddressInactiveAction/EmailServicesFunction_AddressInactiveAction',type:'sap.ui.model.type.String' }" linkText="{i18n>EmailServicesFunction.EmailServicesFunction_AddressInactiveAction/EmailServicesFunction_AddressInactiveAction}"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>EmailServicesFunction.EmailServicesFunction_ApexClassId}" required="false"/> 
+						<Text text=""/>
+						<rdf:ListResource path="dataModel>EmailServicesFunction_ApexClassId/sfdc_EmailServicesFunction_ApexClassId" entitySet="ApexClass"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>EmailServicesFunction.EmailServicesFunction_AttachmentOption}" required="false"/> 
+						<Text text=""/>
+						<rdf:TextLink text="{path:'dataModel>EmailServicesFunction_AttachmentOption/EmailServicesFunction_AttachmentOption',type:'sap.ui.model.type.String' }" linkText="{i18n>EmailServicesFunction.EmailServicesFunction_AttachmentOption/EmailServicesFunction_AttachmentOption}"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>EmailServicesFunction.EmailServicesFunction_AuthenticationFailureAction}" required="false"/> 
+						<Text text=""/>
+						<rdf:TextLink text="{path:'dataModel>EmailServicesFunction_AuthenticationFailureAction/EmailServicesFunction_AuthenticationFailureAction',type:'sap.ui.model.type.String' }" linkText="{i18n>EmailServicesFunction.EmailServicesFunction_AuthenticationFailureAction/EmailServicesFunction_AuthenticationFailureAction}"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>EmailServicesFunction.EmailServicesFunction_AuthorizationFailureAction}" required="false"/> 
+						<Text text=""/>
+						<rdf:TextLink text="{path:'dataModel>EmailServicesFunction_AuthorizationFailureAction/EmailServicesFunction_AuthorizationFailureAction',type:'sap.ui.model.type.String' }" linkText="{i18n>EmailServicesFunction.EmailServicesFunction_AuthorizationFailureAction/EmailServicesFunction_AuthorizationFailureAction}"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>EmailServicesFunction.EmailServicesFunction_AuthorizedSenders}" required="false"/> 
+						<Text text=""/>
+						<rdf:TextLink text="{path:'dataModel>EmailServicesFunction_AuthorizedSenders/EmailServicesFunction_AuthorizedSenders',type:'sap.ui.model.type.String' }" linkText="{i18n>EmailServicesFunction.EmailServicesFunction_AuthorizedSenders/EmailServicesFunction_AuthorizedSenders}"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>EmailServicesFunction.EmailServicesFunction_CreatedById}" required="false"/> 
+						<Text text=""/>
+						<rdf:ListResource path="dataModel>EmailServicesFunction_CreatedById/sfdc_EmailServicesFunction_CreatedById" entitySet="User"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>EmailServicesFunction.EmailServicesFunction_CreatedDate}" required="false"/> 
+						<Text text=""/>
+						<Text text="{dataModel>EmailServicesFunction_CreatedDate/EmailServicesFunction_CreatedDate}"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>EmailServicesFunction.EmailServicesFunction_ErrorRoutingAddress}" required="false"/> 
+						<Text text=""/>
+						<rdf:TextLink text="{path:'dataModel>EmailServicesFunction_ErrorRoutingAddress/EmailServicesFunction_ErrorRoutingAddress',type:'sap.ui.model.type.String' }" linkText="{i18n>EmailServicesFunction.EmailServicesFunction_ErrorRoutingAddress/EmailServicesFunction_ErrorRoutingAddress}"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>EmailServicesFunction.EmailServicesFunction_FunctionInactiveAction}" required="false"/> 
+						<Text text=""/>
+						<rdf:TextLink text="{path:'dataModel>EmailServicesFunction_FunctionInactiveAction/EmailServicesFunction_FunctionInactiveAction',type:'sap.ui.model.type.String' }" linkText="{i18n>EmailServicesFunction.EmailServicesFunction_FunctionInactiveAction/EmailServicesFunction_FunctionInactiveAction}"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>EmailServicesFunction.EmailServicesFunction_FunctionName}" required="false"/> 
+						<Text text=""/>
+						<rdf:TextLink text="{path:'dataModel>EmailServicesFunction_FunctionName/EmailServicesFunction_FunctionName',type:'sap.ui.model.type.String' }" linkText="{i18n>EmailServicesFunction.EmailServicesFunction_FunctionName/EmailServicesFunction_FunctionName}"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>EmailServicesFunction.EmailServicesFunction_Id}" required="false"/> 
+						<Text text=""/>
+						<rdf:TextLink text="{path:'dataModel>EmailServicesFunction_Id/EmailServicesFunction_Id',type:'sap.ui.model.type.String' }" linkText="{i18n>EmailServicesFunction.EmailServicesFunction_Id/EmailServicesFunction_Id}"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>EmailServicesFunction.EmailServicesFunction_IsActive}" required="false"/> 
+						<Text text=""/>
+						<Text text="{path:'dataModel>EmailServicesFunction_IsActive/EmailServicesFunction_IsActive',type:'sap.ui.model.type.Boolean'}"/>  
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>EmailServicesFunction.EmailServicesFunction_IsAuthenticationRequired}" required="false"/> 
+						<Text text=""/>
+						<Text text="{path:'dataModel>EmailServicesFunction_IsAuthenticationRequired/EmailServicesFunction_IsAuthenticationRequired',type:'sap.ui.model.type.Boolean'}"/>  
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>EmailServicesFunction.EmailServicesFunction_IsErrorRoutingEnabled}" required="false"/> 
+						<Text text=""/>
+						<Text text="{path:'dataModel>EmailServicesFunction_IsErrorRoutingEnabled/EmailServicesFunction_IsErrorRoutingEnabled',type:'sap.ui.model.type.Boolean'}"/>  
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>EmailServicesFunction.EmailServicesFunction_IsTextAttachmentsAsBinary}" required="false"/> 
+						<Text text=""/>
+						<Text text="{path:'dataModel>EmailServicesFunction_IsTextAttachmentsAsBinary/EmailServicesFunction_IsTextAttachmentsAsBinary',type:'sap.ui.model.type.Boolean'}"/>  
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>EmailServicesFunction.EmailServicesFunction_IsTlsRequired}" required="false"/> 
+						<Text text=""/>
+						<Text text="{path:'dataModel>EmailServicesFunction_IsTlsRequired/EmailServicesFunction_IsTlsRequired',type:'sap.ui.model.type.Boolean'}"/>  
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>EmailServicesFunction.EmailServicesFunction_LastModifiedById}" required="false"/> 
+						<Text text=""/>
+						<rdf:ListResource path="dataModel>EmailServicesFunction_LastModifiedById/sfdc_EmailServicesFunction_LastModifiedById" entitySet="User"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>EmailServicesFunction.EmailServicesFunction_LastModifiedDate}" required="false"/> 
+						<Text text=""/>
+						<Text text="{dataModel>EmailServicesFunction_LastModifiedDate/EmailServicesFunction_LastModifiedDate}"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>EmailServicesFunction.EmailServicesFunction_OverLimitAction}" required="false"/> 
+						<Text text=""/>
+						<rdf:TextLink text="{path:'dataModel>EmailServicesFunction_OverLimitAction/EmailServicesFunction_OverLimitAction',type:'sap.ui.model.type.String' }" linkText="{i18n>EmailServicesFunction.EmailServicesFunction_OverLimitAction/EmailServicesFunction_OverLimitAction}"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>EmailServicesFunction.EmailServicesFunction_SystemModstamp}" required="false"/> 
+						<Text text=""/>
+						<Text text="{dataModel>EmailServicesFunction_SystemModstamp/EmailServicesFunction_SystemModstamp}"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>EmailServicesFunction.EmailServicesAddress_FunctionId_Inverse}" required="false"/> 
+						<rdf:ListResource path="dataModel>EmailServicesAddress_FunctionId_Inverse" entitySet="EmailServicesAddress"/>
+						<Text text=""/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>EmailServicesFunction.EmailServicesFunction_ApexClassId}" required="false"/> 
+						<rdf:ListResource path="dataModel>EmailServicesFunction_ApexClassId" entitySet="ApexClass"/>
+						<Text text=""/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>EmailServicesFunction.EmailServicesFunction_CreatedById}" required="false"/> 
+						<rdf:ListResource path="dataModel>EmailServicesFunction_CreatedById" entitySet="User"/>
+						<Text text=""/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>EmailServicesFunction.EmailServicesFunction_LastModifiedById}" required="false"/> 
+						<rdf:ListResource path="dataModel>EmailServicesFunction_LastModifiedById" entitySet="User"/>
+						<Text text=""/>
+					</cells>
+				</ColumnListItem>
+			</items>
+		</Table>
+	</Page>
+</mvc:View>

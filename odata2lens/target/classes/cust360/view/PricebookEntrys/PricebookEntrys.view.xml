@@ -1,0 +1,103 @@
+<mvc:View controllerName="com.inova8.lens.controller.EntitySet360" xmlns="sap.m" xmlns:mvc="sap.ui.core.mvc" xmlns:layout="sap.ui.layout"
+	xmlns:rdf="com.inova8.lens.control" xmlns:core="sap.ui.core">
+	<Page showHeader="false" id="page" navButtonPress="onNavBack" showNavButton="true" title="{i18n>PricebookEntrys.ViewTitle}">
+		<content>
+			<Table id="table360" inset="false" items="{ path: 'dataModel>/PricebookEntry' , sorter: { path: 'label', descending: false } 
+				}"
+				noDataText="{entitySetView>/tableNoDataText}" busyIndicatorDelay="{entitySetView>/tableBusyDelay}" growing="true" growingScrollToLoad="true"
+				updateFinished="onUpdateFinished"  fixedLayout="false">
+				<headerToolbar>
+					<Toolbar>
+						<ToolbarSpacer/>
+						<HBox id="sourceTitle" alignItems="Center">
+							<rdf:TextResource id="selectedResource" path="" entitySet=""/>
+						</HBox>
+						<Title id="pathTitle" text="{entitySetView>/navigationText}"/>
+						<HBox id="versionsTitle" alignItems="Center">
+							<Title text="(" required="false"/>
+							<ComboBox id="versionSelection" items="{ path: 'entitySetView>/versions' }" selectionChange="onVersionChange">
+								<core:Item key="{entitySetView>navigation}" text="{entityView>text}"/>
+							</ComboBox>
+							<Title text=")" required="false"/>
+						</HBox>
+						<Title id="tableHeader" text="{entitySetView>/entitySetTableTitle}"/>
+						<ToolbarSpacer/>
+						<SearchField id="searchField" tooltip="{i18n>search.searchTooltip}" search="onSearch" width="auto"></SearchField>
+					</Toolbar>
+				</headerToolbar>
+				<columns>
+					<Column >
+						<Text text="{i18n>PricebookEntrys.this}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>PricebookEntrys.PricebookEntry_CreatedDate}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>PricebookEntrys.PricebookEntry_Id}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>PricebookEntrys.PricebookEntry_IsActive}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>PricebookEntrys.PricebookEntry_IsDeleted}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>PricebookEntrys.PricebookEntry_LastModifiedDate}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>PricebookEntrys.PricebookEntry_Name}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>PricebookEntrys.PricebookEntry_ProductCode}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>PricebookEntrys.PricebookEntry_SystemModstamp}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>PricebookEntrys.PricebookEntry_UnitPrice}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>PricebookEntrys.PricebookEntry_UseStandardPrice}"/>
+					</Column>
+				</columns>
+				<items>
+					<ColumnListItem id="template360" type="Navigation" press="onPress">
+						<cells>
+							<rdf:TextResource path="dataModel>" entitySet="PricebookEntry"/>
+							<VBox>					
+							<Text text="{dataModel>PricebookEntry_CreatedDate/PricebookEntry_CreatedDate}"/>
+							</VBox>							
+							<VBox>					
+							<rdf:TextLink text="{path:'dataModel>PricebookEntry_Id/PricebookEntry_Id',type:'sap.ui.model.type.String'}" linkText="{i18n>PricebookEntry.PricebookEntry_Id/PricebookEntry_Id}"/>
+							</VBox>							
+							<VBox>					
+								<Text text="{path:'dataModel>PricebookEntry_IsActive/PricebookEntry_IsActive',type:'sap.ui.model.type.Boolean'}"/>  
+							</VBox>							
+							<VBox>					
+								<Text text="{path:'dataModel>PricebookEntry_IsDeleted/PricebookEntry_IsDeleted',type:'sap.ui.model.type.Boolean'}"/>  
+							</VBox>							
+							<VBox>					
+							<Text text="{dataModel>PricebookEntry_LastModifiedDate/PricebookEntry_LastModifiedDate}"/>
+							</VBox>							
+							<VBox>					
+							<rdf:TextLink text="{path:'dataModel>PricebookEntry_Name/PricebookEntry_Name',type:'sap.ui.model.type.String'}" linkText="{i18n>PricebookEntry.PricebookEntry_Name/PricebookEntry_Name}"/>
+							</VBox>							
+							<VBox>					
+							<rdf:TextLink text="{path:'dataModel>PricebookEntry_ProductCode/PricebookEntry_ProductCode',type:'sap.ui.model.type.String'}" linkText="{i18n>PricebookEntry.PricebookEntry_ProductCode/PricebookEntry_ProductCode}"/>
+							</VBox>							
+							<VBox>					
+							<Text text="{dataModel>PricebookEntry_SystemModstamp/PricebookEntry_SystemModstamp}"/>
+							</VBox>							
+							<VBox>					
+							<Text text="{path:'dataModel>PricebookEntry_UnitPrice/PricebookEntry_UnitPrice',type:'sap.ui.model.type.Float', formatOptions:{'style':'short','maxFractionDigits':2} }"/>
+							</VBox>							
+							<VBox>					
+								<Text text="{path:'dataModel>PricebookEntry_UseStandardPrice/PricebookEntry_UseStandardPrice',type:'sap.ui.model.type.Boolean'}"/>  
+							</VBox>							
+						</cells>
+					</ColumnListItem>
+				</items>
+			</Table>
+		</content>
+	</Page>
+</mvc:View>

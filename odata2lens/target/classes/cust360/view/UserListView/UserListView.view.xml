@@ -1,0 +1,168 @@
+<mvc:View controllerName="com.inova8.lens.controller.Entity360" xmlns="sap.m" xmlns:mvc="sap.ui.core.mvc" xmlns:l="sap.ui.layout"
+	xmlns:f="sap.ui.layout.form" xmlns:table="sap.ui.table" xmlns:rdf="com.inova8.lens.control" xmlns:html="http://www.w3.org/1999/xhtml"
+	xmlns:core="sap.ui.core">
+	<Page showHeader="true" id="page" navButtonPress="onNavBack" showNavButton="false" title="{i18n>UserListView.Title}" busy="{entityView>/busy}"
+		busyIndicatorDelay="{entityView>/delay}" >
+		<customHeader>
+			<Toolbar>
+				<ToolbarSpacer/>
+				<HBox id="sourceTitle" alignItems="Center">
+						<rdf:TextResource id="selectedResource" path="" entitySet=""/>
+				</HBox>	
+				<Title id="pathTitle" text="{entityView>/navigation}"/>
+				<HBox id="versionsTitle" alignItems="Center">
+					<Title text="(" required="false"/>
+					<ComboBox id="versionSelection" items="{ path: 'entityView>/versions' }" selectionChange="onVersionChange">
+						<core:Item key="{entityView>navigation}" text="{entityView>text}"/>
+					</ComboBox>
+					<Title text=")" required="false"/>
+				</HBox>
+				<Title text="{i18n>UserListView.this}"/>
+				<Title text="(" required="false"/>
+				<rdf:TextResource path="dataModel>" entitySet="UserListView"/>
+				<Title text=")" required="false"/>
+	
+				<ToolbarSpacer/>
+				<ToggleButton id="toggleColumns" icon="sap-icon://hide" activeIcon="sap-icon://show" press="onSettingsPressed" visible="false"	>
+					<layoutData>
+						<OverflowToolbarLayoutData priority="NeverOverflow"/>
+					</layoutData>
+				</ToggleButton>
+				
+			</Toolbar>
+		</customHeader>
+		<Table id="form360" inset="false" fixedLayout="true" class="multicolumnform" updateFinished="hideColumns">
+			<columns>
+				<Column hAlign="Right" width="200px">
+					<Text text=""/>
+				</Column>
+				<Column visible="true">
+				</Column>
+				<Column visible="true">
+					<Text text="UserListView"/>
+				</Column>
+			</columns>
+			<items>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>UserListView.UserListViewCriterion_UserListViewId_Inverse}" required="false"/> 
+						<Text text=""/>
+						<rdf:ListResource path="dataModel>UserListViewCriterion_UserListViewId_Inverse/sfdc_UserListViewCriterion_UserListViewId_Inverse" entitySet="UserListViewCriterion"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>UserListView.UserListView_CreatedById}" required="false"/> 
+						<Text text=""/>
+						<rdf:ListResource path="dataModel>UserListView_CreatedById/sfdc_UserListView_CreatedById" entitySet="User"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>UserListView.UserListView_CreatedDate}" required="false"/> 
+						<Text text=""/>
+						<Text text="{dataModel>UserListView_CreatedDate/UserListView_CreatedDate}"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>UserListView.UserListView_Id}" required="false"/> 
+						<Text text=""/>
+						<rdf:TextLink text="{path:'dataModel>UserListView_Id/UserListView_Id',type:'sap.ui.model.type.String' }" linkText="{i18n>UserListView.UserListView_Id/UserListView_Id}"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>UserListView.UserListView_IsDeleted}" required="false"/> 
+						<Text text=""/>
+						<Text text="{path:'dataModel>UserListView_IsDeleted/UserListView_IsDeleted',type:'sap.ui.model.type.Boolean'}"/>  
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>UserListView.UserListView_LastModifiedById}" required="false"/> 
+						<Text text=""/>
+						<rdf:ListResource path="dataModel>UserListView_LastModifiedById/sfdc_UserListView_LastModifiedById" entitySet="User"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>UserListView.UserListView_LastModifiedDate}" required="false"/> 
+						<Text text=""/>
+						<Text text="{dataModel>UserListView_LastModifiedDate/UserListView_LastModifiedDate}"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>UserListView.UserListView_LastViewedChart}" required="false"/> 
+						<Text text=""/>
+						<rdf:TextLink text="{path:'dataModel>UserListView_LastViewedChart/UserListView_LastViewedChart',type:'sap.ui.model.type.String' }" linkText="{i18n>UserListView.UserListView_LastViewedChart/UserListView_LastViewedChart}"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>UserListView.UserListView_ListViewId}" required="false"/> 
+						<Text text=""/>
+						<rdf:ListResource path="dataModel>UserListView_ListViewId/sfdc_UserListView_ListViewId" entitySet="ListView"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>UserListView.UserListView_SobjectType}" required="false"/> 
+						<Text text=""/>
+						<rdf:TextLink text="{path:'dataModel>UserListView_SobjectType/UserListView_SobjectType',type:'sap.ui.model.type.String' }" linkText="{i18n>UserListView.UserListView_SobjectType/UserListView_SobjectType}"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>UserListView.UserListView_SystemModstamp}" required="false"/> 
+						<Text text=""/>
+						<Text text="{dataModel>UserListView_SystemModstamp/UserListView_SystemModstamp}"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>UserListView.UserListView_UserId}" required="false"/> 
+						<Text text=""/>
+						<rdf:ListResource path="dataModel>UserListView_UserId/sfdc_UserListView_UserId" entitySet="User"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>UserListView.UserListViewCriterion_UserListViewId_Inverse}" required="false"/> 
+						<rdf:ListResource path="dataModel>UserListViewCriterion_UserListViewId_Inverse" entitySet="UserListViewCriterion"/>
+						<Text text=""/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>UserListView.UserListView_CreatedById}" required="false"/> 
+						<rdf:ListResource path="dataModel>UserListView_CreatedById" entitySet="User"/>
+						<Text text=""/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>UserListView.UserListView_LastModifiedById}" required="false"/> 
+						<rdf:ListResource path="dataModel>UserListView_LastModifiedById" entitySet="User"/>
+						<Text text=""/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>UserListView.UserListView_ListViewId}" required="false"/> 
+						<rdf:ListResource path="dataModel>UserListView_ListViewId" entitySet="ListView"/>
+						<Text text=""/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>UserListView.UserListView_UserId}" required="false"/> 
+						<rdf:ListResource path="dataModel>UserListView_UserId" entitySet="User"/>
+						<Text text=""/>
+					</cells>
+				</ColumnListItem>
+			</items>
+		</Table>
+	</Page>
+</mvc:View>

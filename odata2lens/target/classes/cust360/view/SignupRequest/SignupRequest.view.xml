@@ -1,0 +1,357 @@
+<mvc:View controllerName="com.inova8.lens.controller.Entity360" xmlns="sap.m" xmlns:mvc="sap.ui.core.mvc" xmlns:l="sap.ui.layout"
+	xmlns:f="sap.ui.layout.form" xmlns:table="sap.ui.table" xmlns:rdf="com.inova8.lens.control" xmlns:html="http://www.w3.org/1999/xhtml"
+	xmlns:core="sap.ui.core">
+	<Page showHeader="true" id="page" navButtonPress="onNavBack" showNavButton="false" title="{i18n>SignupRequest.Title}" busy="{entityView>/busy}"
+		busyIndicatorDelay="{entityView>/delay}" >
+		<customHeader>
+			<Toolbar>
+				<ToolbarSpacer/>
+				<HBox id="sourceTitle" alignItems="Center">
+						<rdf:TextResource id="selectedResource" path="" entitySet=""/>
+				</HBox>	
+				<Title id="pathTitle" text="{entityView>/navigation}"/>
+				<HBox id="versionsTitle" alignItems="Center">
+					<Title text="(" required="false"/>
+					<ComboBox id="versionSelection" items="{ path: 'entityView>/versions' }" selectionChange="onVersionChange">
+						<core:Item key="{entityView>navigation}" text="{entityView>text}"/>
+					</ComboBox>
+					<Title text=")" required="false"/>
+				</HBox>
+				<Title text="{i18n>SignupRequest.this}"/>
+				<Title text="(" required="false"/>
+				<rdf:TextResource path="dataModel>" entitySet="SignupRequest"/>
+				<Title text=")" required="false"/>
+	
+				<ToolbarSpacer/>
+				<ToggleButton id="toggleColumns" icon="sap-icon://hide" activeIcon="sap-icon://show" press="onSettingsPressed" visible="false"	>
+					<layoutData>
+						<OverflowToolbarLayoutData priority="NeverOverflow"/>
+					</layoutData>
+				</ToggleButton>
+				
+			</Toolbar>
+		</customHeader>
+		<Table id="form360" inset="false" fixedLayout="true" class="multicolumnform" updateFinished="hideColumns">
+			<columns>
+				<Column hAlign="Right" width="200px">
+					<Text text=""/>
+				</Column>
+				<Column visible="true">
+				</Column>
+				<Column visible="true">
+					<Text text="SignupRequest"/>
+				</Column>
+			</columns>
+			<items>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>SignupRequest.SignupRequestFeed_ParentId_Inverse}" required="false"/> 
+						<Text text=""/>
+						<rdf:ListResource path="dataModel>SignupRequestFeed_ParentId_Inverse/sfdc_SignupRequestFeed_ParentId_Inverse" entitySet="SignupRequestFeed"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>SignupRequest.SignupRequestHistory_SignupRequestId_Inverse}" required="false"/> 
+						<Text text=""/>
+						<rdf:ListResource path="dataModel>SignupRequestHistory_SignupRequestId_Inverse/sfdc_SignupRequestHistory_SignupRequestId_Inverse" entitySet="SignupRequestHistory"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>SignupRequest.SignupRequestShare_ParentId_Inverse}" required="false"/> 
+						<Text text=""/>
+						<rdf:ListResource path="dataModel>SignupRequestShare_ParentId_Inverse/sfdc_SignupRequestShare_ParentId_Inverse" entitySet="SignupRequestShare"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>SignupRequest.SignupRequest_AuthCode}" required="false"/> 
+						<Text text=""/>
+						<rdf:TextLink text="{path:'dataModel>SignupRequest_AuthCode/SignupRequest_AuthCode',type:'sap.ui.model.type.String' }" linkText="{i18n>SignupRequest.SignupRequest_AuthCode/SignupRequest_AuthCode}"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>SignupRequest.SignupRequest_CloneFromOrg}" required="false"/> 
+						<Text text=""/>
+						<rdf:TextLink text="{path:'dataModel>SignupRequest_CloneFromOrg/SignupRequest_CloneFromOrg',type:'sap.ui.model.type.String' }" linkText="{i18n>SignupRequest.SignupRequest_CloneFromOrg/SignupRequest_CloneFromOrg}"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>SignupRequest.SignupRequest_Company}" required="false"/> 
+						<Text text=""/>
+						<rdf:TextLink text="{path:'dataModel>SignupRequest_Company/SignupRequest_Company',type:'sap.ui.model.type.String' }" linkText="{i18n>SignupRequest.SignupRequest_Company/SignupRequest_Company}"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>SignupRequest.SignupRequest_ConnectedAppCallbackUrl}" required="false"/> 
+						<Text text=""/>
+						<rdf:TextLink text="{path:'dataModel>SignupRequest_ConnectedAppCallbackUrl/SignupRequest_ConnectedAppCallbackUrl',type:'sap.ui.model.type.String' }" linkText="{i18n>SignupRequest.SignupRequest_ConnectedAppCallbackUrl/SignupRequest_ConnectedAppCallbackUrl}"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>SignupRequest.SignupRequest_ConnectedAppConsumerKey}" required="false"/> 
+						<Text text=""/>
+						<rdf:TextLink text="{path:'dataModel>SignupRequest_ConnectedAppConsumerKey/SignupRequest_ConnectedAppConsumerKey',type:'sap.ui.model.type.String' }" linkText="{i18n>SignupRequest.SignupRequest_ConnectedAppConsumerKey/SignupRequest_ConnectedAppConsumerKey}"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>SignupRequest.SignupRequest_Country}" required="false"/> 
+						<Text text=""/>
+						<rdf:TextLink text="{path:'dataModel>SignupRequest_Country/SignupRequest_Country',type:'sap.ui.model.type.String' }" linkText="{i18n>SignupRequest.SignupRequest_Country/SignupRequest_Country}"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>SignupRequest.SignupRequest_CreatedById}" required="false"/> 
+						<Text text=""/>
+						<rdf:ListResource path="dataModel>SignupRequest_CreatedById/sfdc_SignupRequest_CreatedById" entitySet="User"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>SignupRequest.SignupRequest_CreatedDate}" required="false"/> 
+						<Text text=""/>
+						<Text text="{dataModel>SignupRequest_CreatedDate/SignupRequest_CreatedDate}"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>SignupRequest.SignupRequest_CreatedOrgId}" required="false"/> 
+						<Text text=""/>
+						<rdf:TextLink text="{path:'dataModel>SignupRequest_CreatedOrgId/SignupRequest_CreatedOrgId',type:'sap.ui.model.type.String' }" linkText="{i18n>SignupRequest.SignupRequest_CreatedOrgId/SignupRequest_CreatedOrgId}"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>SignupRequest.SignupRequest_CreatedOrgInstance}" required="false"/> 
+						<Text text=""/>
+						<rdf:TextLink text="{path:'dataModel>SignupRequest_CreatedOrgInstance/SignupRequest_CreatedOrgInstance',type:'sap.ui.model.type.String' }" linkText="{i18n>SignupRequest.SignupRequest_CreatedOrgInstance/SignupRequest_CreatedOrgInstance}"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>SignupRequest.SignupRequest_Edition}" required="false"/> 
+						<Text text=""/>
+						<rdf:TextLink text="{path:'dataModel>SignupRequest_Edition/SignupRequest_Edition',type:'sap.ui.model.type.String' }" linkText="{i18n>SignupRequest.SignupRequest_Edition/SignupRequest_Edition}"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>SignupRequest.SignupRequest_ErrorCode}" required="false"/> 
+						<Text text=""/>
+						<rdf:TextLink text="{path:'dataModel>SignupRequest_ErrorCode/SignupRequest_ErrorCode',type:'sap.ui.model.type.String' }" linkText="{i18n>SignupRequest.SignupRequest_ErrorCode/SignupRequest_ErrorCode}"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>SignupRequest.SignupRequest_FirstName}" required="false"/> 
+						<Text text=""/>
+						<rdf:TextLink text="{path:'dataModel>SignupRequest_FirstName/SignupRequest_FirstName',type:'sap.ui.model.type.String' }" linkText="{i18n>SignupRequest.SignupRequest_FirstName/SignupRequest_FirstName}"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>SignupRequest.SignupRequest_Id}" required="false"/> 
+						<Text text=""/>
+						<rdf:TextLink text="{path:'dataModel>SignupRequest_Id/SignupRequest_Id',type:'sap.ui.model.type.String' }" linkText="{i18n>SignupRequest.SignupRequest_Id/SignupRequest_Id}"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>SignupRequest.SignupRequest_IsDeleted}" required="false"/> 
+						<Text text=""/>
+						<Text text="{path:'dataModel>SignupRequest_IsDeleted/SignupRequest_IsDeleted',type:'sap.ui.model.type.Boolean'}"/>  
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>SignupRequest.SignupRequest_IsSignupEmailSuppressed}" required="false"/> 
+						<Text text=""/>
+						<Text text="{path:'dataModel>SignupRequest_IsSignupEmailSuppressed/SignupRequest_IsSignupEmailSuppressed',type:'sap.ui.model.type.Boolean'}"/>  
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>SignupRequest.SignupRequest_IsTso}" required="false"/> 
+						<Text text=""/>
+						<Text text="{path:'dataModel>SignupRequest_IsTso/SignupRequest_IsTso',type:'sap.ui.model.type.Boolean'}"/>  
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>SignupRequest.SignupRequest_LastModifiedById}" required="false"/> 
+						<Text text=""/>
+						<rdf:ListResource path="dataModel>SignupRequest_LastModifiedById/sfdc_SignupRequest_LastModifiedById" entitySet="User"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>SignupRequest.SignupRequest_LastModifiedDate}" required="false"/> 
+						<Text text=""/>
+						<Text text="{dataModel>SignupRequest_LastModifiedDate/SignupRequest_LastModifiedDate}"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>SignupRequest.SignupRequest_LastName}" required="false"/> 
+						<Text text=""/>
+						<rdf:TextLink text="{path:'dataModel>SignupRequest_LastName/SignupRequest_LastName',type:'sap.ui.model.type.String' }" linkText="{i18n>SignupRequest.SignupRequest_LastName/SignupRequest_LastName}"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>SignupRequest.SignupRequest_Name}" required="false"/> 
+						<Text text=""/>
+						<rdf:TextLink text="{path:'dataModel>SignupRequest_Name/SignupRequest_Name',type:'sap.ui.model.type.String' }" linkText="{i18n>SignupRequest.SignupRequest_Name/SignupRequest_Name}"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>SignupRequest.SignupRequest_OwnerId}" required="false"/> 
+						<Text text=""/>
+						<rdf:ListResource path="dataModel>SignupRequest_OwnerId/sfdc_SignupRequest_OwnerId" entitySet="Group"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>SignupRequest.SignupRequest_PreferredLanguage}" required="false"/> 
+						<Text text=""/>
+						<rdf:TextLink text="{path:'dataModel>SignupRequest_PreferredLanguage/SignupRequest_PreferredLanguage',type:'sap.ui.model.type.String' }" linkText="{i18n>SignupRequest.SignupRequest_PreferredLanguage/SignupRequest_PreferredLanguage}"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>SignupRequest.SignupRequest_ResolvedTemplateId}" required="false"/> 
+						<Text text=""/>
+						<rdf:TextLink text="{path:'dataModel>SignupRequest_ResolvedTemplateId/SignupRequest_ResolvedTemplateId',type:'sap.ui.model.type.String' }" linkText="{i18n>SignupRequest.SignupRequest_ResolvedTemplateId/SignupRequest_ResolvedTemplateId}"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>SignupRequest.SignupRequest_ShouldConnectToEnvHub}" required="false"/> 
+						<Text text=""/>
+						<Text text="{path:'dataModel>SignupRequest_ShouldConnectToEnvHub/SignupRequest_ShouldConnectToEnvHub',type:'sap.ui.model.type.Boolean'}"/>  
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>SignupRequest.SignupRequest_SignupEmail}" required="false"/> 
+						<Text text=""/>
+						<rdf:TextLink text="{path:'dataModel>SignupRequest_SignupEmail/SignupRequest_SignupEmail',type:'sap.ui.model.type.String' }" linkText="{i18n>SignupRequest.SignupRequest_SignupEmail/SignupRequest_SignupEmail}"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>SignupRequest.SignupRequest_SignupSource}" required="false"/> 
+						<Text text=""/>
+						<rdf:TextLink text="{path:'dataModel>SignupRequest_SignupSource/SignupRequest_SignupSource',type:'sap.ui.model.type.String' }" linkText="{i18n>SignupRequest.SignupRequest_SignupSource/SignupRequest_SignupSource}"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>SignupRequest.SignupRequest_Status}" required="false"/> 
+						<Text text=""/>
+						<rdf:TextLink text="{path:'dataModel>SignupRequest_Status/SignupRequest_Status',type:'sap.ui.model.type.String' }" linkText="{i18n>SignupRequest.SignupRequest_Status/SignupRequest_Status}"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>SignupRequest.SignupRequest_Subdomain}" required="false"/> 
+						<Text text=""/>
+						<rdf:TextLink text="{path:'dataModel>SignupRequest_Subdomain/SignupRequest_Subdomain',type:'sap.ui.model.type.String' }" linkText="{i18n>SignupRequest.SignupRequest_Subdomain/SignupRequest_Subdomain}"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>SignupRequest.SignupRequest_SystemModstamp}" required="false"/> 
+						<Text text=""/>
+						<Text text="{dataModel>SignupRequest_SystemModstamp/SignupRequest_SystemModstamp}"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>SignupRequest.SignupRequest_TemplateDescription}" required="false"/> 
+						<Text text=""/>
+						<rdf:TextLink text="{path:'dataModel>SignupRequest_TemplateDescription/SignupRequest_TemplateDescription',type:'sap.ui.model.type.String' }" linkText="{i18n>SignupRequest.SignupRequest_TemplateDescription/SignupRequest_TemplateDescription}"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>SignupRequest.SignupRequest_TemplateId}" required="false"/> 
+						<Text text=""/>
+						<rdf:TextLink text="{path:'dataModel>SignupRequest_TemplateId/SignupRequest_TemplateId',type:'sap.ui.model.type.String' }" linkText="{i18n>SignupRequest.SignupRequest_TemplateId/SignupRequest_TemplateId}"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>SignupRequest.SignupRequest_TrialDays}" required="false"/> 
+						<Text text=""/>
+						<Text text="{path:'dataModel>SignupRequest_TrialDays/SignupRequest_TrialDays',type:'sap.ui.model.type.Integer' }"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>SignupRequest.SignupRequest_TrialSourceOrgId}" required="false"/> 
+						<Text text=""/>
+						<rdf:TextLink text="{path:'dataModel>SignupRequest_TrialSourceOrgId/SignupRequest_TrialSourceOrgId',type:'sap.ui.model.type.String' }" linkText="{i18n>SignupRequest.SignupRequest_TrialSourceOrgId/SignupRequest_TrialSourceOrgId}"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>SignupRequest.SignupRequest_Username}" required="false"/> 
+						<Text text=""/>
+						<rdf:TextLink text="{path:'dataModel>SignupRequest_Username/SignupRequest_Username',type:'sap.ui.model.type.String' }" linkText="{i18n>SignupRequest.SignupRequest_Username/SignupRequest_Username}"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>SignupRequest.SignupRequestFeed_ParentId_Inverse}" required="false"/> 
+						<rdf:ListResource path="dataModel>SignupRequestFeed_ParentId_Inverse" entitySet="SignupRequestFeed"/>
+						<Text text=""/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>SignupRequest.SignupRequestHistory_SignupRequestId_Inverse}" required="false"/> 
+						<rdf:ListResource path="dataModel>SignupRequestHistory_SignupRequestId_Inverse" entitySet="SignupRequestHistory"/>
+						<Text text=""/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>SignupRequest.SignupRequestShare_ParentId_Inverse}" required="false"/> 
+						<rdf:ListResource path="dataModel>SignupRequestShare_ParentId_Inverse" entitySet="SignupRequestShare"/>
+						<Text text=""/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>SignupRequest.SignupRequest_CreatedById}" required="false"/> 
+						<rdf:ListResource path="dataModel>SignupRequest_CreatedById" entitySet="User"/>
+						<Text text=""/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>SignupRequest.SignupRequest_LastModifiedById}" required="false"/> 
+						<rdf:ListResource path="dataModel>SignupRequest_LastModifiedById" entitySet="User"/>
+						<Text text=""/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>SignupRequest.SignupRequest_OwnerId}" required="false"/> 
+						<rdf:ListResource path="dataModel>SignupRequest_OwnerId" entitySet="Group"/>
+						<Text text=""/>
+					</cells>
+				</ColumnListItem>
+			</items>
+		</Table>
+	</Page>
+</mvc:View>

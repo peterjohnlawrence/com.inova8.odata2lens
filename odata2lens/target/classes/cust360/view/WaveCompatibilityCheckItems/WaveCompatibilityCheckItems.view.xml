@@ -1,0 +1,109 @@
+<mvc:View controllerName="com.inova8.lens.controller.EntitySet360" xmlns="sap.m" xmlns:mvc="sap.ui.core.mvc" xmlns:layout="sap.ui.layout"
+	xmlns:rdf="com.inova8.lens.control" xmlns:core="sap.ui.core">
+	<Page showHeader="false" id="page" navButtonPress="onNavBack" showNavButton="true" title="{i18n>WaveCompatibilityCheckItems.ViewTitle}">
+		<content>
+			<Table id="table360" inset="false" items="{ path: 'dataModel>/WaveCompatibilityCheckItem' , sorter: { path: 'label', descending: false } 
+				}"
+				noDataText="{entitySetView>/tableNoDataText}" busyIndicatorDelay="{entitySetView>/tableBusyDelay}" growing="true" growingScrollToLoad="true"
+				updateFinished="onUpdateFinished"  fixedLayout="false">
+				<headerToolbar>
+					<Toolbar>
+						<ToolbarSpacer/>
+						<HBox id="sourceTitle" alignItems="Center">
+							<rdf:TextResource id="selectedResource" path="" entitySet=""/>
+						</HBox>
+						<Title id="pathTitle" text="{entitySetView>/navigationText}"/>
+						<HBox id="versionsTitle" alignItems="Center">
+							<Title text="(" required="false"/>
+							<ComboBox id="versionSelection" items="{ path: 'entitySetView>/versions' }" selectionChange="onVersionChange">
+								<core:Item key="{entitySetView>navigation}" text="{entityView>text}"/>
+							</ComboBox>
+							<Title text=")" required="false"/>
+						</HBox>
+						<Title id="tableHeader" text="{entitySetView>/entitySetTableTitle}"/>
+						<ToolbarSpacer/>
+						<SearchField id="searchField" tooltip="{i18n>search.searchTooltip}" search="onSearch" width="auto"></SearchField>
+					</Toolbar>
+				</headerToolbar>
+				<columns>
+					<Column >
+						<Text text="{i18n>WaveCompatibilityCheckItems.this}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>WaveCompatibilityCheckItems.WaveCompatibilityCheckItem_CreatedDate}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>WaveCompatibilityCheckItems.WaveCompatibilityCheckItem_Id}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>WaveCompatibilityCheckItems.WaveCompatibilityCheckItem_IsDeleted}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>WaveCompatibilityCheckItems.WaveCompatibilityCheckItem_LastModifiedDate}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>WaveCompatibilityCheckItems.WaveCompatibilityCheckItem_Name}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>WaveCompatibilityCheckItems.WaveCompatibilityCheckItem_Payload}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>WaveCompatibilityCheckItems.WaveCompatibilityCheckItem_SystemModstamp}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>WaveCompatibilityCheckItems.WaveCompatibilityCheckItem_TaskName}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>WaveCompatibilityCheckItems.WaveCompatibilityCheckItem_TaskResult}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>WaveCompatibilityCheckItems.WaveCompatibilityCheckItem_TemplateApiName}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>WaveCompatibilityCheckItems.WaveCompatibilityCheckItem_TemplateVersion}"/>
+					</Column>
+				</columns>
+				<items>
+					<ColumnListItem id="template360" type="Navigation" press="onPress">
+						<cells>
+							<rdf:TextResource path="dataModel>" entitySet="WaveCompatibilityCheckItem"/>
+							<VBox>					
+							<Text text="{dataModel>WaveCompatibilityCheckItem_CreatedDate/WaveCompatibilityCheckItem_CreatedDate}"/>
+							</VBox>							
+							<VBox>					
+							<rdf:TextLink text="{path:'dataModel>WaveCompatibilityCheckItem_Id/WaveCompatibilityCheckItem_Id',type:'sap.ui.model.type.String'}" linkText="{i18n>WaveCompatibilityCheckItem.WaveCompatibilityCheckItem_Id/WaveCompatibilityCheckItem_Id}"/>
+							</VBox>							
+							<VBox>					
+								<Text text="{path:'dataModel>WaveCompatibilityCheckItem_IsDeleted/WaveCompatibilityCheckItem_IsDeleted',type:'sap.ui.model.type.Boolean'}"/>  
+							</VBox>							
+							<VBox>					
+							<Text text="{dataModel>WaveCompatibilityCheckItem_LastModifiedDate/WaveCompatibilityCheckItem_LastModifiedDate}"/>
+							</VBox>							
+							<VBox>					
+							<rdf:TextLink text="{path:'dataModel>WaveCompatibilityCheckItem_Name/WaveCompatibilityCheckItem_Name',type:'sap.ui.model.type.String'}" linkText="{i18n>WaveCompatibilityCheckItem.WaveCompatibilityCheckItem_Name/WaveCompatibilityCheckItem_Name}"/>
+							</VBox>							
+							<VBox>					
+							<rdf:TextLink text="{path:'dataModel>WaveCompatibilityCheckItem_Payload/WaveCompatibilityCheckItem_Payload',type:'sap.ui.model.type.String'}" linkText="{i18n>WaveCompatibilityCheckItem.WaveCompatibilityCheckItem_Payload/WaveCompatibilityCheckItem_Payload}"/>
+							</VBox>							
+							<VBox>					
+							<Text text="{dataModel>WaveCompatibilityCheckItem_SystemModstamp/WaveCompatibilityCheckItem_SystemModstamp}"/>
+							</VBox>							
+							<VBox>					
+							<rdf:TextLink text="{path:'dataModel>WaveCompatibilityCheckItem_TaskName/WaveCompatibilityCheckItem_TaskName',type:'sap.ui.model.type.String'}" linkText="{i18n>WaveCompatibilityCheckItem.WaveCompatibilityCheckItem_TaskName/WaveCompatibilityCheckItem_TaskName}"/>
+							</VBox>							
+							<VBox>					
+							<rdf:TextLink text="{path:'dataModel>WaveCompatibilityCheckItem_TaskResult/WaveCompatibilityCheckItem_TaskResult',type:'sap.ui.model.type.String'}" linkText="{i18n>WaveCompatibilityCheckItem.WaveCompatibilityCheckItem_TaskResult/WaveCompatibilityCheckItem_TaskResult}"/>
+							</VBox>							
+							<VBox>					
+							<rdf:TextLink text="{path:'dataModel>WaveCompatibilityCheckItem_TemplateApiName/WaveCompatibilityCheckItem_TemplateApiName',type:'sap.ui.model.type.String'}" linkText="{i18n>WaveCompatibilityCheckItem.WaveCompatibilityCheckItem_TemplateApiName/WaveCompatibilityCheckItem_TemplateApiName}"/>
+							</VBox>							
+							<VBox>					
+							<rdf:TextLink text="{path:'dataModel>WaveCompatibilityCheckItem_TemplateVersion/WaveCompatibilityCheckItem_TemplateVersion',type:'sap.ui.model.type.String'}" linkText="{i18n>WaveCompatibilityCheckItem.WaveCompatibilityCheckItem_TemplateVersion/WaveCompatibilityCheckItem_TemplateVersion}"/>
+							</VBox>							
+						</cells>
+					</ColumnListItem>
+				</items>
+			</Table>
+		</content>
+	</Page>
+</mvc:View>

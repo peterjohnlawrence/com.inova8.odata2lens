@@ -1,0 +1,147 @@
+<mvc:View controllerName="com.inova8.lens.controller.Entity360" xmlns="sap.m" xmlns:mvc="sap.ui.core.mvc" xmlns:l="sap.ui.layout"
+	xmlns:f="sap.ui.layout.form" xmlns:table="sap.ui.table" xmlns:rdf="com.inova8.lens.control" xmlns:html="http://www.w3.org/1999/xhtml"
+	xmlns:core="sap.ui.core">
+	<Page showHeader="true" id="page" navButtonPress="onNavBack" showNavButton="false" title="{i18n>RelationshipDomain.Title}" busy="{entityView>/busy}"
+		busyIndicatorDelay="{entityView>/delay}" >
+		<customHeader>
+			<Toolbar>
+				<ToolbarSpacer/>
+				<HBox id="sourceTitle" alignItems="Center">
+						<rdf:TextResource id="selectedResource" path="" entitySet=""/>
+				</HBox>	
+				<Title id="pathTitle" text="{entityView>/navigation}"/>
+				<HBox id="versionsTitle" alignItems="Center">
+					<Title text="(" required="false"/>
+					<ComboBox id="versionSelection" items="{ path: 'entityView>/versions' }" selectionChange="onVersionChange">
+						<core:Item key="{entityView>navigation}" text="{entityView>text}"/>
+					</ComboBox>
+					<Title text=")" required="false"/>
+				</HBox>
+				<Title text="{i18n>RelationshipDomain.this}"/>
+				<Title text="(" required="false"/>
+				<rdf:TextResource path="dataModel>" entitySet="RelationshipDomain"/>
+				<Title text=")" required="false"/>
+	
+				<ToolbarSpacer/>
+				<ToggleButton id="toggleColumns" icon="sap-icon://hide" activeIcon="sap-icon://show" press="onSettingsPressed" visible="false"	>
+					<layoutData>
+						<OverflowToolbarLayoutData priority="NeverOverflow"/>
+					</layoutData>
+				</ToggleButton>
+				
+			</Toolbar>
+		</customHeader>
+		<Table id="form360" inset="false" fixedLayout="true" class="multicolumnform" updateFinished="hideColumns">
+			<columns>
+				<Column hAlign="Right" width="200px">
+					<Text text=""/>
+				</Column>
+				<Column visible="true">
+				</Column>
+				<Column visible="true">
+					<Text text="RelationshipDomain"/>
+				</Column>
+			</columns>
+			<items>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>RelationshipDomain.RelationshipDomain_ChildSobjectId}" required="false"/> 
+						<Text text=""/>
+						<rdf:ListResource path="dataModel>RelationshipDomain_ChildSobjectId/sfdc_RelationshipDomain_ChildSobjectId" entitySet="EntityDefinition"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>RelationshipDomain.RelationshipDomain_DurableId}" required="false"/> 
+						<Text text=""/>
+						<rdf:TextLink text="{path:'dataModel>RelationshipDomain_DurableId/RelationshipDomain_DurableId',type:'sap.ui.model.type.String' }" linkText="{i18n>RelationshipDomain.RelationshipDomain_DurableId/RelationshipDomain_DurableId}"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>RelationshipDomain.RelationshipDomain_FieldId}" required="false"/> 
+						<Text text=""/>
+						<rdf:ListResource path="dataModel>RelationshipDomain_FieldId/sfdc_RelationshipDomain_FieldId" entitySet="FieldDefinition"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>RelationshipDomain.RelationshipDomain_Id}" required="false"/> 
+						<Text text=""/>
+						<rdf:TextLink text="{path:'dataModel>RelationshipDomain_Id/RelationshipDomain_Id',type:'sap.ui.model.type.String' }" linkText="{i18n>RelationshipDomain.RelationshipDomain_Id/RelationshipDomain_Id}"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>RelationshipDomain.RelationshipDomain_IsCascadeDelete}" required="false"/> 
+						<Text text=""/>
+						<Text text="{path:'dataModel>RelationshipDomain_IsCascadeDelete/RelationshipDomain_IsCascadeDelete',type:'sap.ui.model.type.Boolean'}"/>  
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>RelationshipDomain.RelationshipDomain_IsDeprecatedAndHidden}" required="false"/> 
+						<Text text=""/>
+						<Text text="{path:'dataModel>RelationshipDomain_IsDeprecatedAndHidden/RelationshipDomain_IsDeprecatedAndHidden',type:'sap.ui.model.type.Boolean'}"/>  
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>RelationshipDomain.RelationshipDomain_IsRestrictedDelete}" required="false"/> 
+						<Text text=""/>
+						<Text text="{path:'dataModel>RelationshipDomain_IsRestrictedDelete/RelationshipDomain_IsRestrictedDelete',type:'sap.ui.model.type.Boolean'}"/>  
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>RelationshipDomain.RelationshipDomain_ParentSobjectId}" required="false"/> 
+						<Text text=""/>
+						<rdf:ListResource path="dataModel>RelationshipDomain_ParentSobjectId/sfdc_RelationshipDomain_ParentSobjectId" entitySet="EntityDefinition"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>RelationshipDomain.RelationshipDomain_RelationshipInfoId}" required="false"/> 
+						<Text text=""/>
+						<rdf:ListResource path="dataModel>RelationshipDomain_RelationshipInfoId/sfdc_RelationshipDomain_RelationshipInfoId" entitySet="RelationshipInfo"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>RelationshipDomain.RelationshipDomain_RelationshipName}" required="false"/> 
+						<Text text=""/>
+						<rdf:TextLink text="{path:'dataModel>RelationshipDomain_RelationshipName/RelationshipDomain_RelationshipName',type:'sap.ui.model.type.String' }" linkText="{i18n>RelationshipDomain.RelationshipDomain_RelationshipName/RelationshipDomain_RelationshipName}"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>RelationshipDomain.RelationshipDomain_ChildSobjectId}" required="false"/> 
+						<rdf:ListResource path="dataModel>RelationshipDomain_ChildSobjectId" entitySet="EntityDefinition"/>
+						<Text text=""/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>RelationshipDomain.RelationshipDomain_FieldId}" required="false"/> 
+						<rdf:ListResource path="dataModel>RelationshipDomain_FieldId" entitySet="FieldDefinition"/>
+						<Text text=""/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>RelationshipDomain.RelationshipDomain_ParentSobjectId}" required="false"/> 
+						<rdf:ListResource path="dataModel>RelationshipDomain_ParentSobjectId" entitySet="EntityDefinition"/>
+						<Text text=""/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>RelationshipDomain.RelationshipDomain_RelationshipInfoId}" required="false"/> 
+						<rdf:ListResource path="dataModel>RelationshipDomain_RelationshipInfoId" entitySet="RelationshipInfo"/>
+						<Text text=""/>
+					</cells>
+				</ColumnListItem>
+			</items>
+		</Table>
+	</Page>
+</mvc:View>

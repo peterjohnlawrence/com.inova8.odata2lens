@@ -78,4 +78,8 @@ public class EntityNavigationSet {
 		return subTypeName;
 	}
 
+	public EntityType getRangeType() {
+		return rangeType;
+	}
+
 }

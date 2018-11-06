@@ -1,0 +1,238 @@
+<mvc:View controllerName="com.inova8.lens.controller.Entity360" xmlns="sap.m" xmlns:mvc="sap.ui.core.mvc" xmlns:l="sap.ui.layout"
+	xmlns:f="sap.ui.layout.form" xmlns:table="sap.ui.table" xmlns:rdf="com.inova8.lens.control" xmlns:html="http://www.w3.org/1999/xhtml"
+	xmlns:core="sap.ui.core">
+	<Page showHeader="true" id="page" navButtonPress="onNavBack" showNavButton="false" title="{i18n>ChatterExtension.Title}" busy="{entityView>/busy}"
+		busyIndicatorDelay="{entityView>/delay}" >
+		<customHeader>
+			<Toolbar>
+				<ToolbarSpacer/>
+				<HBox id="sourceTitle" alignItems="Center">
+						<rdf:TextResource id="selectedResource" path="" entitySet=""/>
+				</HBox>	
+				<Title id="pathTitle" text="{entityView>/navigation}"/>
+				<HBox id="versionsTitle" alignItems="Center">
+					<Title text="(" required="false"/>
+					<ComboBox id="versionSelection" items="{ path: 'entityView>/versions' }" selectionChange="onVersionChange">
+						<core:Item key="{entityView>navigation}" text="{entityView>text}"/>
+					</ComboBox>
+					<Title text=")" required="false"/>
+				</HBox>
+				<Title text="{i18n>ChatterExtension.this}"/>
+				<Title text="(" required="false"/>
+				<rdf:TextResource path="dataModel>" entitySet="ChatterExtension"/>
+				<Title text=")" required="false"/>
+	
+				<ToolbarSpacer/>
+				<ToggleButton id="toggleColumns" icon="sap-icon://hide" activeIcon="sap-icon://show" press="onSettingsPressed" visible="false"	>
+					<layoutData>
+						<OverflowToolbarLayoutData priority="NeverOverflow"/>
+					</layoutData>
+				</ToggleButton>
+				
+			</Toolbar>
+		</customHeader>
+		<Table id="form360" inset="false" fixedLayout="true" class="multicolumnform" updateFinished="hideColumns">
+			<columns>
+				<Column hAlign="Right" width="200px">
+					<Text text=""/>
+				</Column>
+				<Column visible="true">
+				</Column>
+				<Column visible="true">
+					<Text text="ChatterExtension"/>
+				</Column>
+			</columns>
+			<items>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>ChatterExtension.ChatterExtensionConfig_ChatterExtensionId_Inverse}" required="false"/> 
+						<Text text=""/>
+						<rdf:ListResource path="dataModel>ChatterExtensionConfig_ChatterExtensionId_Inverse/sfdc_ChatterExtensionConfig_ChatterExtensionId_Inverse" entitySet="ChatterExtensionConfig"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>ChatterExtension.ChatterExtensionLocalization_ParentId_Inverse}" required="false"/> 
+						<Text text=""/>
+						<rdf:ListResource path="dataModel>ChatterExtensionLocalization_ParentId_Inverse/sfdc_ChatterExtensionLocalization_ParentId_Inverse" entitySet="ChatterExtensionLocalization"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>ChatterExtension.ChatterExtension_CompositionComponentEnumOrId}" required="false"/> 
+						<Text text=""/>
+						<rdf:TextLink text="{path:'dataModel>ChatterExtension_CompositionComponentEnumOrId/ChatterExtension_CompositionComponentEnumOrId',type:'sap.ui.model.type.String' }" linkText="{i18n>ChatterExtension.ChatterExtension_CompositionComponentEnumOrId/ChatterExtension_CompositionComponentEnumOrId}"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>ChatterExtension.ChatterExtension_CreatedById}" required="false"/> 
+						<Text text=""/>
+						<rdf:ListResource path="dataModel>ChatterExtension_CreatedById/sfdc_ChatterExtension_CreatedById" entitySet="User"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>ChatterExtension.ChatterExtension_CreatedDate}" required="false"/> 
+						<Text text=""/>
+						<Text text="{dataModel>ChatterExtension_CreatedDate/ChatterExtension_CreatedDate}"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>ChatterExtension.ChatterExtension_Description}" required="false"/> 
+						<Text text=""/>
+						<rdf:TextLink text="{path:'dataModel>ChatterExtension_Description/ChatterExtension_Description',type:'sap.ui.model.type.String' }" linkText="{i18n>ChatterExtension.ChatterExtension_Description/ChatterExtension_Description}"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>ChatterExtension.ChatterExtension_DeveloperName}" required="false"/> 
+						<Text text=""/>
+						<rdf:TextLink text="{path:'dataModel>ChatterExtension_DeveloperName/ChatterExtension_DeveloperName',type:'sap.ui.model.type.String' }" linkText="{i18n>ChatterExtension.ChatterExtension_DeveloperName/ChatterExtension_DeveloperName}"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>ChatterExtension.ChatterExtension_ExtensionName}" required="false"/> 
+						<Text text=""/>
+						<rdf:TextLink text="{path:'dataModel>ChatterExtension_ExtensionName/ChatterExtension_ExtensionName',type:'sap.ui.model.type.String' }" linkText="{i18n>ChatterExtension.ChatterExtension_ExtensionName/ChatterExtension_ExtensionName}"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>ChatterExtension.ChatterExtension_HeaderText}" required="false"/> 
+						<Text text=""/>
+						<rdf:TextLink text="{path:'dataModel>ChatterExtension_HeaderText/ChatterExtension_HeaderText',type:'sap.ui.model.type.String' }" linkText="{i18n>ChatterExtension.ChatterExtension_HeaderText/ChatterExtension_HeaderText}"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>ChatterExtension.ChatterExtension_HoverText}" required="false"/> 
+						<Text text=""/>
+						<rdf:TextLink text="{path:'dataModel>ChatterExtension_HoverText/ChatterExtension_HoverText',type:'sap.ui.model.type.String' }" linkText="{i18n>ChatterExtension.ChatterExtension_HoverText/ChatterExtension_HoverText}"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>ChatterExtension.ChatterExtension_IconId}" required="false"/> 
+						<Text text=""/>
+						<rdf:ListResource path="dataModel>ChatterExtension_IconId/sfdc_ChatterExtension_IconId" entitySet="ContentAsset"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>ChatterExtension.ChatterExtension_Id}" required="false"/> 
+						<Text text=""/>
+						<rdf:TextLink text="{path:'dataModel>ChatterExtension_Id/ChatterExtension_Id',type:'sap.ui.model.type.String' }" linkText="{i18n>ChatterExtension.ChatterExtension_Id/ChatterExtension_Id}"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>ChatterExtension.ChatterExtension_IsDeleted}" required="false"/> 
+						<Text text=""/>
+						<Text text="{path:'dataModel>ChatterExtension_IsDeleted/ChatterExtension_IsDeleted',type:'sap.ui.model.type.Boolean'}"/>  
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>ChatterExtension.ChatterExtension_IsProtected}" required="false"/> 
+						<Text text=""/>
+						<Text text="{path:'dataModel>ChatterExtension_IsProtected/ChatterExtension_IsProtected',type:'sap.ui.model.type.Boolean'}"/>  
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>ChatterExtension.ChatterExtension_Language}" required="false"/> 
+						<Text text=""/>
+						<rdf:TextLink text="{path:'dataModel>ChatterExtension_Language/ChatterExtension_Language',type:'sap.ui.model.type.String' }" linkText="{i18n>ChatterExtension.ChatterExtension_Language/ChatterExtension_Language}"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>ChatterExtension.ChatterExtension_LastModifiedById}" required="false"/> 
+						<Text text=""/>
+						<rdf:ListResource path="dataModel>ChatterExtension_LastModifiedById/sfdc_ChatterExtension_LastModifiedById" entitySet="User"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>ChatterExtension.ChatterExtension_LastModifiedDate}" required="false"/> 
+						<Text text=""/>
+						<Text text="{dataModel>ChatterExtension_LastModifiedDate/ChatterExtension_LastModifiedDate}"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>ChatterExtension.ChatterExtension_MasterLabel}" required="false"/> 
+						<Text text=""/>
+						<rdf:TextLink text="{path:'dataModel>ChatterExtension_MasterLabel/ChatterExtension_MasterLabel',type:'sap.ui.model.type.String' }" linkText="{i18n>ChatterExtension.ChatterExtension_MasterLabel/ChatterExtension_MasterLabel}"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>ChatterExtension.ChatterExtension_NamespacePrefix}" required="false"/> 
+						<Text text=""/>
+						<rdf:TextLink text="{path:'dataModel>ChatterExtension_NamespacePrefix/ChatterExtension_NamespacePrefix',type:'sap.ui.model.type.String' }" linkText="{i18n>ChatterExtension.ChatterExtension_NamespacePrefix/ChatterExtension_NamespacePrefix}"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>ChatterExtension.ChatterExtension_RenderComponentEnumOrId}" required="false"/> 
+						<Text text=""/>
+						<rdf:TextLink text="{path:'dataModel>ChatterExtension_RenderComponentEnumOrId/ChatterExtension_RenderComponentEnumOrId',type:'sap.ui.model.type.String' }" linkText="{i18n>ChatterExtension.ChatterExtension_RenderComponentEnumOrId/ChatterExtension_RenderComponentEnumOrId}"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>ChatterExtension.ChatterExtension_SystemModstamp}" required="false"/> 
+						<Text text=""/>
+						<Text text="{dataModel>ChatterExtension_SystemModstamp/ChatterExtension_SystemModstamp}"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>ChatterExtension.ChatterExtension_Type}" required="false"/> 
+						<Text text=""/>
+						<rdf:TextLink text="{path:'dataModel>ChatterExtension_Type/ChatterExtension_Type',type:'sap.ui.model.type.String' }" linkText="{i18n>ChatterExtension.ChatterExtension_Type/ChatterExtension_Type}"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>ChatterExtension.ChatterExtensionConfig_ChatterExtensionId_Inverse}" required="false"/> 
+						<rdf:ListResource path="dataModel>ChatterExtensionConfig_ChatterExtensionId_Inverse" entitySet="ChatterExtensionConfig"/>
+						<Text text=""/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>ChatterExtension.ChatterExtensionLocalization_ParentId_Inverse}" required="false"/> 
+						<rdf:ListResource path="dataModel>ChatterExtensionLocalization_ParentId_Inverse" entitySet="ChatterExtensionLocalization"/>
+						<Text text=""/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>ChatterExtension.ChatterExtension_CreatedById}" required="false"/> 
+						<rdf:ListResource path="dataModel>ChatterExtension_CreatedById" entitySet="User"/>
+						<Text text=""/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>ChatterExtension.ChatterExtension_IconId}" required="false"/> 
+						<rdf:ListResource path="dataModel>ChatterExtension_IconId" entitySet="ContentAsset"/>
+						<Text text=""/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>ChatterExtension.ChatterExtension_LastModifiedById}" required="false"/> 
+						<rdf:ListResource path="dataModel>ChatterExtension_LastModifiedById" entitySet="User"/>
+						<Text text=""/>
+					</cells>
+				</ColumnListItem>
+			</items>
+		</Table>
+	</Page>
+</mvc:View>

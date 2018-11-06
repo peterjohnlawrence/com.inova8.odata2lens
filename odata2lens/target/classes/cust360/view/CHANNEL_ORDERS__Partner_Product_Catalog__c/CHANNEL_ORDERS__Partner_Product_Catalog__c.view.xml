@@ -1,0 +1,385 @@
+<mvc:View controllerName="com.inova8.lens.controller.Entity360" xmlns="sap.m" xmlns:mvc="sap.ui.core.mvc" xmlns:l="sap.ui.layout"
+	xmlns:f="sap.ui.layout.form" xmlns:table="sap.ui.table" xmlns:rdf="com.inova8.lens.control" xmlns:html="http://www.w3.org/1999/xhtml"
+	xmlns:core="sap.ui.core">
+	<Page showHeader="true" id="page" navButtonPress="onNavBack" showNavButton="false" title="{i18n>CHANNEL_ORDERS__Partner_Product_Catalog__c.Title}" busy="{entityView>/busy}"
+		busyIndicatorDelay="{entityView>/delay}" >
+		<customHeader>
+			<Toolbar>
+				<ToolbarSpacer/>
+				<HBox id="sourceTitle" alignItems="Center">
+						<rdf:TextResource id="selectedResource" path="" entitySet=""/>
+				</HBox>	
+				<Title id="pathTitle" text="{entityView>/navigation}"/>
+				<HBox id="versionsTitle" alignItems="Center">
+					<Title text="(" required="false"/>
+					<ComboBox id="versionSelection" items="{ path: 'entityView>/versions' }" selectionChange="onVersionChange">
+						<core:Item key="{entityView>navigation}" text="{entityView>text}"/>
+					</ComboBox>
+					<Title text=")" required="false"/>
+				</HBox>
+				<Title text="{i18n>CHANNEL_ORDERS__Partner_Product_Catalog__c.this}"/>
+				<Title text="(" required="false"/>
+				<rdf:TextResource path="dataModel>" entitySet="CHANNEL_ORDERS__Partner_Product_Catalog__c"/>
+				<Title text=")" required="false"/>
+	
+				<ToolbarSpacer/>
+				<ToggleButton id="toggleColumns" icon="sap-icon://hide" activeIcon="sap-icon://show" press="onSettingsPressed" visible="false"	>
+					<layoutData>
+						<OverflowToolbarLayoutData priority="NeverOverflow"/>
+					</layoutData>
+				</ToggleButton>
+				
+			</Toolbar>
+		</customHeader>
+		<Table id="form360" inset="false" fixedLayout="true" class="multicolumnform" updateFinished="hideColumns">
+			<columns>
+				<Column hAlign="Right" width="200px">
+					<Text text=""/>
+				</Column>
+				<Column visible="true">
+				</Column>
+				<Column visible="true">
+					<Text text="CHANNEL_ORDERS__Partner_Product_Catalog__c"/>
+				</Column>
+			</columns>
+			<items>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>CHANNEL_ORDERS__Partner_Product_Catalog__c.CHANNEL_ORDERS__Partner_Product_Catalog__Feed_ParentId_Inverse}" required="false"/> 
+						<Text text=""/>
+						<rdf:ListResource path="dataModel>CHANNEL_ORDERS__Partner_Product_Catalog__Feed_ParentId_Inverse/sfdc_CHANNEL_ORDERS__Partner_Product_Catalog__Feed_ParentId_Inverse" entitySet="CHANNEL_ORDERS__Partner_Product_Catalog__Feed"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>CHANNEL_ORDERS__Partner_Product_Catalog__c.CHANNEL_ORDERS__Partner_Product_Catalog__History_ParentId_Inverse}" required="false"/> 
+						<Text text=""/>
+						<rdf:ListResource path="dataModel>CHANNEL_ORDERS__Partner_Product_Catalog__History_ParentId_Inverse/sfdc_CHANNEL_ORDERS__Partner_Product_Catalog__History_ParentId_Inverse" entitySet="CHANNEL_ORDERS__Partner_Product_Catalog__History"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>CHANNEL_ORDERS__Partner_Product_Catalog__c.CHANNEL_ORDERS__Partner_Product_Catalog__c_CHANNEL_ORDERS__Allow_Auto_Renew_Override__c}" required="false"/> 
+						<Text text=""/>
+						<Text text="{path:'dataModel>CHANNEL_ORDERS__Partner_Product_Catalog__c_CHANNEL_ORDERS__Allow_Auto_Renew_Override__c/CHANNEL_ORDERS__Partner_Product_Catalog__c_CHANNEL_ORDERS__Allow_Auto_Renew_Override__c',type:'sap.ui.model.type.Boolean'}"/>  
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>CHANNEL_ORDERS__Partner_Product_Catalog__c.CHANNEL_ORDERS__Partner_Product_Catalog__c_CHANNEL_ORDERS__Allow_Cancellation_Terms_Override__c}" required="false"/> 
+						<Text text=""/>
+						<Text text="{path:'dataModel>CHANNEL_ORDERS__Partner_Product_Catalog__c_CHANNEL_ORDERS__Allow_Cancellation_Terms_Override__c/CHANNEL_ORDERS__Partner_Product_Catalog__c_CHANNEL_ORDERS__Allow_Cancellation_Terms_Override__c',type:'sap.ui.model.type.Boolean'}"/>  
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>CHANNEL_ORDERS__Partner_Product_Catalog__c.CHANNEL_ORDERS__Partner_Product_Catalog__c_CHANNEL_ORDERS__Allow_Contract_Length_Override__c}" required="false"/> 
+						<Text text=""/>
+						<Text text="{path:'dataModel>CHANNEL_ORDERS__Partner_Product_Catalog__c_CHANNEL_ORDERS__Allow_Contract_Length_Override__c/CHANNEL_ORDERS__Partner_Product_Catalog__c_CHANNEL_ORDERS__Allow_Contract_Length_Override__c',type:'sap.ui.model.type.Boolean'}"/>  
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>CHANNEL_ORDERS__Partner_Product_Catalog__c.CHANNEL_ORDERS__Partner_Product_Catalog__c_CHANNEL_ORDERS__Allow_Renewal_Length_Override__c}" required="false"/> 
+						<Text text=""/>
+						<Text text="{path:'dataModel>CHANNEL_ORDERS__Partner_Product_Catalog__c_CHANNEL_ORDERS__Allow_Renewal_Length_Override__c/CHANNEL_ORDERS__Partner_Product_Catalog__c_CHANNEL_ORDERS__Allow_Renewal_Length_Override__c',type:'sap.ui.model.type.Boolean'}"/>  
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>CHANNEL_ORDERS__Partner_Product_Catalog__c.CHANNEL_ORDERS__Partner_Product_Catalog__c_CHANNEL_ORDERS__Application__c}" required="false"/> 
+						<Text text=""/>
+						<rdf:TextLink text="{path:'dataModel>CHANNEL_ORDERS__Partner_Product_Catalog__c_CHANNEL_ORDERS__Application__c/CHANNEL_ORDERS__Partner_Product_Catalog__c_CHANNEL_ORDERS__Application__c',type:'sap.ui.model.type.String' }" linkText="{i18n>CHANNEL_ORDERS__Partner_Product_Catalog__c.CHANNEL_ORDERS__Partner_Product_Catalog__c_CHANNEL_ORDERS__Application__c/CHANNEL_ORDERS__Partner_Product_Catalog__c_CHANNEL_ORDERS__Application__c}"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>CHANNEL_ORDERS__Partner_Product_Catalog__c.CHANNEL_ORDERS__Partner_Product_Catalog__c_CHANNEL_ORDERS__Billing_Frequency__c}" required="false"/> 
+						<Text text=""/>
+						<Text text="{path:'dataModel>CHANNEL_ORDERS__Partner_Product_Catalog__c_CHANNEL_ORDERS__Billing_Frequency__c/CHANNEL_ORDERS__Partner_Product_Catalog__c_CHANNEL_ORDERS__Billing_Frequency__c',type:'sap.ui.model.type.Float', formatOptions:{'style':'short','maxFractionDigits':2} }"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>CHANNEL_ORDERS__Partner_Product_Catalog__c.CHANNEL_ORDERS__Partner_Product_Catalog__c_CHANNEL_ORDERS__Cancellation_Terms__c}" required="false"/> 
+						<Text text=""/>
+						<Text text="{path:'dataModel>CHANNEL_ORDERS__Partner_Product_Catalog__c_CHANNEL_ORDERS__Cancellation_Terms__c/CHANNEL_ORDERS__Partner_Product_Catalog__c_CHANNEL_ORDERS__Cancellation_Terms__c',type:'sap.ui.model.type.Float', formatOptions:{'style':'short','maxFractionDigits':2} }"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>CHANNEL_ORDERS__Partner_Product_Catalog__c.CHANNEL_ORDERS__Partner_Product_Catalog__c_CHANNEL_ORDERS__Contract_Auto_Renew__c}" required="false"/> 
+						<Text text=""/>
+						<rdf:TextLink text="{path:'dataModel>CHANNEL_ORDERS__Partner_Product_Catalog__c_CHANNEL_ORDERS__Contract_Auto_Renew__c/CHANNEL_ORDERS__Partner_Product_Catalog__c_CHANNEL_ORDERS__Contract_Auto_Renew__c',type:'sap.ui.model.type.String' }" linkText="{i18n>CHANNEL_ORDERS__Partner_Product_Catalog__c.CHANNEL_ORDERS__Partner_Product_Catalog__c_CHANNEL_ORDERS__Contract_Auto_Renew__c/CHANNEL_ORDERS__Partner_Product_Catalog__c_CHANNEL_ORDERS__Contract_Auto_Renew__c}"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>CHANNEL_ORDERS__Partner_Product_Catalog__c.CHANNEL_ORDERS__Partner_Product_Catalog__c_CHANNEL_ORDERS__Contract_Length__c}" required="false"/> 
+						<Text text=""/>
+						<Text text="{path:'dataModel>CHANNEL_ORDERS__Partner_Product_Catalog__c_CHANNEL_ORDERS__Contract_Length__c/CHANNEL_ORDERS__Partner_Product_Catalog__c_CHANNEL_ORDERS__Contract_Length__c',type:'sap.ui.model.type.Float', formatOptions:{'style':'short','maxFractionDigits':2} }"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>CHANNEL_ORDERS__Partner_Product_Catalog__c.CHANNEL_ORDERS__Partner_Product_Catalog__c_CHANNEL_ORDERS__Custom_Unit__c}" required="false"/> 
+						<Text text=""/>
+						<rdf:TextLink text="{path:'dataModel>CHANNEL_ORDERS__Partner_Product_Catalog__c_CHANNEL_ORDERS__Custom_Unit__c/CHANNEL_ORDERS__Partner_Product_Catalog__c_CHANNEL_ORDERS__Custom_Unit__c',type:'sap.ui.model.type.String' }" linkText="{i18n>CHANNEL_ORDERS__Partner_Product_Catalog__c.CHANNEL_ORDERS__Partner_Product_Catalog__c_CHANNEL_ORDERS__Custom_Unit__c/CHANNEL_ORDERS__Partner_Product_Catalog__c_CHANNEL_ORDERS__Custom_Unit__c}"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>CHANNEL_ORDERS__Partner_Product_Catalog__c.CHANNEL_ORDERS__Partner_Product_Catalog__c_CHANNEL_ORDERS__Fixed_Price__c}" required="false"/> 
+						<Text text=""/>
+						<Text text="{path:'dataModel>CHANNEL_ORDERS__Partner_Product_Catalog__c_CHANNEL_ORDERS__Fixed_Price__c/CHANNEL_ORDERS__Partner_Product_Catalog__c_CHANNEL_ORDERS__Fixed_Price__c',type:'sap.ui.model.type.Float', formatOptions:{'style':'short','maxFractionDigits':2} }"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>CHANNEL_ORDERS__Partner_Product_Catalog__c.CHANNEL_ORDERS__Partner_Product_Catalog__c_CHANNEL_ORDERS__Floor_Price__c}" required="false"/> 
+						<Text text=""/>
+						<Text text="{path:'dataModel>CHANNEL_ORDERS__Partner_Product_Catalog__c_CHANNEL_ORDERS__Floor_Price__c/CHANNEL_ORDERS__Partner_Product_Catalog__c_CHANNEL_ORDERS__Floor_Price__c',type:'sap.ui.model.type.Float', formatOptions:{'style':'short','maxFractionDigits':2} }"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>CHANNEL_ORDERS__Partner_Product_Catalog__c.CHANNEL_ORDERS__Partner_Product_Catalog__c_CHANNEL_ORDERS__PNR__c}" required="false"/> 
+						<Text text=""/>
+						<Text text="{path:'dataModel>CHANNEL_ORDERS__Partner_Product_Catalog__c_CHANNEL_ORDERS__PNR__c/CHANNEL_ORDERS__Partner_Product_Catalog__c_CHANNEL_ORDERS__PNR__c',type:'sap.ui.model.type.Float', formatOptions:{'style':'short','maxFractionDigits':2} }"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>CHANNEL_ORDERS__Partner_Product_Catalog__c.CHANNEL_ORDERS__Partner_Product_Catalog__c_CHANNEL_ORDERS__Partner_Application_Name__c}" required="false"/> 
+						<Text text=""/>
+						<rdf:TextLink text="{path:'dataModel>CHANNEL_ORDERS__Partner_Product_Catalog__c_CHANNEL_ORDERS__Partner_Application_Name__c/CHANNEL_ORDERS__Partner_Product_Catalog__c_CHANNEL_ORDERS__Partner_Application_Name__c',type:'sap.ui.model.type.String' }" linkText="{i18n>CHANNEL_ORDERS__Partner_Product_Catalog__c.CHANNEL_ORDERS__Partner_Product_Catalog__c_CHANNEL_ORDERS__Partner_Application_Name__c/CHANNEL_ORDERS__Partner_Product_Catalog__c_CHANNEL_ORDERS__Partner_Application_Name__c}"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>CHANNEL_ORDERS__Partner_Product_Catalog__c.CHANNEL_ORDERS__Partner_Product_Catalog__c_CHANNEL_ORDERS__Partner_Contract_Terms__c}" required="false"/> 
+						<Text text=""/>
+						<rdf:ListResource path="dataModel>CHANNEL_ORDERS__Partner_Product_Catalog__c_CHANNEL_ORDERS__Partner_Contract_Terms__c/sfdc_CHANNEL_ORDERS__Partner_Product_Catalog__c_CHANNEL_ORDERS__Partner_Contract_Terms__c" entitySet="CHANNEL_ORDERS__Partner_Contract_Terms__c"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>CHANNEL_ORDERS__Partner_Product_Catalog__c.CHANNEL_ORDERS__Partner_Product_Catalog__c_CHANNEL_ORDERS__Pricing_Type__c}" required="false"/> 
+						<Text text=""/>
+						<rdf:TextLink text="{path:'dataModel>CHANNEL_ORDERS__Partner_Product_Catalog__c_CHANNEL_ORDERS__Pricing_Type__c/CHANNEL_ORDERS__Partner_Product_Catalog__c_CHANNEL_ORDERS__Pricing_Type__c',type:'sap.ui.model.type.String' }" linkText="{i18n>CHANNEL_ORDERS__Partner_Product_Catalog__c.CHANNEL_ORDERS__Partner_Product_Catalog__c_CHANNEL_ORDERS__Pricing_Type__c/CHANNEL_ORDERS__Partner_Product_Catalog__c_CHANNEL_ORDERS__Pricing_Type__c}"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>CHANNEL_ORDERS__Partner_Product_Catalog__c.CHANNEL_ORDERS__Partner_Product_Catalog__c_CHANNEL_ORDERS__Pricing_Unit__c}" required="false"/> 
+						<Text text=""/>
+						<rdf:TextLink text="{path:'dataModel>CHANNEL_ORDERS__Partner_Product_Catalog__c_CHANNEL_ORDERS__Pricing_Unit__c/CHANNEL_ORDERS__Partner_Product_Catalog__c_CHANNEL_ORDERS__Pricing_Unit__c',type:'sap.ui.model.type.String' }" linkText="{i18n>CHANNEL_ORDERS__Partner_Product_Catalog__c.CHANNEL_ORDERS__Partner_Product_Catalog__c_CHANNEL_ORDERS__Pricing_Unit__c/CHANNEL_ORDERS__Partner_Product_Catalog__c_CHANNEL_ORDERS__Pricing_Unit__c}"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>CHANNEL_ORDERS__Partner_Product_Catalog__c.CHANNEL_ORDERS__Partner_Product_Catalog__c_CHANNEL_ORDERS__Product_Description__c}" required="false"/> 
+						<Text text=""/>
+						<rdf:TextLink text="{path:'dataModel>CHANNEL_ORDERS__Partner_Product_Catalog__c_CHANNEL_ORDERS__Product_Description__c/CHANNEL_ORDERS__Partner_Product_Catalog__c_CHANNEL_ORDERS__Product_Description__c',type:'sap.ui.model.type.String' }" linkText="{i18n>CHANNEL_ORDERS__Partner_Product_Catalog__c.CHANNEL_ORDERS__Partner_Product_Catalog__c_CHANNEL_ORDERS__Product_Description__c/CHANNEL_ORDERS__Partner_Product_Catalog__c_CHANNEL_ORDERS__Product_Description__c}"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>CHANNEL_ORDERS__Partner_Product_Catalog__c.CHANNEL_ORDERS__Partner_Product_Catalog__c_CHANNEL_ORDERS__Product_ID__c}" required="false"/> 
+						<Text text=""/>
+						<rdf:TextLink text="{path:'dataModel>CHANNEL_ORDERS__Partner_Product_Catalog__c_CHANNEL_ORDERS__Product_ID__c/CHANNEL_ORDERS__Partner_Product_Catalog__c_CHANNEL_ORDERS__Product_ID__c',type:'sap.ui.model.type.String' }" linkText="{i18n>CHANNEL_ORDERS__Partner_Product_Catalog__c.CHANNEL_ORDERS__Partner_Product_Catalog__c_CHANNEL_ORDERS__Product_ID__c/CHANNEL_ORDERS__Partner_Product_Catalog__c_CHANNEL_ORDERS__Product_ID__c}"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>CHANNEL_ORDERS__Partner_Product_Catalog__c.CHANNEL_ORDERS__Partner_Product_Catalog__c_CHANNEL_ORDERS__Product_Special_Terms__c}" required="false"/> 
+						<Text text=""/>
+						<rdf:TextLink text="{path:'dataModel>CHANNEL_ORDERS__Partner_Product_Catalog__c_CHANNEL_ORDERS__Product_Special_Terms__c/CHANNEL_ORDERS__Partner_Product_Catalog__c_CHANNEL_ORDERS__Product_Special_Terms__c',type:'sap.ui.model.type.String' }" linkText="{i18n>CHANNEL_ORDERS__Partner_Product_Catalog__c.CHANNEL_ORDERS__Partner_Product_Catalog__c_CHANNEL_ORDERS__Product_Special_Terms__c/CHANNEL_ORDERS__Partner_Product_Catalog__c_CHANNEL_ORDERS__Product_Special_Terms__c}"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>CHANNEL_ORDERS__Partner_Product_Catalog__c.CHANNEL_ORDERS__Partner_Product_Catalog__c_CHANNEL_ORDERS__Renewal_Terms__c}" required="false"/> 
+						<Text text=""/>
+						<Text text="{path:'dataModel>CHANNEL_ORDERS__Partner_Product_Catalog__c_CHANNEL_ORDERS__Renewal_Terms__c/CHANNEL_ORDERS__Partner_Product_Catalog__c_CHANNEL_ORDERS__Renewal_Terms__c',type:'sap.ui.model.type.Float', formatOptions:{'style':'short','maxFractionDigits':2} }"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>CHANNEL_ORDERS__Partner_Product_Catalog__c.CHANNEL_ORDERS__Partner_Product_Catalog__c_CHANNEL_ORDERS__Special_Instructions__c}" required="false"/> 
+						<Text text=""/>
+						<rdf:TextLink text="{path:'dataModel>CHANNEL_ORDERS__Partner_Product_Catalog__c_CHANNEL_ORDERS__Special_Instructions__c/CHANNEL_ORDERS__Partner_Product_Catalog__c_CHANNEL_ORDERS__Special_Instructions__c',type:'sap.ui.model.type.String' }" linkText="{i18n>CHANNEL_ORDERS__Partner_Product_Catalog__c.CHANNEL_ORDERS__Partner_Product_Catalog__c_CHANNEL_ORDERS__Special_Instructions__c/CHANNEL_ORDERS__Partner_Product_Catalog__c_CHANNEL_ORDERS__Special_Instructions__c}"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>CHANNEL_ORDERS__Partner_Product_Catalog__c.CHANNEL_ORDERS__Partner_Product_Catalog__c_CHANNEL_ORDERS__Status__c}" required="false"/> 
+						<Text text=""/>
+						<rdf:TextLink text="{path:'dataModel>CHANNEL_ORDERS__Partner_Product_Catalog__c_CHANNEL_ORDERS__Status__c/CHANNEL_ORDERS__Partner_Product_Catalog__c_CHANNEL_ORDERS__Status__c',type:'sap.ui.model.type.String' }" linkText="{i18n>CHANNEL_ORDERS__Partner_Product_Catalog__c.CHANNEL_ORDERS__Partner_Product_Catalog__c_CHANNEL_ORDERS__Status__c/CHANNEL_ORDERS__Partner_Product_Catalog__c_CHANNEL_ORDERS__Status__c}"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>CHANNEL_ORDERS__Partner_Product_Catalog__c.CHANNEL_ORDERS__Partner_Product_Catalog__c_CreatedById}" required="false"/> 
+						<Text text=""/>
+						<rdf:ListResource path="dataModel>CHANNEL_ORDERS__Partner_Product_Catalog__c_CreatedById/sfdc_CHANNEL_ORDERS__Partner_Product_Catalog__c_CreatedById" entitySet="User"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>CHANNEL_ORDERS__Partner_Product_Catalog__c.CHANNEL_ORDERS__Partner_Product_Catalog__c_CreatedDate}" required="false"/> 
+						<Text text=""/>
+						<Text text="{dataModel>CHANNEL_ORDERS__Partner_Product_Catalog__c_CreatedDate/CHANNEL_ORDERS__Partner_Product_Catalog__c_CreatedDate}"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>CHANNEL_ORDERS__Partner_Product_Catalog__c.CHANNEL_ORDERS__Partner_Product_Catalog__c_Id}" required="false"/> 
+						<Text text=""/>
+						<rdf:TextLink text="{path:'dataModel>CHANNEL_ORDERS__Partner_Product_Catalog__c_Id/CHANNEL_ORDERS__Partner_Product_Catalog__c_Id',type:'sap.ui.model.type.String' }" linkText="{i18n>CHANNEL_ORDERS__Partner_Product_Catalog__c.CHANNEL_ORDERS__Partner_Product_Catalog__c_Id/CHANNEL_ORDERS__Partner_Product_Catalog__c_Id}"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>CHANNEL_ORDERS__Partner_Product_Catalog__c.CHANNEL_ORDERS__Partner_Product_Catalog__c_IsDeleted}" required="false"/> 
+						<Text text=""/>
+						<Text text="{path:'dataModel>CHANNEL_ORDERS__Partner_Product_Catalog__c_IsDeleted/CHANNEL_ORDERS__Partner_Product_Catalog__c_IsDeleted',type:'sap.ui.model.type.Boolean'}"/>  
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>CHANNEL_ORDERS__Partner_Product_Catalog__c.CHANNEL_ORDERS__Partner_Product_Catalog__c_LastModifiedById}" required="false"/> 
+						<Text text=""/>
+						<rdf:ListResource path="dataModel>CHANNEL_ORDERS__Partner_Product_Catalog__c_LastModifiedById/sfdc_CHANNEL_ORDERS__Partner_Product_Catalog__c_LastModifiedById" entitySet="User"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>CHANNEL_ORDERS__Partner_Product_Catalog__c.CHANNEL_ORDERS__Partner_Product_Catalog__c_LastModifiedDate}" required="false"/> 
+						<Text text=""/>
+						<Text text="{dataModel>CHANNEL_ORDERS__Partner_Product_Catalog__c_LastModifiedDate/CHANNEL_ORDERS__Partner_Product_Catalog__c_LastModifiedDate}"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>CHANNEL_ORDERS__Partner_Product_Catalog__c.CHANNEL_ORDERS__Partner_Product_Catalog__c_LastReferencedDate}" required="false"/> 
+						<Text text=""/>
+						<Text text="{dataModel>CHANNEL_ORDERS__Partner_Product_Catalog__c_LastReferencedDate/CHANNEL_ORDERS__Partner_Product_Catalog__c_LastReferencedDate}"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>CHANNEL_ORDERS__Partner_Product_Catalog__c.CHANNEL_ORDERS__Partner_Product_Catalog__c_LastViewedDate}" required="false"/> 
+						<Text text=""/>
+						<Text text="{dataModel>CHANNEL_ORDERS__Partner_Product_Catalog__c_LastViewedDate/CHANNEL_ORDERS__Partner_Product_Catalog__c_LastViewedDate}"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>CHANNEL_ORDERS__Partner_Product_Catalog__c.CHANNEL_ORDERS__Partner_Product_Catalog__c_Name}" required="false"/> 
+						<Text text=""/>
+						<rdf:TextLink text="{path:'dataModel>CHANNEL_ORDERS__Partner_Product_Catalog__c_Name/CHANNEL_ORDERS__Partner_Product_Catalog__c_Name',type:'sap.ui.model.type.String' }" linkText="{i18n>CHANNEL_ORDERS__Partner_Product_Catalog__c.CHANNEL_ORDERS__Partner_Product_Catalog__c_Name/CHANNEL_ORDERS__Partner_Product_Catalog__c_Name}"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>CHANNEL_ORDERS__Partner_Product_Catalog__c.CHANNEL_ORDERS__Partner_Product_Catalog__c_OwnerId}" required="false"/> 
+						<Text text=""/>
+						<rdf:ListResource path="dataModel>CHANNEL_ORDERS__Partner_Product_Catalog__c_OwnerId/sfdc_CHANNEL_ORDERS__Partner_Product_Catalog__c_OwnerId" entitySet="Group"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>CHANNEL_ORDERS__Partner_Product_Catalog__c.CHANNEL_ORDERS__Partner_Product_Catalog__c_SystemModstamp}" required="false"/> 
+						<Text text=""/>
+						<Text text="{dataModel>CHANNEL_ORDERS__Partner_Product_Catalog__c_SystemModstamp/CHANNEL_ORDERS__Partner_Product_Catalog__c_SystemModstamp}"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>CHANNEL_ORDERS__Partner_Product_Catalog__c.CHANNEL_ORDERS__Service_Order_Detail__c_CHANNEL_ORDERS__Product_Name__c_Inverse}" required="false"/> 
+						<Text text=""/>
+						<rdf:ListResource path="dataModel>CHANNEL_ORDERS__Service_Order_Detail__c_CHANNEL_ORDERS__Product_Name__c_Inverse/sfdc_CHANNEL_ORDERS__Service_Order_Detail__c_CHANNEL_ORDERS__Product_Name__c_Inverse" entitySet="CHANNEL_ORDERS__Service_Order_Detail__c"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>CHANNEL_ORDERS__Partner_Product_Catalog__c.CHANNEL_ORDERS__Service_Order_Detail__c_hd_CHANNEL_ORDERS__Product_Name__c_hpr_Inverse}" required="false"/> 
+						<Text text=""/>
+						<rdf:ListResource path="dataModel>CHANNEL_ORDERS__Service_Order_Detail__c_hd_CHANNEL_ORDERS__Product_Name__c_hpr_Inverse/sfdc_CHANNEL_ORDERS__Service_Order_Detail__c_hd_CHANNEL_ORDERS__Product_Name__c_hpr_Inverse" entitySet="CHANNEL_ORDERS__Service_Order_Detail__c_hd"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>CHANNEL_ORDERS__Partner_Product_Catalog__c.CHANNEL_ORDERS__Service_Order_Detail__c_hd_CHANNEL_ORDERS__Product_Name__c_hst_Inverse}" required="false"/> 
+						<Text text=""/>
+						<rdf:ListResource path="dataModel>CHANNEL_ORDERS__Service_Order_Detail__c_hd_CHANNEL_ORDERS__Product_Name__c_hst_Inverse/sfdc_CHANNEL_ORDERS__Service_Order_Detail__c_hd_CHANNEL_ORDERS__Product_Name__c_hst_Inverse" entitySet="CHANNEL_ORDERS__Service_Order_Detail__c_hd"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>CHANNEL_ORDERS__Partner_Product_Catalog__c.CHANNEL_ORDERS__Partner_Product_Catalog__Feed_ParentId_Inverse}" required="false"/> 
+						<rdf:ListResource path="dataModel>CHANNEL_ORDERS__Partner_Product_Catalog__Feed_ParentId_Inverse" entitySet="CHANNEL_ORDERS__Partner_Product_Catalog__Feed"/>
+						<Text text=""/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>CHANNEL_ORDERS__Partner_Product_Catalog__c.CHANNEL_ORDERS__Partner_Product_Catalog__History_ParentId_Inverse}" required="false"/> 
+						<rdf:ListResource path="dataModel>CHANNEL_ORDERS__Partner_Product_Catalog__History_ParentId_Inverse" entitySet="CHANNEL_ORDERS__Partner_Product_Catalog__History"/>
+						<Text text=""/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>CHANNEL_ORDERS__Partner_Product_Catalog__c.CHANNEL_ORDERS__Partner_Product_Catalog__c_CHANNEL_ORDERS__Partner_Contract_Terms__c}" required="false"/> 
+						<rdf:ListResource path="dataModel>CHANNEL_ORDERS__Partner_Product_Catalog__c_CHANNEL_ORDERS__Partner_Contract_Terms__c" entitySet="CHANNEL_ORDERS__Partner_Contract_Terms__c"/>
+						<Text text=""/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>CHANNEL_ORDERS__Partner_Product_Catalog__c.CHANNEL_ORDERS__Partner_Product_Catalog__c_CreatedById}" required="false"/> 
+						<rdf:ListResource path="dataModel>CHANNEL_ORDERS__Partner_Product_Catalog__c_CreatedById" entitySet="User"/>
+						<Text text=""/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>CHANNEL_ORDERS__Partner_Product_Catalog__c.CHANNEL_ORDERS__Partner_Product_Catalog__c_LastModifiedById}" required="false"/> 
+						<rdf:ListResource path="dataModel>CHANNEL_ORDERS__Partner_Product_Catalog__c_LastModifiedById" entitySet="User"/>
+						<Text text=""/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>CHANNEL_ORDERS__Partner_Product_Catalog__c.CHANNEL_ORDERS__Partner_Product_Catalog__c_OwnerId}" required="false"/> 
+						<rdf:ListResource path="dataModel>CHANNEL_ORDERS__Partner_Product_Catalog__c_OwnerId" entitySet="Group"/>
+						<Text text=""/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>CHANNEL_ORDERS__Partner_Product_Catalog__c.CHANNEL_ORDERS__Service_Order_Detail__c_CHANNEL_ORDERS__Product_Name__c_Inverse}" required="false"/> 
+						<rdf:ListResource path="dataModel>CHANNEL_ORDERS__Service_Order_Detail__c_CHANNEL_ORDERS__Product_Name__c_Inverse" entitySet="CHANNEL_ORDERS__Service_Order_Detail__c"/>
+						<Text text=""/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>CHANNEL_ORDERS__Partner_Product_Catalog__c.CHANNEL_ORDERS__Service_Order_Detail__c_hd_CHANNEL_ORDERS__Product_Name__c_hpr_Inverse}" required="false"/> 
+						<rdf:ListResource path="dataModel>CHANNEL_ORDERS__Service_Order_Detail__c_hd_CHANNEL_ORDERS__Product_Name__c_hpr_Inverse" entitySet="CHANNEL_ORDERS__Service_Order_Detail__c_hd"/>
+						<Text text=""/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>CHANNEL_ORDERS__Partner_Product_Catalog__c.CHANNEL_ORDERS__Service_Order_Detail__c_hd_CHANNEL_ORDERS__Product_Name__c_hst_Inverse}" required="false"/> 
+						<rdf:ListResource path="dataModel>CHANNEL_ORDERS__Service_Order_Detail__c_hd_CHANNEL_ORDERS__Product_Name__c_hst_Inverse" entitySet="CHANNEL_ORDERS__Service_Order_Detail__c_hd"/>
+						<Text text=""/>
+					</cells>
+				</ColumnListItem>
+			</items>
+		</Table>
+	</Page>
+</mvc:View>

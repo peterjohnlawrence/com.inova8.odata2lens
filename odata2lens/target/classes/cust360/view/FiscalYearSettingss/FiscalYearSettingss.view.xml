@@ -1,0 +1,127 @@
+<mvc:View controllerName="com.inova8.lens.controller.EntitySet360" xmlns="sap.m" xmlns:mvc="sap.ui.core.mvc" xmlns:layout="sap.ui.layout"
+	xmlns:rdf="com.inova8.lens.control" xmlns:core="sap.ui.core">
+	<Page showHeader="false" id="page" navButtonPress="onNavBack" showNavButton="true" title="{i18n>FiscalYearSettingss.ViewTitle}">
+		<content>
+			<Table id="table360" inset="false" items="{ path: 'dataModel>/FiscalYearSettings' , sorter: { path: 'label', descending: false } 
+				}"
+				noDataText="{entitySetView>/tableNoDataText}" busyIndicatorDelay="{entitySetView>/tableBusyDelay}" growing="true" growingScrollToLoad="true"
+				updateFinished="onUpdateFinished"  fixedLayout="false">
+				<headerToolbar>
+					<Toolbar>
+						<ToolbarSpacer/>
+						<HBox id="sourceTitle" alignItems="Center">
+							<rdf:TextResource id="selectedResource" path="" entitySet=""/>
+						</HBox>
+						<Title id="pathTitle" text="{entitySetView>/navigationText}"/>
+						<HBox id="versionsTitle" alignItems="Center">
+							<Title text="(" required="false"/>
+							<ComboBox id="versionSelection" items="{ path: 'entitySetView>/versions' }" selectionChange="onVersionChange">
+								<core:Item key="{entitySetView>navigation}" text="{entityView>text}"/>
+							</ComboBox>
+							<Title text=")" required="false"/>
+						</HBox>
+						<Title id="tableHeader" text="{entitySetView>/entitySetTableTitle}"/>
+						<ToolbarSpacer/>
+						<SearchField id="searchField" tooltip="{i18n>search.searchTooltip}" search="onSearch" width="auto"></SearchField>
+					</Toolbar>
+				</headerToolbar>
+				<columns>
+					<Column >
+						<Text text="{i18n>FiscalYearSettingss.this}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>FiscalYearSettingss.FiscalYearSettings_Description}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>FiscalYearSettingss.FiscalYearSettings_EndDate}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>FiscalYearSettingss.FiscalYearSettings_Id}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>FiscalYearSettingss.FiscalYearSettings_IsStandardYear}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>FiscalYearSettingss.FiscalYearSettings_Name}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>FiscalYearSettingss.FiscalYearSettings_PeriodLabelScheme}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>FiscalYearSettingss.FiscalYearSettings_PeriodPrefix}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>FiscalYearSettingss.FiscalYearSettings_QuarterLabelScheme}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>FiscalYearSettingss.FiscalYearSettings_QuarterPrefix}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>FiscalYearSettingss.FiscalYearSettings_StartDate}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>FiscalYearSettingss.FiscalYearSettings_SystemModstamp}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>FiscalYearSettingss.FiscalYearSettings_WeekLabelScheme}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>FiscalYearSettingss.FiscalYearSettings_WeekStartDay}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>FiscalYearSettingss.FiscalYearSettings_YearType}"/>
+					</Column>
+				</columns>
+				<items>
+					<ColumnListItem id="template360" type="Navigation" press="onPress">
+						<cells>
+							<rdf:TextResource path="dataModel>" entitySet="FiscalYearSettings"/>
+							<VBox>					
+							<rdf:TextLink text="{path:'dataModel>FiscalYearSettings_Description/FiscalYearSettings_Description',type:'sap.ui.model.type.String'}" linkText="{i18n>FiscalYearSettings.FiscalYearSettings_Description/FiscalYearSettings_Description}"/>
+							</VBox>							
+							<VBox>					
+							<Text text="{dataModel>FiscalYearSettings_EndDate/FiscalYearSettings_EndDate}"/>
+							</VBox>							
+							<VBox>					
+							<rdf:TextLink text="{path:'dataModel>FiscalYearSettings_Id/FiscalYearSettings_Id',type:'sap.ui.model.type.String'}" linkText="{i18n>FiscalYearSettings.FiscalYearSettings_Id/FiscalYearSettings_Id}"/>
+							</VBox>							
+							<VBox>					
+								<Text text="{path:'dataModel>FiscalYearSettings_IsStandardYear/FiscalYearSettings_IsStandardYear',type:'sap.ui.model.type.Boolean'}"/>  
+							</VBox>							
+							<VBox>					
+							<rdf:TextLink text="{path:'dataModel>FiscalYearSettings_Name/FiscalYearSettings_Name',type:'sap.ui.model.type.String'}" linkText="{i18n>FiscalYearSettings.FiscalYearSettings_Name/FiscalYearSettings_Name}"/>
+							</VBox>							
+							<VBox>					
+							<rdf:TextLink text="{path:'dataModel>FiscalYearSettings_PeriodLabelScheme/FiscalYearSettings_PeriodLabelScheme',type:'sap.ui.model.type.String'}" linkText="{i18n>FiscalYearSettings.FiscalYearSettings_PeriodLabelScheme/FiscalYearSettings_PeriodLabelScheme}"/>
+							</VBox>							
+							<VBox>					
+							<rdf:TextLink text="{path:'dataModel>FiscalYearSettings_PeriodPrefix/FiscalYearSettings_PeriodPrefix',type:'sap.ui.model.type.String'}" linkText="{i18n>FiscalYearSettings.FiscalYearSettings_PeriodPrefix/FiscalYearSettings_PeriodPrefix}"/>
+							</VBox>							
+							<VBox>					
+							<rdf:TextLink text="{path:'dataModel>FiscalYearSettings_QuarterLabelScheme/FiscalYearSettings_QuarterLabelScheme',type:'sap.ui.model.type.String'}" linkText="{i18n>FiscalYearSettings.FiscalYearSettings_QuarterLabelScheme/FiscalYearSettings_QuarterLabelScheme}"/>
+							</VBox>							
+							<VBox>					
+							<rdf:TextLink text="{path:'dataModel>FiscalYearSettings_QuarterPrefix/FiscalYearSettings_QuarterPrefix',type:'sap.ui.model.type.String'}" linkText="{i18n>FiscalYearSettings.FiscalYearSettings_QuarterPrefix/FiscalYearSettings_QuarterPrefix}"/>
+							</VBox>							
+							<VBox>					
+							<Text text="{dataModel>FiscalYearSettings_StartDate/FiscalYearSettings_StartDate}"/>
+							</VBox>							
+							<VBox>					
+							<Text text="{dataModel>FiscalYearSettings_SystemModstamp/FiscalYearSettings_SystemModstamp}"/>
+							</VBox>							
+							<VBox>					
+							<rdf:TextLink text="{path:'dataModel>FiscalYearSettings_WeekLabelScheme/FiscalYearSettings_WeekLabelScheme',type:'sap.ui.model.type.String'}" linkText="{i18n>FiscalYearSettings.FiscalYearSettings_WeekLabelScheme/FiscalYearSettings_WeekLabelScheme}"/>
+							</VBox>							
+							<VBox>					
+							<Text text="{path:'dataModel>FiscalYearSettings_WeekStartDay/FiscalYearSettings_WeekStartDay',type:'sap.ui.model.type.Integer' }"/>
+							</VBox>							
+							<VBox>					
+							<rdf:TextLink text="{path:'dataModel>FiscalYearSettings_YearType/FiscalYearSettings_YearType',type:'sap.ui.model.type.String'}" linkText="{i18n>FiscalYearSettings.FiscalYearSettings_YearType/FiscalYearSettings_YearType}"/>
+							</VBox>							
+						</cells>
+					</ColumnListItem>
+				</items>
+			</Table>
+		</content>
+	</Page>
+</mvc:View>

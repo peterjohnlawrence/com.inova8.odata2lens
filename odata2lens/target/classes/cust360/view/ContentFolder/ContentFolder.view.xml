@@ -1,0 +1,189 @@
+<mvc:View controllerName="com.inova8.lens.controller.Entity360" xmlns="sap.m" xmlns:mvc="sap.ui.core.mvc" xmlns:l="sap.ui.layout"
+	xmlns:f="sap.ui.layout.form" xmlns:table="sap.ui.table" xmlns:rdf="com.inova8.lens.control" xmlns:html="http://www.w3.org/1999/xhtml"
+	xmlns:core="sap.ui.core">
+	<Page showHeader="true" id="page" navButtonPress="onNavBack" showNavButton="false" title="{i18n>ContentFolder.Title}" busy="{entityView>/busy}"
+		busyIndicatorDelay="{entityView>/delay}" >
+		<customHeader>
+			<Toolbar>
+				<ToolbarSpacer/>
+				<HBox id="sourceTitle" alignItems="Center">
+						<rdf:TextResource id="selectedResource" path="" entitySet=""/>
+				</HBox>	
+				<Title id="pathTitle" text="{entityView>/navigation}"/>
+				<HBox id="versionsTitle" alignItems="Center">
+					<Title text="(" required="false"/>
+					<ComboBox id="versionSelection" items="{ path: 'entityView>/versions' }" selectionChange="onVersionChange">
+						<core:Item key="{entityView>navigation}" text="{entityView>text}"/>
+					</ComboBox>
+					<Title text=")" required="false"/>
+				</HBox>
+				<Title text="{i18n>ContentFolder.this}"/>
+				<Title text="(" required="false"/>
+				<rdf:TextResource path="dataModel>" entitySet="ContentFolder"/>
+				<Title text=")" required="false"/>
+	
+				<ToolbarSpacer/>
+				<ToggleButton id="toggleColumns" icon="sap-icon://hide" activeIcon="sap-icon://show" press="onSettingsPressed" visible="false"	>
+					<layoutData>
+						<OverflowToolbarLayoutData priority="NeverOverflow"/>
+					</layoutData>
+				</ToggleButton>
+				
+			</Toolbar>
+		</customHeader>
+		<Table id="form360" inset="false" fixedLayout="true" class="multicolumnform" updateFinished="hideColumns">
+			<columns>
+				<Column hAlign="Right" width="200px">
+					<Text text=""/>
+				</Column>
+				<Column visible="true">
+				</Column>
+				<Column visible="true">
+					<Text text="ContentFolder"/>
+				</Column>
+			</columns>
+			<items>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>ContentFolder.ContentFolderItem_ParentContentFolderId_Inverse}" required="false"/> 
+						<Text text=""/>
+						<rdf:ListResource path="dataModel>ContentFolderItem_ParentContentFolderId_Inverse/sfdc_ContentFolderItem_ParentContentFolderId_Inverse" entitySet="ContentFolderItem"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>ContentFolder.ContentFolderMember_ParentContentFolderId_Inverse}" required="false"/> 
+						<Text text=""/>
+						<rdf:ListResource path="dataModel>ContentFolderMember_ParentContentFolderId_Inverse/sfdc_ContentFolderMember_ParentContentFolderId_Inverse" entitySet="ContentFolderMember"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>ContentFolder.ContentFolder_CreatedById}" required="false"/> 
+						<Text text=""/>
+						<rdf:ListResource path="dataModel>ContentFolder_CreatedById/sfdc_ContentFolder_CreatedById" entitySet="User"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>ContentFolder.ContentFolder_CreatedDate}" required="false"/> 
+						<Text text=""/>
+						<Text text="{dataModel>ContentFolder_CreatedDate/ContentFolder_CreatedDate}"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>ContentFolder.ContentFolder_Id}" required="false"/> 
+						<Text text=""/>
+						<rdf:TextLink text="{path:'dataModel>ContentFolder_Id/ContentFolder_Id',type:'sap.ui.model.type.String' }" linkText="{i18n>ContentFolder.ContentFolder_Id/ContentFolder_Id}"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>ContentFolder.ContentFolder_IsDeleted}" required="false"/> 
+						<Text text=""/>
+						<Text text="{path:'dataModel>ContentFolder_IsDeleted/ContentFolder_IsDeleted',type:'sap.ui.model.type.Boolean'}"/>  
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>ContentFolder.ContentFolder_LastModifiedById}" required="false"/> 
+						<Text text=""/>
+						<rdf:ListResource path="dataModel>ContentFolder_LastModifiedById/sfdc_ContentFolder_LastModifiedById" entitySet="User"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>ContentFolder.ContentFolder_LastModifiedDate}" required="false"/> 
+						<Text text=""/>
+						<Text text="{dataModel>ContentFolder_LastModifiedDate/ContentFolder_LastModifiedDate}"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>ContentFolder.ContentFolder_Name}" required="false"/> 
+						<Text text=""/>
+						<rdf:TextLink text="{path:'dataModel>ContentFolder_Name/ContentFolder_Name',type:'sap.ui.model.type.String' }" linkText="{i18n>ContentFolder.ContentFolder_Name/ContentFolder_Name}"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>ContentFolder.ContentFolder_ParentContentFolderId}" required="false"/> 
+						<Text text=""/>
+						<rdf:ListResource path="dataModel>ContentFolder_ParentContentFolderId/sfdc_ContentFolder_ParentContentFolderId" entitySet="ContentFolder"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>ContentFolder.ContentFolder_ParentContentFolderId_Inverse}" required="false"/> 
+						<Text text=""/>
+						<rdf:ListResource path="dataModel>ContentFolder_ParentContentFolderId_Inverse/sfdc_ContentFolder_ParentContentFolderId_Inverse" entitySet="ContentFolder"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>ContentFolder.ContentFolder_SystemModstamp}" required="false"/> 
+						<Text text=""/>
+						<Text text="{dataModel>ContentFolder_SystemModstamp/ContentFolder_SystemModstamp}"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>ContentFolder.FolderedContentDocument_ParentContentFolderId_Inverse}" required="false"/> 
+						<Text text=""/>
+						<rdf:ListResource path="dataModel>FolderedContentDocument_ParentContentFolderId_Inverse/sfdc_FolderedContentDocument_ParentContentFolderId_Inverse" entitySet="FolderedContentDocument"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>ContentFolder.ContentFolderItem_ParentContentFolderId_Inverse}" required="false"/> 
+						<rdf:ListResource path="dataModel>ContentFolderItem_ParentContentFolderId_Inverse" entitySet="ContentFolderItem"/>
+						<Text text=""/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>ContentFolder.ContentFolderMember_ParentContentFolderId_Inverse}" required="false"/> 
+						<rdf:ListResource path="dataModel>ContentFolderMember_ParentContentFolderId_Inverse" entitySet="ContentFolderMember"/>
+						<Text text=""/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>ContentFolder.ContentFolder_CreatedById}" required="false"/> 
+						<rdf:ListResource path="dataModel>ContentFolder_CreatedById" entitySet="User"/>
+						<Text text=""/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>ContentFolder.ContentFolder_LastModifiedById}" required="false"/> 
+						<rdf:ListResource path="dataModel>ContentFolder_LastModifiedById" entitySet="User"/>
+						<Text text=""/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>ContentFolder.ContentFolder_ParentContentFolderId}" required="false"/> 
+						<rdf:ListResource path="dataModel>ContentFolder_ParentContentFolderId" entitySet="ContentFolder"/>
+						<Text text=""/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>ContentFolder.ContentFolder_ParentContentFolderId_Inverse}" required="false"/> 
+						<rdf:ListResource path="dataModel>ContentFolder_ParentContentFolderId_Inverse" entitySet="ContentFolder"/>
+						<Text text=""/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>ContentFolder.FolderedContentDocument_ParentContentFolderId_Inverse}" required="false"/> 
+						<rdf:ListResource path="dataModel>FolderedContentDocument_ParentContentFolderId_Inverse" entitySet="FolderedContentDocument"/>
+						<Text text=""/>
+					</cells>
+				</ColumnListItem>
+			</items>
+		</Table>
+	</Page>
+</mvc:View>

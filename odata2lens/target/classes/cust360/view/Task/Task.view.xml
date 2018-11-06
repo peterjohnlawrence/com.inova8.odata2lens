@@ -1,0 +1,420 @@
+<mvc:View controllerName="com.inova8.lens.controller.Entity360" xmlns="sap.m" xmlns:mvc="sap.ui.core.mvc" xmlns:l="sap.ui.layout"
+	xmlns:f="sap.ui.layout.form" xmlns:table="sap.ui.table" xmlns:rdf="com.inova8.lens.control" xmlns:html="http://www.w3.org/1999/xhtml"
+	xmlns:core="sap.ui.core">
+	<Page showHeader="true" id="page" navButtonPress="onNavBack" showNavButton="false" title="{i18n>Task.Title}" busy="{entityView>/busy}"
+		busyIndicatorDelay="{entityView>/delay}" >
+		<customHeader>
+			<Toolbar>
+				<ToolbarSpacer/>
+				<HBox id="sourceTitle" alignItems="Center">
+						<rdf:TextResource id="selectedResource" path="" entitySet=""/>
+				</HBox>	
+				<Title id="pathTitle" text="{entityView>/navigation}"/>
+				<HBox id="versionsTitle" alignItems="Center">
+					<Title text="(" required="false"/>
+					<ComboBox id="versionSelection" items="{ path: 'entityView>/versions' }" selectionChange="onVersionChange">
+						<core:Item key="{entityView>navigation}" text="{entityView>text}"/>
+					</ComboBox>
+					<Title text=")" required="false"/>
+				</HBox>
+				<Title text="{i18n>Task.this}"/>
+				<Title text="(" required="false"/>
+				<rdf:TextResource path="dataModel>" entitySet="Task"/>
+				<Title text=")" required="false"/>
+	
+				<ToolbarSpacer/>
+				<ToggleButton id="toggleColumns" icon="sap-icon://hide" activeIcon="sap-icon://show" press="onSettingsPressed" visible="false"	>
+					<layoutData>
+						<OverflowToolbarLayoutData priority="NeverOverflow"/>
+					</layoutData>
+				</ToggleButton>
+				
+			</Toolbar>
+		</customHeader>
+		<Table id="form360" inset="false" fixedLayout="true" class="multicolumnform" updateFinished="hideColumns">
+			<columns>
+				<Column hAlign="Right" width="200px">
+					<Text text=""/>
+				</Column>
+				<Column visible="true">
+				</Column>
+				<Column visible="true">
+					<Text text="Task"/>
+				</Column>
+			</columns>
+			<items>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>Task.EmailMessage_ActivityId_Inverse}" required="false"/> 
+						<Text text=""/>
+						<rdf:ListResource path="dataModel>EmailMessage_ActivityId_Inverse/sfdc_EmailMessage_ActivityId_Inverse" entitySet="EmailMessage"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>Task.EmailStatus_TaskId_Inverse}" required="false"/> 
+						<Text text=""/>
+						<rdf:ListResource path="dataModel>EmailStatus_TaskId_Inverse/sfdc_EmailStatus_TaskId_Inverse" entitySet="EmailStatus"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>Task.TaskFeed_ParentId_Inverse}" required="false"/> 
+						<Text text=""/>
+						<rdf:ListResource path="dataModel>TaskFeed_ParentId_Inverse/sfdc_TaskFeed_ParentId_Inverse" entitySet="TaskFeed"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>Task.Task_AccountId}" required="false"/> 
+						<Text text=""/>
+						<rdf:ListResource path="dataModel>Task_AccountId/sfdc_Task_AccountId" entitySet="Account"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>Task.Task_ActivityDate}" required="false"/> 
+						<Text text=""/>
+						<Text text="{dataModel>Task_ActivityDate/Task_ActivityDate}"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>Task.Task_CallDisposition}" required="false"/> 
+						<Text text=""/>
+						<rdf:TextLink text="{path:'dataModel>Task_CallDisposition/Task_CallDisposition',type:'sap.ui.model.type.String' }" linkText="{i18n>Task.Task_CallDisposition/Task_CallDisposition}"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>Task.Task_CallDurationInSeconds}" required="false"/> 
+						<Text text=""/>
+						<Text text="{path:'dataModel>Task_CallDurationInSeconds/Task_CallDurationInSeconds',type:'sap.ui.model.type.Integer' }"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>Task.Task_CallObject}" required="false"/> 
+						<Text text=""/>
+						<rdf:TextLink text="{path:'dataModel>Task_CallObject/Task_CallObject',type:'sap.ui.model.type.String' }" linkText="{i18n>Task.Task_CallObject/Task_CallObject}"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>Task.Task_CallType}" required="false"/> 
+						<Text text=""/>
+						<rdf:TextLink text="{path:'dataModel>Task_CallType/Task_CallType',type:'sap.ui.model.type.String' }" linkText="{i18n>Task.Task_CallType/Task_CallType}"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>Task.Task_CreatedById}" required="false"/> 
+						<Text text=""/>
+						<rdf:ListResource path="dataModel>Task_CreatedById/sfdc_Task_CreatedById" entitySet="User"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>Task.Task_CreatedDate}" required="false"/> 
+						<Text text=""/>
+						<Text text="{dataModel>Task_CreatedDate/Task_CreatedDate}"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>Task.Task_Description}" required="false"/> 
+						<Text text=""/>
+						<rdf:TextLink text="{path:'dataModel>Task_Description/Task_Description',type:'sap.ui.model.type.String' }" linkText="{i18n>Task.Task_Description/Task_Description}"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>Task.Task_Id}" required="false"/> 
+						<Text text=""/>
+						<rdf:TextLink text="{path:'dataModel>Task_Id/Task_Id',type:'sap.ui.model.type.String' }" linkText="{i18n>Task.Task_Id/Task_Id}"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>Task.Task_IsArchived}" required="false"/> 
+						<Text text=""/>
+						<Text text="{path:'dataModel>Task_IsArchived/Task_IsArchived',type:'sap.ui.model.type.Boolean'}"/>  
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>Task.Task_IsClosed}" required="false"/> 
+						<Text text=""/>
+						<Text text="{path:'dataModel>Task_IsClosed/Task_IsClosed',type:'sap.ui.model.type.Boolean'}"/>  
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>Task.Task_IsDeleted}" required="false"/> 
+						<Text text=""/>
+						<Text text="{path:'dataModel>Task_IsDeleted/Task_IsDeleted',type:'sap.ui.model.type.Boolean'}"/>  
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>Task.Task_IsHighPriority}" required="false"/> 
+						<Text text=""/>
+						<Text text="{path:'dataModel>Task_IsHighPriority/Task_IsHighPriority',type:'sap.ui.model.type.Boolean'}"/>  
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>Task.Task_IsRecurrence}" required="false"/> 
+						<Text text=""/>
+						<Text text="{path:'dataModel>Task_IsRecurrence/Task_IsRecurrence',type:'sap.ui.model.type.Boolean'}"/>  
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>Task.Task_IsReminderSet}" required="false"/> 
+						<Text text=""/>
+						<Text text="{path:'dataModel>Task_IsReminderSet/Task_IsReminderSet',type:'sap.ui.model.type.Boolean'}"/>  
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>Task.Task_LastModifiedById}" required="false"/> 
+						<Text text=""/>
+						<rdf:ListResource path="dataModel>Task_LastModifiedById/sfdc_Task_LastModifiedById" entitySet="User"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>Task.Task_LastModifiedDate}" required="false"/> 
+						<Text text=""/>
+						<Text text="{dataModel>Task_LastModifiedDate/Task_LastModifiedDate}"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>Task.Task_OwnerId}" required="false"/> 
+						<Text text=""/>
+						<rdf:ListResource path="dataModel>Task_OwnerId/sfdc_Task_OwnerId" entitySet="User"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>Task.Task_Priority}" required="false"/> 
+						<Text text=""/>
+						<rdf:TextLink text="{path:'dataModel>Task_Priority/Task_Priority',type:'sap.ui.model.type.String' }" linkText="{i18n>Task.Task_Priority/Task_Priority}"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>Task.Task_RecurrenceActivityId}" required="false"/> 
+						<Text text=""/>
+						<rdf:ListResource path="dataModel>Task_RecurrenceActivityId/sfdc_Task_RecurrenceActivityId" entitySet="Task"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>Task.Task_RecurrenceActivityId_Inverse}" required="false"/> 
+						<Text text=""/>
+						<rdf:ListResource path="dataModel>Task_RecurrenceActivityId_Inverse/sfdc_Task_RecurrenceActivityId_Inverse" entitySet="Task"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>Task.Task_RecurrenceDayOfMonth}" required="false"/> 
+						<Text text=""/>
+						<Text text="{path:'dataModel>Task_RecurrenceDayOfMonth/Task_RecurrenceDayOfMonth',type:'sap.ui.model.type.Integer' }"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>Task.Task_RecurrenceDayOfWeekMask}" required="false"/> 
+						<Text text=""/>
+						<Text text="{path:'dataModel>Task_RecurrenceDayOfWeekMask/Task_RecurrenceDayOfWeekMask',type:'sap.ui.model.type.Integer' }"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>Task.Task_RecurrenceEndDateOnly}" required="false"/> 
+						<Text text=""/>
+						<Text text="{dataModel>Task_RecurrenceEndDateOnly/Task_RecurrenceEndDateOnly}"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>Task.Task_RecurrenceInstance}" required="false"/> 
+						<Text text=""/>
+						<rdf:TextLink text="{path:'dataModel>Task_RecurrenceInstance/Task_RecurrenceInstance',type:'sap.ui.model.type.String' }" linkText="{i18n>Task.Task_RecurrenceInstance/Task_RecurrenceInstance}"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>Task.Task_RecurrenceInterval}" required="false"/> 
+						<Text text=""/>
+						<Text text="{path:'dataModel>Task_RecurrenceInterval/Task_RecurrenceInterval',type:'sap.ui.model.type.Integer' }"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>Task.Task_RecurrenceMonthOfYear}" required="false"/> 
+						<Text text=""/>
+						<rdf:TextLink text="{path:'dataModel>Task_RecurrenceMonthOfYear/Task_RecurrenceMonthOfYear',type:'sap.ui.model.type.String' }" linkText="{i18n>Task.Task_RecurrenceMonthOfYear/Task_RecurrenceMonthOfYear}"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>Task.Task_RecurrenceRegeneratedType}" required="false"/> 
+						<Text text=""/>
+						<rdf:TextLink text="{path:'dataModel>Task_RecurrenceRegeneratedType/Task_RecurrenceRegeneratedType',type:'sap.ui.model.type.String' }" linkText="{i18n>Task.Task_RecurrenceRegeneratedType/Task_RecurrenceRegeneratedType}"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>Task.Task_RecurrenceStartDateOnly}" required="false"/> 
+						<Text text=""/>
+						<Text text="{dataModel>Task_RecurrenceStartDateOnly/Task_RecurrenceStartDateOnly}"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>Task.Task_RecurrenceTimeZoneSidKey}" required="false"/> 
+						<Text text=""/>
+						<rdf:TextLink text="{path:'dataModel>Task_RecurrenceTimeZoneSidKey/Task_RecurrenceTimeZoneSidKey',type:'sap.ui.model.type.String' }" linkText="{i18n>Task.Task_RecurrenceTimeZoneSidKey/Task_RecurrenceTimeZoneSidKey}"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>Task.Task_RecurrenceType}" required="false"/> 
+						<Text text=""/>
+						<rdf:TextLink text="{path:'dataModel>Task_RecurrenceType/Task_RecurrenceType',type:'sap.ui.model.type.String' }" linkText="{i18n>Task.Task_RecurrenceType/Task_RecurrenceType}"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>Task.Task_ReminderDateTime}" required="false"/> 
+						<Text text=""/>
+						<Text text="{dataModel>Task_ReminderDateTime/Task_ReminderDateTime}"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>Task.Task_Status}" required="false"/> 
+						<Text text=""/>
+						<rdf:TextLink text="{path:'dataModel>Task_Status/Task_Status',type:'sap.ui.model.type.String' }" linkText="{i18n>Task.Task_Status/Task_Status}"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>Task.Task_Subject}" required="false"/> 
+						<Text text=""/>
+						<rdf:TextLink text="{path:'dataModel>Task_Subject/Task_Subject',type:'sap.ui.model.type.String' }" linkText="{i18n>Task.Task_Subject/Task_Subject}"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>Task.Task_SystemModstamp}" required="false"/> 
+						<Text text=""/>
+						<Text text="{dataModel>Task_SystemModstamp/Task_SystemModstamp}"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>Task.Task_TaskSubtype}" required="false"/> 
+						<Text text=""/>
+						<rdf:TextLink text="{path:'dataModel>Task_TaskSubtype/Task_TaskSubtype',type:'sap.ui.model.type.String' }" linkText="{i18n>Task.Task_TaskSubtype/Task_TaskSubtype}"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>Task.Task_WhatId}" required="false"/> 
+						<Text text=""/>
+						<rdf:ListResource path="dataModel>Task_WhatId/sfdc_Task_WhatId" entitySet="Account"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>Task.Task_WhoId}" required="false"/> 
+						<Text text=""/>
+						<rdf:ListResource path="dataModel>Task_WhoId/sfdc_Task_WhoId" entitySet="Contact"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>Task.EmailMessage_ActivityId_Inverse}" required="false"/> 
+						<rdf:ListResource path="dataModel>EmailMessage_ActivityId_Inverse" entitySet="EmailMessage"/>
+						<Text text=""/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>Task.EmailStatus_TaskId_Inverse}" required="false"/> 
+						<rdf:ListResource path="dataModel>EmailStatus_TaskId_Inverse" entitySet="EmailStatus"/>
+						<Text text=""/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>Task.TaskFeed_ParentId_Inverse}" required="false"/> 
+						<rdf:ListResource path="dataModel>TaskFeed_ParentId_Inverse" entitySet="TaskFeed"/>
+						<Text text=""/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>Task.Task_AccountId}" required="false"/> 
+						<rdf:ListResource path="dataModel>Task_AccountId" entitySet="Account"/>
+						<Text text=""/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>Task.Task_CreatedById}" required="false"/> 
+						<rdf:ListResource path="dataModel>Task_CreatedById" entitySet="User"/>
+						<Text text=""/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>Task.Task_LastModifiedById}" required="false"/> 
+						<rdf:ListResource path="dataModel>Task_LastModifiedById" entitySet="User"/>
+						<Text text=""/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>Task.Task_OwnerId}" required="false"/> 
+						<rdf:ListResource path="dataModel>Task_OwnerId" entitySet="User"/>
+						<Text text=""/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>Task.Task_RecurrenceActivityId}" required="false"/> 
+						<rdf:ListResource path="dataModel>Task_RecurrenceActivityId" entitySet="Task"/>
+						<Text text=""/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>Task.Task_RecurrenceActivityId_Inverse}" required="false"/> 
+						<rdf:ListResource path="dataModel>Task_RecurrenceActivityId_Inverse" entitySet="Task"/>
+						<Text text=""/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>Task.Task_WhatId}" required="false"/> 
+						<rdf:ListResource path="dataModel>Task_WhatId" entitySet="Account"/>
+						<Text text=""/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>Task.Task_WhoId}" required="false"/> 
+						<rdf:ListResource path="dataModel>Task_WhoId" entitySet="Contact"/>
+						<Text text=""/>
+					</cells>
+				</ColumnListItem>
+			</items>
+		</Table>
+	</Page>
+</mvc:View>

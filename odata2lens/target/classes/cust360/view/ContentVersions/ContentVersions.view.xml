@@ -1,0 +1,247 @@
+<mvc:View controllerName="com.inova8.lens.controller.EntitySet360" xmlns="sap.m" xmlns:mvc="sap.ui.core.mvc" xmlns:layout="sap.ui.layout"
+	xmlns:rdf="com.inova8.lens.control" xmlns:core="sap.ui.core">
+	<Page showHeader="false" id="page" navButtonPress="onNavBack" showNavButton="true" title="{i18n>ContentVersions.ViewTitle}">
+		<content>
+			<Table id="table360" inset="false" items="{ path: 'dataModel>/ContentVersion' , sorter: { path: 'label', descending: false } 
+				}"
+				noDataText="{entitySetView>/tableNoDataText}" busyIndicatorDelay="{entitySetView>/tableBusyDelay}" growing="true" growingScrollToLoad="true"
+				updateFinished="onUpdateFinished"  fixedLayout="false">
+				<headerToolbar>
+					<Toolbar>
+						<ToolbarSpacer/>
+						<HBox id="sourceTitle" alignItems="Center">
+							<rdf:TextResource id="selectedResource" path="" entitySet=""/>
+						</HBox>
+						<Title id="pathTitle" text="{entitySetView>/navigationText}"/>
+						<HBox id="versionsTitle" alignItems="Center">
+							<Title text="(" required="false"/>
+							<ComboBox id="versionSelection" items="{ path: 'entitySetView>/versions' }" selectionChange="onVersionChange">
+								<core:Item key="{entitySetView>navigation}" text="{entityView>text}"/>
+							</ComboBox>
+							<Title text=")" required="false"/>
+						</HBox>
+						<Title id="tableHeader" text="{entitySetView>/entitySetTableTitle}"/>
+						<ToolbarSpacer/>
+						<SearchField id="searchField" tooltip="{i18n>search.searchTooltip}" search="onSearch" width="auto"></SearchField>
+					</Toolbar>
+				</headerToolbar>
+				<columns>
+					<Column >
+						<Text text="{i18n>ContentVersions.this}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>ContentVersions.ContentVersion_Checksum}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>ContentVersions.ContentVersion_ContentLocation}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>ContentVersions.ContentVersion_ContentModifiedDate}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>ContentVersions.ContentVersion_ContentSize}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>ContentVersions.ContentVersion_ContentUrl}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>ContentVersions.ContentVersion_CreatedDate}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>ContentVersions.ContentVersion_Description}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>ContentVersions.ContentVersion_ExternalDocumentInfo1}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>ContentVersions.ContentVersion_ExternalDocumentInfo2}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>ContentVersions.ContentVersion_FeaturedContentBoost}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>ContentVersions.ContentVersion_FeaturedContentDate}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>ContentVersions.ContentVersion_FileExtension}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>ContentVersions.ContentVersion_FileType}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>ContentVersions.ContentVersion_Id}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>ContentVersions.ContentVersion_IsAssetEnabled}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>ContentVersions.ContentVersion_IsDeleted}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>ContentVersions.ContentVersion_IsLatest}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>ContentVersions.ContentVersion_IsMajorVersion}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>ContentVersions.ContentVersion_LastModifiedDate}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>ContentVersions.ContentVersion_NegativeRatingCount}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>ContentVersions.ContentVersion_Origin}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>ContentVersions.ContentVersion_PathOnClient}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>ContentVersions.ContentVersion_PositiveRatingCount}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>ContentVersions.ContentVersion_PublishStatus}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>ContentVersions.ContentVersion_RatingCount}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>ContentVersions.ContentVersion_ReasonForChange}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>ContentVersions.ContentVersion_SharingOption}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>ContentVersions.ContentVersion_SharingPrivacy}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>ContentVersions.ContentVersion_SystemModstamp}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>ContentVersions.ContentVersion_TagCsv}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>ContentVersions.ContentVersion_TextPreview}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>ContentVersions.ContentVersion_Title}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>ContentVersions.ContentVersion_VersionData}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>ContentVersions.ContentVersion_VersionNumber}"/>
+					</Column>
+				</columns>
+				<items>
+					<ColumnListItem id="template360" type="Navigation" press="onPress">
+						<cells>
+							<rdf:TextResource path="dataModel>" entitySet="ContentVersion"/>
+							<VBox>					
+							<rdf:TextLink text="{path:'dataModel>ContentVersion_Checksum/ContentVersion_Checksum',type:'sap.ui.model.type.String'}" linkText="{i18n>ContentVersion.ContentVersion_Checksum/ContentVersion_Checksum}"/>
+							</VBox>							
+							<VBox>					
+							<rdf:TextLink text="{path:'dataModel>ContentVersion_ContentLocation/ContentVersion_ContentLocation',type:'sap.ui.model.type.String'}" linkText="{i18n>ContentVersion.ContentVersion_ContentLocation/ContentVersion_ContentLocation}"/>
+							</VBox>							
+							<VBox>					
+							<Text text="{dataModel>ContentVersion_ContentModifiedDate/ContentVersion_ContentModifiedDate}"/>
+							</VBox>							
+							<VBox>					
+							<Text text="{path:'dataModel>ContentVersion_ContentSize/ContentVersion_ContentSize',type:'sap.ui.model.type.Integer' }"/>
+							</VBox>							
+							<VBox>					
+							<rdf:TextLink text="{path:'dataModel>ContentVersion_ContentUrl/ContentVersion_ContentUrl',type:'sap.ui.model.type.String'}" linkText="{i18n>ContentVersion.ContentVersion_ContentUrl/ContentVersion_ContentUrl}"/>
+							</VBox>							
+							<VBox>					
+							<Text text="{dataModel>ContentVersion_CreatedDate/ContentVersion_CreatedDate}"/>
+							</VBox>							
+							<VBox>					
+							<rdf:TextLink text="{path:'dataModel>ContentVersion_Description/ContentVersion_Description',type:'sap.ui.model.type.String'}" linkText="{i18n>ContentVersion.ContentVersion_Description/ContentVersion_Description}"/>
+							</VBox>							
+							<VBox>					
+							<rdf:TextLink text="{path:'dataModel>ContentVersion_ExternalDocumentInfo1/ContentVersion_ExternalDocumentInfo1',type:'sap.ui.model.type.String'}" linkText="{i18n>ContentVersion.ContentVersion_ExternalDocumentInfo1/ContentVersion_ExternalDocumentInfo1}"/>
+							</VBox>							
+							<VBox>					
+							<rdf:TextLink text="{path:'dataModel>ContentVersion_ExternalDocumentInfo2/ContentVersion_ExternalDocumentInfo2',type:'sap.ui.model.type.String'}" linkText="{i18n>ContentVersion.ContentVersion_ExternalDocumentInfo2/ContentVersion_ExternalDocumentInfo2}"/>
+							</VBox>							
+							<VBox>					
+							<Text text="{path:'dataModel>ContentVersion_FeaturedContentBoost/ContentVersion_FeaturedContentBoost',type:'sap.ui.model.type.Integer' }"/>
+							</VBox>							
+							<VBox>					
+							<Text text="{dataModel>ContentVersion_FeaturedContentDate/ContentVersion_FeaturedContentDate}"/>
+							</VBox>							
+							<VBox>					
+							<rdf:TextLink text="{path:'dataModel>ContentVersion_FileExtension/ContentVersion_FileExtension',type:'sap.ui.model.type.String'}" linkText="{i18n>ContentVersion.ContentVersion_FileExtension/ContentVersion_FileExtension}"/>
+							</VBox>							
+							<VBox>					
+							<rdf:TextLink text="{path:'dataModel>ContentVersion_FileType/ContentVersion_FileType',type:'sap.ui.model.type.String'}" linkText="{i18n>ContentVersion.ContentVersion_FileType/ContentVersion_FileType}"/>
+							</VBox>							
+							<VBox>					
+							<rdf:TextLink text="{path:'dataModel>ContentVersion_Id/ContentVersion_Id',type:'sap.ui.model.type.String'}" linkText="{i18n>ContentVersion.ContentVersion_Id/ContentVersion_Id}"/>
+							</VBox>							
+							<VBox>					
+								<Text text="{path:'dataModel>ContentVersion_IsAssetEnabled/ContentVersion_IsAssetEnabled',type:'sap.ui.model.type.Boolean'}"/>  
+							</VBox>							
+							<VBox>					
+								<Text text="{path:'dataModel>ContentVersion_IsDeleted/ContentVersion_IsDeleted',type:'sap.ui.model.type.Boolean'}"/>  
+							</VBox>							
+							<VBox>					
+								<Text text="{path:'dataModel>ContentVersion_IsLatest/ContentVersion_IsLatest',type:'sap.ui.model.type.Boolean'}"/>  
+							</VBox>							
+							<VBox>					
+								<Text text="{path:'dataModel>ContentVersion_IsMajorVersion/ContentVersion_IsMajorVersion',type:'sap.ui.model.type.Boolean'}"/>  
+							</VBox>							
+							<VBox>					
+							<Text text="{dataModel>ContentVersion_LastModifiedDate/ContentVersion_LastModifiedDate}"/>
+							</VBox>							
+							<VBox>					
+							<Text text="{path:'dataModel>ContentVersion_NegativeRatingCount/ContentVersion_NegativeRatingCount',type:'sap.ui.model.type.Integer' }"/>
+							</VBox>							
+							<VBox>					
+							<rdf:TextLink text="{path:'dataModel>ContentVersion_Origin/ContentVersion_Origin',type:'sap.ui.model.type.String'}" linkText="{i18n>ContentVersion.ContentVersion_Origin/ContentVersion_Origin}"/>
+							</VBox>							
+							<VBox>					
+							<rdf:TextLink text="{path:'dataModel>ContentVersion_PathOnClient/ContentVersion_PathOnClient',type:'sap.ui.model.type.String'}" linkText="{i18n>ContentVersion.ContentVersion_PathOnClient/ContentVersion_PathOnClient}"/>
+							</VBox>							
+							<VBox>					
+							<Text text="{path:'dataModel>ContentVersion_PositiveRatingCount/ContentVersion_PositiveRatingCount',type:'sap.ui.model.type.Integer' }"/>
+							</VBox>							
+							<VBox>					
+							<rdf:TextLink text="{path:'dataModel>ContentVersion_PublishStatus/ContentVersion_PublishStatus',type:'sap.ui.model.type.String'}" linkText="{i18n>ContentVersion.ContentVersion_PublishStatus/ContentVersion_PublishStatus}"/>
+							</VBox>							
+							<VBox>					
+							<Text text="{path:'dataModel>ContentVersion_RatingCount/ContentVersion_RatingCount',type:'sap.ui.model.type.Integer' }"/>
+							</VBox>							
+							<VBox>					
+							<rdf:TextLink text="{path:'dataModel>ContentVersion_ReasonForChange/ContentVersion_ReasonForChange',type:'sap.ui.model.type.String'}" linkText="{i18n>ContentVersion.ContentVersion_ReasonForChange/ContentVersion_ReasonForChange}"/>
+							</VBox>							
+							<VBox>					
+							<rdf:TextLink text="{path:'dataModel>ContentVersion_SharingOption/ContentVersion_SharingOption',type:'sap.ui.model.type.String'}" linkText="{i18n>ContentVersion.ContentVersion_SharingOption/ContentVersion_SharingOption}"/>
+							</VBox>							
+							<VBox>					
+							<rdf:TextLink text="{path:'dataModel>ContentVersion_SharingPrivacy/ContentVersion_SharingPrivacy',type:'sap.ui.model.type.String'}" linkText="{i18n>ContentVersion.ContentVersion_SharingPrivacy/ContentVersion_SharingPrivacy}"/>
+							</VBox>							
+							<VBox>					
+							<Text text="{dataModel>ContentVersion_SystemModstamp/ContentVersion_SystemModstamp}"/>
+							</VBox>							
+							<VBox>					
+							<rdf:TextLink text="{path:'dataModel>ContentVersion_TagCsv/ContentVersion_TagCsv',type:'sap.ui.model.type.String'}" linkText="{i18n>ContentVersion.ContentVersion_TagCsv/ContentVersion_TagCsv}"/>
+							</VBox>							
+							<VBox>					
+							<rdf:TextLink text="{path:'dataModel>ContentVersion_TextPreview/ContentVersion_TextPreview',type:'sap.ui.model.type.String'}" linkText="{i18n>ContentVersion.ContentVersion_TextPreview/ContentVersion_TextPreview}"/>
+							</VBox>							
+							<VBox>					
+							<rdf:TextLink text="{path:'dataModel>ContentVersion_Title/ContentVersion_Title',type:'sap.ui.model.type.String'}" linkText="{i18n>ContentVersion.ContentVersion_Title/ContentVersion_Title}"/>
+							</VBox>							
+							<VBox>					
+								<Text text="{dataModel>ContentVersion_VersionData/ContentVersion_VersionData}"/>
+							</VBox>							
+							<VBox>					
+							<rdf:TextLink text="{path:'dataModel>ContentVersion_VersionNumber/ContentVersion_VersionNumber',type:'sap.ui.model.type.String'}" linkText="{i18n>ContentVersion.ContentVersion_VersionNumber/ContentVersion_VersionNumber}"/>
+							</VBox>							
+						</cells>
+					</ColumnListItem>
+				</items>
+			</Table>
+		</content>
+	</Page>
+</mvc:View>

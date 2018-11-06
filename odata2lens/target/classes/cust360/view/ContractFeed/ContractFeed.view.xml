@@ -1,0 +1,189 @@
+<mvc:View controllerName="com.inova8.lens.controller.Entity360" xmlns="sap.m" xmlns:mvc="sap.ui.core.mvc" xmlns:l="sap.ui.layout"
+	xmlns:f="sap.ui.layout.form" xmlns:table="sap.ui.table" xmlns:rdf="com.inova8.lens.control" xmlns:html="http://www.w3.org/1999/xhtml"
+	xmlns:core="sap.ui.core">
+	<Page showHeader="true" id="page" navButtonPress="onNavBack" showNavButton="false" title="{i18n>ContractFeed.Title}" busy="{entityView>/busy}"
+		busyIndicatorDelay="{entityView>/delay}" >
+		<customHeader>
+			<Toolbar>
+				<ToolbarSpacer/>
+				<HBox id="sourceTitle" alignItems="Center">
+						<rdf:TextResource id="selectedResource" path="" entitySet=""/>
+				</HBox>	
+				<Title id="pathTitle" text="{entityView>/navigation}"/>
+				<HBox id="versionsTitle" alignItems="Center">
+					<Title text="(" required="false"/>
+					<ComboBox id="versionSelection" items="{ path: 'entityView>/versions' }" selectionChange="onVersionChange">
+						<core:Item key="{entityView>navigation}" text="{entityView>text}"/>
+					</ComboBox>
+					<Title text=")" required="false"/>
+				</HBox>
+				<Title text="{i18n>ContractFeed.this}"/>
+				<Title text="(" required="false"/>
+				<rdf:TextResource path="dataModel>" entitySet="ContractFeed"/>
+				<Title text=")" required="false"/>
+	
+				<ToolbarSpacer/>
+				<ToggleButton id="toggleColumns" icon="sap-icon://hide" activeIcon="sap-icon://show" press="onSettingsPressed" visible="false"	>
+					<layoutData>
+						<OverflowToolbarLayoutData priority="NeverOverflow"/>
+					</layoutData>
+				</ToggleButton>
+				
+			</Toolbar>
+		</customHeader>
+		<Table id="form360" inset="false" fixedLayout="true" class="multicolumnform" updateFinished="hideColumns">
+			<columns>
+				<Column hAlign="Right" width="200px">
+					<Text text=""/>
+				</Column>
+				<Column visible="true">
+				</Column>
+				<Column visible="true">
+					<Text text="ContractFeed"/>
+				</Column>
+			</columns>
+			<items>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>ContractFeed.ContractFeed_Body}" required="false"/> 
+						<Text text=""/>
+						<rdf:TextLink text="{path:'dataModel>ContractFeed_Body/ContractFeed_Body',type:'sap.ui.model.type.String' }" linkText="{i18n>ContractFeed.ContractFeed_Body/ContractFeed_Body}"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>ContractFeed.ContractFeed_CommentCount}" required="false"/> 
+						<Text text=""/>
+						<Text text="{path:'dataModel>ContractFeed_CommentCount/ContractFeed_CommentCount',type:'sap.ui.model.type.Integer' }"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>ContractFeed.ContractFeed_CreatedById}" required="false"/> 
+						<Text text=""/>
+						<rdf:ListResource path="dataModel>ContractFeed_CreatedById/sfdc_ContractFeed_CreatedById" entitySet="User"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>ContractFeed.ContractFeed_CreatedDate}" required="false"/> 
+						<Text text=""/>
+						<Text text="{dataModel>ContractFeed_CreatedDate/ContractFeed_CreatedDate}"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>ContractFeed.ContractFeed_Id}" required="false"/> 
+						<Text text=""/>
+						<rdf:TextLink text="{path:'dataModel>ContractFeed_Id/ContractFeed_Id',type:'sap.ui.model.type.String' }" linkText="{i18n>ContractFeed.ContractFeed_Id/ContractFeed_Id}"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>ContractFeed.ContractFeed_InsertedById}" required="false"/> 
+						<Text text=""/>
+						<rdf:ListResource path="dataModel>ContractFeed_InsertedById/sfdc_ContractFeed_InsertedById" entitySet="User"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>ContractFeed.ContractFeed_IsDeleted}" required="false"/> 
+						<Text text=""/>
+						<Text text="{path:'dataModel>ContractFeed_IsDeleted/ContractFeed_IsDeleted',type:'sap.ui.model.type.Boolean'}"/>  
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>ContractFeed.ContractFeed_IsRichText}" required="false"/> 
+						<Text text=""/>
+						<Text text="{path:'dataModel>ContractFeed_IsRichText/ContractFeed_IsRichText',type:'sap.ui.model.type.Boolean'}"/>  
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>ContractFeed.ContractFeed_LastModifiedDate}" required="false"/> 
+						<Text text=""/>
+						<Text text="{dataModel>ContractFeed_LastModifiedDate/ContractFeed_LastModifiedDate}"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>ContractFeed.ContractFeed_LikeCount}" required="false"/> 
+						<Text text=""/>
+						<Text text="{path:'dataModel>ContractFeed_LikeCount/ContractFeed_LikeCount',type:'sap.ui.model.type.Integer' }"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>ContractFeed.ContractFeed_LinkUrl}" required="false"/> 
+						<Text text=""/>
+						<rdf:TextLink text="{path:'dataModel>ContractFeed_LinkUrl/ContractFeed_LinkUrl',type:'sap.ui.model.type.String' }" linkText="{i18n>ContractFeed.ContractFeed_LinkUrl/ContractFeed_LinkUrl}"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>ContractFeed.ContractFeed_ParentId}" required="false"/> 
+						<Text text=""/>
+						<rdf:ListResource path="dataModel>ContractFeed_ParentId/sfdc_ContractFeed_ParentId" entitySet="Contract"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>ContractFeed.ContractFeed_RelatedRecordId}" required="false"/> 
+						<Text text=""/>
+						<rdf:ListResource path="dataModel>ContractFeed_RelatedRecordId/sfdc_ContractFeed_RelatedRecordId" entitySet="ContentVersion"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>ContractFeed.ContractFeed_SystemModstamp}" required="false"/> 
+						<Text text=""/>
+						<Text text="{dataModel>ContractFeed_SystemModstamp/ContractFeed_SystemModstamp}"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>ContractFeed.ContractFeed_Title}" required="false"/> 
+						<Text text=""/>
+						<rdf:TextLink text="{path:'dataModel>ContractFeed_Title/ContractFeed_Title',type:'sap.ui.model.type.String' }" linkText="{i18n>ContractFeed.ContractFeed_Title/ContractFeed_Title}"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>ContractFeed.ContractFeed_Type}" required="false"/> 
+						<Text text=""/>
+						<rdf:TextLink text="{path:'dataModel>ContractFeed_Type/ContractFeed_Type',type:'sap.ui.model.type.String' }" linkText="{i18n>ContractFeed.ContractFeed_Type/ContractFeed_Type}"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>ContractFeed.ContractFeed_CreatedById}" required="false"/> 
+						<rdf:ListResource path="dataModel>ContractFeed_CreatedById" entitySet="User"/>
+						<Text text=""/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>ContractFeed.ContractFeed_InsertedById}" required="false"/> 
+						<rdf:ListResource path="dataModel>ContractFeed_InsertedById" entitySet="User"/>
+						<Text text=""/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>ContractFeed.ContractFeed_ParentId}" required="false"/> 
+						<rdf:ListResource path="dataModel>ContractFeed_ParentId" entitySet="Contract"/>
+						<Text text=""/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>ContractFeed.ContractFeed_RelatedRecordId}" required="false"/> 
+						<rdf:ListResource path="dataModel>ContractFeed_RelatedRecordId" entitySet="ContentVersion"/>
+						<Text text=""/>
+					</cells>
+				</ColumnListItem>
+			</items>
+		</Table>
+	</Page>
+</mvc:View>

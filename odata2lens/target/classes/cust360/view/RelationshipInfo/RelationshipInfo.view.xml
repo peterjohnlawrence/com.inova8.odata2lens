@@ -1,0 +1,126 @@
+<mvc:View controllerName="com.inova8.lens.controller.Entity360" xmlns="sap.m" xmlns:mvc="sap.ui.core.mvc" xmlns:l="sap.ui.layout"
+	xmlns:f="sap.ui.layout.form" xmlns:table="sap.ui.table" xmlns:rdf="com.inova8.lens.control" xmlns:html="http://www.w3.org/1999/xhtml"
+	xmlns:core="sap.ui.core">
+	<Page showHeader="true" id="page" navButtonPress="onNavBack" showNavButton="false" title="{i18n>RelationshipInfo.Title}" busy="{entityView>/busy}"
+		busyIndicatorDelay="{entityView>/delay}" >
+		<customHeader>
+			<Toolbar>
+				<ToolbarSpacer/>
+				<HBox id="sourceTitle" alignItems="Center">
+						<rdf:TextResource id="selectedResource" path="" entitySet=""/>
+				</HBox>	
+				<Title id="pathTitle" text="{entityView>/navigation}"/>
+				<HBox id="versionsTitle" alignItems="Center">
+					<Title text="(" required="false"/>
+					<ComboBox id="versionSelection" items="{ path: 'entityView>/versions' }" selectionChange="onVersionChange">
+						<core:Item key="{entityView>navigation}" text="{entityView>text}"/>
+					</ComboBox>
+					<Title text=")" required="false"/>
+				</HBox>
+				<Title text="{i18n>RelationshipInfo.this}"/>
+				<Title text="(" required="false"/>
+				<rdf:TextResource path="dataModel>" entitySet="RelationshipInfo"/>
+				<Title text=")" required="false"/>
+	
+				<ToolbarSpacer/>
+				<ToggleButton id="toggleColumns" icon="sap-icon://hide" activeIcon="sap-icon://show" press="onSettingsPressed" visible="false"	>
+					<layoutData>
+						<OverflowToolbarLayoutData priority="NeverOverflow"/>
+					</layoutData>
+				</ToggleButton>
+				
+			</Toolbar>
+		</customHeader>
+		<Table id="form360" inset="false" fixedLayout="true" class="multicolumnform" updateFinished="hideColumns">
+			<columns>
+				<Column hAlign="Right" width="200px">
+					<Text text=""/>
+				</Column>
+				<Column visible="true">
+				</Column>
+				<Column visible="true">
+					<Text text="RelationshipInfo"/>
+				</Column>
+			</columns>
+			<items>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>RelationshipInfo.RelationshipDomain_RelationshipInfoId_Inverse}" required="false"/> 
+						<Text text=""/>
+						<rdf:ListResource path="dataModel>RelationshipDomain_RelationshipInfoId_Inverse/sfdc_RelationshipDomain_RelationshipInfoId_Inverse" entitySet="RelationshipDomain"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>RelationshipInfo.RelationshipInfo_ChildSobjectId}" required="false"/> 
+						<Text text=""/>
+						<rdf:ListResource path="dataModel>RelationshipInfo_ChildSobjectId/sfdc_RelationshipInfo_ChildSobjectId" entitySet="EntityDefinition"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>RelationshipInfo.RelationshipInfo_DurableId}" required="false"/> 
+						<Text text=""/>
+						<rdf:TextLink text="{path:'dataModel>RelationshipInfo_DurableId/RelationshipInfo_DurableId',type:'sap.ui.model.type.String' }" linkText="{i18n>RelationshipInfo.RelationshipInfo_DurableId/RelationshipInfo_DurableId}"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>RelationshipInfo.RelationshipInfo_FieldId}" required="false"/> 
+						<Text text=""/>
+						<rdf:ListResource path="dataModel>RelationshipInfo_FieldId/sfdc_RelationshipInfo_FieldId" entitySet="FieldDefinition"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>RelationshipInfo.RelationshipInfo_Id}" required="false"/> 
+						<Text text=""/>
+						<rdf:TextLink text="{path:'dataModel>RelationshipInfo_Id/RelationshipInfo_Id',type:'sap.ui.model.type.String' }" linkText="{i18n>RelationshipInfo.RelationshipInfo_Id/RelationshipInfo_Id}"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>RelationshipInfo.RelationshipInfo_IsCascadeDelete}" required="false"/> 
+						<Text text=""/>
+						<Text text="{path:'dataModel>RelationshipInfo_IsCascadeDelete/RelationshipInfo_IsCascadeDelete',type:'sap.ui.model.type.Boolean'}"/>  
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>RelationshipInfo.RelationshipInfo_IsDeprecatedAndHidden}" required="false"/> 
+						<Text text=""/>
+						<Text text="{path:'dataModel>RelationshipInfo_IsDeprecatedAndHidden/RelationshipInfo_IsDeprecatedAndHidden',type:'sap.ui.model.type.Boolean'}"/>  
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>RelationshipInfo.RelationshipInfo_IsRestrictedDelete}" required="false"/> 
+						<Text text=""/>
+						<Text text="{path:'dataModel>RelationshipInfo_IsRestrictedDelete/RelationshipInfo_IsRestrictedDelete',type:'sap.ui.model.type.Boolean'}"/>  
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>RelationshipInfo.RelationshipDomain_RelationshipInfoId_Inverse}" required="false"/> 
+						<rdf:ListResource path="dataModel>RelationshipDomain_RelationshipInfoId_Inverse" entitySet="RelationshipDomain"/>
+						<Text text=""/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>RelationshipInfo.RelationshipInfo_ChildSobjectId}" required="false"/> 
+						<rdf:ListResource path="dataModel>RelationshipInfo_ChildSobjectId" entitySet="EntityDefinition"/>
+						<Text text=""/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>RelationshipInfo.RelationshipInfo_FieldId}" required="false"/> 
+						<rdf:ListResource path="dataModel>RelationshipInfo_FieldId" entitySet="FieldDefinition"/>
+						<Text text=""/>
+					</cells>
+				</ColumnListItem>
+			</items>
+		</Table>
+	</Page>
+</mvc:View>

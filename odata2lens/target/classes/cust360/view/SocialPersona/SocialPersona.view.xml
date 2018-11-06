@@ -1,0 +1,350 @@
+<mvc:View controllerName="com.inova8.lens.controller.Entity360" xmlns="sap.m" xmlns:mvc="sap.ui.core.mvc" xmlns:l="sap.ui.layout"
+	xmlns:f="sap.ui.layout.form" xmlns:table="sap.ui.table" xmlns:rdf="com.inova8.lens.control" xmlns:html="http://www.w3.org/1999/xhtml"
+	xmlns:core="sap.ui.core">
+	<Page showHeader="true" id="page" navButtonPress="onNavBack" showNavButton="false" title="{i18n>SocialPersona.Title}" busy="{entityView>/busy}"
+		busyIndicatorDelay="{entityView>/delay}" >
+		<customHeader>
+			<Toolbar>
+				<ToolbarSpacer/>
+				<HBox id="sourceTitle" alignItems="Center">
+						<rdf:TextResource id="selectedResource" path="" entitySet=""/>
+				</HBox>	
+				<Title id="pathTitle" text="{entityView>/navigation}"/>
+				<HBox id="versionsTitle" alignItems="Center">
+					<Title text="(" required="false"/>
+					<ComboBox id="versionSelection" items="{ path: 'entityView>/versions' }" selectionChange="onVersionChange">
+						<core:Item key="{entityView>navigation}" text="{entityView>text}"/>
+					</ComboBox>
+					<Title text=")" required="false"/>
+				</HBox>
+				<Title text="{i18n>SocialPersona.this}"/>
+				<Title text="(" required="false"/>
+				<rdf:TextResource path="dataModel>" entitySet="SocialPersona"/>
+				<Title text=")" required="false"/>
+	
+				<ToolbarSpacer/>
+				<ToggleButton id="toggleColumns" icon="sap-icon://hide" activeIcon="sap-icon://show" press="onSettingsPressed" visible="false"	>
+					<layoutData>
+						<OverflowToolbarLayoutData priority="NeverOverflow"/>
+					</layoutData>
+				</ToggleButton>
+				
+			</Toolbar>
+		</customHeader>
+		<Table id="form360" inset="false" fixedLayout="true" class="multicolumnform" updateFinished="hideColumns">
+			<columns>
+				<Column hAlign="Right" width="200px">
+					<Text text=""/>
+				</Column>
+				<Column visible="true">
+				</Column>
+				<Column visible="true">
+					<Text text="SocialPersona"/>
+				</Column>
+			</columns>
+			<items>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>SocialPersona.SocialPersonaHistory_SocialPersonaId_Inverse}" required="false"/> 
+						<Text text=""/>
+						<rdf:ListResource path="dataModel>SocialPersonaHistory_SocialPersonaId_Inverse/sfdc_SocialPersonaHistory_SocialPersonaId_Inverse" entitySet="SocialPersonaHistory"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>SocialPersona.SocialPersona_AreWeFollowing}" required="false"/> 
+						<Text text=""/>
+						<Text text="{path:'dataModel>SocialPersona_AreWeFollowing/SocialPersona_AreWeFollowing',type:'sap.ui.model.type.Boolean'}"/>  
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>SocialPersona.SocialPersona_AuthorLabels}" required="false"/> 
+						<Text text=""/>
+						<rdf:TextLink text="{path:'dataModel>SocialPersona_AuthorLabels/SocialPersona_AuthorLabels',type:'sap.ui.model.type.String' }" linkText="{i18n>SocialPersona.SocialPersona_AuthorLabels/SocialPersona_AuthorLabels}"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>SocialPersona.SocialPersona_Bio}" required="false"/> 
+						<Text text=""/>
+						<rdf:TextLink text="{path:'dataModel>SocialPersona_Bio/SocialPersona_Bio',type:'sap.ui.model.type.String' }" linkText="{i18n>SocialPersona.SocialPersona_Bio/SocialPersona_Bio}"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>SocialPersona.SocialPersona_CreatedById}" required="false"/> 
+						<Text text=""/>
+						<rdf:ListResource path="dataModel>SocialPersona_CreatedById/sfdc_SocialPersona_CreatedById" entitySet="User"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>SocialPersona.SocialPersona_CreatedDate}" required="false"/> 
+						<Text text=""/>
+						<Text text="{dataModel>SocialPersona_CreatedDate/SocialPersona_CreatedDate}"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>SocialPersona.SocialPersona_ExternalId}" required="false"/> 
+						<Text text=""/>
+						<rdf:TextLink text="{path:'dataModel>SocialPersona_ExternalId/SocialPersona_ExternalId',type:'sap.ui.model.type.String' }" linkText="{i18n>SocialPersona.SocialPersona_ExternalId/SocialPersona_ExternalId}"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>SocialPersona.SocialPersona_ExternalPictureURL}" required="false"/> 
+						<Text text=""/>
+						<rdf:TextLink text="{path:'dataModel>SocialPersona_ExternalPictureURL/SocialPersona_ExternalPictureURL',type:'sap.ui.model.type.String' }" linkText="{i18n>SocialPersona.SocialPersona_ExternalPictureURL/SocialPersona_ExternalPictureURL}"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>SocialPersona.SocialPersona_Followers}" required="false"/> 
+						<Text text=""/>
+						<Text text="{path:'dataModel>SocialPersona_Followers/SocialPersona_Followers',type:'sap.ui.model.type.Integer' }"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>SocialPersona.SocialPersona_Following}" required="false"/> 
+						<Text text=""/>
+						<Text text="{path:'dataModel>SocialPersona_Following/SocialPersona_Following',type:'sap.ui.model.type.Integer' }"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>SocialPersona.SocialPersona_Id}" required="false"/> 
+						<Text text=""/>
+						<rdf:TextLink text="{path:'dataModel>SocialPersona_Id/SocialPersona_Id',type:'sap.ui.model.type.String' }" linkText="{i18n>SocialPersona.SocialPersona_Id/SocialPersona_Id}"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>SocialPersona.SocialPersona_InfluencerScore}" required="false"/> 
+						<Text text=""/>
+						<Text text="{path:'dataModel>SocialPersona_InfluencerScore/SocialPersona_InfluencerScore',type:'sap.ui.model.type.Integer' }"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>SocialPersona.SocialPersona_IsBlacklisted}" required="false"/> 
+						<Text text=""/>
+						<Text text="{path:'dataModel>SocialPersona_IsBlacklisted/SocialPersona_IsBlacklisted',type:'sap.ui.model.type.Boolean'}"/>  
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>SocialPersona.SocialPersona_IsDefault}" required="false"/> 
+						<Text text=""/>
+						<Text text="{path:'dataModel>SocialPersona_IsDefault/SocialPersona_IsDefault',type:'sap.ui.model.type.Boolean'}"/>  
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>SocialPersona.SocialPersona_IsDeleted}" required="false"/> 
+						<Text text=""/>
+						<Text text="{path:'dataModel>SocialPersona_IsDeleted/SocialPersona_IsDeleted',type:'sap.ui.model.type.Boolean'}"/>  
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>SocialPersona.SocialPersona_IsFollowingUs}" required="false"/> 
+						<Text text=""/>
+						<Text text="{path:'dataModel>SocialPersona_IsFollowingUs/SocialPersona_IsFollowingUs',type:'sap.ui.model.type.Boolean'}"/>  
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>SocialPersona.SocialPersona_IsVerified}" required="false"/> 
+						<Text text=""/>
+						<Text text="{path:'dataModel>SocialPersona_IsVerified/SocialPersona_IsVerified',type:'sap.ui.model.type.Boolean'}"/>  
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>SocialPersona.SocialPersona_Klout}" required="false"/> 
+						<Text text=""/>
+						<Text text="{path:'dataModel>SocialPersona_Klout/SocialPersona_Klout',type:'sap.ui.model.type.Float', formatOptions:{'style':'short','maxFractionDigits':2} }"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>SocialPersona.SocialPersona_LastModifiedById}" required="false"/> 
+						<Text text=""/>
+						<rdf:ListResource path="dataModel>SocialPersona_LastModifiedById/sfdc_SocialPersona_LastModifiedById" entitySet="User"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>SocialPersona.SocialPersona_LastModifiedDate}" required="false"/> 
+						<Text text=""/>
+						<Text text="{dataModel>SocialPersona_LastModifiedDate/SocialPersona_LastModifiedDate}"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>SocialPersona.SocialPersona_LastReferencedDate}" required="false"/> 
+						<Text text=""/>
+						<Text text="{dataModel>SocialPersona_LastReferencedDate/SocialPersona_LastReferencedDate}"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>SocialPersona.SocialPersona_LastViewedDate}" required="false"/> 
+						<Text text=""/>
+						<Text text="{dataModel>SocialPersona_LastViewedDate/SocialPersona_LastViewedDate}"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>SocialPersona.SocialPersona_ListedCount}" required="false"/> 
+						<Text text=""/>
+						<Text text="{path:'dataModel>SocialPersona_ListedCount/SocialPersona_ListedCount',type:'sap.ui.model.type.Integer' }"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>SocialPersona.SocialPersona_MediaProvider}" required="false"/> 
+						<Text text=""/>
+						<rdf:TextLink text="{path:'dataModel>SocialPersona_MediaProvider/SocialPersona_MediaProvider',type:'sap.ui.model.type.String' }" linkText="{i18n>SocialPersona.SocialPersona_MediaProvider/SocialPersona_MediaProvider}"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>SocialPersona.SocialPersona_MediaType}" required="false"/> 
+						<Text text=""/>
+						<rdf:TextLink text="{path:'dataModel>SocialPersona_MediaType/SocialPersona_MediaType',type:'sap.ui.model.type.String' }" linkText="{i18n>SocialPersona.SocialPersona_MediaType/SocialPersona_MediaType}"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>SocialPersona.SocialPersona_Name}" required="false"/> 
+						<Text text=""/>
+						<rdf:TextLink text="{path:'dataModel>SocialPersona_Name/SocialPersona_Name',type:'sap.ui.model.type.String' }" linkText="{i18n>SocialPersona.SocialPersona_Name/SocialPersona_Name}"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>SocialPersona.SocialPersona_NumberOfFriends}" required="false"/> 
+						<Text text=""/>
+						<Text text="{path:'dataModel>SocialPersona_NumberOfFriends/SocialPersona_NumberOfFriends',type:'sap.ui.model.type.Integer' }"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>SocialPersona.SocialPersona_NumberOfTweets}" required="false"/> 
+						<Text text=""/>
+						<Text text="{path:'dataModel>SocialPersona_NumberOfTweets/SocialPersona_NumberOfTweets',type:'sap.ui.model.type.Integer' }"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>SocialPersona.SocialPersona_ParentId}" required="false"/> 
+						<Text text=""/>
+						<rdf:ListResource path="dataModel>SocialPersona_ParentId/sfdc_SocialPersona_ParentId" entitySet="Account"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>SocialPersona.SocialPersona_ProfileType}" required="false"/> 
+						<Text text=""/>
+						<rdf:TextLink text="{path:'dataModel>SocialPersona_ProfileType/SocialPersona_ProfileType',type:'sap.ui.model.type.String' }" linkText="{i18n>SocialPersona.SocialPersona_ProfileType/SocialPersona_ProfileType}"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>SocialPersona.SocialPersona_ProfileUrl}" required="false"/> 
+						<Text text=""/>
+						<rdf:TextLink text="{path:'dataModel>SocialPersona_ProfileUrl/SocialPersona_ProfileUrl',type:'sap.ui.model.type.String' }" linkText="{i18n>SocialPersona.SocialPersona_ProfileUrl/SocialPersona_ProfileUrl}"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>SocialPersona.SocialPersona_Provider}" required="false"/> 
+						<Text text=""/>
+						<rdf:TextLink text="{path:'dataModel>SocialPersona_Provider/SocialPersona_Provider',type:'sap.ui.model.type.String' }" linkText="{i18n>SocialPersona.SocialPersona_Provider/SocialPersona_Provider}"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>SocialPersona.SocialPersona_R6SourceId}" required="false"/> 
+						<Text text=""/>
+						<rdf:TextLink text="{path:'dataModel>SocialPersona_R6SourceId/SocialPersona_R6SourceId',type:'sap.ui.model.type.String' }" linkText="{i18n>SocialPersona.SocialPersona_R6SourceId/SocialPersona_R6SourceId}"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>SocialPersona.SocialPersona_RealName}" required="false"/> 
+						<Text text=""/>
+						<rdf:TextLink text="{path:'dataModel>SocialPersona_RealName/SocialPersona_RealName',type:'sap.ui.model.type.String' }" linkText="{i18n>SocialPersona.SocialPersona_RealName/SocialPersona_RealName}"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>SocialPersona.SocialPersona_SourceApp}" required="false"/> 
+						<Text text=""/>
+						<rdf:TextLink text="{path:'dataModel>SocialPersona_SourceApp/SocialPersona_SourceApp',type:'sap.ui.model.type.String' }" linkText="{i18n>SocialPersona.SocialPersona_SourceApp/SocialPersona_SourceApp}"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>SocialPersona.SocialPersona_SystemModstamp}" required="false"/> 
+						<Text text=""/>
+						<Text text="{dataModel>SocialPersona_SystemModstamp/SocialPersona_SystemModstamp}"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>SocialPersona.SocialPersona_TopicType}" required="false"/> 
+						<Text text=""/>
+						<rdf:TextLink text="{path:'dataModel>SocialPersona_TopicType/SocialPersona_TopicType',type:'sap.ui.model.type.String' }" linkText="{i18n>SocialPersona.SocialPersona_TopicType/SocialPersona_TopicType}"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>SocialPersona.SocialPost_PersonaId_Inverse}" required="false"/> 
+						<Text text=""/>
+						<rdf:ListResource path="dataModel>SocialPost_PersonaId_Inverse/sfdc_SocialPost_PersonaId_Inverse" entitySet="SocialPost"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>SocialPersona.SocialPersonaHistory_SocialPersonaId_Inverse}" required="false"/> 
+						<rdf:ListResource path="dataModel>SocialPersonaHistory_SocialPersonaId_Inverse" entitySet="SocialPersonaHistory"/>
+						<Text text=""/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>SocialPersona.SocialPersona_CreatedById}" required="false"/> 
+						<rdf:ListResource path="dataModel>SocialPersona_CreatedById" entitySet="User"/>
+						<Text text=""/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>SocialPersona.SocialPersona_LastModifiedById}" required="false"/> 
+						<rdf:ListResource path="dataModel>SocialPersona_LastModifiedById" entitySet="User"/>
+						<Text text=""/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>SocialPersona.SocialPersona_ParentId}" required="false"/> 
+						<rdf:ListResource path="dataModel>SocialPersona_ParentId" entitySet="Account"/>
+						<Text text=""/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>SocialPersona.SocialPost_PersonaId_Inverse}" required="false"/> 
+						<rdf:ListResource path="dataModel>SocialPost_PersonaId_Inverse" entitySet="SocialPost"/>
+						<Text text=""/>
+					</cells>
+				</ColumnListItem>
+			</items>
+		</Table>
+	</Page>
+</mvc:View>

@@ -1,34 +1,142 @@
-<mvc:View controllerName="com.inova8.lens.controller.Entity" xmlns="sap.m" xmlns:mvc="sap.ui.core.mvc"
-	xmlns:f="sap.ui.layout.form" xmlns:table="sap.ui.table" xmlns:rdf="com.inova8.lens.control">
-	<Page showHeader="true" id="page" navButtonPress="onNavBack" showNavButton="false" title="{i18n>NHS_Care_Trust.Title}"
-		busy="{entityView>/busy}" busyIndicatorDelay="{entityView>/delay}">
+<mvc:View controllerName="com.inova8.lens.controller.Entity360" xmlns="sap.m" xmlns:mvc="sap.ui.core.mvc" xmlns:l="sap.ui.layout"
+	xmlns:f="sap.ui.layout.form" xmlns:table="sap.ui.table" xmlns:rdf="com.inova8.lens.control" xmlns:html="http://www.w3.org/1999/xhtml"
+	xmlns:core="sap.ui.core">
+	<Page showHeader="true" id="page" navButtonPress="onNavBack" showNavButton="false" title="{i18n>NHS_Care_Trust.Title}" busy="{entityView>/busy}"
+		busyIndicatorDelay="{entityView>/delay}" >
 		<customHeader>
 			<Toolbar>
 				<ToolbarSpacer/>
+				<HBox id="sourceTitle" alignItems="Center">
+						<rdf:TextResource id="selectedResource" path="" entitySet=""/>
+				</HBox>	
+				<Title id="pathTitle" text="{entityView>/navigation}"/>
+				<HBox id="versionsTitle" alignItems="Center">
+					<Title text="(" required="false"/>
+					<ComboBox id="versionSelection" items="{ path: 'entityView>/versions' }" selectionChange="onVersionChange">
+						<core:Item key="{entityView>navigation}" text="{entityView>text}"/>
+					</ComboBox>
+					<Title text=")" required="false"/>
+				</HBox>
 				<Title text="{i18n>NHS_Care_Trust.this}"/>
+				<Title text="(" required="false"/>
 				<rdf:TextResource path="dataModel>" entitySet="NHS_Care_Trust"/>
-				<Title text="{i18n>NHS_Care_Trust.Title}" />
+				<Title text=")" required="false"/>
+	
 				<ToolbarSpacer/>
+				<ToggleButton id="toggleColumns" icon="sap-icon://hide" activeIcon="sap-icon://show" press="onSettingsPressed" visible="false"	>
+					<layoutData>
+						<OverflowToolbarLayoutData priority="NeverOverflow"/>
+					</layoutData>
+				</ToggleButton>
+				
 			</Toolbar>
 		</customHeader>
-		<content>
-			<f:SimpleForm class="editableForm" columnsL="1" columnsM="1" editable="true" emptySpanL="4" emptySpanM="4" 
-				labelSpanL="2" labelSpanM="2" layout="ResponsiveGridLayout" maxContainerCols="2" minWidth="1024" singleContainerFullSize="true">
-				<f:content>
-					<!--<Label text="{i18n>NHS_Care_Trust.this}" required="false"/><rdf:TextResource path="dataModel>" entitySet="NHS_Care_Trust"/>-->
-					<Label text="{i18n>NHS_Care_Trust.NHS_Care_Trust_Address_Line_1}" required="false"/>   <rdf:TextLink text="{path:'dataModel>NHS_Care_Trust_Address_Line_1',type:'sap.ui.model.type.String' }" linkText="{i18n>NHS_Care_Trust.NHS_Care_Trust_Address_Line_1}"/>
-					<Label text="{i18n>NHS_Care_Trust.NHS_Care_Trust_Address_Line_2}" required="false"/>   <rdf:TextLink text="{path:'dataModel>NHS_Care_Trust_Address_Line_2',type:'sap.ui.model.type.String' }" linkText="{i18n>NHS_Care_Trust.NHS_Care_Trust_Address_Line_2}"/>
-					<Label text="{i18n>NHS_Care_Trust.NHS_Care_Trust_Address_Line_3}" required="false"/>   <rdf:TextLink text="{path:'dataModel>NHS_Care_Trust_Address_Line_3',type:'sap.ui.model.type.String' }" linkText="{i18n>NHS_Care_Trust.NHS_Care_Trust_Address_Line_3}"/>
-					<Label text="{i18n>NHS_Care_Trust.NHS_Care_Trust_Address_Line_4}" required="false"/>   <rdf:TextLink text="{path:'dataModel>NHS_Care_Trust_Address_Line_4',type:'sap.ui.model.type.String' }" linkText="{i18n>NHS_Care_Trust.NHS_Care_Trust_Address_Line_4}"/>
-					<Label text="{i18n>NHS_Care_Trust.NHS_Care_Trust_Address_Line_5}" required="false"/>   <rdf:TextLink text="{path:'dataModel>NHS_Care_Trust_Address_Line_5',type:'sap.ui.model.type.String' }" linkText="{i18n>NHS_Care_Trust.NHS_Care_Trust_Address_Line_5}"/>
-					<Label text="{i18n>NHS_Care_Trust.NHS_Care_Trust_Close_Date}" required="false"/>   <Text text="{dataModel>NHS_Care_Trust_Close_Date}"/>
-					<Label text="{i18n>NHS_Care_Trust.NHS_Care_Trust_GOR_Code}" required="false"/>   <rdf:TextLink text="{path:'dataModel>NHS_Care_Trust_GOR_Code',type:'sap.ui.model.type.String' }" linkText="{i18n>NHS_Care_Trust.NHS_Care_Trust_GOR_Code}"/>
-					<Label text="{i18n>NHS_Care_Trust.NHS_Care_Trust_Name}" required="false"/>   <rdf:TextLink text="{path:'dataModel>NHS_Care_Trust_Name',type:'sap.ui.model.type.String' }" linkText="{i18n>NHS_Care_Trust.NHS_Care_Trust_Name}"/>
-					<Label text="{i18n>NHS_Care_Trust.NHS_Care_Trust_Open_Date}" required="false"/>   <Text text="{dataModel>NHS_Care_Trust_Open_Date}"/>
-					<Label text="{i18n>NHS_Care_Trust.NHS_Care_Trust_Organisation_Code}" required="false"/>   <rdf:TextLink text="{path:'dataModel>NHS_Care_Trust_Organisation_Code',type:'sap.ui.model.type.String' }" linkText="{i18n>NHS_Care_Trust.NHS_Care_Trust_Organisation_Code}"/>
-					<Label text="{i18n>NHS_Care_Trust.NHS_Care_Trust_Postcode}" required="false"/>   <rdf:TextLink text="{path:'dataModel>NHS_Care_Trust_Postcode',type:'sap.ui.model.type.String' }" linkText="{i18n>NHS_Care_Trust.NHS_Care_Trust_Postcode}"/>
-				</f:content>
-			</f:SimpleForm>
-		</content>
+		<Table id="form360" inset="false" fixedLayout="true" class="multicolumnform" updateFinished="hideColumns">
+			<columns>
+				<Column hAlign="Right" width="200px">
+					<Text text=""/>
+				</Column>
+				<Column visible="true">
+				</Column>
+			</columns>
+			<items>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>NHS_Care_Trust.NHS_Care_Trust_Address_Line_1}" required="false"/> 
+						<rdf:TextLink text="{path:'dataModel>NHS_Care_Trust_Address_Line_1',type:'sap.ui.model.type.String' }" linkText="{i18n>NHS_Care_Trust.NHS_Care_Trust_Address_Line_1}"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>NHS_Care_Trust.NHS_Care_Trust_Address_Line_2}" required="false"/> 
+						<rdf:TextLink text="{path:'dataModel>NHS_Care_Trust_Address_Line_2',type:'sap.ui.model.type.String' }" linkText="{i18n>NHS_Care_Trust.NHS_Care_Trust_Address_Line_2}"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>NHS_Care_Trust.NHS_Care_Trust_Address_Line_3}" required="false"/> 
+						<rdf:TextLink text="{path:'dataModel>NHS_Care_Trust_Address_Line_3',type:'sap.ui.model.type.String' }" linkText="{i18n>NHS_Care_Trust.NHS_Care_Trust_Address_Line_3}"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>NHS_Care_Trust.NHS_Care_Trust_Address_Line_4}" required="false"/> 
+						<rdf:TextLink text="{path:'dataModel>NHS_Care_Trust_Address_Line_4',type:'sap.ui.model.type.String' }" linkText="{i18n>NHS_Care_Trust.NHS_Care_Trust_Address_Line_4}"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>NHS_Care_Trust.NHS_Care_Trust_Address_Line_5}" required="false"/> 
+						<rdf:TextLink text="{path:'dataModel>NHS_Care_Trust_Address_Line_5',type:'sap.ui.model.type.String' }" linkText="{i18n>NHS_Care_Trust.NHS_Care_Trust_Address_Line_5}"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>NHS_Care_Trust.NHS_Care_Trust_Close_Date}" required="false"/> 
+						<Text text="{dataModel>NHS_Care_Trust_Close_Date}"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>NHS_Care_Trust.NHS_Care_Trust_GOR_Code}" required="false"/> 
+						<rdf:TextLink text="{path:'dataModel>NHS_Care_Trust_GOR_Code',type:'sap.ui.model.type.String' }" linkText="{i18n>NHS_Care_Trust.NHS_Care_Trust_GOR_Code}"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>NHS_Care_Trust.NHS_Care_Trust_Name}" required="false"/> 
+						<rdf:TextLink text="{path:'dataModel>NHS_Care_Trust_Name',type:'sap.ui.model.type.String' }" linkText="{i18n>NHS_Care_Trust.NHS_Care_Trust_Name}"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>NHS_Care_Trust.NHS_Care_Trust_Open_Date}" required="false"/> 
+						<Text text="{dataModel>NHS_Care_Trust_Open_Date}"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>NHS_Care_Trust.NHS_Care_Trust_Organisation_Code}" required="false"/> 
+						<rdf:TextLink text="{path:'dataModel>NHS_Care_Trust_Organisation_Code',type:'sap.ui.model.type.String' }" linkText="{i18n>NHS_Care_Trust.NHS_Care_Trust_Organisation_Code}"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>NHS_Care_Trust.NHS_Care_Trust_Postcode}" required="false"/> 
+						<rdf:TextLink text="{path:'dataModel>NHS_Care_Trust_Postcode',type:'sap.ui.model.type.String' }" linkText="{i18n>NHS_Care_Trust.NHS_Care_Trust_Postcode}"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>NHS_Care_Trust.GP_Practice_Provider_Purchaser_inverse}" required="false"/> 
+						<rdf:ListResource path="dataModel>GP_Practice_Provider_Purchaser_inverse" entitySet="GP_Practice"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>NHS_Care_Trust.NHS_Care_Trust_Amended_Record_Indicator}" required="false"/> 
+						<rdf:ListResource path="dataModel>NHS_Care_Trust_Amended_Record_Indicator" entitySet="Amended_Record_Indicator"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>NHS_Care_Trust.NHS_Care_Trust_High_Level_Health_Geography}" required="false"/> 
+						<rdf:ListResource path="dataModel>NHS_Care_Trust_High_Level_Health_Geography" entitySet="Geographical_Region"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>NHS_Care_Trust.NHS_Care_Trust_National_Grouping}" required="false"/> 
+						<rdf:ListResource path="dataModel>NHS_Care_Trust_National_Grouping" entitySet="Geographical_Region"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>NHS_Care_Trust.NHS_Care_Trust_Organisation_Sub_Type_Code}" required="false"/> 
+						<rdf:ListResource path="dataModel>NHS_Care_Trust_Organisation_Sub_Type_Code" entitySet="Organisation_Sub_Type"/>
+					</cells>
+				</ColumnListItem>
+			</items>
+		</Table>
 	</Page>
 </mvc:View>

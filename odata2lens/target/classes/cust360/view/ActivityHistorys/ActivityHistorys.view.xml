@@ -1,0 +1,205 @@
+<mvc:View controllerName="com.inova8.lens.controller.EntitySet360" xmlns="sap.m" xmlns:mvc="sap.ui.core.mvc" xmlns:layout="sap.ui.layout"
+	xmlns:rdf="com.inova8.lens.control" xmlns:core="sap.ui.core">
+	<Page showHeader="false" id="page" navButtonPress="onNavBack" showNavButton="true" title="{i18n>ActivityHistorys.ViewTitle}">
+		<content>
+			<Table id="table360" inset="false" items="{ path: 'dataModel>/ActivityHistory' , sorter: { path: 'label', descending: false } 
+				}"
+				noDataText="{entitySetView>/tableNoDataText}" busyIndicatorDelay="{entitySetView>/tableBusyDelay}" growing="true" growingScrollToLoad="true"
+				updateFinished="onUpdateFinished"  fixedLayout="false">
+				<headerToolbar>
+					<Toolbar>
+						<ToolbarSpacer/>
+						<HBox id="sourceTitle" alignItems="Center">
+							<rdf:TextResource id="selectedResource" path="" entitySet=""/>
+						</HBox>
+						<Title id="pathTitle" text="{entitySetView>/navigationText}"/>
+						<HBox id="versionsTitle" alignItems="Center">
+							<Title text="(" required="false"/>
+							<ComboBox id="versionSelection" items="{ path: 'entitySetView>/versions' }" selectionChange="onVersionChange">
+								<core:Item key="{entitySetView>navigation}" text="{entityView>text}"/>
+							</ComboBox>
+							<Title text=")" required="false"/>
+						</HBox>
+						<Title id="tableHeader" text="{entitySetView>/entitySetTableTitle}"/>
+						<ToolbarSpacer/>
+						<SearchField id="searchField" tooltip="{i18n>search.searchTooltip}" search="onSearch" width="auto"></SearchField>
+					</Toolbar>
+				</headerToolbar>
+				<columns>
+					<Column >
+						<Text text="{i18n>ActivityHistorys.this}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>ActivityHistorys.ActivityHistory_ActivityDate}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>ActivityHistorys.ActivityHistory_ActivitySubtype}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>ActivityHistorys.ActivityHistory_ActivityType}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>ActivityHistorys.ActivityHistory_CallDisposition}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>ActivityHistorys.ActivityHistory_CallDurationInSeconds}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>ActivityHistorys.ActivityHistory_CallObject}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>ActivityHistorys.ActivityHistory_CallType}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>ActivityHistorys.ActivityHistory_CreatedDate}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>ActivityHistorys.ActivityHistory_Description}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>ActivityHistorys.ActivityHistory_DurationInMinutes}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>ActivityHistorys.ActivityHistory_EndDateTime}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>ActivityHistorys.ActivityHistory_Id}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>ActivityHistorys.ActivityHistory_IsAllDayEvent}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>ActivityHistorys.ActivityHistory_IsClosed}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>ActivityHistorys.ActivityHistory_IsDeleted}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>ActivityHistorys.ActivityHistory_IsHighPriority}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>ActivityHistorys.ActivityHistory_IsReminderSet}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>ActivityHistorys.ActivityHistory_IsTask}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>ActivityHistorys.ActivityHistory_IsVisibleInSelfService}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>ActivityHistorys.ActivityHistory_LastModifiedDate}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>ActivityHistorys.ActivityHistory_Location}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>ActivityHistorys.ActivityHistory_Priority}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>ActivityHistorys.ActivityHistory_ReminderDateTime}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>ActivityHistorys.ActivityHistory_StartDateTime}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>ActivityHistorys.ActivityHistory_Status}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>ActivityHistorys.ActivityHistory_Subject}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>ActivityHistorys.ActivityHistory_SystemModstamp}"/>
+					</Column>
+				</columns>
+				<items>
+					<ColumnListItem id="template360" type="Navigation" press="onPress">
+						<cells>
+							<rdf:TextResource path="dataModel>" entitySet="ActivityHistory"/>
+							<VBox>					
+							<Text text="{dataModel>ActivityHistory_ActivityDate/ActivityHistory_ActivityDate}"/>
+							</VBox>							
+							<VBox>					
+							<rdf:TextLink text="{path:'dataModel>ActivityHistory_ActivitySubtype/ActivityHistory_ActivitySubtype',type:'sap.ui.model.type.String'}" linkText="{i18n>ActivityHistory.ActivityHistory_ActivitySubtype/ActivityHistory_ActivitySubtype}"/>
+							</VBox>							
+							<VBox>					
+							<rdf:TextLink text="{path:'dataModel>ActivityHistory_ActivityType/ActivityHistory_ActivityType',type:'sap.ui.model.type.String'}" linkText="{i18n>ActivityHistory.ActivityHistory_ActivityType/ActivityHistory_ActivityType}"/>
+							</VBox>							
+							<VBox>					
+							<rdf:TextLink text="{path:'dataModel>ActivityHistory_CallDisposition/ActivityHistory_CallDisposition',type:'sap.ui.model.type.String'}" linkText="{i18n>ActivityHistory.ActivityHistory_CallDisposition/ActivityHistory_CallDisposition}"/>
+							</VBox>							
+							<VBox>					
+							<Text text="{path:'dataModel>ActivityHistory_CallDurationInSeconds/ActivityHistory_CallDurationInSeconds',type:'sap.ui.model.type.Integer' }"/>
+							</VBox>							
+							<VBox>					
+							<rdf:TextLink text="{path:'dataModel>ActivityHistory_CallObject/ActivityHistory_CallObject',type:'sap.ui.model.type.String'}" linkText="{i18n>ActivityHistory.ActivityHistory_CallObject/ActivityHistory_CallObject}"/>
+							</VBox>							
+							<VBox>					
+							<rdf:TextLink text="{path:'dataModel>ActivityHistory_CallType/ActivityHistory_CallType',type:'sap.ui.model.type.String'}" linkText="{i18n>ActivityHistory.ActivityHistory_CallType/ActivityHistory_CallType}"/>
+							</VBox>							
+							<VBox>					
+							<Text text="{dataModel>ActivityHistory_CreatedDate/ActivityHistory_CreatedDate}"/>
+							</VBox>							
+							<VBox>					
+							<rdf:TextLink text="{path:'dataModel>ActivityHistory_Description/ActivityHistory_Description',type:'sap.ui.model.type.String'}" linkText="{i18n>ActivityHistory.ActivityHistory_Description/ActivityHistory_Description}"/>
+							</VBox>							
+							<VBox>					
+							<Text text="{path:'dataModel>ActivityHistory_DurationInMinutes/ActivityHistory_DurationInMinutes',type:'sap.ui.model.type.Integer' }"/>
+							</VBox>							
+							<VBox>					
+							<Text text="{dataModel>ActivityHistory_EndDateTime/ActivityHistory_EndDateTime}"/>
+							</VBox>							
+							<VBox>					
+							<rdf:TextLink text="{path:'dataModel>ActivityHistory_Id/ActivityHistory_Id',type:'sap.ui.model.type.String'}" linkText="{i18n>ActivityHistory.ActivityHistory_Id/ActivityHistory_Id}"/>
+							</VBox>							
+							<VBox>					
+								<Text text="{path:'dataModel>ActivityHistory_IsAllDayEvent/ActivityHistory_IsAllDayEvent',type:'sap.ui.model.type.Boolean'}"/>  
+							</VBox>							
+							<VBox>					
+								<Text text="{path:'dataModel>ActivityHistory_IsClosed/ActivityHistory_IsClosed',type:'sap.ui.model.type.Boolean'}"/>  
+							</VBox>							
+							<VBox>					
+								<Text text="{path:'dataModel>ActivityHistory_IsDeleted/ActivityHistory_IsDeleted',type:'sap.ui.model.type.Boolean'}"/>  
+							</VBox>							
+							<VBox>					
+								<Text text="{path:'dataModel>ActivityHistory_IsHighPriority/ActivityHistory_IsHighPriority',type:'sap.ui.model.type.Boolean'}"/>  
+							</VBox>							
+							<VBox>					
+								<Text text="{path:'dataModel>ActivityHistory_IsReminderSet/ActivityHistory_IsReminderSet',type:'sap.ui.model.type.Boolean'}"/>  
+							</VBox>							
+							<VBox>					
+								<Text text="{path:'dataModel>ActivityHistory_IsTask/ActivityHistory_IsTask',type:'sap.ui.model.type.Boolean'}"/>  
+							</VBox>							
+							<VBox>					
+								<Text text="{path:'dataModel>ActivityHistory_IsVisibleInSelfService/ActivityHistory_IsVisibleInSelfService',type:'sap.ui.model.type.Boolean'}"/>  
+							</VBox>							
+							<VBox>					
+							<Text text="{dataModel>ActivityHistory_LastModifiedDate/ActivityHistory_LastModifiedDate}"/>
+							</VBox>							
+							<VBox>					
+							<rdf:TextLink text="{path:'dataModel>ActivityHistory_Location/ActivityHistory_Location',type:'sap.ui.model.type.String'}" linkText="{i18n>ActivityHistory.ActivityHistory_Location/ActivityHistory_Location}"/>
+							</VBox>							
+							<VBox>					
+							<rdf:TextLink text="{path:'dataModel>ActivityHistory_Priority/ActivityHistory_Priority',type:'sap.ui.model.type.String'}" linkText="{i18n>ActivityHistory.ActivityHistory_Priority/ActivityHistory_Priority}"/>
+							</VBox>							
+							<VBox>					
+							<Text text="{dataModel>ActivityHistory_ReminderDateTime/ActivityHistory_ReminderDateTime}"/>
+							</VBox>							
+							<VBox>					
+							<Text text="{dataModel>ActivityHistory_StartDateTime/ActivityHistory_StartDateTime}"/>
+							</VBox>							
+							<VBox>					
+							<rdf:TextLink text="{path:'dataModel>ActivityHistory_Status/ActivityHistory_Status',type:'sap.ui.model.type.String'}" linkText="{i18n>ActivityHistory.ActivityHistory_Status/ActivityHistory_Status}"/>
+							</VBox>							
+							<VBox>					
+							<rdf:TextLink text="{path:'dataModel>ActivityHistory_Subject/ActivityHistory_Subject',type:'sap.ui.model.type.String'}" linkText="{i18n>ActivityHistory.ActivityHistory_Subject/ActivityHistory_Subject}"/>
+							</VBox>							
+							<VBox>					
+							<Text text="{dataModel>ActivityHistory_SystemModstamp/ActivityHistory_SystemModstamp}"/>
+							</VBox>							
+						</cells>
+					</ColumnListItem>
+				</items>
+			</Table>
+		</content>
+	</Page>
+</mvc:View>

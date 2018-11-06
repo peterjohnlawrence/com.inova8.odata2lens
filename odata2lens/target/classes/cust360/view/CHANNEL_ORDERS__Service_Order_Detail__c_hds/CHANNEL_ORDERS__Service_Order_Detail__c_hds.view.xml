@@ -1,0 +1,151 @@
+<mvc:View controllerName="com.inova8.lens.controller.EntitySet360" xmlns="sap.m" xmlns:mvc="sap.ui.core.mvc" xmlns:layout="sap.ui.layout"
+	xmlns:rdf="com.inova8.lens.control" xmlns:core="sap.ui.core">
+	<Page showHeader="false" id="page" navButtonPress="onNavBack" showNavButton="true" title="{i18n>CHANNEL_ORDERS__Service_Order_Detail__c_hds.ViewTitle}">
+		<content>
+			<Table id="table360" inset="false" items="{ path: 'dataModel>/CHANNEL_ORDERS__Service_Order_Detail__c_hd' , sorter: { path: 'label', descending: false } 
+				}"
+				noDataText="{entitySetView>/tableNoDataText}" busyIndicatorDelay="{entitySetView>/tableBusyDelay}" growing="true" growingScrollToLoad="true"
+				updateFinished="onUpdateFinished"  fixedLayout="false">
+				<headerToolbar>
+					<Toolbar>
+						<ToolbarSpacer/>
+						<HBox id="sourceTitle" alignItems="Center">
+							<rdf:TextResource id="selectedResource" path="" entitySet=""/>
+						</HBox>
+						<Title id="pathTitle" text="{entitySetView>/navigationText}"/>
+						<HBox id="versionsTitle" alignItems="Center">
+							<Title text="(" required="false"/>
+							<ComboBox id="versionSelection" items="{ path: 'entitySetView>/versions' }" selectionChange="onVersionChange">
+								<core:Item key="{entitySetView>navigation}" text="{entityView>text}"/>
+							</ComboBox>
+							<Title text=")" required="false"/>
+						</HBox>
+						<Title id="tableHeader" text="{entitySetView>/entitySetTableTitle}"/>
+						<ToolbarSpacer/>
+						<SearchField id="searchField" tooltip="{i18n>search.searchTooltip}" search="onSearch" width="auto"></SearchField>
+					</Toolbar>
+				</headerToolbar>
+				<columns>
+					<Column >
+						<Text text="{i18n>CHANNEL_ORDERS__Service_Order_Detail__c_hds.this}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>CHANNEL_ORDERS__Service_Order_Detail__c_hds.CHANNEL_ORDERS__Service_Order_Detail__c_hd_CHANNEL_ORDERS__Customer_Price_Per_Month__c_hpr}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>CHANNEL_ORDERS__Service_Order_Detail__c_hds.CHANNEL_ORDERS__Service_Order_Detail__c_hd_CHANNEL_ORDERS__Customer_Price_Per_Month__c_hst}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>CHANNEL_ORDERS__Service_Order_Detail__c_hds.CHANNEL_ORDERS__Service_Order_Detail__c_hd_CHANNEL_ORDERS__Number_Of_Users_ISVforce__c_hpr}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>CHANNEL_ORDERS__Service_Order_Detail__c_hds.CHANNEL_ORDERS__Service_Order_Detail__c_hd_CHANNEL_ORDERS__Number_Of_Users_ISVforce__c_hst}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>CHANNEL_ORDERS__Service_Order_Detail__c_hds.CHANNEL_ORDERS__Service_Order_Detail__c_hd_CHANNEL_ORDERS__Quantity__c_hpr}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>CHANNEL_ORDERS__Service_Order_Detail__c_hds.CHANNEL_ORDERS__Service_Order_Detail__c_hd_CHANNEL_ORDERS__Quantity__c_hst}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>CHANNEL_ORDERS__Service_Order_Detail__c_hds.CHANNEL_ORDERS__Service_Order_Detail__c_hd_CHANNEL_ORDERS__pc_Pricing_Type__c_hpr}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>CHANNEL_ORDERS__Service_Order_Detail__c_hds.CHANNEL_ORDERS__Service_Order_Detail__c_hd_CHANNEL_ORDERS__pc_Pricing_Type__c_hst}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>CHANNEL_ORDERS__Service_Order_Detail__c_hds.CHANNEL_ORDERS__Service_Order_Detail__c_hd_CHANNEL_ORDERS__pc_Pricing_Unit__c_hpr}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>CHANNEL_ORDERS__Service_Order_Detail__c_hds.CHANNEL_ORDERS__Service_Order_Detail__c_hd_CHANNEL_ORDERS__pc_Pricing_Unit__c_hst}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>CHANNEL_ORDERS__Service_Order_Detail__c_hds.CHANNEL_ORDERS__Service_Order_Detail__c_hd_CHANNEL_ORDERS__pct_Currency__c_hpr}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>CHANNEL_ORDERS__Service_Order_Detail__c_hds.CHANNEL_ORDERS__Service_Order_Detail__c_hd_CHANNEL_ORDERS__pct_Currency__c_hst}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>CHANNEL_ORDERS__Service_Order_Detail__c_hds.CHANNEL_ORDERS__Service_Order_Detail__c_hd_CreatedDate}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>CHANNEL_ORDERS__Service_Order_Detail__c_hds.CHANNEL_ORDERS__Service_Order_Detail__c_hd_Id}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>CHANNEL_ORDERS__Service_Order_Detail__c_hds.CHANNEL_ORDERS__Service_Order_Detail__c_hd_IsDeleted}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>CHANNEL_ORDERS__Service_Order_Detail__c_hds.CHANNEL_ORDERS__Service_Order_Detail__c_hd_SystemModstamp}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>CHANNEL_ORDERS__Service_Order_Detail__c_hds.CHANNEL_ORDERS__Service_Order_Detail__c_hd_ValidFromDate}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>CHANNEL_ORDERS__Service_Order_Detail__c_hds.CHANNEL_ORDERS__Service_Order_Detail__c_hd_ValidToDate}"/>
+					</Column>
+				</columns>
+				<items>
+					<ColumnListItem id="template360" type="Navigation" press="onPress">
+						<cells>
+							<rdf:TextResource path="dataModel>" entitySet="CHANNEL_ORDERS__Service_Order_Detail__c_hd"/>
+							<VBox>					
+							<Text text="{path:'dataModel>CHANNEL_ORDERS__Service_Order_Detail__c_hd_CHANNEL_ORDERS__Customer_Price_Per_Month__c_hpr/CHANNEL_ORDERS__Service_Order_Detail__c_hd_CHANNEL_ORDERS__Customer_Price_Per_Month__c_hpr',type:'sap.ui.model.type.Float', formatOptions:{'style':'short','maxFractionDigits':2} }"/>
+							</VBox>							
+							<VBox>					
+							<Text text="{path:'dataModel>CHANNEL_ORDERS__Service_Order_Detail__c_hd_CHANNEL_ORDERS__Customer_Price_Per_Month__c_hst/CHANNEL_ORDERS__Service_Order_Detail__c_hd_CHANNEL_ORDERS__Customer_Price_Per_Month__c_hst',type:'sap.ui.model.type.Float', formatOptions:{'style':'short','maxFractionDigits':2} }"/>
+							</VBox>							
+							<VBox>					
+							<Text text="{path:'dataModel>CHANNEL_ORDERS__Service_Order_Detail__c_hd_CHANNEL_ORDERS__Number_Of_Users_ISVforce__c_hpr/CHANNEL_ORDERS__Service_Order_Detail__c_hd_CHANNEL_ORDERS__Number_Of_Users_ISVforce__c_hpr',type:'sap.ui.model.type.Float', formatOptions:{'style':'short','maxFractionDigits':2} }"/>
+							</VBox>							
+							<VBox>					
+							<Text text="{path:'dataModel>CHANNEL_ORDERS__Service_Order_Detail__c_hd_CHANNEL_ORDERS__Number_Of_Users_ISVforce__c_hst/CHANNEL_ORDERS__Service_Order_Detail__c_hd_CHANNEL_ORDERS__Number_Of_Users_ISVforce__c_hst',type:'sap.ui.model.type.Float', formatOptions:{'style':'short','maxFractionDigits':2} }"/>
+							</VBox>							
+							<VBox>					
+							<Text text="{path:'dataModel>CHANNEL_ORDERS__Service_Order_Detail__c_hd_CHANNEL_ORDERS__Quantity__c_hpr/CHANNEL_ORDERS__Service_Order_Detail__c_hd_CHANNEL_ORDERS__Quantity__c_hpr',type:'sap.ui.model.type.Float', formatOptions:{'style':'short','maxFractionDigits':2} }"/>
+							</VBox>							
+							<VBox>					
+							<Text text="{path:'dataModel>CHANNEL_ORDERS__Service_Order_Detail__c_hd_CHANNEL_ORDERS__Quantity__c_hst/CHANNEL_ORDERS__Service_Order_Detail__c_hd_CHANNEL_ORDERS__Quantity__c_hst',type:'sap.ui.model.type.Float', formatOptions:{'style':'short','maxFractionDigits':2} }"/>
+							</VBox>							
+							<VBox>					
+							<rdf:TextLink text="{path:'dataModel>CHANNEL_ORDERS__Service_Order_Detail__c_hd_CHANNEL_ORDERS__pc_Pricing_Type__c_hpr/CHANNEL_ORDERS__Service_Order_Detail__c_hd_CHANNEL_ORDERS__pc_Pricing_Type__c_hpr',type:'sap.ui.model.type.String'}" linkText="{i18n>CHANNEL_ORDERS__Service_Order_Detail__c_hd.CHANNEL_ORDERS__Service_Order_Detail__c_hd_CHANNEL_ORDERS__pc_Pricing_Type__c_hpr/CHANNEL_ORDERS__Service_Order_Detail__c_hd_CHANNEL_ORDERS__pc_Pricing_Type__c_hpr}"/>
+							</VBox>							
+							<VBox>					
+							<rdf:TextLink text="{path:'dataModel>CHANNEL_ORDERS__Service_Order_Detail__c_hd_CHANNEL_ORDERS__pc_Pricing_Type__c_hst/CHANNEL_ORDERS__Service_Order_Detail__c_hd_CHANNEL_ORDERS__pc_Pricing_Type__c_hst',type:'sap.ui.model.type.String'}" linkText="{i18n>CHANNEL_ORDERS__Service_Order_Detail__c_hd.CHANNEL_ORDERS__Service_Order_Detail__c_hd_CHANNEL_ORDERS__pc_Pricing_Type__c_hst/CHANNEL_ORDERS__Service_Order_Detail__c_hd_CHANNEL_ORDERS__pc_Pricing_Type__c_hst}"/>
+							</VBox>							
+							<VBox>					
+							<rdf:TextLink text="{path:'dataModel>CHANNEL_ORDERS__Service_Order_Detail__c_hd_CHANNEL_ORDERS__pc_Pricing_Unit__c_hpr/CHANNEL_ORDERS__Service_Order_Detail__c_hd_CHANNEL_ORDERS__pc_Pricing_Unit__c_hpr',type:'sap.ui.model.type.String'}" linkText="{i18n>CHANNEL_ORDERS__Service_Order_Detail__c_hd.CHANNEL_ORDERS__Service_Order_Detail__c_hd_CHANNEL_ORDERS__pc_Pricing_Unit__c_hpr/CHANNEL_ORDERS__Service_Order_Detail__c_hd_CHANNEL_ORDERS__pc_Pricing_Unit__c_hpr}"/>
+							</VBox>							
+							<VBox>					
+							<rdf:TextLink text="{path:'dataModel>CHANNEL_ORDERS__Service_Order_Detail__c_hd_CHANNEL_ORDERS__pc_Pricing_Unit__c_hst/CHANNEL_ORDERS__Service_Order_Detail__c_hd_CHANNEL_ORDERS__pc_Pricing_Unit__c_hst',type:'sap.ui.model.type.String'}" linkText="{i18n>CHANNEL_ORDERS__Service_Order_Detail__c_hd.CHANNEL_ORDERS__Service_Order_Detail__c_hd_CHANNEL_ORDERS__pc_Pricing_Unit__c_hst/CHANNEL_ORDERS__Service_Order_Detail__c_hd_CHANNEL_ORDERS__pc_Pricing_Unit__c_hst}"/>
+							</VBox>							
+							<VBox>					
+							<rdf:TextLink text="{path:'dataModel>CHANNEL_ORDERS__Service_Order_Detail__c_hd_CHANNEL_ORDERS__pct_Currency__c_hpr/CHANNEL_ORDERS__Service_Order_Detail__c_hd_CHANNEL_ORDERS__pct_Currency__c_hpr',type:'sap.ui.model.type.String'}" linkText="{i18n>CHANNEL_ORDERS__Service_Order_Detail__c_hd.CHANNEL_ORDERS__Service_Order_Detail__c_hd_CHANNEL_ORDERS__pct_Currency__c_hpr/CHANNEL_ORDERS__Service_Order_Detail__c_hd_CHANNEL_ORDERS__pct_Currency__c_hpr}"/>
+							</VBox>							
+							<VBox>					
+							<rdf:TextLink text="{path:'dataModel>CHANNEL_ORDERS__Service_Order_Detail__c_hd_CHANNEL_ORDERS__pct_Currency__c_hst/CHANNEL_ORDERS__Service_Order_Detail__c_hd_CHANNEL_ORDERS__pct_Currency__c_hst',type:'sap.ui.model.type.String'}" linkText="{i18n>CHANNEL_ORDERS__Service_Order_Detail__c_hd.CHANNEL_ORDERS__Service_Order_Detail__c_hd_CHANNEL_ORDERS__pct_Currency__c_hst/CHANNEL_ORDERS__Service_Order_Detail__c_hd_CHANNEL_ORDERS__pct_Currency__c_hst}"/>
+							</VBox>							
+							<VBox>					
+							<Text text="{dataModel>CHANNEL_ORDERS__Service_Order_Detail__c_hd_CreatedDate/CHANNEL_ORDERS__Service_Order_Detail__c_hd_CreatedDate}"/>
+							</VBox>							
+							<VBox>					
+							<rdf:TextLink text="{path:'dataModel>CHANNEL_ORDERS__Service_Order_Detail__c_hd_Id/CHANNEL_ORDERS__Service_Order_Detail__c_hd_Id',type:'sap.ui.model.type.String'}" linkText="{i18n>CHANNEL_ORDERS__Service_Order_Detail__c_hd.CHANNEL_ORDERS__Service_Order_Detail__c_hd_Id/CHANNEL_ORDERS__Service_Order_Detail__c_hd_Id}"/>
+							</VBox>							
+							<VBox>					
+								<Text text="{path:'dataModel>CHANNEL_ORDERS__Service_Order_Detail__c_hd_IsDeleted/CHANNEL_ORDERS__Service_Order_Detail__c_hd_IsDeleted',type:'sap.ui.model.type.Boolean'}"/>  
+							</VBox>							
+							<VBox>					
+							<Text text="{dataModel>CHANNEL_ORDERS__Service_Order_Detail__c_hd_SystemModstamp/CHANNEL_ORDERS__Service_Order_Detail__c_hd_SystemModstamp}"/>
+							</VBox>							
+							<VBox>					
+							<Text text="{dataModel>CHANNEL_ORDERS__Service_Order_Detail__c_hd_ValidFromDate/CHANNEL_ORDERS__Service_Order_Detail__c_hd_ValidFromDate}"/>
+							</VBox>							
+							<VBox>					
+							<Text text="{dataModel>CHANNEL_ORDERS__Service_Order_Detail__c_hd_ValidToDate/CHANNEL_ORDERS__Service_Order_Detail__c_hd_ValidToDate}"/>
+							</VBox>							
+						</cells>
+					</ColumnListItem>
+				</items>
+			</Table>
+		</content>
+	</Page>
+</mvc:View>

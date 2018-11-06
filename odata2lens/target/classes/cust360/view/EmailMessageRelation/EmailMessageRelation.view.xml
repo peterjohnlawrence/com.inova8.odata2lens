@@ -1,0 +1,140 @@
+<mvc:View controllerName="com.inova8.lens.controller.Entity360" xmlns="sap.m" xmlns:mvc="sap.ui.core.mvc" xmlns:l="sap.ui.layout"
+	xmlns:f="sap.ui.layout.form" xmlns:table="sap.ui.table" xmlns:rdf="com.inova8.lens.control" xmlns:html="http://www.w3.org/1999/xhtml"
+	xmlns:core="sap.ui.core">
+	<Page showHeader="true" id="page" navButtonPress="onNavBack" showNavButton="false" title="{i18n>EmailMessageRelation.Title}" busy="{entityView>/busy}"
+		busyIndicatorDelay="{entityView>/delay}" >
+		<customHeader>
+			<Toolbar>
+				<ToolbarSpacer/>
+				<HBox id="sourceTitle" alignItems="Center">
+						<rdf:TextResource id="selectedResource" path="" entitySet=""/>
+				</HBox>	
+				<Title id="pathTitle" text="{entityView>/navigation}"/>
+				<HBox id="versionsTitle" alignItems="Center">
+					<Title text="(" required="false"/>
+					<ComboBox id="versionSelection" items="{ path: 'entityView>/versions' }" selectionChange="onVersionChange">
+						<core:Item key="{entityView>navigation}" text="{entityView>text}"/>
+					</ComboBox>
+					<Title text=")" required="false"/>
+				</HBox>
+				<Title text="{i18n>EmailMessageRelation.this}"/>
+				<Title text="(" required="false"/>
+				<rdf:TextResource path="dataModel>" entitySet="EmailMessageRelation"/>
+				<Title text=")" required="false"/>
+	
+				<ToolbarSpacer/>
+				<ToggleButton id="toggleColumns" icon="sap-icon://hide" activeIcon="sap-icon://show" press="onSettingsPressed" visible="false"	>
+					<layoutData>
+						<OverflowToolbarLayoutData priority="NeverOverflow"/>
+					</layoutData>
+				</ToggleButton>
+				
+			</Toolbar>
+		</customHeader>
+		<Table id="form360" inset="false" fixedLayout="true" class="multicolumnform" updateFinished="hideColumns">
+			<columns>
+				<Column hAlign="Right" width="200px">
+					<Text text=""/>
+				</Column>
+				<Column visible="true">
+				</Column>
+				<Column visible="true">
+					<Text text="EmailMessageRelation"/>
+				</Column>
+			</columns>
+			<items>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>EmailMessageRelation.EmailMessageRelation_CreatedById}" required="false"/> 
+						<Text text=""/>
+						<rdf:ListResource path="dataModel>EmailMessageRelation_CreatedById/sfdc_EmailMessageRelation_CreatedById" entitySet="User"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>EmailMessageRelation.EmailMessageRelation_CreatedDate}" required="false"/> 
+						<Text text=""/>
+						<Text text="{dataModel>EmailMessageRelation_CreatedDate/EmailMessageRelation_CreatedDate}"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>EmailMessageRelation.EmailMessageRelation_EmailMessageId}" required="false"/> 
+						<Text text=""/>
+						<rdf:ListResource path="dataModel>EmailMessageRelation_EmailMessageId/sfdc_EmailMessageRelation_EmailMessageId" entitySet="EmailMessage"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>EmailMessageRelation.EmailMessageRelation_Id}" required="false"/> 
+						<Text text=""/>
+						<rdf:TextLink text="{path:'dataModel>EmailMessageRelation_Id/EmailMessageRelation_Id',type:'sap.ui.model.type.String' }" linkText="{i18n>EmailMessageRelation.EmailMessageRelation_Id/EmailMessageRelation_Id}"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>EmailMessageRelation.EmailMessageRelation_IsDeleted}" required="false"/> 
+						<Text text=""/>
+						<Text text="{path:'dataModel>EmailMessageRelation_IsDeleted/EmailMessageRelation_IsDeleted',type:'sap.ui.model.type.Boolean'}"/>  
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>EmailMessageRelation.EmailMessageRelation_RelationAddress}" required="false"/> 
+						<Text text=""/>
+						<rdf:TextLink text="{path:'dataModel>EmailMessageRelation_RelationAddress/EmailMessageRelation_RelationAddress',type:'sap.ui.model.type.String' }" linkText="{i18n>EmailMessageRelation.EmailMessageRelation_RelationAddress/EmailMessageRelation_RelationAddress}"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>EmailMessageRelation.EmailMessageRelation_RelationId}" required="false"/> 
+						<Text text=""/>
+						<rdf:ListResource path="dataModel>EmailMessageRelation_RelationId/sfdc_EmailMessageRelation_RelationId" entitySet="Contact"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>EmailMessageRelation.EmailMessageRelation_RelationObjectType}" required="false"/> 
+						<Text text=""/>
+						<rdf:TextLink text="{path:'dataModel>EmailMessageRelation_RelationObjectType/EmailMessageRelation_RelationObjectType',type:'sap.ui.model.type.String' }" linkText="{i18n>EmailMessageRelation.EmailMessageRelation_RelationObjectType/EmailMessageRelation_RelationObjectType}"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>EmailMessageRelation.EmailMessageRelation_RelationType}" required="false"/> 
+						<Text text=""/>
+						<rdf:TextLink text="{path:'dataModel>EmailMessageRelation_RelationType/EmailMessageRelation_RelationType',type:'sap.ui.model.type.String' }" linkText="{i18n>EmailMessageRelation.EmailMessageRelation_RelationType/EmailMessageRelation_RelationType}"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>EmailMessageRelation.EmailMessageRelation_SystemModstamp}" required="false"/> 
+						<Text text=""/>
+						<Text text="{dataModel>EmailMessageRelation_SystemModstamp/EmailMessageRelation_SystemModstamp}"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>EmailMessageRelation.EmailMessageRelation_CreatedById}" required="false"/> 
+						<rdf:ListResource path="dataModel>EmailMessageRelation_CreatedById" entitySet="User"/>
+						<Text text=""/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>EmailMessageRelation.EmailMessageRelation_EmailMessageId}" required="false"/> 
+						<rdf:ListResource path="dataModel>EmailMessageRelation_EmailMessageId" entitySet="EmailMessage"/>
+						<Text text=""/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>EmailMessageRelation.EmailMessageRelation_RelationId}" required="false"/> 
+						<rdf:ListResource path="dataModel>EmailMessageRelation_RelationId" entitySet="Contact"/>
+						<Text text=""/>
+					</cells>
+				</ColumnListItem>
+			</items>
+		</Table>
+	</Page>
+</mvc:View>

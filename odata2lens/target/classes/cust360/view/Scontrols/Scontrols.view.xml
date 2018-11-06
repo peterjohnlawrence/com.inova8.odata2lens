@@ -1,0 +1,139 @@
+<mvc:View controllerName="com.inova8.lens.controller.EntitySet360" xmlns="sap.m" xmlns:mvc="sap.ui.core.mvc" xmlns:layout="sap.ui.layout"
+	xmlns:rdf="com.inova8.lens.control" xmlns:core="sap.ui.core">
+	<Page showHeader="false" id="page" navButtonPress="onNavBack" showNavButton="true" title="{i18n>Scontrols.ViewTitle}">
+		<content>
+			<Table id="table360" inset="false" items="{ path: 'dataModel>/Scontrol' , sorter: { path: 'label', descending: false } 
+				}"
+				noDataText="{entitySetView>/tableNoDataText}" busyIndicatorDelay="{entitySetView>/tableBusyDelay}" growing="true" growingScrollToLoad="true"
+				updateFinished="onUpdateFinished"  fixedLayout="false">
+				<headerToolbar>
+					<Toolbar>
+						<ToolbarSpacer/>
+						<HBox id="sourceTitle" alignItems="Center">
+							<rdf:TextResource id="selectedResource" path="" entitySet=""/>
+						</HBox>
+						<Title id="pathTitle" text="{entitySetView>/navigationText}"/>
+						<HBox id="versionsTitle" alignItems="Center">
+							<Title text="(" required="false"/>
+							<ComboBox id="versionSelection" items="{ path: 'entitySetView>/versions' }" selectionChange="onVersionChange">
+								<core:Item key="{entitySetView>navigation}" text="{entityView>text}"/>
+							</ComboBox>
+							<Title text=")" required="false"/>
+						</HBox>
+						<Title id="tableHeader" text="{entitySetView>/entitySetTableTitle}"/>
+						<ToolbarSpacer/>
+						<SearchField id="searchField" tooltip="{i18n>search.searchTooltip}" search="onSearch" width="auto"></SearchField>
+					</Toolbar>
+				</headerToolbar>
+				<columns>
+					<Column >
+						<Text text="{i18n>Scontrols.this}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>Scontrols.Scontrol_Binary}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>Scontrols.Scontrol_BodyLength}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>Scontrols.Scontrol_ContentSource}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>Scontrols.Scontrol_CreatedDate}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>Scontrols.Scontrol_Description}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>Scontrols.Scontrol_DeveloperName}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>Scontrols.Scontrol_EncodingKey}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>Scontrols.Scontrol_Filename}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>Scontrols.Scontrol_HtmlWrapper}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>Scontrols.Scontrol_Id}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>Scontrols.Scontrol_IsDeleted}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>Scontrols.Scontrol_LastModifiedDate}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>Scontrols.Scontrol_Name}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>Scontrols.Scontrol_NamespacePrefix}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>Scontrols.Scontrol_SupportsCaching}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>Scontrols.Scontrol_SystemModstamp}"/>
+					</Column>
+				</columns>
+				<items>
+					<ColumnListItem id="template360" type="Navigation" press="onPress">
+						<cells>
+							<rdf:TextResource path="dataModel>" entitySet="Scontrol"/>
+							<VBox>					
+								<Text text="{dataModel>Scontrol_Binary/Scontrol_Binary}"/>
+							</VBox>							
+							<VBox>					
+							<Text text="{path:'dataModel>Scontrol_BodyLength/Scontrol_BodyLength',type:'sap.ui.model.type.Integer' }"/>
+							</VBox>							
+							<VBox>					
+							<rdf:TextLink text="{path:'dataModel>Scontrol_ContentSource/Scontrol_ContentSource',type:'sap.ui.model.type.String'}" linkText="{i18n>Scontrol.Scontrol_ContentSource/Scontrol_ContentSource}"/>
+							</VBox>							
+							<VBox>					
+							<Text text="{dataModel>Scontrol_CreatedDate/Scontrol_CreatedDate}"/>
+							</VBox>							
+							<VBox>					
+							<rdf:TextLink text="{path:'dataModel>Scontrol_Description/Scontrol_Description',type:'sap.ui.model.type.String'}" linkText="{i18n>Scontrol.Scontrol_Description/Scontrol_Description}"/>
+							</VBox>							
+							<VBox>					
+							<rdf:TextLink text="{path:'dataModel>Scontrol_DeveloperName/Scontrol_DeveloperName',type:'sap.ui.model.type.String'}" linkText="{i18n>Scontrol.Scontrol_DeveloperName/Scontrol_DeveloperName}"/>
+							</VBox>							
+							<VBox>					
+							<rdf:TextLink text="{path:'dataModel>Scontrol_EncodingKey/Scontrol_EncodingKey',type:'sap.ui.model.type.String'}" linkText="{i18n>Scontrol.Scontrol_EncodingKey/Scontrol_EncodingKey}"/>
+							</VBox>							
+							<VBox>					
+							<rdf:TextLink text="{path:'dataModel>Scontrol_Filename/Scontrol_Filename',type:'sap.ui.model.type.String'}" linkText="{i18n>Scontrol.Scontrol_Filename/Scontrol_Filename}"/>
+							</VBox>							
+							<VBox>					
+							<rdf:TextLink text="{path:'dataModel>Scontrol_HtmlWrapper/Scontrol_HtmlWrapper',type:'sap.ui.model.type.String'}" linkText="{i18n>Scontrol.Scontrol_HtmlWrapper/Scontrol_HtmlWrapper}"/>
+							</VBox>							
+							<VBox>					
+							<rdf:TextLink text="{path:'dataModel>Scontrol_Id/Scontrol_Id',type:'sap.ui.model.type.String'}" linkText="{i18n>Scontrol.Scontrol_Id/Scontrol_Id}"/>
+							</VBox>							
+							<VBox>					
+								<Text text="{path:'dataModel>Scontrol_IsDeleted/Scontrol_IsDeleted',type:'sap.ui.model.type.Boolean'}"/>  
+							</VBox>							
+							<VBox>					
+							<Text text="{dataModel>Scontrol_LastModifiedDate/Scontrol_LastModifiedDate}"/>
+							</VBox>							
+							<VBox>					
+							<rdf:TextLink text="{path:'dataModel>Scontrol_Name/Scontrol_Name',type:'sap.ui.model.type.String'}" linkText="{i18n>Scontrol.Scontrol_Name/Scontrol_Name}"/>
+							</VBox>							
+							<VBox>					
+							<rdf:TextLink text="{path:'dataModel>Scontrol_NamespacePrefix/Scontrol_NamespacePrefix',type:'sap.ui.model.type.String'}" linkText="{i18n>Scontrol.Scontrol_NamespacePrefix/Scontrol_NamespacePrefix}"/>
+							</VBox>							
+							<VBox>					
+								<Text text="{path:'dataModel>Scontrol_SupportsCaching/Scontrol_SupportsCaching',type:'sap.ui.model.type.Boolean'}"/>  
+							</VBox>							
+							<VBox>					
+							<Text text="{dataModel>Scontrol_SystemModstamp/Scontrol_SystemModstamp}"/>
+							</VBox>							
+						</cells>
+					</ColumnListItem>
+				</items>
+			</Table>
+		</content>
+	</Page>
+</mvc:View>

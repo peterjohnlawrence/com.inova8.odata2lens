@@ -1,0 +1,1071 @@
+<mvc:View controllerName="com.inova8.lens.controller.Entity360" xmlns="sap.m" xmlns:mvc="sap.ui.core.mvc" xmlns:l="sap.ui.layout"
+	xmlns:f="sap.ui.layout.form" xmlns:table="sap.ui.table" xmlns:rdf="com.inova8.lens.control" xmlns:html="http://www.w3.org/1999/xhtml"
+	xmlns:core="sap.ui.core">
+	<Page showHeader="true" id="page" navButtonPress="onNavBack" showNavButton="false" title="{i18n>ContentVersion.Title}" busy="{entityView>/busy}"
+		busyIndicatorDelay="{entityView>/delay}" >
+		<customHeader>
+			<Toolbar>
+				<ToolbarSpacer/>
+				<HBox id="sourceTitle" alignItems="Center">
+						<rdf:TextResource id="selectedResource" path="" entitySet=""/>
+				</HBox>	
+				<Title id="pathTitle" text="{entityView>/navigation}"/>
+				<HBox id="versionsTitle" alignItems="Center">
+					<Title text="(" required="false"/>
+					<ComboBox id="versionSelection" items="{ path: 'entityView>/versions' }" selectionChange="onVersionChange">
+						<core:Item key="{entityView>navigation}" text="{entityView>text}"/>
+					</ComboBox>
+					<Title text=")" required="false"/>
+				</HBox>
+				<Title text="{i18n>ContentVersion.this}"/>
+				<Title text="(" required="false"/>
+				<rdf:TextResource path="dataModel>" entitySet="ContentVersion"/>
+				<Title text=")" required="false"/>
+	
+				<ToolbarSpacer/>
+				<ToggleButton id="toggleColumns" icon="sap-icon://hide" activeIcon="sap-icon://show" press="onSettingsPressed" visible="false"	>
+					<layoutData>
+						<OverflowToolbarLayoutData priority="NeverOverflow"/>
+					</layoutData>
+				</ToggleButton>
+				
+			</Toolbar>
+		</customHeader>
+		<Table id="form360" inset="false" fixedLayout="true" class="multicolumnform" updateFinished="hideColumns">
+			<columns>
+				<Column hAlign="Right" width="200px">
+					<Text text=""/>
+				</Column>
+				<Column visible="true">
+				</Column>
+				<Column visible="true">
+					<Text text="ContentVersion"/>
+				</Column>
+			</columns>
+			<items>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>ContentVersion.AccountFeed_RelatedRecordId_Inverse}" required="false"/> 
+						<Text text=""/>
+						<rdf:ListResource path="dataModel>AccountFeed_RelatedRecordId_Inverse/sfdc_AccountFeed_RelatedRecordId_Inverse" entitySet="AccountFeed"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>ContentVersion.AssetFeed_RelatedRecordId_Inverse}" required="false"/> 
+						<Text text=""/>
+						<rdf:ListResource path="dataModel>AssetFeed_RelatedRecordId_Inverse/sfdc_AssetFeed_RelatedRecordId_Inverse" entitySet="AssetFeed"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>ContentVersion.AssetRelationshipFeed_RelatedRecordId_Inverse}" required="false"/> 
+						<Text text=""/>
+						<rdf:ListResource path="dataModel>AssetRelationshipFeed_RelatedRecordId_Inverse/sfdc_AssetRelationshipFeed_RelatedRecordId_Inverse" entitySet="AssetRelationshipFeed"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>ContentVersion.CHANNEL_ORDERS__Customer__Feed_RelatedRecordId_Inverse}" required="false"/> 
+						<Text text=""/>
+						<rdf:ListResource path="dataModel>CHANNEL_ORDERS__Customer__Feed_RelatedRecordId_Inverse/sfdc_CHANNEL_ORDERS__Customer__Feed_RelatedRecordId_Inverse" entitySet="CHANNEL_ORDERS__Customer__Feed"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>ContentVersion.CHANNEL_ORDERS__Partner_Contract_Terms__Feed_RelatedRecordId_Inverse}" required="false"/> 
+						<Text text=""/>
+						<rdf:ListResource path="dataModel>CHANNEL_ORDERS__Partner_Contract_Terms__Feed_RelatedRecordId_Inverse/sfdc_CHANNEL_ORDERS__Partner_Contract_Terms__Feed_RelatedRecordId_Inverse" entitySet="CHANNEL_ORDERS__Partner_Contract_Terms__Feed"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>ContentVersion.CHANNEL_ORDERS__Partner_Product_Catalog__Feed_RelatedRecordId_Inverse}" required="false"/> 
+						<Text text=""/>
+						<rdf:ListResource path="dataModel>CHANNEL_ORDERS__Partner_Product_Catalog__Feed_RelatedRecordId_Inverse/sfdc_CHANNEL_ORDERS__Partner_Product_Catalog__Feed_RelatedRecordId_Inverse" entitySet="CHANNEL_ORDERS__Partner_Product_Catalog__Feed"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>ContentVersion.CHANNEL_ORDERS__Service_Order_Detail__Feed_RelatedRecordId_Inverse}" required="false"/> 
+						<Text text=""/>
+						<rdf:ListResource path="dataModel>CHANNEL_ORDERS__Service_Order_Detail__Feed_RelatedRecordId_Inverse/sfdc_CHANNEL_ORDERS__Service_Order_Detail__Feed_RelatedRecordId_Inverse" entitySet="CHANNEL_ORDERS__Service_Order_Detail__Feed"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>ContentVersion.CHANNEL_ORDERS__Service_Order_Log__Feed_RelatedRecordId_Inverse}" required="false"/> 
+						<Text text=""/>
+						<rdf:ListResource path="dataModel>CHANNEL_ORDERS__Service_Order_Log__Feed_RelatedRecordId_Inverse/sfdc_CHANNEL_ORDERS__Service_Order_Log__Feed_RelatedRecordId_Inverse" entitySet="CHANNEL_ORDERS__Service_Order_Log__Feed"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>ContentVersion.CHANNEL_ORDERS__Service_Order__Feed_RelatedRecordId_Inverse}" required="false"/> 
+						<Text text=""/>
+						<rdf:ListResource path="dataModel>CHANNEL_ORDERS__Service_Order__Feed_RelatedRecordId_Inverse/sfdc_CHANNEL_ORDERS__Service_Order__Feed_RelatedRecordId_Inverse" entitySet="CHANNEL_ORDERS__Service_Order__Feed"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>ContentVersion.CampaignFeed_RelatedRecordId_Inverse}" required="false"/> 
+						<Text text=""/>
+						<rdf:ListResource path="dataModel>CampaignFeed_RelatedRecordId_Inverse/sfdc_CampaignFeed_RelatedRecordId_Inverse" entitySet="CampaignFeed"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>ContentVersion.CaseFeed_RelatedRecordId_Inverse}" required="false"/> 
+						<Text text=""/>
+						<rdf:ListResource path="dataModel>CaseFeed_RelatedRecordId_Inverse/sfdc_CaseFeed_RelatedRecordId_Inverse" entitySet="CaseFeed"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>ContentVersion.CollaborationGroupFeed_RelatedRecordId_Inverse}" required="false"/> 
+						<Text text=""/>
+						<rdf:ListResource path="dataModel>CollaborationGroupFeed_RelatedRecordId_Inverse/sfdc_CollaborationGroupFeed_RelatedRecordId_Inverse" entitySet="CollaborationGroupFeed"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>ContentVersion.ContactFeed_RelatedRecordId_Inverse}" required="false"/> 
+						<Text text=""/>
+						<rdf:ListResource path="dataModel>ContactFeed_RelatedRecordId_Inverse/sfdc_ContactFeed_RelatedRecordId_Inverse" entitySet="ContactFeed"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>ContentVersion.ContentDistribution_ContentVersionId_Inverse}" required="false"/> 
+						<Text text=""/>
+						<rdf:ListResource path="dataModel>ContentDistribution_ContentVersionId_Inverse/sfdc_ContentDistribution_ContentVersionId_Inverse" entitySet="ContentDistribution"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>ContentVersion.ContentDocumentFeed_RelatedRecordId_Inverse}" required="false"/> 
+						<Text text=""/>
+						<rdf:ListResource path="dataModel>ContentDocumentFeed_RelatedRecordId_Inverse/sfdc_ContentDocumentFeed_RelatedRecordId_Inverse" entitySet="ContentDocumentFeed"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>ContentVersion.ContentDocument_LatestPublishedVersionId_Inverse}" required="false"/> 
+						<Text text=""/>
+						<rdf:ListResource path="dataModel>ContentDocument_LatestPublishedVersionId_Inverse/sfdc_ContentDocument_LatestPublishedVersionId_Inverse" entitySet="ContentDocument"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>ContentVersion.ContentNote_LatestPublishedVersionId_Inverse}" required="false"/> 
+						<Text text=""/>
+						<rdf:ListResource path="dataModel>ContentNote_LatestPublishedVersionId_Inverse/sfdc_ContentNote_LatestPublishedVersionId_Inverse" entitySet="ContentNote"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>ContentVersion.ContentVersionHistory_ContentVersionId_Inverse}" required="false"/> 
+						<Text text=""/>
+						<rdf:ListResource path="dataModel>ContentVersionHistory_ContentVersionId_Inverse/sfdc_ContentVersionHistory_ContentVersionId_Inverse" entitySet="ContentVersionHistory"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>ContentVersion.ContentVersion_Checksum}" required="false"/> 
+						<Text text=""/>
+						<rdf:TextLink text="{path:'dataModel>ContentVersion_Checksum/ContentVersion_Checksum',type:'sap.ui.model.type.String' }" linkText="{i18n>ContentVersion.ContentVersion_Checksum/ContentVersion_Checksum}"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>ContentVersion.ContentVersion_ContentBodyId}" required="false"/> 
+						<Text text=""/>
+						<rdf:ListResource path="dataModel>ContentVersion_ContentBodyId/sfdc_ContentVersion_ContentBodyId" entitySet="ContentBody"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>ContentVersion.ContentVersion_ContentDocumentId}" required="false"/> 
+						<Text text=""/>
+						<rdf:ListResource path="dataModel>ContentVersion_ContentDocumentId/sfdc_ContentVersion_ContentDocumentId" entitySet="ContentDocument"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>ContentVersion.ContentVersion_ContentLocation}" required="false"/> 
+						<Text text=""/>
+						<rdf:TextLink text="{path:'dataModel>ContentVersion_ContentLocation/ContentVersion_ContentLocation',type:'sap.ui.model.type.String' }" linkText="{i18n>ContentVersion.ContentVersion_ContentLocation/ContentVersion_ContentLocation}"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>ContentVersion.ContentVersion_ContentModifiedById}" required="false"/> 
+						<Text text=""/>
+						<rdf:ListResource path="dataModel>ContentVersion_ContentModifiedById/sfdc_ContentVersion_ContentModifiedById" entitySet="User"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>ContentVersion.ContentVersion_ContentModifiedDate}" required="false"/> 
+						<Text text=""/>
+						<Text text="{dataModel>ContentVersion_ContentModifiedDate/ContentVersion_ContentModifiedDate}"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>ContentVersion.ContentVersion_ContentSize}" required="false"/> 
+						<Text text=""/>
+						<Text text="{path:'dataModel>ContentVersion_ContentSize/ContentVersion_ContentSize',type:'sap.ui.model.type.Integer' }"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>ContentVersion.ContentVersion_ContentUrl}" required="false"/> 
+						<Text text=""/>
+						<rdf:TextLink text="{path:'dataModel>ContentVersion_ContentUrl/ContentVersion_ContentUrl',type:'sap.ui.model.type.String' }" linkText="{i18n>ContentVersion.ContentVersion_ContentUrl/ContentVersion_ContentUrl}"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>ContentVersion.ContentVersion_CreatedById}" required="false"/> 
+						<Text text=""/>
+						<rdf:ListResource path="dataModel>ContentVersion_CreatedById/sfdc_ContentVersion_CreatedById" entitySet="User"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>ContentVersion.ContentVersion_CreatedDate}" required="false"/> 
+						<Text text=""/>
+						<Text text="{dataModel>ContentVersion_CreatedDate/ContentVersion_CreatedDate}"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>ContentVersion.ContentVersion_Description}" required="false"/> 
+						<Text text=""/>
+						<rdf:TextLink text="{path:'dataModel>ContentVersion_Description/ContentVersion_Description',type:'sap.ui.model.type.String' }" linkText="{i18n>ContentVersion.ContentVersion_Description/ContentVersion_Description}"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>ContentVersion.ContentVersion_ExternalDataSourceId}" required="false"/> 
+						<Text text=""/>
+						<rdf:ListResource path="dataModel>ContentVersion_ExternalDataSourceId/sfdc_ContentVersion_ExternalDataSourceId" entitySet="ExternalDataSource"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>ContentVersion.ContentVersion_ExternalDocumentInfo1}" required="false"/> 
+						<Text text=""/>
+						<rdf:TextLink text="{path:'dataModel>ContentVersion_ExternalDocumentInfo1/ContentVersion_ExternalDocumentInfo1',type:'sap.ui.model.type.String' }" linkText="{i18n>ContentVersion.ContentVersion_ExternalDocumentInfo1/ContentVersion_ExternalDocumentInfo1}"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>ContentVersion.ContentVersion_ExternalDocumentInfo2}" required="false"/> 
+						<Text text=""/>
+						<rdf:TextLink text="{path:'dataModel>ContentVersion_ExternalDocumentInfo2/ContentVersion_ExternalDocumentInfo2',type:'sap.ui.model.type.String' }" linkText="{i18n>ContentVersion.ContentVersion_ExternalDocumentInfo2/ContentVersion_ExternalDocumentInfo2}"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>ContentVersion.ContentVersion_FeaturedContentBoost}" required="false"/> 
+						<Text text=""/>
+						<Text text="{path:'dataModel>ContentVersion_FeaturedContentBoost/ContentVersion_FeaturedContentBoost',type:'sap.ui.model.type.Integer' }"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>ContentVersion.ContentVersion_FeaturedContentDate}" required="false"/> 
+						<Text text=""/>
+						<Text text="{dataModel>ContentVersion_FeaturedContentDate/ContentVersion_FeaturedContentDate}"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>ContentVersion.ContentVersion_FileExtension}" required="false"/> 
+						<Text text=""/>
+						<rdf:TextLink text="{path:'dataModel>ContentVersion_FileExtension/ContentVersion_FileExtension',type:'sap.ui.model.type.String' }" linkText="{i18n>ContentVersion.ContentVersion_FileExtension/ContentVersion_FileExtension}"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>ContentVersion.ContentVersion_FileType}" required="false"/> 
+						<Text text=""/>
+						<rdf:TextLink text="{path:'dataModel>ContentVersion_FileType/ContentVersion_FileType',type:'sap.ui.model.type.String' }" linkText="{i18n>ContentVersion.ContentVersion_FileType/ContentVersion_FileType}"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>ContentVersion.ContentVersion_FirstPublishLocationId}" required="false"/> 
+						<Text text=""/>
+						<rdf:ListResource path="dataModel>ContentVersion_FirstPublishLocationId/sfdc_ContentVersion_FirstPublishLocationId" entitySet="Account"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>ContentVersion.ContentVersion_Id}" required="false"/> 
+						<Text text=""/>
+						<rdf:TextLink text="{path:'dataModel>ContentVersion_Id/ContentVersion_Id',type:'sap.ui.model.type.String' }" linkText="{i18n>ContentVersion.ContentVersion_Id/ContentVersion_Id}"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>ContentVersion.ContentVersion_IsAssetEnabled}" required="false"/> 
+						<Text text=""/>
+						<Text text="{path:'dataModel>ContentVersion_IsAssetEnabled/ContentVersion_IsAssetEnabled',type:'sap.ui.model.type.Boolean'}"/>  
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>ContentVersion.ContentVersion_IsDeleted}" required="false"/> 
+						<Text text=""/>
+						<Text text="{path:'dataModel>ContentVersion_IsDeleted/ContentVersion_IsDeleted',type:'sap.ui.model.type.Boolean'}"/>  
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>ContentVersion.ContentVersion_IsLatest}" required="false"/> 
+						<Text text=""/>
+						<Text text="{path:'dataModel>ContentVersion_IsLatest/ContentVersion_IsLatest',type:'sap.ui.model.type.Boolean'}"/>  
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>ContentVersion.ContentVersion_IsMajorVersion}" required="false"/> 
+						<Text text=""/>
+						<Text text="{path:'dataModel>ContentVersion_IsMajorVersion/ContentVersion_IsMajorVersion',type:'sap.ui.model.type.Boolean'}"/>  
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>ContentVersion.ContentVersion_LastModifiedById}" required="false"/> 
+						<Text text=""/>
+						<rdf:ListResource path="dataModel>ContentVersion_LastModifiedById/sfdc_ContentVersion_LastModifiedById" entitySet="User"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>ContentVersion.ContentVersion_LastModifiedDate}" required="false"/> 
+						<Text text=""/>
+						<Text text="{dataModel>ContentVersion_LastModifiedDate/ContentVersion_LastModifiedDate}"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>ContentVersion.ContentVersion_NegativeRatingCount}" required="false"/> 
+						<Text text=""/>
+						<Text text="{path:'dataModel>ContentVersion_NegativeRatingCount/ContentVersion_NegativeRatingCount',type:'sap.ui.model.type.Integer' }"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>ContentVersion.ContentVersion_Origin}" required="false"/> 
+						<Text text=""/>
+						<rdf:TextLink text="{path:'dataModel>ContentVersion_Origin/ContentVersion_Origin',type:'sap.ui.model.type.String' }" linkText="{i18n>ContentVersion.ContentVersion_Origin/ContentVersion_Origin}"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>ContentVersion.ContentVersion_OwnerId}" required="false"/> 
+						<Text text=""/>
+						<rdf:ListResource path="dataModel>ContentVersion_OwnerId/sfdc_ContentVersion_OwnerId" entitySet="User"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>ContentVersion.ContentVersion_PathOnClient}" required="false"/> 
+						<Text text=""/>
+						<rdf:TextLink text="{path:'dataModel>ContentVersion_PathOnClient/ContentVersion_PathOnClient',type:'sap.ui.model.type.String' }" linkText="{i18n>ContentVersion.ContentVersion_PathOnClient/ContentVersion_PathOnClient}"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>ContentVersion.ContentVersion_PositiveRatingCount}" required="false"/> 
+						<Text text=""/>
+						<Text text="{path:'dataModel>ContentVersion_PositiveRatingCount/ContentVersion_PositiveRatingCount',type:'sap.ui.model.type.Integer' }"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>ContentVersion.ContentVersion_PublishStatus}" required="false"/> 
+						<Text text=""/>
+						<rdf:TextLink text="{path:'dataModel>ContentVersion_PublishStatus/ContentVersion_PublishStatus',type:'sap.ui.model.type.String' }" linkText="{i18n>ContentVersion.ContentVersion_PublishStatus/ContentVersion_PublishStatus}"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>ContentVersion.ContentVersion_RatingCount}" required="false"/> 
+						<Text text=""/>
+						<Text text="{path:'dataModel>ContentVersion_RatingCount/ContentVersion_RatingCount',type:'sap.ui.model.type.Integer' }"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>ContentVersion.ContentVersion_ReasonForChange}" required="false"/> 
+						<Text text=""/>
+						<rdf:TextLink text="{path:'dataModel>ContentVersion_ReasonForChange/ContentVersion_ReasonForChange',type:'sap.ui.model.type.String' }" linkText="{i18n>ContentVersion.ContentVersion_ReasonForChange/ContentVersion_ReasonForChange}"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>ContentVersion.ContentVersion_SharingOption}" required="false"/> 
+						<Text text=""/>
+						<rdf:TextLink text="{path:'dataModel>ContentVersion_SharingOption/ContentVersion_SharingOption',type:'sap.ui.model.type.String' }" linkText="{i18n>ContentVersion.ContentVersion_SharingOption/ContentVersion_SharingOption}"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>ContentVersion.ContentVersion_SharingPrivacy}" required="false"/> 
+						<Text text=""/>
+						<rdf:TextLink text="{path:'dataModel>ContentVersion_SharingPrivacy/ContentVersion_SharingPrivacy',type:'sap.ui.model.type.String' }" linkText="{i18n>ContentVersion.ContentVersion_SharingPrivacy/ContentVersion_SharingPrivacy}"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>ContentVersion.ContentVersion_SystemModstamp}" required="false"/> 
+						<Text text=""/>
+						<Text text="{dataModel>ContentVersion_SystemModstamp/ContentVersion_SystemModstamp}"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>ContentVersion.ContentVersion_TagCsv}" required="false"/> 
+						<Text text=""/>
+						<rdf:TextLink text="{path:'dataModel>ContentVersion_TagCsv/ContentVersion_TagCsv',type:'sap.ui.model.type.String' }" linkText="{i18n>ContentVersion.ContentVersion_TagCsv/ContentVersion_TagCsv}"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>ContentVersion.ContentVersion_TextPreview}" required="false"/> 
+						<Text text=""/>
+						<rdf:TextLink text="{path:'dataModel>ContentVersion_TextPreview/ContentVersion_TextPreview',type:'sap.ui.model.type.String' }" linkText="{i18n>ContentVersion.ContentVersion_TextPreview/ContentVersion_TextPreview}"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>ContentVersion.ContentVersion_Title}" required="false"/> 
+						<Text text=""/>
+						<rdf:TextLink text="{path:'dataModel>ContentVersion_Title/ContentVersion_Title',type:'sap.ui.model.type.String' }" linkText="{i18n>ContentVersion.ContentVersion_Title/ContentVersion_Title}"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>ContentVersion.ContentVersion_VersionData}" required="false"/> 
+						<Text text=""/>
+						<Text text="{dataModel>ContentVersion_VersionData/ContentVersion_VersionData}"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>ContentVersion.ContentVersion_VersionNumber}" required="false"/> 
+						<Text text=""/>
+						<rdf:TextLink text="{path:'dataModel>ContentVersion_VersionNumber/ContentVersion_VersionNumber',type:'sap.ui.model.type.String' }" linkText="{i18n>ContentVersion.ContentVersion_VersionNumber/ContentVersion_VersionNumber}"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>ContentVersion.ContractFeed_RelatedRecordId_Inverse}" required="false"/> 
+						<Text text=""/>
+						<rdf:ListResource path="dataModel>ContractFeed_RelatedRecordId_Inverse/sfdc_ContractFeed_RelatedRecordId_Inverse" entitySet="ContractFeed"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>ContentVersion.DashboardComponentFeed_RelatedRecordId_Inverse}" required="false"/> 
+						<Text text=""/>
+						<rdf:ListResource path="dataModel>DashboardComponentFeed_RelatedRecordId_Inverse/sfdc_DashboardComponentFeed_RelatedRecordId_Inverse" entitySet="DashboardComponentFeed"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>ContentVersion.DashboardFeed_RelatedRecordId_Inverse}" required="false"/> 
+						<Text text=""/>
+						<rdf:ListResource path="dataModel>DashboardFeed_RelatedRecordId_Inverse/sfdc_DashboardFeed_RelatedRecordId_Inverse" entitySet="DashboardFeed"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>ContentVersion.EntitlementFeed_RelatedRecordId_Inverse}" required="false"/> 
+						<Text text=""/>
+						<rdf:ListResource path="dataModel>EntitlementFeed_RelatedRecordId_Inverse/sfdc_EntitlementFeed_RelatedRecordId_Inverse" entitySet="EntitlementFeed"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>ContentVersion.EntityMilestoneFeed_RelatedRecordId_Inverse}" required="false"/> 
+						<Text text=""/>
+						<rdf:ListResource path="dataModel>EntityMilestoneFeed_RelatedRecordId_Inverse/sfdc_EntityMilestoneFeed_RelatedRecordId_Inverse" entitySet="EntityMilestoneFeed"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>ContentVersion.EventFeed_RelatedRecordId_Inverse}" required="false"/> 
+						<Text text=""/>
+						<rdf:ListResource path="dataModel>EventFeed_RelatedRecordId_Inverse/sfdc_EventFeed_RelatedRecordId_Inverse" entitySet="EventFeed"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>ContentVersion.FeedComment_RelatedRecordId_Inverse}" required="false"/> 
+						<Text text=""/>
+						<rdf:ListResource path="dataModel>FeedComment_RelatedRecordId_Inverse/sfdc_FeedComment_RelatedRecordId_Inverse" entitySet="FeedComment"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>ContentVersion.FeedItem_RelatedRecordId_Inverse}" required="false"/> 
+						<Text text=""/>
+						<rdf:ListResource path="dataModel>FeedItem_RelatedRecordId_Inverse/sfdc_FeedItem_RelatedRecordId_Inverse" entitySet="FeedItem"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>ContentVersion.LeadFeed_RelatedRecordId_Inverse}" required="false"/> 
+						<Text text=""/>
+						<rdf:ListResource path="dataModel>LeadFeed_RelatedRecordId_Inverse/sfdc_LeadFeed_RelatedRecordId_Inverse" entitySet="LeadFeed"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>ContentVersion.OpportunityFeed_RelatedRecordId_Inverse}" required="false"/> 
+						<Text text=""/>
+						<rdf:ListResource path="dataModel>OpportunityFeed_RelatedRecordId_Inverse/sfdc_OpportunityFeed_RelatedRecordId_Inverse" entitySet="OpportunityFeed"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>ContentVersion.OrderFeed_RelatedRecordId_Inverse}" required="false"/> 
+						<Text text=""/>
+						<rdf:ListResource path="dataModel>OrderFeed_RelatedRecordId_Inverse/sfdc_OrderFeed_RelatedRecordId_Inverse" entitySet="OrderFeed"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>ContentVersion.OrderItemFeed_RelatedRecordId_Inverse}" required="false"/> 
+						<Text text=""/>
+						<rdf:ListResource path="dataModel>OrderItemFeed_RelatedRecordId_Inverse/sfdc_OrderItemFeed_RelatedRecordId_Inverse" entitySet="OrderItemFeed"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>ContentVersion.Product2Feed_RelatedRecordId_Inverse}" required="false"/> 
+						<Text text=""/>
+						<rdf:ListResource path="dataModel>Product2Feed_RelatedRecordId_Inverse/sfdc_Product2Feed_RelatedRecordId_Inverse" entitySet="Product2Feed"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>ContentVersion.QuoteDocument_ContentVersionDocumentId_Inverse}" required="false"/> 
+						<Text text=""/>
+						<rdf:ListResource path="dataModel>QuoteDocument_ContentVersionDocumentId_Inverse/sfdc_QuoteDocument_ContentVersionDocumentId_Inverse" entitySet="QuoteDocument"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>ContentVersion.QuoteFeed_RelatedRecordId_Inverse}" required="false"/> 
+						<Text text=""/>
+						<rdf:ListResource path="dataModel>QuoteFeed_RelatedRecordId_Inverse/sfdc_QuoteFeed_RelatedRecordId_Inverse" entitySet="QuoteFeed"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>ContentVersion.ReportFeed_RelatedRecordId_Inverse}" required="false"/> 
+						<Text text=""/>
+						<rdf:ListResource path="dataModel>ReportFeed_RelatedRecordId_Inverse/sfdc_ReportFeed_RelatedRecordId_Inverse" entitySet="ReportFeed"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>ContentVersion.ServiceContractFeed_RelatedRecordId_Inverse}" required="false"/> 
+						<Text text=""/>
+						<rdf:ListResource path="dataModel>ServiceContractFeed_RelatedRecordId_Inverse/sfdc_ServiceContractFeed_RelatedRecordId_Inverse" entitySet="ServiceContractFeed"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>ContentVersion.SignupRequestFeed_RelatedRecordId_Inverse}" required="false"/> 
+						<Text text=""/>
+						<rdf:ListResource path="dataModel>SignupRequestFeed_RelatedRecordId_Inverse/sfdc_SignupRequestFeed_RelatedRecordId_Inverse" entitySet="SignupRequestFeed"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>ContentVersion.SiteFeed_RelatedRecordId_Inverse}" required="false"/> 
+						<Text text=""/>
+						<rdf:ListResource path="dataModel>SiteFeed_RelatedRecordId_Inverse/sfdc_SiteFeed_RelatedRecordId_Inverse" entitySet="SiteFeed"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>ContentVersion.SocialPostFeed_RelatedRecordId_Inverse}" required="false"/> 
+						<Text text=""/>
+						<rdf:ListResource path="dataModel>SocialPostFeed_RelatedRecordId_Inverse/sfdc_SocialPostFeed_RelatedRecordId_Inverse" entitySet="SocialPostFeed"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>ContentVersion.SolutionFeed_RelatedRecordId_Inverse}" required="false"/> 
+						<Text text=""/>
+						<rdf:ListResource path="dataModel>SolutionFeed_RelatedRecordId_Inverse/sfdc_SolutionFeed_RelatedRecordId_Inverse" entitySet="SolutionFeed"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>ContentVersion.TaskFeed_RelatedRecordId_Inverse}" required="false"/> 
+						<Text text=""/>
+						<rdf:ListResource path="dataModel>TaskFeed_RelatedRecordId_Inverse/sfdc_TaskFeed_RelatedRecordId_Inverse" entitySet="TaskFeed"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>ContentVersion.Territory2ModelFeed_RelatedRecordId_Inverse}" required="false"/> 
+						<Text text=""/>
+						<rdf:ListResource path="dataModel>Territory2ModelFeed_RelatedRecordId_Inverse/sfdc_Territory2ModelFeed_RelatedRecordId_Inverse" entitySet="Territory2ModelFeed"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>ContentVersion.TopicFeed_RelatedRecordId_Inverse}" required="false"/> 
+						<Text text=""/>
+						<rdf:ListResource path="dataModel>TopicFeed_RelatedRecordId_Inverse/sfdc_TopicFeed_RelatedRecordId_Inverse" entitySet="TopicFeed"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>ContentVersion.UserFeed_RelatedRecordId_Inverse}" required="false"/> 
+						<Text text=""/>
+						<rdf:ListResource path="dataModel>UserFeed_RelatedRecordId_Inverse/sfdc_UserFeed_RelatedRecordId_Inverse" entitySet="UserFeed"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>ContentVersion.WorkOrderFeed_RelatedRecordId_Inverse}" required="false"/> 
+						<Text text=""/>
+						<rdf:ListResource path="dataModel>WorkOrderFeed_RelatedRecordId_Inverse/sfdc_WorkOrderFeed_RelatedRecordId_Inverse" entitySet="WorkOrderFeed"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>ContentVersion.WorkOrderLineItemFeed_RelatedRecordId_Inverse}" required="false"/> 
+						<Text text=""/>
+						<rdf:ListResource path="dataModel>WorkOrderLineItemFeed_RelatedRecordId_Inverse/sfdc_WorkOrderLineItemFeed_RelatedRecordId_Inverse" entitySet="WorkOrderLineItemFeed"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>ContentVersion.sfLma__License__Feed_RelatedRecordId_Inverse}" required="false"/> 
+						<Text text=""/>
+						<rdf:ListResource path="dataModel>sfLma__License__Feed_RelatedRecordId_Inverse/sfdc_sfLma__License__Feed_RelatedRecordId_Inverse" entitySet="sfLma__License__Feed"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>ContentVersion.sfLma__Package_Version__Feed_RelatedRecordId_Inverse}" required="false"/> 
+						<Text text=""/>
+						<rdf:ListResource path="dataModel>sfLma__Package_Version__Feed_RelatedRecordId_Inverse/sfdc_sfLma__Package_Version__Feed_RelatedRecordId_Inverse" entitySet="sfLma__Package_Version__Feed"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>ContentVersion.sfLma__Package__Feed_RelatedRecordId_Inverse}" required="false"/> 
+						<Text text=""/>
+						<rdf:ListResource path="dataModel>sfLma__Package__Feed_RelatedRecordId_Inverse/sfdc_sfLma__Package__Feed_RelatedRecordId_Inverse" entitySet="sfLma__Package__Feed"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>ContentVersion.AccountFeed_RelatedRecordId_Inverse}" required="false"/> 
+						<rdf:ListResource path="dataModel>AccountFeed_RelatedRecordId_Inverse" entitySet="AccountFeed"/>
+						<Text text=""/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>ContentVersion.AssetFeed_RelatedRecordId_Inverse}" required="false"/> 
+						<rdf:ListResource path="dataModel>AssetFeed_RelatedRecordId_Inverse" entitySet="AssetFeed"/>
+						<Text text=""/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>ContentVersion.AssetRelationshipFeed_RelatedRecordId_Inverse}" required="false"/> 
+						<rdf:ListResource path="dataModel>AssetRelationshipFeed_RelatedRecordId_Inverse" entitySet="AssetRelationshipFeed"/>
+						<Text text=""/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>ContentVersion.CHANNEL_ORDERS__Customer__Feed_RelatedRecordId_Inverse}" required="false"/> 
+						<rdf:ListResource path="dataModel>CHANNEL_ORDERS__Customer__Feed_RelatedRecordId_Inverse" entitySet="CHANNEL_ORDERS__Customer__Feed"/>
+						<Text text=""/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>ContentVersion.CHANNEL_ORDERS__Partner_Contract_Terms__Feed_RelatedRecordId_Inverse}" required="false"/> 
+						<rdf:ListResource path="dataModel>CHANNEL_ORDERS__Partner_Contract_Terms__Feed_RelatedRecordId_Inverse" entitySet="CHANNEL_ORDERS__Partner_Contract_Terms__Feed"/>
+						<Text text=""/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>ContentVersion.CHANNEL_ORDERS__Partner_Product_Catalog__Feed_RelatedRecordId_Inverse}" required="false"/> 
+						<rdf:ListResource path="dataModel>CHANNEL_ORDERS__Partner_Product_Catalog__Feed_RelatedRecordId_Inverse" entitySet="CHANNEL_ORDERS__Partner_Product_Catalog__Feed"/>
+						<Text text=""/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>ContentVersion.CHANNEL_ORDERS__Service_Order_Detail__Feed_RelatedRecordId_Inverse}" required="false"/> 
+						<rdf:ListResource path="dataModel>CHANNEL_ORDERS__Service_Order_Detail__Feed_RelatedRecordId_Inverse" entitySet="CHANNEL_ORDERS__Service_Order_Detail__Feed"/>
+						<Text text=""/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>ContentVersion.CHANNEL_ORDERS__Service_Order_Log__Feed_RelatedRecordId_Inverse}" required="false"/> 
+						<rdf:ListResource path="dataModel>CHANNEL_ORDERS__Service_Order_Log__Feed_RelatedRecordId_Inverse" entitySet="CHANNEL_ORDERS__Service_Order_Log__Feed"/>
+						<Text text=""/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>ContentVersion.CHANNEL_ORDERS__Service_Order__Feed_RelatedRecordId_Inverse}" required="false"/> 
+						<rdf:ListResource path="dataModel>CHANNEL_ORDERS__Service_Order__Feed_RelatedRecordId_Inverse" entitySet="CHANNEL_ORDERS__Service_Order__Feed"/>
+						<Text text=""/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>ContentVersion.CampaignFeed_RelatedRecordId_Inverse}" required="false"/> 
+						<rdf:ListResource path="dataModel>CampaignFeed_RelatedRecordId_Inverse" entitySet="CampaignFeed"/>
+						<Text text=""/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>ContentVersion.CaseFeed_RelatedRecordId_Inverse}" required="false"/> 
+						<rdf:ListResource path="dataModel>CaseFeed_RelatedRecordId_Inverse" entitySet="CaseFeed"/>
+						<Text text=""/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>ContentVersion.CollaborationGroupFeed_RelatedRecordId_Inverse}" required="false"/> 
+						<rdf:ListResource path="dataModel>CollaborationGroupFeed_RelatedRecordId_Inverse" entitySet="CollaborationGroupFeed"/>
+						<Text text=""/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>ContentVersion.ContactFeed_RelatedRecordId_Inverse}" required="false"/> 
+						<rdf:ListResource path="dataModel>ContactFeed_RelatedRecordId_Inverse" entitySet="ContactFeed"/>
+						<Text text=""/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>ContentVersion.ContentDistribution_ContentVersionId_Inverse}" required="false"/> 
+						<rdf:ListResource path="dataModel>ContentDistribution_ContentVersionId_Inverse" entitySet="ContentDistribution"/>
+						<Text text=""/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>ContentVersion.ContentDocumentFeed_RelatedRecordId_Inverse}" required="false"/> 
+						<rdf:ListResource path="dataModel>ContentDocumentFeed_RelatedRecordId_Inverse" entitySet="ContentDocumentFeed"/>
+						<Text text=""/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>ContentVersion.ContentDocument_LatestPublishedVersionId_Inverse}" required="false"/> 
+						<rdf:ListResource path="dataModel>ContentDocument_LatestPublishedVersionId_Inverse" entitySet="ContentDocument"/>
+						<Text text=""/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>ContentVersion.ContentNote_LatestPublishedVersionId_Inverse}" required="false"/> 
+						<rdf:ListResource path="dataModel>ContentNote_LatestPublishedVersionId_Inverse" entitySet="ContentNote"/>
+						<Text text=""/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>ContentVersion.ContentVersionHistory_ContentVersionId_Inverse}" required="false"/> 
+						<rdf:ListResource path="dataModel>ContentVersionHistory_ContentVersionId_Inverse" entitySet="ContentVersionHistory"/>
+						<Text text=""/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>ContentVersion.ContentVersion_ContentBodyId}" required="false"/> 
+						<rdf:ListResource path="dataModel>ContentVersion_ContentBodyId" entitySet="ContentBody"/>
+						<Text text=""/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>ContentVersion.ContentVersion_ContentDocumentId}" required="false"/> 
+						<rdf:ListResource path="dataModel>ContentVersion_ContentDocumentId" entitySet="ContentDocument"/>
+						<Text text=""/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>ContentVersion.ContentVersion_ContentModifiedById}" required="false"/> 
+						<rdf:ListResource path="dataModel>ContentVersion_ContentModifiedById" entitySet="User"/>
+						<Text text=""/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>ContentVersion.ContentVersion_CreatedById}" required="false"/> 
+						<rdf:ListResource path="dataModel>ContentVersion_CreatedById" entitySet="User"/>
+						<Text text=""/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>ContentVersion.ContentVersion_ExternalDataSourceId}" required="false"/> 
+						<rdf:ListResource path="dataModel>ContentVersion_ExternalDataSourceId" entitySet="ExternalDataSource"/>
+						<Text text=""/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>ContentVersion.ContentVersion_FirstPublishLocationId}" required="false"/> 
+						<rdf:ListResource path="dataModel>ContentVersion_FirstPublishLocationId" entitySet="Account"/>
+						<Text text=""/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>ContentVersion.ContentVersion_LastModifiedById}" required="false"/> 
+						<rdf:ListResource path="dataModel>ContentVersion_LastModifiedById" entitySet="User"/>
+						<Text text=""/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>ContentVersion.ContentVersion_OwnerId}" required="false"/> 
+						<rdf:ListResource path="dataModel>ContentVersion_OwnerId" entitySet="User"/>
+						<Text text=""/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>ContentVersion.ContractFeed_RelatedRecordId_Inverse}" required="false"/> 
+						<rdf:ListResource path="dataModel>ContractFeed_RelatedRecordId_Inverse" entitySet="ContractFeed"/>
+						<Text text=""/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>ContentVersion.DashboardComponentFeed_RelatedRecordId_Inverse}" required="false"/> 
+						<rdf:ListResource path="dataModel>DashboardComponentFeed_RelatedRecordId_Inverse" entitySet="DashboardComponentFeed"/>
+						<Text text=""/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>ContentVersion.DashboardFeed_RelatedRecordId_Inverse}" required="false"/> 
+						<rdf:ListResource path="dataModel>DashboardFeed_RelatedRecordId_Inverse" entitySet="DashboardFeed"/>
+						<Text text=""/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>ContentVersion.EntitlementFeed_RelatedRecordId_Inverse}" required="false"/> 
+						<rdf:ListResource path="dataModel>EntitlementFeed_RelatedRecordId_Inverse" entitySet="EntitlementFeed"/>
+						<Text text=""/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>ContentVersion.EntityMilestoneFeed_RelatedRecordId_Inverse}" required="false"/> 
+						<rdf:ListResource path="dataModel>EntityMilestoneFeed_RelatedRecordId_Inverse" entitySet="EntityMilestoneFeed"/>
+						<Text text=""/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>ContentVersion.EventFeed_RelatedRecordId_Inverse}" required="false"/> 
+						<rdf:ListResource path="dataModel>EventFeed_RelatedRecordId_Inverse" entitySet="EventFeed"/>
+						<Text text=""/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>ContentVersion.FeedComment_RelatedRecordId_Inverse}" required="false"/> 
+						<rdf:ListResource path="dataModel>FeedComment_RelatedRecordId_Inverse" entitySet="FeedComment"/>
+						<Text text=""/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>ContentVersion.FeedItem_RelatedRecordId_Inverse}" required="false"/> 
+						<rdf:ListResource path="dataModel>FeedItem_RelatedRecordId_Inverse" entitySet="FeedItem"/>
+						<Text text=""/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>ContentVersion.LeadFeed_RelatedRecordId_Inverse}" required="false"/> 
+						<rdf:ListResource path="dataModel>LeadFeed_RelatedRecordId_Inverse" entitySet="LeadFeed"/>
+						<Text text=""/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>ContentVersion.OpportunityFeed_RelatedRecordId_Inverse}" required="false"/> 
+						<rdf:ListResource path="dataModel>OpportunityFeed_RelatedRecordId_Inverse" entitySet="OpportunityFeed"/>
+						<Text text=""/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>ContentVersion.OrderFeed_RelatedRecordId_Inverse}" required="false"/> 
+						<rdf:ListResource path="dataModel>OrderFeed_RelatedRecordId_Inverse" entitySet="OrderFeed"/>
+						<Text text=""/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>ContentVersion.OrderItemFeed_RelatedRecordId_Inverse}" required="false"/> 
+						<rdf:ListResource path="dataModel>OrderItemFeed_RelatedRecordId_Inverse" entitySet="OrderItemFeed"/>
+						<Text text=""/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>ContentVersion.Product2Feed_RelatedRecordId_Inverse}" required="false"/> 
+						<rdf:ListResource path="dataModel>Product2Feed_RelatedRecordId_Inverse" entitySet="Product2Feed"/>
+						<Text text=""/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>ContentVersion.QuoteDocument_ContentVersionDocumentId_Inverse}" required="false"/> 
+						<rdf:ListResource path="dataModel>QuoteDocument_ContentVersionDocumentId_Inverse" entitySet="QuoteDocument"/>
+						<Text text=""/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>ContentVersion.QuoteFeed_RelatedRecordId_Inverse}" required="false"/> 
+						<rdf:ListResource path="dataModel>QuoteFeed_RelatedRecordId_Inverse" entitySet="QuoteFeed"/>
+						<Text text=""/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>ContentVersion.ReportFeed_RelatedRecordId_Inverse}" required="false"/> 
+						<rdf:ListResource path="dataModel>ReportFeed_RelatedRecordId_Inverse" entitySet="ReportFeed"/>
+						<Text text=""/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>ContentVersion.ServiceContractFeed_RelatedRecordId_Inverse}" required="false"/> 
+						<rdf:ListResource path="dataModel>ServiceContractFeed_RelatedRecordId_Inverse" entitySet="ServiceContractFeed"/>
+						<Text text=""/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>ContentVersion.SignupRequestFeed_RelatedRecordId_Inverse}" required="false"/> 
+						<rdf:ListResource path="dataModel>SignupRequestFeed_RelatedRecordId_Inverse" entitySet="SignupRequestFeed"/>
+						<Text text=""/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>ContentVersion.SiteFeed_RelatedRecordId_Inverse}" required="false"/> 
+						<rdf:ListResource path="dataModel>SiteFeed_RelatedRecordId_Inverse" entitySet="SiteFeed"/>
+						<Text text=""/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>ContentVersion.SocialPostFeed_RelatedRecordId_Inverse}" required="false"/> 
+						<rdf:ListResource path="dataModel>SocialPostFeed_RelatedRecordId_Inverse" entitySet="SocialPostFeed"/>
+						<Text text=""/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>ContentVersion.SolutionFeed_RelatedRecordId_Inverse}" required="false"/> 
+						<rdf:ListResource path="dataModel>SolutionFeed_RelatedRecordId_Inverse" entitySet="SolutionFeed"/>
+						<Text text=""/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>ContentVersion.TaskFeed_RelatedRecordId_Inverse}" required="false"/> 
+						<rdf:ListResource path="dataModel>TaskFeed_RelatedRecordId_Inverse" entitySet="TaskFeed"/>
+						<Text text=""/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>ContentVersion.Territory2ModelFeed_RelatedRecordId_Inverse}" required="false"/> 
+						<rdf:ListResource path="dataModel>Territory2ModelFeed_RelatedRecordId_Inverse" entitySet="Territory2ModelFeed"/>
+						<Text text=""/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>ContentVersion.TopicFeed_RelatedRecordId_Inverse}" required="false"/> 
+						<rdf:ListResource path="dataModel>TopicFeed_RelatedRecordId_Inverse" entitySet="TopicFeed"/>
+						<Text text=""/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>ContentVersion.UserFeed_RelatedRecordId_Inverse}" required="false"/> 
+						<rdf:ListResource path="dataModel>UserFeed_RelatedRecordId_Inverse" entitySet="UserFeed"/>
+						<Text text=""/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>ContentVersion.WorkOrderFeed_RelatedRecordId_Inverse}" required="false"/> 
+						<rdf:ListResource path="dataModel>WorkOrderFeed_RelatedRecordId_Inverse" entitySet="WorkOrderFeed"/>
+						<Text text=""/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>ContentVersion.WorkOrderLineItemFeed_RelatedRecordId_Inverse}" required="false"/> 
+						<rdf:ListResource path="dataModel>WorkOrderLineItemFeed_RelatedRecordId_Inverse" entitySet="WorkOrderLineItemFeed"/>
+						<Text text=""/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>ContentVersion.sfLma__License__Feed_RelatedRecordId_Inverse}" required="false"/> 
+						<rdf:ListResource path="dataModel>sfLma__License__Feed_RelatedRecordId_Inverse" entitySet="sfLma__License__Feed"/>
+						<Text text=""/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>ContentVersion.sfLma__Package_Version__Feed_RelatedRecordId_Inverse}" required="false"/> 
+						<rdf:ListResource path="dataModel>sfLma__Package_Version__Feed_RelatedRecordId_Inverse" entitySet="sfLma__Package_Version__Feed"/>
+						<Text text=""/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>ContentVersion.sfLma__Package__Feed_RelatedRecordId_Inverse}" required="false"/> 
+						<rdf:ListResource path="dataModel>sfLma__Package__Feed_RelatedRecordId_Inverse" entitySet="sfLma__Package__Feed"/>
+						<Text text=""/>
+					</cells>
+				</ColumnListItem>
+			</items>
+		</Table>
+	</Page>
+</mvc:View>

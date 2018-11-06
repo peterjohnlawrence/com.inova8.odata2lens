@@ -1,0 +1,1253 @@
+<mvc:View controllerName="com.inova8.lens.controller.Entity360" xmlns="sap.m" xmlns:mvc="sap.ui.core.mvc" xmlns:l="sap.ui.layout"
+	xmlns:f="sap.ui.layout.form" xmlns:table="sap.ui.table" xmlns:rdf="com.inova8.lens.control" xmlns:html="http://www.w3.org/1999/xhtml"
+	xmlns:core="sap.ui.core">
+	<Page showHeader="true" id="page" navButtonPress="onNavBack" showNavButton="false" title="{i18n>UserPermissionAccess.Title}" busy="{entityView>/busy}"
+		busyIndicatorDelay="{entityView>/delay}" >
+		<customHeader>
+			<Toolbar>
+				<ToolbarSpacer/>
+				<HBox id="sourceTitle" alignItems="Center">
+						<rdf:TextResource id="selectedResource" path="" entitySet=""/>
+				</HBox>	
+				<Title id="pathTitle" text="{entityView>/navigation}"/>
+				<HBox id="versionsTitle" alignItems="Center">
+					<Title text="(" required="false"/>
+					<ComboBox id="versionSelection" items="{ path: 'entityView>/versions' }" selectionChange="onVersionChange">
+						<core:Item key="{entityView>navigation}" text="{entityView>text}"/>
+					</ComboBox>
+					<Title text=")" required="false"/>
+				</HBox>
+				<Title text="{i18n>UserPermissionAccess.this}"/>
+				<Title text="(" required="false"/>
+				<rdf:TextResource path="dataModel>" entitySet="UserPermissionAccess"/>
+				<Title text=")" required="false"/>
+	
+				<ToolbarSpacer/>
+				<ToggleButton id="toggleColumns" icon="sap-icon://hide" activeIcon="sap-icon://show" press="onSettingsPressed" visible="false"	>
+					<layoutData>
+						<OverflowToolbarLayoutData priority="NeverOverflow"/>
+					</layoutData>
+				</ToggleButton>
+				
+			</Toolbar>
+		</customHeader>
+		<Table id="form360" inset="false" fixedLayout="true" class="multicolumnform" updateFinished="hideColumns">
+			<columns>
+				<Column hAlign="Right" width="200px">
+					<Text text=""/>
+				</Column>
+				<Column visible="true">
+				</Column>
+				<Column visible="true">
+					<Text text="UserPermissionAccess"/>
+				</Column>
+			</columns>
+			<items>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>UserPermissionAccess.UserPermissionAccess_Id}" required="false"/> 
+						<Text text=""/>
+						<rdf:TextLink text="{path:'dataModel>UserPermissionAccess_Id/UserPermissionAccess_Id',type:'sap.ui.model.type.String' }" linkText="{i18n>UserPermissionAccess.UserPermissionAccess_Id/UserPermissionAccess_Id}"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>UserPermissionAccess.UserPermissionAccess_LastCacheUpdate}" required="false"/> 
+						<Text text=""/>
+						<Text text="{dataModel>UserPermissionAccess_LastCacheUpdate/UserPermissionAccess_LastCacheUpdate}"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>UserPermissionAccess.UserPermissionAccess_PermissionsAccessCMC}" required="false"/> 
+						<Text text=""/>
+						<Text text="{path:'dataModel>UserPermissionAccess_PermissionsAccessCMC/UserPermissionAccess_PermissionsAccessCMC',type:'sap.ui.model.type.Boolean'}"/>  
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>UserPermissionAccess.UserPermissionAccess_PermissionsActivateContract}" required="false"/> 
+						<Text text=""/>
+						<Text text="{path:'dataModel>UserPermissionAccess_PermissionsActivateContract/UserPermissionAccess_PermissionsActivateContract',type:'sap.ui.model.type.Boolean'}"/>  
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>UserPermissionAccess.UserPermissionAccess_PermissionsActivateOrder}" required="false"/> 
+						<Text text=""/>
+						<Text text="{path:'dataModel>UserPermissionAccess_PermissionsActivateOrder/UserPermissionAccess_PermissionsActivateOrder',type:'sap.ui.model.type.Boolean'}"/>  
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>UserPermissionAccess.UserPermissionAccess_PermissionsAddDirectMessageMembers}" required="false"/> 
+						<Text text=""/>
+						<Text text="{path:'dataModel>UserPermissionAccess_PermissionsAddDirectMessageMembers/UserPermissionAccess_PermissionsAddDirectMessageMembers',type:'sap.ui.model.type.Boolean'}"/>  
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>UserPermissionAccess.UserPermissionAccess_PermissionsAllowLightningLogin}" required="false"/> 
+						<Text text=""/>
+						<Text text="{path:'dataModel>UserPermissionAccess_PermissionsAllowLightningLogin/UserPermissionAccess_PermissionsAllowLightningLogin',type:'sap.ui.model.type.Boolean'}"/>  
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>UserPermissionAccess.UserPermissionAccess_PermissionsAllowViewEditConvertedLeads}" required="false"/> 
+						<Text text=""/>
+						<Text text="{path:'dataModel>UserPermissionAccess_PermissionsAllowViewEditConvertedLeads/UserPermissionAccess_PermissionsAllowViewEditConvertedLeads',type:'sap.ui.model.type.Boolean'}"/>  
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>UserPermissionAccess.UserPermissionAccess_PermissionsApiEnabled}" required="false"/> 
+						<Text text=""/>
+						<Text text="{path:'dataModel>UserPermissionAccess_PermissionsApiEnabled/UserPermissionAccess_PermissionsApiEnabled',type:'sap.ui.model.type.Boolean'}"/>  
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>UserPermissionAccess.UserPermissionAccess_PermissionsApiUserOnly}" required="false"/> 
+						<Text text=""/>
+						<Text text="{path:'dataModel>UserPermissionAccess_PermissionsApiUserOnly/UserPermissionAccess_PermissionsApiUserOnly',type:'sap.ui.model.type.Boolean'}"/>  
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>UserPermissionAccess.UserPermissionAccess_PermissionsAssignPermissionSets}" required="false"/> 
+						<Text text=""/>
+						<Text text="{path:'dataModel>UserPermissionAccess_PermissionsAssignPermissionSets/UserPermissionAccess_PermissionsAssignPermissionSets',type:'sap.ui.model.type.Boolean'}"/>  
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>UserPermissionAccess.UserPermissionAccess_PermissionsAssignTopics}" required="false"/> 
+						<Text text=""/>
+						<Text text="{path:'dataModel>UserPermissionAccess_PermissionsAssignTopics/UserPermissionAccess_PermissionsAssignTopics',type:'sap.ui.model.type.Boolean'}"/>  
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>UserPermissionAccess.UserPermissionAccess_PermissionsAuthorApex}" required="false"/> 
+						<Text text=""/>
+						<Text text="{path:'dataModel>UserPermissionAccess_PermissionsAuthorApex/UserPermissionAccess_PermissionsAuthorApex',type:'sap.ui.model.type.Boolean'}"/>  
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>UserPermissionAccess.UserPermissionAccess_PermissionsBulkApiHardDelete}" required="false"/> 
+						<Text text=""/>
+						<Text text="{path:'dataModel>UserPermissionAccess_PermissionsBulkApiHardDelete/UserPermissionAccess_PermissionsBulkApiHardDelete',type:'sap.ui.model.type.Boolean'}"/>  
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>UserPermissionAccess.UserPermissionAccess_PermissionsBulkMacrosAllowed}" required="false"/> 
+						<Text text=""/>
+						<Text text="{path:'dataModel>UserPermissionAccess_PermissionsBulkMacrosAllowed/UserPermissionAccess_PermissionsBulkMacrosAllowed',type:'sap.ui.model.type.Boolean'}"/>  
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>UserPermissionAccess.UserPermissionAccess_PermissionsCampaignInfluence2}" required="false"/> 
+						<Text text=""/>
+						<Text text="{path:'dataModel>UserPermissionAccess_PermissionsCampaignInfluence2/UserPermissionAccess_PermissionsCampaignInfluence2',type:'sap.ui.model.type.Boolean'}"/>  
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>UserPermissionAccess.UserPermissionAccess_PermissionsCanApproveFeedPost}" required="false"/> 
+						<Text text=""/>
+						<Text text="{path:'dataModel>UserPermissionAccess_PermissionsCanApproveFeedPost/UserPermissionAccess_PermissionsCanApproveFeedPost',type:'sap.ui.model.type.Boolean'}"/>  
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>UserPermissionAccess.UserPermissionAccess_PermissionsCanInsertFeedSystemFields}" required="false"/> 
+						<Text text=""/>
+						<Text text="{path:'dataModel>UserPermissionAccess_PermissionsCanInsertFeedSystemFields/UserPermissionAccess_PermissionsCanInsertFeedSystemFields',type:'sap.ui.model.type.Boolean'}"/>  
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>UserPermissionAccess.UserPermissionAccess_PermissionsCanUseNewDashboardBuilder}" required="false"/> 
+						<Text text=""/>
+						<Text text="{path:'dataModel>UserPermissionAccess_PermissionsCanUseNewDashboardBuilder/UserPermissionAccess_PermissionsCanUseNewDashboardBuilder',type:'sap.ui.model.type.Boolean'}"/>  
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>UserPermissionAccess.UserPermissionAccess_PermissionsCanVerifyComment}" required="false"/> 
+						<Text text=""/>
+						<Text text="{path:'dataModel>UserPermissionAccess_PermissionsCanVerifyComment/UserPermissionAccess_PermissionsCanVerifyComment',type:'sap.ui.model.type.Boolean'}"/>  
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>UserPermissionAccess.UserPermissionAccess_PermissionsChatterComposeUiCodesnippet}" required="false"/> 
+						<Text text=""/>
+						<Text text="{path:'dataModel>UserPermissionAccess_PermissionsChatterComposeUiCodesnippet/UserPermissionAccess_PermissionsChatterComposeUiCodesnippet',type:'sap.ui.model.type.Boolean'}"/>  
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>UserPermissionAccess.UserPermissionAccess_PermissionsChatterEditOwnPost}" required="false"/> 
+						<Text text=""/>
+						<Text text="{path:'dataModel>UserPermissionAccess_PermissionsChatterEditOwnPost/UserPermissionAccess_PermissionsChatterEditOwnPost',type:'sap.ui.model.type.Boolean'}"/>  
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>UserPermissionAccess.UserPermissionAccess_PermissionsChatterEditOwnRecordPost}" required="false"/> 
+						<Text text=""/>
+						<Text text="{path:'dataModel>UserPermissionAccess_PermissionsChatterEditOwnRecordPost/UserPermissionAccess_PermissionsChatterEditOwnRecordPost',type:'sap.ui.model.type.Boolean'}"/>  
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>UserPermissionAccess.UserPermissionAccess_PermissionsChatterFileLink}" required="false"/> 
+						<Text text=""/>
+						<Text text="{path:'dataModel>UserPermissionAccess_PermissionsChatterFileLink/UserPermissionAccess_PermissionsChatterFileLink',type:'sap.ui.model.type.Boolean'}"/>  
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>UserPermissionAccess.UserPermissionAccess_PermissionsChatterForSharePoint}" required="false"/> 
+						<Text text=""/>
+						<Text text="{path:'dataModel>UserPermissionAccess_PermissionsChatterForSharePoint/UserPermissionAccess_PermissionsChatterForSharePoint',type:'sap.ui.model.type.Boolean'}"/>  
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>UserPermissionAccess.UserPermissionAccess_PermissionsChatterInternalUser}" required="false"/> 
+						<Text text=""/>
+						<Text text="{path:'dataModel>UserPermissionAccess_PermissionsChatterInternalUser/UserPermissionAccess_PermissionsChatterInternalUser',type:'sap.ui.model.type.Boolean'}"/>  
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>UserPermissionAccess.UserPermissionAccess_PermissionsChatterInviteExternalUsers}" required="false"/> 
+						<Text text=""/>
+						<Text text="{path:'dataModel>UserPermissionAccess_PermissionsChatterInviteExternalUsers/UserPermissionAccess_PermissionsChatterInviteExternalUsers',type:'sap.ui.model.type.Boolean'}"/>  
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>UserPermissionAccess.UserPermissionAccess_PermissionsChatterOwnGroups}" required="false"/> 
+						<Text text=""/>
+						<Text text="{path:'dataModel>UserPermissionAccess_PermissionsChatterOwnGroups/UserPermissionAccess_PermissionsChatterOwnGroups',type:'sap.ui.model.type.Boolean'}"/>  
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>UserPermissionAccess.UserPermissionAccess_PermissionsConfigCustomRecs}" required="false"/> 
+						<Text text=""/>
+						<Text text="{path:'dataModel>UserPermissionAccess_PermissionsConfigCustomRecs/UserPermissionAccess_PermissionsConfigCustomRecs',type:'sap.ui.model.type.Boolean'}"/>  
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>UserPermissionAccess.UserPermissionAccess_PermissionsConnectOrgToEnvironmentHub}" required="false"/> 
+						<Text text=""/>
+						<Text text="{path:'dataModel>UserPermissionAccess_PermissionsConnectOrgToEnvironmentHub/UserPermissionAccess_PermissionsConnectOrgToEnvironmentHub',type:'sap.ui.model.type.Boolean'}"/>  
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>UserPermissionAccess.UserPermissionAccess_PermissionsContentAdministrator}" required="false"/> 
+						<Text text=""/>
+						<Text text="{path:'dataModel>UserPermissionAccess_PermissionsContentAdministrator/UserPermissionAccess_PermissionsContentAdministrator',type:'sap.ui.model.type.Boolean'}"/>  
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>UserPermissionAccess.UserPermissionAccess_PermissionsContentWorkspaces}" required="false"/> 
+						<Text text=""/>
+						<Text text="{path:'dataModel>UserPermissionAccess_PermissionsContentWorkspaces/UserPermissionAccess_PermissionsContentWorkspaces',type:'sap.ui.model.type.Boolean'}"/>  
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>UserPermissionAccess.UserPermissionAccess_PermissionsConvertLeads}" required="false"/> 
+						<Text text=""/>
+						<Text text="{path:'dataModel>UserPermissionAccess_PermissionsConvertLeads/UserPermissionAccess_PermissionsConvertLeads',type:'sap.ui.model.type.Boolean'}"/>  
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>UserPermissionAccess.UserPermissionAccess_PermissionsCreateCustomizeFilters}" required="false"/> 
+						<Text text=""/>
+						<Text text="{path:'dataModel>UserPermissionAccess_PermissionsCreateCustomizeFilters/UserPermissionAccess_PermissionsCreateCustomizeFilters',type:'sap.ui.model.type.Boolean'}"/>  
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>UserPermissionAccess.UserPermissionAccess_PermissionsCreatePackaging}" required="false"/> 
+						<Text text=""/>
+						<Text text="{path:'dataModel>UserPermissionAccess_PermissionsCreatePackaging/UserPermissionAccess_PermissionsCreatePackaging',type:'sap.ui.model.type.Boolean'}"/>  
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>UserPermissionAccess.UserPermissionAccess_PermissionsCreateTopics}" required="false"/> 
+						<Text text=""/>
+						<Text text="{path:'dataModel>UserPermissionAccess_PermissionsCreateTopics/UserPermissionAccess_PermissionsCreateTopics',type:'sap.ui.model.type.Boolean'}"/>  
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>UserPermissionAccess.UserPermissionAccess_PermissionsCreateWorkspaces}" required="false"/> 
+						<Text text=""/>
+						<Text text="{path:'dataModel>UserPermissionAccess_PermissionsCreateWorkspaces/UserPermissionAccess_PermissionsCreateWorkspaces',type:'sap.ui.model.type.Boolean'}"/>  
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>UserPermissionAccess.UserPermissionAccess_PermissionsCustomMobileAppsAccess}" required="false"/> 
+						<Text text=""/>
+						<Text text="{path:'dataModel>UserPermissionAccess_PermissionsCustomMobileAppsAccess/UserPermissionAccess_PermissionsCustomMobileAppsAccess',type:'sap.ui.model.type.Boolean'}"/>  
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>UserPermissionAccess.UserPermissionAccess_PermissionsCustomSidebarOnAllPages}" required="false"/> 
+						<Text text=""/>
+						<Text text="{path:'dataModel>UserPermissionAccess_PermissionsCustomSidebarOnAllPages/UserPermissionAccess_PermissionsCustomSidebarOnAllPages',type:'sap.ui.model.type.Boolean'}"/>  
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>UserPermissionAccess.UserPermissionAccess_PermissionsCustomizeApplication}" required="false"/> 
+						<Text text=""/>
+						<Text text="{path:'dataModel>UserPermissionAccess_PermissionsCustomizeApplication/UserPermissionAccess_PermissionsCustomizeApplication',type:'sap.ui.model.type.Boolean'}"/>  
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>UserPermissionAccess.UserPermissionAccess_PermissionsDataExport}" required="false"/> 
+						<Text text=""/>
+						<Text text="{path:'dataModel>UserPermissionAccess_PermissionsDataExport/UserPermissionAccess_PermissionsDataExport',type:'sap.ui.model.type.Boolean'}"/>  
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>UserPermissionAccess.UserPermissionAccess_PermissionsDelegatedTwoFactor}" required="false"/> 
+						<Text text=""/>
+						<Text text="{path:'dataModel>UserPermissionAccess_PermissionsDelegatedTwoFactor/UserPermissionAccess_PermissionsDelegatedTwoFactor',type:'sap.ui.model.type.Boolean'}"/>  
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>UserPermissionAccess.UserPermissionAccess_PermissionsDeleteActivatedContract}" required="false"/> 
+						<Text text=""/>
+						<Text text="{path:'dataModel>UserPermissionAccess_PermissionsDeleteActivatedContract/UserPermissionAccess_PermissionsDeleteActivatedContract',type:'sap.ui.model.type.Boolean'}"/>  
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>UserPermissionAccess.UserPermissionAccess_PermissionsDeleteTopics}" required="false"/> 
+						<Text text=""/>
+						<Text text="{path:'dataModel>UserPermissionAccess_PermissionsDeleteTopics/UserPermissionAccess_PermissionsDeleteTopics',type:'sap.ui.model.type.Boolean'}"/>  
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>UserPermissionAccess.UserPermissionAccess_PermissionsDistributeFromPersWksp}" required="false"/> 
+						<Text text=""/>
+						<Text text="{path:'dataModel>UserPermissionAccess_PermissionsDistributeFromPersWksp/UserPermissionAccess_PermissionsDistributeFromPersWksp',type:'sap.ui.model.type.Boolean'}"/>  
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>UserPermissionAccess.UserPermissionAccess_PermissionsEditActivatedOrders}" required="false"/> 
+						<Text text=""/>
+						<Text text="{path:'dataModel>UserPermissionAccess_PermissionsEditActivatedOrders/UserPermissionAccess_PermissionsEditActivatedOrders',type:'sap.ui.model.type.Boolean'}"/>  
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>UserPermissionAccess.UserPermissionAccess_PermissionsEditBrandTemplates}" required="false"/> 
+						<Text text=""/>
+						<Text text="{path:'dataModel>UserPermissionAccess_PermissionsEditBrandTemplates/UserPermissionAccess_PermissionsEditBrandTemplates',type:'sap.ui.model.type.Boolean'}"/>  
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>UserPermissionAccess.UserPermissionAccess_PermissionsEditCaseComments}" required="false"/> 
+						<Text text=""/>
+						<Text text="{path:'dataModel>UserPermissionAccess_PermissionsEditCaseComments/UserPermissionAccess_PermissionsEditCaseComments',type:'sap.ui.model.type.Boolean'}"/>  
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>UserPermissionAccess.UserPermissionAccess_PermissionsEditEvent}" required="false"/> 
+						<Text text=""/>
+						<Text text="{path:'dataModel>UserPermissionAccess_PermissionsEditEvent/UserPermissionAccess_PermissionsEditEvent',type:'sap.ui.model.type.Boolean'}"/>  
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>UserPermissionAccess.UserPermissionAccess_PermissionsEditHtmlTemplates}" required="false"/> 
+						<Text text=""/>
+						<Text text="{path:'dataModel>UserPermissionAccess_PermissionsEditHtmlTemplates/UserPermissionAccess_PermissionsEditHtmlTemplates',type:'sap.ui.model.type.Boolean'}"/>  
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>UserPermissionAccess.UserPermissionAccess_PermissionsEditOppLineItemUnitPrice}" required="false"/> 
+						<Text text=""/>
+						<Text text="{path:'dataModel>UserPermissionAccess_PermissionsEditOppLineItemUnitPrice/UserPermissionAccess_PermissionsEditOppLineItemUnitPrice',type:'sap.ui.model.type.Boolean'}"/>  
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>UserPermissionAccess.UserPermissionAccess_PermissionsEditPublicDocuments}" required="false"/> 
+						<Text text=""/>
+						<Text text="{path:'dataModel>UserPermissionAccess_PermissionsEditPublicDocuments/UserPermissionAccess_PermissionsEditPublicDocuments',type:'sap.ui.model.type.Boolean'}"/>  
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>UserPermissionAccess.UserPermissionAccess_PermissionsEditPublicFilters}" required="false"/> 
+						<Text text=""/>
+						<Text text="{path:'dataModel>UserPermissionAccess_PermissionsEditPublicFilters/UserPermissionAccess_PermissionsEditPublicFilters',type:'sap.ui.model.type.Boolean'}"/>  
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>UserPermissionAccess.UserPermissionAccess_PermissionsEditPublicTemplates}" required="false"/> 
+						<Text text=""/>
+						<Text text="{path:'dataModel>UserPermissionAccess_PermissionsEditPublicTemplates/UserPermissionAccess_PermissionsEditPublicTemplates',type:'sap.ui.model.type.Boolean'}"/>  
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>UserPermissionAccess.UserPermissionAccess_PermissionsEditReadonlyFields}" required="false"/> 
+						<Text text=""/>
+						<Text text="{path:'dataModel>UserPermissionAccess_PermissionsEditReadonlyFields/UserPermissionAccess_PermissionsEditReadonlyFields',type:'sap.ui.model.type.Boolean'}"/>  
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>UserPermissionAccess.UserPermissionAccess_PermissionsEditReports}" required="false"/> 
+						<Text text=""/>
+						<Text text="{path:'dataModel>UserPermissionAccess_PermissionsEditReports/UserPermissionAccess_PermissionsEditReports',type:'sap.ui.model.type.Boolean'}"/>  
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>UserPermissionAccess.UserPermissionAccess_PermissionsEditTask}" required="false"/> 
+						<Text text=""/>
+						<Text text="{path:'dataModel>UserPermissionAccess_PermissionsEditTask/UserPermissionAccess_PermissionsEditTask',type:'sap.ui.model.type.Boolean'}"/>  
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>UserPermissionAccess.UserPermissionAccess_PermissionsEditTopics}" required="false"/> 
+						<Text text=""/>
+						<Text text="{path:'dataModel>UserPermissionAccess_PermissionsEditTopics/UserPermissionAccess_PermissionsEditTopics',type:'sap.ui.model.type.Boolean'}"/>  
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>UserPermissionAccess.UserPermissionAccess_PermissionsEmailAdministration}" required="false"/> 
+						<Text text=""/>
+						<Text text="{path:'dataModel>UserPermissionAccess_PermissionsEmailAdministration/UserPermissionAccess_PermissionsEmailAdministration',type:'sap.ui.model.type.Boolean'}"/>  
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>UserPermissionAccess.UserPermissionAccess_PermissionsEmailMass}" required="false"/> 
+						<Text text=""/>
+						<Text text="{path:'dataModel>UserPermissionAccess_PermissionsEmailMass/UserPermissionAccess_PermissionsEmailMass',type:'sap.ui.model.type.Boolean'}"/>  
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>UserPermissionAccess.UserPermissionAccess_PermissionsEmailSingle}" required="false"/> 
+						<Text text=""/>
+						<Text text="{path:'dataModel>UserPermissionAccess_PermissionsEmailSingle/UserPermissionAccess_PermissionsEmailSingle',type:'sap.ui.model.type.Boolean'}"/>  
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>UserPermissionAccess.UserPermissionAccess_PermissionsEmailTemplateManagement}" required="false"/> 
+						<Text text=""/>
+						<Text text="{path:'dataModel>UserPermissionAccess_PermissionsEmailTemplateManagement/UserPermissionAccess_PermissionsEmailTemplateManagement',type:'sap.ui.model.type.Boolean'}"/>  
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>UserPermissionAccess.UserPermissionAccess_PermissionsEnableCommunityAppLauncher}" required="false"/> 
+						<Text text=""/>
+						<Text text="{path:'dataModel>UserPermissionAccess_PermissionsEnableCommunityAppLauncher/UserPermissionAccess_PermissionsEnableCommunityAppLauncher',type:'sap.ui.model.type.Boolean'}"/>  
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>UserPermissionAccess.UserPermissionAccess_PermissionsEnableNotifications}" required="false"/> 
+						<Text text=""/>
+						<Text text="{path:'dataModel>UserPermissionAccess_PermissionsEnableNotifications/UserPermissionAccess_PermissionsEnableNotifications',type:'sap.ui.model.type.Boolean'}"/>  
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>UserPermissionAccess.UserPermissionAccess_PermissionsExportReport}" required="false"/> 
+						<Text text=""/>
+						<Text text="{path:'dataModel>UserPermissionAccess_PermissionsExportReport/UserPermissionAccess_PermissionsExportReport',type:'sap.ui.model.type.Boolean'}"/>  
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>UserPermissionAccess.UserPermissionAccess_PermissionsFeedPinning}" required="false"/> 
+						<Text text=""/>
+						<Text text="{path:'dataModel>UserPermissionAccess_PermissionsFeedPinning/UserPermissionAccess_PermissionsFeedPinning',type:'sap.ui.model.type.Boolean'}"/>  
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>UserPermissionAccess.UserPermissionAccess_PermissionsFlowUFLRequired}" required="false"/> 
+						<Text text=""/>
+						<Text text="{path:'dataModel>UserPermissionAccess_PermissionsFlowUFLRequired/UserPermissionAccess_PermissionsFlowUFLRequired',type:'sap.ui.model.type.Boolean'}"/>  
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>UserPermissionAccess.UserPermissionAccess_PermissionsForceTwoFactor}" required="false"/> 
+						<Text text=""/>
+						<Text text="{path:'dataModel>UserPermissionAccess_PermissionsForceTwoFactor/UserPermissionAccess_PermissionsForceTwoFactor',type:'sap.ui.model.type.Boolean'}"/>  
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>UserPermissionAccess.UserPermissionAccess_PermissionsGovernNetworks}" required="false"/> 
+						<Text text=""/>
+						<Text text="{path:'dataModel>UserPermissionAccess_PermissionsGovernNetworks/UserPermissionAccess_PermissionsGovernNetworks',type:'sap.ui.model.type.Boolean'}"/>  
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>UserPermissionAccess.UserPermissionAccess_PermissionsHideReadByList}" required="false"/> 
+						<Text text=""/>
+						<Text text="{path:'dataModel>UserPermissionAccess_PermissionsHideReadByList/UserPermissionAccess_PermissionsHideReadByList',type:'sap.ui.model.type.Boolean'}"/>  
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>UserPermissionAccess.UserPermissionAccess_PermissionsIdentityConnect}" required="false"/> 
+						<Text text=""/>
+						<Text text="{path:'dataModel>UserPermissionAccess_PermissionsIdentityConnect/UserPermissionAccess_PermissionsIdentityConnect',type:'sap.ui.model.type.Boolean'}"/>  
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>UserPermissionAccess.UserPermissionAccess_PermissionsIdentityEnabled}" required="false"/> 
+						<Text text=""/>
+						<Text text="{path:'dataModel>UserPermissionAccess_PermissionsIdentityEnabled/UserPermissionAccess_PermissionsIdentityEnabled',type:'sap.ui.model.type.Boolean'}"/>  
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>UserPermissionAccess.UserPermissionAccess_PermissionsImportCustomObjects}" required="false"/> 
+						<Text text=""/>
+						<Text text="{path:'dataModel>UserPermissionAccess_PermissionsImportCustomObjects/UserPermissionAccess_PermissionsImportCustomObjects',type:'sap.ui.model.type.Boolean'}"/>  
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>UserPermissionAccess.UserPermissionAccess_PermissionsImportLeads}" required="false"/> 
+						<Text text=""/>
+						<Text text="{path:'dataModel>UserPermissionAccess_PermissionsImportLeads/UserPermissionAccess_PermissionsImportLeads',type:'sap.ui.model.type.Boolean'}"/>  
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>UserPermissionAccess.UserPermissionAccess_PermissionsImportPersonal}" required="false"/> 
+						<Text text=""/>
+						<Text text="{path:'dataModel>UserPermissionAccess_PermissionsImportPersonal/UserPermissionAccess_PermissionsImportPersonal',type:'sap.ui.model.type.Boolean'}"/>  
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>UserPermissionAccess.UserPermissionAccess_PermissionsInboundMigrationToolsUser}" required="false"/> 
+						<Text text=""/>
+						<Text text="{path:'dataModel>UserPermissionAccess_PermissionsInboundMigrationToolsUser/UserPermissionAccess_PermissionsInboundMigrationToolsUser',type:'sap.ui.model.type.Boolean'}"/>  
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>UserPermissionAccess.UserPermissionAccess_PermissionsInstallPackaging}" required="false"/> 
+						<Text text=""/>
+						<Text text="{path:'dataModel>UserPermissionAccess_PermissionsInstallPackaging/UserPermissionAccess_PermissionsInstallPackaging',type:'sap.ui.model.type.Boolean'}"/>  
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>UserPermissionAccess.UserPermissionAccess_PermissionsLightningConsoleAllowedForUser}" required="false"/> 
+						<Text text=""/>
+						<Text text="{path:'dataModel>UserPermissionAccess_PermissionsLightningConsoleAllowedForUser/UserPermissionAccess_PermissionsLightningConsoleAllowedForUser',type:'sap.ui.model.type.Boolean'}"/>  
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>UserPermissionAccess.UserPermissionAccess_PermissionsLightningExperienceUser}" required="false"/> 
+						<Text text=""/>
+						<Text text="{path:'dataModel>UserPermissionAccess_PermissionsLightningExperienceUser/UserPermissionAccess_PermissionsLightningExperienceUser',type:'sap.ui.model.type.Boolean'}"/>  
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>UserPermissionAccess.UserPermissionAccess_PermissionsListEmailSend}" required="false"/> 
+						<Text text=""/>
+						<Text text="{path:'dataModel>UserPermissionAccess_PermissionsListEmailSend/UserPermissionAccess_PermissionsListEmailSend',type:'sap.ui.model.type.Boolean'}"/>  
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>UserPermissionAccess.UserPermissionAccess_PermissionsManageAnalyticSnapshots}" required="false"/> 
+						<Text text=""/>
+						<Text text="{path:'dataModel>UserPermissionAccess_PermissionsManageAnalyticSnapshots/UserPermissionAccess_PermissionsManageAnalyticSnapshots',type:'sap.ui.model.type.Boolean'}"/>  
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>UserPermissionAccess.UserPermissionAccess_PermissionsManageAuthProviders}" required="false"/> 
+						<Text text=""/>
+						<Text text="{path:'dataModel>UserPermissionAccess_PermissionsManageAuthProviders/UserPermissionAccess_PermissionsManageAuthProviders',type:'sap.ui.model.type.Boolean'}"/>  
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>UserPermissionAccess.UserPermissionAccess_PermissionsManageBusinessHourHolidays}" required="false"/> 
+						<Text text=""/>
+						<Text text="{path:'dataModel>UserPermissionAccess_PermissionsManageBusinessHourHolidays/UserPermissionAccess_PermissionsManageBusinessHourHolidays',type:'sap.ui.model.type.Boolean'}"/>  
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>UserPermissionAccess.UserPermissionAccess_PermissionsManageCallCenters}" required="false"/> 
+						<Text text=""/>
+						<Text text="{path:'dataModel>UserPermissionAccess_PermissionsManageCallCenters/UserPermissionAccess_PermissionsManageCallCenters',type:'sap.ui.model.type.Boolean'}"/>  
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>UserPermissionAccess.UserPermissionAccess_PermissionsManageCases}" required="false"/> 
+						<Text text=""/>
+						<Text text="{path:'dataModel>UserPermissionAccess_PermissionsManageCases/UserPermissionAccess_PermissionsManageCases',type:'sap.ui.model.type.Boolean'}"/>  
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>UserPermissionAccess.UserPermissionAccess_PermissionsManageCategories}" required="false"/> 
+						<Text text=""/>
+						<Text text="{path:'dataModel>UserPermissionAccess_PermissionsManageCategories/UserPermissionAccess_PermissionsManageCategories',type:'sap.ui.model.type.Boolean'}"/>  
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>UserPermissionAccess.UserPermissionAccess_PermissionsManageCertificates}" required="false"/> 
+						<Text text=""/>
+						<Text text="{path:'dataModel>UserPermissionAccess_PermissionsManageCertificates/UserPermissionAccess_PermissionsManageCertificates',type:'sap.ui.model.type.Boolean'}"/>  
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>UserPermissionAccess.UserPermissionAccess_PermissionsManageChatterMessages}" required="false"/> 
+						<Text text=""/>
+						<Text text="{path:'dataModel>UserPermissionAccess_PermissionsManageChatterMessages/UserPermissionAccess_PermissionsManageChatterMessages',type:'sap.ui.model.type.Boolean'}"/>  
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>UserPermissionAccess.UserPermissionAccess_PermissionsManageContentPermissions}" required="false"/> 
+						<Text text=""/>
+						<Text text="{path:'dataModel>UserPermissionAccess_PermissionsManageContentPermissions/UserPermissionAccess_PermissionsManageContentPermissions',type:'sap.ui.model.type.Boolean'}"/>  
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>UserPermissionAccess.UserPermissionAccess_PermissionsManageContentProperties}" required="false"/> 
+						<Text text=""/>
+						<Text text="{path:'dataModel>UserPermissionAccess_PermissionsManageContentProperties/UserPermissionAccess_PermissionsManageContentProperties',type:'sap.ui.model.type.Boolean'}"/>  
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>UserPermissionAccess.UserPermissionAccess_PermissionsManageContentTypes}" required="false"/> 
+						<Text text=""/>
+						<Text text="{path:'dataModel>UserPermissionAccess_PermissionsManageContentTypes/UserPermissionAccess_PermissionsManageContentTypes',type:'sap.ui.model.type.Boolean'}"/>  
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>UserPermissionAccess.UserPermissionAccess_PermissionsManageCustomPermissions}" required="false"/> 
+						<Text text=""/>
+						<Text text="{path:'dataModel>UserPermissionAccess_PermissionsManageCustomPermissions/UserPermissionAccess_PermissionsManageCustomPermissions',type:'sap.ui.model.type.Boolean'}"/>  
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>UserPermissionAccess.UserPermissionAccess_PermissionsManageCustomReportTypes}" required="false"/> 
+						<Text text=""/>
+						<Text text="{path:'dataModel>UserPermissionAccess_PermissionsManageCustomReportTypes/UserPermissionAccess_PermissionsManageCustomReportTypes',type:'sap.ui.model.type.Boolean'}"/>  
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>UserPermissionAccess.UserPermissionAccess_PermissionsManageDashboards}" required="false"/> 
+						<Text text=""/>
+						<Text text="{path:'dataModel>UserPermissionAccess_PermissionsManageDashboards/UserPermissionAccess_PermissionsManageDashboards',type:'sap.ui.model.type.Boolean'}"/>  
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>UserPermissionAccess.UserPermissionAccess_PermissionsManageDataCategories}" required="false"/> 
+						<Text text=""/>
+						<Text text="{path:'dataModel>UserPermissionAccess_PermissionsManageDataCategories/UserPermissionAccess_PermissionsManageDataCategories',type:'sap.ui.model.type.Boolean'}"/>  
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>UserPermissionAccess.UserPermissionAccess_PermissionsManageDataIntegrations}" required="false"/> 
+						<Text text=""/>
+						<Text text="{path:'dataModel>UserPermissionAccess_PermissionsManageDataIntegrations/UserPermissionAccess_PermissionsManageDataIntegrations',type:'sap.ui.model.type.Boolean'}"/>  
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>UserPermissionAccess.UserPermissionAccess_PermissionsManageEmailClientConfig}" required="false"/> 
+						<Text text=""/>
+						<Text text="{path:'dataModel>UserPermissionAccess_PermissionsManageEmailClientConfig/UserPermissionAccess_PermissionsManageEmailClientConfig',type:'sap.ui.model.type.Boolean'}"/>  
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>UserPermissionAccess.UserPermissionAccess_PermissionsManageEntitlements}" required="false"/> 
+						<Text text=""/>
+						<Text text="{path:'dataModel>UserPermissionAccess_PermissionsManageEntitlements/UserPermissionAccess_PermissionsManageEntitlements',type:'sap.ui.model.type.Boolean'}"/>  
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>UserPermissionAccess.UserPermissionAccess_PermissionsManageExchangeConfig}" required="false"/> 
+						<Text text=""/>
+						<Text text="{path:'dataModel>UserPermissionAccess_PermissionsManageExchangeConfig/UserPermissionAccess_PermissionsManageExchangeConfig',type:'sap.ui.model.type.Boolean'}"/>  
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>UserPermissionAccess.UserPermissionAccess_PermissionsManageHealthCheck}" required="false"/> 
+						<Text text=""/>
+						<Text text="{path:'dataModel>UserPermissionAccess_PermissionsManageHealthCheck/UserPermissionAccess_PermissionsManageHealthCheck',type:'sap.ui.model.type.Boolean'}"/>  
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>UserPermissionAccess.UserPermissionAccess_PermissionsManageInteraction}" required="false"/> 
+						<Text text=""/>
+						<Text text="{path:'dataModel>UserPermissionAccess_PermissionsManageInteraction/UserPermissionAccess_PermissionsManageInteraction',type:'sap.ui.model.type.Boolean'}"/>  
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>UserPermissionAccess.UserPermissionAccess_PermissionsManageInternalUsers}" required="false"/> 
+						<Text text=""/>
+						<Text text="{path:'dataModel>UserPermissionAccess_PermissionsManageInternalUsers/UserPermissionAccess_PermissionsManageInternalUsers',type:'sap.ui.model.type.Boolean'}"/>  
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>UserPermissionAccess.UserPermissionAccess_PermissionsManageIpAddresses}" required="false"/> 
+						<Text text=""/>
+						<Text text="{path:'dataModel>UserPermissionAccess_PermissionsManageIpAddresses/UserPermissionAccess_PermissionsManageIpAddresses',type:'sap.ui.model.type.Boolean'}"/>  
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>UserPermissionAccess.UserPermissionAccess_PermissionsManageLeads}" required="false"/> 
+						<Text text=""/>
+						<Text text="{path:'dataModel>UserPermissionAccess_PermissionsManageLeads/UserPermissionAccess_PermissionsManageLeads',type:'sap.ui.model.type.Boolean'}"/>  
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>UserPermissionAccess.UserPermissionAccess_PermissionsManageLoginAccessPolicies}" required="false"/> 
+						<Text text=""/>
+						<Text text="{path:'dataModel>UserPermissionAccess_PermissionsManageLoginAccessPolicies/UserPermissionAccess_PermissionsManageLoginAccessPolicies',type:'sap.ui.model.type.Boolean'}"/>  
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>UserPermissionAccess.UserPermissionAccess_PermissionsManageMobile}" required="false"/> 
+						<Text text=""/>
+						<Text text="{path:'dataModel>UserPermissionAccess_PermissionsManageMobile/UserPermissionAccess_PermissionsManageMobile',type:'sap.ui.model.type.Boolean'}"/>  
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>UserPermissionAccess.UserPermissionAccess_PermissionsManageNetworks}" required="false"/> 
+						<Text text=""/>
+						<Text text="{path:'dataModel>UserPermissionAccess_PermissionsManageNetworks/UserPermissionAccess_PermissionsManageNetworks',type:'sap.ui.model.type.Boolean'}"/>  
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>UserPermissionAccess.UserPermissionAccess_PermissionsManagePasswordPolicies}" required="false"/> 
+						<Text text=""/>
+						<Text text="{path:'dataModel>UserPermissionAccess_PermissionsManagePasswordPolicies/UserPermissionAccess_PermissionsManagePasswordPolicies',type:'sap.ui.model.type.Boolean'}"/>  
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>UserPermissionAccess.UserPermissionAccess_PermissionsManageProfilesPermissionsets}" required="false"/> 
+						<Text text=""/>
+						<Text text="{path:'dataModel>UserPermissionAccess_PermissionsManageProfilesPermissionsets/UserPermissionAccess_PermissionsManageProfilesPermissionsets',type:'sap.ui.model.type.Boolean'}"/>  
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>UserPermissionAccess.UserPermissionAccess_PermissionsManagePvtRptsAndDashbds}" required="false"/> 
+						<Text text=""/>
+						<Text text="{path:'dataModel>UserPermissionAccess_PermissionsManagePvtRptsAndDashbds/UserPermissionAccess_PermissionsManagePvtRptsAndDashbds',type:'sap.ui.model.type.Boolean'}"/>  
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>UserPermissionAccess.UserPermissionAccess_PermissionsManageQuotas}" required="false"/> 
+						<Text text=""/>
+						<Text text="{path:'dataModel>UserPermissionAccess_PermissionsManageQuotas/UserPermissionAccess_PermissionsManageQuotas',type:'sap.ui.model.type.Boolean'}"/>  
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>UserPermissionAccess.UserPermissionAccess_PermissionsManageRealm}" required="false"/> 
+						<Text text=""/>
+						<Text text="{path:'dataModel>UserPermissionAccess_PermissionsManageRealm/UserPermissionAccess_PermissionsManageRealm',type:'sap.ui.model.type.Boolean'}"/>  
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>UserPermissionAccess.UserPermissionAccess_PermissionsManageRemoteAccess}" required="false"/> 
+						<Text text=""/>
+						<Text text="{path:'dataModel>UserPermissionAccess_PermissionsManageRemoteAccess/UserPermissionAccess_PermissionsManageRemoteAccess',type:'sap.ui.model.type.Boolean'}"/>  
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>UserPermissionAccess.UserPermissionAccess_PermissionsManageRoles}" required="false"/> 
+						<Text text=""/>
+						<Text text="{path:'dataModel>UserPermissionAccess_PermissionsManageRoles/UserPermissionAccess_PermissionsManageRoles',type:'sap.ui.model.type.Boolean'}"/>  
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>UserPermissionAccess.UserPermissionAccess_PermissionsManageSandboxes}" required="false"/> 
+						<Text text=""/>
+						<Text text="{path:'dataModel>UserPermissionAccess_PermissionsManageSandboxes/UserPermissionAccess_PermissionsManageSandboxes',type:'sap.ui.model.type.Boolean'}"/>  
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>UserPermissionAccess.UserPermissionAccess_PermissionsManageSessionPermissionSets}" required="false"/> 
+						<Text text=""/>
+						<Text text="{path:'dataModel>UserPermissionAccess_PermissionsManageSessionPermissionSets/UserPermissionAccess_PermissionsManageSessionPermissionSets',type:'sap.ui.model.type.Boolean'}"/>  
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>UserPermissionAccess.UserPermissionAccess_PermissionsManageSharing}" required="false"/> 
+						<Text text=""/>
+						<Text text="{path:'dataModel>UserPermissionAccess_PermissionsManageSharing/UserPermissionAccess_PermissionsManageSharing',type:'sap.ui.model.type.Boolean'}"/>  
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>UserPermissionAccess.UserPermissionAccess_PermissionsManageSolutions}" required="false"/> 
+						<Text text=""/>
+						<Text text="{path:'dataModel>UserPermissionAccess_PermissionsManageSolutions/UserPermissionAccess_PermissionsManageSolutions',type:'sap.ui.model.type.Boolean'}"/>  
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>UserPermissionAccess.UserPermissionAccess_PermissionsManageSynonyms}" required="false"/> 
+						<Text text=""/>
+						<Text text="{path:'dataModel>UserPermissionAccess_PermissionsManageSynonyms/UserPermissionAccess_PermissionsManageSynonyms',type:'sap.ui.model.type.Boolean'}"/>  
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>UserPermissionAccess.UserPermissionAccess_PermissionsManageTerritories}" required="false"/> 
+						<Text text=""/>
+						<Text text="{path:'dataModel>UserPermissionAccess_PermissionsManageTerritories/UserPermissionAccess_PermissionsManageTerritories',type:'sap.ui.model.type.Boolean'}"/>  
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>UserPermissionAccess.UserPermissionAccess_PermissionsManageTranslation}" required="false"/> 
+						<Text text=""/>
+						<Text text="{path:'dataModel>UserPermissionAccess_PermissionsManageTranslation/UserPermissionAccess_PermissionsManageTranslation',type:'sap.ui.model.type.Boolean'}"/>  
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>UserPermissionAccess.UserPermissionAccess_PermissionsManageTwoFactor}" required="false"/> 
+						<Text text=""/>
+						<Text text="{path:'dataModel>UserPermissionAccess_PermissionsManageTwoFactor/UserPermissionAccess_PermissionsManageTwoFactor',type:'sap.ui.model.type.Boolean'}"/>  
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>UserPermissionAccess.UserPermissionAccess_PermissionsManageUnlistedGroups}" required="false"/> 
+						<Text text=""/>
+						<Text text="{path:'dataModel>UserPermissionAccess_PermissionsManageUnlistedGroups/UserPermissionAccess_PermissionsManageUnlistedGroups',type:'sap.ui.model.type.Boolean'}"/>  
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>UserPermissionAccess.UserPermissionAccess_PermissionsManageUsers}" required="false"/> 
+						<Text text=""/>
+						<Text text="{path:'dataModel>UserPermissionAccess_PermissionsManageUsers/UserPermissionAccess_PermissionsManageUsers',type:'sap.ui.model.type.Boolean'}"/>  
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>UserPermissionAccess.UserPermissionAccess_PermissionsMassInlineEdit}" required="false"/> 
+						<Text text=""/>
+						<Text text="{path:'dataModel>UserPermissionAccess_PermissionsMassInlineEdit/UserPermissionAccess_PermissionsMassInlineEdit',type:'sap.ui.model.type.Boolean'}"/>  
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>UserPermissionAccess.UserPermissionAccess_PermissionsMergeTopics}" required="false"/> 
+						<Text text=""/>
+						<Text text="{path:'dataModel>UserPermissionAccess_PermissionsMergeTopics/UserPermissionAccess_PermissionsMergeTopics',type:'sap.ui.model.type.Boolean'}"/>  
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>UserPermissionAccess.UserPermissionAccess_PermissionsModerateChatter}" required="false"/> 
+						<Text text=""/>
+						<Text text="{path:'dataModel>UserPermissionAccess_PermissionsModerateChatter/UserPermissionAccess_PermissionsModerateChatter',type:'sap.ui.model.type.Boolean'}"/>  
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>UserPermissionAccess.UserPermissionAccess_PermissionsModerateNetworkUsers}" required="false"/> 
+						<Text text=""/>
+						<Text text="{path:'dataModel>UserPermissionAccess_PermissionsModerateNetworkUsers/UserPermissionAccess_PermissionsModerateNetworkUsers',type:'sap.ui.model.type.Boolean'}"/>  
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>UserPermissionAccess.UserPermissionAccess_PermissionsModifyAllData}" required="false"/> 
+						<Text text=""/>
+						<Text text="{path:'dataModel>UserPermissionAccess_PermissionsModifyAllData/UserPermissionAccess_PermissionsModifyAllData',type:'sap.ui.model.type.Boolean'}"/>  
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>UserPermissionAccess.UserPermissionAccess_PermissionsNewReportBuilder}" required="false"/> 
+						<Text text=""/>
+						<Text text="{path:'dataModel>UserPermissionAccess_PermissionsNewReportBuilder/UserPermissionAccess_PermissionsNewReportBuilder',type:'sap.ui.model.type.Boolean'}"/>  
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>UserPermissionAccess.UserPermissionAccess_PermissionsOutboundMigrationToolsUser}" required="false"/> 
+						<Text text=""/>
+						<Text text="{path:'dataModel>UserPermissionAccess_PermissionsOutboundMigrationToolsUser/UserPermissionAccess_PermissionsOutboundMigrationToolsUser',type:'sap.ui.model.type.Boolean'}"/>  
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>UserPermissionAccess.UserPermissionAccess_PermissionsOverrideForecasts}" required="false"/> 
+						<Text text=""/>
+						<Text text="{path:'dataModel>UserPermissionAccess_PermissionsOverrideForecasts/UserPermissionAccess_PermissionsOverrideForecasts',type:'sap.ui.model.type.Boolean'}"/>  
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>UserPermissionAccess.UserPermissionAccess_PermissionsPackaging2}" required="false"/> 
+						<Text text=""/>
+						<Text text="{path:'dataModel>UserPermissionAccess_PermissionsPackaging2/UserPermissionAccess_PermissionsPackaging2',type:'sap.ui.model.type.Boolean'}"/>  
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>UserPermissionAccess.UserPermissionAccess_PermissionsPasswordNeverExpires}" required="false"/> 
+						<Text text=""/>
+						<Text text="{path:'dataModel>UserPermissionAccess_PermissionsPasswordNeverExpires/UserPermissionAccess_PermissionsPasswordNeverExpires',type:'sap.ui.model.type.Boolean'}"/>  
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>UserPermissionAccess.UserPermissionAccess_PermissionsPreventClassicExperience}" required="false"/> 
+						<Text text=""/>
+						<Text text="{path:'dataModel>UserPermissionAccess_PermissionsPreventClassicExperience/UserPermissionAccess_PermissionsPreventClassicExperience',type:'sap.ui.model.type.Boolean'}"/>  
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>UserPermissionAccess.UserPermissionAccess_PermissionsPublicTwitterResponse}" required="false"/> 
+						<Text text=""/>
+						<Text text="{path:'dataModel>UserPermissionAccess_PermissionsPublicTwitterResponse/UserPermissionAccess_PermissionsPublicTwitterResponse',type:'sap.ui.model.type.Boolean'}"/>  
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>UserPermissionAccess.UserPermissionAccess_PermissionsPublishPackaging}" required="false"/> 
+						<Text text=""/>
+						<Text text="{path:'dataModel>UserPermissionAccess_PermissionsPublishPackaging/UserPermissionAccess_PermissionsPublishPackaging',type:'sap.ui.model.type.Boolean'}"/>  
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>UserPermissionAccess.UserPermissionAccess_PermissionsRemoveDirectMessageMembers}" required="false"/> 
+						<Text text=""/>
+						<Text text="{path:'dataModel>UserPermissionAccess_PermissionsRemoveDirectMessageMembers/UserPermissionAccess_PermissionsRemoveDirectMessageMembers',type:'sap.ui.model.type.Boolean'}"/>  
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>UserPermissionAccess.UserPermissionAccess_PermissionsResetPasswords}" required="false"/> 
+						<Text text=""/>
+						<Text text="{path:'dataModel>UserPermissionAccess_PermissionsResetPasswords/UserPermissionAccess_PermissionsResetPasswords',type:'sap.ui.model.type.Boolean'}"/>  
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>UserPermissionAccess.UserPermissionAccess_PermissionsRunFlow}" required="false"/> 
+						<Text text=""/>
+						<Text text="{path:'dataModel>UserPermissionAccess_PermissionsRunFlow/UserPermissionAccess_PermissionsRunFlow',type:'sap.ui.model.type.Boolean'}"/>  
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>UserPermissionAccess.UserPermissionAccess_PermissionsRunReports}" required="false"/> 
+						<Text text=""/>
+						<Text text="{path:'dataModel>UserPermissionAccess_PermissionsRunReports/UserPermissionAccess_PermissionsRunReports',type:'sap.ui.model.type.Boolean'}"/>  
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>UserPermissionAccess.UserPermissionAccess_PermissionsSalesConsole}" required="false"/> 
+						<Text text=""/>
+						<Text text="{path:'dataModel>UserPermissionAccess_PermissionsSalesConsole/UserPermissionAccess_PermissionsSalesConsole',type:'sap.ui.model.type.Boolean'}"/>  
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>UserPermissionAccess.UserPermissionAccess_PermissionsScheduleJob}" required="false"/> 
+						<Text text=""/>
+						<Text text="{path:'dataModel>UserPermissionAccess_PermissionsScheduleJob/UserPermissionAccess_PermissionsScheduleJob',type:'sap.ui.model.type.Boolean'}"/>  
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>UserPermissionAccess.UserPermissionAccess_PermissionsScheduleReports}" required="false"/> 
+						<Text text=""/>
+						<Text text="{path:'dataModel>UserPermissionAccess_PermissionsScheduleReports/UserPermissionAccess_PermissionsScheduleReports',type:'sap.ui.model.type.Boolean'}"/>  
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>UserPermissionAccess.UserPermissionAccess_PermissionsScsRequireApproval}" required="false"/> 
+						<Text text=""/>
+						<Text text="{path:'dataModel>UserPermissionAccess_PermissionsScsRequireApproval/UserPermissionAccess_PermissionsScsRequireApproval',type:'sap.ui.model.type.Boolean'}"/>  
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>UserPermissionAccess.UserPermissionAccess_PermissionsSelectFilesFromSalesforce}" required="false"/> 
+						<Text text=""/>
+						<Text text="{path:'dataModel>UserPermissionAccess_PermissionsSelectFilesFromSalesforce/UserPermissionAccess_PermissionsSelectFilesFromSalesforce',type:'sap.ui.model.type.Boolean'}"/>  
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>UserPermissionAccess.UserPermissionAccess_PermissionsSendAnnouncementEmails}" required="false"/> 
+						<Text text=""/>
+						<Text text="{path:'dataModel>UserPermissionAccess_PermissionsSendAnnouncementEmails/UserPermissionAccess_PermissionsSendAnnouncementEmails',type:'sap.ui.model.type.Boolean'}"/>  
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>UserPermissionAccess.UserPermissionAccess_PermissionsSendSitRequests}" required="false"/> 
+						<Text text=""/>
+						<Text text="{path:'dataModel>UserPermissionAccess_PermissionsSendSitRequests/UserPermissionAccess_PermissionsSendSitRequests',type:'sap.ui.model.type.Boolean'}"/>  
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>UserPermissionAccess.UserPermissionAccess_PermissionsShowCompanyNameAsUserBadge}" required="false"/> 
+						<Text text=""/>
+						<Text text="{path:'dataModel>UserPermissionAccess_PermissionsShowCompanyNameAsUserBadge/UserPermissionAccess_PermissionsShowCompanyNameAsUserBadge',type:'sap.ui.model.type.Boolean'}"/>  
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>UserPermissionAccess.UserPermissionAccess_PermissionsSolutionImport}" required="false"/> 
+						<Text text=""/>
+						<Text text="{path:'dataModel>UserPermissionAccess_PermissionsSolutionImport/UserPermissionAccess_PermissionsSolutionImport',type:'sap.ui.model.type.Boolean'}"/>  
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>UserPermissionAccess.UserPermissionAccess_PermissionsSubmitMacrosAllowed}" required="false"/> 
+						<Text text=""/>
+						<Text text="{path:'dataModel>UserPermissionAccess_PermissionsSubmitMacrosAllowed/UserPermissionAccess_PermissionsSubmitMacrosAllowed',type:'sap.ui.model.type.Boolean'}"/>  
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>UserPermissionAccess.UserPermissionAccess_PermissionsSubscribeToLightningReports}" required="false"/> 
+						<Text text=""/>
+						<Text text="{path:'dataModel>UserPermissionAccess_PermissionsSubscribeToLightningReports/UserPermissionAccess_PermissionsSubscribeToLightningReports',type:'sap.ui.model.type.Boolean'}"/>  
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>UserPermissionAccess.UserPermissionAccess_PermissionsTransferAnyCase}" required="false"/> 
+						<Text text=""/>
+						<Text text="{path:'dataModel>UserPermissionAccess_PermissionsTransferAnyCase/UserPermissionAccess_PermissionsTransferAnyCase',type:'sap.ui.model.type.Boolean'}"/>  
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>UserPermissionAccess.UserPermissionAccess_PermissionsTransferAnyEntity}" required="false"/> 
+						<Text text=""/>
+						<Text text="{path:'dataModel>UserPermissionAccess_PermissionsTransferAnyEntity/UserPermissionAccess_PermissionsTransferAnyEntity',type:'sap.ui.model.type.Boolean'}"/>  
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>UserPermissionAccess.UserPermissionAccess_PermissionsTransferAnyLead}" required="false"/> 
+						<Text text=""/>
+						<Text text="{path:'dataModel>UserPermissionAccess_PermissionsTransferAnyLead/UserPermissionAccess_PermissionsTransferAnyLead',type:'sap.ui.model.type.Boolean'}"/>  
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>UserPermissionAccess.UserPermissionAccess_PermissionsTwoFactorApi}" required="false"/> 
+						<Text text=""/>
+						<Text text="{path:'dataModel>UserPermissionAccess_PermissionsTwoFactorApi/UserPermissionAccess_PermissionsTwoFactorApi',type:'sap.ui.model.type.Boolean'}"/>  
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>UserPermissionAccess.UserPermissionAccess_PermissionsUseTeamReassignWizards}" required="false"/> 
+						<Text text=""/>
+						<Text text="{path:'dataModel>UserPermissionAccess_PermissionsUseTeamReassignWizards/UserPermissionAccess_PermissionsUseTeamReassignWizards',type:'sap.ui.model.type.Boolean'}"/>  
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>UserPermissionAccess.UserPermissionAccess_PermissionsUseWebLink}" required="false"/> 
+						<Text text=""/>
+						<Text text="{path:'dataModel>UserPermissionAccess_PermissionsUseWebLink/UserPermissionAccess_PermissionsUseWebLink',type:'sap.ui.model.type.Boolean'}"/>  
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>UserPermissionAccess.UserPermissionAccess_PermissionsViewAllActivities}" required="false"/> 
+						<Text text=""/>
+						<Text text="{path:'dataModel>UserPermissionAccess_PermissionsViewAllActivities/UserPermissionAccess_PermissionsViewAllActivities',type:'sap.ui.model.type.Boolean'}"/>  
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>UserPermissionAccess.UserPermissionAccess_PermissionsViewAllData}" required="false"/> 
+						<Text text=""/>
+						<Text text="{path:'dataModel>UserPermissionAccess_PermissionsViewAllData/UserPermissionAccess_PermissionsViewAllData',type:'sap.ui.model.type.Boolean'}"/>  
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>UserPermissionAccess.UserPermissionAccess_PermissionsViewAllForecasts}" required="false"/> 
+						<Text text=""/>
+						<Text text="{path:'dataModel>UserPermissionAccess_PermissionsViewAllForecasts/UserPermissionAccess_PermissionsViewAllForecasts',type:'sap.ui.model.type.Boolean'}"/>  
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>UserPermissionAccess.UserPermissionAccess_PermissionsViewAllUsers}" required="false"/> 
+						<Text text=""/>
+						<Text text="{path:'dataModel>UserPermissionAccess_PermissionsViewAllUsers/UserPermissionAccess_PermissionsViewAllUsers',type:'sap.ui.model.type.Boolean'}"/>  
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>UserPermissionAccess.UserPermissionAccess_PermissionsViewAndDebugManagedApex}" required="false"/> 
+						<Text text=""/>
+						<Text text="{path:'dataModel>UserPermissionAccess_PermissionsViewAndDebugManagedApex/UserPermissionAccess_PermissionsViewAndDebugManagedApex',type:'sap.ui.model.type.Boolean'}"/>  
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>UserPermissionAccess.UserPermissionAccess_PermissionsViewContent}" required="false"/> 
+						<Text text=""/>
+						<Text text="{path:'dataModel>UserPermissionAccess_PermissionsViewContent/UserPermissionAccess_PermissionsViewContent',type:'sap.ui.model.type.Boolean'}"/>  
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>UserPermissionAccess.UserPermissionAccess_PermissionsViewDataAssessment}" required="false"/> 
+						<Text text=""/>
+						<Text text="{path:'dataModel>UserPermissionAccess_PermissionsViewDataAssessment/UserPermissionAccess_PermissionsViewDataAssessment',type:'sap.ui.model.type.Boolean'}"/>  
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>UserPermissionAccess.UserPermissionAccess_PermissionsViewDataCategories}" required="false"/> 
+						<Text text=""/>
+						<Text text="{path:'dataModel>UserPermissionAccess_PermissionsViewDataCategories/UserPermissionAccess_PermissionsViewDataCategories',type:'sap.ui.model.type.Boolean'}"/>  
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>UserPermissionAccess.UserPermissionAccess_PermissionsViewEncryptedData}" required="false"/> 
+						<Text text=""/>
+						<Text text="{path:'dataModel>UserPermissionAccess_PermissionsViewEncryptedData/UserPermissionAccess_PermissionsViewEncryptedData',type:'sap.ui.model.type.Boolean'}"/>  
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>UserPermissionAccess.UserPermissionAccess_PermissionsViewEventLogFiles}" required="false"/> 
+						<Text text=""/>
+						<Text text="{path:'dataModel>UserPermissionAccess_PermissionsViewEventLogFiles/UserPermissionAccess_PermissionsViewEventLogFiles',type:'sap.ui.model.type.Boolean'}"/>  
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>UserPermissionAccess.UserPermissionAccess_PermissionsViewHealthCheck}" required="false"/> 
+						<Text text=""/>
+						<Text text="{path:'dataModel>UserPermissionAccess_PermissionsViewHealthCheck/UserPermissionAccess_PermissionsViewHealthCheck',type:'sap.ui.model.type.Boolean'}"/>  
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>UserPermissionAccess.UserPermissionAccess_PermissionsViewHelpLink}" required="false"/> 
+						<Text text=""/>
+						<Text text="{path:'dataModel>UserPermissionAccess_PermissionsViewHelpLink/UserPermissionAccess_PermissionsViewHelpLink',type:'sap.ui.model.type.Boolean'}"/>  
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>UserPermissionAccess.UserPermissionAccess_PermissionsViewMyTeamsDashboards}" required="false"/> 
+						<Text text=""/>
+						<Text text="{path:'dataModel>UserPermissionAccess_PermissionsViewMyTeamsDashboards/UserPermissionAccess_PermissionsViewMyTeamsDashboards',type:'sap.ui.model.type.Boolean'}"/>  
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>UserPermissionAccess.UserPermissionAccess_PermissionsViewSetup}" required="false"/> 
+						<Text text=""/>
+						<Text text="{path:'dataModel>UserPermissionAccess_PermissionsViewSetup/UserPermissionAccess_PermissionsViewSetup',type:'sap.ui.model.type.Boolean'}"/>  
+					</cells>
+				</ColumnListItem>
+			</items>
+		</Table>
+	</Page>
+</mvc:View>

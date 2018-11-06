@@ -1,0 +1,427 @@
+<mvc:View controllerName="com.inova8.lens.controller.Entity360" xmlns="sap.m" xmlns:mvc="sap.ui.core.mvc" xmlns:l="sap.ui.layout"
+	xmlns:f="sap.ui.layout.form" xmlns:table="sap.ui.table" xmlns:rdf="com.inova8.lens.control" xmlns:html="http://www.w3.org/1999/xhtml"
+	xmlns:core="sap.ui.core">
+	<Page showHeader="true" id="page" navButtonPress="onNavBack" showNavButton="false" title="{i18n>ContentDocument.Title}" busy="{entityView>/busy}"
+		busyIndicatorDelay="{entityView>/delay}" >
+		<customHeader>
+			<Toolbar>
+				<ToolbarSpacer/>
+				<HBox id="sourceTitle" alignItems="Center">
+						<rdf:TextResource id="selectedResource" path="" entitySet=""/>
+				</HBox>	
+				<Title id="pathTitle" text="{entityView>/navigation}"/>
+				<HBox id="versionsTitle" alignItems="Center">
+					<Title text="(" required="false"/>
+					<ComboBox id="versionSelection" items="{ path: 'entityView>/versions' }" selectionChange="onVersionChange">
+						<core:Item key="{entityView>navigation}" text="{entityView>text}"/>
+					</ComboBox>
+					<Title text=")" required="false"/>
+				</HBox>
+				<Title text="{i18n>ContentDocument.this}"/>
+				<Title text="(" required="false"/>
+				<rdf:TextResource path="dataModel>" entitySet="ContentDocument"/>
+				<Title text=")" required="false"/>
+	
+				<ToolbarSpacer/>
+				<ToggleButton id="toggleColumns" icon="sap-icon://hide" activeIcon="sap-icon://show" press="onSettingsPressed" visible="false"	>
+					<layoutData>
+						<OverflowToolbarLayoutData priority="NeverOverflow"/>
+					</layoutData>
+				</ToggleButton>
+				
+			</Toolbar>
+		</customHeader>
+		<Table id="form360" inset="false" fixedLayout="true" class="multicolumnform" updateFinished="hideColumns">
+			<columns>
+				<Column hAlign="Right" width="200px">
+					<Text text=""/>
+				</Column>
+				<Column visible="true">
+				</Column>
+				<Column visible="true">
+					<Text text="ContentDocument"/>
+				</Column>
+			</columns>
+			<items>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>ContentDocument.AttachedContentDocument_ContentDocumentId_Inverse}" required="false"/> 
+						<Text text=""/>
+						<rdf:ListResource path="dataModel>AttachedContentDocument_ContentDocumentId_Inverse/sfdc_AttachedContentDocument_ContentDocumentId_Inverse" entitySet="AttachedContentDocument"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>ContentDocument.AttachedContentNote_ContentDocumentId_Inverse}" required="false"/> 
+						<Text text=""/>
+						<rdf:ListResource path="dataModel>AttachedContentNote_ContentDocumentId_Inverse/sfdc_AttachedContentNote_ContentDocumentId_Inverse" entitySet="AttachedContentNote"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>ContentDocument.ContentAsset_ContentDocumentId_Inverse}" required="false"/> 
+						<Text text=""/>
+						<rdf:ListResource path="dataModel>ContentAsset_ContentDocumentId_Inverse/sfdc_ContentAsset_ContentDocumentId_Inverse" entitySet="ContentAsset"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>ContentDocument.ContentDistribution_ContentDocumentId_Inverse}" required="false"/> 
+						<Text text=""/>
+						<rdf:ListResource path="dataModel>ContentDistribution_ContentDocumentId_Inverse/sfdc_ContentDistribution_ContentDocumentId_Inverse" entitySet="ContentDistribution"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>ContentDocument.ContentDocumentFeed_ParentId_Inverse}" required="false"/> 
+						<Text text=""/>
+						<rdf:ListResource path="dataModel>ContentDocumentFeed_ParentId_Inverse/sfdc_ContentDocumentFeed_ParentId_Inverse" entitySet="ContentDocumentFeed"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>ContentDocument.ContentDocumentHistory_ContentDocumentId_Inverse}" required="false"/> 
+						<Text text=""/>
+						<rdf:ListResource path="dataModel>ContentDocumentHistory_ContentDocumentId_Inverse/sfdc_ContentDocumentHistory_ContentDocumentId_Inverse" entitySet="ContentDocumentHistory"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>ContentDocument.ContentDocumentLink_ContentDocumentId_Inverse}" required="false"/> 
+						<Text text=""/>
+						<rdf:ListResource path="dataModel>ContentDocumentLink_ContentDocumentId_Inverse/sfdc_ContentDocumentLink_ContentDocumentId_Inverse" entitySet="ContentDocumentLink"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>ContentDocument.ContentDocument_ArchivedById}" required="false"/> 
+						<Text text=""/>
+						<rdf:ListResource path="dataModel>ContentDocument_ArchivedById/sfdc_ContentDocument_ArchivedById" entitySet="User"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>ContentDocument.ContentDocument_ArchivedDate}" required="false"/> 
+						<Text text=""/>
+						<Text text="{dataModel>ContentDocument_ArchivedDate/ContentDocument_ArchivedDate}"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>ContentDocument.ContentDocument_ContentAssetId}" required="false"/> 
+						<Text text=""/>
+						<rdf:ListResource path="dataModel>ContentDocument_ContentAssetId/sfdc_ContentDocument_ContentAssetId" entitySet="ContentAsset"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>ContentDocument.ContentDocument_ContentModifiedDate}" required="false"/> 
+						<Text text=""/>
+						<Text text="{dataModel>ContentDocument_ContentModifiedDate/ContentDocument_ContentModifiedDate}"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>ContentDocument.ContentDocument_ContentSize}" required="false"/> 
+						<Text text=""/>
+						<Text text="{path:'dataModel>ContentDocument_ContentSize/ContentDocument_ContentSize',type:'sap.ui.model.type.Integer' }"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>ContentDocument.ContentDocument_CreatedById}" required="false"/> 
+						<Text text=""/>
+						<rdf:ListResource path="dataModel>ContentDocument_CreatedById/sfdc_ContentDocument_CreatedById" entitySet="User"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>ContentDocument.ContentDocument_CreatedDate}" required="false"/> 
+						<Text text=""/>
+						<Text text="{dataModel>ContentDocument_CreatedDate/ContentDocument_CreatedDate}"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>ContentDocument.ContentDocument_Description}" required="false"/> 
+						<Text text=""/>
+						<rdf:TextLink text="{path:'dataModel>ContentDocument_Description/ContentDocument_Description',type:'sap.ui.model.type.String' }" linkText="{i18n>ContentDocument.ContentDocument_Description/ContentDocument_Description}"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>ContentDocument.ContentDocument_FileExtension}" required="false"/> 
+						<Text text=""/>
+						<rdf:TextLink text="{path:'dataModel>ContentDocument_FileExtension/ContentDocument_FileExtension',type:'sap.ui.model.type.String' }" linkText="{i18n>ContentDocument.ContentDocument_FileExtension/ContentDocument_FileExtension}"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>ContentDocument.ContentDocument_FileType}" required="false"/> 
+						<Text text=""/>
+						<rdf:TextLink text="{path:'dataModel>ContentDocument_FileType/ContentDocument_FileType',type:'sap.ui.model.type.String' }" linkText="{i18n>ContentDocument.ContentDocument_FileType/ContentDocument_FileType}"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>ContentDocument.ContentDocument_Id}" required="false"/> 
+						<Text text=""/>
+						<rdf:TextLink text="{path:'dataModel>ContentDocument_Id/ContentDocument_Id',type:'sap.ui.model.type.String' }" linkText="{i18n>ContentDocument.ContentDocument_Id/ContentDocument_Id}"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>ContentDocument.ContentDocument_IsArchived}" required="false"/> 
+						<Text text=""/>
+						<Text text="{path:'dataModel>ContentDocument_IsArchived/ContentDocument_IsArchived',type:'sap.ui.model.type.Boolean'}"/>  
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>ContentDocument.ContentDocument_IsDeleted}" required="false"/> 
+						<Text text=""/>
+						<Text text="{path:'dataModel>ContentDocument_IsDeleted/ContentDocument_IsDeleted',type:'sap.ui.model.type.Boolean'}"/>  
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>ContentDocument.ContentDocument_LastModifiedById}" required="false"/> 
+						<Text text=""/>
+						<rdf:ListResource path="dataModel>ContentDocument_LastModifiedById/sfdc_ContentDocument_LastModifiedById" entitySet="User"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>ContentDocument.ContentDocument_LastModifiedDate}" required="false"/> 
+						<Text text=""/>
+						<Text text="{dataModel>ContentDocument_LastModifiedDate/ContentDocument_LastModifiedDate}"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>ContentDocument.ContentDocument_LastReferencedDate}" required="false"/> 
+						<Text text=""/>
+						<Text text="{dataModel>ContentDocument_LastReferencedDate/ContentDocument_LastReferencedDate}"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>ContentDocument.ContentDocument_LastViewedDate}" required="false"/> 
+						<Text text=""/>
+						<Text text="{dataModel>ContentDocument_LastViewedDate/ContentDocument_LastViewedDate}"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>ContentDocument.ContentDocument_LatestPublishedVersionId}" required="false"/> 
+						<Text text=""/>
+						<rdf:ListResource path="dataModel>ContentDocument_LatestPublishedVersionId/sfdc_ContentDocument_LatestPublishedVersionId" entitySet="ContentVersion"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>ContentDocument.ContentDocument_OwnerId}" required="false"/> 
+						<Text text=""/>
+						<rdf:ListResource path="dataModel>ContentDocument_OwnerId/sfdc_ContentDocument_OwnerId" entitySet="User"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>ContentDocument.ContentDocument_PublishStatus}" required="false"/> 
+						<Text text=""/>
+						<rdf:TextLink text="{path:'dataModel>ContentDocument_PublishStatus/ContentDocument_PublishStatus',type:'sap.ui.model.type.String' }" linkText="{i18n>ContentDocument.ContentDocument_PublishStatus/ContentDocument_PublishStatus}"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>ContentDocument.ContentDocument_SharingOption}" required="false"/> 
+						<Text text=""/>
+						<rdf:TextLink text="{path:'dataModel>ContentDocument_SharingOption/ContentDocument_SharingOption',type:'sap.ui.model.type.String' }" linkText="{i18n>ContentDocument.ContentDocument_SharingOption/ContentDocument_SharingOption}"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>ContentDocument.ContentDocument_SharingPrivacy}" required="false"/> 
+						<Text text=""/>
+						<rdf:TextLink text="{path:'dataModel>ContentDocument_SharingPrivacy/ContentDocument_SharingPrivacy',type:'sap.ui.model.type.String' }" linkText="{i18n>ContentDocument.ContentDocument_SharingPrivacy/ContentDocument_SharingPrivacy}"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>ContentDocument.ContentDocument_SystemModstamp}" required="false"/> 
+						<Text text=""/>
+						<Text text="{dataModel>ContentDocument_SystemModstamp/ContentDocument_SystemModstamp}"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>ContentDocument.ContentDocument_Title}" required="false"/> 
+						<Text text=""/>
+						<rdf:TextLink text="{path:'dataModel>ContentDocument_Title/ContentDocument_Title',type:'sap.ui.model.type.String' }" linkText="{i18n>ContentDocument.ContentDocument_Title/ContentDocument_Title}"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>ContentDocument.ContentFolderMember_ChildRecordId_Inverse}" required="false"/> 
+						<Text text=""/>
+						<rdf:ListResource path="dataModel>ContentFolderMember_ChildRecordId_Inverse/sfdc_ContentFolderMember_ChildRecordId_Inverse" entitySet="ContentFolderMember"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>ContentDocument.ContentVersion_ContentDocumentId_Inverse}" required="false"/> 
+						<Text text=""/>
+						<rdf:ListResource path="dataModel>ContentVersion_ContentDocumentId_Inverse/sfdc_ContentVersion_ContentDocumentId_Inverse" entitySet="ContentVersion"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>ContentDocument.FeedAttachment_RecordId_Inverse}" required="false"/> 
+						<Text text=""/>
+						<rdf:ListResource path="dataModel>FeedAttachment_RecordId_Inverse/sfdc_FeedAttachment_RecordId_Inverse" entitySet="FeedAttachment"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>ContentDocument.FolderedContentDocument_ContentDocumentId_Inverse}" required="false"/> 
+						<Text text=""/>
+						<rdf:ListResource path="dataModel>FolderedContentDocument_ContentDocumentId_Inverse/sfdc_FolderedContentDocument_ContentDocumentId_Inverse" entitySet="FolderedContentDocument"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>ContentDocument.OwnedContentDocument_ContentDocumentId_Inverse}" required="false"/> 
+						<Text text=""/>
+						<rdf:ListResource path="dataModel>OwnedContentDocument_ContentDocumentId_Inverse/sfdc_OwnedContentDocument_ContentDocumentId_Inverse" entitySet="OwnedContentDocument"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>ContentDocument.AttachedContentDocument_ContentDocumentId_Inverse}" required="false"/> 
+						<rdf:ListResource path="dataModel>AttachedContentDocument_ContentDocumentId_Inverse" entitySet="AttachedContentDocument"/>
+						<Text text=""/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>ContentDocument.AttachedContentNote_ContentDocumentId_Inverse}" required="false"/> 
+						<rdf:ListResource path="dataModel>AttachedContentNote_ContentDocumentId_Inverse" entitySet="AttachedContentNote"/>
+						<Text text=""/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>ContentDocument.ContentAsset_ContentDocumentId_Inverse}" required="false"/> 
+						<rdf:ListResource path="dataModel>ContentAsset_ContentDocumentId_Inverse" entitySet="ContentAsset"/>
+						<Text text=""/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>ContentDocument.ContentDistribution_ContentDocumentId_Inverse}" required="false"/> 
+						<rdf:ListResource path="dataModel>ContentDistribution_ContentDocumentId_Inverse" entitySet="ContentDistribution"/>
+						<Text text=""/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>ContentDocument.ContentDocumentFeed_ParentId_Inverse}" required="false"/> 
+						<rdf:ListResource path="dataModel>ContentDocumentFeed_ParentId_Inverse" entitySet="ContentDocumentFeed"/>
+						<Text text=""/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>ContentDocument.ContentDocumentHistory_ContentDocumentId_Inverse}" required="false"/> 
+						<rdf:ListResource path="dataModel>ContentDocumentHistory_ContentDocumentId_Inverse" entitySet="ContentDocumentHistory"/>
+						<Text text=""/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>ContentDocument.ContentDocumentLink_ContentDocumentId_Inverse}" required="false"/> 
+						<rdf:ListResource path="dataModel>ContentDocumentLink_ContentDocumentId_Inverse" entitySet="ContentDocumentLink"/>
+						<Text text=""/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>ContentDocument.ContentDocument_ArchivedById}" required="false"/> 
+						<rdf:ListResource path="dataModel>ContentDocument_ArchivedById" entitySet="User"/>
+						<Text text=""/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>ContentDocument.ContentDocument_ContentAssetId}" required="false"/> 
+						<rdf:ListResource path="dataModel>ContentDocument_ContentAssetId" entitySet="ContentAsset"/>
+						<Text text=""/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>ContentDocument.ContentDocument_CreatedById}" required="false"/> 
+						<rdf:ListResource path="dataModel>ContentDocument_CreatedById" entitySet="User"/>
+						<Text text=""/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>ContentDocument.ContentDocument_LastModifiedById}" required="false"/> 
+						<rdf:ListResource path="dataModel>ContentDocument_LastModifiedById" entitySet="User"/>
+						<Text text=""/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>ContentDocument.ContentDocument_LatestPublishedVersionId}" required="false"/> 
+						<rdf:ListResource path="dataModel>ContentDocument_LatestPublishedVersionId" entitySet="ContentVersion"/>
+						<Text text=""/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>ContentDocument.ContentDocument_OwnerId}" required="false"/> 
+						<rdf:ListResource path="dataModel>ContentDocument_OwnerId" entitySet="User"/>
+						<Text text=""/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>ContentDocument.ContentFolderMember_ChildRecordId_Inverse}" required="false"/> 
+						<rdf:ListResource path="dataModel>ContentFolderMember_ChildRecordId_Inverse" entitySet="ContentFolderMember"/>
+						<Text text=""/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>ContentDocument.ContentVersion_ContentDocumentId_Inverse}" required="false"/> 
+						<rdf:ListResource path="dataModel>ContentVersion_ContentDocumentId_Inverse" entitySet="ContentVersion"/>
+						<Text text=""/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>ContentDocument.FeedAttachment_RecordId_Inverse}" required="false"/> 
+						<rdf:ListResource path="dataModel>FeedAttachment_RecordId_Inverse" entitySet="FeedAttachment"/>
+						<Text text=""/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>ContentDocument.FolderedContentDocument_ContentDocumentId_Inverse}" required="false"/> 
+						<rdf:ListResource path="dataModel>FolderedContentDocument_ContentDocumentId_Inverse" entitySet="FolderedContentDocument"/>
+						<Text text=""/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>ContentDocument.OwnedContentDocument_ContentDocumentId_Inverse}" required="false"/> 
+						<rdf:ListResource path="dataModel>OwnedContentDocument_ContentDocumentId_Inverse" entitySet="OwnedContentDocument"/>
+						<Text text=""/>
+					</cells>
+				</ColumnListItem>
+			</items>
+		</Table>
+	</Page>
+</mvc:View>

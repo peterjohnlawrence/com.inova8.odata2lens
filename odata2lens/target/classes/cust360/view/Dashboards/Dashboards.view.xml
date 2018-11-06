@@ -1,0 +1,187 @@
+<mvc:View controllerName="com.inova8.lens.controller.EntitySet360" xmlns="sap.m" xmlns:mvc="sap.ui.core.mvc" xmlns:layout="sap.ui.layout"
+	xmlns:rdf="com.inova8.lens.control" xmlns:core="sap.ui.core">
+	<Page showHeader="false" id="page" navButtonPress="onNavBack" showNavButton="true" title="{i18n>Dashboards.ViewTitle}">
+		<content>
+			<Table id="table360" inset="false" items="{ path: 'dataModel>/Dashboard' , sorter: { path: 'label', descending: false } 
+				}"
+				noDataText="{entitySetView>/tableNoDataText}" busyIndicatorDelay="{entitySetView>/tableBusyDelay}" growing="true" growingScrollToLoad="true"
+				updateFinished="onUpdateFinished"  fixedLayout="false">
+				<headerToolbar>
+					<Toolbar>
+						<ToolbarSpacer/>
+						<HBox id="sourceTitle" alignItems="Center">
+							<rdf:TextResource id="selectedResource" path="" entitySet=""/>
+						</HBox>
+						<Title id="pathTitle" text="{entitySetView>/navigationText}"/>
+						<HBox id="versionsTitle" alignItems="Center">
+							<Title text="(" required="false"/>
+							<ComboBox id="versionSelection" items="{ path: 'entitySetView>/versions' }" selectionChange="onVersionChange">
+								<core:Item key="{entitySetView>navigation}" text="{entityView>text}"/>
+							</ComboBox>
+							<Title text=")" required="false"/>
+						</HBox>
+						<Title id="tableHeader" text="{entitySetView>/entitySetTableTitle}"/>
+						<ToolbarSpacer/>
+						<SearchField id="searchField" tooltip="{i18n>search.searchTooltip}" search="onSearch" width="auto"></SearchField>
+					</Toolbar>
+				</headerToolbar>
+				<columns>
+					<Column >
+						<Text text="{i18n>Dashboards.this}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>Dashboards.Dashboard_BackgroundDirection}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>Dashboards.Dashboard_BackgroundEnd}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>Dashboards.Dashboard_BackgroundStart}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>Dashboards.Dashboard_CreatedDate}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>Dashboards.Dashboard_DashboardResultRefreshedDate}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>Dashboards.Dashboard_DashboardResultRunningUser}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>Dashboards.Dashboard_Description}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>Dashboards.Dashboard_DeveloperName}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>Dashboards.Dashboard_FolderName}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>Dashboards.Dashboard_Id}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>Dashboards.Dashboard_IsDeleted}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>Dashboards.Dashboard_LastModifiedDate}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>Dashboards.Dashboard_LastReferencedDate}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>Dashboards.Dashboard_LastViewedDate}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>Dashboards.Dashboard_LeftSize}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>Dashboards.Dashboard_MiddleSize}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>Dashboards.Dashboard_NamespacePrefix}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>Dashboards.Dashboard_RightSize}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>Dashboards.Dashboard_SystemModstamp}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>Dashboards.Dashboard_TextColor}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>Dashboards.Dashboard_Title}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>Dashboards.Dashboard_TitleColor}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>Dashboards.Dashboard_TitleSize}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>Dashboards.Dashboard_Type}"/>
+					</Column>
+				</columns>
+				<items>
+					<ColumnListItem id="template360" type="Navigation" press="onPress">
+						<cells>
+							<rdf:TextResource path="dataModel>" entitySet="Dashboard"/>
+							<VBox>					
+							<rdf:TextLink text="{path:'dataModel>Dashboard_BackgroundDirection/Dashboard_BackgroundDirection',type:'sap.ui.model.type.String'}" linkText="{i18n>Dashboard.Dashboard_BackgroundDirection/Dashboard_BackgroundDirection}"/>
+							</VBox>							
+							<VBox>					
+							<Text text="{path:'dataModel>Dashboard_BackgroundEnd/Dashboard_BackgroundEnd',type:'sap.ui.model.type.Integer' }"/>
+							</VBox>							
+							<VBox>					
+							<Text text="{path:'dataModel>Dashboard_BackgroundStart/Dashboard_BackgroundStart',type:'sap.ui.model.type.Integer' }"/>
+							</VBox>							
+							<VBox>					
+							<Text text="{dataModel>Dashboard_CreatedDate/Dashboard_CreatedDate}"/>
+							</VBox>							
+							<VBox>					
+							<rdf:TextLink text="{path:'dataModel>Dashboard_DashboardResultRefreshedDate/Dashboard_DashboardResultRefreshedDate',type:'sap.ui.model.type.String'}" linkText="{i18n>Dashboard.Dashboard_DashboardResultRefreshedDate/Dashboard_DashboardResultRefreshedDate}"/>
+							</VBox>							
+							<VBox>					
+							<rdf:TextLink text="{path:'dataModel>Dashboard_DashboardResultRunningUser/Dashboard_DashboardResultRunningUser',type:'sap.ui.model.type.String'}" linkText="{i18n>Dashboard.Dashboard_DashboardResultRunningUser/Dashboard_DashboardResultRunningUser}"/>
+							</VBox>							
+							<VBox>					
+							<rdf:TextLink text="{path:'dataModel>Dashboard_Description/Dashboard_Description',type:'sap.ui.model.type.String'}" linkText="{i18n>Dashboard.Dashboard_Description/Dashboard_Description}"/>
+							</VBox>							
+							<VBox>					
+							<rdf:TextLink text="{path:'dataModel>Dashboard_DeveloperName/Dashboard_DeveloperName',type:'sap.ui.model.type.String'}" linkText="{i18n>Dashboard.Dashboard_DeveloperName/Dashboard_DeveloperName}"/>
+							</VBox>							
+							<VBox>					
+							<rdf:TextLink text="{path:'dataModel>Dashboard_FolderName/Dashboard_FolderName',type:'sap.ui.model.type.String'}" linkText="{i18n>Dashboard.Dashboard_FolderName/Dashboard_FolderName}"/>
+							</VBox>							
+							<VBox>					
+							<rdf:TextLink text="{path:'dataModel>Dashboard_Id/Dashboard_Id',type:'sap.ui.model.type.String'}" linkText="{i18n>Dashboard.Dashboard_Id/Dashboard_Id}"/>
+							</VBox>							
+							<VBox>					
+								<Text text="{path:'dataModel>Dashboard_IsDeleted/Dashboard_IsDeleted',type:'sap.ui.model.type.Boolean'}"/>  
+							</VBox>							
+							<VBox>					
+							<Text text="{dataModel>Dashboard_LastModifiedDate/Dashboard_LastModifiedDate}"/>
+							</VBox>							
+							<VBox>					
+							<Text text="{dataModel>Dashboard_LastReferencedDate/Dashboard_LastReferencedDate}"/>
+							</VBox>							
+							<VBox>					
+							<Text text="{dataModel>Dashboard_LastViewedDate/Dashboard_LastViewedDate}"/>
+							</VBox>							
+							<VBox>					
+							<rdf:TextLink text="{path:'dataModel>Dashboard_LeftSize/Dashboard_LeftSize',type:'sap.ui.model.type.String'}" linkText="{i18n>Dashboard.Dashboard_LeftSize/Dashboard_LeftSize}"/>
+							</VBox>							
+							<VBox>					
+							<rdf:TextLink text="{path:'dataModel>Dashboard_MiddleSize/Dashboard_MiddleSize',type:'sap.ui.model.type.String'}" linkText="{i18n>Dashboard.Dashboard_MiddleSize/Dashboard_MiddleSize}"/>
+							</VBox>							
+							<VBox>					
+							<rdf:TextLink text="{path:'dataModel>Dashboard_NamespacePrefix/Dashboard_NamespacePrefix',type:'sap.ui.model.type.String'}" linkText="{i18n>Dashboard.Dashboard_NamespacePrefix/Dashboard_NamespacePrefix}"/>
+							</VBox>							
+							<VBox>					
+							<rdf:TextLink text="{path:'dataModel>Dashboard_RightSize/Dashboard_RightSize',type:'sap.ui.model.type.String'}" linkText="{i18n>Dashboard.Dashboard_RightSize/Dashboard_RightSize}"/>
+							</VBox>							
+							<VBox>					
+							<Text text="{dataModel>Dashboard_SystemModstamp/Dashboard_SystemModstamp}"/>
+							</VBox>							
+							<VBox>					
+							<Text text="{path:'dataModel>Dashboard_TextColor/Dashboard_TextColor',type:'sap.ui.model.type.Integer' }"/>
+							</VBox>							
+							<VBox>					
+							<rdf:TextLink text="{path:'dataModel>Dashboard_Title/Dashboard_Title',type:'sap.ui.model.type.String'}" linkText="{i18n>Dashboard.Dashboard_Title/Dashboard_Title}"/>
+							</VBox>							
+							<VBox>					
+							<Text text="{path:'dataModel>Dashboard_TitleColor/Dashboard_TitleColor',type:'sap.ui.model.type.Integer' }"/>
+							</VBox>							
+							<VBox>					
+							<Text text="{path:'dataModel>Dashboard_TitleSize/Dashboard_TitleSize',type:'sap.ui.model.type.Integer' }"/>
+							</VBox>							
+							<VBox>					
+							<rdf:TextLink text="{path:'dataModel>Dashboard_Type/Dashboard_Type',type:'sap.ui.model.type.String'}" linkText="{i18n>Dashboard.Dashboard_Type/Dashboard_Type}"/>
+							</VBox>							
+						</cells>
+					</ColumnListItem>
+				</items>
+			</Table>
+		</content>
+	</Page>
+</mvc:View>

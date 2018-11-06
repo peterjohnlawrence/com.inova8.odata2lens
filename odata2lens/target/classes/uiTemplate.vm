@@ -42,7 +42,8 @@ $sequence, $entityType.entitySet.name, "sap-icon://expand-group","./images/icons
 $sequence, $entityType.entitySet.name, "sap-icon://expand-group","./images/icons/category.png",$entityType.entity.target ,"sap-icon://expand-group", Form,  $entityType.entitySet.name ,true,$entityNavigationSet.name, C, $entityNavigationSet.range,$numSoFar,true, [List],""
 		#set ($numSoFar = $numSoFar + 1  )
 	#end	
-	
+
+#*	
 	#foreach($navigationSet in $entityType.entity.navigationSet)
 	#set ($sequence = $sequence + 1)
 	#set ( $thisEntityType = $entityTypes.get($navigationSet.targetEntityType))
@@ -69,4 +70,5 @@ $sequence, $entityType.entitySet.name, "sap-icon://expand-group","./images/icons
 	#end	
 	
 	#end	
+*#
 #end

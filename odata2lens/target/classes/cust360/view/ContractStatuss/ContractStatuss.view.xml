@@ -1,0 +1,97 @@
+<mvc:View controllerName="com.inova8.lens.controller.EntitySet360" xmlns="sap.m" xmlns:mvc="sap.ui.core.mvc" xmlns:layout="sap.ui.layout"
+	xmlns:rdf="com.inova8.lens.control" xmlns:core="sap.ui.core">
+	<Page showHeader="false" id="page" navButtonPress="onNavBack" showNavButton="true" title="{i18n>ContractStatuss.ViewTitle}">
+		<content>
+			<Table id="table360" inset="false" items="{ path: 'dataModel>/ContractStatus' , sorter: { path: 'label', descending: false } 
+				}"
+				noDataText="{entitySetView>/tableNoDataText}" busyIndicatorDelay="{entitySetView>/tableBusyDelay}" growing="true" growingScrollToLoad="true"
+				updateFinished="onUpdateFinished"  fixedLayout="false">
+				<headerToolbar>
+					<Toolbar>
+						<ToolbarSpacer/>
+						<HBox id="sourceTitle" alignItems="Center">
+							<rdf:TextResource id="selectedResource" path="" entitySet=""/>
+						</HBox>
+						<Title id="pathTitle" text="{entitySetView>/navigationText}"/>
+						<HBox id="versionsTitle" alignItems="Center">
+							<Title text="(" required="false"/>
+							<ComboBox id="versionSelection" items="{ path: 'entitySetView>/versions' }" selectionChange="onVersionChange">
+								<core:Item key="{entitySetView>navigation}" text="{entityView>text}"/>
+							</ComboBox>
+							<Title text=")" required="false"/>
+						</HBox>
+						<Title id="tableHeader" text="{entitySetView>/entitySetTableTitle}"/>
+						<ToolbarSpacer/>
+						<SearchField id="searchField" tooltip="{i18n>search.searchTooltip}" search="onSearch" width="auto"></SearchField>
+					</Toolbar>
+				</headerToolbar>
+				<columns>
+					<Column >
+						<Text text="{i18n>ContractStatuss.this}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>ContractStatuss.ContractStatus_ApiName}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>ContractStatuss.ContractStatus_CreatedDate}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>ContractStatuss.ContractStatus_Id}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>ContractStatuss.ContractStatus_IsDefault}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>ContractStatuss.ContractStatus_LastModifiedDate}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>ContractStatuss.ContractStatus_MasterLabel}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>ContractStatuss.ContractStatus_SortOrder}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>ContractStatuss.ContractStatus_StatusCode}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>ContractStatuss.ContractStatus_SystemModstamp}"/>
+					</Column>
+				</columns>
+				<items>
+					<ColumnListItem id="template360" type="Navigation" press="onPress">
+						<cells>
+							<rdf:TextResource path="dataModel>" entitySet="ContractStatus"/>
+							<VBox>					
+							<rdf:TextLink text="{path:'dataModel>ContractStatus_ApiName/ContractStatus_ApiName',type:'sap.ui.model.type.String'}" linkText="{i18n>ContractStatus.ContractStatus_ApiName/ContractStatus_ApiName}"/>
+							</VBox>							
+							<VBox>					
+							<Text text="{dataModel>ContractStatus_CreatedDate/ContractStatus_CreatedDate}"/>
+							</VBox>							
+							<VBox>					
+							<rdf:TextLink text="{path:'dataModel>ContractStatus_Id/ContractStatus_Id',type:'sap.ui.model.type.String'}" linkText="{i18n>ContractStatus.ContractStatus_Id/ContractStatus_Id}"/>
+							</VBox>							
+							<VBox>					
+								<Text text="{path:'dataModel>ContractStatus_IsDefault/ContractStatus_IsDefault',type:'sap.ui.model.type.Boolean'}"/>  
+							</VBox>							
+							<VBox>					
+							<Text text="{dataModel>ContractStatus_LastModifiedDate/ContractStatus_LastModifiedDate}"/>
+							</VBox>							
+							<VBox>					
+							<rdf:TextLink text="{path:'dataModel>ContractStatus_MasterLabel/ContractStatus_MasterLabel',type:'sap.ui.model.type.String'}" linkText="{i18n>ContractStatus.ContractStatus_MasterLabel/ContractStatus_MasterLabel}"/>
+							</VBox>							
+							<VBox>					
+							<Text text="{path:'dataModel>ContractStatus_SortOrder/ContractStatus_SortOrder',type:'sap.ui.model.type.Integer' }"/>
+							</VBox>							
+							<VBox>					
+							<rdf:TextLink text="{path:'dataModel>ContractStatus_StatusCode/ContractStatus_StatusCode',type:'sap.ui.model.type.String'}" linkText="{i18n>ContractStatus.ContractStatus_StatusCode/ContractStatus_StatusCode}"/>
+							</VBox>							
+							<VBox>					
+							<Text text="{dataModel>ContractStatus_SystemModstamp/ContractStatus_SystemModstamp}"/>
+							</VBox>							
+						</cells>
+					</ColumnListItem>
+				</items>
+			</Table>
+		</content>
+	</Page>
+</mvc:View>

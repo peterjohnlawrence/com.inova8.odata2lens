@@ -1,0 +1,91 @@
+<mvc:View controllerName="com.inova8.lens.controller.EntitySet360" xmlns="sap.m" xmlns:mvc="sap.ui.core.mvc" xmlns:layout="sap.ui.layout"
+	xmlns:rdf="com.inova8.lens.control" xmlns:core="sap.ui.core">
+	<Page showHeader="false" id="page" navButtonPress="onNavBack" showNavButton="true" title="{i18n>EmailServicesAddresss.ViewTitle}">
+		<content>
+			<Table id="table360" inset="false" items="{ path: 'dataModel>/EmailServicesAddress' , sorter: { path: 'label', descending: false } 
+				}"
+				noDataText="{entitySetView>/tableNoDataText}" busyIndicatorDelay="{entitySetView>/tableBusyDelay}" growing="true" growingScrollToLoad="true"
+				updateFinished="onUpdateFinished"  fixedLayout="false">
+				<headerToolbar>
+					<Toolbar>
+						<ToolbarSpacer/>
+						<HBox id="sourceTitle" alignItems="Center">
+							<rdf:TextResource id="selectedResource" path="" entitySet=""/>
+						</HBox>
+						<Title id="pathTitle" text="{entitySetView>/navigationText}"/>
+						<HBox id="versionsTitle" alignItems="Center">
+							<Title text="(" required="false"/>
+							<ComboBox id="versionSelection" items="{ path: 'entitySetView>/versions' }" selectionChange="onVersionChange">
+								<core:Item key="{entitySetView>navigation}" text="{entityView>text}"/>
+							</ComboBox>
+							<Title text=")" required="false"/>
+						</HBox>
+						<Title id="tableHeader" text="{entitySetView>/entitySetTableTitle}"/>
+						<ToolbarSpacer/>
+						<SearchField id="searchField" tooltip="{i18n>search.searchTooltip}" search="onSearch" width="auto"></SearchField>
+					</Toolbar>
+				</headerToolbar>
+				<columns>
+					<Column >
+						<Text text="{i18n>EmailServicesAddresss.this}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>EmailServicesAddresss.EmailServicesAddress_AuthorizedSenders}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>EmailServicesAddresss.EmailServicesAddress_CreatedDate}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>EmailServicesAddresss.EmailServicesAddress_EmailDomainName}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>EmailServicesAddresss.EmailServicesAddress_Id}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>EmailServicesAddresss.EmailServicesAddress_IsActive}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>EmailServicesAddresss.EmailServicesAddress_LastModifiedDate}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>EmailServicesAddresss.EmailServicesAddress_LocalPart}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>EmailServicesAddresss.EmailServicesAddress_SystemModstamp}"/>
+					</Column>
+				</columns>
+				<items>
+					<ColumnListItem id="template360" type="Navigation" press="onPress">
+						<cells>
+							<rdf:TextResource path="dataModel>" entitySet="EmailServicesAddress"/>
+							<VBox>					
+							<rdf:TextLink text="{path:'dataModel>EmailServicesAddress_AuthorizedSenders/EmailServicesAddress_AuthorizedSenders',type:'sap.ui.model.type.String'}" linkText="{i18n>EmailServicesAddress.EmailServicesAddress_AuthorizedSenders/EmailServicesAddress_AuthorizedSenders}"/>
+							</VBox>							
+							<VBox>					
+							<Text text="{dataModel>EmailServicesAddress_CreatedDate/EmailServicesAddress_CreatedDate}"/>
+							</VBox>							
+							<VBox>					
+							<rdf:TextLink text="{path:'dataModel>EmailServicesAddress_EmailDomainName/EmailServicesAddress_EmailDomainName',type:'sap.ui.model.type.String'}" linkText="{i18n>EmailServicesAddress.EmailServicesAddress_EmailDomainName/EmailServicesAddress_EmailDomainName}"/>
+							</VBox>							
+							<VBox>					
+							<rdf:TextLink text="{path:'dataModel>EmailServicesAddress_Id/EmailServicesAddress_Id',type:'sap.ui.model.type.String'}" linkText="{i18n>EmailServicesAddress.EmailServicesAddress_Id/EmailServicesAddress_Id}"/>
+							</VBox>							
+							<VBox>					
+								<Text text="{path:'dataModel>EmailServicesAddress_IsActive/EmailServicesAddress_IsActive',type:'sap.ui.model.type.Boolean'}"/>  
+							</VBox>							
+							<VBox>					
+							<Text text="{dataModel>EmailServicesAddress_LastModifiedDate/EmailServicesAddress_LastModifiedDate}"/>
+							</VBox>							
+							<VBox>					
+							<rdf:TextLink text="{path:'dataModel>EmailServicesAddress_LocalPart/EmailServicesAddress_LocalPart',type:'sap.ui.model.type.String'}" linkText="{i18n>EmailServicesAddress.EmailServicesAddress_LocalPart/EmailServicesAddress_LocalPart}"/>
+							</VBox>							
+							<VBox>					
+							<Text text="{dataModel>EmailServicesAddress_SystemModstamp/EmailServicesAddress_SystemModstamp}"/>
+							</VBox>							
+						</cells>
+					</ColumnListItem>
+				</items>
+			</Table>
+		</content>
+	</Page>
+</mvc:View>

@@ -1,0 +1,343 @@
+<mvc:View controllerName="com.inova8.lens.controller.Entity360" xmlns="sap.m" xmlns:mvc="sap.ui.core.mvc" xmlns:l="sap.ui.layout"
+	xmlns:f="sap.ui.layout.form" xmlns:table="sap.ui.table" xmlns:rdf="com.inova8.lens.control" xmlns:html="http://www.w3.org/1999/xhtml"
+	xmlns:core="sap.ui.core">
+	<Page showHeader="true" id="page" navButtonPress="onNavBack" showNavButton="false" title="{i18n>AppMenuItem.Title}" busy="{entityView>/busy}"
+		busyIndicatorDelay="{entityView>/delay}" >
+		<customHeader>
+			<Toolbar>
+				<ToolbarSpacer/>
+				<HBox id="sourceTitle" alignItems="Center">
+						<rdf:TextResource id="selectedResource" path="" entitySet=""/>
+				</HBox>	
+				<Title id="pathTitle" text="{entityView>/navigation}"/>
+				<HBox id="versionsTitle" alignItems="Center">
+					<Title text="(" required="false"/>
+					<ComboBox id="versionSelection" items="{ path: 'entityView>/versions' }" selectionChange="onVersionChange">
+						<core:Item key="{entityView>navigation}" text="{entityView>text}"/>
+					</ComboBox>
+					<Title text=")" required="false"/>
+				</HBox>
+				<Title text="{i18n>AppMenuItem.this}"/>
+				<Title text="(" required="false"/>
+				<rdf:TextResource path="dataModel>" entitySet="AppMenuItem"/>
+				<Title text=")" required="false"/>
+	
+				<ToolbarSpacer/>
+				<ToggleButton id="toggleColumns" icon="sap-icon://hide" activeIcon="sap-icon://show" press="onSettingsPressed" visible="false"	>
+					<layoutData>
+						<OverflowToolbarLayoutData priority="NeverOverflow"/>
+					</layoutData>
+				</ToggleButton>
+				
+			</Toolbar>
+		</customHeader>
+		<Table id="form360" inset="false" fixedLayout="true" class="multicolumnform" updateFinished="hideColumns">
+			<columns>
+				<Column hAlign="Right" width="200px">
+					<Text text=""/>
+				</Column>
+				<Column visible="true">
+				</Column>
+				<Column visible="true">
+					<Text text="AppMenuItem"/>
+				</Column>
+			</columns>
+			<items>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>AppMenuItem.AppMenuItem_ApplicationId}" required="false"/> 
+						<Text text=""/>
+						<rdf:TextLink text="{path:'dataModel>AppMenuItem_ApplicationId/AppMenuItem_ApplicationId',type:'sap.ui.model.type.String' }" linkText="{i18n>AppMenuItem.AppMenuItem_ApplicationId/AppMenuItem_ApplicationId}"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>AppMenuItem.AppMenuItem_CanvasAccessMethod}" required="false"/> 
+						<Text text=""/>
+						<rdf:TextLink text="{path:'dataModel>AppMenuItem_CanvasAccessMethod/AppMenuItem_CanvasAccessMethod',type:'sap.ui.model.type.String' }" linkText="{i18n>AppMenuItem.AppMenuItem_CanvasAccessMethod/AppMenuItem_CanvasAccessMethod}"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>AppMenuItem.AppMenuItem_CanvasEnabled}" required="false"/> 
+						<Text text=""/>
+						<Text text="{path:'dataModel>AppMenuItem_CanvasEnabled/AppMenuItem_CanvasEnabled',type:'sap.ui.model.type.Boolean'}"/>  
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>AppMenuItem.AppMenuItem_CanvasOptions}" required="false"/> 
+						<Text text=""/>
+						<rdf:TextLink text="{path:'dataModel>AppMenuItem_CanvasOptions/AppMenuItem_CanvasOptions',type:'sap.ui.model.type.String' }" linkText="{i18n>AppMenuItem.AppMenuItem_CanvasOptions/AppMenuItem_CanvasOptions}"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>AppMenuItem.AppMenuItem_CanvasReferenceId}" required="false"/> 
+						<Text text=""/>
+						<rdf:TextLink text="{path:'dataModel>AppMenuItem_CanvasReferenceId/AppMenuItem_CanvasReferenceId',type:'sap.ui.model.type.String' }" linkText="{i18n>AppMenuItem.AppMenuItem_CanvasReferenceId/AppMenuItem_CanvasReferenceId}"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>AppMenuItem.AppMenuItem_CanvasSelectedLocations}" required="false"/> 
+						<Text text=""/>
+						<rdf:TextLink text="{path:'dataModel>AppMenuItem_CanvasSelectedLocations/AppMenuItem_CanvasSelectedLocations',type:'sap.ui.model.type.String' }" linkText="{i18n>AppMenuItem.AppMenuItem_CanvasSelectedLocations/AppMenuItem_CanvasSelectedLocations}"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>AppMenuItem.AppMenuItem_CanvasUrl}" required="false"/> 
+						<Text text=""/>
+						<rdf:TextLink text="{path:'dataModel>AppMenuItem_CanvasUrl/AppMenuItem_CanvasUrl',type:'sap.ui.model.type.String' }" linkText="{i18n>AppMenuItem.AppMenuItem_CanvasUrl/AppMenuItem_CanvasUrl}"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>AppMenuItem.AppMenuItem_CreatedById}" required="false"/> 
+						<Text text=""/>
+						<rdf:ListResource path="dataModel>AppMenuItem_CreatedById/sfdc_AppMenuItem_CreatedById" entitySet="User"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>AppMenuItem.AppMenuItem_CreatedDate}" required="false"/> 
+						<Text text=""/>
+						<Text text="{dataModel>AppMenuItem_CreatedDate/AppMenuItem_CreatedDate}"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>AppMenuItem.AppMenuItem_Description}" required="false"/> 
+						<Text text=""/>
+						<rdf:TextLink text="{path:'dataModel>AppMenuItem_Description/AppMenuItem_Description',type:'sap.ui.model.type.String' }" linkText="{i18n>AppMenuItem.AppMenuItem_Description/AppMenuItem_Description}"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>AppMenuItem.AppMenuItem_IconUrl}" required="false"/> 
+						<Text text=""/>
+						<rdf:TextLink text="{path:'dataModel>AppMenuItem_IconUrl/AppMenuItem_IconUrl',type:'sap.ui.model.type.String' }" linkText="{i18n>AppMenuItem.AppMenuItem_IconUrl/AppMenuItem_IconUrl}"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>AppMenuItem.AppMenuItem_Id}" required="false"/> 
+						<Text text=""/>
+						<rdf:TextLink text="{path:'dataModel>AppMenuItem_Id/AppMenuItem_Id',type:'sap.ui.model.type.String' }" linkText="{i18n>AppMenuItem.AppMenuItem_Id/AppMenuItem_Id}"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>AppMenuItem.AppMenuItem_InfoUrl}" required="false"/> 
+						<Text text=""/>
+						<rdf:TextLink text="{path:'dataModel>AppMenuItem_InfoUrl/AppMenuItem_InfoUrl',type:'sap.ui.model.type.String' }" linkText="{i18n>AppMenuItem.AppMenuItem_InfoUrl/AppMenuItem_InfoUrl}"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>AppMenuItem.AppMenuItem_IsAccessible}" required="false"/> 
+						<Text text=""/>
+						<Text text="{path:'dataModel>AppMenuItem_IsAccessible/AppMenuItem_IsAccessible',type:'sap.ui.model.type.Boolean'}"/>  
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>AppMenuItem.AppMenuItem_IsDeleted}" required="false"/> 
+						<Text text=""/>
+						<Text text="{path:'dataModel>AppMenuItem_IsDeleted/AppMenuItem_IsDeleted',type:'sap.ui.model.type.Boolean'}"/>  
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>AppMenuItem.AppMenuItem_IsRegisteredDeviceOnly}" required="false"/> 
+						<Text text=""/>
+						<Text text="{path:'dataModel>AppMenuItem_IsRegisteredDeviceOnly/AppMenuItem_IsRegisteredDeviceOnly',type:'sap.ui.model.type.Boolean'}"/>  
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>AppMenuItem.AppMenuItem_IsUsingAdminAuthorization}" required="false"/> 
+						<Text text=""/>
+						<Text text="{path:'dataModel>AppMenuItem_IsUsingAdminAuthorization/AppMenuItem_IsUsingAdminAuthorization',type:'sap.ui.model.type.Boolean'}"/>  
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>AppMenuItem.AppMenuItem_IsVisible}" required="false"/> 
+						<Text text=""/>
+						<Text text="{path:'dataModel>AppMenuItem_IsVisible/AppMenuItem_IsVisible',type:'sap.ui.model.type.Boolean'}"/>  
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>AppMenuItem.AppMenuItem_Label}" required="false"/> 
+						<Text text=""/>
+						<rdf:TextLink text="{path:'dataModel>AppMenuItem_Label/AppMenuItem_Label',type:'sap.ui.model.type.String' }" linkText="{i18n>AppMenuItem.AppMenuItem_Label/AppMenuItem_Label}"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>AppMenuItem.AppMenuItem_LastModifiedById}" required="false"/> 
+						<Text text=""/>
+						<rdf:ListResource path="dataModel>AppMenuItem_LastModifiedById/sfdc_AppMenuItem_LastModifiedById" entitySet="User"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>AppMenuItem.AppMenuItem_LastModifiedDate}" required="false"/> 
+						<Text text=""/>
+						<Text text="{dataModel>AppMenuItem_LastModifiedDate/AppMenuItem_LastModifiedDate}"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>AppMenuItem.AppMenuItem_LogoUrl}" required="false"/> 
+						<Text text=""/>
+						<rdf:TextLink text="{path:'dataModel>AppMenuItem_LogoUrl/AppMenuItem_LogoUrl',type:'sap.ui.model.type.String' }" linkText="{i18n>AppMenuItem.AppMenuItem_LogoUrl/AppMenuItem_LogoUrl}"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>AppMenuItem.AppMenuItem_MobileAppBinaryId}" required="false"/> 
+						<Text text=""/>
+						<rdf:TextLink text="{path:'dataModel>AppMenuItem_MobileAppBinaryId/AppMenuItem_MobileAppBinaryId',type:'sap.ui.model.type.String' }" linkText="{i18n>AppMenuItem.AppMenuItem_MobileAppBinaryId/AppMenuItem_MobileAppBinaryId}"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>AppMenuItem.AppMenuItem_MobileAppInstallUrl}" required="false"/> 
+						<Text text=""/>
+						<rdf:TextLink text="{path:'dataModel>AppMenuItem_MobileAppInstallUrl/AppMenuItem_MobileAppInstallUrl',type:'sap.ui.model.type.String' }" linkText="{i18n>AppMenuItem.AppMenuItem_MobileAppInstallUrl/AppMenuItem_MobileAppInstallUrl}"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>AppMenuItem.AppMenuItem_MobileAppInstalledDate}" required="false"/> 
+						<Text text=""/>
+						<Text text="{dataModel>AppMenuItem_MobileAppInstalledDate/AppMenuItem_MobileAppInstalledDate}"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>AppMenuItem.AppMenuItem_MobileAppInstalledVersion}" required="false"/> 
+						<Text text=""/>
+						<rdf:TextLink text="{path:'dataModel>AppMenuItem_MobileAppInstalledVersion/AppMenuItem_MobileAppInstalledVersion',type:'sap.ui.model.type.String' }" linkText="{i18n>AppMenuItem.AppMenuItem_MobileAppInstalledVersion/AppMenuItem_MobileAppInstalledVersion}"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>AppMenuItem.AppMenuItem_MobileAppVer}" required="false"/> 
+						<Text text=""/>
+						<rdf:TextLink text="{path:'dataModel>AppMenuItem_MobileAppVer/AppMenuItem_MobileAppVer',type:'sap.ui.model.type.String' }" linkText="{i18n>AppMenuItem.AppMenuItem_MobileAppVer/AppMenuItem_MobileAppVer}"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>AppMenuItem.AppMenuItem_MobileDeviceType}" required="false"/> 
+						<Text text=""/>
+						<rdf:TextLink text="{path:'dataModel>AppMenuItem_MobileDeviceType/AppMenuItem_MobileDeviceType',type:'sap.ui.model.type.String' }" linkText="{i18n>AppMenuItem.AppMenuItem_MobileDeviceType/AppMenuItem_MobileDeviceType}"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>AppMenuItem.AppMenuItem_MobileMinOsVer}" required="false"/> 
+						<Text text=""/>
+						<rdf:TextLink text="{path:'dataModel>AppMenuItem_MobileMinOsVer/AppMenuItem_MobileMinOsVer',type:'sap.ui.model.type.String' }" linkText="{i18n>AppMenuItem.AppMenuItem_MobileMinOsVer/AppMenuItem_MobileMinOsVer}"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>AppMenuItem.AppMenuItem_MobilePlatform}" required="false"/> 
+						<Text text=""/>
+						<rdf:TextLink text="{path:'dataModel>AppMenuItem_MobilePlatform/AppMenuItem_MobilePlatform',type:'sap.ui.model.type.String' }" linkText="{i18n>AppMenuItem.AppMenuItem_MobilePlatform/AppMenuItem_MobilePlatform}"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>AppMenuItem.AppMenuItem_MobileStartUrl}" required="false"/> 
+						<Text text=""/>
+						<rdf:TextLink text="{path:'dataModel>AppMenuItem_MobileStartUrl/AppMenuItem_MobileStartUrl',type:'sap.ui.model.type.String' }" linkText="{i18n>AppMenuItem.AppMenuItem_MobileStartUrl/AppMenuItem_MobileStartUrl}"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>AppMenuItem.AppMenuItem_Name}" required="false"/> 
+						<Text text=""/>
+						<rdf:TextLink text="{path:'dataModel>AppMenuItem_Name/AppMenuItem_Name',type:'sap.ui.model.type.String' }" linkText="{i18n>AppMenuItem.AppMenuItem_Name/AppMenuItem_Name}"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>AppMenuItem.AppMenuItem_NamespacePrefix}" required="false"/> 
+						<Text text=""/>
+						<rdf:TextLink text="{path:'dataModel>AppMenuItem_NamespacePrefix/AppMenuItem_NamespacePrefix',type:'sap.ui.model.type.String' }" linkText="{i18n>AppMenuItem.AppMenuItem_NamespacePrefix/AppMenuItem_NamespacePrefix}"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>AppMenuItem.AppMenuItem_SortOrder}" required="false"/> 
+						<Text text=""/>
+						<Text text="{path:'dataModel>AppMenuItem_SortOrder/AppMenuItem_SortOrder',type:'sap.ui.model.type.Integer' }"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>AppMenuItem.AppMenuItem_StartUrl}" required="false"/> 
+						<Text text=""/>
+						<rdf:TextLink text="{path:'dataModel>AppMenuItem_StartUrl/AppMenuItem_StartUrl',type:'sap.ui.model.type.String' }" linkText="{i18n>AppMenuItem.AppMenuItem_StartUrl/AppMenuItem_StartUrl}"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>AppMenuItem.AppMenuItem_SystemModstamp}" required="false"/> 
+						<Text text=""/>
+						<Text text="{dataModel>AppMenuItem_SystemModstamp/AppMenuItem_SystemModstamp}"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>AppMenuItem.AppMenuItem_Type}" required="false"/> 
+						<Text text=""/>
+						<rdf:TextLink text="{path:'dataModel>AppMenuItem_Type/AppMenuItem_Type',type:'sap.ui.model.type.String' }" linkText="{i18n>AppMenuItem.AppMenuItem_Type/AppMenuItem_Type}"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>AppMenuItem.AppMenuItem_UserSortOrder}" required="false"/> 
+						<Text text=""/>
+						<Text text="{path:'dataModel>AppMenuItem_UserSortOrder/AppMenuItem_UserSortOrder',type:'sap.ui.model.type.Integer' }"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>AppMenuItem.OauthToken_AppMenuItemId_Inverse}" required="false"/> 
+						<Text text=""/>
+						<rdf:ListResource path="dataModel>OauthToken_AppMenuItemId_Inverse/sfdc_OauthToken_AppMenuItemId_Inverse" entitySet="OauthToken"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>AppMenuItem.AppMenuItem_CreatedById}" required="false"/> 
+						<rdf:ListResource path="dataModel>AppMenuItem_CreatedById" entitySet="User"/>
+						<Text text=""/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>AppMenuItem.AppMenuItem_LastModifiedById}" required="false"/> 
+						<rdf:ListResource path="dataModel>AppMenuItem_LastModifiedById" entitySet="User"/>
+						<Text text=""/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>AppMenuItem.OauthToken_AppMenuItemId_Inverse}" required="false"/> 
+						<rdf:ListResource path="dataModel>OauthToken_AppMenuItemId_Inverse" entitySet="OauthToken"/>
+						<Text text=""/>
+					</cells>
+				</ColumnListItem>
+			</items>
+		</Table>
+	</Page>
+</mvc:View>

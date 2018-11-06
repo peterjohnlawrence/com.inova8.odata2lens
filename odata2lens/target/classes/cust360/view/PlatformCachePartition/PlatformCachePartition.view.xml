@@ -1,0 +1,168 @@
+<mvc:View controllerName="com.inova8.lens.controller.Entity360" xmlns="sap.m" xmlns:mvc="sap.ui.core.mvc" xmlns:l="sap.ui.layout"
+	xmlns:f="sap.ui.layout.form" xmlns:table="sap.ui.table" xmlns:rdf="com.inova8.lens.control" xmlns:html="http://www.w3.org/1999/xhtml"
+	xmlns:core="sap.ui.core">
+	<Page showHeader="true" id="page" navButtonPress="onNavBack" showNavButton="false" title="{i18n>PlatformCachePartition.Title}" busy="{entityView>/busy}"
+		busyIndicatorDelay="{entityView>/delay}" >
+		<customHeader>
+			<Toolbar>
+				<ToolbarSpacer/>
+				<HBox id="sourceTitle" alignItems="Center">
+						<rdf:TextResource id="selectedResource" path="" entitySet=""/>
+				</HBox>	
+				<Title id="pathTitle" text="{entityView>/navigation}"/>
+				<HBox id="versionsTitle" alignItems="Center">
+					<Title text="(" required="false"/>
+					<ComboBox id="versionSelection" items="{ path: 'entityView>/versions' }" selectionChange="onVersionChange">
+						<core:Item key="{entityView>navigation}" text="{entityView>text}"/>
+					</ComboBox>
+					<Title text=")" required="false"/>
+				</HBox>
+				<Title text="{i18n>PlatformCachePartition.this}"/>
+				<Title text="(" required="false"/>
+				<rdf:TextResource path="dataModel>" entitySet="PlatformCachePartition"/>
+				<Title text=")" required="false"/>
+	
+				<ToolbarSpacer/>
+				<ToggleButton id="toggleColumns" icon="sap-icon://hide" activeIcon="sap-icon://show" press="onSettingsPressed" visible="false"	>
+					<layoutData>
+						<OverflowToolbarLayoutData priority="NeverOverflow"/>
+					</layoutData>
+				</ToggleButton>
+				
+			</Toolbar>
+		</customHeader>
+		<Table id="form360" inset="false" fixedLayout="true" class="multicolumnform" updateFinished="hideColumns">
+			<columns>
+				<Column hAlign="Right" width="200px">
+					<Text text=""/>
+				</Column>
+				<Column visible="true">
+				</Column>
+				<Column visible="true">
+					<Text text="PlatformCachePartition"/>
+				</Column>
+			</columns>
+			<items>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>PlatformCachePartition.PlatformCachePartitionType_PlatformCachePartitionId_Inverse}" required="false"/> 
+						<Text text=""/>
+						<rdf:ListResource path="dataModel>PlatformCachePartitionType_PlatformCachePartitionId_Inverse/sfdc_PlatformCachePartitionType_PlatformCachePartitionId_Inverse" entitySet="PlatformCachePartitionType"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>PlatformCachePartition.PlatformCachePartition_CreatedById}" required="false"/> 
+						<Text text=""/>
+						<rdf:ListResource path="dataModel>PlatformCachePartition_CreatedById/sfdc_PlatformCachePartition_CreatedById" entitySet="User"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>PlatformCachePartition.PlatformCachePartition_CreatedDate}" required="false"/> 
+						<Text text=""/>
+						<Text text="{dataModel>PlatformCachePartition_CreatedDate/PlatformCachePartition_CreatedDate}"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>PlatformCachePartition.PlatformCachePartition_Description}" required="false"/> 
+						<Text text=""/>
+						<rdf:TextLink text="{path:'dataModel>PlatformCachePartition_Description/PlatformCachePartition_Description',type:'sap.ui.model.type.String' }" linkText="{i18n>PlatformCachePartition.PlatformCachePartition_Description/PlatformCachePartition_Description}"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>PlatformCachePartition.PlatformCachePartition_DeveloperName}" required="false"/> 
+						<Text text=""/>
+						<rdf:TextLink text="{path:'dataModel>PlatformCachePartition_DeveloperName/PlatformCachePartition_DeveloperName',type:'sap.ui.model.type.String' }" linkText="{i18n>PlatformCachePartition.PlatformCachePartition_DeveloperName/PlatformCachePartition_DeveloperName}"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>PlatformCachePartition.PlatformCachePartition_Id}" required="false"/> 
+						<Text text=""/>
+						<rdf:TextLink text="{path:'dataModel>PlatformCachePartition_Id/PlatformCachePartition_Id',type:'sap.ui.model.type.String' }" linkText="{i18n>PlatformCachePartition.PlatformCachePartition_Id/PlatformCachePartition_Id}"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>PlatformCachePartition.PlatformCachePartition_IsDefaultPartition}" required="false"/> 
+						<Text text=""/>
+						<Text text="{path:'dataModel>PlatformCachePartition_IsDefaultPartition/PlatformCachePartition_IsDefaultPartition',type:'sap.ui.model.type.Boolean'}"/>  
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>PlatformCachePartition.PlatformCachePartition_IsDeleted}" required="false"/> 
+						<Text text=""/>
+						<Text text="{path:'dataModel>PlatformCachePartition_IsDeleted/PlatformCachePartition_IsDeleted',type:'sap.ui.model.type.Boolean'}"/>  
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>PlatformCachePartition.PlatformCachePartition_Language}" required="false"/> 
+						<Text text=""/>
+						<rdf:TextLink text="{path:'dataModel>PlatformCachePartition_Language/PlatformCachePartition_Language',type:'sap.ui.model.type.String' }" linkText="{i18n>PlatformCachePartition.PlatformCachePartition_Language/PlatformCachePartition_Language}"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>PlatformCachePartition.PlatformCachePartition_LastModifiedById}" required="false"/> 
+						<Text text=""/>
+						<rdf:ListResource path="dataModel>PlatformCachePartition_LastModifiedById/sfdc_PlatformCachePartition_LastModifiedById" entitySet="User"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>PlatformCachePartition.PlatformCachePartition_LastModifiedDate}" required="false"/> 
+						<Text text=""/>
+						<Text text="{dataModel>PlatformCachePartition_LastModifiedDate/PlatformCachePartition_LastModifiedDate}"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>PlatformCachePartition.PlatformCachePartition_MasterLabel}" required="false"/> 
+						<Text text=""/>
+						<rdf:TextLink text="{path:'dataModel>PlatformCachePartition_MasterLabel/PlatformCachePartition_MasterLabel',type:'sap.ui.model.type.String' }" linkText="{i18n>PlatformCachePartition.PlatformCachePartition_MasterLabel/PlatformCachePartition_MasterLabel}"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>PlatformCachePartition.PlatformCachePartition_NamespacePrefix}" required="false"/> 
+						<Text text=""/>
+						<rdf:TextLink text="{path:'dataModel>PlatformCachePartition_NamespacePrefix/PlatformCachePartition_NamespacePrefix',type:'sap.ui.model.type.String' }" linkText="{i18n>PlatformCachePartition.PlatformCachePartition_NamespacePrefix/PlatformCachePartition_NamespacePrefix}"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>PlatformCachePartition.PlatformCachePartition_SystemModstamp}" required="false"/> 
+						<Text text=""/>
+						<Text text="{dataModel>PlatformCachePartition_SystemModstamp/PlatformCachePartition_SystemModstamp}"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>PlatformCachePartition.PlatformCachePartitionType_PlatformCachePartitionId_Inverse}" required="false"/> 
+						<rdf:ListResource path="dataModel>PlatformCachePartitionType_PlatformCachePartitionId_Inverse" entitySet="PlatformCachePartitionType"/>
+						<Text text=""/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>PlatformCachePartition.PlatformCachePartition_CreatedById}" required="false"/> 
+						<rdf:ListResource path="dataModel>PlatformCachePartition_CreatedById" entitySet="User"/>
+						<Text text=""/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>PlatformCachePartition.PlatformCachePartition_LastModifiedById}" required="false"/> 
+						<rdf:ListResource path="dataModel>PlatformCachePartition_LastModifiedById" entitySet="User"/>
+						<Text text=""/>
+					</cells>
+				</ColumnListItem>
+			</items>
+		</Table>
+	</Page>
+</mvc:View>

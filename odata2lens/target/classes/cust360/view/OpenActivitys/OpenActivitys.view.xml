@@ -1,0 +1,205 @@
+<mvc:View controllerName="com.inova8.lens.controller.EntitySet360" xmlns="sap.m" xmlns:mvc="sap.ui.core.mvc" xmlns:layout="sap.ui.layout"
+	xmlns:rdf="com.inova8.lens.control" xmlns:core="sap.ui.core">
+	<Page showHeader="false" id="page" navButtonPress="onNavBack" showNavButton="true" title="{i18n>OpenActivitys.ViewTitle}">
+		<content>
+			<Table id="table360" inset="false" items="{ path: 'dataModel>/OpenActivity' , sorter: { path: 'label', descending: false } 
+				}"
+				noDataText="{entitySetView>/tableNoDataText}" busyIndicatorDelay="{entitySetView>/tableBusyDelay}" growing="true" growingScrollToLoad="true"
+				updateFinished="onUpdateFinished"  fixedLayout="false">
+				<headerToolbar>
+					<Toolbar>
+						<ToolbarSpacer/>
+						<HBox id="sourceTitle" alignItems="Center">
+							<rdf:TextResource id="selectedResource" path="" entitySet=""/>
+						</HBox>
+						<Title id="pathTitle" text="{entitySetView>/navigationText}"/>
+						<HBox id="versionsTitle" alignItems="Center">
+							<Title text="(" required="false"/>
+							<ComboBox id="versionSelection" items="{ path: 'entitySetView>/versions' }" selectionChange="onVersionChange">
+								<core:Item key="{entitySetView>navigation}" text="{entityView>text}"/>
+							</ComboBox>
+							<Title text=")" required="false"/>
+						</HBox>
+						<Title id="tableHeader" text="{entitySetView>/entitySetTableTitle}"/>
+						<ToolbarSpacer/>
+						<SearchField id="searchField" tooltip="{i18n>search.searchTooltip}" search="onSearch" width="auto"></SearchField>
+					</Toolbar>
+				</headerToolbar>
+				<columns>
+					<Column >
+						<Text text="{i18n>OpenActivitys.this}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>OpenActivitys.OpenActivity_ActivityDate}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>OpenActivitys.OpenActivity_ActivitySubtype}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>OpenActivitys.OpenActivity_ActivityType}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>OpenActivitys.OpenActivity_CallDisposition}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>OpenActivitys.OpenActivity_CallDurationInSeconds}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>OpenActivitys.OpenActivity_CallObject}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>OpenActivitys.OpenActivity_CallType}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>OpenActivitys.OpenActivity_CreatedDate}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>OpenActivitys.OpenActivity_Description}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>OpenActivitys.OpenActivity_DurationInMinutes}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>OpenActivitys.OpenActivity_EndDateTime}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>OpenActivitys.OpenActivity_Id}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>OpenActivitys.OpenActivity_IsAllDayEvent}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>OpenActivitys.OpenActivity_IsClosed}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>OpenActivitys.OpenActivity_IsDeleted}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>OpenActivitys.OpenActivity_IsHighPriority}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>OpenActivitys.OpenActivity_IsReminderSet}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>OpenActivitys.OpenActivity_IsTask}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>OpenActivitys.OpenActivity_IsVisibleInSelfService}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>OpenActivitys.OpenActivity_LastModifiedDate}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>OpenActivitys.OpenActivity_Location}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>OpenActivitys.OpenActivity_Priority}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>OpenActivitys.OpenActivity_ReminderDateTime}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>OpenActivitys.OpenActivity_StartDateTime}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>OpenActivitys.OpenActivity_Status}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>OpenActivitys.OpenActivity_Subject}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>OpenActivitys.OpenActivity_SystemModstamp}"/>
+					</Column>
+				</columns>
+				<items>
+					<ColumnListItem id="template360" type="Navigation" press="onPress">
+						<cells>
+							<rdf:TextResource path="dataModel>" entitySet="OpenActivity"/>
+							<VBox>					
+							<Text text="{dataModel>OpenActivity_ActivityDate/OpenActivity_ActivityDate}"/>
+							</VBox>							
+							<VBox>					
+							<rdf:TextLink text="{path:'dataModel>OpenActivity_ActivitySubtype/OpenActivity_ActivitySubtype',type:'sap.ui.model.type.String'}" linkText="{i18n>OpenActivity.OpenActivity_ActivitySubtype/OpenActivity_ActivitySubtype}"/>
+							</VBox>							
+							<VBox>					
+							<rdf:TextLink text="{path:'dataModel>OpenActivity_ActivityType/OpenActivity_ActivityType',type:'sap.ui.model.type.String'}" linkText="{i18n>OpenActivity.OpenActivity_ActivityType/OpenActivity_ActivityType}"/>
+							</VBox>							
+							<VBox>					
+							<rdf:TextLink text="{path:'dataModel>OpenActivity_CallDisposition/OpenActivity_CallDisposition',type:'sap.ui.model.type.String'}" linkText="{i18n>OpenActivity.OpenActivity_CallDisposition/OpenActivity_CallDisposition}"/>
+							</VBox>							
+							<VBox>					
+							<Text text="{path:'dataModel>OpenActivity_CallDurationInSeconds/OpenActivity_CallDurationInSeconds',type:'sap.ui.model.type.Integer' }"/>
+							</VBox>							
+							<VBox>					
+							<rdf:TextLink text="{path:'dataModel>OpenActivity_CallObject/OpenActivity_CallObject',type:'sap.ui.model.type.String'}" linkText="{i18n>OpenActivity.OpenActivity_CallObject/OpenActivity_CallObject}"/>
+							</VBox>							
+							<VBox>					
+							<rdf:TextLink text="{path:'dataModel>OpenActivity_CallType/OpenActivity_CallType',type:'sap.ui.model.type.String'}" linkText="{i18n>OpenActivity.OpenActivity_CallType/OpenActivity_CallType}"/>
+							</VBox>							
+							<VBox>					
+							<Text text="{dataModel>OpenActivity_CreatedDate/OpenActivity_CreatedDate}"/>
+							</VBox>							
+							<VBox>					
+							<rdf:TextLink text="{path:'dataModel>OpenActivity_Description/OpenActivity_Description',type:'sap.ui.model.type.String'}" linkText="{i18n>OpenActivity.OpenActivity_Description/OpenActivity_Description}"/>
+							</VBox>							
+							<VBox>					
+							<Text text="{path:'dataModel>OpenActivity_DurationInMinutes/OpenActivity_DurationInMinutes',type:'sap.ui.model.type.Integer' }"/>
+							</VBox>							
+							<VBox>					
+							<Text text="{dataModel>OpenActivity_EndDateTime/OpenActivity_EndDateTime}"/>
+							</VBox>							
+							<VBox>					
+							<rdf:TextLink text="{path:'dataModel>OpenActivity_Id/OpenActivity_Id',type:'sap.ui.model.type.String'}" linkText="{i18n>OpenActivity.OpenActivity_Id/OpenActivity_Id}"/>
+							</VBox>							
+							<VBox>					
+								<Text text="{path:'dataModel>OpenActivity_IsAllDayEvent/OpenActivity_IsAllDayEvent',type:'sap.ui.model.type.Boolean'}"/>  
+							</VBox>							
+							<VBox>					
+								<Text text="{path:'dataModel>OpenActivity_IsClosed/OpenActivity_IsClosed',type:'sap.ui.model.type.Boolean'}"/>  
+							</VBox>							
+							<VBox>					
+								<Text text="{path:'dataModel>OpenActivity_IsDeleted/OpenActivity_IsDeleted',type:'sap.ui.model.type.Boolean'}"/>  
+							</VBox>							
+							<VBox>					
+								<Text text="{path:'dataModel>OpenActivity_IsHighPriority/OpenActivity_IsHighPriority',type:'sap.ui.model.type.Boolean'}"/>  
+							</VBox>							
+							<VBox>					
+								<Text text="{path:'dataModel>OpenActivity_IsReminderSet/OpenActivity_IsReminderSet',type:'sap.ui.model.type.Boolean'}"/>  
+							</VBox>							
+							<VBox>					
+								<Text text="{path:'dataModel>OpenActivity_IsTask/OpenActivity_IsTask',type:'sap.ui.model.type.Boolean'}"/>  
+							</VBox>							
+							<VBox>					
+								<Text text="{path:'dataModel>OpenActivity_IsVisibleInSelfService/OpenActivity_IsVisibleInSelfService',type:'sap.ui.model.type.Boolean'}"/>  
+							</VBox>							
+							<VBox>					
+							<Text text="{dataModel>OpenActivity_LastModifiedDate/OpenActivity_LastModifiedDate}"/>
+							</VBox>							
+							<VBox>					
+							<rdf:TextLink text="{path:'dataModel>OpenActivity_Location/OpenActivity_Location',type:'sap.ui.model.type.String'}" linkText="{i18n>OpenActivity.OpenActivity_Location/OpenActivity_Location}"/>
+							</VBox>							
+							<VBox>					
+							<rdf:TextLink text="{path:'dataModel>OpenActivity_Priority/OpenActivity_Priority',type:'sap.ui.model.type.String'}" linkText="{i18n>OpenActivity.OpenActivity_Priority/OpenActivity_Priority}"/>
+							</VBox>							
+							<VBox>					
+							<Text text="{dataModel>OpenActivity_ReminderDateTime/OpenActivity_ReminderDateTime}"/>
+							</VBox>							
+							<VBox>					
+							<Text text="{dataModel>OpenActivity_StartDateTime/OpenActivity_StartDateTime}"/>
+							</VBox>							
+							<VBox>					
+							<rdf:TextLink text="{path:'dataModel>OpenActivity_Status/OpenActivity_Status',type:'sap.ui.model.type.String'}" linkText="{i18n>OpenActivity.OpenActivity_Status/OpenActivity_Status}"/>
+							</VBox>							
+							<VBox>					
+							<rdf:TextLink text="{path:'dataModel>OpenActivity_Subject/OpenActivity_Subject',type:'sap.ui.model.type.String'}" linkText="{i18n>OpenActivity.OpenActivity_Subject/OpenActivity_Subject}"/>
+							</VBox>							
+							<VBox>					
+							<Text text="{dataModel>OpenActivity_SystemModstamp/OpenActivity_SystemModstamp}"/>
+							</VBox>							
+						</cells>
+					</ColumnListItem>
+				</items>
+			</Table>
+		</content>
+	</Page>
+</mvc:View>

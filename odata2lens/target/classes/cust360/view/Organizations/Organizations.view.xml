@@ -1,0 +1,325 @@
+<mvc:View controllerName="com.inova8.lens.controller.EntitySet360" xmlns="sap.m" xmlns:mvc="sap.ui.core.mvc" xmlns:layout="sap.ui.layout"
+	xmlns:rdf="com.inova8.lens.control" xmlns:core="sap.ui.core">
+	<Page showHeader="false" id="page" navButtonPress="onNavBack" showNavButton="true" title="{i18n>Organizations.ViewTitle}">
+		<content>
+			<Table id="table360" inset="false" items="{ path: 'dataModel>/Organization' , sorter: { path: 'label', descending: false } 
+				}"
+				noDataText="{entitySetView>/tableNoDataText}" busyIndicatorDelay="{entitySetView>/tableBusyDelay}" growing="true" growingScrollToLoad="true"
+				updateFinished="onUpdateFinished"  fixedLayout="false">
+				<headerToolbar>
+					<Toolbar>
+						<ToolbarSpacer/>
+						<HBox id="sourceTitle" alignItems="Center">
+							<rdf:TextResource id="selectedResource" path="" entitySet=""/>
+						</HBox>
+						<Title id="pathTitle" text="{entitySetView>/navigationText}"/>
+						<HBox id="versionsTitle" alignItems="Center">
+							<Title text="(" required="false"/>
+							<ComboBox id="versionSelection" items="{ path: 'entitySetView>/versions' }" selectionChange="onVersionChange">
+								<core:Item key="{entitySetView>navigation}" text="{entityView>text}"/>
+							</ComboBox>
+							<Title text=")" required="false"/>
+						</HBox>
+						<Title id="tableHeader" text="{entitySetView>/entitySetTableTitle}"/>
+						<ToolbarSpacer/>
+						<SearchField id="searchField" tooltip="{i18n>search.searchTooltip}" search="onSearch" width="auto"></SearchField>
+					</Toolbar>
+				</headerToolbar>
+				<columns>
+					<Column >
+						<Text text="{i18n>Organizations.this}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>Organizations.Organization_City}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>Organizations.Organization_ComplianceBccEmail}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>Organizations.Organization_Country}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>Organizations.Organization_CreatedDate}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>Organizations.Organization_DefaultAccountAccess}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>Organizations.Organization_DefaultCalendarAccess}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>Organizations.Organization_DefaultCampaignAccess}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>Organizations.Organization_DefaultCaseAccess}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>Organizations.Organization_DefaultContactAccess}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>Organizations.Organization_DefaultLeadAccess}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>Organizations.Organization_DefaultLocaleSidKey}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>Organizations.Organization_DefaultOpportunityAccess}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>Organizations.Organization_DefaultPricebookAccess}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>Organizations.Organization_Division}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>Organizations.Organization_Fax}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>Organizations.Organization_FiscalYearStartMonth}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>Organizations.Organization_GeocodeAccuracy}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>Organizations.Organization_Id}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>Organizations.Organization_InstanceName}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>Organizations.Organization_IsReadOnly}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>Organizations.Organization_IsSandbox}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>Organizations.Organization_LanguageLocaleKey}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>Organizations.Organization_LastModifiedDate}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>Organizations.Organization_Latitude}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>Organizations.Organization_Longitude}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>Organizations.Organization_MonthlyPageViewsEntitlement}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>Organizations.Organization_MonthlyPageViewsUsed}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>Organizations.Organization_Name}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>Organizations.Organization_NamespacePrefix}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>Organizations.Organization_NumKnowledgeService}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>Organizations.Organization_OrganizationType}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>Organizations.Organization_Phone}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>Organizations.Organization_PostalCode}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>Organizations.Organization_PreferencesLightningLoginEnabled}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>Organizations.Organization_PreferencesOnlyLLPermUserAllowed}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>Organizations.Organization_PreferencesRequireOpportunityProducts}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>Organizations.Organization_PrimaryContact}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>Organizations.Organization_ReceivesAdminInfoEmails}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>Organizations.Organization_ReceivesInfoEmails}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>Organizations.Organization_SignupCountryIsoCode}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>Organizations.Organization_State}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>Organizations.Organization_Street}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>Organizations.Organization_SystemModstamp}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>Organizations.Organization_TrialExpirationDate}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>Organizations.Organization_UiSkin}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>Organizations.Organization_UsesStartDateAsFiscalYearName}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>Organizations.Organization_WebToCaseDefaultOrigin}"/>
+					</Column>
+				</columns>
+				<items>
+					<ColumnListItem id="template360" type="Navigation" press="onPress">
+						<cells>
+							<rdf:TextResource path="dataModel>" entitySet="Organization"/>
+							<VBox>					
+							<rdf:TextLink text="{path:'dataModel>Organization_City/Organization_City',type:'sap.ui.model.type.String'}" linkText="{i18n>Organization.Organization_City/Organization_City}"/>
+							</VBox>							
+							<VBox>					
+							<rdf:TextLink text="{path:'dataModel>Organization_ComplianceBccEmail/Organization_ComplianceBccEmail',type:'sap.ui.model.type.String'}" linkText="{i18n>Organization.Organization_ComplianceBccEmail/Organization_ComplianceBccEmail}"/>
+							</VBox>							
+							<VBox>					
+							<rdf:TextLink text="{path:'dataModel>Organization_Country/Organization_Country',type:'sap.ui.model.type.String'}" linkText="{i18n>Organization.Organization_Country/Organization_Country}"/>
+							</VBox>							
+							<VBox>					
+							<Text text="{dataModel>Organization_CreatedDate/Organization_CreatedDate}"/>
+							</VBox>							
+							<VBox>					
+							<rdf:TextLink text="{path:'dataModel>Organization_DefaultAccountAccess/Organization_DefaultAccountAccess',type:'sap.ui.model.type.String'}" linkText="{i18n>Organization.Organization_DefaultAccountAccess/Organization_DefaultAccountAccess}"/>
+							</VBox>							
+							<VBox>					
+							<rdf:TextLink text="{path:'dataModel>Organization_DefaultCalendarAccess/Organization_DefaultCalendarAccess',type:'sap.ui.model.type.String'}" linkText="{i18n>Organization.Organization_DefaultCalendarAccess/Organization_DefaultCalendarAccess}"/>
+							</VBox>							
+							<VBox>					
+							<rdf:TextLink text="{path:'dataModel>Organization_DefaultCampaignAccess/Organization_DefaultCampaignAccess',type:'sap.ui.model.type.String'}" linkText="{i18n>Organization.Organization_DefaultCampaignAccess/Organization_DefaultCampaignAccess}"/>
+							</VBox>							
+							<VBox>					
+							<rdf:TextLink text="{path:'dataModel>Organization_DefaultCaseAccess/Organization_DefaultCaseAccess',type:'sap.ui.model.type.String'}" linkText="{i18n>Organization.Organization_DefaultCaseAccess/Organization_DefaultCaseAccess}"/>
+							</VBox>							
+							<VBox>					
+							<rdf:TextLink text="{path:'dataModel>Organization_DefaultContactAccess/Organization_DefaultContactAccess',type:'sap.ui.model.type.String'}" linkText="{i18n>Organization.Organization_DefaultContactAccess/Organization_DefaultContactAccess}"/>
+							</VBox>							
+							<VBox>					
+							<rdf:TextLink text="{path:'dataModel>Organization_DefaultLeadAccess/Organization_DefaultLeadAccess',type:'sap.ui.model.type.String'}" linkText="{i18n>Organization.Organization_DefaultLeadAccess/Organization_DefaultLeadAccess}"/>
+							</VBox>							
+							<VBox>					
+							<rdf:TextLink text="{path:'dataModel>Organization_DefaultLocaleSidKey/Organization_DefaultLocaleSidKey',type:'sap.ui.model.type.String'}" linkText="{i18n>Organization.Organization_DefaultLocaleSidKey/Organization_DefaultLocaleSidKey}"/>
+							</VBox>							
+							<VBox>					
+							<rdf:TextLink text="{path:'dataModel>Organization_DefaultOpportunityAccess/Organization_DefaultOpportunityAccess',type:'sap.ui.model.type.String'}" linkText="{i18n>Organization.Organization_DefaultOpportunityAccess/Organization_DefaultOpportunityAccess}"/>
+							</VBox>							
+							<VBox>					
+							<rdf:TextLink text="{path:'dataModel>Organization_DefaultPricebookAccess/Organization_DefaultPricebookAccess',type:'sap.ui.model.type.String'}" linkText="{i18n>Organization.Organization_DefaultPricebookAccess/Organization_DefaultPricebookAccess}"/>
+							</VBox>							
+							<VBox>					
+							<rdf:TextLink text="{path:'dataModel>Organization_Division/Organization_Division',type:'sap.ui.model.type.String'}" linkText="{i18n>Organization.Organization_Division/Organization_Division}"/>
+							</VBox>							
+							<VBox>					
+							<rdf:TextLink text="{path:'dataModel>Organization_Fax/Organization_Fax',type:'sap.ui.model.type.String'}" linkText="{i18n>Organization.Organization_Fax/Organization_Fax}"/>
+							</VBox>							
+							<VBox>					
+							<Text text="{path:'dataModel>Organization_FiscalYearStartMonth/Organization_FiscalYearStartMonth',type:'sap.ui.model.type.Integer' }"/>
+							</VBox>							
+							<VBox>					
+							<rdf:TextLink text="{path:'dataModel>Organization_GeocodeAccuracy/Organization_GeocodeAccuracy',type:'sap.ui.model.type.String'}" linkText="{i18n>Organization.Organization_GeocodeAccuracy/Organization_GeocodeAccuracy}"/>
+							</VBox>							
+							<VBox>					
+							<rdf:TextLink text="{path:'dataModel>Organization_Id/Organization_Id',type:'sap.ui.model.type.String'}" linkText="{i18n>Organization.Organization_Id/Organization_Id}"/>
+							</VBox>							
+							<VBox>					
+							<rdf:TextLink text="{path:'dataModel>Organization_InstanceName/Organization_InstanceName',type:'sap.ui.model.type.String'}" linkText="{i18n>Organization.Organization_InstanceName/Organization_InstanceName}"/>
+							</VBox>							
+							<VBox>					
+								<Text text="{path:'dataModel>Organization_IsReadOnly/Organization_IsReadOnly',type:'sap.ui.model.type.Boolean'}"/>  
+							</VBox>							
+							<VBox>					
+								<Text text="{path:'dataModel>Organization_IsSandbox/Organization_IsSandbox',type:'sap.ui.model.type.Boolean'}"/>  
+							</VBox>							
+							<VBox>					
+							<rdf:TextLink text="{path:'dataModel>Organization_LanguageLocaleKey/Organization_LanguageLocaleKey',type:'sap.ui.model.type.String'}" linkText="{i18n>Organization.Organization_LanguageLocaleKey/Organization_LanguageLocaleKey}"/>
+							</VBox>							
+							<VBox>					
+							<Text text="{dataModel>Organization_LastModifiedDate/Organization_LastModifiedDate}"/>
+							</VBox>							
+							<VBox>					
+							<Text text="{path:'dataModel>Organization_Latitude/Organization_Latitude',type:'sap.ui.model.type.Float', formatOptions:{'style':'short','maxFractionDigits':2} }"/>
+							</VBox>							
+							<VBox>					
+							<Text text="{path:'dataModel>Organization_Longitude/Organization_Longitude',type:'sap.ui.model.type.Float', formatOptions:{'style':'short','maxFractionDigits':2} }"/>
+							</VBox>							
+							<VBox>					
+							<Text text="{path:'dataModel>Organization_MonthlyPageViewsEntitlement/Organization_MonthlyPageViewsEntitlement',type:'sap.ui.model.type.Integer' }"/>
+							</VBox>							
+							<VBox>					
+							<Text text="{path:'dataModel>Organization_MonthlyPageViewsUsed/Organization_MonthlyPageViewsUsed',type:'sap.ui.model.type.Integer' }"/>
+							</VBox>							
+							<VBox>					
+							<rdf:TextLink text="{path:'dataModel>Organization_Name/Organization_Name',type:'sap.ui.model.type.String'}" linkText="{i18n>Organization.Organization_Name/Organization_Name}"/>
+							</VBox>							
+							<VBox>					
+							<rdf:TextLink text="{path:'dataModel>Organization_NamespacePrefix/Organization_NamespacePrefix',type:'sap.ui.model.type.String'}" linkText="{i18n>Organization.Organization_NamespacePrefix/Organization_NamespacePrefix}"/>
+							</VBox>							
+							<VBox>					
+							<Text text="{path:'dataModel>Organization_NumKnowledgeService/Organization_NumKnowledgeService',type:'sap.ui.model.type.Integer' }"/>
+							</VBox>							
+							<VBox>					
+							<rdf:TextLink text="{path:'dataModel>Organization_OrganizationType/Organization_OrganizationType',type:'sap.ui.model.type.String'}" linkText="{i18n>Organization.Organization_OrganizationType/Organization_OrganizationType}"/>
+							</VBox>							
+							<VBox>					
+							<rdf:TextLink text="{path:'dataModel>Organization_Phone/Organization_Phone',type:'sap.ui.model.type.String'}" linkText="{i18n>Organization.Organization_Phone/Organization_Phone}"/>
+							</VBox>							
+							<VBox>					
+							<rdf:TextLink text="{path:'dataModel>Organization_PostalCode/Organization_PostalCode',type:'sap.ui.model.type.String'}" linkText="{i18n>Organization.Organization_PostalCode/Organization_PostalCode}"/>
+							</VBox>							
+							<VBox>					
+								<Text text="{path:'dataModel>Organization_PreferencesLightningLoginEnabled/Organization_PreferencesLightningLoginEnabled',type:'sap.ui.model.type.Boolean'}"/>  
+							</VBox>							
+							<VBox>					
+								<Text text="{path:'dataModel>Organization_PreferencesOnlyLLPermUserAllowed/Organization_PreferencesOnlyLLPermUserAllowed',type:'sap.ui.model.type.Boolean'}"/>  
+							</VBox>							
+							<VBox>					
+								<Text text="{path:'dataModel>Organization_PreferencesRequireOpportunityProducts/Organization_PreferencesRequireOpportunityProducts',type:'sap.ui.model.type.Boolean'}"/>  
+							</VBox>							
+							<VBox>					
+							<rdf:TextLink text="{path:'dataModel>Organization_PrimaryContact/Organization_PrimaryContact',type:'sap.ui.model.type.String'}" linkText="{i18n>Organization.Organization_PrimaryContact/Organization_PrimaryContact}"/>
+							</VBox>							
+							<VBox>					
+								<Text text="{path:'dataModel>Organization_ReceivesAdminInfoEmails/Organization_ReceivesAdminInfoEmails',type:'sap.ui.model.type.Boolean'}"/>  
+							</VBox>							
+							<VBox>					
+								<Text text="{path:'dataModel>Organization_ReceivesInfoEmails/Organization_ReceivesInfoEmails',type:'sap.ui.model.type.Boolean'}"/>  
+							</VBox>							
+							<VBox>					
+							<rdf:TextLink text="{path:'dataModel>Organization_SignupCountryIsoCode/Organization_SignupCountryIsoCode',type:'sap.ui.model.type.String'}" linkText="{i18n>Organization.Organization_SignupCountryIsoCode/Organization_SignupCountryIsoCode}"/>
+							</VBox>							
+							<VBox>					
+							<rdf:TextLink text="{path:'dataModel>Organization_State/Organization_State',type:'sap.ui.model.type.String'}" linkText="{i18n>Organization.Organization_State/Organization_State}"/>
+							</VBox>							
+							<VBox>					
+							<rdf:TextLink text="{path:'dataModel>Organization_Street/Organization_Street',type:'sap.ui.model.type.String'}" linkText="{i18n>Organization.Organization_Street/Organization_Street}"/>
+							</VBox>							
+							<VBox>					
+							<Text text="{dataModel>Organization_SystemModstamp/Organization_SystemModstamp}"/>
+							</VBox>							
+							<VBox>					
+							<Text text="{dataModel>Organization_TrialExpirationDate/Organization_TrialExpirationDate}"/>
+							</VBox>							
+							<VBox>					
+							<rdf:TextLink text="{path:'dataModel>Organization_UiSkin/Organization_UiSkin',type:'sap.ui.model.type.String'}" linkText="{i18n>Organization.Organization_UiSkin/Organization_UiSkin}"/>
+							</VBox>							
+							<VBox>					
+								<Text text="{path:'dataModel>Organization_UsesStartDateAsFiscalYearName/Organization_UsesStartDateAsFiscalYearName',type:'sap.ui.model.type.Boolean'}"/>  
+							</VBox>							
+							<VBox>					
+							<rdf:TextLink text="{path:'dataModel>Organization_WebToCaseDefaultOrigin/Organization_WebToCaseDefaultOrigin',type:'sap.ui.model.type.String'}" linkText="{i18n>Organization.Organization_WebToCaseDefaultOrigin/Organization_WebToCaseDefaultOrigin}"/>
+							</VBox>							
+						</cells>
+					</ColumnListItem>
+				</items>
+			</Table>
+		</content>
+	</Page>
+</mvc:View>

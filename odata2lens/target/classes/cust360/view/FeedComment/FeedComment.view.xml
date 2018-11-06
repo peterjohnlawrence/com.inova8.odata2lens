@@ -1,0 +1,238 @@
+<mvc:View controllerName="com.inova8.lens.controller.Entity360" xmlns="sap.m" xmlns:mvc="sap.ui.core.mvc" xmlns:l="sap.ui.layout"
+	xmlns:f="sap.ui.layout.form" xmlns:table="sap.ui.table" xmlns:rdf="com.inova8.lens.control" xmlns:html="http://www.w3.org/1999/xhtml"
+	xmlns:core="sap.ui.core">
+	<Page showHeader="true" id="page" navButtonPress="onNavBack" showNavButton="false" title="{i18n>FeedComment.Title}" busy="{entityView>/busy}"
+		busyIndicatorDelay="{entityView>/delay}" >
+		<customHeader>
+			<Toolbar>
+				<ToolbarSpacer/>
+				<HBox id="sourceTitle" alignItems="Center">
+						<rdf:TextResource id="selectedResource" path="" entitySet=""/>
+				</HBox>	
+				<Title id="pathTitle" text="{entityView>/navigation}"/>
+				<HBox id="versionsTitle" alignItems="Center">
+					<Title text="(" required="false"/>
+					<ComboBox id="versionSelection" items="{ path: 'entityView>/versions' }" selectionChange="onVersionChange">
+						<core:Item key="{entityView>navigation}" text="{entityView>text}"/>
+					</ComboBox>
+					<Title text=")" required="false"/>
+				</HBox>
+				<Title text="{i18n>FeedComment.this}"/>
+				<Title text="(" required="false"/>
+				<rdf:TextResource path="dataModel>" entitySet="FeedComment"/>
+				<Title text=")" required="false"/>
+	
+				<ToolbarSpacer/>
+				<ToggleButton id="toggleColumns" icon="sap-icon://hide" activeIcon="sap-icon://show" press="onSettingsPressed" visible="false"	>
+					<layoutData>
+						<OverflowToolbarLayoutData priority="NeverOverflow"/>
+					</layoutData>
+				</ToggleButton>
+				
+			</Toolbar>
+		</customHeader>
+		<Table id="form360" inset="false" fixedLayout="true" class="multicolumnform" updateFinished="hideColumns">
+			<columns>
+				<Column hAlign="Right" width="200px">
+					<Text text=""/>
+				</Column>
+				<Column visible="true">
+				</Column>
+				<Column visible="true">
+					<Text text="FeedComment"/>
+				</Column>
+			</columns>
+			<items>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>FeedComment.FeedComment_CommentBody}" required="false"/> 
+						<Text text=""/>
+						<rdf:TextLink text="{path:'dataModel>FeedComment_CommentBody/FeedComment_CommentBody',type:'sap.ui.model.type.String' }" linkText="{i18n>FeedComment.FeedComment_CommentBody/FeedComment_CommentBody}"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>FeedComment.FeedComment_CommentType}" required="false"/> 
+						<Text text=""/>
+						<rdf:TextLink text="{path:'dataModel>FeedComment_CommentType/FeedComment_CommentType',type:'sap.ui.model.type.String' }" linkText="{i18n>FeedComment.FeedComment_CommentType/FeedComment_CommentType}"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>FeedComment.FeedComment_CreatedById}" required="false"/> 
+						<Text text=""/>
+						<rdf:ListResource path="dataModel>FeedComment_CreatedById/sfdc_FeedComment_CreatedById" entitySet="User"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>FeedComment.FeedComment_CreatedDate}" required="false"/> 
+						<Text text=""/>
+						<Text text="{dataModel>FeedComment_CreatedDate/FeedComment_CreatedDate}"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>FeedComment.FeedComment_FeedItemId}" required="false"/> 
+						<Text text=""/>
+						<rdf:ListResource path="dataModel>FeedComment_FeedItemId/sfdc_FeedComment_FeedItemId" entitySet="AccountFeed"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>FeedComment.FeedComment_Id}" required="false"/> 
+						<Text text=""/>
+						<rdf:TextLink text="{path:'dataModel>FeedComment_Id/FeedComment_Id',type:'sap.ui.model.type.String' }" linkText="{i18n>FeedComment.FeedComment_Id/FeedComment_Id}"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>FeedComment.FeedComment_InsertedById}" required="false"/> 
+						<Text text=""/>
+						<rdf:ListResource path="dataModel>FeedComment_InsertedById/sfdc_FeedComment_InsertedById" entitySet="User"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>FeedComment.FeedComment_IsDeleted}" required="false"/> 
+						<Text text=""/>
+						<Text text="{path:'dataModel>FeedComment_IsDeleted/FeedComment_IsDeleted',type:'sap.ui.model.type.Boolean'}"/>  
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>FeedComment.FeedComment_IsRichText}" required="false"/> 
+						<Text text=""/>
+						<Text text="{path:'dataModel>FeedComment_IsRichText/FeedComment_IsRichText',type:'sap.ui.model.type.Boolean'}"/>  
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>FeedComment.FeedComment_IsVerified}" required="false"/> 
+						<Text text=""/>
+						<Text text="{path:'dataModel>FeedComment_IsVerified/FeedComment_IsVerified',type:'sap.ui.model.type.Boolean'}"/>  
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>FeedComment.FeedComment_LastEditById}" required="false"/> 
+						<Text text=""/>
+						<rdf:ListResource path="dataModel>FeedComment_LastEditById/sfdc_FeedComment_LastEditById" entitySet="User"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>FeedComment.FeedComment_LastEditDate}" required="false"/> 
+						<Text text=""/>
+						<Text text="{dataModel>FeedComment_LastEditDate/FeedComment_LastEditDate}"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>FeedComment.FeedComment_ParentId}" required="false"/> 
+						<Text text=""/>
+						<rdf:ListResource path="dataModel>FeedComment_ParentId/sfdc_FeedComment_ParentId" entitySet="Account"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>FeedComment.FeedComment_RelatedRecordId}" required="false"/> 
+						<Text text=""/>
+						<rdf:ListResource path="dataModel>FeedComment_RelatedRecordId/sfdc_FeedComment_RelatedRecordId" entitySet="ContentVersion"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>FeedComment.FeedComment_Revision}" required="false"/> 
+						<Text text=""/>
+						<Text text="{path:'dataModel>FeedComment_Revision/FeedComment_Revision',type:'sap.ui.model.type.Integer' }"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>FeedComment.FeedComment_Status}" required="false"/> 
+						<Text text=""/>
+						<rdf:TextLink text="{path:'dataModel>FeedComment_Status/FeedComment_Status',type:'sap.ui.model.type.String' }" linkText="{i18n>FeedComment.FeedComment_Status/FeedComment_Status}"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>FeedComment.FeedComment_SystemModstamp}" required="false"/> 
+						<Text text=""/>
+						<Text text="{dataModel>FeedComment_SystemModstamp/FeedComment_SystemModstamp}"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>FeedComment.FeedItem_BestCommentId_Inverse}" required="false"/> 
+						<Text text=""/>
+						<rdf:ListResource path="dataModel>FeedItem_BestCommentId_Inverse/sfdc_FeedItem_BestCommentId_Inverse" entitySet="FeedItem"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>FeedComment.FeedRevision_FeedEntityId_Inverse}" required="false"/> 
+						<Text text=""/>
+						<rdf:ListResource path="dataModel>FeedRevision_FeedEntityId_Inverse/sfdc_FeedRevision_FeedEntityId_Inverse" entitySet="FeedRevision"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>FeedComment.FeedComment_CreatedById}" required="false"/> 
+						<rdf:ListResource path="dataModel>FeedComment_CreatedById" entitySet="User"/>
+						<Text text=""/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>FeedComment.FeedComment_FeedItemId}" required="false"/> 
+						<rdf:ListResource path="dataModel>FeedComment_FeedItemId" entitySet="AccountFeed"/>
+						<Text text=""/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>FeedComment.FeedComment_InsertedById}" required="false"/> 
+						<rdf:ListResource path="dataModel>FeedComment_InsertedById" entitySet="User"/>
+						<Text text=""/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>FeedComment.FeedComment_LastEditById}" required="false"/> 
+						<rdf:ListResource path="dataModel>FeedComment_LastEditById" entitySet="User"/>
+						<Text text=""/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>FeedComment.FeedComment_ParentId}" required="false"/> 
+						<rdf:ListResource path="dataModel>FeedComment_ParentId" entitySet="Account"/>
+						<Text text=""/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>FeedComment.FeedComment_RelatedRecordId}" required="false"/> 
+						<rdf:ListResource path="dataModel>FeedComment_RelatedRecordId" entitySet="ContentVersion"/>
+						<Text text=""/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>FeedComment.FeedItem_BestCommentId_Inverse}" required="false"/> 
+						<rdf:ListResource path="dataModel>FeedItem_BestCommentId_Inverse" entitySet="FeedItem"/>
+						<Text text=""/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>FeedComment.FeedRevision_FeedEntityId_Inverse}" required="false"/> 
+						<rdf:ListResource path="dataModel>FeedRevision_FeedEntityId_Inverse" entitySet="FeedRevision"/>
+						<Text text=""/>
+					</cells>
+				</ColumnListItem>
+			</items>
+		</Table>
+	</Page>
+</mvc:View>

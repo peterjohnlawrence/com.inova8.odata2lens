@@ -1,0 +1,373 @@
+<mvc:View controllerName="com.inova8.lens.controller.EntitySet360" xmlns="sap.m" xmlns:mvc="sap.ui.core.mvc" xmlns:layout="sap.ui.layout"
+	xmlns:rdf="com.inova8.lens.control" xmlns:core="sap.ui.core">
+	<Page showHeader="false" id="page" navButtonPress="onNavBack" showNavButton="true" title="{i18n>SocialPosts.ViewTitle}">
+		<content>
+			<Table id="table360" inset="false" items="{ path: 'dataModel>/SocialPost' , sorter: { path: 'label', descending: false } 
+				}"
+				noDataText="{entitySetView>/tableNoDataText}" busyIndicatorDelay="{entitySetView>/tableBusyDelay}" growing="true" growingScrollToLoad="true"
+				updateFinished="onUpdateFinished"  fixedLayout="false">
+				<headerToolbar>
+					<Toolbar>
+						<ToolbarSpacer/>
+						<HBox id="sourceTitle" alignItems="Center">
+							<rdf:TextResource id="selectedResource" path="" entitySet=""/>
+						</HBox>
+						<Title id="pathTitle" text="{entitySetView>/navigationText}"/>
+						<HBox id="versionsTitle" alignItems="Center">
+							<Title text="(" required="false"/>
+							<ComboBox id="versionSelection" items="{ path: 'entitySetView>/versions' }" selectionChange="onVersionChange">
+								<core:Item key="{entitySetView>navigation}" text="{entityView>text}"/>
+							</ComboBox>
+							<Title text=")" required="false"/>
+						</HBox>
+						<Title id="tableHeader" text="{entitySetView>/entitySetTableTitle}"/>
+						<ToolbarSpacer/>
+						<SearchField id="searchField" tooltip="{i18n>search.searchTooltip}" search="onSearch" width="auto"></SearchField>
+					</Toolbar>
+				</headerToolbar>
+				<columns>
+					<Column >
+						<Text text="{i18n>SocialPosts.this}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>SocialPosts.SocialPost_AnalyzerScore}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>SocialPosts.SocialPost_AssignedTo}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>SocialPosts.SocialPost_AttachmentType}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>SocialPosts.SocialPost_AttachmentUrl}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>SocialPosts.SocialPost_Classification}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>SocialPosts.SocialPost_CommentCount}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>SocialPosts.SocialPost_Content}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>SocialPosts.SocialPost_CreatedDate}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>SocialPosts.SocialPost_EngagementLevel}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>SocialPosts.SocialPost_ExternalPostId}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>SocialPosts.SocialPost_Handle}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>SocialPosts.SocialPost_HarvestDate}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>SocialPosts.SocialPost_Headline}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>SocialPosts.SocialPost_Id}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>SocialPosts.SocialPost_InboundLinkCount}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>SocialPosts.SocialPost_IsDeleted}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>SocialPosts.SocialPost_IsOutbound}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>SocialPosts.SocialPost_KeywordGroupName}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>SocialPosts.SocialPost_Language}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>SocialPosts.SocialPost_LastModifiedDate}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>SocialPosts.SocialPost_LastReferencedDate}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>SocialPosts.SocialPost_LastViewedDate}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>SocialPosts.SocialPost_LikedBy}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>SocialPosts.SocialPost_LikesAndVotes}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>SocialPosts.SocialPost_MediaProvider}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>SocialPosts.SocialPost_MediaType}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>SocialPosts.SocialPost_MessageType}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>SocialPosts.SocialPost_Name}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>SocialPosts.SocialPost_PostPriority}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>SocialPosts.SocialPost_PostTags}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>SocialPosts.SocialPost_PostUrl}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>SocialPosts.SocialPost_Posted}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>SocialPosts.SocialPost_Provider}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>SocialPosts.SocialPost_R6PostId}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>SocialPosts.SocialPost_R6SourceId}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>SocialPosts.SocialPost_R6TopicId}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>SocialPosts.SocialPost_Recipient}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>SocialPosts.SocialPost_RecipientType}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>SocialPosts.SocialPost_ResponseContextExternalId}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>SocialPosts.SocialPost_ReviewScale}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>SocialPosts.SocialPost_ReviewScore}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>SocialPosts.SocialPost_ReviewedStatus}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>SocialPosts.SocialPost_Sentiment}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>SocialPosts.SocialPost_Shares}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>SocialPosts.SocialPost_SourceTags}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>SocialPosts.SocialPost_SpamRating}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>SocialPosts.SocialPost_Status}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>SocialPosts.SocialPost_StatusMessage}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>SocialPosts.SocialPost_SystemModstamp}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>SocialPosts.SocialPost_ThreadSize}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>SocialPosts.SocialPost_TopicProfileName}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>SocialPosts.SocialPost_TopicType}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>SocialPosts.SocialPost_TruncatedContent}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>SocialPosts.SocialPost_UniqueCommentors}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>SocialPosts.SocialPost_ViewCount}"/>
+					</Column>
+				</columns>
+				<items>
+					<ColumnListItem id="template360" type="Navigation" press="onPress">
+						<cells>
+							<rdf:TextResource path="dataModel>" entitySet="SocialPost"/>
+							<VBox>					
+							<Text text="{path:'dataModel>SocialPost_AnalyzerScore/SocialPost_AnalyzerScore',type:'sap.ui.model.type.Float', formatOptions:{'style':'short','maxFractionDigits':2} }"/>
+							</VBox>							
+							<VBox>					
+							<rdf:TextLink text="{path:'dataModel>SocialPost_AssignedTo/SocialPost_AssignedTo',type:'sap.ui.model.type.String'}" linkText="{i18n>SocialPost.SocialPost_AssignedTo/SocialPost_AssignedTo}"/>
+							</VBox>							
+							<VBox>					
+							<rdf:TextLink text="{path:'dataModel>SocialPost_AttachmentType/SocialPost_AttachmentType',type:'sap.ui.model.type.String'}" linkText="{i18n>SocialPost.SocialPost_AttachmentType/SocialPost_AttachmentType}"/>
+							</VBox>							
+							<VBox>					
+							<rdf:TextLink text="{path:'dataModel>SocialPost_AttachmentUrl/SocialPost_AttachmentUrl',type:'sap.ui.model.type.String'}" linkText="{i18n>SocialPost.SocialPost_AttachmentUrl/SocialPost_AttachmentUrl}"/>
+							</VBox>							
+							<VBox>					
+							<rdf:TextLink text="{path:'dataModel>SocialPost_Classification/SocialPost_Classification',type:'sap.ui.model.type.String'}" linkText="{i18n>SocialPost.SocialPost_Classification/SocialPost_Classification}"/>
+							</VBox>							
+							<VBox>					
+							<Text text="{path:'dataModel>SocialPost_CommentCount/SocialPost_CommentCount',type:'sap.ui.model.type.Integer' }"/>
+							</VBox>							
+							<VBox>					
+							<rdf:TextLink text="{path:'dataModel>SocialPost_Content/SocialPost_Content',type:'sap.ui.model.type.String'}" linkText="{i18n>SocialPost.SocialPost_Content/SocialPost_Content}"/>
+							</VBox>							
+							<VBox>					
+							<Text text="{dataModel>SocialPost_CreatedDate/SocialPost_CreatedDate}"/>
+							</VBox>							
+							<VBox>					
+							<rdf:TextLink text="{path:'dataModel>SocialPost_EngagementLevel/SocialPost_EngagementLevel',type:'sap.ui.model.type.String'}" linkText="{i18n>SocialPost.SocialPost_EngagementLevel/SocialPost_EngagementLevel}"/>
+							</VBox>							
+							<VBox>					
+							<rdf:TextLink text="{path:'dataModel>SocialPost_ExternalPostId/SocialPost_ExternalPostId',type:'sap.ui.model.type.String'}" linkText="{i18n>SocialPost.SocialPost_ExternalPostId/SocialPost_ExternalPostId}"/>
+							</VBox>							
+							<VBox>					
+							<rdf:TextLink text="{path:'dataModel>SocialPost_Handle/SocialPost_Handle',type:'sap.ui.model.type.String'}" linkText="{i18n>SocialPost.SocialPost_Handle/SocialPost_Handle}"/>
+							</VBox>							
+							<VBox>					
+							<Text text="{dataModel>SocialPost_HarvestDate/SocialPost_HarvestDate}"/>
+							</VBox>							
+							<VBox>					
+							<rdf:TextLink text="{path:'dataModel>SocialPost_Headline/SocialPost_Headline',type:'sap.ui.model.type.String'}" linkText="{i18n>SocialPost.SocialPost_Headline/SocialPost_Headline}"/>
+							</VBox>							
+							<VBox>					
+							<rdf:TextLink text="{path:'dataModel>SocialPost_Id/SocialPost_Id',type:'sap.ui.model.type.String'}" linkText="{i18n>SocialPost.SocialPost_Id/SocialPost_Id}"/>
+							</VBox>							
+							<VBox>					
+							<Text text="{path:'dataModel>SocialPost_InboundLinkCount/SocialPost_InboundLinkCount',type:'sap.ui.model.type.Integer' }"/>
+							</VBox>							
+							<VBox>					
+								<Text text="{path:'dataModel>SocialPost_IsDeleted/SocialPost_IsDeleted',type:'sap.ui.model.type.Boolean'}"/>  
+							</VBox>							
+							<VBox>					
+								<Text text="{path:'dataModel>SocialPost_IsOutbound/SocialPost_IsOutbound',type:'sap.ui.model.type.Boolean'}"/>  
+							</VBox>							
+							<VBox>					
+							<rdf:TextLink text="{path:'dataModel>SocialPost_KeywordGroupName/SocialPost_KeywordGroupName',type:'sap.ui.model.type.String'}" linkText="{i18n>SocialPost.SocialPost_KeywordGroupName/SocialPost_KeywordGroupName}"/>
+							</VBox>							
+							<VBox>					
+							<rdf:TextLink text="{path:'dataModel>SocialPost_Language/SocialPost_Language',type:'sap.ui.model.type.String'}" linkText="{i18n>SocialPost.SocialPost_Language/SocialPost_Language}"/>
+							</VBox>							
+							<VBox>					
+							<Text text="{dataModel>SocialPost_LastModifiedDate/SocialPost_LastModifiedDate}"/>
+							</VBox>							
+							<VBox>					
+							<Text text="{dataModel>SocialPost_LastReferencedDate/SocialPost_LastReferencedDate}"/>
+							</VBox>							
+							<VBox>					
+							<Text text="{dataModel>SocialPost_LastViewedDate/SocialPost_LastViewedDate}"/>
+							</VBox>							
+							<VBox>					
+							<rdf:TextLink text="{path:'dataModel>SocialPost_LikedBy/SocialPost_LikedBy',type:'sap.ui.model.type.String'}" linkText="{i18n>SocialPost.SocialPost_LikedBy/SocialPost_LikedBy}"/>
+							</VBox>							
+							<VBox>					
+							<Text text="{path:'dataModel>SocialPost_LikesAndVotes/SocialPost_LikesAndVotes',type:'sap.ui.model.type.Integer' }"/>
+							</VBox>							
+							<VBox>					
+							<rdf:TextLink text="{path:'dataModel>SocialPost_MediaProvider/SocialPost_MediaProvider',type:'sap.ui.model.type.String'}" linkText="{i18n>SocialPost.SocialPost_MediaProvider/SocialPost_MediaProvider}"/>
+							</VBox>							
+							<VBox>					
+							<rdf:TextLink text="{path:'dataModel>SocialPost_MediaType/SocialPost_MediaType',type:'sap.ui.model.type.String'}" linkText="{i18n>SocialPost.SocialPost_MediaType/SocialPost_MediaType}"/>
+							</VBox>							
+							<VBox>					
+							<rdf:TextLink text="{path:'dataModel>SocialPost_MessageType/SocialPost_MessageType',type:'sap.ui.model.type.String'}" linkText="{i18n>SocialPost.SocialPost_MessageType/SocialPost_MessageType}"/>
+							</VBox>							
+							<VBox>					
+							<rdf:TextLink text="{path:'dataModel>SocialPost_Name/SocialPost_Name',type:'sap.ui.model.type.String'}" linkText="{i18n>SocialPost.SocialPost_Name/SocialPost_Name}"/>
+							</VBox>							
+							<VBox>					
+							<rdf:TextLink text="{path:'dataModel>SocialPost_PostPriority/SocialPost_PostPriority',type:'sap.ui.model.type.String'}" linkText="{i18n>SocialPost.SocialPost_PostPriority/SocialPost_PostPriority}"/>
+							</VBox>							
+							<VBox>					
+							<rdf:TextLink text="{path:'dataModel>SocialPost_PostTags/SocialPost_PostTags',type:'sap.ui.model.type.String'}" linkText="{i18n>SocialPost.SocialPost_PostTags/SocialPost_PostTags}"/>
+							</VBox>							
+							<VBox>					
+							<rdf:TextLink text="{path:'dataModel>SocialPost_PostUrl/SocialPost_PostUrl',type:'sap.ui.model.type.String'}" linkText="{i18n>SocialPost.SocialPost_PostUrl/SocialPost_PostUrl}"/>
+							</VBox>							
+							<VBox>					
+							<Text text="{dataModel>SocialPost_Posted/SocialPost_Posted}"/>
+							</VBox>							
+							<VBox>					
+							<rdf:TextLink text="{path:'dataModel>SocialPost_Provider/SocialPost_Provider',type:'sap.ui.model.type.String'}" linkText="{i18n>SocialPost.SocialPost_Provider/SocialPost_Provider}"/>
+							</VBox>							
+							<VBox>					
+							<rdf:TextLink text="{path:'dataModel>SocialPost_R6PostId/SocialPost_R6PostId',type:'sap.ui.model.type.String'}" linkText="{i18n>SocialPost.SocialPost_R6PostId/SocialPost_R6PostId}"/>
+							</VBox>							
+							<VBox>					
+							<rdf:TextLink text="{path:'dataModel>SocialPost_R6SourceId/SocialPost_R6SourceId',type:'sap.ui.model.type.String'}" linkText="{i18n>SocialPost.SocialPost_R6SourceId/SocialPost_R6SourceId}"/>
+							</VBox>							
+							<VBox>					
+							<rdf:TextLink text="{path:'dataModel>SocialPost_R6TopicId/SocialPost_R6TopicId',type:'sap.ui.model.type.String'}" linkText="{i18n>SocialPost.SocialPost_R6TopicId/SocialPost_R6TopicId}"/>
+							</VBox>							
+							<VBox>					
+							<rdf:TextLink text="{path:'dataModel>SocialPost_Recipient/SocialPost_Recipient',type:'sap.ui.model.type.String'}" linkText="{i18n>SocialPost.SocialPost_Recipient/SocialPost_Recipient}"/>
+							</VBox>							
+							<VBox>					
+							<rdf:TextLink text="{path:'dataModel>SocialPost_RecipientType/SocialPost_RecipientType',type:'sap.ui.model.type.String'}" linkText="{i18n>SocialPost.SocialPost_RecipientType/SocialPost_RecipientType}"/>
+							</VBox>							
+							<VBox>					
+							<rdf:TextLink text="{path:'dataModel>SocialPost_ResponseContextExternalId/SocialPost_ResponseContextExternalId',type:'sap.ui.model.type.String'}" linkText="{i18n>SocialPost.SocialPost_ResponseContextExternalId/SocialPost_ResponseContextExternalId}"/>
+							</VBox>							
+							<VBox>					
+							<Text text="{path:'dataModel>SocialPost_ReviewScale/SocialPost_ReviewScale',type:'sap.ui.model.type.Float', formatOptions:{'style':'short','maxFractionDigits':2} }"/>
+							</VBox>							
+							<VBox>					
+							<Text text="{path:'dataModel>SocialPost_ReviewScore/SocialPost_ReviewScore',type:'sap.ui.model.type.Float', formatOptions:{'style':'short','maxFractionDigits':2} }"/>
+							</VBox>							
+							<VBox>					
+							<rdf:TextLink text="{path:'dataModel>SocialPost_ReviewedStatus/SocialPost_ReviewedStatus',type:'sap.ui.model.type.String'}" linkText="{i18n>SocialPost.SocialPost_ReviewedStatus/SocialPost_ReviewedStatus}"/>
+							</VBox>							
+							<VBox>					
+							<rdf:TextLink text="{path:'dataModel>SocialPost_Sentiment/SocialPost_Sentiment',type:'sap.ui.model.type.String'}" linkText="{i18n>SocialPost.SocialPost_Sentiment/SocialPost_Sentiment}"/>
+							</VBox>							
+							<VBox>					
+							<Text text="{path:'dataModel>SocialPost_Shares/SocialPost_Shares',type:'sap.ui.model.type.Integer' }"/>
+							</VBox>							
+							<VBox>					
+							<rdf:TextLink text="{path:'dataModel>SocialPost_SourceTags/SocialPost_SourceTags',type:'sap.ui.model.type.String'}" linkText="{i18n>SocialPost.SocialPost_SourceTags/SocialPost_SourceTags}"/>
+							</VBox>							
+							<VBox>					
+							<rdf:TextLink text="{path:'dataModel>SocialPost_SpamRating/SocialPost_SpamRating',type:'sap.ui.model.type.String'}" linkText="{i18n>SocialPost.SocialPost_SpamRating/SocialPost_SpamRating}"/>
+							</VBox>							
+							<VBox>					
+							<rdf:TextLink text="{path:'dataModel>SocialPost_Status/SocialPost_Status',type:'sap.ui.model.type.String'}" linkText="{i18n>SocialPost.SocialPost_Status/SocialPost_Status}"/>
+							</VBox>							
+							<VBox>					
+							<rdf:TextLink text="{path:'dataModel>SocialPost_StatusMessage/SocialPost_StatusMessage',type:'sap.ui.model.type.String'}" linkText="{i18n>SocialPost.SocialPost_StatusMessage/SocialPost_StatusMessage}"/>
+							</VBox>							
+							<VBox>					
+							<Text text="{dataModel>SocialPost_SystemModstamp/SocialPost_SystemModstamp}"/>
+							</VBox>							
+							<VBox>					
+							<Text text="{path:'dataModel>SocialPost_ThreadSize/SocialPost_ThreadSize',type:'sap.ui.model.type.Integer' }"/>
+							</VBox>							
+							<VBox>					
+							<rdf:TextLink text="{path:'dataModel>SocialPost_TopicProfileName/SocialPost_TopicProfileName',type:'sap.ui.model.type.String'}" linkText="{i18n>SocialPost.SocialPost_TopicProfileName/SocialPost_TopicProfileName}"/>
+							</VBox>							
+							<VBox>					
+							<rdf:TextLink text="{path:'dataModel>SocialPost_TopicType/SocialPost_TopicType',type:'sap.ui.model.type.String'}" linkText="{i18n>SocialPost.SocialPost_TopicType/SocialPost_TopicType}"/>
+							</VBox>							
+							<VBox>					
+							<rdf:TextLink text="{path:'dataModel>SocialPost_TruncatedContent/SocialPost_TruncatedContent',type:'sap.ui.model.type.String'}" linkText="{i18n>SocialPost.SocialPost_TruncatedContent/SocialPost_TruncatedContent}"/>
+							</VBox>							
+							<VBox>					
+							<Text text="{path:'dataModel>SocialPost_UniqueCommentors/SocialPost_UniqueCommentors',type:'sap.ui.model.type.Integer' }"/>
+							</VBox>							
+							<VBox>					
+							<Text text="{path:'dataModel>SocialPost_ViewCount/SocialPost_ViewCount',type:'sap.ui.model.type.Integer' }"/>
+							</VBox>							
+						</cells>
+					</ColumnListItem>
+				</items>
+			</Table>
+		</content>
+	</Page>
+</mvc:View>

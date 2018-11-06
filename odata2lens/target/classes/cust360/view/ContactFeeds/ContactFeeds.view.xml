@@ -1,0 +1,115 @@
+<mvc:View controllerName="com.inova8.lens.controller.EntitySet360" xmlns="sap.m" xmlns:mvc="sap.ui.core.mvc" xmlns:layout="sap.ui.layout"
+	xmlns:rdf="com.inova8.lens.control" xmlns:core="sap.ui.core">
+	<Page showHeader="false" id="page" navButtonPress="onNavBack" showNavButton="true" title="{i18n>ContactFeeds.ViewTitle}">
+		<content>
+			<Table id="table360" inset="false" items="{ path: 'dataModel>/ContactFeed' , sorter: { path: 'label', descending: false } 
+				}"
+				noDataText="{entitySetView>/tableNoDataText}" busyIndicatorDelay="{entitySetView>/tableBusyDelay}" growing="true" growingScrollToLoad="true"
+				updateFinished="onUpdateFinished"  fixedLayout="false">
+				<headerToolbar>
+					<Toolbar>
+						<ToolbarSpacer/>
+						<HBox id="sourceTitle" alignItems="Center">
+							<rdf:TextResource id="selectedResource" path="" entitySet=""/>
+						</HBox>
+						<Title id="pathTitle" text="{entitySetView>/navigationText}"/>
+						<HBox id="versionsTitle" alignItems="Center">
+							<Title text="(" required="false"/>
+							<ComboBox id="versionSelection" items="{ path: 'entitySetView>/versions' }" selectionChange="onVersionChange">
+								<core:Item key="{entitySetView>navigation}" text="{entityView>text}"/>
+							</ComboBox>
+							<Title text=")" required="false"/>
+						</HBox>
+						<Title id="tableHeader" text="{entitySetView>/entitySetTableTitle}"/>
+						<ToolbarSpacer/>
+						<SearchField id="searchField" tooltip="{i18n>search.searchTooltip}" search="onSearch" width="auto"></SearchField>
+					</Toolbar>
+				</headerToolbar>
+				<columns>
+					<Column >
+						<Text text="{i18n>ContactFeeds.this}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>ContactFeeds.ContactFeed_Body}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>ContactFeeds.ContactFeed_CommentCount}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>ContactFeeds.ContactFeed_CreatedDate}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>ContactFeeds.ContactFeed_Id}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>ContactFeeds.ContactFeed_IsDeleted}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>ContactFeeds.ContactFeed_IsRichText}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>ContactFeeds.ContactFeed_LastModifiedDate}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>ContactFeeds.ContactFeed_LikeCount}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>ContactFeeds.ContactFeed_LinkUrl}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>ContactFeeds.ContactFeed_SystemModstamp}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>ContactFeeds.ContactFeed_Title}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>ContactFeeds.ContactFeed_Type}"/>
+					</Column>
+				</columns>
+				<items>
+					<ColumnListItem id="template360" type="Navigation" press="onPress">
+						<cells>
+							<rdf:TextResource path="dataModel>" entitySet="ContactFeed"/>
+							<VBox>					
+							<rdf:TextLink text="{path:'dataModel>ContactFeed_Body/ContactFeed_Body',type:'sap.ui.model.type.String'}" linkText="{i18n>ContactFeed.ContactFeed_Body/ContactFeed_Body}"/>
+							</VBox>							
+							<VBox>					
+							<Text text="{path:'dataModel>ContactFeed_CommentCount/ContactFeed_CommentCount',type:'sap.ui.model.type.Integer' }"/>
+							</VBox>							
+							<VBox>					
+							<Text text="{dataModel>ContactFeed_CreatedDate/ContactFeed_CreatedDate}"/>
+							</VBox>							
+							<VBox>					
+							<rdf:TextLink text="{path:'dataModel>ContactFeed_Id/ContactFeed_Id',type:'sap.ui.model.type.String'}" linkText="{i18n>ContactFeed.ContactFeed_Id/ContactFeed_Id}"/>
+							</VBox>							
+							<VBox>					
+								<Text text="{path:'dataModel>ContactFeed_IsDeleted/ContactFeed_IsDeleted',type:'sap.ui.model.type.Boolean'}"/>  
+							</VBox>							
+							<VBox>					
+								<Text text="{path:'dataModel>ContactFeed_IsRichText/ContactFeed_IsRichText',type:'sap.ui.model.type.Boolean'}"/>  
+							</VBox>							
+							<VBox>					
+							<Text text="{dataModel>ContactFeed_LastModifiedDate/ContactFeed_LastModifiedDate}"/>
+							</VBox>							
+							<VBox>					
+							<Text text="{path:'dataModel>ContactFeed_LikeCount/ContactFeed_LikeCount',type:'sap.ui.model.type.Integer' }"/>
+							</VBox>							
+							<VBox>					
+							<rdf:TextLink text="{path:'dataModel>ContactFeed_LinkUrl/ContactFeed_LinkUrl',type:'sap.ui.model.type.String'}" linkText="{i18n>ContactFeed.ContactFeed_LinkUrl/ContactFeed_LinkUrl}"/>
+							</VBox>							
+							<VBox>					
+							<Text text="{dataModel>ContactFeed_SystemModstamp/ContactFeed_SystemModstamp}"/>
+							</VBox>							
+							<VBox>					
+							<rdf:TextLink text="{path:'dataModel>ContactFeed_Title/ContactFeed_Title',type:'sap.ui.model.type.String'}" linkText="{i18n>ContactFeed.ContactFeed_Title/ContactFeed_Title}"/>
+							</VBox>							
+							<VBox>					
+							<rdf:TextLink text="{path:'dataModel>ContactFeed_Type/ContactFeed_Type',type:'sap.ui.model.type.String'}" linkText="{i18n>ContactFeed.ContactFeed_Type/ContactFeed_Type}"/>
+							</VBox>							
+						</cells>
+					</ColumnListItem>
+				</items>
+			</Table>
+		</content>
+	</Page>
+</mvc:View>

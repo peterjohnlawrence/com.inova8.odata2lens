@@ -1,0 +1,168 @@
+<mvc:View controllerName="com.inova8.lens.controller.Entity360" xmlns="sap.m" xmlns:mvc="sap.ui.core.mvc" xmlns:l="sap.ui.layout"
+	xmlns:f="sap.ui.layout.form" xmlns:table="sap.ui.table" xmlns:rdf="com.inova8.lens.control" xmlns:html="http://www.w3.org/1999/xhtml"
+	xmlns:core="sap.ui.core">
+	<Page showHeader="true" id="page" navButtonPress="onNavBack" showNavButton="false" title="{i18n>AuraDefinitionBundle.Title}" busy="{entityView>/busy}"
+		busyIndicatorDelay="{entityView>/delay}" >
+		<customHeader>
+			<Toolbar>
+				<ToolbarSpacer/>
+				<HBox id="sourceTitle" alignItems="Center">
+						<rdf:TextResource id="selectedResource" path="" entitySet=""/>
+				</HBox>	
+				<Title id="pathTitle" text="{entityView>/navigation}"/>
+				<HBox id="versionsTitle" alignItems="Center">
+					<Title text="(" required="false"/>
+					<ComboBox id="versionSelection" items="{ path: 'entityView>/versions' }" selectionChange="onVersionChange">
+						<core:Item key="{entityView>navigation}" text="{entityView>text}"/>
+					</ComboBox>
+					<Title text=")" required="false"/>
+				</HBox>
+				<Title text="{i18n>AuraDefinitionBundle.this}"/>
+				<Title text="(" required="false"/>
+				<rdf:TextResource path="dataModel>" entitySet="AuraDefinitionBundle"/>
+				<Title text=")" required="false"/>
+	
+				<ToolbarSpacer/>
+				<ToggleButton id="toggleColumns" icon="sap-icon://hide" activeIcon="sap-icon://show" press="onSettingsPressed" visible="false"	>
+					<layoutData>
+						<OverflowToolbarLayoutData priority="NeverOverflow"/>
+					</layoutData>
+				</ToggleButton>
+				
+			</Toolbar>
+		</customHeader>
+		<Table id="form360" inset="false" fixedLayout="true" class="multicolumnform" updateFinished="hideColumns">
+			<columns>
+				<Column hAlign="Right" width="200px">
+					<Text text=""/>
+				</Column>
+				<Column visible="true">
+				</Column>
+				<Column visible="true">
+					<Text text="AuraDefinitionBundle"/>
+				</Column>
+			</columns>
+			<items>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>AuraDefinitionBundle.AuraDefinitionBundle_ApiVersion}" required="false"/> 
+						<Text text=""/>
+						<Text text="{path:'dataModel>AuraDefinitionBundle_ApiVersion/AuraDefinitionBundle_ApiVersion',type:'sap.ui.model.type.Float', formatOptions:{'style':'short','maxFractionDigits':2} }"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>AuraDefinitionBundle.AuraDefinitionBundle_CreatedById}" required="false"/> 
+						<Text text=""/>
+						<rdf:ListResource path="dataModel>AuraDefinitionBundle_CreatedById/sfdc_AuraDefinitionBundle_CreatedById" entitySet="User"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>AuraDefinitionBundle.AuraDefinitionBundle_CreatedDate}" required="false"/> 
+						<Text text=""/>
+						<Text text="{dataModel>AuraDefinitionBundle_CreatedDate/AuraDefinitionBundle_CreatedDate}"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>AuraDefinitionBundle.AuraDefinitionBundle_Description}" required="false"/> 
+						<Text text=""/>
+						<rdf:TextLink text="{path:'dataModel>AuraDefinitionBundle_Description/AuraDefinitionBundle_Description',type:'sap.ui.model.type.String' }" linkText="{i18n>AuraDefinitionBundle.AuraDefinitionBundle_Description/AuraDefinitionBundle_Description}"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>AuraDefinitionBundle.AuraDefinitionBundle_DeveloperName}" required="false"/> 
+						<Text text=""/>
+						<rdf:TextLink text="{path:'dataModel>AuraDefinitionBundle_DeveloperName/AuraDefinitionBundle_DeveloperName',type:'sap.ui.model.type.String' }" linkText="{i18n>AuraDefinitionBundle.AuraDefinitionBundle_DeveloperName/AuraDefinitionBundle_DeveloperName}"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>AuraDefinitionBundle.AuraDefinitionBundle_Id}" required="false"/> 
+						<Text text=""/>
+						<rdf:TextLink text="{path:'dataModel>AuraDefinitionBundle_Id/AuraDefinitionBundle_Id',type:'sap.ui.model.type.String' }" linkText="{i18n>AuraDefinitionBundle.AuraDefinitionBundle_Id/AuraDefinitionBundle_Id}"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>AuraDefinitionBundle.AuraDefinitionBundle_IsDeleted}" required="false"/> 
+						<Text text=""/>
+						<Text text="{path:'dataModel>AuraDefinitionBundle_IsDeleted/AuraDefinitionBundle_IsDeleted',type:'sap.ui.model.type.Boolean'}"/>  
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>AuraDefinitionBundle.AuraDefinitionBundle_Language}" required="false"/> 
+						<Text text=""/>
+						<rdf:TextLink text="{path:'dataModel>AuraDefinitionBundle_Language/AuraDefinitionBundle_Language',type:'sap.ui.model.type.String' }" linkText="{i18n>AuraDefinitionBundle.AuraDefinitionBundle_Language/AuraDefinitionBundle_Language}"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>AuraDefinitionBundle.AuraDefinitionBundle_LastModifiedById}" required="false"/> 
+						<Text text=""/>
+						<rdf:ListResource path="dataModel>AuraDefinitionBundle_LastModifiedById/sfdc_AuraDefinitionBundle_LastModifiedById" entitySet="User"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>AuraDefinitionBundle.AuraDefinitionBundle_LastModifiedDate}" required="false"/> 
+						<Text text=""/>
+						<Text text="{dataModel>AuraDefinitionBundle_LastModifiedDate/AuraDefinitionBundle_LastModifiedDate}"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>AuraDefinitionBundle.AuraDefinitionBundle_MasterLabel}" required="false"/> 
+						<Text text=""/>
+						<rdf:TextLink text="{path:'dataModel>AuraDefinitionBundle_MasterLabel/AuraDefinitionBundle_MasterLabel',type:'sap.ui.model.type.String' }" linkText="{i18n>AuraDefinitionBundle.AuraDefinitionBundle_MasterLabel/AuraDefinitionBundle_MasterLabel}"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>AuraDefinitionBundle.AuraDefinitionBundle_NamespacePrefix}" required="false"/> 
+						<Text text=""/>
+						<rdf:TextLink text="{path:'dataModel>AuraDefinitionBundle_NamespacePrefix/AuraDefinitionBundle_NamespacePrefix',type:'sap.ui.model.type.String' }" linkText="{i18n>AuraDefinitionBundle.AuraDefinitionBundle_NamespacePrefix/AuraDefinitionBundle_NamespacePrefix}"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>AuraDefinitionBundle.AuraDefinitionBundle_SystemModstamp}" required="false"/> 
+						<Text text=""/>
+						<Text text="{dataModel>AuraDefinitionBundle_SystemModstamp/AuraDefinitionBundle_SystemModstamp}"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>AuraDefinitionBundle.AuraDefinition_AuraDefinitionBundleId_Inverse}" required="false"/> 
+						<Text text=""/>
+						<rdf:ListResource path="dataModel>AuraDefinition_AuraDefinitionBundleId_Inverse/sfdc_AuraDefinition_AuraDefinitionBundleId_Inverse" entitySet="AuraDefinition"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>AuraDefinitionBundle.AuraDefinitionBundle_CreatedById}" required="false"/> 
+						<rdf:ListResource path="dataModel>AuraDefinitionBundle_CreatedById" entitySet="User"/>
+						<Text text=""/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>AuraDefinitionBundle.AuraDefinitionBundle_LastModifiedById}" required="false"/> 
+						<rdf:ListResource path="dataModel>AuraDefinitionBundle_LastModifiedById" entitySet="User"/>
+						<Text text=""/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>AuraDefinitionBundle.AuraDefinition_AuraDefinitionBundleId_Inverse}" required="false"/> 
+						<rdf:ListResource path="dataModel>AuraDefinition_AuraDefinitionBundleId_Inverse" entitySet="AuraDefinition"/>
+						<Text text=""/>
+					</cells>
+				</ColumnListItem>
+			</items>
+		</Table>
+	</Page>
+</mvc:View>

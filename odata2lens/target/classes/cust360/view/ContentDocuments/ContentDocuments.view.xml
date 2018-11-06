@@ -1,0 +1,151 @@
+<mvc:View controllerName="com.inova8.lens.controller.EntitySet360" xmlns="sap.m" xmlns:mvc="sap.ui.core.mvc" xmlns:layout="sap.ui.layout"
+	xmlns:rdf="com.inova8.lens.control" xmlns:core="sap.ui.core">
+	<Page showHeader="false" id="page" navButtonPress="onNavBack" showNavButton="true" title="{i18n>ContentDocuments.ViewTitle}">
+		<content>
+			<Table id="table360" inset="false" items="{ path: 'dataModel>/ContentDocument' , sorter: { path: 'label', descending: false } 
+				}"
+				noDataText="{entitySetView>/tableNoDataText}" busyIndicatorDelay="{entitySetView>/tableBusyDelay}" growing="true" growingScrollToLoad="true"
+				updateFinished="onUpdateFinished"  fixedLayout="false">
+				<headerToolbar>
+					<Toolbar>
+						<ToolbarSpacer/>
+						<HBox id="sourceTitle" alignItems="Center">
+							<rdf:TextResource id="selectedResource" path="" entitySet=""/>
+						</HBox>
+						<Title id="pathTitle" text="{entitySetView>/navigationText}"/>
+						<HBox id="versionsTitle" alignItems="Center">
+							<Title text="(" required="false"/>
+							<ComboBox id="versionSelection" items="{ path: 'entitySetView>/versions' }" selectionChange="onVersionChange">
+								<core:Item key="{entitySetView>navigation}" text="{entityView>text}"/>
+							</ComboBox>
+							<Title text=")" required="false"/>
+						</HBox>
+						<Title id="tableHeader" text="{entitySetView>/entitySetTableTitle}"/>
+						<ToolbarSpacer/>
+						<SearchField id="searchField" tooltip="{i18n>search.searchTooltip}" search="onSearch" width="auto"></SearchField>
+					</Toolbar>
+				</headerToolbar>
+				<columns>
+					<Column >
+						<Text text="{i18n>ContentDocuments.this}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>ContentDocuments.ContentDocument_ArchivedDate}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>ContentDocuments.ContentDocument_ContentModifiedDate}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>ContentDocuments.ContentDocument_ContentSize}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>ContentDocuments.ContentDocument_CreatedDate}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>ContentDocuments.ContentDocument_Description}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>ContentDocuments.ContentDocument_FileExtension}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>ContentDocuments.ContentDocument_FileType}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>ContentDocuments.ContentDocument_Id}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>ContentDocuments.ContentDocument_IsArchived}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>ContentDocuments.ContentDocument_IsDeleted}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>ContentDocuments.ContentDocument_LastModifiedDate}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>ContentDocuments.ContentDocument_LastReferencedDate}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>ContentDocuments.ContentDocument_LastViewedDate}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>ContentDocuments.ContentDocument_PublishStatus}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>ContentDocuments.ContentDocument_SharingOption}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>ContentDocuments.ContentDocument_SharingPrivacy}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>ContentDocuments.ContentDocument_SystemModstamp}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>ContentDocuments.ContentDocument_Title}"/>
+					</Column>
+				</columns>
+				<items>
+					<ColumnListItem id="template360" type="Navigation" press="onPress">
+						<cells>
+							<rdf:TextResource path="dataModel>" entitySet="ContentDocument"/>
+							<VBox>					
+							<Text text="{dataModel>ContentDocument_ArchivedDate/ContentDocument_ArchivedDate}"/>
+							</VBox>							
+							<VBox>					
+							<Text text="{dataModel>ContentDocument_ContentModifiedDate/ContentDocument_ContentModifiedDate}"/>
+							</VBox>							
+							<VBox>					
+							<Text text="{path:'dataModel>ContentDocument_ContentSize/ContentDocument_ContentSize',type:'sap.ui.model.type.Integer' }"/>
+							</VBox>							
+							<VBox>					
+							<Text text="{dataModel>ContentDocument_CreatedDate/ContentDocument_CreatedDate}"/>
+							</VBox>							
+							<VBox>					
+							<rdf:TextLink text="{path:'dataModel>ContentDocument_Description/ContentDocument_Description',type:'sap.ui.model.type.String'}" linkText="{i18n>ContentDocument.ContentDocument_Description/ContentDocument_Description}"/>
+							</VBox>							
+							<VBox>					
+							<rdf:TextLink text="{path:'dataModel>ContentDocument_FileExtension/ContentDocument_FileExtension',type:'sap.ui.model.type.String'}" linkText="{i18n>ContentDocument.ContentDocument_FileExtension/ContentDocument_FileExtension}"/>
+							</VBox>							
+							<VBox>					
+							<rdf:TextLink text="{path:'dataModel>ContentDocument_FileType/ContentDocument_FileType',type:'sap.ui.model.type.String'}" linkText="{i18n>ContentDocument.ContentDocument_FileType/ContentDocument_FileType}"/>
+							</VBox>							
+							<VBox>					
+							<rdf:TextLink text="{path:'dataModel>ContentDocument_Id/ContentDocument_Id',type:'sap.ui.model.type.String'}" linkText="{i18n>ContentDocument.ContentDocument_Id/ContentDocument_Id}"/>
+							</VBox>							
+							<VBox>					
+								<Text text="{path:'dataModel>ContentDocument_IsArchived/ContentDocument_IsArchived',type:'sap.ui.model.type.Boolean'}"/>  
+							</VBox>							
+							<VBox>					
+								<Text text="{path:'dataModel>ContentDocument_IsDeleted/ContentDocument_IsDeleted',type:'sap.ui.model.type.Boolean'}"/>  
+							</VBox>							
+							<VBox>					
+							<Text text="{dataModel>ContentDocument_LastModifiedDate/ContentDocument_LastModifiedDate}"/>
+							</VBox>							
+							<VBox>					
+							<Text text="{dataModel>ContentDocument_LastReferencedDate/ContentDocument_LastReferencedDate}"/>
+							</VBox>							
+							<VBox>					
+							<Text text="{dataModel>ContentDocument_LastViewedDate/ContentDocument_LastViewedDate}"/>
+							</VBox>							
+							<VBox>					
+							<rdf:TextLink text="{path:'dataModel>ContentDocument_PublishStatus/ContentDocument_PublishStatus',type:'sap.ui.model.type.String'}" linkText="{i18n>ContentDocument.ContentDocument_PublishStatus/ContentDocument_PublishStatus}"/>
+							</VBox>							
+							<VBox>					
+							<rdf:TextLink text="{path:'dataModel>ContentDocument_SharingOption/ContentDocument_SharingOption',type:'sap.ui.model.type.String'}" linkText="{i18n>ContentDocument.ContentDocument_SharingOption/ContentDocument_SharingOption}"/>
+							</VBox>							
+							<VBox>					
+							<rdf:TextLink text="{path:'dataModel>ContentDocument_SharingPrivacy/ContentDocument_SharingPrivacy',type:'sap.ui.model.type.String'}" linkText="{i18n>ContentDocument.ContentDocument_SharingPrivacy/ContentDocument_SharingPrivacy}"/>
+							</VBox>							
+							<VBox>					
+							<Text text="{dataModel>ContentDocument_SystemModstamp/ContentDocument_SystemModstamp}"/>
+							</VBox>							
+							<VBox>					
+							<rdf:TextLink text="{path:'dataModel>ContentDocument_Title/ContentDocument_Title',type:'sap.ui.model.type.String'}" linkText="{i18n>ContentDocument.ContentDocument_Title/ContentDocument_Title}"/>
+							</VBox>							
+						</cells>
+					</ColumnListItem>
+				</items>
+			</Table>
+		</content>
+	</Page>
+</mvc:View>

@@ -1,0 +1,469 @@
+<mvc:View controllerName="com.inova8.lens.controller.Entity360" xmlns="sap.m" xmlns:mvc="sap.ui.core.mvc" xmlns:l="sap.ui.layout"
+	xmlns:f="sap.ui.layout.form" xmlns:table="sap.ui.table" xmlns:rdf="com.inova8.lens.control" xmlns:html="http://www.w3.org/1999/xhtml"
+	xmlns:core="sap.ui.core">
+	<Page showHeader="true" id="page" navButtonPress="onNavBack" showNavButton="false" title="{i18n>EntityParticle.Title}" busy="{entityView>/busy}"
+		busyIndicatorDelay="{entityView>/delay}" >
+		<customHeader>
+			<Toolbar>
+				<ToolbarSpacer/>
+				<HBox id="sourceTitle" alignItems="Center">
+						<rdf:TextResource id="selectedResource" path="" entitySet=""/>
+				</HBox>	
+				<Title id="pathTitle" text="{entityView>/navigation}"/>
+				<HBox id="versionsTitle" alignItems="Center">
+					<Title text="(" required="false"/>
+					<ComboBox id="versionSelection" items="{ path: 'entityView>/versions' }" selectionChange="onVersionChange">
+						<core:Item key="{entityView>navigation}" text="{entityView>text}"/>
+					</ComboBox>
+					<Title text=")" required="false"/>
+				</HBox>
+				<Title text="{i18n>EntityParticle.this}"/>
+				<Title text="(" required="false"/>
+				<rdf:TextResource path="dataModel>" entitySet="EntityParticle"/>
+				<Title text=")" required="false"/>
+	
+				<ToolbarSpacer/>
+				<ToggleButton id="toggleColumns" icon="sap-icon://hide" activeIcon="sap-icon://show" press="onSettingsPressed" visible="false"	>
+					<layoutData>
+						<OverflowToolbarLayoutData priority="NeverOverflow"/>
+					</layoutData>
+				</ToggleButton>
+				
+			</Toolbar>
+		</customHeader>
+		<Table id="form360" inset="false" fixedLayout="true" class="multicolumnform" updateFinished="hideColumns">
+			<columns>
+				<Column hAlign="Right" width="200px">
+					<Text text=""/>
+				</Column>
+				<Column visible="true">
+				</Column>
+				<Column visible="true">
+					<Text text="EntityParticle"/>
+				</Column>
+			</columns>
+			<items>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>EntityParticle.EntityParticle_ByteLength}" required="false"/> 
+						<Text text=""/>
+						<Text text="{path:'dataModel>EntityParticle_ByteLength/EntityParticle_ByteLength',type:'sap.ui.model.type.Integer' }"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>EntityParticle.EntityParticle_DataType}" required="false"/> 
+						<Text text=""/>
+						<rdf:TextLink text="{path:'dataModel>EntityParticle_DataType/EntityParticle_DataType',type:'sap.ui.model.type.String' }" linkText="{i18n>EntityParticle.EntityParticle_DataType/EntityParticle_DataType}"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>EntityParticle.EntityParticle_DefaultValueFormula}" required="false"/> 
+						<Text text=""/>
+						<rdf:TextLink text="{path:'dataModel>EntityParticle_DefaultValueFormula/EntityParticle_DefaultValueFormula',type:'sap.ui.model.type.String' }" linkText="{i18n>EntityParticle.EntityParticle_DefaultValueFormula/EntityParticle_DefaultValueFormula}"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>EntityParticle.EntityParticle_DeveloperName}" required="false"/> 
+						<Text text=""/>
+						<rdf:TextLink text="{path:'dataModel>EntityParticle_DeveloperName/EntityParticle_DeveloperName',type:'sap.ui.model.type.String' }" linkText="{i18n>EntityParticle.EntityParticle_DeveloperName/EntityParticle_DeveloperName}"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>EntityParticle.EntityParticle_Digits}" required="false"/> 
+						<Text text=""/>
+						<Text text="{path:'dataModel>EntityParticle_Digits/EntityParticle_Digits',type:'sap.ui.model.type.Integer' }"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>EntityParticle.EntityParticle_DurableId}" required="false"/> 
+						<Text text=""/>
+						<rdf:TextLink text="{path:'dataModel>EntityParticle_DurableId/EntityParticle_DurableId',type:'sap.ui.model.type.String' }" linkText="{i18n>EntityParticle.EntityParticle_DurableId/EntityParticle_DurableId}"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>EntityParticle.EntityParticle_EntityDefinitionId}" required="false"/> 
+						<Text text=""/>
+						<rdf:ListResource path="dataModel>EntityParticle_EntityDefinitionId/sfdc_EntityParticle_EntityDefinitionId" entitySet="EntityDefinition"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>EntityParticle.EntityParticle_ExtraTypeInfo}" required="false"/> 
+						<Text text=""/>
+						<rdf:TextLink text="{path:'dataModel>EntityParticle_ExtraTypeInfo/EntityParticle_ExtraTypeInfo',type:'sap.ui.model.type.String' }" linkText="{i18n>EntityParticle.EntityParticle_ExtraTypeInfo/EntityParticle_ExtraTypeInfo}"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>EntityParticle.EntityParticle_FieldDefinitionId}" required="false"/> 
+						<Text text=""/>
+						<rdf:ListResource path="dataModel>EntityParticle_FieldDefinitionId/sfdc_EntityParticle_FieldDefinitionId" entitySet="FieldDefinition"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>EntityParticle.EntityParticle_Id}" required="false"/> 
+						<Text text=""/>
+						<rdf:TextLink text="{path:'dataModel>EntityParticle_Id/EntityParticle_Id',type:'sap.ui.model.type.String' }" linkText="{i18n>EntityParticle.EntityParticle_Id/EntityParticle_Id}"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>EntityParticle.EntityParticle_InlineHelpText}" required="false"/> 
+						<Text text=""/>
+						<rdf:TextLink text="{path:'dataModel>EntityParticle_InlineHelpText/EntityParticle_InlineHelpText',type:'sap.ui.model.type.String' }" linkText="{i18n>EntityParticle.EntityParticle_InlineHelpText/EntityParticle_InlineHelpText}"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>EntityParticle.EntityParticle_IsApiFilterable}" required="false"/> 
+						<Text text=""/>
+						<Text text="{path:'dataModel>EntityParticle_IsApiFilterable/EntityParticle_IsApiFilterable',type:'sap.ui.model.type.Boolean'}"/>  
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>EntityParticle.EntityParticle_IsApiGroupable}" required="false"/> 
+						<Text text=""/>
+						<Text text="{path:'dataModel>EntityParticle_IsApiGroupable/EntityParticle_IsApiGroupable',type:'sap.ui.model.type.Boolean'}"/>  
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>EntityParticle.EntityParticle_IsApiSortable}" required="false"/> 
+						<Text text=""/>
+						<Text text="{path:'dataModel>EntityParticle_IsApiSortable/EntityParticle_IsApiSortable',type:'sap.ui.model.type.Boolean'}"/>  
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>EntityParticle.EntityParticle_IsAutonumber}" required="false"/> 
+						<Text text=""/>
+						<Text text="{path:'dataModel>EntityParticle_IsAutonumber/EntityParticle_IsAutonumber',type:'sap.ui.model.type.Boolean'}"/>  
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>EntityParticle.EntityParticle_IsCalculated}" required="false"/> 
+						<Text text=""/>
+						<Text text="{path:'dataModel>EntityParticle_IsCalculated/EntityParticle_IsCalculated',type:'sap.ui.model.type.Boolean'}"/>  
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>EntityParticle.EntityParticle_IsCaseSensitive}" required="false"/> 
+						<Text text=""/>
+						<Text text="{path:'dataModel>EntityParticle_IsCaseSensitive/EntityParticle_IsCaseSensitive',type:'sap.ui.model.type.Boolean'}"/>  
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>EntityParticle.EntityParticle_IsCompactLayoutable}" required="false"/> 
+						<Text text=""/>
+						<Text text="{path:'dataModel>EntityParticle_IsCompactLayoutable/EntityParticle_IsCompactLayoutable',type:'sap.ui.model.type.Boolean'}"/>  
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>EntityParticle.EntityParticle_IsComponent}" required="false"/> 
+						<Text text=""/>
+						<Text text="{path:'dataModel>EntityParticle_IsComponent/EntityParticle_IsComponent',type:'sap.ui.model.type.Boolean'}"/>  
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>EntityParticle.EntityParticle_IsCompound}" required="false"/> 
+						<Text text=""/>
+						<Text text="{path:'dataModel>EntityParticle_IsCompound/EntityParticle_IsCompound',type:'sap.ui.model.type.Boolean'}"/>  
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>EntityParticle.EntityParticle_IsCreatable}" required="false"/> 
+						<Text text=""/>
+						<Text text="{path:'dataModel>EntityParticle_IsCreatable/EntityParticle_IsCreatable',type:'sap.ui.model.type.Boolean'}"/>  
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>EntityParticle.EntityParticle_IsDefaultedOnCreate}" required="false"/> 
+						<Text text=""/>
+						<Text text="{path:'dataModel>EntityParticle_IsDefaultedOnCreate/EntityParticle_IsDefaultedOnCreate',type:'sap.ui.model.type.Boolean'}"/>  
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>EntityParticle.EntityParticle_IsDependentPicklist}" required="false"/> 
+						<Text text=""/>
+						<Text text="{path:'dataModel>EntityParticle_IsDependentPicklist/EntityParticle_IsDependentPicklist',type:'sap.ui.model.type.Boolean'}"/>  
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>EntityParticle.EntityParticle_IsDeprecatedAndHidden}" required="false"/> 
+						<Text text=""/>
+						<Text text="{path:'dataModel>EntityParticle_IsDeprecatedAndHidden/EntityParticle_IsDeprecatedAndHidden',type:'sap.ui.model.type.Boolean'}"/>  
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>EntityParticle.EntityParticle_IsDisplayLocationInDecimal}" required="false"/> 
+						<Text text=""/>
+						<Text text="{path:'dataModel>EntityParticle_IsDisplayLocationInDecimal/EntityParticle_IsDisplayLocationInDecimal',type:'sap.ui.model.type.Boolean'}"/>  
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>EntityParticle.EntityParticle_IsEncrypted}" required="false"/> 
+						<Text text=""/>
+						<Text text="{path:'dataModel>EntityParticle_IsEncrypted/EntityParticle_IsEncrypted',type:'sap.ui.model.type.Boolean'}"/>  
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>EntityParticle.EntityParticle_IsFieldHistoryTracked}" required="false"/> 
+						<Text text=""/>
+						<Text text="{path:'dataModel>EntityParticle_IsFieldHistoryTracked/EntityParticle_IsFieldHistoryTracked',type:'sap.ui.model.type.Boolean'}"/>  
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>EntityParticle.EntityParticle_IsHighScaleNumber}" required="false"/> 
+						<Text text=""/>
+						<Text text="{path:'dataModel>EntityParticle_IsHighScaleNumber/EntityParticle_IsHighScaleNumber',type:'sap.ui.model.type.Boolean'}"/>  
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>EntityParticle.EntityParticle_IsHtmlFormatted}" required="false"/> 
+						<Text text=""/>
+						<Text text="{path:'dataModel>EntityParticle_IsHtmlFormatted/EntityParticle_IsHtmlFormatted',type:'sap.ui.model.type.Boolean'}"/>  
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>EntityParticle.EntityParticle_IsIdLookup}" required="false"/> 
+						<Text text=""/>
+						<Text text="{path:'dataModel>EntityParticle_IsIdLookup/EntityParticle_IsIdLookup',type:'sap.ui.model.type.Boolean'}"/>  
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>EntityParticle.EntityParticle_IsLayoutable}" required="false"/> 
+						<Text text=""/>
+						<Text text="{path:'dataModel>EntityParticle_IsLayoutable/EntityParticle_IsLayoutable',type:'sap.ui.model.type.Boolean'}"/>  
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>EntityParticle.EntityParticle_IsListVisible}" required="false"/> 
+						<Text text=""/>
+						<Text text="{path:'dataModel>EntityParticle_IsListVisible/EntityParticle_IsListVisible',type:'sap.ui.model.type.Boolean'}"/>  
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>EntityParticle.EntityParticle_IsNameField}" required="false"/> 
+						<Text text=""/>
+						<Text text="{path:'dataModel>EntityParticle_IsNameField/EntityParticle_IsNameField',type:'sap.ui.model.type.Boolean'}"/>  
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>EntityParticle.EntityParticle_IsNamePointing}" required="false"/> 
+						<Text text=""/>
+						<Text text="{path:'dataModel>EntityParticle_IsNamePointing/EntityParticle_IsNamePointing',type:'sap.ui.model.type.Boolean'}"/>  
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>EntityParticle.EntityParticle_IsNillable}" required="false"/> 
+						<Text text=""/>
+						<Text text="{path:'dataModel>EntityParticle_IsNillable/EntityParticle_IsNillable',type:'sap.ui.model.type.Boolean'}"/>  
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>EntityParticle.EntityParticle_IsPermissionable}" required="false"/> 
+						<Text text=""/>
+						<Text text="{path:'dataModel>EntityParticle_IsPermissionable/EntityParticle_IsPermissionable',type:'sap.ui.model.type.Boolean'}"/>  
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>EntityParticle.EntityParticle_IsUnique}" required="false"/> 
+						<Text text=""/>
+						<Text text="{path:'dataModel>EntityParticle_IsUnique/EntityParticle_IsUnique',type:'sap.ui.model.type.Boolean'}"/>  
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>EntityParticle.EntityParticle_IsUpdatable}" required="false"/> 
+						<Text text=""/>
+						<Text text="{path:'dataModel>EntityParticle_IsUpdatable/EntityParticle_IsUpdatable',type:'sap.ui.model.type.Boolean'}"/>  
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>EntityParticle.EntityParticle_IsWorkflowFilterable}" required="false"/> 
+						<Text text=""/>
+						<Text text="{path:'dataModel>EntityParticle_IsWorkflowFilterable/EntityParticle_IsWorkflowFilterable',type:'sap.ui.model.type.Boolean'}"/>  
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>EntityParticle.EntityParticle_IsWriteRequiresMasterRead}" required="false"/> 
+						<Text text=""/>
+						<Text text="{path:'dataModel>EntityParticle_IsWriteRequiresMasterRead/EntityParticle_IsWriteRequiresMasterRead',type:'sap.ui.model.type.Boolean'}"/>  
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>EntityParticle.EntityParticle_Label}" required="false"/> 
+						<Text text=""/>
+						<rdf:TextLink text="{path:'dataModel>EntityParticle_Label/EntityParticle_Label',type:'sap.ui.model.type.String' }" linkText="{i18n>EntityParticle.EntityParticle_Label/EntityParticle_Label}"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>EntityParticle.EntityParticle_Length}" required="false"/> 
+						<Text text=""/>
+						<Text text="{path:'dataModel>EntityParticle_Length/EntityParticle_Length',type:'sap.ui.model.type.Integer' }"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>EntityParticle.EntityParticle_Mask}" required="false"/> 
+						<Text text=""/>
+						<rdf:TextLink text="{path:'dataModel>EntityParticle_Mask/EntityParticle_Mask',type:'sap.ui.model.type.String' }" linkText="{i18n>EntityParticle.EntityParticle_Mask/EntityParticle_Mask}"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>EntityParticle.EntityParticle_MaskType}" required="false"/> 
+						<Text text=""/>
+						<rdf:TextLink text="{path:'dataModel>EntityParticle_MaskType/EntityParticle_MaskType',type:'sap.ui.model.type.String' }" linkText="{i18n>EntityParticle.EntityParticle_MaskType/EntityParticle_MaskType}"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>EntityParticle.EntityParticle_MasterLabel}" required="false"/> 
+						<Text text=""/>
+						<rdf:TextLink text="{path:'dataModel>EntityParticle_MasterLabel/EntityParticle_MasterLabel',type:'sap.ui.model.type.String' }" linkText="{i18n>EntityParticle.EntityParticle_MasterLabel/EntityParticle_MasterLabel}"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>EntityParticle.EntityParticle_Name}" required="false"/> 
+						<Text text=""/>
+						<rdf:TextLink text="{path:'dataModel>EntityParticle_Name/EntityParticle_Name',type:'sap.ui.model.type.String' }" linkText="{i18n>EntityParticle.EntityParticle_Name/EntityParticle_Name}"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>EntityParticle.EntityParticle_NamespacePrefix}" required="false"/> 
+						<Text text=""/>
+						<rdf:TextLink text="{path:'dataModel>EntityParticle_NamespacePrefix/EntityParticle_NamespacePrefix',type:'sap.ui.model.type.String' }" linkText="{i18n>EntityParticle.EntityParticle_NamespacePrefix/EntityParticle_NamespacePrefix}"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>EntityParticle.EntityParticle_Precision}" required="false"/> 
+						<Text text=""/>
+						<Text text="{path:'dataModel>EntityParticle_Precision/EntityParticle_Precision',type:'sap.ui.model.type.Integer' }"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>EntityParticle.EntityParticle_QualifiedApiName}" required="false"/> 
+						<Text text=""/>
+						<rdf:TextLink text="{path:'dataModel>EntityParticle_QualifiedApiName/EntityParticle_QualifiedApiName',type:'sap.ui.model.type.String' }" linkText="{i18n>EntityParticle.EntityParticle_QualifiedApiName/EntityParticle_QualifiedApiName}"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>EntityParticle.EntityParticle_ReferenceTargetField}" required="false"/> 
+						<Text text=""/>
+						<rdf:TextLink text="{path:'dataModel>EntityParticle_ReferenceTargetField/EntityParticle_ReferenceTargetField',type:'sap.ui.model.type.String' }" linkText="{i18n>EntityParticle.EntityParticle_ReferenceTargetField/EntityParticle_ReferenceTargetField}"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>EntityParticle.EntityParticle_RelationshipName}" required="false"/> 
+						<Text text=""/>
+						<rdf:TextLink text="{path:'dataModel>EntityParticle_RelationshipName/EntityParticle_RelationshipName',type:'sap.ui.model.type.String' }" linkText="{i18n>EntityParticle.EntityParticle_RelationshipName/EntityParticle_RelationshipName}"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>EntityParticle.EntityParticle_RelationshipOrder}" required="false"/> 
+						<Text text=""/>
+						<Text text="{path:'dataModel>EntityParticle_RelationshipOrder/EntityParticle_RelationshipOrder',type:'sap.ui.model.type.Integer' }"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>EntityParticle.EntityParticle_Scale}" required="false"/> 
+						<Text text=""/>
+						<Text text="{path:'dataModel>EntityParticle_Scale/EntityParticle_Scale',type:'sap.ui.model.type.Integer' }"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>EntityParticle.EntityParticle_ServiceDataTypeId}" required="false"/> 
+						<Text text=""/>
+						<rdf:ListResource path="dataModel>EntityParticle_ServiceDataTypeId/sfdc_EntityParticle_ServiceDataTypeId" entitySet="DataType"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>EntityParticle.EntityParticle_ValueTypeId}" required="false"/> 
+						<Text text=""/>
+						<rdf:ListResource path="dataModel>EntityParticle_ValueTypeId/sfdc_EntityParticle_ValueTypeId" entitySet="DataType"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>EntityParticle.EntityParticle_EntityDefinitionId}" required="false"/> 
+						<rdf:ListResource path="dataModel>EntityParticle_EntityDefinitionId" entitySet="EntityDefinition"/>
+						<Text text=""/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>EntityParticle.EntityParticle_FieldDefinitionId}" required="false"/> 
+						<rdf:ListResource path="dataModel>EntityParticle_FieldDefinitionId" entitySet="FieldDefinition"/>
+						<Text text=""/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>EntityParticle.EntityParticle_ServiceDataTypeId}" required="false"/> 
+						<rdf:ListResource path="dataModel>EntityParticle_ServiceDataTypeId" entitySet="DataType"/>
+						<Text text=""/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>EntityParticle.EntityParticle_ValueTypeId}" required="false"/> 
+						<rdf:ListResource path="dataModel>EntityParticle_ValueTypeId" entitySet="DataType"/>
+						<Text text=""/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>EntityParticle.PicklistValueInfo_EntityParticleId_Inverse}" required="false"/> 
+						<rdf:ListResource path="dataModel>PicklistValueInfo_EntityParticleId_Inverse" entitySet="PicklistValueInfo"/>
+						<Text text=""/>
+					</cells>
+				</ColumnListItem>
+			</items>
+		</Table>
+	</Page>
+</mvc:View>

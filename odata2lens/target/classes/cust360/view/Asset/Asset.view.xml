@@ -1,0 +1,476 @@
+<mvc:View controllerName="com.inova8.lens.controller.Entity360" xmlns="sap.m" xmlns:mvc="sap.ui.core.mvc" xmlns:l="sap.ui.layout"
+	xmlns:f="sap.ui.layout.form" xmlns:table="sap.ui.table" xmlns:rdf="com.inova8.lens.control" xmlns:html="http://www.w3.org/1999/xhtml"
+	xmlns:core="sap.ui.core">
+	<Page showHeader="true" id="page" navButtonPress="onNavBack" showNavButton="false" title="{i18n>Asset.Title}" busy="{entityView>/busy}"
+		busyIndicatorDelay="{entityView>/delay}" >
+		<customHeader>
+			<Toolbar>
+				<ToolbarSpacer/>
+				<HBox id="sourceTitle" alignItems="Center">
+						<rdf:TextResource id="selectedResource" path="" entitySet=""/>
+				</HBox>	
+				<Title id="pathTitle" text="{entityView>/navigation}"/>
+				<HBox id="versionsTitle" alignItems="Center">
+					<Title text="(" required="false"/>
+					<ComboBox id="versionSelection" items="{ path: 'entityView>/versions' }" selectionChange="onVersionChange">
+						<core:Item key="{entityView>navigation}" text="{entityView>text}"/>
+					</ComboBox>
+					<Title text=")" required="false"/>
+				</HBox>
+				<Title text="{i18n>Asset.this}"/>
+				<Title text="(" required="false"/>
+				<rdf:TextResource path="dataModel>" entitySet="Asset"/>
+				<Title text=")" required="false"/>
+	
+				<ToolbarSpacer/>
+				<ToggleButton id="toggleColumns" icon="sap-icon://hide" activeIcon="sap-icon://show" press="onSettingsPressed" visible="false"	>
+					<layoutData>
+						<OverflowToolbarLayoutData priority="NeverOverflow"/>
+					</layoutData>
+				</ToggleButton>
+				
+			</Toolbar>
+		</customHeader>
+		<Table id="form360" inset="false" fixedLayout="true" class="multicolumnform" updateFinished="hideColumns">
+			<columns>
+				<Column hAlign="Right" width="200px">
+					<Text text=""/>
+				</Column>
+				<Column visible="true">
+				</Column>
+				<Column visible="true">
+					<Text text="Asset"/>
+				</Column>
+			</columns>
+			<items>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>Asset.AssetFeed_ParentId_Inverse}" required="false"/> 
+						<Text text=""/>
+						<rdf:ListResource path="dataModel>AssetFeed_ParentId_Inverse/sfdc_AssetFeed_ParentId_Inverse" entitySet="AssetFeed"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>Asset.AssetHistory_AssetId_Inverse}" required="false"/> 
+						<Text text=""/>
+						<rdf:ListResource path="dataModel>AssetHistory_AssetId_Inverse/sfdc_AssetHistory_AssetId_Inverse" entitySet="AssetHistory"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>Asset.AssetRelationship_AssetId_Inverse}" required="false"/> 
+						<Text text=""/>
+						<rdf:ListResource path="dataModel>AssetRelationship_AssetId_Inverse/sfdc_AssetRelationship_AssetId_Inverse" entitySet="AssetRelationship"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>Asset.AssetRelationship_RelatedAssetId_Inverse}" required="false"/> 
+						<Text text=""/>
+						<rdf:ListResource path="dataModel>AssetRelationship_RelatedAssetId_Inverse/sfdc_AssetRelationship_RelatedAssetId_Inverse" entitySet="AssetRelationship"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>Asset.AssetTokenEvent_AssetId_Inverse}" required="false"/> 
+						<Text text=""/>
+						<rdf:ListResource path="dataModel>AssetTokenEvent_AssetId_Inverse/sfdc_AssetTokenEvent_AssetId_Inverse" entitySet="AssetTokenEvent"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>Asset.Asset_AccountId}" required="false"/> 
+						<Text text=""/>
+						<rdf:ListResource path="dataModel>Asset_AccountId/sfdc_Asset_AccountId" entitySet="Account"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>Asset.Asset_AssetLevel}" required="false"/> 
+						<Text text=""/>
+						<Text text="{path:'dataModel>Asset_AssetLevel/Asset_AssetLevel',type:'sap.ui.model.type.Integer' }"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>Asset.Asset_AssetProvidedById}" required="false"/> 
+						<Text text=""/>
+						<rdf:ListResource path="dataModel>Asset_AssetProvidedById/sfdc_Asset_AssetProvidedById" entitySet="Account"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>Asset.Asset_AssetServicedById}" required="false"/> 
+						<Text text=""/>
+						<rdf:ListResource path="dataModel>Asset_AssetServicedById/sfdc_Asset_AssetServicedById" entitySet="Account"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>Asset.Asset_ContactId}" required="false"/> 
+						<Text text=""/>
+						<rdf:ListResource path="dataModel>Asset_ContactId/sfdc_Asset_ContactId" entitySet="Contact"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>Asset.Asset_CreatedById}" required="false"/> 
+						<Text text=""/>
+						<rdf:ListResource path="dataModel>Asset_CreatedById/sfdc_Asset_CreatedById" entitySet="User"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>Asset.Asset_CreatedDate}" required="false"/> 
+						<Text text=""/>
+						<Text text="{dataModel>Asset_CreatedDate/Asset_CreatedDate}"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>Asset.Asset_Description}" required="false"/> 
+						<Text text=""/>
+						<rdf:TextLink text="{path:'dataModel>Asset_Description/Asset_Description',type:'sap.ui.model.type.String' }" linkText="{i18n>Asset.Asset_Description/Asset_Description}"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>Asset.Asset_Id}" required="false"/> 
+						<Text text=""/>
+						<rdf:TextLink text="{path:'dataModel>Asset_Id/Asset_Id',type:'sap.ui.model.type.String' }" linkText="{i18n>Asset.Asset_Id/Asset_Id}"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>Asset.Asset_InstallDate}" required="false"/> 
+						<Text text=""/>
+						<Text text="{dataModel>Asset_InstallDate/Asset_InstallDate}"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>Asset.Asset_IsCompetitorProduct}" required="false"/> 
+						<Text text=""/>
+						<Text text="{path:'dataModel>Asset_IsCompetitorProduct/Asset_IsCompetitorProduct',type:'sap.ui.model.type.Boolean'}"/>  
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>Asset.Asset_IsDeleted}" required="false"/> 
+						<Text text=""/>
+						<Text text="{path:'dataModel>Asset_IsDeleted/Asset_IsDeleted',type:'sap.ui.model.type.Boolean'}"/>  
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>Asset.Asset_IsInternal}" required="false"/> 
+						<Text text=""/>
+						<Text text="{path:'dataModel>Asset_IsInternal/Asset_IsInternal',type:'sap.ui.model.type.Boolean'}"/>  
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>Asset.Asset_LastModifiedById}" required="false"/> 
+						<Text text=""/>
+						<rdf:ListResource path="dataModel>Asset_LastModifiedById/sfdc_Asset_LastModifiedById" entitySet="User"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>Asset.Asset_LastModifiedDate}" required="false"/> 
+						<Text text=""/>
+						<Text text="{dataModel>Asset_LastModifiedDate/Asset_LastModifiedDate}"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>Asset.Asset_LastReferencedDate}" required="false"/> 
+						<Text text=""/>
+						<Text text="{dataModel>Asset_LastReferencedDate/Asset_LastReferencedDate}"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>Asset.Asset_LastViewedDate}" required="false"/> 
+						<Text text=""/>
+						<Text text="{dataModel>Asset_LastViewedDate/Asset_LastViewedDate}"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>Asset.Asset_Name}" required="false"/> 
+						<Text text=""/>
+						<rdf:TextLink text="{path:'dataModel>Asset_Name/Asset_Name',type:'sap.ui.model.type.String' }" linkText="{i18n>Asset.Asset_Name/Asset_Name}"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>Asset.Asset_ParentId}" required="false"/> 
+						<Text text=""/>
+						<rdf:ListResource path="dataModel>Asset_ParentId/sfdc_Asset_ParentId" entitySet="Asset"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>Asset.Asset_ParentId_Inverse}" required="false"/> 
+						<Text text=""/>
+						<rdf:ListResource path="dataModel>Asset_ParentId_Inverse/sfdc_Asset_ParentId_Inverse" entitySet="Asset"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>Asset.Asset_Price}" required="false"/> 
+						<Text text=""/>
+						<Text text="{path:'dataModel>Asset_Price/Asset_Price',type:'sap.ui.model.type.Float', formatOptions:{'style':'short','maxFractionDigits':2} }"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>Asset.Asset_Product2Id}" required="false"/> 
+						<Text text=""/>
+						<rdf:ListResource path="dataModel>Asset_Product2Id/sfdc_Asset_Product2Id" entitySet="Product2"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>Asset.Asset_ProductCode}" required="false"/> 
+						<Text text=""/>
+						<rdf:TextLink text="{path:'dataModel>Asset_ProductCode/Asset_ProductCode',type:'sap.ui.model.type.String' }" linkText="{i18n>Asset.Asset_ProductCode/Asset_ProductCode}"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>Asset.Asset_PurchaseDate}" required="false"/> 
+						<Text text=""/>
+						<Text text="{dataModel>Asset_PurchaseDate/Asset_PurchaseDate}"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>Asset.Asset_Quantity}" required="false"/> 
+						<Text text=""/>
+						<Text text="{path:'dataModel>Asset_Quantity/Asset_Quantity',type:'sap.ui.model.type.Float', formatOptions:{'style':'short','maxFractionDigits':2} }"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>Asset.Asset_RootAssetId}" required="false"/> 
+						<Text text=""/>
+						<rdf:ListResource path="dataModel>Asset_RootAssetId/sfdc_Asset_RootAssetId" entitySet="Asset"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>Asset.Asset_RootAssetId_Inverse}" required="false"/> 
+						<Text text=""/>
+						<rdf:ListResource path="dataModel>Asset_RootAssetId_Inverse/sfdc_Asset_RootAssetId_Inverse" entitySet="Asset"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>Asset.Asset_SerialNumber}" required="false"/> 
+						<Text text=""/>
+						<rdf:TextLink text="{path:'dataModel>Asset_SerialNumber/Asset_SerialNumber',type:'sap.ui.model.type.String' }" linkText="{i18n>Asset.Asset_SerialNumber/Asset_SerialNumber}"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>Asset.Asset_Status}" required="false"/> 
+						<Text text=""/>
+						<rdf:TextLink text="{path:'dataModel>Asset_Status/Asset_Status',type:'sap.ui.model.type.String' }" linkText="{i18n>Asset.Asset_Status/Asset_Status}"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>Asset.Asset_StockKeepingUnit}" required="false"/> 
+						<Text text=""/>
+						<rdf:TextLink text="{path:'dataModel>Asset_StockKeepingUnit/Asset_StockKeepingUnit',type:'sap.ui.model.type.String' }" linkText="{i18n>Asset.Asset_StockKeepingUnit/Asset_StockKeepingUnit}"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>Asset.Asset_SystemModstamp}" required="false"/> 
+						<Text text=""/>
+						<Text text="{dataModel>Asset_SystemModstamp/Asset_SystemModstamp}"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>Asset.Asset_UsageEndDate}" required="false"/> 
+						<Text text=""/>
+						<Text text="{dataModel>Asset_UsageEndDate/Asset_UsageEndDate}"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>Asset.ContractLineItem_AssetId_Inverse}" required="false"/> 
+						<Text text=""/>
+						<rdf:ListResource path="dataModel>ContractLineItem_AssetId_Inverse/sfdc_ContractLineItem_AssetId_Inverse" entitySet="ContractLineItem"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>Asset.Entitlement_AssetId_Inverse}" required="false"/> 
+						<Text text=""/>
+						<rdf:ListResource path="dataModel>Entitlement_AssetId_Inverse/sfdc_Entitlement_AssetId_Inverse" entitySet="Entitlement"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>Asset.WorkOrderLineItem_AssetId_Inverse}" required="false"/> 
+						<Text text=""/>
+						<rdf:ListResource path="dataModel>WorkOrderLineItem_AssetId_Inverse/sfdc_WorkOrderLineItem_AssetId_Inverse" entitySet="WorkOrderLineItem"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>Asset.WorkOrder_AssetId_Inverse}" required="false"/> 
+						<Text text=""/>
+						<rdf:ListResource path="dataModel>WorkOrder_AssetId_Inverse/sfdc_WorkOrder_AssetId_Inverse" entitySet="WorkOrder"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>Asset.AssetFeed_ParentId_Inverse}" required="false"/> 
+						<rdf:ListResource path="dataModel>AssetFeed_ParentId_Inverse" entitySet="AssetFeed"/>
+						<Text text=""/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>Asset.AssetHistory_AssetId_Inverse}" required="false"/> 
+						<rdf:ListResource path="dataModel>AssetHistory_AssetId_Inverse" entitySet="AssetHistory"/>
+						<Text text=""/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>Asset.AssetRelationship_AssetId_Inverse}" required="false"/> 
+						<rdf:ListResource path="dataModel>AssetRelationship_AssetId_Inverse" entitySet="AssetRelationship"/>
+						<Text text=""/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>Asset.AssetRelationship_RelatedAssetId_Inverse}" required="false"/> 
+						<rdf:ListResource path="dataModel>AssetRelationship_RelatedAssetId_Inverse" entitySet="AssetRelationship"/>
+						<Text text=""/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>Asset.AssetTokenEvent_AssetId_Inverse}" required="false"/> 
+						<rdf:ListResource path="dataModel>AssetTokenEvent_AssetId_Inverse" entitySet="AssetTokenEvent"/>
+						<Text text=""/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>Asset.Asset_AccountId}" required="false"/> 
+						<rdf:ListResource path="dataModel>Asset_AccountId" entitySet="Account"/>
+						<Text text=""/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>Asset.Asset_AssetProvidedById}" required="false"/> 
+						<rdf:ListResource path="dataModel>Asset_AssetProvidedById" entitySet="Account"/>
+						<Text text=""/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>Asset.Asset_AssetServicedById}" required="false"/> 
+						<rdf:ListResource path="dataModel>Asset_AssetServicedById" entitySet="Account"/>
+						<Text text=""/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>Asset.Asset_ContactId}" required="false"/> 
+						<rdf:ListResource path="dataModel>Asset_ContactId" entitySet="Contact"/>
+						<Text text=""/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>Asset.Asset_CreatedById}" required="false"/> 
+						<rdf:ListResource path="dataModel>Asset_CreatedById" entitySet="User"/>
+						<Text text=""/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>Asset.Asset_LastModifiedById}" required="false"/> 
+						<rdf:ListResource path="dataModel>Asset_LastModifiedById" entitySet="User"/>
+						<Text text=""/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>Asset.Asset_ParentId}" required="false"/> 
+						<rdf:ListResource path="dataModel>Asset_ParentId" entitySet="Asset"/>
+						<Text text=""/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>Asset.Asset_ParentId_Inverse}" required="false"/> 
+						<rdf:ListResource path="dataModel>Asset_ParentId_Inverse" entitySet="Asset"/>
+						<Text text=""/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>Asset.Asset_Product2Id}" required="false"/> 
+						<rdf:ListResource path="dataModel>Asset_Product2Id" entitySet="Product2"/>
+						<Text text=""/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>Asset.Asset_RootAssetId}" required="false"/> 
+						<rdf:ListResource path="dataModel>Asset_RootAssetId" entitySet="Asset"/>
+						<Text text=""/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>Asset.Asset_RootAssetId_Inverse}" required="false"/> 
+						<rdf:ListResource path="dataModel>Asset_RootAssetId_Inverse" entitySet="Asset"/>
+						<Text text=""/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>Asset.ContractLineItem_AssetId_Inverse}" required="false"/> 
+						<rdf:ListResource path="dataModel>ContractLineItem_AssetId_Inverse" entitySet="ContractLineItem"/>
+						<Text text=""/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>Asset.Entitlement_AssetId_Inverse}" required="false"/> 
+						<rdf:ListResource path="dataModel>Entitlement_AssetId_Inverse" entitySet="Entitlement"/>
+						<Text text=""/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>Asset.WorkOrderLineItem_AssetId_Inverse}" required="false"/> 
+						<rdf:ListResource path="dataModel>WorkOrderLineItem_AssetId_Inverse" entitySet="WorkOrderLineItem"/>
+						<Text text=""/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>Asset.WorkOrder_AssetId_Inverse}" required="false"/> 
+						<rdf:ListResource path="dataModel>WorkOrder_AssetId_Inverse" entitySet="WorkOrder"/>
+						<Text text=""/>
+					</cells>
+				</ColumnListItem>
+			</items>
+		</Table>
+	</Page>
+</mvc:View>

@@ -1,0 +1,196 @@
+<mvc:View controllerName="com.inova8.lens.controller.Entity360" xmlns="sap.m" xmlns:mvc="sap.ui.core.mvc" xmlns:l="sap.ui.layout"
+	xmlns:f="sap.ui.layout.form" xmlns:table="sap.ui.table" xmlns:rdf="com.inova8.lens.control" xmlns:html="http://www.w3.org/1999/xhtml"
+	xmlns:core="sap.ui.core">
+	<Page showHeader="true" id="page" navButtonPress="onNavBack" showNavButton="false" title="{i18n>ProcessInstanceNode.Title}" busy="{entityView>/busy}"
+		busyIndicatorDelay="{entityView>/delay}" >
+		<customHeader>
+			<Toolbar>
+				<ToolbarSpacer/>
+				<HBox id="sourceTitle" alignItems="Center">
+						<rdf:TextResource id="selectedResource" path="" entitySet=""/>
+				</HBox>	
+				<Title id="pathTitle" text="{entityView>/navigation}"/>
+				<HBox id="versionsTitle" alignItems="Center">
+					<Title text="(" required="false"/>
+					<ComboBox id="versionSelection" items="{ path: 'entityView>/versions' }" selectionChange="onVersionChange">
+						<core:Item key="{entityView>navigation}" text="{entityView>text}"/>
+					</ComboBox>
+					<Title text=")" required="false"/>
+				</HBox>
+				<Title text="{i18n>ProcessInstanceNode.this}"/>
+				<Title text="(" required="false"/>
+				<rdf:TextResource path="dataModel>" entitySet="ProcessInstanceNode"/>
+				<Title text=")" required="false"/>
+	
+				<ToolbarSpacer/>
+				<ToggleButton id="toggleColumns" icon="sap-icon://hide" activeIcon="sap-icon://show" press="onSettingsPressed" visible="false"	>
+					<layoutData>
+						<OverflowToolbarLayoutData priority="NeverOverflow"/>
+					</layoutData>
+				</ToggleButton>
+				
+			</Toolbar>
+		</customHeader>
+		<Table id="form360" inset="false" fixedLayout="true" class="multicolumnform" updateFinished="hideColumns">
+			<columns>
+				<Column hAlign="Right" width="200px">
+					<Text text=""/>
+				</Column>
+				<Column visible="true">
+				</Column>
+				<Column visible="true">
+					<Text text="ProcessInstanceNode"/>
+				</Column>
+			</columns>
+			<items>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>ProcessInstanceNode.ProcessInstanceNode_CompletedDate}" required="false"/> 
+						<Text text=""/>
+						<Text text="{dataModel>ProcessInstanceNode_CompletedDate/ProcessInstanceNode_CompletedDate}"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>ProcessInstanceNode.ProcessInstanceNode_CreatedById}" required="false"/> 
+						<Text text=""/>
+						<rdf:ListResource path="dataModel>ProcessInstanceNode_CreatedById/sfdc_ProcessInstanceNode_CreatedById" entitySet="User"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>ProcessInstanceNode.ProcessInstanceNode_CreatedDate}" required="false"/> 
+						<Text text=""/>
+						<Text text="{dataModel>ProcessInstanceNode_CreatedDate/ProcessInstanceNode_CreatedDate}"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>ProcessInstanceNode.ProcessInstanceNode_ElapsedTimeInDays}" required="false"/> 
+						<Text text=""/>
+						<Text text="{path:'dataModel>ProcessInstanceNode_ElapsedTimeInDays/ProcessInstanceNode_ElapsedTimeInDays',type:'sap.ui.model.type.Float', formatOptions:{'style':'short','maxFractionDigits':2} }"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>ProcessInstanceNode.ProcessInstanceNode_ElapsedTimeInHours}" required="false"/> 
+						<Text text=""/>
+						<Text text="{path:'dataModel>ProcessInstanceNode_ElapsedTimeInHours/ProcessInstanceNode_ElapsedTimeInHours',type:'sap.ui.model.type.Float', formatOptions:{'style':'short','maxFractionDigits':2} }"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>ProcessInstanceNode.ProcessInstanceNode_ElapsedTimeInMinutes}" required="false"/> 
+						<Text text=""/>
+						<Text text="{path:'dataModel>ProcessInstanceNode_ElapsedTimeInMinutes/ProcessInstanceNode_ElapsedTimeInMinutes',type:'sap.ui.model.type.Float', formatOptions:{'style':'short','maxFractionDigits':2} }"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>ProcessInstanceNode.ProcessInstanceNode_Id}" required="false"/> 
+						<Text text=""/>
+						<rdf:TextLink text="{path:'dataModel>ProcessInstanceNode_Id/ProcessInstanceNode_Id',type:'sap.ui.model.type.String' }" linkText="{i18n>ProcessInstanceNode.ProcessInstanceNode_Id/ProcessInstanceNode_Id}"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>ProcessInstanceNode.ProcessInstanceNode_IsDeleted}" required="false"/> 
+						<Text text=""/>
+						<Text text="{path:'dataModel>ProcessInstanceNode_IsDeleted/ProcessInstanceNode_IsDeleted',type:'sap.ui.model.type.Boolean'}"/>  
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>ProcessInstanceNode.ProcessInstanceNode_LastActorId}" required="false"/> 
+						<Text text=""/>
+						<rdf:ListResource path="dataModel>ProcessInstanceNode_LastActorId/sfdc_ProcessInstanceNode_LastActorId" entitySet="User"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>ProcessInstanceNode.ProcessInstanceNode_LastModifiedById}" required="false"/> 
+						<Text text=""/>
+						<rdf:ListResource path="dataModel>ProcessInstanceNode_LastModifiedById/sfdc_ProcessInstanceNode_LastModifiedById" entitySet="User"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>ProcessInstanceNode.ProcessInstanceNode_LastModifiedDate}" required="false"/> 
+						<Text text=""/>
+						<Text text="{dataModel>ProcessInstanceNode_LastModifiedDate/ProcessInstanceNode_LastModifiedDate}"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>ProcessInstanceNode.ProcessInstanceNode_NodeStatus}" required="false"/> 
+						<Text text=""/>
+						<rdf:TextLink text="{path:'dataModel>ProcessInstanceNode_NodeStatus/ProcessInstanceNode_NodeStatus',type:'sap.ui.model.type.String' }" linkText="{i18n>ProcessInstanceNode.ProcessInstanceNode_NodeStatus/ProcessInstanceNode_NodeStatus}"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>ProcessInstanceNode.ProcessInstanceNode_ProcessInstanceId}" required="false"/> 
+						<Text text=""/>
+						<rdf:ListResource path="dataModel>ProcessInstanceNode_ProcessInstanceId/sfdc_ProcessInstanceNode_ProcessInstanceId" entitySet="ProcessInstance"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>ProcessInstanceNode.ProcessInstanceNode_ProcessNodeId}" required="false"/> 
+						<Text text=""/>
+						<rdf:ListResource path="dataModel>ProcessInstanceNode_ProcessNodeId/sfdc_ProcessInstanceNode_ProcessNodeId" entitySet="ProcessNode"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>ProcessInstanceNode.ProcessInstanceNode_ProcessNodeName}" required="false"/> 
+						<Text text=""/>
+						<rdf:TextLink text="{path:'dataModel>ProcessInstanceNode_ProcessNodeName/ProcessInstanceNode_ProcessNodeName',type:'sap.ui.model.type.String' }" linkText="{i18n>ProcessInstanceNode.ProcessInstanceNode_ProcessNodeName/ProcessInstanceNode_ProcessNodeName}"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>ProcessInstanceNode.ProcessInstanceNode_SystemModstamp}" required="false"/> 
+						<Text text=""/>
+						<Text text="{dataModel>ProcessInstanceNode_SystemModstamp/ProcessInstanceNode_SystemModstamp}"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>ProcessInstanceNode.ProcessInstanceNode_CreatedById}" required="false"/> 
+						<rdf:ListResource path="dataModel>ProcessInstanceNode_CreatedById" entitySet="User"/>
+						<Text text=""/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>ProcessInstanceNode.ProcessInstanceNode_LastActorId}" required="false"/> 
+						<rdf:ListResource path="dataModel>ProcessInstanceNode_LastActorId" entitySet="User"/>
+						<Text text=""/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>ProcessInstanceNode.ProcessInstanceNode_LastModifiedById}" required="false"/> 
+						<rdf:ListResource path="dataModel>ProcessInstanceNode_LastModifiedById" entitySet="User"/>
+						<Text text=""/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>ProcessInstanceNode.ProcessInstanceNode_ProcessInstanceId}" required="false"/> 
+						<rdf:ListResource path="dataModel>ProcessInstanceNode_ProcessInstanceId" entitySet="ProcessInstance"/>
+						<Text text=""/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>ProcessInstanceNode.ProcessInstanceNode_ProcessNodeId}" required="false"/> 
+						<rdf:ListResource path="dataModel>ProcessInstanceNode_ProcessNodeId" entitySet="ProcessNode"/>
+						<Text text=""/>
+					</cells>
+				</ColumnListItem>
+			</items>
+		</Table>
+	</Page>
+</mvc:View>

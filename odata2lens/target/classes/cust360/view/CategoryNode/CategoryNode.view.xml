@@ -1,0 +1,182 @@
+<mvc:View controllerName="com.inova8.lens.controller.Entity360" xmlns="sap.m" xmlns:mvc="sap.ui.core.mvc" xmlns:l="sap.ui.layout"
+	xmlns:f="sap.ui.layout.form" xmlns:table="sap.ui.table" xmlns:rdf="com.inova8.lens.control" xmlns:html="http://www.w3.org/1999/xhtml"
+	xmlns:core="sap.ui.core">
+	<Page showHeader="true" id="page" navButtonPress="onNavBack" showNavButton="false" title="{i18n>CategoryNode.Title}" busy="{entityView>/busy}"
+		busyIndicatorDelay="{entityView>/delay}" >
+		<customHeader>
+			<Toolbar>
+				<ToolbarSpacer/>
+				<HBox id="sourceTitle" alignItems="Center">
+						<rdf:TextResource id="selectedResource" path="" entitySet=""/>
+				</HBox>	
+				<Title id="pathTitle" text="{entityView>/navigation}"/>
+				<HBox id="versionsTitle" alignItems="Center">
+					<Title text="(" required="false"/>
+					<ComboBox id="versionSelection" items="{ path: 'entityView>/versions' }" selectionChange="onVersionChange">
+						<core:Item key="{entityView>navigation}" text="{entityView>text}"/>
+					</ComboBox>
+					<Title text=")" required="false"/>
+				</HBox>
+				<Title text="{i18n>CategoryNode.this}"/>
+				<Title text="(" required="false"/>
+				<rdf:TextResource path="dataModel>" entitySet="CategoryNode"/>
+				<Title text=")" required="false"/>
+	
+				<ToolbarSpacer/>
+				<ToggleButton id="toggleColumns" icon="sap-icon://hide" activeIcon="sap-icon://show" press="onSettingsPressed" visible="false"	>
+					<layoutData>
+						<OverflowToolbarLayoutData priority="NeverOverflow"/>
+					</layoutData>
+				</ToggleButton>
+				
+			</Toolbar>
+		</customHeader>
+		<Table id="form360" inset="false" fixedLayout="true" class="multicolumnform" updateFinished="hideColumns">
+			<columns>
+				<Column hAlign="Right" width="200px">
+					<Text text=""/>
+				</Column>
+				<Column visible="true">
+				</Column>
+				<Column visible="true">
+					<Text text="CategoryNode"/>
+				</Column>
+			</columns>
+			<items>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>CategoryNode.CategoryData_CategoryNodeId_Inverse}" required="false"/> 
+						<Text text=""/>
+						<rdf:ListResource path="dataModel>CategoryData_CategoryNodeId_Inverse/sfdc_CategoryData_CategoryNodeId_Inverse" entitySet="CategoryData"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>CategoryNode.CategoryNodeLocalization_CategoryNodeId_Inverse}" required="false"/> 
+						<Text text=""/>
+						<rdf:ListResource path="dataModel>CategoryNodeLocalization_CategoryNodeId_Inverse/sfdc_CategoryNodeLocalization_CategoryNodeId_Inverse" entitySet="CategoryNodeLocalization"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>CategoryNode.CategoryNode_CreatedById}" required="false"/> 
+						<Text text=""/>
+						<rdf:ListResource path="dataModel>CategoryNode_CreatedById/sfdc_CategoryNode_CreatedById" entitySet="User"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>CategoryNode.CategoryNode_CreatedDate}" required="false"/> 
+						<Text text=""/>
+						<Text text="{dataModel>CategoryNode_CreatedDate/CategoryNode_CreatedDate}"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>CategoryNode.CategoryNode_Id}" required="false"/> 
+						<Text text=""/>
+						<rdf:TextLink text="{path:'dataModel>CategoryNode_Id/CategoryNode_Id',type:'sap.ui.model.type.String' }" linkText="{i18n>CategoryNode.CategoryNode_Id/CategoryNode_Id}"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>CategoryNode.CategoryNode_LastModifiedById}" required="false"/> 
+						<Text text=""/>
+						<rdf:ListResource path="dataModel>CategoryNode_LastModifiedById/sfdc_CategoryNode_LastModifiedById" entitySet="User"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>CategoryNode.CategoryNode_LastModifiedDate}" required="false"/> 
+						<Text text=""/>
+						<Text text="{dataModel>CategoryNode_LastModifiedDate/CategoryNode_LastModifiedDate}"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>CategoryNode.CategoryNode_MasterLabel}" required="false"/> 
+						<Text text=""/>
+						<rdf:TextLink text="{path:'dataModel>CategoryNode_MasterLabel/CategoryNode_MasterLabel',type:'sap.ui.model.type.String' }" linkText="{i18n>CategoryNode.CategoryNode_MasterLabel/CategoryNode_MasterLabel}"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>CategoryNode.CategoryNode_ParentId}" required="false"/> 
+						<Text text=""/>
+						<rdf:ListResource path="dataModel>CategoryNode_ParentId/sfdc_CategoryNode_ParentId" entitySet="CategoryNode"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>CategoryNode.CategoryNode_ParentId_Inverse}" required="false"/> 
+						<Text text=""/>
+						<rdf:ListResource path="dataModel>CategoryNode_ParentId_Inverse/sfdc_CategoryNode_ParentId_Inverse" entitySet="CategoryNode"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>CategoryNode.CategoryNode_SortOrder}" required="false"/> 
+						<Text text=""/>
+						<Text text="{path:'dataModel>CategoryNode_SortOrder/CategoryNode_SortOrder',type:'sap.ui.model.type.Integer' }"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>CategoryNode.CategoryNode_SortStyle}" required="false"/> 
+						<Text text=""/>
+						<rdf:TextLink text="{path:'dataModel>CategoryNode_SortStyle/CategoryNode_SortStyle',type:'sap.ui.model.type.String' }" linkText="{i18n>CategoryNode.CategoryNode_SortStyle/CategoryNode_SortStyle}"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>CategoryNode.CategoryNode_SystemModstamp}" required="false"/> 
+						<Text text=""/>
+						<Text text="{dataModel>CategoryNode_SystemModstamp/CategoryNode_SystemModstamp}"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>CategoryNode.CategoryData_CategoryNodeId_Inverse}" required="false"/> 
+						<rdf:ListResource path="dataModel>CategoryData_CategoryNodeId_Inverse" entitySet="CategoryData"/>
+						<Text text=""/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>CategoryNode.CategoryNodeLocalization_CategoryNodeId_Inverse}" required="false"/> 
+						<rdf:ListResource path="dataModel>CategoryNodeLocalization_CategoryNodeId_Inverse" entitySet="CategoryNodeLocalization"/>
+						<Text text=""/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>CategoryNode.CategoryNode_CreatedById}" required="false"/> 
+						<rdf:ListResource path="dataModel>CategoryNode_CreatedById" entitySet="User"/>
+						<Text text=""/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>CategoryNode.CategoryNode_LastModifiedById}" required="false"/> 
+						<rdf:ListResource path="dataModel>CategoryNode_LastModifiedById" entitySet="User"/>
+						<Text text=""/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>CategoryNode.CategoryNode_ParentId}" required="false"/> 
+						<rdf:ListResource path="dataModel>CategoryNode_ParentId" entitySet="CategoryNode"/>
+						<Text text=""/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>CategoryNode.CategoryNode_ParentId_Inverse}" required="false"/> 
+						<rdf:ListResource path="dataModel>CategoryNode_ParentId_Inverse" entitySet="CategoryNode"/>
+						<Text text=""/>
+					</cells>
+				</ColumnListItem>
+			</items>
+		</Table>
+	</Page>
+</mvc:View>

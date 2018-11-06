@@ -63,6 +63,9 @@
 		"image": "$entityType.entitySet.image",
 		"icon": "$entityType.entitySet.entityIcon",
 		"visible":$entityType.entitySet.visible,
+		"parameters": {
+				"objectId": "$entityType.entitySet.name"
+		},
 		"menu": [{
 			"type":"entitySet",
 		    "key": "graph",
@@ -82,7 +85,10 @@
 			"text": "$entityType.entitySet.label",
 			"target": "$entityType.entitySet.target",
 			"tooltip": "Show all $entityType.entitySet.label",
-			"visible":$entityType.entitySet.visible
+			"visible":$entityType.entitySet.visible,
+			"parameters": {
+				"objectId": "$entityType.entitySet.name"
+			}
 		}, {
 			"type":"entitySet",
 			"key": "$dashboard",
@@ -135,7 +141,7 @@
 				"visible": true
 			}, {
 				"type":"entity",
-				"key": "Details",
+				"key": "$entityType.entity.target",
 				"text": "Details",
 				"icon": "sap-icon://detail-view",
 				"target": "$entityType.entity.target",
@@ -148,9 +154,12 @@
 				"key": "$navigationSet.name",
 				"text": "$navigationSet.label",
 				"icon": "$navigationSet.icon",
-				"target": "$entityType.entity.target$navigationSet.name",
+				"target": "$navigationSet.rangeType.entitySet.target", 
 				"tooltip": "$navigationSet.tooltip",
-				"visible": true ##$navigationSet.targetVisible
+				"visible": true, 
+				"parameters": {
+					"navigation": "$navigationSet.name"
+				}	
 			}
 	#end	
 	#foreach($navigationProperty in $entityType.entity.navigationProperties)
@@ -161,11 +170,62 @@
 				"icon": "$navigationProperty.icon",
 				"target": "$navigationProperty.targetEntityType",
 				"tooltip": "$navigationProperty.tooltip",
+				"visible": true ,
 				"parameters": {
 					"navigation": "$navigationProperty.name"
-				},
-				"visible": true ##$navigationProperty.targetVisible
+				}
 			}
+	#end	
+	#foreach($complexNavigationProperty in $entityType.entity.properties)
+		#if($complexNavigationProperty.complexRange.isNavigationProperty)
+			, {				
+				"type":"complexNavigationProperty",
+				"key": "$complexNavigationProperty.name",
+				"text": "$complexNavigationProperty.label",
+				"icon": "$complexNavigationProperty.complexRange.icon",
+				"target": "$complexNavigationProperty.complexRange.targetEntityType",
+				"tooltip": "$complexNavigationProperty.tooltip",
+				"visible": true , 
+				"parameters": {
+					"navigation": "$complexNavigationProperty.name",
+					"queryOptions": {
+						"$expand": "*"
+					},
+					"versions": [	
+				#foreach($navigationPropery in $complexNavigationProperty.complexRange.navigationProperties)
+						{	"text": "$navigationPropery.subTypeName",
+							"navigation": "$navigationPropery.name"
+						}#if( $foreach.hasNext ),	#end
+					
+				#end
+					]
+				}
+			}
+		#elseif($complexNavigationProperty.complexRange.isNavigationSet)
+			, {				
+				"type":"complexNavigationSet",
+				"key": "$complexNavigationProperty.name",
+				"text": "$complexNavigationProperty.label",
+				"icon": "$complexNavigationProperty.complexRange.icon",
+				"target": "$complexNavigationProperty.complexRange.targetEntitySet",
+				"tooltip": "$complexNavigationProperty.tooltip",
+				"visible": true , 
+				"parameters": {
+					"navigation": "$complexNavigationProperty.name",
+					"queryOptions": {
+						"$expand": "*"
+					},
+					"versions": [	
+				#foreach($navigationSet in $complexNavigationProperty.complexRange.navigationSets)
+						{	"text": "$navigationSet.subTypeName",
+							"navigation": "$navigationSet.name"
+						}#if( $foreach.hasNext ),	#end
+					
+				#end
+					]
+				}
+			}
+		#end
 	#end			
 			]
 		}
@@ -187,9 +247,12 @@
 					"key": "$navigationSet.name",
 					"text": "$navigationSet.label",
 					"icon": "$navigationSet.icon",
-					"target": "$navigationSet.target",
+					"target":  "$navigationSet.rangeType.entitySet.target", 
 					"tooltip": "$navigationSet.tooltip",
-					"visible": true
+					"visible": true,
+					"parameters": {
+						"navigation": "$navigationSet.name"
+					}
 				}]
 			}
 		#if ( $foreach.hasNext ) 

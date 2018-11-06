@@ -1,0 +1,315 @@
+<mvc:View controllerName="com.inova8.lens.controller.Entity360" xmlns="sap.m" xmlns:mvc="sap.ui.core.mvc" xmlns:l="sap.ui.layout"
+	xmlns:f="sap.ui.layout.form" xmlns:table="sap.ui.table" xmlns:rdf="com.inova8.lens.control" xmlns:html="http://www.w3.org/1999/xhtml"
+	xmlns:core="sap.ui.core">
+	<Page showHeader="true" id="page" navButtonPress="onNavBack" showNavButton="false" title="{i18n>AccountFeed.Title}" busy="{entityView>/busy}"
+		busyIndicatorDelay="{entityView>/delay}" >
+		<customHeader>
+			<Toolbar>
+				<ToolbarSpacer/>
+				<HBox id="sourceTitle" alignItems="Center">
+						<rdf:TextResource id="selectedResource" path="" entitySet=""/>
+				</HBox>	
+				<Title id="pathTitle" text="{entityView>/navigation}"/>
+				<HBox id="versionsTitle" alignItems="Center">
+					<Title text="(" required="false"/>
+					<ComboBox id="versionSelection" items="{ path: 'entityView>/versions' }" selectionChange="onVersionChange">
+						<core:Item key="{entityView>navigation}" text="{entityView>text}"/>
+					</ComboBox>
+					<Title text=")" required="false"/>
+				</HBox>
+				<Title text="{i18n>AccountFeed.this}"/>
+				<Title text="(" required="false"/>
+				<rdf:TextResource path="dataModel>" entitySet="AccountFeed"/>
+				<Title text=")" required="false"/>
+	
+				<ToolbarSpacer/>
+				<ToggleButton id="toggleColumns" icon="sap-icon://hide" activeIcon="sap-icon://show" press="onSettingsPressed" visible="false"	>
+					<layoutData>
+						<OverflowToolbarLayoutData priority="NeverOverflow"/>
+					</layoutData>
+				</ToggleButton>
+				
+			</Toolbar>
+		</customHeader>
+		<Table id="form360" inset="false" fixedLayout="true" class="multicolumnform" updateFinished="hideColumns">
+			<columns>
+				<Column hAlign="Right" width="200px">
+					<Text text=""/>
+				</Column>
+				<Column visible="true">
+				</Column>
+				<Column visible="true">
+					<Text text="AccountFeed"/>
+				</Column>
+			</columns>
+			<items>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>AccountFeed.AccountFeed_Body}" required="false"/> 
+						<Text text=""/>
+						<rdf:TextLink text="{path:'dataModel>AccountFeed_Body/AccountFeed_Body',type:'sap.ui.model.type.String' }" linkText="{i18n>AccountFeed.AccountFeed_Body/AccountFeed_Body}"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>AccountFeed.AccountFeed_CommentCount}" required="false"/> 
+						<Text text=""/>
+						<Text text="{path:'dataModel>AccountFeed_CommentCount/AccountFeed_CommentCount',type:'sap.ui.model.type.Integer' }"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>AccountFeed.AccountFeed_CreatedById}" required="false"/> 
+						<Text text=""/>
+						<rdf:ListResource path="dataModel>AccountFeed_CreatedById/sfdc_AccountFeed_CreatedById" entitySet="User"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>AccountFeed.AccountFeed_CreatedDate}" required="false"/> 
+						<Text text=""/>
+						<Text text="{dataModel>AccountFeed_CreatedDate/AccountFeed_CreatedDate}"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>AccountFeed.AccountFeed_Id}" required="false"/> 
+						<Text text=""/>
+						<rdf:TextLink text="{path:'dataModel>AccountFeed_Id/AccountFeed_Id',type:'sap.ui.model.type.String' }" linkText="{i18n>AccountFeed.AccountFeed_Id/AccountFeed_Id}"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>AccountFeed.AccountFeed_InsertedById}" required="false"/> 
+						<Text text=""/>
+						<rdf:ListResource path="dataModel>AccountFeed_InsertedById/sfdc_AccountFeed_InsertedById" entitySet="User"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>AccountFeed.AccountFeed_IsDeleted}" required="false"/> 
+						<Text text=""/>
+						<Text text="{path:'dataModel>AccountFeed_IsDeleted/AccountFeed_IsDeleted',type:'sap.ui.model.type.Boolean'}"/>  
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>AccountFeed.AccountFeed_IsRichText}" required="false"/> 
+						<Text text=""/>
+						<Text text="{path:'dataModel>AccountFeed_IsRichText/AccountFeed_IsRichText',type:'sap.ui.model.type.Boolean'}"/>  
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>AccountFeed.AccountFeed_LastModifiedDate}" required="false"/> 
+						<Text text=""/>
+						<Text text="{dataModel>AccountFeed_LastModifiedDate/AccountFeed_LastModifiedDate}"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>AccountFeed.AccountFeed_LikeCount}" required="false"/> 
+						<Text text=""/>
+						<Text text="{path:'dataModel>AccountFeed_LikeCount/AccountFeed_LikeCount',type:'sap.ui.model.type.Integer' }"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>AccountFeed.AccountFeed_LinkUrl}" required="false"/> 
+						<Text text=""/>
+						<rdf:TextLink text="{path:'dataModel>AccountFeed_LinkUrl/AccountFeed_LinkUrl',type:'sap.ui.model.type.String' }" linkText="{i18n>AccountFeed.AccountFeed_LinkUrl/AccountFeed_LinkUrl}"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>AccountFeed.AccountFeed_ParentId}" required="false"/> 
+						<Text text=""/>
+						<rdf:ListResource path="dataModel>AccountFeed_ParentId/sfdc_AccountFeed_ParentId" entitySet="Account"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>AccountFeed.AccountFeed_RelatedRecordId}" required="false"/> 
+						<Text text=""/>
+						<rdf:ListResource path="dataModel>AccountFeed_RelatedRecordId/sfdc_AccountFeed_RelatedRecordId" entitySet="ContentVersion"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>AccountFeed.AccountFeed_SystemModstamp}" required="false"/> 
+						<Text text=""/>
+						<Text text="{dataModel>AccountFeed_SystemModstamp/AccountFeed_SystemModstamp}"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>AccountFeed.AccountFeed_Title}" required="false"/> 
+						<Text text=""/>
+						<rdf:TextLink text="{path:'dataModel>AccountFeed_Title/AccountFeed_Title',type:'sap.ui.model.type.String' }" linkText="{i18n>AccountFeed.AccountFeed_Title/AccountFeed_Title}"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>AccountFeed.AccountFeed_Type}" required="false"/> 
+						<Text text=""/>
+						<rdf:TextLink text="{path:'dataModel>AccountFeed_Type/AccountFeed_Type',type:'sap.ui.model.type.String' }" linkText="{i18n>AccountFeed.AccountFeed_Type/AccountFeed_Type}"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>AccountFeed.FeedAttachment_FeedEntityId_Inverse}" required="false"/> 
+						<Text text=""/>
+						<rdf:ListResource path="dataModel>FeedAttachment_FeedEntityId_Inverse/sfdc_FeedAttachment_FeedEntityId_Inverse" entitySet="FeedAttachment"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>AccountFeed.FeedComment_FeedItemId_Inverse}" required="false"/> 
+						<Text text=""/>
+						<rdf:ListResource path="dataModel>FeedComment_FeedItemId_Inverse/sfdc_FeedComment_FeedItemId_Inverse" entitySet="FeedComment"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>AccountFeed.FeedLike_FeedEntityId_Inverse}" required="false"/> 
+						<Text text=""/>
+						<rdf:ListResource path="dataModel>FeedLike_FeedEntityId_Inverse/sfdc_FeedLike_FeedEntityId_Inverse" entitySet="FeedLike"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>AccountFeed.FeedLike_FeedItemId_Inverse}" required="false"/> 
+						<Text text=""/>
+						<rdf:ListResource path="dataModel>FeedLike_FeedItemId_Inverse/sfdc_FeedLike_FeedItemId_Inverse" entitySet="FeedLike"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>AccountFeed.FeedPollChoice_FeedItemId_Inverse}" required="false"/> 
+						<Text text=""/>
+						<rdf:ListResource path="dataModel>FeedPollChoice_FeedItemId_Inverse/sfdc_FeedPollChoice_FeedItemId_Inverse" entitySet="FeedPollChoice"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>AccountFeed.FeedPollVote_FeedItemId_Inverse}" required="false"/> 
+						<Text text=""/>
+						<rdf:ListResource path="dataModel>FeedPollVote_FeedItemId_Inverse/sfdc_FeedPollVote_FeedItemId_Inverse" entitySet="FeedPollVote"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>AccountFeed.FeedSignal_FeedEntityId_Inverse}" required="false"/> 
+						<Text text=""/>
+						<rdf:ListResource path="dataModel>FeedSignal_FeedEntityId_Inverse/sfdc_FeedSignal_FeedEntityId_Inverse" entitySet="FeedSignal"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>AccountFeed.FeedSignal_FeedItemId_Inverse}" required="false"/> 
+						<Text text=""/>
+						<rdf:ListResource path="dataModel>FeedSignal_FeedItemId_Inverse/sfdc_FeedSignal_FeedItemId_Inverse" entitySet="FeedSignal"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>AccountFeed.FeedTrackedChange_FeedItemId_Inverse}" required="false"/> 
+						<Text text=""/>
+						<rdf:ListResource path="dataModel>FeedTrackedChange_FeedItemId_Inverse/sfdc_FeedTrackedChange_FeedItemId_Inverse" entitySet="FeedTrackedChange"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>AccountFeed.AccountFeed_CreatedById}" required="false"/> 
+						<rdf:ListResource path="dataModel>AccountFeed_CreatedById" entitySet="User"/>
+						<Text text=""/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>AccountFeed.AccountFeed_InsertedById}" required="false"/> 
+						<rdf:ListResource path="dataModel>AccountFeed_InsertedById" entitySet="User"/>
+						<Text text=""/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>AccountFeed.AccountFeed_ParentId}" required="false"/> 
+						<rdf:ListResource path="dataModel>AccountFeed_ParentId" entitySet="Account"/>
+						<Text text=""/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>AccountFeed.AccountFeed_RelatedRecordId}" required="false"/> 
+						<rdf:ListResource path="dataModel>AccountFeed_RelatedRecordId" entitySet="ContentVersion"/>
+						<Text text=""/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>AccountFeed.FeedAttachment_FeedEntityId_Inverse}" required="false"/> 
+						<rdf:ListResource path="dataModel>FeedAttachment_FeedEntityId_Inverse" entitySet="FeedAttachment"/>
+						<Text text=""/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>AccountFeed.FeedComment_FeedItemId_Inverse}" required="false"/> 
+						<rdf:ListResource path="dataModel>FeedComment_FeedItemId_Inverse" entitySet="FeedComment"/>
+						<Text text=""/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>AccountFeed.FeedLike_FeedEntityId_Inverse}" required="false"/> 
+						<rdf:ListResource path="dataModel>FeedLike_FeedEntityId_Inverse" entitySet="FeedLike"/>
+						<Text text=""/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>AccountFeed.FeedLike_FeedItemId_Inverse}" required="false"/> 
+						<rdf:ListResource path="dataModel>FeedLike_FeedItemId_Inverse" entitySet="FeedLike"/>
+						<Text text=""/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>AccountFeed.FeedPollChoice_FeedItemId_Inverse}" required="false"/> 
+						<rdf:ListResource path="dataModel>FeedPollChoice_FeedItemId_Inverse" entitySet="FeedPollChoice"/>
+						<Text text=""/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>AccountFeed.FeedPollVote_FeedItemId_Inverse}" required="false"/> 
+						<rdf:ListResource path="dataModel>FeedPollVote_FeedItemId_Inverse" entitySet="FeedPollVote"/>
+						<Text text=""/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>AccountFeed.FeedSignal_FeedEntityId_Inverse}" required="false"/> 
+						<rdf:ListResource path="dataModel>FeedSignal_FeedEntityId_Inverse" entitySet="FeedSignal"/>
+						<Text text=""/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>AccountFeed.FeedSignal_FeedItemId_Inverse}" required="false"/> 
+						<rdf:ListResource path="dataModel>FeedSignal_FeedItemId_Inverse" entitySet="FeedSignal"/>
+						<Text text=""/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>AccountFeed.FeedTrackedChange_FeedItemId_Inverse}" required="false"/> 
+						<rdf:ListResource path="dataModel>FeedTrackedChange_FeedItemId_Inverse" entitySet="FeedTrackedChange"/>
+						<Text text=""/>
+					</cells>
+				</ColumnListItem>
+			</items>
+		</Table>
+	</Page>
+</mvc:View>

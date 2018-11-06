@@ -1,0 +1,413 @@
+<mvc:View controllerName="com.inova8.lens.controller.Entity360" xmlns="sap.m" xmlns:mvc="sap.ui.core.mvc" xmlns:l="sap.ui.layout"
+	xmlns:f="sap.ui.layout.form" xmlns:table="sap.ui.table" xmlns:rdf="com.inova8.lens.control" xmlns:html="http://www.w3.org/1999/xhtml"
+	xmlns:core="sap.ui.core">
+	<Page showHeader="true" id="page" navButtonPress="onNavBack" showNavButton="false" title="{i18n>Campaign.Title}" busy="{entityView>/busy}"
+		busyIndicatorDelay="{entityView>/delay}" >
+		<customHeader>
+			<Toolbar>
+				<ToolbarSpacer/>
+				<HBox id="sourceTitle" alignItems="Center">
+						<rdf:TextResource id="selectedResource" path="" entitySet=""/>
+				</HBox>	
+				<Title id="pathTitle" text="{entityView>/navigation}"/>
+				<HBox id="versionsTitle" alignItems="Center">
+					<Title text="(" required="false"/>
+					<ComboBox id="versionSelection" items="{ path: 'entityView>/versions' }" selectionChange="onVersionChange">
+						<core:Item key="{entityView>navigation}" text="{entityView>text}"/>
+					</ComboBox>
+					<Title text=")" required="false"/>
+				</HBox>
+				<Title text="{i18n>Campaign.this}"/>
+				<Title text="(" required="false"/>
+				<rdf:TextResource path="dataModel>" entitySet="Campaign"/>
+				<Title text=")" required="false"/>
+	
+				<ToolbarSpacer/>
+				<ToggleButton id="toggleColumns" icon="sap-icon://hide" activeIcon="sap-icon://show" press="onSettingsPressed" visible="false"	>
+					<layoutData>
+						<OverflowToolbarLayoutData priority="NeverOverflow"/>
+					</layoutData>
+				</ToggleButton>
+				
+			</Toolbar>
+		</customHeader>
+		<Table id="form360" inset="false" fixedLayout="true" class="multicolumnform" updateFinished="hideColumns">
+			<columns>
+				<Column hAlign="Right" width="200px">
+					<Text text=""/>
+				</Column>
+				<Column visible="true">
+				</Column>
+				<Column visible="true">
+					<Text text="Campaign"/>
+				</Column>
+			</columns>
+			<items>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>Campaign.CampaignFeed_ParentId_Inverse}" required="false"/> 
+						<Text text=""/>
+						<rdf:ListResource path="dataModel>CampaignFeed_ParentId_Inverse/sfdc_CampaignFeed_ParentId_Inverse" entitySet="CampaignFeed"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>Campaign.CampaignHistory_CampaignId_Inverse}" required="false"/> 
+						<Text text=""/>
+						<rdf:ListResource path="dataModel>CampaignHistory_CampaignId_Inverse/sfdc_CampaignHistory_CampaignId_Inverse" entitySet="CampaignHistory"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>Campaign.CampaignMemberStatus_CampaignId_Inverse}" required="false"/> 
+						<Text text=""/>
+						<rdf:ListResource path="dataModel>CampaignMemberStatus_CampaignId_Inverse/sfdc_CampaignMemberStatus_CampaignId_Inverse" entitySet="CampaignMemberStatus"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>Campaign.CampaignMember_CampaignId_Inverse}" required="false"/> 
+						<Text text=""/>
+						<rdf:ListResource path="dataModel>CampaignMember_CampaignId_Inverse/sfdc_CampaignMember_CampaignId_Inverse" entitySet="CampaignMember"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>Campaign.CampaignShare_CampaignId_Inverse}" required="false"/> 
+						<Text text=""/>
+						<rdf:ListResource path="dataModel>CampaignShare_CampaignId_Inverse/sfdc_CampaignShare_CampaignId_Inverse" entitySet="CampaignShare"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>Campaign.Campaign_ActualCost}" required="false"/> 
+						<Text text=""/>
+						<Text text="{path:'dataModel>Campaign_ActualCost/Campaign_ActualCost',type:'sap.ui.model.type.Float', formatOptions:{'style':'short','maxFractionDigits':2} }"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>Campaign.Campaign_AmountAllOpportunities}" required="false"/> 
+						<Text text=""/>
+						<Text text="{path:'dataModel>Campaign_AmountAllOpportunities/Campaign_AmountAllOpportunities',type:'sap.ui.model.type.Float', formatOptions:{'style':'short','maxFractionDigits':2} }"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>Campaign.Campaign_AmountWonOpportunities}" required="false"/> 
+						<Text text=""/>
+						<Text text="{path:'dataModel>Campaign_AmountWonOpportunities/Campaign_AmountWonOpportunities',type:'sap.ui.model.type.Float', formatOptions:{'style':'short','maxFractionDigits':2} }"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>Campaign.Campaign_BudgetedCost}" required="false"/> 
+						<Text text=""/>
+						<Text text="{path:'dataModel>Campaign_BudgetedCost/Campaign_BudgetedCost',type:'sap.ui.model.type.Float', formatOptions:{'style':'short','maxFractionDigits':2} }"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>Campaign.Campaign_CampaignMemberRecordTypeId}" required="false"/> 
+						<Text text=""/>
+						<rdf:ListResource path="dataModel>Campaign_CampaignMemberRecordTypeId/sfdc_Campaign_CampaignMemberRecordTypeId" entitySet="RecordType"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>Campaign.Campaign_CreatedById}" required="false"/> 
+						<Text text=""/>
+						<rdf:ListResource path="dataModel>Campaign_CreatedById/sfdc_Campaign_CreatedById" entitySet="User"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>Campaign.Campaign_CreatedDate}" required="false"/> 
+						<Text text=""/>
+						<Text text="{dataModel>Campaign_CreatedDate/Campaign_CreatedDate}"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>Campaign.Campaign_Description}" required="false"/> 
+						<Text text=""/>
+						<rdf:TextLink text="{path:'dataModel>Campaign_Description/Campaign_Description',type:'sap.ui.model.type.String' }" linkText="{i18n>Campaign.Campaign_Description/Campaign_Description}"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>Campaign.Campaign_EndDate}" required="false"/> 
+						<Text text=""/>
+						<Text text="{dataModel>Campaign_EndDate/Campaign_EndDate}"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>Campaign.Campaign_ExpectedResponse}" required="false"/> 
+						<Text text=""/>
+						<Text text="{path:'dataModel>Campaign_ExpectedResponse/Campaign_ExpectedResponse',type:'sap.ui.model.type.Float', formatOptions:{'style':'short','maxFractionDigits':2} }"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>Campaign.Campaign_ExpectedRevenue}" required="false"/> 
+						<Text text=""/>
+						<Text text="{path:'dataModel>Campaign_ExpectedRevenue/Campaign_ExpectedRevenue',type:'sap.ui.model.type.Float', formatOptions:{'style':'short','maxFractionDigits':2} }"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>Campaign.Campaign_Id}" required="false"/> 
+						<Text text=""/>
+						<rdf:TextLink text="{path:'dataModel>Campaign_Id/Campaign_Id',type:'sap.ui.model.type.String' }" linkText="{i18n>Campaign.Campaign_Id/Campaign_Id}"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>Campaign.Campaign_IsActive}" required="false"/> 
+						<Text text=""/>
+						<Text text="{path:'dataModel>Campaign_IsActive/Campaign_IsActive',type:'sap.ui.model.type.Boolean'}"/>  
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>Campaign.Campaign_IsDeleted}" required="false"/> 
+						<Text text=""/>
+						<Text text="{path:'dataModel>Campaign_IsDeleted/Campaign_IsDeleted',type:'sap.ui.model.type.Boolean'}"/>  
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>Campaign.Campaign_LastActivityDate}" required="false"/> 
+						<Text text=""/>
+						<Text text="{dataModel>Campaign_LastActivityDate/Campaign_LastActivityDate}"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>Campaign.Campaign_LastModifiedById}" required="false"/> 
+						<Text text=""/>
+						<rdf:ListResource path="dataModel>Campaign_LastModifiedById/sfdc_Campaign_LastModifiedById" entitySet="User"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>Campaign.Campaign_LastModifiedDate}" required="false"/> 
+						<Text text=""/>
+						<Text text="{dataModel>Campaign_LastModifiedDate/Campaign_LastModifiedDate}"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>Campaign.Campaign_LastReferencedDate}" required="false"/> 
+						<Text text=""/>
+						<Text text="{dataModel>Campaign_LastReferencedDate/Campaign_LastReferencedDate}"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>Campaign.Campaign_LastViewedDate}" required="false"/> 
+						<Text text=""/>
+						<Text text="{dataModel>Campaign_LastViewedDate/Campaign_LastViewedDate}"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>Campaign.Campaign_Name}" required="false"/> 
+						<Text text=""/>
+						<rdf:TextLink text="{path:'dataModel>Campaign_Name/Campaign_Name',type:'sap.ui.model.type.String' }" linkText="{i18n>Campaign.Campaign_Name/Campaign_Name}"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>Campaign.Campaign_NumberOfContacts}" required="false"/> 
+						<Text text=""/>
+						<Text text="{path:'dataModel>Campaign_NumberOfContacts/Campaign_NumberOfContacts',type:'sap.ui.model.type.Integer' }"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>Campaign.Campaign_NumberOfConvertedLeads}" required="false"/> 
+						<Text text=""/>
+						<Text text="{path:'dataModel>Campaign_NumberOfConvertedLeads/Campaign_NumberOfConvertedLeads',type:'sap.ui.model.type.Integer' }"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>Campaign.Campaign_NumberOfLeads}" required="false"/> 
+						<Text text=""/>
+						<Text text="{path:'dataModel>Campaign_NumberOfLeads/Campaign_NumberOfLeads',type:'sap.ui.model.type.Integer' }"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>Campaign.Campaign_NumberOfOpportunities}" required="false"/> 
+						<Text text=""/>
+						<Text text="{path:'dataModel>Campaign_NumberOfOpportunities/Campaign_NumberOfOpportunities',type:'sap.ui.model.type.Integer' }"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>Campaign.Campaign_NumberOfResponses}" required="false"/> 
+						<Text text=""/>
+						<Text text="{path:'dataModel>Campaign_NumberOfResponses/Campaign_NumberOfResponses',type:'sap.ui.model.type.Integer' }"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>Campaign.Campaign_NumberOfWonOpportunities}" required="false"/> 
+						<Text text=""/>
+						<Text text="{path:'dataModel>Campaign_NumberOfWonOpportunities/Campaign_NumberOfWonOpportunities',type:'sap.ui.model.type.Integer' }"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>Campaign.Campaign_NumberSent}" required="false"/> 
+						<Text text=""/>
+						<Text text="{path:'dataModel>Campaign_NumberSent/Campaign_NumberSent',type:'sap.ui.model.type.Float', formatOptions:{'style':'short','maxFractionDigits':2} }"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>Campaign.Campaign_OwnerId}" required="false"/> 
+						<Text text=""/>
+						<rdf:ListResource path="dataModel>Campaign_OwnerId/sfdc_Campaign_OwnerId" entitySet="User"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>Campaign.Campaign_ParentId}" required="false"/> 
+						<Text text=""/>
+						<rdf:ListResource path="dataModel>Campaign_ParentId/sfdc_Campaign_ParentId" entitySet="Campaign"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>Campaign.Campaign_ParentId_Inverse}" required="false"/> 
+						<Text text=""/>
+						<rdf:ListResource path="dataModel>Campaign_ParentId_Inverse/sfdc_Campaign_ParentId_Inverse" entitySet="Campaign"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>Campaign.Campaign_StartDate}" required="false"/> 
+						<Text text=""/>
+						<Text text="{dataModel>Campaign_StartDate/Campaign_StartDate}"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>Campaign.Campaign_Status}" required="false"/> 
+						<Text text=""/>
+						<rdf:TextLink text="{path:'dataModel>Campaign_Status/Campaign_Status',type:'sap.ui.model.type.String' }" linkText="{i18n>Campaign.Campaign_Status/Campaign_Status}"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>Campaign.Campaign_SystemModstamp}" required="false"/> 
+						<Text text=""/>
+						<Text text="{dataModel>Campaign_SystemModstamp/Campaign_SystemModstamp}"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>Campaign.Campaign_Type}" required="false"/> 
+						<Text text=""/>
+						<rdf:TextLink text="{path:'dataModel>Campaign_Type/Campaign_Type',type:'sap.ui.model.type.String' }" linkText="{i18n>Campaign.Campaign_Type/Campaign_Type}"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>Campaign.Opportunity_CampaignId_Inverse}" required="false"/> 
+						<Text text=""/>
+						<rdf:ListResource path="dataModel>Opportunity_CampaignId_Inverse/sfdc_Opportunity_CampaignId_Inverse" entitySet="Opportunity"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>Campaign.CampaignFeed_ParentId_Inverse}" required="false"/> 
+						<rdf:ListResource path="dataModel>CampaignFeed_ParentId_Inverse" entitySet="CampaignFeed"/>
+						<Text text=""/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>Campaign.CampaignHistory_CampaignId_Inverse}" required="false"/> 
+						<rdf:ListResource path="dataModel>CampaignHistory_CampaignId_Inverse" entitySet="CampaignHistory"/>
+						<Text text=""/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>Campaign.CampaignMemberStatus_CampaignId_Inverse}" required="false"/> 
+						<rdf:ListResource path="dataModel>CampaignMemberStatus_CampaignId_Inverse" entitySet="CampaignMemberStatus"/>
+						<Text text=""/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>Campaign.CampaignMember_CampaignId_Inverse}" required="false"/> 
+						<rdf:ListResource path="dataModel>CampaignMember_CampaignId_Inverse" entitySet="CampaignMember"/>
+						<Text text=""/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>Campaign.CampaignShare_CampaignId_Inverse}" required="false"/> 
+						<rdf:ListResource path="dataModel>CampaignShare_CampaignId_Inverse" entitySet="CampaignShare"/>
+						<Text text=""/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>Campaign.Campaign_CampaignMemberRecordTypeId}" required="false"/> 
+						<rdf:ListResource path="dataModel>Campaign_CampaignMemberRecordTypeId" entitySet="RecordType"/>
+						<Text text=""/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>Campaign.Campaign_CreatedById}" required="false"/> 
+						<rdf:ListResource path="dataModel>Campaign_CreatedById" entitySet="User"/>
+						<Text text=""/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>Campaign.Campaign_LastModifiedById}" required="false"/> 
+						<rdf:ListResource path="dataModel>Campaign_LastModifiedById" entitySet="User"/>
+						<Text text=""/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>Campaign.Campaign_OwnerId}" required="false"/> 
+						<rdf:ListResource path="dataModel>Campaign_OwnerId" entitySet="User"/>
+						<Text text=""/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>Campaign.Campaign_ParentId}" required="false"/> 
+						<rdf:ListResource path="dataModel>Campaign_ParentId" entitySet="Campaign"/>
+						<Text text=""/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>Campaign.Campaign_ParentId_Inverse}" required="false"/> 
+						<rdf:ListResource path="dataModel>Campaign_ParentId_Inverse" entitySet="Campaign"/>
+						<Text text=""/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>Campaign.Opportunity_CampaignId_Inverse}" required="false"/> 
+						<rdf:ListResource path="dataModel>Opportunity_CampaignId_Inverse" entitySet="Opportunity"/>
+						<Text text=""/>
+					</cells>
+				</ColumnListItem>
+			</items>
+		</Table>
+	</Page>
+</mvc:View>

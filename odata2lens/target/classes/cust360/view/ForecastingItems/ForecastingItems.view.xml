@@ -1,0 +1,169 @@
+<mvc:View controllerName="com.inova8.lens.controller.EntitySet360" xmlns="sap.m" xmlns:mvc="sap.ui.core.mvc" xmlns:layout="sap.ui.layout"
+	xmlns:rdf="com.inova8.lens.control" xmlns:core="sap.ui.core">
+	<Page showHeader="false" id="page" navButtonPress="onNavBack" showNavButton="true" title="{i18n>ForecastingItems.ViewTitle}">
+		<content>
+			<Table id="table360" inset="false" items="{ path: 'dataModel>/ForecastingItem' , sorter: { path: 'label', descending: false } 
+				}"
+				noDataText="{entitySetView>/tableNoDataText}" busyIndicatorDelay="{entitySetView>/tableBusyDelay}" growing="true" growingScrollToLoad="true"
+				updateFinished="onUpdateFinished"  fixedLayout="false">
+				<headerToolbar>
+					<Toolbar>
+						<ToolbarSpacer/>
+						<HBox id="sourceTitle" alignItems="Center">
+							<rdf:TextResource id="selectedResource" path="" entitySet=""/>
+						</HBox>
+						<Title id="pathTitle" text="{entitySetView>/navigationText}"/>
+						<HBox id="versionsTitle" alignItems="Center">
+							<Title text="(" required="false"/>
+							<ComboBox id="versionSelection" items="{ path: 'entitySetView>/versions' }" selectionChange="onVersionChange">
+								<core:Item key="{entitySetView>navigation}" text="{entityView>text}"/>
+							</ComboBox>
+							<Title text=")" required="false"/>
+						</HBox>
+						<Title id="tableHeader" text="{entitySetView>/entitySetTableTitle}"/>
+						<ToolbarSpacer/>
+						<SearchField id="searchField" tooltip="{i18n>search.searchTooltip}" search="onSearch" width="auto"></SearchField>
+					</Toolbar>
+				</headerToolbar>
+				<columns>
+					<Column >
+						<Text text="{i18n>ForecastingItems.this}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>ForecastingItems.ForecastingItem_AmountWithoutAdjustments}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>ForecastingItems.ForecastingItem_AmountWithoutManagerAdjustment}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>ForecastingItems.ForecastingItem_AmountWithoutOwnerAdjustment}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>ForecastingItems.ForecastingItem_ForecastAmount}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>ForecastingItems.ForecastingItem_ForecastCategoryName}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>ForecastingItems.ForecastingItem_ForecastQuantity}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>ForecastingItems.ForecastingItem_ForecastingItemCategory}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>ForecastingItems.ForecastingItem_HasAdjustment}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>ForecastingItems.ForecastingItem_HasOwnerAdjustment}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>ForecastingItems.ForecastingItem_Id}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>ForecastingItems.ForecastingItem_IsAmount}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>ForecastingItems.ForecastingItem_IsQuantity}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>ForecastingItems.ForecastingItem_IsUpToDate}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>ForecastingItems.ForecastingItem_OwnerOnlyAmount}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>ForecastingItems.ForecastingItem_OwnerOnlyQuantity}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>ForecastingItems.ForecastingItem_ProductFamily}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>ForecastingItems.ForecastingItem_QuantityWithoutAdjustments}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>ForecastingItems.ForecastingItem_QuantityWithoutManagerAdjustment}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>ForecastingItems.ForecastingItem_QuantityWithoutOwnerAdjustment}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>ForecastingItems.ForecastingItem_SubordinateOverrides}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>ForecastingItems.ForecastingItem_SystemModstamp}"/>
+					</Column>
+				</columns>
+				<items>
+					<ColumnListItem id="template360" type="Navigation" press="onPress">
+						<cells>
+							<rdf:TextResource path="dataModel>" entitySet="ForecastingItem"/>
+							<VBox>					
+							<Text text="{path:'dataModel>ForecastingItem_AmountWithoutAdjustments/ForecastingItem_AmountWithoutAdjustments',type:'sap.ui.model.type.Float', formatOptions:{'style':'short','maxFractionDigits':2} }"/>
+							</VBox>							
+							<VBox>					
+							<Text text="{path:'dataModel>ForecastingItem_AmountWithoutManagerAdjustment/ForecastingItem_AmountWithoutManagerAdjustment',type:'sap.ui.model.type.Float', formatOptions:{'style':'short','maxFractionDigits':2} }"/>
+							</VBox>							
+							<VBox>					
+							<Text text="{path:'dataModel>ForecastingItem_AmountWithoutOwnerAdjustment/ForecastingItem_AmountWithoutOwnerAdjustment',type:'sap.ui.model.type.Float', formatOptions:{'style':'short','maxFractionDigits':2} }"/>
+							</VBox>							
+							<VBox>					
+							<Text text="{path:'dataModel>ForecastingItem_ForecastAmount/ForecastingItem_ForecastAmount',type:'sap.ui.model.type.Float', formatOptions:{'style':'short','maxFractionDigits':2} }"/>
+							</VBox>							
+							<VBox>					
+							<rdf:TextLink text="{path:'dataModel>ForecastingItem_ForecastCategoryName/ForecastingItem_ForecastCategoryName',type:'sap.ui.model.type.String'}" linkText="{i18n>ForecastingItem.ForecastingItem_ForecastCategoryName/ForecastingItem_ForecastCategoryName}"/>
+							</VBox>							
+							<VBox>					
+							<Text text="{path:'dataModel>ForecastingItem_ForecastQuantity/ForecastingItem_ForecastQuantity',type:'sap.ui.model.type.Float', formatOptions:{'style':'short','maxFractionDigits':2} }"/>
+							</VBox>							
+							<VBox>					
+							<rdf:TextLink text="{path:'dataModel>ForecastingItem_ForecastingItemCategory/ForecastingItem_ForecastingItemCategory',type:'sap.ui.model.type.String'}" linkText="{i18n>ForecastingItem.ForecastingItem_ForecastingItemCategory/ForecastingItem_ForecastingItemCategory}"/>
+							</VBox>							
+							<VBox>					
+								<Text text="{path:'dataModel>ForecastingItem_HasAdjustment/ForecastingItem_HasAdjustment',type:'sap.ui.model.type.Boolean'}"/>  
+							</VBox>							
+							<VBox>					
+								<Text text="{path:'dataModel>ForecastingItem_HasOwnerAdjustment/ForecastingItem_HasOwnerAdjustment',type:'sap.ui.model.type.Boolean'}"/>  
+							</VBox>							
+							<VBox>					
+							<rdf:TextLink text="{path:'dataModel>ForecastingItem_Id/ForecastingItem_Id',type:'sap.ui.model.type.String'}" linkText="{i18n>ForecastingItem.ForecastingItem_Id/ForecastingItem_Id}"/>
+							</VBox>							
+							<VBox>					
+								<Text text="{path:'dataModel>ForecastingItem_IsAmount/ForecastingItem_IsAmount',type:'sap.ui.model.type.Boolean'}"/>  
+							</VBox>							
+							<VBox>					
+								<Text text="{path:'dataModel>ForecastingItem_IsQuantity/ForecastingItem_IsQuantity',type:'sap.ui.model.type.Boolean'}"/>  
+							</VBox>							
+							<VBox>					
+								<Text text="{path:'dataModel>ForecastingItem_IsUpToDate/ForecastingItem_IsUpToDate',type:'sap.ui.model.type.Boolean'}"/>  
+							</VBox>							
+							<VBox>					
+							<Text text="{path:'dataModel>ForecastingItem_OwnerOnlyAmount/ForecastingItem_OwnerOnlyAmount',type:'sap.ui.model.type.Float', formatOptions:{'style':'short','maxFractionDigits':2} }"/>
+							</VBox>							
+							<VBox>					
+							<Text text="{path:'dataModel>ForecastingItem_OwnerOnlyQuantity/ForecastingItem_OwnerOnlyQuantity',type:'sap.ui.model.type.Float', formatOptions:{'style':'short','maxFractionDigits':2} }"/>
+							</VBox>							
+							<VBox>					
+							<rdf:TextLink text="{path:'dataModel>ForecastingItem_ProductFamily/ForecastingItem_ProductFamily',type:'sap.ui.model.type.String'}" linkText="{i18n>ForecastingItem.ForecastingItem_ProductFamily/ForecastingItem_ProductFamily}"/>
+							</VBox>							
+							<VBox>					
+							<Text text="{path:'dataModel>ForecastingItem_QuantityWithoutAdjustments/ForecastingItem_QuantityWithoutAdjustments',type:'sap.ui.model.type.Float', formatOptions:{'style':'short','maxFractionDigits':2} }"/>
+							</VBox>							
+							<VBox>					
+							<Text text="{path:'dataModel>ForecastingItem_QuantityWithoutManagerAdjustment/ForecastingItem_QuantityWithoutManagerAdjustment',type:'sap.ui.model.type.Float', formatOptions:{'style':'short','maxFractionDigits':2} }"/>
+							</VBox>							
+							<VBox>					
+							<Text text="{path:'dataModel>ForecastingItem_QuantityWithoutOwnerAdjustment/ForecastingItem_QuantityWithoutOwnerAdjustment',type:'sap.ui.model.type.Float', formatOptions:{'style':'short','maxFractionDigits':2} }"/>
+							</VBox>							
+							<VBox>					
+							<Text text="{path:'dataModel>ForecastingItem_SubordinateOverrides/ForecastingItem_SubordinateOverrides',type:'sap.ui.model.type.Integer' }"/>
+							</VBox>							
+							<VBox>					
+							<Text text="{dataModel>ForecastingItem_SystemModstamp/ForecastingItem_SystemModstamp}"/>
+							</VBox>							
+						</cells>
+					</ColumnListItem>
+				</items>
+			</Table>
+		</content>
+	</Page>
+</mvc:View>

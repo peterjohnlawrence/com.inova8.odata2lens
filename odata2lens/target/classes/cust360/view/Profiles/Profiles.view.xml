@@ -1,0 +1,1117 @@
+<mvc:View controllerName="com.inova8.lens.controller.EntitySet360" xmlns="sap.m" xmlns:mvc="sap.ui.core.mvc" xmlns:layout="sap.ui.layout"
+	xmlns:rdf="com.inova8.lens.control" xmlns:core="sap.ui.core">
+	<Page showHeader="false" id="page" navButtonPress="onNavBack" showNavButton="true" title="{i18n>Profiles.ViewTitle}">
+		<content>
+			<Table id="table360" inset="false" items="{ path: 'dataModel>/Profile' , sorter: { path: 'label', descending: false } 
+				}"
+				noDataText="{entitySetView>/tableNoDataText}" busyIndicatorDelay="{entitySetView>/tableBusyDelay}" growing="true" growingScrollToLoad="true"
+				updateFinished="onUpdateFinished"  fixedLayout="false">
+				<headerToolbar>
+					<Toolbar>
+						<ToolbarSpacer/>
+						<HBox id="sourceTitle" alignItems="Center">
+							<rdf:TextResource id="selectedResource" path="" entitySet=""/>
+						</HBox>
+						<Title id="pathTitle" text="{entitySetView>/navigationText}"/>
+						<HBox id="versionsTitle" alignItems="Center">
+							<Title text="(" required="false"/>
+							<ComboBox id="versionSelection" items="{ path: 'entitySetView>/versions' }" selectionChange="onVersionChange">
+								<core:Item key="{entitySetView>navigation}" text="{entityView>text}"/>
+							</ComboBox>
+							<Title text=")" required="false"/>
+						</HBox>
+						<Title id="tableHeader" text="{entitySetView>/entitySetTableTitle}"/>
+						<ToolbarSpacer/>
+						<SearchField id="searchField" tooltip="{i18n>search.searchTooltip}" search="onSearch" width="auto"></SearchField>
+					</Toolbar>
+				</headerToolbar>
+				<columns>
+					<Column >
+						<Text text="{i18n>Profiles.this}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>Profiles.Profile_CreatedDate}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>Profiles.Profile_Description}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>Profiles.Profile_Id}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>Profiles.Profile_LastModifiedDate}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>Profiles.Profile_LastReferencedDate}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>Profiles.Profile_LastViewedDate}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>Profiles.Profile_Name}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>Profiles.Profile_PermissionsAccessCMC}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>Profiles.Profile_PermissionsActivateContract}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>Profiles.Profile_PermissionsActivateOrder}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>Profiles.Profile_PermissionsAddDirectMessageMembers}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>Profiles.Profile_PermissionsAllowLightningLogin}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>Profiles.Profile_PermissionsAllowViewEditConvertedLeads}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>Profiles.Profile_PermissionsApiEnabled}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>Profiles.Profile_PermissionsApiUserOnly}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>Profiles.Profile_PermissionsAssignPermissionSets}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>Profiles.Profile_PermissionsAssignTopics}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>Profiles.Profile_PermissionsAuthorApex}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>Profiles.Profile_PermissionsBulkApiHardDelete}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>Profiles.Profile_PermissionsBulkMacrosAllowed}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>Profiles.Profile_PermissionsCampaignInfluence2}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>Profiles.Profile_PermissionsCanApproveFeedPost}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>Profiles.Profile_PermissionsCanInsertFeedSystemFields}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>Profiles.Profile_PermissionsCanUseNewDashboardBuilder}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>Profiles.Profile_PermissionsCanVerifyComment}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>Profiles.Profile_PermissionsChatterComposeUiCodesnippet}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>Profiles.Profile_PermissionsChatterEditOwnPost}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>Profiles.Profile_PermissionsChatterEditOwnRecordPost}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>Profiles.Profile_PermissionsChatterFileLink}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>Profiles.Profile_PermissionsChatterForSharePoint}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>Profiles.Profile_PermissionsChatterInternalUser}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>Profiles.Profile_PermissionsChatterInviteExternalUsers}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>Profiles.Profile_PermissionsChatterOwnGroups}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>Profiles.Profile_PermissionsConfigCustomRecs}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>Profiles.Profile_PermissionsConnectOrgToEnvironmentHub}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>Profiles.Profile_PermissionsContentAdministrator}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>Profiles.Profile_PermissionsContentWorkspaces}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>Profiles.Profile_PermissionsConvertLeads}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>Profiles.Profile_PermissionsCreateCustomizeFilters}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>Profiles.Profile_PermissionsCreateMultiforce}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>Profiles.Profile_PermissionsCreateTopics}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>Profiles.Profile_PermissionsCreateWorkspaces}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>Profiles.Profile_PermissionsCustomMobileAppsAccess}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>Profiles.Profile_PermissionsCustomSidebarOnAllPages}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>Profiles.Profile_PermissionsCustomizeApplication}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>Profiles.Profile_PermissionsDataExport}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>Profiles.Profile_PermissionsDelegatedTwoFactor}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>Profiles.Profile_PermissionsDeleteActivatedContract}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>Profiles.Profile_PermissionsDeleteTopics}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>Profiles.Profile_PermissionsDistributeFromPersWksp}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>Profiles.Profile_PermissionsEditActivatedOrders}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>Profiles.Profile_PermissionsEditBrandTemplates}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>Profiles.Profile_PermissionsEditCaseComments}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>Profiles.Profile_PermissionsEditEvent}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>Profiles.Profile_PermissionsEditHtmlTemplates}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>Profiles.Profile_PermissionsEditOppLineItemUnitPrice}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>Profiles.Profile_PermissionsEditPublicDocuments}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>Profiles.Profile_PermissionsEditPublicFilters}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>Profiles.Profile_PermissionsEditPublicTemplates}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>Profiles.Profile_PermissionsEditReadonlyFields}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>Profiles.Profile_PermissionsEditReports}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>Profiles.Profile_PermissionsEditTask}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>Profiles.Profile_PermissionsEditTopics}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>Profiles.Profile_PermissionsEmailAdministration}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>Profiles.Profile_PermissionsEmailMass}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>Profiles.Profile_PermissionsEmailSingle}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>Profiles.Profile_PermissionsEmailTemplateManagement}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>Profiles.Profile_PermissionsEnableCommunityAppLauncher}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>Profiles.Profile_PermissionsEnableNotifications}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>Profiles.Profile_PermissionsExportReport}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>Profiles.Profile_PermissionsFeedPinning}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>Profiles.Profile_PermissionsFlowUFLRequired}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>Profiles.Profile_PermissionsForceTwoFactor}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>Profiles.Profile_PermissionsGovernNetworks}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>Profiles.Profile_PermissionsHideReadByList}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>Profiles.Profile_PermissionsIdentityConnect}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>Profiles.Profile_PermissionsIdentityEnabled}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>Profiles.Profile_PermissionsImportCustomObjects}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>Profiles.Profile_PermissionsImportLeads}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>Profiles.Profile_PermissionsImportPersonal}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>Profiles.Profile_PermissionsInboundMigrationToolsUser}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>Profiles.Profile_PermissionsInstallMultiforce}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>Profiles.Profile_PermissionsLightningConsoleAllowedForUser}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>Profiles.Profile_PermissionsLightningExperienceUser}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>Profiles.Profile_PermissionsListEmailSend}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>Profiles.Profile_PermissionsManageAnalyticSnapshots}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>Profiles.Profile_PermissionsManageAuthProviders}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>Profiles.Profile_PermissionsManageBusinessHourHolidays}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>Profiles.Profile_PermissionsManageCallCenters}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>Profiles.Profile_PermissionsManageCases}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>Profiles.Profile_PermissionsManageCategories}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>Profiles.Profile_PermissionsManageCertificates}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>Profiles.Profile_PermissionsManageChatterMessages}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>Profiles.Profile_PermissionsManageContentPermissions}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>Profiles.Profile_PermissionsManageContentProperties}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>Profiles.Profile_PermissionsManageContentTypes}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>Profiles.Profile_PermissionsManageCustomPermissions}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>Profiles.Profile_PermissionsManageCustomReportTypes}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>Profiles.Profile_PermissionsManageDashboards}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>Profiles.Profile_PermissionsManageDataCategories}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>Profiles.Profile_PermissionsManageDataIntegrations}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>Profiles.Profile_PermissionsManageEmailClientConfig}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>Profiles.Profile_PermissionsManageEntitlements}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>Profiles.Profile_PermissionsManageExchangeConfig}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>Profiles.Profile_PermissionsManageHealthCheck}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>Profiles.Profile_PermissionsManageInteraction}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>Profiles.Profile_PermissionsManageInternalUsers}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>Profiles.Profile_PermissionsManageIpAddresses}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>Profiles.Profile_PermissionsManageLeads}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>Profiles.Profile_PermissionsManageLoginAccessPolicies}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>Profiles.Profile_PermissionsManageMobile}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>Profiles.Profile_PermissionsManageNetworks}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>Profiles.Profile_PermissionsManagePasswordPolicies}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>Profiles.Profile_PermissionsManageProfilesPermissionsets}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>Profiles.Profile_PermissionsManagePvtRptsAndDashbds}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>Profiles.Profile_PermissionsManageQuotas}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>Profiles.Profile_PermissionsManageRealm}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>Profiles.Profile_PermissionsManageRemoteAccess}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>Profiles.Profile_PermissionsManageRoles}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>Profiles.Profile_PermissionsManageSandboxes}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>Profiles.Profile_PermissionsManageSessionPermissionSets}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>Profiles.Profile_PermissionsManageSharing}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>Profiles.Profile_PermissionsManageSolutions}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>Profiles.Profile_PermissionsManageSynonyms}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>Profiles.Profile_PermissionsManageTerritories}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>Profiles.Profile_PermissionsManageTranslation}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>Profiles.Profile_PermissionsManageTwoFactor}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>Profiles.Profile_PermissionsManageUnlistedGroups}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>Profiles.Profile_PermissionsManageUsers}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>Profiles.Profile_PermissionsMassInlineEdit}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>Profiles.Profile_PermissionsMergeTopics}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>Profiles.Profile_PermissionsModerateChatter}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>Profiles.Profile_PermissionsModerateNetworkUsers}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>Profiles.Profile_PermissionsModifyAllData}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>Profiles.Profile_PermissionsNewReportBuilder}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>Profiles.Profile_PermissionsOutboundMigrationToolsUser}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>Profiles.Profile_PermissionsOverrideForecasts}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>Profiles.Profile_PermissionsPackaging2}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>Profiles.Profile_PermissionsPasswordNeverExpires}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>Profiles.Profile_PermissionsPreventClassicExperience}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>Profiles.Profile_PermissionsPublicTwitterResponse}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>Profiles.Profile_PermissionsPublishMultiforce}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>Profiles.Profile_PermissionsRemoveDirectMessageMembers}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>Profiles.Profile_PermissionsResetPasswords}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>Profiles.Profile_PermissionsRunFlow}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>Profiles.Profile_PermissionsRunReports}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>Profiles.Profile_PermissionsSalesConsole}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>Profiles.Profile_PermissionsScheduleJob}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>Profiles.Profile_PermissionsScheduleReports}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>Profiles.Profile_PermissionsScsRequireApproval}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>Profiles.Profile_PermissionsSelectFilesFromSalesforce}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>Profiles.Profile_PermissionsSendAnnouncementEmails}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>Profiles.Profile_PermissionsSendSitRequests}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>Profiles.Profile_PermissionsShowCompanyNameAsUserBadge}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>Profiles.Profile_PermissionsSolutionImport}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>Profiles.Profile_PermissionsSubmitMacrosAllowed}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>Profiles.Profile_PermissionsSubscribeToLightningReports}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>Profiles.Profile_PermissionsTransferAnyCase}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>Profiles.Profile_PermissionsTransferAnyEntity}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>Profiles.Profile_PermissionsTransferAnyLead}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>Profiles.Profile_PermissionsTwoFactorApi}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>Profiles.Profile_PermissionsUseTeamReassignWizards}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>Profiles.Profile_PermissionsUseWebLink}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>Profiles.Profile_PermissionsViewAllActivities}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>Profiles.Profile_PermissionsViewAllData}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>Profiles.Profile_PermissionsViewAllForecasts}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>Profiles.Profile_PermissionsViewAllUsers}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>Profiles.Profile_PermissionsViewAndDebugManagedApex}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>Profiles.Profile_PermissionsViewContent}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>Profiles.Profile_PermissionsViewDataAssessment}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>Profiles.Profile_PermissionsViewDataCategories}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>Profiles.Profile_PermissionsViewEncryptedData}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>Profiles.Profile_PermissionsViewEventLogFiles}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>Profiles.Profile_PermissionsViewHealthCheck}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>Profiles.Profile_PermissionsViewHelpLink}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>Profiles.Profile_PermissionsViewMyTeamsDashboards}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>Profiles.Profile_PermissionsViewSetup}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>Profiles.Profile_SystemModstamp}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>Profiles.Profile_UserType}"/>
+					</Column>
+				</columns>
+				<items>
+					<ColumnListItem id="template360" type="Navigation" press="onPress">
+						<cells>
+							<rdf:TextResource path="dataModel>" entitySet="Profile"/>
+							<VBox>					
+							<Text text="{dataModel>Profile_CreatedDate/Profile_CreatedDate}"/>
+							</VBox>							
+							<VBox>					
+							<rdf:TextLink text="{path:'dataModel>Profile_Description/Profile_Description',type:'sap.ui.model.type.String'}" linkText="{i18n>Profile.Profile_Description/Profile_Description}"/>
+							</VBox>							
+							<VBox>					
+							<rdf:TextLink text="{path:'dataModel>Profile_Id/Profile_Id',type:'sap.ui.model.type.String'}" linkText="{i18n>Profile.Profile_Id/Profile_Id}"/>
+							</VBox>							
+							<VBox>					
+							<Text text="{dataModel>Profile_LastModifiedDate/Profile_LastModifiedDate}"/>
+							</VBox>							
+							<VBox>					
+							<Text text="{dataModel>Profile_LastReferencedDate/Profile_LastReferencedDate}"/>
+							</VBox>							
+							<VBox>					
+							<Text text="{dataModel>Profile_LastViewedDate/Profile_LastViewedDate}"/>
+							</VBox>							
+							<VBox>					
+							<rdf:TextLink text="{path:'dataModel>Profile_Name/Profile_Name',type:'sap.ui.model.type.String'}" linkText="{i18n>Profile.Profile_Name/Profile_Name}"/>
+							</VBox>							
+							<VBox>					
+								<Text text="{path:'dataModel>Profile_PermissionsAccessCMC/Profile_PermissionsAccessCMC',type:'sap.ui.model.type.Boolean'}"/>  
+							</VBox>							
+							<VBox>					
+								<Text text="{path:'dataModel>Profile_PermissionsActivateContract/Profile_PermissionsActivateContract',type:'sap.ui.model.type.Boolean'}"/>  
+							</VBox>							
+							<VBox>					
+								<Text text="{path:'dataModel>Profile_PermissionsActivateOrder/Profile_PermissionsActivateOrder',type:'sap.ui.model.type.Boolean'}"/>  
+							</VBox>							
+							<VBox>					
+								<Text text="{path:'dataModel>Profile_PermissionsAddDirectMessageMembers/Profile_PermissionsAddDirectMessageMembers',type:'sap.ui.model.type.Boolean'}"/>  
+							</VBox>							
+							<VBox>					
+								<Text text="{path:'dataModel>Profile_PermissionsAllowLightningLogin/Profile_PermissionsAllowLightningLogin',type:'sap.ui.model.type.Boolean'}"/>  
+							</VBox>							
+							<VBox>					
+								<Text text="{path:'dataModel>Profile_PermissionsAllowViewEditConvertedLeads/Profile_PermissionsAllowViewEditConvertedLeads',type:'sap.ui.model.type.Boolean'}"/>  
+							</VBox>							
+							<VBox>					
+								<Text text="{path:'dataModel>Profile_PermissionsApiEnabled/Profile_PermissionsApiEnabled',type:'sap.ui.model.type.Boolean'}"/>  
+							</VBox>							
+							<VBox>					
+								<Text text="{path:'dataModel>Profile_PermissionsApiUserOnly/Profile_PermissionsApiUserOnly',type:'sap.ui.model.type.Boolean'}"/>  
+							</VBox>							
+							<VBox>					
+								<Text text="{path:'dataModel>Profile_PermissionsAssignPermissionSets/Profile_PermissionsAssignPermissionSets',type:'sap.ui.model.type.Boolean'}"/>  
+							</VBox>							
+							<VBox>					
+								<Text text="{path:'dataModel>Profile_PermissionsAssignTopics/Profile_PermissionsAssignTopics',type:'sap.ui.model.type.Boolean'}"/>  
+							</VBox>							
+							<VBox>					
+								<Text text="{path:'dataModel>Profile_PermissionsAuthorApex/Profile_PermissionsAuthorApex',type:'sap.ui.model.type.Boolean'}"/>  
+							</VBox>							
+							<VBox>					
+								<Text text="{path:'dataModel>Profile_PermissionsBulkApiHardDelete/Profile_PermissionsBulkApiHardDelete',type:'sap.ui.model.type.Boolean'}"/>  
+							</VBox>							
+							<VBox>					
+								<Text text="{path:'dataModel>Profile_PermissionsBulkMacrosAllowed/Profile_PermissionsBulkMacrosAllowed',type:'sap.ui.model.type.Boolean'}"/>  
+							</VBox>							
+							<VBox>					
+								<Text text="{path:'dataModel>Profile_PermissionsCampaignInfluence2/Profile_PermissionsCampaignInfluence2',type:'sap.ui.model.type.Boolean'}"/>  
+							</VBox>							
+							<VBox>					
+								<Text text="{path:'dataModel>Profile_PermissionsCanApproveFeedPost/Profile_PermissionsCanApproveFeedPost',type:'sap.ui.model.type.Boolean'}"/>  
+							</VBox>							
+							<VBox>					
+								<Text text="{path:'dataModel>Profile_PermissionsCanInsertFeedSystemFields/Profile_PermissionsCanInsertFeedSystemFields',type:'sap.ui.model.type.Boolean'}"/>  
+							</VBox>							
+							<VBox>					
+								<Text text="{path:'dataModel>Profile_PermissionsCanUseNewDashboardBuilder/Profile_PermissionsCanUseNewDashboardBuilder',type:'sap.ui.model.type.Boolean'}"/>  
+							</VBox>							
+							<VBox>					
+								<Text text="{path:'dataModel>Profile_PermissionsCanVerifyComment/Profile_PermissionsCanVerifyComment',type:'sap.ui.model.type.Boolean'}"/>  
+							</VBox>							
+							<VBox>					
+								<Text text="{path:'dataModel>Profile_PermissionsChatterComposeUiCodesnippet/Profile_PermissionsChatterComposeUiCodesnippet',type:'sap.ui.model.type.Boolean'}"/>  
+							</VBox>							
+							<VBox>					
+								<Text text="{path:'dataModel>Profile_PermissionsChatterEditOwnPost/Profile_PermissionsChatterEditOwnPost',type:'sap.ui.model.type.Boolean'}"/>  
+							</VBox>							
+							<VBox>					
+								<Text text="{path:'dataModel>Profile_PermissionsChatterEditOwnRecordPost/Profile_PermissionsChatterEditOwnRecordPost',type:'sap.ui.model.type.Boolean'}"/>  
+							</VBox>							
+							<VBox>					
+								<Text text="{path:'dataModel>Profile_PermissionsChatterFileLink/Profile_PermissionsChatterFileLink',type:'sap.ui.model.type.Boolean'}"/>  
+							</VBox>							
+							<VBox>					
+								<Text text="{path:'dataModel>Profile_PermissionsChatterForSharePoint/Profile_PermissionsChatterForSharePoint',type:'sap.ui.model.type.Boolean'}"/>  
+							</VBox>							
+							<VBox>					
+								<Text text="{path:'dataModel>Profile_PermissionsChatterInternalUser/Profile_PermissionsChatterInternalUser',type:'sap.ui.model.type.Boolean'}"/>  
+							</VBox>							
+							<VBox>					
+								<Text text="{path:'dataModel>Profile_PermissionsChatterInviteExternalUsers/Profile_PermissionsChatterInviteExternalUsers',type:'sap.ui.model.type.Boolean'}"/>  
+							</VBox>							
+							<VBox>					
+								<Text text="{path:'dataModel>Profile_PermissionsChatterOwnGroups/Profile_PermissionsChatterOwnGroups',type:'sap.ui.model.type.Boolean'}"/>  
+							</VBox>							
+							<VBox>					
+								<Text text="{path:'dataModel>Profile_PermissionsConfigCustomRecs/Profile_PermissionsConfigCustomRecs',type:'sap.ui.model.type.Boolean'}"/>  
+							</VBox>							
+							<VBox>					
+								<Text text="{path:'dataModel>Profile_PermissionsConnectOrgToEnvironmentHub/Profile_PermissionsConnectOrgToEnvironmentHub',type:'sap.ui.model.type.Boolean'}"/>  
+							</VBox>							
+							<VBox>					
+								<Text text="{path:'dataModel>Profile_PermissionsContentAdministrator/Profile_PermissionsContentAdministrator',type:'sap.ui.model.type.Boolean'}"/>  
+							</VBox>							
+							<VBox>					
+								<Text text="{path:'dataModel>Profile_PermissionsContentWorkspaces/Profile_PermissionsContentWorkspaces',type:'sap.ui.model.type.Boolean'}"/>  
+							</VBox>							
+							<VBox>					
+								<Text text="{path:'dataModel>Profile_PermissionsConvertLeads/Profile_PermissionsConvertLeads',type:'sap.ui.model.type.Boolean'}"/>  
+							</VBox>							
+							<VBox>					
+								<Text text="{path:'dataModel>Profile_PermissionsCreateCustomizeFilters/Profile_PermissionsCreateCustomizeFilters',type:'sap.ui.model.type.Boolean'}"/>  
+							</VBox>							
+							<VBox>					
+								<Text text="{path:'dataModel>Profile_PermissionsCreateMultiforce/Profile_PermissionsCreateMultiforce',type:'sap.ui.model.type.Boolean'}"/>  
+							</VBox>							
+							<VBox>					
+								<Text text="{path:'dataModel>Profile_PermissionsCreateTopics/Profile_PermissionsCreateTopics',type:'sap.ui.model.type.Boolean'}"/>  
+							</VBox>							
+							<VBox>					
+								<Text text="{path:'dataModel>Profile_PermissionsCreateWorkspaces/Profile_PermissionsCreateWorkspaces',type:'sap.ui.model.type.Boolean'}"/>  
+							</VBox>							
+							<VBox>					
+								<Text text="{path:'dataModel>Profile_PermissionsCustomMobileAppsAccess/Profile_PermissionsCustomMobileAppsAccess',type:'sap.ui.model.type.Boolean'}"/>  
+							</VBox>							
+							<VBox>					
+								<Text text="{path:'dataModel>Profile_PermissionsCustomSidebarOnAllPages/Profile_PermissionsCustomSidebarOnAllPages',type:'sap.ui.model.type.Boolean'}"/>  
+							</VBox>							
+							<VBox>					
+								<Text text="{path:'dataModel>Profile_PermissionsCustomizeApplication/Profile_PermissionsCustomizeApplication',type:'sap.ui.model.type.Boolean'}"/>  
+							</VBox>							
+							<VBox>					
+								<Text text="{path:'dataModel>Profile_PermissionsDataExport/Profile_PermissionsDataExport',type:'sap.ui.model.type.Boolean'}"/>  
+							</VBox>							
+							<VBox>					
+								<Text text="{path:'dataModel>Profile_PermissionsDelegatedTwoFactor/Profile_PermissionsDelegatedTwoFactor',type:'sap.ui.model.type.Boolean'}"/>  
+							</VBox>							
+							<VBox>					
+								<Text text="{path:'dataModel>Profile_PermissionsDeleteActivatedContract/Profile_PermissionsDeleteActivatedContract',type:'sap.ui.model.type.Boolean'}"/>  
+							</VBox>							
+							<VBox>					
+								<Text text="{path:'dataModel>Profile_PermissionsDeleteTopics/Profile_PermissionsDeleteTopics',type:'sap.ui.model.type.Boolean'}"/>  
+							</VBox>							
+							<VBox>					
+								<Text text="{path:'dataModel>Profile_PermissionsDistributeFromPersWksp/Profile_PermissionsDistributeFromPersWksp',type:'sap.ui.model.type.Boolean'}"/>  
+							</VBox>							
+							<VBox>					
+								<Text text="{path:'dataModel>Profile_PermissionsEditActivatedOrders/Profile_PermissionsEditActivatedOrders',type:'sap.ui.model.type.Boolean'}"/>  
+							</VBox>							
+							<VBox>					
+								<Text text="{path:'dataModel>Profile_PermissionsEditBrandTemplates/Profile_PermissionsEditBrandTemplates',type:'sap.ui.model.type.Boolean'}"/>  
+							</VBox>							
+							<VBox>					
+								<Text text="{path:'dataModel>Profile_PermissionsEditCaseComments/Profile_PermissionsEditCaseComments',type:'sap.ui.model.type.Boolean'}"/>  
+							</VBox>							
+							<VBox>					
+								<Text text="{path:'dataModel>Profile_PermissionsEditEvent/Profile_PermissionsEditEvent',type:'sap.ui.model.type.Boolean'}"/>  
+							</VBox>							
+							<VBox>					
+								<Text text="{path:'dataModel>Profile_PermissionsEditHtmlTemplates/Profile_PermissionsEditHtmlTemplates',type:'sap.ui.model.type.Boolean'}"/>  
+							</VBox>							
+							<VBox>					
+								<Text text="{path:'dataModel>Profile_PermissionsEditOppLineItemUnitPrice/Profile_PermissionsEditOppLineItemUnitPrice',type:'sap.ui.model.type.Boolean'}"/>  
+							</VBox>							
+							<VBox>					
+								<Text text="{path:'dataModel>Profile_PermissionsEditPublicDocuments/Profile_PermissionsEditPublicDocuments',type:'sap.ui.model.type.Boolean'}"/>  
+							</VBox>							
+							<VBox>					
+								<Text text="{path:'dataModel>Profile_PermissionsEditPublicFilters/Profile_PermissionsEditPublicFilters',type:'sap.ui.model.type.Boolean'}"/>  
+							</VBox>							
+							<VBox>					
+								<Text text="{path:'dataModel>Profile_PermissionsEditPublicTemplates/Profile_PermissionsEditPublicTemplates',type:'sap.ui.model.type.Boolean'}"/>  
+							</VBox>							
+							<VBox>					
+								<Text text="{path:'dataModel>Profile_PermissionsEditReadonlyFields/Profile_PermissionsEditReadonlyFields',type:'sap.ui.model.type.Boolean'}"/>  
+							</VBox>							
+							<VBox>					
+								<Text text="{path:'dataModel>Profile_PermissionsEditReports/Profile_PermissionsEditReports',type:'sap.ui.model.type.Boolean'}"/>  
+							</VBox>							
+							<VBox>					
+								<Text text="{path:'dataModel>Profile_PermissionsEditTask/Profile_PermissionsEditTask',type:'sap.ui.model.type.Boolean'}"/>  
+							</VBox>							
+							<VBox>					
+								<Text text="{path:'dataModel>Profile_PermissionsEditTopics/Profile_PermissionsEditTopics',type:'sap.ui.model.type.Boolean'}"/>  
+							</VBox>							
+							<VBox>					
+								<Text text="{path:'dataModel>Profile_PermissionsEmailAdministration/Profile_PermissionsEmailAdministration',type:'sap.ui.model.type.Boolean'}"/>  
+							</VBox>							
+							<VBox>					
+								<Text text="{path:'dataModel>Profile_PermissionsEmailMass/Profile_PermissionsEmailMass',type:'sap.ui.model.type.Boolean'}"/>  
+							</VBox>							
+							<VBox>					
+								<Text text="{path:'dataModel>Profile_PermissionsEmailSingle/Profile_PermissionsEmailSingle',type:'sap.ui.model.type.Boolean'}"/>  
+							</VBox>							
+							<VBox>					
+								<Text text="{path:'dataModel>Profile_PermissionsEmailTemplateManagement/Profile_PermissionsEmailTemplateManagement',type:'sap.ui.model.type.Boolean'}"/>  
+							</VBox>							
+							<VBox>					
+								<Text text="{path:'dataModel>Profile_PermissionsEnableCommunityAppLauncher/Profile_PermissionsEnableCommunityAppLauncher',type:'sap.ui.model.type.Boolean'}"/>  
+							</VBox>							
+							<VBox>					
+								<Text text="{path:'dataModel>Profile_PermissionsEnableNotifications/Profile_PermissionsEnableNotifications',type:'sap.ui.model.type.Boolean'}"/>  
+							</VBox>							
+							<VBox>					
+								<Text text="{path:'dataModel>Profile_PermissionsExportReport/Profile_PermissionsExportReport',type:'sap.ui.model.type.Boolean'}"/>  
+							</VBox>							
+							<VBox>					
+								<Text text="{path:'dataModel>Profile_PermissionsFeedPinning/Profile_PermissionsFeedPinning',type:'sap.ui.model.type.Boolean'}"/>  
+							</VBox>							
+							<VBox>					
+								<Text text="{path:'dataModel>Profile_PermissionsFlowUFLRequired/Profile_PermissionsFlowUFLRequired',type:'sap.ui.model.type.Boolean'}"/>  
+							</VBox>							
+							<VBox>					
+								<Text text="{path:'dataModel>Profile_PermissionsForceTwoFactor/Profile_PermissionsForceTwoFactor',type:'sap.ui.model.type.Boolean'}"/>  
+							</VBox>							
+							<VBox>					
+								<Text text="{path:'dataModel>Profile_PermissionsGovernNetworks/Profile_PermissionsGovernNetworks',type:'sap.ui.model.type.Boolean'}"/>  
+							</VBox>							
+							<VBox>					
+								<Text text="{path:'dataModel>Profile_PermissionsHideReadByList/Profile_PermissionsHideReadByList',type:'sap.ui.model.type.Boolean'}"/>  
+							</VBox>							
+							<VBox>					
+								<Text text="{path:'dataModel>Profile_PermissionsIdentityConnect/Profile_PermissionsIdentityConnect',type:'sap.ui.model.type.Boolean'}"/>  
+							</VBox>							
+							<VBox>					
+								<Text text="{path:'dataModel>Profile_PermissionsIdentityEnabled/Profile_PermissionsIdentityEnabled',type:'sap.ui.model.type.Boolean'}"/>  
+							</VBox>							
+							<VBox>					
+								<Text text="{path:'dataModel>Profile_PermissionsImportCustomObjects/Profile_PermissionsImportCustomObjects',type:'sap.ui.model.type.Boolean'}"/>  
+							</VBox>							
+							<VBox>					
+								<Text text="{path:'dataModel>Profile_PermissionsImportLeads/Profile_PermissionsImportLeads',type:'sap.ui.model.type.Boolean'}"/>  
+							</VBox>							
+							<VBox>					
+								<Text text="{path:'dataModel>Profile_PermissionsImportPersonal/Profile_PermissionsImportPersonal',type:'sap.ui.model.type.Boolean'}"/>  
+							</VBox>							
+							<VBox>					
+								<Text text="{path:'dataModel>Profile_PermissionsInboundMigrationToolsUser/Profile_PermissionsInboundMigrationToolsUser',type:'sap.ui.model.type.Boolean'}"/>  
+							</VBox>							
+							<VBox>					
+								<Text text="{path:'dataModel>Profile_PermissionsInstallMultiforce/Profile_PermissionsInstallMultiforce',type:'sap.ui.model.type.Boolean'}"/>  
+							</VBox>							
+							<VBox>					
+								<Text text="{path:'dataModel>Profile_PermissionsLightningConsoleAllowedForUser/Profile_PermissionsLightningConsoleAllowedForUser',type:'sap.ui.model.type.Boolean'}"/>  
+							</VBox>							
+							<VBox>					
+								<Text text="{path:'dataModel>Profile_PermissionsLightningExperienceUser/Profile_PermissionsLightningExperienceUser',type:'sap.ui.model.type.Boolean'}"/>  
+							</VBox>							
+							<VBox>					
+								<Text text="{path:'dataModel>Profile_PermissionsListEmailSend/Profile_PermissionsListEmailSend',type:'sap.ui.model.type.Boolean'}"/>  
+							</VBox>							
+							<VBox>					
+								<Text text="{path:'dataModel>Profile_PermissionsManageAnalyticSnapshots/Profile_PermissionsManageAnalyticSnapshots',type:'sap.ui.model.type.Boolean'}"/>  
+							</VBox>							
+							<VBox>					
+								<Text text="{path:'dataModel>Profile_PermissionsManageAuthProviders/Profile_PermissionsManageAuthProviders',type:'sap.ui.model.type.Boolean'}"/>  
+							</VBox>							
+							<VBox>					
+								<Text text="{path:'dataModel>Profile_PermissionsManageBusinessHourHolidays/Profile_PermissionsManageBusinessHourHolidays',type:'sap.ui.model.type.Boolean'}"/>  
+							</VBox>							
+							<VBox>					
+								<Text text="{path:'dataModel>Profile_PermissionsManageCallCenters/Profile_PermissionsManageCallCenters',type:'sap.ui.model.type.Boolean'}"/>  
+							</VBox>							
+							<VBox>					
+								<Text text="{path:'dataModel>Profile_PermissionsManageCases/Profile_PermissionsManageCases',type:'sap.ui.model.type.Boolean'}"/>  
+							</VBox>							
+							<VBox>					
+								<Text text="{path:'dataModel>Profile_PermissionsManageCategories/Profile_PermissionsManageCategories',type:'sap.ui.model.type.Boolean'}"/>  
+							</VBox>							
+							<VBox>					
+								<Text text="{path:'dataModel>Profile_PermissionsManageCertificates/Profile_PermissionsManageCertificates',type:'sap.ui.model.type.Boolean'}"/>  
+							</VBox>							
+							<VBox>					
+								<Text text="{path:'dataModel>Profile_PermissionsManageChatterMessages/Profile_PermissionsManageChatterMessages',type:'sap.ui.model.type.Boolean'}"/>  
+							</VBox>							
+							<VBox>					
+								<Text text="{path:'dataModel>Profile_PermissionsManageContentPermissions/Profile_PermissionsManageContentPermissions',type:'sap.ui.model.type.Boolean'}"/>  
+							</VBox>							
+							<VBox>					
+								<Text text="{path:'dataModel>Profile_PermissionsManageContentProperties/Profile_PermissionsManageContentProperties',type:'sap.ui.model.type.Boolean'}"/>  
+							</VBox>							
+							<VBox>					
+								<Text text="{path:'dataModel>Profile_PermissionsManageContentTypes/Profile_PermissionsManageContentTypes',type:'sap.ui.model.type.Boolean'}"/>  
+							</VBox>							
+							<VBox>					
+								<Text text="{path:'dataModel>Profile_PermissionsManageCustomPermissions/Profile_PermissionsManageCustomPermissions',type:'sap.ui.model.type.Boolean'}"/>  
+							</VBox>							
+							<VBox>					
+								<Text text="{path:'dataModel>Profile_PermissionsManageCustomReportTypes/Profile_PermissionsManageCustomReportTypes',type:'sap.ui.model.type.Boolean'}"/>  
+							</VBox>							
+							<VBox>					
+								<Text text="{path:'dataModel>Profile_PermissionsManageDashboards/Profile_PermissionsManageDashboards',type:'sap.ui.model.type.Boolean'}"/>  
+							</VBox>							
+							<VBox>					
+								<Text text="{path:'dataModel>Profile_PermissionsManageDataCategories/Profile_PermissionsManageDataCategories',type:'sap.ui.model.type.Boolean'}"/>  
+							</VBox>							
+							<VBox>					
+								<Text text="{path:'dataModel>Profile_PermissionsManageDataIntegrations/Profile_PermissionsManageDataIntegrations',type:'sap.ui.model.type.Boolean'}"/>  
+							</VBox>							
+							<VBox>					
+								<Text text="{path:'dataModel>Profile_PermissionsManageEmailClientConfig/Profile_PermissionsManageEmailClientConfig',type:'sap.ui.model.type.Boolean'}"/>  
+							</VBox>							
+							<VBox>					
+								<Text text="{path:'dataModel>Profile_PermissionsManageEntitlements/Profile_PermissionsManageEntitlements',type:'sap.ui.model.type.Boolean'}"/>  
+							</VBox>							
+							<VBox>					
+								<Text text="{path:'dataModel>Profile_PermissionsManageExchangeConfig/Profile_PermissionsManageExchangeConfig',type:'sap.ui.model.type.Boolean'}"/>  
+							</VBox>							
+							<VBox>					
+								<Text text="{path:'dataModel>Profile_PermissionsManageHealthCheck/Profile_PermissionsManageHealthCheck',type:'sap.ui.model.type.Boolean'}"/>  
+							</VBox>							
+							<VBox>					
+								<Text text="{path:'dataModel>Profile_PermissionsManageInteraction/Profile_PermissionsManageInteraction',type:'sap.ui.model.type.Boolean'}"/>  
+							</VBox>							
+							<VBox>					
+								<Text text="{path:'dataModel>Profile_PermissionsManageInternalUsers/Profile_PermissionsManageInternalUsers',type:'sap.ui.model.type.Boolean'}"/>  
+							</VBox>							
+							<VBox>					
+								<Text text="{path:'dataModel>Profile_PermissionsManageIpAddresses/Profile_PermissionsManageIpAddresses',type:'sap.ui.model.type.Boolean'}"/>  
+							</VBox>							
+							<VBox>					
+								<Text text="{path:'dataModel>Profile_PermissionsManageLeads/Profile_PermissionsManageLeads',type:'sap.ui.model.type.Boolean'}"/>  
+							</VBox>							
+							<VBox>					
+								<Text text="{path:'dataModel>Profile_PermissionsManageLoginAccessPolicies/Profile_PermissionsManageLoginAccessPolicies',type:'sap.ui.model.type.Boolean'}"/>  
+							</VBox>							
+							<VBox>					
+								<Text text="{path:'dataModel>Profile_PermissionsManageMobile/Profile_PermissionsManageMobile',type:'sap.ui.model.type.Boolean'}"/>  
+							</VBox>							
+							<VBox>					
+								<Text text="{path:'dataModel>Profile_PermissionsManageNetworks/Profile_PermissionsManageNetworks',type:'sap.ui.model.type.Boolean'}"/>  
+							</VBox>							
+							<VBox>					
+								<Text text="{path:'dataModel>Profile_PermissionsManagePasswordPolicies/Profile_PermissionsManagePasswordPolicies',type:'sap.ui.model.type.Boolean'}"/>  
+							</VBox>							
+							<VBox>					
+								<Text text="{path:'dataModel>Profile_PermissionsManageProfilesPermissionsets/Profile_PermissionsManageProfilesPermissionsets',type:'sap.ui.model.type.Boolean'}"/>  
+							</VBox>							
+							<VBox>					
+								<Text text="{path:'dataModel>Profile_PermissionsManagePvtRptsAndDashbds/Profile_PermissionsManagePvtRptsAndDashbds',type:'sap.ui.model.type.Boolean'}"/>  
+							</VBox>							
+							<VBox>					
+								<Text text="{path:'dataModel>Profile_PermissionsManageQuotas/Profile_PermissionsManageQuotas',type:'sap.ui.model.type.Boolean'}"/>  
+							</VBox>							
+							<VBox>					
+								<Text text="{path:'dataModel>Profile_PermissionsManageRealm/Profile_PermissionsManageRealm',type:'sap.ui.model.type.Boolean'}"/>  
+							</VBox>							
+							<VBox>					
+								<Text text="{path:'dataModel>Profile_PermissionsManageRemoteAccess/Profile_PermissionsManageRemoteAccess',type:'sap.ui.model.type.Boolean'}"/>  
+							</VBox>							
+							<VBox>					
+								<Text text="{path:'dataModel>Profile_PermissionsManageRoles/Profile_PermissionsManageRoles',type:'sap.ui.model.type.Boolean'}"/>  
+							</VBox>							
+							<VBox>					
+								<Text text="{path:'dataModel>Profile_PermissionsManageSandboxes/Profile_PermissionsManageSandboxes',type:'sap.ui.model.type.Boolean'}"/>  
+							</VBox>							
+							<VBox>					
+								<Text text="{path:'dataModel>Profile_PermissionsManageSessionPermissionSets/Profile_PermissionsManageSessionPermissionSets',type:'sap.ui.model.type.Boolean'}"/>  
+							</VBox>							
+							<VBox>					
+								<Text text="{path:'dataModel>Profile_PermissionsManageSharing/Profile_PermissionsManageSharing',type:'sap.ui.model.type.Boolean'}"/>  
+							</VBox>							
+							<VBox>					
+								<Text text="{path:'dataModel>Profile_PermissionsManageSolutions/Profile_PermissionsManageSolutions',type:'sap.ui.model.type.Boolean'}"/>  
+							</VBox>							
+							<VBox>					
+								<Text text="{path:'dataModel>Profile_PermissionsManageSynonyms/Profile_PermissionsManageSynonyms',type:'sap.ui.model.type.Boolean'}"/>  
+							</VBox>							
+							<VBox>					
+								<Text text="{path:'dataModel>Profile_PermissionsManageTerritories/Profile_PermissionsManageTerritories',type:'sap.ui.model.type.Boolean'}"/>  
+							</VBox>							
+							<VBox>					
+								<Text text="{path:'dataModel>Profile_PermissionsManageTranslation/Profile_PermissionsManageTranslation',type:'sap.ui.model.type.Boolean'}"/>  
+							</VBox>							
+							<VBox>					
+								<Text text="{path:'dataModel>Profile_PermissionsManageTwoFactor/Profile_PermissionsManageTwoFactor',type:'sap.ui.model.type.Boolean'}"/>  
+							</VBox>							
+							<VBox>					
+								<Text text="{path:'dataModel>Profile_PermissionsManageUnlistedGroups/Profile_PermissionsManageUnlistedGroups',type:'sap.ui.model.type.Boolean'}"/>  
+							</VBox>							
+							<VBox>					
+								<Text text="{path:'dataModel>Profile_PermissionsManageUsers/Profile_PermissionsManageUsers',type:'sap.ui.model.type.Boolean'}"/>  
+							</VBox>							
+							<VBox>					
+								<Text text="{path:'dataModel>Profile_PermissionsMassInlineEdit/Profile_PermissionsMassInlineEdit',type:'sap.ui.model.type.Boolean'}"/>  
+							</VBox>							
+							<VBox>					
+								<Text text="{path:'dataModel>Profile_PermissionsMergeTopics/Profile_PermissionsMergeTopics',type:'sap.ui.model.type.Boolean'}"/>  
+							</VBox>							
+							<VBox>					
+								<Text text="{path:'dataModel>Profile_PermissionsModerateChatter/Profile_PermissionsModerateChatter',type:'sap.ui.model.type.Boolean'}"/>  
+							</VBox>							
+							<VBox>					
+								<Text text="{path:'dataModel>Profile_PermissionsModerateNetworkUsers/Profile_PermissionsModerateNetworkUsers',type:'sap.ui.model.type.Boolean'}"/>  
+							</VBox>							
+							<VBox>					
+								<Text text="{path:'dataModel>Profile_PermissionsModifyAllData/Profile_PermissionsModifyAllData',type:'sap.ui.model.type.Boolean'}"/>  
+							</VBox>							
+							<VBox>					
+								<Text text="{path:'dataModel>Profile_PermissionsNewReportBuilder/Profile_PermissionsNewReportBuilder',type:'sap.ui.model.type.Boolean'}"/>  
+							</VBox>							
+							<VBox>					
+								<Text text="{path:'dataModel>Profile_PermissionsOutboundMigrationToolsUser/Profile_PermissionsOutboundMigrationToolsUser',type:'sap.ui.model.type.Boolean'}"/>  
+							</VBox>							
+							<VBox>					
+								<Text text="{path:'dataModel>Profile_PermissionsOverrideForecasts/Profile_PermissionsOverrideForecasts',type:'sap.ui.model.type.Boolean'}"/>  
+							</VBox>							
+							<VBox>					
+								<Text text="{path:'dataModel>Profile_PermissionsPackaging2/Profile_PermissionsPackaging2',type:'sap.ui.model.type.Boolean'}"/>  
+							</VBox>							
+							<VBox>					
+								<Text text="{path:'dataModel>Profile_PermissionsPasswordNeverExpires/Profile_PermissionsPasswordNeverExpires',type:'sap.ui.model.type.Boolean'}"/>  
+							</VBox>							
+							<VBox>					
+								<Text text="{path:'dataModel>Profile_PermissionsPreventClassicExperience/Profile_PermissionsPreventClassicExperience',type:'sap.ui.model.type.Boolean'}"/>  
+							</VBox>							
+							<VBox>					
+								<Text text="{path:'dataModel>Profile_PermissionsPublicTwitterResponse/Profile_PermissionsPublicTwitterResponse',type:'sap.ui.model.type.Boolean'}"/>  
+							</VBox>							
+							<VBox>					
+								<Text text="{path:'dataModel>Profile_PermissionsPublishMultiforce/Profile_PermissionsPublishMultiforce',type:'sap.ui.model.type.Boolean'}"/>  
+							</VBox>							
+							<VBox>					
+								<Text text="{path:'dataModel>Profile_PermissionsRemoveDirectMessageMembers/Profile_PermissionsRemoveDirectMessageMembers',type:'sap.ui.model.type.Boolean'}"/>  
+							</VBox>							
+							<VBox>					
+								<Text text="{path:'dataModel>Profile_PermissionsResetPasswords/Profile_PermissionsResetPasswords',type:'sap.ui.model.type.Boolean'}"/>  
+							</VBox>							
+							<VBox>					
+								<Text text="{path:'dataModel>Profile_PermissionsRunFlow/Profile_PermissionsRunFlow',type:'sap.ui.model.type.Boolean'}"/>  
+							</VBox>							
+							<VBox>					
+								<Text text="{path:'dataModel>Profile_PermissionsRunReports/Profile_PermissionsRunReports',type:'sap.ui.model.type.Boolean'}"/>  
+							</VBox>							
+							<VBox>					
+								<Text text="{path:'dataModel>Profile_PermissionsSalesConsole/Profile_PermissionsSalesConsole',type:'sap.ui.model.type.Boolean'}"/>  
+							</VBox>							
+							<VBox>					
+								<Text text="{path:'dataModel>Profile_PermissionsScheduleJob/Profile_PermissionsScheduleJob',type:'sap.ui.model.type.Boolean'}"/>  
+							</VBox>							
+							<VBox>					
+								<Text text="{path:'dataModel>Profile_PermissionsScheduleReports/Profile_PermissionsScheduleReports',type:'sap.ui.model.type.Boolean'}"/>  
+							</VBox>							
+							<VBox>					
+								<Text text="{path:'dataModel>Profile_PermissionsScsRequireApproval/Profile_PermissionsScsRequireApproval',type:'sap.ui.model.type.Boolean'}"/>  
+							</VBox>							
+							<VBox>					
+								<Text text="{path:'dataModel>Profile_PermissionsSelectFilesFromSalesforce/Profile_PermissionsSelectFilesFromSalesforce',type:'sap.ui.model.type.Boolean'}"/>  
+							</VBox>							
+							<VBox>					
+								<Text text="{path:'dataModel>Profile_PermissionsSendAnnouncementEmails/Profile_PermissionsSendAnnouncementEmails',type:'sap.ui.model.type.Boolean'}"/>  
+							</VBox>							
+							<VBox>					
+								<Text text="{path:'dataModel>Profile_PermissionsSendSitRequests/Profile_PermissionsSendSitRequests',type:'sap.ui.model.type.Boolean'}"/>  
+							</VBox>							
+							<VBox>					
+								<Text text="{path:'dataModel>Profile_PermissionsShowCompanyNameAsUserBadge/Profile_PermissionsShowCompanyNameAsUserBadge',type:'sap.ui.model.type.Boolean'}"/>  
+							</VBox>							
+							<VBox>					
+								<Text text="{path:'dataModel>Profile_PermissionsSolutionImport/Profile_PermissionsSolutionImport',type:'sap.ui.model.type.Boolean'}"/>  
+							</VBox>							
+							<VBox>					
+								<Text text="{path:'dataModel>Profile_PermissionsSubmitMacrosAllowed/Profile_PermissionsSubmitMacrosAllowed',type:'sap.ui.model.type.Boolean'}"/>  
+							</VBox>							
+							<VBox>					
+								<Text text="{path:'dataModel>Profile_PermissionsSubscribeToLightningReports/Profile_PermissionsSubscribeToLightningReports',type:'sap.ui.model.type.Boolean'}"/>  
+							</VBox>							
+							<VBox>					
+								<Text text="{path:'dataModel>Profile_PermissionsTransferAnyCase/Profile_PermissionsTransferAnyCase',type:'sap.ui.model.type.Boolean'}"/>  
+							</VBox>							
+							<VBox>					
+								<Text text="{path:'dataModel>Profile_PermissionsTransferAnyEntity/Profile_PermissionsTransferAnyEntity',type:'sap.ui.model.type.Boolean'}"/>  
+							</VBox>							
+							<VBox>					
+								<Text text="{path:'dataModel>Profile_PermissionsTransferAnyLead/Profile_PermissionsTransferAnyLead',type:'sap.ui.model.type.Boolean'}"/>  
+							</VBox>							
+							<VBox>					
+								<Text text="{path:'dataModel>Profile_PermissionsTwoFactorApi/Profile_PermissionsTwoFactorApi',type:'sap.ui.model.type.Boolean'}"/>  
+							</VBox>							
+							<VBox>					
+								<Text text="{path:'dataModel>Profile_PermissionsUseTeamReassignWizards/Profile_PermissionsUseTeamReassignWizards',type:'sap.ui.model.type.Boolean'}"/>  
+							</VBox>							
+							<VBox>					
+								<Text text="{path:'dataModel>Profile_PermissionsUseWebLink/Profile_PermissionsUseWebLink',type:'sap.ui.model.type.Boolean'}"/>  
+							</VBox>							
+							<VBox>					
+								<Text text="{path:'dataModel>Profile_PermissionsViewAllActivities/Profile_PermissionsViewAllActivities',type:'sap.ui.model.type.Boolean'}"/>  
+							</VBox>							
+							<VBox>					
+								<Text text="{path:'dataModel>Profile_PermissionsViewAllData/Profile_PermissionsViewAllData',type:'sap.ui.model.type.Boolean'}"/>  
+							</VBox>							
+							<VBox>					
+								<Text text="{path:'dataModel>Profile_PermissionsViewAllForecasts/Profile_PermissionsViewAllForecasts',type:'sap.ui.model.type.Boolean'}"/>  
+							</VBox>							
+							<VBox>					
+								<Text text="{path:'dataModel>Profile_PermissionsViewAllUsers/Profile_PermissionsViewAllUsers',type:'sap.ui.model.type.Boolean'}"/>  
+							</VBox>							
+							<VBox>					
+								<Text text="{path:'dataModel>Profile_PermissionsViewAndDebugManagedApex/Profile_PermissionsViewAndDebugManagedApex',type:'sap.ui.model.type.Boolean'}"/>  
+							</VBox>							
+							<VBox>					
+								<Text text="{path:'dataModel>Profile_PermissionsViewContent/Profile_PermissionsViewContent',type:'sap.ui.model.type.Boolean'}"/>  
+							</VBox>							
+							<VBox>					
+								<Text text="{path:'dataModel>Profile_PermissionsViewDataAssessment/Profile_PermissionsViewDataAssessment',type:'sap.ui.model.type.Boolean'}"/>  
+							</VBox>							
+							<VBox>					
+								<Text text="{path:'dataModel>Profile_PermissionsViewDataCategories/Profile_PermissionsViewDataCategories',type:'sap.ui.model.type.Boolean'}"/>  
+							</VBox>							
+							<VBox>					
+								<Text text="{path:'dataModel>Profile_PermissionsViewEncryptedData/Profile_PermissionsViewEncryptedData',type:'sap.ui.model.type.Boolean'}"/>  
+							</VBox>							
+							<VBox>					
+								<Text text="{path:'dataModel>Profile_PermissionsViewEventLogFiles/Profile_PermissionsViewEventLogFiles',type:'sap.ui.model.type.Boolean'}"/>  
+							</VBox>							
+							<VBox>					
+								<Text text="{path:'dataModel>Profile_PermissionsViewHealthCheck/Profile_PermissionsViewHealthCheck',type:'sap.ui.model.type.Boolean'}"/>  
+							</VBox>							
+							<VBox>					
+								<Text text="{path:'dataModel>Profile_PermissionsViewHelpLink/Profile_PermissionsViewHelpLink',type:'sap.ui.model.type.Boolean'}"/>  
+							</VBox>							
+							<VBox>					
+								<Text text="{path:'dataModel>Profile_PermissionsViewMyTeamsDashboards/Profile_PermissionsViewMyTeamsDashboards',type:'sap.ui.model.type.Boolean'}"/>  
+							</VBox>							
+							<VBox>					
+								<Text text="{path:'dataModel>Profile_PermissionsViewSetup/Profile_PermissionsViewSetup',type:'sap.ui.model.type.Boolean'}"/>  
+							</VBox>							
+							<VBox>					
+							<Text text="{dataModel>Profile_SystemModstamp/Profile_SystemModstamp}"/>
+							</VBox>							
+							<VBox>					
+							<rdf:TextLink text="{path:'dataModel>Profile_UserType/Profile_UserType',type:'sap.ui.model.type.String'}" linkText="{i18n>Profile.Profile_UserType/Profile_UserType}"/>
+							</VBox>							
+						</cells>
+					</ColumnListItem>
+				</items>
+			</Table>
+		</content>
+	</Page>
+</mvc:View>

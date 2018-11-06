@@ -6,11 +6,24 @@
 		<customHeader>
 			<Toolbar>
 				<ToolbarSpacer/>
+				<HBox id="sourceTitle" alignItems="Center">
+						<rdf:TextResource id="selectedResource" path="" entitySet=""/>
+				</HBox>	
+				<Title id="pathTitle" text="{entityView>/navigation}"/>
+				<HBox id="versionsTitle" alignItems="Center">
+					<Title text="(" required="false"/>
+					<ComboBox id="versionSelection" items="{ path: 'entityView>/versions' }" selectionChange="onVersionChange">
+						<core:Item key="{entityView>navigation}" text="{entityView>text}"/>
+					</ComboBox>
+					<Title text=")" required="false"/>
+				</HBox>
 				<Title text="{i18n>Product.this}"/>
+				<Title text="(" required="false"/>
 				<rdf:TextResource path="dataModel>" entitySet="Product"/>
-				<Title text="{i18n>Product.Title}"/>
+				<Title text=")" required="false"/>
+	
 				<ToolbarSpacer/>
-				<ToggleButton id="toggleColumns" icon="sap-icon://hide" activeIcon="sap-icon://show" press="onSettingsPressed" visible="false"	>
+				<ToggleButton id="toggleColumns" icon="sap-icon://hide" activeIcon="sap-icon://show" press="onSettingsPressed" visible="true"	>
 					<layoutData>
 						<OverflowToolbarLayoutData priority="NeverOverflow"/>
 					</layoutData>
@@ -25,96 +38,140 @@
 				</Column>
 				<Column visible="true">
 				</Column>
+				<Column visible="true">
+					<Text text="SystemAProduct"/>
+				</Column>
+				<Column visible="true">
+					<Text text="SystemBProduct"/>
+				</Column>
 			</columns>
 			<items>
 				<ColumnListItem >
 					<cells>
 						<Label text="{i18n>Product.categoryNotation}" required="false"/> 
 						<rdf:TextLink text="{path:'dataModel>categoryNotation',type:'sap.ui.model.type.String' }" linkText="{i18n>Product.categoryNotation}"/>
+						<Text text=""/>
+						<Text text=""/>
 					</cells>
 				</ColumnListItem>
 				<ColumnListItem >
 					<cells>
 						<Label text="{i18n>Product.comment}" required="false"/> 
 						<rdf:TextLink text="{path:'dataModel>comment',type:'sap.ui.model.type.String' }" linkText="{i18n>Product.comment}"/>
+						<Text text=""/>
+						<Text text=""/>
 					</cells>
 				</ColumnListItem>
 				<ColumnListItem >
 					<cells>
 						<Label text="{i18n>Product.discontinued}" required="false"/> 
 						<Text text="{path:'dataModel>discontinued',type:'sap.ui.model.type.Boolean'}"/>  
+						<Text text=""/>
+						<Text text=""/>
 					</cells>
 				</ColumnListItem>
 				<ColumnListItem >
 					<cells>
 						<Label text="{i18n>Product.productName}" required="false"/> 
 						<rdf:TextLink text="{path:'dataModel>productName',type:'sap.ui.model.type.String' }" linkText="{i18n>Product.productName}"/>
+						<Text text=""/>
+						<Text text=""/>
 					</cells>
 				</ColumnListItem>
 				<ColumnListItem >
 					<cells>
 						<Label text="{i18n>Product.productUnitPrice}" required="false"/> 
 						<Text text="{path:'dataModel>productUnitPrice',type:'sap.ui.model.type.Float' }"/>
+						<Text text=""/>
+						<Text text=""/>
 					</cells>
 				</ColumnListItem>
 				<ColumnListItem >
 					<cells>
 						<Label text="{i18n>Product.quantityPerUnit}" required="false"/> 
 						<rdf:TextLink text="{path:'dataModel>quantityPerUnit',type:'sap.ui.model.type.String' }" linkText="{i18n>Product.quantityPerUnit}"/>
+						<Text text=""/>
+						<Text text=""/>
 					</cells>
 				</ColumnListItem>
 				<ColumnListItem >
 					<cells>
 						<Label text="{i18n>Product.reorderLevel}" required="false"/> 
 						<Text text="{path:'dataModel>reorderLevel',type:'sap.ui.model.type.Integer' }"/>
+						<Text text=""/>
+						<Text text=""/>
 					</cells>
 				</ColumnListItem>
 				<ColumnListItem >
 					<cells>
 						<Label text="{i18n>Product.seeAlso}" required="false"/> 
 						<rdf:TextLink text="{path:'dataModel>seeAlso',type:'sap.ui.model.type.String' }" linkText="{i18n>Product.seeAlso}"/>
+						<Text text=""/>
+						<Text text=""/>
 					</cells>
 				</ColumnListItem>
 				<ColumnListItem >
 					<cells>
 						<Label text="{i18n>Product.supplierNotation}" required="false"/> 
 						<rdf:TextLink text="{path:'dataModel>supplierNotation',type:'sap.ui.model.type.String' }" linkText="{i18n>Product.supplierNotation}"/>
+						<Text text=""/>
+						<Text text=""/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>Product.unitCommission}" required="false"/> 
+						<Text text=""/>
+						<Text text="{dataModel>unitCommission/systemAUnitCommision}"/>
+						<Text text="{dataModel>unitCommission/systemBUnitCommission}"/>
 					</cells>
 				</ColumnListItem>
 				<ColumnListItem >
 					<cells>
 						<Label text="{i18n>Product.unitsInStock}" required="false"/> 
 						<Text text="{path:'dataModel>unitsInStock',type:'sap.ui.model.type.Integer' }"/>
+						<Text text=""/>
+						<Text text=""/>
 					</cells>
 				</ColumnListItem>
 				<ColumnListItem >
 					<cells>
 						<Label text="{i18n>Product.unitsOnOrder}" required="false"/> 
 						<Text text="{path:'dataModel>unitsOnOrder',type:'sap.ui.model.type.Integer' }"/>
+						<Text text=""/>
+						<Text text=""/>
 					</cells>
 				</ColumnListItem>
 				<ColumnListItem >
 					<cells>
 						<Label text="{i18n>Product.category}" required="false"/> 
 						<rdf:TextResource path="dataModel>category" entitySet="Category"/>		
+						<Text text=""/>
+						<Text text=""/>
 					</cells>
 				</ColumnListItem>
 				<ColumnListItem >
 					<cells>
 						<Label text="{i18n>Product.supplier}" required="false"/> 
 						<rdf:TextResource path="dataModel>supplier" entitySet="Supplier"/>		
+						<Text text=""/>
+						<Text text=""/>
 					</cells>
 				</ColumnListItem>
 				<ColumnListItem >
 					<cells>
 						<Label text="{i18n>Product.isPartOfOrderDetail}" required="false"/> 
 						<rdf:ListResource path="dataModel>isPartOfOrderDetail" entitySet="OrderDetail"/>
+						<Text text=""/>
+						<Text text=""/>
 					</cells>
 				</ColumnListItem>
 				<ColumnListItem >
 					<cells>
 						<Label text="{i18n>Product.product_orderSummary}" required="false"/> 
 						<rdf:ListResource path="dataModel>product_orderSummary" entitySet="OrderSummary"/>
+						<Text text=""/>
+						<Text text=""/>
 					</cells>
 				</ColumnListItem>
 			</items>

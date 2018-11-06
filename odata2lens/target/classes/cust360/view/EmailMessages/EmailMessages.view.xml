@@ -1,0 +1,181 @@
+<mvc:View controllerName="com.inova8.lens.controller.EntitySet360" xmlns="sap.m" xmlns:mvc="sap.ui.core.mvc" xmlns:layout="sap.ui.layout"
+	xmlns:rdf="com.inova8.lens.control" xmlns:core="sap.ui.core">
+	<Page showHeader="false" id="page" navButtonPress="onNavBack" showNavButton="true" title="{i18n>EmailMessages.ViewTitle}">
+		<content>
+			<Table id="table360" inset="false" items="{ path: 'dataModel>/EmailMessage' , sorter: { path: 'label', descending: false } 
+				}"
+				noDataText="{entitySetView>/tableNoDataText}" busyIndicatorDelay="{entitySetView>/tableBusyDelay}" growing="true" growingScrollToLoad="true"
+				updateFinished="onUpdateFinished"  fixedLayout="false">
+				<headerToolbar>
+					<Toolbar>
+						<ToolbarSpacer/>
+						<HBox id="sourceTitle" alignItems="Center">
+							<rdf:TextResource id="selectedResource" path="" entitySet=""/>
+						</HBox>
+						<Title id="pathTitle" text="{entitySetView>/navigationText}"/>
+						<HBox id="versionsTitle" alignItems="Center">
+							<Title text="(" required="false"/>
+							<ComboBox id="versionSelection" items="{ path: 'entitySetView>/versions' }" selectionChange="onVersionChange">
+								<core:Item key="{entitySetView>navigation}" text="{entityView>text}"/>
+							</ComboBox>
+							<Title text=")" required="false"/>
+						</HBox>
+						<Title id="tableHeader" text="{entitySetView>/entitySetTableTitle}"/>
+						<ToolbarSpacer/>
+						<SearchField id="searchField" tooltip="{i18n>search.searchTooltip}" search="onSearch" width="auto"></SearchField>
+					</Toolbar>
+				</headerToolbar>
+				<columns>
+					<Column >
+						<Text text="{i18n>EmailMessages.this}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>EmailMessages.EmailMessage_BccAddress}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>EmailMessages.EmailMessage_CcAddress}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>EmailMessages.EmailMessage_CreatedDate}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>EmailMessages.EmailMessage_FromAddress}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>EmailMessages.EmailMessage_FromName}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>EmailMessages.EmailMessage_HasAttachment}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>EmailMessages.EmailMessage_Headers}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>EmailMessages.EmailMessage_HtmlBody}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>EmailMessages.EmailMessage_Id}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>EmailMessages.EmailMessage_Incoming}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>EmailMessages.EmailMessage_IsClientManaged}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>EmailMessages.EmailMessage_IsDeleted}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>EmailMessages.EmailMessage_IsExternallyVisible}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>EmailMessages.EmailMessage_LastModifiedDate}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>EmailMessages.EmailMessage_MessageDate}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>EmailMessages.EmailMessage_MessageIdentifier}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>EmailMessages.EmailMessage_Status}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>EmailMessages.EmailMessage_Subject}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>EmailMessages.EmailMessage_SystemModstamp}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>EmailMessages.EmailMessage_TextBody}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>EmailMessages.EmailMessage_ThreadIdentifier}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>EmailMessages.EmailMessage_ToAddress}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>EmailMessages.EmailMessage_ValidatedFromAddress}"/>
+					</Column>
+				</columns>
+				<items>
+					<ColumnListItem id="template360" type="Navigation" press="onPress">
+						<cells>
+							<rdf:TextResource path="dataModel>" entitySet="EmailMessage"/>
+							<VBox>					
+							<rdf:TextLink text="{path:'dataModel>EmailMessage_BccAddress/EmailMessage_BccAddress',type:'sap.ui.model.type.String'}" linkText="{i18n>EmailMessage.EmailMessage_BccAddress/EmailMessage_BccAddress}"/>
+							</VBox>							
+							<VBox>					
+							<rdf:TextLink text="{path:'dataModel>EmailMessage_CcAddress/EmailMessage_CcAddress',type:'sap.ui.model.type.String'}" linkText="{i18n>EmailMessage.EmailMessage_CcAddress/EmailMessage_CcAddress}"/>
+							</VBox>							
+							<VBox>					
+							<Text text="{dataModel>EmailMessage_CreatedDate/EmailMessage_CreatedDate}"/>
+							</VBox>							
+							<VBox>					
+							<rdf:TextLink text="{path:'dataModel>EmailMessage_FromAddress/EmailMessage_FromAddress',type:'sap.ui.model.type.String'}" linkText="{i18n>EmailMessage.EmailMessage_FromAddress/EmailMessage_FromAddress}"/>
+							</VBox>							
+							<VBox>					
+							<rdf:TextLink text="{path:'dataModel>EmailMessage_FromName/EmailMessage_FromName',type:'sap.ui.model.type.String'}" linkText="{i18n>EmailMessage.EmailMessage_FromName/EmailMessage_FromName}"/>
+							</VBox>							
+							<VBox>					
+								<Text text="{path:'dataModel>EmailMessage_HasAttachment/EmailMessage_HasAttachment',type:'sap.ui.model.type.Boolean'}"/>  
+							</VBox>							
+							<VBox>					
+							<rdf:TextLink text="{path:'dataModel>EmailMessage_Headers/EmailMessage_Headers',type:'sap.ui.model.type.String'}" linkText="{i18n>EmailMessage.EmailMessage_Headers/EmailMessage_Headers}"/>
+							</VBox>							
+							<VBox>					
+							<rdf:TextLink text="{path:'dataModel>EmailMessage_HtmlBody/EmailMessage_HtmlBody',type:'sap.ui.model.type.String'}" linkText="{i18n>EmailMessage.EmailMessage_HtmlBody/EmailMessage_HtmlBody}"/>
+							</VBox>							
+							<VBox>					
+							<rdf:TextLink text="{path:'dataModel>EmailMessage_Id/EmailMessage_Id',type:'sap.ui.model.type.String'}" linkText="{i18n>EmailMessage.EmailMessage_Id/EmailMessage_Id}"/>
+							</VBox>							
+							<VBox>					
+								<Text text="{path:'dataModel>EmailMessage_Incoming/EmailMessage_Incoming',type:'sap.ui.model.type.Boolean'}"/>  
+							</VBox>							
+							<VBox>					
+								<Text text="{path:'dataModel>EmailMessage_IsClientManaged/EmailMessage_IsClientManaged',type:'sap.ui.model.type.Boolean'}"/>  
+							</VBox>							
+							<VBox>					
+								<Text text="{path:'dataModel>EmailMessage_IsDeleted/EmailMessage_IsDeleted',type:'sap.ui.model.type.Boolean'}"/>  
+							</VBox>							
+							<VBox>					
+								<Text text="{path:'dataModel>EmailMessage_IsExternallyVisible/EmailMessage_IsExternallyVisible',type:'sap.ui.model.type.Boolean'}"/>  
+							</VBox>							
+							<VBox>					
+							<Text text="{dataModel>EmailMessage_LastModifiedDate/EmailMessage_LastModifiedDate}"/>
+							</VBox>							
+							<VBox>					
+							<Text text="{dataModel>EmailMessage_MessageDate/EmailMessage_MessageDate}"/>
+							</VBox>							
+							<VBox>					
+							<rdf:TextLink text="{path:'dataModel>EmailMessage_MessageIdentifier/EmailMessage_MessageIdentifier',type:'sap.ui.model.type.String'}" linkText="{i18n>EmailMessage.EmailMessage_MessageIdentifier/EmailMessage_MessageIdentifier}"/>
+							</VBox>							
+							<VBox>					
+							<rdf:TextLink text="{path:'dataModel>EmailMessage_Status/EmailMessage_Status',type:'sap.ui.model.type.String'}" linkText="{i18n>EmailMessage.EmailMessage_Status/EmailMessage_Status}"/>
+							</VBox>							
+							<VBox>					
+							<rdf:TextLink text="{path:'dataModel>EmailMessage_Subject/EmailMessage_Subject',type:'sap.ui.model.type.String'}" linkText="{i18n>EmailMessage.EmailMessage_Subject/EmailMessage_Subject}"/>
+							</VBox>							
+							<VBox>					
+							<Text text="{dataModel>EmailMessage_SystemModstamp/EmailMessage_SystemModstamp}"/>
+							</VBox>							
+							<VBox>					
+							<rdf:TextLink text="{path:'dataModel>EmailMessage_TextBody/EmailMessage_TextBody',type:'sap.ui.model.type.String'}" linkText="{i18n>EmailMessage.EmailMessage_TextBody/EmailMessage_TextBody}"/>
+							</VBox>							
+							<VBox>					
+							<rdf:TextLink text="{path:'dataModel>EmailMessage_ThreadIdentifier/EmailMessage_ThreadIdentifier',type:'sap.ui.model.type.String'}" linkText="{i18n>EmailMessage.EmailMessage_ThreadIdentifier/EmailMessage_ThreadIdentifier}"/>
+							</VBox>							
+							<VBox>					
+							<rdf:TextLink text="{path:'dataModel>EmailMessage_ToAddress/EmailMessage_ToAddress',type:'sap.ui.model.type.String'}" linkText="{i18n>EmailMessage.EmailMessage_ToAddress/EmailMessage_ToAddress}"/>
+							</VBox>							
+							<VBox>					
+							<rdf:TextLink text="{path:'dataModel>EmailMessage_ValidatedFromAddress/EmailMessage_ValidatedFromAddress',type:'sap.ui.model.type.String'}" linkText="{i18n>EmailMessage.EmailMessage_ValidatedFromAddress/EmailMessage_ValidatedFromAddress}"/>
+							</VBox>							
+						</cells>
+					</ColumnListItem>
+				</items>
+			</Table>
+		</content>
+	</Page>
+</mvc:View>

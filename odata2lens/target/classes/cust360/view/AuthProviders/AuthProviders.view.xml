@@ -1,0 +1,157 @@
+<mvc:View controllerName="com.inova8.lens.controller.EntitySet360" xmlns="sap.m" xmlns:mvc="sap.ui.core.mvc" xmlns:layout="sap.ui.layout"
+	xmlns:rdf="com.inova8.lens.control" xmlns:core="sap.ui.core">
+	<Page showHeader="false" id="page" navButtonPress="onNavBack" showNavButton="true" title="{i18n>AuthProviders.ViewTitle}">
+		<content>
+			<Table id="table360" inset="false" items="{ path: 'dataModel>/AuthProvider' , sorter: { path: 'label', descending: false } 
+				}"
+				noDataText="{entitySetView>/tableNoDataText}" busyIndicatorDelay="{entitySetView>/tableBusyDelay}" growing="true" growingScrollToLoad="true"
+				updateFinished="onUpdateFinished"  fixedLayout="false">
+				<headerToolbar>
+					<Toolbar>
+						<ToolbarSpacer/>
+						<HBox id="sourceTitle" alignItems="Center">
+							<rdf:TextResource id="selectedResource" path="" entitySet=""/>
+						</HBox>
+						<Title id="pathTitle" text="{entitySetView>/navigationText}"/>
+						<HBox id="versionsTitle" alignItems="Center">
+							<Title text="(" required="false"/>
+							<ComboBox id="versionSelection" items="{ path: 'entitySetView>/versions' }" selectionChange="onVersionChange">
+								<core:Item key="{entitySetView>navigation}" text="{entityView>text}"/>
+							</ComboBox>
+							<Title text=")" required="false"/>
+						</HBox>
+						<Title id="tableHeader" text="{entitySetView>/entitySetTableTitle}"/>
+						<ToolbarSpacer/>
+						<SearchField id="searchField" tooltip="{i18n>search.searchTooltip}" search="onSearch" width="auto"></SearchField>
+					</Toolbar>
+				</headerToolbar>
+				<columns>
+					<Column >
+						<Text text="{i18n>AuthProviders.this}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>AuthProviders.AuthProvider_AuthorizeUrl}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>AuthProviders.AuthProvider_ConsumerKey}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>AuthProviders.AuthProvider_ConsumerSecret}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>AuthProviders.AuthProvider_CreatedDate}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>AuthProviders.AuthProvider_CustomMetadataTypeRecord}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>AuthProviders.AuthProvider_DefaultScopes}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>AuthProviders.AuthProvider_DeveloperName}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>AuthProviders.AuthProvider_ErrorUrl}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>AuthProviders.AuthProvider_FriendlyName}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>AuthProviders.AuthProvider_IconUrl}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>AuthProviders.AuthProvider_Id}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>AuthProviders.AuthProvider_IdTokenIssuer}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>AuthProviders.AuthProvider_LogoutUrl}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>AuthProviders.AuthProvider_OptionsIncludeOrgIdInId}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>AuthProviders.AuthProvider_OptionsSendAccessTokenInHeader}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>AuthProviders.AuthProvider_OptionsSendClientCredentialsInHeader}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>AuthProviders.AuthProvider_ProviderType}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>AuthProviders.AuthProvider_TokenUrl}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>AuthProviders.AuthProvider_UserInfoUrl}"/>
+					</Column>
+				</columns>
+				<items>
+					<ColumnListItem id="template360" type="Navigation" press="onPress">
+						<cells>
+							<rdf:TextResource path="dataModel>" entitySet="AuthProvider"/>
+							<VBox>					
+							<rdf:TextLink text="{path:'dataModel>AuthProvider_AuthorizeUrl/AuthProvider_AuthorizeUrl',type:'sap.ui.model.type.String'}" linkText="{i18n>AuthProvider.AuthProvider_AuthorizeUrl/AuthProvider_AuthorizeUrl}"/>
+							</VBox>							
+							<VBox>					
+							<rdf:TextLink text="{path:'dataModel>AuthProvider_ConsumerKey/AuthProvider_ConsumerKey',type:'sap.ui.model.type.String'}" linkText="{i18n>AuthProvider.AuthProvider_ConsumerKey/AuthProvider_ConsumerKey}"/>
+							</VBox>							
+							<VBox>					
+							<rdf:TextLink text="{path:'dataModel>AuthProvider_ConsumerSecret/AuthProvider_ConsumerSecret',type:'sap.ui.model.type.String'}" linkText="{i18n>AuthProvider.AuthProvider_ConsumerSecret/AuthProvider_ConsumerSecret}"/>
+							</VBox>							
+							<VBox>					
+							<Text text="{dataModel>AuthProvider_CreatedDate/AuthProvider_CreatedDate}"/>
+							</VBox>							
+							<VBox>					
+							<rdf:TextLink text="{path:'dataModel>AuthProvider_CustomMetadataTypeRecord/AuthProvider_CustomMetadataTypeRecord',type:'sap.ui.model.type.String'}" linkText="{i18n>AuthProvider.AuthProvider_CustomMetadataTypeRecord/AuthProvider_CustomMetadataTypeRecord}"/>
+							</VBox>							
+							<VBox>					
+							<rdf:TextLink text="{path:'dataModel>AuthProvider_DefaultScopes/AuthProvider_DefaultScopes',type:'sap.ui.model.type.String'}" linkText="{i18n>AuthProvider.AuthProvider_DefaultScopes/AuthProvider_DefaultScopes}"/>
+							</VBox>							
+							<VBox>					
+							<rdf:TextLink text="{path:'dataModel>AuthProvider_DeveloperName/AuthProvider_DeveloperName',type:'sap.ui.model.type.String'}" linkText="{i18n>AuthProvider.AuthProvider_DeveloperName/AuthProvider_DeveloperName}"/>
+							</VBox>							
+							<VBox>					
+							<rdf:TextLink text="{path:'dataModel>AuthProvider_ErrorUrl/AuthProvider_ErrorUrl',type:'sap.ui.model.type.String'}" linkText="{i18n>AuthProvider.AuthProvider_ErrorUrl/AuthProvider_ErrorUrl}"/>
+							</VBox>							
+							<VBox>					
+							<rdf:TextLink text="{path:'dataModel>AuthProvider_FriendlyName/AuthProvider_FriendlyName',type:'sap.ui.model.type.String'}" linkText="{i18n>AuthProvider.AuthProvider_FriendlyName/AuthProvider_FriendlyName}"/>
+							</VBox>							
+							<VBox>					
+							<rdf:TextLink text="{path:'dataModel>AuthProvider_IconUrl/AuthProvider_IconUrl',type:'sap.ui.model.type.String'}" linkText="{i18n>AuthProvider.AuthProvider_IconUrl/AuthProvider_IconUrl}"/>
+							</VBox>							
+							<VBox>					
+							<rdf:TextLink text="{path:'dataModel>AuthProvider_Id/AuthProvider_Id',type:'sap.ui.model.type.String'}" linkText="{i18n>AuthProvider.AuthProvider_Id/AuthProvider_Id}"/>
+							</VBox>							
+							<VBox>					
+							<rdf:TextLink text="{path:'dataModel>AuthProvider_IdTokenIssuer/AuthProvider_IdTokenIssuer',type:'sap.ui.model.type.String'}" linkText="{i18n>AuthProvider.AuthProvider_IdTokenIssuer/AuthProvider_IdTokenIssuer}"/>
+							</VBox>							
+							<VBox>					
+							<rdf:TextLink text="{path:'dataModel>AuthProvider_LogoutUrl/AuthProvider_LogoutUrl',type:'sap.ui.model.type.String'}" linkText="{i18n>AuthProvider.AuthProvider_LogoutUrl/AuthProvider_LogoutUrl}"/>
+							</VBox>							
+							<VBox>					
+								<Text text="{path:'dataModel>AuthProvider_OptionsIncludeOrgIdInId/AuthProvider_OptionsIncludeOrgIdInId',type:'sap.ui.model.type.Boolean'}"/>  
+							</VBox>							
+							<VBox>					
+								<Text text="{path:'dataModel>AuthProvider_OptionsSendAccessTokenInHeader/AuthProvider_OptionsSendAccessTokenInHeader',type:'sap.ui.model.type.Boolean'}"/>  
+							</VBox>							
+							<VBox>					
+								<Text text="{path:'dataModel>AuthProvider_OptionsSendClientCredentialsInHeader/AuthProvider_OptionsSendClientCredentialsInHeader',type:'sap.ui.model.type.Boolean'}"/>  
+							</VBox>							
+							<VBox>					
+							<rdf:TextLink text="{path:'dataModel>AuthProvider_ProviderType/AuthProvider_ProviderType',type:'sap.ui.model.type.String'}" linkText="{i18n>AuthProvider.AuthProvider_ProviderType/AuthProvider_ProviderType}"/>
+							</VBox>							
+							<VBox>					
+							<rdf:TextLink text="{path:'dataModel>AuthProvider_TokenUrl/AuthProvider_TokenUrl',type:'sap.ui.model.type.String'}" linkText="{i18n>AuthProvider.AuthProvider_TokenUrl/AuthProvider_TokenUrl}"/>
+							</VBox>							
+							<VBox>					
+							<rdf:TextLink text="{path:'dataModel>AuthProvider_UserInfoUrl/AuthProvider_UserInfoUrl',type:'sap.ui.model.type.String'}" linkText="{i18n>AuthProvider.AuthProvider_UserInfoUrl/AuthProvider_UserInfoUrl}"/>
+							</VBox>							
+						</cells>
+					</ColumnListItem>
+				</items>
+			</Table>
+		</content>
+	</Page>
+</mvc:View>

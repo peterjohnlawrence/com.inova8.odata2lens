@@ -1,0 +1,1400 @@
+<mvc:View controllerName="com.inova8.lens.controller.Entity360" xmlns="sap.m" xmlns:mvc="sap.ui.core.mvc" xmlns:l="sap.ui.layout"
+	xmlns:f="sap.ui.layout.form" xmlns:table="sap.ui.table" xmlns:rdf="com.inova8.lens.control" xmlns:html="http://www.w3.org/1999/xhtml"
+	xmlns:core="sap.ui.core">
+	<Page showHeader="true" id="page" navButtonPress="onNavBack" showNavButton="false" title="{i18n>Profile.Title}" busy="{entityView>/busy}"
+		busyIndicatorDelay="{entityView>/delay}" >
+		<customHeader>
+			<Toolbar>
+				<ToolbarSpacer/>
+				<HBox id="sourceTitle" alignItems="Center">
+						<rdf:TextResource id="selectedResource" path="" entitySet=""/>
+				</HBox>	
+				<Title id="pathTitle" text="{entityView>/navigation}"/>
+				<HBox id="versionsTitle" alignItems="Center">
+					<Title text="(" required="false"/>
+					<ComboBox id="versionSelection" items="{ path: 'entityView>/versions' }" selectionChange="onVersionChange">
+						<core:Item key="{entityView>navigation}" text="{entityView>text}"/>
+					</ComboBox>
+					<Title text=")" required="false"/>
+				</HBox>
+				<Title text="{i18n>Profile.this}"/>
+				<Title text="(" required="false"/>
+				<rdf:TextResource path="dataModel>" entitySet="Profile"/>
+				<Title text=")" required="false"/>
+	
+				<ToolbarSpacer/>
+				<ToggleButton id="toggleColumns" icon="sap-icon://hide" activeIcon="sap-icon://show" press="onSettingsPressed" visible="false"	>
+					<layoutData>
+						<OverflowToolbarLayoutData priority="NeverOverflow"/>
+					</layoutData>
+				</ToggleButton>
+				
+			</Toolbar>
+		</customHeader>
+		<Table id="form360" inset="false" fixedLayout="true" class="multicolumnform" updateFinished="hideColumns">
+			<columns>
+				<Column hAlign="Right" width="200px">
+					<Text text=""/>
+				</Column>
+				<Column visible="true">
+				</Column>
+				<Column visible="true">
+					<Text text="Profile"/>
+				</Column>
+			</columns>
+			<items>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>Profile.Name_ProfileId_Inverse}" required="false"/> 
+						<Text text=""/>
+						<rdf:ListResource path="dataModel>Name_ProfileId_Inverse/sfdc_Name_ProfileId_Inverse" entitySet="Name"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>Profile.PermissionSet_ProfileId_Inverse}" required="false"/> 
+						<Text text=""/>
+						<rdf:ListResource path="dataModel>PermissionSet_ProfileId_Inverse/sfdc_PermissionSet_ProfileId_Inverse" entitySet="PermissionSet"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>Profile.Profile_CreatedById}" required="false"/> 
+						<Text text=""/>
+						<rdf:ListResource path="dataModel>Profile_CreatedById/sfdc_Profile_CreatedById" entitySet="User"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>Profile.Profile_CreatedDate}" required="false"/> 
+						<Text text=""/>
+						<Text text="{dataModel>Profile_CreatedDate/Profile_CreatedDate}"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>Profile.Profile_Description}" required="false"/> 
+						<Text text=""/>
+						<rdf:TextLink text="{path:'dataModel>Profile_Description/Profile_Description',type:'sap.ui.model.type.String' }" linkText="{i18n>Profile.Profile_Description/Profile_Description}"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>Profile.Profile_Id}" required="false"/> 
+						<Text text=""/>
+						<rdf:TextLink text="{path:'dataModel>Profile_Id/Profile_Id',type:'sap.ui.model.type.String' }" linkText="{i18n>Profile.Profile_Id/Profile_Id}"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>Profile.Profile_LastModifiedById}" required="false"/> 
+						<Text text=""/>
+						<rdf:ListResource path="dataModel>Profile_LastModifiedById/sfdc_Profile_LastModifiedById" entitySet="User"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>Profile.Profile_LastModifiedDate}" required="false"/> 
+						<Text text=""/>
+						<Text text="{dataModel>Profile_LastModifiedDate/Profile_LastModifiedDate}"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>Profile.Profile_LastReferencedDate}" required="false"/> 
+						<Text text=""/>
+						<Text text="{dataModel>Profile_LastReferencedDate/Profile_LastReferencedDate}"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>Profile.Profile_LastViewedDate}" required="false"/> 
+						<Text text=""/>
+						<Text text="{dataModel>Profile_LastViewedDate/Profile_LastViewedDate}"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>Profile.Profile_Name}" required="false"/> 
+						<Text text=""/>
+						<rdf:TextLink text="{path:'dataModel>Profile_Name/Profile_Name',type:'sap.ui.model.type.String' }" linkText="{i18n>Profile.Profile_Name/Profile_Name}"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>Profile.Profile_PermissionsAccessCMC}" required="false"/> 
+						<Text text=""/>
+						<Text text="{path:'dataModel>Profile_PermissionsAccessCMC/Profile_PermissionsAccessCMC',type:'sap.ui.model.type.Boolean'}"/>  
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>Profile.Profile_PermissionsActivateContract}" required="false"/> 
+						<Text text=""/>
+						<Text text="{path:'dataModel>Profile_PermissionsActivateContract/Profile_PermissionsActivateContract',type:'sap.ui.model.type.Boolean'}"/>  
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>Profile.Profile_PermissionsActivateOrder}" required="false"/> 
+						<Text text=""/>
+						<Text text="{path:'dataModel>Profile_PermissionsActivateOrder/Profile_PermissionsActivateOrder',type:'sap.ui.model.type.Boolean'}"/>  
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>Profile.Profile_PermissionsAddDirectMessageMembers}" required="false"/> 
+						<Text text=""/>
+						<Text text="{path:'dataModel>Profile_PermissionsAddDirectMessageMembers/Profile_PermissionsAddDirectMessageMembers',type:'sap.ui.model.type.Boolean'}"/>  
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>Profile.Profile_PermissionsAllowLightningLogin}" required="false"/> 
+						<Text text=""/>
+						<Text text="{path:'dataModel>Profile_PermissionsAllowLightningLogin/Profile_PermissionsAllowLightningLogin',type:'sap.ui.model.type.Boolean'}"/>  
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>Profile.Profile_PermissionsAllowViewEditConvertedLeads}" required="false"/> 
+						<Text text=""/>
+						<Text text="{path:'dataModel>Profile_PermissionsAllowViewEditConvertedLeads/Profile_PermissionsAllowViewEditConvertedLeads',type:'sap.ui.model.type.Boolean'}"/>  
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>Profile.Profile_PermissionsApiEnabled}" required="false"/> 
+						<Text text=""/>
+						<Text text="{path:'dataModel>Profile_PermissionsApiEnabled/Profile_PermissionsApiEnabled',type:'sap.ui.model.type.Boolean'}"/>  
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>Profile.Profile_PermissionsApiUserOnly}" required="false"/> 
+						<Text text=""/>
+						<Text text="{path:'dataModel>Profile_PermissionsApiUserOnly/Profile_PermissionsApiUserOnly',type:'sap.ui.model.type.Boolean'}"/>  
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>Profile.Profile_PermissionsAssignPermissionSets}" required="false"/> 
+						<Text text=""/>
+						<Text text="{path:'dataModel>Profile_PermissionsAssignPermissionSets/Profile_PermissionsAssignPermissionSets',type:'sap.ui.model.type.Boolean'}"/>  
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>Profile.Profile_PermissionsAssignTopics}" required="false"/> 
+						<Text text=""/>
+						<Text text="{path:'dataModel>Profile_PermissionsAssignTopics/Profile_PermissionsAssignTopics',type:'sap.ui.model.type.Boolean'}"/>  
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>Profile.Profile_PermissionsAuthorApex}" required="false"/> 
+						<Text text=""/>
+						<Text text="{path:'dataModel>Profile_PermissionsAuthorApex/Profile_PermissionsAuthorApex',type:'sap.ui.model.type.Boolean'}"/>  
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>Profile.Profile_PermissionsBulkApiHardDelete}" required="false"/> 
+						<Text text=""/>
+						<Text text="{path:'dataModel>Profile_PermissionsBulkApiHardDelete/Profile_PermissionsBulkApiHardDelete',type:'sap.ui.model.type.Boolean'}"/>  
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>Profile.Profile_PermissionsBulkMacrosAllowed}" required="false"/> 
+						<Text text=""/>
+						<Text text="{path:'dataModel>Profile_PermissionsBulkMacrosAllowed/Profile_PermissionsBulkMacrosAllowed',type:'sap.ui.model.type.Boolean'}"/>  
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>Profile.Profile_PermissionsCampaignInfluence2}" required="false"/> 
+						<Text text=""/>
+						<Text text="{path:'dataModel>Profile_PermissionsCampaignInfluence2/Profile_PermissionsCampaignInfluence2',type:'sap.ui.model.type.Boolean'}"/>  
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>Profile.Profile_PermissionsCanApproveFeedPost}" required="false"/> 
+						<Text text=""/>
+						<Text text="{path:'dataModel>Profile_PermissionsCanApproveFeedPost/Profile_PermissionsCanApproveFeedPost',type:'sap.ui.model.type.Boolean'}"/>  
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>Profile.Profile_PermissionsCanInsertFeedSystemFields}" required="false"/> 
+						<Text text=""/>
+						<Text text="{path:'dataModel>Profile_PermissionsCanInsertFeedSystemFields/Profile_PermissionsCanInsertFeedSystemFields',type:'sap.ui.model.type.Boolean'}"/>  
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>Profile.Profile_PermissionsCanUseNewDashboardBuilder}" required="false"/> 
+						<Text text=""/>
+						<Text text="{path:'dataModel>Profile_PermissionsCanUseNewDashboardBuilder/Profile_PermissionsCanUseNewDashboardBuilder',type:'sap.ui.model.type.Boolean'}"/>  
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>Profile.Profile_PermissionsCanVerifyComment}" required="false"/> 
+						<Text text=""/>
+						<Text text="{path:'dataModel>Profile_PermissionsCanVerifyComment/Profile_PermissionsCanVerifyComment',type:'sap.ui.model.type.Boolean'}"/>  
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>Profile.Profile_PermissionsChatterComposeUiCodesnippet}" required="false"/> 
+						<Text text=""/>
+						<Text text="{path:'dataModel>Profile_PermissionsChatterComposeUiCodesnippet/Profile_PermissionsChatterComposeUiCodesnippet',type:'sap.ui.model.type.Boolean'}"/>  
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>Profile.Profile_PermissionsChatterEditOwnPost}" required="false"/> 
+						<Text text=""/>
+						<Text text="{path:'dataModel>Profile_PermissionsChatterEditOwnPost/Profile_PermissionsChatterEditOwnPost',type:'sap.ui.model.type.Boolean'}"/>  
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>Profile.Profile_PermissionsChatterEditOwnRecordPost}" required="false"/> 
+						<Text text=""/>
+						<Text text="{path:'dataModel>Profile_PermissionsChatterEditOwnRecordPost/Profile_PermissionsChatterEditOwnRecordPost',type:'sap.ui.model.type.Boolean'}"/>  
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>Profile.Profile_PermissionsChatterFileLink}" required="false"/> 
+						<Text text=""/>
+						<Text text="{path:'dataModel>Profile_PermissionsChatterFileLink/Profile_PermissionsChatterFileLink',type:'sap.ui.model.type.Boolean'}"/>  
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>Profile.Profile_PermissionsChatterForSharePoint}" required="false"/> 
+						<Text text=""/>
+						<Text text="{path:'dataModel>Profile_PermissionsChatterForSharePoint/Profile_PermissionsChatterForSharePoint',type:'sap.ui.model.type.Boolean'}"/>  
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>Profile.Profile_PermissionsChatterInternalUser}" required="false"/> 
+						<Text text=""/>
+						<Text text="{path:'dataModel>Profile_PermissionsChatterInternalUser/Profile_PermissionsChatterInternalUser',type:'sap.ui.model.type.Boolean'}"/>  
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>Profile.Profile_PermissionsChatterInviteExternalUsers}" required="false"/> 
+						<Text text=""/>
+						<Text text="{path:'dataModel>Profile_PermissionsChatterInviteExternalUsers/Profile_PermissionsChatterInviteExternalUsers',type:'sap.ui.model.type.Boolean'}"/>  
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>Profile.Profile_PermissionsChatterOwnGroups}" required="false"/> 
+						<Text text=""/>
+						<Text text="{path:'dataModel>Profile_PermissionsChatterOwnGroups/Profile_PermissionsChatterOwnGroups',type:'sap.ui.model.type.Boolean'}"/>  
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>Profile.Profile_PermissionsConfigCustomRecs}" required="false"/> 
+						<Text text=""/>
+						<Text text="{path:'dataModel>Profile_PermissionsConfigCustomRecs/Profile_PermissionsConfigCustomRecs',type:'sap.ui.model.type.Boolean'}"/>  
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>Profile.Profile_PermissionsConnectOrgToEnvironmentHub}" required="false"/> 
+						<Text text=""/>
+						<Text text="{path:'dataModel>Profile_PermissionsConnectOrgToEnvironmentHub/Profile_PermissionsConnectOrgToEnvironmentHub',type:'sap.ui.model.type.Boolean'}"/>  
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>Profile.Profile_PermissionsContentAdministrator}" required="false"/> 
+						<Text text=""/>
+						<Text text="{path:'dataModel>Profile_PermissionsContentAdministrator/Profile_PermissionsContentAdministrator',type:'sap.ui.model.type.Boolean'}"/>  
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>Profile.Profile_PermissionsContentWorkspaces}" required="false"/> 
+						<Text text=""/>
+						<Text text="{path:'dataModel>Profile_PermissionsContentWorkspaces/Profile_PermissionsContentWorkspaces',type:'sap.ui.model.type.Boolean'}"/>  
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>Profile.Profile_PermissionsConvertLeads}" required="false"/> 
+						<Text text=""/>
+						<Text text="{path:'dataModel>Profile_PermissionsConvertLeads/Profile_PermissionsConvertLeads',type:'sap.ui.model.type.Boolean'}"/>  
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>Profile.Profile_PermissionsCreateCustomizeFilters}" required="false"/> 
+						<Text text=""/>
+						<Text text="{path:'dataModel>Profile_PermissionsCreateCustomizeFilters/Profile_PermissionsCreateCustomizeFilters',type:'sap.ui.model.type.Boolean'}"/>  
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>Profile.Profile_PermissionsCreateMultiforce}" required="false"/> 
+						<Text text=""/>
+						<Text text="{path:'dataModel>Profile_PermissionsCreateMultiforce/Profile_PermissionsCreateMultiforce',type:'sap.ui.model.type.Boolean'}"/>  
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>Profile.Profile_PermissionsCreateTopics}" required="false"/> 
+						<Text text=""/>
+						<Text text="{path:'dataModel>Profile_PermissionsCreateTopics/Profile_PermissionsCreateTopics',type:'sap.ui.model.type.Boolean'}"/>  
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>Profile.Profile_PermissionsCreateWorkspaces}" required="false"/> 
+						<Text text=""/>
+						<Text text="{path:'dataModel>Profile_PermissionsCreateWorkspaces/Profile_PermissionsCreateWorkspaces',type:'sap.ui.model.type.Boolean'}"/>  
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>Profile.Profile_PermissionsCustomMobileAppsAccess}" required="false"/> 
+						<Text text=""/>
+						<Text text="{path:'dataModel>Profile_PermissionsCustomMobileAppsAccess/Profile_PermissionsCustomMobileAppsAccess',type:'sap.ui.model.type.Boolean'}"/>  
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>Profile.Profile_PermissionsCustomSidebarOnAllPages}" required="false"/> 
+						<Text text=""/>
+						<Text text="{path:'dataModel>Profile_PermissionsCustomSidebarOnAllPages/Profile_PermissionsCustomSidebarOnAllPages',type:'sap.ui.model.type.Boolean'}"/>  
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>Profile.Profile_PermissionsCustomizeApplication}" required="false"/> 
+						<Text text=""/>
+						<Text text="{path:'dataModel>Profile_PermissionsCustomizeApplication/Profile_PermissionsCustomizeApplication',type:'sap.ui.model.type.Boolean'}"/>  
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>Profile.Profile_PermissionsDataExport}" required="false"/> 
+						<Text text=""/>
+						<Text text="{path:'dataModel>Profile_PermissionsDataExport/Profile_PermissionsDataExport',type:'sap.ui.model.type.Boolean'}"/>  
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>Profile.Profile_PermissionsDelegatedTwoFactor}" required="false"/> 
+						<Text text=""/>
+						<Text text="{path:'dataModel>Profile_PermissionsDelegatedTwoFactor/Profile_PermissionsDelegatedTwoFactor',type:'sap.ui.model.type.Boolean'}"/>  
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>Profile.Profile_PermissionsDeleteActivatedContract}" required="false"/> 
+						<Text text=""/>
+						<Text text="{path:'dataModel>Profile_PermissionsDeleteActivatedContract/Profile_PermissionsDeleteActivatedContract',type:'sap.ui.model.type.Boolean'}"/>  
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>Profile.Profile_PermissionsDeleteTopics}" required="false"/> 
+						<Text text=""/>
+						<Text text="{path:'dataModel>Profile_PermissionsDeleteTopics/Profile_PermissionsDeleteTopics',type:'sap.ui.model.type.Boolean'}"/>  
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>Profile.Profile_PermissionsDistributeFromPersWksp}" required="false"/> 
+						<Text text=""/>
+						<Text text="{path:'dataModel>Profile_PermissionsDistributeFromPersWksp/Profile_PermissionsDistributeFromPersWksp',type:'sap.ui.model.type.Boolean'}"/>  
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>Profile.Profile_PermissionsEditActivatedOrders}" required="false"/> 
+						<Text text=""/>
+						<Text text="{path:'dataModel>Profile_PermissionsEditActivatedOrders/Profile_PermissionsEditActivatedOrders',type:'sap.ui.model.type.Boolean'}"/>  
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>Profile.Profile_PermissionsEditBrandTemplates}" required="false"/> 
+						<Text text=""/>
+						<Text text="{path:'dataModel>Profile_PermissionsEditBrandTemplates/Profile_PermissionsEditBrandTemplates',type:'sap.ui.model.type.Boolean'}"/>  
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>Profile.Profile_PermissionsEditCaseComments}" required="false"/> 
+						<Text text=""/>
+						<Text text="{path:'dataModel>Profile_PermissionsEditCaseComments/Profile_PermissionsEditCaseComments',type:'sap.ui.model.type.Boolean'}"/>  
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>Profile.Profile_PermissionsEditEvent}" required="false"/> 
+						<Text text=""/>
+						<Text text="{path:'dataModel>Profile_PermissionsEditEvent/Profile_PermissionsEditEvent',type:'sap.ui.model.type.Boolean'}"/>  
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>Profile.Profile_PermissionsEditHtmlTemplates}" required="false"/> 
+						<Text text=""/>
+						<Text text="{path:'dataModel>Profile_PermissionsEditHtmlTemplates/Profile_PermissionsEditHtmlTemplates',type:'sap.ui.model.type.Boolean'}"/>  
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>Profile.Profile_PermissionsEditOppLineItemUnitPrice}" required="false"/> 
+						<Text text=""/>
+						<Text text="{path:'dataModel>Profile_PermissionsEditOppLineItemUnitPrice/Profile_PermissionsEditOppLineItemUnitPrice',type:'sap.ui.model.type.Boolean'}"/>  
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>Profile.Profile_PermissionsEditPublicDocuments}" required="false"/> 
+						<Text text=""/>
+						<Text text="{path:'dataModel>Profile_PermissionsEditPublicDocuments/Profile_PermissionsEditPublicDocuments',type:'sap.ui.model.type.Boolean'}"/>  
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>Profile.Profile_PermissionsEditPublicFilters}" required="false"/> 
+						<Text text=""/>
+						<Text text="{path:'dataModel>Profile_PermissionsEditPublicFilters/Profile_PermissionsEditPublicFilters',type:'sap.ui.model.type.Boolean'}"/>  
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>Profile.Profile_PermissionsEditPublicTemplates}" required="false"/> 
+						<Text text=""/>
+						<Text text="{path:'dataModel>Profile_PermissionsEditPublicTemplates/Profile_PermissionsEditPublicTemplates',type:'sap.ui.model.type.Boolean'}"/>  
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>Profile.Profile_PermissionsEditReadonlyFields}" required="false"/> 
+						<Text text=""/>
+						<Text text="{path:'dataModel>Profile_PermissionsEditReadonlyFields/Profile_PermissionsEditReadonlyFields',type:'sap.ui.model.type.Boolean'}"/>  
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>Profile.Profile_PermissionsEditReports}" required="false"/> 
+						<Text text=""/>
+						<Text text="{path:'dataModel>Profile_PermissionsEditReports/Profile_PermissionsEditReports',type:'sap.ui.model.type.Boolean'}"/>  
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>Profile.Profile_PermissionsEditTask}" required="false"/> 
+						<Text text=""/>
+						<Text text="{path:'dataModel>Profile_PermissionsEditTask/Profile_PermissionsEditTask',type:'sap.ui.model.type.Boolean'}"/>  
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>Profile.Profile_PermissionsEditTopics}" required="false"/> 
+						<Text text=""/>
+						<Text text="{path:'dataModel>Profile_PermissionsEditTopics/Profile_PermissionsEditTopics',type:'sap.ui.model.type.Boolean'}"/>  
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>Profile.Profile_PermissionsEmailAdministration}" required="false"/> 
+						<Text text=""/>
+						<Text text="{path:'dataModel>Profile_PermissionsEmailAdministration/Profile_PermissionsEmailAdministration',type:'sap.ui.model.type.Boolean'}"/>  
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>Profile.Profile_PermissionsEmailMass}" required="false"/> 
+						<Text text=""/>
+						<Text text="{path:'dataModel>Profile_PermissionsEmailMass/Profile_PermissionsEmailMass',type:'sap.ui.model.type.Boolean'}"/>  
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>Profile.Profile_PermissionsEmailSingle}" required="false"/> 
+						<Text text=""/>
+						<Text text="{path:'dataModel>Profile_PermissionsEmailSingle/Profile_PermissionsEmailSingle',type:'sap.ui.model.type.Boolean'}"/>  
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>Profile.Profile_PermissionsEmailTemplateManagement}" required="false"/> 
+						<Text text=""/>
+						<Text text="{path:'dataModel>Profile_PermissionsEmailTemplateManagement/Profile_PermissionsEmailTemplateManagement',type:'sap.ui.model.type.Boolean'}"/>  
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>Profile.Profile_PermissionsEnableCommunityAppLauncher}" required="false"/> 
+						<Text text=""/>
+						<Text text="{path:'dataModel>Profile_PermissionsEnableCommunityAppLauncher/Profile_PermissionsEnableCommunityAppLauncher',type:'sap.ui.model.type.Boolean'}"/>  
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>Profile.Profile_PermissionsEnableNotifications}" required="false"/> 
+						<Text text=""/>
+						<Text text="{path:'dataModel>Profile_PermissionsEnableNotifications/Profile_PermissionsEnableNotifications',type:'sap.ui.model.type.Boolean'}"/>  
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>Profile.Profile_PermissionsExportReport}" required="false"/> 
+						<Text text=""/>
+						<Text text="{path:'dataModel>Profile_PermissionsExportReport/Profile_PermissionsExportReport',type:'sap.ui.model.type.Boolean'}"/>  
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>Profile.Profile_PermissionsFeedPinning}" required="false"/> 
+						<Text text=""/>
+						<Text text="{path:'dataModel>Profile_PermissionsFeedPinning/Profile_PermissionsFeedPinning',type:'sap.ui.model.type.Boolean'}"/>  
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>Profile.Profile_PermissionsFlowUFLRequired}" required="false"/> 
+						<Text text=""/>
+						<Text text="{path:'dataModel>Profile_PermissionsFlowUFLRequired/Profile_PermissionsFlowUFLRequired',type:'sap.ui.model.type.Boolean'}"/>  
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>Profile.Profile_PermissionsForceTwoFactor}" required="false"/> 
+						<Text text=""/>
+						<Text text="{path:'dataModel>Profile_PermissionsForceTwoFactor/Profile_PermissionsForceTwoFactor',type:'sap.ui.model.type.Boolean'}"/>  
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>Profile.Profile_PermissionsGovernNetworks}" required="false"/> 
+						<Text text=""/>
+						<Text text="{path:'dataModel>Profile_PermissionsGovernNetworks/Profile_PermissionsGovernNetworks',type:'sap.ui.model.type.Boolean'}"/>  
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>Profile.Profile_PermissionsHideReadByList}" required="false"/> 
+						<Text text=""/>
+						<Text text="{path:'dataModel>Profile_PermissionsHideReadByList/Profile_PermissionsHideReadByList',type:'sap.ui.model.type.Boolean'}"/>  
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>Profile.Profile_PermissionsIdentityConnect}" required="false"/> 
+						<Text text=""/>
+						<Text text="{path:'dataModel>Profile_PermissionsIdentityConnect/Profile_PermissionsIdentityConnect',type:'sap.ui.model.type.Boolean'}"/>  
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>Profile.Profile_PermissionsIdentityEnabled}" required="false"/> 
+						<Text text=""/>
+						<Text text="{path:'dataModel>Profile_PermissionsIdentityEnabled/Profile_PermissionsIdentityEnabled',type:'sap.ui.model.type.Boolean'}"/>  
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>Profile.Profile_PermissionsImportCustomObjects}" required="false"/> 
+						<Text text=""/>
+						<Text text="{path:'dataModel>Profile_PermissionsImportCustomObjects/Profile_PermissionsImportCustomObjects',type:'sap.ui.model.type.Boolean'}"/>  
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>Profile.Profile_PermissionsImportLeads}" required="false"/> 
+						<Text text=""/>
+						<Text text="{path:'dataModel>Profile_PermissionsImportLeads/Profile_PermissionsImportLeads',type:'sap.ui.model.type.Boolean'}"/>  
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>Profile.Profile_PermissionsImportPersonal}" required="false"/> 
+						<Text text=""/>
+						<Text text="{path:'dataModel>Profile_PermissionsImportPersonal/Profile_PermissionsImportPersonal',type:'sap.ui.model.type.Boolean'}"/>  
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>Profile.Profile_PermissionsInboundMigrationToolsUser}" required="false"/> 
+						<Text text=""/>
+						<Text text="{path:'dataModel>Profile_PermissionsInboundMigrationToolsUser/Profile_PermissionsInboundMigrationToolsUser',type:'sap.ui.model.type.Boolean'}"/>  
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>Profile.Profile_PermissionsInstallMultiforce}" required="false"/> 
+						<Text text=""/>
+						<Text text="{path:'dataModel>Profile_PermissionsInstallMultiforce/Profile_PermissionsInstallMultiforce',type:'sap.ui.model.type.Boolean'}"/>  
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>Profile.Profile_PermissionsLightningConsoleAllowedForUser}" required="false"/> 
+						<Text text=""/>
+						<Text text="{path:'dataModel>Profile_PermissionsLightningConsoleAllowedForUser/Profile_PermissionsLightningConsoleAllowedForUser',type:'sap.ui.model.type.Boolean'}"/>  
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>Profile.Profile_PermissionsLightningExperienceUser}" required="false"/> 
+						<Text text=""/>
+						<Text text="{path:'dataModel>Profile_PermissionsLightningExperienceUser/Profile_PermissionsLightningExperienceUser',type:'sap.ui.model.type.Boolean'}"/>  
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>Profile.Profile_PermissionsListEmailSend}" required="false"/> 
+						<Text text=""/>
+						<Text text="{path:'dataModel>Profile_PermissionsListEmailSend/Profile_PermissionsListEmailSend',type:'sap.ui.model.type.Boolean'}"/>  
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>Profile.Profile_PermissionsManageAnalyticSnapshots}" required="false"/> 
+						<Text text=""/>
+						<Text text="{path:'dataModel>Profile_PermissionsManageAnalyticSnapshots/Profile_PermissionsManageAnalyticSnapshots',type:'sap.ui.model.type.Boolean'}"/>  
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>Profile.Profile_PermissionsManageAuthProviders}" required="false"/> 
+						<Text text=""/>
+						<Text text="{path:'dataModel>Profile_PermissionsManageAuthProviders/Profile_PermissionsManageAuthProviders',type:'sap.ui.model.type.Boolean'}"/>  
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>Profile.Profile_PermissionsManageBusinessHourHolidays}" required="false"/> 
+						<Text text=""/>
+						<Text text="{path:'dataModel>Profile_PermissionsManageBusinessHourHolidays/Profile_PermissionsManageBusinessHourHolidays',type:'sap.ui.model.type.Boolean'}"/>  
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>Profile.Profile_PermissionsManageCallCenters}" required="false"/> 
+						<Text text=""/>
+						<Text text="{path:'dataModel>Profile_PermissionsManageCallCenters/Profile_PermissionsManageCallCenters',type:'sap.ui.model.type.Boolean'}"/>  
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>Profile.Profile_PermissionsManageCases}" required="false"/> 
+						<Text text=""/>
+						<Text text="{path:'dataModel>Profile_PermissionsManageCases/Profile_PermissionsManageCases',type:'sap.ui.model.type.Boolean'}"/>  
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>Profile.Profile_PermissionsManageCategories}" required="false"/> 
+						<Text text=""/>
+						<Text text="{path:'dataModel>Profile_PermissionsManageCategories/Profile_PermissionsManageCategories',type:'sap.ui.model.type.Boolean'}"/>  
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>Profile.Profile_PermissionsManageCertificates}" required="false"/> 
+						<Text text=""/>
+						<Text text="{path:'dataModel>Profile_PermissionsManageCertificates/Profile_PermissionsManageCertificates',type:'sap.ui.model.type.Boolean'}"/>  
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>Profile.Profile_PermissionsManageChatterMessages}" required="false"/> 
+						<Text text=""/>
+						<Text text="{path:'dataModel>Profile_PermissionsManageChatterMessages/Profile_PermissionsManageChatterMessages',type:'sap.ui.model.type.Boolean'}"/>  
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>Profile.Profile_PermissionsManageContentPermissions}" required="false"/> 
+						<Text text=""/>
+						<Text text="{path:'dataModel>Profile_PermissionsManageContentPermissions/Profile_PermissionsManageContentPermissions',type:'sap.ui.model.type.Boolean'}"/>  
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>Profile.Profile_PermissionsManageContentProperties}" required="false"/> 
+						<Text text=""/>
+						<Text text="{path:'dataModel>Profile_PermissionsManageContentProperties/Profile_PermissionsManageContentProperties',type:'sap.ui.model.type.Boolean'}"/>  
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>Profile.Profile_PermissionsManageContentTypes}" required="false"/> 
+						<Text text=""/>
+						<Text text="{path:'dataModel>Profile_PermissionsManageContentTypes/Profile_PermissionsManageContentTypes',type:'sap.ui.model.type.Boolean'}"/>  
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>Profile.Profile_PermissionsManageCustomPermissions}" required="false"/> 
+						<Text text=""/>
+						<Text text="{path:'dataModel>Profile_PermissionsManageCustomPermissions/Profile_PermissionsManageCustomPermissions',type:'sap.ui.model.type.Boolean'}"/>  
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>Profile.Profile_PermissionsManageCustomReportTypes}" required="false"/> 
+						<Text text=""/>
+						<Text text="{path:'dataModel>Profile_PermissionsManageCustomReportTypes/Profile_PermissionsManageCustomReportTypes',type:'sap.ui.model.type.Boolean'}"/>  
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>Profile.Profile_PermissionsManageDashboards}" required="false"/> 
+						<Text text=""/>
+						<Text text="{path:'dataModel>Profile_PermissionsManageDashboards/Profile_PermissionsManageDashboards',type:'sap.ui.model.type.Boolean'}"/>  
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>Profile.Profile_PermissionsManageDataCategories}" required="false"/> 
+						<Text text=""/>
+						<Text text="{path:'dataModel>Profile_PermissionsManageDataCategories/Profile_PermissionsManageDataCategories',type:'sap.ui.model.type.Boolean'}"/>  
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>Profile.Profile_PermissionsManageDataIntegrations}" required="false"/> 
+						<Text text=""/>
+						<Text text="{path:'dataModel>Profile_PermissionsManageDataIntegrations/Profile_PermissionsManageDataIntegrations',type:'sap.ui.model.type.Boolean'}"/>  
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>Profile.Profile_PermissionsManageEmailClientConfig}" required="false"/> 
+						<Text text=""/>
+						<Text text="{path:'dataModel>Profile_PermissionsManageEmailClientConfig/Profile_PermissionsManageEmailClientConfig',type:'sap.ui.model.type.Boolean'}"/>  
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>Profile.Profile_PermissionsManageEntitlements}" required="false"/> 
+						<Text text=""/>
+						<Text text="{path:'dataModel>Profile_PermissionsManageEntitlements/Profile_PermissionsManageEntitlements',type:'sap.ui.model.type.Boolean'}"/>  
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>Profile.Profile_PermissionsManageExchangeConfig}" required="false"/> 
+						<Text text=""/>
+						<Text text="{path:'dataModel>Profile_PermissionsManageExchangeConfig/Profile_PermissionsManageExchangeConfig',type:'sap.ui.model.type.Boolean'}"/>  
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>Profile.Profile_PermissionsManageHealthCheck}" required="false"/> 
+						<Text text=""/>
+						<Text text="{path:'dataModel>Profile_PermissionsManageHealthCheck/Profile_PermissionsManageHealthCheck',type:'sap.ui.model.type.Boolean'}"/>  
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>Profile.Profile_PermissionsManageInteraction}" required="false"/> 
+						<Text text=""/>
+						<Text text="{path:'dataModel>Profile_PermissionsManageInteraction/Profile_PermissionsManageInteraction',type:'sap.ui.model.type.Boolean'}"/>  
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>Profile.Profile_PermissionsManageInternalUsers}" required="false"/> 
+						<Text text=""/>
+						<Text text="{path:'dataModel>Profile_PermissionsManageInternalUsers/Profile_PermissionsManageInternalUsers',type:'sap.ui.model.type.Boolean'}"/>  
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>Profile.Profile_PermissionsManageIpAddresses}" required="false"/> 
+						<Text text=""/>
+						<Text text="{path:'dataModel>Profile_PermissionsManageIpAddresses/Profile_PermissionsManageIpAddresses',type:'sap.ui.model.type.Boolean'}"/>  
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>Profile.Profile_PermissionsManageLeads}" required="false"/> 
+						<Text text=""/>
+						<Text text="{path:'dataModel>Profile_PermissionsManageLeads/Profile_PermissionsManageLeads',type:'sap.ui.model.type.Boolean'}"/>  
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>Profile.Profile_PermissionsManageLoginAccessPolicies}" required="false"/> 
+						<Text text=""/>
+						<Text text="{path:'dataModel>Profile_PermissionsManageLoginAccessPolicies/Profile_PermissionsManageLoginAccessPolicies',type:'sap.ui.model.type.Boolean'}"/>  
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>Profile.Profile_PermissionsManageMobile}" required="false"/> 
+						<Text text=""/>
+						<Text text="{path:'dataModel>Profile_PermissionsManageMobile/Profile_PermissionsManageMobile',type:'sap.ui.model.type.Boolean'}"/>  
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>Profile.Profile_PermissionsManageNetworks}" required="false"/> 
+						<Text text=""/>
+						<Text text="{path:'dataModel>Profile_PermissionsManageNetworks/Profile_PermissionsManageNetworks',type:'sap.ui.model.type.Boolean'}"/>  
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>Profile.Profile_PermissionsManagePasswordPolicies}" required="false"/> 
+						<Text text=""/>
+						<Text text="{path:'dataModel>Profile_PermissionsManagePasswordPolicies/Profile_PermissionsManagePasswordPolicies',type:'sap.ui.model.type.Boolean'}"/>  
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>Profile.Profile_PermissionsManageProfilesPermissionsets}" required="false"/> 
+						<Text text=""/>
+						<Text text="{path:'dataModel>Profile_PermissionsManageProfilesPermissionsets/Profile_PermissionsManageProfilesPermissionsets',type:'sap.ui.model.type.Boolean'}"/>  
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>Profile.Profile_PermissionsManagePvtRptsAndDashbds}" required="false"/> 
+						<Text text=""/>
+						<Text text="{path:'dataModel>Profile_PermissionsManagePvtRptsAndDashbds/Profile_PermissionsManagePvtRptsAndDashbds',type:'sap.ui.model.type.Boolean'}"/>  
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>Profile.Profile_PermissionsManageQuotas}" required="false"/> 
+						<Text text=""/>
+						<Text text="{path:'dataModel>Profile_PermissionsManageQuotas/Profile_PermissionsManageQuotas',type:'sap.ui.model.type.Boolean'}"/>  
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>Profile.Profile_PermissionsManageRealm}" required="false"/> 
+						<Text text=""/>
+						<Text text="{path:'dataModel>Profile_PermissionsManageRealm/Profile_PermissionsManageRealm',type:'sap.ui.model.type.Boolean'}"/>  
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>Profile.Profile_PermissionsManageRemoteAccess}" required="false"/> 
+						<Text text=""/>
+						<Text text="{path:'dataModel>Profile_PermissionsManageRemoteAccess/Profile_PermissionsManageRemoteAccess',type:'sap.ui.model.type.Boolean'}"/>  
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>Profile.Profile_PermissionsManageRoles}" required="false"/> 
+						<Text text=""/>
+						<Text text="{path:'dataModel>Profile_PermissionsManageRoles/Profile_PermissionsManageRoles',type:'sap.ui.model.type.Boolean'}"/>  
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>Profile.Profile_PermissionsManageSandboxes}" required="false"/> 
+						<Text text=""/>
+						<Text text="{path:'dataModel>Profile_PermissionsManageSandboxes/Profile_PermissionsManageSandboxes',type:'sap.ui.model.type.Boolean'}"/>  
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>Profile.Profile_PermissionsManageSessionPermissionSets}" required="false"/> 
+						<Text text=""/>
+						<Text text="{path:'dataModel>Profile_PermissionsManageSessionPermissionSets/Profile_PermissionsManageSessionPermissionSets',type:'sap.ui.model.type.Boolean'}"/>  
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>Profile.Profile_PermissionsManageSharing}" required="false"/> 
+						<Text text=""/>
+						<Text text="{path:'dataModel>Profile_PermissionsManageSharing/Profile_PermissionsManageSharing',type:'sap.ui.model.type.Boolean'}"/>  
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>Profile.Profile_PermissionsManageSolutions}" required="false"/> 
+						<Text text=""/>
+						<Text text="{path:'dataModel>Profile_PermissionsManageSolutions/Profile_PermissionsManageSolutions',type:'sap.ui.model.type.Boolean'}"/>  
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>Profile.Profile_PermissionsManageSynonyms}" required="false"/> 
+						<Text text=""/>
+						<Text text="{path:'dataModel>Profile_PermissionsManageSynonyms/Profile_PermissionsManageSynonyms',type:'sap.ui.model.type.Boolean'}"/>  
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>Profile.Profile_PermissionsManageTerritories}" required="false"/> 
+						<Text text=""/>
+						<Text text="{path:'dataModel>Profile_PermissionsManageTerritories/Profile_PermissionsManageTerritories',type:'sap.ui.model.type.Boolean'}"/>  
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>Profile.Profile_PermissionsManageTranslation}" required="false"/> 
+						<Text text=""/>
+						<Text text="{path:'dataModel>Profile_PermissionsManageTranslation/Profile_PermissionsManageTranslation',type:'sap.ui.model.type.Boolean'}"/>  
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>Profile.Profile_PermissionsManageTwoFactor}" required="false"/> 
+						<Text text=""/>
+						<Text text="{path:'dataModel>Profile_PermissionsManageTwoFactor/Profile_PermissionsManageTwoFactor',type:'sap.ui.model.type.Boolean'}"/>  
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>Profile.Profile_PermissionsManageUnlistedGroups}" required="false"/> 
+						<Text text=""/>
+						<Text text="{path:'dataModel>Profile_PermissionsManageUnlistedGroups/Profile_PermissionsManageUnlistedGroups',type:'sap.ui.model.type.Boolean'}"/>  
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>Profile.Profile_PermissionsManageUsers}" required="false"/> 
+						<Text text=""/>
+						<Text text="{path:'dataModel>Profile_PermissionsManageUsers/Profile_PermissionsManageUsers',type:'sap.ui.model.type.Boolean'}"/>  
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>Profile.Profile_PermissionsMassInlineEdit}" required="false"/> 
+						<Text text=""/>
+						<Text text="{path:'dataModel>Profile_PermissionsMassInlineEdit/Profile_PermissionsMassInlineEdit',type:'sap.ui.model.type.Boolean'}"/>  
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>Profile.Profile_PermissionsMergeTopics}" required="false"/> 
+						<Text text=""/>
+						<Text text="{path:'dataModel>Profile_PermissionsMergeTopics/Profile_PermissionsMergeTopics',type:'sap.ui.model.type.Boolean'}"/>  
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>Profile.Profile_PermissionsModerateChatter}" required="false"/> 
+						<Text text=""/>
+						<Text text="{path:'dataModel>Profile_PermissionsModerateChatter/Profile_PermissionsModerateChatter',type:'sap.ui.model.type.Boolean'}"/>  
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>Profile.Profile_PermissionsModerateNetworkUsers}" required="false"/> 
+						<Text text=""/>
+						<Text text="{path:'dataModel>Profile_PermissionsModerateNetworkUsers/Profile_PermissionsModerateNetworkUsers',type:'sap.ui.model.type.Boolean'}"/>  
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>Profile.Profile_PermissionsModifyAllData}" required="false"/> 
+						<Text text=""/>
+						<Text text="{path:'dataModel>Profile_PermissionsModifyAllData/Profile_PermissionsModifyAllData',type:'sap.ui.model.type.Boolean'}"/>  
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>Profile.Profile_PermissionsNewReportBuilder}" required="false"/> 
+						<Text text=""/>
+						<Text text="{path:'dataModel>Profile_PermissionsNewReportBuilder/Profile_PermissionsNewReportBuilder',type:'sap.ui.model.type.Boolean'}"/>  
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>Profile.Profile_PermissionsOutboundMigrationToolsUser}" required="false"/> 
+						<Text text=""/>
+						<Text text="{path:'dataModel>Profile_PermissionsOutboundMigrationToolsUser/Profile_PermissionsOutboundMigrationToolsUser',type:'sap.ui.model.type.Boolean'}"/>  
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>Profile.Profile_PermissionsOverrideForecasts}" required="false"/> 
+						<Text text=""/>
+						<Text text="{path:'dataModel>Profile_PermissionsOverrideForecasts/Profile_PermissionsOverrideForecasts',type:'sap.ui.model.type.Boolean'}"/>  
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>Profile.Profile_PermissionsPackaging2}" required="false"/> 
+						<Text text=""/>
+						<Text text="{path:'dataModel>Profile_PermissionsPackaging2/Profile_PermissionsPackaging2',type:'sap.ui.model.type.Boolean'}"/>  
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>Profile.Profile_PermissionsPasswordNeverExpires}" required="false"/> 
+						<Text text=""/>
+						<Text text="{path:'dataModel>Profile_PermissionsPasswordNeverExpires/Profile_PermissionsPasswordNeverExpires',type:'sap.ui.model.type.Boolean'}"/>  
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>Profile.Profile_PermissionsPreventClassicExperience}" required="false"/> 
+						<Text text=""/>
+						<Text text="{path:'dataModel>Profile_PermissionsPreventClassicExperience/Profile_PermissionsPreventClassicExperience',type:'sap.ui.model.type.Boolean'}"/>  
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>Profile.Profile_PermissionsPublicTwitterResponse}" required="false"/> 
+						<Text text=""/>
+						<Text text="{path:'dataModel>Profile_PermissionsPublicTwitterResponse/Profile_PermissionsPublicTwitterResponse',type:'sap.ui.model.type.Boolean'}"/>  
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>Profile.Profile_PermissionsPublishMultiforce}" required="false"/> 
+						<Text text=""/>
+						<Text text="{path:'dataModel>Profile_PermissionsPublishMultiforce/Profile_PermissionsPublishMultiforce',type:'sap.ui.model.type.Boolean'}"/>  
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>Profile.Profile_PermissionsRemoveDirectMessageMembers}" required="false"/> 
+						<Text text=""/>
+						<Text text="{path:'dataModel>Profile_PermissionsRemoveDirectMessageMembers/Profile_PermissionsRemoveDirectMessageMembers',type:'sap.ui.model.type.Boolean'}"/>  
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>Profile.Profile_PermissionsResetPasswords}" required="false"/> 
+						<Text text=""/>
+						<Text text="{path:'dataModel>Profile_PermissionsResetPasswords/Profile_PermissionsResetPasswords',type:'sap.ui.model.type.Boolean'}"/>  
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>Profile.Profile_PermissionsRunFlow}" required="false"/> 
+						<Text text=""/>
+						<Text text="{path:'dataModel>Profile_PermissionsRunFlow/Profile_PermissionsRunFlow',type:'sap.ui.model.type.Boolean'}"/>  
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>Profile.Profile_PermissionsRunReports}" required="false"/> 
+						<Text text=""/>
+						<Text text="{path:'dataModel>Profile_PermissionsRunReports/Profile_PermissionsRunReports',type:'sap.ui.model.type.Boolean'}"/>  
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>Profile.Profile_PermissionsSalesConsole}" required="false"/> 
+						<Text text=""/>
+						<Text text="{path:'dataModel>Profile_PermissionsSalesConsole/Profile_PermissionsSalesConsole',type:'sap.ui.model.type.Boolean'}"/>  
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>Profile.Profile_PermissionsScheduleJob}" required="false"/> 
+						<Text text=""/>
+						<Text text="{path:'dataModel>Profile_PermissionsScheduleJob/Profile_PermissionsScheduleJob',type:'sap.ui.model.type.Boolean'}"/>  
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>Profile.Profile_PermissionsScheduleReports}" required="false"/> 
+						<Text text=""/>
+						<Text text="{path:'dataModel>Profile_PermissionsScheduleReports/Profile_PermissionsScheduleReports',type:'sap.ui.model.type.Boolean'}"/>  
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>Profile.Profile_PermissionsScsRequireApproval}" required="false"/> 
+						<Text text=""/>
+						<Text text="{path:'dataModel>Profile_PermissionsScsRequireApproval/Profile_PermissionsScsRequireApproval',type:'sap.ui.model.type.Boolean'}"/>  
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>Profile.Profile_PermissionsSelectFilesFromSalesforce}" required="false"/> 
+						<Text text=""/>
+						<Text text="{path:'dataModel>Profile_PermissionsSelectFilesFromSalesforce/Profile_PermissionsSelectFilesFromSalesforce',type:'sap.ui.model.type.Boolean'}"/>  
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>Profile.Profile_PermissionsSendAnnouncementEmails}" required="false"/> 
+						<Text text=""/>
+						<Text text="{path:'dataModel>Profile_PermissionsSendAnnouncementEmails/Profile_PermissionsSendAnnouncementEmails',type:'sap.ui.model.type.Boolean'}"/>  
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>Profile.Profile_PermissionsSendSitRequests}" required="false"/> 
+						<Text text=""/>
+						<Text text="{path:'dataModel>Profile_PermissionsSendSitRequests/Profile_PermissionsSendSitRequests',type:'sap.ui.model.type.Boolean'}"/>  
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>Profile.Profile_PermissionsShowCompanyNameAsUserBadge}" required="false"/> 
+						<Text text=""/>
+						<Text text="{path:'dataModel>Profile_PermissionsShowCompanyNameAsUserBadge/Profile_PermissionsShowCompanyNameAsUserBadge',type:'sap.ui.model.type.Boolean'}"/>  
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>Profile.Profile_PermissionsSolutionImport}" required="false"/> 
+						<Text text=""/>
+						<Text text="{path:'dataModel>Profile_PermissionsSolutionImport/Profile_PermissionsSolutionImport',type:'sap.ui.model.type.Boolean'}"/>  
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>Profile.Profile_PermissionsSubmitMacrosAllowed}" required="false"/> 
+						<Text text=""/>
+						<Text text="{path:'dataModel>Profile_PermissionsSubmitMacrosAllowed/Profile_PermissionsSubmitMacrosAllowed',type:'sap.ui.model.type.Boolean'}"/>  
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>Profile.Profile_PermissionsSubscribeToLightningReports}" required="false"/> 
+						<Text text=""/>
+						<Text text="{path:'dataModel>Profile_PermissionsSubscribeToLightningReports/Profile_PermissionsSubscribeToLightningReports',type:'sap.ui.model.type.Boolean'}"/>  
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>Profile.Profile_PermissionsTransferAnyCase}" required="false"/> 
+						<Text text=""/>
+						<Text text="{path:'dataModel>Profile_PermissionsTransferAnyCase/Profile_PermissionsTransferAnyCase',type:'sap.ui.model.type.Boolean'}"/>  
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>Profile.Profile_PermissionsTransferAnyEntity}" required="false"/> 
+						<Text text=""/>
+						<Text text="{path:'dataModel>Profile_PermissionsTransferAnyEntity/Profile_PermissionsTransferAnyEntity',type:'sap.ui.model.type.Boolean'}"/>  
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>Profile.Profile_PermissionsTransferAnyLead}" required="false"/> 
+						<Text text=""/>
+						<Text text="{path:'dataModel>Profile_PermissionsTransferAnyLead/Profile_PermissionsTransferAnyLead',type:'sap.ui.model.type.Boolean'}"/>  
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>Profile.Profile_PermissionsTwoFactorApi}" required="false"/> 
+						<Text text=""/>
+						<Text text="{path:'dataModel>Profile_PermissionsTwoFactorApi/Profile_PermissionsTwoFactorApi',type:'sap.ui.model.type.Boolean'}"/>  
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>Profile.Profile_PermissionsUseTeamReassignWizards}" required="false"/> 
+						<Text text=""/>
+						<Text text="{path:'dataModel>Profile_PermissionsUseTeamReassignWizards/Profile_PermissionsUseTeamReassignWizards',type:'sap.ui.model.type.Boolean'}"/>  
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>Profile.Profile_PermissionsUseWebLink}" required="false"/> 
+						<Text text=""/>
+						<Text text="{path:'dataModel>Profile_PermissionsUseWebLink/Profile_PermissionsUseWebLink',type:'sap.ui.model.type.Boolean'}"/>  
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>Profile.Profile_PermissionsViewAllActivities}" required="false"/> 
+						<Text text=""/>
+						<Text text="{path:'dataModel>Profile_PermissionsViewAllActivities/Profile_PermissionsViewAllActivities',type:'sap.ui.model.type.Boolean'}"/>  
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>Profile.Profile_PermissionsViewAllData}" required="false"/> 
+						<Text text=""/>
+						<Text text="{path:'dataModel>Profile_PermissionsViewAllData/Profile_PermissionsViewAllData',type:'sap.ui.model.type.Boolean'}"/>  
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>Profile.Profile_PermissionsViewAllForecasts}" required="false"/> 
+						<Text text=""/>
+						<Text text="{path:'dataModel>Profile_PermissionsViewAllForecasts/Profile_PermissionsViewAllForecasts',type:'sap.ui.model.type.Boolean'}"/>  
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>Profile.Profile_PermissionsViewAllUsers}" required="false"/> 
+						<Text text=""/>
+						<Text text="{path:'dataModel>Profile_PermissionsViewAllUsers/Profile_PermissionsViewAllUsers',type:'sap.ui.model.type.Boolean'}"/>  
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>Profile.Profile_PermissionsViewAndDebugManagedApex}" required="false"/> 
+						<Text text=""/>
+						<Text text="{path:'dataModel>Profile_PermissionsViewAndDebugManagedApex/Profile_PermissionsViewAndDebugManagedApex',type:'sap.ui.model.type.Boolean'}"/>  
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>Profile.Profile_PermissionsViewContent}" required="false"/> 
+						<Text text=""/>
+						<Text text="{path:'dataModel>Profile_PermissionsViewContent/Profile_PermissionsViewContent',type:'sap.ui.model.type.Boolean'}"/>  
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>Profile.Profile_PermissionsViewDataAssessment}" required="false"/> 
+						<Text text=""/>
+						<Text text="{path:'dataModel>Profile_PermissionsViewDataAssessment/Profile_PermissionsViewDataAssessment',type:'sap.ui.model.type.Boolean'}"/>  
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>Profile.Profile_PermissionsViewDataCategories}" required="false"/> 
+						<Text text=""/>
+						<Text text="{path:'dataModel>Profile_PermissionsViewDataCategories/Profile_PermissionsViewDataCategories',type:'sap.ui.model.type.Boolean'}"/>  
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>Profile.Profile_PermissionsViewEncryptedData}" required="false"/> 
+						<Text text=""/>
+						<Text text="{path:'dataModel>Profile_PermissionsViewEncryptedData/Profile_PermissionsViewEncryptedData',type:'sap.ui.model.type.Boolean'}"/>  
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>Profile.Profile_PermissionsViewEventLogFiles}" required="false"/> 
+						<Text text=""/>
+						<Text text="{path:'dataModel>Profile_PermissionsViewEventLogFiles/Profile_PermissionsViewEventLogFiles',type:'sap.ui.model.type.Boolean'}"/>  
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>Profile.Profile_PermissionsViewHealthCheck}" required="false"/> 
+						<Text text=""/>
+						<Text text="{path:'dataModel>Profile_PermissionsViewHealthCheck/Profile_PermissionsViewHealthCheck',type:'sap.ui.model.type.Boolean'}"/>  
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>Profile.Profile_PermissionsViewHelpLink}" required="false"/> 
+						<Text text=""/>
+						<Text text="{path:'dataModel>Profile_PermissionsViewHelpLink/Profile_PermissionsViewHelpLink',type:'sap.ui.model.type.Boolean'}"/>  
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>Profile.Profile_PermissionsViewMyTeamsDashboards}" required="false"/> 
+						<Text text=""/>
+						<Text text="{path:'dataModel>Profile_PermissionsViewMyTeamsDashboards/Profile_PermissionsViewMyTeamsDashboards',type:'sap.ui.model.type.Boolean'}"/>  
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>Profile.Profile_PermissionsViewSetup}" required="false"/> 
+						<Text text=""/>
+						<Text text="{path:'dataModel>Profile_PermissionsViewSetup/Profile_PermissionsViewSetup',type:'sap.ui.model.type.Boolean'}"/>  
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>Profile.Profile_SystemModstamp}" required="false"/> 
+						<Text text=""/>
+						<Text text="{dataModel>Profile_SystemModstamp/Profile_SystemModstamp}"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>Profile.Profile_UserLicenseId}" required="false"/> 
+						<Text text=""/>
+						<rdf:ListResource path="dataModel>Profile_UserLicenseId/sfdc_Profile_UserLicenseId" entitySet="UserLicense"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>Profile.Profile_UserType}" required="false"/> 
+						<Text text=""/>
+						<rdf:TextLink text="{path:'dataModel>Profile_UserType/Profile_UserType',type:'sap.ui.model.type.String' }" linkText="{i18n>Profile.Profile_UserType/Profile_UserType}"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>Profile.RecentlyViewed_ProfileId_Inverse}" required="false"/> 
+						<Text text=""/>
+						<rdf:ListResource path="dataModel>RecentlyViewed_ProfileId_Inverse/sfdc_RecentlyViewed_ProfileId_Inverse" entitySet="RecentlyViewed"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>Profile.User_ProfileId_Inverse}" required="false"/> 
+						<Text text=""/>
+						<rdf:ListResource path="dataModel>User_ProfileId_Inverse/sfdc_User_ProfileId_Inverse" entitySet="User"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>Profile.Name_ProfileId_Inverse}" required="false"/> 
+						<rdf:ListResource path="dataModel>Name_ProfileId_Inverse" entitySet="Name"/>
+						<Text text=""/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>Profile.PermissionSet_ProfileId_Inverse}" required="false"/> 
+						<rdf:ListResource path="dataModel>PermissionSet_ProfileId_Inverse" entitySet="PermissionSet"/>
+						<Text text=""/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>Profile.Profile_CreatedById}" required="false"/> 
+						<rdf:ListResource path="dataModel>Profile_CreatedById" entitySet="User"/>
+						<Text text=""/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>Profile.Profile_LastModifiedById}" required="false"/> 
+						<rdf:ListResource path="dataModel>Profile_LastModifiedById" entitySet="User"/>
+						<Text text=""/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>Profile.Profile_UserLicenseId}" required="false"/> 
+						<rdf:ListResource path="dataModel>Profile_UserLicenseId" entitySet="UserLicense"/>
+						<Text text=""/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>Profile.RecentlyViewed_ProfileId_Inverse}" required="false"/> 
+						<rdf:ListResource path="dataModel>RecentlyViewed_ProfileId_Inverse" entitySet="RecentlyViewed"/>
+						<Text text=""/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>Profile.User_ProfileId_Inverse}" required="false"/> 
+						<rdf:ListResource path="dataModel>User_ProfileId_Inverse" entitySet="User"/>
+						<Text text=""/>
+					</cells>
+				</ColumnListItem>
+			</items>
+		</Table>
+	</Page>
+</mvc:View>

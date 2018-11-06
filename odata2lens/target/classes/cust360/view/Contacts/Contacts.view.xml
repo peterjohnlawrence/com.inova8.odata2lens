@@ -1,0 +1,337 @@
+<mvc:View controllerName="com.inova8.lens.controller.EntitySet360" xmlns="sap.m" xmlns:mvc="sap.ui.core.mvc" xmlns:layout="sap.ui.layout"
+	xmlns:rdf="com.inova8.lens.control" xmlns:core="sap.ui.core">
+	<Page showHeader="false" id="page" navButtonPress="onNavBack" showNavButton="true" title="{i18n>Contacts.ViewTitle}">
+		<content>
+			<Table id="table360" inset="false" items="{ path: 'dataModel>/Contact' , sorter: { path: 'label', descending: false } 
+				}"
+				noDataText="{entitySetView>/tableNoDataText}" busyIndicatorDelay="{entitySetView>/tableBusyDelay}" growing="true" growingScrollToLoad="true"
+				updateFinished="onUpdateFinished"  fixedLayout="false">
+				<headerToolbar>
+					<Toolbar>
+						<ToolbarSpacer/>
+						<HBox id="sourceTitle" alignItems="Center">
+							<rdf:TextResource id="selectedResource" path="" entitySet=""/>
+						</HBox>
+						<Title id="pathTitle" text="{entitySetView>/navigationText}"/>
+						<HBox id="versionsTitle" alignItems="Center">
+							<Title text="(" required="false"/>
+							<ComboBox id="versionSelection" items="{ path: 'entitySetView>/versions' }" selectionChange="onVersionChange">
+								<core:Item key="{entitySetView>navigation}" text="{entityView>text}"/>
+							</ComboBox>
+							<Title text=")" required="false"/>
+						</HBox>
+						<Title id="tableHeader" text="{entitySetView>/entitySetTableTitle}"/>
+						<ToolbarSpacer/>
+						<SearchField id="searchField" tooltip="{i18n>search.searchTooltip}" search="onSearch" width="auto"></SearchField>
+					</Toolbar>
+				</headerToolbar>
+				<columns>
+					<Column >
+						<Text text="{i18n>Contacts.this}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>Contacts.Contact_AssistantName}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>Contacts.Contact_AssistantPhone}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>Contacts.Contact_Birthdate}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>Contacts.Contact_CreatedDate}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>Contacts.Contact_Department}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>Contacts.Contact_Description}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>Contacts.Contact_Email}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>Contacts.Contact_EmailBouncedDate}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>Contacts.Contact_EmailBouncedReason}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>Contacts.Contact_Fax}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>Contacts.Contact_FirstName}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>Contacts.Contact_HomePhone}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>Contacts.Contact_Id}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>Contacts.Contact_IsDeleted}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>Contacts.Contact_IsEmailBounced}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>Contacts.Contact_Jigsaw}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>Contacts.Contact_JigsawContactId}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>Contacts.Contact_LastActivityDate}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>Contacts.Contact_LastCURequestDate}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>Contacts.Contact_LastCUUpdateDate}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>Contacts.Contact_LastModifiedDate}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>Contacts.Contact_LastName}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>Contacts.Contact_LastReferencedDate}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>Contacts.Contact_LastViewedDate}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>Contacts.Contact_LeadSource}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>Contacts.Contact_MailingCity}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>Contacts.Contact_MailingCountry}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>Contacts.Contact_MailingGeocodeAccuracy}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>Contacts.Contact_MailingLatitude}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>Contacts.Contact_MailingLongitude}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>Contacts.Contact_MailingPostalCode}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>Contacts.Contact_MailingState}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>Contacts.Contact_MailingStreet}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>Contacts.Contact_MobilePhone}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>Contacts.Contact_Name}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>Contacts.Contact_OtherCity}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>Contacts.Contact_OtherCountry}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>Contacts.Contact_OtherGeocodeAccuracy}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>Contacts.Contact_OtherLatitude}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>Contacts.Contact_OtherLongitude}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>Contacts.Contact_OtherPhone}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>Contacts.Contact_OtherPostalCode}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>Contacts.Contact_OtherState}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>Contacts.Contact_OtherStreet}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>Contacts.Contact_Phone}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>Contacts.Contact_PhotoUrl}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>Contacts.Contact_Salutation}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>Contacts.Contact_SystemModstamp}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>Contacts.Contact_Title}"/>
+					</Column>
+				</columns>
+				<items>
+					<ColumnListItem id="template360" type="Navigation" press="onPress">
+						<cells>
+							<rdf:TextResource path="dataModel>" entitySet="Contact"/>
+							<VBox>					
+							<rdf:TextLink text="{path:'dataModel>Contact_AssistantName/Contact_AssistantName',type:'sap.ui.model.type.String'}" linkText="{i18n>Contact.Contact_AssistantName/Contact_AssistantName}"/>
+							</VBox>							
+							<VBox>					
+							<rdf:TextLink text="{path:'dataModel>Contact_AssistantPhone/Contact_AssistantPhone',type:'sap.ui.model.type.String'}" linkText="{i18n>Contact.Contact_AssistantPhone/Contact_AssistantPhone}"/>
+							</VBox>							
+							<VBox>					
+							<Text text="{dataModel>Contact_Birthdate/Contact_Birthdate}"/>
+							</VBox>							
+							<VBox>					
+							<Text text="{dataModel>Contact_CreatedDate/Contact_CreatedDate}"/>
+							</VBox>							
+							<VBox>					
+							<rdf:TextLink text="{path:'dataModel>Contact_Department/Contact_Department',type:'sap.ui.model.type.String'}" linkText="{i18n>Contact.Contact_Department/Contact_Department}"/>
+							</VBox>							
+							<VBox>					
+							<rdf:TextLink text="{path:'dataModel>Contact_Description/Contact_Description',type:'sap.ui.model.type.String'}" linkText="{i18n>Contact.Contact_Description/Contact_Description}"/>
+							</VBox>							
+							<VBox>					
+							<rdf:TextLink text="{path:'dataModel>Contact_Email/Contact_Email',type:'sap.ui.model.type.String'}" linkText="{i18n>Contact.Contact_Email/Contact_Email}"/>
+							</VBox>							
+							<VBox>					
+							<Text text="{dataModel>Contact_EmailBouncedDate/Contact_EmailBouncedDate}"/>
+							</VBox>							
+							<VBox>					
+							<rdf:TextLink text="{path:'dataModel>Contact_EmailBouncedReason/Contact_EmailBouncedReason',type:'sap.ui.model.type.String'}" linkText="{i18n>Contact.Contact_EmailBouncedReason/Contact_EmailBouncedReason}"/>
+							</VBox>							
+							<VBox>					
+							<rdf:TextLink text="{path:'dataModel>Contact_Fax/Contact_Fax',type:'sap.ui.model.type.String'}" linkText="{i18n>Contact.Contact_Fax/Contact_Fax}"/>
+							</VBox>							
+							<VBox>					
+							<rdf:TextLink text="{path:'dataModel>Contact_FirstName/Contact_FirstName',type:'sap.ui.model.type.String'}" linkText="{i18n>Contact.Contact_FirstName/Contact_FirstName}"/>
+							</VBox>							
+							<VBox>					
+							<rdf:TextLink text="{path:'dataModel>Contact_HomePhone/Contact_HomePhone',type:'sap.ui.model.type.String'}" linkText="{i18n>Contact.Contact_HomePhone/Contact_HomePhone}"/>
+							</VBox>							
+							<VBox>					
+							<rdf:TextLink text="{path:'dataModel>Contact_Id/Contact_Id',type:'sap.ui.model.type.String'}" linkText="{i18n>Contact.Contact_Id/Contact_Id}"/>
+							</VBox>							
+							<VBox>					
+								<Text text="{path:'dataModel>Contact_IsDeleted/Contact_IsDeleted',type:'sap.ui.model.type.Boolean'}"/>  
+							</VBox>							
+							<VBox>					
+								<Text text="{path:'dataModel>Contact_IsEmailBounced/Contact_IsEmailBounced',type:'sap.ui.model.type.Boolean'}"/>  
+							</VBox>							
+							<VBox>					
+							<rdf:TextLink text="{path:'dataModel>Contact_Jigsaw/Contact_Jigsaw',type:'sap.ui.model.type.String'}" linkText="{i18n>Contact.Contact_Jigsaw/Contact_Jigsaw}"/>
+							</VBox>							
+							<VBox>					
+							<rdf:TextLink text="{path:'dataModel>Contact_JigsawContactId/Contact_JigsawContactId',type:'sap.ui.model.type.String'}" linkText="{i18n>Contact.Contact_JigsawContactId/Contact_JigsawContactId}"/>
+							</VBox>							
+							<VBox>					
+							<Text text="{dataModel>Contact_LastActivityDate/Contact_LastActivityDate}"/>
+							</VBox>							
+							<VBox>					
+							<Text text="{dataModel>Contact_LastCURequestDate/Contact_LastCURequestDate}"/>
+							</VBox>							
+							<VBox>					
+							<Text text="{dataModel>Contact_LastCUUpdateDate/Contact_LastCUUpdateDate}"/>
+							</VBox>							
+							<VBox>					
+							<Text text="{dataModel>Contact_LastModifiedDate/Contact_LastModifiedDate}"/>
+							</VBox>							
+							<VBox>					
+							<rdf:TextLink text="{path:'dataModel>Contact_LastName/Contact_LastName',type:'sap.ui.model.type.String'}" linkText="{i18n>Contact.Contact_LastName/Contact_LastName}"/>
+							</VBox>							
+							<VBox>					
+							<Text text="{dataModel>Contact_LastReferencedDate/Contact_LastReferencedDate}"/>
+							</VBox>							
+							<VBox>					
+							<Text text="{dataModel>Contact_LastViewedDate/Contact_LastViewedDate}"/>
+							</VBox>							
+							<VBox>					
+							<rdf:TextLink text="{path:'dataModel>Contact_LeadSource/Contact_LeadSource',type:'sap.ui.model.type.String'}" linkText="{i18n>Contact.Contact_LeadSource/Contact_LeadSource}"/>
+							</VBox>							
+							<VBox>					
+							<rdf:TextLink text="{path:'dataModel>Contact_MailingCity/Contact_MailingCity',type:'sap.ui.model.type.String'}" linkText="{i18n>Contact.Contact_MailingCity/Contact_MailingCity}"/>
+							</VBox>							
+							<VBox>					
+							<rdf:TextLink text="{path:'dataModel>Contact_MailingCountry/Contact_MailingCountry',type:'sap.ui.model.type.String'}" linkText="{i18n>Contact.Contact_MailingCountry/Contact_MailingCountry}"/>
+							</VBox>							
+							<VBox>					
+							<rdf:TextLink text="{path:'dataModel>Contact_MailingGeocodeAccuracy/Contact_MailingGeocodeAccuracy',type:'sap.ui.model.type.String'}" linkText="{i18n>Contact.Contact_MailingGeocodeAccuracy/Contact_MailingGeocodeAccuracy}"/>
+							</VBox>							
+							<VBox>					
+							<Text text="{path:'dataModel>Contact_MailingLatitude/Contact_MailingLatitude',type:'sap.ui.model.type.Float', formatOptions:{'style':'short','maxFractionDigits':2} }"/>
+							</VBox>							
+							<VBox>					
+							<Text text="{path:'dataModel>Contact_MailingLongitude/Contact_MailingLongitude',type:'sap.ui.model.type.Float', formatOptions:{'style':'short','maxFractionDigits':2} }"/>
+							</VBox>							
+							<VBox>					
+							<rdf:TextLink text="{path:'dataModel>Contact_MailingPostalCode/Contact_MailingPostalCode',type:'sap.ui.model.type.String'}" linkText="{i18n>Contact.Contact_MailingPostalCode/Contact_MailingPostalCode}"/>
+							</VBox>							
+							<VBox>					
+							<rdf:TextLink text="{path:'dataModel>Contact_MailingState/Contact_MailingState',type:'sap.ui.model.type.String'}" linkText="{i18n>Contact.Contact_MailingState/Contact_MailingState}"/>
+							</VBox>							
+							<VBox>					
+							<rdf:TextLink text="{path:'dataModel>Contact_MailingStreet/Contact_MailingStreet',type:'sap.ui.model.type.String'}" linkText="{i18n>Contact.Contact_MailingStreet/Contact_MailingStreet}"/>
+							</VBox>							
+							<VBox>					
+							<rdf:TextLink text="{path:'dataModel>Contact_MobilePhone/Contact_MobilePhone',type:'sap.ui.model.type.String'}" linkText="{i18n>Contact.Contact_MobilePhone/Contact_MobilePhone}"/>
+							</VBox>							
+							<VBox>					
+							<rdf:TextLink text="{path:'dataModel>Contact_Name/Contact_Name',type:'sap.ui.model.type.String'}" linkText="{i18n>Contact.Contact_Name/Contact_Name}"/>
+							</VBox>							
+							<VBox>					
+							<rdf:TextLink text="{path:'dataModel>Contact_OtherCity/Contact_OtherCity',type:'sap.ui.model.type.String'}" linkText="{i18n>Contact.Contact_OtherCity/Contact_OtherCity}"/>
+							</VBox>							
+							<VBox>					
+							<rdf:TextLink text="{path:'dataModel>Contact_OtherCountry/Contact_OtherCountry',type:'sap.ui.model.type.String'}" linkText="{i18n>Contact.Contact_OtherCountry/Contact_OtherCountry}"/>
+							</VBox>							
+							<VBox>					
+							<rdf:TextLink text="{path:'dataModel>Contact_OtherGeocodeAccuracy/Contact_OtherGeocodeAccuracy',type:'sap.ui.model.type.String'}" linkText="{i18n>Contact.Contact_OtherGeocodeAccuracy/Contact_OtherGeocodeAccuracy}"/>
+							</VBox>							
+							<VBox>					
+							<Text text="{path:'dataModel>Contact_OtherLatitude/Contact_OtherLatitude',type:'sap.ui.model.type.Float', formatOptions:{'style':'short','maxFractionDigits':2} }"/>
+							</VBox>							
+							<VBox>					
+							<Text text="{path:'dataModel>Contact_OtherLongitude/Contact_OtherLongitude',type:'sap.ui.model.type.Float', formatOptions:{'style':'short','maxFractionDigits':2} }"/>
+							</VBox>							
+							<VBox>					
+							<rdf:TextLink text="{path:'dataModel>Contact_OtherPhone/Contact_OtherPhone',type:'sap.ui.model.type.String'}" linkText="{i18n>Contact.Contact_OtherPhone/Contact_OtherPhone}"/>
+							</VBox>							
+							<VBox>					
+							<rdf:TextLink text="{path:'dataModel>Contact_OtherPostalCode/Contact_OtherPostalCode',type:'sap.ui.model.type.String'}" linkText="{i18n>Contact.Contact_OtherPostalCode/Contact_OtherPostalCode}"/>
+							</VBox>							
+							<VBox>					
+							<rdf:TextLink text="{path:'dataModel>Contact_OtherState/Contact_OtherState',type:'sap.ui.model.type.String'}" linkText="{i18n>Contact.Contact_OtherState/Contact_OtherState}"/>
+							</VBox>							
+							<VBox>					
+							<rdf:TextLink text="{path:'dataModel>Contact_OtherStreet/Contact_OtherStreet',type:'sap.ui.model.type.String'}" linkText="{i18n>Contact.Contact_OtherStreet/Contact_OtherStreet}"/>
+							</VBox>							
+							<VBox>					
+							<rdf:TextLink text="{path:'dataModel>Contact_Phone/Contact_Phone',type:'sap.ui.model.type.String'}" linkText="{i18n>Contact.Contact_Phone/Contact_Phone}"/>
+							</VBox>							
+							<VBox>					
+							<rdf:TextLink text="{path:'dataModel>Contact_PhotoUrl/Contact_PhotoUrl',type:'sap.ui.model.type.String'}" linkText="{i18n>Contact.Contact_PhotoUrl/Contact_PhotoUrl}"/>
+							</VBox>							
+							<VBox>					
+							<rdf:TextLink text="{path:'dataModel>Contact_Salutation/Contact_Salutation',type:'sap.ui.model.type.String'}" linkText="{i18n>Contact.Contact_Salutation/Contact_Salutation}"/>
+							</VBox>							
+							<VBox>					
+							<Text text="{dataModel>Contact_SystemModstamp/Contact_SystemModstamp}"/>
+							</VBox>							
+							<VBox>					
+							<rdf:TextLink text="{path:'dataModel>Contact_Title/Contact_Title',type:'sap.ui.model.type.String'}" linkText="{i18n>Contact.Contact_Title/Contact_Title}"/>
+							</VBox>							
+						</cells>
+					</ColumnListItem>
+				</items>
+			</Table>
+		</content>
+	</Page>
+</mvc:View>

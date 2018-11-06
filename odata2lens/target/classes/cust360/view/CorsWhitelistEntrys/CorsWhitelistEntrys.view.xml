@@ -1,0 +1,103 @@
+<mvc:View controllerName="com.inova8.lens.controller.EntitySet360" xmlns="sap.m" xmlns:mvc="sap.ui.core.mvc" xmlns:layout="sap.ui.layout"
+	xmlns:rdf="com.inova8.lens.control" xmlns:core="sap.ui.core">
+	<Page showHeader="false" id="page" navButtonPress="onNavBack" showNavButton="true" title="{i18n>CorsWhitelistEntrys.ViewTitle}">
+		<content>
+			<Table id="table360" inset="false" items="{ path: 'dataModel>/CorsWhitelistEntry' , sorter: { path: 'label', descending: false } 
+				}"
+				noDataText="{entitySetView>/tableNoDataText}" busyIndicatorDelay="{entitySetView>/tableBusyDelay}" growing="true" growingScrollToLoad="true"
+				updateFinished="onUpdateFinished"  fixedLayout="false">
+				<headerToolbar>
+					<Toolbar>
+						<ToolbarSpacer/>
+						<HBox id="sourceTitle" alignItems="Center">
+							<rdf:TextResource id="selectedResource" path="" entitySet=""/>
+						</HBox>
+						<Title id="pathTitle" text="{entitySetView>/navigationText}"/>
+						<HBox id="versionsTitle" alignItems="Center">
+							<Title text="(" required="false"/>
+							<ComboBox id="versionSelection" items="{ path: 'entitySetView>/versions' }" selectionChange="onVersionChange">
+								<core:Item key="{entitySetView>navigation}" text="{entityView>text}"/>
+							</ComboBox>
+							<Title text=")" required="false"/>
+						</HBox>
+						<Title id="tableHeader" text="{entitySetView>/entitySetTableTitle}"/>
+						<ToolbarSpacer/>
+						<SearchField id="searchField" tooltip="{i18n>search.searchTooltip}" search="onSearch" width="auto"></SearchField>
+					</Toolbar>
+				</headerToolbar>
+				<columns>
+					<Column >
+						<Text text="{i18n>CorsWhitelistEntrys.this}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>CorsWhitelistEntrys.CorsWhitelistEntry_CreatedDate}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>CorsWhitelistEntrys.CorsWhitelistEntry_DeveloperName}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>CorsWhitelistEntrys.CorsWhitelistEntry_Id}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>CorsWhitelistEntrys.CorsWhitelistEntry_IsDeleted}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>CorsWhitelistEntrys.CorsWhitelistEntry_Language}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>CorsWhitelistEntrys.CorsWhitelistEntry_LastModifiedDate}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>CorsWhitelistEntrys.CorsWhitelistEntry_MasterLabel}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>CorsWhitelistEntrys.CorsWhitelistEntry_NamespacePrefix}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>CorsWhitelistEntrys.CorsWhitelistEntry_SystemModstamp}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>CorsWhitelistEntrys.CorsWhitelistEntry_UrlPattern}"/>
+					</Column>
+				</columns>
+				<items>
+					<ColumnListItem id="template360" type="Navigation" press="onPress">
+						<cells>
+							<rdf:TextResource path="dataModel>" entitySet="CorsWhitelistEntry"/>
+							<VBox>					
+							<Text text="{dataModel>CorsWhitelistEntry_CreatedDate/CorsWhitelistEntry_CreatedDate}"/>
+							</VBox>							
+							<VBox>					
+							<rdf:TextLink text="{path:'dataModel>CorsWhitelistEntry_DeveloperName/CorsWhitelistEntry_DeveloperName',type:'sap.ui.model.type.String'}" linkText="{i18n>CorsWhitelistEntry.CorsWhitelistEntry_DeveloperName/CorsWhitelistEntry_DeveloperName}"/>
+							</VBox>							
+							<VBox>					
+							<rdf:TextLink text="{path:'dataModel>CorsWhitelistEntry_Id/CorsWhitelistEntry_Id',type:'sap.ui.model.type.String'}" linkText="{i18n>CorsWhitelistEntry.CorsWhitelistEntry_Id/CorsWhitelistEntry_Id}"/>
+							</VBox>							
+							<VBox>					
+								<Text text="{path:'dataModel>CorsWhitelistEntry_IsDeleted/CorsWhitelistEntry_IsDeleted',type:'sap.ui.model.type.Boolean'}"/>  
+							</VBox>							
+							<VBox>					
+							<rdf:TextLink text="{path:'dataModel>CorsWhitelistEntry_Language/CorsWhitelistEntry_Language',type:'sap.ui.model.type.String'}" linkText="{i18n>CorsWhitelistEntry.CorsWhitelistEntry_Language/CorsWhitelistEntry_Language}"/>
+							</VBox>							
+							<VBox>					
+							<Text text="{dataModel>CorsWhitelistEntry_LastModifiedDate/CorsWhitelistEntry_LastModifiedDate}"/>
+							</VBox>							
+							<VBox>					
+							<rdf:TextLink text="{path:'dataModel>CorsWhitelistEntry_MasterLabel/CorsWhitelistEntry_MasterLabel',type:'sap.ui.model.type.String'}" linkText="{i18n>CorsWhitelistEntry.CorsWhitelistEntry_MasterLabel/CorsWhitelistEntry_MasterLabel}"/>
+							</VBox>							
+							<VBox>					
+							<rdf:TextLink text="{path:'dataModel>CorsWhitelistEntry_NamespacePrefix/CorsWhitelistEntry_NamespacePrefix',type:'sap.ui.model.type.String'}" linkText="{i18n>CorsWhitelistEntry.CorsWhitelistEntry_NamespacePrefix/CorsWhitelistEntry_NamespacePrefix}"/>
+							</VBox>							
+							<VBox>					
+							<Text text="{dataModel>CorsWhitelistEntry_SystemModstamp/CorsWhitelistEntry_SystemModstamp}"/>
+							</VBox>							
+							<VBox>					
+							<rdf:TextLink text="{path:'dataModel>CorsWhitelistEntry_UrlPattern/CorsWhitelistEntry_UrlPattern',type:'sap.ui.model.type.String'}" linkText="{i18n>CorsWhitelistEntry.CorsWhitelistEntry_UrlPattern/CorsWhitelistEntry_UrlPattern}"/>
+							</VBox>							
+						</cells>
+					</ColumnListItem>
+				</items>
+			</Table>
+		</content>
+	</Page>
+</mvc:View>

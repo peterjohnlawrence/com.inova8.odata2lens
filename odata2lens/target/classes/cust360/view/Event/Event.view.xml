@@ -1,0 +1,490 @@
+<mvc:View controllerName="com.inova8.lens.controller.Entity360" xmlns="sap.m" xmlns:mvc="sap.ui.core.mvc" xmlns:l="sap.ui.layout"
+	xmlns:f="sap.ui.layout.form" xmlns:table="sap.ui.table" xmlns:rdf="com.inova8.lens.control" xmlns:html="http://www.w3.org/1999/xhtml"
+	xmlns:core="sap.ui.core">
+	<Page showHeader="true" id="page" navButtonPress="onNavBack" showNavButton="false" title="{i18n>Event.Title}" busy="{entityView>/busy}"
+		busyIndicatorDelay="{entityView>/delay}" >
+		<customHeader>
+			<Toolbar>
+				<ToolbarSpacer/>
+				<HBox id="sourceTitle" alignItems="Center">
+						<rdf:TextResource id="selectedResource" path="" entitySet=""/>
+				</HBox>	
+				<Title id="pathTitle" text="{entityView>/navigation}"/>
+				<HBox id="versionsTitle" alignItems="Center">
+					<Title text="(" required="false"/>
+					<ComboBox id="versionSelection" items="{ path: 'entityView>/versions' }" selectionChange="onVersionChange">
+						<core:Item key="{entityView>navigation}" text="{entityView>text}"/>
+					</ComboBox>
+					<Title text=")" required="false"/>
+				</HBox>
+				<Title text="{i18n>Event.this}"/>
+				<Title text="(" required="false"/>
+				<rdf:TextResource path="dataModel>" entitySet="Event"/>
+				<Title text=")" required="false"/>
+	
+				<ToolbarSpacer/>
+				<ToggleButton id="toggleColumns" icon="sap-icon://hide" activeIcon="sap-icon://show" press="onSettingsPressed" visible="false"	>
+					<layoutData>
+						<OverflowToolbarLayoutData priority="NeverOverflow"/>
+					</layoutData>
+				</ToggleButton>
+				
+			</Toolbar>
+		</customHeader>
+		<Table id="form360" inset="false" fixedLayout="true" class="multicolumnform" updateFinished="hideColumns">
+			<columns>
+				<Column hAlign="Right" width="200px">
+					<Text text=""/>
+				</Column>
+				<Column visible="true">
+				</Column>
+				<Column visible="true">
+					<Text text="Event"/>
+				</Column>
+			</columns>
+			<items>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>Event.AcceptedEventRelation_EventId_Inverse}" required="false"/> 
+						<Text text=""/>
+						<rdf:ListResource path="dataModel>AcceptedEventRelation_EventId_Inverse/sfdc_AcceptedEventRelation_EventId_Inverse" entitySet="AcceptedEventRelation"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>Event.ActivityExtension_BaseId_Inverse}" required="false"/> 
+						<Text text=""/>
+						<rdf:ListResource path="dataModel>ActivityExtension_BaseId_Inverse/sfdc_ActivityExtension_BaseId_Inverse" entitySet="ActivityExtension"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>Event.DeclinedEventRelation_EventId_Inverse}" required="false"/> 
+						<Text text=""/>
+						<rdf:ListResource path="dataModel>DeclinedEventRelation_EventId_Inverse/sfdc_DeclinedEventRelation_EventId_Inverse" entitySet="DeclinedEventRelation"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>Event.EventFeed_ParentId_Inverse}" required="false"/> 
+						<Text text=""/>
+						<rdf:ListResource path="dataModel>EventFeed_ParentId_Inverse/sfdc_EventFeed_ParentId_Inverse" entitySet="EventFeed"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>Event.EventRelation_EventId_Inverse}" required="false"/> 
+						<Text text=""/>
+						<rdf:ListResource path="dataModel>EventRelation_EventId_Inverse/sfdc_EventRelation_EventId_Inverse" entitySet="EventRelation"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>Event.Event_AccountId}" required="false"/> 
+						<Text text=""/>
+						<rdf:ListResource path="dataModel>Event_AccountId/sfdc_Event_AccountId" entitySet="Account"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>Event.Event_ActivityDate}" required="false"/> 
+						<Text text=""/>
+						<Text text="{dataModel>Event_ActivityDate/Event_ActivityDate}"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>Event.Event_ActivityDateTime}" required="false"/> 
+						<Text text=""/>
+						<Text text="{dataModel>Event_ActivityDateTime/Event_ActivityDateTime}"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>Event.Event_ActivityExtensionId}" required="false"/> 
+						<Text text=""/>
+						<rdf:ListResource path="dataModel>Event_ActivityExtensionId/sfdc_Event_ActivityExtensionId" entitySet="ActivityExtension"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>Event.Event_CreatedById}" required="false"/> 
+						<Text text=""/>
+						<rdf:ListResource path="dataModel>Event_CreatedById/sfdc_Event_CreatedById" entitySet="User"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>Event.Event_CreatedDate}" required="false"/> 
+						<Text text=""/>
+						<Text text="{dataModel>Event_CreatedDate/Event_CreatedDate}"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>Event.Event_Description}" required="false"/> 
+						<Text text=""/>
+						<rdf:TextLink text="{path:'dataModel>Event_Description/Event_Description',type:'sap.ui.model.type.String' }" linkText="{i18n>Event.Event_Description/Event_Description}"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>Event.Event_DurationInMinutes}" required="false"/> 
+						<Text text=""/>
+						<Text text="{path:'dataModel>Event_DurationInMinutes/Event_DurationInMinutes',type:'sap.ui.model.type.Integer' }"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>Event.Event_EndDateTime}" required="false"/> 
+						<Text text=""/>
+						<Text text="{dataModel>Event_EndDateTime/Event_EndDateTime}"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>Event.Event_EventSubtype}" required="false"/> 
+						<Text text=""/>
+						<rdf:TextLink text="{path:'dataModel>Event_EventSubtype/Event_EventSubtype',type:'sap.ui.model.type.String' }" linkText="{i18n>Event.Event_EventSubtype/Event_EventSubtype}"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>Event.Event_GroupEventType}" required="false"/> 
+						<Text text=""/>
+						<rdf:TextLink text="{path:'dataModel>Event_GroupEventType/Event_GroupEventType',type:'sap.ui.model.type.String' }" linkText="{i18n>Event.Event_GroupEventType/Event_GroupEventType}"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>Event.Event_Id}" required="false"/> 
+						<Text text=""/>
+						<rdf:TextLink text="{path:'dataModel>Event_Id/Event_Id',type:'sap.ui.model.type.String' }" linkText="{i18n>Event.Event_Id/Event_Id}"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>Event.Event_IsAllDayEvent}" required="false"/> 
+						<Text text=""/>
+						<Text text="{path:'dataModel>Event_IsAllDayEvent/Event_IsAllDayEvent',type:'sap.ui.model.type.Boolean'}"/>  
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>Event.Event_IsArchived}" required="false"/> 
+						<Text text=""/>
+						<Text text="{path:'dataModel>Event_IsArchived/Event_IsArchived',type:'sap.ui.model.type.Boolean'}"/>  
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>Event.Event_IsChild}" required="false"/> 
+						<Text text=""/>
+						<Text text="{path:'dataModel>Event_IsChild/Event_IsChild',type:'sap.ui.model.type.Boolean'}"/>  
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>Event.Event_IsDeleted}" required="false"/> 
+						<Text text=""/>
+						<Text text="{path:'dataModel>Event_IsDeleted/Event_IsDeleted',type:'sap.ui.model.type.Boolean'}"/>  
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>Event.Event_IsGroupEvent}" required="false"/> 
+						<Text text=""/>
+						<Text text="{path:'dataModel>Event_IsGroupEvent/Event_IsGroupEvent',type:'sap.ui.model.type.Boolean'}"/>  
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>Event.Event_IsPrivate}" required="false"/> 
+						<Text text=""/>
+						<Text text="{path:'dataModel>Event_IsPrivate/Event_IsPrivate',type:'sap.ui.model.type.Boolean'}"/>  
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>Event.Event_IsRecurrence}" required="false"/> 
+						<Text text=""/>
+						<Text text="{path:'dataModel>Event_IsRecurrence/Event_IsRecurrence',type:'sap.ui.model.type.Boolean'}"/>  
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>Event.Event_IsReminderSet}" required="false"/> 
+						<Text text=""/>
+						<Text text="{path:'dataModel>Event_IsReminderSet/Event_IsReminderSet',type:'sap.ui.model.type.Boolean'}"/>  
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>Event.Event_LastModifiedById}" required="false"/> 
+						<Text text=""/>
+						<rdf:ListResource path="dataModel>Event_LastModifiedById/sfdc_Event_LastModifiedById" entitySet="User"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>Event.Event_LastModifiedDate}" required="false"/> 
+						<Text text=""/>
+						<Text text="{dataModel>Event_LastModifiedDate/Event_LastModifiedDate}"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>Event.Event_Location}" required="false"/> 
+						<Text text=""/>
+						<rdf:TextLink text="{path:'dataModel>Event_Location/Event_Location',type:'sap.ui.model.type.String' }" linkText="{i18n>Event.Event_Location/Event_Location}"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>Event.Event_OwnerId}" required="false"/> 
+						<Text text=""/>
+						<rdf:ListResource path="dataModel>Event_OwnerId/sfdc_Event_OwnerId" entitySet="User"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>Event.Event_RecurrenceActivityId}" required="false"/> 
+						<Text text=""/>
+						<rdf:ListResource path="dataModel>Event_RecurrenceActivityId/sfdc_Event_RecurrenceActivityId" entitySet="Event"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>Event.Event_RecurrenceActivityId_Inverse}" required="false"/> 
+						<Text text=""/>
+						<rdf:ListResource path="dataModel>Event_RecurrenceActivityId_Inverse/sfdc_Event_RecurrenceActivityId_Inverse" entitySet="Event"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>Event.Event_RecurrenceDayOfMonth}" required="false"/> 
+						<Text text=""/>
+						<Text text="{path:'dataModel>Event_RecurrenceDayOfMonth/Event_RecurrenceDayOfMonth',type:'sap.ui.model.type.Integer' }"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>Event.Event_RecurrenceDayOfWeekMask}" required="false"/> 
+						<Text text=""/>
+						<Text text="{path:'dataModel>Event_RecurrenceDayOfWeekMask/Event_RecurrenceDayOfWeekMask',type:'sap.ui.model.type.Integer' }"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>Event.Event_RecurrenceEndDateOnly}" required="false"/> 
+						<Text text=""/>
+						<Text text="{dataModel>Event_RecurrenceEndDateOnly/Event_RecurrenceEndDateOnly}"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>Event.Event_RecurrenceInstance}" required="false"/> 
+						<Text text=""/>
+						<rdf:TextLink text="{path:'dataModel>Event_RecurrenceInstance/Event_RecurrenceInstance',type:'sap.ui.model.type.String' }" linkText="{i18n>Event.Event_RecurrenceInstance/Event_RecurrenceInstance}"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>Event.Event_RecurrenceInterval}" required="false"/> 
+						<Text text=""/>
+						<Text text="{path:'dataModel>Event_RecurrenceInterval/Event_RecurrenceInterval',type:'sap.ui.model.type.Integer' }"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>Event.Event_RecurrenceMonthOfYear}" required="false"/> 
+						<Text text=""/>
+						<rdf:TextLink text="{path:'dataModel>Event_RecurrenceMonthOfYear/Event_RecurrenceMonthOfYear',type:'sap.ui.model.type.String' }" linkText="{i18n>Event.Event_RecurrenceMonthOfYear/Event_RecurrenceMonthOfYear}"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>Event.Event_RecurrenceStartDateTime}" required="false"/> 
+						<Text text=""/>
+						<Text text="{dataModel>Event_RecurrenceStartDateTime/Event_RecurrenceStartDateTime}"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>Event.Event_RecurrenceTimeZoneSidKey}" required="false"/> 
+						<Text text=""/>
+						<rdf:TextLink text="{path:'dataModel>Event_RecurrenceTimeZoneSidKey/Event_RecurrenceTimeZoneSidKey',type:'sap.ui.model.type.String' }" linkText="{i18n>Event.Event_RecurrenceTimeZoneSidKey/Event_RecurrenceTimeZoneSidKey}"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>Event.Event_RecurrenceType}" required="false"/> 
+						<Text text=""/>
+						<rdf:TextLink text="{path:'dataModel>Event_RecurrenceType/Event_RecurrenceType',type:'sap.ui.model.type.String' }" linkText="{i18n>Event.Event_RecurrenceType/Event_RecurrenceType}"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>Event.Event_ReminderDateTime}" required="false"/> 
+						<Text text=""/>
+						<Text text="{dataModel>Event_ReminderDateTime/Event_ReminderDateTime}"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>Event.Event_ShowAs}" required="false"/> 
+						<Text text=""/>
+						<rdf:TextLink text="{path:'dataModel>Event_ShowAs/Event_ShowAs',type:'sap.ui.model.type.String' }" linkText="{i18n>Event.Event_ShowAs/Event_ShowAs}"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>Event.Event_StartDateTime}" required="false"/> 
+						<Text text=""/>
+						<Text text="{dataModel>Event_StartDateTime/Event_StartDateTime}"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>Event.Event_Subject}" required="false"/> 
+						<Text text=""/>
+						<rdf:TextLink text="{path:'dataModel>Event_Subject/Event_Subject',type:'sap.ui.model.type.String' }" linkText="{i18n>Event.Event_Subject/Event_Subject}"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>Event.Event_SystemModstamp}" required="false"/> 
+						<Text text=""/>
+						<Text text="{dataModel>Event_SystemModstamp/Event_SystemModstamp}"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>Event.Event_WhatId}" required="false"/> 
+						<Text text=""/>
+						<rdf:ListResource path="dataModel>Event_WhatId/sfdc_Event_WhatId" entitySet="Account"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>Event.Event_WhoId}" required="false"/> 
+						<Text text=""/>
+						<rdf:ListResource path="dataModel>Event_WhoId/sfdc_Event_WhoId" entitySet="Contact"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>Event.UndecidedEventRelation_EventId_Inverse}" required="false"/> 
+						<Text text=""/>
+						<rdf:ListResource path="dataModel>UndecidedEventRelation_EventId_Inverse/sfdc_UndecidedEventRelation_EventId_Inverse" entitySet="UndecidedEventRelation"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>Event.AcceptedEventRelation_EventId_Inverse}" required="false"/> 
+						<rdf:ListResource path="dataModel>AcceptedEventRelation_EventId_Inverse" entitySet="AcceptedEventRelation"/>
+						<Text text=""/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>Event.ActivityExtension_BaseId_Inverse}" required="false"/> 
+						<rdf:ListResource path="dataModel>ActivityExtension_BaseId_Inverse" entitySet="ActivityExtension"/>
+						<Text text=""/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>Event.DeclinedEventRelation_EventId_Inverse}" required="false"/> 
+						<rdf:ListResource path="dataModel>DeclinedEventRelation_EventId_Inverse" entitySet="DeclinedEventRelation"/>
+						<Text text=""/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>Event.EventFeed_ParentId_Inverse}" required="false"/> 
+						<rdf:ListResource path="dataModel>EventFeed_ParentId_Inverse" entitySet="EventFeed"/>
+						<Text text=""/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>Event.EventRelation_EventId_Inverse}" required="false"/> 
+						<rdf:ListResource path="dataModel>EventRelation_EventId_Inverse" entitySet="EventRelation"/>
+						<Text text=""/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>Event.Event_AccountId}" required="false"/> 
+						<rdf:ListResource path="dataModel>Event_AccountId" entitySet="Account"/>
+						<Text text=""/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>Event.Event_ActivityExtensionId}" required="false"/> 
+						<rdf:ListResource path="dataModel>Event_ActivityExtensionId" entitySet="ActivityExtension"/>
+						<Text text=""/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>Event.Event_CreatedById}" required="false"/> 
+						<rdf:ListResource path="dataModel>Event_CreatedById" entitySet="User"/>
+						<Text text=""/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>Event.Event_LastModifiedById}" required="false"/> 
+						<rdf:ListResource path="dataModel>Event_LastModifiedById" entitySet="User"/>
+						<Text text=""/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>Event.Event_OwnerId}" required="false"/> 
+						<rdf:ListResource path="dataModel>Event_OwnerId" entitySet="User"/>
+						<Text text=""/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>Event.Event_RecurrenceActivityId}" required="false"/> 
+						<rdf:ListResource path="dataModel>Event_RecurrenceActivityId" entitySet="Event"/>
+						<Text text=""/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>Event.Event_RecurrenceActivityId_Inverse}" required="false"/> 
+						<rdf:ListResource path="dataModel>Event_RecurrenceActivityId_Inverse" entitySet="Event"/>
+						<Text text=""/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>Event.Event_WhatId}" required="false"/> 
+						<rdf:ListResource path="dataModel>Event_WhatId" entitySet="Account"/>
+						<Text text=""/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>Event.Event_WhoId}" required="false"/> 
+						<rdf:ListResource path="dataModel>Event_WhoId" entitySet="Contact"/>
+						<Text text=""/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>Event.UndecidedEventRelation_EventId_Inverse}" required="false"/> 
+						<rdf:ListResource path="dataModel>UndecidedEventRelation_EventId_Inverse" entitySet="UndecidedEventRelation"/>
+						<Text text=""/>
+					</cells>
+				</ColumnListItem>
+			</items>
+		</Table>
+	</Page>
+</mvc:View>

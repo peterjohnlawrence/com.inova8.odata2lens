@@ -1,0 +1,210 @@
+<mvc:View controllerName="com.inova8.lens.controller.Entity360" xmlns="sap.m" xmlns:mvc="sap.ui.core.mvc" xmlns:l="sap.ui.layout"
+	xmlns:f="sap.ui.layout.form" xmlns:table="sap.ui.table" xmlns:rdf="com.inova8.lens.control" xmlns:html="http://www.w3.org/1999/xhtml"
+	xmlns:core="sap.ui.core">
+	<Page showHeader="true" id="page" navButtonPress="onNavBack" showNavButton="false" title="{i18n>ActionLinkTemplate.Title}" busy="{entityView>/busy}"
+		busyIndicatorDelay="{entityView>/delay}" >
+		<customHeader>
+			<Toolbar>
+				<ToolbarSpacer/>
+				<HBox id="sourceTitle" alignItems="Center">
+						<rdf:TextResource id="selectedResource" path="" entitySet=""/>
+				</HBox>	
+				<Title id="pathTitle" text="{entityView>/navigation}"/>
+				<HBox id="versionsTitle" alignItems="Center">
+					<Title text="(" required="false"/>
+					<ComboBox id="versionSelection" items="{ path: 'entityView>/versions' }" selectionChange="onVersionChange">
+						<core:Item key="{entityView>navigation}" text="{entityView>text}"/>
+					</ComboBox>
+					<Title text=")" required="false"/>
+				</HBox>
+				<Title text="{i18n>ActionLinkTemplate.this}"/>
+				<Title text="(" required="false"/>
+				<rdf:TextResource path="dataModel>" entitySet="ActionLinkTemplate"/>
+				<Title text=")" required="false"/>
+	
+				<ToolbarSpacer/>
+				<ToggleButton id="toggleColumns" icon="sap-icon://hide" activeIcon="sap-icon://show" press="onSettingsPressed" visible="false"	>
+					<layoutData>
+						<OverflowToolbarLayoutData priority="NeverOverflow"/>
+					</layoutData>
+				</ToggleButton>
+				
+			</Toolbar>
+		</customHeader>
+		<Table id="form360" inset="false" fixedLayout="true" class="multicolumnform" updateFinished="hideColumns">
+			<columns>
+				<Column hAlign="Right" width="200px">
+					<Text text=""/>
+				</Column>
+				<Column visible="true">
+				</Column>
+				<Column visible="true">
+					<Text text="ActionLinkTemplate"/>
+				</Column>
+			</columns>
+			<items>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>ActionLinkTemplate.ActionLinkTemplate_ActionLinkGroupTemplateId}" required="false"/> 
+						<Text text=""/>
+						<rdf:ListResource path="dataModel>ActionLinkTemplate_ActionLinkGroupTemplateId/sfdc_ActionLinkTemplate_ActionLinkGroupTemplateId" entitySet="ActionLinkGroupTemplate"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>ActionLinkTemplate.ActionLinkTemplate_ActionUrl}" required="false"/> 
+						<Text text=""/>
+						<rdf:TextLink text="{path:'dataModel>ActionLinkTemplate_ActionUrl/ActionLinkTemplate_ActionUrl',type:'sap.ui.model.type.String' }" linkText="{i18n>ActionLinkTemplate.ActionLinkTemplate_ActionUrl/ActionLinkTemplate_ActionUrl}"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>ActionLinkTemplate.ActionLinkTemplate_CreatedById}" required="false"/> 
+						<Text text=""/>
+						<rdf:ListResource path="dataModel>ActionLinkTemplate_CreatedById/sfdc_ActionLinkTemplate_CreatedById" entitySet="User"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>ActionLinkTemplate.ActionLinkTemplate_CreatedDate}" required="false"/> 
+						<Text text=""/>
+						<Text text="{dataModel>ActionLinkTemplate_CreatedDate/ActionLinkTemplate_CreatedDate}"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>ActionLinkTemplate.ActionLinkTemplate_Headers}" required="false"/> 
+						<Text text=""/>
+						<rdf:TextLink text="{path:'dataModel>ActionLinkTemplate_Headers/ActionLinkTemplate_Headers',type:'sap.ui.model.type.String' }" linkText="{i18n>ActionLinkTemplate.ActionLinkTemplate_Headers/ActionLinkTemplate_Headers}"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>ActionLinkTemplate.ActionLinkTemplate_Id}" required="false"/> 
+						<Text text=""/>
+						<rdf:TextLink text="{path:'dataModel>ActionLinkTemplate_Id/ActionLinkTemplate_Id',type:'sap.ui.model.type.String' }" linkText="{i18n>ActionLinkTemplate.ActionLinkTemplate_Id/ActionLinkTemplate_Id}"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>ActionLinkTemplate.ActionLinkTemplate_IsConfirmationRequired}" required="false"/> 
+						<Text text=""/>
+						<Text text="{path:'dataModel>ActionLinkTemplate_IsConfirmationRequired/ActionLinkTemplate_IsConfirmationRequired',type:'sap.ui.model.type.Boolean'}"/>  
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>ActionLinkTemplate.ActionLinkTemplate_IsDeleted}" required="false"/> 
+						<Text text=""/>
+						<Text text="{path:'dataModel>ActionLinkTemplate_IsDeleted/ActionLinkTemplate_IsDeleted',type:'sap.ui.model.type.Boolean'}"/>  
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>ActionLinkTemplate.ActionLinkTemplate_IsGroupDefault}" required="false"/> 
+						<Text text=""/>
+						<Text text="{path:'dataModel>ActionLinkTemplate_IsGroupDefault/ActionLinkTemplate_IsGroupDefault',type:'sap.ui.model.type.Boolean'}"/>  
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>ActionLinkTemplate.ActionLinkTemplate_Label}" required="false"/> 
+						<Text text=""/>
+						<rdf:TextLink text="{path:'dataModel>ActionLinkTemplate_Label/ActionLinkTemplate_Label',type:'sap.ui.model.type.String' }" linkText="{i18n>ActionLinkTemplate.ActionLinkTemplate_Label/ActionLinkTemplate_Label}"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>ActionLinkTemplate.ActionLinkTemplate_LabelKey}" required="false"/> 
+						<Text text=""/>
+						<rdf:TextLink text="{path:'dataModel>ActionLinkTemplate_LabelKey/ActionLinkTemplate_LabelKey',type:'sap.ui.model.type.String' }" linkText="{i18n>ActionLinkTemplate.ActionLinkTemplate_LabelKey/ActionLinkTemplate_LabelKey}"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>ActionLinkTemplate.ActionLinkTemplate_LastModifiedById}" required="false"/> 
+						<Text text=""/>
+						<rdf:ListResource path="dataModel>ActionLinkTemplate_LastModifiedById/sfdc_ActionLinkTemplate_LastModifiedById" entitySet="User"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>ActionLinkTemplate.ActionLinkTemplate_LastModifiedDate}" required="false"/> 
+						<Text text=""/>
+						<Text text="{dataModel>ActionLinkTemplate_LastModifiedDate/ActionLinkTemplate_LastModifiedDate}"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>ActionLinkTemplate.ActionLinkTemplate_LinkType}" required="false"/> 
+						<Text text=""/>
+						<rdf:TextLink text="{path:'dataModel>ActionLinkTemplate_LinkType/ActionLinkTemplate_LinkType',type:'sap.ui.model.type.String' }" linkText="{i18n>ActionLinkTemplate.ActionLinkTemplate_LinkType/ActionLinkTemplate_LinkType}"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>ActionLinkTemplate.ActionLinkTemplate_Method}" required="false"/> 
+						<Text text=""/>
+						<rdf:TextLink text="{path:'dataModel>ActionLinkTemplate_Method/ActionLinkTemplate_Method',type:'sap.ui.model.type.String' }" linkText="{i18n>ActionLinkTemplate.ActionLinkTemplate_Method/ActionLinkTemplate_Method}"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>ActionLinkTemplate.ActionLinkTemplate_Position}" required="false"/> 
+						<Text text=""/>
+						<Text text="{path:'dataModel>ActionLinkTemplate_Position/ActionLinkTemplate_Position',type:'sap.ui.model.type.Integer' }"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>ActionLinkTemplate.ActionLinkTemplate_RequestBody}" required="false"/> 
+						<Text text=""/>
+						<rdf:TextLink text="{path:'dataModel>ActionLinkTemplate_RequestBody/ActionLinkTemplate_RequestBody',type:'sap.ui.model.type.String' }" linkText="{i18n>ActionLinkTemplate.ActionLinkTemplate_RequestBody/ActionLinkTemplate_RequestBody}"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>ActionLinkTemplate.ActionLinkTemplate_SystemModstamp}" required="false"/> 
+						<Text text=""/>
+						<Text text="{dataModel>ActionLinkTemplate_SystemModstamp/ActionLinkTemplate_SystemModstamp}"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>ActionLinkTemplate.ActionLinkTemplate_UserAlias}" required="false"/> 
+						<Text text=""/>
+						<rdf:TextLink text="{path:'dataModel>ActionLinkTemplate_UserAlias/ActionLinkTemplate_UserAlias',type:'sap.ui.model.type.String' }" linkText="{i18n>ActionLinkTemplate.ActionLinkTemplate_UserAlias/ActionLinkTemplate_UserAlias}"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>ActionLinkTemplate.ActionLinkTemplate_UserVisibility}" required="false"/> 
+						<Text text=""/>
+						<rdf:TextLink text="{path:'dataModel>ActionLinkTemplate_UserVisibility/ActionLinkTemplate_UserVisibility',type:'sap.ui.model.type.String' }" linkText="{i18n>ActionLinkTemplate.ActionLinkTemplate_UserVisibility/ActionLinkTemplate_UserVisibility}"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>ActionLinkTemplate.ActionLinkTemplate_ActionLinkGroupTemplateId}" required="false"/> 
+						<rdf:ListResource path="dataModel>ActionLinkTemplate_ActionLinkGroupTemplateId" entitySet="ActionLinkGroupTemplate"/>
+						<Text text=""/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>ActionLinkTemplate.ActionLinkTemplate_CreatedById}" required="false"/> 
+						<rdf:ListResource path="dataModel>ActionLinkTemplate_CreatedById" entitySet="User"/>
+						<Text text=""/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>ActionLinkTemplate.ActionLinkTemplate_LastModifiedById}" required="false"/> 
+						<rdf:ListResource path="dataModel>ActionLinkTemplate_LastModifiedById" entitySet="User"/>
+						<Text text=""/>
+					</cells>
+				</ColumnListItem>
+			</items>
+		</Table>
+	</Page>
+</mvc:View>

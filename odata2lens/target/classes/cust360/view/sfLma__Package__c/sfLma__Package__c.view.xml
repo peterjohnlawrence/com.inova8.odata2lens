@@ -1,0 +1,252 @@
+<mvc:View controllerName="com.inova8.lens.controller.Entity360" xmlns="sap.m" xmlns:mvc="sap.ui.core.mvc" xmlns:l="sap.ui.layout"
+	xmlns:f="sap.ui.layout.form" xmlns:table="sap.ui.table" xmlns:rdf="com.inova8.lens.control" xmlns:html="http://www.w3.org/1999/xhtml"
+	xmlns:core="sap.ui.core">
+	<Page showHeader="true" id="page" navButtonPress="onNavBack" showNavButton="false" title="{i18n>sfLma__Package__c.Title}" busy="{entityView>/busy}"
+		busyIndicatorDelay="{entityView>/delay}" >
+		<customHeader>
+			<Toolbar>
+				<ToolbarSpacer/>
+				<HBox id="sourceTitle" alignItems="Center">
+						<rdf:TextResource id="selectedResource" path="" entitySet=""/>
+				</HBox>	
+				<Title id="pathTitle" text="{entityView>/navigation}"/>
+				<HBox id="versionsTitle" alignItems="Center">
+					<Title text="(" required="false"/>
+					<ComboBox id="versionSelection" items="{ path: 'entityView>/versions' }" selectionChange="onVersionChange">
+						<core:Item key="{entityView>navigation}" text="{entityView>text}"/>
+					</ComboBox>
+					<Title text=")" required="false"/>
+				</HBox>
+				<Title text="{i18n>sfLma__Package__c.this}"/>
+				<Title text="(" required="false"/>
+				<rdf:TextResource path="dataModel>" entitySet="sfLma__Package__c"/>
+				<Title text=")" required="false"/>
+	
+				<ToolbarSpacer/>
+				<ToggleButton id="toggleColumns" icon="sap-icon://hide" activeIcon="sap-icon://show" press="onSettingsPressed" visible="false"	>
+					<layoutData>
+						<OverflowToolbarLayoutData priority="NeverOverflow"/>
+					</layoutData>
+				</ToggleButton>
+				
+			</Toolbar>
+		</customHeader>
+		<Table id="form360" inset="false" fixedLayout="true" class="multicolumnform" updateFinished="hideColumns">
+			<columns>
+				<Column hAlign="Right" width="200px">
+					<Text text=""/>
+				</Column>
+				<Column visible="true">
+				</Column>
+				<Column visible="true">
+					<Text text="sfLma__Package__c"/>
+				</Column>
+			</columns>
+			<items>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>sfLma__Package__c.sfLma__Package_Version__c_sfLma__Package__c_Inverse}" required="false"/> 
+						<Text text=""/>
+						<rdf:ListResource path="dataModel>sfLma__Package_Version__c_sfLma__Package__c_Inverse/sfdc_sfLma__Package_Version__c_sfLma__Package__c_Inverse" entitySet="sfLma__Package_Version__c"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>sfLma__Package__c.sfLma__Package__Feed_ParentId_Inverse}" required="false"/> 
+						<Text text=""/>
+						<rdf:ListResource path="dataModel>sfLma__Package__Feed_ParentId_Inverse/sfdc_sfLma__Package__Feed_ParentId_Inverse" entitySet="sfLma__Package__Feed"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>sfLma__Package__c.sfLma__Package__History_ParentId_Inverse}" required="false"/> 
+						<Text text=""/>
+						<rdf:ListResource path="dataModel>sfLma__Package__History_ParentId_Inverse/sfdc_sfLma__Package__History_ParentId_Inverse" entitySet="sfLma__Package__History"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>sfLma__Package__c.sfLma__Package__c_CreatedById}" required="false"/> 
+						<Text text=""/>
+						<rdf:ListResource path="dataModel>sfLma__Package__c_CreatedById/sfdc_sfLma__Package__c_CreatedById" entitySet="User"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>sfLma__Package__c.sfLma__Package__c_CreatedDate}" required="false"/> 
+						<Text text=""/>
+						<Text text="{dataModel>sfLma__Package__c_CreatedDate/sfLma__Package__c_CreatedDate}"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>sfLma__Package__c.sfLma__Package__c_Id}" required="false"/> 
+						<Text text=""/>
+						<rdf:TextLink text="{path:'dataModel>sfLma__Package__c_Id/sfLma__Package__c_Id',type:'sap.ui.model.type.String' }" linkText="{i18n>sfLma__Package__c.sfLma__Package__c_Id/sfLma__Package__c_Id}"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>sfLma__Package__c.sfLma__Package__c_IsDeleted}" required="false"/> 
+						<Text text=""/>
+						<Text text="{path:'dataModel>sfLma__Package__c_IsDeleted/sfLma__Package__c_IsDeleted',type:'sap.ui.model.type.Boolean'}"/>  
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>sfLma__Package__c.sfLma__Package__c_LastActivityDate}" required="false"/> 
+						<Text text=""/>
+						<Text text="{dataModel>sfLma__Package__c_LastActivityDate/sfLma__Package__c_LastActivityDate}"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>sfLma__Package__c.sfLma__Package__c_LastModifiedById}" required="false"/> 
+						<Text text=""/>
+						<rdf:ListResource path="dataModel>sfLma__Package__c_LastModifiedById/sfdc_sfLma__Package__c_LastModifiedById" entitySet="User"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>sfLma__Package__c.sfLma__Package__c_LastModifiedDate}" required="false"/> 
+						<Text text=""/>
+						<Text text="{dataModel>sfLma__Package__c_LastModifiedDate/sfLma__Package__c_LastModifiedDate}"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>sfLma__Package__c.sfLma__Package__c_LastReferencedDate}" required="false"/> 
+						<Text text=""/>
+						<Text text="{dataModel>sfLma__Package__c_LastReferencedDate/sfLma__Package__c_LastReferencedDate}"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>sfLma__Package__c.sfLma__Package__c_LastViewedDate}" required="false"/> 
+						<Text text=""/>
+						<Text text="{dataModel>sfLma__Package__c_LastViewedDate/sfLma__Package__c_LastViewedDate}"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>sfLma__Package__c.sfLma__Package__c_Name}" required="false"/> 
+						<Text text=""/>
+						<rdf:TextLink text="{path:'dataModel>sfLma__Package__c_Name/sfLma__Package__c_Name',type:'sap.ui.model.type.String' }" linkText="{i18n>sfLma__Package__c.sfLma__Package__c_Name/sfLma__Package__c_Name}"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>sfLma__Package__c.sfLma__Package__c_OwnerId}" required="false"/> 
+						<Text text=""/>
+						<rdf:ListResource path="dataModel>sfLma__Package__c_OwnerId/sfdc_sfLma__Package__c_OwnerId" entitySet="Group"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>sfLma__Package__c.sfLma__Package__c_SystemModstamp}" required="false"/> 
+						<Text text=""/>
+						<Text text="{dataModel>sfLma__Package__c_SystemModstamp/sfLma__Package__c_SystemModstamp}"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>sfLma__Package__c.sfLma__Package__c_sfLma__Developer_Name__c}" required="false"/> 
+						<Text text=""/>
+						<rdf:TextLink text="{path:'dataModel>sfLma__Package__c_sfLma__Developer_Name__c/sfLma__Package__c_sfLma__Developer_Name__c',type:'sap.ui.model.type.String' }" linkText="{i18n>sfLma__Package__c.sfLma__Package__c_sfLma__Developer_Name__c/sfLma__Package__c_sfLma__Developer_Name__c}"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>sfLma__Package__c.sfLma__Package__c_sfLma__Developer_Org_ID__c}" required="false"/> 
+						<Text text=""/>
+						<rdf:TextLink text="{path:'dataModel>sfLma__Package__c_sfLma__Developer_Org_ID__c/sfLma__Package__c_sfLma__Developer_Org_ID__c',type:'sap.ui.model.type.String' }" linkText="{i18n>sfLma__Package__c.sfLma__Package__c_sfLma__Developer_Org_ID__c/sfLma__Package__c_sfLma__Developer_Org_ID__c}"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>sfLma__Package__c.sfLma__Package__c_sfLma__Help__c}" required="false"/> 
+						<Text text=""/>
+						<rdf:TextLink text="{path:'dataModel>sfLma__Package__c_sfLma__Help__c/sfLma__Package__c_sfLma__Help__c',type:'sap.ui.model.type.String' }" linkText="{i18n>sfLma__Package__c.sfLma__Package__c_sfLma__Help__c/sfLma__Package__c_sfLma__Help__c}"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>sfLma__Package__c.sfLma__Package__c_sfLma__Latest_Version__c}" required="false"/> 
+						<Text text=""/>
+						<rdf:TextLink text="{path:'dataModel>sfLma__Package__c_sfLma__Latest_Version__c/sfLma__Package__c_sfLma__Latest_Version__c',type:'sap.ui.model.type.String' }" linkText="{i18n>sfLma__Package__c.sfLma__Package__c_sfLma__Latest_Version__c/sfLma__Package__c_sfLma__Latest_Version__c}"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>sfLma__Package__c.sfLma__Package__c_sfLma__Lead_Manager__c}" required="false"/> 
+						<Text text=""/>
+						<rdf:ListResource path="dataModel>sfLma__Package__c_sfLma__Lead_Manager__c/sfdc_sfLma__Package__c_sfLma__Lead_Manager__c" entitySet="User"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>sfLma__Package__c.sfLma__Package__c_sfLma__Package_ID__c}" required="false"/> 
+						<Text text=""/>
+						<rdf:TextLink text="{path:'dataModel>sfLma__Package__c_sfLma__Package_ID__c/sfLma__Package__c_sfLma__Package_ID__c',type:'sap.ui.model.type.String' }" linkText="{i18n>sfLma__Package__c.sfLma__Package__c_sfLma__Package_ID__c/sfLma__Package__c_sfLma__Package_ID__c}"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>sfLma__Package__c.sfLma__Package__c_sfLma__Release_Date__c}" required="false"/> 
+						<Text text=""/>
+						<Text text="{dataModel>sfLma__Package__c_sfLma__Release_Date__c/sfLma__Package__c_sfLma__Release_Date__c}"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>sfLma__Package__c.sfLma__Package_Version__c_sfLma__Package__c_Inverse}" required="false"/> 
+						<rdf:ListResource path="dataModel>sfLma__Package_Version__c_sfLma__Package__c_Inverse" entitySet="sfLma__Package_Version__c"/>
+						<Text text=""/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>sfLma__Package__c.sfLma__Package__Feed_ParentId_Inverse}" required="false"/> 
+						<rdf:ListResource path="dataModel>sfLma__Package__Feed_ParentId_Inverse" entitySet="sfLma__Package__Feed"/>
+						<Text text=""/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>sfLma__Package__c.sfLma__Package__History_ParentId_Inverse}" required="false"/> 
+						<rdf:ListResource path="dataModel>sfLma__Package__History_ParentId_Inverse" entitySet="sfLma__Package__History"/>
+						<Text text=""/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>sfLma__Package__c.sfLma__Package__c_CreatedById}" required="false"/> 
+						<rdf:ListResource path="dataModel>sfLma__Package__c_CreatedById" entitySet="User"/>
+						<Text text=""/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>sfLma__Package__c.sfLma__Package__c_LastModifiedById}" required="false"/> 
+						<rdf:ListResource path="dataModel>sfLma__Package__c_LastModifiedById" entitySet="User"/>
+						<Text text=""/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>sfLma__Package__c.sfLma__Package__c_OwnerId}" required="false"/> 
+						<rdf:ListResource path="dataModel>sfLma__Package__c_OwnerId" entitySet="Group"/>
+						<Text text=""/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>sfLma__Package__c.sfLma__Package__c_sfLma__Lead_Manager__c}" required="false"/> 
+						<rdf:ListResource path="dataModel>sfLma__Package__c_sfLma__Lead_Manager__c" entitySet="User"/>
+						<Text text=""/>
+					</cells>
+				</ColumnListItem>
+			</items>
+		</Table>
+	</Page>
+</mvc:View>

@@ -1,0 +1,154 @@
+<mvc:View controllerName="com.inova8.lens.controller.Entity360" xmlns="sap.m" xmlns:mvc="sap.ui.core.mvc" xmlns:l="sap.ui.layout"
+	xmlns:f="sap.ui.layout.form" xmlns:table="sap.ui.table" xmlns:rdf="com.inova8.lens.control" xmlns:html="http://www.w3.org/1999/xhtml"
+	xmlns:core="sap.ui.core">
+	<Page showHeader="true" id="page" navButtonPress="onNavBack" showNavButton="false" title="{i18n>MilestoneType.Title}" busy="{entityView>/busy}"
+		busyIndicatorDelay="{entityView>/delay}" >
+		<customHeader>
+			<Toolbar>
+				<ToolbarSpacer/>
+				<HBox id="sourceTitle" alignItems="Center">
+						<rdf:TextResource id="selectedResource" path="" entitySet=""/>
+				</HBox>	
+				<Title id="pathTitle" text="{entityView>/navigation}"/>
+				<HBox id="versionsTitle" alignItems="Center">
+					<Title text="(" required="false"/>
+					<ComboBox id="versionSelection" items="{ path: 'entityView>/versions' }" selectionChange="onVersionChange">
+						<core:Item key="{entityView>navigation}" text="{entityView>text}"/>
+					</ComboBox>
+					<Title text=")" required="false"/>
+				</HBox>
+				<Title text="{i18n>MilestoneType.this}"/>
+				<Title text="(" required="false"/>
+				<rdf:TextResource path="dataModel>" entitySet="MilestoneType"/>
+				<Title text=")" required="false"/>
+	
+				<ToolbarSpacer/>
+				<ToggleButton id="toggleColumns" icon="sap-icon://hide" activeIcon="sap-icon://show" press="onSettingsPressed" visible="false"	>
+					<layoutData>
+						<OverflowToolbarLayoutData priority="NeverOverflow"/>
+					</layoutData>
+				</ToggleButton>
+				
+			</Toolbar>
+		</customHeader>
+		<Table id="form360" inset="false" fixedLayout="true" class="multicolumnform" updateFinished="hideColumns">
+			<columns>
+				<Column hAlign="Right" width="200px">
+					<Text text=""/>
+				</Column>
+				<Column visible="true">
+				</Column>
+				<Column visible="true">
+					<Text text="MilestoneType"/>
+				</Column>
+			</columns>
+			<items>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>MilestoneType.CaseMilestone_MilestoneTypeId_Inverse}" required="false"/> 
+						<Text text=""/>
+						<rdf:ListResource path="dataModel>CaseMilestone_MilestoneTypeId_Inverse/sfdc_CaseMilestone_MilestoneTypeId_Inverse" entitySet="CaseMilestone"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>MilestoneType.EntityMilestone_MilestoneTypeId_Inverse}" required="false"/> 
+						<Text text=""/>
+						<rdf:ListResource path="dataModel>EntityMilestone_MilestoneTypeId_Inverse/sfdc_EntityMilestone_MilestoneTypeId_Inverse" entitySet="EntityMilestone"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>MilestoneType.MilestoneType_CreatedById}" required="false"/> 
+						<Text text=""/>
+						<rdf:ListResource path="dataModel>MilestoneType_CreatedById/sfdc_MilestoneType_CreatedById" entitySet="User"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>MilestoneType.MilestoneType_CreatedDate}" required="false"/> 
+						<Text text=""/>
+						<Text text="{dataModel>MilestoneType_CreatedDate/MilestoneType_CreatedDate}"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>MilestoneType.MilestoneType_Description}" required="false"/> 
+						<Text text=""/>
+						<rdf:TextLink text="{path:'dataModel>MilestoneType_Description/MilestoneType_Description',type:'sap.ui.model.type.String' }" linkText="{i18n>MilestoneType.MilestoneType_Description/MilestoneType_Description}"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>MilestoneType.MilestoneType_Id}" required="false"/> 
+						<Text text=""/>
+						<rdf:TextLink text="{path:'dataModel>MilestoneType_Id/MilestoneType_Id',type:'sap.ui.model.type.String' }" linkText="{i18n>MilestoneType.MilestoneType_Id/MilestoneType_Id}"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>MilestoneType.MilestoneType_LastModifiedById}" required="false"/> 
+						<Text text=""/>
+						<rdf:ListResource path="dataModel>MilestoneType_LastModifiedById/sfdc_MilestoneType_LastModifiedById" entitySet="User"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>MilestoneType.MilestoneType_LastModifiedDate}" required="false"/> 
+						<Text text=""/>
+						<Text text="{dataModel>MilestoneType_LastModifiedDate/MilestoneType_LastModifiedDate}"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>MilestoneType.MilestoneType_Name}" required="false"/> 
+						<Text text=""/>
+						<rdf:TextLink text="{path:'dataModel>MilestoneType_Name/MilestoneType_Name',type:'sap.ui.model.type.String' }" linkText="{i18n>MilestoneType.MilestoneType_Name/MilestoneType_Name}"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>MilestoneType.MilestoneType_RecurrenceType}" required="false"/> 
+						<Text text=""/>
+						<rdf:TextLink text="{path:'dataModel>MilestoneType_RecurrenceType/MilestoneType_RecurrenceType',type:'sap.ui.model.type.String' }" linkText="{i18n>MilestoneType.MilestoneType_RecurrenceType/MilestoneType_RecurrenceType}"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>MilestoneType.MilestoneType_SystemModstamp}" required="false"/> 
+						<Text text=""/>
+						<Text text="{dataModel>MilestoneType_SystemModstamp/MilestoneType_SystemModstamp}"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>MilestoneType.CaseMilestone_MilestoneTypeId_Inverse}" required="false"/> 
+						<rdf:ListResource path="dataModel>CaseMilestone_MilestoneTypeId_Inverse" entitySet="CaseMilestone"/>
+						<Text text=""/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>MilestoneType.EntityMilestone_MilestoneTypeId_Inverse}" required="false"/> 
+						<rdf:ListResource path="dataModel>EntityMilestone_MilestoneTypeId_Inverse" entitySet="EntityMilestone"/>
+						<Text text=""/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>MilestoneType.MilestoneType_CreatedById}" required="false"/> 
+						<rdf:ListResource path="dataModel>MilestoneType_CreatedById" entitySet="User"/>
+						<Text text=""/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>MilestoneType.MilestoneType_LastModifiedById}" required="false"/> 
+						<rdf:ListResource path="dataModel>MilestoneType_LastModifiedById" entitySet="User"/>
+						<Text text=""/>
+					</cells>
+				</ColumnListItem>
+			</items>
+		</Table>
+	</Page>
+</mvc:View>

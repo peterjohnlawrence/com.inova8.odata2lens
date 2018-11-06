@@ -1,0 +1,189 @@
+<mvc:View controllerName="com.inova8.lens.controller.Entity360" xmlns="sap.m" xmlns:mvc="sap.ui.core.mvc" xmlns:l="sap.ui.layout"
+	xmlns:f="sap.ui.layout.form" xmlns:table="sap.ui.table" xmlns:rdf="com.inova8.lens.control" xmlns:html="http://www.w3.org/1999/xhtml"
+	xmlns:core="sap.ui.core">
+	<Page showHeader="true" id="page" navButtonPress="onNavBack" showNavButton="false" title="{i18n>Product2Feed.Title}" busy="{entityView>/busy}"
+		busyIndicatorDelay="{entityView>/delay}" >
+		<customHeader>
+			<Toolbar>
+				<ToolbarSpacer/>
+				<HBox id="sourceTitle" alignItems="Center">
+						<rdf:TextResource id="selectedResource" path="" entitySet=""/>
+				</HBox>	
+				<Title id="pathTitle" text="{entityView>/navigation}"/>
+				<HBox id="versionsTitle" alignItems="Center">
+					<Title text="(" required="false"/>
+					<ComboBox id="versionSelection" items="{ path: 'entityView>/versions' }" selectionChange="onVersionChange">
+						<core:Item key="{entityView>navigation}" text="{entityView>text}"/>
+					</ComboBox>
+					<Title text=")" required="false"/>
+				</HBox>
+				<Title text="{i18n>Product2Feed.this}"/>
+				<Title text="(" required="false"/>
+				<rdf:TextResource path="dataModel>" entitySet="Product2Feed"/>
+				<Title text=")" required="false"/>
+	
+				<ToolbarSpacer/>
+				<ToggleButton id="toggleColumns" icon="sap-icon://hide" activeIcon="sap-icon://show" press="onSettingsPressed" visible="false"	>
+					<layoutData>
+						<OverflowToolbarLayoutData priority="NeverOverflow"/>
+					</layoutData>
+				</ToggleButton>
+				
+			</Toolbar>
+		</customHeader>
+		<Table id="form360" inset="false" fixedLayout="true" class="multicolumnform" updateFinished="hideColumns">
+			<columns>
+				<Column hAlign="Right" width="200px">
+					<Text text=""/>
+				</Column>
+				<Column visible="true">
+				</Column>
+				<Column visible="true">
+					<Text text="Product2Feed"/>
+				</Column>
+			</columns>
+			<items>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>Product2Feed.Product2Feed_Body}" required="false"/> 
+						<Text text=""/>
+						<rdf:TextLink text="{path:'dataModel>Product2Feed_Body/Product2Feed_Body',type:'sap.ui.model.type.String' }" linkText="{i18n>Product2Feed.Product2Feed_Body/Product2Feed_Body}"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>Product2Feed.Product2Feed_CommentCount}" required="false"/> 
+						<Text text=""/>
+						<Text text="{path:'dataModel>Product2Feed_CommentCount/Product2Feed_CommentCount',type:'sap.ui.model.type.Integer' }"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>Product2Feed.Product2Feed_CreatedById}" required="false"/> 
+						<Text text=""/>
+						<rdf:ListResource path="dataModel>Product2Feed_CreatedById/sfdc_Product2Feed_CreatedById" entitySet="User"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>Product2Feed.Product2Feed_CreatedDate}" required="false"/> 
+						<Text text=""/>
+						<Text text="{dataModel>Product2Feed_CreatedDate/Product2Feed_CreatedDate}"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>Product2Feed.Product2Feed_Id}" required="false"/> 
+						<Text text=""/>
+						<rdf:TextLink text="{path:'dataModel>Product2Feed_Id/Product2Feed_Id',type:'sap.ui.model.type.String' }" linkText="{i18n>Product2Feed.Product2Feed_Id/Product2Feed_Id}"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>Product2Feed.Product2Feed_InsertedById}" required="false"/> 
+						<Text text=""/>
+						<rdf:ListResource path="dataModel>Product2Feed_InsertedById/sfdc_Product2Feed_InsertedById" entitySet="User"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>Product2Feed.Product2Feed_IsDeleted}" required="false"/> 
+						<Text text=""/>
+						<Text text="{path:'dataModel>Product2Feed_IsDeleted/Product2Feed_IsDeleted',type:'sap.ui.model.type.Boolean'}"/>  
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>Product2Feed.Product2Feed_IsRichText}" required="false"/> 
+						<Text text=""/>
+						<Text text="{path:'dataModel>Product2Feed_IsRichText/Product2Feed_IsRichText',type:'sap.ui.model.type.Boolean'}"/>  
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>Product2Feed.Product2Feed_LastModifiedDate}" required="false"/> 
+						<Text text=""/>
+						<Text text="{dataModel>Product2Feed_LastModifiedDate/Product2Feed_LastModifiedDate}"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>Product2Feed.Product2Feed_LikeCount}" required="false"/> 
+						<Text text=""/>
+						<Text text="{path:'dataModel>Product2Feed_LikeCount/Product2Feed_LikeCount',type:'sap.ui.model.type.Integer' }"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>Product2Feed.Product2Feed_LinkUrl}" required="false"/> 
+						<Text text=""/>
+						<rdf:TextLink text="{path:'dataModel>Product2Feed_LinkUrl/Product2Feed_LinkUrl',type:'sap.ui.model.type.String' }" linkText="{i18n>Product2Feed.Product2Feed_LinkUrl/Product2Feed_LinkUrl}"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>Product2Feed.Product2Feed_ParentId}" required="false"/> 
+						<Text text=""/>
+						<rdf:ListResource path="dataModel>Product2Feed_ParentId/sfdc_Product2Feed_ParentId" entitySet="Product2"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>Product2Feed.Product2Feed_RelatedRecordId}" required="false"/> 
+						<Text text=""/>
+						<rdf:ListResource path="dataModel>Product2Feed_RelatedRecordId/sfdc_Product2Feed_RelatedRecordId" entitySet="ContentVersion"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>Product2Feed.Product2Feed_SystemModstamp}" required="false"/> 
+						<Text text=""/>
+						<Text text="{dataModel>Product2Feed_SystemModstamp/Product2Feed_SystemModstamp}"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>Product2Feed.Product2Feed_Title}" required="false"/> 
+						<Text text=""/>
+						<rdf:TextLink text="{path:'dataModel>Product2Feed_Title/Product2Feed_Title',type:'sap.ui.model.type.String' }" linkText="{i18n>Product2Feed.Product2Feed_Title/Product2Feed_Title}"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>Product2Feed.Product2Feed_Type}" required="false"/> 
+						<Text text=""/>
+						<rdf:TextLink text="{path:'dataModel>Product2Feed_Type/Product2Feed_Type',type:'sap.ui.model.type.String' }" linkText="{i18n>Product2Feed.Product2Feed_Type/Product2Feed_Type}"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>Product2Feed.Product2Feed_CreatedById}" required="false"/> 
+						<rdf:ListResource path="dataModel>Product2Feed_CreatedById" entitySet="User"/>
+						<Text text=""/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>Product2Feed.Product2Feed_InsertedById}" required="false"/> 
+						<rdf:ListResource path="dataModel>Product2Feed_InsertedById" entitySet="User"/>
+						<Text text=""/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>Product2Feed.Product2Feed_ParentId}" required="false"/> 
+						<rdf:ListResource path="dataModel>Product2Feed_ParentId" entitySet="Product2"/>
+						<Text text=""/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>Product2Feed.Product2Feed_RelatedRecordId}" required="false"/> 
+						<rdf:ListResource path="dataModel>Product2Feed_RelatedRecordId" entitySet="ContentVersion"/>
+						<Text text=""/>
+					</cells>
+				</ColumnListItem>
+			</items>
+		</Table>
+	</Page>
+</mvc:View>

@@ -1,0 +1,196 @@
+<mvc:View controllerName="com.inova8.lens.controller.Entity360" xmlns="sap.m" xmlns:mvc="sap.ui.core.mvc" xmlns:l="sap.ui.layout"
+	xmlns:f="sap.ui.layout.form" xmlns:table="sap.ui.table" xmlns:rdf="com.inova8.lens.control" xmlns:html="http://www.w3.org/1999/xhtml"
+	xmlns:core="sap.ui.core">
+	<Page showHeader="true" id="page" navButtonPress="onNavBack" showNavButton="false" title="{i18n>AccountPartner.Title}" busy="{entityView>/busy}"
+		busyIndicatorDelay="{entityView>/delay}" >
+		<customHeader>
+			<Toolbar>
+				<ToolbarSpacer/>
+				<HBox id="sourceTitle" alignItems="Center">
+						<rdf:TextResource id="selectedResource" path="" entitySet=""/>
+				</HBox>	
+				<Title id="pathTitle" text="{entityView>/navigation}"/>
+				<HBox id="versionsTitle" alignItems="Center">
+					<Title text="(" required="false"/>
+					<ComboBox id="versionSelection" items="{ path: 'entityView>/versions' }" selectionChange="onVersionChange">
+						<core:Item key="{entityView>navigation}" text="{entityView>text}"/>
+					</ComboBox>
+					<Title text=")" required="false"/>
+				</HBox>
+				<Title text="{i18n>AccountPartner.this}"/>
+				<Title text="(" required="false"/>
+				<rdf:TextResource path="dataModel>" entitySet="AccountPartner"/>
+				<Title text=")" required="false"/>
+	
+				<ToolbarSpacer/>
+				<ToggleButton id="toggleColumns" icon="sap-icon://hide" activeIcon="sap-icon://show" press="onSettingsPressed" visible="false"	>
+					<layoutData>
+						<OverflowToolbarLayoutData priority="NeverOverflow"/>
+					</layoutData>
+				</ToggleButton>
+				
+			</Toolbar>
+		</customHeader>
+		<Table id="form360" inset="false" fixedLayout="true" class="multicolumnform" updateFinished="hideColumns">
+			<columns>
+				<Column hAlign="Right" width="200px">
+					<Text text=""/>
+				</Column>
+				<Column visible="true">
+				</Column>
+				<Column visible="true">
+					<Text text="AccountPartner"/>
+				</Column>
+			</columns>
+			<items>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>AccountPartner.AccountPartner_AccountFromId}" required="false"/> 
+						<Text text=""/>
+						<rdf:ListResource path="dataModel>AccountPartner_AccountFromId/sfdc_AccountPartner_AccountFromId" entitySet="Account"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>AccountPartner.AccountPartner_AccountToId}" required="false"/> 
+						<Text text=""/>
+						<rdf:ListResource path="dataModel>AccountPartner_AccountToId/sfdc_AccountPartner_AccountToId" entitySet="Account"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>AccountPartner.AccountPartner_CreatedById}" required="false"/> 
+						<Text text=""/>
+						<rdf:ListResource path="dataModel>AccountPartner_CreatedById/sfdc_AccountPartner_CreatedById" entitySet="User"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>AccountPartner.AccountPartner_CreatedDate}" required="false"/> 
+						<Text text=""/>
+						<Text text="{dataModel>AccountPartner_CreatedDate/AccountPartner_CreatedDate}"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>AccountPartner.AccountPartner_Id}" required="false"/> 
+						<Text text=""/>
+						<rdf:TextLink text="{path:'dataModel>AccountPartner_Id/AccountPartner_Id',type:'sap.ui.model.type.String' }" linkText="{i18n>AccountPartner.AccountPartner_Id/AccountPartner_Id}"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>AccountPartner.AccountPartner_IsDeleted}" required="false"/> 
+						<Text text=""/>
+						<Text text="{path:'dataModel>AccountPartner_IsDeleted/AccountPartner_IsDeleted',type:'sap.ui.model.type.Boolean'}"/>  
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>AccountPartner.AccountPartner_IsPrimary}" required="false"/> 
+						<Text text=""/>
+						<Text text="{path:'dataModel>AccountPartner_IsPrimary/AccountPartner_IsPrimary',type:'sap.ui.model.type.Boolean'}"/>  
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>AccountPartner.AccountPartner_LastModifiedById}" required="false"/> 
+						<Text text=""/>
+						<rdf:ListResource path="dataModel>AccountPartner_LastModifiedById/sfdc_AccountPartner_LastModifiedById" entitySet="User"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>AccountPartner.AccountPartner_LastModifiedDate}" required="false"/> 
+						<Text text=""/>
+						<Text text="{dataModel>AccountPartner_LastModifiedDate/AccountPartner_LastModifiedDate}"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>AccountPartner.AccountPartner_OpportunityId}" required="false"/> 
+						<Text text=""/>
+						<rdf:ListResource path="dataModel>AccountPartner_OpportunityId/sfdc_AccountPartner_OpportunityId" entitySet="Opportunity"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>AccountPartner.AccountPartner_ReversePartnerId}" required="false"/> 
+						<Text text=""/>
+						<rdf:ListResource path="dataModel>AccountPartner_ReversePartnerId/sfdc_AccountPartner_ReversePartnerId" entitySet="AccountPartner"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>AccountPartner.AccountPartner_ReversePartnerId_Inverse}" required="false"/> 
+						<Text text=""/>
+						<rdf:ListResource path="dataModel>AccountPartner_ReversePartnerId_Inverse/sfdc_AccountPartner_ReversePartnerId_Inverse" entitySet="AccountPartner"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>AccountPartner.AccountPartner_Role}" required="false"/> 
+						<Text text=""/>
+						<rdf:TextLink text="{path:'dataModel>AccountPartner_Role/AccountPartner_Role',type:'sap.ui.model.type.String' }" linkText="{i18n>AccountPartner.AccountPartner_Role/AccountPartner_Role}"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>AccountPartner.AccountPartner_SystemModstamp}" required="false"/> 
+						<Text text=""/>
+						<Text text="{dataModel>AccountPartner_SystemModstamp/AccountPartner_SystemModstamp}"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>AccountPartner.AccountPartner_AccountFromId}" required="false"/> 
+						<rdf:ListResource path="dataModel>AccountPartner_AccountFromId" entitySet="Account"/>
+						<Text text=""/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>AccountPartner.AccountPartner_AccountToId}" required="false"/> 
+						<rdf:ListResource path="dataModel>AccountPartner_AccountToId" entitySet="Account"/>
+						<Text text=""/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>AccountPartner.AccountPartner_CreatedById}" required="false"/> 
+						<rdf:ListResource path="dataModel>AccountPartner_CreatedById" entitySet="User"/>
+						<Text text=""/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>AccountPartner.AccountPartner_LastModifiedById}" required="false"/> 
+						<rdf:ListResource path="dataModel>AccountPartner_LastModifiedById" entitySet="User"/>
+						<Text text=""/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>AccountPartner.AccountPartner_OpportunityId}" required="false"/> 
+						<rdf:ListResource path="dataModel>AccountPartner_OpportunityId" entitySet="Opportunity"/>
+						<Text text=""/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>AccountPartner.AccountPartner_ReversePartnerId}" required="false"/> 
+						<rdf:ListResource path="dataModel>AccountPartner_ReversePartnerId" entitySet="AccountPartner"/>
+						<Text text=""/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>AccountPartner.AccountPartner_ReversePartnerId_Inverse}" required="false"/> 
+						<rdf:ListResource path="dataModel>AccountPartner_ReversePartnerId_Inverse" entitySet="AccountPartner"/>
+						<Text text=""/>
+					</cells>
+				</ColumnListItem>
+			</items>
+		</Table>
+	</Page>
+</mvc:View>

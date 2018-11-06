@@ -1,0 +1,109 @@
+<mvc:View controllerName="com.inova8.lens.controller.EntitySet360" xmlns="sap.m" xmlns:mvc="sap.ui.core.mvc" xmlns:layout="sap.ui.layout"
+	xmlns:rdf="com.inova8.lens.control" xmlns:core="sap.ui.core">
+	<Page showHeader="false" id="page" navButtonPress="onNavBack" showNavButton="true" title="{i18n>OwnedContentDocuments.ViewTitle}">
+		<content>
+			<Table id="table360" inset="false" items="{ path: 'dataModel>/OwnedContentDocument' , sorter: { path: 'label', descending: false } 
+				}"
+				noDataText="{entitySetView>/tableNoDataText}" busyIndicatorDelay="{entitySetView>/tableBusyDelay}" growing="true" growingScrollToLoad="true"
+				updateFinished="onUpdateFinished"  fixedLayout="false">
+				<headerToolbar>
+					<Toolbar>
+						<ToolbarSpacer/>
+						<HBox id="sourceTitle" alignItems="Center">
+							<rdf:TextResource id="selectedResource" path="" entitySet=""/>
+						</HBox>
+						<Title id="pathTitle" text="{entitySetView>/navigationText}"/>
+						<HBox id="versionsTitle" alignItems="Center">
+							<Title text="(" required="false"/>
+							<ComboBox id="versionSelection" items="{ path: 'entitySetView>/versions' }" selectionChange="onVersionChange">
+								<core:Item key="{entitySetView>navigation}" text="{entityView>text}"/>
+							</ComboBox>
+							<Title text=")" required="false"/>
+						</HBox>
+						<Title id="tableHeader" text="{entitySetView>/entitySetTableTitle}"/>
+						<ToolbarSpacer/>
+						<SearchField id="searchField" tooltip="{i18n>search.searchTooltip}" search="onSearch" width="auto"></SearchField>
+					</Toolbar>
+				</headerToolbar>
+				<columns>
+					<Column >
+						<Text text="{i18n>OwnedContentDocuments.this}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>OwnedContentDocuments.OwnedContentDocument_ContentSize}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>OwnedContentDocuments.OwnedContentDocument_ContentUrl}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>OwnedContentDocuments.OwnedContentDocument_CreatedDate}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>OwnedContentDocuments.OwnedContentDocument_ExternalDataSourceName}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>OwnedContentDocuments.OwnedContentDocument_ExternalDataSourceType}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>OwnedContentDocuments.OwnedContentDocument_FileExtension}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>OwnedContentDocuments.OwnedContentDocument_FileType}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>OwnedContentDocuments.OwnedContentDocument_Id}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>OwnedContentDocuments.OwnedContentDocument_IsDeleted}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>OwnedContentDocuments.OwnedContentDocument_LastModifiedDate}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>OwnedContentDocuments.OwnedContentDocument_Title}"/>
+					</Column>
+				</columns>
+				<items>
+					<ColumnListItem id="template360" type="Navigation" press="onPress">
+						<cells>
+							<rdf:TextResource path="dataModel>" entitySet="OwnedContentDocument"/>
+							<VBox>					
+							<Text text="{path:'dataModel>OwnedContentDocument_ContentSize/OwnedContentDocument_ContentSize',type:'sap.ui.model.type.Integer' }"/>
+							</VBox>							
+							<VBox>					
+							<rdf:TextLink text="{path:'dataModel>OwnedContentDocument_ContentUrl/OwnedContentDocument_ContentUrl',type:'sap.ui.model.type.String'}" linkText="{i18n>OwnedContentDocument.OwnedContentDocument_ContentUrl/OwnedContentDocument_ContentUrl}"/>
+							</VBox>							
+							<VBox>					
+							<Text text="{dataModel>OwnedContentDocument_CreatedDate/OwnedContentDocument_CreatedDate}"/>
+							</VBox>							
+							<VBox>					
+							<rdf:TextLink text="{path:'dataModel>OwnedContentDocument_ExternalDataSourceName/OwnedContentDocument_ExternalDataSourceName',type:'sap.ui.model.type.String'}" linkText="{i18n>OwnedContentDocument.OwnedContentDocument_ExternalDataSourceName/OwnedContentDocument_ExternalDataSourceName}"/>
+							</VBox>							
+							<VBox>					
+							<rdf:TextLink text="{path:'dataModel>OwnedContentDocument_ExternalDataSourceType/OwnedContentDocument_ExternalDataSourceType',type:'sap.ui.model.type.String'}" linkText="{i18n>OwnedContentDocument.OwnedContentDocument_ExternalDataSourceType/OwnedContentDocument_ExternalDataSourceType}"/>
+							</VBox>							
+							<VBox>					
+							<rdf:TextLink text="{path:'dataModel>OwnedContentDocument_FileExtension/OwnedContentDocument_FileExtension',type:'sap.ui.model.type.String'}" linkText="{i18n>OwnedContentDocument.OwnedContentDocument_FileExtension/OwnedContentDocument_FileExtension}"/>
+							</VBox>							
+							<VBox>					
+							<rdf:TextLink text="{path:'dataModel>OwnedContentDocument_FileType/OwnedContentDocument_FileType',type:'sap.ui.model.type.String'}" linkText="{i18n>OwnedContentDocument.OwnedContentDocument_FileType/OwnedContentDocument_FileType}"/>
+							</VBox>							
+							<VBox>					
+							<rdf:TextLink text="{path:'dataModel>OwnedContentDocument_Id/OwnedContentDocument_Id',type:'sap.ui.model.type.String'}" linkText="{i18n>OwnedContentDocument.OwnedContentDocument_Id/OwnedContentDocument_Id}"/>
+							</VBox>							
+							<VBox>					
+								<Text text="{path:'dataModel>OwnedContentDocument_IsDeleted/OwnedContentDocument_IsDeleted',type:'sap.ui.model.type.Boolean'}"/>  
+							</VBox>							
+							<VBox>					
+							<Text text="{dataModel>OwnedContentDocument_LastModifiedDate/OwnedContentDocument_LastModifiedDate}"/>
+							</VBox>							
+							<VBox>					
+							<rdf:TextLink text="{path:'dataModel>OwnedContentDocument_Title/OwnedContentDocument_Title',type:'sap.ui.model.type.String'}" linkText="{i18n>OwnedContentDocument.OwnedContentDocument_Title/OwnedContentDocument_Title}"/>
+							</VBox>							
+						</cells>
+					</ColumnListItem>
+				</items>
+			</Table>
+		</content>
+	</Page>
+</mvc:View>

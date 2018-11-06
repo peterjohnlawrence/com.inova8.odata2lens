@@ -1,0 +1,959 @@
+<mvc:View controllerName="com.inova8.lens.controller.Entity360" xmlns="sap.m" xmlns:mvc="sap.ui.core.mvc" xmlns:l="sap.ui.layout"
+	xmlns:f="sap.ui.layout.form" xmlns:table="sap.ui.table" xmlns:rdf="com.inova8.lens.control" xmlns:html="http://www.w3.org/1999/xhtml"
+	xmlns:core="sap.ui.core">
+	<Page showHeader="true" id="page" navButtonPress="onNavBack" showNavButton="false" title="{i18n>Group.Title}" busy="{entityView>/busy}"
+		busyIndicatorDelay="{entityView>/delay}" >
+		<customHeader>
+			<Toolbar>
+				<ToolbarSpacer/>
+				<HBox id="sourceTitle" alignItems="Center">
+						<rdf:TextResource id="selectedResource" path="" entitySet=""/>
+				</HBox>	
+				<Title id="pathTitle" text="{entityView>/navigation}"/>
+				<HBox id="versionsTitle" alignItems="Center">
+					<Title text="(" required="false"/>
+					<ComboBox id="versionSelection" items="{ path: 'entityView>/versions' }" selectionChange="onVersionChange">
+						<core:Item key="{entityView>navigation}" text="{entityView>text}"/>
+					</ComboBox>
+					<Title text=")" required="false"/>
+				</HBox>
+				<Title text="{i18n>Group.this}"/>
+				<Title text="(" required="false"/>
+				<rdf:TextResource path="dataModel>" entitySet="Group"/>
+				<Title text=")" required="false"/>
+	
+				<ToolbarSpacer/>
+				<ToggleButton id="toggleColumns" icon="sap-icon://hide" activeIcon="sap-icon://show" press="onSettingsPressed" visible="false"	>
+					<layoutData>
+						<OverflowToolbarLayoutData priority="NeverOverflow"/>
+					</layoutData>
+				</ToggleButton>
+				
+			</Toolbar>
+		</customHeader>
+		<Table id="form360" inset="false" fixedLayout="true" class="multicolumnform" updateFinished="hideColumns">
+			<columns>
+				<Column hAlign="Right" width="200px">
+					<Text text=""/>
+				</Column>
+				<Column visible="true">
+				</Column>
+				<Column visible="true">
+					<Text text="Group"/>
+				</Column>
+			</columns>
+			<items>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>Group.AccountShare_UserOrGroupId_Inverse}" required="false"/> 
+						<Text text=""/>
+						<rdf:ListResource path="dataModel>AccountShare_UserOrGroupId_Inverse/sfdc_AccountShare_UserOrGroupId_Inverse" entitySet="AccountShare"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>Group.CHANNEL_ORDERS__Customer__c_OwnerId_Inverse}" required="false"/> 
+						<Text text=""/>
+						<rdf:ListResource path="dataModel>CHANNEL_ORDERS__Customer__c_OwnerId_Inverse/sfdc_CHANNEL_ORDERS__Customer__c_OwnerId_Inverse" entitySet="CHANNEL_ORDERS__Customer__c"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>Group.CHANNEL_ORDERS__Partner_Contract_Terms__c_OwnerId_Inverse}" required="false"/> 
+						<Text text=""/>
+						<rdf:ListResource path="dataModel>CHANNEL_ORDERS__Partner_Contract_Terms__c_OwnerId_Inverse/sfdc_CHANNEL_ORDERS__Partner_Contract_Terms__c_OwnerId_Inverse" entitySet="CHANNEL_ORDERS__Partner_Contract_Terms__c"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>Group.CHANNEL_ORDERS__Partner_Product_Catalog__c_OwnerId_Inverse}" required="false"/> 
+						<Text text=""/>
+						<rdf:ListResource path="dataModel>CHANNEL_ORDERS__Partner_Product_Catalog__c_OwnerId_Inverse/sfdc_CHANNEL_ORDERS__Partner_Product_Catalog__c_OwnerId_Inverse" entitySet="CHANNEL_ORDERS__Partner_Product_Catalog__c"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>Group.CHANNEL_ORDERS__Service_Order_Log__c_OwnerId_Inverse}" required="false"/> 
+						<Text text=""/>
+						<rdf:ListResource path="dataModel>CHANNEL_ORDERS__Service_Order_Log__c_OwnerId_Inverse/sfdc_CHANNEL_ORDERS__Service_Order_Log__c_OwnerId_Inverse" entitySet="CHANNEL_ORDERS__Service_Order_Log__c"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>Group.CHANNEL_ORDERS__Service_Order__c_OwnerId_Inverse}" required="false"/> 
+						<Text text=""/>
+						<rdf:ListResource path="dataModel>CHANNEL_ORDERS__Service_Order__c_OwnerId_Inverse/sfdc_CHANNEL_ORDERS__Service_Order__c_OwnerId_Inverse" entitySet="CHANNEL_ORDERS__Service_Order__c"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>Group.CampaignMember_LeadOrContactOwnerId_Inverse}" required="false"/> 
+						<Text text=""/>
+						<rdf:ListResource path="dataModel>CampaignMember_LeadOrContactOwnerId_Inverse/sfdc_CampaignMember_LeadOrContactOwnerId_Inverse" entitySet="CampaignMember"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>Group.CampaignShare_UserOrGroupId_Inverse}" required="false"/> 
+						<Text text=""/>
+						<rdf:ListResource path="dataModel>CampaignShare_UserOrGroupId_Inverse/sfdc_CampaignShare_UserOrGroupId_Inverse" entitySet="CampaignShare"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>Group.CaseShare_UserOrGroupId_Inverse}" required="false"/> 
+						<Text text=""/>
+						<rdf:ListResource path="dataModel>CaseShare_UserOrGroupId_Inverse/sfdc_CaseShare_UserOrGroupId_Inverse" entitySet="CaseShare"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>Group.Case_OwnerId_Inverse}" required="false"/> 
+						<Text text=""/>
+						<rdf:ListResource path="dataModel>Case_OwnerId_Inverse/sfdc_Case_OwnerId_Inverse" entitySet="Case"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>Group.ContactShare_UserOrGroupId_Inverse}" required="false"/> 
+						<Text text=""/>
+						<rdf:ListResource path="dataModel>ContactShare_UserOrGroupId_Inverse/sfdc_ContactShare_UserOrGroupId_Inverse" entitySet="ContactShare"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>Group.EntityDefinition_DataStewardId_Inverse}" required="false"/> 
+						<Text text=""/>
+						<rdf:ListResource path="dataModel>EntityDefinition_DataStewardId_Inverse/sfdc_EntityDefinition_DataStewardId_Inverse" entitySet="EntityDefinition"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>Group.FieldDefinition_BusinessOwnerId_Inverse}" required="false"/> 
+						<Text text=""/>
+						<rdf:ListResource path="dataModel>FieldDefinition_BusinessOwnerId_Inverse/sfdc_FieldDefinition_BusinessOwnerId_Inverse" entitySet="FieldDefinition"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>Group.FlowInterviewShare_UserOrGroupId_Inverse}" required="false"/> 
+						<Text text=""/>
+						<rdf:ListResource path="dataModel>FlowInterviewShare_UserOrGroupId_Inverse/sfdc_FlowInterviewShare_UserOrGroupId_Inverse" entitySet="FlowInterviewShare"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>Group.FlowInterview_OwnerId_Inverse}" required="false"/> 
+						<Text text=""/>
+						<rdf:ListResource path="dataModel>FlowInterview_OwnerId_Inverse/sfdc_FlowInterview_OwnerId_Inverse" entitySet="FlowInterview"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>Group.ForecastShare_UserOrGroupId_Inverse}" required="false"/> 
+						<Text text=""/>
+						<rdf:ListResource path="dataModel>ForecastShare_UserOrGroupId_Inverse/sfdc_ForecastShare_UserOrGroupId_Inverse" entitySet="ForecastShare"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>Group.GroupMember_GroupId_Inverse}" required="false"/> 
+						<Text text=""/>
+						<rdf:ListResource path="dataModel>GroupMember_GroupId_Inverse/sfdc_GroupMember_GroupId_Inverse" entitySet="GroupMember"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>Group.GroupMember_UserOrGroupId_Inverse}" required="false"/> 
+						<Text text=""/>
+						<rdf:ListResource path="dataModel>GroupMember_UserOrGroupId_Inverse/sfdc_GroupMember_UserOrGroupId_Inverse" entitySet="GroupMember"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>Group.Group_CreatedById}" required="false"/> 
+						<Text text=""/>
+						<rdf:ListResource path="dataModel>Group_CreatedById/sfdc_Group_CreatedById" entitySet="User"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>Group.Group_CreatedDate}" required="false"/> 
+						<Text text=""/>
+						<Text text="{dataModel>Group_CreatedDate/Group_CreatedDate}"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>Group.Group_DeveloperName}" required="false"/> 
+						<Text text=""/>
+						<rdf:TextLink text="{path:'dataModel>Group_DeveloperName/Group_DeveloperName',type:'sap.ui.model.type.String' }" linkText="{i18n>Group.Group_DeveloperName/Group_DeveloperName}"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>Group.Group_DoesIncludeBosses}" required="false"/> 
+						<Text text=""/>
+						<Text text="{path:'dataModel>Group_DoesIncludeBosses/Group_DoesIncludeBosses',type:'sap.ui.model.type.Boolean'}"/>  
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>Group.Group_DoesSendEmailToMembers}" required="false"/> 
+						<Text text=""/>
+						<Text text="{path:'dataModel>Group_DoesSendEmailToMembers/Group_DoesSendEmailToMembers',type:'sap.ui.model.type.Boolean'}"/>  
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>Group.Group_Email}" required="false"/> 
+						<Text text=""/>
+						<rdf:TextLink text="{path:'dataModel>Group_Email/Group_Email',type:'sap.ui.model.type.String' }" linkText="{i18n>Group.Group_Email/Group_Email}"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>Group.Group_Id}" required="false"/> 
+						<Text text=""/>
+						<rdf:TextLink text="{path:'dataModel>Group_Id/Group_Id',type:'sap.ui.model.type.String' }" linkText="{i18n>Group.Group_Id/Group_Id}"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>Group.Group_LastModifiedById}" required="false"/> 
+						<Text text=""/>
+						<rdf:ListResource path="dataModel>Group_LastModifiedById/sfdc_Group_LastModifiedById" entitySet="User"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>Group.Group_LastModifiedDate}" required="false"/> 
+						<Text text=""/>
+						<Text text="{dataModel>Group_LastModifiedDate/Group_LastModifiedDate}"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>Group.Group_Name}" required="false"/> 
+						<Text text=""/>
+						<rdf:TextLink text="{path:'dataModel>Group_Name/Group_Name',type:'sap.ui.model.type.String' }" linkText="{i18n>Group.Group_Name/Group_Name}"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>Group.Group_OwnerId}" required="false"/> 
+						<Text text=""/>
+						<rdf:ListResource path="dataModel>Group_OwnerId/sfdc_Group_OwnerId" entitySet="Organization"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>Group.Group_RelatedId}" required="false"/> 
+						<Text text=""/>
+						<rdf:ListResource path="dataModel>Group_RelatedId/sfdc_Group_RelatedId" entitySet="Territory2"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>Group.Group_SystemModstamp}" required="false"/> 
+						<Text text=""/>
+						<Text text="{dataModel>Group_SystemModstamp/Group_SystemModstamp}"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>Group.Group_Type}" required="false"/> 
+						<Text text=""/>
+						<rdf:TextLink text="{path:'dataModel>Group_Type/Group_Type',type:'sap.ui.model.type.String' }" linkText="{i18n>Group.Group_Type/Group_Type}"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>Group.LeadShare_UserOrGroupId_Inverse}" required="false"/> 
+						<Text text=""/>
+						<rdf:ListResource path="dataModel>LeadShare_UserOrGroupId_Inverse/sfdc_LeadShare_UserOrGroupId_Inverse" entitySet="LeadShare"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>Group.Lead_OwnerId_Inverse}" required="false"/> 
+						<Text text=""/>
+						<rdf:ListResource path="dataModel>Lead_OwnerId_Inverse/sfdc_Lead_OwnerId_Inverse" entitySet="Lead"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>Group.ListEmailShare_UserOrGroupId_Inverse}" required="false"/> 
+						<Text text=""/>
+						<rdf:ListResource path="dataModel>ListEmailShare_UserOrGroupId_Inverse/sfdc_ListEmailShare_UserOrGroupId_Inverse" entitySet="ListEmailShare"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>Group.ListEmail_OwnerId_Inverse}" required="false"/> 
+						<Text text=""/>
+						<rdf:ListResource path="dataModel>ListEmail_OwnerId_Inverse/sfdc_ListEmail_OwnerId_Inverse" entitySet="ListEmail"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>Group.MacroShare_UserOrGroupId_Inverse}" required="false"/> 
+						<Text text=""/>
+						<rdf:ListResource path="dataModel>MacroShare_UserOrGroupId_Inverse/sfdc_MacroShare_UserOrGroupId_Inverse" entitySet="MacroShare"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>Group.Macro_OwnerId_Inverse}" required="false"/> 
+						<Text text=""/>
+						<rdf:ListResource path="dataModel>Macro_OwnerId_Inverse/sfdc_Macro_OwnerId_Inverse" entitySet="Macro"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>Group.OpportunityShare_UserOrGroupId_Inverse}" required="false"/> 
+						<Text text=""/>
+						<rdf:ListResource path="dataModel>OpportunityShare_UserOrGroupId_Inverse/sfdc_OpportunityShare_UserOrGroupId_Inverse" entitySet="OpportunityShare"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>Group.OrderShare_UserOrGroupId_Inverse}" required="false"/> 
+						<Text text=""/>
+						<rdf:ListResource path="dataModel>OrderShare_UserOrGroupId_Inverse/sfdc_OrderShare_UserOrGroupId_Inverse" entitySet="OrderShare"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>Group.Order_OwnerId_Inverse}" required="false"/> 
+						<Text text=""/>
+						<rdf:ListResource path="dataModel>Order_OwnerId_Inverse/sfdc_Order_OwnerId_Inverse" entitySet="Order"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>Group.ProcessInstanceHistory_ActorId_Inverse}" required="false"/> 
+						<Text text=""/>
+						<rdf:ListResource path="dataModel>ProcessInstanceHistory_ActorId_Inverse/sfdc_ProcessInstanceHistory_ActorId_Inverse" entitySet="ProcessInstanceHistory"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>Group.ProcessInstanceHistory_OriginalActorId_Inverse}" required="false"/> 
+						<Text text=""/>
+						<rdf:ListResource path="dataModel>ProcessInstanceHistory_OriginalActorId_Inverse/sfdc_ProcessInstanceHistory_OriginalActorId_Inverse" entitySet="ProcessInstanceHistory"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>Group.ProcessInstanceStep_ActorId_Inverse}" required="false"/> 
+						<Text text=""/>
+						<rdf:ListResource path="dataModel>ProcessInstanceStep_ActorId_Inverse/sfdc_ProcessInstanceStep_ActorId_Inverse" entitySet="ProcessInstanceStep"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>Group.ProcessInstanceStep_OriginalActorId_Inverse}" required="false"/> 
+						<Text text=""/>
+						<rdf:ListResource path="dataModel>ProcessInstanceStep_OriginalActorId_Inverse/sfdc_ProcessInstanceStep_OriginalActorId_Inverse" entitySet="ProcessInstanceStep"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>Group.ProcessInstanceWorkitem_ActorId_Inverse}" required="false"/> 
+						<Text text=""/>
+						<rdf:ListResource path="dataModel>ProcessInstanceWorkitem_ActorId_Inverse/sfdc_ProcessInstanceWorkitem_ActorId_Inverse" entitySet="ProcessInstanceWorkitem"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>Group.ProcessInstanceWorkitem_OriginalActorId_Inverse}" required="false"/> 
+						<Text text=""/>
+						<rdf:ListResource path="dataModel>ProcessInstanceWorkitem_OriginalActorId_Inverse/sfdc_ProcessInstanceWorkitem_OriginalActorId_Inverse" entitySet="ProcessInstanceWorkitem"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>Group.QueueSobject_QueueId_Inverse}" required="false"/> 
+						<Text text=""/>
+						<rdf:ListResource path="dataModel>QueueSobject_QueueId_Inverse/sfdc_QueueSobject_QueueId_Inverse" entitySet="QueueSobject"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>Group.QuoteShare_UserOrGroupId_Inverse}" required="false"/> 
+						<Text text=""/>
+						<rdf:ListResource path="dataModel>QuoteShare_UserOrGroupId_Inverse/sfdc_QuoteShare_UserOrGroupId_Inverse" entitySet="QuoteShare"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>Group.Quote_OwnerId_Inverse}" required="false"/> 
+						<Text text=""/>
+						<rdf:ListResource path="dataModel>Quote_OwnerId_Inverse/sfdc_Quote_OwnerId_Inverse" entitySet="Quote"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>Group.ServiceContractShare_UserOrGroupId_Inverse}" required="false"/> 
+						<Text text=""/>
+						<rdf:ListResource path="dataModel>ServiceContractShare_UserOrGroupId_Inverse/sfdc_ServiceContractShare_UserOrGroupId_Inverse" entitySet="ServiceContractShare"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>Group.ServiceContract_OwnerId_Inverse}" required="false"/> 
+						<Text text=""/>
+						<rdf:ListResource path="dataModel>ServiceContract_OwnerId_Inverse/sfdc_ServiceContract_OwnerId_Inverse" entitySet="ServiceContract"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>Group.SignupRequestShare_UserOrGroupId_Inverse}" required="false"/> 
+						<Text text=""/>
+						<rdf:ListResource path="dataModel>SignupRequestShare_UserOrGroupId_Inverse/sfdc_SignupRequestShare_UserOrGroupId_Inverse" entitySet="SignupRequestShare"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>Group.SignupRequest_OwnerId_Inverse}" required="false"/> 
+						<Text text=""/>
+						<rdf:ListResource path="dataModel>SignupRequest_OwnerId_Inverse/sfdc_SignupRequest_OwnerId_Inverse" entitySet="SignupRequest"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>Group.SocialPostShare_UserOrGroupId_Inverse}" required="false"/> 
+						<Text text=""/>
+						<rdf:ListResource path="dataModel>SocialPostShare_UserOrGroupId_Inverse/sfdc_SocialPostShare_UserOrGroupId_Inverse" entitySet="SocialPostShare"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>Group.SocialPost_OwnerId_Inverse}" required="false"/> 
+						<Text text=""/>
+						<rdf:ListResource path="dataModel>SocialPost_OwnerId_Inverse/sfdc_SocialPost_OwnerId_Inverse" entitySet="SocialPost"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>Group.StreamingChannelShare_UserOrGroupId_Inverse}" required="false"/> 
+						<Text text=""/>
+						<rdf:ListResource path="dataModel>StreamingChannelShare_UserOrGroupId_Inverse/sfdc_StreamingChannelShare_UserOrGroupId_Inverse" entitySet="StreamingChannelShare"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>Group.StreamingChannel_OwnerId_Inverse}" required="false"/> 
+						<Text text=""/>
+						<rdf:ListResource path="dataModel>StreamingChannel_OwnerId_Inverse/sfdc_StreamingChannel_OwnerId_Inverse" entitySet="StreamingChannel"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>Group.TodayGoalShare_UserOrGroupId_Inverse}" required="false"/> 
+						<Text text=""/>
+						<rdf:ListResource path="dataModel>TodayGoalShare_UserOrGroupId_Inverse/sfdc_TodayGoalShare_UserOrGroupId_Inverse" entitySet="TodayGoalShare"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>Group.TodayGoal_OwnerId_Inverse}" required="false"/> 
+						<Text text=""/>
+						<rdf:ListResource path="dataModel>TodayGoal_OwnerId_Inverse/sfdc_TodayGoal_OwnerId_Inverse" entitySet="TodayGoal"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>Group.UserAppMenuCustomizationShare_UserOrGroupId_Inverse}" required="false"/> 
+						<Text text=""/>
+						<rdf:ListResource path="dataModel>UserAppMenuCustomizationShare_UserOrGroupId_Inverse/sfdc_UserAppMenuCustomizationShare_UserOrGroupId_Inverse" entitySet="UserAppMenuCustomizationShare"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>Group.UserAppMenuCustomization_OwnerId_Inverse}" required="false"/> 
+						<Text text=""/>
+						<rdf:ListResource path="dataModel>UserAppMenuCustomization_OwnerId_Inverse/sfdc_UserAppMenuCustomization_OwnerId_Inverse" entitySet="UserAppMenuCustomization"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>Group.UserProvisioningRequestShare_UserOrGroupId_Inverse}" required="false"/> 
+						<Text text=""/>
+						<rdf:ListResource path="dataModel>UserProvisioningRequestShare_UserOrGroupId_Inverse/sfdc_UserProvisioningRequestShare_UserOrGroupId_Inverse" entitySet="UserProvisioningRequestShare"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>Group.UserProvisioningRequest_OwnerId_Inverse}" required="false"/> 
+						<Text text=""/>
+						<rdf:ListResource path="dataModel>UserProvisioningRequest_OwnerId_Inverse/sfdc_UserProvisioningRequest_OwnerId_Inverse" entitySet="UserProvisioningRequest"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>Group.UserShare_UserOrGroupId_Inverse}" required="false"/> 
+						<Text text=""/>
+						<rdf:ListResource path="dataModel>UserShare_UserOrGroupId_Inverse/sfdc_UserShare_UserOrGroupId_Inverse" entitySet="UserShare"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>Group.User_DelegatedApproverId_Inverse}" required="false"/> 
+						<Text text=""/>
+						<rdf:ListResource path="dataModel>User_DelegatedApproverId_Inverse/sfdc_User_DelegatedApproverId_Inverse" entitySet="User"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>Group.WorkOrderShare_UserOrGroupId_Inverse}" required="false"/> 
+						<Text text=""/>
+						<rdf:ListResource path="dataModel>WorkOrderShare_UserOrGroupId_Inverse/sfdc_WorkOrderShare_UserOrGroupId_Inverse" entitySet="WorkOrderShare"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>Group.WorkOrder_OwnerId_Inverse}" required="false"/> 
+						<Text text=""/>
+						<rdf:ListResource path="dataModel>WorkOrder_OwnerId_Inverse/sfdc_WorkOrder_OwnerId_Inverse" entitySet="WorkOrder"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>Group.sfLma__License__c_OwnerId_Inverse}" required="false"/> 
+						<Text text=""/>
+						<rdf:ListResource path="dataModel>sfLma__License__c_OwnerId_Inverse/sfdc_sfLma__License__c_OwnerId_Inverse" entitySet="sfLma__License__c"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>Group.sfLma__Package__c_OwnerId_Inverse}" required="false"/> 
+						<Text text=""/>
+						<rdf:ListResource path="dataModel>sfLma__Package__c_OwnerId_Inverse/sfdc_sfLma__Package__c_OwnerId_Inverse" entitySet="sfLma__Package__c"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>Group.AccountShare_UserOrGroupId_Inverse}" required="false"/> 
+						<rdf:ListResource path="dataModel>AccountShare_UserOrGroupId_Inverse" entitySet="AccountShare"/>
+						<Text text=""/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>Group.CHANNEL_ORDERS__Customer__c_OwnerId_Inverse}" required="false"/> 
+						<rdf:ListResource path="dataModel>CHANNEL_ORDERS__Customer__c_OwnerId_Inverse" entitySet="CHANNEL_ORDERS__Customer__c"/>
+						<Text text=""/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>Group.CHANNEL_ORDERS__Partner_Contract_Terms__c_OwnerId_Inverse}" required="false"/> 
+						<rdf:ListResource path="dataModel>CHANNEL_ORDERS__Partner_Contract_Terms__c_OwnerId_Inverse" entitySet="CHANNEL_ORDERS__Partner_Contract_Terms__c"/>
+						<Text text=""/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>Group.CHANNEL_ORDERS__Partner_Product_Catalog__c_OwnerId_Inverse}" required="false"/> 
+						<rdf:ListResource path="dataModel>CHANNEL_ORDERS__Partner_Product_Catalog__c_OwnerId_Inverse" entitySet="CHANNEL_ORDERS__Partner_Product_Catalog__c"/>
+						<Text text=""/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>Group.CHANNEL_ORDERS__Service_Order_Log__c_OwnerId_Inverse}" required="false"/> 
+						<rdf:ListResource path="dataModel>CHANNEL_ORDERS__Service_Order_Log__c_OwnerId_Inverse" entitySet="CHANNEL_ORDERS__Service_Order_Log__c"/>
+						<Text text=""/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>Group.CHANNEL_ORDERS__Service_Order__c_OwnerId_Inverse}" required="false"/> 
+						<rdf:ListResource path="dataModel>CHANNEL_ORDERS__Service_Order__c_OwnerId_Inverse" entitySet="CHANNEL_ORDERS__Service_Order__c"/>
+						<Text text=""/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>Group.CampaignMember_LeadOrContactOwnerId_Inverse}" required="false"/> 
+						<rdf:ListResource path="dataModel>CampaignMember_LeadOrContactOwnerId_Inverse" entitySet="CampaignMember"/>
+						<Text text=""/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>Group.CampaignShare_UserOrGroupId_Inverse}" required="false"/> 
+						<rdf:ListResource path="dataModel>CampaignShare_UserOrGroupId_Inverse" entitySet="CampaignShare"/>
+						<Text text=""/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>Group.CaseShare_UserOrGroupId_Inverse}" required="false"/> 
+						<rdf:ListResource path="dataModel>CaseShare_UserOrGroupId_Inverse" entitySet="CaseShare"/>
+						<Text text=""/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>Group.Case_OwnerId_Inverse}" required="false"/> 
+						<rdf:ListResource path="dataModel>Case_OwnerId_Inverse" entitySet="Case"/>
+						<Text text=""/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>Group.ContactShare_UserOrGroupId_Inverse}" required="false"/> 
+						<rdf:ListResource path="dataModel>ContactShare_UserOrGroupId_Inverse" entitySet="ContactShare"/>
+						<Text text=""/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>Group.EntityDefinition_DataStewardId_Inverse}" required="false"/> 
+						<rdf:ListResource path="dataModel>EntityDefinition_DataStewardId_Inverse" entitySet="EntityDefinition"/>
+						<Text text=""/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>Group.FieldDefinition_BusinessOwnerId_Inverse}" required="false"/> 
+						<rdf:ListResource path="dataModel>FieldDefinition_BusinessOwnerId_Inverse" entitySet="FieldDefinition"/>
+						<Text text=""/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>Group.FlowInterviewShare_UserOrGroupId_Inverse}" required="false"/> 
+						<rdf:ListResource path="dataModel>FlowInterviewShare_UserOrGroupId_Inverse" entitySet="FlowInterviewShare"/>
+						<Text text=""/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>Group.FlowInterview_OwnerId_Inverse}" required="false"/> 
+						<rdf:ListResource path="dataModel>FlowInterview_OwnerId_Inverse" entitySet="FlowInterview"/>
+						<Text text=""/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>Group.ForecastShare_UserOrGroupId_Inverse}" required="false"/> 
+						<rdf:ListResource path="dataModel>ForecastShare_UserOrGroupId_Inverse" entitySet="ForecastShare"/>
+						<Text text=""/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>Group.GroupMember_GroupId_Inverse}" required="false"/> 
+						<rdf:ListResource path="dataModel>GroupMember_GroupId_Inverse" entitySet="GroupMember"/>
+						<Text text=""/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>Group.GroupMember_UserOrGroupId_Inverse}" required="false"/> 
+						<rdf:ListResource path="dataModel>GroupMember_UserOrGroupId_Inverse" entitySet="GroupMember"/>
+						<Text text=""/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>Group.Group_CreatedById}" required="false"/> 
+						<rdf:ListResource path="dataModel>Group_CreatedById" entitySet="User"/>
+						<Text text=""/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>Group.Group_LastModifiedById}" required="false"/> 
+						<rdf:ListResource path="dataModel>Group_LastModifiedById" entitySet="User"/>
+						<Text text=""/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>Group.Group_OwnerId}" required="false"/> 
+						<rdf:ListResource path="dataModel>Group_OwnerId" entitySet="Organization"/>
+						<Text text=""/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>Group.Group_RelatedId}" required="false"/> 
+						<rdf:ListResource path="dataModel>Group_RelatedId" entitySet="Territory2"/>
+						<Text text=""/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>Group.LeadShare_UserOrGroupId_Inverse}" required="false"/> 
+						<rdf:ListResource path="dataModel>LeadShare_UserOrGroupId_Inverse" entitySet="LeadShare"/>
+						<Text text=""/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>Group.Lead_OwnerId_Inverse}" required="false"/> 
+						<rdf:ListResource path="dataModel>Lead_OwnerId_Inverse" entitySet="Lead"/>
+						<Text text=""/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>Group.ListEmailShare_UserOrGroupId_Inverse}" required="false"/> 
+						<rdf:ListResource path="dataModel>ListEmailShare_UserOrGroupId_Inverse" entitySet="ListEmailShare"/>
+						<Text text=""/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>Group.ListEmail_OwnerId_Inverse}" required="false"/> 
+						<rdf:ListResource path="dataModel>ListEmail_OwnerId_Inverse" entitySet="ListEmail"/>
+						<Text text=""/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>Group.MacroShare_UserOrGroupId_Inverse}" required="false"/> 
+						<rdf:ListResource path="dataModel>MacroShare_UserOrGroupId_Inverse" entitySet="MacroShare"/>
+						<Text text=""/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>Group.Macro_OwnerId_Inverse}" required="false"/> 
+						<rdf:ListResource path="dataModel>Macro_OwnerId_Inverse" entitySet="Macro"/>
+						<Text text=""/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>Group.OpportunityShare_UserOrGroupId_Inverse}" required="false"/> 
+						<rdf:ListResource path="dataModel>OpportunityShare_UserOrGroupId_Inverse" entitySet="OpportunityShare"/>
+						<Text text=""/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>Group.OrderShare_UserOrGroupId_Inverse}" required="false"/> 
+						<rdf:ListResource path="dataModel>OrderShare_UserOrGroupId_Inverse" entitySet="OrderShare"/>
+						<Text text=""/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>Group.Order_OwnerId_Inverse}" required="false"/> 
+						<rdf:ListResource path="dataModel>Order_OwnerId_Inverse" entitySet="Order"/>
+						<Text text=""/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>Group.ProcessInstanceHistory_ActorId_Inverse}" required="false"/> 
+						<rdf:ListResource path="dataModel>ProcessInstanceHistory_ActorId_Inverse" entitySet="ProcessInstanceHistory"/>
+						<Text text=""/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>Group.ProcessInstanceHistory_OriginalActorId_Inverse}" required="false"/> 
+						<rdf:ListResource path="dataModel>ProcessInstanceHistory_OriginalActorId_Inverse" entitySet="ProcessInstanceHistory"/>
+						<Text text=""/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>Group.ProcessInstanceStep_ActorId_Inverse}" required="false"/> 
+						<rdf:ListResource path="dataModel>ProcessInstanceStep_ActorId_Inverse" entitySet="ProcessInstanceStep"/>
+						<Text text=""/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>Group.ProcessInstanceStep_OriginalActorId_Inverse}" required="false"/> 
+						<rdf:ListResource path="dataModel>ProcessInstanceStep_OriginalActorId_Inverse" entitySet="ProcessInstanceStep"/>
+						<Text text=""/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>Group.ProcessInstanceWorkitem_ActorId_Inverse}" required="false"/> 
+						<rdf:ListResource path="dataModel>ProcessInstanceWorkitem_ActorId_Inverse" entitySet="ProcessInstanceWorkitem"/>
+						<Text text=""/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>Group.ProcessInstanceWorkitem_OriginalActorId_Inverse}" required="false"/> 
+						<rdf:ListResource path="dataModel>ProcessInstanceWorkitem_OriginalActorId_Inverse" entitySet="ProcessInstanceWorkitem"/>
+						<Text text=""/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>Group.QueueSobject_QueueId_Inverse}" required="false"/> 
+						<rdf:ListResource path="dataModel>QueueSobject_QueueId_Inverse" entitySet="QueueSobject"/>
+						<Text text=""/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>Group.QuoteShare_UserOrGroupId_Inverse}" required="false"/> 
+						<rdf:ListResource path="dataModel>QuoteShare_UserOrGroupId_Inverse" entitySet="QuoteShare"/>
+						<Text text=""/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>Group.Quote_OwnerId_Inverse}" required="false"/> 
+						<rdf:ListResource path="dataModel>Quote_OwnerId_Inverse" entitySet="Quote"/>
+						<Text text=""/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>Group.ServiceContractShare_UserOrGroupId_Inverse}" required="false"/> 
+						<rdf:ListResource path="dataModel>ServiceContractShare_UserOrGroupId_Inverse" entitySet="ServiceContractShare"/>
+						<Text text=""/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>Group.ServiceContract_OwnerId_Inverse}" required="false"/> 
+						<rdf:ListResource path="dataModel>ServiceContract_OwnerId_Inverse" entitySet="ServiceContract"/>
+						<Text text=""/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>Group.SignupRequestShare_UserOrGroupId_Inverse}" required="false"/> 
+						<rdf:ListResource path="dataModel>SignupRequestShare_UserOrGroupId_Inverse" entitySet="SignupRequestShare"/>
+						<Text text=""/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>Group.SignupRequest_OwnerId_Inverse}" required="false"/> 
+						<rdf:ListResource path="dataModel>SignupRequest_OwnerId_Inverse" entitySet="SignupRequest"/>
+						<Text text=""/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>Group.SocialPostShare_UserOrGroupId_Inverse}" required="false"/> 
+						<rdf:ListResource path="dataModel>SocialPostShare_UserOrGroupId_Inverse" entitySet="SocialPostShare"/>
+						<Text text=""/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>Group.SocialPost_OwnerId_Inverse}" required="false"/> 
+						<rdf:ListResource path="dataModel>SocialPost_OwnerId_Inverse" entitySet="SocialPost"/>
+						<Text text=""/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>Group.StreamingChannelShare_UserOrGroupId_Inverse}" required="false"/> 
+						<rdf:ListResource path="dataModel>StreamingChannelShare_UserOrGroupId_Inverse" entitySet="StreamingChannelShare"/>
+						<Text text=""/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>Group.StreamingChannel_OwnerId_Inverse}" required="false"/> 
+						<rdf:ListResource path="dataModel>StreamingChannel_OwnerId_Inverse" entitySet="StreamingChannel"/>
+						<Text text=""/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>Group.TodayGoalShare_UserOrGroupId_Inverse}" required="false"/> 
+						<rdf:ListResource path="dataModel>TodayGoalShare_UserOrGroupId_Inverse" entitySet="TodayGoalShare"/>
+						<Text text=""/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>Group.TodayGoal_OwnerId_Inverse}" required="false"/> 
+						<rdf:ListResource path="dataModel>TodayGoal_OwnerId_Inverse" entitySet="TodayGoal"/>
+						<Text text=""/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>Group.UserAppMenuCustomizationShare_UserOrGroupId_Inverse}" required="false"/> 
+						<rdf:ListResource path="dataModel>UserAppMenuCustomizationShare_UserOrGroupId_Inverse" entitySet="UserAppMenuCustomizationShare"/>
+						<Text text=""/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>Group.UserAppMenuCustomization_OwnerId_Inverse}" required="false"/> 
+						<rdf:ListResource path="dataModel>UserAppMenuCustomization_OwnerId_Inverse" entitySet="UserAppMenuCustomization"/>
+						<Text text=""/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>Group.UserProvisioningRequestShare_UserOrGroupId_Inverse}" required="false"/> 
+						<rdf:ListResource path="dataModel>UserProvisioningRequestShare_UserOrGroupId_Inverse" entitySet="UserProvisioningRequestShare"/>
+						<Text text=""/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>Group.UserProvisioningRequest_OwnerId_Inverse}" required="false"/> 
+						<rdf:ListResource path="dataModel>UserProvisioningRequest_OwnerId_Inverse" entitySet="UserProvisioningRequest"/>
+						<Text text=""/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>Group.UserShare_UserOrGroupId_Inverse}" required="false"/> 
+						<rdf:ListResource path="dataModel>UserShare_UserOrGroupId_Inverse" entitySet="UserShare"/>
+						<Text text=""/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>Group.User_DelegatedApproverId_Inverse}" required="false"/> 
+						<rdf:ListResource path="dataModel>User_DelegatedApproverId_Inverse" entitySet="User"/>
+						<Text text=""/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>Group.WorkOrderShare_UserOrGroupId_Inverse}" required="false"/> 
+						<rdf:ListResource path="dataModel>WorkOrderShare_UserOrGroupId_Inverse" entitySet="WorkOrderShare"/>
+						<Text text=""/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>Group.WorkOrder_OwnerId_Inverse}" required="false"/> 
+						<rdf:ListResource path="dataModel>WorkOrder_OwnerId_Inverse" entitySet="WorkOrder"/>
+						<Text text=""/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>Group.sfLma__License__c_OwnerId_Inverse}" required="false"/> 
+						<rdf:ListResource path="dataModel>sfLma__License__c_OwnerId_Inverse" entitySet="sfLma__License__c"/>
+						<Text text=""/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>Group.sfLma__Package__c_OwnerId_Inverse}" required="false"/> 
+						<rdf:ListResource path="dataModel>sfLma__Package__c_OwnerId_Inverse" entitySet="sfLma__Package__c"/>
+						<Text text=""/>
+					</cells>
+				</ColumnListItem>
+			</items>
+		</Table>
+	</Page>
+</mvc:View>

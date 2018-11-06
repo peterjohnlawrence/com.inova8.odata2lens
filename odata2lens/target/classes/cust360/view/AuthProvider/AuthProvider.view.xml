@@ -1,0 +1,308 @@
+<mvc:View controllerName="com.inova8.lens.controller.Entity360" xmlns="sap.m" xmlns:mvc="sap.ui.core.mvc" xmlns:l="sap.ui.layout"
+	xmlns:f="sap.ui.layout.form" xmlns:table="sap.ui.table" xmlns:rdf="com.inova8.lens.control" xmlns:html="http://www.w3.org/1999/xhtml"
+	xmlns:core="sap.ui.core">
+	<Page showHeader="true" id="page" navButtonPress="onNavBack" showNavButton="false" title="{i18n>AuthProvider.Title}" busy="{entityView>/busy}"
+		busyIndicatorDelay="{entityView>/delay}" >
+		<customHeader>
+			<Toolbar>
+				<ToolbarSpacer/>
+				<HBox id="sourceTitle" alignItems="Center">
+						<rdf:TextResource id="selectedResource" path="" entitySet=""/>
+				</HBox>	
+				<Title id="pathTitle" text="{entityView>/navigation}"/>
+				<HBox id="versionsTitle" alignItems="Center">
+					<Title text="(" required="false"/>
+					<ComboBox id="versionSelection" items="{ path: 'entityView>/versions' }" selectionChange="onVersionChange">
+						<core:Item key="{entityView>navigation}" text="{entityView>text}"/>
+					</ComboBox>
+					<Title text=")" required="false"/>
+				</HBox>
+				<Title text="{i18n>AuthProvider.this}"/>
+				<Title text="(" required="false"/>
+				<rdf:TextResource path="dataModel>" entitySet="AuthProvider"/>
+				<Title text=")" required="false"/>
+	
+				<ToolbarSpacer/>
+				<ToggleButton id="toggleColumns" icon="sap-icon://hide" activeIcon="sap-icon://show" press="onSettingsPressed" visible="false"	>
+					<layoutData>
+						<OverflowToolbarLayoutData priority="NeverOverflow"/>
+					</layoutData>
+				</ToggleButton>
+				
+			</Toolbar>
+		</customHeader>
+		<Table id="form360" inset="false" fixedLayout="true" class="multicolumnform" updateFinished="hideColumns">
+			<columns>
+				<Column hAlign="Right" width="200px">
+					<Text text=""/>
+				</Column>
+				<Column visible="true">
+				</Column>
+				<Column visible="true">
+					<Text text="AuthProvider"/>
+				</Column>
+			</columns>
+			<items>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>AuthProvider.AuthConfigProviders_AuthProviderId_Inverse}" required="false"/> 
+						<Text text=""/>
+						<rdf:ListResource path="dataModel>AuthConfigProviders_AuthProviderId_Inverse/sfdc_AuthConfigProviders_AuthProviderId_Inverse" entitySet="AuthConfigProviders"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>AuthProvider.AuthProvider_AuthorizeUrl}" required="false"/> 
+						<Text text=""/>
+						<rdf:TextLink text="{path:'dataModel>AuthProvider_AuthorizeUrl/AuthProvider_AuthorizeUrl',type:'sap.ui.model.type.String' }" linkText="{i18n>AuthProvider.AuthProvider_AuthorizeUrl/AuthProvider_AuthorizeUrl}"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>AuthProvider.AuthProvider_ConsumerKey}" required="false"/> 
+						<Text text=""/>
+						<rdf:TextLink text="{path:'dataModel>AuthProvider_ConsumerKey/AuthProvider_ConsumerKey',type:'sap.ui.model.type.String' }" linkText="{i18n>AuthProvider.AuthProvider_ConsumerKey/AuthProvider_ConsumerKey}"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>AuthProvider.AuthProvider_ConsumerSecret}" required="false"/> 
+						<Text text=""/>
+						<rdf:TextLink text="{path:'dataModel>AuthProvider_ConsumerSecret/AuthProvider_ConsumerSecret',type:'sap.ui.model.type.String' }" linkText="{i18n>AuthProvider.AuthProvider_ConsumerSecret/AuthProvider_ConsumerSecret}"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>AuthProvider.AuthProvider_CreatedDate}" required="false"/> 
+						<Text text=""/>
+						<Text text="{dataModel>AuthProvider_CreatedDate/AuthProvider_CreatedDate}"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>AuthProvider.AuthProvider_CustomMetadataTypeRecord}" required="false"/> 
+						<Text text=""/>
+						<rdf:TextLink text="{path:'dataModel>AuthProvider_CustomMetadataTypeRecord/AuthProvider_CustomMetadataTypeRecord',type:'sap.ui.model.type.String' }" linkText="{i18n>AuthProvider.AuthProvider_CustomMetadataTypeRecord/AuthProvider_CustomMetadataTypeRecord}"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>AuthProvider.AuthProvider_DefaultScopes}" required="false"/> 
+						<Text text=""/>
+						<rdf:TextLink text="{path:'dataModel>AuthProvider_DefaultScopes/AuthProvider_DefaultScopes',type:'sap.ui.model.type.String' }" linkText="{i18n>AuthProvider.AuthProvider_DefaultScopes/AuthProvider_DefaultScopes}"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>AuthProvider.AuthProvider_DeveloperName}" required="false"/> 
+						<Text text=""/>
+						<rdf:TextLink text="{path:'dataModel>AuthProvider_DeveloperName/AuthProvider_DeveloperName',type:'sap.ui.model.type.String' }" linkText="{i18n>AuthProvider.AuthProvider_DeveloperName/AuthProvider_DeveloperName}"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>AuthProvider.AuthProvider_ErrorUrl}" required="false"/> 
+						<Text text=""/>
+						<rdf:TextLink text="{path:'dataModel>AuthProvider_ErrorUrl/AuthProvider_ErrorUrl',type:'sap.ui.model.type.String' }" linkText="{i18n>AuthProvider.AuthProvider_ErrorUrl/AuthProvider_ErrorUrl}"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>AuthProvider.AuthProvider_ExecutionUserId}" required="false"/> 
+						<Text text=""/>
+						<rdf:ListResource path="dataModel>AuthProvider_ExecutionUserId/sfdc_AuthProvider_ExecutionUserId" entitySet="User"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>AuthProvider.AuthProvider_FriendlyName}" required="false"/> 
+						<Text text=""/>
+						<rdf:TextLink text="{path:'dataModel>AuthProvider_FriendlyName/AuthProvider_FriendlyName',type:'sap.ui.model.type.String' }" linkText="{i18n>AuthProvider.AuthProvider_FriendlyName/AuthProvider_FriendlyName}"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>AuthProvider.AuthProvider_IconUrl}" required="false"/> 
+						<Text text=""/>
+						<rdf:TextLink text="{path:'dataModel>AuthProvider_IconUrl/AuthProvider_IconUrl',type:'sap.ui.model.type.String' }" linkText="{i18n>AuthProvider.AuthProvider_IconUrl/AuthProvider_IconUrl}"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>AuthProvider.AuthProvider_Id}" required="false"/> 
+						<Text text=""/>
+						<rdf:TextLink text="{path:'dataModel>AuthProvider_Id/AuthProvider_Id',type:'sap.ui.model.type.String' }" linkText="{i18n>AuthProvider.AuthProvider_Id/AuthProvider_Id}"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>AuthProvider.AuthProvider_IdTokenIssuer}" required="false"/> 
+						<Text text=""/>
+						<rdf:TextLink text="{path:'dataModel>AuthProvider_IdTokenIssuer/AuthProvider_IdTokenIssuer',type:'sap.ui.model.type.String' }" linkText="{i18n>AuthProvider.AuthProvider_IdTokenIssuer/AuthProvider_IdTokenIssuer}"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>AuthProvider.AuthProvider_LogoutUrl}" required="false"/> 
+						<Text text=""/>
+						<rdf:TextLink text="{path:'dataModel>AuthProvider_LogoutUrl/AuthProvider_LogoutUrl',type:'sap.ui.model.type.String' }" linkText="{i18n>AuthProvider.AuthProvider_LogoutUrl/AuthProvider_LogoutUrl}"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>AuthProvider.AuthProvider_OptionsIncludeOrgIdInId}" required="false"/> 
+						<Text text=""/>
+						<Text text="{path:'dataModel>AuthProvider_OptionsIncludeOrgIdInId/AuthProvider_OptionsIncludeOrgIdInId',type:'sap.ui.model.type.Boolean'}"/>  
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>AuthProvider.AuthProvider_OptionsSendAccessTokenInHeader}" required="false"/> 
+						<Text text=""/>
+						<Text text="{path:'dataModel>AuthProvider_OptionsSendAccessTokenInHeader/AuthProvider_OptionsSendAccessTokenInHeader',type:'sap.ui.model.type.Boolean'}"/>  
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>AuthProvider.AuthProvider_OptionsSendClientCredentialsInHeader}" required="false"/> 
+						<Text text=""/>
+						<Text text="{path:'dataModel>AuthProvider_OptionsSendClientCredentialsInHeader/AuthProvider_OptionsSendClientCredentialsInHeader',type:'sap.ui.model.type.Boolean'}"/>  
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>AuthProvider.AuthProvider_PluginId}" required="false"/> 
+						<Text text=""/>
+						<rdf:ListResource path="dataModel>AuthProvider_PluginId/sfdc_AuthProvider_PluginId" entitySet="ApexClass"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>AuthProvider.AuthProvider_ProviderType}" required="false"/> 
+						<Text text=""/>
+						<rdf:TextLink text="{path:'dataModel>AuthProvider_ProviderType/AuthProvider_ProviderType',type:'sap.ui.model.type.String' }" linkText="{i18n>AuthProvider.AuthProvider_ProviderType/AuthProvider_ProviderType}"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>AuthProvider.AuthProvider_RegistrationHandlerId}" required="false"/> 
+						<Text text=""/>
+						<rdf:ListResource path="dataModel>AuthProvider_RegistrationHandlerId/sfdc_AuthProvider_RegistrationHandlerId" entitySet="ApexClass"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>AuthProvider.AuthProvider_TokenUrl}" required="false"/> 
+						<Text text=""/>
+						<rdf:TextLink text="{path:'dataModel>AuthProvider_TokenUrl/AuthProvider_TokenUrl',type:'sap.ui.model.type.String' }" linkText="{i18n>AuthProvider.AuthProvider_TokenUrl/AuthProvider_TokenUrl}"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>AuthProvider.AuthProvider_UserInfoUrl}" required="false"/> 
+						<Text text=""/>
+						<rdf:TextLink text="{path:'dataModel>AuthProvider_UserInfoUrl/AuthProvider_UserInfoUrl',type:'sap.ui.model.type.String' }" linkText="{i18n>AuthProvider.AuthProvider_UserInfoUrl/AuthProvider_UserInfoUrl}"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>AuthProvider.ExternalDataSource_AuthProviderId_Inverse}" required="false"/> 
+						<Text text=""/>
+						<rdf:ListResource path="dataModel>ExternalDataSource_AuthProviderId_Inverse/sfdc_ExternalDataSource_AuthProviderId_Inverse" entitySet="ExternalDataSource"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>AuthProvider.ExternalDataUserAuth_AuthProviderId_Inverse}" required="false"/> 
+						<Text text=""/>
+						<rdf:ListResource path="dataModel>ExternalDataUserAuth_AuthProviderId_Inverse/sfdc_ExternalDataUserAuth_AuthProviderId_Inverse" entitySet="ExternalDataUserAuth"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>AuthProvider.LoginHistory_AuthenticationServiceId_Inverse}" required="false"/> 
+						<Text text=""/>
+						<rdf:ListResource path="dataModel>LoginHistory_AuthenticationServiceId_Inverse/sfdc_LoginHistory_AuthenticationServiceId_Inverse" entitySet="LoginHistory"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>AuthProvider.NamedCredential_AuthProviderId_Inverse}" required="false"/> 
+						<Text text=""/>
+						<rdf:ListResource path="dataModel>NamedCredential_AuthProviderId_Inverse/sfdc_NamedCredential_AuthProviderId_Inverse" entitySet="NamedCredential"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>AuthProvider.ThirdPartyAccountLink_SsoProviderId_Inverse}" required="false"/> 
+						<Text text=""/>
+						<rdf:ListResource path="dataModel>ThirdPartyAccountLink_SsoProviderId_Inverse/sfdc_ThirdPartyAccountLink_SsoProviderId_Inverse" entitySet="ThirdPartyAccountLink"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>AuthProvider.AuthConfigProviders_AuthProviderId_Inverse}" required="false"/> 
+						<rdf:ListResource path="dataModel>AuthConfigProviders_AuthProviderId_Inverse" entitySet="AuthConfigProviders"/>
+						<Text text=""/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>AuthProvider.AuthProvider_ExecutionUserId}" required="false"/> 
+						<rdf:ListResource path="dataModel>AuthProvider_ExecutionUserId" entitySet="User"/>
+						<Text text=""/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>AuthProvider.AuthProvider_PluginId}" required="false"/> 
+						<rdf:ListResource path="dataModel>AuthProvider_PluginId" entitySet="ApexClass"/>
+						<Text text=""/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>AuthProvider.AuthProvider_RegistrationHandlerId}" required="false"/> 
+						<rdf:ListResource path="dataModel>AuthProvider_RegistrationHandlerId" entitySet="ApexClass"/>
+						<Text text=""/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>AuthProvider.ExternalDataSource_AuthProviderId_Inverse}" required="false"/> 
+						<rdf:ListResource path="dataModel>ExternalDataSource_AuthProviderId_Inverse" entitySet="ExternalDataSource"/>
+						<Text text=""/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>AuthProvider.ExternalDataUserAuth_AuthProviderId_Inverse}" required="false"/> 
+						<rdf:ListResource path="dataModel>ExternalDataUserAuth_AuthProviderId_Inverse" entitySet="ExternalDataUserAuth"/>
+						<Text text=""/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>AuthProvider.LoginHistory_AuthenticationServiceId_Inverse}" required="false"/> 
+						<rdf:ListResource path="dataModel>LoginHistory_AuthenticationServiceId_Inverse" entitySet="LoginHistory"/>
+						<Text text=""/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>AuthProvider.NamedCredential_AuthProviderId_Inverse}" required="false"/> 
+						<rdf:ListResource path="dataModel>NamedCredential_AuthProviderId_Inverse" entitySet="NamedCredential"/>
+						<Text text=""/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>AuthProvider.ThirdPartyAccountLink_SsoProviderId_Inverse}" required="false"/> 
+						<rdf:ListResource path="dataModel>ThirdPartyAccountLink_SsoProviderId_Inverse" entitySet="ThirdPartyAccountLink"/>
+						<Text text=""/>
+					</cells>
+				</ColumnListItem>
+			</items>
+		</Table>
+	</Page>
+</mvc:View>

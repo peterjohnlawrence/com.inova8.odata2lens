@@ -1,0 +1,245 @@
+<mvc:View controllerName="com.inova8.lens.controller.Entity360" xmlns="sap.m" xmlns:mvc="sap.ui.core.mvc" xmlns:l="sap.ui.layout"
+	xmlns:f="sap.ui.layout.form" xmlns:table="sap.ui.table" xmlns:rdf="com.inova8.lens.control" xmlns:html="http://www.w3.org/1999/xhtml"
+	xmlns:core="sap.ui.core">
+	<Page showHeader="true" id="page" navButtonPress="onNavBack" showNavButton="false" title="{i18n>OpportunityLineItem.Title}" busy="{entityView>/busy}"
+		busyIndicatorDelay="{entityView>/delay}" >
+		<customHeader>
+			<Toolbar>
+				<ToolbarSpacer/>
+				<HBox id="sourceTitle" alignItems="Center">
+						<rdf:TextResource id="selectedResource" path="" entitySet=""/>
+				</HBox>	
+				<Title id="pathTitle" text="{entityView>/navigation}"/>
+				<HBox id="versionsTitle" alignItems="Center">
+					<Title text="(" required="false"/>
+					<ComboBox id="versionSelection" items="{ path: 'entityView>/versions' }" selectionChange="onVersionChange">
+						<core:Item key="{entityView>navigation}" text="{entityView>text}"/>
+					</ComboBox>
+					<Title text=")" required="false"/>
+				</HBox>
+				<Title text="{i18n>OpportunityLineItem.this}"/>
+				<Title text="(" required="false"/>
+				<rdf:TextResource path="dataModel>" entitySet="OpportunityLineItem"/>
+				<Title text=")" required="false"/>
+	
+				<ToolbarSpacer/>
+				<ToggleButton id="toggleColumns" icon="sap-icon://hide" activeIcon="sap-icon://show" press="onSettingsPressed" visible="false"	>
+					<layoutData>
+						<OverflowToolbarLayoutData priority="NeverOverflow"/>
+					</layoutData>
+				</ToggleButton>
+				
+			</Toolbar>
+		</customHeader>
+		<Table id="form360" inset="false" fixedLayout="true" class="multicolumnform" updateFinished="hideColumns">
+			<columns>
+				<Column hAlign="Right" width="200px">
+					<Text text=""/>
+				</Column>
+				<Column visible="true">
+				</Column>
+				<Column visible="true">
+					<Text text="OpportunityLineItem"/>
+				</Column>
+			</columns>
+			<items>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>OpportunityLineItem.ForecastingFact_ForecastedObjectId_Inverse}" required="false"/> 
+						<Text text=""/>
+						<rdf:ListResource path="dataModel>ForecastingFact_ForecastedObjectId_Inverse/sfdc_ForecastingFact_ForecastedObjectId_Inverse" entitySet="ForecastingFact"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>OpportunityLineItem.OpportunityLineItem_CreatedById}" required="false"/> 
+						<Text text=""/>
+						<rdf:ListResource path="dataModel>OpportunityLineItem_CreatedById/sfdc_OpportunityLineItem_CreatedById" entitySet="User"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>OpportunityLineItem.OpportunityLineItem_CreatedDate}" required="false"/> 
+						<Text text=""/>
+						<Text text="{dataModel>OpportunityLineItem_CreatedDate/OpportunityLineItem_CreatedDate}"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>OpportunityLineItem.OpportunityLineItem_Description}" required="false"/> 
+						<Text text=""/>
+						<rdf:TextLink text="{path:'dataModel>OpportunityLineItem_Description/OpportunityLineItem_Description',type:'sap.ui.model.type.String' }" linkText="{i18n>OpportunityLineItem.OpportunityLineItem_Description/OpportunityLineItem_Description}"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>OpportunityLineItem.OpportunityLineItem_Id}" required="false"/> 
+						<Text text=""/>
+						<rdf:TextLink text="{path:'dataModel>OpportunityLineItem_Id/OpportunityLineItem_Id',type:'sap.ui.model.type.String' }" linkText="{i18n>OpportunityLineItem.OpportunityLineItem_Id/OpportunityLineItem_Id}"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>OpportunityLineItem.OpportunityLineItem_IsDeleted}" required="false"/> 
+						<Text text=""/>
+						<Text text="{path:'dataModel>OpportunityLineItem_IsDeleted/OpportunityLineItem_IsDeleted',type:'sap.ui.model.type.Boolean'}"/>  
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>OpportunityLineItem.OpportunityLineItem_LastModifiedById}" required="false"/> 
+						<Text text=""/>
+						<rdf:ListResource path="dataModel>OpportunityLineItem_LastModifiedById/sfdc_OpportunityLineItem_LastModifiedById" entitySet="User"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>OpportunityLineItem.OpportunityLineItem_LastModifiedDate}" required="false"/> 
+						<Text text=""/>
+						<Text text="{dataModel>OpportunityLineItem_LastModifiedDate/OpportunityLineItem_LastModifiedDate}"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>OpportunityLineItem.OpportunityLineItem_ListPrice}" required="false"/> 
+						<Text text=""/>
+						<Text text="{path:'dataModel>OpportunityLineItem_ListPrice/OpportunityLineItem_ListPrice',type:'sap.ui.model.type.Float', formatOptions:{'style':'short','maxFractionDigits':2} }"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>OpportunityLineItem.OpportunityLineItem_Name}" required="false"/> 
+						<Text text=""/>
+						<rdf:TextLink text="{path:'dataModel>OpportunityLineItem_Name/OpportunityLineItem_Name',type:'sap.ui.model.type.String' }" linkText="{i18n>OpportunityLineItem.OpportunityLineItem_Name/OpportunityLineItem_Name}"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>OpportunityLineItem.OpportunityLineItem_OpportunityId}" required="false"/> 
+						<Text text=""/>
+						<rdf:ListResource path="dataModel>OpportunityLineItem_OpportunityId/sfdc_OpportunityLineItem_OpportunityId" entitySet="Opportunity"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>OpportunityLineItem.OpportunityLineItem_PricebookEntryId}" required="false"/> 
+						<Text text=""/>
+						<rdf:ListResource path="dataModel>OpportunityLineItem_PricebookEntryId/sfdc_OpportunityLineItem_PricebookEntryId" entitySet="PricebookEntry"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>OpportunityLineItem.OpportunityLineItem_Product2Id}" required="false"/> 
+						<Text text=""/>
+						<rdf:ListResource path="dataModel>OpportunityLineItem_Product2Id/sfdc_OpportunityLineItem_Product2Id" entitySet="Product2"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>OpportunityLineItem.OpportunityLineItem_ProductCode}" required="false"/> 
+						<Text text=""/>
+						<rdf:TextLink text="{path:'dataModel>OpportunityLineItem_ProductCode/OpportunityLineItem_ProductCode',type:'sap.ui.model.type.String' }" linkText="{i18n>OpportunityLineItem.OpportunityLineItem_ProductCode/OpportunityLineItem_ProductCode}"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>OpportunityLineItem.OpportunityLineItem_Quantity}" required="false"/> 
+						<Text text=""/>
+						<Text text="{path:'dataModel>OpportunityLineItem_Quantity/OpportunityLineItem_Quantity',type:'sap.ui.model.type.Float', formatOptions:{'style':'short','maxFractionDigits':2} }"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>OpportunityLineItem.OpportunityLineItem_ServiceDate}" required="false"/> 
+						<Text text=""/>
+						<Text text="{dataModel>OpportunityLineItem_ServiceDate/OpportunityLineItem_ServiceDate}"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>OpportunityLineItem.OpportunityLineItem_SortOrder}" required="false"/> 
+						<Text text=""/>
+						<Text text="{path:'dataModel>OpportunityLineItem_SortOrder/OpportunityLineItem_SortOrder',type:'sap.ui.model.type.Integer' }"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>OpportunityLineItem.OpportunityLineItem_SystemModstamp}" required="false"/> 
+						<Text text=""/>
+						<Text text="{dataModel>OpportunityLineItem_SystemModstamp/OpportunityLineItem_SystemModstamp}"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>OpportunityLineItem.OpportunityLineItem_TotalPrice}" required="false"/> 
+						<Text text=""/>
+						<Text text="{path:'dataModel>OpportunityLineItem_TotalPrice/OpportunityLineItem_TotalPrice',type:'sap.ui.model.type.Float', formatOptions:{'style':'short','maxFractionDigits':2} }"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>OpportunityLineItem.OpportunityLineItem_UnitPrice}" required="false"/> 
+						<Text text=""/>
+						<Text text="{path:'dataModel>OpportunityLineItem_UnitPrice/OpportunityLineItem_UnitPrice',type:'sap.ui.model.type.Float', formatOptions:{'style':'short','maxFractionDigits':2} }"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>OpportunityLineItem.QuoteLineItem_OpportunityLineItemId_Inverse}" required="false"/> 
+						<Text text=""/>
+						<rdf:ListResource path="dataModel>QuoteLineItem_OpportunityLineItemId_Inverse/sfdc_QuoteLineItem_OpportunityLineItemId_Inverse" entitySet="QuoteLineItem"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>OpportunityLineItem.ForecastingFact_ForecastedObjectId_Inverse}" required="false"/> 
+						<rdf:ListResource path="dataModel>ForecastingFact_ForecastedObjectId_Inverse" entitySet="ForecastingFact"/>
+						<Text text=""/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>OpportunityLineItem.OpportunityLineItem_CreatedById}" required="false"/> 
+						<rdf:ListResource path="dataModel>OpportunityLineItem_CreatedById" entitySet="User"/>
+						<Text text=""/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>OpportunityLineItem.OpportunityLineItem_LastModifiedById}" required="false"/> 
+						<rdf:ListResource path="dataModel>OpportunityLineItem_LastModifiedById" entitySet="User"/>
+						<Text text=""/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>OpportunityLineItem.OpportunityLineItem_OpportunityId}" required="false"/> 
+						<rdf:ListResource path="dataModel>OpportunityLineItem_OpportunityId" entitySet="Opportunity"/>
+						<Text text=""/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>OpportunityLineItem.OpportunityLineItem_PricebookEntryId}" required="false"/> 
+						<rdf:ListResource path="dataModel>OpportunityLineItem_PricebookEntryId" entitySet="PricebookEntry"/>
+						<Text text=""/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>OpportunityLineItem.OpportunityLineItem_Product2Id}" required="false"/> 
+						<rdf:ListResource path="dataModel>OpportunityLineItem_Product2Id" entitySet="Product2"/>
+						<Text text=""/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>OpportunityLineItem.QuoteLineItem_OpportunityLineItemId_Inverse}" required="false"/> 
+						<rdf:ListResource path="dataModel>QuoteLineItem_OpportunityLineItemId_Inverse" entitySet="QuoteLineItem"/>
+						<Text text=""/>
+					</cells>
+				</ColumnListItem>
+			</items>
+		</Table>
+	</Page>
+</mvc:View>

@@ -1,0 +1,217 @@
+<mvc:View controllerName="com.inova8.lens.controller.EntitySet360" xmlns="sap.m" xmlns:mvc="sap.ui.core.mvc" xmlns:layout="sap.ui.layout"
+	xmlns:rdf="com.inova8.lens.control" xmlns:core="sap.ui.core">
+	<Page showHeader="false" id="page" navButtonPress="onNavBack" showNavButton="true" title="{i18n>CampaignMembers.ViewTitle}">
+		<content>
+			<Table id="table360" inset="false" items="{ path: 'dataModel>/CampaignMember' , sorter: { path: 'label', descending: false } 
+				}"
+				noDataText="{entitySetView>/tableNoDataText}" busyIndicatorDelay="{entitySetView>/tableBusyDelay}" growing="true" growingScrollToLoad="true"
+				updateFinished="onUpdateFinished"  fixedLayout="false">
+				<headerToolbar>
+					<Toolbar>
+						<ToolbarSpacer/>
+						<HBox id="sourceTitle" alignItems="Center">
+							<rdf:TextResource id="selectedResource" path="" entitySet=""/>
+						</HBox>
+						<Title id="pathTitle" text="{entitySetView>/navigationText}"/>
+						<HBox id="versionsTitle" alignItems="Center">
+							<Title text="(" required="false"/>
+							<ComboBox id="versionSelection" items="{ path: 'entitySetView>/versions' }" selectionChange="onVersionChange">
+								<core:Item key="{entitySetView>navigation}" text="{entityView>text}"/>
+							</ComboBox>
+							<Title text=")" required="false"/>
+						</HBox>
+						<Title id="tableHeader" text="{entitySetView>/entitySetTableTitle}"/>
+						<ToolbarSpacer/>
+						<SearchField id="searchField" tooltip="{i18n>search.searchTooltip}" search="onSearch" width="auto"></SearchField>
+					</Toolbar>
+				</headerToolbar>
+				<columns>
+					<Column >
+						<Text text="{i18n>CampaignMembers.this}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>CampaignMembers.CampaignMember_City}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>CampaignMembers.CampaignMember_CompanyOrAccount}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>CampaignMembers.CampaignMember_Country}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>CampaignMembers.CampaignMember_CreatedDate}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>CampaignMembers.CampaignMember_Description}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>CampaignMembers.CampaignMember_DoNotCall}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>CampaignMembers.CampaignMember_Email}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>CampaignMembers.CampaignMember_Fax}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>CampaignMembers.CampaignMember_FirstName}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>CampaignMembers.CampaignMember_FirstRespondedDate}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>CampaignMembers.CampaignMember_HasOptedOutOfEmail}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>CampaignMembers.CampaignMember_HasOptedOutOfFax}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>CampaignMembers.CampaignMember_HasResponded}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>CampaignMembers.CampaignMember_Id}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>CampaignMembers.CampaignMember_IsDeleted}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>CampaignMembers.CampaignMember_LastModifiedDate}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>CampaignMembers.CampaignMember_LastName}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>CampaignMembers.CampaignMember_LeadSource}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>CampaignMembers.CampaignMember_MobilePhone}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>CampaignMembers.CampaignMember_Name}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>CampaignMembers.CampaignMember_Phone}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>CampaignMembers.CampaignMember_PostalCode}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>CampaignMembers.CampaignMember_Salutation}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>CampaignMembers.CampaignMember_State}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>CampaignMembers.CampaignMember_Status}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>CampaignMembers.CampaignMember_Street}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>CampaignMembers.CampaignMember_SystemModstamp}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>CampaignMembers.CampaignMember_Title}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>CampaignMembers.CampaignMember_Type}"/>
+					</Column>
+				</columns>
+				<items>
+					<ColumnListItem id="template360" type="Navigation" press="onPress">
+						<cells>
+							<rdf:TextResource path="dataModel>" entitySet="CampaignMember"/>
+							<VBox>					
+							<rdf:TextLink text="{path:'dataModel>CampaignMember_City/CampaignMember_City',type:'sap.ui.model.type.String'}" linkText="{i18n>CampaignMember.CampaignMember_City/CampaignMember_City}"/>
+							</VBox>							
+							<VBox>					
+							<rdf:TextLink text="{path:'dataModel>CampaignMember_CompanyOrAccount/CampaignMember_CompanyOrAccount',type:'sap.ui.model.type.String'}" linkText="{i18n>CampaignMember.CampaignMember_CompanyOrAccount/CampaignMember_CompanyOrAccount}"/>
+							</VBox>							
+							<VBox>					
+							<rdf:TextLink text="{path:'dataModel>CampaignMember_Country/CampaignMember_Country',type:'sap.ui.model.type.String'}" linkText="{i18n>CampaignMember.CampaignMember_Country/CampaignMember_Country}"/>
+							</VBox>							
+							<VBox>					
+							<Text text="{dataModel>CampaignMember_CreatedDate/CampaignMember_CreatedDate}"/>
+							</VBox>							
+							<VBox>					
+							<rdf:TextLink text="{path:'dataModel>CampaignMember_Description/CampaignMember_Description',type:'sap.ui.model.type.String'}" linkText="{i18n>CampaignMember.CampaignMember_Description/CampaignMember_Description}"/>
+							</VBox>							
+							<VBox>					
+								<Text text="{path:'dataModel>CampaignMember_DoNotCall/CampaignMember_DoNotCall',type:'sap.ui.model.type.Boolean'}"/>  
+							</VBox>							
+							<VBox>					
+							<rdf:TextLink text="{path:'dataModel>CampaignMember_Email/CampaignMember_Email',type:'sap.ui.model.type.String'}" linkText="{i18n>CampaignMember.CampaignMember_Email/CampaignMember_Email}"/>
+							</VBox>							
+							<VBox>					
+							<rdf:TextLink text="{path:'dataModel>CampaignMember_Fax/CampaignMember_Fax',type:'sap.ui.model.type.String'}" linkText="{i18n>CampaignMember.CampaignMember_Fax/CampaignMember_Fax}"/>
+							</VBox>							
+							<VBox>					
+							<rdf:TextLink text="{path:'dataModel>CampaignMember_FirstName/CampaignMember_FirstName',type:'sap.ui.model.type.String'}" linkText="{i18n>CampaignMember.CampaignMember_FirstName/CampaignMember_FirstName}"/>
+							</VBox>							
+							<VBox>					
+							<Text text="{dataModel>CampaignMember_FirstRespondedDate/CampaignMember_FirstRespondedDate}"/>
+							</VBox>							
+							<VBox>					
+								<Text text="{path:'dataModel>CampaignMember_HasOptedOutOfEmail/CampaignMember_HasOptedOutOfEmail',type:'sap.ui.model.type.Boolean'}"/>  
+							</VBox>							
+							<VBox>					
+								<Text text="{path:'dataModel>CampaignMember_HasOptedOutOfFax/CampaignMember_HasOptedOutOfFax',type:'sap.ui.model.type.Boolean'}"/>  
+							</VBox>							
+							<VBox>					
+								<Text text="{path:'dataModel>CampaignMember_HasResponded/CampaignMember_HasResponded',type:'sap.ui.model.type.Boolean'}"/>  
+							</VBox>							
+							<VBox>					
+							<rdf:TextLink text="{path:'dataModel>CampaignMember_Id/CampaignMember_Id',type:'sap.ui.model.type.String'}" linkText="{i18n>CampaignMember.CampaignMember_Id/CampaignMember_Id}"/>
+							</VBox>							
+							<VBox>					
+								<Text text="{path:'dataModel>CampaignMember_IsDeleted/CampaignMember_IsDeleted',type:'sap.ui.model.type.Boolean'}"/>  
+							</VBox>							
+							<VBox>					
+							<Text text="{dataModel>CampaignMember_LastModifiedDate/CampaignMember_LastModifiedDate}"/>
+							</VBox>							
+							<VBox>					
+							<rdf:TextLink text="{path:'dataModel>CampaignMember_LastName/CampaignMember_LastName',type:'sap.ui.model.type.String'}" linkText="{i18n>CampaignMember.CampaignMember_LastName/CampaignMember_LastName}"/>
+							</VBox>							
+							<VBox>					
+							<rdf:TextLink text="{path:'dataModel>CampaignMember_LeadSource/CampaignMember_LeadSource',type:'sap.ui.model.type.String'}" linkText="{i18n>CampaignMember.CampaignMember_LeadSource/CampaignMember_LeadSource}"/>
+							</VBox>							
+							<VBox>					
+							<rdf:TextLink text="{path:'dataModel>CampaignMember_MobilePhone/CampaignMember_MobilePhone',type:'sap.ui.model.type.String'}" linkText="{i18n>CampaignMember.CampaignMember_MobilePhone/CampaignMember_MobilePhone}"/>
+							</VBox>							
+							<VBox>					
+							<rdf:TextLink text="{path:'dataModel>CampaignMember_Name/CampaignMember_Name',type:'sap.ui.model.type.String'}" linkText="{i18n>CampaignMember.CampaignMember_Name/CampaignMember_Name}"/>
+							</VBox>							
+							<VBox>					
+							<rdf:TextLink text="{path:'dataModel>CampaignMember_Phone/CampaignMember_Phone',type:'sap.ui.model.type.String'}" linkText="{i18n>CampaignMember.CampaignMember_Phone/CampaignMember_Phone}"/>
+							</VBox>							
+							<VBox>					
+							<rdf:TextLink text="{path:'dataModel>CampaignMember_PostalCode/CampaignMember_PostalCode',type:'sap.ui.model.type.String'}" linkText="{i18n>CampaignMember.CampaignMember_PostalCode/CampaignMember_PostalCode}"/>
+							</VBox>							
+							<VBox>					
+							<rdf:TextLink text="{path:'dataModel>CampaignMember_Salutation/CampaignMember_Salutation',type:'sap.ui.model.type.String'}" linkText="{i18n>CampaignMember.CampaignMember_Salutation/CampaignMember_Salutation}"/>
+							</VBox>							
+							<VBox>					
+							<rdf:TextLink text="{path:'dataModel>CampaignMember_State/CampaignMember_State',type:'sap.ui.model.type.String'}" linkText="{i18n>CampaignMember.CampaignMember_State/CampaignMember_State}"/>
+							</VBox>							
+							<VBox>					
+							<rdf:TextLink text="{path:'dataModel>CampaignMember_Status/CampaignMember_Status',type:'sap.ui.model.type.String'}" linkText="{i18n>CampaignMember.CampaignMember_Status/CampaignMember_Status}"/>
+							</VBox>							
+							<VBox>					
+							<rdf:TextLink text="{path:'dataModel>CampaignMember_Street/CampaignMember_Street',type:'sap.ui.model.type.String'}" linkText="{i18n>CampaignMember.CampaignMember_Street/CampaignMember_Street}"/>
+							</VBox>							
+							<VBox>					
+							<Text text="{dataModel>CampaignMember_SystemModstamp/CampaignMember_SystemModstamp}"/>
+							</VBox>							
+							<VBox>					
+							<rdf:TextLink text="{path:'dataModel>CampaignMember_Title/CampaignMember_Title',type:'sap.ui.model.type.String'}" linkText="{i18n>CampaignMember.CampaignMember_Title/CampaignMember_Title}"/>
+							</VBox>							
+							<VBox>					
+							<rdf:TextLink text="{path:'dataModel>CampaignMember_Type/CampaignMember_Type',type:'sap.ui.model.type.String'}" linkText="{i18n>CampaignMember.CampaignMember_Type/CampaignMember_Type}"/>
+							</VBox>							
+						</cells>
+					</ColumnListItem>
+				</items>
+			</Table>
+		</content>
+	</Page>
+</mvc:View>

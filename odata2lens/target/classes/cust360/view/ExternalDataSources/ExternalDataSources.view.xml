@@ -1,0 +1,139 @@
+<mvc:View controllerName="com.inova8.lens.controller.EntitySet360" xmlns="sap.m" xmlns:mvc="sap.ui.core.mvc" xmlns:layout="sap.ui.layout"
+	xmlns:rdf="com.inova8.lens.control" xmlns:core="sap.ui.core">
+	<Page showHeader="false" id="page" navButtonPress="onNavBack" showNavButton="true" title="{i18n>ExternalDataSources.ViewTitle}">
+		<content>
+			<Table id="table360" inset="false" items="{ path: 'dataModel>/ExternalDataSource' , sorter: { path: 'label', descending: false } 
+				}"
+				noDataText="{entitySetView>/tableNoDataText}" busyIndicatorDelay="{entitySetView>/tableBusyDelay}" growing="true" growingScrollToLoad="true"
+				updateFinished="onUpdateFinished"  fixedLayout="false">
+				<headerToolbar>
+					<Toolbar>
+						<ToolbarSpacer/>
+						<HBox id="sourceTitle" alignItems="Center">
+							<rdf:TextResource id="selectedResource" path="" entitySet=""/>
+						</HBox>
+						<Title id="pathTitle" text="{entitySetView>/navigationText}"/>
+						<HBox id="versionsTitle" alignItems="Center">
+							<Title text="(" required="false"/>
+							<ComboBox id="versionSelection" items="{ path: 'entitySetView>/versions' }" selectionChange="onVersionChange">
+								<core:Item key="{entitySetView>navigation}" text="{entityView>text}"/>
+							</ComboBox>
+							<Title text=")" required="false"/>
+						</HBox>
+						<Title id="tableHeader" text="{entitySetView>/entitySetTableTitle}"/>
+						<ToolbarSpacer/>
+						<SearchField id="searchField" tooltip="{i18n>search.searchTooltip}" search="onSearch" width="auto"></SearchField>
+					</Toolbar>
+				</headerToolbar>
+				<columns>
+					<Column >
+						<Text text="{i18n>ExternalDataSources.this}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>ExternalDataSources.ExternalDataSource_CreatedDate}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>ExternalDataSources.ExternalDataSource_CustomConfiguration}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>ExternalDataSources.ExternalDataSource_DeveloperName}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>ExternalDataSources.ExternalDataSource_Endpoint}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>ExternalDataSources.ExternalDataSource_Id}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>ExternalDataSources.ExternalDataSource_IsDeleted}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>ExternalDataSources.ExternalDataSource_IsWritable}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>ExternalDataSources.ExternalDataSource_Language}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>ExternalDataSources.ExternalDataSource_LastModifiedDate}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>ExternalDataSources.ExternalDataSource_MasterLabel}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>ExternalDataSources.ExternalDataSource_NamespacePrefix}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>ExternalDataSources.ExternalDataSource_PrincipalType}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>ExternalDataSources.ExternalDataSource_Protocol}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>ExternalDataSources.ExternalDataSource_Repository}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>ExternalDataSources.ExternalDataSource_SystemModstamp}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>ExternalDataSources.ExternalDataSource_Type}"/>
+					</Column>
+				</columns>
+				<items>
+					<ColumnListItem id="template360" type="Navigation" press="onPress">
+						<cells>
+							<rdf:TextResource path="dataModel>" entitySet="ExternalDataSource"/>
+							<VBox>					
+							<Text text="{dataModel>ExternalDataSource_CreatedDate/ExternalDataSource_CreatedDate}"/>
+							</VBox>							
+							<VBox>					
+							<rdf:TextLink text="{path:'dataModel>ExternalDataSource_CustomConfiguration/ExternalDataSource_CustomConfiguration',type:'sap.ui.model.type.String'}" linkText="{i18n>ExternalDataSource.ExternalDataSource_CustomConfiguration/ExternalDataSource_CustomConfiguration}"/>
+							</VBox>							
+							<VBox>					
+							<rdf:TextLink text="{path:'dataModel>ExternalDataSource_DeveloperName/ExternalDataSource_DeveloperName',type:'sap.ui.model.type.String'}" linkText="{i18n>ExternalDataSource.ExternalDataSource_DeveloperName/ExternalDataSource_DeveloperName}"/>
+							</VBox>							
+							<VBox>					
+							<rdf:TextLink text="{path:'dataModel>ExternalDataSource_Endpoint/ExternalDataSource_Endpoint',type:'sap.ui.model.type.String'}" linkText="{i18n>ExternalDataSource.ExternalDataSource_Endpoint/ExternalDataSource_Endpoint}"/>
+							</VBox>							
+							<VBox>					
+							<rdf:TextLink text="{path:'dataModel>ExternalDataSource_Id/ExternalDataSource_Id',type:'sap.ui.model.type.String'}" linkText="{i18n>ExternalDataSource.ExternalDataSource_Id/ExternalDataSource_Id}"/>
+							</VBox>							
+							<VBox>					
+								<Text text="{path:'dataModel>ExternalDataSource_IsDeleted/ExternalDataSource_IsDeleted',type:'sap.ui.model.type.Boolean'}"/>  
+							</VBox>							
+							<VBox>					
+								<Text text="{path:'dataModel>ExternalDataSource_IsWritable/ExternalDataSource_IsWritable',type:'sap.ui.model.type.Boolean'}"/>  
+							</VBox>							
+							<VBox>					
+							<rdf:TextLink text="{path:'dataModel>ExternalDataSource_Language/ExternalDataSource_Language',type:'sap.ui.model.type.String'}" linkText="{i18n>ExternalDataSource.ExternalDataSource_Language/ExternalDataSource_Language}"/>
+							</VBox>							
+							<VBox>					
+							<Text text="{dataModel>ExternalDataSource_LastModifiedDate/ExternalDataSource_LastModifiedDate}"/>
+							</VBox>							
+							<VBox>					
+							<rdf:TextLink text="{path:'dataModel>ExternalDataSource_MasterLabel/ExternalDataSource_MasterLabel',type:'sap.ui.model.type.String'}" linkText="{i18n>ExternalDataSource.ExternalDataSource_MasterLabel/ExternalDataSource_MasterLabel}"/>
+							</VBox>							
+							<VBox>					
+							<rdf:TextLink text="{path:'dataModel>ExternalDataSource_NamespacePrefix/ExternalDataSource_NamespacePrefix',type:'sap.ui.model.type.String'}" linkText="{i18n>ExternalDataSource.ExternalDataSource_NamespacePrefix/ExternalDataSource_NamespacePrefix}"/>
+							</VBox>							
+							<VBox>					
+							<rdf:TextLink text="{path:'dataModel>ExternalDataSource_PrincipalType/ExternalDataSource_PrincipalType',type:'sap.ui.model.type.String'}" linkText="{i18n>ExternalDataSource.ExternalDataSource_PrincipalType/ExternalDataSource_PrincipalType}"/>
+							</VBox>							
+							<VBox>					
+							<rdf:TextLink text="{path:'dataModel>ExternalDataSource_Protocol/ExternalDataSource_Protocol',type:'sap.ui.model.type.String'}" linkText="{i18n>ExternalDataSource.ExternalDataSource_Protocol/ExternalDataSource_Protocol}"/>
+							</VBox>							
+							<VBox>					
+							<rdf:TextLink text="{path:'dataModel>ExternalDataSource_Repository/ExternalDataSource_Repository',type:'sap.ui.model.type.String'}" linkText="{i18n>ExternalDataSource.ExternalDataSource_Repository/ExternalDataSource_Repository}"/>
+							</VBox>							
+							<VBox>					
+							<Text text="{dataModel>ExternalDataSource_SystemModstamp/ExternalDataSource_SystemModstamp}"/>
+							</VBox>							
+							<VBox>					
+							<rdf:TextLink text="{path:'dataModel>ExternalDataSource_Type/ExternalDataSource_Type',type:'sap.ui.model.type.String'}" linkText="{i18n>ExternalDataSource.ExternalDataSource_Type/ExternalDataSource_Type}"/>
+							</VBox>							
+						</cells>
+					</ColumnListItem>
+				</items>
+			</Table>
+		</content>
+	</Page>
+</mvc:View>

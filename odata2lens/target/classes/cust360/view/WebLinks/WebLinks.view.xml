@@ -1,0 +1,193 @@
+<mvc:View controllerName="com.inova8.lens.controller.EntitySet360" xmlns="sap.m" xmlns:mvc="sap.ui.core.mvc" xmlns:layout="sap.ui.layout"
+	xmlns:rdf="com.inova8.lens.control" xmlns:core="sap.ui.core">
+	<Page showHeader="false" id="page" navButtonPress="onNavBack" showNavButton="true" title="{i18n>WebLinks.ViewTitle}">
+		<content>
+			<Table id="table360" inset="false" items="{ path: 'dataModel>/WebLink' , sorter: { path: 'label', descending: false } 
+				}"
+				noDataText="{entitySetView>/tableNoDataText}" busyIndicatorDelay="{entitySetView>/tableBusyDelay}" growing="true" growingScrollToLoad="true"
+				updateFinished="onUpdateFinished"  fixedLayout="false">
+				<headerToolbar>
+					<Toolbar>
+						<ToolbarSpacer/>
+						<HBox id="sourceTitle" alignItems="Center">
+							<rdf:TextResource id="selectedResource" path="" entitySet=""/>
+						</HBox>
+						<Title id="pathTitle" text="{entitySetView>/navigationText}"/>
+						<HBox id="versionsTitle" alignItems="Center">
+							<Title text="(" required="false"/>
+							<ComboBox id="versionSelection" items="{ path: 'entitySetView>/versions' }" selectionChange="onVersionChange">
+								<core:Item key="{entitySetView>navigation}" text="{entityView>text}"/>
+							</ComboBox>
+							<Title text=")" required="false"/>
+						</HBox>
+						<Title id="tableHeader" text="{entitySetView>/entitySetTableTitle}"/>
+						<ToolbarSpacer/>
+						<SearchField id="searchField" tooltip="{i18n>search.searchTooltip}" search="onSearch" width="auto"></SearchField>
+					</Toolbar>
+				</headerToolbar>
+				<columns>
+					<Column >
+						<Text text="{i18n>WebLinks.this}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>WebLinks.WebLink_CreatedDate}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>WebLinks.WebLink_Description}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>WebLinks.WebLink_DisplayType}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>WebLinks.WebLink_EncodingKey}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>WebLinks.WebLink_HasMenubar}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>WebLinks.WebLink_HasScrollbars}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>WebLinks.WebLink_HasToolbar}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>WebLinks.WebLink_Height}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>WebLinks.WebLink_Id}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>WebLinks.WebLink_IsProtected}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>WebLinks.WebLink_IsResizable}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>WebLinks.WebLink_LastModifiedDate}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>WebLinks.WebLink_LinkType}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>WebLinks.WebLink_MasterLabel}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>WebLinks.WebLink_Name}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>WebLinks.WebLink_NamespacePrefix}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>WebLinks.WebLink_OpenType}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>WebLinks.WebLink_PageOrSobjectType}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>WebLinks.WebLink_Position}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>WebLinks.WebLink_RequireRowSelection}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>WebLinks.WebLink_ShowsLocation}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>WebLinks.WebLink_ShowsStatus}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>WebLinks.WebLink_SystemModstamp}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>WebLinks.WebLink_Url}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>WebLinks.WebLink_Width}"/>
+					</Column>
+				</columns>
+				<items>
+					<ColumnListItem id="template360" type="Navigation" press="onPress">
+						<cells>
+							<rdf:TextResource path="dataModel>" entitySet="WebLink"/>
+							<VBox>					
+							<Text text="{dataModel>WebLink_CreatedDate/WebLink_CreatedDate}"/>
+							</VBox>							
+							<VBox>					
+							<rdf:TextLink text="{path:'dataModel>WebLink_Description/WebLink_Description',type:'sap.ui.model.type.String'}" linkText="{i18n>WebLink.WebLink_Description/WebLink_Description}"/>
+							</VBox>							
+							<VBox>					
+							<rdf:TextLink text="{path:'dataModel>WebLink_DisplayType/WebLink_DisplayType',type:'sap.ui.model.type.String'}" linkText="{i18n>WebLink.WebLink_DisplayType/WebLink_DisplayType}"/>
+							</VBox>							
+							<VBox>					
+							<rdf:TextLink text="{path:'dataModel>WebLink_EncodingKey/WebLink_EncodingKey',type:'sap.ui.model.type.String'}" linkText="{i18n>WebLink.WebLink_EncodingKey/WebLink_EncodingKey}"/>
+							</VBox>							
+							<VBox>					
+								<Text text="{path:'dataModel>WebLink_HasMenubar/WebLink_HasMenubar',type:'sap.ui.model.type.Boolean'}"/>  
+							</VBox>							
+							<VBox>					
+								<Text text="{path:'dataModel>WebLink_HasScrollbars/WebLink_HasScrollbars',type:'sap.ui.model.type.Boolean'}"/>  
+							</VBox>							
+							<VBox>					
+								<Text text="{path:'dataModel>WebLink_HasToolbar/WebLink_HasToolbar',type:'sap.ui.model.type.Boolean'}"/>  
+							</VBox>							
+							<VBox>					
+							<Text text="{path:'dataModel>WebLink_Height/WebLink_Height',type:'sap.ui.model.type.Integer' }"/>
+							</VBox>							
+							<VBox>					
+							<rdf:TextLink text="{path:'dataModel>WebLink_Id/WebLink_Id',type:'sap.ui.model.type.String'}" linkText="{i18n>WebLink.WebLink_Id/WebLink_Id}"/>
+							</VBox>							
+							<VBox>					
+								<Text text="{path:'dataModel>WebLink_IsProtected/WebLink_IsProtected',type:'sap.ui.model.type.Boolean'}"/>  
+							</VBox>							
+							<VBox>					
+								<Text text="{path:'dataModel>WebLink_IsResizable/WebLink_IsResizable',type:'sap.ui.model.type.Boolean'}"/>  
+							</VBox>							
+							<VBox>					
+							<Text text="{dataModel>WebLink_LastModifiedDate/WebLink_LastModifiedDate}"/>
+							</VBox>							
+							<VBox>					
+							<rdf:TextLink text="{path:'dataModel>WebLink_LinkType/WebLink_LinkType',type:'sap.ui.model.type.String'}" linkText="{i18n>WebLink.WebLink_LinkType/WebLink_LinkType}"/>
+							</VBox>							
+							<VBox>					
+							<rdf:TextLink text="{path:'dataModel>WebLink_MasterLabel/WebLink_MasterLabel',type:'sap.ui.model.type.String'}" linkText="{i18n>WebLink.WebLink_MasterLabel/WebLink_MasterLabel}"/>
+							</VBox>							
+							<VBox>					
+							<rdf:TextLink text="{path:'dataModel>WebLink_Name/WebLink_Name',type:'sap.ui.model.type.String'}" linkText="{i18n>WebLink.WebLink_Name/WebLink_Name}"/>
+							</VBox>							
+							<VBox>					
+							<rdf:TextLink text="{path:'dataModel>WebLink_NamespacePrefix/WebLink_NamespacePrefix',type:'sap.ui.model.type.String'}" linkText="{i18n>WebLink.WebLink_NamespacePrefix/WebLink_NamespacePrefix}"/>
+							</VBox>							
+							<VBox>					
+							<rdf:TextLink text="{path:'dataModel>WebLink_OpenType/WebLink_OpenType',type:'sap.ui.model.type.String'}" linkText="{i18n>WebLink.WebLink_OpenType/WebLink_OpenType}"/>
+							</VBox>							
+							<VBox>					
+							<rdf:TextLink text="{path:'dataModel>WebLink_PageOrSobjectType/WebLink_PageOrSobjectType',type:'sap.ui.model.type.String'}" linkText="{i18n>WebLink.WebLink_PageOrSobjectType/WebLink_PageOrSobjectType}"/>
+							</VBox>							
+							<VBox>					
+							<rdf:TextLink text="{path:'dataModel>WebLink_Position/WebLink_Position',type:'sap.ui.model.type.String'}" linkText="{i18n>WebLink.WebLink_Position/WebLink_Position}"/>
+							</VBox>							
+							<VBox>					
+								<Text text="{path:'dataModel>WebLink_RequireRowSelection/WebLink_RequireRowSelection',type:'sap.ui.model.type.Boolean'}"/>  
+							</VBox>							
+							<VBox>					
+								<Text text="{path:'dataModel>WebLink_ShowsLocation/WebLink_ShowsLocation',type:'sap.ui.model.type.Boolean'}"/>  
+							</VBox>							
+							<VBox>					
+								<Text text="{path:'dataModel>WebLink_ShowsStatus/WebLink_ShowsStatus',type:'sap.ui.model.type.Boolean'}"/>  
+							</VBox>							
+							<VBox>					
+							<Text text="{dataModel>WebLink_SystemModstamp/WebLink_SystemModstamp}"/>
+							</VBox>							
+							<VBox>					
+							<rdf:TextLink text="{path:'dataModel>WebLink_Url/WebLink_Url',type:'sap.ui.model.type.String'}" linkText="{i18n>WebLink.WebLink_Url/WebLink_Url}"/>
+							</VBox>							
+							<VBox>					
+							<Text text="{path:'dataModel>WebLink_Width/WebLink_Width',type:'sap.ui.model.type.Integer' }"/>
+							</VBox>							
+						</cells>
+					</ColumnListItem>
+				</items>
+			</Table>
+		</content>
+	</Page>
+</mvc:View>

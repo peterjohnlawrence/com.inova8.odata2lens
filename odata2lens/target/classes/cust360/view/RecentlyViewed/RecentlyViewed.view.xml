@@ -1,0 +1,189 @@
+<mvc:View controllerName="com.inova8.lens.controller.Entity360" xmlns="sap.m" xmlns:mvc="sap.ui.core.mvc" xmlns:l="sap.ui.layout"
+	xmlns:f="sap.ui.layout.form" xmlns:table="sap.ui.table" xmlns:rdf="com.inova8.lens.control" xmlns:html="http://www.w3.org/1999/xhtml"
+	xmlns:core="sap.ui.core">
+	<Page showHeader="true" id="page" navButtonPress="onNavBack" showNavButton="false" title="{i18n>RecentlyViewed.Title}" busy="{entityView>/busy}"
+		busyIndicatorDelay="{entityView>/delay}" >
+		<customHeader>
+			<Toolbar>
+				<ToolbarSpacer/>
+				<HBox id="sourceTitle" alignItems="Center">
+						<rdf:TextResource id="selectedResource" path="" entitySet=""/>
+				</HBox>	
+				<Title id="pathTitle" text="{entityView>/navigation}"/>
+				<HBox id="versionsTitle" alignItems="Center">
+					<Title text="(" required="false"/>
+					<ComboBox id="versionSelection" items="{ path: 'entityView>/versions' }" selectionChange="onVersionChange">
+						<core:Item key="{entityView>navigation}" text="{entityView>text}"/>
+					</ComboBox>
+					<Title text=")" required="false"/>
+				</HBox>
+				<Title text="{i18n>RecentlyViewed.this}"/>
+				<Title text="(" required="false"/>
+				<rdf:TextResource path="dataModel>" entitySet="RecentlyViewed"/>
+				<Title text=")" required="false"/>
+	
+				<ToolbarSpacer/>
+				<ToggleButton id="toggleColumns" icon="sap-icon://hide" activeIcon="sap-icon://show" press="onSettingsPressed" visible="false"	>
+					<layoutData>
+						<OverflowToolbarLayoutData priority="NeverOverflow"/>
+					</layoutData>
+				</ToggleButton>
+				
+			</Toolbar>
+		</customHeader>
+		<Table id="form360" inset="false" fixedLayout="true" class="multicolumnform" updateFinished="hideColumns">
+			<columns>
+				<Column hAlign="Right" width="200px">
+					<Text text=""/>
+				</Column>
+				<Column visible="true">
+				</Column>
+				<Column visible="true">
+					<Text text="RecentlyViewed"/>
+				</Column>
+			</columns>
+			<items>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>RecentlyViewed.RecentlyViewed_Alias}" required="false"/> 
+						<Text text=""/>
+						<rdf:TextLink text="{path:'dataModel>RecentlyViewed_Alias/RecentlyViewed_Alias',type:'sap.ui.model.type.String' }" linkText="{i18n>RecentlyViewed.RecentlyViewed_Alias/RecentlyViewed_Alias}"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>RecentlyViewed.RecentlyViewed_Email}" required="false"/> 
+						<Text text=""/>
+						<rdf:TextLink text="{path:'dataModel>RecentlyViewed_Email/RecentlyViewed_Email',type:'sap.ui.model.type.String' }" linkText="{i18n>RecentlyViewed.RecentlyViewed_Email/RecentlyViewed_Email}"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>RecentlyViewed.RecentlyViewed_FirstName}" required="false"/> 
+						<Text text=""/>
+						<rdf:TextLink text="{path:'dataModel>RecentlyViewed_FirstName/RecentlyViewed_FirstName',type:'sap.ui.model.type.String' }" linkText="{i18n>RecentlyViewed.RecentlyViewed_FirstName/RecentlyViewed_FirstName}"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>RecentlyViewed.RecentlyViewed_Id}" required="false"/> 
+						<Text text=""/>
+						<rdf:TextLink text="{path:'dataModel>RecentlyViewed_Id/RecentlyViewed_Id',type:'sap.ui.model.type.String' }" linkText="{i18n>RecentlyViewed.RecentlyViewed_Id/RecentlyViewed_Id}"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>RecentlyViewed.RecentlyViewed_IsActive}" required="false"/> 
+						<Text text=""/>
+						<Text text="{path:'dataModel>RecentlyViewed_IsActive/RecentlyViewed_IsActive',type:'sap.ui.model.type.Boolean'}"/>  
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>RecentlyViewed.RecentlyViewed_Language}" required="false"/> 
+						<Text text=""/>
+						<rdf:TextLink text="{path:'dataModel>RecentlyViewed_Language/RecentlyViewed_Language',type:'sap.ui.model.type.String' }" linkText="{i18n>RecentlyViewed.RecentlyViewed_Language/RecentlyViewed_Language}"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>RecentlyViewed.RecentlyViewed_LastName}" required="false"/> 
+						<Text text=""/>
+						<rdf:TextLink text="{path:'dataModel>RecentlyViewed_LastName/RecentlyViewed_LastName',type:'sap.ui.model.type.String' }" linkText="{i18n>RecentlyViewed.RecentlyViewed_LastName/RecentlyViewed_LastName}"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>RecentlyViewed.RecentlyViewed_LastReferencedDate}" required="false"/> 
+						<Text text=""/>
+						<Text text="{dataModel>RecentlyViewed_LastReferencedDate/RecentlyViewed_LastReferencedDate}"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>RecentlyViewed.RecentlyViewed_LastViewedDate}" required="false"/> 
+						<Text text=""/>
+						<Text text="{dataModel>RecentlyViewed_LastViewedDate/RecentlyViewed_LastViewedDate}"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>RecentlyViewed.RecentlyViewed_Name}" required="false"/> 
+						<Text text=""/>
+						<rdf:TextLink text="{path:'dataModel>RecentlyViewed_Name/RecentlyViewed_Name',type:'sap.ui.model.type.String' }" linkText="{i18n>RecentlyViewed.RecentlyViewed_Name/RecentlyViewed_Name}"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>RecentlyViewed.RecentlyViewed_NameOrAlias}" required="false"/> 
+						<Text text=""/>
+						<rdf:TextLink text="{path:'dataModel>RecentlyViewed_NameOrAlias/RecentlyViewed_NameOrAlias',type:'sap.ui.model.type.String' }" linkText="{i18n>RecentlyViewed.RecentlyViewed_NameOrAlias/RecentlyViewed_NameOrAlias}"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>RecentlyViewed.RecentlyViewed_Phone}" required="false"/> 
+						<Text text=""/>
+						<rdf:TextLink text="{path:'dataModel>RecentlyViewed_Phone/RecentlyViewed_Phone',type:'sap.ui.model.type.String' }" linkText="{i18n>RecentlyViewed.RecentlyViewed_Phone/RecentlyViewed_Phone}"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>RecentlyViewed.RecentlyViewed_ProfileId}" required="false"/> 
+						<Text text=""/>
+						<rdf:ListResource path="dataModel>RecentlyViewed_ProfileId/sfdc_RecentlyViewed_ProfileId" entitySet="Profile"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>RecentlyViewed.RecentlyViewed_RecordTypeId}" required="false"/> 
+						<Text text=""/>
+						<rdf:ListResource path="dataModel>RecentlyViewed_RecordTypeId/sfdc_RecentlyViewed_RecordTypeId" entitySet="RecordType"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>RecentlyViewed.RecentlyViewed_Title}" required="false"/> 
+						<Text text=""/>
+						<rdf:TextLink text="{path:'dataModel>RecentlyViewed_Title/RecentlyViewed_Title',type:'sap.ui.model.type.String' }" linkText="{i18n>RecentlyViewed.RecentlyViewed_Title/RecentlyViewed_Title}"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>RecentlyViewed.RecentlyViewed_Type}" required="false"/> 
+						<Text text=""/>
+						<rdf:TextLink text="{path:'dataModel>RecentlyViewed_Type/RecentlyViewed_Type',type:'sap.ui.model.type.String' }" linkText="{i18n>RecentlyViewed.RecentlyViewed_Type/RecentlyViewed_Type}"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>RecentlyViewed.RecentlyViewed_UserRoleId}" required="false"/> 
+						<Text text=""/>
+						<rdf:ListResource path="dataModel>RecentlyViewed_UserRoleId/sfdc_RecentlyViewed_UserRoleId" entitySet="UserRole"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>RecentlyViewed.RecentlyViewed_ProfileId}" required="false"/> 
+						<rdf:ListResource path="dataModel>RecentlyViewed_ProfileId" entitySet="Profile"/>
+						<Text text=""/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>RecentlyViewed.RecentlyViewed_RecordTypeId}" required="false"/> 
+						<rdf:ListResource path="dataModel>RecentlyViewed_RecordTypeId" entitySet="RecordType"/>
+						<Text text=""/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>RecentlyViewed.RecentlyViewed_UserRoleId}" required="false"/> 
+						<rdf:ListResource path="dataModel>RecentlyViewed_UserRoleId" entitySet="UserRole"/>
+						<Text text=""/>
+					</cells>
+				</ColumnListItem>
+			</items>
+		</Table>
+	</Page>
+</mvc:View>

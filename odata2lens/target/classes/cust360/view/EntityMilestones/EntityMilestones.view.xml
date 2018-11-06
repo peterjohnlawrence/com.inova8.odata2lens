@@ -1,0 +1,157 @@
+<mvc:View controllerName="com.inova8.lens.controller.EntitySet360" xmlns="sap.m" xmlns:mvc="sap.ui.core.mvc" xmlns:layout="sap.ui.layout"
+	xmlns:rdf="com.inova8.lens.control" xmlns:core="sap.ui.core">
+	<Page showHeader="false" id="page" navButtonPress="onNavBack" showNavButton="true" title="{i18n>EntityMilestones.ViewTitle}">
+		<content>
+			<Table id="table360" inset="false" items="{ path: 'dataModel>/EntityMilestone' , sorter: { path: 'label', descending: false } 
+				}"
+				noDataText="{entitySetView>/tableNoDataText}" busyIndicatorDelay="{entitySetView>/tableBusyDelay}" growing="true" growingScrollToLoad="true"
+				updateFinished="onUpdateFinished"  fixedLayout="false">
+				<headerToolbar>
+					<Toolbar>
+						<ToolbarSpacer/>
+						<HBox id="sourceTitle" alignItems="Center">
+							<rdf:TextResource id="selectedResource" path="" entitySet=""/>
+						</HBox>
+						<Title id="pathTitle" text="{entitySetView>/navigationText}"/>
+						<HBox id="versionsTitle" alignItems="Center">
+							<Title text="(" required="false"/>
+							<ComboBox id="versionSelection" items="{ path: 'entitySetView>/versions' }" selectionChange="onVersionChange">
+								<core:Item key="{entitySetView>navigation}" text="{entityView>text}"/>
+							</ComboBox>
+							<Title text=")" required="false"/>
+						</HBox>
+						<Title id="tableHeader" text="{entitySetView>/entitySetTableTitle}"/>
+						<ToolbarSpacer/>
+						<SearchField id="searchField" tooltip="{i18n>search.searchTooltip}" search="onSearch" width="auto"></SearchField>
+					</Toolbar>
+				</headerToolbar>
+				<columns>
+					<Column >
+						<Text text="{i18n>EntityMilestones.this}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>EntityMilestones.EntityMilestone_CompletionDate}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>EntityMilestones.EntityMilestone_CreatedDate}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>EntityMilestones.EntityMilestone_ElapsedTimeInDays}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>EntityMilestones.EntityMilestone_ElapsedTimeInHrs}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>EntityMilestones.EntityMilestone_ElapsedTimeInMins}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>EntityMilestones.EntityMilestone_Id}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>EntityMilestones.EntityMilestone_IsCompleted}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>EntityMilestones.EntityMilestone_IsDeleted}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>EntityMilestones.EntityMilestone_IsViolated}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>EntityMilestones.EntityMilestone_LastModifiedDate}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>EntityMilestones.EntityMilestone_Name}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>EntityMilestones.EntityMilestone_StartDate}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>EntityMilestones.EntityMilestone_SystemModstamp}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>EntityMilestones.EntityMilestone_TargetDate}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>EntityMilestones.EntityMilestone_TargetResponseInDays}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>EntityMilestones.EntityMilestone_TargetResponseInHrs}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>EntityMilestones.EntityMilestone_TargetResponseInMins}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>EntityMilestones.EntityMilestone_TimeRemainingInMins}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>EntityMilestones.EntityMilestone_TimeSinceTargetInMins}"/>
+					</Column>
+				</columns>
+				<items>
+					<ColumnListItem id="template360" type="Navigation" press="onPress">
+						<cells>
+							<rdf:TextResource path="dataModel>" entitySet="EntityMilestone"/>
+							<VBox>					
+							<Text text="{dataModel>EntityMilestone_CompletionDate/EntityMilestone_CompletionDate}"/>
+							</VBox>							
+							<VBox>					
+							<Text text="{dataModel>EntityMilestone_CreatedDate/EntityMilestone_CreatedDate}"/>
+							</VBox>							
+							<VBox>					
+							<Text text="{path:'dataModel>EntityMilestone_ElapsedTimeInDays/EntityMilestone_ElapsedTimeInDays',type:'sap.ui.model.type.Float', formatOptions:{'style':'short','maxFractionDigits':2} }"/>
+							</VBox>							
+							<VBox>					
+							<Text text="{path:'dataModel>EntityMilestone_ElapsedTimeInHrs/EntityMilestone_ElapsedTimeInHrs',type:'sap.ui.model.type.Float', formatOptions:{'style':'short','maxFractionDigits':2} }"/>
+							</VBox>							
+							<VBox>					
+							<Text text="{path:'dataModel>EntityMilestone_ElapsedTimeInMins/EntityMilestone_ElapsedTimeInMins',type:'sap.ui.model.type.Integer' }"/>
+							</VBox>							
+							<VBox>					
+							<rdf:TextLink text="{path:'dataModel>EntityMilestone_Id/EntityMilestone_Id',type:'sap.ui.model.type.String'}" linkText="{i18n>EntityMilestone.EntityMilestone_Id/EntityMilestone_Id}"/>
+							</VBox>							
+							<VBox>					
+								<Text text="{path:'dataModel>EntityMilestone_IsCompleted/EntityMilestone_IsCompleted',type:'sap.ui.model.type.Boolean'}"/>  
+							</VBox>							
+							<VBox>					
+								<Text text="{path:'dataModel>EntityMilestone_IsDeleted/EntityMilestone_IsDeleted',type:'sap.ui.model.type.Boolean'}"/>  
+							</VBox>							
+							<VBox>					
+								<Text text="{path:'dataModel>EntityMilestone_IsViolated/EntityMilestone_IsViolated',type:'sap.ui.model.type.Boolean'}"/>  
+							</VBox>							
+							<VBox>					
+							<Text text="{dataModel>EntityMilestone_LastModifiedDate/EntityMilestone_LastModifiedDate}"/>
+							</VBox>							
+							<VBox>					
+							<rdf:TextLink text="{path:'dataModel>EntityMilestone_Name/EntityMilestone_Name',type:'sap.ui.model.type.String'}" linkText="{i18n>EntityMilestone.EntityMilestone_Name/EntityMilestone_Name}"/>
+							</VBox>							
+							<VBox>					
+							<Text text="{dataModel>EntityMilestone_StartDate/EntityMilestone_StartDate}"/>
+							</VBox>							
+							<VBox>					
+							<Text text="{dataModel>EntityMilestone_SystemModstamp/EntityMilestone_SystemModstamp}"/>
+							</VBox>							
+							<VBox>					
+							<Text text="{dataModel>EntityMilestone_TargetDate/EntityMilestone_TargetDate}"/>
+							</VBox>							
+							<VBox>					
+							<Text text="{path:'dataModel>EntityMilestone_TargetResponseInDays/EntityMilestone_TargetResponseInDays',type:'sap.ui.model.type.Float', formatOptions:{'style':'short','maxFractionDigits':2} }"/>
+							</VBox>							
+							<VBox>					
+							<Text text="{path:'dataModel>EntityMilestone_TargetResponseInHrs/EntityMilestone_TargetResponseInHrs',type:'sap.ui.model.type.Float', formatOptions:{'style':'short','maxFractionDigits':2} }"/>
+							</VBox>							
+							<VBox>					
+							<Text text="{path:'dataModel>EntityMilestone_TargetResponseInMins/EntityMilestone_TargetResponseInMins',type:'sap.ui.model.type.Integer' }"/>
+							</VBox>							
+							<VBox>					
+							<rdf:TextLink text="{path:'dataModel>EntityMilestone_TimeRemainingInMins/EntityMilestone_TimeRemainingInMins',type:'sap.ui.model.type.String'}" linkText="{i18n>EntityMilestone.EntityMilestone_TimeRemainingInMins/EntityMilestone_TimeRemainingInMins}"/>
+							</VBox>							
+							<VBox>					
+							<rdf:TextLink text="{path:'dataModel>EntityMilestone_TimeSinceTargetInMins/EntityMilestone_TimeSinceTargetInMins',type:'sap.ui.model.type.String'}" linkText="{i18n>EntityMilestone.EntityMilestone_TimeSinceTargetInMins/EntityMilestone_TimeSinceTargetInMins}"/>
+							</VBox>							
+						</cells>
+					</ColumnListItem>
+				</items>
+			</Table>
+		</content>
+	</Page>
+</mvc:View>

@@ -1,14 +1,25 @@
-<mvc:View controllerName="com.inova8.lens.controller.EntitySet" xmlns="sap.m" xmlns:mvc="sap.ui.core.mvc" xmlns:layout="sap.ui.layout"
-	xmlns:rdf="com.inova8.lens.control">
+<mvc:View controllerName="com.inova8.lens.controller.EntitySet360" xmlns="sap.m" xmlns:mvc="sap.ui.core.mvc" xmlns:layout="sap.ui.layout"
+	xmlns:rdf="com.inova8.lens.control" xmlns:core="sap.ui.core">
 	<Page showHeader="false" id="page" navButtonPress="onNavBack" showNavButton="true" title="{i18n>Virtual_Medicinal_Products.ViewTitle}">
 		<content>
-			<Table id="table" inset="false" items="{ path: 'dataModel>/Virtual_Medicinal_Product' , sorter: { path: 'label', descending: false } 
+			<Table id="table360" inset="false" items="{ path: 'dataModel>/Virtual_Medicinal_Product' , sorter: { path: 'label', descending: false } 
 				}"
 				noDataText="{entitySetView>/tableNoDataText}" busyIndicatorDelay="{entitySetView>/tableBusyDelay}" growing="true" growingScrollToLoad="true"
 				updateFinished="onUpdateFinished"  fixedLayout="false">
 				<headerToolbar>
 					<Toolbar>
 						<ToolbarSpacer/>
+						<HBox id="sourceTitle" alignItems="Center">
+							<rdf:TextResource id="selectedResource" path="" entitySet=""/>
+						</HBox>
+						<Title id="pathTitle" text="{entitySetView>/navigationText}"/>
+						<HBox id="versionsTitle" alignItems="Center">
+							<Title text="(" required="false"/>
+							<ComboBox id="versionSelection" items="{ path: 'entitySetView>/versions' }" selectionChange="onVersionChange">
+								<core:Item key="{entitySetView>navigation}" text="{entityView>text}"/>
+							</ComboBox>
+							<Title text=")" required="false"/>
+						</HBox>
 						<Title id="tableHeader" text="{entitySetView>/entitySetTableTitle}"/>
 						<ToolbarSpacer/>
 						<SearchField id="searchField" tooltip="{i18n>search.searchTooltip}" search="onSearch" width="auto"></SearchField>
@@ -38,15 +49,15 @@
 					</Column>
 				</columns>
 				<items>
-					<ColumnListItem id="template" type="Navigation" press="onPress">
+					<ColumnListItem id="template360" type="Navigation" press="onPress">
 						<cells>
 							<rdf:TextResource path="dataModel>" entitySet="Virtual_Medicinal_Product"/>
-  <rdf:TextLink text="{path:'dataModel>Virtual_Medicinal_Product_ATC_Code',type:'sap.ui.model.type.String'}" linkText="{i18n>Virtual_Medicinal_Product.Virtual_Medicinal_Product_ATC_Code}"/>
-  <rdf:TextLink text="{path:'dataModel>Virtual_Medicinal_Product_Abbreviated_Name',type:'sap.ui.model.type.String'}" linkText="{i18n>Virtual_Medicinal_Product.Virtual_Medicinal_Product_Abbreviated_Name}"/>
-  <rdf:TextLink text="{path:'dataModel>Virtual_Medicinal_Product_Id',type:'sap.ui.model.type.String'}" linkText="{i18n>Virtual_Medicinal_Product.Virtual_Medicinal_Product_Id}"/>
-  <Text text="{path:'dataModel>Virtual_Medicinal_Product_Invalid',type:'sap.ui.model.type.Boolean'}"/>  
-  <rdf:TextLink text="{path:'dataModel>Virtual_Medicinal_Product_Name',type:'sap.ui.model.type.String'}" linkText="{i18n>Virtual_Medicinal_Product.Virtual_Medicinal_Product_Name}"/>
-  <rdf:TextLink text="{path:'dataModel>Virtual_Medicinal_Product_WHO_Url',type:'sap.ui.model.type.String'}" linkText="{i18n>Virtual_Medicinal_Product.Virtual_Medicinal_Product_WHO_Url}"/>
+							<rdf:TextLink text="{path:'dataModel>Virtual_Medicinal_Product_ATC_Code',type:'sap.ui.model.type.String'}" linkText="{i18n>Virtual_Medicinal_Product.Virtual_Medicinal_Product_ATC_Code}"/>
+							<rdf:TextLink text="{path:'dataModel>Virtual_Medicinal_Product_Abbreviated_Name',type:'sap.ui.model.type.String'}" linkText="{i18n>Virtual_Medicinal_Product.Virtual_Medicinal_Product_Abbreviated_Name}"/>
+							<rdf:TextLink text="{path:'dataModel>Virtual_Medicinal_Product_Id',type:'sap.ui.model.type.String'}" linkText="{i18n>Virtual_Medicinal_Product.Virtual_Medicinal_Product_Id}"/>
+								<Text text="{path:'dataModel>Virtual_Medicinal_Product_Invalid',type:'sap.ui.model.type.Boolean'}"/>  
+							<rdf:TextLink text="{path:'dataModel>Virtual_Medicinal_Product_Name',type:'sap.ui.model.type.String'}" linkText="{i18n>Virtual_Medicinal_Product.Virtual_Medicinal_Product_Name}"/>
+							<rdf:TextLink text="{path:'dataModel>Virtual_Medicinal_Product_WHO_Url',type:'sap.ui.model.type.String'}" linkText="{i18n>Virtual_Medicinal_Product.Virtual_Medicinal_Product_WHO_Url}"/>
 						</cells>
 					</ColumnListItem>
 				</items>

@@ -50,7 +50,7 @@ public class NavigationProperty {
 	}
 
 	public String getIcon() {
-		if (icon.isEmpty()) {
+		if ( icon == null || icon.isEmpty()) {
 			return rangeType.getEntity().getTargetIcon();
 		} else {
 			return icon;
@@ -64,6 +64,10 @@ public class NavigationProperty {
 	public void setRangeType(EntityType entityType) {
 		this.rangeType = entityType;
 
+	}
+
+	public EntityType getRangeType() {
+		return rangeType;
 	}
 
 }

@@ -1,0 +1,211 @@
+<mvc:View controllerName="com.inova8.lens.controller.EntitySet360" xmlns="sap.m" xmlns:mvc="sap.ui.core.mvc" xmlns:layout="sap.ui.layout"
+	xmlns:rdf="com.inova8.lens.control" xmlns:core="sap.ui.core">
+	<Page showHeader="false" id="page" navButtonPress="onNavBack" showNavButton="true" title="{i18n>Opportunitys.ViewTitle}">
+		<content>
+			<Table id="table360" inset="false" items="{ path: 'dataModel>/Opportunity' , sorter: { path: 'label', descending: false } 
+				}"
+				noDataText="{entitySetView>/tableNoDataText}" busyIndicatorDelay="{entitySetView>/tableBusyDelay}" growing="true" growingScrollToLoad="true"
+				updateFinished="onUpdateFinished"  fixedLayout="false">
+				<headerToolbar>
+					<Toolbar>
+						<ToolbarSpacer/>
+						<HBox id="sourceTitle" alignItems="Center">
+							<rdf:TextResource id="selectedResource" path="" entitySet=""/>
+						</HBox>
+						<Title id="pathTitle" text="{entitySetView>/navigationText}"/>
+						<HBox id="versionsTitle" alignItems="Center">
+							<Title text="(" required="false"/>
+							<ComboBox id="versionSelection" items="{ path: 'entitySetView>/versions' }" selectionChange="onVersionChange">
+								<core:Item key="{entitySetView>navigation}" text="{entityView>text}"/>
+							</ComboBox>
+							<Title text=")" required="false"/>
+						</HBox>
+						<Title id="tableHeader" text="{entitySetView>/entitySetTableTitle}"/>
+						<ToolbarSpacer/>
+						<SearchField id="searchField" tooltip="{i18n>search.searchTooltip}" search="onSearch" width="auto"></SearchField>
+					</Toolbar>
+				</headerToolbar>
+				<columns>
+					<Column >
+						<Text text="{i18n>Opportunitys.this}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>Opportunitys.Opportunity_Amount}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>Opportunitys.Opportunity_CloseDate}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>Opportunitys.Opportunity_CreatedDate}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>Opportunitys.Opportunity_Description}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>Opportunitys.Opportunity_Fiscal}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>Opportunitys.Opportunity_FiscalQuarter}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>Opportunitys.Opportunity_FiscalYear}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>Opportunitys.Opportunity_ForecastCategory}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>Opportunitys.Opportunity_ForecastCategoryName}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>Opportunitys.Opportunity_HasOpenActivity}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>Opportunitys.Opportunity_HasOpportunityLineItem}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>Opportunitys.Opportunity_HasOverdueTask}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>Opportunitys.Opportunity_Id}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>Opportunitys.Opportunity_IsClosed}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>Opportunitys.Opportunity_IsDeleted}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>Opportunitys.Opportunity_IsExcludedFromTerritory2Filter}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>Opportunitys.Opportunity_IsWon}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>Opportunitys.Opportunity_LastActivityDate}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>Opportunitys.Opportunity_LastModifiedDate}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>Opportunitys.Opportunity_LastReferencedDate}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>Opportunitys.Opportunity_LastViewedDate}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>Opportunitys.Opportunity_LeadSource}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>Opportunitys.Opportunity_Name}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>Opportunitys.Opportunity_NextStep}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>Opportunitys.Opportunity_Probability}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>Opportunitys.Opportunity_StageName}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>Opportunitys.Opportunity_SystemModstamp}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>Opportunitys.Opportunity_Type}"/>
+					</Column>
+				</columns>
+				<items>
+					<ColumnListItem id="template360" type="Navigation" press="onPress">
+						<cells>
+							<rdf:TextResource path="dataModel>" entitySet="Opportunity"/>
+							<VBox>					
+							<Text text="{path:'dataModel>Opportunity_Amount/Opportunity_Amount',type:'sap.ui.model.type.Float', formatOptions:{'style':'short','maxFractionDigits':2} }"/>
+							</VBox>							
+							<VBox>					
+							<Text text="{dataModel>Opportunity_CloseDate/Opportunity_CloseDate}"/>
+							</VBox>							
+							<VBox>					
+							<Text text="{dataModel>Opportunity_CreatedDate/Opportunity_CreatedDate}"/>
+							</VBox>							
+							<VBox>					
+							<rdf:TextLink text="{path:'dataModel>Opportunity_Description/Opportunity_Description',type:'sap.ui.model.type.String'}" linkText="{i18n>Opportunity.Opportunity_Description/Opportunity_Description}"/>
+							</VBox>							
+							<VBox>					
+							<rdf:TextLink text="{path:'dataModel>Opportunity_Fiscal/Opportunity_Fiscal',type:'sap.ui.model.type.String'}" linkText="{i18n>Opportunity.Opportunity_Fiscal/Opportunity_Fiscal}"/>
+							</VBox>							
+							<VBox>					
+							<Text text="{path:'dataModel>Opportunity_FiscalQuarter/Opportunity_FiscalQuarter',type:'sap.ui.model.type.Integer' }"/>
+							</VBox>							
+							<VBox>					
+							<Text text="{path:'dataModel>Opportunity_FiscalYear/Opportunity_FiscalYear',type:'sap.ui.model.type.Integer' }"/>
+							</VBox>							
+							<VBox>					
+							<rdf:TextLink text="{path:'dataModel>Opportunity_ForecastCategory/Opportunity_ForecastCategory',type:'sap.ui.model.type.String'}" linkText="{i18n>Opportunity.Opportunity_ForecastCategory/Opportunity_ForecastCategory}"/>
+							</VBox>							
+							<VBox>					
+							<rdf:TextLink text="{path:'dataModel>Opportunity_ForecastCategoryName/Opportunity_ForecastCategoryName',type:'sap.ui.model.type.String'}" linkText="{i18n>Opportunity.Opportunity_ForecastCategoryName/Opportunity_ForecastCategoryName}"/>
+							</VBox>							
+							<VBox>					
+								<Text text="{path:'dataModel>Opportunity_HasOpenActivity/Opportunity_HasOpenActivity',type:'sap.ui.model.type.Boolean'}"/>  
+							</VBox>							
+							<VBox>					
+								<Text text="{path:'dataModel>Opportunity_HasOpportunityLineItem/Opportunity_HasOpportunityLineItem',type:'sap.ui.model.type.Boolean'}"/>  
+							</VBox>							
+							<VBox>					
+								<Text text="{path:'dataModel>Opportunity_HasOverdueTask/Opportunity_HasOverdueTask',type:'sap.ui.model.type.Boolean'}"/>  
+							</VBox>							
+							<VBox>					
+							<rdf:TextLink text="{path:'dataModel>Opportunity_Id/Opportunity_Id',type:'sap.ui.model.type.String'}" linkText="{i18n>Opportunity.Opportunity_Id/Opportunity_Id}"/>
+							</VBox>							
+							<VBox>					
+								<Text text="{path:'dataModel>Opportunity_IsClosed/Opportunity_IsClosed',type:'sap.ui.model.type.Boolean'}"/>  
+							</VBox>							
+							<VBox>					
+								<Text text="{path:'dataModel>Opportunity_IsDeleted/Opportunity_IsDeleted',type:'sap.ui.model.type.Boolean'}"/>  
+							</VBox>							
+							<VBox>					
+								<Text text="{path:'dataModel>Opportunity_IsExcludedFromTerritory2Filter/Opportunity_IsExcludedFromTerritory2Filter',type:'sap.ui.model.type.Boolean'}"/>  
+							</VBox>							
+							<VBox>					
+								<Text text="{path:'dataModel>Opportunity_IsWon/Opportunity_IsWon',type:'sap.ui.model.type.Boolean'}"/>  
+							</VBox>							
+							<VBox>					
+							<Text text="{dataModel>Opportunity_LastActivityDate/Opportunity_LastActivityDate}"/>
+							</VBox>							
+							<VBox>					
+							<Text text="{dataModel>Opportunity_LastModifiedDate/Opportunity_LastModifiedDate}"/>
+							</VBox>							
+							<VBox>					
+							<Text text="{dataModel>Opportunity_LastReferencedDate/Opportunity_LastReferencedDate}"/>
+							</VBox>							
+							<VBox>					
+							<Text text="{dataModel>Opportunity_LastViewedDate/Opportunity_LastViewedDate}"/>
+							</VBox>							
+							<VBox>					
+							<rdf:TextLink text="{path:'dataModel>Opportunity_LeadSource/Opportunity_LeadSource',type:'sap.ui.model.type.String'}" linkText="{i18n>Opportunity.Opportunity_LeadSource/Opportunity_LeadSource}"/>
+							</VBox>							
+							<VBox>					
+							<rdf:TextLink text="{path:'dataModel>Opportunity_Name/Opportunity_Name',type:'sap.ui.model.type.String'}" linkText="{i18n>Opportunity.Opportunity_Name/Opportunity_Name}"/>
+							</VBox>							
+							<VBox>					
+							<rdf:TextLink text="{path:'dataModel>Opportunity_NextStep/Opportunity_NextStep',type:'sap.ui.model.type.String'}" linkText="{i18n>Opportunity.Opportunity_NextStep/Opportunity_NextStep}"/>
+							</VBox>							
+							<VBox>					
+							<Text text="{path:'dataModel>Opportunity_Probability/Opportunity_Probability',type:'sap.ui.model.type.Float', formatOptions:{'style':'short','maxFractionDigits':2} }"/>
+							</VBox>							
+							<VBox>					
+							<rdf:TextLink text="{path:'dataModel>Opportunity_StageName/Opportunity_StageName',type:'sap.ui.model.type.String'}" linkText="{i18n>Opportunity.Opportunity_StageName/Opportunity_StageName}"/>
+							</VBox>							
+							<VBox>					
+							<Text text="{dataModel>Opportunity_SystemModstamp/Opportunity_SystemModstamp}"/>
+							</VBox>							
+							<VBox>					
+							<rdf:TextLink text="{path:'dataModel>Opportunity_Type/Opportunity_Type',type:'sap.ui.model.type.String'}" linkText="{i18n>Opportunity.Opportunity_Type/Opportunity_Type}"/>
+							</VBox>							
+						</cells>
+					</ColumnListItem>
+				</items>
+			</Table>
+		</content>
+	</Page>
+</mvc:View>

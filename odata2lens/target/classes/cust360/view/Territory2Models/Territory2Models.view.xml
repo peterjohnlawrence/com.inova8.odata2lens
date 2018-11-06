@@ -1,0 +1,127 @@
+<mvc:View controllerName="com.inova8.lens.controller.EntitySet360" xmlns="sap.m" xmlns:mvc="sap.ui.core.mvc" xmlns:layout="sap.ui.layout"
+	xmlns:rdf="com.inova8.lens.control" xmlns:core="sap.ui.core">
+	<Page showHeader="false" id="page" navButtonPress="onNavBack" showNavButton="true" title="{i18n>Territory2Models.ViewTitle}">
+		<content>
+			<Table id="table360" inset="false" items="{ path: 'dataModel>/Territory2Model' , sorter: { path: 'label', descending: false } 
+				}"
+				noDataText="{entitySetView>/tableNoDataText}" busyIndicatorDelay="{entitySetView>/tableBusyDelay}" growing="true" growingScrollToLoad="true"
+				updateFinished="onUpdateFinished"  fixedLayout="false">
+				<headerToolbar>
+					<Toolbar>
+						<ToolbarSpacer/>
+						<HBox id="sourceTitle" alignItems="Center">
+							<rdf:TextResource id="selectedResource" path="" entitySet=""/>
+						</HBox>
+						<Title id="pathTitle" text="{entitySetView>/navigationText}"/>
+						<HBox id="versionsTitle" alignItems="Center">
+							<Title text="(" required="false"/>
+							<ComboBox id="versionSelection" items="{ path: 'entitySetView>/versions' }" selectionChange="onVersionChange">
+								<core:Item key="{entitySetView>navigation}" text="{entityView>text}"/>
+							</ComboBox>
+							<Title text=")" required="false"/>
+						</HBox>
+						<Title id="tableHeader" text="{entitySetView>/entitySetTableTitle}"/>
+						<ToolbarSpacer/>
+						<SearchField id="searchField" tooltip="{i18n>search.searchTooltip}" search="onSearch" width="auto"></SearchField>
+					</Toolbar>
+				</headerToolbar>
+				<columns>
+					<Column >
+						<Text text="{i18n>Territory2Models.this}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>Territory2Models.Territory2Model_ActivatedDate}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>Territory2Models.Territory2Model_CreatedDate}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>Territory2Models.Territory2Model_DeactivatedDate}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>Territory2Models.Territory2Model_Description}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>Territory2Models.Territory2Model_DeveloperName}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>Territory2Models.Territory2Model_Id}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>Territory2Models.Territory2Model_IsCloneSource}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>Territory2Models.Territory2Model_IsDeleted}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>Territory2Models.Territory2Model_LastModifiedDate}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>Territory2Models.Territory2Model_LastOppTerrAssignEndDate}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>Territory2Models.Territory2Model_LastRunRulesEndDate}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>Territory2Models.Territory2Model_Name}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>Territory2Models.Territory2Model_State}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>Territory2Models.Territory2Model_SystemModstamp}"/>
+					</Column>
+				</columns>
+				<items>
+					<ColumnListItem id="template360" type="Navigation" press="onPress">
+						<cells>
+							<rdf:TextResource path="dataModel>" entitySet="Territory2Model"/>
+							<VBox>					
+							<Text text="{dataModel>Territory2Model_ActivatedDate/Territory2Model_ActivatedDate}"/>
+							</VBox>							
+							<VBox>					
+							<Text text="{dataModel>Territory2Model_CreatedDate/Territory2Model_CreatedDate}"/>
+							</VBox>							
+							<VBox>					
+							<Text text="{dataModel>Territory2Model_DeactivatedDate/Territory2Model_DeactivatedDate}"/>
+							</VBox>							
+							<VBox>					
+							<rdf:TextLink text="{path:'dataModel>Territory2Model_Description/Territory2Model_Description',type:'sap.ui.model.type.String'}" linkText="{i18n>Territory2Model.Territory2Model_Description/Territory2Model_Description}"/>
+							</VBox>							
+							<VBox>					
+							<rdf:TextLink text="{path:'dataModel>Territory2Model_DeveloperName/Territory2Model_DeveloperName',type:'sap.ui.model.type.String'}" linkText="{i18n>Territory2Model.Territory2Model_DeveloperName/Territory2Model_DeveloperName}"/>
+							</VBox>							
+							<VBox>					
+							<rdf:TextLink text="{path:'dataModel>Territory2Model_Id/Territory2Model_Id',type:'sap.ui.model.type.String'}" linkText="{i18n>Territory2Model.Territory2Model_Id/Territory2Model_Id}"/>
+							</VBox>							
+							<VBox>					
+								<Text text="{path:'dataModel>Territory2Model_IsCloneSource/Territory2Model_IsCloneSource',type:'sap.ui.model.type.Boolean'}"/>  
+							</VBox>							
+							<VBox>					
+								<Text text="{path:'dataModel>Territory2Model_IsDeleted/Territory2Model_IsDeleted',type:'sap.ui.model.type.Boolean'}"/>  
+							</VBox>							
+							<VBox>					
+							<Text text="{dataModel>Territory2Model_LastModifiedDate/Territory2Model_LastModifiedDate}"/>
+							</VBox>							
+							<VBox>					
+							<Text text="{dataModel>Territory2Model_LastOppTerrAssignEndDate/Territory2Model_LastOppTerrAssignEndDate}"/>
+							</VBox>							
+							<VBox>					
+							<Text text="{dataModel>Territory2Model_LastRunRulesEndDate/Territory2Model_LastRunRulesEndDate}"/>
+							</VBox>							
+							<VBox>					
+							<rdf:TextLink text="{path:'dataModel>Territory2Model_Name/Territory2Model_Name',type:'sap.ui.model.type.String'}" linkText="{i18n>Territory2Model.Territory2Model_Name/Territory2Model_Name}"/>
+							</VBox>							
+							<VBox>					
+							<rdf:TextLink text="{path:'dataModel>Territory2Model_State/Territory2Model_State',type:'sap.ui.model.type.String'}" linkText="{i18n>Territory2Model.Territory2Model_State/Territory2Model_State}"/>
+							</VBox>							
+							<VBox>					
+							<Text text="{dataModel>Territory2Model_SystemModstamp/Territory2Model_SystemModstamp}"/>
+							</VBox>							
+						</cells>
+					</ColumnListItem>
+				</items>
+			</Table>
+		</content>
+	</Page>
+</mvc:View>

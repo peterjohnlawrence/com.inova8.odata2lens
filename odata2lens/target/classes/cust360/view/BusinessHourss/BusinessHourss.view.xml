@@ -1,0 +1,181 @@
+<mvc:View controllerName="com.inova8.lens.controller.EntitySet360" xmlns="sap.m" xmlns:mvc="sap.ui.core.mvc" xmlns:layout="sap.ui.layout"
+	xmlns:rdf="com.inova8.lens.control" xmlns:core="sap.ui.core">
+	<Page showHeader="false" id="page" navButtonPress="onNavBack" showNavButton="true" title="{i18n>BusinessHourss.ViewTitle}">
+		<content>
+			<Table id="table360" inset="false" items="{ path: 'dataModel>/BusinessHours' , sorter: { path: 'label', descending: false } 
+				}"
+				noDataText="{entitySetView>/tableNoDataText}" busyIndicatorDelay="{entitySetView>/tableBusyDelay}" growing="true" growingScrollToLoad="true"
+				updateFinished="onUpdateFinished"  fixedLayout="false">
+				<headerToolbar>
+					<Toolbar>
+						<ToolbarSpacer/>
+						<HBox id="sourceTitle" alignItems="Center">
+							<rdf:TextResource id="selectedResource" path="" entitySet=""/>
+						</HBox>
+						<Title id="pathTitle" text="{entitySetView>/navigationText}"/>
+						<HBox id="versionsTitle" alignItems="Center">
+							<Title text="(" required="false"/>
+							<ComboBox id="versionSelection" items="{ path: 'entitySetView>/versions' }" selectionChange="onVersionChange">
+								<core:Item key="{entitySetView>navigation}" text="{entityView>text}"/>
+							</ComboBox>
+							<Title text=")" required="false"/>
+						</HBox>
+						<Title id="tableHeader" text="{entitySetView>/entitySetTableTitle}"/>
+						<ToolbarSpacer/>
+						<SearchField id="searchField" tooltip="{i18n>search.searchTooltip}" search="onSearch" width="auto"></SearchField>
+					</Toolbar>
+				</headerToolbar>
+				<columns>
+					<Column >
+						<Text text="{i18n>BusinessHourss.this}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>BusinessHourss.BusinessHours_CreatedDate}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>BusinessHourss.BusinessHours_FridayEndTime}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>BusinessHourss.BusinessHours_FridayStartTime}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>BusinessHourss.BusinessHours_Id}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>BusinessHourss.BusinessHours_IsActive}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>BusinessHourss.BusinessHours_IsDefault}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>BusinessHourss.BusinessHours_LastModifiedDate}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>BusinessHourss.BusinessHours_LastViewedDate}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>BusinessHourss.BusinessHours_MondayEndTime}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>BusinessHourss.BusinessHours_MondayStartTime}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>BusinessHourss.BusinessHours_Name}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>BusinessHourss.BusinessHours_SaturdayEndTime}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>BusinessHourss.BusinessHours_SaturdayStartTime}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>BusinessHourss.BusinessHours_SundayEndTime}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>BusinessHourss.BusinessHours_SundayStartTime}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>BusinessHourss.BusinessHours_SystemModstamp}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>BusinessHourss.BusinessHours_ThursdayEndTime}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>BusinessHourss.BusinessHours_ThursdayStartTime}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>BusinessHourss.BusinessHours_TimeZoneSidKey}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>BusinessHourss.BusinessHours_TuesdayEndTime}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>BusinessHourss.BusinessHours_TuesdayStartTime}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>BusinessHourss.BusinessHours_WednesdayEndTime}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>BusinessHourss.BusinessHours_WednesdayStartTime}"/>
+					</Column>
+				</columns>
+				<items>
+					<ColumnListItem id="template360" type="Navigation" press="onPress">
+						<cells>
+							<rdf:TextResource path="dataModel>" entitySet="BusinessHours"/>
+							<VBox>					
+							<Text text="{dataModel>BusinessHours_CreatedDate/BusinessHours_CreatedDate}"/>
+							</VBox>							
+							<VBox>					
+							<Text text="{dataModel>BusinessHours_FridayEndTime/BusinessHours_FridayEndTime}"/>
+							</VBox>							
+							<VBox>					
+							<Text text="{dataModel>BusinessHours_FridayStartTime/BusinessHours_FridayStartTime}"/>
+							</VBox>							
+							<VBox>					
+							<rdf:TextLink text="{path:'dataModel>BusinessHours_Id/BusinessHours_Id',type:'sap.ui.model.type.String'}" linkText="{i18n>BusinessHours.BusinessHours_Id/BusinessHours_Id}"/>
+							</VBox>							
+							<VBox>					
+								<Text text="{path:'dataModel>BusinessHours_IsActive/BusinessHours_IsActive',type:'sap.ui.model.type.Boolean'}"/>  
+							</VBox>							
+							<VBox>					
+								<Text text="{path:'dataModel>BusinessHours_IsDefault/BusinessHours_IsDefault',type:'sap.ui.model.type.Boolean'}"/>  
+							</VBox>							
+							<VBox>					
+							<Text text="{dataModel>BusinessHours_LastModifiedDate/BusinessHours_LastModifiedDate}"/>
+							</VBox>							
+							<VBox>					
+							<Text text="{dataModel>BusinessHours_LastViewedDate/BusinessHours_LastViewedDate}"/>
+							</VBox>							
+							<VBox>					
+							<Text text="{dataModel>BusinessHours_MondayEndTime/BusinessHours_MondayEndTime}"/>
+							</VBox>							
+							<VBox>					
+							<Text text="{dataModel>BusinessHours_MondayStartTime/BusinessHours_MondayStartTime}"/>
+							</VBox>							
+							<VBox>					
+							<rdf:TextLink text="{path:'dataModel>BusinessHours_Name/BusinessHours_Name',type:'sap.ui.model.type.String'}" linkText="{i18n>BusinessHours.BusinessHours_Name/BusinessHours_Name}"/>
+							</VBox>							
+							<VBox>					
+							<Text text="{dataModel>BusinessHours_SaturdayEndTime/BusinessHours_SaturdayEndTime}"/>
+							</VBox>							
+							<VBox>					
+							<Text text="{dataModel>BusinessHours_SaturdayStartTime/BusinessHours_SaturdayStartTime}"/>
+							</VBox>							
+							<VBox>					
+							<Text text="{dataModel>BusinessHours_SundayEndTime/BusinessHours_SundayEndTime}"/>
+							</VBox>							
+							<VBox>					
+							<Text text="{dataModel>BusinessHours_SundayStartTime/BusinessHours_SundayStartTime}"/>
+							</VBox>							
+							<VBox>					
+							<Text text="{dataModel>BusinessHours_SystemModstamp/BusinessHours_SystemModstamp}"/>
+							</VBox>							
+							<VBox>					
+							<Text text="{dataModel>BusinessHours_ThursdayEndTime/BusinessHours_ThursdayEndTime}"/>
+							</VBox>							
+							<VBox>					
+							<Text text="{dataModel>BusinessHours_ThursdayStartTime/BusinessHours_ThursdayStartTime}"/>
+							</VBox>							
+							<VBox>					
+							<rdf:TextLink text="{path:'dataModel>BusinessHours_TimeZoneSidKey/BusinessHours_TimeZoneSidKey',type:'sap.ui.model.type.String'}" linkText="{i18n>BusinessHours.BusinessHours_TimeZoneSidKey/BusinessHours_TimeZoneSidKey}"/>
+							</VBox>							
+							<VBox>					
+							<Text text="{dataModel>BusinessHours_TuesdayEndTime/BusinessHours_TuesdayEndTime}"/>
+							</VBox>							
+							<VBox>					
+							<Text text="{dataModel>BusinessHours_TuesdayStartTime/BusinessHours_TuesdayStartTime}"/>
+							</VBox>							
+							<VBox>					
+							<Text text="{dataModel>BusinessHours_WednesdayEndTime/BusinessHours_WednesdayEndTime}"/>
+							</VBox>							
+							<VBox>					
+							<Text text="{dataModel>BusinessHours_WednesdayStartTime/BusinessHours_WednesdayStartTime}"/>
+							</VBox>							
+						</cells>
+					</ColumnListItem>
+				</items>
+			</Table>
+		</content>
+	</Page>
+</mvc:View>

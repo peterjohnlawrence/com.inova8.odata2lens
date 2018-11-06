@@ -1,0 +1,301 @@
+<mvc:View controllerName="com.inova8.lens.controller.Entity360" xmlns="sap.m" xmlns:mvc="sap.ui.core.mvc" xmlns:l="sap.ui.layout"
+	xmlns:f="sap.ui.layout.form" xmlns:table="sap.ui.table" xmlns:rdf="com.inova8.lens.control" xmlns:html="http://www.w3.org/1999/xhtml"
+	xmlns:core="sap.ui.core">
+	<Page showHeader="true" id="page" navButtonPress="onNavBack" showNavButton="false" title="{i18n>ContentDistribution.Title}" busy="{entityView>/busy}"
+		busyIndicatorDelay="{entityView>/delay}" >
+		<customHeader>
+			<Toolbar>
+				<ToolbarSpacer/>
+				<HBox id="sourceTitle" alignItems="Center">
+						<rdf:TextResource id="selectedResource" path="" entitySet=""/>
+				</HBox>	
+				<Title id="pathTitle" text="{entityView>/navigation}"/>
+				<HBox id="versionsTitle" alignItems="Center">
+					<Title text="(" required="false"/>
+					<ComboBox id="versionSelection" items="{ path: 'entityView>/versions' }" selectionChange="onVersionChange">
+						<core:Item key="{entityView>navigation}" text="{entityView>text}"/>
+					</ComboBox>
+					<Title text=")" required="false"/>
+				</HBox>
+				<Title text="{i18n>ContentDistribution.this}"/>
+				<Title text="(" required="false"/>
+				<rdf:TextResource path="dataModel>" entitySet="ContentDistribution"/>
+				<Title text=")" required="false"/>
+	
+				<ToolbarSpacer/>
+				<ToggleButton id="toggleColumns" icon="sap-icon://hide" activeIcon="sap-icon://show" press="onSettingsPressed" visible="false"	>
+					<layoutData>
+						<OverflowToolbarLayoutData priority="NeverOverflow"/>
+					</layoutData>
+				</ToggleButton>
+				
+			</Toolbar>
+		</customHeader>
+		<Table id="form360" inset="false" fixedLayout="true" class="multicolumnform" updateFinished="hideColumns">
+			<columns>
+				<Column hAlign="Right" width="200px">
+					<Text text=""/>
+				</Column>
+				<Column visible="true">
+				</Column>
+				<Column visible="true">
+					<Text text="ContentDistribution"/>
+				</Column>
+			</columns>
+			<items>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>ContentDistribution.ContentDistributionView_DistributionId_Inverse}" required="false"/> 
+						<Text text=""/>
+						<rdf:ListResource path="dataModel>ContentDistributionView_DistributionId_Inverse/sfdc_ContentDistributionView_DistributionId_Inverse" entitySet="ContentDistributionView"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>ContentDistribution.ContentDistribution_ContentDocumentId}" required="false"/> 
+						<Text text=""/>
+						<rdf:ListResource path="dataModel>ContentDistribution_ContentDocumentId/sfdc_ContentDistribution_ContentDocumentId" entitySet="ContentDocument"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>ContentDistribution.ContentDistribution_ContentDownloadUrl}" required="false"/> 
+						<Text text=""/>
+						<rdf:TextLink text="{path:'dataModel>ContentDistribution_ContentDownloadUrl/ContentDistribution_ContentDownloadUrl',type:'sap.ui.model.type.String' }" linkText="{i18n>ContentDistribution.ContentDistribution_ContentDownloadUrl/ContentDistribution_ContentDownloadUrl}"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>ContentDistribution.ContentDistribution_ContentVersionId}" required="false"/> 
+						<Text text=""/>
+						<rdf:ListResource path="dataModel>ContentDistribution_ContentVersionId/sfdc_ContentDistribution_ContentVersionId" entitySet="ContentVersion"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>ContentDistribution.ContentDistribution_CreatedById}" required="false"/> 
+						<Text text=""/>
+						<rdf:ListResource path="dataModel>ContentDistribution_CreatedById/sfdc_ContentDistribution_CreatedById" entitySet="User"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>ContentDistribution.ContentDistribution_CreatedDate}" required="false"/> 
+						<Text text=""/>
+						<Text text="{dataModel>ContentDistribution_CreatedDate/ContentDistribution_CreatedDate}"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>ContentDistribution.ContentDistribution_DistributionPublicUrl}" required="false"/> 
+						<Text text=""/>
+						<rdf:TextLink text="{path:'dataModel>ContentDistribution_DistributionPublicUrl/ContentDistribution_DistributionPublicUrl',type:'sap.ui.model.type.String' }" linkText="{i18n>ContentDistribution.ContentDistribution_DistributionPublicUrl/ContentDistribution_DistributionPublicUrl}"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>ContentDistribution.ContentDistribution_ExpiryDate}" required="false"/> 
+						<Text text=""/>
+						<Text text="{dataModel>ContentDistribution_ExpiryDate/ContentDistribution_ExpiryDate}"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>ContentDistribution.ContentDistribution_FirstViewDate}" required="false"/> 
+						<Text text=""/>
+						<Text text="{dataModel>ContentDistribution_FirstViewDate/ContentDistribution_FirstViewDate}"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>ContentDistribution.ContentDistribution_Id}" required="false"/> 
+						<Text text=""/>
+						<rdf:TextLink text="{path:'dataModel>ContentDistribution_Id/ContentDistribution_Id',type:'sap.ui.model.type.String' }" linkText="{i18n>ContentDistribution.ContentDistribution_Id/ContentDistribution_Id}"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>ContentDistribution.ContentDistribution_IsDeleted}" required="false"/> 
+						<Text text=""/>
+						<Text text="{path:'dataModel>ContentDistribution_IsDeleted/ContentDistribution_IsDeleted',type:'sap.ui.model.type.Boolean'}"/>  
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>ContentDistribution.ContentDistribution_LastModifiedById}" required="false"/> 
+						<Text text=""/>
+						<rdf:ListResource path="dataModel>ContentDistribution_LastModifiedById/sfdc_ContentDistribution_LastModifiedById" entitySet="User"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>ContentDistribution.ContentDistribution_LastModifiedDate}" required="false"/> 
+						<Text text=""/>
+						<Text text="{dataModel>ContentDistribution_LastModifiedDate/ContentDistribution_LastModifiedDate}"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>ContentDistribution.ContentDistribution_LastViewDate}" required="false"/> 
+						<Text text=""/>
+						<Text text="{dataModel>ContentDistribution_LastViewDate/ContentDistribution_LastViewDate}"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>ContentDistribution.ContentDistribution_Name}" required="false"/> 
+						<Text text=""/>
+						<rdf:TextLink text="{path:'dataModel>ContentDistribution_Name/ContentDistribution_Name',type:'sap.ui.model.type.String' }" linkText="{i18n>ContentDistribution.ContentDistribution_Name/ContentDistribution_Name}"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>ContentDistribution.ContentDistribution_OwnerId}" required="false"/> 
+						<Text text=""/>
+						<rdf:ListResource path="dataModel>ContentDistribution_OwnerId/sfdc_ContentDistribution_OwnerId" entitySet="User"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>ContentDistribution.ContentDistribution_Password}" required="false"/> 
+						<Text text=""/>
+						<rdf:TextLink text="{path:'dataModel>ContentDistribution_Password/ContentDistribution_Password',type:'sap.ui.model.type.String' }" linkText="{i18n>ContentDistribution.ContentDistribution_Password/ContentDistribution_Password}"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>ContentDistribution.ContentDistribution_PdfDownloadUrl}" required="false"/> 
+						<Text text=""/>
+						<rdf:TextLink text="{path:'dataModel>ContentDistribution_PdfDownloadUrl/ContentDistribution_PdfDownloadUrl',type:'sap.ui.model.type.String' }" linkText="{i18n>ContentDistribution.ContentDistribution_PdfDownloadUrl/ContentDistribution_PdfDownloadUrl}"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>ContentDistribution.ContentDistribution_PreferencesAllowOriginalDownload}" required="false"/> 
+						<Text text=""/>
+						<Text text="{path:'dataModel>ContentDistribution_PreferencesAllowOriginalDownload/ContentDistribution_PreferencesAllowOriginalDownload',type:'sap.ui.model.type.Boolean'}"/>  
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>ContentDistribution.ContentDistribution_PreferencesAllowPDFDownload}" required="false"/> 
+						<Text text=""/>
+						<Text text="{path:'dataModel>ContentDistribution_PreferencesAllowPDFDownload/ContentDistribution_PreferencesAllowPDFDownload',type:'sap.ui.model.type.Boolean'}"/>  
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>ContentDistribution.ContentDistribution_PreferencesAllowViewInBrowser}" required="false"/> 
+						<Text text=""/>
+						<Text text="{path:'dataModel>ContentDistribution_PreferencesAllowViewInBrowser/ContentDistribution_PreferencesAllowViewInBrowser',type:'sap.ui.model.type.Boolean'}"/>  
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>ContentDistribution.ContentDistribution_PreferencesExpires}" required="false"/> 
+						<Text text=""/>
+						<Text text="{path:'dataModel>ContentDistribution_PreferencesExpires/ContentDistribution_PreferencesExpires',type:'sap.ui.model.type.Boolean'}"/>  
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>ContentDistribution.ContentDistribution_PreferencesLinkLatestVersion}" required="false"/> 
+						<Text text=""/>
+						<Text text="{path:'dataModel>ContentDistribution_PreferencesLinkLatestVersion/ContentDistribution_PreferencesLinkLatestVersion',type:'sap.ui.model.type.Boolean'}"/>  
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>ContentDistribution.ContentDistribution_PreferencesNotifyOnVisit}" required="false"/> 
+						<Text text=""/>
+						<Text text="{path:'dataModel>ContentDistribution_PreferencesNotifyOnVisit/ContentDistribution_PreferencesNotifyOnVisit',type:'sap.ui.model.type.Boolean'}"/>  
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>ContentDistribution.ContentDistribution_PreferencesNotifyRndtnComplete}" required="false"/> 
+						<Text text=""/>
+						<Text text="{path:'dataModel>ContentDistribution_PreferencesNotifyRndtnComplete/ContentDistribution_PreferencesNotifyRndtnComplete',type:'sap.ui.model.type.Boolean'}"/>  
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>ContentDistribution.ContentDistribution_PreferencesPasswordRequired}" required="false"/> 
+						<Text text=""/>
+						<Text text="{path:'dataModel>ContentDistribution_PreferencesPasswordRequired/ContentDistribution_PreferencesPasswordRequired',type:'sap.ui.model.type.Boolean'}"/>  
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>ContentDistribution.ContentDistribution_RelatedRecordId}" required="false"/> 
+						<Text text=""/>
+						<rdf:ListResource path="dataModel>ContentDistribution_RelatedRecordId/sfdc_ContentDistribution_RelatedRecordId" entitySet="Account"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>ContentDistribution.ContentDistribution_SystemModstamp}" required="false"/> 
+						<Text text=""/>
+						<Text text="{dataModel>ContentDistribution_SystemModstamp/ContentDistribution_SystemModstamp}"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>ContentDistribution.ContentDistribution_ViewCount}" required="false"/> 
+						<Text text=""/>
+						<Text text="{path:'dataModel>ContentDistribution_ViewCount/ContentDistribution_ViewCount',type:'sap.ui.model.type.Integer' }"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>ContentDistribution.ContentDistributionView_DistributionId_Inverse}" required="false"/> 
+						<rdf:ListResource path="dataModel>ContentDistributionView_DistributionId_Inverse" entitySet="ContentDistributionView"/>
+						<Text text=""/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>ContentDistribution.ContentDistribution_ContentDocumentId}" required="false"/> 
+						<rdf:ListResource path="dataModel>ContentDistribution_ContentDocumentId" entitySet="ContentDocument"/>
+						<Text text=""/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>ContentDistribution.ContentDistribution_ContentVersionId}" required="false"/> 
+						<rdf:ListResource path="dataModel>ContentDistribution_ContentVersionId" entitySet="ContentVersion"/>
+						<Text text=""/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>ContentDistribution.ContentDistribution_CreatedById}" required="false"/> 
+						<rdf:ListResource path="dataModel>ContentDistribution_CreatedById" entitySet="User"/>
+						<Text text=""/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>ContentDistribution.ContentDistribution_LastModifiedById}" required="false"/> 
+						<rdf:ListResource path="dataModel>ContentDistribution_LastModifiedById" entitySet="User"/>
+						<Text text=""/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>ContentDistribution.ContentDistribution_OwnerId}" required="false"/> 
+						<rdf:ListResource path="dataModel>ContentDistribution_OwnerId" entitySet="User"/>
+						<Text text=""/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>ContentDistribution.ContentDistribution_RelatedRecordId}" required="false"/> 
+						<rdf:ListResource path="dataModel>ContentDistribution_RelatedRecordId" entitySet="Account"/>
+						<Text text=""/>
+					</cells>
+				</ColumnListItem>
+			</items>
+		</Table>
+	</Page>
+</mvc:View>

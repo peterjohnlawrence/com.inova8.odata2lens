@@ -1,0 +1,154 @@
+<mvc:View controllerName="com.inova8.lens.controller.Entity360" xmlns="sap.m" xmlns:mvc="sap.ui.core.mvc" xmlns:l="sap.ui.layout"
+	xmlns:f="sap.ui.layout.form" xmlns:table="sap.ui.table" xmlns:rdf="com.inova8.lens.control" xmlns:html="http://www.w3.org/1999/xhtml"
+	xmlns:core="sap.ui.core">
+	<Page showHeader="true" id="page" navButtonPress="onNavBack" showNavButton="false" title="{i18n>ApexTestQueueItem.Title}" busy="{entityView>/busy}"
+		busyIndicatorDelay="{entityView>/delay}" >
+		<customHeader>
+			<Toolbar>
+				<ToolbarSpacer/>
+				<HBox id="sourceTitle" alignItems="Center">
+						<rdf:TextResource id="selectedResource" path="" entitySet=""/>
+				</HBox>	
+				<Title id="pathTitle" text="{entityView>/navigation}"/>
+				<HBox id="versionsTitle" alignItems="Center">
+					<Title text="(" required="false"/>
+					<ComboBox id="versionSelection" items="{ path: 'entityView>/versions' }" selectionChange="onVersionChange">
+						<core:Item key="{entityView>navigation}" text="{entityView>text}"/>
+					</ComboBox>
+					<Title text=")" required="false"/>
+				</HBox>
+				<Title text="{i18n>ApexTestQueueItem.this}"/>
+				<Title text="(" required="false"/>
+				<rdf:TextResource path="dataModel>" entitySet="ApexTestQueueItem"/>
+				<Title text=")" required="false"/>
+	
+				<ToolbarSpacer/>
+				<ToggleButton id="toggleColumns" icon="sap-icon://hide" activeIcon="sap-icon://show" press="onSettingsPressed" visible="false"	>
+					<layoutData>
+						<OverflowToolbarLayoutData priority="NeverOverflow"/>
+					</layoutData>
+				</ToggleButton>
+				
+			</Toolbar>
+		</customHeader>
+		<Table id="form360" inset="false" fixedLayout="true" class="multicolumnform" updateFinished="hideColumns">
+			<columns>
+				<Column hAlign="Right" width="200px">
+					<Text text=""/>
+				</Column>
+				<Column visible="true">
+				</Column>
+				<Column visible="true">
+					<Text text="ApexTestQueueItem"/>
+				</Column>
+			</columns>
+			<items>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>ApexTestQueueItem.ApexTestQueueItem_ApexClassId}" required="false"/> 
+						<Text text=""/>
+						<rdf:ListResource path="dataModel>ApexTestQueueItem_ApexClassId/sfdc_ApexTestQueueItem_ApexClassId" entitySet="ApexClass"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>ApexTestQueueItem.ApexTestQueueItem_CreatedById}" required="false"/> 
+						<Text text=""/>
+						<rdf:ListResource path="dataModel>ApexTestQueueItem_CreatedById/sfdc_ApexTestQueueItem_CreatedById" entitySet="User"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>ApexTestQueueItem.ApexTestQueueItem_CreatedDate}" required="false"/> 
+						<Text text=""/>
+						<Text text="{dataModel>ApexTestQueueItem_CreatedDate/ApexTestQueueItem_CreatedDate}"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>ApexTestQueueItem.ApexTestQueueItem_ExtendedStatus}" required="false"/> 
+						<Text text=""/>
+						<rdf:TextLink text="{path:'dataModel>ApexTestQueueItem_ExtendedStatus/ApexTestQueueItem_ExtendedStatus',type:'sap.ui.model.type.String' }" linkText="{i18n>ApexTestQueueItem.ApexTestQueueItem_ExtendedStatus/ApexTestQueueItem_ExtendedStatus}"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>ApexTestQueueItem.ApexTestQueueItem_Id}" required="false"/> 
+						<Text text=""/>
+						<rdf:TextLink text="{path:'dataModel>ApexTestQueueItem_Id/ApexTestQueueItem_Id',type:'sap.ui.model.type.String' }" linkText="{i18n>ApexTestQueueItem.ApexTestQueueItem_Id/ApexTestQueueItem_Id}"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>ApexTestQueueItem.ApexTestQueueItem_ParentJobId}" required="false"/> 
+						<Text text=""/>
+						<rdf:ListResource path="dataModel>ApexTestQueueItem_ParentJobId/sfdc_ApexTestQueueItem_ParentJobId" entitySet="AsyncApexJob"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>ApexTestQueueItem.ApexTestQueueItem_Status}" required="false"/> 
+						<Text text=""/>
+						<rdf:TextLink text="{path:'dataModel>ApexTestQueueItem_Status/ApexTestQueueItem_Status',type:'sap.ui.model.type.String' }" linkText="{i18n>ApexTestQueueItem.ApexTestQueueItem_Status/ApexTestQueueItem_Status}"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>ApexTestQueueItem.ApexTestQueueItem_SystemModstamp}" required="false"/> 
+						<Text text=""/>
+						<Text text="{dataModel>ApexTestQueueItem_SystemModstamp/ApexTestQueueItem_SystemModstamp}"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>ApexTestQueueItem.ApexTestQueueItem_TestRunResultId}" required="false"/> 
+						<Text text=""/>
+						<rdf:ListResource path="dataModel>ApexTestQueueItem_TestRunResultId/sfdc_ApexTestQueueItem_TestRunResultId" entitySet="ApexTestRunResult"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>ApexTestQueueItem.ApexTestResult_QueueItemId_Inverse}" required="false"/> 
+						<Text text=""/>
+						<rdf:ListResource path="dataModel>ApexTestResult_QueueItemId_Inverse/sfdc_ApexTestResult_QueueItemId_Inverse" entitySet="ApexTestResult"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>ApexTestQueueItem.ApexTestQueueItem_ApexClassId}" required="false"/> 
+						<rdf:ListResource path="dataModel>ApexTestQueueItem_ApexClassId" entitySet="ApexClass"/>
+						<Text text=""/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>ApexTestQueueItem.ApexTestQueueItem_CreatedById}" required="false"/> 
+						<rdf:ListResource path="dataModel>ApexTestQueueItem_CreatedById" entitySet="User"/>
+						<Text text=""/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>ApexTestQueueItem.ApexTestQueueItem_ParentJobId}" required="false"/> 
+						<rdf:ListResource path="dataModel>ApexTestQueueItem_ParentJobId" entitySet="AsyncApexJob"/>
+						<Text text=""/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>ApexTestQueueItem.ApexTestQueueItem_TestRunResultId}" required="false"/> 
+						<rdf:ListResource path="dataModel>ApexTestQueueItem_TestRunResultId" entitySet="ApexTestRunResult"/>
+						<Text text=""/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>ApexTestQueueItem.ApexTestResult_QueueItemId_Inverse}" required="false"/> 
+						<rdf:ListResource path="dataModel>ApexTestResult_QueueItemId_Inverse" entitySet="ApexTestResult"/>
+						<Text text=""/>
+					</cells>
+				</ColumnListItem>
+			</items>
+		</Table>
+	</Page>
+</mvc:View>
