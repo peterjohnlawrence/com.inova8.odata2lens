@@ -16,7 +16,7 @@
 						<HBox id="versionsTitle" alignItems="Center">
 							<Title text="(" required="false"/>
 							<ComboBox id="versionSelection" items="{ path: 'entitySetView>/versions' }" selectionChange="onVersionChange">
-								<core:Item key="{entitySetView>navigation}" text="{entityView>text}"/>
+								<core:Item key="{entitySetView>navigation}" text="{entitySetView>text}"/>
 							</ComboBox>
 							<Title text=")" required="false"/>
 						</HBox>
