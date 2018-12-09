@@ -302,8 +302,7 @@ public class GenerateLens {
 									edmEntityType.getName() + navigationPropertyName,
 									navigationPropertyAnnotations.containsKey("sap.label")
 											? navigationPropertyAnnotations.get("sap.label")
-											: "Show " + edmEntityType.getName() + "s "
-													+ edmNavigationProperty.getType().getName(),
+											: navigationPropertyName,
 									navigationPropertyAnnotations.containsKey("sap.quickinfo")
 											? navigationPropertyAnnotations.get("sap.quickinfo")
 											: "Show " + edmEntityType.getName() + "s "
@@ -383,7 +382,6 @@ public class GenerateLens {
 	}
 
 	private static boolean isFunctionImport(List<EdmFunction> edmFunctions, EdmEntityType edmEntityType) {
-		// TODO Auto-generated method stub
 		for (EdmFunction edmFunction : edmFunctions) {
 			if (edmFunction.getReturnType().getType().getName().equals(edmEntityType.getName()))
 				return true;
@@ -521,6 +519,7 @@ public class GenerateLens {
 
 	}
 
+	@SuppressWarnings("unused")
 	private static void generateEntityNavigationSet(String schemaName, StringWriter i18nWriter,
 			TreeMap<String, UITemplate> uiTemplates) throws IOException {
 

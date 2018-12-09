@@ -11,16 +11,16 @@
 				</HBox>	
 				<Title id="pathTitle" text="{entityView>/navigation}"/>
 				<HBox id="versionsTitle" alignItems="Center">
-					<Title text="(" required="false"/>
+					<Title text="("/>
 					<ComboBox id="versionSelection" items="{ path: 'entityView>/versions' }" selectionChange="onVersionChange">
 						<core:Item key="{entityView>navigation}" text="{entityView>text}"/>
 					</ComboBox>
-					<Title text=")" required="false"/>
+					<Title text=")" />
 				</HBox>
 				<Title text="{i18n>Customer_Order.this}"/>
-				<Title text="(" required="false"/>
+				<Title text="(" />
 				<rdf:TextResource path="dataModel>" entitySet="Customer_Order"/>
-				<Title text=")" required="false"/>
+				<Title text=")" />
 	
 				<ToolbarSpacer/>
 				<ToggleButton id="toggleColumns" icon="sap-icon://hide" activeIcon="sap-icon://show" press="onSettingsPressed" visible="false"	>

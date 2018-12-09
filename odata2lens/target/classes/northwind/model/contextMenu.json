@@ -161,7 +161,7 @@
 					}
 				}]
 			}
-		}
+													}
 	}
 	,
 	"Customer": {
@@ -248,18 +248,6 @@
 			}
 			, {
 				"type":"navigationSet",
-				"key": "customer_customer_Order",
-				"text": "is referenced in customer_order",
-				"icon": "sap-icon://northwind/Customer_Order",
-				"target": "Customer_Orders", 
-				"tooltip": "is referenced in customer_order",
-				"visible": true, 
-				"parameters": {
-					"navigation": "customer_customer_Order"
-				}	
-			}
-			, {
-				"type":"navigationSet",
 				"key": "hasPlacedOrder",
 				"text": "has placed Order",
 				"icon": "sap-icon://northwind/order",
@@ -297,33 +285,7 @@
 					}
 				}]
 			}
-		,
-			"customer_customer_Order": {
-				"target": "Customercustomer_customer_Order",
-				"icon": "sap-icon://northwind/customer",
-				"menu": [{
-					"type":"navigationSet",
-					"key": "graph",
-					"text": "Graph View",
-					"icon": "sap-icon://overview-chart",
-					"target": "navigationSetGraph",
-					"tooltip": "customer_customer_Order Graph",
-					"visible": true
-				}, {
-					"type":"navigationSet",
-					"key": "customer_customer_Order",
-					"text": "is referenced in customer_order",
-					"icon": "sap-icon://northwind/Customer_Order",
-					"target":  "Customer_Orders", 
-					"tooltip": "is referenced in customer_order",
-					"visible": true,
-					"parameters": {
-						"navigation": "customer_customer_Order"
-					}
-				}]
-			}
-		,
-			"hasPlacedOrder": {
+											, 			"hasPlacedOrder": {
 				"target": "CustomerhasPlacedOrder",
 				"icon": "sap-icon://northwind/customer",
 				"menu": [{
@@ -347,7 +309,7 @@
 					}
 				}]
 			}
-		}
+													}
 	}
 	,
 	"Customer_Order": {
@@ -671,8 +633,7 @@
 					}
 				}]
 			}
-		,
-			"managesEmployee": {
+											, 			"managesEmployee": {
 				"target": "EmployeemanagesEmployee",
 				"icon": "sap-icon://northwind/employee",
 				"menu": [{
@@ -696,8 +657,7 @@
 					}
 				}]
 			}
-		,
-			"managesOrder": {
+											, 			"managesOrder": {
 				"target": "EmployeemanagesOrder",
 				"icon": "sap-icon://northwind/employee",
 				"menu": [{
@@ -721,8 +681,7 @@
 					}
 				}]
 			}
-		,
-			"territory": {
+											, 			"territory": {
 				"target": "Employeeterritory",
 				"icon": "sap-icon://northwind/employee",
 				"menu": [{
@@ -746,7 +705,7 @@
 					}
 				}]
 			}
-		}
+													}
 	}
 	,
 	"Order": {
@@ -831,30 +790,6 @@
 					"navigation": "hasOrderDetail"
 				}	
 			}
-			, {
-				"type":"navigationSet",
-				"key": "order_customer_Order",
-				"text": "is summarized in",
-				"icon": "sap-icon://northwind/Customer_Order",
-				"target": "Customer_Orders", 
-				"tooltip": "is summarized in",
-				"visible": true, 
-				"parameters": {
-					"navigation": "order_customer_Order"
-				}	
-			}
-			, {
-				"type":"navigationSet",
-				"key": "order_orderSummary",
-				"text": "is referenced in a order summary",
-				"icon": "sap-icon://northwind/OrderSummary",
-				"target": "OrderSummarys", 
-				"tooltip": "is referenced in a order summary",
-				"visible": true, 
-				"parameters": {
-					"navigation": "order_orderSummary"
-				}	
-			}
 			, {				
 				"type":"navigationProperty",
 				"key": "customer",
@@ -930,57 +865,7 @@
 					}
 				}]
 			}
-		,
-			"order_customer_Order": {
-				"target": "Orderorder_customer_Order",
-				"icon": "sap-icon://northwind/order",
-				"menu": [{
-					"type":"navigationSet",
-					"key": "graph",
-					"text": "Graph View",
-					"icon": "sap-icon://overview-chart",
-					"target": "navigationSetGraph",
-					"tooltip": "order_customer_Order Graph",
-					"visible": true
-				}, {
-					"type":"navigationSet",
-					"key": "order_customer_Order",
-					"text": "is summarized in",
-					"icon": "sap-icon://northwind/Customer_Order",
-					"target":  "Customer_Orders", 
-					"tooltip": "is summarized in",
-					"visible": true,
-					"parameters": {
-						"navigation": "order_customer_Order"
-					}
-				}]
-			}
-		,
-			"order_orderSummary": {
-				"target": "Orderorder_orderSummary",
-				"icon": "sap-icon://northwind/order",
-				"menu": [{
-					"type":"navigationSet",
-					"key": "graph",
-					"text": "Graph View",
-					"icon": "sap-icon://overview-chart",
-					"target": "navigationSetGraph",
-					"tooltip": "order_orderSummary Graph",
-					"visible": true
-				}, {
-					"type":"navigationSet",
-					"key": "order_orderSummary",
-					"text": "is referenced in a order summary",
-					"icon": "sap-icon://northwind/OrderSummary",
-					"target":  "OrderSummarys", 
-					"tooltip": "is referenced in a order summary",
-					"visible": true,
-					"parameters": {
-						"navigation": "order_orderSummary"
-					}
-				}]
-			}
-		}
+													}
 	}
 	,
 	"OrderDetail": {
@@ -1283,18 +1168,6 @@
 					"navigation": "isPartOfOrderDetail"
 				}	
 			}
-			, {
-				"type":"navigationSet",
-				"key": "product_orderSummary",
-				"text": "is referenced in a order summary",
-				"icon": "sap-icon://northwind/OrderSummary",
-				"target": "OrderSummarys", 
-				"tooltip": "is referenced in a order summary",
-				"visible": true, 
-				"parameters": {
-					"navigation": "product_orderSummary"
-				}	
-			}
 			, {				
 				"type":"navigationProperty",
 				"key": "category",
@@ -1346,32 +1219,7 @@
 					}
 				}]
 			}
-		,
-			"product_orderSummary": {
-				"target": "Productproduct_orderSummary",
-				"icon": "sap-icon://northwind/parttimeEmployee",
-				"menu": [{
-					"type":"navigationSet",
-					"key": "graph",
-					"text": "Graph View",
-					"icon": "sap-icon://overview-chart",
-					"target": "navigationSetGraph",
-					"tooltip": "product_orderSummary Graph",
-					"visible": true
-				}, {
-					"type":"navigationSet",
-					"key": "product_orderSummary",
-					"text": "is referenced in a order summary",
-					"icon": "sap-icon://northwind/OrderSummary",
-					"target":  "OrderSummarys", 
-					"tooltip": "is referenced in a order summary",
-					"visible": true,
-					"parameters": {
-						"navigation": "product_orderSummary"
-					}
-				}]
-			}
-		}
+													}
 	}
 	,
 	"Region": {
@@ -1559,7 +1407,7 @@
 					}
 				}]
 			}
-		}
+													}
 	}
 	,
 	"Supplier": {
@@ -1683,8 +1531,7 @@
 					}
 				}]
 			}
-		,
-			"suppliesProduct": {
+											, 			"suppliesProduct": {
 				"target": "SuppliersuppliesProduct",
 				"icon": "sap-icon://northwind/supplier",
 				"menu": [{
@@ -1708,7 +1555,7 @@
 					}
 				}]
 			}
-		}
+													}
 	}
 	,
 	"SystemAEmployee": {
@@ -1913,8 +1760,7 @@
 					}
 				}]
 			}
-		,
-			"managesEmployee": {
+											, 			"managesEmployee": {
 				"target": "SystemAEmployeemanagesEmployee",
 				"icon": "sap-icon://expand-group",
 				"menu": [{
@@ -1938,8 +1784,7 @@
 					}
 				}]
 			}
-		,
-			"managesOrder": {
+											, 			"managesOrder": {
 				"target": "SystemAEmployeemanagesOrder",
 				"icon": "sap-icon://expand-group",
 				"menu": [{
@@ -1963,8 +1808,7 @@
 					}
 				}]
 			}
-		,
-			"systemACustomer": {
+											, 			"systemACustomer": {
 				"target": "SystemAEmployeesystemACustomer",
 				"icon": "sap-icon://expand-group",
 				"menu": [{
@@ -1988,8 +1832,7 @@
 					}
 				}]
 			}
-		,
-			"systemAEmployer": {
+											, 			"systemAEmployer": {
 				"target": "SystemAEmployeesystemAEmployer",
 				"icon": "sap-icon://expand-group",
 				"menu": [{
@@ -2013,8 +1856,7 @@
 					}
 				}]
 			}
-		,
-			"territory": {
+											, 			"territory": {
 				"target": "SystemAEmployeeterritory",
 				"icon": "sap-icon://expand-group",
 				"menu": [{
@@ -2038,7 +1880,7 @@
 					}
 				}]
 			}
-		}
+													}
 	}
 	,
 	"SystemAProduct": {
@@ -2132,18 +1974,6 @@
 					"navigation": "isPartOfOrderDetail"
 				}	
 			}
-			, {
-				"type":"navigationSet",
-				"key": "product_orderSummary",
-				"text": "is referenced in a order summary",
-				"icon": "sap-icon://northwind/OrderSummary",
-				"target": "OrderSummarys", 
-				"tooltip": "is referenced in a order summary",
-				"visible": true, 
-				"parameters": {
-					"navigation": "product_orderSummary"
-				}	
-			}
 			, {				
 				"type":"navigationProperty",
 				"key": "category",
@@ -2195,32 +2025,7 @@
 					}
 				}]
 			}
-		,
-			"product_orderSummary": {
-				"target": "SystemAProductproduct_orderSummary",
-				"icon": "sap-icon://expand-group",
-				"menu": [{
-					"type":"navigationSet",
-					"key": "graph",
-					"text": "Graph View",
-					"icon": "sap-icon://overview-chart",
-					"target": "navigationSetGraph",
-					"tooltip": "product_orderSummary Graph",
-					"visible": true
-				}, {
-					"type":"navigationSet",
-					"key": "product_orderSummary",
-					"text": "is referenced in a order summary",
-					"icon": "sap-icon://northwind/OrderSummary",
-					"target":  "OrderSummarys", 
-					"tooltip": "is referenced in a order summary",
-					"visible": true,
-					"parameters": {
-						"navigation": "product_orderSummary"
-					}
-				}]
-			}
-		}
+													}
 	}
 	,
 	"SystemBEmployee": {
@@ -2413,8 +2218,7 @@
 					}
 				}]
 			}
-		,
-			"managesEmployee": {
+											, 			"managesEmployee": {
 				"target": "SystemBEmployeemanagesEmployee",
 				"icon": "sap-icon://expand-group",
 				"menu": [{
@@ -2438,8 +2242,7 @@
 					}
 				}]
 			}
-		,
-			"managesOrder": {
+											, 			"managesOrder": {
 				"target": "SystemBEmployeemanagesOrder",
 				"icon": "sap-icon://expand-group",
 				"menu": [{
@@ -2463,8 +2266,7 @@
 					}
 				}]
 			}
-		,
-			"systemBEmployer": {
+											, 			"systemBEmployer": {
 				"target": "SystemBEmployeesystemBEmployer",
 				"icon": "sap-icon://expand-group",
 				"menu": [{
@@ -2488,8 +2290,7 @@
 					}
 				}]
 			}
-		,
-			"territory": {
+											, 			"territory": {
 				"target": "SystemBEmployeeterritory",
 				"icon": "sap-icon://expand-group",
 				"menu": [{
@@ -2513,7 +2314,7 @@
 					}
 				}]
 			}
-		}
+													}
 	}
 	,
 	"SystemBProduct": {
@@ -2607,18 +2408,6 @@
 					"navigation": "isPartOfOrderDetail"
 				}	
 			}
-			, {
-				"type":"navigationSet",
-				"key": "product_orderSummary",
-				"text": "is referenced in a order summary",
-				"icon": "sap-icon://northwind/OrderSummary",
-				"target": "OrderSummarys", 
-				"tooltip": "is referenced in a order summary",
-				"visible": true, 
-				"parameters": {
-					"navigation": "product_orderSummary"
-				}	
-			}
 			, {				
 				"type":"navigationProperty",
 				"key": "category",
@@ -2670,32 +2459,7 @@
 					}
 				}]
 			}
-		,
-			"product_orderSummary": {
-				"target": "SystemBProductproduct_orderSummary",
-				"icon": "sap-icon://expand-group",
-				"menu": [{
-					"type":"navigationSet",
-					"key": "graph",
-					"text": "Graph View",
-					"icon": "sap-icon://overview-chart",
-					"target": "navigationSetGraph",
-					"tooltip": "product_orderSummary Graph",
-					"visible": true
-				}, {
-					"type":"navigationSet",
-					"key": "product_orderSummary",
-					"text": "is referenced in a order summary",
-					"icon": "sap-icon://northwind/OrderSummary",
-					"target":  "OrderSummarys", 
-					"tooltip": "is referenced in a order summary",
-					"visible": true,
-					"parameters": {
-						"navigation": "product_orderSummary"
-					}
-				}]
-			}
-		}
+													}
 	}
 	,
 	"Territory": {
@@ -2819,8 +2583,7 @@
 					}
 				}]
 			}
-		,
-			"territoryRegion": {
+											, 			"territoryRegion": {
 				"target": "TerritoryterritoryRegion",
 				"icon": "sap-icon://northwind/territory",
 				"menu": [{
@@ -2844,7 +2607,7 @@
 					}
 				}]
 			}
-		}
+													}
 	}
 	,
 	"USState": {
@@ -2956,6 +2719,6 @@
 					}
 				}]
 			}
-		}
+													}
 	}
 }

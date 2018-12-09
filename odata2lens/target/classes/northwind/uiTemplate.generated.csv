@@ -11,7 +11,7 @@ sequence, entity, entityIcon, image, target, targetIcon, type, targetEntity, tar
 		2, Category, "sap-icon://expand-group","./images/icons/category.png", Category , "sap-icon://expand-group",  Form, Category ,true, description, D, Edm.String,2,true, [] ,"" 
 		2, Category, "sap-icon://expand-group","./images/icons/category.png", Category , "sap-icon://expand-group",  Form, Category ,true, picture, D, Edm.String,3,true, [] ,"" 
 		2, Category, "sap-icon://expand-group","./images/icons/category.png", Category , "sap-icon://expand-group",  Form, Category ,true, seeAlso, D, Edm.String,4,true, [] ,"" 
-2, Category, "sap-icon://expand-group","./images/icons/category.png",Category ,"sap-icon://expand-group", Form,  Category ,true,isCategoryOf, C, Product,5,true, [List],""
+2, Category, "sap-icon://expand-group","./images/icons/category.png",Category ,"sap-icon://expand-group", Form,  Category ,true ,isCategoryOf, C, Product,5,true, [List],""
 
 
 		3, Customer, "sap-icon://expand-group", "./images/icons/category.png", Customers, "sap-icon://expand-group", Grid, Customer ,true ,comment, D, Edm.String,0,true, [] , 	
@@ -50,9 +50,9 @@ sequence, entity, entityIcon, image, target, targetIcon, type, targetEntity, tar
 		4, Customer, "sap-icon://expand-group","./images/icons/category.png", Customer , "sap-icon://expand-group",  Form, Customer ,true, long, D, Edm.Double,13,true, [] ,"" 
 		4, Customer, "sap-icon://expand-group","./images/icons/category.png", Customer , "sap-icon://expand-group",  Form, Customer ,true, regionDescription, D, Edm.String,14,true, [] ,"" 
 		4, Customer, "sap-icon://expand-group","./images/icons/category.png", Customer , "sap-icon://expand-group",  Form, Customer ,true, seeAlso, D, Edm.String,15,true, [] ,"" 
-4, Customer, "sap-icon://expand-group","./images/icons/category.png",Customer ,"sap-icon://expand-group", Form,  Customer ,true,customerRegion, C, Region,16,true, [List],""
-4, Customer, "sap-icon://expand-group","./images/icons/category.png",Customer ,"sap-icon://expand-group", Form,  Customer ,true,customer_customer_Order, C, Customer_Order,17,true, [List],""
-4, Customer, "sap-icon://expand-group","./images/icons/category.png",Customer ,"sap-icon://expand-group", Form,  Customer ,true,hasPlacedOrder, C, Order,18,true, [List],""
+4, Customer, "sap-icon://expand-group","./images/icons/category.png",Customer ,"sap-icon://expand-group", Form,  Customer ,true ,customerRegion, C, Region,16,true, [List],""
+4, Customer, "sap-icon://expand-group","./images/icons/category.png",Customer ,"sap-icon://expand-group", Form,  Customer ,true ,customer_customer_Order, C, Customer_Order,17,true, [List],""
+4, Customer, "sap-icon://expand-group","./images/icons/category.png",Customer ,"sap-icon://expand-group", Form,  Customer ,true ,hasPlacedOrder, C, Order,18,true, [List],""
 
 
 		5, Customer_Order, "sap-icon://expand-group", "./images/icons/category.png", Customer_Orders, "sap-icon://expand-group", Grid, Customer_Order ,true ,customer, D, Edm.String,0,true, [] , 	
@@ -68,8 +68,8 @@ sequence, entity, entityIcon, image, target, targetIcon, type, targetEntity, tar
 		6, Customer_Order, "sap-icon://expand-group","./images/icons/category.png", Customer_Order , "sap-icon://expand-group",  Form, Customer_Order ,true, customer_Order_customerCompanyName, D, Edm.String,2,true, [] ,"" 
 		6, Customer_Order, "sap-icon://expand-group","./images/icons/category.png", Customer_Order , "sap-icon://expand-group",  Form, Customer_Order ,true, customer_Order_shipCity, D, Edm.String,3,true, [] ,"" 
 		6, Customer_Order, "sap-icon://expand-group","./images/icons/category.png", Customer_Order , "sap-icon://expand-group",  Form, Customer_Order ,true, order, D, Edm.String,4,true, [] ,"" 
-6, Customer_Order, "sap-icon://expand-group","./images/icons/category.png", Customer_Order , "sap-icon://expand-group", Form,  Customer_Order ,true,customer_Order_customer, O, Customer,5,true, [] ,""
-6, Customer_Order, "sap-icon://expand-group","./images/icons/category.png", Customer_Order , "sap-icon://expand-group", Form,  Customer_Order ,true,customer_Order_order, O, Order,6,true, [] ,""
+6, Customer_Order, "sap-icon://expand-group","./images/icons/category.png", Customer_Order , "sap-icon://expand-group", Form,  Customer_Order ,	true  ,customer_Order_customer, O, Customer,5,true, [] ,""
+6, Customer_Order, "sap-icon://expand-group","./images/icons/category.png", Customer_Order , "sap-icon://expand-group", Form,  Customer_Order ,	true  ,customer_Order_order, O, Order,6,true, [] ,""
 
 
 		7, Employee, "sap-icon://expand-group", "./images/icons/category.png", Employees, "sap-icon://expand-group", Grid, Employee ,true ,birthDate, D, Edm.Date,0,true, [] , 	
@@ -132,11 +132,11 @@ sequence, entity, entityIcon, image, target, targetIcon, type, targetEntity, tar
 		8, Employee, "sap-icon://expand-group","./images/icons/category.png", Employee , "sap-icon://expand-group",  Form, Employee ,true, territoryNotation, D, Edm.String,24,true, [] ,"" 
 		8, Employee, "sap-icon://expand-group","./images/icons/category.png", Employee , "sap-icon://expand-group",  Form, Employee ,true, title, D, Edm.String,25,true, [] ,"" 
 		8, Employee, "sap-icon://expand-group","./images/icons/category.png", Employee , "sap-icon://expand-group",  Form, Employee ,true, titleOfCourtesy, D, Edm.String,26,true, [] ,"" 
-8, Employee, "sap-icon://expand-group","./images/icons/category.png", Employee , "sap-icon://expand-group", Form,  Employee ,true,reportsTo, O, Employee,27,true, [] ,""
-8, Employee, "sap-icon://expand-group","./images/icons/category.png",Employee ,"sap-icon://expand-group", Form,  Employee ,true,employeeRegion, C, Region,28,true, [List],""
-8, Employee, "sap-icon://expand-group","./images/icons/category.png",Employee ,"sap-icon://expand-group", Form,  Employee ,true,managesEmployee, C, Employee,29,true, [List],""
-8, Employee, "sap-icon://expand-group","./images/icons/category.png",Employee ,"sap-icon://expand-group", Form,  Employee ,true,managesOrder, C, Order,30,true, [List],""
-8, Employee, "sap-icon://expand-group","./images/icons/category.png",Employee ,"sap-icon://expand-group", Form,  Employee ,true,territory, C, Territory,31,true, [List],""
+8, Employee, "sap-icon://expand-group","./images/icons/category.png", Employee , "sap-icon://expand-group", Form,  Employee ,	true  ,reportsTo, O, Employee,27,true, [] ,""
+8, Employee, "sap-icon://expand-group","./images/icons/category.png",Employee ,"sap-icon://expand-group", Form,  Employee ,true ,employeeRegion, C, Region,28,true, [List],""
+8, Employee, "sap-icon://expand-group","./images/icons/category.png",Employee ,"sap-icon://expand-group", Form,  Employee ,true ,managesEmployee, C, Employee,29,true, [List],""
+8, Employee, "sap-icon://expand-group","./images/icons/category.png",Employee ,"sap-icon://expand-group", Form,  Employee ,true ,managesOrder, C, Order,30,true, [List],""
+8, Employee, "sap-icon://expand-group","./images/icons/category.png",Employee ,"sap-icon://expand-group", Form,  Employee ,true ,territory, C, Territory,31,true, [List],""
 
 
 		9, Order, "sap-icon://expand-group", "./images/icons/category.png", Orders, "sap-icon://expand-group", Grid, Order ,true ,comment, D, Edm.String,0,true, [] , 	
@@ -191,13 +191,13 @@ sequence, entity, entityIcon, image, target, targetIcon, type, targetEntity, tar
 		10, Order, "sap-icon://expand-group","./images/icons/category.png", Order , "sap-icon://expand-group",  Form, Order ,true, shipViaId, D, Edm.String,19,false, [] ,"" 
 		10, Order, "sap-icon://expand-group","./images/icons/category.png", Order , "sap-icon://expand-group",  Form, Order ,true, shipViaNotation, D, Edm.String,20,true, [] ,"" 
 		10, Order, "sap-icon://expand-group","./images/icons/category.png", Order , "sap-icon://expand-group",  Form, Order ,true, shippedDate, D, Edm.DateTimeOffset,21,true, [] ,"" 
-10, Order, "sap-icon://expand-group","./images/icons/category.png", Order , "sap-icon://expand-group", Form,  Order ,true,customer, O, Customer,22,true, [] ,""
-10, Order, "sap-icon://expand-group","./images/icons/category.png", Order , "sap-icon://expand-group", Form,  Order ,true,employee, O, Employee,23,true, [] ,""
-10, Order, "sap-icon://expand-group","./images/icons/category.png", Order , "sap-icon://expand-group", Form,  Order ,true,orderRegion, O, Region,24,true, [] ,""
-10, Order, "sap-icon://expand-group","./images/icons/category.png", Order , "sap-icon://expand-group", Form,  Order ,true,shipVia, O, Shipper,25,true, [] ,""
-10, Order, "sap-icon://expand-group","./images/icons/category.png",Order ,"sap-icon://expand-group", Form,  Order ,true,hasOrderDetail, C, OrderDetail,26,true, [List],""
-10, Order, "sap-icon://expand-group","./images/icons/category.png",Order ,"sap-icon://expand-group", Form,  Order ,true,order_customer_Order, C, Customer_Order,27,true, [List],""
-10, Order, "sap-icon://expand-group","./images/icons/category.png",Order ,"sap-icon://expand-group", Form,  Order ,true,order_orderSummary, C, OrderSummary,28,true, [List],""
+10, Order, "sap-icon://expand-group","./images/icons/category.png", Order , "sap-icon://expand-group", Form,  Order ,	true  ,customer, O, Customer,22,true, [] ,""
+10, Order, "sap-icon://expand-group","./images/icons/category.png", Order , "sap-icon://expand-group", Form,  Order ,	true  ,employee, O, Employee,23,true, [] ,""
+10, Order, "sap-icon://expand-group","./images/icons/category.png", Order , "sap-icon://expand-group", Form,  Order ,	true  ,orderRegion, O, Region,24,true, [] ,""
+10, Order, "sap-icon://expand-group","./images/icons/category.png", Order , "sap-icon://expand-group", Form,  Order ,	true  ,shipVia, O, Shipper,25,true, [] ,""
+10, Order, "sap-icon://expand-group","./images/icons/category.png",Order ,"sap-icon://expand-group", Form,  Order ,true ,hasOrderDetail, C, OrderDetail,26,true, [List],""
+10, Order, "sap-icon://expand-group","./images/icons/category.png",Order ,"sap-icon://expand-group", Form,  Order ,true ,order_customer_Order, C, Customer_Order,27,true, [List],""
+10, Order, "sap-icon://expand-group","./images/icons/category.png",Order ,"sap-icon://expand-group", Form,  Order ,true ,order_orderSummary, C, OrderSummary,28,true, [List],""
 
 
 		11, OrderDetail, "sap-icon://expand-group", "./images/icons/category.png", OrderDetails, "sap-icon://expand-group", Grid, OrderDetail ,true ,comment, D, Edm.String,0,true, [] , 	
@@ -221,8 +221,8 @@ sequence, entity, entityIcon, image, target, targetIcon, type, targetEntity, tar
 		12, OrderDetail, "sap-icon://expand-group","./images/icons/category.png", OrderDetail , "sap-icon://expand-group",  Form, OrderDetail ,true, productNotation, D, Edm.String,6,true, [] ,"" 
 		12, OrderDetail, "sap-icon://expand-group","./images/icons/category.png", OrderDetail , "sap-icon://expand-group",  Form, OrderDetail ,true, quantity, D, Edm.Int32,7,true, [] ,"" 
 		12, OrderDetail, "sap-icon://expand-group","./images/icons/category.png", OrderDetail , "sap-icon://expand-group",  Form, OrderDetail ,true, seeAlso, D, Edm.String,8,true, [] ,"" 
-12, OrderDetail, "sap-icon://expand-group","./images/icons/category.png", OrderDetail , "sap-icon://expand-group", Form,  OrderDetail ,true,order, O, Order,9,true, [] ,""
-12, OrderDetail, "sap-icon://expand-group","./images/icons/category.png", OrderDetail , "sap-icon://expand-group", Form,  OrderDetail ,true,product, O, Product,10,true, [] ,""
+12, OrderDetail, "sap-icon://expand-group","./images/icons/category.png", OrderDetail , "sap-icon://expand-group", Form,  OrderDetail ,	true  ,order, O, Order,9,true, [] ,""
+12, OrderDetail, "sap-icon://expand-group","./images/icons/category.png", OrderDetail , "sap-icon://expand-group", Form,  OrderDetail ,	true  ,product, O, Product,10,true, [] ,""
 
 
 		13, OrderSummary, "sap-icon://expand-group", "./images/icons/category.png", OrderSummarys, "sap-icon://expand-group", Grid, OrderSummary ,true ,order, D, Edm.String,0,true, [] , 	
@@ -234,8 +234,8 @@ sequence, entity, entityIcon, image, target, targetIcon, type, targetEntity, tar
 		14, OrderSummary, "sap-icon://expand-group","./images/icons/category.png", OrderSummary , "sap-icon://expand-group",  Form, OrderSummary ,true, order, D, Edm.String,0,true, [] ,"" 
 		14, OrderSummary, "sap-icon://expand-group","./images/icons/category.png", OrderSummary , "sap-icon://expand-group",  Form, OrderSummary ,true, orderSummary_Value, D, Edm.Double,1,true, [] ,"" 
 		14, OrderSummary, "sap-icon://expand-group","./images/icons/category.png", OrderSummary , "sap-icon://expand-group",  Form, OrderSummary ,true, prod, D, Edm.String,2,true, [] ,"" 
-14, OrderSummary, "sap-icon://expand-group","./images/icons/category.png", OrderSummary , "sap-icon://expand-group", Form,  OrderSummary ,true,orderSummary_order, O, Order,3,true, [] ,""
-14, OrderSummary, "sap-icon://expand-group","./images/icons/category.png", OrderSummary , "sap-icon://expand-group", Form,  OrderSummary ,true,orderSummary_product, O, Product,4,true, [] ,""
+14, OrderSummary, "sap-icon://expand-group","./images/icons/category.png", OrderSummary , "sap-icon://expand-group", Form,  OrderSummary ,	true  ,orderSummary_order, O, Order,3,true, [] ,""
+14, OrderSummary, "sap-icon://expand-group","./images/icons/category.png", OrderSummary , "sap-icon://expand-group", Form,  OrderSummary ,	true  ,orderSummary_product, O, Product,4,true, [] ,""
 
 
 		15, Product, "sap-icon://expand-group", "./images/icons/category.png", Products, "sap-icon://expand-group", Grid, Product ,true ,categoryId, D, Edm.String,0,false, [] , 	
@@ -271,10 +271,10 @@ sequence, entity, entityIcon, image, target, targetIcon, type, targetEntity, tar
 		16, Product, "sap-icon://expand-group","./images/icons/category.png", Product , "sap-icon://expand-group",  Form, Product ,true, unitCommission, S, northwind.unitCommission,11,true, [] ,"" 
 		16, Product, "sap-icon://expand-group","./images/icons/category.png", Product , "sap-icon://expand-group",  Form, Product ,true, unitsInStock, D, Edm.Int32,12,true, [] ,"" 
 		16, Product, "sap-icon://expand-group","./images/icons/category.png", Product , "sap-icon://expand-group",  Form, Product ,true, unitsOnOrder, D, Edm.Int32,13,true, [] ,"" 
-16, Product, "sap-icon://expand-group","./images/icons/category.png", Product , "sap-icon://expand-group", Form,  Product ,true,category, O, Category,14,true, [] ,""
-16, Product, "sap-icon://expand-group","./images/icons/category.png", Product , "sap-icon://expand-group", Form,  Product ,true,supplier, O, Supplier,15,true, [] ,""
-16, Product, "sap-icon://expand-group","./images/icons/category.png",Product ,"sap-icon://expand-group", Form,  Product ,true,isPartOfOrderDetail, C, OrderDetail,16,true, [List],""
-16, Product, "sap-icon://expand-group","./images/icons/category.png",Product ,"sap-icon://expand-group", Form,  Product ,true,product_orderSummary, C, OrderSummary,17,true, [List],""
+16, Product, "sap-icon://expand-group","./images/icons/category.png", Product , "sap-icon://expand-group", Form,  Product ,	true  ,category, O, Category,14,true, [] ,""
+16, Product, "sap-icon://expand-group","./images/icons/category.png", Product , "sap-icon://expand-group", Form,  Product ,	true  ,supplier, O, Supplier,15,true, [] ,""
+16, Product, "sap-icon://expand-group","./images/icons/category.png",Product ,"sap-icon://expand-group", Form,  Product ,true ,isPartOfOrderDetail, C, OrderDetail,16,true, [List],""
+16, Product, "sap-icon://expand-group","./images/icons/category.png",Product ,"sap-icon://expand-group", Form,  Product ,true ,product_orderSummary, C, OrderSummary,17,true, [List],""
 
 
 		17, Region, "sap-icon://expand-group", "./images/icons/category.png", Regions, "sap-icon://expand-group", Grid, Region ,true ,comment, D, Edm.String,0,true, [] , 	
@@ -296,7 +296,7 @@ sequence, entity, entityIcon, image, target, targetIcon, type, targetEntity, tar
 		20, Shipper, "sap-icon://expand-group","./images/icons/category.png", Shipper , "sap-icon://expand-group",  Form, Shipper ,true, seeAlso, D, Edm.String,1,true, [] ,"" 
 		20, Shipper, "sap-icon://expand-group","./images/icons/category.png", Shipper , "sap-icon://expand-group",  Form, Shipper ,true, shipperCompanyName, D, Edm.String,2,true, [] ,"" 
 		20, Shipper, "sap-icon://expand-group","./images/icons/category.png", Shipper , "sap-icon://expand-group",  Form, Shipper ,true, shipperPhone, D, Edm.String,3,true, [] ,"" 
-20, Shipper, "sap-icon://expand-group","./images/icons/category.png",Shipper ,"sap-icon://expand-group", Form,  Shipper ,true,shipsOrder, C, Order,4,true, [List],""
+20, Shipper, "sap-icon://expand-group","./images/icons/category.png",Shipper ,"sap-icon://expand-group", Form,  Shipper ,true ,shipsOrder, C, Order,4,true, [List],""
 
 
 		21, Supplier, "sap-icon://expand-group", "./images/icons/category.png", Suppliers, "sap-icon://expand-group", Grid, Supplier ,true ,comment, D, Edm.String,0,true, [] , 	
@@ -336,8 +336,8 @@ sequence, entity, entityIcon, image, target, targetIcon, type, targetEntity, tar
 		22, Supplier, "sap-icon://expand-group","./images/icons/category.png", Supplier , "sap-icon://expand-group",  Form, Supplier ,true, supplierHomePage, D, Edm.String,14,true, [] ,"" 
 		22, Supplier, "sap-icon://expand-group","./images/icons/category.png", Supplier , "sap-icon://expand-group",  Form, Supplier ,true, supplierPhone, D, Edm.String,15,true, [] ,"" 
 		22, Supplier, "sap-icon://expand-group","./images/icons/category.png", Supplier , "sap-icon://expand-group",  Form, Supplier ,true, supplierPostalCode, D, Edm.String,16,true, [] ,"" 
-22, Supplier, "sap-icon://expand-group","./images/icons/category.png",Supplier ,"sap-icon://expand-group", Form,  Supplier ,true,supplierRegion, C, Region,17,true, [List],""
-22, Supplier, "sap-icon://expand-group","./images/icons/category.png",Supplier ,"sap-icon://expand-group", Form,  Supplier ,true,suppliesProduct, C, Product,18,true, [List],""
+22, Supplier, "sap-icon://expand-group","./images/icons/category.png",Supplier ,"sap-icon://expand-group", Form,  Supplier ,true ,supplierRegion, C, Region,17,true, [List],""
+22, Supplier, "sap-icon://expand-group","./images/icons/category.png",Supplier ,"sap-icon://expand-group", Form,  Supplier ,true ,suppliesProduct, C, Product,18,true, [List],""
 
 
 		23, SystemAEmployee, "sap-icon://expand-group", "./images/icons/category.png", SystemAEmployees, "sap-icon://expand-group", Grid, SystemAEmployee ,true ,birthDate, D, Edm.Date,0,true, [] , 	
@@ -401,14 +401,14 @@ sequence, entity, entityIcon, image, target, targetIcon, type, targetEntity, tar
 		24, SystemAEmployee, "sap-icon://expand-group","./images/icons/category.png", SystemAEmployee , "sap-icon://expand-group",  Form, SystemAEmployee ,true, territoryNotation, D, Edm.String,23,true, [] ,"" 
 		24, SystemAEmployee, "sap-icon://expand-group","./images/icons/category.png", SystemAEmployee , "sap-icon://expand-group",  Form, SystemAEmployee ,true, title, D, Edm.String,24,true, [] ,"" 
 		24, SystemAEmployee, "sap-icon://expand-group","./images/icons/category.png", SystemAEmployee , "sap-icon://expand-group",  Form, SystemAEmployee ,true, titleOfCourtesy, D, Edm.String,25,true, [] ,"" 
-24, SystemAEmployee, "sap-icon://expand-group","./images/icons/category.png", SystemAEmployee , "sap-icon://expand-group", Form,  SystemAEmployee ,true,reportsTo, O, Employee,26,true, [] ,""
-24, SystemAEmployee, "sap-icon://expand-group","./images/icons/category.png", SystemAEmployee , "sap-icon://expand-group", Form,  SystemAEmployee ,true,systemAFavorite, O, Product,27,true, [] ,""
-24, SystemAEmployee, "sap-icon://expand-group","./images/icons/category.png",SystemAEmployee ,"sap-icon://expand-group", Form,  SystemAEmployee ,true,employeeRegion, C, Region,28,true, [List],""
-24, SystemAEmployee, "sap-icon://expand-group","./images/icons/category.png",SystemAEmployee ,"sap-icon://expand-group", Form,  SystemAEmployee ,true,managesEmployee, C, Employee,29,true, [List],""
-24, SystemAEmployee, "sap-icon://expand-group","./images/icons/category.png",SystemAEmployee ,"sap-icon://expand-group", Form,  SystemAEmployee ,true,managesOrder, C, Order,30,true, [List],""
-24, SystemAEmployee, "sap-icon://expand-group","./images/icons/category.png",SystemAEmployee ,"sap-icon://expand-group", Form,  SystemAEmployee ,true,systemACustomer, C, Customer,31,true, [List],""
-24, SystemAEmployee, "sap-icon://expand-group","./images/icons/category.png",SystemAEmployee ,"sap-icon://expand-group", Form,  SystemAEmployee ,true,systemAEmployer, C, Supplier,32,true, [List],""
-24, SystemAEmployee, "sap-icon://expand-group","./images/icons/category.png",SystemAEmployee ,"sap-icon://expand-group", Form,  SystemAEmployee ,true,territory, C, Territory,33,true, [List],""
+24, SystemAEmployee, "sap-icon://expand-group","./images/icons/category.png", SystemAEmployee , "sap-icon://expand-group", Form,  SystemAEmployee ,	true  ,reportsTo, O, Employee,26,true, [] ,""
+24, SystemAEmployee, "sap-icon://expand-group","./images/icons/category.png", SystemAEmployee , "sap-icon://expand-group", Form,  SystemAEmployee ,	true  ,systemAFavorite, O, Product,27,true, [] ,""
+24, SystemAEmployee, "sap-icon://expand-group","./images/icons/category.png",SystemAEmployee ,"sap-icon://expand-group", Form,  SystemAEmployee ,true ,employeeRegion, C, Region,28,true, [List],""
+24, SystemAEmployee, "sap-icon://expand-group","./images/icons/category.png",SystemAEmployee ,"sap-icon://expand-group", Form,  SystemAEmployee ,true ,managesEmployee, C, Employee,29,true, [List],""
+24, SystemAEmployee, "sap-icon://expand-group","./images/icons/category.png",SystemAEmployee ,"sap-icon://expand-group", Form,  SystemAEmployee ,true ,managesOrder, C, Order,30,true, [List],""
+24, SystemAEmployee, "sap-icon://expand-group","./images/icons/category.png",SystemAEmployee ,"sap-icon://expand-group", Form,  SystemAEmployee ,true ,systemACustomer, C, Customer,31,true, [List],""
+24, SystemAEmployee, "sap-icon://expand-group","./images/icons/category.png",SystemAEmployee ,"sap-icon://expand-group", Form,  SystemAEmployee ,true ,systemAEmployer, C, Supplier,32,true, [List],""
+24, SystemAEmployee, "sap-icon://expand-group","./images/icons/category.png",SystemAEmployee ,"sap-icon://expand-group", Form,  SystemAEmployee ,true ,territory, C, Territory,33,true, [List],""
 
 
 		25, SystemAProduct, "sap-icon://expand-group", "./images/icons/category.png", SystemAProducts, "sap-icon://expand-group", Grid, SystemAProduct ,true ,categoryId, D, Edm.String,0,false, [] , 	
@@ -444,10 +444,10 @@ sequence, entity, entityIcon, image, target, targetIcon, type, targetEntity, tar
 		26, SystemAProduct, "sap-icon://expand-group","./images/icons/category.png", SystemAProduct , "sap-icon://expand-group",  Form, SystemAProduct ,true, systemAUnitCommision, D, Edm.Decimal,11,true, [] ,"" 
 		26, SystemAProduct, "sap-icon://expand-group","./images/icons/category.png", SystemAProduct , "sap-icon://expand-group",  Form, SystemAProduct ,true, unitsInStock, D, Edm.Int32,12,true, [] ,"" 
 		26, SystemAProduct, "sap-icon://expand-group","./images/icons/category.png", SystemAProduct , "sap-icon://expand-group",  Form, SystemAProduct ,true, unitsOnOrder, D, Edm.Int32,13,true, [] ,"" 
-26, SystemAProduct, "sap-icon://expand-group","./images/icons/category.png", SystemAProduct , "sap-icon://expand-group", Form,  SystemAProduct ,true,category, O, Category,14,true, [] ,""
-26, SystemAProduct, "sap-icon://expand-group","./images/icons/category.png", SystemAProduct , "sap-icon://expand-group", Form,  SystemAProduct ,true,supplier, O, Supplier,15,true, [] ,""
-26, SystemAProduct, "sap-icon://expand-group","./images/icons/category.png",SystemAProduct ,"sap-icon://expand-group", Form,  SystemAProduct ,true,isPartOfOrderDetail, C, OrderDetail,16,true, [List],""
-26, SystemAProduct, "sap-icon://expand-group","./images/icons/category.png",SystemAProduct ,"sap-icon://expand-group", Form,  SystemAProduct ,true,product_orderSummary, C, OrderSummary,17,true, [List],""
+26, SystemAProduct, "sap-icon://expand-group","./images/icons/category.png", SystemAProduct , "sap-icon://expand-group", Form,  SystemAProduct ,	true  ,category, O, Category,14,true, [] ,""
+26, SystemAProduct, "sap-icon://expand-group","./images/icons/category.png", SystemAProduct , "sap-icon://expand-group", Form,  SystemAProduct ,	true  ,supplier, O, Supplier,15,true, [] ,""
+26, SystemAProduct, "sap-icon://expand-group","./images/icons/category.png",SystemAProduct ,"sap-icon://expand-group", Form,  SystemAProduct ,true ,isPartOfOrderDetail, C, OrderDetail,16,true, [List],""
+26, SystemAProduct, "sap-icon://expand-group","./images/icons/category.png",SystemAProduct ,"sap-icon://expand-group", Form,  SystemAProduct ,true ,product_orderSummary, C, OrderSummary,17,true, [List],""
 
 
 		27, SystemBEmployee, "sap-icon://expand-group", "./images/icons/category.png", SystemBEmployees, "sap-icon://expand-group", Grid, SystemBEmployee ,true ,birthDate, D, Edm.Date,0,true, [] , 	
@@ -512,13 +512,13 @@ sequence, entity, entityIcon, image, target, targetIcon, type, targetEntity, tar
 		28, SystemBEmployee, "sap-icon://expand-group","./images/icons/category.png", SystemBEmployee , "sap-icon://expand-group",  Form, SystemBEmployee ,true, territoryNotation, D, Edm.String,24,true, [] ,"" 
 		28, SystemBEmployee, "sap-icon://expand-group","./images/icons/category.png", SystemBEmployee , "sap-icon://expand-group",  Form, SystemBEmployee ,true, title, D, Edm.String,25,true, [] ,"" 
 		28, SystemBEmployee, "sap-icon://expand-group","./images/icons/category.png", SystemBEmployee , "sap-icon://expand-group",  Form, SystemBEmployee ,true, titleOfCourtesy, D, Edm.String,26,true, [] ,"" 
-28, SystemBEmployee, "sap-icon://expand-group","./images/icons/category.png", SystemBEmployee , "sap-icon://expand-group", Form,  SystemBEmployee ,true,reportsTo, O, Employee,27,true, [] ,""
-28, SystemBEmployee, "sap-icon://expand-group","./images/icons/category.png", SystemBEmployee , "sap-icon://expand-group", Form,  SystemBEmployee ,true,systemBFavorite, O, Product,28,true, [] ,""
-28, SystemBEmployee, "sap-icon://expand-group","./images/icons/category.png",SystemBEmployee ,"sap-icon://expand-group", Form,  SystemBEmployee ,true,employeeRegion, C, Region,29,true, [List],""
-28, SystemBEmployee, "sap-icon://expand-group","./images/icons/category.png",SystemBEmployee ,"sap-icon://expand-group", Form,  SystemBEmployee ,true,managesEmployee, C, Employee,30,true, [List],""
-28, SystemBEmployee, "sap-icon://expand-group","./images/icons/category.png",SystemBEmployee ,"sap-icon://expand-group", Form,  SystemBEmployee ,true,managesOrder, C, Order,31,true, [List],""
-28, SystemBEmployee, "sap-icon://expand-group","./images/icons/category.png",SystemBEmployee ,"sap-icon://expand-group", Form,  SystemBEmployee ,true,systemBEmployer, C, Supplier,32,true, [List],""
-28, SystemBEmployee, "sap-icon://expand-group","./images/icons/category.png",SystemBEmployee ,"sap-icon://expand-group", Form,  SystemBEmployee ,true,territory, C, Territory,33,true, [List],""
+28, SystemBEmployee, "sap-icon://expand-group","./images/icons/category.png", SystemBEmployee , "sap-icon://expand-group", Form,  SystemBEmployee ,	true  ,reportsTo, O, Employee,27,true, [] ,""
+28, SystemBEmployee, "sap-icon://expand-group","./images/icons/category.png", SystemBEmployee , "sap-icon://expand-group", Form,  SystemBEmployee ,	true  ,systemBFavorite, O, Product,28,true, [] ,""
+28, SystemBEmployee, "sap-icon://expand-group","./images/icons/category.png",SystemBEmployee ,"sap-icon://expand-group", Form,  SystemBEmployee ,true ,employeeRegion, C, Region,29,true, [List],""
+28, SystemBEmployee, "sap-icon://expand-group","./images/icons/category.png",SystemBEmployee ,"sap-icon://expand-group", Form,  SystemBEmployee ,true ,managesEmployee, C, Employee,30,true, [List],""
+28, SystemBEmployee, "sap-icon://expand-group","./images/icons/category.png",SystemBEmployee ,"sap-icon://expand-group", Form,  SystemBEmployee ,true ,managesOrder, C, Order,31,true, [List],""
+28, SystemBEmployee, "sap-icon://expand-group","./images/icons/category.png",SystemBEmployee ,"sap-icon://expand-group", Form,  SystemBEmployee ,true ,systemBEmployer, C, Supplier,32,true, [List],""
+28, SystemBEmployee, "sap-icon://expand-group","./images/icons/category.png",SystemBEmployee ,"sap-icon://expand-group", Form,  SystemBEmployee ,true ,territory, C, Territory,33,true, [List],""
 
 
 		29, SystemBProduct, "sap-icon://expand-group", "./images/icons/category.png", SystemBProducts, "sap-icon://expand-group", Grid, SystemBProduct ,true ,categoryId, D, Edm.String,0,false, [] , 	
@@ -554,10 +554,10 @@ sequence, entity, entityIcon, image, target, targetIcon, type, targetEntity, tar
 		30, SystemBProduct, "sap-icon://expand-group","./images/icons/category.png", SystemBProduct , "sap-icon://expand-group",  Form, SystemBProduct ,true, systemBUnitCommission, D, Edm.Decimal,11,true, [] ,"" 
 		30, SystemBProduct, "sap-icon://expand-group","./images/icons/category.png", SystemBProduct , "sap-icon://expand-group",  Form, SystemBProduct ,true, unitsInStock, D, Edm.Int32,12,true, [] ,"" 
 		30, SystemBProduct, "sap-icon://expand-group","./images/icons/category.png", SystemBProduct , "sap-icon://expand-group",  Form, SystemBProduct ,true, unitsOnOrder, D, Edm.Int32,13,true, [] ,"" 
-30, SystemBProduct, "sap-icon://expand-group","./images/icons/category.png", SystemBProduct , "sap-icon://expand-group", Form,  SystemBProduct ,true,category, O, Category,14,true, [] ,""
-30, SystemBProduct, "sap-icon://expand-group","./images/icons/category.png", SystemBProduct , "sap-icon://expand-group", Form,  SystemBProduct ,true,supplier, O, Supplier,15,true, [] ,""
-30, SystemBProduct, "sap-icon://expand-group","./images/icons/category.png",SystemBProduct ,"sap-icon://expand-group", Form,  SystemBProduct ,true,isPartOfOrderDetail, C, OrderDetail,16,true, [List],""
-30, SystemBProduct, "sap-icon://expand-group","./images/icons/category.png",SystemBProduct ,"sap-icon://expand-group", Form,  SystemBProduct ,true,product_orderSummary, C, OrderSummary,17,true, [List],""
+30, SystemBProduct, "sap-icon://expand-group","./images/icons/category.png", SystemBProduct , "sap-icon://expand-group", Form,  SystemBProduct ,	true  ,category, O, Category,14,true, [] ,""
+30, SystemBProduct, "sap-icon://expand-group","./images/icons/category.png", SystemBProduct , "sap-icon://expand-group", Form,  SystemBProduct ,	true  ,supplier, O, Supplier,15,true, [] ,""
+30, SystemBProduct, "sap-icon://expand-group","./images/icons/category.png",SystemBProduct ,"sap-icon://expand-group", Form,  SystemBProduct ,true ,isPartOfOrderDetail, C, OrderDetail,16,true, [List],""
+30, SystemBProduct, "sap-icon://expand-group","./images/icons/category.png",SystemBProduct ,"sap-icon://expand-group", Form,  SystemBProduct ,true ,product_orderSummary, C, OrderSummary,17,true, [List],""
 
 
 		31, Territory, "sap-icon://expand-group", "./images/icons/category.png", Territorys, "sap-icon://expand-group", Grid, Territory ,true ,comment, D, Edm.String,0,true, [] , 	
@@ -571,8 +571,8 @@ sequence, entity, entityIcon, image, target, targetIcon, type, targetEntity, tar
 		32, Territory, "sap-icon://expand-group","./images/icons/category.png", Territory , "sap-icon://expand-group",  Form, Territory ,true, regionNotation, D, Edm.String,1,true, [] ,"" 
 		32, Territory, "sap-icon://expand-group","./images/icons/category.png", Territory , "sap-icon://expand-group",  Form, Territory ,true, seeAlso, D, Edm.String,2,true, [] ,"" 
 		32, Territory, "sap-icon://expand-group","./images/icons/category.png", Territory , "sap-icon://expand-group",  Form, Territory ,true, territoryDescription, D, Edm.String,3,true, [] ,"" 
-32, Territory, "sap-icon://expand-group","./images/icons/category.png",Territory ,"sap-icon://expand-group", Form,  Territory ,true,territoryOf, C, Employee,4,true, [List],""
-32, Territory, "sap-icon://expand-group","./images/icons/category.png",Territory ,"sap-icon://expand-group", Form,  Territory ,true,territoryRegion, C, Region,5,true, [List],""
+32, Territory, "sap-icon://expand-group","./images/icons/category.png",Territory ,"sap-icon://expand-group", Form,  Territory ,true ,territoryOf, C, Employee,4,true, [List],""
+32, Territory, "sap-icon://expand-group","./images/icons/category.png",Territory ,"sap-icon://expand-group", Form,  Territory ,true ,territoryRegion, C, Region,5,true, [List],""
 
 
 		33, USState, "sap-icon://expand-group", "./images/icons/category.png", USStates, "sap-icon://expand-group", Grid, USState ,true ,comment, D, Edm.String,0,true, [] , 	
@@ -589,6 +589,6 @@ sequence, entity, entityIcon, image, target, targetIcon, type, targetEntity, tar
 		34, USState, "sap-icon://expand-group","./images/icons/category.png", USState , "sap-icon://expand-group",  Form, USState ,true, seeAlso, D, Edm.String,3,true, [] ,"" 
 		34, USState, "sap-icon://expand-group","./images/icons/category.png", USState , "sap-icon://expand-group",  Form, USState ,true, stateAbbr, D, Edm.String,4,true, [] ,"" 
 		34, USState, "sap-icon://expand-group","./images/icons/category.png", USState , "sap-icon://expand-group",  Form, USState ,true, stateName, D, Edm.String,5,true, [] ,"" 
-34, USState, "sap-icon://expand-group","./images/icons/category.png",USState ,"sap-icon://expand-group", Form,  USState ,true,usstateRegion, C, Region,6,true, [List],""
+34, USState, "sap-icon://expand-group","./images/icons/category.png",USState ,"sap-icon://expand-group", Form,  USState ,true ,usstateRegion, C, Region,6,true, [List],""
 
 

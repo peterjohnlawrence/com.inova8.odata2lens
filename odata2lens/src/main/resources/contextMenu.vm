@@ -149,6 +149,7 @@
 				"visible": true ##$entityType.entity.targetVisible
 			}
 	#foreach($navigationSet in $entityType.entity.navigationSet)
+		#if($navigationSet.rangeType.entitySet.visible)
 			, {
 				"type":"navigationSet",
 				"key": "$navigationSet.name",
@@ -161,8 +162,10 @@
 					"navigation": "$navigationSet.name"
 				}	
 			}
+		#end
 	#end	
 	#foreach($navigationProperty in $entityType.entity.navigationProperties)
+		#if($navigationProperty.rangeType.entitySet.visible)
 			, {				
 				"type":"navigationProperty",
 				"key": "$navigationProperty.name",
@@ -175,6 +178,7 @@
 					"navigation": "$navigationProperty.name"
 				}
 			}
+		#end
 	#end	
 	#foreach($complexNavigationProperty in $entityType.entity.properties)
 		#if($complexNavigationProperty.complexRange.isNavigationProperty)
@@ -230,7 +234,11 @@
 			]
 		}
 		,"navigationProperty": {
+	#set( $previous=false)
 	#foreach($navigationSet in $entityType.entity.navigationSet)
+		#if($navigationSet.rangeType.entitySet.visible)
+		#if ($previous ), #end
+			#set( $previous=true)
 			"$navigationSet.name": {
 				"target": "$navigationSet.target",
 				"icon": "$entityType.entity.targetIcon",
@@ -255,8 +263,9 @@
 					}
 				}]
 			}
-		#if ( $foreach.hasNext ) 
-		,
+			##if ( $foreach.hasNext ) 
+			##,
+			##end
 		#end
 	#end
 		}

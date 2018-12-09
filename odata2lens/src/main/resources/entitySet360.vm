@@ -66,11 +66,11 @@
 						</HBox>
 						<Title id="pathTitle" text="{entitySetView>/navigationText}"/>
 						<HBox id="versionsTitle" alignItems="Center">
-							<Title text="(" required="false"/>
+							<Title text="(" />
 							<ComboBox id="versionSelection" items="{ path: 'entitySetView>/versions' }" selectionChange="onVersionChange">
 								<core:Item key="{entitySetView>navigation}" text="{entitySetView>text}"/>
 							</ComboBox>
-							<Title text=")" required="false"/>
+							<Title text=")" />
 						</HBox>
 						<Title id="tableHeader" text="{entitySetView>/entitySetTableTitle}"/>
 						<ToolbarSpacer/>

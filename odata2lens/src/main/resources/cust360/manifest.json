@@ -4,8 +4,8 @@
 		"id": "com.inova8.lens",
 		"type": "application",
 		"i18n": "i18n/i18n.properties",
-		"title": "{{Lens.appTitle}}",
-		"description": "{{Lens.appDescription}}",
+		"title": "lens2odata",
+		"description": "lens2odata",
 		"applicationVersion": {
 			"version": "1.0.0"
 		},
