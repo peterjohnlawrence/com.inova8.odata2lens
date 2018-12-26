@@ -43,31 +43,31 @@
 				<ColumnListItem >
 					<cells>
 						<Label text="{i18n>Shipper.comment}" required="false"/> 
-						<rdf:TextLink text="{path:'dataModel>comment',type:'sap.ui.model.type.String' }" linkText="{i18n>Shipper.comment}"/>
+						<rdf:TextLink text="{path:'dataModel>comment',type:'sap.ui.model.type.String' }" linkText="{i18n>Shipper.comment}" tooltip="{i18n>Shipper.comment}"/>
 					</cells>
 				</ColumnListItem>
 				<ColumnListItem >
 					<cells>
 						<Label text="{i18n>Shipper.seeAlso}" required="false"/> 
-						<rdf:TextLink text="{path:'dataModel>seeAlso',type:'sap.ui.model.type.String' }" linkText="{i18n>Shipper.seeAlso}"/>
+						<rdf:TextLink text="{path:'dataModel>seeAlso',type:'sap.ui.model.type.String' }" linkText="{i18n>Shipper.seeAlso}" tooltip="{i18n>Shipper.seeAlso}"/>
 					</cells>
 				</ColumnListItem>
 				<ColumnListItem >
 					<cells>
 						<Label text="{i18n>Shipper.shipperCompanyName}" required="false"/> 
-						<rdf:TextLink text="{path:'dataModel>shipperCompanyName',type:'sap.ui.model.type.String' }" linkText="{i18n>Shipper.shipperCompanyName}"/>
+						<rdf:TextLink text="{path:'dataModel>shipperCompanyName',type:'sap.ui.model.type.String' }" linkText="{i18n>Shipper.shipperCompanyName}" tooltip="{i18n>Shipper.shipperCompanyName}"/>
 					</cells>
 				</ColumnListItem>
 				<ColumnListItem >
 					<cells>
 						<Label text="{i18n>Shipper.shipperPhone}" required="false"/> 
-						<rdf:TextLink text="{path:'dataModel>shipperPhone',type:'sap.ui.model.type.String' }" linkText="{i18n>Shipper.shipperPhone}"/>
+						<rdf:TextLink text="{path:'dataModel>shipperPhone',type:'sap.ui.model.type.String' }" linkText="{i18n>Shipper.shipperPhone}" tooltip="{i18n>Shipper.shipperPhone}"/>
 					</cells>
 				</ColumnListItem>
 				<ColumnListItem >
 					<cells>
 						<Label text="{i18n>Shipper.shipsOrder}" required="false"/> 
-						<rdf:ListResource path="dataModel>shipsOrder" entitySet="Order"/>
+						<rdf:ListResource path="dataModel>shipsOrder" entitySet="Order" tooltip="{i18n>$target.shipsOrder}"/>
 					</cells>
 				</ColumnListItem>
 			</items>

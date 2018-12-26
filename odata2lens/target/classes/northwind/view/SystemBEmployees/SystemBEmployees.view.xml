@@ -90,7 +90,10 @@
 						<Text text="{i18n>SystemBEmployees.seeAlso}"/>
 					</Column>
 					<Column demandPopin="true" minScreenWidth="Tablet">
-						<Text text="{i18n>SystemBEmployees.systemBEmployeeSalary}"/>
+						<Text text="{i18n>SystemBEmployees.systemBEmployeeAnnualSalary}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>SystemBEmployees.systemBEmployeeMonthlySalary}"/>
 					</Column>
 					<Column demandPopin="true" minScreenWidth="Tablet">
 						<Text text="{i18n>SystemBEmployees.systemBHours}"/>
@@ -129,7 +132,8 @@
 							<rdf:TextLink text="{path:'dataModel>regionDescription',type:'sap.ui.model.type.String'}" linkText="{i18n>SystemBEmployee.regionDescription}"/>
 							<rdf:TextLink text="{path:'dataModel>reportsToNotation',type:'sap.ui.model.type.String'}" linkText="{i18n>SystemBEmployee.reportsToNotation}"/>
 							<rdf:TextLink text="{path:'dataModel>seeAlso',type:'sap.ui.model.type.String'}" linkText="{i18n>SystemBEmployee.seeAlso}"/>
-							<Text text="{path:'dataModel>systemBEmployeeSalary',type:'sap.ui.model.type.Float', formatOptions:{'style':'short','maxFractionDigits':2} }"/>
+							<Text text="{path:'dataModel>systemBEmployeeAnnualSalary',type:'sap.ui.model.type.Float', formatOptions:{'style':'short','maxFractionDigits':2} }"/>
+							<Text text="{path:'dataModel>systemBEmployeeMonthlySalary',type:'sap.ui.model.type.Float', formatOptions:{'style':'short','maxFractionDigits':2} }"/>
 							<Text text="{dataModel>systemBHours}"/>
 							<rdf:TextLink text="{path:'dataModel>territoryNotation',type:'sap.ui.model.type.String'}" linkText="{i18n>SystemBEmployee.territoryNotation}"/>
 							<rdf:TextLink text="{path:'dataModel>title',type:'sap.ui.model.type.String'}" linkText="{i18n>SystemBEmployee.title}"/>

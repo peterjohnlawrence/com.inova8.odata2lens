@@ -43,97 +43,97 @@
 				<ColumnListItem >
 					<cells>
 						<Label text="{i18n>SystemBProduct.categoryNotation}" required="false"/> 
-						<rdf:TextLink text="{path:'dataModel>categoryNotation',type:'sap.ui.model.type.String' }" linkText="{i18n>SystemBProduct.categoryNotation}"/>
+						<rdf:TextLink text="{path:'dataModel>categoryNotation',type:'sap.ui.model.type.String' }" linkText="{i18n>SystemBProduct.categoryNotation}" tooltip="{i18n>SystemBProduct.categoryNotation}"/>
 					</cells>
 				</ColumnListItem>
 				<ColumnListItem >
 					<cells>
 						<Label text="{i18n>SystemBProduct.comment}" required="false"/> 
-						<rdf:TextLink text="{path:'dataModel>comment',type:'sap.ui.model.type.String' }" linkText="{i18n>SystemBProduct.comment}"/>
+						<rdf:TextLink text="{path:'dataModel>comment',type:'sap.ui.model.type.String' }" linkText="{i18n>SystemBProduct.comment}" tooltip="{i18n>SystemBProduct.comment}"/>
 					</cells>
 				</ColumnListItem>
 				<ColumnListItem >
 					<cells>
 						<Label text="{i18n>SystemBProduct.discontinued}" required="false"/> 
-						<Text text="{path:'dataModel>discontinued',type:'sap.ui.model.type.Boolean'}"/>  
+						<Text text="{path:'dataModel>discontinued',type:'sap.ui.model.type.Boolean'}" tooltip="{i18n>SystemBProduct.discontinued}"/>
 					</cells>
 				</ColumnListItem>
 				<ColumnListItem >
 					<cells>
 						<Label text="{i18n>SystemBProduct.productName}" required="false"/> 
-						<rdf:TextLink text="{path:'dataModel>productName',type:'sap.ui.model.type.String' }" linkText="{i18n>SystemBProduct.productName}"/>
+						<rdf:TextLink text="{path:'dataModel>productName',type:'sap.ui.model.type.String' }" linkText="{i18n>SystemBProduct.productName}" tooltip="{i18n>SystemBProduct.productName}"/>
 					</cells>
 				</ColumnListItem>
 				<ColumnListItem >
 					<cells>
 						<Label text="{i18n>SystemBProduct.productUnitPrice}" required="false"/> 
-						<Text text="{path:'dataModel>productUnitPrice',type:'sap.ui.model.type.Float' }"/>
+						<Text text="{path:'dataModel>productUnitPrice',type:'sap.ui.model.type.Float' }" tooltip="{i18n>SystemBProduct.productUnitPrice}"/>
 					</cells>
 				</ColumnListItem>
 				<ColumnListItem >
 					<cells>
 						<Label text="{i18n>SystemBProduct.quantityPerUnit}" required="false"/> 
-						<rdf:TextLink text="{path:'dataModel>quantityPerUnit',type:'sap.ui.model.type.String' }" linkText="{i18n>SystemBProduct.quantityPerUnit}"/>
+						<rdf:TextLink text="{path:'dataModel>quantityPerUnit',type:'sap.ui.model.type.String' }" linkText="{i18n>SystemBProduct.quantityPerUnit}" tooltip="{i18n>SystemBProduct.quantityPerUnit}"/>
 					</cells>
 				</ColumnListItem>
 				<ColumnListItem >
 					<cells>
 						<Label text="{i18n>SystemBProduct.reorderLevel}" required="false"/> 
-						<Text text="{path:'dataModel>reorderLevel',type:'sap.ui.model.type.Integer' }"/>
+						<Text text="{path:'dataModel>reorderLevel',type:'sap.ui.model.type.Integer' }" tooltip="{i18n>SystemBProduct.reorderLevel}"/>
 					</cells>
 				</ColumnListItem>
 				<ColumnListItem >
 					<cells>
 						<Label text="{i18n>SystemBProduct.seeAlso}" required="false"/> 
-						<rdf:TextLink text="{path:'dataModel>seeAlso',type:'sap.ui.model.type.String' }" linkText="{i18n>SystemBProduct.seeAlso}"/>
+						<rdf:TextLink text="{path:'dataModel>seeAlso',type:'sap.ui.model.type.String' }" linkText="{i18n>SystemBProduct.seeAlso}" tooltip="{i18n>SystemBProduct.seeAlso}"/>
 					</cells>
 				</ColumnListItem>
 				<ColumnListItem >
 					<cells>
 						<Label text="{i18n>SystemBProduct.supplierNotation}" required="false"/> 
-						<rdf:TextLink text="{path:'dataModel>supplierNotation',type:'sap.ui.model.type.String' }" linkText="{i18n>SystemBProduct.supplierNotation}"/>
+						<rdf:TextLink text="{path:'dataModel>supplierNotation',type:'sap.ui.model.type.String' }" linkText="{i18n>SystemBProduct.supplierNotation}" tooltip="{i18n>SystemBProduct.supplierNotation}"/>
 					</cells>
 				</ColumnListItem>
 				<ColumnListItem >
 					<cells>
 						<Label text="{i18n>SystemBProduct.systemBUnitCommission}" required="false"/> 
-						<Text text="{dataModel>systemBUnitCommission}"/>
+						<Text text="{dataModel>systemBUnitCommission}" tooltip="{i18n>SystemBProduct.systemBUnitCommission}"/>
 					</cells>
 				</ColumnListItem>
 				<ColumnListItem >
 					<cells>
 						<Label text="{i18n>SystemBProduct.unitsInStock}" required="false"/> 
-						<Text text="{path:'dataModel>unitsInStock',type:'sap.ui.model.type.Integer' }"/>
+						<Text text="{path:'dataModel>unitsInStock',type:'sap.ui.model.type.Integer' }" tooltip="{i18n>SystemBProduct.unitsInStock}"/>
 					</cells>
 				</ColumnListItem>
 				<ColumnListItem >
 					<cells>
 						<Label text="{i18n>SystemBProduct.unitsOnOrder}" required="false"/> 
-						<Text text="{path:'dataModel>unitsOnOrder',type:'sap.ui.model.type.Integer' }"/>
+						<Text text="{path:'dataModel>unitsOnOrder',type:'sap.ui.model.type.Integer' }" tooltip="{i18n>SystemBProduct.unitsOnOrder}"/>
 					</cells>
 				</ColumnListItem>
 				<ColumnListItem >
 					<cells>
 						<Label text="{i18n>SystemBProduct.category}" required="false"/> 
-						<rdf:TextResource path="dataModel>category" entitySet="Category"/>		
+						<rdf:TextResource path="dataModel>category" entitySet="Category" tooltip="{i18n>$target.category}"/>		
 					</cells>
 				</ColumnListItem>
 				<ColumnListItem >
 					<cells>
 						<Label text="{i18n>SystemBProduct.supplier}" required="false"/> 
-						<rdf:TextResource path="dataModel>supplier" entitySet="Supplier"/>		
+						<rdf:TextResource path="dataModel>supplier" entitySet="Supplier" tooltip="{i18n>$target.supplier}"/>		
 					</cells>
 				</ColumnListItem>
 				<ColumnListItem >
 					<cells>
 						<Label text="{i18n>SystemBProduct.isPartOfOrderDetail}" required="false"/> 
-						<rdf:ListResource path="dataModel>isPartOfOrderDetail" entitySet="OrderDetail"/>
+						<rdf:ListResource path="dataModel>isPartOfOrderDetail" entitySet="OrderDetail" tooltip="{i18n>$target.isPartOfOrderDetail}"/>
 					</cells>
 				</ColumnListItem>
 				<ColumnListItem >
 					<cells>
 						<Label text="{i18n>SystemBProduct.product_orderSummary}" required="false"/> 
-						<rdf:ListResource path="dataModel>product_orderSummary" entitySet="OrderSummary"/>
+						<rdf:ListResource path="dataModel>product_orderSummary" entitySet="OrderSummary" tooltip="{i18n>$target.product_orderSummary}"/>
 					</cells>
 				</ColumnListItem>
 			</items>

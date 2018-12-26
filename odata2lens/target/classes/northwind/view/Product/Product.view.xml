@@ -49,7 +49,7 @@
 				<ColumnListItem >
 					<cells>
 						<Label text="{i18n>Product.categoryNotation}" required="false"/> 
-						<rdf:TextLink text="{path:'dataModel>categoryNotation',type:'sap.ui.model.type.String' }" linkText="{i18n>Product.categoryNotation}"/>
+						<rdf:TextLink text="{path:'dataModel>categoryNotation',type:'sap.ui.model.type.String' }" linkText="{i18n>Product.categoryNotation}" tooltip="{i18n>Product.categoryNotation}"/>
 						<Text text=""/>
 						<Text text=""/>
 					</cells>
@@ -57,7 +57,7 @@
 				<ColumnListItem >
 					<cells>
 						<Label text="{i18n>Product.comment}" required="false"/> 
-						<rdf:TextLink text="{path:'dataModel>comment',type:'sap.ui.model.type.String' }" linkText="{i18n>Product.comment}"/>
+						<rdf:TextLink text="{path:'dataModel>comment',type:'sap.ui.model.type.String' }" linkText="{i18n>Product.comment}" tooltip="{i18n>Product.comment}"/>
 						<Text text=""/>
 						<Text text=""/>
 					</cells>
@@ -65,7 +65,7 @@
 				<ColumnListItem >
 					<cells>
 						<Label text="{i18n>Product.discontinued}" required="false"/> 
-						<Text text="{path:'dataModel>discontinued',type:'sap.ui.model.type.Boolean'}"/>  
+						<Text text="{path:'dataModel>discontinued',type:'sap.ui.model.type.Boolean'}" tooltip="{i18n>Product.discontinued}"/>
 						<Text text=""/>
 						<Text text=""/>
 					</cells>
@@ -73,7 +73,7 @@
 				<ColumnListItem >
 					<cells>
 						<Label text="{i18n>Product.productName}" required="false"/> 
-						<rdf:TextLink text="{path:'dataModel>productName',type:'sap.ui.model.type.String' }" linkText="{i18n>Product.productName}"/>
+						<rdf:TextLink text="{path:'dataModel>productName',type:'sap.ui.model.type.String' }" linkText="{i18n>Product.productName}" tooltip="{i18n>Product.productName}"/>
 						<Text text=""/>
 						<Text text=""/>
 					</cells>
@@ -81,7 +81,7 @@
 				<ColumnListItem >
 					<cells>
 						<Label text="{i18n>Product.productUnitPrice}" required="false"/> 
-						<Text text="{path:'dataModel>productUnitPrice',type:'sap.ui.model.type.Float' }"/>
+						<Text text="{path:'dataModel>productUnitPrice',type:'sap.ui.model.type.Float' }" tooltip="{i18n>Product.productUnitPrice}"/>
 						<Text text=""/>
 						<Text text=""/>
 					</cells>
@@ -89,7 +89,7 @@
 				<ColumnListItem >
 					<cells>
 						<Label text="{i18n>Product.quantityPerUnit}" required="false"/> 
-						<rdf:TextLink text="{path:'dataModel>quantityPerUnit',type:'sap.ui.model.type.String' }" linkText="{i18n>Product.quantityPerUnit}"/>
+						<rdf:TextLink text="{path:'dataModel>quantityPerUnit',type:'sap.ui.model.type.String' }" linkText="{i18n>Product.quantityPerUnit}" tooltip="{i18n>Product.quantityPerUnit}"/>
 						<Text text=""/>
 						<Text text=""/>
 					</cells>
@@ -97,7 +97,7 @@
 				<ColumnListItem >
 					<cells>
 						<Label text="{i18n>Product.reorderLevel}" required="false"/> 
-						<Text text="{path:'dataModel>reorderLevel',type:'sap.ui.model.type.Integer' }"/>
+						<Text text="{path:'dataModel>reorderLevel',type:'sap.ui.model.type.Integer' }" tooltip="{i18n>Product.reorderLevel}"/>
 						<Text text=""/>
 						<Text text=""/>
 					</cells>
@@ -105,7 +105,7 @@
 				<ColumnListItem >
 					<cells>
 						<Label text="{i18n>Product.seeAlso}" required="false"/> 
-						<rdf:TextLink text="{path:'dataModel>seeAlso',type:'sap.ui.model.type.String' }" linkText="{i18n>Product.seeAlso}"/>
+						<rdf:TextLink text="{path:'dataModel>seeAlso',type:'sap.ui.model.type.String' }" linkText="{i18n>Product.seeAlso}" tooltip="{i18n>Product.seeAlso}"/>
 						<Text text=""/>
 						<Text text=""/>
 					</cells>
@@ -113,7 +113,7 @@
 				<ColumnListItem >
 					<cells>
 						<Label text="{i18n>Product.supplierNotation}" required="false"/> 
-						<rdf:TextLink text="{path:'dataModel>supplierNotation',type:'sap.ui.model.type.String' }" linkText="{i18n>Product.supplierNotation}"/>
+						<rdf:TextLink text="{path:'dataModel>supplierNotation',type:'sap.ui.model.type.String' }" linkText="{i18n>Product.supplierNotation}" tooltip="{i18n>Product.supplierNotation}"/>
 						<Text text=""/>
 						<Text text=""/>
 					</cells>
@@ -122,14 +122,14 @@
 					<cells>
 						<Label text="{i18n>Product.unitCommission}" required="false"/> 
 						<Text text=""/>
-						<Text text="{dataModel>unitCommission/systemAUnitCommision}"/>
-						<Text text="{dataModel>unitCommission/systemBUnitCommission}"/>
+						<Text text="{dataModel>unitCommission/systemAUnitCommision}" tooltip="{i18n>Product.unitCommission/systemAUnitCommision}"/>
+						<Text text="{dataModel>unitCommission/systemBUnitCommission}" tooltip="{i18n>Product.unitCommission/systemBUnitCommission}"/>
 					</cells>
 				</ColumnListItem>
 				<ColumnListItem >
 					<cells>
 						<Label text="{i18n>Product.unitsInStock}" required="false"/> 
-						<Text text="{path:'dataModel>unitsInStock',type:'sap.ui.model.type.Integer' }"/>
+						<Text text="{path:'dataModel>unitsInStock',type:'sap.ui.model.type.Integer' }" tooltip="{i18n>Product.unitsInStock}"/>
 						<Text text=""/>
 						<Text text=""/>
 					</cells>
@@ -137,7 +137,7 @@
 				<ColumnListItem >
 					<cells>
 						<Label text="{i18n>Product.unitsOnOrder}" required="false"/> 
-						<Text text="{path:'dataModel>unitsOnOrder',type:'sap.ui.model.type.Integer' }"/>
+						<Text text="{path:'dataModel>unitsOnOrder',type:'sap.ui.model.type.Integer' }" tooltip="{i18n>Product.unitsOnOrder}"/>
 						<Text text=""/>
 						<Text text=""/>
 					</cells>
@@ -145,7 +145,7 @@
 				<ColumnListItem >
 					<cells>
 						<Label text="{i18n>Product.category}" required="false"/> 
-						<rdf:TextResource path="dataModel>category" entitySet="Category"/>		
+						<rdf:TextResource path="dataModel>category" entitySet="Category" tooltip="{i18n>$target.category}"/>		
 						<Text text=""/>
 						<Text text=""/>
 					</cells>
@@ -153,7 +153,7 @@
 				<ColumnListItem >
 					<cells>
 						<Label text="{i18n>Product.supplier}" required="false"/> 
-						<rdf:TextResource path="dataModel>supplier" entitySet="Supplier"/>		
+						<rdf:TextResource path="dataModel>supplier" entitySet="Supplier" tooltip="{i18n>$target.supplier}"/>		
 						<Text text=""/>
 						<Text text=""/>
 					</cells>
@@ -161,7 +161,7 @@
 				<ColumnListItem >
 					<cells>
 						<Label text="{i18n>Product.isPartOfOrderDetail}" required="false"/> 
-						<rdf:ListResource path="dataModel>isPartOfOrderDetail" entitySet="OrderDetail"/>
+						<rdf:ListResource path="dataModel>isPartOfOrderDetail" entitySet="OrderDetail" tooltip="{i18n>$target.isPartOfOrderDetail}"/>
 						<Text text=""/>
 						<Text text=""/>
 					</cells>
@@ -169,7 +169,7 @@
 				<ColumnListItem >
 					<cells>
 						<Label text="{i18n>Product.product_orderSummary}" required="false"/> 
-						<rdf:ListResource path="dataModel>product_orderSummary" entitySet="OrderSummary"/>
+						<rdf:ListResource path="dataModel>product_orderSummary" entitySet="OrderSummary" tooltip="{i18n>$target.product_orderSummary}"/>
 						<Text text=""/>
 						<Text text=""/>
 					</cells>

@@ -49,7 +49,7 @@
 				<ColumnListItem >
 					<cells>
 						<Label text="{i18n>Employee.birthDate}" required="false"/> 
-						<Text text="{dataModel>birthDate}"/>
+						<Text text="{dataModel>birthDate}" tooltip="{i18n>Employee.birthDate}"/>
 						<Text text=""/>
 						<Text text=""/>
 					</cells>
@@ -57,7 +57,7 @@
 				<ColumnListItem >
 					<cells>
 						<Label text="{i18n>Employee.comment}" required="false"/> 
-						<rdf:TextLink text="{path:'dataModel>comment',type:'sap.ui.model.type.String' }" linkText="{i18n>Employee.comment}"/>
+						<rdf:TextLink text="{path:'dataModel>comment',type:'sap.ui.model.type.String' }" linkText="{i18n>Employee.comment}" tooltip="{i18n>Employee.comment}"/>
 						<Text text=""/>
 						<Text text=""/>
 					</cells>
@@ -65,7 +65,7 @@
 				<ColumnListItem >
 					<cells>
 						<Label text="{i18n>Employee.employeeAddress}" required="false"/> 
-						<rdf:TextLink text="{path:'dataModel>employeeAddress',type:'sap.ui.model.type.String' }" linkText="{i18n>Employee.employeeAddress}"/>
+						<rdf:TextLink text="{path:'dataModel>employeeAddress',type:'sap.ui.model.type.String' }" linkText="{i18n>Employee.employeeAddress}" tooltip="{i18n>Employee.employeeAddress}"/>
 						<Text text=""/>
 						<Text text=""/>
 					</cells>
@@ -73,7 +73,7 @@
 				<ColumnListItem >
 					<cells>
 						<Label text="{i18n>Employee.employeeCity}" required="false"/> 
-						<rdf:TextLink text="{path:'dataModel>employeeCity',type:'sap.ui.model.type.String' }" linkText="{i18n>Employee.employeeCity}"/>
+						<rdf:TextLink text="{path:'dataModel>employeeCity',type:'sap.ui.model.type.String' }" linkText="{i18n>Employee.employeeCity}" tooltip="{i18n>Employee.employeeCity}"/>
 						<Text text=""/>
 						<Text text=""/>
 					</cells>
@@ -81,7 +81,7 @@
 				<ColumnListItem >
 					<cells>
 						<Label text="{i18n>Employee.employeeCountry}" required="false"/> 
-						<rdf:TextLink text="{path:'dataModel>employeeCountry',type:'sap.ui.model.type.String' }" linkText="{i18n>Employee.employeeCountry}"/>
+						<rdf:TextLink text="{path:'dataModel>employeeCountry',type:'sap.ui.model.type.String' }" linkText="{i18n>Employee.employeeCountry}" tooltip="{i18n>Employee.employeeCountry}"/>
 						<Text text=""/>
 						<Text text=""/>
 					</cells>
@@ -89,7 +89,7 @@
 				<ColumnListItem >
 					<cells>
 						<Label text="{i18n>Employee.employeeLinkedIn}" required="false"/> 
-						<rdf:TextLink text="{path:'dataModel>employeeLinkedIn',type:'sap.ui.model.type.String' }" linkText="{i18n>Employee.employeeLinkedIn}"/>
+						<rdf:TextLink text="{path:'dataModel>employeeLinkedIn',type:'sap.ui.model.type.String' }" linkText="{i18n>Employee.employeeLinkedIn}" tooltip="{i18n>Employee.employeeLinkedIn}"/>
 						<Text text=""/>
 						<Text text=""/>
 					</cells>
@@ -97,7 +97,7 @@
 				<ColumnListItem >
 					<cells>
 						<Label text="{i18n>Employee.employeePostalCode}" required="false"/> 
-						<rdf:TextLink text="{path:'dataModel>employeePostalCode',type:'sap.ui.model.type.String' }" linkText="{i18n>Employee.employeePostalCode}"/>
+						<rdf:TextLink text="{path:'dataModel>employeePostalCode',type:'sap.ui.model.type.String' }" linkText="{i18n>Employee.employeePostalCode}" tooltip="{i18n>Employee.employeePostalCode}"/>
 						<Text text=""/>
 						<Text text=""/>
 					</cells>
@@ -106,22 +106,25 @@
 					<cells>
 						<Label text="{i18n>Employee.employeeSalary}" required="false"/> 
 						<Text text=""/>
-						<Text text="{path:'dataModel>employeeSalary/systemBEmployeeSalary',type:'sap.ui.model.type.Float', formatOptions:{'style':'short','maxFractionDigits':2} }"/>
-						<Text text="{path:'dataModel>employeeSalary/systemAEmployeeSalary',type:'sap.ui.model.type.Float', formatOptions:{'style':'short','maxFractionDigits':2} }"/>
+						<VBox>
+						<Text text="{path:'dataModel>employeeSalary/systemBEmployeeAnnualSalary',type:'sap.ui.model.type.Float', formatOptions:{'style':'short','maxFractionDigits':2} }" tooltip="{i18n>Employee.employeeSalary/systemBEmployeeAnnualSalary}"/>
+						<Text text="{path:'dataModel>employeeSalary/systemBEmployeeMonthlySalary',type:'sap.ui.model.type.Float', formatOptions:{'style':'short','maxFractionDigits':2} }" tooltip="{i18n>Employee.employeeSalary/systemBEmployeeMonthlySalary}"/>
+						</VBox>
+						<Text text="{path:'dataModel>employeeSalary/systemAEmployeeSalary',type:'sap.ui.model.type.Float', formatOptions:{'style':'short','maxFractionDigits':2} }" tooltip="{i18n>Employee.employeeSalary/systemAEmployeeSalary}"/>
 					</cells>
 				</ColumnListItem>
 				<ColumnListItem >
 					<cells>
 						<Label text="{i18n>Employee.employer}" required="false"/> 
 						<Text text=""/>
-						<rdf:ListResource path="dataModel>employer/systemBEmployer" entitySet="Supplier"/>
-						<rdf:ListResource path="dataModel>employer/systemAEmployer" entitySet="Supplier"/>
+						<rdf:ListResource path="dataModel>employer/systemBEmployer" entitySet="Supplier" tooltip="{i18n>$target.employer/systemBEmployer}"/>
+						<rdf:ListResource path="dataModel>employer/systemAEmployer" entitySet="Supplier" tooltip="{i18n>$target.employer/systemAEmployer}"/>
 					</cells>
 				</ColumnListItem>
 				<ColumnListItem >
 					<cells>
 						<Label text="{i18n>Employee.extension}" required="false"/> 
-						<rdf:TextLink text="{path:'dataModel>extension',type:'sap.ui.model.type.String' }" linkText="{i18n>Employee.extension}"/>
+						<rdf:TextLink text="{path:'dataModel>extension',type:'sap.ui.model.type.String' }" linkText="{i18n>Employee.extension}" tooltip="{i18n>Employee.extension}"/>
 						<Text text=""/>
 						<Text text=""/>
 					</cells>
@@ -130,14 +133,14 @@
 					<cells>
 						<Label text="{i18n>Employee.favorite}" required="false"/> 
 						<Text text=""/>
-						<rdf:TextResource path="dataModel>favorite/systemBFavorite" entitySet="Product"/>		
-						<rdf:TextResource path="dataModel>favorite/systemAFavorite" entitySet="Product"/>		
+						<rdf:TextResource path="dataModel>favorite/systemBFavorite" entitySet="Product" tooltip="{i18n>$target.favorite/systemBFavorite}"/>		
+						<rdf:TextResource path="dataModel>favorite/systemAFavorite" entitySet="Product" tooltip="{i18n>$target.favorite/systemAFavorite}"/>		
 					</cells>
 				</ColumnListItem>
 				<ColumnListItem >
 					<cells>
 						<Label text="{i18n>Employee.firstName}" required="false"/> 
-						<rdf:TextLink text="{path:'dataModel>firstName',type:'sap.ui.model.type.String' }" linkText="{i18n>Employee.firstName}"/>
+						<rdf:TextLink text="{path:'dataModel>firstName',type:'sap.ui.model.type.String' }" linkText="{i18n>Employee.firstName}" tooltip="{i18n>Employee.firstName}"/>
 						<Text text=""/>
 						<Text text=""/>
 					</cells>
@@ -145,7 +148,7 @@
 				<ColumnListItem >
 					<cells>
 						<Label text="{i18n>Employee.hireDate}" required="false"/> 
-						<Text text="{dataModel>hireDate}"/>
+						<Text text="{dataModel>hireDate}" tooltip="{i18n>Employee.hireDate}"/>
 						<Text text=""/>
 						<Text text=""/>
 					</cells>
@@ -153,7 +156,7 @@
 				<ColumnListItem >
 					<cells>
 						<Label text="{i18n>Employee.homePhone}" required="false"/> 
-						<rdf:TextLink text="{path:'dataModel>homePhone',type:'sap.ui.model.type.String' }" linkText="{i18n>Employee.homePhone}"/>
+						<rdf:TextLink text="{path:'dataModel>homePhone',type:'sap.ui.model.type.String' }" linkText="{i18n>Employee.homePhone}" tooltip="{i18n>Employee.homePhone}"/>
 						<Text text=""/>
 						<Text text=""/>
 					</cells>
@@ -161,7 +164,7 @@
 				<ColumnListItem >
 					<cells>
 						<Label text="{i18n>Employee.lastName}" required="false"/> 
-						<rdf:TextLink text="{path:'dataModel>lastName',type:'sap.ui.model.type.String' }" linkText="{i18n>Employee.lastName}"/>
+						<rdf:TextLink text="{path:'dataModel>lastName',type:'sap.ui.model.type.String' }" linkText="{i18n>Employee.lastName}" tooltip="{i18n>Employee.lastName}"/>
 						<Text text=""/>
 						<Text text=""/>
 					</cells>
@@ -169,7 +172,7 @@
 				<ColumnListItem >
 					<cells>
 						<Label text="{i18n>Employee.lat}" required="false"/> 
-						<Text text="{path:'dataModel>lat',type:'sap.ui.model.type.Float' }"/>
+						<Text text="{path:'dataModel>lat',type:'sap.ui.model.type.Float' }" tooltip="{i18n>Employee.lat}"/>
 						<Text text=""/>
 						<Text text=""/>
 					</cells>
@@ -177,7 +180,7 @@
 				<ColumnListItem >
 					<cells>
 						<Label text="{i18n>Employee.lat_long}" required="false"/> 
-						<rdf:TextLink text="{path:'dataModel>lat_long',type:'sap.ui.model.type.String' }" linkText="{i18n>Employee.lat_long}"/>
+						<rdf:TextLink text="{path:'dataModel>lat_long',type:'sap.ui.model.type.String' }" linkText="{i18n>Employee.lat_long}" tooltip="{i18n>Employee.lat_long}"/>
 						<Text text=""/>
 						<Text text=""/>
 					</cells>
@@ -185,7 +188,7 @@
 				<ColumnListItem >
 					<cells>
 						<Label text="{i18n>Employee.long}" required="false"/> 
-						<Text text="{path:'dataModel>long',type:'sap.ui.model.type.Float' }"/>
+						<Text text="{path:'dataModel>long',type:'sap.ui.model.type.Float' }" tooltip="{i18n>Employee.long}"/>
 						<Text text=""/>
 						<Text text=""/>
 					</cells>
@@ -193,7 +196,7 @@
 				<ColumnListItem >
 					<cells>
 						<Label text="{i18n>Employee.notes}" required="false"/> 
-						<rdf:TextLink text="{path:'dataModel>notes',type:'sap.ui.model.type.String' }" linkText="{i18n>Employee.notes}"/>
+						<rdf:TextLink text="{path:'dataModel>notes',type:'sap.ui.model.type.String' }" linkText="{i18n>Employee.notes}" tooltip="{i18n>Employee.notes}"/>
 						<Text text=""/>
 						<Text text=""/>
 					</cells>
@@ -201,7 +204,7 @@
 				<ColumnListItem >
 					<cells>
 						<Label text="{i18n>Employee.photo}" required="false"/> 
-						<rdf:TextLink text="{path:'dataModel>photo',type:'sap.ui.model.type.String' }" linkText="{i18n>Employee.photo}"/>
+						<rdf:TextLink text="{path:'dataModel>photo',type:'sap.ui.model.type.String' }" linkText="{i18n>Employee.photo}" tooltip="{i18n>Employee.photo}"/>
 						<Text text=""/>
 						<Text text=""/>
 					</cells>
@@ -209,7 +212,7 @@
 				<ColumnListItem >
 					<cells>
 						<Label text="{i18n>Employee.regionDescription}" required="false"/> 
-						<rdf:TextLink text="{path:'dataModel>regionDescription',type:'sap.ui.model.type.String' }" linkText="{i18n>Employee.regionDescription}"/>
+						<rdf:TextLink text="{path:'dataModel>regionDescription',type:'sap.ui.model.type.String' }" linkText="{i18n>Employee.regionDescription}" tooltip="{i18n>Employee.regionDescription}"/>
 						<Text text=""/>
 						<Text text=""/>
 					</cells>
@@ -217,7 +220,7 @@
 				<ColumnListItem >
 					<cells>
 						<Label text="{i18n>Employee.reportsToNotation}" required="false"/> 
-						<rdf:TextLink text="{path:'dataModel>reportsToNotation',type:'sap.ui.model.type.String' }" linkText="{i18n>Employee.reportsToNotation}"/>
+						<rdf:TextLink text="{path:'dataModel>reportsToNotation',type:'sap.ui.model.type.String' }" linkText="{i18n>Employee.reportsToNotation}" tooltip="{i18n>Employee.reportsToNotation}"/>
 						<Text text=""/>
 						<Text text=""/>
 					</cells>
@@ -225,7 +228,7 @@
 				<ColumnListItem >
 					<cells>
 						<Label text="{i18n>Employee.seeAlso}" required="false"/> 
-						<rdf:TextLink text="{path:'dataModel>seeAlso',type:'sap.ui.model.type.String' }" linkText="{i18n>Employee.seeAlso}"/>
+						<rdf:TextLink text="{path:'dataModel>seeAlso',type:'sap.ui.model.type.String' }" linkText="{i18n>Employee.seeAlso}" tooltip="{i18n>Employee.seeAlso}"/>
 						<Text text=""/>
 						<Text text=""/>
 					</cells>
@@ -233,7 +236,7 @@
 				<ColumnListItem >
 					<cells>
 						<Label text="{i18n>Employee.territoryNotation}" required="false"/> 
-						<rdf:TextLink text="{path:'dataModel>territoryNotation',type:'sap.ui.model.type.String' }" linkText="{i18n>Employee.territoryNotation}"/>
+						<rdf:TextLink text="{path:'dataModel>territoryNotation',type:'sap.ui.model.type.String' }" linkText="{i18n>Employee.territoryNotation}" tooltip="{i18n>Employee.territoryNotation}"/>
 						<Text text=""/>
 						<Text text=""/>
 					</cells>
@@ -241,7 +244,7 @@
 				<ColumnListItem >
 					<cells>
 						<Label text="{i18n>Employee.title}" required="false"/> 
-						<rdf:TextLink text="{path:'dataModel>title',type:'sap.ui.model.type.String' }" linkText="{i18n>Employee.title}"/>
+						<rdf:TextLink text="{path:'dataModel>title',type:'sap.ui.model.type.String' }" linkText="{i18n>Employee.title}" tooltip="{i18n>Employee.title}"/>
 						<Text text=""/>
 						<Text text=""/>
 					</cells>
@@ -249,7 +252,7 @@
 				<ColumnListItem >
 					<cells>
 						<Label text="{i18n>Employee.titleOfCourtesy}" required="false"/> 
-						<rdf:TextLink text="{path:'dataModel>titleOfCourtesy',type:'sap.ui.model.type.String' }" linkText="{i18n>Employee.titleOfCourtesy}"/>
+						<rdf:TextLink text="{path:'dataModel>titleOfCourtesy',type:'sap.ui.model.type.String' }" linkText="{i18n>Employee.titleOfCourtesy}" tooltip="{i18n>Employee.titleOfCourtesy}"/>
 						<Text text=""/>
 						<Text text=""/>
 					</cells>
@@ -257,7 +260,7 @@
 				<ColumnListItem >
 					<cells>
 						<Label text="{i18n>Employee.reportsTo}" required="false"/> 
-						<rdf:TextResource path="dataModel>reportsTo" entitySet="Employee"/>		
+						<rdf:TextResource path="dataModel>reportsTo" entitySet="Employee" tooltip="{i18n>$target.reportsTo}"/>		
 						<Text text=""/>
 						<Text text=""/>
 					</cells>
@@ -265,7 +268,7 @@
 				<ColumnListItem >
 					<cells>
 						<Label text="{i18n>Employee.employeeRegion}" required="false"/> 
-						<rdf:ListResource path="dataModel>employeeRegion" entitySet="Region"/>
+						<rdf:ListResource path="dataModel>employeeRegion" entitySet="Region" tooltip="{i18n>$target.employeeRegion}"/>
 						<Text text=""/>
 						<Text text=""/>
 					</cells>
@@ -273,7 +276,7 @@
 				<ColumnListItem >
 					<cells>
 						<Label text="{i18n>Employee.managesEmployee}" required="false"/> 
-						<rdf:ListResource path="dataModel>managesEmployee" entitySet="Employee"/>
+						<rdf:ListResource path="dataModel>managesEmployee" entitySet="Employee" tooltip="{i18n>$target.managesEmployee}"/>
 						<Text text=""/>
 						<Text text=""/>
 					</cells>
@@ -281,7 +284,7 @@
 				<ColumnListItem >
 					<cells>
 						<Label text="{i18n>Employee.managesOrder}" required="false"/> 
-						<rdf:ListResource path="dataModel>managesOrder" entitySet="Order"/>
+						<rdf:ListResource path="dataModel>managesOrder" entitySet="Order" tooltip="{i18n>$target.managesOrder}"/>
 						<Text text=""/>
 						<Text text=""/>
 					</cells>
@@ -289,7 +292,7 @@
 				<ColumnListItem >
 					<cells>
 						<Label text="{i18n>Employee.territory}" required="false"/> 
-						<rdf:ListResource path="dataModel>territory" entitySet="Territory"/>
+						<rdf:ListResource path="dataModel>territory" entitySet="Territory" tooltip="{i18n>$target.territory}"/>
 						<Text text=""/>
 						<Text text=""/>
 					</cells>

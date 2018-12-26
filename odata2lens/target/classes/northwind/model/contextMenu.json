@@ -564,8 +564,8 @@
 				"type":"complexNavigationSet",
 				"key": "employer",
 				"text": "employer",
-				"icon": "sap-icon://northwind/supplier",
-				"target": "Suppliers",
+				"icon": "$complexNavigationProperty.complexRange.icon",
+				"target": "$complexNavigationProperty.complexRange.targetEntitySet",
 				"tooltip": "employer",
 				"visible": true , 
 				"parameters": {
@@ -574,11 +574,11 @@
 						"$expand": "*"
 					},
 					"versions": [	
-						{	"text": "SystemAEmployee",
-							"navigation": "systemAEmployer"
+						{	"text": "$navigationSet.subTypeName",
+							"navigation": "$navigationSet.name"
 						},						
-						{	"text": "SystemBEmployee",
-							"navigation": "systemBEmployer"
+						{	"text": "$navigationSet.subTypeName",
+							"navigation": "$navigationSet.name"
 						}					
 					]
 				}
@@ -587,8 +587,8 @@
 				"type":"complexNavigationProperty",
 				"key": "favorite",
 				"text": "favorite",
-				"icon": "sap-icon://northwind/employee",
-				"target": "Product",
+				"icon": "$complexNavigationProperty.complexRange.icon",
+				"target": "$complexNavigationProperty.complexRange.targetEntityType",
 				"tooltip": "favorite",
 				"visible": true , 
 				"parameters": {
@@ -597,11 +597,11 @@
 						"$expand": "*"
 					},
 					"versions": [	
-						{	"text": "SystemAEmployee",
-							"navigation": "systemAFavorite"
+						{	"text": "$navigationPropery.subTypeName",
+							"navigation": "$navigationPropery.name"
 						},						
-						{	"text": "SystemBEmployee",
-							"navigation": "systemBFavorite"
+						{	"text": "$navigationPropery.subTypeName",
+							"navigation": "$navigationPropery.name"
 						}					
 					]
 				}

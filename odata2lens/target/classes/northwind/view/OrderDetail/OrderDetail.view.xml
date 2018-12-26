@@ -43,55 +43,55 @@
 				<ColumnListItem >
 					<cells>
 						<Label text="{i18n>OrderDetail.comment}" required="false"/> 
-						<rdf:TextLink text="{path:'dataModel>comment',type:'sap.ui.model.type.String' }" linkText="{i18n>OrderDetail.comment}"/>
+						<rdf:TextLink text="{path:'dataModel>comment',type:'sap.ui.model.type.String' }" linkText="{i18n>OrderDetail.comment}" tooltip="{i18n>OrderDetail.comment}"/>
 					</cells>
 				</ColumnListItem>
 				<ColumnListItem >
 					<cells>
 						<Label text="{i18n>OrderDetail.orderDetailUnitPrice}" required="false"/> 
-						<Text text="{path:'dataModel>orderDetailUnitPrice',type:'sap.ui.model.type.Float' }"/>
+						<Text text="{path:'dataModel>orderDetailUnitPrice',type:'sap.ui.model.type.Float' }" tooltip="{i18n>OrderDetail.orderDetailUnitPrice}"/>
 					</cells>
 				</ColumnListItem>
 				<ColumnListItem >
 					<cells>
 						<Label text="{i18n>OrderDetail.discount}" required="false"/> 
-						<Text text="{path:'dataModel>discount',type:'sap.ui.model.type.Float', formatOptions:{'style':'short','minFractionDigits':5} }"/>
+						<Text text="{path:'dataModel>discount',type:'sap.ui.model.type.Float', formatOptions:{'style':'short','minFractionDigits':5} }" tooltip="{i18n>OrderDetail.discount}"/>
 					</cells>
 				</ColumnListItem>
 				<ColumnListItem >
 					<cells>
 						<Label text="{i18n>OrderDetail.orderNotation}" required="false"/> 
-						<rdf:TextLink text="{path:'dataModel>orderNotation',type:'sap.ui.model.type.String' }" linkText="{i18n>OrderDetail.orderNotation}"/>
+						<rdf:TextLink text="{path:'dataModel>orderNotation',type:'sap.ui.model.type.String' }" linkText="{i18n>OrderDetail.orderNotation}" tooltip="{i18n>OrderDetail.orderNotation}"/>
 					</cells>
 				</ColumnListItem>
 				<ColumnListItem >
 					<cells>
 						<Label text="{i18n>OrderDetail.productNotation}" required="false"/> 
-						<rdf:TextLink text="{path:'dataModel>productNotation',type:'sap.ui.model.type.String' }" linkText="{i18n>OrderDetail.productNotation}"/>
+						<rdf:TextLink text="{path:'dataModel>productNotation',type:'sap.ui.model.type.String' }" linkText="{i18n>OrderDetail.productNotation}" tooltip="{i18n>OrderDetail.productNotation}"/>
 					</cells>
 				</ColumnListItem>
 				<ColumnListItem >
 					<cells>
 						<Label text="{i18n>OrderDetail.quantity}" required="false"/> 
-						<Text text="{path:'dataModel>quantity',type:'sap.ui.model.type.Integer' }"/>
+						<Text text="{path:'dataModel>quantity',type:'sap.ui.model.type.Integer' }" tooltip="{i18n>OrderDetail.quantity}"/>
 					</cells>
 				</ColumnListItem>
 				<ColumnListItem >
 					<cells>
 						<Label text="{i18n>OrderDetail.seeAlso}" required="false"/> 
-						<rdf:TextLink text="{path:'dataModel>seeAlso',type:'sap.ui.model.type.String' }" linkText="{i18n>OrderDetail.seeAlso}"/>
+						<rdf:TextLink text="{path:'dataModel>seeAlso',type:'sap.ui.model.type.String' }" linkText="{i18n>OrderDetail.seeAlso}" tooltip="{i18n>OrderDetail.seeAlso}"/>
 					</cells>
 				</ColumnListItem>
 				<ColumnListItem >
 					<cells>
 						<Label text="{i18n>OrderDetail.order}" required="false"/> 
-						<rdf:TextResource path="dataModel>order" entitySet="Order"/>		
+						<rdf:TextResource path="dataModel>order" entitySet="Order" tooltip="{i18n>$target.order}"/>		
 					</cells>
 				</ColumnListItem>
 				<ColumnListItem >
 					<cells>
 						<Label text="{i18n>OrderDetail.product}" required="false"/> 
-						<rdf:TextResource path="dataModel>product" entitySet="Product"/>		
+						<rdf:TextResource path="dataModel>product" entitySet="Product" tooltip="{i18n>$target.product}"/>		
 					</cells>
 				</ColumnListItem>
 			</items>

@@ -43,115 +43,115 @@
 				<ColumnListItem >
 					<cells>
 						<Label text="{i18n>Customer.comment}" required="false"/> 
-						<rdf:TextLink text="{path:'dataModel>comment',type:'sap.ui.model.type.String' }" linkText="{i18n>Customer.comment}"/>
+						<rdf:TextLink text="{path:'dataModel>comment',type:'sap.ui.model.type.String' }" linkText="{i18n>Customer.comment}" tooltip="{i18n>Customer.comment}"/>
 					</cells>
 				</ColumnListItem>
 				<ColumnListItem >
 					<cells>
 						<Label text="{i18n>Customer.customerAddress}" required="false"/> 
-						<rdf:TextLink text="{path:'dataModel>customerAddress',type:'sap.ui.model.type.String' }" linkText="{i18n>Customer.customerAddress}"/>
+						<rdf:TextLink text="{path:'dataModel>customerAddress',type:'sap.ui.model.type.String' }" linkText="{i18n>Customer.customerAddress}" tooltip="{i18n>Customer.customerAddress}"/>
 					</cells>
 				</ColumnListItem>
 				<ColumnListItem >
 					<cells>
 						<Label text="{i18n>Customer.customerCity}" required="false"/> 
-						<rdf:TextLink text="{path:'dataModel>customerCity',type:'sap.ui.model.type.String' }" linkText="{i18n>Customer.customerCity}"/>
+						<rdf:TextLink text="{path:'dataModel>customerCity',type:'sap.ui.model.type.String' }" linkText="{i18n>Customer.customerCity}" tooltip="{i18n>Customer.customerCity}"/>
 					</cells>
 				</ColumnListItem>
 				<ColumnListItem >
 					<cells>
 						<Label text="{i18n>Customer.customerCompanyName}" required="false"/> 
-						<rdf:TextLink text="{path:'dataModel>customerCompanyName',type:'sap.ui.model.type.String' }" linkText="{i18n>Customer.customerCompanyName}"/>
+						<rdf:TextLink text="{path:'dataModel>customerCompanyName',type:'sap.ui.model.type.String' }" linkText="{i18n>Customer.customerCompanyName}" tooltip="{i18n>Customer.customerCompanyName}"/>
 					</cells>
 				</ColumnListItem>
 				<ColumnListItem >
 					<cells>
 						<Label text="{i18n>Customer.customerContactName}" required="false"/> 
-						<rdf:TextLink text="{path:'dataModel>customerContactName',type:'sap.ui.model.type.String' }" linkText="{i18n>Customer.customerContactName}"/>
+						<rdf:TextLink text="{path:'dataModel>customerContactName',type:'sap.ui.model.type.String' }" linkText="{i18n>Customer.customerContactName}" tooltip="{i18n>Customer.customerContactName}"/>
 					</cells>
 				</ColumnListItem>
 				<ColumnListItem >
 					<cells>
 						<Label text="{i18n>Customer.customerContactTitle}" required="false"/> 
-						<rdf:TextLink text="{path:'dataModel>customerContactTitle',type:'sap.ui.model.type.String' }" linkText="{i18n>Customer.customerContactTitle}"/>
+						<rdf:TextLink text="{path:'dataModel>customerContactTitle',type:'sap.ui.model.type.String' }" linkText="{i18n>Customer.customerContactTitle}" tooltip="{i18n>Customer.customerContactTitle}"/>
 					</cells>
 				</ColumnListItem>
 				<ColumnListItem >
 					<cells>
 						<Label text="{i18n>Customer.customerCountry}" required="false"/> 
-						<rdf:TextLink text="{path:'dataModel>customerCountry',type:'sap.ui.model.type.String' }" linkText="{i18n>Customer.customerCountry}"/>
+						<rdf:TextLink text="{path:'dataModel>customerCountry',type:'sap.ui.model.type.String' }" linkText="{i18n>Customer.customerCountry}" tooltip="{i18n>Customer.customerCountry}"/>
 					</cells>
 				</ColumnListItem>
 				<ColumnListItem >
 					<cells>
 						<Label text="{i18n>Customer.customerFax}" required="false"/> 
-						<rdf:TextLink text="{path:'dataModel>customerFax',type:'sap.ui.model.type.String' }" linkText="{i18n>Customer.customerFax}"/>
+						<rdf:TextLink text="{path:'dataModel>customerFax',type:'sap.ui.model.type.String' }" linkText="{i18n>Customer.customerFax}" tooltip="{i18n>Customer.customerFax}"/>
 					</cells>
 				</ColumnListItem>
 				<ColumnListItem >
 					<cells>
 						<Label text="{i18n>Customer.customerPhone}" required="false"/> 
-						<rdf:TextLink text="{path:'dataModel>customerPhone',type:'sap.ui.model.type.String' }" linkText="{i18n>Customer.customerPhone}"/>
+						<rdf:TextLink text="{path:'dataModel>customerPhone',type:'sap.ui.model.type.String' }" linkText="{i18n>Customer.customerPhone}" tooltip="{i18n>Customer.customerPhone}"/>
 					</cells>
 				</ColumnListItem>
 				<ColumnListItem >
 					<cells>
 						<Label text="{i18n>Customer.customerPostalCode}" required="false"/> 
-						<rdf:TextLink text="{path:'dataModel>customerPostalCode',type:'sap.ui.model.type.String' }" linkText="{i18n>Customer.customerPostalCode}"/>
+						<rdf:TextLink text="{path:'dataModel>customerPostalCode',type:'sap.ui.model.type.String' }" linkText="{i18n>Customer.customerPostalCode}" tooltip="{i18n>Customer.customerPostalCode}"/>
 					</cells>
 				</ColumnListItem>
 				<ColumnListItem >
 					<cells>
 						<Label text="{i18n>Customer.customerWebsite}" required="false"/> 
-						<rdf:TextLink text="{path:'dataModel>customerWebsite',type:'sap.ui.model.type.String' }" linkText="{i18n>Customer.customerWebsite}"/>
+						<rdf:TextLink text="{path:'dataModel>customerWebsite',type:'sap.ui.model.type.String' }" linkText="{i18n>Customer.customerWebsite}" tooltip="{i18n>Customer.customerWebsite}"/>
 					</cells>
 				</ColumnListItem>
 				<ColumnListItem >
 					<cells>
 						<Label text="{i18n>Customer.lat}" required="false"/> 
-						<Text text="{path:'dataModel>lat',type:'sap.ui.model.type.Float' }"/>
+						<Text text="{path:'dataModel>lat',type:'sap.ui.model.type.Float' }" tooltip="{i18n>Customer.lat}"/>
 					</cells>
 				</ColumnListItem>
 				<ColumnListItem >
 					<cells>
 						<Label text="{i18n>Customer.lat_long}" required="false"/> 
-						<rdf:TextLink text="{path:'dataModel>lat_long',type:'sap.ui.model.type.String' }" linkText="{i18n>Customer.lat_long}"/>
+						<rdf:TextLink text="{path:'dataModel>lat_long',type:'sap.ui.model.type.String' }" linkText="{i18n>Customer.lat_long}" tooltip="{i18n>Customer.lat_long}"/>
 					</cells>
 				</ColumnListItem>
 				<ColumnListItem >
 					<cells>
 						<Label text="{i18n>Customer.long}" required="false"/> 
-						<Text text="{path:'dataModel>long',type:'sap.ui.model.type.Float' }"/>
+						<Text text="{path:'dataModel>long',type:'sap.ui.model.type.Float' }" tooltip="{i18n>Customer.long}"/>
 					</cells>
 				</ColumnListItem>
 				<ColumnListItem >
 					<cells>
 						<Label text="{i18n>Customer.regionDescription}" required="false"/> 
-						<rdf:TextLink text="{path:'dataModel>regionDescription',type:'sap.ui.model.type.String' }" linkText="{i18n>Customer.regionDescription}"/>
+						<rdf:TextLink text="{path:'dataModel>regionDescription',type:'sap.ui.model.type.String' }" linkText="{i18n>Customer.regionDescription}" tooltip="{i18n>Customer.regionDescription}"/>
 					</cells>
 				</ColumnListItem>
 				<ColumnListItem >
 					<cells>
 						<Label text="{i18n>Customer.seeAlso}" required="false"/> 
-						<rdf:TextLink text="{path:'dataModel>seeAlso',type:'sap.ui.model.type.String' }" linkText="{i18n>Customer.seeAlso}"/>
+						<rdf:TextLink text="{path:'dataModel>seeAlso',type:'sap.ui.model.type.String' }" linkText="{i18n>Customer.seeAlso}" tooltip="{i18n>Customer.seeAlso}"/>
 					</cells>
 				</ColumnListItem>
 				<ColumnListItem >
 					<cells>
 						<Label text="{i18n>Customer.customerRegion}" required="false"/> 
-						<rdf:ListResource path="dataModel>customerRegion" entitySet="Region"/>
+						<rdf:ListResource path="dataModel>customerRegion" entitySet="Region" tooltip="{i18n>$target.customerRegion}"/>
 					</cells>
 				</ColumnListItem>
 				<ColumnListItem >
 					<cells>
 						<Label text="{i18n>Customer.customer_customer_Order}" required="false"/> 
-						<rdf:ListResource path="dataModel>customer_customer_Order" entitySet="Customer_Order"/>
+						<rdf:ListResource path="dataModel>customer_customer_Order" entitySet="Customer_Order" tooltip="{i18n>$target.customer_customer_Order}"/>
 					</cells>
 				</ColumnListItem>
 				<ColumnListItem >
 					<cells>
 						<Label text="{i18n>Customer.hasPlacedOrder}" required="false"/> 
-						<rdf:ListResource path="dataModel>hasPlacedOrder" entitySet="Order"/>
+						<rdf:ListResource path="dataModel>hasPlacedOrder" entitySet="Order" tooltip="{i18n>$target.hasPlacedOrder}"/>
 					</cells>
 				</ColumnListItem>
 			</items>

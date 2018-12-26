@@ -43,193 +43,199 @@
 				<ColumnListItem >
 					<cells>
 						<Label text="{i18n>SystemBEmployee.birthDate}" required="false"/> 
-						<Text text="{dataModel>birthDate}"/>
+						<Text text="{dataModel>birthDate}" tooltip="{i18n>SystemBEmployee.birthDate}"/>
 					</cells>
 				</ColumnListItem>
 				<ColumnListItem >
 					<cells>
 						<Label text="{i18n>SystemBEmployee.comment}" required="false"/> 
-						<rdf:TextLink text="{path:'dataModel>comment',type:'sap.ui.model.type.String' }" linkText="{i18n>SystemBEmployee.comment}"/>
+						<rdf:TextLink text="{path:'dataModel>comment',type:'sap.ui.model.type.String' }" linkText="{i18n>SystemBEmployee.comment}" tooltip="{i18n>SystemBEmployee.comment}"/>
 					</cells>
 				</ColumnListItem>
 				<ColumnListItem >
 					<cells>
 						<Label text="{i18n>SystemBEmployee.employeeAddress}" required="false"/> 
-						<rdf:TextLink text="{path:'dataModel>employeeAddress',type:'sap.ui.model.type.String' }" linkText="{i18n>SystemBEmployee.employeeAddress}"/>
+						<rdf:TextLink text="{path:'dataModel>employeeAddress',type:'sap.ui.model.type.String' }" linkText="{i18n>SystemBEmployee.employeeAddress}" tooltip="{i18n>SystemBEmployee.employeeAddress}"/>
 					</cells>
 				</ColumnListItem>
 				<ColumnListItem >
 					<cells>
 						<Label text="{i18n>SystemBEmployee.employeeCity}" required="false"/> 
-						<rdf:TextLink text="{path:'dataModel>employeeCity',type:'sap.ui.model.type.String' }" linkText="{i18n>SystemBEmployee.employeeCity}"/>
+						<rdf:TextLink text="{path:'dataModel>employeeCity',type:'sap.ui.model.type.String' }" linkText="{i18n>SystemBEmployee.employeeCity}" tooltip="{i18n>SystemBEmployee.employeeCity}"/>
 					</cells>
 				</ColumnListItem>
 				<ColumnListItem >
 					<cells>
 						<Label text="{i18n>SystemBEmployee.employeeCountry}" required="false"/> 
-						<rdf:TextLink text="{path:'dataModel>employeeCountry',type:'sap.ui.model.type.String' }" linkText="{i18n>SystemBEmployee.employeeCountry}"/>
+						<rdf:TextLink text="{path:'dataModel>employeeCountry',type:'sap.ui.model.type.String' }" linkText="{i18n>SystemBEmployee.employeeCountry}" tooltip="{i18n>SystemBEmployee.employeeCountry}"/>
 					</cells>
 				</ColumnListItem>
 				<ColumnListItem >
 					<cells>
 						<Label text="{i18n>SystemBEmployee.employeeLinkedIn}" required="false"/> 
-						<rdf:TextLink text="{path:'dataModel>employeeLinkedIn',type:'sap.ui.model.type.String' }" linkText="{i18n>SystemBEmployee.employeeLinkedIn}"/>
+						<rdf:TextLink text="{path:'dataModel>employeeLinkedIn',type:'sap.ui.model.type.String' }" linkText="{i18n>SystemBEmployee.employeeLinkedIn}" tooltip="{i18n>SystemBEmployee.employeeLinkedIn}"/>
 					</cells>
 				</ColumnListItem>
 				<ColumnListItem >
 					<cells>
 						<Label text="{i18n>SystemBEmployee.employeePostalCode}" required="false"/> 
-						<rdf:TextLink text="{path:'dataModel>employeePostalCode',type:'sap.ui.model.type.String' }" linkText="{i18n>SystemBEmployee.employeePostalCode}"/>
+						<rdf:TextLink text="{path:'dataModel>employeePostalCode',type:'sap.ui.model.type.String' }" linkText="{i18n>SystemBEmployee.employeePostalCode}" tooltip="{i18n>SystemBEmployee.employeePostalCode}"/>
 					</cells>
 				</ColumnListItem>
 				<ColumnListItem >
 					<cells>
 						<Label text="{i18n>SystemBEmployee.extension}" required="false"/> 
-						<rdf:TextLink text="{path:'dataModel>extension',type:'sap.ui.model.type.String' }" linkText="{i18n>SystemBEmployee.extension}"/>
+						<rdf:TextLink text="{path:'dataModel>extension',type:'sap.ui.model.type.String' }" linkText="{i18n>SystemBEmployee.extension}" tooltip="{i18n>SystemBEmployee.extension}"/>
 					</cells>
 				</ColumnListItem>
 				<ColumnListItem >
 					<cells>
 						<Label text="{i18n>SystemBEmployee.firstName}" required="false"/> 
-						<rdf:TextLink text="{path:'dataModel>firstName',type:'sap.ui.model.type.String' }" linkText="{i18n>SystemBEmployee.firstName}"/>
+						<rdf:TextLink text="{path:'dataModel>firstName',type:'sap.ui.model.type.String' }" linkText="{i18n>SystemBEmployee.firstName}" tooltip="{i18n>SystemBEmployee.firstName}"/>
 					</cells>
 				</ColumnListItem>
 				<ColumnListItem >
 					<cells>
 						<Label text="{i18n>SystemBEmployee.hireDate}" required="false"/> 
-						<Text text="{dataModel>hireDate}"/>
+						<Text text="{dataModel>hireDate}" tooltip="{i18n>SystemBEmployee.hireDate}"/>
 					</cells>
 				</ColumnListItem>
 				<ColumnListItem >
 					<cells>
 						<Label text="{i18n>SystemBEmployee.homePhone}" required="false"/> 
-						<rdf:TextLink text="{path:'dataModel>homePhone',type:'sap.ui.model.type.String' }" linkText="{i18n>SystemBEmployee.homePhone}"/>
+						<rdf:TextLink text="{path:'dataModel>homePhone',type:'sap.ui.model.type.String' }" linkText="{i18n>SystemBEmployee.homePhone}" tooltip="{i18n>SystemBEmployee.homePhone}"/>
 					</cells>
 				</ColumnListItem>
 				<ColumnListItem >
 					<cells>
 						<Label text="{i18n>SystemBEmployee.lastName}" required="false"/> 
-						<rdf:TextLink text="{path:'dataModel>lastName',type:'sap.ui.model.type.String' }" linkText="{i18n>SystemBEmployee.lastName}"/>
+						<rdf:TextLink text="{path:'dataModel>lastName',type:'sap.ui.model.type.String' }" linkText="{i18n>SystemBEmployee.lastName}" tooltip="{i18n>SystemBEmployee.lastName}"/>
 					</cells>
 				</ColumnListItem>
 				<ColumnListItem >
 					<cells>
 						<Label text="{i18n>SystemBEmployee.lat}" required="false"/> 
-						<Text text="{path:'dataModel>lat',type:'sap.ui.model.type.Float' }"/>
+						<Text text="{path:'dataModel>lat',type:'sap.ui.model.type.Float' }" tooltip="{i18n>SystemBEmployee.lat}"/>
 					</cells>
 				</ColumnListItem>
 				<ColumnListItem >
 					<cells>
 						<Label text="{i18n>SystemBEmployee.lat_long}" required="false"/> 
-						<rdf:TextLink text="{path:'dataModel>lat_long',type:'sap.ui.model.type.String' }" linkText="{i18n>SystemBEmployee.lat_long}"/>
+						<rdf:TextLink text="{path:'dataModel>lat_long',type:'sap.ui.model.type.String' }" linkText="{i18n>SystemBEmployee.lat_long}" tooltip="{i18n>SystemBEmployee.lat_long}"/>
 					</cells>
 				</ColumnListItem>
 				<ColumnListItem >
 					<cells>
 						<Label text="{i18n>SystemBEmployee.long}" required="false"/> 
-						<Text text="{path:'dataModel>long',type:'sap.ui.model.type.Float' }"/>
+						<Text text="{path:'dataModel>long',type:'sap.ui.model.type.Float' }" tooltip="{i18n>SystemBEmployee.long}"/>
 					</cells>
 				</ColumnListItem>
 				<ColumnListItem >
 					<cells>
 						<Label text="{i18n>SystemBEmployee.notes}" required="false"/> 
-						<rdf:TextLink text="{path:'dataModel>notes',type:'sap.ui.model.type.String' }" linkText="{i18n>SystemBEmployee.notes}"/>
+						<rdf:TextLink text="{path:'dataModel>notes',type:'sap.ui.model.type.String' }" linkText="{i18n>SystemBEmployee.notes}" tooltip="{i18n>SystemBEmployee.notes}"/>
 					</cells>
 				</ColumnListItem>
 				<ColumnListItem >
 					<cells>
 						<Label text="{i18n>SystemBEmployee.photo}" required="false"/> 
-						<rdf:TextLink text="{path:'dataModel>photo',type:'sap.ui.model.type.String' }" linkText="{i18n>SystemBEmployee.photo}"/>
+						<rdf:TextLink text="{path:'dataModel>photo',type:'sap.ui.model.type.String' }" linkText="{i18n>SystemBEmployee.photo}" tooltip="{i18n>SystemBEmployee.photo}"/>
 					</cells>
 				</ColumnListItem>
 				<ColumnListItem >
 					<cells>
 						<Label text="{i18n>SystemBEmployee.regionDescription}" required="false"/> 
-						<rdf:TextLink text="{path:'dataModel>regionDescription',type:'sap.ui.model.type.String' }" linkText="{i18n>SystemBEmployee.regionDescription}"/>
+						<rdf:TextLink text="{path:'dataModel>regionDescription',type:'sap.ui.model.type.String' }" linkText="{i18n>SystemBEmployee.regionDescription}" tooltip="{i18n>SystemBEmployee.regionDescription}"/>
 					</cells>
 				</ColumnListItem>
 				<ColumnListItem >
 					<cells>
 						<Label text="{i18n>SystemBEmployee.reportsToNotation}" required="false"/> 
-						<rdf:TextLink text="{path:'dataModel>reportsToNotation',type:'sap.ui.model.type.String' }" linkText="{i18n>SystemBEmployee.reportsToNotation}"/>
+						<rdf:TextLink text="{path:'dataModel>reportsToNotation',type:'sap.ui.model.type.String' }" linkText="{i18n>SystemBEmployee.reportsToNotation}" tooltip="{i18n>SystemBEmployee.reportsToNotation}"/>
 					</cells>
 				</ColumnListItem>
 				<ColumnListItem >
 					<cells>
 						<Label text="{i18n>SystemBEmployee.seeAlso}" required="false"/> 
-						<rdf:TextLink text="{path:'dataModel>seeAlso',type:'sap.ui.model.type.String' }" linkText="{i18n>SystemBEmployee.seeAlso}"/>
+						<rdf:TextLink text="{path:'dataModel>seeAlso',type:'sap.ui.model.type.String' }" linkText="{i18n>SystemBEmployee.seeAlso}" tooltip="{i18n>SystemBEmployee.seeAlso}"/>
 					</cells>
 				</ColumnListItem>
 				<ColumnListItem >
 					<cells>
-						<Label text="{i18n>SystemBEmployee.systemBEmployeeSalary}" required="false"/> 
-						<Text text="{path:'dataModel>systemBEmployeeSalary',type:'sap.ui.model.type.Float' }"/>
+						<Label text="{i18n>SystemBEmployee.systemBEmployeeAnnualSalary}" required="false"/> 
+						<Text text="{path:'dataModel>systemBEmployeeAnnualSalary',type:'sap.ui.model.type.Float' }" tooltip="{i18n>SystemBEmployee.systemBEmployeeAnnualSalary}"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>SystemBEmployee.systemBEmployeeMonthlySalary}" required="false"/> 
+						<Text text="{path:'dataModel>systemBEmployeeMonthlySalary',type:'sap.ui.model.type.Float' }" tooltip="{i18n>SystemBEmployee.systemBEmployeeMonthlySalary}"/>
 					</cells>
 				</ColumnListItem>
 				<ColumnListItem >
 					<cells>
 						<Label text="{i18n>SystemBEmployee.systemBHours}" required="false"/> 
-						<Text text="{dataModel>systemBHours}"/>
+						<Text text="{dataModel>systemBHours}" tooltip="{i18n>SystemBEmployee.systemBHours}"/>
 					</cells>
 				</ColumnListItem>
 				<ColumnListItem >
 					<cells>
 						<Label text="{i18n>SystemBEmployee.territoryNotation}" required="false"/> 
-						<rdf:TextLink text="{path:'dataModel>territoryNotation',type:'sap.ui.model.type.String' }" linkText="{i18n>SystemBEmployee.territoryNotation}"/>
+						<rdf:TextLink text="{path:'dataModel>territoryNotation',type:'sap.ui.model.type.String' }" linkText="{i18n>SystemBEmployee.territoryNotation}" tooltip="{i18n>SystemBEmployee.territoryNotation}"/>
 					</cells>
 				</ColumnListItem>
 				<ColumnListItem >
 					<cells>
 						<Label text="{i18n>SystemBEmployee.title}" required="false"/> 
-						<rdf:TextLink text="{path:'dataModel>title',type:'sap.ui.model.type.String' }" linkText="{i18n>SystemBEmployee.title}"/>
+						<rdf:TextLink text="{path:'dataModel>title',type:'sap.ui.model.type.String' }" linkText="{i18n>SystemBEmployee.title}" tooltip="{i18n>SystemBEmployee.title}"/>
 					</cells>
 				</ColumnListItem>
 				<ColumnListItem >
 					<cells>
 						<Label text="{i18n>SystemBEmployee.titleOfCourtesy}" required="false"/> 
-						<rdf:TextLink text="{path:'dataModel>titleOfCourtesy',type:'sap.ui.model.type.String' }" linkText="{i18n>SystemBEmployee.titleOfCourtesy}"/>
+						<rdf:TextLink text="{path:'dataModel>titleOfCourtesy',type:'sap.ui.model.type.String' }" linkText="{i18n>SystemBEmployee.titleOfCourtesy}" tooltip="{i18n>SystemBEmployee.titleOfCourtesy}"/>
 					</cells>
 				</ColumnListItem>
 				<ColumnListItem >
 					<cells>
 						<Label text="{i18n>SystemBEmployee.reportsTo}" required="false"/> 
-						<rdf:TextResource path="dataModel>reportsTo" entitySet="Employee"/>		
+						<rdf:TextResource path="dataModel>reportsTo" entitySet="Employee" tooltip="{i18n>$target.reportsTo}"/>		
 					</cells>
 				</ColumnListItem>
 				<ColumnListItem >
 					<cells>
 						<Label text="{i18n>SystemBEmployee.systemBFavorite}" required="false"/> 
-						<rdf:TextResource path="dataModel>systemBFavorite" entitySet="Product"/>		
+						<rdf:TextResource path="dataModel>systemBFavorite" entitySet="Product" tooltip="{i18n>$target.systemBFavorite}"/>		
 					</cells>
 				</ColumnListItem>
 				<ColumnListItem >
 					<cells>
 						<Label text="{i18n>SystemBEmployee.employeeRegion}" required="false"/> 
-						<rdf:ListResource path="dataModel>employeeRegion" entitySet="Region"/>
+						<rdf:ListResource path="dataModel>employeeRegion" entitySet="Region" tooltip="{i18n>$target.employeeRegion}"/>
 					</cells>
 				</ColumnListItem>
 				<ColumnListItem >
 					<cells>
 						<Label text="{i18n>SystemBEmployee.managesEmployee}" required="false"/> 
-						<rdf:ListResource path="dataModel>managesEmployee" entitySet="Employee"/>
+						<rdf:ListResource path="dataModel>managesEmployee" entitySet="Employee" tooltip="{i18n>$target.managesEmployee}"/>
 					</cells>
 				</ColumnListItem>
 				<ColumnListItem >
 					<cells>
 						<Label text="{i18n>SystemBEmployee.managesOrder}" required="false"/> 
-						<rdf:ListResource path="dataModel>managesOrder" entitySet="Order"/>
+						<rdf:ListResource path="dataModel>managesOrder" entitySet="Order" tooltip="{i18n>$target.managesOrder}"/>
 					</cells>
 				</ColumnListItem>
 				<ColumnListItem >
 					<cells>
 						<Label text="{i18n>SystemBEmployee.systemBEmployer}" required="false"/> 
-						<rdf:ListResource path="dataModel>systemBEmployer" entitySet="Supplier"/>
+						<rdf:ListResource path="dataModel>systemBEmployer" entitySet="Supplier" tooltip="{i18n>$target.systemBEmployer}"/>
 					</cells>
 				</ColumnListItem>
 				<ColumnListItem >
 					<cells>
 						<Label text="{i18n>SystemBEmployee.territory}" required="false"/> 
-						<rdf:ListResource path="dataModel>territory" entitySet="Territory"/>
+						<rdf:ListResource path="dataModel>territory" entitySet="Territory" tooltip="{i18n>$target.territory}"/>
 					</cells>
 				</ColumnListItem>
 			</items>

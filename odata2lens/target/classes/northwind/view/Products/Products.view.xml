@@ -80,8 +80,8 @@
 							<rdf:TextLink text="{path:'dataModel>seeAlso',type:'sap.ui.model.type.String'}" linkText="{i18n>Product.seeAlso}"/>
 							<rdf:TextLink text="{path:'dataModel>supplierNotation',type:'sap.ui.model.type.String'}" linkText="{i18n>Product.supplierNotation}"/>
 							<VBox>					
-							<Text text="{dataModel>unitCommission/systemAUnitCommision}"/>
-							<Text text="{dataModel>unitCommission/systemBUnitCommission}"/>
+								<Text text=""/>
+								<Text text=""/>
 							</VBox>							
 							<Text text="{path:'dataModel>unitsInStock',type:'sap.ui.model.type.Integer' }"/>
 							<Text text="{path:'dataModel>unitsOnOrder',type:'sap.ui.model.type.Integer' }"/>

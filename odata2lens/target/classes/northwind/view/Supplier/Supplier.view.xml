@@ -43,115 +43,115 @@
 				<ColumnListItem >
 					<cells>
 						<Label text="{i18n>Supplier.comment}" required="false"/> 
-						<rdf:TextLink text="{path:'dataModel>comment',type:'sap.ui.model.type.String' }" linkText="{i18n>Supplier.comment}"/>
+						<rdf:TextLink text="{path:'dataModel>comment',type:'sap.ui.model.type.String' }" linkText="{i18n>Supplier.comment}" tooltip="{i18n>Supplier.comment}"/>
 					</cells>
 				</ColumnListItem>
 				<ColumnListItem >
 					<cells>
 						<Label text="{i18n>Supplier.homePage}" required="false"/> 
-						<rdf:TextLink text="{path:'dataModel>homePage',type:'sap.ui.model.type.String' }" linkText="{i18n>Supplier.homePage}"/>
+						<rdf:TextLink text="{path:'dataModel>homePage',type:'sap.ui.model.type.String' }" linkText="{i18n>Supplier.homePage}" tooltip="{i18n>Supplier.homePage}"/>
 					</cells>
 				</ColumnListItem>
 				<ColumnListItem >
 					<cells>
 						<Label text="{i18n>Supplier.lat}" required="false"/> 
-						<Text text="{path:'dataModel>lat',type:'sap.ui.model.type.Float' }"/>
+						<Text text="{path:'dataModel>lat',type:'sap.ui.model.type.Float' }" tooltip="{i18n>Supplier.lat}"/>
 					</cells>
 				</ColumnListItem>
 				<ColumnListItem >
 					<cells>
 						<Label text="{i18n>Supplier.lat_long}" required="false"/> 
-						<rdf:TextLink text="{path:'dataModel>lat_long',type:'sap.ui.model.type.String' }" linkText="{i18n>Supplier.lat_long}"/>
+						<rdf:TextLink text="{path:'dataModel>lat_long',type:'sap.ui.model.type.String' }" linkText="{i18n>Supplier.lat_long}" tooltip="{i18n>Supplier.lat_long}"/>
 					</cells>
 				</ColumnListItem>
 				<ColumnListItem >
 					<cells>
 						<Label text="{i18n>Supplier.long}" required="false"/> 
-						<Text text="{path:'dataModel>long',type:'sap.ui.model.type.Float' }"/>
+						<Text text="{path:'dataModel>long',type:'sap.ui.model.type.Float' }" tooltip="{i18n>Supplier.long}"/>
 					</cells>
 				</ColumnListItem>
 				<ColumnListItem >
 					<cells>
 						<Label text="{i18n>Supplier.regionDescription}" required="false"/> 
-						<rdf:TextLink text="{path:'dataModel>regionDescription',type:'sap.ui.model.type.String' }" linkText="{i18n>Supplier.regionDescription}"/>
+						<rdf:TextLink text="{path:'dataModel>regionDescription',type:'sap.ui.model.type.String' }" linkText="{i18n>Supplier.regionDescription}" tooltip="{i18n>Supplier.regionDescription}"/>
 					</cells>
 				</ColumnListItem>
 				<ColumnListItem >
 					<cells>
 						<Label text="{i18n>Supplier.seeAlso}" required="false"/> 
-						<rdf:TextLink text="{path:'dataModel>seeAlso',type:'sap.ui.model.type.String' }" linkText="{i18n>Supplier.seeAlso}"/>
+						<rdf:TextLink text="{path:'dataModel>seeAlso',type:'sap.ui.model.type.String' }" linkText="{i18n>Supplier.seeAlso}" tooltip="{i18n>Supplier.seeAlso}"/>
 					</cells>
 				</ColumnListItem>
 				<ColumnListItem >
 					<cells>
 						<Label text="{i18n>Supplier.supplierAddress}" required="false"/> 
-						<rdf:TextLink text="{path:'dataModel>supplierAddress',type:'sap.ui.model.type.String' }" linkText="{i18n>Supplier.supplierAddress}"/>
+						<rdf:TextLink text="{path:'dataModel>supplierAddress',type:'sap.ui.model.type.String' }" linkText="{i18n>Supplier.supplierAddress}" tooltip="{i18n>Supplier.supplierAddress}"/>
 					</cells>
 				</ColumnListItem>
 				<ColumnListItem >
 					<cells>
 						<Label text="{i18n>Supplier.supplierCity}" required="false"/> 
-						<rdf:TextLink text="{path:'dataModel>supplierCity',type:'sap.ui.model.type.String' }" linkText="{i18n>Supplier.supplierCity}"/>
+						<rdf:TextLink text="{path:'dataModel>supplierCity',type:'sap.ui.model.type.String' }" linkText="{i18n>Supplier.supplierCity}" tooltip="{i18n>Supplier.supplierCity}"/>
 					</cells>
 				</ColumnListItem>
 				<ColumnListItem >
 					<cells>
 						<Label text="{i18n>Supplier.supplierCompanyName}" required="false"/> 
-						<rdf:TextLink text="{path:'dataModel>supplierCompanyName',type:'sap.ui.model.type.String' }" linkText="{i18n>Supplier.supplierCompanyName}"/>
+						<rdf:TextLink text="{path:'dataModel>supplierCompanyName',type:'sap.ui.model.type.String' }" linkText="{i18n>Supplier.supplierCompanyName}" tooltip="{i18n>Supplier.supplierCompanyName}"/>
 					</cells>
 				</ColumnListItem>
 				<ColumnListItem >
 					<cells>
 						<Label text="{i18n>Supplier.supplierContactName}" required="false"/> 
-						<rdf:TextLink text="{path:'dataModel>supplierContactName',type:'sap.ui.model.type.String' }" linkText="{i18n>Supplier.supplierContactName}"/>
+						<rdf:TextLink text="{path:'dataModel>supplierContactName',type:'sap.ui.model.type.String' }" linkText="{i18n>Supplier.supplierContactName}" tooltip="{i18n>Supplier.supplierContactName}"/>
 					</cells>
 				</ColumnListItem>
 				<ColumnListItem >
 					<cells>
 						<Label text="{i18n>Supplier.supplierContactTitle}" required="false"/> 
-						<rdf:TextLink text="{path:'dataModel>supplierContactTitle',type:'sap.ui.model.type.String' }" linkText="{i18n>Supplier.supplierContactTitle}"/>
+						<rdf:TextLink text="{path:'dataModel>supplierContactTitle',type:'sap.ui.model.type.String' }" linkText="{i18n>Supplier.supplierContactTitle}" tooltip="{i18n>Supplier.supplierContactTitle}"/>
 					</cells>
 				</ColumnListItem>
 				<ColumnListItem >
 					<cells>
 						<Label text="{i18n>Supplier.supplierCountry}" required="false"/> 
-						<rdf:TextLink text="{path:'dataModel>supplierCountry',type:'sap.ui.model.type.String' }" linkText="{i18n>Supplier.supplierCountry}"/>
+						<rdf:TextLink text="{path:'dataModel>supplierCountry',type:'sap.ui.model.type.String' }" linkText="{i18n>Supplier.supplierCountry}" tooltip="{i18n>Supplier.supplierCountry}"/>
 					</cells>
 				</ColumnListItem>
 				<ColumnListItem >
 					<cells>
 						<Label text="{i18n>Supplier.supplierFax}" required="false"/> 
-						<rdf:TextLink text="{path:'dataModel>supplierFax',type:'sap.ui.model.type.String' }" linkText="{i18n>Supplier.supplierFax}"/>
+						<rdf:TextLink text="{path:'dataModel>supplierFax',type:'sap.ui.model.type.String' }" linkText="{i18n>Supplier.supplierFax}" tooltip="{i18n>Supplier.supplierFax}"/>
 					</cells>
 				</ColumnListItem>
 				<ColumnListItem >
 					<cells>
 						<Label text="{i18n>Supplier.supplierHomePage}" required="false"/> 
-						<rdf:TextLink text="{path:'dataModel>supplierHomePage',type:'sap.ui.model.type.String' }" linkText="{i18n>Supplier.supplierHomePage}"/>
+						<rdf:TextLink text="{path:'dataModel>supplierHomePage',type:'sap.ui.model.type.String' }" linkText="{i18n>Supplier.supplierHomePage}" tooltip="{i18n>Supplier.supplierHomePage}"/>
 					</cells>
 				</ColumnListItem>
 				<ColumnListItem >
 					<cells>
 						<Label text="{i18n>Supplier.supplierPhone}" required="false"/> 
-						<rdf:TextLink text="{path:'dataModel>supplierPhone',type:'sap.ui.model.type.String' }" linkText="{i18n>Supplier.supplierPhone}"/>
+						<rdf:TextLink text="{path:'dataModel>supplierPhone',type:'sap.ui.model.type.String' }" linkText="{i18n>Supplier.supplierPhone}" tooltip="{i18n>Supplier.supplierPhone}"/>
 					</cells>
 				</ColumnListItem>
 				<ColumnListItem >
 					<cells>
 						<Label text="{i18n>Supplier.supplierPostalCode}" required="false"/> 
-						<rdf:TextLink text="{path:'dataModel>supplierPostalCode',type:'sap.ui.model.type.String' }" linkText="{i18n>Supplier.supplierPostalCode}"/>
+						<rdf:TextLink text="{path:'dataModel>supplierPostalCode',type:'sap.ui.model.type.String' }" linkText="{i18n>Supplier.supplierPostalCode}" tooltip="{i18n>Supplier.supplierPostalCode}"/>
 					</cells>
 				</ColumnListItem>
 				<ColumnListItem >
 					<cells>
 						<Label text="{i18n>Supplier.supplierRegion}" required="false"/> 
-						<rdf:ListResource path="dataModel>supplierRegion" entitySet="Region"/>
+						<rdf:ListResource path="dataModel>supplierRegion" entitySet="Region" tooltip="{i18n>$target.supplierRegion}"/>
 					</cells>
 				</ColumnListItem>
 				<ColumnListItem >
 					<cells>
 						<Label text="{i18n>Supplier.suppliesProduct}" required="false"/> 
-						<rdf:ListResource path="dataModel>suppliesProduct" entitySet="Product"/>
+						<rdf:ListResource path="dataModel>suppliesProduct" entitySet="Product" tooltip="{i18n>$target.suppliesProduct}"/>
 					</cells>
 				</ColumnListItem>
 			</items>

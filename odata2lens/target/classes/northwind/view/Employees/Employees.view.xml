@@ -103,8 +103,8 @@
 							<rdf:TextLink text="{path:'dataModel>employeeCountry',type:'sap.ui.model.type.String'}" linkText="{i18n>Employee.employeeCountry}"/>
 							<rdf:TextLink text="{path:'dataModel>employeeLinkedIn',type:'sap.ui.model.type.String'}" linkText="{i18n>Employee.employeeLinkedIn}"/>
 							<VBox>					
-							<Text text="{path:'dataModel>employeeSalary/systemBEmployeeSalary',type:'sap.ui.model.type.Float', formatOptions:{'style':'short','maxFractionDigits':2} }"/>
-							<Text text="{path:'dataModel>employeeSalary/systemAEmployeeSalary',type:'sap.ui.model.type.Float', formatOptions:{'style':'short','maxFractionDigits':2} }"/>
+								<Text text=""/>
+								<Text text=""/>
 							</VBox>							
 							<rdf:TextLink text="{path:'dataModel>extension',type:'sap.ui.model.type.String'}" linkText="{i18n>Employee.extension}"/>
 							<Text text="{path:'dataModel>lat',type:'sap.ui.model.type.Float', formatOptions:{'style':'short','maxFractionDigits':2} }"/>

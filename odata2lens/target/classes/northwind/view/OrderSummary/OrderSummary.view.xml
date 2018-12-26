@@ -43,31 +43,31 @@
 				<ColumnListItem >
 					<cells>
 						<Label text="{i18n>OrderSummary.order}" required="false"/> 
-						<rdf:TextLink text="{path:'dataModel>order',type:'sap.ui.model.type.String' }" linkText="{i18n>OrderSummary.order}"/>
+						<rdf:TextLink text="{path:'dataModel>order',type:'sap.ui.model.type.String' }" linkText="{i18n>OrderSummary.order}" tooltip="{i18n>OrderSummary.order}"/>
 					</cells>
 				</ColumnListItem>
 				<ColumnListItem >
 					<cells>
 						<Label text="{i18n>OrderSummary.orderSummary_Value}" required="false"/> 
-						<Text text="{path:'dataModel>orderSummary_Value',type:'sap.ui.model.type.Float' }"/>
+						<Text text="{path:'dataModel>orderSummary_Value',type:'sap.ui.model.type.Float' }" tooltip="{i18n>OrderSummary.orderSummary_Value}"/>
 					</cells>
 				</ColumnListItem>
 				<ColumnListItem >
 					<cells>
 						<Label text="{i18n>OrderSummary.prod}" required="false"/> 
-						<rdf:TextLink text="{path:'dataModel>prod',type:'sap.ui.model.type.String' }" linkText="{i18n>OrderSummary.prod}"/>
+						<rdf:TextLink text="{path:'dataModel>prod',type:'sap.ui.model.type.String' }" linkText="{i18n>OrderSummary.prod}" tooltip="{i18n>OrderSummary.prod}"/>
 					</cells>
 				</ColumnListItem>
 				<ColumnListItem >
 					<cells>
 						<Label text="{i18n>OrderSummary.orderSummary_order}" required="false"/> 
-						<rdf:TextResource path="dataModel>orderSummary_order" entitySet="Order"/>		
+						<rdf:TextResource path="dataModel>orderSummary_order" entitySet="Order" tooltip="{i18n>$target.orderSummary_order}"/>		
 					</cells>
 				</ColumnListItem>
 				<ColumnListItem >
 					<cells>
 						<Label text="{i18n>OrderSummary.orderSummary_product}" required="false"/> 
-						<rdf:TextResource path="dataModel>orderSummary_product" entitySet="Product"/>		
+						<rdf:TextResource path="dataModel>orderSummary_product" entitySet="Product" tooltip="{i18n>$target.orderSummary_product}"/>		
 					</cells>
 				</ColumnListItem>
 			</items>

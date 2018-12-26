@@ -471,19 +471,20 @@ sequence, entity, entityIcon, image, target, targetIcon, type, targetEntity, tar
 		27, SystemBEmployee, "sap-icon://expand-group", "./images/icons/category.png", SystemBEmployees, "sap-icon://expand-group", Grid, SystemBEmployee ,true ,reportsToId, D, Edm.String,18,false, [] , 	
 		27, SystemBEmployee, "sap-icon://expand-group", "./images/icons/category.png", SystemBEmployees, "sap-icon://expand-group", Grid, SystemBEmployee ,true ,reportsToNotation, D, Edm.String,19,true, [] , 	
 		27, SystemBEmployee, "sap-icon://expand-group", "./images/icons/category.png", SystemBEmployees, "sap-icon://expand-group", Grid, SystemBEmployee ,true ,seeAlso, D, Edm.String,20,true, [] , 	
-		27, SystemBEmployee, "sap-icon://expand-group", "./images/icons/category.png", SystemBEmployees, "sap-icon://expand-group", Grid, SystemBEmployee ,true ,systemBEmployeeSalary, D, Edm.Double,21,true, [] , {'style':'short';'maxFractionDigits':2}	
-		27, SystemBEmployee, "sap-icon://expand-group", "./images/icons/category.png", SystemBEmployees, "sap-icon://expand-group", Grid, SystemBEmployee ,true ,systemBFavoriteId, D, Edm.String,22,false, [] , 	
-		27, SystemBEmployee, "sap-icon://expand-group", "./images/icons/category.png", SystemBEmployees, "sap-icon://expand-group", Grid, SystemBEmployee ,true ,systemBHours, D, Edm.Decimal,23,true, [] , 	
-		27, SystemBEmployee, "sap-icon://expand-group", "./images/icons/category.png", SystemBEmployees, "sap-icon://expand-group", Grid, SystemBEmployee ,true ,territoryNotation, D, Edm.String,24,true, [] , 	
-		27, SystemBEmployee, "sap-icon://expand-group", "./images/icons/category.png", SystemBEmployees, "sap-icon://expand-group", Grid, SystemBEmployee ,true ,title, D, Edm.String,25,true, [] , 	
-		27, SystemBEmployee, "sap-icon://expand-group", "./images/icons/category.png", SystemBEmployees, "sap-icon://expand-group", Grid, SystemBEmployee ,true ,titleOfCourtesy, D, Edm.String,26,true, [] , 	
-		27, SystemBEmployee, "sap-icon://expand-group", "./images/icons/category.png", SystemBEmployees ,"sap-icon://expand-group",  Grid,SystemBEmployee ,true, reportsTo, O, Employee, 27,false, [] ,""
-		27, SystemBEmployee, "sap-icon://expand-group", "./images/icons/category.png", SystemBEmployees ,"sap-icon://expand-group",  Grid,SystemBEmployee ,true, systemBFavorite, O, Product, 28,false, [] ,""
-		27, SystemBEmployee, "sap-icon://expand-group","./images/icons/category.png", SystemBEmployees ,"sap-icon://expand-group", Grid,  SystemBEmployee ,true, employeeRegion, C, Region,29,false, [Count],""
-		27, SystemBEmployee, "sap-icon://expand-group","./images/icons/category.png", SystemBEmployees ,"sap-icon://expand-group", Grid,  SystemBEmployee ,true, managesEmployee, C, Employee,30,false, [Count],""
-		27, SystemBEmployee, "sap-icon://expand-group","./images/icons/category.png", SystemBEmployees ,"sap-icon://expand-group", Grid,  SystemBEmployee ,true, managesOrder, C, Order,31,false, [Count],""
-		27, SystemBEmployee, "sap-icon://expand-group","./images/icons/category.png", SystemBEmployees ,"sap-icon://expand-group", Grid,  SystemBEmployee ,true, systemBEmployer, C, Supplier,32,false, [Count],""
-		27, SystemBEmployee, "sap-icon://expand-group","./images/icons/category.png", SystemBEmployees ,"sap-icon://expand-group", Grid,  SystemBEmployee ,true, territory, C, Territory,33,false, [Count],""
+		27, SystemBEmployee, "sap-icon://expand-group", "./images/icons/category.png", SystemBEmployees, "sap-icon://expand-group", Grid, SystemBEmployee ,true ,systemBEmployeeAnnualSalary, D, Edm.Double,21,true, [] , {'style':'short';'maxFractionDigits':2}	
+		27, SystemBEmployee, "sap-icon://expand-group", "./images/icons/category.png", SystemBEmployees, "sap-icon://expand-group", Grid, SystemBEmployee ,true ,systemBEmployeeMonthlySalary, D, Edm.Double,22,true, [] , {'style':'short';'maxFractionDigits':2}	
+		27, SystemBEmployee, "sap-icon://expand-group", "./images/icons/category.png", SystemBEmployees, "sap-icon://expand-group", Grid, SystemBEmployee ,true ,systemBFavoriteId, D, Edm.String,23,false, [] , 	
+		27, SystemBEmployee, "sap-icon://expand-group", "./images/icons/category.png", SystemBEmployees, "sap-icon://expand-group", Grid, SystemBEmployee ,true ,systemBHours, D, Edm.Decimal,24,true, [] , 	
+		27, SystemBEmployee, "sap-icon://expand-group", "./images/icons/category.png", SystemBEmployees, "sap-icon://expand-group", Grid, SystemBEmployee ,true ,territoryNotation, D, Edm.String,25,true, [] , 	
+		27, SystemBEmployee, "sap-icon://expand-group", "./images/icons/category.png", SystemBEmployees, "sap-icon://expand-group", Grid, SystemBEmployee ,true ,title, D, Edm.String,26,true, [] , 	
+		27, SystemBEmployee, "sap-icon://expand-group", "./images/icons/category.png", SystemBEmployees, "sap-icon://expand-group", Grid, SystemBEmployee ,true ,titleOfCourtesy, D, Edm.String,27,true, [] , 	
+		27, SystemBEmployee, "sap-icon://expand-group", "./images/icons/category.png", SystemBEmployees ,"sap-icon://expand-group",  Grid,SystemBEmployee ,true, reportsTo, O, Employee, 28,false, [] ,""
+		27, SystemBEmployee, "sap-icon://expand-group", "./images/icons/category.png", SystemBEmployees ,"sap-icon://expand-group",  Grid,SystemBEmployee ,true, systemBFavorite, O, Product, 29,false, [] ,""
+		27, SystemBEmployee, "sap-icon://expand-group","./images/icons/category.png", SystemBEmployees ,"sap-icon://expand-group", Grid,  SystemBEmployee ,true, employeeRegion, C, Region,30,false, [Count],""
+		27, SystemBEmployee, "sap-icon://expand-group","./images/icons/category.png", SystemBEmployees ,"sap-icon://expand-group", Grid,  SystemBEmployee ,true, managesEmployee, C, Employee,31,false, [Count],""
+		27, SystemBEmployee, "sap-icon://expand-group","./images/icons/category.png", SystemBEmployees ,"sap-icon://expand-group", Grid,  SystemBEmployee ,true, managesOrder, C, Order,32,false, [Count],""
+		27, SystemBEmployee, "sap-icon://expand-group","./images/icons/category.png", SystemBEmployees ,"sap-icon://expand-group", Grid,  SystemBEmployee ,true, systemBEmployer, C, Supplier,33,false, [Count],""
+		27, SystemBEmployee, "sap-icon://expand-group","./images/icons/category.png", SystemBEmployees ,"sap-icon://expand-group", Grid,  SystemBEmployee ,true, territory, C, Territory,34,false, [Count],""
 	
 		28, SystemBEmployee, "sap-icon://expand-group","./images/icons/category.png", SystemBEmployee , "sap-icon://expand-group",  Form, SystemBEmployee ,true, birthDate, D, Edm.Date,0,true, [] ,"" 
 		28, SystemBEmployee, "sap-icon://expand-group","./images/icons/category.png", SystemBEmployee , "sap-icon://expand-group",  Form, SystemBEmployee ,true, comment, D, Edm.String,1,true, [] ,"" 
@@ -506,19 +507,20 @@ sequence, entity, entityIcon, image, target, targetIcon, type, targetEntity, tar
 		28, SystemBEmployee, "sap-icon://expand-group","./images/icons/category.png", SystemBEmployee , "sap-icon://expand-group",  Form, SystemBEmployee ,true, reportsToId, D, Edm.String,18,false, [] ,"" 
 		28, SystemBEmployee, "sap-icon://expand-group","./images/icons/category.png", SystemBEmployee , "sap-icon://expand-group",  Form, SystemBEmployee ,true, reportsToNotation, D, Edm.String,19,true, [] ,"" 
 		28, SystemBEmployee, "sap-icon://expand-group","./images/icons/category.png", SystemBEmployee , "sap-icon://expand-group",  Form, SystemBEmployee ,true, seeAlso, D, Edm.String,20,true, [] ,"" 
-		28, SystemBEmployee, "sap-icon://expand-group","./images/icons/category.png", SystemBEmployee , "sap-icon://expand-group",  Form, SystemBEmployee ,true, systemBEmployeeSalary, D, Edm.Double,21,true, [] ,"" 
-		28, SystemBEmployee, "sap-icon://expand-group","./images/icons/category.png", SystemBEmployee , "sap-icon://expand-group",  Form, SystemBEmployee ,true, systemBFavoriteId, D, Edm.String,22,false, [] ,"" 
-		28, SystemBEmployee, "sap-icon://expand-group","./images/icons/category.png", SystemBEmployee , "sap-icon://expand-group",  Form, SystemBEmployee ,true, systemBHours, D, Edm.Decimal,23,true, [] ,"" 
-		28, SystemBEmployee, "sap-icon://expand-group","./images/icons/category.png", SystemBEmployee , "sap-icon://expand-group",  Form, SystemBEmployee ,true, territoryNotation, D, Edm.String,24,true, [] ,"" 
-		28, SystemBEmployee, "sap-icon://expand-group","./images/icons/category.png", SystemBEmployee , "sap-icon://expand-group",  Form, SystemBEmployee ,true, title, D, Edm.String,25,true, [] ,"" 
-		28, SystemBEmployee, "sap-icon://expand-group","./images/icons/category.png", SystemBEmployee , "sap-icon://expand-group",  Form, SystemBEmployee ,true, titleOfCourtesy, D, Edm.String,26,true, [] ,"" 
-28, SystemBEmployee, "sap-icon://expand-group","./images/icons/category.png", SystemBEmployee , "sap-icon://expand-group", Form,  SystemBEmployee ,	true  ,reportsTo, O, Employee,27,true, [] ,""
-28, SystemBEmployee, "sap-icon://expand-group","./images/icons/category.png", SystemBEmployee , "sap-icon://expand-group", Form,  SystemBEmployee ,	true  ,systemBFavorite, O, Product,28,true, [] ,""
-28, SystemBEmployee, "sap-icon://expand-group","./images/icons/category.png",SystemBEmployee ,"sap-icon://expand-group", Form,  SystemBEmployee ,true ,employeeRegion, C, Region,29,true, [List],""
-28, SystemBEmployee, "sap-icon://expand-group","./images/icons/category.png",SystemBEmployee ,"sap-icon://expand-group", Form,  SystemBEmployee ,true ,managesEmployee, C, Employee,30,true, [List],""
-28, SystemBEmployee, "sap-icon://expand-group","./images/icons/category.png",SystemBEmployee ,"sap-icon://expand-group", Form,  SystemBEmployee ,true ,managesOrder, C, Order,31,true, [List],""
-28, SystemBEmployee, "sap-icon://expand-group","./images/icons/category.png",SystemBEmployee ,"sap-icon://expand-group", Form,  SystemBEmployee ,true ,systemBEmployer, C, Supplier,32,true, [List],""
-28, SystemBEmployee, "sap-icon://expand-group","./images/icons/category.png",SystemBEmployee ,"sap-icon://expand-group", Form,  SystemBEmployee ,true ,territory, C, Territory,33,true, [List],""
+		28, SystemBEmployee, "sap-icon://expand-group","./images/icons/category.png", SystemBEmployee , "sap-icon://expand-group",  Form, SystemBEmployee ,true, systemBEmployeeAnnualSalary, D, Edm.Double,21,true, [] ,"" 
+		28, SystemBEmployee, "sap-icon://expand-group","./images/icons/category.png", SystemBEmployee , "sap-icon://expand-group",  Form, SystemBEmployee ,true, systemBEmployeeMonthlySalary, D, Edm.Double,22,true, [] ,"" 
+		28, SystemBEmployee, "sap-icon://expand-group","./images/icons/category.png", SystemBEmployee , "sap-icon://expand-group",  Form, SystemBEmployee ,true, systemBFavoriteId, D, Edm.String,23,false, [] ,"" 
+		28, SystemBEmployee, "sap-icon://expand-group","./images/icons/category.png", SystemBEmployee , "sap-icon://expand-group",  Form, SystemBEmployee ,true, systemBHours, D, Edm.Decimal,24,true, [] ,"" 
+		28, SystemBEmployee, "sap-icon://expand-group","./images/icons/category.png", SystemBEmployee , "sap-icon://expand-group",  Form, SystemBEmployee ,true, territoryNotation, D, Edm.String,25,true, [] ,"" 
+		28, SystemBEmployee, "sap-icon://expand-group","./images/icons/category.png", SystemBEmployee , "sap-icon://expand-group",  Form, SystemBEmployee ,true, title, D, Edm.String,26,true, [] ,"" 
+		28, SystemBEmployee, "sap-icon://expand-group","./images/icons/category.png", SystemBEmployee , "sap-icon://expand-group",  Form, SystemBEmployee ,true, titleOfCourtesy, D, Edm.String,27,true, [] ,"" 
+28, SystemBEmployee, "sap-icon://expand-group","./images/icons/category.png", SystemBEmployee , "sap-icon://expand-group", Form,  SystemBEmployee ,	true  ,reportsTo, O, Employee,28,true, [] ,""
+28, SystemBEmployee, "sap-icon://expand-group","./images/icons/category.png", SystemBEmployee , "sap-icon://expand-group", Form,  SystemBEmployee ,	true  ,systemBFavorite, O, Product,29,true, [] ,""
+28, SystemBEmployee, "sap-icon://expand-group","./images/icons/category.png",SystemBEmployee ,"sap-icon://expand-group", Form,  SystemBEmployee ,true ,employeeRegion, C, Region,30,true, [List],""
+28, SystemBEmployee, "sap-icon://expand-group","./images/icons/category.png",SystemBEmployee ,"sap-icon://expand-group", Form,  SystemBEmployee ,true ,managesEmployee, C, Employee,31,true, [List],""
+28, SystemBEmployee, "sap-icon://expand-group","./images/icons/category.png",SystemBEmployee ,"sap-icon://expand-group", Form,  SystemBEmployee ,true ,managesOrder, C, Order,32,true, [List],""
+28, SystemBEmployee, "sap-icon://expand-group","./images/icons/category.png",SystemBEmployee ,"sap-icon://expand-group", Form,  SystemBEmployee ,true ,systemBEmployer, C, Supplier,33,true, [List],""
+28, SystemBEmployee, "sap-icon://expand-group","./images/icons/category.png",SystemBEmployee ,"sap-icon://expand-group", Form,  SystemBEmployee ,true ,territory, C, Territory,34,true, [List],""
 
 
 		29, SystemBProduct, "sap-icon://expand-group", "./images/icons/category.png", SystemBProducts, "sap-icon://expand-group", Grid, SystemBProduct ,true ,categoryId, D, Edm.String,0,false, [] , 	

@@ -43,43 +43,43 @@
 				<ColumnListItem >
 					<cells>
 						<Label text="{i18n>Customer_Order.customer}" required="false"/> 
-						<rdf:TextLink text="{path:'dataModel>customer',type:'sap.ui.model.type.String' }" linkText="{i18n>Customer_Order.customer}"/>
+						<rdf:TextLink text="{path:'dataModel>customer',type:'sap.ui.model.type.String' }" linkText="{i18n>Customer_Order.customer}" tooltip="{i18n>Customer_Order.customer}"/>
 					</cells>
 				</ColumnListItem>
 				<ColumnListItem >
 					<cells>
 						<Label text="{i18n>Customer_Order.customer_Order_customerCity}" required="false"/> 
-						<rdf:TextLink text="{path:'dataModel>customer_Order_customerCity',type:'sap.ui.model.type.String' }" linkText="{i18n>Customer_Order.customer_Order_customerCity}"/>
+						<rdf:TextLink text="{path:'dataModel>customer_Order_customerCity',type:'sap.ui.model.type.String' }" linkText="{i18n>Customer_Order.customer_Order_customerCity}" tooltip="{i18n>Customer_Order.customer_Order_customerCity}"/>
 					</cells>
 				</ColumnListItem>
 				<ColumnListItem >
 					<cells>
 						<Label text="{i18n>Customer_Order.customer_Order_customerCompanyName}" required="false"/> 
-						<rdf:TextLink text="{path:'dataModel>customer_Order_customerCompanyName',type:'sap.ui.model.type.String' }" linkText="{i18n>Customer_Order.customer_Order_customerCompanyName}"/>
+						<rdf:TextLink text="{path:'dataModel>customer_Order_customerCompanyName',type:'sap.ui.model.type.String' }" linkText="{i18n>Customer_Order.customer_Order_customerCompanyName}" tooltip="{i18n>Customer_Order.customer_Order_customerCompanyName}"/>
 					</cells>
 				</ColumnListItem>
 				<ColumnListItem >
 					<cells>
 						<Label text="{i18n>Customer_Order.customer_Order_shipCity}" required="false"/> 
-						<rdf:TextLink text="{path:'dataModel>customer_Order_shipCity',type:'sap.ui.model.type.String' }" linkText="{i18n>Customer_Order.customer_Order_shipCity}"/>
+						<rdf:TextLink text="{path:'dataModel>customer_Order_shipCity',type:'sap.ui.model.type.String' }" linkText="{i18n>Customer_Order.customer_Order_shipCity}" tooltip="{i18n>Customer_Order.customer_Order_shipCity}"/>
 					</cells>
 				</ColumnListItem>
 				<ColumnListItem >
 					<cells>
 						<Label text="{i18n>Customer_Order.order}" required="false"/> 
-						<rdf:TextLink text="{path:'dataModel>order',type:'sap.ui.model.type.String' }" linkText="{i18n>Customer_Order.order}"/>
+						<rdf:TextLink text="{path:'dataModel>order',type:'sap.ui.model.type.String' }" linkText="{i18n>Customer_Order.order}" tooltip="{i18n>Customer_Order.order}"/>
 					</cells>
 				</ColumnListItem>
 				<ColumnListItem >
 					<cells>
 						<Label text="{i18n>Customer_Order.customer_Order_customer}" required="false"/> 
-						<rdf:TextResource path="dataModel>customer_Order_customer" entitySet="Customer"/>		
+						<rdf:TextResource path="dataModel>customer_Order_customer" entitySet="Customer" tooltip="{i18n>$target.customer_Order_customer}"/>		
 					</cells>
 				</ColumnListItem>
 				<ColumnListItem >
 					<cells>
 						<Label text="{i18n>Customer_Order.customer_Order_order}" required="false"/> 
-						<rdf:TextResource path="dataModel>customer_Order_order" entitySet="Order"/>		
+						<rdf:TextResource path="dataModel>customer_Order_order" entitySet="Order" tooltip="{i18n>$target.customer_Order_order}"/>		
 					</cells>
 				</ColumnListItem>
 			</items>

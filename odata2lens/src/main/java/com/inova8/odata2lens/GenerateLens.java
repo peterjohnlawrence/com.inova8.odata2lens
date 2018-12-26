@@ -221,7 +221,7 @@ public class GenerateLens {
 				Property property = new Property(propertyName, propertyName, propertyName,
 						edmProperty.getType().getFullQualifiedName().toString(), null,false);
 				property.setSubTypeName(subTypeName);
-				complexType.getProperties().put(subTypeName, property);
+				complexType.putProperty(subTypeName,property);
 			}
 			for (String navigationPropertyName : edmComplexType.getNavigationPropertyNames()) {
 				EdmNavigationProperty edmNavigationProperty = edmComplexType.getNavigationProperty(navigationPropertyName);
@@ -232,7 +232,7 @@ public class GenerateLens {
 							edmNavigationProperty.getType().getName(), "");
 					entityNavigationSet.setSubTypeName(subTypeName);
 					//entityNavigationSet.setRangeType( );
-					complexType.getNavigationSets().put(subTypeName,entityNavigationSet);
+					complexType.putNavigationSet(subTypeName,entityNavigationSet);
 				} else {
 					//String name, String label, String tooltip, String targetEntityType, String range,	String icon					
 					NavigationProperty navigationProperty = new NavigationProperty(navigationPropertyName,
@@ -240,7 +240,7 @@ public class GenerateLens {
 							edmNavigationProperty.getType().getName(), null);
 					navigationProperty.setSubTypeName(subTypeName);
 					//navigationProperty.setRangeType(subTypeName);
-					complexType.getNavigationProperties().put(subTypeName, navigationProperty);
+					complexType.putNavigationProperty(subTypeName, navigationProperty);
 				}
 			}
 		}
@@ -345,16 +345,28 @@ public class GenerateLens {
 			}
 			for ( Property property : entityType.getEntity().getProperties().values()) {
 				if (property.getComplex()) {
-					for ( Property complexProperty :property.getComplexRange().getProperties().values()) {
-						entityType.getEntity().getSubTypeNames().add(complexProperty.getSubTypeName());
+//					for ( Property complexProperty : property.getComplexRange().getProperties().values()) {
+//						entityType.getEntity().getSubTypeNames().add(complexProperty.getSubTypeName());
+//					}	
+//					for ( NavigationProperty complexNavigationProperty :property.getComplexRange().getNavigationProperties().values()) {
+//						entityType.getEntity().getSubTypeNames().add(complexNavigationProperty.getSubTypeName());
+//						complexNavigationProperty.setRangeType(entityType);
+//					}	
+//					for ( EntityNavigationSet complexNavigationSet :property.getComplexRange().getNavigationSets().values()) {
+//						entityType.getEntity().getSubTypeNames().add(complexNavigationSet.getSubTypeName());
+//						complexNavigationSet.setRangeType(entityTypes.get(complexNavigationSet.getRange()));
+//					}
+					
+					for ( String subTypeName : property.getComplexRange().getProperties().keySet()) {
+						entityType.getEntity().getSubTypeNames().add(subTypeName);
 					}	
-					for ( NavigationProperty complexNavigationProperty :property.getComplexRange().getNavigationProperties().values()) {
-						entityType.getEntity().getSubTypeNames().add(complexNavigationProperty.getSubTypeName());
-						complexNavigationProperty.setRangeType(entityType);
+					for ( String subTypeName :property.getComplexRange().getNavigationProperties().keySet()) {
+						entityType.getEntity().getSubTypeNames().add(subTypeName);
+					//	complexNavigationProperty.setRangeType(entityType);
 					}	
-					for ( EntityNavigationSet complexNavigationSet :property.getComplexRange().getNavigationSets().values()) {
-						entityType.getEntity().getSubTypeNames().add(complexNavigationSet.getSubTypeName());
-						complexNavigationSet.setRangeType(entityTypes.get(complexNavigationSet.getRange()));
+					for (  String subTypeName :property.getComplexRange().getNavigationSets().keySet()) {
+						entityType.getEntity().getSubTypeNames().add(subTypeName);
+					//	complexNavigationSet.setRangeType(entityTypes.get(complexNavigationSet.getRange()));
 					}
 				}else
 				{
@@ -458,7 +470,7 @@ public class GenerateLens {
 		Template i18nTemplate = null;
 
 		entitySetTemplate = Velocity.getTemplate("entitySet360.vm");
-		i18nTemplate = Velocity.getTemplate("i18n.entitySet.vm");
+		i18nTemplate = Velocity.getTemplate("i18n.entitySet360.vm");
 
 		for (EntityType entityType : entityTypes.values()) {
 			StringWriter entitySetWriter = new StringWriter();
@@ -493,7 +505,7 @@ public class GenerateLens {
 		Template i18nTemplate = null;
 
 		entityTemplate = Velocity.getTemplate("entity360.vm");
-		i18nTemplate = Velocity.getTemplate("i18n.entity.vm");
+		i18nTemplate = Velocity.getTemplate("i18n.entity360.vm");
 
 		for (EntityType entityType : entityTypes.values()) {
 			StringWriter entityWriter = new StringWriter();
@@ -515,50 +527,6 @@ public class GenerateLens {
 			fw.close();
 			//System.out.println(entityWriter.toString());
 			//System.out.println(i18nWriter.toString());
-		}
-
-	}
-
-	@SuppressWarnings("unused")
-	private static void generateEntityNavigationSet(String schemaName, StringWriter i18nWriter,
-			TreeMap<String, UITemplate> uiTemplates) throws IOException {
-
-		Template entityNavigationSetTemplate = null;
-		Template i18nTemplate = null;
-
-		entityNavigationSetTemplate = Velocity.getTemplate("entityNavigationSet.vm");
-		i18nTemplate = Velocity.getTemplate("i18n.entityNavigationSet.vm");
-
-		for (EntityType entityType : entityTypes.values()) {
-			for (EntityNavigationSet entityNavigationSet : entityType.getEntity().getNavigationSet().values()) {
-
-				if (entityTypes.get(entityNavigationSet.getTargetEntityType()) != null) {
-					//Only include those that are within this namespace
-					StringWriter entityNavigationSetWriter = new StringWriter();
-					VelocityContext entityNavigationSetContext = new VelocityContext();
-
-					entityNavigationSetContext.put("schema", schemaName);
-					entityNavigationSetContext.put("entity",
-							entityTypes.get(entityNavigationSet.getTargetEntityType()).getEntity());
-					entityNavigationSetContext.put("entitySet",
-							entityTypes.get(entityNavigationSet.getTargetEntityType()).getEntitySet());
-					entityNavigationSetContext.put("complexTypes", complexTypes);
-					entityNavigationSetContext.put("entityNavigationSet", entityNavigationSet);
-					entityNavigationSetContext.put("uiTemplate", uiTemplates.get(entityNavigationSet.getTarget()));
-					entityNavigationSetTemplate.merge(entityNavigationSetContext, entityNavigationSetWriter);
-
-					i18nTemplate.merge(entityNavigationSetContext, i18nWriter);
-
-					(new File(getWorkingPath() + "\\" + schemaName + "\\view\\" + entityNavigationSet.getTarget()))
-							.mkdirs();
-					FileWriter fw = new FileWriter(new File(getWorkingPath() + "\\" + schemaName + "\\view\\"
-							+ entityNavigationSet.getTarget() + "\\" + entityNavigationSet.getTarget() + ".view.xml"));
-					fw.write(entityNavigationSetWriter.toString());
-					fw.close();
-					//System.out.println(entityNavigationSetWriter.toString());
-					//System.out.println(i18nWriter.toString());
-				}
-			}
 		}
 
 	}
