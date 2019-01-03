@@ -2,8 +2,10 @@
 	xmlns:rdf="com.inova8.lens.control" xmlns:core="sap.ui.core">
 	<Page showHeader="false" id="page" navButtonPress="onNavBack" showNavButton="true" title="{i18n>Categorys.ViewTitle}">
 		<content>
-			<Table id="table360" inset="false" items="{ path: 'dataModel>/Category' , sorter: { path: 'label', descending: false } 
-				}"
+			<Table id="table360" inset="false" 
+					items="{ path: 'dataModel>/Category' 
+						   , sorter: { path: 'label', descending: false } 
+						}"
 				noDataText="{entitySetView>/tableNoDataText}" busyIndicatorDelay="{entitySetView>/tableBusyDelay}" growing="true" growingScrollToLoad="true"
 				updateFinished="onUpdateFinished"  fixedLayout="false">
 				<headerToolbar>
@@ -49,11 +51,11 @@
 					<ColumnListItem id="template360" type="Navigation" press="onPress">
 						<cells>
 							<rdf:TextResource path="dataModel>" entitySet="Category"/>
-							<rdf:TextLink text="{path:'dataModel>categoryName',type:'sap.ui.model.type.String'}" linkText="{i18n>Category.categoryName}"/>
-							<rdf:TextLink text="{path:'dataModel>comment',type:'sap.ui.model.type.String'}" linkText="{i18n>Category.comment}"/>
-							<rdf:TextLink text="{path:'dataModel>description',type:'sap.ui.model.type.String'}" linkText="{i18n>Category.description}"/>
-							<rdf:TextLink text="{path:'dataModel>picture',type:'sap.ui.model.type.String'}" linkText="{i18n>Category.picture}"/>
-							<rdf:TextLink text="{path:'dataModel>seeAlso',type:'sap.ui.model.type.String'}" linkText="{i18n>Category.seeAlso}"/>
+							<rdf:TextLink text="{path:'dataModel>categoryName',type:'sap.ui.model.type.String' }" linkText="{i18n>Categorys.categoryName}" tooltip="{i18n>Categorys.categoryName}"/>
+							<rdf:TextLink text="{path:'dataModel>comment',type:'sap.ui.model.type.String' }" linkText="{i18n>Categorys.comment}" tooltip="{i18n>Categorys.comment}"/>
+							<rdf:TextLink text="{path:'dataModel>description',type:'sap.ui.model.type.String' }" linkText="{i18n>Categorys.description}" tooltip="{i18n>Categorys.description}"/>
+							<rdf:TextLink text="{path:'dataModel>picture',type:'sap.ui.model.type.String' }" linkText="{i18n>Categorys.picture}" tooltip="{i18n>Categorys.picture}"/>
+							<rdf:TextLink text="{path:'dataModel>seeAlso',type:'sap.ui.model.type.String' }" linkText="{i18n>Categorys.seeAlso}" tooltip="{i18n>Categorys.seeAlso}"/>
 						</cells>
 					</ColumnListItem>
 				</items>

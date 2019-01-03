@@ -2,8 +2,10 @@
 	xmlns:rdf="com.inova8.lens.control" xmlns:core="sap.ui.core">
 	<Page showHeader="false" id="page" navButtonPress="onNavBack" showNavButton="true" title="{i18n>SystemBEmployees.ViewTitle}">
 		<content>
-			<Table id="table360" inset="false" items="{ path: 'dataModel>/SystemBEmployee' , sorter: { path: 'label', descending: false } 
-				}"
+			<Table id="table360" inset="false" 
+					items="{ path: 'dataModel>/SystemBEmployee' 
+						   , sorter: { path: 'label', descending: false } 
+						}"
 				noDataText="{entitySetView>/tableNoDataText}" busyIndicatorDelay="{entitySetView>/tableBusyDelay}" growing="true" growingScrollToLoad="true"
 				updateFinished="onUpdateFinished"  fixedLayout="false">
 				<headerToolbar>
@@ -112,32 +114,32 @@
 					<ColumnListItem id="template360" type="Navigation" press="onPress">
 						<cells>
 							<rdf:TextResource path="dataModel>" entitySet="SystemBEmployee"/>
-							<Text text="{dataModel>birthDate}"/>
-							<rdf:TextLink text="{path:'dataModel>comment',type:'sap.ui.model.type.String'}" linkText="{i18n>SystemBEmployee.comment}"/>
-							<rdf:TextLink text="{path:'dataModel>employeeAddress',type:'sap.ui.model.type.String'}" linkText="{i18n>SystemBEmployee.employeeAddress}"/>
-							<rdf:TextLink text="{path:'dataModel>employeeCity',type:'sap.ui.model.type.String'}" linkText="{i18n>SystemBEmployee.employeeCity}"/>
-							<rdf:TextLink text="{path:'dataModel>employeeCountry',type:'sap.ui.model.type.String'}" linkText="{i18n>SystemBEmployee.employeeCountry}"/>
-							<rdf:TextLink text="{path:'dataModel>employeeLinkedIn',type:'sap.ui.model.type.String'}" linkText="{i18n>SystemBEmployee.employeeLinkedIn}"/>
-							<rdf:TextLink text="{path:'dataModel>employeePostalCode',type:'sap.ui.model.type.String'}" linkText="{i18n>SystemBEmployee.employeePostalCode}"/>
-							<rdf:TextLink text="{path:'dataModel>extension',type:'sap.ui.model.type.String'}" linkText="{i18n>SystemBEmployee.extension}"/>
-							<rdf:TextLink text="{path:'dataModel>firstName',type:'sap.ui.model.type.String'}" linkText="{i18n>SystemBEmployee.firstName}"/>
-							<Text text="{dataModel>hireDate}"/>
-							<rdf:TextLink text="{path:'dataModel>homePhone',type:'sap.ui.model.type.String'}" linkText="{i18n>SystemBEmployee.homePhone}"/>
-							<rdf:TextLink text="{path:'dataModel>lastName',type:'sap.ui.model.type.String'}" linkText="{i18n>SystemBEmployee.lastName}"/>
-							<Text text="{path:'dataModel>lat',type:'sap.ui.model.type.Float', formatOptions:{'style':'short','maxFractionDigits':2} }"/>
-							<rdf:TextLink text="{path:'dataModel>lat_long',type:'sap.ui.model.type.String'}" linkText="{i18n>SystemBEmployee.lat_long}"/>
-							<Text text="{path:'dataModel>long',type:'sap.ui.model.type.Float', formatOptions:{'style':'short','maxFractionDigits':2} }"/>
-							<rdf:TextLink text="{path:'dataModel>notes',type:'sap.ui.model.type.String'}" linkText="{i18n>SystemBEmployee.notes}"/>
-							<rdf:TextLink text="{path:'dataModel>photo',type:'sap.ui.model.type.String'}" linkText="{i18n>SystemBEmployee.photo}"/>
-							<rdf:TextLink text="{path:'dataModel>regionDescription',type:'sap.ui.model.type.String'}" linkText="{i18n>SystemBEmployee.regionDescription}"/>
-							<rdf:TextLink text="{path:'dataModel>reportsToNotation',type:'sap.ui.model.type.String'}" linkText="{i18n>SystemBEmployee.reportsToNotation}"/>
-							<rdf:TextLink text="{path:'dataModel>seeAlso',type:'sap.ui.model.type.String'}" linkText="{i18n>SystemBEmployee.seeAlso}"/>
-							<Text text="{path:'dataModel>systemBEmployeeAnnualSalary',type:'sap.ui.model.type.Float', formatOptions:{'style':'short','maxFractionDigits':2} }"/>
-							<Text text="{path:'dataModel>systemBEmployeeMonthlySalary',type:'sap.ui.model.type.Float', formatOptions:{'style':'short','maxFractionDigits':2} }"/>
-							<Text text="{dataModel>systemBHours}"/>
-							<rdf:TextLink text="{path:'dataModel>territoryNotation',type:'sap.ui.model.type.String'}" linkText="{i18n>SystemBEmployee.territoryNotation}"/>
-							<rdf:TextLink text="{path:'dataModel>title',type:'sap.ui.model.type.String'}" linkText="{i18n>SystemBEmployee.title}"/>
-							<rdf:TextLink text="{path:'dataModel>titleOfCourtesy',type:'sap.ui.model.type.String'}" linkText="{i18n>SystemBEmployee.titleOfCourtesy}"/>
+							<Text text="{dataModel>birthDate}" tooltip="{i18n>SystemBEmployees.birthDate}"/>
+							<rdf:TextLink text="{path:'dataModel>comment',type:'sap.ui.model.type.String' }" linkText="{i18n>SystemBEmployees.comment}" tooltip="{i18n>SystemBEmployees.comment}"/>
+							<rdf:TextLink text="{path:'dataModel>employeeAddress',type:'sap.ui.model.type.String' }" linkText="{i18n>SystemBEmployees.employeeAddress}" tooltip="{i18n>SystemBEmployees.employeeAddress}"/>
+							<rdf:TextLink text="{path:'dataModel>employeeCity',type:'sap.ui.model.type.String' }" linkText="{i18n>SystemBEmployees.employeeCity}" tooltip="{i18n>SystemBEmployees.employeeCity}"/>
+							<rdf:TextLink text="{path:'dataModel>employeeCountry',type:'sap.ui.model.type.String' }" linkText="{i18n>SystemBEmployees.employeeCountry}" tooltip="{i18n>SystemBEmployees.employeeCountry}"/>
+							<rdf:TextLink text="{path:'dataModel>employeeLinkedIn',type:'sap.ui.model.type.String' }" linkText="{i18n>SystemBEmployees.employeeLinkedIn}" tooltip="{i18n>SystemBEmployees.employeeLinkedIn}"/>
+							<rdf:TextLink text="{path:'dataModel>employeePostalCode',type:'sap.ui.model.type.String' }" linkText="{i18n>SystemBEmployees.employeePostalCode}" tooltip="{i18n>SystemBEmployees.employeePostalCode}"/>
+							<rdf:TextLink text="{path:'dataModel>extension',type:'sap.ui.model.type.String' }" linkText="{i18n>SystemBEmployees.extension}" tooltip="{i18n>SystemBEmployees.extension}"/>
+							<rdf:TextLink text="{path:'dataModel>firstName',type:'sap.ui.model.type.String' }" linkText="{i18n>SystemBEmployees.firstName}" tooltip="{i18n>SystemBEmployees.firstName}"/>
+							<Text text="{dataModel>hireDate}" tooltip="{i18n>SystemBEmployees.hireDate}"/>
+							<rdf:TextLink text="{path:'dataModel>homePhone',type:'sap.ui.model.type.String' }" linkText="{i18n>SystemBEmployees.homePhone}" tooltip="{i18n>SystemBEmployees.homePhone}"/>
+							<rdf:TextLink text="{path:'dataModel>lastName',type:'sap.ui.model.type.String' }" linkText="{i18n>SystemBEmployees.lastName}" tooltip="{i18n>SystemBEmployees.lastName}"/>
+							<Text text="{path:'dataModel>lat',type:'sap.ui.model.type.Float', formatOptions:{'style':'short','maxFractionDigits':2} }" tooltip="{i18n>SystemBEmployees.lat}"/>
+							<rdf:TextLink text="{path:'dataModel>lat_long',type:'sap.ui.model.type.String' }" linkText="{i18n>SystemBEmployees.lat_long}" tooltip="{i18n>SystemBEmployees.lat_long}"/>
+							<Text text="{path:'dataModel>long',type:'sap.ui.model.type.Float', formatOptions:{'style':'short','maxFractionDigits':2} }" tooltip="{i18n>SystemBEmployees.long}"/>
+							<rdf:TextLink text="{path:'dataModel>notes',type:'sap.ui.model.type.String' }" linkText="{i18n>SystemBEmployees.notes}" tooltip="{i18n>SystemBEmployees.notes}"/>
+							<rdf:TextLink text="{path:'dataModel>photo',type:'sap.ui.model.type.String' }" linkText="{i18n>SystemBEmployees.photo}" tooltip="{i18n>SystemBEmployees.photo}"/>
+							<rdf:TextLink text="{path:'dataModel>regionDescription',type:'sap.ui.model.type.String' }" linkText="{i18n>SystemBEmployees.regionDescription}" tooltip="{i18n>SystemBEmployees.regionDescription}"/>
+							<rdf:TextLink text="{path:'dataModel>reportsToNotation',type:'sap.ui.model.type.String' }" linkText="{i18n>SystemBEmployees.reportsToNotation}" tooltip="{i18n>SystemBEmployees.reportsToNotation}"/>
+							<rdf:TextLink text="{path:'dataModel>seeAlso',type:'sap.ui.model.type.String' }" linkText="{i18n>SystemBEmployees.seeAlso}" tooltip="{i18n>SystemBEmployees.seeAlso}"/>
+							<Text text="{path:'dataModel>systemBEmployeeAnnualSalary',type:'sap.ui.model.type.Float', formatOptions:{'style':'short','maxFractionDigits':2} }" tooltip="{i18n>SystemBEmployees.systemBEmployeeAnnualSalary}"/>
+							<Text text="{path:'dataModel>systemBEmployeeMonthlySalary',type:'sap.ui.model.type.Float', formatOptions:{'style':'short','maxFractionDigits':2} }" tooltip="{i18n>SystemBEmployees.systemBEmployeeMonthlySalary}"/>
+							<Text text="{dataModel>systemBHours}" tooltip="{i18n>SystemBEmployees.systemBHours}"/>
+							<rdf:TextLink text="{path:'dataModel>territoryNotation',type:'sap.ui.model.type.String' }" linkText="{i18n>SystemBEmployees.territoryNotation}" tooltip="{i18n>SystemBEmployees.territoryNotation}"/>
+							<rdf:TextLink text="{path:'dataModel>title',type:'sap.ui.model.type.String' }" linkText="{i18n>SystemBEmployees.title}" tooltip="{i18n>SystemBEmployees.title}"/>
+							<rdf:TextLink text="{path:'dataModel>titleOfCourtesy',type:'sap.ui.model.type.String' }" linkText="{i18n>SystemBEmployees.titleOfCourtesy}" tooltip="{i18n>SystemBEmployees.titleOfCourtesy}"/>
 						</cells>
 					</ColumnListItem>
 				</items>

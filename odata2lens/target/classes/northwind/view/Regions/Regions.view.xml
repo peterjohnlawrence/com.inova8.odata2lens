@@ -2,8 +2,10 @@
 	xmlns:rdf="com.inova8.lens.control" xmlns:core="sap.ui.core">
 	<Page showHeader="false" id="page" navButtonPress="onNavBack" showNavButton="true" title="{i18n>Regions.ViewTitle}">
 		<content>
-			<Table id="table360" inset="false" items="{ path: 'dataModel>/Region' , sorter: { path: 'label', descending: false } 
-				}"
+			<Table id="table360" inset="false" 
+					items="{ path: 'dataModel>/Region' 
+						   , sorter: { path: 'label', descending: false } 
+						}"
 				noDataText="{entitySetView>/tableNoDataText}" busyIndicatorDelay="{entitySetView>/tableBusyDelay}" growing="true" growingScrollToLoad="true"
 				updateFinished="onUpdateFinished"  fixedLayout="false">
 				<headerToolbar>
@@ -43,9 +45,9 @@
 					<ColumnListItem id="template360" type="Navigation" press="onPress">
 						<cells>
 							<rdf:TextResource path="dataModel>" entitySet="Region"/>
-							<rdf:TextLink text="{path:'dataModel>comment',type:'sap.ui.model.type.String'}" linkText="{i18n>Region.comment}"/>
-							<rdf:TextLink text="{path:'dataModel>regionDescription',type:'sap.ui.model.type.String'}" linkText="{i18n>Region.regionDescription}"/>
-							<rdf:TextLink text="{path:'dataModel>seeAlso',type:'sap.ui.model.type.String'}" linkText="{i18n>Region.seeAlso}"/>
+							<rdf:TextLink text="{path:'dataModel>comment',type:'sap.ui.model.type.String' }" linkText="{i18n>Regions.comment}" tooltip="{i18n>Regions.comment}"/>
+							<rdf:TextLink text="{path:'dataModel>regionDescription',type:'sap.ui.model.type.String' }" linkText="{i18n>Regions.regionDescription}" tooltip="{i18n>Regions.regionDescription}"/>
+							<rdf:TextLink text="{path:'dataModel>seeAlso',type:'sap.ui.model.type.String' }" linkText="{i18n>Regions.seeAlso}" tooltip="{i18n>Regions.seeAlso}"/>
 						</cells>
 					</ColumnListItem>
 				</items>

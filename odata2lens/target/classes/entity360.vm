@@ -116,7 +116,7 @@
 							#end
 							#foreach( $complexProperty in   $complexProperties)
 								#if($complexProperty.propertyType == "D")
-								#entitymaptypes( $complexProperty $entity.target  ) 
+						#entitymaptypes( $complexProperty $entity.target  ) 
 								#elseif ($complexProperty.propertyType == "O")
 						<rdf:TextResource path="dataModel>$complexProperty.property" entitySet="$complexProperty.range" tooltip="{i18n>$target.$complexProperty.property}"/>		
 								#elseif ($complexProperty.propertyType == "C")

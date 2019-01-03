@@ -2,8 +2,10 @@
 	xmlns:rdf="com.inova8.lens.control" xmlns:core="sap.ui.core">
 	<Page showHeader="false" id="page" navButtonPress="onNavBack" showNavButton="true" title="{i18n>SystemAProducts.ViewTitle}">
 		<content>
-			<Table id="table360" inset="false" items="{ path: 'dataModel>/SystemAProduct' , sorter: { path: 'label', descending: false } 
-				}"
+			<Table id="table360" inset="false" 
+					items="{ path: 'dataModel>/SystemAProduct' 
+						   , sorter: { path: 'label', descending: false } 
+						}"
 				noDataText="{entitySetView>/tableNoDataText}" busyIndicatorDelay="{entitySetView>/tableBusyDelay}" growing="true" growingScrollToLoad="true"
 				updateFinished="onUpdateFinished"  fixedLayout="false">
 				<headerToolbar>
@@ -70,18 +72,18 @@
 					<ColumnListItem id="template360" type="Navigation" press="onPress">
 						<cells>
 							<rdf:TextResource path="dataModel>" entitySet="SystemAProduct"/>
-							<rdf:TextLink text="{path:'dataModel>categoryNotation',type:'sap.ui.model.type.String'}" linkText="{i18n>SystemAProduct.categoryNotation}"/>
-							<rdf:TextLink text="{path:'dataModel>comment',type:'sap.ui.model.type.String'}" linkText="{i18n>SystemAProduct.comment}"/>
-								<Text text="{path:'dataModel>discontinued',type:'sap.ui.model.type.Boolean'}"/>  
-							<rdf:TextLink text="{path:'dataModel>productName',type:'sap.ui.model.type.String'}" linkText="{i18n>SystemAProduct.productName}"/>
-							<Text text="{path:'dataModel>productUnitPrice',type:'sap.ui.model.type.Float', formatOptions:{'style':'short','maxFractionDigits':2} }"/>
-							<rdf:TextLink text="{path:'dataModel>quantityPerUnit',type:'sap.ui.model.type.String'}" linkText="{i18n>SystemAProduct.quantityPerUnit}"/>
-							<Text text="{path:'dataModel>reorderLevel',type:'sap.ui.model.type.Integer' }"/>
-							<rdf:TextLink text="{path:'dataModel>seeAlso',type:'sap.ui.model.type.String'}" linkText="{i18n>SystemAProduct.seeAlso}"/>
-							<rdf:TextLink text="{path:'dataModel>supplierNotation',type:'sap.ui.model.type.String'}" linkText="{i18n>SystemAProduct.supplierNotation}"/>
-							<Text text="{dataModel>systemAUnitCommision}"/>
-							<Text text="{path:'dataModel>unitsInStock',type:'sap.ui.model.type.Integer' }"/>
-							<Text text="{path:'dataModel>unitsOnOrder',type:'sap.ui.model.type.Integer' }"/>
+							<rdf:TextLink text="{path:'dataModel>categoryNotation',type:'sap.ui.model.type.String' }" linkText="{i18n>SystemAProducts.categoryNotation}" tooltip="{i18n>SystemAProducts.categoryNotation}"/>
+							<rdf:TextLink text="{path:'dataModel>comment',type:'sap.ui.model.type.String' }" linkText="{i18n>SystemAProducts.comment}" tooltip="{i18n>SystemAProducts.comment}"/>
+							<Text text="{path:'dataModel>discontinued',type:'sap.ui.model.type.Boolean'}" tooltip="{i18n>SystemAProducts.discontinued}"/>
+							<rdf:TextLink text="{path:'dataModel>productName',type:'sap.ui.model.type.String' }" linkText="{i18n>SystemAProducts.productName}" tooltip="{i18n>SystemAProducts.productName}"/>
+							<Text text="{path:'dataModel>productUnitPrice',type:'sap.ui.model.type.Float', formatOptions:{'style':'short','maxFractionDigits':2} }" tooltip="{i18n>SystemAProducts.productUnitPrice}"/>
+							<rdf:TextLink text="{path:'dataModel>quantityPerUnit',type:'sap.ui.model.type.String' }" linkText="{i18n>SystemAProducts.quantityPerUnit}" tooltip="{i18n>SystemAProducts.quantityPerUnit}"/>
+							<Text text="{path:'dataModel>reorderLevel',type:'sap.ui.model.type.Integer' }" tooltip="{i18n>SystemAProducts.reorderLevel}"/>
+							<rdf:TextLink text="{path:'dataModel>seeAlso',type:'sap.ui.model.type.String' }" linkText="{i18n>SystemAProducts.seeAlso}" tooltip="{i18n>SystemAProducts.seeAlso}"/>
+							<rdf:TextLink text="{path:'dataModel>supplierNotation',type:'sap.ui.model.type.String' }" linkText="{i18n>SystemAProducts.supplierNotation}" tooltip="{i18n>SystemAProducts.supplierNotation}"/>
+							<Text text="{dataModel>systemAUnitCommision}" tooltip="{i18n>SystemAProducts.systemAUnitCommision}"/>
+							<Text text="{path:'dataModel>unitsInStock',type:'sap.ui.model.type.Integer' }" tooltip="{i18n>SystemAProducts.unitsInStock}"/>
+							<Text text="{path:'dataModel>unitsOnOrder',type:'sap.ui.model.type.Integer' }" tooltip="{i18n>SystemAProducts.unitsOnOrder}"/>
 						</cells>
 					</ColumnListItem>
 				</items>

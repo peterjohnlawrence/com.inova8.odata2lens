@@ -2,8 +2,10 @@
 	xmlns:rdf="com.inova8.lens.control" xmlns:core="sap.ui.core">
 	<Page showHeader="false" id="page" navButtonPress="onNavBack" showNavButton="true" title="{i18n>Customers.ViewTitle}">
 		<content>
-			<Table id="table360" inset="false" items="{ path: 'dataModel>/Customer' , sorter: { path: 'label', descending: false } 
-				}"
+			<Table id="table360" inset="false" 
+					items="{ path: 'dataModel>/Customer' 
+						   , sorter: { path: 'label', descending: false } 
+						}"
 				noDataText="{entitySetView>/tableNoDataText}" busyIndicatorDelay="{entitySetView>/tableBusyDelay}" growing="true" growingScrollToLoad="true"
 				updateFinished="onUpdateFinished"  fixedLayout="false">
 				<headerToolbar>
@@ -82,22 +84,22 @@
 					<ColumnListItem id="template360" type="Navigation" press="onPress">
 						<cells>
 							<rdf:TextResource path="dataModel>" entitySet="Customer"/>
-							<rdf:TextLink text="{path:'dataModel>comment',type:'sap.ui.model.type.String'}" linkText="{i18n>Customer.comment}"/>
-							<rdf:TextLink text="{path:'dataModel>customerAddress',type:'sap.ui.model.type.String'}" linkText="{i18n>Customer.customerAddress}"/>
-							<rdf:TextLink text="{path:'dataModel>customerCity',type:'sap.ui.model.type.String'}" linkText="{i18n>Customer.customerCity}"/>
-							<rdf:TextLink text="{path:'dataModel>customerCompanyName',type:'sap.ui.model.type.String'}" linkText="{i18n>Customer.customerCompanyName}"/>
-							<rdf:TextLink text="{path:'dataModel>customerContactName',type:'sap.ui.model.type.String'}" linkText="{i18n>Customer.customerContactName}"/>
-							<rdf:TextLink text="{path:'dataModel>customerContactTitle',type:'sap.ui.model.type.String'}" linkText="{i18n>Customer.customerContactTitle}"/>
-							<rdf:TextLink text="{path:'dataModel>customerCountry',type:'sap.ui.model.type.String'}" linkText="{i18n>Customer.customerCountry}"/>
-							<rdf:TextLink text="{path:'dataModel>customerFax',type:'sap.ui.model.type.String'}" linkText="{i18n>Customer.customerFax}"/>
-							<rdf:TextLink text="{path:'dataModel>customerPhone',type:'sap.ui.model.type.String'}" linkText="{i18n>Customer.customerPhone}"/>
-							<rdf:TextLink text="{path:'dataModel>customerPostalCode',type:'sap.ui.model.type.String'}" linkText="{i18n>Customer.customerPostalCode}"/>
-							<rdf:TextLink text="{path:'dataModel>customerWebsite',type:'sap.ui.model.type.String'}" linkText="{i18n>Customer.customerWebsite}"/>
-							<Text text="{path:'dataModel>lat',type:'sap.ui.model.type.Float', formatOptions:{'style':'short','maxFractionDigits':2} }"/>
-							<rdf:TextLink text="{path:'dataModel>lat_long',type:'sap.ui.model.type.String'}" linkText="{i18n>Customer.lat_long}"/>
-							<Text text="{path:'dataModel>long',type:'sap.ui.model.type.Float', formatOptions:{'style':'short','maxFractionDigits':2} }"/>
-							<rdf:TextLink text="{path:'dataModel>regionDescription',type:'sap.ui.model.type.String'}" linkText="{i18n>Customer.regionDescription}"/>
-							<rdf:TextLink text="{path:'dataModel>seeAlso',type:'sap.ui.model.type.String'}" linkText="{i18n>Customer.seeAlso}"/>
+							<rdf:TextLink text="{path:'dataModel>comment',type:'sap.ui.model.type.String' }" linkText="{i18n>Customers.comment}" tooltip="{i18n>Customers.comment}"/>
+							<rdf:TextLink text="{path:'dataModel>customerAddress',type:'sap.ui.model.type.String' }" linkText="{i18n>Customers.customerAddress}" tooltip="{i18n>Customers.customerAddress}"/>
+							<rdf:TextLink text="{path:'dataModel>customerCity',type:'sap.ui.model.type.String' }" linkText="{i18n>Customers.customerCity}" tooltip="{i18n>Customers.customerCity}"/>
+							<rdf:TextLink text="{path:'dataModel>customerCompanyName',type:'sap.ui.model.type.String' }" linkText="{i18n>Customers.customerCompanyName}" tooltip="{i18n>Customers.customerCompanyName}"/>
+							<rdf:TextLink text="{path:'dataModel>customerContactName',type:'sap.ui.model.type.String' }" linkText="{i18n>Customers.customerContactName}" tooltip="{i18n>Customers.customerContactName}"/>
+							<rdf:TextLink text="{path:'dataModel>customerContactTitle',type:'sap.ui.model.type.String' }" linkText="{i18n>Customers.customerContactTitle}" tooltip="{i18n>Customers.customerContactTitle}"/>
+							<rdf:TextLink text="{path:'dataModel>customerCountry',type:'sap.ui.model.type.String' }" linkText="{i18n>Customers.customerCountry}" tooltip="{i18n>Customers.customerCountry}"/>
+							<rdf:TextLink text="{path:'dataModel>customerFax',type:'sap.ui.model.type.String' }" linkText="{i18n>Customers.customerFax}" tooltip="{i18n>Customers.customerFax}"/>
+							<rdf:TextLink text="{path:'dataModel>customerPhone',type:'sap.ui.model.type.String' }" linkText="{i18n>Customers.customerPhone}" tooltip="{i18n>Customers.customerPhone}"/>
+							<rdf:TextLink text="{path:'dataModel>customerPostalCode',type:'sap.ui.model.type.String' }" linkText="{i18n>Customers.customerPostalCode}" tooltip="{i18n>Customers.customerPostalCode}"/>
+							<rdf:TextLink text="{path:'dataModel>customerWebsite',type:'sap.ui.model.type.String' }" linkText="{i18n>Customers.customerWebsite}" tooltip="{i18n>Customers.customerWebsite}"/>
+							<Text text="{path:'dataModel>lat',type:'sap.ui.model.type.Float', formatOptions:{'style':'short','maxFractionDigits':2} }" tooltip="{i18n>Customers.lat}"/>
+							<rdf:TextLink text="{path:'dataModel>lat_long',type:'sap.ui.model.type.String' }" linkText="{i18n>Customers.lat_long}" tooltip="{i18n>Customers.lat_long}"/>
+							<Text text="{path:'dataModel>long',type:'sap.ui.model.type.Float', formatOptions:{'style':'short','maxFractionDigits':2} }" tooltip="{i18n>Customers.long}"/>
+							<rdf:TextLink text="{path:'dataModel>regionDescription',type:'sap.ui.model.type.String' }" linkText="{i18n>Customers.regionDescription}" tooltip="{i18n>Customers.regionDescription}"/>
+							<rdf:TextLink text="{path:'dataModel>seeAlso',type:'sap.ui.model.type.String' }" linkText="{i18n>Customers.seeAlso}" tooltip="{i18n>Customers.seeAlso}"/>
 						</cells>
 					</ColumnListItem>
 				</items>

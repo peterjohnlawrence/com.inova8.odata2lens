@@ -2,8 +2,10 @@
 	xmlns:rdf="com.inova8.lens.control" xmlns:core="sap.ui.core">
 	<Page showHeader="false" id="page" navButtonPress="onNavBack" showNavButton="true" title="{i18n>Suppliers.ViewTitle}">
 		<content>
-			<Table id="table360" inset="false" items="{ path: 'dataModel>/Supplier' , sorter: { path: 'label', descending: false } 
-				}"
+			<Table id="table360" inset="false" 
+					items="{ path: 'dataModel>/Supplier' 
+						   , sorter: { path: 'label', descending: false } 
+						}"
 				noDataText="{entitySetView>/tableNoDataText}" busyIndicatorDelay="{entitySetView>/tableBusyDelay}" growing="true" growingScrollToLoad="true"
 				updateFinished="onUpdateFinished"  fixedLayout="false">
 				<headerToolbar>
@@ -85,23 +87,23 @@
 					<ColumnListItem id="template360" type="Navigation" press="onPress">
 						<cells>
 							<rdf:TextResource path="dataModel>" entitySet="Supplier"/>
-							<rdf:TextLink text="{path:'dataModel>comment',type:'sap.ui.model.type.String'}" linkText="{i18n>Supplier.comment}"/>
-							<rdf:TextLink text="{path:'dataModel>homePage',type:'sap.ui.model.type.String'}" linkText="{i18n>Supplier.homePage}"/>
-							<Text text="{path:'dataModel>lat',type:'sap.ui.model.type.Float', formatOptions:{'style':'short','maxFractionDigits':2} }"/>
-							<rdf:TextLink text="{path:'dataModel>lat_long',type:'sap.ui.model.type.String'}" linkText="{i18n>Supplier.lat_long}"/>
-							<Text text="{path:'dataModel>long',type:'sap.ui.model.type.Float', formatOptions:{'style':'short','maxFractionDigits':2} }"/>
-							<rdf:TextLink text="{path:'dataModel>regionDescription',type:'sap.ui.model.type.String'}" linkText="{i18n>Supplier.regionDescription}"/>
-							<rdf:TextLink text="{path:'dataModel>seeAlso',type:'sap.ui.model.type.String'}" linkText="{i18n>Supplier.seeAlso}"/>
-							<rdf:TextLink text="{path:'dataModel>supplierAddress',type:'sap.ui.model.type.String'}" linkText="{i18n>Supplier.supplierAddress}"/>
-							<rdf:TextLink text="{path:'dataModel>supplierCity',type:'sap.ui.model.type.String'}" linkText="{i18n>Supplier.supplierCity}"/>
-							<rdf:TextLink text="{path:'dataModel>supplierCompanyName',type:'sap.ui.model.type.String'}" linkText="{i18n>Supplier.supplierCompanyName}"/>
-							<rdf:TextLink text="{path:'dataModel>supplierContactName',type:'sap.ui.model.type.String'}" linkText="{i18n>Supplier.supplierContactName}"/>
-							<rdf:TextLink text="{path:'dataModel>supplierContactTitle',type:'sap.ui.model.type.String'}" linkText="{i18n>Supplier.supplierContactTitle}"/>
-							<rdf:TextLink text="{path:'dataModel>supplierCountry',type:'sap.ui.model.type.String'}" linkText="{i18n>Supplier.supplierCountry}"/>
-							<rdf:TextLink text="{path:'dataModel>supplierFax',type:'sap.ui.model.type.String'}" linkText="{i18n>Supplier.supplierFax}"/>
-							<rdf:TextLink text="{path:'dataModel>supplierHomePage',type:'sap.ui.model.type.String'}" linkText="{i18n>Supplier.supplierHomePage}"/>
-							<rdf:TextLink text="{path:'dataModel>supplierPhone',type:'sap.ui.model.type.String'}" linkText="{i18n>Supplier.supplierPhone}"/>
-							<rdf:TextLink text="{path:'dataModel>supplierPostalCode',type:'sap.ui.model.type.String'}" linkText="{i18n>Supplier.supplierPostalCode}"/>
+							<rdf:TextLink text="{path:'dataModel>comment',type:'sap.ui.model.type.String' }" linkText="{i18n>Suppliers.comment}" tooltip="{i18n>Suppliers.comment}"/>
+							<rdf:TextLink text="{path:'dataModel>homePage',type:'sap.ui.model.type.String' }" linkText="{i18n>Suppliers.homePage}" tooltip="{i18n>Suppliers.homePage}"/>
+							<Text text="{path:'dataModel>lat',type:'sap.ui.model.type.Float', formatOptions:{'style':'short','maxFractionDigits':2} }" tooltip="{i18n>Suppliers.lat}"/>
+							<rdf:TextLink text="{path:'dataModel>lat_long',type:'sap.ui.model.type.String' }" linkText="{i18n>Suppliers.lat_long}" tooltip="{i18n>Suppliers.lat_long}"/>
+							<Text text="{path:'dataModel>long',type:'sap.ui.model.type.Float', formatOptions:{'style':'short','maxFractionDigits':2} }" tooltip="{i18n>Suppliers.long}"/>
+							<rdf:TextLink text="{path:'dataModel>regionDescription',type:'sap.ui.model.type.String' }" linkText="{i18n>Suppliers.regionDescription}" tooltip="{i18n>Suppliers.regionDescription}"/>
+							<rdf:TextLink text="{path:'dataModel>seeAlso',type:'sap.ui.model.type.String' }" linkText="{i18n>Suppliers.seeAlso}" tooltip="{i18n>Suppliers.seeAlso}"/>
+							<rdf:TextLink text="{path:'dataModel>supplierAddress',type:'sap.ui.model.type.String' }" linkText="{i18n>Suppliers.supplierAddress}" tooltip="{i18n>Suppliers.supplierAddress}"/>
+							<rdf:TextLink text="{path:'dataModel>supplierCity',type:'sap.ui.model.type.String' }" linkText="{i18n>Suppliers.supplierCity}" tooltip="{i18n>Suppliers.supplierCity}"/>
+							<rdf:TextLink text="{path:'dataModel>supplierCompanyName',type:'sap.ui.model.type.String' }" linkText="{i18n>Suppliers.supplierCompanyName}" tooltip="{i18n>Suppliers.supplierCompanyName}"/>
+							<rdf:TextLink text="{path:'dataModel>supplierContactName',type:'sap.ui.model.type.String' }" linkText="{i18n>Suppliers.supplierContactName}" tooltip="{i18n>Suppliers.supplierContactName}"/>
+							<rdf:TextLink text="{path:'dataModel>supplierContactTitle',type:'sap.ui.model.type.String' }" linkText="{i18n>Suppliers.supplierContactTitle}" tooltip="{i18n>Suppliers.supplierContactTitle}"/>
+							<rdf:TextLink text="{path:'dataModel>supplierCountry',type:'sap.ui.model.type.String' }" linkText="{i18n>Suppliers.supplierCountry}" tooltip="{i18n>Suppliers.supplierCountry}"/>
+							<rdf:TextLink text="{path:'dataModel>supplierFax',type:'sap.ui.model.type.String' }" linkText="{i18n>Suppliers.supplierFax}" tooltip="{i18n>Suppliers.supplierFax}"/>
+							<rdf:TextLink text="{path:'dataModel>supplierHomePage',type:'sap.ui.model.type.String' }" linkText="{i18n>Suppliers.supplierHomePage}" tooltip="{i18n>Suppliers.supplierHomePage}"/>
+							<rdf:TextLink text="{path:'dataModel>supplierPhone',type:'sap.ui.model.type.String' }" linkText="{i18n>Suppliers.supplierPhone}" tooltip="{i18n>Suppliers.supplierPhone}"/>
+							<rdf:TextLink text="{path:'dataModel>supplierPostalCode',type:'sap.ui.model.type.String' }" linkText="{i18n>Suppliers.supplierPostalCode}" tooltip="{i18n>Suppliers.supplierPostalCode}"/>
 						</cells>
 					</ColumnListItem>
 				</items>

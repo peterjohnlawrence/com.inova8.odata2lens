@@ -2,42 +2,41 @@
 #set ($This	= "this") 
 #set ($SearchTooltip	= "SearchTooltip") 
 #macro( entitySetmaptypes $propertyObject $target )
-#set( $property =  $propertyObject.property)
 #set( $range =  $propertyObject.range)
 #set( $formatOptions =  $propertyObject.formatOptions)
-  #if ($range == "Edm.Binary")								<Text text="{dataModel>$property}"/>
-  #elseif ($range == "Edm.Boolean")								<Text text="{path:'dataModel>$property',type:'sap.ui.model.type.Boolean'}"/>  
-  #elseif ($range == "Edm.Byte")							<Text text="{dataModel>$property}"/>
-  #elseif ($range == "Edm.SByte")							<Text text="{dataModel>$property}"/>
-  #elseif ($range == "Edm.Date")							<Text text="{dataModel>$property}"/>
-  #elseif ($range == "Edm.DateTimeOffset")							<Text text="{dataModel>$property}"/>
-  #elseif ($range == "Edm.TimeOfDay")							<Text text="{dataModel>$property}"/>
-  #elseif ($range == "Edm.Duration")							<Text text="{dataModel>$property}"/>
-  #elseif ($range == "Edm.Decimal")							<Text text="{dataModel>$property}"/>
-  #elseif ($range == "Edm.Single")							<Text text="{dataModel>$property}"/>
-  #elseif ($range == "Edm.Double")							<Text text="{path:'dataModel>$property',type:'sap.ui.model.type.Float'$!formatOptions }"/>
-  #elseif ($range == "Edm.Guid")							<Text text="{path:'dataModel>$property',type:'sap.ui.model.type.String'}"/>
-  #elseif ($range == "Edm.Int16")							<Text text="{path:'dataModel>$property',type:'sap.ui.model.type.Integer'$!formatOptions }"/>
-  #elseif ($range == "Edm.Int32")							<Text text="{path:'dataModel>$property',type:'sap.ui.model.type.Integer'$!formatOptions }"/>
-  #elseif ($range == "Edm.Int64")							<Text text="{path:'dataModel>$property',type:'sap.ui.model.type.Integer'$!formatOptions }"/>
-  #elseif ($range == "Edm.String")							<rdf:TextLink text="{path:'dataModel>$property',type:'sap.ui.model.type.String'}" linkText="{i18n>$target.$property}"/>
-  #elseif ($range == "Edm.Stream")							<Text text="{dataModel>$property}"/>
-  #elseif ($range == "Edm.Geography")							<Text text="{dataModel>$property}"/>
-  #elseif ($range == "Edm.GeographyPoint")							<Text text="{dataModel>$property}"/>
-  #elseif ($range == "Edm.GeographyLineString")							<Text text="{dataModel>$property}"/>
-  #elseif ($range == "Edm.GeographyPolygon")							<Text text="{dataModel>$property}"/>
-  #elseif ($range == "Edm.GeographyMultiPoint")							<Text text="{dataModel>$property}"/>
-  #elseif ($range == "Edm.GeographyMultiLineString")							<Text text="{dataModel>$property}"/>
-  #elseif ($range == "Edm.GeographyMultiPolygon")							<Text text="{dataModel>$property}"/>
-  #elseif ($range == "Edm.GeographyCollection")							<Text text="{dataModel>$property}"/>
-  #elseif ($range == "Edm.Geometry")							<Text text="{dataModel>$property}"/>
-  #elseif ($range == "Edm.GeometryPoint")							<Text text="{dataModel>$property}"/>
-  #elseif ($range == "Edm.GeometryLineString")							<Text text="{dataModel>$property}"/>
-  #elseif ($range == "Edm.GeometryPolygon")							<Text text="{dataModel>$property}"/>
-  #elseif ($range == "Edm.GeometryMultiPoint")							<Text text="{dataModel>$property}"/>
-  #elseif ($range == "Edm.GeometryMultiLineString")							<Text text="{dataModel>$property}"/>
-  #elseif ($range == "Edm.GeometryMultiPolygon")							<Text text="{dataModel>$property}"/>
-  #elseif ($range == "Edm.GeometryCollection")							<Text text="{dataModel>$property}"/>
+  #if ($range == "Edm.Binary")							<Text text="{dataModel>$propertyObject.property}" tooltip="{i18n>$target.$propertyObject.property}"/>
+  #elseif ($range == "Edm.Boolean")							<Text text="{path:'dataModel>$propertyObject.property',type:'sap.ui.model.type.Boolean'}" tooltip="{i18n>$target.$propertyObject.property}"/>
+  #elseif ($range == "Edm.Byte")							<Text text="{dataModel>$propertyObject.property}" tooltip="{i18n>$target.$propertyObject.property}"/>
+  #elseif ($range == "Edm.SByte")							<Text text="{dataModel>$propertyObject.property}" tooltip="{i18n>$target.$propertyObject.property}"/>
+  #elseif ($range == "Edm.Date")							<Text text="{dataModel>$propertyObject.property}" tooltip="{i18n>$target.$propertyObject.property}"/>
+  #elseif ($range == "Edm.DateTimeOffset")							<Text text="{dataModel>$propertyObject.property}" tooltip="{i18n>$target.$propertyObject.property}"/>
+  #elseif ($range == "Edm.TimeOfDay")							<Text text="{dataModel>$propertyObject.property}" tooltip="{i18n>$target.$propertyObject.property}"/>
+  #elseif ($range == "Edm.Duration")							<Text text="{dataModel>$propertyObject.property}" tooltip="{i18n>$target.$propertyObject.property}"/>
+  #elseif ($range == "Edm.Decimal")							<Text text="{dataModel>$propertyObject.property}" tooltip="{i18n>$target.$propertyObject.property}"/>
+  #elseif ($range == "Edm.Single")							<Text text="{dataModel>$propertyObject.property}" tooltip="{i18n>$target.$propertyObject.property}"/>
+  #elseif ($range == "Edm.Double")							<Text text="{path:'dataModel>$propertyObject.property',type:'sap.ui.model.type.Float'$!formatOptions }" tooltip="{i18n>$target.$propertyObject.property}"/>
+  #elseif ($range == "Edm.Guid")							<Text text="{path:'dataModel>$propertyObject.property',type:'sap.ui.model.type.String'}" tooltip="{i18n>$target.$propertyObject.property}"/>
+  #elseif ($range == "Edm.Int16")							<Text text="{path:'dataModel>$propertyObject.property',type:'sap.ui.model.type.Integer'$!formatOptions }" tooltip="{i18n>$target.$propertyObject.property}"/>
+  #elseif ($range == "Edm.Int32")							<Text text="{path:'dataModel>$propertyObject.property',type:'sap.ui.model.type.Integer'$!formatOptions }" tooltip="{i18n>$target.$propertyObject.property}"/>
+  #elseif ($range == "Edm.Int64")							<Text text="{path:'dataModel>$propertyObject.property',type:'sap.ui.model.type.Integer'$!formatOptions}" tooltip="{i18n>$target.$propertyObject.property}"/>
+  #elseif ($range == "Edm.String")							<rdf:TextLink text="{path:'dataModel>$propertyObject.property',type:'sap.ui.model.type.String' }" linkText="{i18n>$target.$propertyObject.property}" tooltip="{i18n>$target.$propertyObject.property}"/>
+  #elseif ($range == "Edm.Stream")							<Text text="{dataModel>$propertyObject.property}" tooltip="{i18n>$target.$propertyObject.property}"/>
+  #elseif ($range == "Edm.Geography")							<Text text="{dataModel>$propertyObject.property}" tooltip="{i18n>$target.$propertyObject.property}"/>
+  #elseif ($range == "Edm.GeographyPoint")							<Text text="{dataModel>$propertyObject.property}" tooltip="{i18n>$target.$propertyObject.property}"/>
+  #elseif ($range == "Edm.GeographyLineString")							<Text text="{dataModel>$propertyObject.property}" tooltip="{i18n>$target.$propertyObject.property}"/>
+  #elseif ($range == "Edm.GeographyPolygon")							<Text text="{dataModel>$propertyObject.property}" tooltip="{i18n>$target.$propertyObject.property}"/>
+  #elseif ($range == "Edm.GeographyMultiPoint")							<Text text="{dataModel>$propertyObject.property}" tooltip="{i18n>$target.$propertyObject.property}"/>
+  #elseif ($range == "Edm.GeographyMultiLineString")							<Text text="{dataModel>$propertyObject.property}" tooltip="{i18n>$target.$propertyObject.property}"/>
+  #elseif ($range == "Edm.GeographyMultiPolygon")							<Text text="{dataModel>$propertyObject.property}" tooltip="{i18n>$target.$propertyObject.property}"/>
+  #elseif ($range == "Edm.GeographyCollection")							<Text text="{dataModel>$propertyObject.property}" tooltip="{i18n>$target.$propertyObject.property}"/>
+  #elseif ($range == "Edm.Geometry")							<Text text="{dataModel>$propertyObject.property}" tooltip="{i18n>$target.$propertyObject.property}"/>
+  #elseif ($range == "Edm.GeometryPoint")							<Text text="{dataModel>$propertyObject.property}" tooltip="{i18n>$target.$propertyObject.property}"/>
+  #elseif ($range == "Edm.GeometryLineString")							<Text text="{dataModel>$propertyObject.property}" tooltip="{i18n>$target.$propertyObject.property}"/>
+  #elseif ($range == "Edm.GeometryPolygon")							<Text text="{dataModel>$propertyObject.property}" tooltip="{i18n>$target.$propertyObject.property}"/>
+  #elseif ($range == "Edm.GeometryMultiPoint")							<Text text="{dataModel>$propertyObject.property}" tooltip="{i18n>$target.$propertyObject.property}"/>
+  #elseif ($range == "Edm.GeometryMultiLineString")							<Text text="{dataModel>$propertyObject.property}" tooltip="{i18n>$target.$propertyObject.property}"/>
+  #elseif ($range == "Edm.GeometryMultiPolygon")							<Text text="{dataModel>$propertyObject.property}" tooltip="{i18n>$target.$propertyObject.property}"/>
+  #elseif ($range == "Edm.GeometryCollection")							<Text text="{dataModel>$propertyObject.property}" tooltip="{i18n>$target.$propertyObject.property}"/>
   #else
   #end 
 #end
@@ -45,17 +44,22 @@
 	xmlns:rdf="com.inova8.lens.control" xmlns:core="sap.ui.core">
 	<Page showHeader="false" id="page" navButtonPress="onNavBack" showNavButton="true" title="{i18n>$entitySet.target.$ViewTitle}">
 		<content>
-			<Table id="table360" inset="false" items="{ path: 'dataModel>/$entitySet.name' , sorter: { path: 'label', descending: false } 
+			<Table id="table360" inset="false" 
+					items="{ path: 'dataModel>/$entitySet.name' 
+						   , sorter: { path: 'label', descending: false } 
 					#set($numOfExpand = 0)		
 					#foreach($property in $uiTemplate.properties)
 						#if(($property.visible) && ($property.propertyType == "C")) 
-							#if($numOfExpand == 0) ,parameters:{$expand:{ #else , #end
-							$property.property:{ $count:true}	
+							#if($numOfExpand == 0) 
+						   , parameters:{$expand:{#else 
+						  						, #end $property.property:{ $count:true}	
 							#set($numOfExpand = $numOfExpand + 1)
 						#end					
 					#end
-					#if($numOfExpand > 0) }} #end
-				}"
+					#if($numOfExpand > 0) 
+							},$select:'*'} 
+					#end 
+						}"
 				noDataText="{entitySetView>/tableNoDataText}" busyIndicatorDelay="{entitySetView>/tableBusyDelay}" growing="true" growingScrollToLoad="true"
 				updateFinished="onUpdateFinished"  fixedLayout="false">
 				<headerToolbar>
@@ -96,27 +100,36 @@
 							#foreach($property in $uiTemplate.properties)
 								#if($property.visible)
 									#if($property.propertyType == "D")
-							#entitySetmaptypes($property $entity.target  ) 	
+							#entitySetmaptypes($property $entitySet.target  ) 	
 									#elseif ($property.propertyType == "O")
 							<rdf:TextResource path="dataModel>$property.property" entitySet="$property.range"/>
 									#elseif ($property.propertyType == "C")
 							<rdf:NavigationPropertyCollection path="dataModel>$property.property/$count" navigationProperty="$entitySet.name/$property.property"/>
 									#elseif ($property.propertyType == "S")		
 							<VBox>					
-										#set( $complexTypeName =  $property.range)			
 										#foreach($subTypeName in $entity.subTypeNames)
+											#set( $complexTypeName =  $property.range)				
 											#set( $complexType = $complexTypes.get($complexTypeName))
-											#set( $complexProperty = $complexType.getPropertyTemplate($subTypeName))
-											#if($complexProperty.propertyType == "D")
-												#entitySetmaptypes( $complexProperty $entity.target  ) 
-											#elseif ($complexProperty.propertyType == "O")
-								<rdf:TextResource path="dataModel>$complexProperty.property" entitySet="$complexProperty.range"/>		
-											#elseif ($complexProperty.propertyType == "C")
-								<rdf:ListResource path="dataModel>$complexProperty.property" entitySet="$complexProperty.range"/>
+											#if(  $complexType.getPropertyTemplates($subTypeName)  )
+												#set( $complexProperties = $complexType.getPropertyTemplates($subTypeName))
+								<HBox  justifyContent="Center" alignItems="Stretch">
+												#foreach( $complexProperty in   $complexProperties)
+													#if($complexProperty.propertyType == "D")
+									#entitySetmaptypes( $complexProperty $entitySet.target  ) 
+													#elseif ($complexProperty.propertyType == "O")
+							<rdf:TextResource path="dataModel>$complexProperty.property" entitySet="$complexProperty.range" tooltip="{i18n>$entitySet.target.$complexProperty.property}"/>		
+													#elseif ($complexProperty.propertyType == "C")
+							<rdf:ListResource path="dataModel>$complexProperty.property" entitySet="$complexProperty.range" tooltip="{i18n>$entitySet.target.$complexProperty.property}"/>
+													#end	
+													#if ( $foreach.hasNext ) 
+							<Text text="  " renderWhitespace="true"/>
+													#end
+												#end
+								</HBox>
 											#else
-								<Text text=""/>
-											#end	
-										#end	
+											<Text text=""/>
+											#end
+										#end
 							</VBox>							
 									#end
 								#end

@@ -2,8 +2,10 @@
 	xmlns:rdf="com.inova8.lens.control" xmlns:core="sap.ui.core">
 	<Page showHeader="false" id="page" navButtonPress="onNavBack" showNavButton="true" title="{i18n>OrderSummarys.ViewTitle}">
 		<content>
-			<Table id="table360" inset="false" items="{ path: 'dataModel>/OrderSummary' , sorter: { path: 'label', descending: false } 
-				}"
+			<Table id="table360" inset="false" 
+					items="{ path: 'dataModel>/OrderSummary' 
+						   , sorter: { path: 'label', descending: false } 
+						}"
 				noDataText="{entitySetView>/tableNoDataText}" busyIndicatorDelay="{entitySetView>/tableBusyDelay}" growing="true" growingScrollToLoad="true"
 				updateFinished="onUpdateFinished"  fixedLayout="false">
 				<headerToolbar>
@@ -43,9 +45,9 @@
 					<ColumnListItem id="template360" type="Navigation" press="onPress">
 						<cells>
 							<rdf:TextResource path="dataModel>" entitySet="OrderSummary"/>
-							<rdf:TextLink text="{path:'dataModel>order',type:'sap.ui.model.type.String'}" linkText="{i18n>OrderSummary.order}"/>
-							<Text text="{path:'dataModel>orderSummary_Value',type:'sap.ui.model.type.Float', formatOptions:{'style':'short','maxFractionDigits':2} }"/>
-							<rdf:TextLink text="{path:'dataModel>prod',type:'sap.ui.model.type.String'}" linkText="{i18n>OrderSummary.prod}"/>
+							<rdf:TextLink text="{path:'dataModel>order',type:'sap.ui.model.type.String' }" linkText="{i18n>OrderSummarys.order}" tooltip="{i18n>OrderSummarys.order}"/>
+							<Text text="{path:'dataModel>orderSummary_Value',type:'sap.ui.model.type.Float', formatOptions:{'style':'short','maxFractionDigits':2} }" tooltip="{i18n>OrderSummarys.orderSummary_Value}"/>
+							<rdf:TextLink text="{path:'dataModel>prod',type:'sap.ui.model.type.String' }" linkText="{i18n>OrderSummarys.prod}" tooltip="{i18n>OrderSummarys.prod}"/>
 						</cells>
 					</ColumnListItem>
 				</items>

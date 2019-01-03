@@ -9,7 +9,20 @@ $entitySet.target#[[.TableTitleCount]]#=$entitySet.target ({0})
 $entitySet.target#[[.tableNoDataText]]#=No $entitySet.target are currently available
 $entitySet.target#[[.this]]# = $entitySet.label
 #foreach($property in $entity.properties)
+	#if($property.complex )
+		#set($complexType = $property.complexRange)
+		#foreach($complexProperty in $complexType.allProperties)
+$entitySet.target#[[.]]#$complexType.name#[[/]]#$complexProperty.name = $complexProperty.label	
+		#end
+		#foreach($complexNavigationProperty in $complexType.allNavigationProperties)
+$entitySet.target#[[.]]#$complexType.name#[[/]]#$complexNavigationProperty.name = $complexNavigationProperty.label	
+		#end	
+		#foreach($complexNavigationSet in $complexType.allNavigationSets)
+$entitySet.target#[[.]]#$complexType.name#[[/]]#$complexNavigationSet.name = $complexNavigationSet.label	
+		#end	
+	#else
 $entitySet.target#[[.]]#$property.name = $property.label
+	#end
 #end
 #foreach($navigationProperty in $entity.navigationProperties)
 $entitySet.target#[[.]]#$navigationProperty.name = $navigationProperty.label  

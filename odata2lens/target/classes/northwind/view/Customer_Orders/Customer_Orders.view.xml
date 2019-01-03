@@ -2,8 +2,10 @@
 	xmlns:rdf="com.inova8.lens.control" xmlns:core="sap.ui.core">
 	<Page showHeader="false" id="page" navButtonPress="onNavBack" showNavButton="true" title="{i18n>Customer_Orders.ViewTitle}">
 		<content>
-			<Table id="table360" inset="false" items="{ path: 'dataModel>/Customer_Order' , sorter: { path: 'label', descending: false } 
-				}"
+			<Table id="table360" inset="false" 
+					items="{ path: 'dataModel>/Customer_Order' 
+						   , sorter: { path: 'label', descending: false } 
+						}"
 				noDataText="{entitySetView>/tableNoDataText}" busyIndicatorDelay="{entitySetView>/tableBusyDelay}" growing="true" growingScrollToLoad="true"
 				updateFinished="onUpdateFinished"  fixedLayout="false">
 				<headerToolbar>
@@ -49,11 +51,11 @@
 					<ColumnListItem id="template360" type="Navigation" press="onPress">
 						<cells>
 							<rdf:TextResource path="dataModel>" entitySet="Customer_Order"/>
-							<rdf:TextLink text="{path:'dataModel>customer',type:'sap.ui.model.type.String'}" linkText="{i18n>Customer_Order.customer}"/>
-							<rdf:TextLink text="{path:'dataModel>customer_Order_customerCity',type:'sap.ui.model.type.String'}" linkText="{i18n>Customer_Order.customer_Order_customerCity}"/>
-							<rdf:TextLink text="{path:'dataModel>customer_Order_customerCompanyName',type:'sap.ui.model.type.String'}" linkText="{i18n>Customer_Order.customer_Order_customerCompanyName}"/>
-							<rdf:TextLink text="{path:'dataModel>customer_Order_shipCity',type:'sap.ui.model.type.String'}" linkText="{i18n>Customer_Order.customer_Order_shipCity}"/>
-							<rdf:TextLink text="{path:'dataModel>order',type:'sap.ui.model.type.String'}" linkText="{i18n>Customer_Order.order}"/>
+							<rdf:TextLink text="{path:'dataModel>customer',type:'sap.ui.model.type.String' }" linkText="{i18n>Customer_Orders.customer}" tooltip="{i18n>Customer_Orders.customer}"/>
+							<rdf:TextLink text="{path:'dataModel>customer_Order_customerCity',type:'sap.ui.model.type.String' }" linkText="{i18n>Customer_Orders.customer_Order_customerCity}" tooltip="{i18n>Customer_Orders.customer_Order_customerCity}"/>
+							<rdf:TextLink text="{path:'dataModel>customer_Order_customerCompanyName',type:'sap.ui.model.type.String' }" linkText="{i18n>Customer_Orders.customer_Order_customerCompanyName}" tooltip="{i18n>Customer_Orders.customer_Order_customerCompanyName}"/>
+							<rdf:TextLink text="{path:'dataModel>customer_Order_shipCity',type:'sap.ui.model.type.String' }" linkText="{i18n>Customer_Orders.customer_Order_shipCity}" tooltip="{i18n>Customer_Orders.customer_Order_shipCity}"/>
+							<rdf:TextLink text="{path:'dataModel>order',type:'sap.ui.model.type.String' }" linkText="{i18n>Customer_Orders.order}" tooltip="{i18n>Customer_Orders.order}"/>
 						</cells>
 					</ColumnListItem>
 				</items>

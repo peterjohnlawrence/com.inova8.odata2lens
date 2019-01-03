@@ -2,8 +2,10 @@
 	xmlns:rdf="com.inova8.lens.control" xmlns:core="sap.ui.core">
 	<Page showHeader="false" id="page" navButtonPress="onNavBack" showNavButton="true" title="{i18n>USStates.ViewTitle}">
 		<content>
-			<Table id="table360" inset="false" items="{ path: 'dataModel>/USState' , sorter: { path: 'label', descending: false } 
-				}"
+			<Table id="table360" inset="false" 
+					items="{ path: 'dataModel>/USState' 
+						   , sorter: { path: 'label', descending: false } 
+						}"
 				noDataText="{entitySetView>/tableNoDataText}" busyIndicatorDelay="{entitySetView>/tableBusyDelay}" growing="true" growingScrollToLoad="true"
 				updateFinished="onUpdateFinished"  fixedLayout="false">
 				<headerToolbar>
@@ -52,12 +54,12 @@
 					<ColumnListItem id="template360" type="Navigation" press="onPress">
 						<cells>
 							<rdf:TextResource path="dataModel>" entitySet="USState"/>
-							<rdf:TextLink text="{path:'dataModel>comment',type:'sap.ui.model.type.String'}" linkText="{i18n>USState.comment}"/>
-							<rdf:TextLink text="{path:'dataModel>regionDescription',type:'sap.ui.model.type.String'}" linkText="{i18n>USState.regionDescription}"/>
-							<rdf:TextLink text="{path:'dataModel>regionNotation',type:'sap.ui.model.type.String'}" linkText="{i18n>USState.regionNotation}"/>
-							<rdf:TextLink text="{path:'dataModel>seeAlso',type:'sap.ui.model.type.String'}" linkText="{i18n>USState.seeAlso}"/>
-							<rdf:TextLink text="{path:'dataModel>stateAbbr',type:'sap.ui.model.type.String'}" linkText="{i18n>USState.stateAbbr}"/>
-							<rdf:TextLink text="{path:'dataModel>stateName',type:'sap.ui.model.type.String'}" linkText="{i18n>USState.stateName}"/>
+							<rdf:TextLink text="{path:'dataModel>comment',type:'sap.ui.model.type.String' }" linkText="{i18n>USStates.comment}" tooltip="{i18n>USStates.comment}"/>
+							<rdf:TextLink text="{path:'dataModel>regionDescription',type:'sap.ui.model.type.String' }" linkText="{i18n>USStates.regionDescription}" tooltip="{i18n>USStates.regionDescription}"/>
+							<rdf:TextLink text="{path:'dataModel>regionNotation',type:'sap.ui.model.type.String' }" linkText="{i18n>USStates.regionNotation}" tooltip="{i18n>USStates.regionNotation}"/>
+							<rdf:TextLink text="{path:'dataModel>seeAlso',type:'sap.ui.model.type.String' }" linkText="{i18n>USStates.seeAlso}" tooltip="{i18n>USStates.seeAlso}"/>
+							<rdf:TextLink text="{path:'dataModel>stateAbbr',type:'sap.ui.model.type.String' }" linkText="{i18n>USStates.stateAbbr}" tooltip="{i18n>USStates.stateAbbr}"/>
+							<rdf:TextLink text="{path:'dataModel>stateName',type:'sap.ui.model.type.String' }" linkText="{i18n>USStates.stateName}" tooltip="{i18n>USStates.stateName}"/>
 						</cells>
 					</ColumnListItem>
 				</items>
