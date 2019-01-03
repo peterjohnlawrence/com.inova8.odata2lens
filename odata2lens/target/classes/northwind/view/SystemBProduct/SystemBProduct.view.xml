@@ -115,25 +115,25 @@
 				<ColumnListItem >
 					<cells>
 						<Label text="{i18n>SystemBProduct.category}" required="false"/> 
-						<rdf:TextResource path="dataModel>category" entitySet="Category" tooltip="{i18n>$target.category}"/>		
+						<rdf:TextResource path="dataModel>category" entitySet="Category" tooltip="{i18n>SystemBProduct.category}"/>		
 					</cells>
 				</ColumnListItem>
 				<ColumnListItem >
 					<cells>
 						<Label text="{i18n>SystemBProduct.supplier}" required="false"/> 
-						<rdf:TextResource path="dataModel>supplier" entitySet="Supplier" tooltip="{i18n>$target.supplier}"/>		
+						<rdf:TextResource path="dataModel>supplier" entitySet="Supplier" tooltip="{i18n>SystemBProduct.supplier}"/>		
 					</cells>
 				</ColumnListItem>
 				<ColumnListItem >
 					<cells>
 						<Label text="{i18n>SystemBProduct.isPartOfOrderDetail}" required="false"/> 
-						<rdf:ListResource path="dataModel>isPartOfOrderDetail" entitySet="OrderDetail" tooltip="{i18n>$target.isPartOfOrderDetail}"/>
+						<rdf:ListResource path="dataModel>isPartOfOrderDetail" entitySet="OrderDetail" tooltip="{i18n>SystemBProduct.isPartOfOrderDetail}"/>
 					</cells>
 				</ColumnListItem>
 				<ColumnListItem >
 					<cells>
 						<Label text="{i18n>SystemBProduct.product_orderSummary}" required="false"/> 
-						<rdf:ListResource path="dataModel>product_orderSummary" entitySet="OrderSummary" tooltip="{i18n>$target.product_orderSummary}"/>
+						<rdf:ListResource path="dataModel>product_orderSummary" entitySet="OrderSummary" tooltip="{i18n>SystemBProduct.product_orderSummary}"/>
 					</cells>
 				</ColumnListItem>
 			</items>

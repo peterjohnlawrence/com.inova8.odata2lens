@@ -100,9 +100,9 @@
 						#if($property.propertyType == "D")
 						#entitymaptypes( $property $entity.target  ) 
 						#elseif ($property.propertyType == "O")
-						<rdf:TextResource path="dataModel>$property.property" entitySet="$property.range" tooltip="{i18n>$target.$property.property}"/>		
+						<rdf:TextResource path="dataModel>$property.property" entitySet="$property.range" tooltip="{i18n>$entity.target.$property.property}"/>		
 						#elseif ($property.propertyType == "C")
-						<rdf:ListResource path="dataModel>$property.property" entitySet="$property.range" tooltip="{i18n>$target.$property.property}"/>
+						<rdf:ListResource path="dataModel>$property.property" entitySet="$property.range" tooltip="{i18n>$entity.target.$property.property}"/>
 						#elseif ($property.propertyType == "S")
 						<Text text=""/>
 						#end
@@ -118,9 +118,9 @@
 								#if($complexProperty.propertyType == "D")
 						#entitymaptypes( $complexProperty $entity.target  ) 
 								#elseif ($complexProperty.propertyType == "O")
-						<rdf:TextResource path="dataModel>$complexProperty.property" entitySet="$complexProperty.range" tooltip="{i18n>$target.$complexProperty.property}"/>		
+						<rdf:TextResource path="dataModel>$complexProperty.property" entitySet="$complexProperty.range" tooltip="{i18n>$entity.target.$complexProperty.property}"/>		
 								#elseif ($complexProperty.propertyType == "C")
-						<rdf:ListResource path="dataModel>$complexProperty.property" entitySet="$complexProperty.range" tooltip="{i18n>$target.$complexProperty.property}"/>
+						<rdf:ListResource path="dataModel>$complexProperty.property" entitySet="$complexProperty.range" tooltip="{i18n>$entity.target.$complexProperty.property}"/>
 								#end	
 							#end
 							#if($complexProperties.size() > 1 )

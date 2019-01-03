@@ -151,43 +151,43 @@
 				<ColumnListItem >
 					<cells>
 						<Label text="{i18n>Order.customer}" required="false"/> 
-						<rdf:TextResource path="dataModel>customer" entitySet="Customer" tooltip="{i18n>$target.customer}"/>		
+						<rdf:TextResource path="dataModel>customer" entitySet="Customer" tooltip="{i18n>Order.customer}"/>		
 					</cells>
 				</ColumnListItem>
 				<ColumnListItem >
 					<cells>
 						<Label text="{i18n>Order.employee}" required="false"/> 
-						<rdf:TextResource path="dataModel>employee" entitySet="Employee" tooltip="{i18n>$target.employee}"/>		
+						<rdf:TextResource path="dataModel>employee" entitySet="Employee" tooltip="{i18n>Order.employee}"/>		
 					</cells>
 				</ColumnListItem>
 				<ColumnListItem >
 					<cells>
 						<Label text="{i18n>Order.orderRegion}" required="false"/> 
-						<rdf:TextResource path="dataModel>orderRegion" entitySet="Region" tooltip="{i18n>$target.orderRegion}"/>		
+						<rdf:TextResource path="dataModel>orderRegion" entitySet="Region" tooltip="{i18n>Order.orderRegion}"/>		
 					</cells>
 				</ColumnListItem>
 				<ColumnListItem >
 					<cells>
 						<Label text="{i18n>Order.shipVia}" required="false"/> 
-						<rdf:TextResource path="dataModel>shipVia" entitySet="Shipper" tooltip="{i18n>$target.shipVia}"/>		
+						<rdf:TextResource path="dataModel>shipVia" entitySet="Shipper" tooltip="{i18n>Order.shipVia}"/>		
 					</cells>
 				</ColumnListItem>
 				<ColumnListItem >
 					<cells>
 						<Label text="{i18n>Order.hasOrderDetail}" required="false"/> 
-						<rdf:ListResource path="dataModel>hasOrderDetail" entitySet="OrderDetail" tooltip="{i18n>$target.hasOrderDetail}"/>
+						<rdf:ListResource path="dataModel>hasOrderDetail" entitySet="OrderDetail" tooltip="{i18n>Order.hasOrderDetail}"/>
 					</cells>
 				</ColumnListItem>
 				<ColumnListItem >
 					<cells>
 						<Label text="{i18n>Order.order_customer_Order}" required="false"/> 
-						<rdf:ListResource path="dataModel>order_customer_Order" entitySet="Customer_Order" tooltip="{i18n>$target.order_customer_Order}"/>
+						<rdf:ListResource path="dataModel>order_customer_Order" entitySet="Customer_Order" tooltip="{i18n>Order.order_customer_Order}"/>
 					</cells>
 				</ColumnListItem>
 				<ColumnListItem >
 					<cells>
 						<Label text="{i18n>Order.order_orderSummary}" required="false"/> 
-						<rdf:ListResource path="dataModel>order_orderSummary" entitySet="OrderSummary" tooltip="{i18n>$target.order_orderSummary}"/>
+						<rdf:ListResource path="dataModel>order_orderSummary" entitySet="OrderSummary" tooltip="{i18n>Order.order_orderSummary}"/>
 					</cells>
 				</ColumnListItem>
 			</items>

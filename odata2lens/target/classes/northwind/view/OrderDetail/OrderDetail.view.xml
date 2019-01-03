@@ -85,13 +85,13 @@
 				<ColumnListItem >
 					<cells>
 						<Label text="{i18n>OrderDetail.order}" required="false"/> 
-						<rdf:TextResource path="dataModel>order" entitySet="Order" tooltip="{i18n>$target.order}"/>		
+						<rdf:TextResource path="dataModel>order" entitySet="Order" tooltip="{i18n>OrderDetail.order}"/>		
 					</cells>
 				</ColumnListItem>
 				<ColumnListItem >
 					<cells>
 						<Label text="{i18n>OrderDetail.product}" required="false"/> 
-						<rdf:TextResource path="dataModel>product" entitySet="Product" tooltip="{i18n>$target.product}"/>		
+						<rdf:TextResource path="dataModel>product" entitySet="Product" tooltip="{i18n>OrderDetail.product}"/>		
 					</cells>
 				</ColumnListItem>
 			</items>

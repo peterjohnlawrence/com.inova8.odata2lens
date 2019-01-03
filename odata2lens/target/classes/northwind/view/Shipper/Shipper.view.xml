@@ -67,7 +67,7 @@
 				<ColumnListItem >
 					<cells>
 						<Label text="{i18n>Shipper.shipsOrder}" required="false"/> 
-						<rdf:ListResource path="dataModel>shipsOrder" entitySet="Order" tooltip="{i18n>$target.shipsOrder}"/>
+						<rdf:ListResource path="dataModel>shipsOrder" entitySet="Order" tooltip="{i18n>Shipper.shipsOrder}"/>
 					</cells>
 				</ColumnListItem>
 			</items>

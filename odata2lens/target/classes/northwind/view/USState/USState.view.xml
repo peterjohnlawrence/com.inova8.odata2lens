@@ -79,7 +79,7 @@
 				<ColumnListItem >
 					<cells>
 						<Label text="{i18n>USState.usstateRegion}" required="false"/> 
-						<rdf:ListResource path="dataModel>usstateRegion" entitySet="Region" tooltip="{i18n>$target.usstateRegion}"/>
+						<rdf:ListResource path="dataModel>usstateRegion" entitySet="Region" tooltip="{i18n>USState.usstateRegion}"/>
 					</cells>
 				</ColumnListItem>
 			</items>

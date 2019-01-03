@@ -11,6 +11,7 @@ $entitySet.target#[[.this]]# = $entitySet.label
 #foreach($property in $entity.properties)
 	#if($property.complex )
 		#set($complexType = $property.complexRange)
+$entitySet.target#[[.]]#$complexType.name = $property.label	
 		#foreach($complexProperty in $complexType.allProperties)
 $entitySet.target#[[.]]#$complexType.name#[[/]]#$complexProperty.name = $complexProperty.label	
 		#end

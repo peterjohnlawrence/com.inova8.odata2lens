@@ -73,13 +73,13 @@
 				<ColumnListItem >
 					<cells>
 						<Label text="{i18n>Customer_Order.customer_Order_customer}" required="false"/> 
-						<rdf:TextResource path="dataModel>customer_Order_customer" entitySet="Customer" tooltip="{i18n>$target.customer_Order_customer}"/>		
+						<rdf:TextResource path="dataModel>customer_Order_customer" entitySet="Customer" tooltip="{i18n>Customer_Order.customer_Order_customer}"/>		
 					</cells>
 				</ColumnListItem>
 				<ColumnListItem >
 					<cells>
 						<Label text="{i18n>Customer_Order.customer_Order_order}" required="false"/> 
-						<rdf:TextResource path="dataModel>customer_Order_order" entitySet="Order" tooltip="{i18n>$target.customer_Order_order}"/>		
+						<rdf:TextResource path="dataModel>customer_Order_order" entitySet="Order" tooltip="{i18n>Customer_Order.customer_Order_order}"/>		
 					</cells>
 				</ColumnListItem>
 			</items>

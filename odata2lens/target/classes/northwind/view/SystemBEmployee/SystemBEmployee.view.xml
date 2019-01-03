@@ -199,43 +199,43 @@
 				<ColumnListItem >
 					<cells>
 						<Label text="{i18n>SystemBEmployee.reportsTo}" required="false"/> 
-						<rdf:TextResource path="dataModel>reportsTo" entitySet="Employee" tooltip="{i18n>$target.reportsTo}"/>		
+						<rdf:TextResource path="dataModel>reportsTo" entitySet="Employee" tooltip="{i18n>SystemBEmployee.reportsTo}"/>		
 					</cells>
 				</ColumnListItem>
 				<ColumnListItem >
 					<cells>
 						<Label text="{i18n>SystemBEmployee.systemBFavorite}" required="false"/> 
-						<rdf:TextResource path="dataModel>systemBFavorite" entitySet="Product" tooltip="{i18n>$target.systemBFavorite}"/>		
+						<rdf:TextResource path="dataModel>systemBFavorite" entitySet="Product" tooltip="{i18n>SystemBEmployee.systemBFavorite}"/>		
 					</cells>
 				</ColumnListItem>
 				<ColumnListItem >
 					<cells>
 						<Label text="{i18n>SystemBEmployee.employeeRegion}" required="false"/> 
-						<rdf:ListResource path="dataModel>employeeRegion" entitySet="Region" tooltip="{i18n>$target.employeeRegion}"/>
+						<rdf:ListResource path="dataModel>employeeRegion" entitySet="Region" tooltip="{i18n>SystemBEmployee.employeeRegion}"/>
 					</cells>
 				</ColumnListItem>
 				<ColumnListItem >
 					<cells>
 						<Label text="{i18n>SystemBEmployee.managesEmployee}" required="false"/> 
-						<rdf:ListResource path="dataModel>managesEmployee" entitySet="Employee" tooltip="{i18n>$target.managesEmployee}"/>
+						<rdf:ListResource path="dataModel>managesEmployee" entitySet="Employee" tooltip="{i18n>SystemBEmployee.managesEmployee}"/>
 					</cells>
 				</ColumnListItem>
 				<ColumnListItem >
 					<cells>
 						<Label text="{i18n>SystemBEmployee.managesOrder}" required="false"/> 
-						<rdf:ListResource path="dataModel>managesOrder" entitySet="Order" tooltip="{i18n>$target.managesOrder}"/>
+						<rdf:ListResource path="dataModel>managesOrder" entitySet="Order" tooltip="{i18n>SystemBEmployee.managesOrder}"/>
 					</cells>
 				</ColumnListItem>
 				<ColumnListItem >
 					<cells>
 						<Label text="{i18n>SystemBEmployee.systemBEmployer}" required="false"/> 
-						<rdf:ListResource path="dataModel>systemBEmployer" entitySet="Supplier" tooltip="{i18n>$target.systemBEmployer}"/>
+						<rdf:ListResource path="dataModel>systemBEmployer" entitySet="Supplier" tooltip="{i18n>SystemBEmployee.systemBEmployer}"/>
 					</cells>
 				</ColumnListItem>
 				<ColumnListItem >
 					<cells>
 						<Label text="{i18n>SystemBEmployee.territory}" required="false"/> 
-						<rdf:ListResource path="dataModel>territory" entitySet="Territory" tooltip="{i18n>$target.territory}"/>
+						<rdf:ListResource path="dataModel>territory" entitySet="Territory" tooltip="{i18n>SystemBEmployee.territory}"/>
 					</cells>
 				</ColumnListItem>
 			</items>

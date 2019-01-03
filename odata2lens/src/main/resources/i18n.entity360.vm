@@ -6,6 +6,7 @@ $entity.target#[[.this]]# = $entity.label
 #foreach($property in $entity.properties)
 	#if($property.complex )
 		#set($complexType = $property.complexRange)
+$entity.target#[[.]]#$complexType.name = $property.label	
 		#foreach($complexProperty in $complexType.allProperties)
 $entity.target#[[.]]#$complexType.name#[[/]]#$complexProperty.name = $complexProperty.label	
 		#end

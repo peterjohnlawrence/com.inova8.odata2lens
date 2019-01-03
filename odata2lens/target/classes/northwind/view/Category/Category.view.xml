@@ -73,7 +73,7 @@
 				<ColumnListItem >
 					<cells>
 						<Label text="{i18n>Category.isCategoryOf}" required="false"/> 
-						<rdf:ListResource path="dataModel>isCategoryOf" entitySet="Product" tooltip="{i18n>$target.isCategoryOf}"/>
+						<rdf:ListResource path="dataModel>isCategoryOf" entitySet="Product" tooltip="{i18n>Category.isCategoryOf}"/>
 					</cells>
 				</ColumnListItem>
 			</items>

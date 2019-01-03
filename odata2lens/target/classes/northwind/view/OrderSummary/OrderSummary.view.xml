@@ -61,13 +61,13 @@
 				<ColumnListItem >
 					<cells>
 						<Label text="{i18n>OrderSummary.orderSummary_order}" required="false"/> 
-						<rdf:TextResource path="dataModel>orderSummary_order" entitySet="Order" tooltip="{i18n>$target.orderSummary_order}"/>		
+						<rdf:TextResource path="dataModel>orderSummary_order" entitySet="Order" tooltip="{i18n>OrderSummary.orderSummary_order}"/>		
 					</cells>
 				</ColumnListItem>
 				<ColumnListItem >
 					<cells>
 						<Label text="{i18n>OrderSummary.orderSummary_product}" required="false"/> 
-						<rdf:TextResource path="dataModel>orderSummary_product" entitySet="Product" tooltip="{i18n>$target.orderSummary_product}"/>		
+						<rdf:TextResource path="dataModel>orderSummary_product" entitySet="Product" tooltip="{i18n>OrderSummary.orderSummary_product}"/>		
 					</cells>
 				</ColumnListItem>
 			</items>

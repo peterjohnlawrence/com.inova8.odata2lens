@@ -139,19 +139,19 @@
 				<ColumnListItem >
 					<cells>
 						<Label text="{i18n>Customer.customerRegion}" required="false"/> 
-						<rdf:ListResource path="dataModel>customerRegion" entitySet="Region" tooltip="{i18n>$target.customerRegion}"/>
+						<rdf:ListResource path="dataModel>customerRegion" entitySet="Region" tooltip="{i18n>Customer.customerRegion}"/>
 					</cells>
 				</ColumnListItem>
 				<ColumnListItem >
 					<cells>
 						<Label text="{i18n>Customer.customer_customer_Order}" required="false"/> 
-						<rdf:ListResource path="dataModel>customer_customer_Order" entitySet="Customer_Order" tooltip="{i18n>$target.customer_customer_Order}"/>
+						<rdf:ListResource path="dataModel>customer_customer_Order" entitySet="Customer_Order" tooltip="{i18n>Customer.customer_customer_Order}"/>
 					</cells>
 				</ColumnListItem>
 				<ColumnListItem >
 					<cells>
 						<Label text="{i18n>Customer.hasPlacedOrder}" required="false"/> 
-						<rdf:ListResource path="dataModel>hasPlacedOrder" entitySet="Order" tooltip="{i18n>$target.hasPlacedOrder}"/>
+						<rdf:ListResource path="dataModel>hasPlacedOrder" entitySet="Order" tooltip="{i18n>Customer.hasPlacedOrder}"/>
 					</cells>
 				</ColumnListItem>
 			</items>

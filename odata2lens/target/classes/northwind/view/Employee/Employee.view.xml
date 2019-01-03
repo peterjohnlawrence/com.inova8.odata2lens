@@ -117,8 +117,8 @@
 					<cells>
 						<Label text="{i18n>Employee.employer}" required="false"/> 
 						<Text text=""/>
-						<rdf:ListResource path="dataModel>employer/systemBEmployer" entitySet="Supplier" tooltip="{i18n>$target.employer/systemBEmployer}"/>
-						<rdf:ListResource path="dataModel>employer/systemAEmployer" entitySet="Supplier" tooltip="{i18n>$target.employer/systemAEmployer}"/>
+						<rdf:ListResource path="dataModel>employer/systemBEmployer" entitySet="Supplier" tooltip="{i18n>Employee.employer/systemBEmployer}"/>
+						<rdf:ListResource path="dataModel>employer/systemAEmployer" entitySet="Supplier" tooltip="{i18n>Employee.employer/systemAEmployer}"/>
 					</cells>
 				</ColumnListItem>
 				<ColumnListItem >
@@ -133,8 +133,8 @@
 					<cells>
 						<Label text="{i18n>Employee.favorite}" required="false"/> 
 						<Text text=""/>
-						<rdf:TextResource path="dataModel>favorite/systemBFavorite" entitySet="Product" tooltip="{i18n>$target.favorite/systemBFavorite}"/>		
-						<rdf:TextResource path="dataModel>favorite/systemAFavorite" entitySet="Product" tooltip="{i18n>$target.favorite/systemAFavorite}"/>		
+						<rdf:TextResource path="dataModel>favorite/systemBFavorite" entitySet="Product" tooltip="{i18n>Employee.favorite/systemBFavorite}"/>		
+						<rdf:TextResource path="dataModel>favorite/systemAFavorite" entitySet="Product" tooltip="{i18n>Employee.favorite/systemAFavorite}"/>		
 					</cells>
 				</ColumnListItem>
 				<ColumnListItem >
@@ -260,7 +260,7 @@
 				<ColumnListItem >
 					<cells>
 						<Label text="{i18n>Employee.reportsTo}" required="false"/> 
-						<rdf:TextResource path="dataModel>reportsTo" entitySet="Employee" tooltip="{i18n>$target.reportsTo}"/>		
+						<rdf:TextResource path="dataModel>reportsTo" entitySet="Employee" tooltip="{i18n>Employee.reportsTo}"/>		
 						<Text text=""/>
 						<Text text=""/>
 					</cells>
@@ -268,7 +268,7 @@
 				<ColumnListItem >
 					<cells>
 						<Label text="{i18n>Employee.employeeRegion}" required="false"/> 
-						<rdf:ListResource path="dataModel>employeeRegion" entitySet="Region" tooltip="{i18n>$target.employeeRegion}"/>
+						<rdf:ListResource path="dataModel>employeeRegion" entitySet="Region" tooltip="{i18n>Employee.employeeRegion}"/>
 						<Text text=""/>
 						<Text text=""/>
 					</cells>
@@ -276,7 +276,7 @@
 				<ColumnListItem >
 					<cells>
 						<Label text="{i18n>Employee.managesEmployee}" required="false"/> 
-						<rdf:ListResource path="dataModel>managesEmployee" entitySet="Employee" tooltip="{i18n>$target.managesEmployee}"/>
+						<rdf:ListResource path="dataModel>managesEmployee" entitySet="Employee" tooltip="{i18n>Employee.managesEmployee}"/>
 						<Text text=""/>
 						<Text text=""/>
 					</cells>
@@ -284,7 +284,7 @@
 				<ColumnListItem >
 					<cells>
 						<Label text="{i18n>Employee.managesOrder}" required="false"/> 
-						<rdf:ListResource path="dataModel>managesOrder" entitySet="Order" tooltip="{i18n>$target.managesOrder}"/>
+						<rdf:ListResource path="dataModel>managesOrder" entitySet="Order" tooltip="{i18n>Employee.managesOrder}"/>
 						<Text text=""/>
 						<Text text=""/>
 					</cells>
@@ -292,7 +292,7 @@
 				<ColumnListItem >
 					<cells>
 						<Label text="{i18n>Employee.territory}" required="false"/> 
-						<rdf:ListResource path="dataModel>territory" entitySet="Territory" tooltip="{i18n>$target.territory}"/>
+						<rdf:ListResource path="dataModel>territory" entitySet="Territory" tooltip="{i18n>Employee.territory}"/>
 						<Text text=""/>
 						<Text text=""/>
 					</cells>

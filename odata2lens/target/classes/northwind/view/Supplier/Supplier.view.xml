@@ -145,13 +145,13 @@
 				<ColumnListItem >
 					<cells>
 						<Label text="{i18n>Supplier.supplierRegion}" required="false"/> 
-						<rdf:ListResource path="dataModel>supplierRegion" entitySet="Region" tooltip="{i18n>$target.supplierRegion}"/>
+						<rdf:ListResource path="dataModel>supplierRegion" entitySet="Region" tooltip="{i18n>Supplier.supplierRegion}"/>
 					</cells>
 				</ColumnListItem>
 				<ColumnListItem >
 					<cells>
 						<Label text="{i18n>Supplier.suppliesProduct}" required="false"/> 
-						<rdf:ListResource path="dataModel>suppliesProduct" entitySet="Product" tooltip="{i18n>$target.suppliesProduct}"/>
+						<rdf:ListResource path="dataModel>suppliesProduct" entitySet="Product" tooltip="{i18n>Supplier.suppliesProduct}"/>
 					</cells>
 				</ColumnListItem>
 			</items>
