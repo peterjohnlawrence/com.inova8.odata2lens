@@ -44,6 +44,18 @@
 				"settings"
 			]
 		}, {
+			"pattern": "Legal",
+			"name": "legal",
+			"target": [
+				"legal"
+			]
+		},{
+			"pattern": "Links",
+			"name": "links",
+			"target": [
+				"links"
+			]
+		},{
 			"pattern": "login",
 			"name": "login",
 			"target": [
@@ -140,6 +152,16 @@
 				"viewId": "settings",
 				"viewLevel": 1
 			},
+			"legal": {
+				"viewName": "Legal",
+				"viewId": "legal",
+				"viewLevel": 1
+			},
+			"links": {
+				"viewName": "Links",
+				"viewId": "links",
+				"viewLevel": 1
+			},
 			"login": {
 				"viewName": "Login",
 				"viewId": "login",
@@ -175,14 +197,6 @@
 				"viewId": "objectNotFound"
 			},
 			"notFound": {
-				"viewName": "NotFound",
-				"viewId": "notFound"
-			},
-			"legal": {
-				"viewName": "NotFound",
-				"viewId": "notFound"
-			},
-			"links": {
 				"viewName": "NotFound",
 				"viewId": "notFound"
 			}

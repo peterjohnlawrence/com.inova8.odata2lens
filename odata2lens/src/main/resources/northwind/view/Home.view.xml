@@ -7,22 +7,22 @@
 					<l:BlockLayout id="statisticsBlockLayout" busy="false" background="Dashboard">
 						<l:BlockLayoutRow rowColorSet="ColorSet2">
 							<l:BlockLayoutCell>
-								<Title text="{i18n>home.productsByCategor}" titleStyle="H2" width="100%"/>
-								<Title text="{i18n>home.productsByCategor}" width="100%" class="sapUiSmallMarginBottom"/>
+								<Title text="{i18n>home.productsByCategory}" titleStyle="H2" width="100%"/>
+								<Title text="{i18n>home.pieChart}" width="100%" class="sapUiSmallMarginBottom"/>
 								<tool:D3PieChart data="{view>/PieChartData}">
 									<base:ManagedObject/>
 								</tool:D3PieChart>
 							</l:BlockLayoutCell>
 							<l:BlockLayoutCell>
 								<Title text="{i18n>home.productsByCategory}" titleStyle="H2" width="100%"/>
-								<Title text="{i18n>home.productsByCategoryDescription}" width="100%" class="sapUiSmallMarginBottom"/>
+								<Title text="{i18n>home.columnChart}" width="100%" class="sapUiSmallMarginBottom"/>
 								<tool:D3ColumnChart data="{view>/ColumnChartData}">
 									<base:ManagedObject/>
 								</tool:D3ColumnChart>
 							</l:BlockLayoutCell>
 							<l:BlockLayoutCell>
-								<Title text="{i18n>home.productsByCategor}" titleStyle="H2" width="100%"/>
-								<Title text="{i18n>home.productsByCategor}" width="100%" class="sapUiSmallMarginBottom"/>
+								<Title text="{i18n>home.productsByCategory}" titleStyle="H2" width="100%"/>
+								<Title text="{i18n>home.comparisonChart}" width="100%" class="sapUiSmallMarginBottom"/>
 								<tool:D3ComparisonChart data="{view>/ComparisonChartData}">
 									<base:ManagedObject/>
 								</tool:D3ComparisonChart>

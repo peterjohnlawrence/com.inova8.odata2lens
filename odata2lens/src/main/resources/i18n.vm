@@ -4,6 +4,8 @@ Lens.appDescription=Quorum Browser
 Lens.notificationTitle=Notifications
 Lens.notificationButtonText=Show all Notifications
 Lens.userHeaderTitle=Settings
+Lens.field=Field
+Lens.common=Common Values
 
 #~~~ common errors ~~~~~~~~~~~~~~~~~~~~~~~~~~
 tableNoDataText = No data retrieved
@@ -13,6 +15,10 @@ home.ViewTitle=Home
 
 #~~~ Settings View ~~~~~~~~~~~~~~~~~~~~~~~~~~
 settings.ViewTitle=Settings
+#~~~ Legal View ~~~~~~~~~~~~~~~~~~~~~~~~~~
+legal.ViewTitle=Legal
+#~~~ Links View ~~~~~~~~~~~~~~~~~~~~~~~~~~
+links.ViewTitle=Important Links
 
 #~~~ Not Found View ~~~~~~~~~~~~~~~~~~~~~~~
 NotFound.Title=Not Found
