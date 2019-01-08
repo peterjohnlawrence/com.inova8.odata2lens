@@ -44,6 +44,18 @@
 				"settings"
 			]
 		}, {
+			"pattern": "Legal",
+			"name": "legal",
+			"target": [
+				"legal"
+			]
+		},{
+			"pattern": "Links",
+			"name": "links",
+			"target": [
+				"links"
+			]
+		},{
 			"pattern": "login",
 			"name": "login",
 			"target": [
@@ -107,15 +119,6 @@
 				"$entityType.entity.target"
 			]
 		}
-	#foreach($navigationSet in $entityType.entity.navigationSet)			
-		, {
-			"pattern": "$navigationSet.target/{objectId}:/navigation::?queryOptions:",
-			"name": "$navigationSet.target",
-			"target": [
-				"$navigationSet.target"
-			]
-		}		
-	#end		
 #end			
 	],
 		"targets": {
@@ -138,6 +141,16 @@
 			"settings": {
 				"viewName": "Settings",
 				"viewId": "settings",
+				"viewLevel": 1
+			},
+			"legal": {
+				"viewName": "Legal",
+				"viewId": "legal",
+				"viewLevel": 1
+			},
+			"links": {
+				"viewName": "Links",
+				"viewId": "links",
 				"viewLevel": 1
 			},
 			"login": {
@@ -177,14 +190,6 @@
 			"notFound": {
 				"viewName": "NotFound",
 				"viewId": "notFound"
-			},
-			"legal": {
-				"viewName": "NotFound",
-				"viewId": "notFound"
-			},
-			"links": {
-				"viewName": "NotFound",
-				"viewId": "notFound"
 			}
 #foreach($entityType in $entityTypes)		
 			,"$entityType.entitySet.target": {
@@ -198,15 +203,7 @@
 				"viewPath":"$schema",
 				"viewId": "$entityType.entity.target",
 				"viewLevel": 1
-			}
-	#foreach($navigationSet in $entityType.entity.navigationSet)			
-			, 	"$navigationSet.target": {
-				"viewName": "view/$navigationSet.target/$navigationSet.target",
-				"viewPath":"$schema",
-				"viewId": "$navigationSet.target",
-				"viewLevel": 1
-			}	
-	#end					
+			}					
 #end
 		}
 	}

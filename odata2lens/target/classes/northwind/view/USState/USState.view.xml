@@ -9,18 +9,18 @@
 				<HBox id="sourceTitle" alignItems="Center">
 						<rdf:TextResource id="selectedResource" path="" entitySet=""/>
 				</HBox>	
-				<Title id="pathTitle" text="{entityView>/navigation}"/>
+				<Title id="pathTitle" text="{entityView>/navigationText}"/>
 				<HBox id="versionsTitle" alignItems="Center">
-					<Title text="("/>
+					<Title text="(" width="4px"/>
 					<ComboBox id="versionSelection" items="{ path: 'entityView>/versions' }" selectionChange="onVersionChange">
 						<core:Item key="{entityView>navigation}" text="{entityView>text}"/>
 					</ComboBox>
-					<Title text=")" />
+					<Title text=")" width="5px"/>
 				</HBox>
-				<Title text="{i18n>USState.this}"/>
-				<Title text="(" />
+				<Title id="entityTypeTitle" text="{i18n>USState.this}"/>
+				<Title text="(" width="4px"/>
 				<rdf:TextResource path="dataModel>" entitySet="USState"/>
-				<Title text=")" />
+				<Title text=")" width="5px"/>
 	
 				<ToolbarSpacer/>
 				<ToggleButton id="toggleColumns" icon="sap-icon://hide" activeIcon="sap-icon://show" press="onSettingsPressed" visible="false"	>
@@ -34,9 +34,10 @@
 		<Table id="form360" inset="false" fixedLayout="true" class="multicolumnform" updateFinished="hideColumns">
 			<columns>
 				<Column hAlign="Right" width="200px">
-					<Text text=""/>
+					<Title text="{i18n>Lens.field}"/>
 				</Column>
 				<Column visible="true">
+					<Title text="{i18n>Lens.common}"/>
 				</Column>
 			</columns>
 			<items>

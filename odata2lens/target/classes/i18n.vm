@@ -4,6 +4,8 @@ Lens.appDescription=Quorum Browser
 Lens.notificationTitle=Notifications
 Lens.notificationButtonText=Show all Notifications
 Lens.userHeaderTitle=Settings
+Lens.field=Field
+Lens.common=Common Values
 
 #~~~ common errors ~~~~~~~~~~~~~~~~~~~~~~~~~~
 tableNoDataText = No data retrieved
@@ -13,6 +15,10 @@ home.ViewTitle=Home
 
 #~~~ Settings View ~~~~~~~~~~~~~~~~~~~~~~~~~~
 settings.ViewTitle=Settings
+#~~~ Legal View ~~~~~~~~~~~~~~~~~~~~~~~~~~
+legal.ViewTitle=Legal
+#~~~ Links View ~~~~~~~~~~~~~~~~~~~~~~~~~~
+links.ViewTitle=Important Links
 
 #~~~ Not Found View ~~~~~~~~~~~~~~~~~~~~~~~
 NotFound.Title=Not Found
@@ -100,15 +106,15 @@ graph.removeNode = Remove Node
 graph.selectLinked = Select Linked
 graph.EntityNodeDetails = Entity Node Details
 graph.GroupNodeDetails = Group Node Details
-graph.NodeGrouping = Node Grouping
-graph.NodeFiltering = Node Filtering
+graph.NodeGrouping = Grouping
+graph.NodeFiltering = Filtering
 graph.Filter = Toggle Filtering
 graph.filterTooltip = Toggle filtering on causes all selected filters to be applied
 graph.AddFilter = Add
 graph.DeleteFilter = Delete
 graph.Layout = Layout
 graph.LayoutAlgorithm = Layout Algorithm
-graph.GeomapView = Geomap
+graph.GeoMap= Geomap
 graph.mapMode = Toggle Map Mode
 graph.mapModeTooltip = Selecting Map Mode will position nodes over map. Other layout preferences will be ignored.
 graph.History = History

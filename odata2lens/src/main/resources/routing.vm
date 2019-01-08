@@ -119,15 +119,6 @@
 				"$entityType.entity.target"
 			]
 		}
-	#foreach($navigationSet in $entityType.entity.navigationSet)			
-		, {
-			"pattern": "$navigationSet.target/{objectId}:/navigation::?queryOptions:",
-			"name": "$navigationSet.target",
-			"target": [
-				"$navigationSet.target"
-			]
-		}		
-	#end		
 #end			
 	],
 		"targets": {
@@ -212,15 +203,7 @@
 				"viewPath":"$schema",
 				"viewId": "$entityType.entity.target",
 				"viewLevel": 1
-			}
-	#foreach($navigationSet in $entityType.entity.navigationSet)			
-			, 	"$navigationSet.target": {
-				"viewName": "view/$navigationSet.target/$navigationSet.target",
-				"viewPath":"$schema",
-				"viewId": "$navigationSet.target",
-				"viewLevel": 1
-			}	
-	#end					
+			}					
 #end
 		}
 	}

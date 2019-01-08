@@ -3,9 +3,9 @@
 
 $entitySet.target#[[.ViewTitle]]#=$entitySet.target
 $entitySet.target#[[.TableTitle]]#=$entitySet.label
+$entitySet.target#[[.TableTitleCount]]#=({0})
 $entitySet.target#[[.SearchTooltip]]#=Enter an $entitySet.target name or a part of it.
 $entitySet.target#[[.NoDataWithSearchText]]#=No matching $entitySet.target found
-$entitySet.target#[[.TableTitleCount]]#=$entitySet.target ({0})
 $entitySet.target#[[.tableNoDataText]]#=No $entitySet.target are currently available
 $entitySet.target#[[.this]]# = $entitySet.label
 #foreach($property in $entity.properties)

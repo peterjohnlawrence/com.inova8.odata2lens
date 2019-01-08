@@ -8,7 +8,7 @@ sap.ui.define([
 
 			onInit: function () {
 				var oViewModel = new JSONModel({
-					ColumnChartData: [{v: 80,l:"Desserts, candies, and sweet breads"}, {v: 150,l:"b"}, {v: 400,l:"c"}, {v: 200,l:"d"}, {v: 201,l:"e"}, {v: 202,l:"f"}, {v: 203,l:"g"}],
+					ColumnChartData: [{v: 80,l:"a"}, {v: 150,l:"b"}, {v: 400,l:"c"}, {v: 200,l:"d"}, {v: 201,l:"e"}, {v: 202,l:"f"}, {v: 203,l:"g"}],
 					//ColumnChartData2: [{v: 40}, {v: 320}, {v: 270}, {v: 140}, {v: 60}],
 					ComparisonChartData: [{v: 120}, {v: -67}, {v: 250}, {v: -80}],
 				//	ComparisonChartData2: [{v: -70}, {v: 170}, {v: -30}, {v: 60}, {v: 120}],

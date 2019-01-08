@@ -44,6 +44,18 @@
 				"settings"
 			]
 		}, {
+			"pattern": "Legal",
+			"name": "legal",
+			"target": [
+				"legal"
+			]
+		},{
+			"pattern": "Links",
+			"name": "links",
+			"target": [
+				"links"
+			]
+		},{
 			"pattern": "login",
 			"name": "login",
 			"target": [
@@ -106,13 +118,6 @@
 				"Category"
 			]
 		}
-		, {
-			"pattern": "CategoryisCategoryOf/{objectId}:/navigation::?queryOptions:",
-			"name": "CategoryisCategoryOf",
-			"target": [
-				"CategoryisCategoryOf"
-			]
-		}		
 		,{
 			"pattern": "Customers/:objectId:/:navigation::?queryOptions:",
 			"name": "Customers",
@@ -127,27 +132,6 @@
 				"Customer"
 			]
 		}
-		, {
-			"pattern": "CustomercustomerRegion/{objectId}:/navigation::?queryOptions:",
-			"name": "CustomercustomerRegion",
-			"target": [
-				"CustomercustomerRegion"
-			]
-		}		
-		, {
-			"pattern": "Customercustomer_customer_Order/{objectId}:/navigation::?queryOptions:",
-			"name": "Customercustomer_customer_Order",
-			"target": [
-				"Customercustomer_customer_Order"
-			]
-		}		
-		, {
-			"pattern": "CustomerhasPlacedOrder/{objectId}:/navigation::?queryOptions:",
-			"name": "CustomerhasPlacedOrder",
-			"target": [
-				"CustomerhasPlacedOrder"
-			]
-		}		
 		,{
 			"pattern": "Customer_Orders/:objectId:/:navigation::?queryOptions:",
 			"name": "Customer_Orders",
@@ -176,34 +160,6 @@
 				"Employee"
 			]
 		}
-		, {
-			"pattern": "EmployeeemployeeRegion/{objectId}:/navigation::?queryOptions:",
-			"name": "EmployeeemployeeRegion",
-			"target": [
-				"EmployeeemployeeRegion"
-			]
-		}		
-		, {
-			"pattern": "EmployeemanagesEmployee/{objectId}:/navigation::?queryOptions:",
-			"name": "EmployeemanagesEmployee",
-			"target": [
-				"EmployeemanagesEmployee"
-			]
-		}		
-		, {
-			"pattern": "EmployeemanagesOrder/{objectId}:/navigation::?queryOptions:",
-			"name": "EmployeemanagesOrder",
-			"target": [
-				"EmployeemanagesOrder"
-			]
-		}		
-		, {
-			"pattern": "Employeeterritory/{objectId}:/navigation::?queryOptions:",
-			"name": "Employeeterritory",
-			"target": [
-				"Employeeterritory"
-			]
-		}		
 		,{
 			"pattern": "Orders/:objectId:/:navigation::?queryOptions:",
 			"name": "Orders",
@@ -218,27 +174,6 @@
 				"Order"
 			]
 		}
-		, {
-			"pattern": "OrderhasOrderDetail/{objectId}:/navigation::?queryOptions:",
-			"name": "OrderhasOrderDetail",
-			"target": [
-				"OrderhasOrderDetail"
-			]
-		}		
-		, {
-			"pattern": "Orderorder_customer_Order/{objectId}:/navigation::?queryOptions:",
-			"name": "Orderorder_customer_Order",
-			"target": [
-				"Orderorder_customer_Order"
-			]
-		}		
-		, {
-			"pattern": "Orderorder_orderSummary/{objectId}:/navigation::?queryOptions:",
-			"name": "Orderorder_orderSummary",
-			"target": [
-				"Orderorder_orderSummary"
-			]
-		}		
 		,{
 			"pattern": "OrderDetails/:objectId:/:navigation::?queryOptions:",
 			"name": "OrderDetails",
@@ -281,20 +216,6 @@
 				"Product"
 			]
 		}
-		, {
-			"pattern": "ProductisPartOfOrderDetail/{objectId}:/navigation::?queryOptions:",
-			"name": "ProductisPartOfOrderDetail",
-			"target": [
-				"ProductisPartOfOrderDetail"
-			]
-		}		
-		, {
-			"pattern": "Productproduct_orderSummary/{objectId}:/navigation::?queryOptions:",
-			"name": "Productproduct_orderSummary",
-			"target": [
-				"Productproduct_orderSummary"
-			]
-		}		
 		,{
 			"pattern": "Regions/:objectId:/:navigation::?queryOptions:",
 			"name": "Regions",
@@ -323,13 +244,6 @@
 				"Shipper"
 			]
 		}
-		, {
-			"pattern": "ShippershipsOrder/{objectId}:/navigation::?queryOptions:",
-			"name": "ShippershipsOrder",
-			"target": [
-				"ShippershipsOrder"
-			]
-		}		
 		,{
 			"pattern": "Suppliers/:objectId:/:navigation::?queryOptions:",
 			"name": "Suppliers",
@@ -344,20 +258,6 @@
 				"Supplier"
 			]
 		}
-		, {
-			"pattern": "SuppliersupplierRegion/{objectId}:/navigation::?queryOptions:",
-			"name": "SuppliersupplierRegion",
-			"target": [
-				"SuppliersupplierRegion"
-			]
-		}		
-		, {
-			"pattern": "SuppliersuppliesProduct/{objectId}:/navigation::?queryOptions:",
-			"name": "SuppliersuppliesProduct",
-			"target": [
-				"SuppliersuppliesProduct"
-			]
-		}		
 		,{
 			"pattern": "SystemAEmployees/:objectId:/:navigation::?queryOptions:",
 			"name": "SystemAEmployees",
@@ -372,48 +272,6 @@
 				"SystemAEmployee"
 			]
 		}
-		, {
-			"pattern": "SystemAEmployeeemployeeRegion/{objectId}:/navigation::?queryOptions:",
-			"name": "SystemAEmployeeemployeeRegion",
-			"target": [
-				"SystemAEmployeeemployeeRegion"
-			]
-		}		
-		, {
-			"pattern": "SystemAEmployeemanagesEmployee/{objectId}:/navigation::?queryOptions:",
-			"name": "SystemAEmployeemanagesEmployee",
-			"target": [
-				"SystemAEmployeemanagesEmployee"
-			]
-		}		
-		, {
-			"pattern": "SystemAEmployeemanagesOrder/{objectId}:/navigation::?queryOptions:",
-			"name": "SystemAEmployeemanagesOrder",
-			"target": [
-				"SystemAEmployeemanagesOrder"
-			]
-		}		
-		, {
-			"pattern": "SystemAEmployeesystemACustomer/{objectId}:/navigation::?queryOptions:",
-			"name": "SystemAEmployeesystemACustomer",
-			"target": [
-				"SystemAEmployeesystemACustomer"
-			]
-		}		
-		, {
-			"pattern": "SystemAEmployeesystemAEmployer/{objectId}:/navigation::?queryOptions:",
-			"name": "SystemAEmployeesystemAEmployer",
-			"target": [
-				"SystemAEmployeesystemAEmployer"
-			]
-		}		
-		, {
-			"pattern": "SystemAEmployeeterritory/{objectId}:/navigation::?queryOptions:",
-			"name": "SystemAEmployeeterritory",
-			"target": [
-				"SystemAEmployeeterritory"
-			]
-		}		
 		,{
 			"pattern": "SystemAProducts/:objectId:/:navigation::?queryOptions:",
 			"name": "SystemAProducts",
@@ -428,20 +286,6 @@
 				"SystemAProduct"
 			]
 		}
-		, {
-			"pattern": "SystemAProductisPartOfOrderDetail/{objectId}:/navigation::?queryOptions:",
-			"name": "SystemAProductisPartOfOrderDetail",
-			"target": [
-				"SystemAProductisPartOfOrderDetail"
-			]
-		}		
-		, {
-			"pattern": "SystemAProductproduct_orderSummary/{objectId}:/navigation::?queryOptions:",
-			"name": "SystemAProductproduct_orderSummary",
-			"target": [
-				"SystemAProductproduct_orderSummary"
-			]
-		}		
 		,{
 			"pattern": "SystemBEmployees/:objectId:/:navigation::?queryOptions:",
 			"name": "SystemBEmployees",
@@ -456,41 +300,6 @@
 				"SystemBEmployee"
 			]
 		}
-		, {
-			"pattern": "SystemBEmployeeemployeeRegion/{objectId}:/navigation::?queryOptions:",
-			"name": "SystemBEmployeeemployeeRegion",
-			"target": [
-				"SystemBEmployeeemployeeRegion"
-			]
-		}		
-		, {
-			"pattern": "SystemBEmployeemanagesEmployee/{objectId}:/navigation::?queryOptions:",
-			"name": "SystemBEmployeemanagesEmployee",
-			"target": [
-				"SystemBEmployeemanagesEmployee"
-			]
-		}		
-		, {
-			"pattern": "SystemBEmployeemanagesOrder/{objectId}:/navigation::?queryOptions:",
-			"name": "SystemBEmployeemanagesOrder",
-			"target": [
-				"SystemBEmployeemanagesOrder"
-			]
-		}		
-		, {
-			"pattern": "SystemBEmployeesystemBEmployer/{objectId}:/navigation::?queryOptions:",
-			"name": "SystemBEmployeesystemBEmployer",
-			"target": [
-				"SystemBEmployeesystemBEmployer"
-			]
-		}		
-		, {
-			"pattern": "SystemBEmployeeterritory/{objectId}:/navigation::?queryOptions:",
-			"name": "SystemBEmployeeterritory",
-			"target": [
-				"SystemBEmployeeterritory"
-			]
-		}		
 		,{
 			"pattern": "SystemBProducts/:objectId:/:navigation::?queryOptions:",
 			"name": "SystemBProducts",
@@ -505,20 +314,6 @@
 				"SystemBProduct"
 			]
 		}
-		, {
-			"pattern": "SystemBProductisPartOfOrderDetail/{objectId}:/navigation::?queryOptions:",
-			"name": "SystemBProductisPartOfOrderDetail",
-			"target": [
-				"SystemBProductisPartOfOrderDetail"
-			]
-		}		
-		, {
-			"pattern": "SystemBProductproduct_orderSummary/{objectId}:/navigation::?queryOptions:",
-			"name": "SystemBProductproduct_orderSummary",
-			"target": [
-				"SystemBProductproduct_orderSummary"
-			]
-		}		
 		,{
 			"pattern": "Territorys/:objectId:/:navigation::?queryOptions:",
 			"name": "Territorys",
@@ -533,20 +328,6 @@
 				"Territory"
 			]
 		}
-		, {
-			"pattern": "TerritoryterritoryOf/{objectId}:/navigation::?queryOptions:",
-			"name": "TerritoryterritoryOf",
-			"target": [
-				"TerritoryterritoryOf"
-			]
-		}		
-		, {
-			"pattern": "TerritoryterritoryRegion/{objectId}:/navigation::?queryOptions:",
-			"name": "TerritoryterritoryRegion",
-			"target": [
-				"TerritoryterritoryRegion"
-			]
-		}		
 		,{
 			"pattern": "USStates/:objectId:/:navigation::?queryOptions:",
 			"name": "USStates",
@@ -561,13 +342,6 @@
 				"USState"
 			]
 		}
-		, {
-			"pattern": "USStateusstateRegion/{objectId}:/navigation::?queryOptions:",
-			"name": "USStateusstateRegion",
-			"target": [
-				"USStateusstateRegion"
-			]
-		}		
 	],
 		"targets": {
 			"home": {
@@ -589,6 +363,16 @@
 			"settings": {
 				"viewName": "Settings",
 				"viewId": "settings",
+				"viewLevel": 1
+			},
+			"legal": {
+				"viewName": "Legal",
+				"viewId": "legal",
+				"viewLevel": 1
+			},
+			"links": {
+				"viewName": "Links",
+				"viewId": "links",
 				"viewLevel": 1
 			},
 			"login": {
@@ -628,14 +412,6 @@
 			"notFound": {
 				"viewName": "NotFound",
 				"viewId": "notFound"
-			},
-			"legal": {
-				"viewName": "NotFound",
-				"viewId": "notFound"
-			},
-			"links": {
-				"viewName": "NotFound",
-				"viewId": "notFound"
 			}
 			,"Categorys": {
 				"viewName": "view/Categorys/Categorys",
@@ -648,13 +424,7 @@
 				"viewPath":"northwind",
 				"viewId": "Category",
 				"viewLevel": 1
-			}
-			, 	"CategoryisCategoryOf": {
-				"viewName": "view/CategoryisCategoryOf/CategoryisCategoryOf",
-				"viewPath":"northwind",
-				"viewId": "CategoryisCategoryOf",
-				"viewLevel": 1
-			}	
+			}					
 			,"Customers": {
 				"viewName": "view/Customers/Customers",
 				"viewPath":"northwind",
@@ -666,25 +436,7 @@
 				"viewPath":"northwind",
 				"viewId": "Customer",
 				"viewLevel": 1
-			}
-			, 	"CustomercustomerRegion": {
-				"viewName": "view/CustomercustomerRegion/CustomercustomerRegion",
-				"viewPath":"northwind",
-				"viewId": "CustomercustomerRegion",
-				"viewLevel": 1
-			}	
-			, 	"Customercustomer_customer_Order": {
-				"viewName": "view/Customercustomer_customer_Order/Customercustomer_customer_Order",
-				"viewPath":"northwind",
-				"viewId": "Customercustomer_customer_Order",
-				"viewLevel": 1
-			}	
-			, 	"CustomerhasPlacedOrder": {
-				"viewName": "view/CustomerhasPlacedOrder/CustomerhasPlacedOrder",
-				"viewPath":"northwind",
-				"viewId": "CustomerhasPlacedOrder",
-				"viewLevel": 1
-			}	
+			}					
 			,"Customer_Orders": {
 				"viewName": "view/Customer_Orders/Customer_Orders",
 				"viewPath":"northwind",
@@ -696,7 +448,7 @@
 				"viewPath":"northwind",
 				"viewId": "Customer_Order",
 				"viewLevel": 1
-			}
+			}					
 			,"Employees": {
 				"viewName": "view/Employees/Employees",
 				"viewPath":"northwind",
@@ -708,31 +460,7 @@
 				"viewPath":"northwind",
 				"viewId": "Employee",
 				"viewLevel": 1
-			}
-			, 	"EmployeeemployeeRegion": {
-				"viewName": "view/EmployeeemployeeRegion/EmployeeemployeeRegion",
-				"viewPath":"northwind",
-				"viewId": "EmployeeemployeeRegion",
-				"viewLevel": 1
-			}	
-			, 	"EmployeemanagesEmployee": {
-				"viewName": "view/EmployeemanagesEmployee/EmployeemanagesEmployee",
-				"viewPath":"northwind",
-				"viewId": "EmployeemanagesEmployee",
-				"viewLevel": 1
-			}	
-			, 	"EmployeemanagesOrder": {
-				"viewName": "view/EmployeemanagesOrder/EmployeemanagesOrder",
-				"viewPath":"northwind",
-				"viewId": "EmployeemanagesOrder",
-				"viewLevel": 1
-			}	
-			, 	"Employeeterritory": {
-				"viewName": "view/Employeeterritory/Employeeterritory",
-				"viewPath":"northwind",
-				"viewId": "Employeeterritory",
-				"viewLevel": 1
-			}	
+			}					
 			,"Orders": {
 				"viewName": "view/Orders/Orders",
 				"viewPath":"northwind",
@@ -744,25 +472,7 @@
 				"viewPath":"northwind",
 				"viewId": "Order",
 				"viewLevel": 1
-			}
-			, 	"OrderhasOrderDetail": {
-				"viewName": "view/OrderhasOrderDetail/OrderhasOrderDetail",
-				"viewPath":"northwind",
-				"viewId": "OrderhasOrderDetail",
-				"viewLevel": 1
-			}	
-			, 	"Orderorder_customer_Order": {
-				"viewName": "view/Orderorder_customer_Order/Orderorder_customer_Order",
-				"viewPath":"northwind",
-				"viewId": "Orderorder_customer_Order",
-				"viewLevel": 1
-			}	
-			, 	"Orderorder_orderSummary": {
-				"viewName": "view/Orderorder_orderSummary/Orderorder_orderSummary",
-				"viewPath":"northwind",
-				"viewId": "Orderorder_orderSummary",
-				"viewLevel": 1
-			}	
+			}					
 			,"OrderDetails": {
 				"viewName": "view/OrderDetails/OrderDetails",
 				"viewPath":"northwind",
@@ -774,7 +484,7 @@
 				"viewPath":"northwind",
 				"viewId": "OrderDetail",
 				"viewLevel": 1
-			}
+			}					
 			,"OrderSummarys": {
 				"viewName": "view/OrderSummarys/OrderSummarys",
 				"viewPath":"northwind",
@@ -786,7 +496,7 @@
 				"viewPath":"northwind",
 				"viewId": "OrderSummary",
 				"viewLevel": 1
-			}
+			}					
 			,"Products": {
 				"viewName": "view/Products/Products",
 				"viewPath":"northwind",
@@ -798,19 +508,7 @@
 				"viewPath":"northwind",
 				"viewId": "Product",
 				"viewLevel": 1
-			}
-			, 	"ProductisPartOfOrderDetail": {
-				"viewName": "view/ProductisPartOfOrderDetail/ProductisPartOfOrderDetail",
-				"viewPath":"northwind",
-				"viewId": "ProductisPartOfOrderDetail",
-				"viewLevel": 1
-			}	
-			, 	"Productproduct_orderSummary": {
-				"viewName": "view/Productproduct_orderSummary/Productproduct_orderSummary",
-				"viewPath":"northwind",
-				"viewId": "Productproduct_orderSummary",
-				"viewLevel": 1
-			}	
+			}					
 			,"Regions": {
 				"viewName": "view/Regions/Regions",
 				"viewPath":"northwind",
@@ -822,7 +520,7 @@
 				"viewPath":"northwind",
 				"viewId": "Region",
 				"viewLevel": 1
-			}
+			}					
 			,"Shippers": {
 				"viewName": "view/Shippers/Shippers",
 				"viewPath":"northwind",
@@ -834,13 +532,7 @@
 				"viewPath":"northwind",
 				"viewId": "Shipper",
 				"viewLevel": 1
-			}
-			, 	"ShippershipsOrder": {
-				"viewName": "view/ShippershipsOrder/ShippershipsOrder",
-				"viewPath":"northwind",
-				"viewId": "ShippershipsOrder",
-				"viewLevel": 1
-			}	
+			}					
 			,"Suppliers": {
 				"viewName": "view/Suppliers/Suppliers",
 				"viewPath":"northwind",
@@ -852,19 +544,7 @@
 				"viewPath":"northwind",
 				"viewId": "Supplier",
 				"viewLevel": 1
-			}
-			, 	"SuppliersupplierRegion": {
-				"viewName": "view/SuppliersupplierRegion/SuppliersupplierRegion",
-				"viewPath":"northwind",
-				"viewId": "SuppliersupplierRegion",
-				"viewLevel": 1
-			}	
-			, 	"SuppliersuppliesProduct": {
-				"viewName": "view/SuppliersuppliesProduct/SuppliersuppliesProduct",
-				"viewPath":"northwind",
-				"viewId": "SuppliersuppliesProduct",
-				"viewLevel": 1
-			}	
+			}					
 			,"SystemAEmployees": {
 				"viewName": "view/SystemAEmployees/SystemAEmployees",
 				"viewPath":"northwind",
@@ -876,43 +556,7 @@
 				"viewPath":"northwind",
 				"viewId": "SystemAEmployee",
 				"viewLevel": 1
-			}
-			, 	"SystemAEmployeeemployeeRegion": {
-				"viewName": "view/SystemAEmployeeemployeeRegion/SystemAEmployeeemployeeRegion",
-				"viewPath":"northwind",
-				"viewId": "SystemAEmployeeemployeeRegion",
-				"viewLevel": 1
-			}	
-			, 	"SystemAEmployeemanagesEmployee": {
-				"viewName": "view/SystemAEmployeemanagesEmployee/SystemAEmployeemanagesEmployee",
-				"viewPath":"northwind",
-				"viewId": "SystemAEmployeemanagesEmployee",
-				"viewLevel": 1
-			}	
-			, 	"SystemAEmployeemanagesOrder": {
-				"viewName": "view/SystemAEmployeemanagesOrder/SystemAEmployeemanagesOrder",
-				"viewPath":"northwind",
-				"viewId": "SystemAEmployeemanagesOrder",
-				"viewLevel": 1
-			}	
-			, 	"SystemAEmployeesystemACustomer": {
-				"viewName": "view/SystemAEmployeesystemACustomer/SystemAEmployeesystemACustomer",
-				"viewPath":"northwind",
-				"viewId": "SystemAEmployeesystemACustomer",
-				"viewLevel": 1
-			}	
-			, 	"SystemAEmployeesystemAEmployer": {
-				"viewName": "view/SystemAEmployeesystemAEmployer/SystemAEmployeesystemAEmployer",
-				"viewPath":"northwind",
-				"viewId": "SystemAEmployeesystemAEmployer",
-				"viewLevel": 1
-			}	
-			, 	"SystemAEmployeeterritory": {
-				"viewName": "view/SystemAEmployeeterritory/SystemAEmployeeterritory",
-				"viewPath":"northwind",
-				"viewId": "SystemAEmployeeterritory",
-				"viewLevel": 1
-			}	
+			}					
 			,"SystemAProducts": {
 				"viewName": "view/SystemAProducts/SystemAProducts",
 				"viewPath":"northwind",
@@ -924,19 +568,7 @@
 				"viewPath":"northwind",
 				"viewId": "SystemAProduct",
 				"viewLevel": 1
-			}
-			, 	"SystemAProductisPartOfOrderDetail": {
-				"viewName": "view/SystemAProductisPartOfOrderDetail/SystemAProductisPartOfOrderDetail",
-				"viewPath":"northwind",
-				"viewId": "SystemAProductisPartOfOrderDetail",
-				"viewLevel": 1
-			}	
-			, 	"SystemAProductproduct_orderSummary": {
-				"viewName": "view/SystemAProductproduct_orderSummary/SystemAProductproduct_orderSummary",
-				"viewPath":"northwind",
-				"viewId": "SystemAProductproduct_orderSummary",
-				"viewLevel": 1
-			}	
+			}					
 			,"SystemBEmployees": {
 				"viewName": "view/SystemBEmployees/SystemBEmployees",
 				"viewPath":"northwind",
@@ -948,37 +580,7 @@
 				"viewPath":"northwind",
 				"viewId": "SystemBEmployee",
 				"viewLevel": 1
-			}
-			, 	"SystemBEmployeeemployeeRegion": {
-				"viewName": "view/SystemBEmployeeemployeeRegion/SystemBEmployeeemployeeRegion",
-				"viewPath":"northwind",
-				"viewId": "SystemBEmployeeemployeeRegion",
-				"viewLevel": 1
-			}	
-			, 	"SystemBEmployeemanagesEmployee": {
-				"viewName": "view/SystemBEmployeemanagesEmployee/SystemBEmployeemanagesEmployee",
-				"viewPath":"northwind",
-				"viewId": "SystemBEmployeemanagesEmployee",
-				"viewLevel": 1
-			}	
-			, 	"SystemBEmployeemanagesOrder": {
-				"viewName": "view/SystemBEmployeemanagesOrder/SystemBEmployeemanagesOrder",
-				"viewPath":"northwind",
-				"viewId": "SystemBEmployeemanagesOrder",
-				"viewLevel": 1
-			}	
-			, 	"SystemBEmployeesystemBEmployer": {
-				"viewName": "view/SystemBEmployeesystemBEmployer/SystemBEmployeesystemBEmployer",
-				"viewPath":"northwind",
-				"viewId": "SystemBEmployeesystemBEmployer",
-				"viewLevel": 1
-			}	
-			, 	"SystemBEmployeeterritory": {
-				"viewName": "view/SystemBEmployeeterritory/SystemBEmployeeterritory",
-				"viewPath":"northwind",
-				"viewId": "SystemBEmployeeterritory",
-				"viewLevel": 1
-			}	
+			}					
 			,"SystemBProducts": {
 				"viewName": "view/SystemBProducts/SystemBProducts",
 				"viewPath":"northwind",
@@ -990,19 +592,7 @@
 				"viewPath":"northwind",
 				"viewId": "SystemBProduct",
 				"viewLevel": 1
-			}
-			, 	"SystemBProductisPartOfOrderDetail": {
-				"viewName": "view/SystemBProductisPartOfOrderDetail/SystemBProductisPartOfOrderDetail",
-				"viewPath":"northwind",
-				"viewId": "SystemBProductisPartOfOrderDetail",
-				"viewLevel": 1
-			}	
-			, 	"SystemBProductproduct_orderSummary": {
-				"viewName": "view/SystemBProductproduct_orderSummary/SystemBProductproduct_orderSummary",
-				"viewPath":"northwind",
-				"viewId": "SystemBProductproduct_orderSummary",
-				"viewLevel": 1
-			}	
+			}					
 			,"Territorys": {
 				"viewName": "view/Territorys/Territorys",
 				"viewPath":"northwind",
@@ -1014,19 +604,7 @@
 				"viewPath":"northwind",
 				"viewId": "Territory",
 				"viewLevel": 1
-			}
-			, 	"TerritoryterritoryOf": {
-				"viewName": "view/TerritoryterritoryOf/TerritoryterritoryOf",
-				"viewPath":"northwind",
-				"viewId": "TerritoryterritoryOf",
-				"viewLevel": 1
-			}	
-			, 	"TerritoryterritoryRegion": {
-				"viewName": "view/TerritoryterritoryRegion/TerritoryterritoryRegion",
-				"viewPath":"northwind",
-				"viewId": "TerritoryterritoryRegion",
-				"viewLevel": 1
-			}	
+			}					
 			,"USStates": {
 				"viewName": "view/USStates/USStates",
 				"viewPath":"northwind",
@@ -1038,13 +616,7 @@
 				"viewPath":"northwind",
 				"viewId": "USState",
 				"viewLevel": 1
-			}
-			, 	"USStateusstateRegion": {
-				"viewName": "view/USStateusstateRegion/USStateusstateRegion",
-				"viewPath":"northwind",
-				"viewId": "USStateusstateRegion",
-				"viewLevel": 1
-			}	
+			}					
 		}
 	}
 }
