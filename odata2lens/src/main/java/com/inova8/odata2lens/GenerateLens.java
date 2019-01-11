@@ -37,10 +37,13 @@ public class GenerateLens {
 	String workingPath;
 	static TreeMap<String, EntityType> entityTypes = new TreeMap<String, EntityType>();
 	static TreeMap<String, ComplexType> complexTypes = new TreeMap<String, ComplexType>();
+	static String odataEndpoint = "http://localhost:8080/odata2sparql/";
 
 	public static void main(String[] args) throws IOException, ODataException {
-		for (String schemaName : args) {
-			generate(schemaName);
+		odataEndpoint = args[0]; //Fixes #4
+		//for (String schemaName : args) { //Fixes #4
+		for (int schemaIndex= 1;  schemaIndex < args.length; schemaIndex++) {	
+			generate( args[schemaIndex]);
 		}
 	}
 
