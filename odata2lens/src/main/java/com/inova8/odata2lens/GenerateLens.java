@@ -53,9 +53,9 @@ public class GenerateLens {
 
 		Velocity.init(props);
 
-		(new File(getWorkingPath() + "\\" + schemaName + "\\" + "model")).mkdirs();
-		(new File(getWorkingPath() + "\\" + schemaName + "\\" + "view")).mkdirs();
-		(new File(getWorkingPath() + "\\" + schemaName + "\\" + "i18n")).mkdirs();
+		(new File(getWorkingPath() + File.separator + schemaName + File.separator + "model")).mkdirs();
+		(new File(getWorkingPath() + File.separator + schemaName + File.separator + "view")).mkdirs();
+		(new File(getWorkingPath() + File.separator + schemaName + File.separator + "i18n")).mkdirs();
 
 		//		TreeMap<String, EntityType> entityTypes = new TreeMap<String, EntityType>();
 		//		TreeMap<String, ComplexType> complexTypes = new TreeMap<String, ComplexType>();
@@ -70,7 +70,7 @@ public class GenerateLens {
 		//generateEntityNavigationSet(schemaName, i18nWriter, uiTemplates);
 
 		FileWriter fw = new FileWriter(
-				new File(getWorkingPath() + "\\" + schemaName + "\\" + "i18n\\", "i18n.properties"));
+				new File(getWorkingPath() + File.separator + schemaName + File.separator + "i18n" + File.separator, "i18n.properties"));
 		fw.write(i18nWriter.toString());
 		fw.close();
 		System.out.println(schemaName + " generated");
@@ -81,9 +81,9 @@ public class GenerateLens {
 		BufferedReader uiTemplateReader = null;
 		TreeMap<String, UITemplate> uiTemplates = new TreeMap<String, UITemplate>();
 
-		uiTemplates = readUITemplateFile(getWorkingPath() + "\\" + schemaName + "\\uitemplate.generated.csv");
+		uiTemplates = readUITemplateFile(getWorkingPath() + File.separator + schemaName + File.separator +"uitemplate.generated.csv");
 		try {
-			String uiTemplateFile = getWorkingPath() + "\\" + schemaName + "\\uitemplate.csv";
+			String uiTemplateFile = getWorkingPath() + File.separator + schemaName + File.separator+ "uitemplate.csv";
 			uiTemplateReader = new BufferedReader(new FileReader(uiTemplateFile));
 			String line = "";
 			String cvsSplitBy = ",";
@@ -415,7 +415,7 @@ public class GenerateLens {
 		routingTemplate.merge(routingContext, routingWriter);
 
 		FileWriter fw = new FileWriter(
-				new File(getWorkingPath() + "\\" + schemaName + "\\" + "model\\", "routing.json"));
+				new File(getWorkingPath() + File.separator + schemaName + File.separator + "model"+ File.separator, "routing.json"));
 		fw.write(routingWriter.toString());
 		fw.close();
 		//System.out.println(routingWriter.toString());
@@ -436,7 +436,7 @@ public class GenerateLens {
 		uiTemplate.merge(uiContext, uiWriter);
 
 		FileWriter fw = new FileWriter(
-				new File(getWorkingPath() + "\\" + schemaName + "\\", "uiTemplate.generated.csv"));
+				new File(getWorkingPath() + File.separator + schemaName + File.separator, "uiTemplate.generated.csv"));
 		fw.write(uiWriter.toString());
 		fw.close();
 		//System.out.println(uiWriter.toString());
@@ -457,7 +457,7 @@ public class GenerateLens {
 		contextMenuTemplate.merge(contextMenuContext, contextMenuWriter);
 
 		FileWriter fw = new FileWriter(
-				new File(getWorkingPath() + "\\" + schemaName + "\\" + "model\\", "contextMenu.json"));
+				new File(getWorkingPath() + File.separator + schemaName + File.separator + "model"+ File.separator, "contextMenu.json"));
 		fw.write(contextMenuWriter.toString());
 		fw.close();
 		//System.out.println(contextMenuWriter.toString());
@@ -485,11 +485,11 @@ public class GenerateLens {
 
 			i18nTemplate.merge(entitySetContext, i18nWriter);
 
-			(new File(getWorkingPath() + "\\" + schemaName + "\\view\\" + entityType.getEntitySet().getTarget()))
+			(new File(getWorkingPath() + File.separator + schemaName+ File.separator + "view" + File.separator+ entityType.getEntitySet().getTarget()))
 					.mkdirs();
 			FileWriter fw = new FileWriter(
-					new File(getWorkingPath() + "\\" + schemaName + "\\view\\" + entityType.getEntitySet().getTarget()
-							+ "\\" + entityType.getEntitySet().getTarget() + ".view.xml"));
+					new File(getWorkingPath() + File.separator + schemaName + File.separator+ "view" + File.separator+ entityType.getEntitySet().getTarget()
+							+ File.separator + entityType.getEntitySet().getTarget() + ".view.xml"));
 			fw.write(entitySetWriter.toString());
 			fw.close();
 			//System.out.println(entitySetWriter.toString());
@@ -520,9 +520,9 @@ public class GenerateLens {
 
 			i18nTemplate.merge(entityContext, i18nWriter);
 
-			(new File(getWorkingPath() + "\\" + schemaName + "\\view\\" + entityType.getEntity().getTarget())).mkdirs();
-			FileWriter fw = new FileWriter(new File(getWorkingPath() + "\\" + schemaName + "\\view\\"
-					+ entityType.getEntity().getTarget() + "\\" + entityType.getEntity().getTarget() + ".view.xml"));
+			(new File(getWorkingPath() + File.separator + schemaName + File.separator+ "view" + File.separator+ entityType.getEntity().getTarget())).mkdirs();
+			FileWriter fw = new FileWriter(new File(getWorkingPath() + File.separator + schemaName + File.separator+ "view" + File.separator
+					+ entityType.getEntity().getTarget() + File.separator + entityType.getEntity().getTarget() + ".view.xml"));
 			fw.write(entityWriter.toString());
 			fw.close();
 			//System.out.println(entityWriter.toString());

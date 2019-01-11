@@ -20,7 +20,7 @@ sequence,entity,entityIcon,image,target,targetIcon,type,targetEntity,targetVisib
 11,Employee,,,Employees,,Grid,Employee,,employeePostalCode,D,Edm.String,0.5,TRUE,[],
 11,Employee,,,Employees,,Grid,Employee,,lat,D,Edm.Double,10,TRUE,[],{'style':'short';'maxFractionDigits':2}
 11,Employee,,,Employees,,Grid,Employee,,lat_long,D,Edm.String,11,FALSE,[],
-11,Employee,,,Employees,,Grid,Employee,,long,D,Edm.Double,12,TRUE,[],{'style':'short';'minFractionDigits':5}
+11,Employee,,,Employees,,Grid,Employee,,long,D,Edm.Double,0.7,TRUE,[],{'style':'short';'minFractionDigits':5}
 11,Employee,,,Employees,,Grid,Employee,,notes,D,Edm.String,13,FALSE,[],
 11,Employee,,,Employees,,Grid,Employee,,photo,D,Edm.String,14,FALSE,[],
 11,Employee,,,Employees,,Grid,Employee,,reportsToNotation,D,Edm.String,16,FALSE,[],

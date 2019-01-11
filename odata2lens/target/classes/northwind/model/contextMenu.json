@@ -1,6 +1,30 @@
 {
 	"qb_DataSet": {
-		"image": "./images/icons/category.svg",
+		"image": "./images/icons/qb_DataSet.svg",
+		"menu": [{
+			"key": "graph",
+			"text": "Graph View",
+			"icon": "sap-icon://overview-chart",
+			"target": "graphgraph",
+			"tooltip": "Category Graph",
+			"visible": true
+		}, {
+			"type": "entity",
+			"key": "Details",
+			"text": "Details",
+			"icon": "sap-icon://detail-view",
+			"target": "DataSet",
+			"tooltip": "DataSet Details",
+			"visible": true
+		}, {
+			"type": "entitySet",
+			"key": "DataSetisDatasetOf",
+			"text": "Graph",
+			"icon": "sap-icon://database",
+			"target": "DataSetisDatasetOf",
+			"tooltip": "Dataset's Graph Details",
+			"visible": true
+		}],
 		"entity": {
 			"target": "qb_DataSet",
 			"icon": "sap-icon://database",
@@ -12,6 +36,7 @@
 				"tooltip": "Category Graph",
 				"visible": true
 			}, {
+				"type": "entity",
 				"key": "Details",
 				"text": "Details",
 				"icon": "sap-icon://detail-view",
@@ -19,6 +44,7 @@
 				"tooltip": "DataSet Details",
 				"visible": true
 			}, {
+				"type": "entitySet",
 				"key": "DataSetisDatasetOf",
 				"text": "Graph",
 				"icon": "sap-icon://database",
@@ -50,7 +76,7 @@
 		}
 	},
 	"datacube_Graph": {
-		"image": "./images/icons/category.svg"
+		"image": "./images/icons/datacube_Graph.svg"
 	},
 	"Category": {
 		"key": "Category",

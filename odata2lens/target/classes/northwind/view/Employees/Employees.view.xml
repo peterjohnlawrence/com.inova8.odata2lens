@@ -38,6 +38,9 @@
 						<Text text="{i18n>Employees.employeePostalCode}"/>
 					</Column>
 					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>Employees.long}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
 						<Text text="{i18n>Employees.comment}"/>
 					</Column>
 					<Column demandPopin="true" minScreenWidth="Tablet">
@@ -66,9 +69,6 @@
 					</Column>
 					<Column demandPopin="true" minScreenWidth="Tablet">
 						<Text text="{i18n>Employees.hireDate}"/>
-					</Column>
-					<Column demandPopin="true" minScreenWidth="Tablet">
-						<Text text="{i18n>Employees.long}"/>
 					</Column>
 					<Column demandPopin="true" minScreenWidth="Tablet">
 						<Text text="{i18n>Employees.homePhone}"/>
@@ -100,6 +100,7 @@
 						<cells>
 							<rdf:TextResource path="dataModel>" entitySet="Employee"/>
 							<rdf:TextLink text="{path:'dataModel>employeePostalCode',type:'sap.ui.model.type.String' }" linkText="{i18n>Employees.employeePostalCode}" tooltip="{i18n>Employees.employeePostalCode}"/>
+							<Text text="{path:'dataModel>long',type:'sap.ui.model.type.Float', formatOptions:{'style':'short','minFractionDigits':5} }" tooltip="{i18n>Employees.long}"/>
 							<rdf:TextLink text="{path:'dataModel>comment',type:'sap.ui.model.type.String' }" linkText="{i18n>Employees.comment}" tooltip="{i18n>Employees.comment}"/>
 							<rdf:TextLink text="{path:'dataModel>employeeAddress',type:'sap.ui.model.type.String' }" linkText="{i18n>Employees.employeeAddress}" tooltip="{i18n>Employees.employeeAddress}"/>
 							<rdf:TextLink text="{path:'dataModel>employeeCity',type:'sap.ui.model.type.String' }" linkText="{i18n>Employees.employeeCity}" tooltip="{i18n>Employees.employeeCity}"/>
@@ -119,7 +120,6 @@
 							<Text text="{path:'dataModel>lat',type:'sap.ui.model.type.Float', formatOptions:{'style':'short','maxFractionDigits':2} }" tooltip="{i18n>Employees.lat}"/>
 							<rdf:TextLink text="{path:'dataModel>firstName',type:'sap.ui.model.type.String' }" linkText="{i18n>Employees.firstName}" tooltip="{i18n>Employees.firstName}"/>
 							<Text text="{dataModel>hireDate}" tooltip="{i18n>Employees.hireDate}"/>
-							<Text text="{path:'dataModel>long',type:'sap.ui.model.type.Float', formatOptions:{'style':'short','minFractionDigits':5} }" tooltip="{i18n>Employees.long}"/>
 							<rdf:TextLink text="{path:'dataModel>homePhone',type:'sap.ui.model.type.String' }" linkText="{i18n>Employees.homePhone}" tooltip="{i18n>Employees.homePhone}"/>
 							<rdf:TextLink text="{path:'dataModel>lastName',type:'sap.ui.model.type.String' }" linkText="{i18n>Employees.lastName}" tooltip="{i18n>Employees.lastName}"/>
 							<rdf:TextLink text="{path:'dataModel>regionDescription',type:'sap.ui.model.type.String' }" linkText="{i18n>Employees.regionDescription}" tooltip="{i18n>Employees.regionDescription}"/>
