@@ -8,7 +8,7 @@ public class Property {
 	Boolean isFK=false;
 	private String subTypeName;
 	ComplexType complexRange;
-	String formatOptions;
+	String formatOptions="";
 
 	public Property(String name, String label, String tooltip, String range, String formatOptions, Boolean isFK) {
 		this.name = name;

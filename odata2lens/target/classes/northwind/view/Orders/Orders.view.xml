@@ -35,6 +35,9 @@
 						<Text text="{i18n>Orders.comment}"/>
 					</Column>
 					<Column demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{i18n>Orders.lat}"/>
+					</Column>
+					<Column demandPopin="true" minScreenWidth="Tablet">
 						<Text text="{i18n>Orders.customerNotation}"/>
 					</Column>
 					<Column demandPopin="true" minScreenWidth="Tablet">
@@ -42,9 +45,6 @@
 					</Column>
 					<Column demandPopin="true" minScreenWidth="Tablet">
 						<Text text="{i18n>Orders.freight}"/>
-					</Column>
-					<Column demandPopin="true" minScreenWidth="Tablet">
-						<Text text="{i18n>Orders.lat}"/>
 					</Column>
 					<Column demandPopin="true" minScreenWidth="Tablet">
 						<Text text="{i18n>Orders.lat_long}"/>
@@ -91,10 +91,10 @@
 						<cells>
 							<rdf:TextResource path="dataModel>" entitySet="Order"/>
 							<rdf:TextLink text="{path:'dataModel>comment',type:'sap.ui.model.type.String' }" linkText="{i18n>Orders.comment}" tooltip="{i18n>Orders.comment}"/>
+							<Text text="{path:'dataModel>lat',type:'sap.ui.model.type.Float' }" tooltip="{i18n>Orders.lat}"/>
 							<rdf:TextLink text="{path:'dataModel>customerNotation',type:'sap.ui.model.type.String' }" linkText="{i18n>Orders.customerNotation}" tooltip="{i18n>Orders.customerNotation}"/>
 							<rdf:TextLink text="{path:'dataModel>employeeNotation',type:'sap.ui.model.type.String' }" linkText="{i18n>Orders.employeeNotation}" tooltip="{i18n>Orders.employeeNotation}"/>
 							<rdf:TextLink text="{path:'dataModel>freight',type:'sap.ui.model.type.String' }" linkText="{i18n>Orders.freight}" tooltip="{i18n>Orders.freight}"/>
-							<Text text="{path:'dataModel>lat',type:'sap.ui.model.type.Float', formatOptions:{'style':'short','maxFractionDigits':2} }" tooltip="{i18n>Orders.lat}"/>
 							<rdf:TextLink text="{path:'dataModel>lat_long',type:'sap.ui.model.type.String' }" linkText="{i18n>Orders.lat_long}" tooltip="{i18n>Orders.lat_long}"/>
 							<Text text="{path:'dataModel>long',type:'sap.ui.model.type.Float', formatOptions:{'style':'short','maxFractionDigits':2} }" tooltip="{i18n>Orders.long}"/>
 							<Text text="{dataModel>orderDate}" tooltip="{i18n>Orders.orderDate}"/>

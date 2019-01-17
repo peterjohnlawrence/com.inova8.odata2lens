@@ -1,0 +1,5288 @@
+{
+	"Category": {
+	"entity": "Category",
+	"icon": "sap-icon://expand-group",
+	"image": "./images/icons/category.png",
+	"entitySetVisible":true,
+	"grid": {
+		"target": "Categorys",
+		"targetVisible": true,
+		"targetIcon": "sap-icon://expand-group",
+		"targetEntity": "Category",	
+		"properties": [	
+			{  
+				"property": "categoryName",
+				"propertyVisible": true,
+				"propertyType": "D",
+				"propertyRange": "Edm.String",
+				"ordinal": 0,
+				"aggregate": "[]",
+				"formatOptions": ""
+			}	
+			,{ 
+				"property": "comment",
+				"propertyVisible": true,
+				"propertyType": "D",
+				"propertyRange": "Edm.String",
+				"ordinal": 1,
+				"aggregate": "[]",
+				"formatOptions": ""
+			}	
+			,{ 
+				"property": "description",
+				"propertyVisible": true,
+				"propertyType": "D",
+				"propertyRange": "Edm.String",
+				"ordinal": 2,
+				"aggregate": "[]",
+				"formatOptions": ""
+			}	
+			,{ 
+				"property": "picture",
+				"propertyVisible": true,
+				"propertyType": "D",
+				"propertyRange": "Edm.String",
+				"ordinal": 3,
+				"aggregate": "[]",
+				"formatOptions": ""
+			}	
+			,{ 
+				"property": "seeAlso",
+				"propertyVisible": true,
+				"propertyType": "D",
+				"propertyRange": "Edm.String",
+				"ordinal": 4,
+				"aggregate": "[]",
+				"formatOptions": ""
+			}	
+			,{ 
+				"property": "isCategoryOf",
+				"propertyVisible": false,
+				"propertyType": "C",
+				"propertyRange": "Product",
+				"ordinal": 5,
+				"aggregate": "[Count]",
+				"formatOptions": ""
+			}	
+			]
+		},
+	"form": {
+		"target": "Category",
+		"targetVisible": true,
+		"targetIcon": "sap-icon://expand-group",
+		"targetEntity": "Category",
+		"properties": [		
+			{  
+				"property": "categoryName",
+				"propertyVisible": true,
+				"propertyType": "D",
+				"propertyRange": "Edm.String",
+				"ordinal": 0,
+				"aggregate": "[]",
+				"formatOptions": null
+			}
+			,{ 
+				"property": "comment",
+				"propertyVisible": true,
+				"propertyType": "D",
+				"propertyRange": "Edm.String",
+				"ordinal": 1,
+				"aggregate": "[]",
+				"formatOptions": null
+			}
+			,{ 
+				"property": "description",
+				"propertyVisible": true,
+				"propertyType": "D",
+				"propertyRange": "Edm.String",
+				"ordinal": 2,
+				"aggregate": "[]",
+				"formatOptions": null
+			}
+			,{ 
+				"property": "picture",
+				"propertyVisible": true,
+				"propertyType": "D",
+				"propertyRange": "Edm.String",
+				"ordinal": 3,
+				"aggregate": "[]",
+				"formatOptions": null
+			}
+			,{ 
+				"property": "seeAlso",
+				"propertyVisible": true,
+				"propertyType": "D",
+				"propertyRange": "Edm.String",
+				"ordinal": 4,
+				"aggregate": "[]",
+				"formatOptions": null
+			}
+			,{ 
+				"property": "isCategoryOf",
+				"propertyVisible": true,
+				"propertyType": "C",
+				"propertyRange": "Product",
+				"ordinal": 5,
+				"aggregate": "[List]",
+				"formatOptions": null
+			}
+			]
+		}
+	}
+	,
+	"Customer": {
+	"entity": "Customer",
+	"icon": "sap-icon://expand-group",
+	"image": "./images/icons/category.png",
+	"entitySetVisible":true,
+	"grid": {
+		"target": "Customers",
+		"targetVisible": true,
+		"targetIcon": "sap-icon://expand-group",
+		"targetEntity": "Customer",	
+		"properties": [	
+			{  
+				"property": "comment",
+				"propertyVisible": true,
+				"propertyType": "D",
+				"propertyRange": "Edm.String",
+				"ordinal": 0,
+				"aggregate": "[]",
+				"formatOptions": ""
+			}	
+			,{ 
+				"property": "customerAddress",
+				"propertyVisible": true,
+				"propertyType": "D",
+				"propertyRange": "Edm.String",
+				"ordinal": 1,
+				"aggregate": "[]",
+				"formatOptions": ""
+			}	
+			,{ 
+				"property": "customerCity",
+				"propertyVisible": true,
+				"propertyType": "D",
+				"propertyRange": "Edm.String",
+				"ordinal": 2,
+				"aggregate": "[]",
+				"formatOptions": ""
+			}	
+			,{ 
+				"property": "customerCompanyName",
+				"propertyVisible": true,
+				"propertyType": "D",
+				"propertyRange": "Edm.String",
+				"ordinal": 3,
+				"aggregate": "[]",
+				"formatOptions": ""
+			}	
+			,{ 
+				"property": "customerContactName",
+				"propertyVisible": true,
+				"propertyType": "D",
+				"propertyRange": "Edm.String",
+				"ordinal": 4,
+				"aggregate": "[]",
+				"formatOptions": ""
+			}	
+			,{ 
+				"property": "customerContactTitle",
+				"propertyVisible": true,
+				"propertyType": "D",
+				"propertyRange": "Edm.String",
+				"ordinal": 5,
+				"aggregate": "[]",
+				"formatOptions": ""
+			}	
+			,{ 
+				"property": "customerCountry",
+				"propertyVisible": true,
+				"propertyType": "D",
+				"propertyRange": "Edm.String",
+				"ordinal": 6,
+				"aggregate": "[]",
+				"formatOptions": ""
+			}	
+			,{ 
+				"property": "customerFax",
+				"propertyVisible": true,
+				"propertyType": "D",
+				"propertyRange": "Edm.String",
+				"ordinal": 7,
+				"aggregate": "[]",
+				"formatOptions": ""
+			}	
+			,{ 
+				"property": "customerPhone",
+				"propertyVisible": true,
+				"propertyType": "D",
+				"propertyRange": "Edm.String",
+				"ordinal": 8,
+				"aggregate": "[]",
+				"formatOptions": ""
+			}	
+			,{ 
+				"property": "customerPostalCode",
+				"propertyVisible": true,
+				"propertyType": "D",
+				"propertyRange": "Edm.String",
+				"ordinal": 9,
+				"aggregate": "[]",
+				"formatOptions": ""
+			}	
+			,{ 
+				"property": "customerWebsite",
+				"propertyVisible": true,
+				"propertyType": "D",
+				"propertyRange": "Edm.String",
+				"ordinal": 10,
+				"aggregate": "[]",
+				"formatOptions": ""
+			}	
+			,{ 
+				"property": "lat",
+				"propertyVisible": true,
+				"propertyType": "D",
+				"propertyRange": "Edm.Double",
+				"ordinal": 11,
+				"aggregate": "[]",
+				"formatOptions": "{'style':'short';'maxFractionDigits':2}"
+			}	
+			,{ 
+				"property": "lat_long",
+				"propertyVisible": true,
+				"propertyType": "D",
+				"propertyRange": "Edm.String",
+				"ordinal": 12,
+				"aggregate": "[]",
+				"formatOptions": ""
+			}	
+			,{ 
+				"property": "long",
+				"propertyVisible": true,
+				"propertyType": "D",
+				"propertyRange": "Edm.Double",
+				"ordinal": 13,
+				"aggregate": "[]",
+				"formatOptions": "{'style':'short';'maxFractionDigits':2}"
+			}	
+			,{ 
+				"property": "regionDescription",
+				"propertyVisible": true,
+				"propertyType": "D",
+				"propertyRange": "Edm.String",
+				"ordinal": 14,
+				"aggregate": "[]",
+				"formatOptions": ""
+			}	
+			,{ 
+				"property": "seeAlso",
+				"propertyVisible": true,
+				"propertyType": "D",
+				"propertyRange": "Edm.String",
+				"ordinal": 15,
+				"aggregate": "[]",
+				"formatOptions": ""
+			}	
+			,{ 
+				"property": "customerRegion",
+				"propertyVisible": false,
+				"propertyType": "C",
+				"propertyRange": "Region",
+				"ordinal": 16,
+				"aggregate": "[Count]",
+				"formatOptions": ""
+			}	
+			,{ 
+				"property": "customer_customer_Order",
+				"propertyVisible": false,
+				"propertyType": "C",
+				"propertyRange": "Customer_Order",
+				"ordinal": 17,
+				"aggregate": "[Count]",
+				"formatOptions": ""
+			}	
+			,{ 
+				"property": "hasPlacedOrder",
+				"propertyVisible": false,
+				"propertyType": "C",
+				"propertyRange": "Order",
+				"ordinal": 18,
+				"aggregate": "[Count]",
+				"formatOptions": ""
+			}	
+			]
+		},
+	"form": {
+		"target": "Customer",
+		"targetVisible": true,
+		"targetIcon": "sap-icon://expand-group",
+		"targetEntity": "Customer",
+		"properties": [		
+			{  
+				"property": "comment",
+				"propertyVisible": true,
+				"propertyType": "D",
+				"propertyRange": "Edm.String",
+				"ordinal": 0,
+				"aggregate": "[]",
+				"formatOptions": null
+			}
+			,{ 
+				"property": "customerAddress",
+				"propertyVisible": true,
+				"propertyType": "D",
+				"propertyRange": "Edm.String",
+				"ordinal": 1,
+				"aggregate": "[]",
+				"formatOptions": null
+			}
+			,{ 
+				"property": "customerCity",
+				"propertyVisible": true,
+				"propertyType": "D",
+				"propertyRange": "Edm.String",
+				"ordinal": 2,
+				"aggregate": "[]",
+				"formatOptions": null
+			}
+			,{ 
+				"property": "customerCompanyName",
+				"propertyVisible": true,
+				"propertyType": "D",
+				"propertyRange": "Edm.String",
+				"ordinal": 3,
+				"aggregate": "[]",
+				"formatOptions": null
+			}
+			,{ 
+				"property": "customerContactName",
+				"propertyVisible": true,
+				"propertyType": "D",
+				"propertyRange": "Edm.String",
+				"ordinal": 4,
+				"aggregate": "[]",
+				"formatOptions": null
+			}
+			,{ 
+				"property": "customerContactTitle",
+				"propertyVisible": true,
+				"propertyType": "D",
+				"propertyRange": "Edm.String",
+				"ordinal": 5,
+				"aggregate": "[]",
+				"formatOptions": null
+			}
+			,{ 
+				"property": "customerCountry",
+				"propertyVisible": true,
+				"propertyType": "D",
+				"propertyRange": "Edm.String",
+				"ordinal": 6,
+				"aggregate": "[]",
+				"formatOptions": null
+			}
+			,{ 
+				"property": "customerFax",
+				"propertyVisible": true,
+				"propertyType": "D",
+				"propertyRange": "Edm.String",
+				"ordinal": 7,
+				"aggregate": "[]",
+				"formatOptions": null
+			}
+			,{ 
+				"property": "customerPhone",
+				"propertyVisible": true,
+				"propertyType": "D",
+				"propertyRange": "Edm.String",
+				"ordinal": 8,
+				"aggregate": "[]",
+				"formatOptions": null
+			}
+			,{ 
+				"property": "customerPostalCode",
+				"propertyVisible": true,
+				"propertyType": "D",
+				"propertyRange": "Edm.String",
+				"ordinal": 9,
+				"aggregate": "[]",
+				"formatOptions": null
+			}
+			,{ 
+				"property": "customerWebsite",
+				"propertyVisible": true,
+				"propertyType": "D",
+				"propertyRange": "Edm.String",
+				"ordinal": 10,
+				"aggregate": "[]",
+				"formatOptions": null
+			}
+			,{ 
+				"property": "lat",
+				"propertyVisible": true,
+				"propertyType": "D",
+				"propertyRange": "Edm.Double",
+				"ordinal": 11,
+				"aggregate": "[]",
+				"formatOptions": null
+			}
+			,{ 
+				"property": "lat_long",
+				"propertyVisible": true,
+				"propertyType": "D",
+				"propertyRange": "Edm.String",
+				"ordinal": 12,
+				"aggregate": "[]",
+				"formatOptions": null
+			}
+			,{ 
+				"property": "long",
+				"propertyVisible": true,
+				"propertyType": "D",
+				"propertyRange": "Edm.Double",
+				"ordinal": 13,
+				"aggregate": "[]",
+				"formatOptions": null
+			}
+			,{ 
+				"property": "regionDescription",
+				"propertyVisible": true,
+				"propertyType": "D",
+				"propertyRange": "Edm.String",
+				"ordinal": 14,
+				"aggregate": "[]",
+				"formatOptions": null
+			}
+			,{ 
+				"property": "seeAlso",
+				"propertyVisible": true,
+				"propertyType": "D",
+				"propertyRange": "Edm.String",
+				"ordinal": 15,
+				"aggregate": "[]",
+				"formatOptions": null
+			}
+			,{ 
+				"property": "customerRegion",
+				"propertyVisible": true,
+				"propertyType": "C",
+				"propertyRange": "Region",
+				"ordinal": 16,
+				"aggregate": "[List]",
+				"formatOptions": null
+			}
+			,{ 
+				"property": "customer_customer_Order",
+				"propertyVisible": true,
+				"propertyType": "C",
+				"propertyRange": "Customer_Order",
+				"ordinal": 17,
+				"aggregate": "[List]",
+				"formatOptions": null
+			}
+			,{ 
+				"property": "hasPlacedOrder",
+				"propertyVisible": true,
+				"propertyType": "C",
+				"propertyRange": "Order",
+				"ordinal": 18,
+				"aggregate": "[List]",
+				"formatOptions": null
+			}
+			]
+		}
+	}
+	,
+	"Customer_Order": {
+	"entity": "Customer_Order",
+	"icon": "sap-icon://expand-group",
+	"image": "./images/icons/category.png",
+	"entitySetVisible":true,
+	"grid": {
+		"target": "Customer_Orders",
+		"targetVisible": true,
+		"targetIcon": "sap-icon://expand-group",
+		"targetEntity": "Customer_Order",	
+		"properties": [	
+			{  
+				"property": "customer",
+				"propertyVisible": true,
+				"propertyType": "D",
+				"propertyRange": "Edm.String",
+				"ordinal": 0,
+				"aggregate": "[]",
+				"formatOptions": ""
+			}	
+			,{ 
+				"property": "customer_Order_customerCity",
+				"propertyVisible": true,
+				"propertyType": "D",
+				"propertyRange": "Edm.String",
+				"ordinal": 1,
+				"aggregate": "[]",
+				"formatOptions": ""
+			}	
+			,{ 
+				"property": "customer_Order_customerCompanyName",
+				"propertyVisible": true,
+				"propertyType": "D",
+				"propertyRange": "Edm.String",
+				"ordinal": 2,
+				"aggregate": "[]",
+				"formatOptions": ""
+			}	
+			,{ 
+				"property": "customer_Order_shipCity",
+				"propertyVisible": true,
+				"propertyType": "D",
+				"propertyRange": "Edm.String",
+				"ordinal": 3,
+				"aggregate": "[]",
+				"formatOptions": ""
+			}	
+			,{ 
+				"property": "order",
+				"propertyVisible": true,
+				"propertyType": "D",
+				"propertyRange": "Edm.String",
+				"ordinal": 4,
+				"aggregate": "[]",
+				"formatOptions": ""
+			}	
+			,{ 
+				"property": "customer_Order_customer",
+				"propertyVisible": false,
+				"propertyType": "O",
+				"propertyRange": "Customer",
+				"ordinal": 5,
+				"aggregate": "[]",
+				"formatOptions": ""
+			}	
+			,{ 
+				"property": "customer_Order_order",
+				"propertyVisible": false,
+				"propertyType": "O",
+				"propertyRange": "Order",
+				"ordinal": 6,
+				"aggregate": "[]",
+				"formatOptions": ""
+			}	
+			]
+		},
+	"form": {
+		"target": "Customer_Order",
+		"targetVisible": true,
+		"targetIcon": "sap-icon://expand-group",
+		"targetEntity": "Customer_Order",
+		"properties": [		
+			{  
+				"property": "customer",
+				"propertyVisible": true,
+				"propertyType": "D",
+				"propertyRange": "Edm.String",
+				"ordinal": 0,
+				"aggregate": "[]",
+				"formatOptions": null
+			}
+			,{ 
+				"property": "customer_Order_customerCity",
+				"propertyVisible": true,
+				"propertyType": "D",
+				"propertyRange": "Edm.String",
+				"ordinal": 1,
+				"aggregate": "[]",
+				"formatOptions": null
+			}
+			,{ 
+				"property": "customer_Order_customerCompanyName",
+				"propertyVisible": true,
+				"propertyType": "D",
+				"propertyRange": "Edm.String",
+				"ordinal": 2,
+				"aggregate": "[]",
+				"formatOptions": null
+			}
+			,{ 
+				"property": "customer_Order_shipCity",
+				"propertyVisible": true,
+				"propertyType": "D",
+				"propertyRange": "Edm.String",
+				"ordinal": 3,
+				"aggregate": "[]",
+				"formatOptions": null
+			}
+			,{ 
+				"property": "order",
+				"propertyVisible": true,
+				"propertyType": "D",
+				"propertyRange": "Edm.String",
+				"ordinal": 4,
+				"aggregate": "[]",
+				"formatOptions": null
+			}
+			,{ 
+				"property": "customer_Order_customer",
+				"propertyVisible": true,
+				"propertyType": "O",
+				"propertyRange": "Customer",
+				"ordinal": 5,
+				"aggregate": "[]",
+				"formatOptions": null
+			}
+			,{ 
+				"property": "customer_Order_order",
+				"propertyVisible": true,
+				"propertyType": "O",
+				"propertyRange": "Order",
+				"ordinal": 6,
+				"aggregate": "[]",
+				"formatOptions": null
+			}
+			]
+		}
+	}
+	,
+	"Employee": {
+	"entity": "Employee",
+	"icon": "sap-icon://expand-group",
+	"image": "./images/icons/category.png",
+	"entitySetVisible":true,
+	"grid": {
+		"target": "Employees",
+		"targetVisible": true,
+		"targetIcon": "sap-icon://expand-group",
+		"targetEntity": "Employee",	
+		"properties": [	
+			{  
+				"property": "birthDate",
+				"propertyVisible": true,
+				"propertyType": "D",
+				"propertyRange": "Edm.Date",
+				"ordinal": 0,
+				"aggregate": "[]",
+				"formatOptions": ""
+			}	
+			,{ 
+				"property": "comment",
+				"propertyVisible": true,
+				"propertyType": "D",
+				"propertyRange": "Edm.String",
+				"ordinal": 1,
+				"aggregate": "[]",
+				"formatOptions": ""
+			}	
+			,{ 
+				"property": "employeeAddress",
+				"propertyVisible": true,
+				"propertyType": "D",
+				"propertyRange": "Edm.String",
+				"ordinal": 2,
+				"aggregate": "[]",
+				"formatOptions": ""
+			}	
+			,{ 
+				"property": "employeeCity",
+				"propertyVisible": true,
+				"propertyType": "D",
+				"propertyRange": "Edm.String",
+				"ordinal": 3,
+				"aggregate": "[]",
+				"formatOptions": ""
+			}	
+			,{ 
+				"property": "employeeCountry",
+				"propertyVisible": true,
+				"propertyType": "D",
+				"propertyRange": "Edm.String",
+				"ordinal": 4,
+				"aggregate": "[]",
+				"formatOptions": ""
+			}	
+			,{ 
+				"property": "employeeLinkedIn",
+				"propertyVisible": true,
+				"propertyType": "D",
+				"propertyRange": "Edm.String",
+				"ordinal": 5,
+				"aggregate": "[]",
+				"formatOptions": ""
+			}	
+			,{ 
+				"property": "employeePostalCode",
+				"propertyVisible": true,
+				"propertyType": "D",
+				"propertyRange": "Edm.String",
+				"ordinal": 6,
+				"aggregate": "[]",
+				"formatOptions": ""
+			}	
+			,{ 
+				"property": "employeeSalary",
+				"propertyVisible": true,
+				"propertyType": "S",
+				"propertyRange": "northwind.employeeSalary",
+				"ordinal": 7,
+				"aggregate": "[]",
+				"formatOptions": ""
+			}
+			,{ 
+				"property": "employer",
+				"propertyVisible": true,
+				"propertyType": "S",
+				"propertyRange": "northwind.employer",
+				"ordinal": 8,
+				"aggregate": "[]",
+				"formatOptions": ""
+			}
+			,{ 
+				"property": "extension",
+				"propertyVisible": true,
+				"propertyType": "D",
+				"propertyRange": "Edm.String",
+				"ordinal": 9,
+				"aggregate": "[]",
+				"formatOptions": ""
+			}	
+			,{ 
+				"property": "favorite",
+				"propertyVisible": true,
+				"propertyType": "S",
+				"propertyRange": "northwind.favorite",
+				"ordinal": 10,
+				"aggregate": "[]",
+				"formatOptions": ""
+			}
+			,{ 
+				"property": "firstName",
+				"propertyVisible": true,
+				"propertyType": "D",
+				"propertyRange": "Edm.String",
+				"ordinal": 11,
+				"aggregate": "[]",
+				"formatOptions": ""
+			}	
+			,{ 
+				"property": "hireDate",
+				"propertyVisible": true,
+				"propertyType": "D",
+				"propertyRange": "Edm.Date",
+				"ordinal": 12,
+				"aggregate": "[]",
+				"formatOptions": ""
+			}	
+			,{ 
+				"property": "homePhone",
+				"propertyVisible": true,
+				"propertyType": "D",
+				"propertyRange": "Edm.String",
+				"ordinal": 13,
+				"aggregate": "[]",
+				"formatOptions": ""
+			}	
+			,{ 
+				"property": "lastName",
+				"propertyVisible": true,
+				"propertyType": "D",
+				"propertyRange": "Edm.String",
+				"ordinal": 14,
+				"aggregate": "[]",
+				"formatOptions": ""
+			}	
+			,{ 
+				"property": "lat",
+				"propertyVisible": true,
+				"propertyType": "D",
+				"propertyRange": "Edm.Double",
+				"ordinal": 15,
+				"aggregate": "[]",
+				"formatOptions": "{'style':'short';'maxFractionDigits':2}"
+			}	
+			,{ 
+				"property": "lat_long",
+				"propertyVisible": true,
+				"propertyType": "D",
+				"propertyRange": "Edm.String",
+				"ordinal": 16,
+				"aggregate": "[]",
+				"formatOptions": ""
+			}	
+			,{ 
+				"property": "long",
+				"propertyVisible": true,
+				"propertyType": "D",
+				"propertyRange": "Edm.Double",
+				"ordinal": 17,
+				"aggregate": "[]",
+				"formatOptions": "{'style':'short';'maxFractionDigits':2}"
+			}	
+			,{ 
+				"property": "notes",
+				"propertyVisible": true,
+				"propertyType": "D",
+				"propertyRange": "Edm.String",
+				"ordinal": 18,
+				"aggregate": "[]",
+				"formatOptions": ""
+			}	
+			,{ 
+				"property": "photo",
+				"propertyVisible": true,
+				"propertyType": "D",
+				"propertyRange": "Edm.String",
+				"ordinal": 19,
+				"aggregate": "[]",
+				"formatOptions": ""
+			}	
+			,{ 
+				"property": "regionDescription",
+				"propertyVisible": true,
+				"propertyType": "D",
+				"propertyRange": "Edm.String",
+				"ordinal": 20,
+				"aggregate": "[]",
+				"formatOptions": ""
+			}	
+			,{ 
+				"property": "reportsToId",
+				"propertyVisible": false,
+				"propertyType": "D",
+				"propertyRange": "Edm.String",
+				"ordinal": 21,
+				"aggregate": "[]",
+				"formatOptions": ""
+			}	
+			,{ 
+				"property": "reportsToNotation",
+				"propertyVisible": true,
+				"propertyType": "D",
+				"propertyRange": "Edm.String",
+				"ordinal": 22,
+				"aggregate": "[]",
+				"formatOptions": ""
+			}	
+			,{ 
+				"property": "seeAlso",
+				"propertyVisible": true,
+				"propertyType": "D",
+				"propertyRange": "Edm.String",
+				"ordinal": 23,
+				"aggregate": "[]",
+				"formatOptions": ""
+			}	
+			,{ 
+				"property": "territoryNotation",
+				"propertyVisible": true,
+				"propertyType": "D",
+				"propertyRange": "Edm.String",
+				"ordinal": 24,
+				"aggregate": "[]",
+				"formatOptions": ""
+			}	
+			,{ 
+				"property": "title",
+				"propertyVisible": true,
+				"propertyType": "D",
+				"propertyRange": "Edm.String",
+				"ordinal": 25,
+				"aggregate": "[]",
+				"formatOptions": ""
+			}	
+			,{ 
+				"property": "titleOfCourtesy",
+				"propertyVisible": true,
+				"propertyType": "D",
+				"propertyRange": "Edm.String",
+				"ordinal": 26,
+				"aggregate": "[]",
+				"formatOptions": ""
+			}	
+			,{ 
+				"property": "reportsTo",
+				"propertyVisible": false,
+				"propertyType": "O",
+				"propertyRange": "Employee",
+				"ordinal": 27,
+				"aggregate": "[]",
+				"formatOptions": ""
+			}	
+			,{ 
+				"property": "employeeRegion",
+				"propertyVisible": false,
+				"propertyType": "C",
+				"propertyRange": "Region",
+				"ordinal": 28,
+				"aggregate": "[Count]",
+				"formatOptions": ""
+			}	
+			,{ 
+				"property": "managesEmployee",
+				"propertyVisible": false,
+				"propertyType": "C",
+				"propertyRange": "Employee",
+				"ordinal": 29,
+				"aggregate": "[Count]",
+				"formatOptions": ""
+			}	
+			,{ 
+				"property": "managesOrder",
+				"propertyVisible": false,
+				"propertyType": "C",
+				"propertyRange": "Order",
+				"ordinal": 30,
+				"aggregate": "[Count]",
+				"formatOptions": ""
+			}	
+			,{ 
+				"property": "territory",
+				"propertyVisible": false,
+				"propertyType": "C",
+				"propertyRange": "Territory",
+				"ordinal": 31,
+				"aggregate": "[Count]",
+				"formatOptions": ""
+			}	
+			]
+		},
+	"form": {
+		"target": "Employee",
+		"targetVisible": true,
+		"targetIcon": "sap-icon://expand-group",
+		"targetEntity": "Employee",
+		"properties": [		
+			{  
+				"property": "birthDate",
+				"propertyVisible": true,
+				"propertyType": "D",
+				"propertyRange": "Edm.Date",
+				"ordinal": 0,
+				"aggregate": "[]",
+				"formatOptions": null
+			}
+			,{ 
+				"property": "comment",
+				"propertyVisible": true,
+				"propertyType": "D",
+				"propertyRange": "Edm.String",
+				"ordinal": 1,
+				"aggregate": "[]",
+				"formatOptions": null
+			}
+			,{ 
+				"property": "employeeAddress",
+				"propertyVisible": true,
+				"propertyType": "D",
+				"propertyRange": "Edm.String",
+				"ordinal": 2,
+				"aggregate": "[]",
+				"formatOptions": null
+			}
+			,{ 
+				"property": "employeeCity",
+				"propertyVisible": true,
+				"propertyType": "D",
+				"propertyRange": "Edm.String",
+				"ordinal": 3,
+				"aggregate": "[]",
+				"formatOptions": null
+			}
+			,{ 
+				"property": "employeeCountry",
+				"propertyVisible": true,
+				"propertyType": "D",
+				"propertyRange": "Edm.String",
+				"ordinal": 4,
+				"aggregate": "[]",
+				"formatOptions": null
+			}
+			,{ 
+				"property": "employeeLinkedIn",
+				"propertyVisible": true,
+				"propertyType": "D",
+				"propertyRange": "Edm.String",
+				"ordinal": 5,
+				"aggregate": "[]",
+				"formatOptions": null
+			}
+			,{ 
+				"property": "employeePostalCode",
+				"propertyVisible": true,
+				"propertyType": "D",
+				"propertyRange": "Edm.String",
+				"ordinal": 6,
+				"aggregate": "[]",
+				"formatOptions": null
+			}
+			,{ 
+				"property": "employeeSalary",
+				"propertyVisible": true,
+				"propertyType": "S",
+				"propertyRange": "northwind.employeeSalary",
+				"ordinal": 7,
+				"aggregate": "[]",
+				"formatOptions": null
+			}
+			,{ 
+				"property": "employer",
+				"propertyVisible": true,
+				"propertyType": "S",
+				"propertyRange": "northwind.employer",
+				"ordinal": 8,
+				"aggregate": "[]",
+				"formatOptions": null
+			}
+			,{ 
+				"property": "extension",
+				"propertyVisible": true,
+				"propertyType": "D",
+				"propertyRange": "Edm.String",
+				"ordinal": 9,
+				"aggregate": "[]",
+				"formatOptions": null
+			}
+			,{ 
+				"property": "favorite",
+				"propertyVisible": true,
+				"propertyType": "S",
+				"propertyRange": "northwind.favorite",
+				"ordinal": 10,
+				"aggregate": "[]",
+				"formatOptions": null
+			}
+			,{ 
+				"property": "firstName",
+				"propertyVisible": true,
+				"propertyType": "D",
+				"propertyRange": "Edm.String",
+				"ordinal": 11,
+				"aggregate": "[]",
+				"formatOptions": null
+			}
+			,{ 
+				"property": "hireDate",
+				"propertyVisible": true,
+				"propertyType": "D",
+				"propertyRange": "Edm.Date",
+				"ordinal": 12,
+				"aggregate": "[]",
+				"formatOptions": null
+			}
+			,{ 
+				"property": "homePhone",
+				"propertyVisible": true,
+				"propertyType": "D",
+				"propertyRange": "Edm.String",
+				"ordinal": 13,
+				"aggregate": "[]",
+				"formatOptions": null
+			}
+			,{ 
+				"property": "lastName",
+				"propertyVisible": true,
+				"propertyType": "D",
+				"propertyRange": "Edm.String",
+				"ordinal": 14,
+				"aggregate": "[]",
+				"formatOptions": null
+			}
+			,{ 
+				"property": "lat",
+				"propertyVisible": true,
+				"propertyType": "D",
+				"propertyRange": "Edm.Double",
+				"ordinal": 15,
+				"aggregate": "[]",
+				"formatOptions": null
+			}
+			,{ 
+				"property": "lat_long",
+				"propertyVisible": true,
+				"propertyType": "D",
+				"propertyRange": "Edm.String",
+				"ordinal": 16,
+				"aggregate": "[]",
+				"formatOptions": null
+			}
+			,{ 
+				"property": "long",
+				"propertyVisible": true,
+				"propertyType": "D",
+				"propertyRange": "Edm.Double",
+				"ordinal": 17,
+				"aggregate": "[]",
+				"formatOptions": null
+			}
+			,{ 
+				"property": "notes",
+				"propertyVisible": true,
+				"propertyType": "D",
+				"propertyRange": "Edm.String",
+				"ordinal": 18,
+				"aggregate": "[]",
+				"formatOptions": null
+			}
+			,{ 
+				"property": "photo",
+				"propertyVisible": true,
+				"propertyType": "D",
+				"propertyRange": "Edm.String",
+				"ordinal": 19,
+				"aggregate": "[]",
+				"formatOptions": null
+			}
+			,{ 
+				"property": "regionDescription",
+				"propertyVisible": true,
+				"propertyType": "D",
+				"propertyRange": "Edm.String",
+				"ordinal": 20,
+				"aggregate": "[]",
+				"formatOptions": null
+			}
+			,{ 
+				"property": "reportsToId",
+				"propertyVisible": false,
+				"propertyType": "D",
+				"propertyRange": "Edm.String",
+				"ordinal": 21,
+				"aggregate": "[]",
+				"formatOptions": null
+			}
+			,{ 
+				"property": "reportsToNotation",
+				"propertyVisible": true,
+				"propertyType": "D",
+				"propertyRange": "Edm.String",
+				"ordinal": 22,
+				"aggregate": "[]",
+				"formatOptions": null
+			}
+			,{ 
+				"property": "seeAlso",
+				"propertyVisible": true,
+				"propertyType": "D",
+				"propertyRange": "Edm.String",
+				"ordinal": 23,
+				"aggregate": "[]",
+				"formatOptions": null
+			}
+			,{ 
+				"property": "territoryNotation",
+				"propertyVisible": true,
+				"propertyType": "D",
+				"propertyRange": "Edm.String",
+				"ordinal": 24,
+				"aggregate": "[]",
+				"formatOptions": null
+			}
+			,{ 
+				"property": "title",
+				"propertyVisible": true,
+				"propertyType": "D",
+				"propertyRange": "Edm.String",
+				"ordinal": 25,
+				"aggregate": "[]",
+				"formatOptions": null
+			}
+			,{ 
+				"property": "titleOfCourtesy",
+				"propertyVisible": true,
+				"propertyType": "D",
+				"propertyRange": "Edm.String",
+				"ordinal": 26,
+				"aggregate": "[]",
+				"formatOptions": null
+			}
+			,{ 
+				"property": "reportsTo",
+				"propertyVisible": true,
+				"propertyType": "O",
+				"propertyRange": "Employee",
+				"ordinal": 27,
+				"aggregate": "[]",
+				"formatOptions": null
+			}
+			,{ 
+				"property": "employeeRegion",
+				"propertyVisible": true,
+				"propertyType": "C",
+				"propertyRange": "Region",
+				"ordinal": 28,
+				"aggregate": "[List]",
+				"formatOptions": null
+			}
+			,{ 
+				"property": "managesEmployee",
+				"propertyVisible": true,
+				"propertyType": "C",
+				"propertyRange": "Employee",
+				"ordinal": 29,
+				"aggregate": "[List]",
+				"formatOptions": null
+			}
+			,{ 
+				"property": "managesOrder",
+				"propertyVisible": true,
+				"propertyType": "C",
+				"propertyRange": "Order",
+				"ordinal": 30,
+				"aggregate": "[List]",
+				"formatOptions": null
+			}
+			,{ 
+				"property": "territory",
+				"propertyVisible": true,
+				"propertyType": "C",
+				"propertyRange": "Territory",
+				"ordinal": 31,
+				"aggregate": "[List]",
+				"formatOptions": null
+			}
+			]
+		}
+	}
+	,
+	"Order": {
+	"entity": "Order",
+	"icon": "sap-icon://expand-group",
+	"image": "./images/icons/category.png",
+	"entitySetVisible":true,
+	"grid": {
+		"target": "Orders",
+		"targetVisible": true,
+		"targetIcon": "sap-icon://expand-group",
+		"targetEntity": "Order",	
+		"properties": [	
+			{  
+				"property": "comment",
+				"propertyVisible": true,
+				"propertyType": "D",
+				"propertyRange": "Edm.String",
+				"ordinal": 0,
+				"aggregate": "[]",
+				"formatOptions": ""
+			}	
+			,{ 
+				"property": "customerId",
+				"propertyVisible": false,
+				"propertyType": "D",
+				"propertyRange": "Edm.String",
+				"ordinal": 1,
+				"aggregate": "[]",
+				"formatOptions": ""
+			}	
+			,{ 
+				"property": "customerNotation",
+				"propertyVisible": true,
+				"propertyType": "D",
+				"propertyRange": "Edm.String",
+				"ordinal": 2,
+				"aggregate": "[]",
+				"formatOptions": ""
+			}	
+			,{ 
+				"property": "employeeId",
+				"propertyVisible": false,
+				"propertyType": "D",
+				"propertyRange": "Edm.String",
+				"ordinal": 3,
+				"aggregate": "[]",
+				"formatOptions": ""
+			}	
+			,{ 
+				"property": "employeeNotation",
+				"propertyVisible": true,
+				"propertyType": "D",
+				"propertyRange": "Edm.String",
+				"ordinal": 4,
+				"aggregate": "[]",
+				"formatOptions": ""
+			}	
+			,{ 
+				"property": "freight",
+				"propertyVisible": true,
+				"propertyType": "D",
+				"propertyRange": "Edm.String",
+				"ordinal": 5,
+				"aggregate": "[]",
+				"formatOptions": ""
+			}	
+			,{ 
+				"property": "lat",
+				"propertyVisible": true,
+				"propertyType": "D",
+				"propertyRange": "Edm.Double",
+				"ordinal": 6,
+				"aggregate": "[]",
+				"formatOptions": "{'style':'short';'maxFractionDigits':2}"
+			}	
+			,{ 
+				"property": "lat_long",
+				"propertyVisible": true,
+				"propertyType": "D",
+				"propertyRange": "Edm.String",
+				"ordinal": 7,
+				"aggregate": "[]",
+				"formatOptions": ""
+			}	
+			,{ 
+				"property": "long",
+				"propertyVisible": true,
+				"propertyType": "D",
+				"propertyRange": "Edm.Double",
+				"ordinal": 8,
+				"aggregate": "[]",
+				"formatOptions": "{'style':'short';'maxFractionDigits':2}"
+			}	
+			,{ 
+				"property": "orderDate",
+				"propertyVisible": true,
+				"propertyType": "D",
+				"propertyRange": "Edm.DateTimeOffset",
+				"ordinal": 9,
+				"aggregate": "[]",
+				"formatOptions": ""
+			}	
+			,{ 
+				"property": "orderRegionId",
+				"propertyVisible": false,
+				"propertyType": "D",
+				"propertyRange": "Edm.String",
+				"ordinal": 10,
+				"aggregate": "[]",
+				"formatOptions": ""
+			}	
+			,{ 
+				"property": "regionDescription",
+				"propertyVisible": true,
+				"propertyType": "D",
+				"propertyRange": "Edm.String",
+				"ordinal": 11,
+				"aggregate": "[]",
+				"formatOptions": ""
+			}	
+			,{ 
+				"property": "requiredDate",
+				"propertyVisible": true,
+				"propertyType": "D",
+				"propertyRange": "Edm.DateTimeOffset",
+				"ordinal": 12,
+				"aggregate": "[]",
+				"formatOptions": ""
+			}	
+			,{ 
+				"property": "seeAlso",
+				"propertyVisible": true,
+				"propertyType": "D",
+				"propertyRange": "Edm.String",
+				"ordinal": 13,
+				"aggregate": "[]",
+				"formatOptions": ""
+			}	
+			,{ 
+				"property": "shipAddress",
+				"propertyVisible": true,
+				"propertyType": "D",
+				"propertyRange": "Edm.String",
+				"ordinal": 14,
+				"aggregate": "[]",
+				"formatOptions": ""
+			}	
+			,{ 
+				"property": "shipCity",
+				"propertyVisible": true,
+				"propertyType": "D",
+				"propertyRange": "Edm.String",
+				"ordinal": 15,
+				"aggregate": "[]",
+				"formatOptions": ""
+			}	
+			,{ 
+				"property": "shipCountry",
+				"propertyVisible": true,
+				"propertyType": "D",
+				"propertyRange": "Edm.String",
+				"ordinal": 16,
+				"aggregate": "[]",
+				"formatOptions": ""
+			}	
+			,{ 
+				"property": "shipName",
+				"propertyVisible": true,
+				"propertyType": "D",
+				"propertyRange": "Edm.String",
+				"ordinal": 17,
+				"aggregate": "[]",
+				"formatOptions": ""
+			}	
+			,{ 
+				"property": "shipPostalCode",
+				"propertyVisible": true,
+				"propertyType": "D",
+				"propertyRange": "Edm.String",
+				"ordinal": 18,
+				"aggregate": "[]",
+				"formatOptions": ""
+			}	
+			,{ 
+				"property": "shipViaId",
+				"propertyVisible": false,
+				"propertyType": "D",
+				"propertyRange": "Edm.String",
+				"ordinal": 19,
+				"aggregate": "[]",
+				"formatOptions": ""
+			}	
+			,{ 
+				"property": "shipViaNotation",
+				"propertyVisible": true,
+				"propertyType": "D",
+				"propertyRange": "Edm.String",
+				"ordinal": 20,
+				"aggregate": "[]",
+				"formatOptions": ""
+			}	
+			,{ 
+				"property": "shippedDate",
+				"propertyVisible": true,
+				"propertyType": "D",
+				"propertyRange": "Edm.DateTimeOffset",
+				"ordinal": 21,
+				"aggregate": "[]",
+				"formatOptions": ""
+			}	
+			,{ 
+				"property": "customer",
+				"propertyVisible": false,
+				"propertyType": "O",
+				"propertyRange": "Customer",
+				"ordinal": 22,
+				"aggregate": "[]",
+				"formatOptions": ""
+			}	
+			,{ 
+				"property": "employee",
+				"propertyVisible": false,
+				"propertyType": "O",
+				"propertyRange": "Employee",
+				"ordinal": 23,
+				"aggregate": "[]",
+				"formatOptions": ""
+			}	
+			,{ 
+				"property": "orderRegion",
+				"propertyVisible": false,
+				"propertyType": "O",
+				"propertyRange": "Region",
+				"ordinal": 24,
+				"aggregate": "[]",
+				"formatOptions": ""
+			}	
+			,{ 
+				"property": "shipVia",
+				"propertyVisible": false,
+				"propertyType": "O",
+				"propertyRange": "Shipper",
+				"ordinal": 25,
+				"aggregate": "[]",
+				"formatOptions": ""
+			}	
+			,{ 
+				"property": "hasOrderDetail",
+				"propertyVisible": false,
+				"propertyType": "C",
+				"propertyRange": "OrderDetail",
+				"ordinal": 26,
+				"aggregate": "[Count]",
+				"formatOptions": ""
+			}	
+			,{ 
+				"property": "order_customer_Order",
+				"propertyVisible": false,
+				"propertyType": "C",
+				"propertyRange": "Customer_Order",
+				"ordinal": 27,
+				"aggregate": "[Count]",
+				"formatOptions": ""
+			}	
+			,{ 
+				"property": "order_orderSummary",
+				"propertyVisible": false,
+				"propertyType": "C",
+				"propertyRange": "OrderSummary",
+				"ordinal": 28,
+				"aggregate": "[Count]",
+				"formatOptions": ""
+			}	
+			]
+		},
+	"form": {
+		"target": "Order",
+		"targetVisible": true,
+		"targetIcon": "sap-icon://expand-group",
+		"targetEntity": "Order",
+		"properties": [		
+			{  
+				"property": "comment",
+				"propertyVisible": true,
+				"propertyType": "D",
+				"propertyRange": "Edm.String",
+				"ordinal": 0,
+				"aggregate": "[]",
+				"formatOptions": null
+			}
+			,{ 
+				"property": "customerId",
+				"propertyVisible": false,
+				"propertyType": "D",
+				"propertyRange": "Edm.String",
+				"ordinal": 1,
+				"aggregate": "[]",
+				"formatOptions": null
+			}
+			,{ 
+				"property": "customerNotation",
+				"propertyVisible": true,
+				"propertyType": "D",
+				"propertyRange": "Edm.String",
+				"ordinal": 2,
+				"aggregate": "[]",
+				"formatOptions": null
+			}
+			,{ 
+				"property": "employeeId",
+				"propertyVisible": false,
+				"propertyType": "D",
+				"propertyRange": "Edm.String",
+				"ordinal": 3,
+				"aggregate": "[]",
+				"formatOptions": null
+			}
+			,{ 
+				"property": "employeeNotation",
+				"propertyVisible": true,
+				"propertyType": "D",
+				"propertyRange": "Edm.String",
+				"ordinal": 4,
+				"aggregate": "[]",
+				"formatOptions": null
+			}
+			,{ 
+				"property": "freight",
+				"propertyVisible": true,
+				"propertyType": "D",
+				"propertyRange": "Edm.String",
+				"ordinal": 5,
+				"aggregate": "[]",
+				"formatOptions": null
+			}
+			,{ 
+				"property": "lat",
+				"propertyVisible": true,
+				"propertyType": "D",
+				"propertyRange": "Edm.Double",
+				"ordinal": 6,
+				"aggregate": "[]",
+				"formatOptions": null
+			}
+			,{ 
+				"property": "lat_long",
+				"propertyVisible": true,
+				"propertyType": "D",
+				"propertyRange": "Edm.String",
+				"ordinal": 7,
+				"aggregate": "[]",
+				"formatOptions": null
+			}
+			,{ 
+				"property": "long",
+				"propertyVisible": true,
+				"propertyType": "D",
+				"propertyRange": "Edm.Double",
+				"ordinal": 8,
+				"aggregate": "[]",
+				"formatOptions": null
+			}
+			,{ 
+				"property": "orderDate",
+				"propertyVisible": true,
+				"propertyType": "D",
+				"propertyRange": "Edm.DateTimeOffset",
+				"ordinal": 9,
+				"aggregate": "[]",
+				"formatOptions": null
+			}
+			,{ 
+				"property": "orderRegionId",
+				"propertyVisible": false,
+				"propertyType": "D",
+				"propertyRange": "Edm.String",
+				"ordinal": 10,
+				"aggregate": "[]",
+				"formatOptions": null
+			}
+			,{ 
+				"property": "regionDescription",
+				"propertyVisible": true,
+				"propertyType": "D",
+				"propertyRange": "Edm.String",
+				"ordinal": 11,
+				"aggregate": "[]",
+				"formatOptions": null
+			}
+			,{ 
+				"property": "requiredDate",
+				"propertyVisible": true,
+				"propertyType": "D",
+				"propertyRange": "Edm.DateTimeOffset",
+				"ordinal": 12,
+				"aggregate": "[]",
+				"formatOptions": null
+			}
+			,{ 
+				"property": "seeAlso",
+				"propertyVisible": true,
+				"propertyType": "D",
+				"propertyRange": "Edm.String",
+				"ordinal": 13,
+				"aggregate": "[]",
+				"formatOptions": null
+			}
+			,{ 
+				"property": "shipAddress",
+				"propertyVisible": true,
+				"propertyType": "D",
+				"propertyRange": "Edm.String",
+				"ordinal": 14,
+				"aggregate": "[]",
+				"formatOptions": null
+			}
+			,{ 
+				"property": "shipCity",
+				"propertyVisible": true,
+				"propertyType": "D",
+				"propertyRange": "Edm.String",
+				"ordinal": 15,
+				"aggregate": "[]",
+				"formatOptions": null
+			}
+			,{ 
+				"property": "shipCountry",
+				"propertyVisible": true,
+				"propertyType": "D",
+				"propertyRange": "Edm.String",
+				"ordinal": 16,
+				"aggregate": "[]",
+				"formatOptions": null
+			}
+			,{ 
+				"property": "shipName",
+				"propertyVisible": true,
+				"propertyType": "D",
+				"propertyRange": "Edm.String",
+				"ordinal": 17,
+				"aggregate": "[]",
+				"formatOptions": null
+			}
+			,{ 
+				"property": "shipPostalCode",
+				"propertyVisible": true,
+				"propertyType": "D",
+				"propertyRange": "Edm.String",
+				"ordinal": 18,
+				"aggregate": "[]",
+				"formatOptions": null
+			}
+			,{ 
+				"property": "shipViaId",
+				"propertyVisible": false,
+				"propertyType": "D",
+				"propertyRange": "Edm.String",
+				"ordinal": 19,
+				"aggregate": "[]",
+				"formatOptions": null
+			}
+			,{ 
+				"property": "shipViaNotation",
+				"propertyVisible": true,
+				"propertyType": "D",
+				"propertyRange": "Edm.String",
+				"ordinal": 20,
+				"aggregate": "[]",
+				"formatOptions": null
+			}
+			,{ 
+				"property": "shippedDate",
+				"propertyVisible": true,
+				"propertyType": "D",
+				"propertyRange": "Edm.DateTimeOffset",
+				"ordinal": 21,
+				"aggregate": "[]",
+				"formatOptions": null
+			}
+			,{ 
+				"property": "customer",
+				"propertyVisible": true,
+				"propertyType": "O",
+				"propertyRange": "Customer",
+				"ordinal": 22,
+				"aggregate": "[]",
+				"formatOptions": null
+			}
+			,{ 
+				"property": "employee",
+				"propertyVisible": true,
+				"propertyType": "O",
+				"propertyRange": "Employee",
+				"ordinal": 23,
+				"aggregate": "[]",
+				"formatOptions": null
+			}
+			,{ 
+				"property": "orderRegion",
+				"propertyVisible": true,
+				"propertyType": "O",
+				"propertyRange": "Region",
+				"ordinal": 24,
+				"aggregate": "[]",
+				"formatOptions": null
+			}
+			,{ 
+				"property": "shipVia",
+				"propertyVisible": true,
+				"propertyType": "O",
+				"propertyRange": "Shipper",
+				"ordinal": 25,
+				"aggregate": "[]",
+				"formatOptions": null
+			}
+			,{ 
+				"property": "hasOrderDetail",
+				"propertyVisible": true,
+				"propertyType": "C",
+				"propertyRange": "OrderDetail",
+				"ordinal": 26,
+				"aggregate": "[List]",
+				"formatOptions": null
+			}
+			,{ 
+				"property": "order_customer_Order",
+				"propertyVisible": true,
+				"propertyType": "C",
+				"propertyRange": "Customer_Order",
+				"ordinal": 27,
+				"aggregate": "[List]",
+				"formatOptions": null
+			}
+			,{ 
+				"property": "order_orderSummary",
+				"propertyVisible": true,
+				"propertyType": "C",
+				"propertyRange": "OrderSummary",
+				"ordinal": 28,
+				"aggregate": "[List]",
+				"formatOptions": null
+			}
+			]
+		}
+	}
+	,
+	"OrderDetail": {
+	"entity": "OrderDetail",
+	"icon": "sap-icon://expand-group",
+	"image": "./images/icons/category.png",
+	"entitySetVisible":true,
+	"grid": {
+		"target": "OrderDetails",
+		"targetVisible": true,
+		"targetIcon": "sap-icon://expand-group",
+		"targetEntity": "OrderDetail",	
+		"properties": [	
+			{  
+				"property": "comment",
+				"propertyVisible": true,
+				"propertyType": "D",
+				"propertyRange": "Edm.String",
+				"ordinal": 0,
+				"aggregate": "[]",
+				"formatOptions": ""
+			}	
+			,{ 
+				"property": "discount",
+				"propertyVisible": true,
+				"propertyType": "D",
+				"propertyRange": "Edm.Double",
+				"ordinal": 1,
+				"aggregate": "[]",
+				"formatOptions": "{'style':'short';'maxFractionDigits':2}"
+			}	
+			,{ 
+				"property": "orderDetailUnitPrice",
+				"propertyVisible": true,
+				"propertyType": "D",
+				"propertyRange": "Edm.Double",
+				"ordinal": 2,
+				"aggregate": "[]",
+				"formatOptions": "{'style':'short';'maxFractionDigits':2}"
+			}	
+			,{ 
+				"property": "orderId",
+				"propertyVisible": false,
+				"propertyType": "D",
+				"propertyRange": "Edm.String",
+				"ordinal": 3,
+				"aggregate": "[]",
+				"formatOptions": ""
+			}	
+			,{ 
+				"property": "orderNotation",
+				"propertyVisible": true,
+				"propertyType": "D",
+				"propertyRange": "Edm.String",
+				"ordinal": 4,
+				"aggregate": "[]",
+				"formatOptions": ""
+			}	
+			,{ 
+				"property": "productId",
+				"propertyVisible": false,
+				"propertyType": "D",
+				"propertyRange": "Edm.String",
+				"ordinal": 5,
+				"aggregate": "[]",
+				"formatOptions": ""
+			}	
+			,{ 
+				"property": "productNotation",
+				"propertyVisible": true,
+				"propertyType": "D",
+				"propertyRange": "Edm.String",
+				"ordinal": 6,
+				"aggregate": "[]",
+				"formatOptions": ""
+			}	
+			,{ 
+				"property": "quantity",
+				"propertyVisible": true,
+				"propertyType": "D",
+				"propertyRange": "Edm.Int32",
+				"ordinal": 7,
+				"aggregate": "[]",
+				"formatOptions": ""
+			}	
+			,{ 
+				"property": "seeAlso",
+				"propertyVisible": true,
+				"propertyType": "D",
+				"propertyRange": "Edm.String",
+				"ordinal": 8,
+				"aggregate": "[]",
+				"formatOptions": ""
+			}	
+			,{ 
+				"property": "order",
+				"propertyVisible": false,
+				"propertyType": "O",
+				"propertyRange": "Order",
+				"ordinal": 9,
+				"aggregate": "[]",
+				"formatOptions": ""
+			}	
+			,{ 
+				"property": "product",
+				"propertyVisible": false,
+				"propertyType": "O",
+				"propertyRange": "Product",
+				"ordinal": 10,
+				"aggregate": "[]",
+				"formatOptions": ""
+			}	
+			]
+		},
+	"form": {
+		"target": "OrderDetail",
+		"targetVisible": true,
+		"targetIcon": "sap-icon://expand-group",
+		"targetEntity": "OrderDetail",
+		"properties": [		
+			{  
+				"property": "comment",
+				"propertyVisible": true,
+				"propertyType": "D",
+				"propertyRange": "Edm.String",
+				"ordinal": 0,
+				"aggregate": "[]",
+				"formatOptions": null
+			}
+			,{ 
+				"property": "discount",
+				"propertyVisible": true,
+				"propertyType": "D",
+				"propertyRange": "Edm.Double",
+				"ordinal": 1,
+				"aggregate": "[]",
+				"formatOptions": null
+			}
+			,{ 
+				"property": "orderDetailUnitPrice",
+				"propertyVisible": true,
+				"propertyType": "D",
+				"propertyRange": "Edm.Double",
+				"ordinal": 2,
+				"aggregate": "[]",
+				"formatOptions": null
+			}
+			,{ 
+				"property": "orderId",
+				"propertyVisible": false,
+				"propertyType": "D",
+				"propertyRange": "Edm.String",
+				"ordinal": 3,
+				"aggregate": "[]",
+				"formatOptions": null
+			}
+			,{ 
+				"property": "orderNotation",
+				"propertyVisible": true,
+				"propertyType": "D",
+				"propertyRange": "Edm.String",
+				"ordinal": 4,
+				"aggregate": "[]",
+				"formatOptions": null
+			}
+			,{ 
+				"property": "productId",
+				"propertyVisible": false,
+				"propertyType": "D",
+				"propertyRange": "Edm.String",
+				"ordinal": 5,
+				"aggregate": "[]",
+				"formatOptions": null
+			}
+			,{ 
+				"property": "productNotation",
+				"propertyVisible": true,
+				"propertyType": "D",
+				"propertyRange": "Edm.String",
+				"ordinal": 6,
+				"aggregate": "[]",
+				"formatOptions": null
+			}
+			,{ 
+				"property": "quantity",
+				"propertyVisible": true,
+				"propertyType": "D",
+				"propertyRange": "Edm.Int32",
+				"ordinal": 7,
+				"aggregate": "[]",
+				"formatOptions": null
+			}
+			,{ 
+				"property": "seeAlso",
+				"propertyVisible": true,
+				"propertyType": "D",
+				"propertyRange": "Edm.String",
+				"ordinal": 8,
+				"aggregate": "[]",
+				"formatOptions": null
+			}
+			,{ 
+				"property": "order",
+				"propertyVisible": true,
+				"propertyType": "O",
+				"propertyRange": "Order",
+				"ordinal": 9,
+				"aggregate": "[]",
+				"formatOptions": null
+			}
+			,{ 
+				"property": "product",
+				"propertyVisible": true,
+				"propertyType": "O",
+				"propertyRange": "Product",
+				"ordinal": 10,
+				"aggregate": "[]",
+				"formatOptions": null
+			}
+			]
+		}
+	}
+	,
+	"OrderSummary": {
+	"entity": "OrderSummary",
+	"icon": "sap-icon://expand-group",
+	"image": "./images/icons/category.png",
+	"entitySetVisible":true,
+	"grid": {
+		"target": "OrderSummarys",
+		"targetVisible": true,
+		"targetIcon": "sap-icon://expand-group",
+		"targetEntity": "OrderSummary",	
+		"properties": [	
+			{  
+				"property": "order",
+				"propertyVisible": true,
+				"propertyType": "D",
+				"propertyRange": "Edm.String",
+				"ordinal": 0,
+				"aggregate": "[]",
+				"formatOptions": ""
+			}	
+			,{ 
+				"property": "orderSummary_Value",
+				"propertyVisible": true,
+				"propertyType": "D",
+				"propertyRange": "Edm.Double",
+				"ordinal": 1,
+				"aggregate": "[]",
+				"formatOptions": "{'style':'short';'maxFractionDigits':2}"
+			}	
+			,{ 
+				"property": "prod",
+				"propertyVisible": true,
+				"propertyType": "D",
+				"propertyRange": "Edm.String",
+				"ordinal": 2,
+				"aggregate": "[]",
+				"formatOptions": ""
+			}	
+			,{ 
+				"property": "orderSummary_order",
+				"propertyVisible": false,
+				"propertyType": "O",
+				"propertyRange": "Order",
+				"ordinal": 3,
+				"aggregate": "[]",
+				"formatOptions": ""
+			}	
+			,{ 
+				"property": "orderSummary_product",
+				"propertyVisible": false,
+				"propertyType": "O",
+				"propertyRange": "Product",
+				"ordinal": 4,
+				"aggregate": "[]",
+				"formatOptions": ""
+			}	
+			]
+		},
+	"form": {
+		"target": "OrderSummary",
+		"targetVisible": true,
+		"targetIcon": "sap-icon://expand-group",
+		"targetEntity": "OrderSummary",
+		"properties": [		
+			{  
+				"property": "order",
+				"propertyVisible": true,
+				"propertyType": "D",
+				"propertyRange": "Edm.String",
+				"ordinal": 0,
+				"aggregate": "[]",
+				"formatOptions": null
+			}
+			,{ 
+				"property": "orderSummary_Value",
+				"propertyVisible": true,
+				"propertyType": "D",
+				"propertyRange": "Edm.Double",
+				"ordinal": 1,
+				"aggregate": "[]",
+				"formatOptions": null
+			}
+			,{ 
+				"property": "prod",
+				"propertyVisible": true,
+				"propertyType": "D",
+				"propertyRange": "Edm.String",
+				"ordinal": 2,
+				"aggregate": "[]",
+				"formatOptions": null
+			}
+			,{ 
+				"property": "orderSummary_order",
+				"propertyVisible": true,
+				"propertyType": "O",
+				"propertyRange": "Order",
+				"ordinal": 3,
+				"aggregate": "[]",
+				"formatOptions": null
+			}
+			,{ 
+				"property": "orderSummary_product",
+				"propertyVisible": true,
+				"propertyType": "O",
+				"propertyRange": "Product",
+				"ordinal": 4,
+				"aggregate": "[]",
+				"formatOptions": null
+			}
+			]
+		}
+	}
+	,
+	"Product": {
+	"entity": "Product",
+	"icon": "sap-icon://expand-group",
+	"image": "./images/icons/category.png",
+	"entitySetVisible":true,
+	"grid": {
+		"target": "Products",
+		"targetVisible": true,
+		"targetIcon": "sap-icon://expand-group",
+		"targetEntity": "Product",	
+		"properties": [	
+			{  
+				"property": "categoryId",
+				"propertyVisible": false,
+				"propertyType": "D",
+				"propertyRange": "Edm.String",
+				"ordinal": 0,
+				"aggregate": "[]",
+				"formatOptions": ""
+			}	
+			,{ 
+				"property": "categoryNotation",
+				"propertyVisible": true,
+				"propertyType": "D",
+				"propertyRange": "Edm.String",
+				"ordinal": 1,
+				"aggregate": "[]",
+				"formatOptions": ""
+			}	
+			,{ 
+				"property": "comment",
+				"propertyVisible": true,
+				"propertyType": "D",
+				"propertyRange": "Edm.String",
+				"ordinal": 2,
+				"aggregate": "[]",
+				"formatOptions": ""
+			}	
+			,{ 
+				"property": "discontinued",
+				"propertyVisible": true,
+				"propertyType": "D",
+				"propertyRange": "Edm.Boolean",
+				"ordinal": 3,
+				"aggregate": "[]",
+				"formatOptions": ""
+			}	
+			,{ 
+				"property": "productName",
+				"propertyVisible": true,
+				"propertyType": "D",
+				"propertyRange": "Edm.String",
+				"ordinal": 4,
+				"aggregate": "[]",
+				"formatOptions": ""
+			}	
+			,{ 
+				"property": "productUnitPrice",
+				"propertyVisible": true,
+				"propertyType": "D",
+				"propertyRange": "Edm.Double",
+				"ordinal": 5,
+				"aggregate": "[]",
+				"formatOptions": "{'style':'short';'maxFractionDigits':2}"
+			}	
+			,{ 
+				"property": "quantityPerUnit",
+				"propertyVisible": true,
+				"propertyType": "D",
+				"propertyRange": "Edm.String",
+				"ordinal": 6,
+				"aggregate": "[]",
+				"formatOptions": ""
+			}	
+			,{ 
+				"property": "reorderLevel",
+				"propertyVisible": true,
+				"propertyType": "D",
+				"propertyRange": "Edm.Int32",
+				"ordinal": 7,
+				"aggregate": "[]",
+				"formatOptions": ""
+			}	
+			,{ 
+				"property": "seeAlso",
+				"propertyVisible": true,
+				"propertyType": "D",
+				"propertyRange": "Edm.String",
+				"ordinal": 8,
+				"aggregate": "[]",
+				"formatOptions": ""
+			}	
+			,{ 
+				"property": "supplierId",
+				"propertyVisible": false,
+				"propertyType": "D",
+				"propertyRange": "Edm.String",
+				"ordinal": 9,
+				"aggregate": "[]",
+				"formatOptions": ""
+			}	
+			,{ 
+				"property": "supplierNotation",
+				"propertyVisible": true,
+				"propertyType": "D",
+				"propertyRange": "Edm.String",
+				"ordinal": 10,
+				"aggregate": "[]",
+				"formatOptions": ""
+			}	
+			,{ 
+				"property": "unitCommission",
+				"propertyVisible": true,
+				"propertyType": "S",
+				"propertyRange": "northwind.unitCommission",
+				"ordinal": 11,
+				"aggregate": "[]",
+				"formatOptions": ""
+			}
+			,{ 
+				"property": "unitsInStock",
+				"propertyVisible": true,
+				"propertyType": "D",
+				"propertyRange": "Edm.Int32",
+				"ordinal": 12,
+				"aggregate": "[]",
+				"formatOptions": ""
+			}	
+			,{ 
+				"property": "unitsOnOrder",
+				"propertyVisible": true,
+				"propertyType": "D",
+				"propertyRange": "Edm.Int32",
+				"ordinal": 13,
+				"aggregate": "[]",
+				"formatOptions": ""
+			}	
+			,{ 
+				"property": "category",
+				"propertyVisible": false,
+				"propertyType": "O",
+				"propertyRange": "Category",
+				"ordinal": 14,
+				"aggregate": "[]",
+				"formatOptions": ""
+			}	
+			,{ 
+				"property": "supplier",
+				"propertyVisible": false,
+				"propertyType": "O",
+				"propertyRange": "Supplier",
+				"ordinal": 15,
+				"aggregate": "[]",
+				"formatOptions": ""
+			}	
+			,{ 
+				"property": "isPartOfOrderDetail",
+				"propertyVisible": false,
+				"propertyType": "C",
+				"propertyRange": "OrderDetail",
+				"ordinal": 16,
+				"aggregate": "[Count]",
+				"formatOptions": ""
+			}	
+			,{ 
+				"property": "product_orderSummary",
+				"propertyVisible": false,
+				"propertyType": "C",
+				"propertyRange": "OrderSummary",
+				"ordinal": 17,
+				"aggregate": "[Count]",
+				"formatOptions": ""
+			}	
+			]
+		},
+	"form": {
+		"target": "Product",
+		"targetVisible": true,
+		"targetIcon": "sap-icon://expand-group",
+		"targetEntity": "Product",
+		"properties": [		
+			{  
+				"property": "categoryId",
+				"propertyVisible": false,
+				"propertyType": "D",
+				"propertyRange": "Edm.String",
+				"ordinal": 0,
+				"aggregate": "[]",
+				"formatOptions": null
+			}
+			,{ 
+				"property": "categoryNotation",
+				"propertyVisible": true,
+				"propertyType": "D",
+				"propertyRange": "Edm.String",
+				"ordinal": 1,
+				"aggregate": "[]",
+				"formatOptions": null
+			}
+			,{ 
+				"property": "comment",
+				"propertyVisible": true,
+				"propertyType": "D",
+				"propertyRange": "Edm.String",
+				"ordinal": 2,
+				"aggregate": "[]",
+				"formatOptions": null
+			}
+			,{ 
+				"property": "discontinued",
+				"propertyVisible": true,
+				"propertyType": "D",
+				"propertyRange": "Edm.Boolean",
+				"ordinal": 3,
+				"aggregate": "[]",
+				"formatOptions": null
+			}
+			,{ 
+				"property": "productName",
+				"propertyVisible": true,
+				"propertyType": "D",
+				"propertyRange": "Edm.String",
+				"ordinal": 4,
+				"aggregate": "[]",
+				"formatOptions": null
+			}
+			,{ 
+				"property": "productUnitPrice",
+				"propertyVisible": true,
+				"propertyType": "D",
+				"propertyRange": "Edm.Double",
+				"ordinal": 5,
+				"aggregate": "[]",
+				"formatOptions": null
+			}
+			,{ 
+				"property": "quantityPerUnit",
+				"propertyVisible": true,
+				"propertyType": "D",
+				"propertyRange": "Edm.String",
+				"ordinal": 6,
+				"aggregate": "[]",
+				"formatOptions": null
+			}
+			,{ 
+				"property": "reorderLevel",
+				"propertyVisible": true,
+				"propertyType": "D",
+				"propertyRange": "Edm.Int32",
+				"ordinal": 7,
+				"aggregate": "[]",
+				"formatOptions": null
+			}
+			,{ 
+				"property": "seeAlso",
+				"propertyVisible": true,
+				"propertyType": "D",
+				"propertyRange": "Edm.String",
+				"ordinal": 8,
+				"aggregate": "[]",
+				"formatOptions": null
+			}
+			,{ 
+				"property": "supplierId",
+				"propertyVisible": false,
+				"propertyType": "D",
+				"propertyRange": "Edm.String",
+				"ordinal": 9,
+				"aggregate": "[]",
+				"formatOptions": null
+			}
+			,{ 
+				"property": "supplierNotation",
+				"propertyVisible": true,
+				"propertyType": "D",
+				"propertyRange": "Edm.String",
+				"ordinal": 10,
+				"aggregate": "[]",
+				"formatOptions": null
+			}
+			,{ 
+				"property": "unitCommission",
+				"propertyVisible": true,
+				"propertyType": "S",
+				"propertyRange": "northwind.unitCommission",
+				"ordinal": 11,
+				"aggregate": "[]",
+				"formatOptions": null
+			}
+			,{ 
+				"property": "unitsInStock",
+				"propertyVisible": true,
+				"propertyType": "D",
+				"propertyRange": "Edm.Int32",
+				"ordinal": 12,
+				"aggregate": "[]",
+				"formatOptions": null
+			}
+			,{ 
+				"property": "unitsOnOrder",
+				"propertyVisible": true,
+				"propertyType": "D",
+				"propertyRange": "Edm.Int32",
+				"ordinal": 13,
+				"aggregate": "[]",
+				"formatOptions": null
+			}
+			,{ 
+				"property": "category",
+				"propertyVisible": true,
+				"propertyType": "O",
+				"propertyRange": "Category",
+				"ordinal": 14,
+				"aggregate": "[]",
+				"formatOptions": null
+			}
+			,{ 
+				"property": "supplier",
+				"propertyVisible": true,
+				"propertyType": "O",
+				"propertyRange": "Supplier",
+				"ordinal": 15,
+				"aggregate": "[]",
+				"formatOptions": null
+			}
+			,{ 
+				"property": "isPartOfOrderDetail",
+				"propertyVisible": true,
+				"propertyType": "C",
+				"propertyRange": "OrderDetail",
+				"ordinal": 16,
+				"aggregate": "[List]",
+				"formatOptions": null
+			}
+			,{ 
+				"property": "product_orderSummary",
+				"propertyVisible": true,
+				"propertyType": "C",
+				"propertyRange": "OrderSummary",
+				"ordinal": 17,
+				"aggregate": "[List]",
+				"formatOptions": null
+			}
+			]
+		}
+	}
+	,
+	"Region": {
+	"entity": "Region",
+	"icon": "sap-icon://expand-group",
+	"image": "./images/icons/category.png",
+	"entitySetVisible":true,
+	"grid": {
+		"target": "Regions",
+		"targetVisible": true,
+		"targetIcon": "sap-icon://expand-group",
+		"targetEntity": "Region",	
+		"properties": [	
+			{  
+				"property": "comment",
+				"propertyVisible": true,
+				"propertyType": "D",
+				"propertyRange": "Edm.String",
+				"ordinal": 0,
+				"aggregate": "[]",
+				"formatOptions": ""
+			}	
+			,{ 
+				"property": "regionDescription",
+				"propertyVisible": true,
+				"propertyType": "D",
+				"propertyRange": "Edm.String",
+				"ordinal": 1,
+				"aggregate": "[]",
+				"formatOptions": ""
+			}	
+			,{ 
+				"property": "seeAlso",
+				"propertyVisible": true,
+				"propertyType": "D",
+				"propertyRange": "Edm.String",
+				"ordinal": 2,
+				"aggregate": "[]",
+				"formatOptions": ""
+			}	
+			]
+		},
+	"form": {
+		"target": "Region",
+		"targetVisible": true,
+		"targetIcon": "sap-icon://expand-group",
+		"targetEntity": "Region",
+		"properties": [		
+			{  
+				"property": "comment",
+				"propertyVisible": true,
+				"propertyType": "D",
+				"propertyRange": "Edm.String",
+				"ordinal": 0,
+				"aggregate": "[]",
+				"formatOptions": null
+			}
+			,{ 
+				"property": "regionDescription",
+				"propertyVisible": true,
+				"propertyType": "D",
+				"propertyRange": "Edm.String",
+				"ordinal": 1,
+				"aggregate": "[]",
+				"formatOptions": null
+			}
+			,{ 
+				"property": "seeAlso",
+				"propertyVisible": true,
+				"propertyType": "D",
+				"propertyRange": "Edm.String",
+				"ordinal": 2,
+				"aggregate": "[]",
+				"formatOptions": null
+			}
+			]
+		}
+	}
+	,
+	"Shipper": {
+	"entity": "Shipper",
+	"icon": "sap-icon://expand-group",
+	"image": "./images/icons/category.png",
+	"entitySetVisible":true,
+	"grid": {
+		"target": "Shippers",
+		"targetVisible": true,
+		"targetIcon": "sap-icon://expand-group",
+		"targetEntity": "Shipper",	
+		"properties": [	
+			{  
+				"property": "comment",
+				"propertyVisible": true,
+				"propertyType": "D",
+				"propertyRange": "Edm.String",
+				"ordinal": 0,
+				"aggregate": "[]",
+				"formatOptions": ""
+			}	
+			,{ 
+				"property": "seeAlso",
+				"propertyVisible": true,
+				"propertyType": "D",
+				"propertyRange": "Edm.String",
+				"ordinal": 1,
+				"aggregate": "[]",
+				"formatOptions": ""
+			}	
+			,{ 
+				"property": "shipperCompanyName",
+				"propertyVisible": true,
+				"propertyType": "D",
+				"propertyRange": "Edm.String",
+				"ordinal": 2,
+				"aggregate": "[]",
+				"formatOptions": ""
+			}	
+			,{ 
+				"property": "shipperPhone",
+				"propertyVisible": true,
+				"propertyType": "D",
+				"propertyRange": "Edm.String",
+				"ordinal": 3,
+				"aggregate": "[]",
+				"formatOptions": ""
+			}	
+			,{ 
+				"property": "shipsOrder",
+				"propertyVisible": false,
+				"propertyType": "C",
+				"propertyRange": "Order",
+				"ordinal": 4,
+				"aggregate": "[Count]",
+				"formatOptions": ""
+			}	
+			]
+		},
+	"form": {
+		"target": "Shipper",
+		"targetVisible": true,
+		"targetIcon": "sap-icon://expand-group",
+		"targetEntity": "Shipper",
+		"properties": [		
+			{  
+				"property": "comment",
+				"propertyVisible": true,
+				"propertyType": "D",
+				"propertyRange": "Edm.String",
+				"ordinal": 0,
+				"aggregate": "[]",
+				"formatOptions": null
+			}
+			,{ 
+				"property": "seeAlso",
+				"propertyVisible": true,
+				"propertyType": "D",
+				"propertyRange": "Edm.String",
+				"ordinal": 1,
+				"aggregate": "[]",
+				"formatOptions": null
+			}
+			,{ 
+				"property": "shipperCompanyName",
+				"propertyVisible": true,
+				"propertyType": "D",
+				"propertyRange": "Edm.String",
+				"ordinal": 2,
+				"aggregate": "[]",
+				"formatOptions": null
+			}
+			,{ 
+				"property": "shipperPhone",
+				"propertyVisible": true,
+				"propertyType": "D",
+				"propertyRange": "Edm.String",
+				"ordinal": 3,
+				"aggregate": "[]",
+				"formatOptions": null
+			}
+			,{ 
+				"property": "shipsOrder",
+				"propertyVisible": true,
+				"propertyType": "C",
+				"propertyRange": "Order",
+				"ordinal": 4,
+				"aggregate": "[List]",
+				"formatOptions": null
+			}
+			]
+		}
+	}
+	,
+	"Supplier": {
+	"entity": "Supplier",
+	"icon": "sap-icon://expand-group",
+	"image": "./images/icons/category.png",
+	"entitySetVisible":true,
+	"grid": {
+		"target": "Suppliers",
+		"targetVisible": true,
+		"targetIcon": "sap-icon://expand-group",
+		"targetEntity": "Supplier",	
+		"properties": [	
+			{  
+				"property": "comment",
+				"propertyVisible": true,
+				"propertyType": "D",
+				"propertyRange": "Edm.String",
+				"ordinal": 0,
+				"aggregate": "[]",
+				"formatOptions": ""
+			}	
+			,{ 
+				"property": "homePage",
+				"propertyVisible": true,
+				"propertyType": "D",
+				"propertyRange": "Edm.String",
+				"ordinal": 1,
+				"aggregate": "[]",
+				"formatOptions": ""
+			}	
+			,{ 
+				"property": "lat",
+				"propertyVisible": true,
+				"propertyType": "D",
+				"propertyRange": "Edm.Double",
+				"ordinal": 2,
+				"aggregate": "[]",
+				"formatOptions": "{'style':'short';'maxFractionDigits':2}"
+			}	
+			,{ 
+				"property": "lat_long",
+				"propertyVisible": true,
+				"propertyType": "D",
+				"propertyRange": "Edm.String",
+				"ordinal": 3,
+				"aggregate": "[]",
+				"formatOptions": ""
+			}	
+			,{ 
+				"property": "long",
+				"propertyVisible": true,
+				"propertyType": "D",
+				"propertyRange": "Edm.Double",
+				"ordinal": 4,
+				"aggregate": "[]",
+				"formatOptions": "{'style':'short';'maxFractionDigits':2}"
+			}	
+			,{ 
+				"property": "regionDescription",
+				"propertyVisible": true,
+				"propertyType": "D",
+				"propertyRange": "Edm.String",
+				"ordinal": 5,
+				"aggregate": "[]",
+				"formatOptions": ""
+			}	
+			,{ 
+				"property": "seeAlso",
+				"propertyVisible": true,
+				"propertyType": "D",
+				"propertyRange": "Edm.String",
+				"ordinal": 6,
+				"aggregate": "[]",
+				"formatOptions": ""
+			}	
+			,{ 
+				"property": "supplierAddress",
+				"propertyVisible": true,
+				"propertyType": "D",
+				"propertyRange": "Edm.String",
+				"ordinal": 7,
+				"aggregate": "[]",
+				"formatOptions": ""
+			}	
+			,{ 
+				"property": "supplierCity",
+				"propertyVisible": true,
+				"propertyType": "D",
+				"propertyRange": "Edm.String",
+				"ordinal": 8,
+				"aggregate": "[]",
+				"formatOptions": ""
+			}	
+			,{ 
+				"property": "supplierCompanyName",
+				"propertyVisible": true,
+				"propertyType": "D",
+				"propertyRange": "Edm.String",
+				"ordinal": 9,
+				"aggregate": "[]",
+				"formatOptions": ""
+			}	
+			,{ 
+				"property": "supplierContactName",
+				"propertyVisible": true,
+				"propertyType": "D",
+				"propertyRange": "Edm.String",
+				"ordinal": 10,
+				"aggregate": "[]",
+				"formatOptions": ""
+			}	
+			,{ 
+				"property": "supplierContactTitle",
+				"propertyVisible": true,
+				"propertyType": "D",
+				"propertyRange": "Edm.String",
+				"ordinal": 11,
+				"aggregate": "[]",
+				"formatOptions": ""
+			}	
+			,{ 
+				"property": "supplierCountry",
+				"propertyVisible": true,
+				"propertyType": "D",
+				"propertyRange": "Edm.String",
+				"ordinal": 12,
+				"aggregate": "[]",
+				"formatOptions": ""
+			}	
+			,{ 
+				"property": "supplierFax",
+				"propertyVisible": true,
+				"propertyType": "D",
+				"propertyRange": "Edm.String",
+				"ordinal": 13,
+				"aggregate": "[]",
+				"formatOptions": ""
+			}	
+			,{ 
+				"property": "supplierHomePage",
+				"propertyVisible": true,
+				"propertyType": "D",
+				"propertyRange": "Edm.String",
+				"ordinal": 14,
+				"aggregate": "[]",
+				"formatOptions": ""
+			}	
+			,{ 
+				"property": "supplierPhone",
+				"propertyVisible": true,
+				"propertyType": "D",
+				"propertyRange": "Edm.String",
+				"ordinal": 15,
+				"aggregate": "[]",
+				"formatOptions": ""
+			}	
+			,{ 
+				"property": "supplierPostalCode",
+				"propertyVisible": true,
+				"propertyType": "D",
+				"propertyRange": "Edm.String",
+				"ordinal": 16,
+				"aggregate": "[]",
+				"formatOptions": ""
+			}	
+			,{ 
+				"property": "supplierRegion",
+				"propertyVisible": false,
+				"propertyType": "C",
+				"propertyRange": "Region",
+				"ordinal": 17,
+				"aggregate": "[Count]",
+				"formatOptions": ""
+			}	
+			,{ 
+				"property": "suppliesProduct",
+				"propertyVisible": false,
+				"propertyType": "C",
+				"propertyRange": "Product",
+				"ordinal": 18,
+				"aggregate": "[Count]",
+				"formatOptions": ""
+			}	
+			]
+		},
+	"form": {
+		"target": "Supplier",
+		"targetVisible": true,
+		"targetIcon": "sap-icon://expand-group",
+		"targetEntity": "Supplier",
+		"properties": [		
+			{  
+				"property": "comment",
+				"propertyVisible": true,
+				"propertyType": "D",
+				"propertyRange": "Edm.String",
+				"ordinal": 0,
+				"aggregate": "[]",
+				"formatOptions": null
+			}
+			,{ 
+				"property": "homePage",
+				"propertyVisible": true,
+				"propertyType": "D",
+				"propertyRange": "Edm.String",
+				"ordinal": 1,
+				"aggregate": "[]",
+				"formatOptions": null
+			}
+			,{ 
+				"property": "lat",
+				"propertyVisible": true,
+				"propertyType": "D",
+				"propertyRange": "Edm.Double",
+				"ordinal": 2,
+				"aggregate": "[]",
+				"formatOptions": null
+			}
+			,{ 
+				"property": "lat_long",
+				"propertyVisible": true,
+				"propertyType": "D",
+				"propertyRange": "Edm.String",
+				"ordinal": 3,
+				"aggregate": "[]",
+				"formatOptions": null
+			}
+			,{ 
+				"property": "long",
+				"propertyVisible": true,
+				"propertyType": "D",
+				"propertyRange": "Edm.Double",
+				"ordinal": 4,
+				"aggregate": "[]",
+				"formatOptions": null
+			}
+			,{ 
+				"property": "regionDescription",
+				"propertyVisible": true,
+				"propertyType": "D",
+				"propertyRange": "Edm.String",
+				"ordinal": 5,
+				"aggregate": "[]",
+				"formatOptions": null
+			}
+			,{ 
+				"property": "seeAlso",
+				"propertyVisible": true,
+				"propertyType": "D",
+				"propertyRange": "Edm.String",
+				"ordinal": 6,
+				"aggregate": "[]",
+				"formatOptions": null
+			}
+			,{ 
+				"property": "supplierAddress",
+				"propertyVisible": true,
+				"propertyType": "D",
+				"propertyRange": "Edm.String",
+				"ordinal": 7,
+				"aggregate": "[]",
+				"formatOptions": null
+			}
+			,{ 
+				"property": "supplierCity",
+				"propertyVisible": true,
+				"propertyType": "D",
+				"propertyRange": "Edm.String",
+				"ordinal": 8,
+				"aggregate": "[]",
+				"formatOptions": null
+			}
+			,{ 
+				"property": "supplierCompanyName",
+				"propertyVisible": true,
+				"propertyType": "D",
+				"propertyRange": "Edm.String",
+				"ordinal": 9,
+				"aggregate": "[]",
+				"formatOptions": null
+			}
+			,{ 
+				"property": "supplierContactName",
+				"propertyVisible": true,
+				"propertyType": "D",
+				"propertyRange": "Edm.String",
+				"ordinal": 10,
+				"aggregate": "[]",
+				"formatOptions": null
+			}
+			,{ 
+				"property": "supplierContactTitle",
+				"propertyVisible": true,
+				"propertyType": "D",
+				"propertyRange": "Edm.String",
+				"ordinal": 11,
+				"aggregate": "[]",
+				"formatOptions": null
+			}
+			,{ 
+				"property": "supplierCountry",
+				"propertyVisible": true,
+				"propertyType": "D",
+				"propertyRange": "Edm.String",
+				"ordinal": 12,
+				"aggregate": "[]",
+				"formatOptions": null
+			}
+			,{ 
+				"property": "supplierFax",
+				"propertyVisible": true,
+				"propertyType": "D",
+				"propertyRange": "Edm.String",
+				"ordinal": 13,
+				"aggregate": "[]",
+				"formatOptions": null
+			}
+			,{ 
+				"property": "supplierHomePage",
+				"propertyVisible": true,
+				"propertyType": "D",
+				"propertyRange": "Edm.String",
+				"ordinal": 14,
+				"aggregate": "[]",
+				"formatOptions": null
+			}
+			,{ 
+				"property": "supplierPhone",
+				"propertyVisible": true,
+				"propertyType": "D",
+				"propertyRange": "Edm.String",
+				"ordinal": 15,
+				"aggregate": "[]",
+				"formatOptions": null
+			}
+			,{ 
+				"property": "supplierPostalCode",
+				"propertyVisible": true,
+				"propertyType": "D",
+				"propertyRange": "Edm.String",
+				"ordinal": 16,
+				"aggregate": "[]",
+				"formatOptions": null
+			}
+			,{ 
+				"property": "supplierRegion",
+				"propertyVisible": true,
+				"propertyType": "C",
+				"propertyRange": "Region",
+				"ordinal": 17,
+				"aggregate": "[List]",
+				"formatOptions": null
+			}
+			,{ 
+				"property": "suppliesProduct",
+				"propertyVisible": true,
+				"propertyType": "C",
+				"propertyRange": "Product",
+				"ordinal": 18,
+				"aggregate": "[List]",
+				"formatOptions": null
+			}
+			]
+		}
+	}
+	,
+	"SystemAEmployee": {
+	"entity": "SystemAEmployee",
+	"icon": "sap-icon://expand-group",
+	"image": "./images/icons/category.png",
+	"entitySetVisible":true,
+	"grid": {
+		"target": "SystemAEmployees",
+		"targetVisible": true,
+		"targetIcon": "sap-icon://expand-group",
+		"targetEntity": "SystemAEmployee",	
+		"properties": [	
+			{  
+				"property": "birthDate",
+				"propertyVisible": true,
+				"propertyType": "D",
+				"propertyRange": "Edm.Date",
+				"ordinal": 0,
+				"aggregate": "[]",
+				"formatOptions": ""
+			}	
+			,{ 
+				"property": "comment",
+				"propertyVisible": true,
+				"propertyType": "D",
+				"propertyRange": "Edm.String",
+				"ordinal": 1,
+				"aggregate": "[]",
+				"formatOptions": ""
+			}	
+			,{ 
+				"property": "employeeAddress",
+				"propertyVisible": true,
+				"propertyType": "D",
+				"propertyRange": "Edm.String",
+				"ordinal": 2,
+				"aggregate": "[]",
+				"formatOptions": ""
+			}	
+			,{ 
+				"property": "employeeCity",
+				"propertyVisible": true,
+				"propertyType": "D",
+				"propertyRange": "Edm.String",
+				"ordinal": 3,
+				"aggregate": "[]",
+				"formatOptions": ""
+			}	
+			,{ 
+				"property": "employeeCountry",
+				"propertyVisible": true,
+				"propertyType": "D",
+				"propertyRange": "Edm.String",
+				"ordinal": 4,
+				"aggregate": "[]",
+				"formatOptions": ""
+			}	
+			,{ 
+				"property": "employeeLinkedIn",
+				"propertyVisible": true,
+				"propertyType": "D",
+				"propertyRange": "Edm.String",
+				"ordinal": 5,
+				"aggregate": "[]",
+				"formatOptions": ""
+			}	
+			,{ 
+				"property": "employeePostalCode",
+				"propertyVisible": true,
+				"propertyType": "D",
+				"propertyRange": "Edm.String",
+				"ordinal": 6,
+				"aggregate": "[]",
+				"formatOptions": ""
+			}	
+			,{ 
+				"property": "extension",
+				"propertyVisible": true,
+				"propertyType": "D",
+				"propertyRange": "Edm.String",
+				"ordinal": 7,
+				"aggregate": "[]",
+				"formatOptions": ""
+			}	
+			,{ 
+				"property": "firstName",
+				"propertyVisible": true,
+				"propertyType": "D",
+				"propertyRange": "Edm.String",
+				"ordinal": 8,
+				"aggregate": "[]",
+				"formatOptions": ""
+			}	
+			,{ 
+				"property": "hireDate",
+				"propertyVisible": true,
+				"propertyType": "D",
+				"propertyRange": "Edm.Date",
+				"ordinal": 9,
+				"aggregate": "[]",
+				"formatOptions": ""
+			}	
+			,{ 
+				"property": "homePhone",
+				"propertyVisible": true,
+				"propertyType": "D",
+				"propertyRange": "Edm.String",
+				"ordinal": 10,
+				"aggregate": "[]",
+				"formatOptions": ""
+			}	
+			,{ 
+				"property": "lastName",
+				"propertyVisible": true,
+				"propertyType": "D",
+				"propertyRange": "Edm.String",
+				"ordinal": 11,
+				"aggregate": "[]",
+				"formatOptions": ""
+			}	
+			,{ 
+				"property": "lat",
+				"propertyVisible": true,
+				"propertyType": "D",
+				"propertyRange": "Edm.Double",
+				"ordinal": 12,
+				"aggregate": "[]",
+				"formatOptions": "{'style':'short';'maxFractionDigits':2}"
+			}	
+			,{ 
+				"property": "lat_long",
+				"propertyVisible": true,
+				"propertyType": "D",
+				"propertyRange": "Edm.String",
+				"ordinal": 13,
+				"aggregate": "[]",
+				"formatOptions": ""
+			}	
+			,{ 
+				"property": "long",
+				"propertyVisible": true,
+				"propertyType": "D",
+				"propertyRange": "Edm.Double",
+				"ordinal": 14,
+				"aggregate": "[]",
+				"formatOptions": "{'style':'short';'maxFractionDigits':2}"
+			}	
+			,{ 
+				"property": "notes",
+				"propertyVisible": true,
+				"propertyType": "D",
+				"propertyRange": "Edm.String",
+				"ordinal": 15,
+				"aggregate": "[]",
+				"formatOptions": ""
+			}	
+			,{ 
+				"property": "photo",
+				"propertyVisible": true,
+				"propertyType": "D",
+				"propertyRange": "Edm.String",
+				"ordinal": 16,
+				"aggregate": "[]",
+				"formatOptions": ""
+			}	
+			,{ 
+				"property": "regionDescription",
+				"propertyVisible": true,
+				"propertyType": "D",
+				"propertyRange": "Edm.String",
+				"ordinal": 17,
+				"aggregate": "[]",
+				"formatOptions": ""
+			}	
+			,{ 
+				"property": "reportsToId",
+				"propertyVisible": false,
+				"propertyType": "D",
+				"propertyRange": "Edm.String",
+				"ordinal": 18,
+				"aggregate": "[]",
+				"formatOptions": ""
+			}	
+			,{ 
+				"property": "reportsToNotation",
+				"propertyVisible": true,
+				"propertyType": "D",
+				"propertyRange": "Edm.String",
+				"ordinal": 19,
+				"aggregate": "[]",
+				"formatOptions": ""
+			}	
+			,{ 
+				"property": "seeAlso",
+				"propertyVisible": true,
+				"propertyType": "D",
+				"propertyRange": "Edm.String",
+				"ordinal": 20,
+				"aggregate": "[]",
+				"formatOptions": ""
+			}	
+			,{ 
+				"property": "systemAEmployeeSalary",
+				"propertyVisible": true,
+				"propertyType": "D",
+				"propertyRange": "Edm.Double",
+				"ordinal": 21,
+				"aggregate": "[]",
+				"formatOptions": "{'style':'short';'maxFractionDigits':2}"
+			}	
+			,{ 
+				"property": "systemAFavoriteId",
+				"propertyVisible": false,
+				"propertyType": "D",
+				"propertyRange": "Edm.String",
+				"ordinal": 22,
+				"aggregate": "[]",
+				"formatOptions": ""
+			}	
+			,{ 
+				"property": "territoryNotation",
+				"propertyVisible": true,
+				"propertyType": "D",
+				"propertyRange": "Edm.String",
+				"ordinal": 23,
+				"aggregate": "[]",
+				"formatOptions": ""
+			}	
+			,{ 
+				"property": "title",
+				"propertyVisible": true,
+				"propertyType": "D",
+				"propertyRange": "Edm.String",
+				"ordinal": 24,
+				"aggregate": "[]",
+				"formatOptions": ""
+			}	
+			,{ 
+				"property": "titleOfCourtesy",
+				"propertyVisible": true,
+				"propertyType": "D",
+				"propertyRange": "Edm.String",
+				"ordinal": 25,
+				"aggregate": "[]",
+				"formatOptions": ""
+			}	
+			,{ 
+				"property": "reportsTo",
+				"propertyVisible": false,
+				"propertyType": "O",
+				"propertyRange": "Employee",
+				"ordinal": 26,
+				"aggregate": "[]",
+				"formatOptions": ""
+			}	
+			,{ 
+				"property": "systemAFavorite",
+				"propertyVisible": false,
+				"propertyType": "O",
+				"propertyRange": "Product",
+				"ordinal": 27,
+				"aggregate": "[]",
+				"formatOptions": ""
+			}	
+			,{ 
+				"property": "employeeRegion",
+				"propertyVisible": false,
+				"propertyType": "C",
+				"propertyRange": "Region",
+				"ordinal": 28,
+				"aggregate": "[Count]",
+				"formatOptions": ""
+			}	
+			,{ 
+				"property": "managesEmployee",
+				"propertyVisible": false,
+				"propertyType": "C",
+				"propertyRange": "Employee",
+				"ordinal": 29,
+				"aggregate": "[Count]",
+				"formatOptions": ""
+			}	
+			,{ 
+				"property": "managesOrder",
+				"propertyVisible": false,
+				"propertyType": "C",
+				"propertyRange": "Order",
+				"ordinal": 30,
+				"aggregate": "[Count]",
+				"formatOptions": ""
+			}	
+			,{ 
+				"property": "systemACustomer",
+				"propertyVisible": false,
+				"propertyType": "C",
+				"propertyRange": "Customer",
+				"ordinal": 31,
+				"aggregate": "[Count]",
+				"formatOptions": ""
+			}	
+			,{ 
+				"property": "systemAEmployer",
+				"propertyVisible": false,
+				"propertyType": "C",
+				"propertyRange": "Supplier",
+				"ordinal": 32,
+				"aggregate": "[Count]",
+				"formatOptions": ""
+			}	
+			,{ 
+				"property": "territory",
+				"propertyVisible": false,
+				"propertyType": "C",
+				"propertyRange": "Territory",
+				"ordinal": 33,
+				"aggregate": "[Count]",
+				"formatOptions": ""
+			}	
+			]
+		},
+	"form": {
+		"target": "SystemAEmployee",
+		"targetVisible": true,
+		"targetIcon": "sap-icon://expand-group",
+		"targetEntity": "SystemAEmployee",
+		"properties": [		
+			{  
+				"property": "birthDate",
+				"propertyVisible": true,
+				"propertyType": "D",
+				"propertyRange": "Edm.Date",
+				"ordinal": 0,
+				"aggregate": "[]",
+				"formatOptions": null
+			}
+			,{ 
+				"property": "comment",
+				"propertyVisible": true,
+				"propertyType": "D",
+				"propertyRange": "Edm.String",
+				"ordinal": 1,
+				"aggregate": "[]",
+				"formatOptions": null
+			}
+			,{ 
+				"property": "employeeAddress",
+				"propertyVisible": true,
+				"propertyType": "D",
+				"propertyRange": "Edm.String",
+				"ordinal": 2,
+				"aggregate": "[]",
+				"formatOptions": null
+			}
+			,{ 
+				"property": "employeeCity",
+				"propertyVisible": true,
+				"propertyType": "D",
+				"propertyRange": "Edm.String",
+				"ordinal": 3,
+				"aggregate": "[]",
+				"formatOptions": null
+			}
+			,{ 
+				"property": "employeeCountry",
+				"propertyVisible": true,
+				"propertyType": "D",
+				"propertyRange": "Edm.String",
+				"ordinal": 4,
+				"aggregate": "[]",
+				"formatOptions": null
+			}
+			,{ 
+				"property": "employeeLinkedIn",
+				"propertyVisible": true,
+				"propertyType": "D",
+				"propertyRange": "Edm.String",
+				"ordinal": 5,
+				"aggregate": "[]",
+				"formatOptions": null
+			}
+			,{ 
+				"property": "employeePostalCode",
+				"propertyVisible": true,
+				"propertyType": "D",
+				"propertyRange": "Edm.String",
+				"ordinal": 6,
+				"aggregate": "[]",
+				"formatOptions": null
+			}
+			,{ 
+				"property": "extension",
+				"propertyVisible": true,
+				"propertyType": "D",
+				"propertyRange": "Edm.String",
+				"ordinal": 7,
+				"aggregate": "[]",
+				"formatOptions": null
+			}
+			,{ 
+				"property": "firstName",
+				"propertyVisible": true,
+				"propertyType": "D",
+				"propertyRange": "Edm.String",
+				"ordinal": 8,
+				"aggregate": "[]",
+				"formatOptions": null
+			}
+			,{ 
+				"property": "hireDate",
+				"propertyVisible": true,
+				"propertyType": "D",
+				"propertyRange": "Edm.Date",
+				"ordinal": 9,
+				"aggregate": "[]",
+				"formatOptions": null
+			}
+			,{ 
+				"property": "homePhone",
+				"propertyVisible": true,
+				"propertyType": "D",
+				"propertyRange": "Edm.String",
+				"ordinal": 10,
+				"aggregate": "[]",
+				"formatOptions": null
+			}
+			,{ 
+				"property": "lastName",
+				"propertyVisible": true,
+				"propertyType": "D",
+				"propertyRange": "Edm.String",
+				"ordinal": 11,
+				"aggregate": "[]",
+				"formatOptions": null
+			}
+			,{ 
+				"property": "lat",
+				"propertyVisible": true,
+				"propertyType": "D",
+				"propertyRange": "Edm.Double",
+				"ordinal": 12,
+				"aggregate": "[]",
+				"formatOptions": null
+			}
+			,{ 
+				"property": "lat_long",
+				"propertyVisible": true,
+				"propertyType": "D",
+				"propertyRange": "Edm.String",
+				"ordinal": 13,
+				"aggregate": "[]",
+				"formatOptions": null
+			}
+			,{ 
+				"property": "long",
+				"propertyVisible": true,
+				"propertyType": "D",
+				"propertyRange": "Edm.Double",
+				"ordinal": 14,
+				"aggregate": "[]",
+				"formatOptions": null
+			}
+			,{ 
+				"property": "notes",
+				"propertyVisible": true,
+				"propertyType": "D",
+				"propertyRange": "Edm.String",
+				"ordinal": 15,
+				"aggregate": "[]",
+				"formatOptions": null
+			}
+			,{ 
+				"property": "photo",
+				"propertyVisible": true,
+				"propertyType": "D",
+				"propertyRange": "Edm.String",
+				"ordinal": 16,
+				"aggregate": "[]",
+				"formatOptions": null
+			}
+			,{ 
+				"property": "regionDescription",
+				"propertyVisible": true,
+				"propertyType": "D",
+				"propertyRange": "Edm.String",
+				"ordinal": 17,
+				"aggregate": "[]",
+				"formatOptions": null
+			}
+			,{ 
+				"property": "reportsToId",
+				"propertyVisible": false,
+				"propertyType": "D",
+				"propertyRange": "Edm.String",
+				"ordinal": 18,
+				"aggregate": "[]",
+				"formatOptions": null
+			}
+			,{ 
+				"property": "reportsToNotation",
+				"propertyVisible": true,
+				"propertyType": "D",
+				"propertyRange": "Edm.String",
+				"ordinal": 19,
+				"aggregate": "[]",
+				"formatOptions": null
+			}
+			,{ 
+				"property": "seeAlso",
+				"propertyVisible": true,
+				"propertyType": "D",
+				"propertyRange": "Edm.String",
+				"ordinal": 20,
+				"aggregate": "[]",
+				"formatOptions": null
+			}
+			,{ 
+				"property": "systemAEmployeeSalary",
+				"propertyVisible": true,
+				"propertyType": "D",
+				"propertyRange": "Edm.Double",
+				"ordinal": 21,
+				"aggregate": "[]",
+				"formatOptions": null
+			}
+			,{ 
+				"property": "systemAFavoriteId",
+				"propertyVisible": false,
+				"propertyType": "D",
+				"propertyRange": "Edm.String",
+				"ordinal": 22,
+				"aggregate": "[]",
+				"formatOptions": null
+			}
+			,{ 
+				"property": "territoryNotation",
+				"propertyVisible": true,
+				"propertyType": "D",
+				"propertyRange": "Edm.String",
+				"ordinal": 23,
+				"aggregate": "[]",
+				"formatOptions": null
+			}
+			,{ 
+				"property": "title",
+				"propertyVisible": true,
+				"propertyType": "D",
+				"propertyRange": "Edm.String",
+				"ordinal": 24,
+				"aggregate": "[]",
+				"formatOptions": null
+			}
+			,{ 
+				"property": "titleOfCourtesy",
+				"propertyVisible": true,
+				"propertyType": "D",
+				"propertyRange": "Edm.String",
+				"ordinal": 25,
+				"aggregate": "[]",
+				"formatOptions": null
+			}
+			,{ 
+				"property": "reportsTo",
+				"propertyVisible": true,
+				"propertyType": "O",
+				"propertyRange": "Employee",
+				"ordinal": 26,
+				"aggregate": "[]",
+				"formatOptions": null
+			}
+			,{ 
+				"property": "systemAFavorite",
+				"propertyVisible": true,
+				"propertyType": "O",
+				"propertyRange": "Product",
+				"ordinal": 27,
+				"aggregate": "[]",
+				"formatOptions": null
+			}
+			,{ 
+				"property": "employeeRegion",
+				"propertyVisible": true,
+				"propertyType": "C",
+				"propertyRange": "Region",
+				"ordinal": 28,
+				"aggregate": "[List]",
+				"formatOptions": null
+			}
+			,{ 
+				"property": "managesEmployee",
+				"propertyVisible": true,
+				"propertyType": "C",
+				"propertyRange": "Employee",
+				"ordinal": 29,
+				"aggregate": "[List]",
+				"formatOptions": null
+			}
+			,{ 
+				"property": "managesOrder",
+				"propertyVisible": true,
+				"propertyType": "C",
+				"propertyRange": "Order",
+				"ordinal": 30,
+				"aggregate": "[List]",
+				"formatOptions": null
+			}
+			,{ 
+				"property": "systemACustomer",
+				"propertyVisible": true,
+				"propertyType": "C",
+				"propertyRange": "Customer",
+				"ordinal": 31,
+				"aggregate": "[List]",
+				"formatOptions": null
+			}
+			,{ 
+				"property": "systemAEmployer",
+				"propertyVisible": true,
+				"propertyType": "C",
+				"propertyRange": "Supplier",
+				"ordinal": 32,
+				"aggregate": "[List]",
+				"formatOptions": null
+			}
+			,{ 
+				"property": "territory",
+				"propertyVisible": true,
+				"propertyType": "C",
+				"propertyRange": "Territory",
+				"ordinal": 33,
+				"aggregate": "[List]",
+				"formatOptions": null
+			}
+			]
+		}
+	}
+	,
+	"SystemAProduct": {
+	"entity": "SystemAProduct",
+	"icon": "sap-icon://expand-group",
+	"image": "./images/icons/category.png",
+	"entitySetVisible":true,
+	"grid": {
+		"target": "SystemAProducts",
+		"targetVisible": true,
+		"targetIcon": "sap-icon://expand-group",
+		"targetEntity": "SystemAProduct",	
+		"properties": [	
+			{  
+				"property": "categoryId",
+				"propertyVisible": false,
+				"propertyType": "D",
+				"propertyRange": "Edm.String",
+				"ordinal": 0,
+				"aggregate": "[]",
+				"formatOptions": ""
+			}	
+			,{ 
+				"property": "categoryNotation",
+				"propertyVisible": true,
+				"propertyType": "D",
+				"propertyRange": "Edm.String",
+				"ordinal": 1,
+				"aggregate": "[]",
+				"formatOptions": ""
+			}	
+			,{ 
+				"property": "comment",
+				"propertyVisible": true,
+				"propertyType": "D",
+				"propertyRange": "Edm.String",
+				"ordinal": 2,
+				"aggregate": "[]",
+				"formatOptions": ""
+			}	
+			,{ 
+				"property": "discontinued",
+				"propertyVisible": true,
+				"propertyType": "D",
+				"propertyRange": "Edm.Boolean",
+				"ordinal": 3,
+				"aggregate": "[]",
+				"formatOptions": ""
+			}	
+			,{ 
+				"property": "productName",
+				"propertyVisible": true,
+				"propertyType": "D",
+				"propertyRange": "Edm.String",
+				"ordinal": 4,
+				"aggregate": "[]",
+				"formatOptions": ""
+			}	
+			,{ 
+				"property": "productUnitPrice",
+				"propertyVisible": true,
+				"propertyType": "D",
+				"propertyRange": "Edm.Double",
+				"ordinal": 5,
+				"aggregate": "[]",
+				"formatOptions": "{'style':'short';'maxFractionDigits':2}"
+			}	
+			,{ 
+				"property": "quantityPerUnit",
+				"propertyVisible": true,
+				"propertyType": "D",
+				"propertyRange": "Edm.String",
+				"ordinal": 6,
+				"aggregate": "[]",
+				"formatOptions": ""
+			}	
+			,{ 
+				"property": "reorderLevel",
+				"propertyVisible": true,
+				"propertyType": "D",
+				"propertyRange": "Edm.Int32",
+				"ordinal": 7,
+				"aggregate": "[]",
+				"formatOptions": ""
+			}	
+			,{ 
+				"property": "seeAlso",
+				"propertyVisible": true,
+				"propertyType": "D",
+				"propertyRange": "Edm.String",
+				"ordinal": 8,
+				"aggregate": "[]",
+				"formatOptions": ""
+			}	
+			,{ 
+				"property": "supplierId",
+				"propertyVisible": false,
+				"propertyType": "D",
+				"propertyRange": "Edm.String",
+				"ordinal": 9,
+				"aggregate": "[]",
+				"formatOptions": ""
+			}	
+			,{ 
+				"property": "supplierNotation",
+				"propertyVisible": true,
+				"propertyType": "D",
+				"propertyRange": "Edm.String",
+				"ordinal": 10,
+				"aggregate": "[]",
+				"formatOptions": ""
+			}	
+			,{ 
+				"property": "systemAUnitCommision",
+				"propertyVisible": true,
+				"propertyType": "D",
+				"propertyRange": "Edm.Decimal",
+				"ordinal": 11,
+				"aggregate": "[]",
+				"formatOptions": ""
+			}	
+			,{ 
+				"property": "unitsInStock",
+				"propertyVisible": true,
+				"propertyType": "D",
+				"propertyRange": "Edm.Int32",
+				"ordinal": 12,
+				"aggregate": "[]",
+				"formatOptions": ""
+			}	
+			,{ 
+				"property": "unitsOnOrder",
+				"propertyVisible": true,
+				"propertyType": "D",
+				"propertyRange": "Edm.Int32",
+				"ordinal": 13,
+				"aggregate": "[]",
+				"formatOptions": ""
+			}	
+			,{ 
+				"property": "category",
+				"propertyVisible": false,
+				"propertyType": "O",
+				"propertyRange": "Category",
+				"ordinal": 14,
+				"aggregate": "[]",
+				"formatOptions": ""
+			}	
+			,{ 
+				"property": "supplier",
+				"propertyVisible": false,
+				"propertyType": "O",
+				"propertyRange": "Supplier",
+				"ordinal": 15,
+				"aggregate": "[]",
+				"formatOptions": ""
+			}	
+			,{ 
+				"property": "isPartOfOrderDetail",
+				"propertyVisible": false,
+				"propertyType": "C",
+				"propertyRange": "OrderDetail",
+				"ordinal": 16,
+				"aggregate": "[Count]",
+				"formatOptions": ""
+			}	
+			,{ 
+				"property": "product_orderSummary",
+				"propertyVisible": false,
+				"propertyType": "C",
+				"propertyRange": "OrderSummary",
+				"ordinal": 17,
+				"aggregate": "[Count]",
+				"formatOptions": ""
+			}	
+			]
+		},
+	"form": {
+		"target": "SystemAProduct",
+		"targetVisible": true,
+		"targetIcon": "sap-icon://expand-group",
+		"targetEntity": "SystemAProduct",
+		"properties": [		
+			{  
+				"property": "categoryId",
+				"propertyVisible": false,
+				"propertyType": "D",
+				"propertyRange": "Edm.String",
+				"ordinal": 0,
+				"aggregate": "[]",
+				"formatOptions": null
+			}
+			,{ 
+				"property": "categoryNotation",
+				"propertyVisible": true,
+				"propertyType": "D",
+				"propertyRange": "Edm.String",
+				"ordinal": 1,
+				"aggregate": "[]",
+				"formatOptions": null
+			}
+			,{ 
+				"property": "comment",
+				"propertyVisible": true,
+				"propertyType": "D",
+				"propertyRange": "Edm.String",
+				"ordinal": 2,
+				"aggregate": "[]",
+				"formatOptions": null
+			}
+			,{ 
+				"property": "discontinued",
+				"propertyVisible": true,
+				"propertyType": "D",
+				"propertyRange": "Edm.Boolean",
+				"ordinal": 3,
+				"aggregate": "[]",
+				"formatOptions": null
+			}
+			,{ 
+				"property": "productName",
+				"propertyVisible": true,
+				"propertyType": "D",
+				"propertyRange": "Edm.String",
+				"ordinal": 4,
+				"aggregate": "[]",
+				"formatOptions": null
+			}
+			,{ 
+				"property": "productUnitPrice",
+				"propertyVisible": true,
+				"propertyType": "D",
+				"propertyRange": "Edm.Double",
+				"ordinal": 5,
+				"aggregate": "[]",
+				"formatOptions": null
+			}
+			,{ 
+				"property": "quantityPerUnit",
+				"propertyVisible": true,
+				"propertyType": "D",
+				"propertyRange": "Edm.String",
+				"ordinal": 6,
+				"aggregate": "[]",
+				"formatOptions": null
+			}
+			,{ 
+				"property": "reorderLevel",
+				"propertyVisible": true,
+				"propertyType": "D",
+				"propertyRange": "Edm.Int32",
+				"ordinal": 7,
+				"aggregate": "[]",
+				"formatOptions": null
+			}
+			,{ 
+				"property": "seeAlso",
+				"propertyVisible": true,
+				"propertyType": "D",
+				"propertyRange": "Edm.String",
+				"ordinal": 8,
+				"aggregate": "[]",
+				"formatOptions": null
+			}
+			,{ 
+				"property": "supplierId",
+				"propertyVisible": false,
+				"propertyType": "D",
+				"propertyRange": "Edm.String",
+				"ordinal": 9,
+				"aggregate": "[]",
+				"formatOptions": null
+			}
+			,{ 
+				"property": "supplierNotation",
+				"propertyVisible": true,
+				"propertyType": "D",
+				"propertyRange": "Edm.String",
+				"ordinal": 10,
+				"aggregate": "[]",
+				"formatOptions": null
+			}
+			,{ 
+				"property": "systemAUnitCommision",
+				"propertyVisible": true,
+				"propertyType": "D",
+				"propertyRange": "Edm.Decimal",
+				"ordinal": 11,
+				"aggregate": "[]",
+				"formatOptions": null
+			}
+			,{ 
+				"property": "unitsInStock",
+				"propertyVisible": true,
+				"propertyType": "D",
+				"propertyRange": "Edm.Int32",
+				"ordinal": 12,
+				"aggregate": "[]",
+				"formatOptions": null
+			}
+			,{ 
+				"property": "unitsOnOrder",
+				"propertyVisible": true,
+				"propertyType": "D",
+				"propertyRange": "Edm.Int32",
+				"ordinal": 13,
+				"aggregate": "[]",
+				"formatOptions": null
+			}
+			,{ 
+				"property": "category",
+				"propertyVisible": true,
+				"propertyType": "O",
+				"propertyRange": "Category",
+				"ordinal": 14,
+				"aggregate": "[]",
+				"formatOptions": null
+			}
+			,{ 
+				"property": "supplier",
+				"propertyVisible": true,
+				"propertyType": "O",
+				"propertyRange": "Supplier",
+				"ordinal": 15,
+				"aggregate": "[]",
+				"formatOptions": null
+			}
+			,{ 
+				"property": "isPartOfOrderDetail",
+				"propertyVisible": true,
+				"propertyType": "C",
+				"propertyRange": "OrderDetail",
+				"ordinal": 16,
+				"aggregate": "[List]",
+				"formatOptions": null
+			}
+			,{ 
+				"property": "product_orderSummary",
+				"propertyVisible": true,
+				"propertyType": "C",
+				"propertyRange": "OrderSummary",
+				"ordinal": 17,
+				"aggregate": "[List]",
+				"formatOptions": null
+			}
+			]
+		}
+	}
+	,
+	"SystemBEmployee": {
+	"entity": "SystemBEmployee",
+	"icon": "sap-icon://expand-group",
+	"image": "./images/icons/category.png",
+	"entitySetVisible":true,
+	"grid": {
+		"target": "SystemBEmployees",
+		"targetVisible": true,
+		"targetIcon": "sap-icon://expand-group",
+		"targetEntity": "SystemBEmployee",	
+		"properties": [	
+			{  
+				"property": "birthDate",
+				"propertyVisible": true,
+				"propertyType": "D",
+				"propertyRange": "Edm.Date",
+				"ordinal": 0,
+				"aggregate": "[]",
+				"formatOptions": ""
+			}	
+			,{ 
+				"property": "comment",
+				"propertyVisible": true,
+				"propertyType": "D",
+				"propertyRange": "Edm.String",
+				"ordinal": 1,
+				"aggregate": "[]",
+				"formatOptions": ""
+			}	
+			,{ 
+				"property": "employeeAddress",
+				"propertyVisible": true,
+				"propertyType": "D",
+				"propertyRange": "Edm.String",
+				"ordinal": 2,
+				"aggregate": "[]",
+				"formatOptions": ""
+			}	
+			,{ 
+				"property": "employeeCity",
+				"propertyVisible": true,
+				"propertyType": "D",
+				"propertyRange": "Edm.String",
+				"ordinal": 3,
+				"aggregate": "[]",
+				"formatOptions": ""
+			}	
+			,{ 
+				"property": "employeeCountry",
+				"propertyVisible": true,
+				"propertyType": "D",
+				"propertyRange": "Edm.String",
+				"ordinal": 4,
+				"aggregate": "[]",
+				"formatOptions": ""
+			}	
+			,{ 
+				"property": "employeeLinkedIn",
+				"propertyVisible": true,
+				"propertyType": "D",
+				"propertyRange": "Edm.String",
+				"ordinal": 5,
+				"aggregate": "[]",
+				"formatOptions": ""
+			}	
+			,{ 
+				"property": "employeePostalCode",
+				"propertyVisible": true,
+				"propertyType": "D",
+				"propertyRange": "Edm.String",
+				"ordinal": 6,
+				"aggregate": "[]",
+				"formatOptions": ""
+			}	
+			,{ 
+				"property": "extension",
+				"propertyVisible": true,
+				"propertyType": "D",
+				"propertyRange": "Edm.String",
+				"ordinal": 7,
+				"aggregate": "[]",
+				"formatOptions": ""
+			}	
+			,{ 
+				"property": "firstName",
+				"propertyVisible": true,
+				"propertyType": "D",
+				"propertyRange": "Edm.String",
+				"ordinal": 8,
+				"aggregate": "[]",
+				"formatOptions": ""
+			}	
+			,{ 
+				"property": "hireDate",
+				"propertyVisible": true,
+				"propertyType": "D",
+				"propertyRange": "Edm.Date",
+				"ordinal": 9,
+				"aggregate": "[]",
+				"formatOptions": ""
+			}	
+			,{ 
+				"property": "homePhone",
+				"propertyVisible": true,
+				"propertyType": "D",
+				"propertyRange": "Edm.String",
+				"ordinal": 10,
+				"aggregate": "[]",
+				"formatOptions": ""
+			}	
+			,{ 
+				"property": "lastName",
+				"propertyVisible": true,
+				"propertyType": "D",
+				"propertyRange": "Edm.String",
+				"ordinal": 11,
+				"aggregate": "[]",
+				"formatOptions": ""
+			}	
+			,{ 
+				"property": "lat",
+				"propertyVisible": true,
+				"propertyType": "D",
+				"propertyRange": "Edm.Double",
+				"ordinal": 12,
+				"aggregate": "[]",
+				"formatOptions": "{'style':'short';'maxFractionDigits':2}"
+			}	
+			,{ 
+				"property": "lat_long",
+				"propertyVisible": true,
+				"propertyType": "D",
+				"propertyRange": "Edm.String",
+				"ordinal": 13,
+				"aggregate": "[]",
+				"formatOptions": ""
+			}	
+			,{ 
+				"property": "long",
+				"propertyVisible": true,
+				"propertyType": "D",
+				"propertyRange": "Edm.Double",
+				"ordinal": 14,
+				"aggregate": "[]",
+				"formatOptions": "{'style':'short';'maxFractionDigits':2}"
+			}	
+			,{ 
+				"property": "notes",
+				"propertyVisible": true,
+				"propertyType": "D",
+				"propertyRange": "Edm.String",
+				"ordinal": 15,
+				"aggregate": "[]",
+				"formatOptions": ""
+			}	
+			,{ 
+				"property": "photo",
+				"propertyVisible": true,
+				"propertyType": "D",
+				"propertyRange": "Edm.String",
+				"ordinal": 16,
+				"aggregate": "[]",
+				"formatOptions": ""
+			}	
+			,{ 
+				"property": "regionDescription",
+				"propertyVisible": true,
+				"propertyType": "D",
+				"propertyRange": "Edm.String",
+				"ordinal": 17,
+				"aggregate": "[]",
+				"formatOptions": ""
+			}	
+			,{ 
+				"property": "reportsToId",
+				"propertyVisible": false,
+				"propertyType": "D",
+				"propertyRange": "Edm.String",
+				"ordinal": 18,
+				"aggregate": "[]",
+				"formatOptions": ""
+			}	
+			,{ 
+				"property": "reportsToNotation",
+				"propertyVisible": true,
+				"propertyType": "D",
+				"propertyRange": "Edm.String",
+				"ordinal": 19,
+				"aggregate": "[]",
+				"formatOptions": ""
+			}	
+			,{ 
+				"property": "seeAlso",
+				"propertyVisible": true,
+				"propertyType": "D",
+				"propertyRange": "Edm.String",
+				"ordinal": 20,
+				"aggregate": "[]",
+				"formatOptions": ""
+			}	
+			,{ 
+				"property": "systemBEmployeeAnnualSalary",
+				"propertyVisible": true,
+				"propertyType": "D",
+				"propertyRange": "Edm.Double",
+				"ordinal": 21,
+				"aggregate": "[]",
+				"formatOptions": "{'style':'short';'maxFractionDigits':2}"
+			}	
+			,{ 
+				"property": "systemBEmployeeMonthlySalary",
+				"propertyVisible": true,
+				"propertyType": "D",
+				"propertyRange": "Edm.Double",
+				"ordinal": 22,
+				"aggregate": "[]",
+				"formatOptions": "{'style':'short';'maxFractionDigits':2}"
+			}	
+			,{ 
+				"property": "systemBFavoriteId",
+				"propertyVisible": false,
+				"propertyType": "D",
+				"propertyRange": "Edm.String",
+				"ordinal": 23,
+				"aggregate": "[]",
+				"formatOptions": ""
+			}	
+			,{ 
+				"property": "systemBHours",
+				"propertyVisible": true,
+				"propertyType": "D",
+				"propertyRange": "Edm.Decimal",
+				"ordinal": 24,
+				"aggregate": "[]",
+				"formatOptions": ""
+			}	
+			,{ 
+				"property": "territoryNotation",
+				"propertyVisible": true,
+				"propertyType": "D",
+				"propertyRange": "Edm.String",
+				"ordinal": 25,
+				"aggregate": "[]",
+				"formatOptions": ""
+			}	
+			,{ 
+				"property": "title",
+				"propertyVisible": true,
+				"propertyType": "D",
+				"propertyRange": "Edm.String",
+				"ordinal": 26,
+				"aggregate": "[]",
+				"formatOptions": ""
+			}	
+			,{ 
+				"property": "titleOfCourtesy",
+				"propertyVisible": true,
+				"propertyType": "D",
+				"propertyRange": "Edm.String",
+				"ordinal": 27,
+				"aggregate": "[]",
+				"formatOptions": ""
+			}	
+			,{ 
+				"property": "reportsTo",
+				"propertyVisible": false,
+				"propertyType": "O",
+				"propertyRange": "Employee",
+				"ordinal": 28,
+				"aggregate": "[]",
+				"formatOptions": ""
+			}	
+			,{ 
+				"property": "systemBFavorite",
+				"propertyVisible": false,
+				"propertyType": "O",
+				"propertyRange": "Product",
+				"ordinal": 29,
+				"aggregate": "[]",
+				"formatOptions": ""
+			}	
+			,{ 
+				"property": "employeeRegion",
+				"propertyVisible": false,
+				"propertyType": "C",
+				"propertyRange": "Region",
+				"ordinal": 30,
+				"aggregate": "[Count]",
+				"formatOptions": ""
+			}	
+			,{ 
+				"property": "managesEmployee",
+				"propertyVisible": false,
+				"propertyType": "C",
+				"propertyRange": "Employee",
+				"ordinal": 31,
+				"aggregate": "[Count]",
+				"formatOptions": ""
+			}	
+			,{ 
+				"property": "managesOrder",
+				"propertyVisible": false,
+				"propertyType": "C",
+				"propertyRange": "Order",
+				"ordinal": 32,
+				"aggregate": "[Count]",
+				"formatOptions": ""
+			}	
+			,{ 
+				"property": "systemBEmployer",
+				"propertyVisible": false,
+				"propertyType": "C",
+				"propertyRange": "Supplier",
+				"ordinal": 33,
+				"aggregate": "[Count]",
+				"formatOptions": ""
+			}	
+			,{ 
+				"property": "territory",
+				"propertyVisible": false,
+				"propertyType": "C",
+				"propertyRange": "Territory",
+				"ordinal": 34,
+				"aggregate": "[Count]",
+				"formatOptions": ""
+			}	
+			]
+		},
+	"form": {
+		"target": "SystemBEmployee",
+		"targetVisible": true,
+		"targetIcon": "sap-icon://expand-group",
+		"targetEntity": "SystemBEmployee",
+		"properties": [		
+			{  
+				"property": "birthDate",
+				"propertyVisible": true,
+				"propertyType": "D",
+				"propertyRange": "Edm.Date",
+				"ordinal": 0,
+				"aggregate": "[]",
+				"formatOptions": null
+			}
+			,{ 
+				"property": "comment",
+				"propertyVisible": true,
+				"propertyType": "D",
+				"propertyRange": "Edm.String",
+				"ordinal": 1,
+				"aggregate": "[]",
+				"formatOptions": null
+			}
+			,{ 
+				"property": "employeeAddress",
+				"propertyVisible": true,
+				"propertyType": "D",
+				"propertyRange": "Edm.String",
+				"ordinal": 2,
+				"aggregate": "[]",
+				"formatOptions": null
+			}
+			,{ 
+				"property": "employeeCity",
+				"propertyVisible": true,
+				"propertyType": "D",
+				"propertyRange": "Edm.String",
+				"ordinal": 3,
+				"aggregate": "[]",
+				"formatOptions": null
+			}
+			,{ 
+				"property": "employeeCountry",
+				"propertyVisible": true,
+				"propertyType": "D",
+				"propertyRange": "Edm.String",
+				"ordinal": 4,
+				"aggregate": "[]",
+				"formatOptions": null
+			}
+			,{ 
+				"property": "employeeLinkedIn",
+				"propertyVisible": true,
+				"propertyType": "D",
+				"propertyRange": "Edm.String",
+				"ordinal": 5,
+				"aggregate": "[]",
+				"formatOptions": null
+			}
+			,{ 
+				"property": "employeePostalCode",
+				"propertyVisible": true,
+				"propertyType": "D",
+				"propertyRange": "Edm.String",
+				"ordinal": 6,
+				"aggregate": "[]",
+				"formatOptions": null
+			}
+			,{ 
+				"property": "extension",
+				"propertyVisible": true,
+				"propertyType": "D",
+				"propertyRange": "Edm.String",
+				"ordinal": 7,
+				"aggregate": "[]",
+				"formatOptions": null
+			}
+			,{ 
+				"property": "firstName",
+				"propertyVisible": true,
+				"propertyType": "D",
+				"propertyRange": "Edm.String",
+				"ordinal": 8,
+				"aggregate": "[]",
+				"formatOptions": null
+			}
+			,{ 
+				"property": "hireDate",
+				"propertyVisible": true,
+				"propertyType": "D",
+				"propertyRange": "Edm.Date",
+				"ordinal": 9,
+				"aggregate": "[]",
+				"formatOptions": null
+			}
+			,{ 
+				"property": "homePhone",
+				"propertyVisible": true,
+				"propertyType": "D",
+				"propertyRange": "Edm.String",
+				"ordinal": 10,
+				"aggregate": "[]",
+				"formatOptions": null
+			}
+			,{ 
+				"property": "lastName",
+				"propertyVisible": true,
+				"propertyType": "D",
+				"propertyRange": "Edm.String",
+				"ordinal": 11,
+				"aggregate": "[]",
+				"formatOptions": null
+			}
+			,{ 
+				"property": "lat",
+				"propertyVisible": true,
+				"propertyType": "D",
+				"propertyRange": "Edm.Double",
+				"ordinal": 12,
+				"aggregate": "[]",
+				"formatOptions": null
+			}
+			,{ 
+				"property": "lat_long",
+				"propertyVisible": true,
+				"propertyType": "D",
+				"propertyRange": "Edm.String",
+				"ordinal": 13,
+				"aggregate": "[]",
+				"formatOptions": null
+			}
+			,{ 
+				"property": "long",
+				"propertyVisible": true,
+				"propertyType": "D",
+				"propertyRange": "Edm.Double",
+				"ordinal": 14,
+				"aggregate": "[]",
+				"formatOptions": null
+			}
+			,{ 
+				"property": "notes",
+				"propertyVisible": true,
+				"propertyType": "D",
+				"propertyRange": "Edm.String",
+				"ordinal": 15,
+				"aggregate": "[]",
+				"formatOptions": null
+			}
+			,{ 
+				"property": "photo",
+				"propertyVisible": true,
+				"propertyType": "D",
+				"propertyRange": "Edm.String",
+				"ordinal": 16,
+				"aggregate": "[]",
+				"formatOptions": null
+			}
+			,{ 
+				"property": "regionDescription",
+				"propertyVisible": true,
+				"propertyType": "D",
+				"propertyRange": "Edm.String",
+				"ordinal": 17,
+				"aggregate": "[]",
+				"formatOptions": null
+			}
+			,{ 
+				"property": "reportsToId",
+				"propertyVisible": false,
+				"propertyType": "D",
+				"propertyRange": "Edm.String",
+				"ordinal": 18,
+				"aggregate": "[]",
+				"formatOptions": null
+			}
+			,{ 
+				"property": "reportsToNotation",
+				"propertyVisible": true,
+				"propertyType": "D",
+				"propertyRange": "Edm.String",
+				"ordinal": 19,
+				"aggregate": "[]",
+				"formatOptions": null
+			}
+			,{ 
+				"property": "seeAlso",
+				"propertyVisible": true,
+				"propertyType": "D",
+				"propertyRange": "Edm.String",
+				"ordinal": 20,
+				"aggregate": "[]",
+				"formatOptions": null
+			}
+			,{ 
+				"property": "systemBEmployeeAnnualSalary",
+				"propertyVisible": true,
+				"propertyType": "D",
+				"propertyRange": "Edm.Double",
+				"ordinal": 21,
+				"aggregate": "[]",
+				"formatOptions": null
+			}
+			,{ 
+				"property": "systemBEmployeeMonthlySalary",
+				"propertyVisible": true,
+				"propertyType": "D",
+				"propertyRange": "Edm.Double",
+				"ordinal": 22,
+				"aggregate": "[]",
+				"formatOptions": null
+			}
+			,{ 
+				"property": "systemBFavoriteId",
+				"propertyVisible": false,
+				"propertyType": "D",
+				"propertyRange": "Edm.String",
+				"ordinal": 23,
+				"aggregate": "[]",
+				"formatOptions": null
+			}
+			,{ 
+				"property": "systemBHours",
+				"propertyVisible": true,
+				"propertyType": "D",
+				"propertyRange": "Edm.Decimal",
+				"ordinal": 24,
+				"aggregate": "[]",
+				"formatOptions": null
+			}
+			,{ 
+				"property": "territoryNotation",
+				"propertyVisible": true,
+				"propertyType": "D",
+				"propertyRange": "Edm.String",
+				"ordinal": 25,
+				"aggregate": "[]",
+				"formatOptions": null
+			}
+			,{ 
+				"property": "title",
+				"propertyVisible": true,
+				"propertyType": "D",
+				"propertyRange": "Edm.String",
+				"ordinal": 26,
+				"aggregate": "[]",
+				"formatOptions": null
+			}
+			,{ 
+				"property": "titleOfCourtesy",
+				"propertyVisible": true,
+				"propertyType": "D",
+				"propertyRange": "Edm.String",
+				"ordinal": 27,
+				"aggregate": "[]",
+				"formatOptions": null
+			}
+			,{ 
+				"property": "reportsTo",
+				"propertyVisible": true,
+				"propertyType": "O",
+				"propertyRange": "Employee",
+				"ordinal": 28,
+				"aggregate": "[]",
+				"formatOptions": null
+			}
+			,{ 
+				"property": "systemBFavorite",
+				"propertyVisible": true,
+				"propertyType": "O",
+				"propertyRange": "Product",
+				"ordinal": 29,
+				"aggregate": "[]",
+				"formatOptions": null
+			}
+			,{ 
+				"property": "employeeRegion",
+				"propertyVisible": true,
+				"propertyType": "C",
+				"propertyRange": "Region",
+				"ordinal": 30,
+				"aggregate": "[List]",
+				"formatOptions": null
+			}
+			,{ 
+				"property": "managesEmployee",
+				"propertyVisible": true,
+				"propertyType": "C",
+				"propertyRange": "Employee",
+				"ordinal": 31,
+				"aggregate": "[List]",
+				"formatOptions": null
+			}
+			,{ 
+				"property": "managesOrder",
+				"propertyVisible": true,
+				"propertyType": "C",
+				"propertyRange": "Order",
+				"ordinal": 32,
+				"aggregate": "[List]",
+				"formatOptions": null
+			}
+			,{ 
+				"property": "systemBEmployer",
+				"propertyVisible": true,
+				"propertyType": "C",
+				"propertyRange": "Supplier",
+				"ordinal": 33,
+				"aggregate": "[List]",
+				"formatOptions": null
+			}
+			,{ 
+				"property": "territory",
+				"propertyVisible": true,
+				"propertyType": "C",
+				"propertyRange": "Territory",
+				"ordinal": 34,
+				"aggregate": "[List]",
+				"formatOptions": null
+			}
+			]
+		}
+	}
+	,
+	"SystemBProduct": {
+	"entity": "SystemBProduct",
+	"icon": "sap-icon://expand-group",
+	"image": "./images/icons/category.png",
+	"entitySetVisible":true,
+	"grid": {
+		"target": "SystemBProducts",
+		"targetVisible": true,
+		"targetIcon": "sap-icon://expand-group",
+		"targetEntity": "SystemBProduct",	
+		"properties": [	
+			{  
+				"property": "categoryId",
+				"propertyVisible": false,
+				"propertyType": "D",
+				"propertyRange": "Edm.String",
+				"ordinal": 0,
+				"aggregate": "[]",
+				"formatOptions": ""
+			}	
+			,{ 
+				"property": "categoryNotation",
+				"propertyVisible": true,
+				"propertyType": "D",
+				"propertyRange": "Edm.String",
+				"ordinal": 1,
+				"aggregate": "[]",
+				"formatOptions": ""
+			}	
+			,{ 
+				"property": "comment",
+				"propertyVisible": true,
+				"propertyType": "D",
+				"propertyRange": "Edm.String",
+				"ordinal": 2,
+				"aggregate": "[]",
+				"formatOptions": ""
+			}	
+			,{ 
+				"property": "discontinued",
+				"propertyVisible": true,
+				"propertyType": "D",
+				"propertyRange": "Edm.Boolean",
+				"ordinal": 3,
+				"aggregate": "[]",
+				"formatOptions": ""
+			}	
+			,{ 
+				"property": "productName",
+				"propertyVisible": true,
+				"propertyType": "D",
+				"propertyRange": "Edm.String",
+				"ordinal": 4,
+				"aggregate": "[]",
+				"formatOptions": ""
+			}	
+			,{ 
+				"property": "productUnitPrice",
+				"propertyVisible": true,
+				"propertyType": "D",
+				"propertyRange": "Edm.Double",
+				"ordinal": 5,
+				"aggregate": "[]",
+				"formatOptions": "{'style':'short';'maxFractionDigits':2}"
+			}	
+			,{ 
+				"property": "quantityPerUnit",
+				"propertyVisible": true,
+				"propertyType": "D",
+				"propertyRange": "Edm.String",
+				"ordinal": 6,
+				"aggregate": "[]",
+				"formatOptions": ""
+			}	
+			,{ 
+				"property": "reorderLevel",
+				"propertyVisible": true,
+				"propertyType": "D",
+				"propertyRange": "Edm.Int32",
+				"ordinal": 7,
+				"aggregate": "[]",
+				"formatOptions": ""
+			}	
+			,{ 
+				"property": "seeAlso",
+				"propertyVisible": true,
+				"propertyType": "D",
+				"propertyRange": "Edm.String",
+				"ordinal": 8,
+				"aggregate": "[]",
+				"formatOptions": ""
+			}	
+			,{ 
+				"property": "supplierId",
+				"propertyVisible": false,
+				"propertyType": "D",
+				"propertyRange": "Edm.String",
+				"ordinal": 9,
+				"aggregate": "[]",
+				"formatOptions": ""
+			}	
+			,{ 
+				"property": "supplierNotation",
+				"propertyVisible": true,
+				"propertyType": "D",
+				"propertyRange": "Edm.String",
+				"ordinal": 10,
+				"aggregate": "[]",
+				"formatOptions": ""
+			}	
+			,{ 
+				"property": "systemBUnitCommission",
+				"propertyVisible": true,
+				"propertyType": "D",
+				"propertyRange": "Edm.Decimal",
+				"ordinal": 11,
+				"aggregate": "[]",
+				"formatOptions": ""
+			}	
+			,{ 
+				"property": "unitsInStock",
+				"propertyVisible": true,
+				"propertyType": "D",
+				"propertyRange": "Edm.Int32",
+				"ordinal": 12,
+				"aggregate": "[]",
+				"formatOptions": ""
+			}	
+			,{ 
+				"property": "unitsOnOrder",
+				"propertyVisible": true,
+				"propertyType": "D",
+				"propertyRange": "Edm.Int32",
+				"ordinal": 13,
+				"aggregate": "[]",
+				"formatOptions": ""
+			}	
+			,{ 
+				"property": "category",
+				"propertyVisible": false,
+				"propertyType": "O",
+				"propertyRange": "Category",
+				"ordinal": 14,
+				"aggregate": "[]",
+				"formatOptions": ""
+			}	
+			,{ 
+				"property": "supplier",
+				"propertyVisible": false,
+				"propertyType": "O",
+				"propertyRange": "Supplier",
+				"ordinal": 15,
+				"aggregate": "[]",
+				"formatOptions": ""
+			}	
+			,{ 
+				"property": "isPartOfOrderDetail",
+				"propertyVisible": false,
+				"propertyType": "C",
+				"propertyRange": "OrderDetail",
+				"ordinal": 16,
+				"aggregate": "[Count]",
+				"formatOptions": ""
+			}	
+			,{ 
+				"property": "product_orderSummary",
+				"propertyVisible": false,
+				"propertyType": "C",
+				"propertyRange": "OrderSummary",
+				"ordinal": 17,
+				"aggregate": "[Count]",
+				"formatOptions": ""
+			}	
+			]
+		},
+	"form": {
+		"target": "SystemBProduct",
+		"targetVisible": true,
+		"targetIcon": "sap-icon://expand-group",
+		"targetEntity": "SystemBProduct",
+		"properties": [		
+			{  
+				"property": "categoryId",
+				"propertyVisible": false,
+				"propertyType": "D",
+				"propertyRange": "Edm.String",
+				"ordinal": 0,
+				"aggregate": "[]",
+				"formatOptions": null
+			}
+			,{ 
+				"property": "categoryNotation",
+				"propertyVisible": true,
+				"propertyType": "D",
+				"propertyRange": "Edm.String",
+				"ordinal": 1,
+				"aggregate": "[]",
+				"formatOptions": null
+			}
+			,{ 
+				"property": "comment",
+				"propertyVisible": true,
+				"propertyType": "D",
+				"propertyRange": "Edm.String",
+				"ordinal": 2,
+				"aggregate": "[]",
+				"formatOptions": null
+			}
+			,{ 
+				"property": "discontinued",
+				"propertyVisible": true,
+				"propertyType": "D",
+				"propertyRange": "Edm.Boolean",
+				"ordinal": 3,
+				"aggregate": "[]",
+				"formatOptions": null
+			}
+			,{ 
+				"property": "productName",
+				"propertyVisible": true,
+				"propertyType": "D",
+				"propertyRange": "Edm.String",
+				"ordinal": 4,
+				"aggregate": "[]",
+				"formatOptions": null
+			}
+			,{ 
+				"property": "productUnitPrice",
+				"propertyVisible": true,
+				"propertyType": "D",
+				"propertyRange": "Edm.Double",
+				"ordinal": 5,
+				"aggregate": "[]",
+				"formatOptions": null
+			}
+			,{ 
+				"property": "quantityPerUnit",
+				"propertyVisible": true,
+				"propertyType": "D",
+				"propertyRange": "Edm.String",
+				"ordinal": 6,
+				"aggregate": "[]",
+				"formatOptions": null
+			}
+			,{ 
+				"property": "reorderLevel",
+				"propertyVisible": true,
+				"propertyType": "D",
+				"propertyRange": "Edm.Int32",
+				"ordinal": 7,
+				"aggregate": "[]",
+				"formatOptions": null
+			}
+			,{ 
+				"property": "seeAlso",
+				"propertyVisible": true,
+				"propertyType": "D",
+				"propertyRange": "Edm.String",
+				"ordinal": 8,
+				"aggregate": "[]",
+				"formatOptions": null
+			}
+			,{ 
+				"property": "supplierId",
+				"propertyVisible": false,
+				"propertyType": "D",
+				"propertyRange": "Edm.String",
+				"ordinal": 9,
+				"aggregate": "[]",
+				"formatOptions": null
+			}
+			,{ 
+				"property": "supplierNotation",
+				"propertyVisible": true,
+				"propertyType": "D",
+				"propertyRange": "Edm.String",
+				"ordinal": 10,
+				"aggregate": "[]",
+				"formatOptions": null
+			}
+			,{ 
+				"property": "systemBUnitCommission",
+				"propertyVisible": true,
+				"propertyType": "D",
+				"propertyRange": "Edm.Decimal",
+				"ordinal": 11,
+				"aggregate": "[]",
+				"formatOptions": null
+			}
+			,{ 
+				"property": "unitsInStock",
+				"propertyVisible": true,
+				"propertyType": "D",
+				"propertyRange": "Edm.Int32",
+				"ordinal": 12,
+				"aggregate": "[]",
+				"formatOptions": null
+			}
+			,{ 
+				"property": "unitsOnOrder",
+				"propertyVisible": true,
+				"propertyType": "D",
+				"propertyRange": "Edm.Int32",
+				"ordinal": 13,
+				"aggregate": "[]",
+				"formatOptions": null
+			}
+			,{ 
+				"property": "category",
+				"propertyVisible": true,
+				"propertyType": "O",
+				"propertyRange": "Category",
+				"ordinal": 14,
+				"aggregate": "[]",
+				"formatOptions": null
+			}
+			,{ 
+				"property": "supplier",
+				"propertyVisible": true,
+				"propertyType": "O",
+				"propertyRange": "Supplier",
+				"ordinal": 15,
+				"aggregate": "[]",
+				"formatOptions": null
+			}
+			,{ 
+				"property": "isPartOfOrderDetail",
+				"propertyVisible": true,
+				"propertyType": "C",
+				"propertyRange": "OrderDetail",
+				"ordinal": 16,
+				"aggregate": "[List]",
+				"formatOptions": null
+			}
+			,{ 
+				"property": "product_orderSummary",
+				"propertyVisible": true,
+				"propertyType": "C",
+				"propertyRange": "OrderSummary",
+				"ordinal": 17,
+				"aggregate": "[List]",
+				"formatOptions": null
+			}
+			]
+		}
+	}
+	,
+	"Territory": {
+	"entity": "Territory",
+	"icon": "sap-icon://expand-group",
+	"image": "./images/icons/category.png",
+	"entitySetVisible":true,
+	"grid": {
+		"target": "Territorys",
+		"targetVisible": true,
+		"targetIcon": "sap-icon://expand-group",
+		"targetEntity": "Territory",	
+		"properties": [	
+			{  
+				"property": "comment",
+				"propertyVisible": true,
+				"propertyType": "D",
+				"propertyRange": "Edm.String",
+				"ordinal": 0,
+				"aggregate": "[]",
+				"formatOptions": ""
+			}	
+			,{ 
+				"property": "regionNotation",
+				"propertyVisible": true,
+				"propertyType": "D",
+				"propertyRange": "Edm.String",
+				"ordinal": 1,
+				"aggregate": "[]",
+				"formatOptions": ""
+			}	
+			,{ 
+				"property": "seeAlso",
+				"propertyVisible": true,
+				"propertyType": "D",
+				"propertyRange": "Edm.String",
+				"ordinal": 2,
+				"aggregate": "[]",
+				"formatOptions": ""
+			}	
+			,{ 
+				"property": "territoryDescription",
+				"propertyVisible": true,
+				"propertyType": "D",
+				"propertyRange": "Edm.String",
+				"ordinal": 3,
+				"aggregate": "[]",
+				"formatOptions": ""
+			}	
+			,{ 
+				"property": "territoryOf",
+				"propertyVisible": false,
+				"propertyType": "C",
+				"propertyRange": "Employee",
+				"ordinal": 4,
+				"aggregate": "[Count]",
+				"formatOptions": ""
+			}	
+			,{ 
+				"property": "territoryRegion",
+				"propertyVisible": false,
+				"propertyType": "C",
+				"propertyRange": "Region",
+				"ordinal": 5,
+				"aggregate": "[Count]",
+				"formatOptions": ""
+			}	
+			]
+		},
+	"form": {
+		"target": "Territory",
+		"targetVisible": true,
+		"targetIcon": "sap-icon://expand-group",
+		"targetEntity": "Territory",
+		"properties": [		
+			{  
+				"property": "comment",
+				"propertyVisible": true,
+				"propertyType": "D",
+				"propertyRange": "Edm.String",
+				"ordinal": 0,
+				"aggregate": "[]",
+				"formatOptions": null
+			}
+			,{ 
+				"property": "regionNotation",
+				"propertyVisible": true,
+				"propertyType": "D",
+				"propertyRange": "Edm.String",
+				"ordinal": 1,
+				"aggregate": "[]",
+				"formatOptions": null
+			}
+			,{ 
+				"property": "seeAlso",
+				"propertyVisible": true,
+				"propertyType": "D",
+				"propertyRange": "Edm.String",
+				"ordinal": 2,
+				"aggregate": "[]",
+				"formatOptions": null
+			}
+			,{ 
+				"property": "territoryDescription",
+				"propertyVisible": true,
+				"propertyType": "D",
+				"propertyRange": "Edm.String",
+				"ordinal": 3,
+				"aggregate": "[]",
+				"formatOptions": null
+			}
+			,{ 
+				"property": "territoryOf",
+				"propertyVisible": true,
+				"propertyType": "C",
+				"propertyRange": "Employee",
+				"ordinal": 4,
+				"aggregate": "[List]",
+				"formatOptions": null
+			}
+			,{ 
+				"property": "territoryRegion",
+				"propertyVisible": true,
+				"propertyType": "C",
+				"propertyRange": "Region",
+				"ordinal": 5,
+				"aggregate": "[List]",
+				"formatOptions": null
+			}
+			]
+		}
+	}
+	,
+	"USState": {
+	"entity": "USState",
+	"icon": "sap-icon://expand-group",
+	"image": "./images/icons/category.png",
+	"entitySetVisible":true,
+	"grid": {
+		"target": "USStates",
+		"targetVisible": true,
+		"targetIcon": "sap-icon://expand-group",
+		"targetEntity": "USState",	
+		"properties": [	
+			{  
+				"property": "comment",
+				"propertyVisible": true,
+				"propertyType": "D",
+				"propertyRange": "Edm.String",
+				"ordinal": 0,
+				"aggregate": "[]",
+				"formatOptions": ""
+			}	
+			,{ 
+				"property": "regionDescription",
+				"propertyVisible": true,
+				"propertyType": "D",
+				"propertyRange": "Edm.String",
+				"ordinal": 1,
+				"aggregate": "[]",
+				"formatOptions": ""
+			}	
+			,{ 
+				"property": "regionNotation",
+				"propertyVisible": true,
+				"propertyType": "D",
+				"propertyRange": "Edm.String",
+				"ordinal": 2,
+				"aggregate": "[]",
+				"formatOptions": ""
+			}	
+			,{ 
+				"property": "seeAlso",
+				"propertyVisible": true,
+				"propertyType": "D",
+				"propertyRange": "Edm.String",
+				"ordinal": 3,
+				"aggregate": "[]",
+				"formatOptions": ""
+			}	
+			,{ 
+				"property": "stateAbbr",
+				"propertyVisible": true,
+				"propertyType": "D",
+				"propertyRange": "Edm.String",
+				"ordinal": 4,
+				"aggregate": "[]",
+				"formatOptions": ""
+			}	
+			,{ 
+				"property": "stateName",
+				"propertyVisible": true,
+				"propertyType": "D",
+				"propertyRange": "Edm.String",
+				"ordinal": 5,
+				"aggregate": "[]",
+				"formatOptions": ""
+			}	
+			,{ 
+				"property": "usstateRegion",
+				"propertyVisible": false,
+				"propertyType": "C",
+				"propertyRange": "Region",
+				"ordinal": 6,
+				"aggregate": "[Count]",
+				"formatOptions": ""
+			}	
+			]
+		},
+	"form": {
+		"target": "USState",
+		"targetVisible": true,
+		"targetIcon": "sap-icon://expand-group",
+		"targetEntity": "USState",
+		"properties": [		
+			{  
+				"property": "comment",
+				"propertyVisible": true,
+				"propertyType": "D",
+				"propertyRange": "Edm.String",
+				"ordinal": 0,
+				"aggregate": "[]",
+				"formatOptions": null
+			}
+			,{ 
+				"property": "regionDescription",
+				"propertyVisible": true,
+				"propertyType": "D",
+				"propertyRange": "Edm.String",
+				"ordinal": 1,
+				"aggregate": "[]",
+				"formatOptions": null
+			}
+			,{ 
+				"property": "regionNotation",
+				"propertyVisible": true,
+				"propertyType": "D",
+				"propertyRange": "Edm.String",
+				"ordinal": 2,
+				"aggregate": "[]",
+				"formatOptions": null
+			}
+			,{ 
+				"property": "seeAlso",
+				"propertyVisible": true,
+				"propertyType": "D",
+				"propertyRange": "Edm.String",
+				"ordinal": 3,
+				"aggregate": "[]",
+				"formatOptions": null
+			}
+			,{ 
+				"property": "stateAbbr",
+				"propertyVisible": true,
+				"propertyType": "D",
+				"propertyRange": "Edm.String",
+				"ordinal": 4,
+				"aggregate": "[]",
+				"formatOptions": null
+			}
+			,{ 
+				"property": "stateName",
+				"propertyVisible": true,
+				"propertyType": "D",
+				"propertyRange": "Edm.String",
+				"ordinal": 5,
+				"aggregate": "[]",
+				"formatOptions": null
+			}
+			,{ 
+				"property": "usstateRegion",
+				"propertyVisible": true,
+				"propertyType": "C",
+				"propertyRange": "Region",
+				"ordinal": 6,
+				"aggregate": "[List]",
+				"formatOptions": null
+			}
+			]
+		}
+	}
+}

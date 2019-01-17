@@ -1,0 +1,189 @@
+{
+#set ($sequence = 0)
+#foreach($entityType in $entityTypes)
+	#set ($sequence = $sequence + 1)
+	#set ($numSoFar = 0)
+	#set ( $firstGridProperty = true )
+	"$entityType.entitySet.name": {
+	"entity": "$entityType.entitySet.name",
+	"icon": "sap-icon://expand-group",
+	"image": "./images/icons/category.png",
+	"entitySetVisible":true,
+	"grid": {
+		"target": "$entityType.entitySet.target",
+		"targetVisible": true,
+		"targetIcon": "sap-icon://expand-group",
+		"targetEntity": "$entityType.entitySet.name",	
+		"properties": [	
+	#foreach($property in $entityType.entity.properties)
+	#if( $property.complex )
+		#if ( $property.complexRange.isProperty)
+			#if ($firstGridProperty ) 
+			{  
+			#set ( $firstGridProperty = false ) 
+			#else
+			,{ 
+			#end
+				"property": "$property.name",
+				"propertyVisible": $property.isNotFK,
+				"propertyType": "S",
+				"propertyRange": "$property.range",
+				"ordinal": $numSoFar,
+				"aggregate": "[]",
+				"formatOptions": "$property.formatOptions"
+			}
+		#else
+			#if ($firstGridProperty ) 
+			{  
+			#set ( $firstGridProperty = false ) 
+			#else
+			,{ 
+			#end
+				"property": "$property.name",
+				"propertyVisible": $property.isNotFK,
+				"propertyType": "S",
+				"propertyRange": "$property.range",
+				"ordinal": $numSoFar,
+				"aggregate": "[]",
+				"formatOptions": ""
+			}
+		#end
+	#else
+			#if ($firstGridProperty ) 
+			{  
+			#set ( $firstGridProperty = false ) 
+			#else
+			,{ 
+			#end
+				"property": "$property.name",
+				"propertyVisible": $property.isNotFK,
+				"propertyType": "D",
+				"propertyRange": "$property.range",
+				"ordinal": $numSoFar,
+				"aggregate": "[]",
+				"formatOptions": "$property.formatOptions"
+			}	
+	#end
+	#set ($numSoFar = $numSoFar + 1  )
+	#end				
+	#foreach($navigationProperty in $entityType.entity.navigationProperties)
+			#if ($firstGridProperty ) 
+			{  
+			#set ( $firstGridProperty = false ) 
+			#else
+			,{ 
+			#end
+				"property": "$navigationProperty.name",
+				"propertyVisible": false,
+				"propertyType": "O",
+				"propertyRange": "$navigationProperty.range",
+				"ordinal": $numSoFar,
+				"aggregate": "[]",
+				"formatOptions": ""
+			}	
+		#set ($numSoFar = $numSoFar + 1  )
+	#end	
+	#foreach($entityNavigationSet in $entityType.entity.navigationSet)
+			#if ($firstGridProperty ) 
+			{  
+			#set ( $firstGridProperty = false ) 
+			#else
+			,{ 
+			#end
+				"property": "$entityNavigationSet.name",
+				"propertyVisible": false,
+				"propertyType": "C",
+				"propertyRange": "$entityNavigationSet.range",
+				"ordinal": $numSoFar,
+				"aggregate": "[Count]",
+				"formatOptions": ""
+			}	
+		#set ($numSoFar = $numSoFar + 1  )
+	#end	
+			]
+		},
+	#set ($sequence = $sequence + 1)
+	#set ($numSoFar = 0)
+	#set ( $firstFormProperty = true )
+	"form": {
+		"target": "$entityType.entity.target",
+		"targetVisible": true,
+		"targetIcon": "sap-icon://expand-group",
+		"targetEntity": "$entityType.entitySet.name",
+		"properties": [		
+	#foreach($property in $entityType.entity.properties)
+		#if( $property.complex )
+			#if ($firstFormProperty ) 
+			{  
+			#set ( $firstFormProperty = false ) 
+			#else
+			,{ 
+			#end
+				"property": "$property.name",
+				"propertyVisible": $property.isNotFK,
+				"propertyType": "S",
+				"propertyRange": "$property.range",
+				"ordinal": $numSoFar,
+				"aggregate": "[]",
+				"formatOptions": null
+			}
+		#else	
+			#if ($firstFormProperty ) 
+			{  
+			#set ( $firstFormProperty = false ) 
+			#else
+			,{ 
+			#end
+				"property": "$property.name",
+				"propertyVisible": $property.isNotFK,
+				"propertyType": "D",
+				"propertyRange": "$property.range",
+				"ordinal": $numSoFar,
+				"aggregate": "[]",
+				"formatOptions": null
+			}
+	#end
+	#set ($numSoFar = $numSoFar + 1  )
+	#end				
+	#foreach($navigationProperty in $entityType.entity.navigationProperties)
+			#if ($firstFormProperty ) 
+			{  
+			#set ( $firstFormProperty = false ) 
+			#else
+			,{ 
+			#end
+				"property": "$navigationProperty.name",
+				"propertyVisible": true,
+				"propertyType": "O",
+				"propertyRange": "$navigationProperty.range",
+				"ordinal": $numSoFar,
+				"aggregate": "[]",
+				"formatOptions": null
+			}
+	#set ($numSoFar = $numSoFar + 1  )
+	#end	
+	#foreach($entityNavigationSet in $entityType.entity.navigationSet)
+			#if ($firstFormProperty ) 
+			{  
+			#set ( $firstFormProperty = false ) 
+			#else
+			,{ 
+			#end
+				"property": "$entityNavigationSet.name",
+				"propertyVisible": true,
+				"propertyType": "C",
+				"propertyRange": "$entityNavigationSet.range",
+				"ordinal": $numSoFar,
+				"aggregate": "[List]",
+				"formatOptions": null
+			}
+	#set ($numSoFar = $numSoFar + 1  )
+	#end		
+			]
+		}
+	}
+	#if ( $foreach.hasNext ) 
+	,
+	#end	
+#end
+}

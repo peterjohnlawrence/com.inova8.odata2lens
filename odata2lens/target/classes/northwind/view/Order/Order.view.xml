@@ -49,12 +49,6 @@
 				</ColumnListItem>
 				<ColumnListItem >
 					<cells>
-						<Label text="{i18n>Order.lat}" required="false"/> 
-						<Text text="{path:'dataModel>lat',type:'sap.ui.model.type.Float' }" tooltip="{i18n>Order.lat}"/>
-					</cells>
-				</ColumnListItem>
-				<ColumnListItem >
-					<cells>
 						<Label text="{i18n>Order.customerNotation}" required="false"/> 
 						<rdf:TextLink text="{path:'dataModel>customerNotation',type:'sap.ui.model.type.String' }" linkText="{i18n>Order.customerNotation}" tooltip="{i18n>Order.customerNotation}"/>
 					</cells>
@@ -69,6 +63,12 @@
 					<cells>
 						<Label text="{i18n>Order.freight}" required="false"/> 
 						<rdf:TextLink text="{path:'dataModel>freight',type:'sap.ui.model.type.String' }" linkText="{i18n>Order.freight}" tooltip="{i18n>Order.freight}"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>Order.lat}" required="false"/> 
+						<Text text="{path:'dataModel>lat',type:'sap.ui.model.type.Float' }" tooltip="{i18n>Order.lat}"/>
 					</cells>
 				</ColumnListItem>
 				<ColumnListItem >

@@ -152,7 +152,7 @@
 				"type":"navigationSet",
 				"key": "isCategoryOf",
 				"text": "is category of",
-				"icon": "sap-icon://northwind/product",
+				"icon": "sap-icon://expand-group",
 				"target": "Products", 
 				"tooltip": "is category of",
 				"visible": true, 
@@ -165,7 +165,7 @@
 		,"navigationProperty": {
 			"isCategoryOf": {
 				"target": "CategoryisCategoryOf",
-				"icon": "sap-icon://northwind/category",
+				"icon": "sap-icon://expand-group",
 				"menu": [{
 					"type":"navigationSet",
 					"key": "graph",
@@ -178,7 +178,7 @@
 					"type":"navigationSet",
 					"key": "isCategoryOf",
 					"text": "is category of",
-					"icon": "sap-icon://northwind/product",
+					"icon": "sap-icon://expand-group",
 					"target":  "Products", 
 					"tooltip": "is category of",
 					"visible": true,
@@ -264,7 +264,7 @@
 				"type":"navigationSet",
 				"key": "customerRegion",
 				"text": "is part of region",
-				"icon": "sap-icon://northwind/region",
+				"icon": "sap-icon://expand-group",
 				"target": "Regions", 
 				"tooltip": "is part of region",
 				"visible": true, 
@@ -276,7 +276,7 @@
 				"type":"navigationSet",
 				"key": "hasPlacedOrder",
 				"text": "has placed Order",
-				"icon": "sap-icon://northwind/order",
+				"icon": "sap-icon://expand-group",
 				"target": "Orders", 
 				"tooltip": "has placed Order",
 				"visible": true, 
@@ -289,7 +289,7 @@
 		,"navigationProperty": {
 			"customerRegion": {
 				"target": "CustomercustomerRegion",
-				"icon": "sap-icon://northwind/customer",
+				"icon": "sap-icon://expand-group",
 				"menu": [{
 					"type":"navigationSet",
 					"key": "graph",
@@ -302,7 +302,7 @@
 					"type":"navigationSet",
 					"key": "customerRegion",
 					"text": "is part of region",
-					"icon": "sap-icon://northwind/region",
+					"icon": "sap-icon://expand-group",
 					"target":  "Regions", 
 					"tooltip": "is part of region",
 					"visible": true,
@@ -313,7 +313,7 @@
 			}
 											, 			"hasPlacedOrder": {
 				"target": "CustomerhasPlacedOrder",
-				"icon": "sap-icon://northwind/customer",
+				"icon": "sap-icon://expand-group",
 				"menu": [{
 					"type":"navigationSet",
 					"key": "graph",
@@ -326,7 +326,7 @@
 					"type":"navigationSet",
 					"key": "hasPlacedOrder",
 					"text": "has placed Order",
-					"icon": "sap-icon://northwind/order",
+					"icon": "sap-icon://expand-group",
 					"target":  "Orders", 
 					"tooltip": "has placed Order",
 					"visible": true,
@@ -412,7 +412,7 @@
 				"type":"navigationProperty",
 				"key": "customer_Order_customer",
 				"text": "customer_Order_customer",
-				"icon": "sap-icon://northwind/customer",
+				"icon": "sap-icon://expand-group",
 				"target": "Customer",
 				"tooltip": "customer_Order_customer",
 				"visible": true ,
@@ -424,7 +424,7 @@
 				"type":"navigationProperty",
 				"key": "customer_Order_order",
 				"text": "customer_Order_order",
-				"icon": "sap-icon://northwind/order",
+				"icon": "sap-icon://expand-group",
 				"target": "Order",
 				"tooltip": "customer_Order_order",
 				"visible": true ,
@@ -487,7 +487,7 @@
 			"icon": "$childEntitySet.icon",
 			"target": "SystemBEmployee",
 			"tooltip": "Go down to SystemB employees",
-			"visible": true
+			"visible": false
 		}
 		,{
 			"type":"menuNavigation",
@@ -496,7 +496,7 @@
 			"icon": "$childEntitySet.icon",
 			"target": "SystemAEmployee",
 			"tooltip": "Go down to SystemA employees",
-			"visible": true
+			"visible": false
 		}
 		],
 		"entity": {
@@ -530,7 +530,7 @@
 				"type":"navigationSet",
 				"key": "employeeRegion",
 				"text": "supports region",
-				"icon": "sap-icon://northwind/region",
+				"icon": "sap-icon://expand-group",
 				"target": "Regions", 
 				"tooltip": "supports region",
 				"visible": true, 
@@ -554,7 +554,7 @@
 				"type":"navigationSet",
 				"key": "managesOrder",
 				"text": "manages order",
-				"icon": "sap-icon://northwind/order",
+				"icon": "sap-icon://expand-group",
 				"target": "Orders", 
 				"tooltip": "manages order",
 				"visible": true, 
@@ -566,7 +566,7 @@
 				"type":"navigationSet",
 				"key": "territory",
 				"text": "operates within territory",
-				"icon": "sap-icon://northwind/territory",
+				"icon": "sap-icon://expand-group",
 				"target": "Territorys", 
 				"tooltip": "operates within territory",
 				"visible": true, 
@@ -650,7 +650,7 @@
 					"type":"navigationSet",
 					"key": "employeeRegion",
 					"text": "supports region",
-					"icon": "sap-icon://northwind/region",
+					"icon": "sap-icon://expand-group",
 					"target":  "Regions", 
 					"tooltip": "supports region",
 					"visible": true,
@@ -698,7 +698,7 @@
 					"type":"navigationSet",
 					"key": "managesOrder",
 					"text": "manages order",
-					"icon": "sap-icon://northwind/order",
+					"icon": "sap-icon://expand-group",
 					"target":  "Orders", 
 					"tooltip": "manages order",
 					"visible": true,
@@ -722,7 +722,7 @@
 					"type":"navigationSet",
 					"key": "territory",
 					"text": "operates within territory",
-					"icon": "sap-icon://northwind/territory",
+					"icon": "sap-icon://expand-group",
 					"target":  "Territorys", 
 					"tooltip": "operates within territory",
 					"visible": true,
@@ -808,7 +808,7 @@
 				"type":"navigationSet",
 				"key": "hasOrderDetail",
 				"text": "has order details",
-				"icon": "sap-icon://northwind/orderDetail",
+				"icon": "sap-icon://expand-group",
 				"target": "OrderDetails", 
 				"tooltip": "has order details",
 				"visible": true, 
@@ -820,7 +820,7 @@
 				"type":"navigationProperty",
 				"key": "customer",
 				"text": "placed by customer",
-				"icon": "sap-icon://northwind/customer",
+				"icon": "sap-icon://expand-group",
 				"target": "Customer",
 				"tooltip": "placed by customer",
 				"visible": true ,
@@ -844,7 +844,7 @@
 				"type":"navigationProperty",
 				"key": "orderRegion",
 				"text": "is ordered in region",
-				"icon": "sap-icon://northwind/region",
+				"icon": "sap-icon://expand-group",
 				"target": "Region",
 				"tooltip": "is ordered in region",
 				"visible": true ,
@@ -856,7 +856,7 @@
 				"type":"navigationProperty",
 				"key": "shipVia",
 				"text": "is shipped by",
-				"icon": "sap-icon://northwind/shipper",
+				"icon": "sap-icon://expand-group",
 				"target": "Shipper",
 				"tooltip": "is shipped by",
 				"visible": true ,
@@ -869,7 +869,7 @@
 		,"navigationProperty": {
 			"hasOrderDetail": {
 				"target": "OrderhasOrderDetail",
-				"icon": "sap-icon://northwind/order",
+				"icon": "sap-icon://expand-group",
 				"menu": [{
 					"type":"navigationSet",
 					"key": "graph",
@@ -882,7 +882,7 @@
 					"type":"navigationSet",
 					"key": "hasOrderDetail",
 					"text": "has order details",
-					"icon": "sap-icon://northwind/orderDetail",
+					"icon": "sap-icon://expand-group",
 					"target":  "OrderDetails", 
 					"tooltip": "has order details",
 					"visible": true,
@@ -968,7 +968,7 @@
 				"type":"navigationProperty",
 				"key": "order",
 				"text": "is part of order",
-				"icon": "sap-icon://northwind/order",
+				"icon": "sap-icon://expand-group",
 				"target": "Order",
 				"tooltip": "is part of order",
 				"visible": true ,
@@ -980,7 +980,7 @@
 				"type":"navigationProperty",
 				"key": "product",
 				"text": "includes product",
-				"icon": "sap-icon://northwind/product",
+				"icon": "sap-icon://expand-group",
 				"target": "Product",
 				"tooltip": "includes product",
 				"visible": true ,
@@ -1068,7 +1068,7 @@
 				"type":"navigationProperty",
 				"key": "orderSummary_order",
 				"text": "references order",
-				"icon": "sap-icon://northwind/order",
+				"icon": "sap-icon://expand-group",
 				"target": "Order",
 				"tooltip": "references order",
 				"visible": true ,
@@ -1080,7 +1080,7 @@
 				"type":"navigationProperty",
 				"key": "orderSummary_product",
 				"text": "references product",
-				"icon": "sap-icon://northwind/product",
+				"icon": "sap-icon://expand-group",
 				"target": "Product",
 				"tooltip": "references product",
 				"visible": true ,
@@ -1143,7 +1143,7 @@
 			"icon": "$childEntitySet.icon",
 			"target": "SystemBProduct",
 			"tooltip": "Go down to SystemB products",
-			"visible": true
+			"visible": false
 		}
 		,{
 			"type":"menuNavigation",
@@ -1152,7 +1152,7 @@
 			"icon": "$childEntitySet.icon",
 			"target": "SystemAProduct",
 			"tooltip": "Go down to SystemA products",
-			"visible": true
+			"visible": false
 		}
 		],
 		"entity": {
@@ -1186,7 +1186,7 @@
 				"type":"navigationSet",
 				"key": "isPartOfOrderDetail",
 				"text": "is part of order detail",
-				"icon": "sap-icon://northwind/orderDetail",
+				"icon": "sap-icon://expand-group",
 				"target": "OrderDetails", 
 				"tooltip": "is part of order detail",
 				"visible": true, 
@@ -1198,7 +1198,7 @@
 				"type":"navigationProperty",
 				"key": "category",
 				"text": "is categorized as",
-				"icon": "sap-icon://northwind/category",
+				"icon": "sap-icon://expand-group",
 				"target": "Category",
 				"tooltip": "is categorized as",
 				"visible": true ,
@@ -1210,7 +1210,7 @@
 				"type":"navigationProperty",
 				"key": "supplier",
 				"text": "is supplied by",
-				"icon": "sap-icon://northwind/supplier",
+				"icon": "sap-icon://expand-group",
 				"target": "Supplier",
 				"tooltip": "is supplied by",
 				"visible": true ,
@@ -1223,7 +1223,7 @@
 		,"navigationProperty": {
 			"isPartOfOrderDetail": {
 				"target": "ProductisPartOfOrderDetail",
-				"icon": "sap-icon://northwind/product",
+				"icon": "sap-icon://expand-group",
 				"menu": [{
 					"type":"navigationSet",
 					"key": "graph",
@@ -1236,7 +1236,7 @@
 					"type":"navigationSet",
 					"key": "isPartOfOrderDetail",
 					"text": "is part of order detail",
-					"icon": "sap-icon://northwind/orderDetail",
+					"icon": "sap-icon://expand-group",
 					"target":  "OrderDetails", 
 					"tooltip": "is part of order detail",
 					"visible": true,
@@ -1398,7 +1398,7 @@
 				"type":"navigationSet",
 				"key": "shipsOrder",
 				"text": "ships Order",
-				"icon": "sap-icon://northwind/order",
+				"icon": "sap-icon://expand-group",
 				"target": "Orders", 
 				"tooltip": "ships Order",
 				"visible": true, 
@@ -1411,7 +1411,7 @@
 		,"navigationProperty": {
 			"shipsOrder": {
 				"target": "ShippershipsOrder",
-				"icon": "sap-icon://northwind/shipper",
+				"icon": "sap-icon://expand-group",
 				"menu": [{
 					"type":"navigationSet",
 					"key": "graph",
@@ -1424,7 +1424,7 @@
 					"type":"navigationSet",
 					"key": "shipsOrder",
 					"text": "ships Order",
-					"icon": "sap-icon://northwind/order",
+					"icon": "sap-icon://expand-group",
 					"target":  "Orders", 
 					"tooltip": "ships Order",
 					"visible": true,
@@ -1510,7 +1510,7 @@
 				"type":"navigationSet",
 				"key": "supplierRegion",
 				"text": "supplies in region",
-				"icon": "sap-icon://northwind/region",
+				"icon": "sap-icon://expand-group",
 				"target": "Regions", 
 				"tooltip": "supplies in region",
 				"visible": true, 
@@ -1522,7 +1522,7 @@
 				"type":"navigationSet",
 				"key": "suppliesProduct",
 				"text": "supplies product",
-				"icon": "sap-icon://northwind/product",
+				"icon": "sap-icon://expand-group",
 				"target": "Products", 
 				"tooltip": "supplies product",
 				"visible": true, 
@@ -1535,7 +1535,7 @@
 		,"navigationProperty": {
 			"supplierRegion": {
 				"target": "SuppliersupplierRegion",
-				"icon": "sap-icon://northwind/supplier",
+				"icon": "sap-icon://expand-group",
 				"menu": [{
 					"type":"navigationSet",
 					"key": "graph",
@@ -1548,7 +1548,7 @@
 					"type":"navigationSet",
 					"key": "supplierRegion",
 					"text": "supplies in region",
-					"icon": "sap-icon://northwind/region",
+					"icon": "sap-icon://expand-group",
 					"target":  "Regions", 
 					"tooltip": "supplies in region",
 					"visible": true,
@@ -1559,7 +1559,7 @@
 			}
 											, 			"suppliesProduct": {
 				"target": "SuppliersuppliesProduct",
-				"icon": "sap-icon://northwind/supplier",
+				"icon": "sap-icon://expand-group",
 				"menu": [{
 					"type":"navigationSet",
 					"key": "graph",
@@ -1572,7 +1572,7 @@
 					"type":"navigationSet",
 					"key": "suppliesProduct",
 					"text": "supplies product",
-					"icon": "sap-icon://northwind/product",
+					"icon": "sap-icon://expand-group",
 					"target":  "Products", 
 					"tooltip": "supplies product",
 					"visible": true,
@@ -1591,7 +1591,7 @@
 		"tooltip": "Show all SystemA employees",
 		"image": "./images/northwind/systemAEmployee.svg",
 		"icon": "sap-icon://northwind/systemAEmployee",
-		"visible":true,
+		"visible":false,
 		"parameters": {
 				"objectId": "SystemAEmployee"
 		},
@@ -1601,7 +1601,7 @@
 			"text": "Graph View",
 			"target": "graph",
 			"tooltip": "SystemA employees Graph",
-			"visible":true,
+			"visible":false,
 			"parameters": {
 				"objectId": "SystemAEmployee",
 				"queryOptions": {
@@ -1614,7 +1614,7 @@
 			"text": "SystemA employees",
 			"target": "SystemAEmployees",
 			"tooltip": "Show all SystemA employees",
-			"visible":true,
+			"visible":false,
 			"parameters": {
 				"objectId": "SystemAEmployee"
 			}
@@ -1624,7 +1624,7 @@
 			"text": "DashBoard",
 			"target": "SystemAEmployeesDashBoard",
 			"tooltip": "Show SystemA employees DashBoard",
-			"visible":true
+			"visible":false
 		}
 		,{
 			"type":"menuNavigation",
@@ -1667,7 +1667,7 @@
 				"type":"navigationSet",
 				"key": "employeeRegion",
 				"text": "supports region",
-				"icon": "sap-icon://northwind/region",
+				"icon": "sap-icon://expand-group",
 				"target": "Regions", 
 				"tooltip": "supports region",
 				"visible": true, 
@@ -1691,7 +1691,7 @@
 				"type":"navigationSet",
 				"key": "managesOrder",
 				"text": "manages order",
-				"icon": "sap-icon://northwind/order",
+				"icon": "sap-icon://expand-group",
 				"target": "Orders", 
 				"tooltip": "manages order",
 				"visible": true, 
@@ -1703,7 +1703,7 @@
 				"type":"navigationSet",
 				"key": "systemACustomer",
 				"text": "SystemB customer",
-				"icon": "sap-icon://northwind/customer",
+				"icon": "sap-icon://expand-group",
 				"target": "Customers", 
 				"tooltip": "SystemB customer",
 				"visible": true, 
@@ -1715,7 +1715,7 @@
 				"type":"navigationSet",
 				"key": "systemAEmployer",
 				"text": "SystemA employer",
-				"icon": "sap-icon://northwind/supplier",
+				"icon": "sap-icon://expand-group",
 				"target": "Suppliers", 
 				"tooltip": "SystemA employer",
 				"visible": true, 
@@ -1727,7 +1727,7 @@
 				"type":"navigationSet",
 				"key": "territory",
 				"text": "operates within territory",
-				"icon": "sap-icon://northwind/territory",
+				"icon": "sap-icon://expand-group",
 				"target": "Territorys", 
 				"tooltip": "operates within territory",
 				"visible": true, 
@@ -1751,7 +1751,7 @@
 				"type":"navigationProperty",
 				"key": "systemAFavorite",
 				"text": "SystemA favorite",
-				"icon": "sap-icon://northwind/product",
+				"icon": "sap-icon://expand-group",
 				"target": "Product",
 				"tooltip": "SystemA favorite",
 				"visible": true ,
@@ -1764,7 +1764,7 @@
 		,"navigationProperty": {
 			"employeeRegion": {
 				"target": "SystemAEmployeeemployeeRegion",
-				"icon": "sap-icon://northwind/systemAEmployee",
+				"icon": "sap-icon://expand-group",
 				"menu": [{
 					"type":"navigationSet",
 					"key": "graph",
@@ -1777,7 +1777,7 @@
 					"type":"navigationSet",
 					"key": "employeeRegion",
 					"text": "supports region",
-					"icon": "sap-icon://northwind/region",
+					"icon": "sap-icon://expand-group",
 					"target":  "Regions", 
 					"tooltip": "supports region",
 					"visible": true,
@@ -1788,7 +1788,7 @@
 			}
 											, 			"managesEmployee": {
 				"target": "SystemAEmployeemanagesEmployee",
-				"icon": "sap-icon://northwind/systemAEmployee",
+				"icon": "sap-icon://expand-group",
 				"menu": [{
 					"type":"navigationSet",
 					"key": "graph",
@@ -1812,7 +1812,7 @@
 			}
 											, 			"managesOrder": {
 				"target": "SystemAEmployeemanagesOrder",
-				"icon": "sap-icon://northwind/systemAEmployee",
+				"icon": "sap-icon://expand-group",
 				"menu": [{
 					"type":"navigationSet",
 					"key": "graph",
@@ -1825,7 +1825,7 @@
 					"type":"navigationSet",
 					"key": "managesOrder",
 					"text": "manages order",
-					"icon": "sap-icon://northwind/order",
+					"icon": "sap-icon://expand-group",
 					"target":  "Orders", 
 					"tooltip": "manages order",
 					"visible": true,
@@ -1836,7 +1836,7 @@
 			}
 											, 			"systemACustomer": {
 				"target": "SystemAEmployeesystemACustomer",
-				"icon": "sap-icon://northwind/systemAEmployee",
+				"icon": "sap-icon://expand-group",
 				"menu": [{
 					"type":"navigationSet",
 					"key": "graph",
@@ -1849,7 +1849,7 @@
 					"type":"navigationSet",
 					"key": "systemACustomer",
 					"text": "SystemB customer",
-					"icon": "sap-icon://northwind/customer",
+					"icon": "sap-icon://expand-group",
 					"target":  "Customers", 
 					"tooltip": "SystemB customer",
 					"visible": true,
@@ -1860,7 +1860,7 @@
 			}
 											, 			"systemAEmployer": {
 				"target": "SystemAEmployeesystemAEmployer",
-				"icon": "sap-icon://northwind/systemAEmployee",
+				"icon": "sap-icon://expand-group",
 				"menu": [{
 					"type":"navigationSet",
 					"key": "graph",
@@ -1873,7 +1873,7 @@
 					"type":"navigationSet",
 					"key": "systemAEmployer",
 					"text": "SystemA employer",
-					"icon": "sap-icon://northwind/supplier",
+					"icon": "sap-icon://expand-group",
 					"target":  "Suppliers", 
 					"tooltip": "SystemA employer",
 					"visible": true,
@@ -1884,7 +1884,7 @@
 			}
 											, 			"territory": {
 				"target": "SystemAEmployeeterritory",
-				"icon": "sap-icon://northwind/systemAEmployee",
+				"icon": "sap-icon://expand-group",
 				"menu": [{
 					"type":"navigationSet",
 					"key": "graph",
@@ -1897,7 +1897,7 @@
 					"type":"navigationSet",
 					"key": "territory",
 					"text": "operates within territory",
-					"icon": "sap-icon://northwind/territory",
+					"icon": "sap-icon://expand-group",
 					"target":  "Territorys", 
 					"tooltip": "operates within territory",
 					"visible": true,
@@ -1916,7 +1916,7 @@
 		"tooltip": "Show all SystemA products",
 		"image": "./images/northwind/systemAProduct",
 		"icon": "sap-icon://northwind/systemAProduct",
-		"visible":true,
+		"visible":false,
 		"parameters": {
 				"objectId": "SystemAProduct"
 		},
@@ -1926,7 +1926,7 @@
 			"text": "Graph View",
 			"target": "graph",
 			"tooltip": "SystemA products Graph",
-			"visible":true,
+			"visible":false,
 			"parameters": {
 				"objectId": "SystemAProduct",
 				"queryOptions": {
@@ -1939,7 +1939,7 @@
 			"text": "SystemA products",
 			"target": "SystemAProducts",
 			"tooltip": "Show all SystemA products",
-			"visible":true,
+			"visible":false,
 			"parameters": {
 				"objectId": "SystemAProduct"
 			}
@@ -1949,7 +1949,7 @@
 			"text": "DashBoard",
 			"target": "SystemAProductsDashBoard",
 			"tooltip": "Show SystemA products DashBoard",
-			"visible":true
+			"visible":false
 		}
 		,{
 			"type":"menuNavigation",
@@ -1992,7 +1992,7 @@
 				"type":"navigationSet",
 				"key": "isPartOfOrderDetail",
 				"text": "is part of order detail",
-				"icon": "sap-icon://northwind/orderDetail",
+				"icon": "sap-icon://expand-group",
 				"target": "OrderDetails", 
 				"tooltip": "is part of order detail",
 				"visible": true, 
@@ -2004,7 +2004,7 @@
 				"type":"navigationProperty",
 				"key": "category",
 				"text": "is categorized as",
-				"icon": "sap-icon://northwind/category",
+				"icon": "sap-icon://expand-group",
 				"target": "Category",
 				"tooltip": "is categorized as",
 				"visible": true ,
@@ -2016,7 +2016,7 @@
 				"type":"navigationProperty",
 				"key": "supplier",
 				"text": "is supplied by",
-				"icon": "sap-icon://northwind/supplier",
+				"icon": "sap-icon://expand-group",
 				"target": "Supplier",
 				"tooltip": "is supplied by",
 				"visible": true ,
@@ -2029,7 +2029,7 @@
 		,"navigationProperty": {
 			"isPartOfOrderDetail": {
 				"target": "SystemAProductisPartOfOrderDetail",
-				"icon": "sap-icon://northwind/systemAProduct",
+				"icon": "sap-icon://expand-group",
 				"menu": [{
 					"type":"navigationSet",
 					"key": "graph",
@@ -2042,7 +2042,7 @@
 					"type":"navigationSet",
 					"key": "isPartOfOrderDetail",
 					"text": "is part of order detail",
-					"icon": "sap-icon://northwind/orderDetail",
+					"icon": "sap-icon://expand-group",
 					"target":  "OrderDetails", 
 					"tooltip": "is part of order detail",
 					"visible": true,
@@ -2061,7 +2061,7 @@
 		"tooltip": "Show all SystemB employees",
 		"image": "./images/northwind/systemBEmployee.svg",
 		"icon": "sap-icon://northwind/systemBEmployee",
-		"visible":true,
+		"visible":false,
 		"parameters": {
 				"objectId": "SystemBEmployee"
 		},
@@ -2071,7 +2071,7 @@
 			"text": "Graph View",
 			"target": "graph",
 			"tooltip": "SystemB employees Graph",
-			"visible":true,
+			"visible":false,
 			"parameters": {
 				"objectId": "SystemBEmployee",
 				"queryOptions": {
@@ -2084,7 +2084,7 @@
 			"text": "SystemB employees",
 			"target": "SystemBEmployees",
 			"tooltip": "Show all SystemB employees",
-			"visible":true,
+			"visible":false,
 			"parameters": {
 				"objectId": "SystemBEmployee"
 			}
@@ -2094,7 +2094,7 @@
 			"text": "DashBoard",
 			"target": "SystemBEmployeesDashBoard",
 			"tooltip": "Show SystemB employees DashBoard",
-			"visible":true
+			"visible":false
 		}
 		,{
 			"type":"menuNavigation",
@@ -2137,7 +2137,7 @@
 				"type":"navigationSet",
 				"key": "employeeRegion",
 				"text": "supports region",
-				"icon": "sap-icon://northwind/region",
+				"icon": "sap-icon://expand-group",
 				"target": "Regions", 
 				"tooltip": "supports region",
 				"visible": true, 
@@ -2161,7 +2161,7 @@
 				"type":"navigationSet",
 				"key": "managesOrder",
 				"text": "manages order",
-				"icon": "sap-icon://northwind/order",
+				"icon": "sap-icon://expand-group",
 				"target": "Orders", 
 				"tooltip": "manages order",
 				"visible": true, 
@@ -2173,7 +2173,7 @@
 				"type":"navigationSet",
 				"key": "systemBEmployer",
 				"text": "SystemB employer",
-				"icon": "sap-icon://northwind/supplier",
+				"icon": "sap-icon://expand-group",
 				"target": "Suppliers", 
 				"tooltip": "SystemB employer",
 				"visible": true, 
@@ -2185,7 +2185,7 @@
 				"type":"navigationSet",
 				"key": "territory",
 				"text": "operates within territory",
-				"icon": "sap-icon://northwind/territory",
+				"icon": "sap-icon://expand-group",
 				"target": "Territorys", 
 				"tooltip": "operates within territory",
 				"visible": true, 
@@ -2209,7 +2209,7 @@
 				"type":"navigationProperty",
 				"key": "systemBFavorite",
 				"text": "SystemB favorite",
-				"icon": "sap-icon://northwind/product",
+				"icon": "sap-icon://expand-group",
 				"target": "Product",
 				"tooltip": "SystemB favorite",
 				"visible": true ,
@@ -2222,7 +2222,7 @@
 		,"navigationProperty": {
 			"employeeRegion": {
 				"target": "SystemBEmployeeemployeeRegion",
-				"icon": "sap-icon://northwind/systemBEmployee",
+				"icon": "sap-icon://expand-group",
 				"menu": [{
 					"type":"navigationSet",
 					"key": "graph",
@@ -2235,7 +2235,7 @@
 					"type":"navigationSet",
 					"key": "employeeRegion",
 					"text": "supports region",
-					"icon": "sap-icon://northwind/region",
+					"icon": "sap-icon://expand-group",
 					"target":  "Regions", 
 					"tooltip": "supports region",
 					"visible": true,
@@ -2246,7 +2246,7 @@
 			}
 											, 			"managesEmployee": {
 				"target": "SystemBEmployeemanagesEmployee",
-				"icon": "sap-icon://northwind/systemBEmployee",
+				"icon": "sap-icon://expand-group",
 				"menu": [{
 					"type":"navigationSet",
 					"key": "graph",
@@ -2270,7 +2270,7 @@
 			}
 											, 			"managesOrder": {
 				"target": "SystemBEmployeemanagesOrder",
-				"icon": "sap-icon://northwind/systemBEmployee",
+				"icon": "sap-icon://expand-group",
 				"menu": [{
 					"type":"navigationSet",
 					"key": "graph",
@@ -2283,7 +2283,7 @@
 					"type":"navigationSet",
 					"key": "managesOrder",
 					"text": "manages order",
-					"icon": "sap-icon://northwind/order",
+					"icon": "sap-icon://expand-group",
 					"target":  "Orders", 
 					"tooltip": "manages order",
 					"visible": true,
@@ -2294,7 +2294,7 @@
 			}
 											, 			"systemBEmployer": {
 				"target": "SystemBEmployeesystemBEmployer",
-				"icon": "sap-icon://northwind/systemBEmployee",
+				"icon": "sap-icon://expand-group",
 				"menu": [{
 					"type":"navigationSet",
 					"key": "graph",
@@ -2307,7 +2307,7 @@
 					"type":"navigationSet",
 					"key": "systemBEmployer",
 					"text": "SystemB employer",
-					"icon": "sap-icon://northwind/supplier",
+					"icon": "sap-icon://expand-group",
 					"target":  "Suppliers", 
 					"tooltip": "SystemB employer",
 					"visible": true,
@@ -2318,7 +2318,7 @@
 			}
 											, 			"territory": {
 				"target": "SystemBEmployeeterritory",
-				"icon": "sap-icon://northwind/systemBEmployee",
+				"icon": "sap-icon://expand-group",
 				"menu": [{
 					"type":"navigationSet",
 					"key": "graph",
@@ -2331,7 +2331,7 @@
 					"type":"navigationSet",
 					"key": "territory",
 					"text": "operates within territory",
-					"icon": "sap-icon://northwind/territory",
+					"icon": "sap-icon://expand-group",
 					"target":  "Territorys", 
 					"tooltip": "operates within territory",
 					"visible": true,
@@ -2350,7 +2350,7 @@
 		"tooltip": "Show all SystemB products",
 		"image": "./images/northwind/systemBProduct.svg",
 		"icon": "sap-icon://northwind/systemBProduct",
-		"visible":true,
+		"visible":false,
 		"parameters": {
 				"objectId": "SystemBProduct"
 		},
@@ -2360,7 +2360,7 @@
 			"text": "Graph View",
 			"target": "graph",
 			"tooltip": "SystemB products Graph",
-			"visible":true,
+			"visible":false,
 			"parameters": {
 				"objectId": "SystemBProduct",
 				"queryOptions": {
@@ -2373,7 +2373,7 @@
 			"text": "SystemB products",
 			"target": "SystemBProducts",
 			"tooltip": "Show all SystemB products",
-			"visible":true,
+			"visible":false,
 			"parameters": {
 				"objectId": "SystemBProduct"
 			}
@@ -2383,7 +2383,7 @@
 			"text": "DashBoard",
 			"target": "SystemBProductsDashBoard",
 			"tooltip": "Show SystemB products DashBoard",
-			"visible":true
+			"visible":false
 		}
 		,{
 			"type":"menuNavigation",
@@ -2426,7 +2426,7 @@
 				"type":"navigationSet",
 				"key": "isPartOfOrderDetail",
 				"text": "is part of order detail",
-				"icon": "sap-icon://northwind/orderDetail",
+				"icon": "sap-icon://expand-group",
 				"target": "OrderDetails", 
 				"tooltip": "is part of order detail",
 				"visible": true, 
@@ -2438,7 +2438,7 @@
 				"type":"navigationProperty",
 				"key": "category",
 				"text": "is categorized as",
-				"icon": "sap-icon://northwind/category",
+				"icon": "sap-icon://expand-group",
 				"target": "Category",
 				"tooltip": "is categorized as",
 				"visible": true ,
@@ -2450,7 +2450,7 @@
 				"type":"navigationProperty",
 				"key": "supplier",
 				"text": "is supplied by",
-				"icon": "sap-icon://northwind/supplier",
+				"icon": "sap-icon://expand-group",
 				"target": "Supplier",
 				"tooltip": "is supplied by",
 				"visible": true ,
@@ -2463,7 +2463,7 @@
 		,"navigationProperty": {
 			"isPartOfOrderDetail": {
 				"target": "SystemBProductisPartOfOrderDetail",
-				"icon": "sap-icon://northwind/systemBProduct",
+				"icon": "sap-icon://expand-group",
 				"menu": [{
 					"type":"navigationSet",
 					"key": "graph",
@@ -2476,7 +2476,7 @@
 					"type":"navigationSet",
 					"key": "isPartOfOrderDetail",
 					"text": "is part of order detail",
-					"icon": "sap-icon://northwind/orderDetail",
+					"icon": "sap-icon://expand-group",
 					"target":  "OrderDetails", 
 					"tooltip": "is part of order detail",
 					"visible": true,
@@ -2574,7 +2574,7 @@
 				"type":"navigationSet",
 				"key": "territoryRegion",
 				"text": "is located within region",
-				"icon": "sap-icon://northwind/region",
+				"icon": "sap-icon://expand-group",
 				"target": "Regions", 
 				"tooltip": "is located within region",
 				"visible": true, 
@@ -2587,7 +2587,7 @@
 		,"navigationProperty": {
 			"territoryOf": {
 				"target": "TerritoryterritoryOf",
-				"icon": "sap-icon://northwind/territory",
+				"icon": "sap-icon://expand-group",
 				"menu": [{
 					"type":"navigationSet",
 					"key": "graph",
@@ -2611,7 +2611,7 @@
 			}
 											, 			"territoryRegion": {
 				"target": "TerritoryterritoryRegion",
-				"icon": "sap-icon://northwind/territory",
+				"icon": "sap-icon://expand-group",
 				"menu": [{
 					"type":"navigationSet",
 					"key": "graph",
@@ -2624,7 +2624,7 @@
 					"type":"navigationSet",
 					"key": "territoryRegion",
 					"text": "is located within region",
-					"icon": "sap-icon://northwind/region",
+					"icon": "sap-icon://expand-group",
 					"target":  "Regions", 
 					"tooltip": "is located within region",
 					"visible": true,
@@ -2710,7 +2710,7 @@
 				"type":"navigationSet",
 				"key": "usstateRegion",
 				"text": "usstate region",
-				"icon": "sap-icon://northwind/region",
+				"icon": "sap-icon://expand-group",
 				"target": "Regions", 
 				"tooltip": "usstate region",
 				"visible": true, 
@@ -2723,7 +2723,7 @@
 		,"navigationProperty": {
 			"usstateRegion": {
 				"target": "USStateusstateRegion",
-				"icon": "sap-icon://northwind/usstate",
+				"icon": "sap-icon://expand-group",
 				"menu": [{
 					"type":"navigationSet",
 					"key": "graph",
@@ -2736,7 +2736,7 @@
 					"type":"navigationSet",
 					"key": "usstateRegion",
 					"text": "usstate region",
-					"icon": "sap-icon://northwind/region",
+					"icon": "sap-icon://expand-group",
 					"target":  "Regions", 
 					"tooltip": "usstate region",
 					"visible": true,

@@ -71,44 +71,81 @@ public class UITemplate {
 
 	public void update(String sequence, String entity, String entityIcon, String image, String target,
 			String targetIcon, String type, String targetEntity, String targetVisible) {
-		if (!sequence.isEmpty())
+		if (sequence != null && !sequence.isEmpty())
 			this.sequence = sequence;
-		if (!entity.isEmpty())
+		if (entity != null && !entity.isEmpty())
 			this.entity = entity;
-		if (!entityIcon.isEmpty())
+		if (entityIcon != null && !entityIcon.isEmpty())
 			this.entityIcon = entityIcon;
-		if (!image.isEmpty())
+		if (image != null && !image.isEmpty())
 			this.image = image;
-		if (!target.isEmpty())
+		if (target != null && !target.isEmpty())
 			this.target = target;
-		if (!targetIcon.isEmpty())
+		if (targetIcon != null && !targetIcon.isEmpty())
 			this.targetIcon = targetIcon;
-		if (!type.isEmpty())
+		if (type != null && !type.isEmpty())
 			this.type = type;
-		if (!targetEntity.isEmpty())
+		if (targetEntity != null && !targetEntity.isEmpty())
 			this.targetEntity = targetEntity;
-		if (!targetVisible.isEmpty())
+		if (targetVisible != null && !targetVisible.isEmpty())
 			this.targetVisible = targetVisible;
 	}
 
-	public void updateProperty(String property, String propertyType, String range, Float ordinal, boolean visible,
+	public void update(String sequence, String entity, String entityIcon, String image, String target,
+			String targetIcon, String type, String targetEntity, Boolean targetVisible) {
+		if (sequence != null && !sequence.isEmpty())
+			this.sequence = sequence;
+		if (entity != null && !entity.isEmpty())
+			this.entity = entity;
+		if (entityIcon != null && !entityIcon.isEmpty())
+			this.entityIcon = entityIcon;
+		if (image != null && !image.isEmpty())
+			this.image = image;
+		if (target != null && !target.isEmpty())
+			this.target = target;
+		if (targetIcon != null && !targetIcon.isEmpty())
+			this.targetIcon = targetIcon;
+		if (type != null && !type.isEmpty())
+			this.type = type;
+		if (targetEntity != null && !targetEntity.isEmpty())
+			this.targetEntity = targetEntity;
+		if (targetVisible != null && !targetEntity.isEmpty())
+			this.targetVisible = targetVisible.toString();
+	}
+
+	public void updateProperty(String property, String propertyType, String range, Float ordinal, Boolean visible,
 			String aggregate, String formatOptions) {
-		Float currentOrdinal = null;
-		for (PropertyTemplate propertyTemplate : properties.values()) {
-			if (propertyTemplate.getProperty().equals(property)) {
-				currentOrdinal = propertyTemplate.getOrdinal();
-				break;
+		if (ordinal != null) {
+			Float currentOrdinal = null;
+			PropertyTemplate currentTemplate = null;
+			for (PropertyTemplate propertyTemplate : properties.values()) {
+				if (propertyTemplate.getProperty().equals(property)) {
+					currentOrdinal = propertyTemplate.getOrdinal();
+					currentTemplate = propertyTemplate;
+					break;
+				}
 			}
-		}
-		Float increment = (float) 0.0 ;
-		while(properties.containsKey(ordinal + increment)) {
-			increment = (float) (increment + 0.1) ;
-		}
-		if (currentOrdinal != null) {
-			PropertyTemplate propertyTemplate = new PropertyTemplate(property, propertyType, range, ordinal+ increment, visible,
-					aggregate, formatOptions);
-			properties.remove(currentOrdinal);
-			properties.put(ordinal + increment, propertyTemplate);
+			Float increment = (float) 0.0;
+			while (properties.containsKey(ordinal + increment)) {
+				increment = (float) (increment + 0.1);
+			}
+			if (currentOrdinal != null && currentTemplate != null) {
+				PropertyTemplate propertyTemplate = new PropertyTemplate(property,
+						(propertyType == null) ? currentTemplate.getPropertyType() : propertyType,
+						(range == null) ? currentTemplate.getRange() : range, ordinal + increment,
+						(visible == null) ? currentTemplate.getVisible() : visible,
+						(aggregate == null) ? currentTemplate.getAggregate() : aggregate,
+						(formatOptions == null) ? currentTemplate.getFormatOptions() : formatOptions);
+				properties.remove(currentOrdinal);
+				properties.put(ordinal + increment, propertyTemplate);
+			}
+		} else {
+			for (PropertyTemplate propertyTemplate : properties.values()) {
+				if (propertyTemplate.getProperty().equals(property)) {
+					propertyTemplate.update(property, propertyType, range, ordinal, visible, aggregate, formatOptions);
+					break;
+				}
+			}
 		}
 	}
 }

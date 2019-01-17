@@ -1,0 +1,137 @@
+@font-face {
+  font-family: 'icomoon';
+  src:  url('fonts/icomoon.eot?od4p3d');
+  src:  url('fonts/icomoon.eot?od4p3d#iefix') format('embedded-opentype'),
+    url('fonts/icomoon.ttf?od4p3d') format('truetype'),
+    url('fonts/icomoon.woff?od4p3d') format('woff'),
+    url('fonts/icomoon.svg?od4p3d#icomoon') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+
+[class^="icon-"], [class*=" icon-"] {
+  /* use !important to prevent issues with browser extensions that change fonts */
+  font-family: 'icomoon' !important;
+  speak: none;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+
+  /* Better Font Rendering =========== */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.icon-Actual_Medicinal_Product:before {
+  content: "\e900";
+}
+.icon-Actual_Medicinal_Product_Pack:before {
+  content: "\e901";
+}
+.icon-BNF_Medicinal_Product:before {
+  content: "\e902";
+}
+.icon-Care_Organisation:before {
+  content: "\e903";
+}
+.icon-Clinical_Commissioning_Group:before {
+  content: "\e904";
+}
+.icon-Clinical_Commissioning_Group_Site:before {
+  content: "\e905";
+}
+.icon-Current_Care_Organisation:before {
+  content: "\e906";
+}
+.icon-Dental_Consultant:before {
+  content: "\e907";
+}
+.icon-Dispensary:before {
+  content: "\e908";
+}
+.icon-General_Dental_Practice:before {
+  content: "\e909";
+}
+.icon-General_Dental_Practitioner:before {
+  content: "\e90a";
+}
+.icon-General_Dental_Practitioner_Membership:before {
+  content: "\e90b";
+}
+.icon-General_Practitioner:before {
+  content: "\e90c";
+}
+.icon-General_Practitioner_Membership:before {
+  content: "\e90d";
+}
+.icon-Geographical_Region:before {
+  content: "\e90e";
+}
+.icon-GP_Branch_Surgery:before {
+  content: "\e90f";
+}
+.icon-GP_Practice:before {
+  content: "\e910";
+}
+.icon-Hospital_Consultant:before {
+  content: "\e911";
+}
+.icon-Independent_Healthcare_Provider:before {
+  content: "\e912";
+}
+.icon-Independent_Healthcare_Provider_Site:before {
+  content: "\e913";
+}
+.icon-Independent_Provider:before {
+  content: "\e914";
+}
+.icon-NHS_Care_Trust:before {
+  content: "\e915";
+}
+.icon-NHS_Trust:before {
+  content: "\e916";
+}
+.icon-NHS_Trust_Site:before {
+  content: "\e917";
+}
+.icon-Nurse_Prescriber:before {
+  content: "\e918";
+}
+.icon-Parent_Organisation:before {
+  content: "\e919";
+}
+.icon-Pharmacy_Headquarters_Organisation:before {
+  content: "\e91a";
+}
+.icon-Practice_Membership:before {
+  content: "\e91b";
+}
+.icon-Prescription_Order:before {
+  content: "\e91c";
+}
+.icon-Primary_Care_Trust:before {
+  content: "\e91d";
+}
+.icon-Primary_Care_Trust_Site:before {
+  content: "\e91e";
+}
+.icon-Private_Controlled_Drug_Prescriber:before {
+  content: "\e91f";
+}
+.icon-Provider_Purchaser:before {
+  content: "\e920";
+}
+.icon-Supplier:before {
+  content: "\e921";
+}
+.icon-Virtual_Medicinal_Product:before {
+  content: "\e922";
+}
+.icon-Virtual_Medicinal_Product_Pack:before {
+  content: "\e923";
+}
+.icon-Virtual_Therapeutic_Moiety:before {
+  content: "\e924";
+}
