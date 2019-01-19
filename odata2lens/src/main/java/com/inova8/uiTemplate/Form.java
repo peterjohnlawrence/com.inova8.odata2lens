@@ -3,6 +3,7 @@ package com.inova8.uiTemplate;
 public class Form {
 
 		String target;
+		String formStyle;
 		Boolean targetVisible;
 		String targetIcon;
 		String targetEntity;	
@@ -12,6 +13,12 @@ public class Form {
 		}
 		public void setTarget(String target) {
 			this.target = target;
+		}
+		public String getFormStyle() {
+			return formStyle;
+		}
+		public void setFormStyle(String formStyle) {
+			this.formStyle = formStyle;
 		}
 		public Boolean getTargetVisible() {
 			return targetVisible;

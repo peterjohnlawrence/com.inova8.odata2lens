@@ -266,7 +266,7 @@
 		#if ($previous ), #end
 			#set( $previous=true)
 			"$navigationSet.name": {
-				"target": "$navigationSet.target",
+				"target": "$navigationSet.rangeType.entitySet.target",
 				"icon": "$entityType.entity.targetIcon",
 				"menu": [{
 					"type":"navigationSet",

@@ -11,14 +11,14 @@
 		},
 		"dataSources": {
 			"dataService": {
-				"serviceUrl": "./../../odata2sparql/cust360/",
+				"serviceUrl": "./../../odata2sparql/NHS360/",
 				"odataVersion": "4.0",
 				"autoExpandSelect": true,
 				"operationMode": "Server",
 				"synchronizationMode": "None"
 			},
 			"local": {
-				"serviceUrl": "http://localhost:8080/odata2sparql/cust360/",
+				"serviceUrl": "http://localhost:8080/odata2sparql/NHS360/",
 				"odataVersion": "4.0",
 				"autoExpandSelect": true,
 				"operationMode": "Server",
@@ -71,7 +71,7 @@
 			"i18n": {
 				"type": "sap.ui.model.resource.ResourceModel",
 				"settings": {
-					"bundleName": "apartment.cust360.i18n.i18n"
+					"bundleName": "apartment.NHS360.i18n.i18n"
 				}
 			},
 			"dataModel": {

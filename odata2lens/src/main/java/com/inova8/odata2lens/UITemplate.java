@@ -9,13 +9,15 @@ public class UITemplate {
 	private String target;
 	private String targetIcon;
 	private String type;
+	private String formStyle;
+	private String gridStyle;
 	private String targetEntity;
 	private String targetVisible;
 	private String image;
 	private TreeMap<Float, PropertyTemplate> properties = new TreeMap<Float, PropertyTemplate>();
 
 	public UITemplate(String sequence, String entity, String entityIcon, String image, String target, String targetIcon,
-			String type, String targetEntity, String targetVisible) {
+			String type, String targetEntity, String targetVisible, String formStyle, String gridStyle) {
 		super();
 		this.sequence = sequence;
 		this.entity = entity;
@@ -26,7 +28,10 @@ public class UITemplate {
 		this.type = type;
 		this.targetEntity = targetEntity;
 		this.targetVisible = targetVisible;
-
+		if (formStyle != null && !formStyle.isEmpty())
+			this.formStyle = formStyle;
+		if (gridStyle != null && !gridStyle.isEmpty())
+			this.gridStyle = gridStyle;
 	}
 
 	public String getSequence() {
@@ -69,8 +74,25 @@ public class UITemplate {
 		return properties;
 	}
 
+	public String getFormStyle() {
+		return formStyle;
+	}
+
+	public void setFormStyle(String formStyle) {
+		this.formStyle = formStyle;
+	}
+
+	public String getGridStyle() {
+		return gridStyle;
+	}
+
+	public void setGridStyle(String gridStyle) {
+		this.gridStyle = gridStyle;
+	}
+
 	public void update(String sequence, String entity, String entityIcon, String image, String target,
-			String targetIcon, String type, String targetEntity, String targetVisible) {
+			String targetIcon, String type, String targetEntity, String targetVisible, String formStyle,
+			String gridStyle) {
 		if (sequence != null && !sequence.isEmpty())
 			this.sequence = sequence;
 		if (entity != null && !entity.isEmpty())
@@ -89,10 +111,15 @@ public class UITemplate {
 			this.targetEntity = targetEntity;
 		if (targetVisible != null && !targetVisible.isEmpty())
 			this.targetVisible = targetVisible;
+		if (formStyle != null && !formStyle.isEmpty())
+			this.formStyle = formStyle;
+		if (gridStyle != null && !gridStyle.isEmpty())
+			this.gridStyle = gridStyle;
 	}
 
 	public void update(String sequence, String entity, String entityIcon, String image, String target,
-			String targetIcon, String type, String targetEntity, Boolean targetVisible) {
+			String targetIcon, String type, String targetEntity, Boolean targetVisible,String formStyle,
+			String gridStyle) {
 		if (sequence != null && !sequence.isEmpty())
 			this.sequence = sequence;
 		if (entity != null && !entity.isEmpty())
@@ -111,6 +138,10 @@ public class UITemplate {
 			this.targetEntity = targetEntity;
 		if (targetVisible != null && !targetEntity.isEmpty())
 			this.targetVisible = targetVisible.toString();
+		if (formStyle != null && !formStyle.isEmpty())
+			this.formStyle = formStyle;
+		if (gridStyle != null && !gridStyle.isEmpty())
+			this.gridStyle = gridStyle;
 	}
 
 	public void updateProperty(String property, String propertyType, String range, Float ordinal, Boolean visible,

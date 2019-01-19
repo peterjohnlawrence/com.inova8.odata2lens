@@ -1,6 +1,5 @@
 package com.inova8.odata2lens;
 
-import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
@@ -103,115 +102,6 @@ public class GenerateLens {
 		}
 	}
 
-	@SuppressWarnings("unused")
-	private static TreeMap<String, UITemplate> readUITemplate(String schemaName) throws IOException {
-
-		BufferedReader uiTemplateReader = null;
-		TreeMap<String, UITemplate> uiTemplates = new TreeMap<String, UITemplate>();
-
-		uiTemplates = readUITemplateFile(
-				getDestinationPath() + File.separator + schemaName + File.separator + "uitemplate.generated.csv");
-		try {
-			String uiTemplateFile = getSourcePath() + File.separator + schemaName + File.separator + "uitemplate.csv";
-			uiTemplateReader = new BufferedReader(new FileReader(uiTemplateFile));
-			String line = "";
-			String cvsSplitBy = ",";
-			Boolean firstLine = true;
-			while ((line = uiTemplateReader.readLine()) != null) {
-				if (firstLine) {
-					firstLine = false;
-				} else {
-					String[] template = line.split(cvsSplitBy);
-					if (template.length > 13) {
-						String target = null;
-						try {
-							target = template[4].trim();
-							UITemplate currentTemplate = uiTemplates.get(target);
-							currentTemplate.update(template[0].trim(), template[1].trim(), template[2].trim(),
-									template[3].trim(), template[4].trim(), template[5].trim(), template[6].trim(),
-									template[7].trim(), template[8].trim());
-							EntityType entityType = entityTypes.get(template[1].trim());
-							if (!template[2].trim().isEmpty())
-								entityType.getEntitySet().setEntityIcon(template[2].trim());
-							if (!template[3].trim().isEmpty())
-								entityType.getEntitySet().setImage(template[3].trim());
-							if (!template[5].trim().isEmpty())
-								entityType.getEntity().setTargetIcon(template[5].trim());
-							if (!template[8].trim().isEmpty())
-								entityType.getEntitySet().setVisible(Boolean.parseBoolean(template[8].trim()));
-							if (template.length == 16)
-								currentTemplate.updateProperty(template[9].trim(), template[10].trim(),
-										template[11].trim(), Float.parseFloat(template[12].trim()),
-										Boolean.parseBoolean(template[13].trim()), template[14].trim(),
-										template[15].trim());
-							else
-								currentTemplate.updateProperty(template[9].trim(), template[10].trim(),
-										template[11].trim(), Float.parseFloat(template[12].trim()),
-										Boolean.parseBoolean(template[13].trim()), template[14].trim(), "");
-						} catch (Exception e) {
-						} finally {
-						}
-					}
-				}
-			}
-		} catch (FileNotFoundException e) {
-
-		} finally {
-			if (uiTemplateReader != null) {
-				uiTemplateReader.close();
-			}
-		}
-		return uiTemplates;
-	}
-
-	private static TreeMap<String, UITemplate> readUITemplateFile(String uiTemplateFile) throws IOException {
-
-		BufferedReader uiTemplateReader = null;
-		TreeMap<String, UITemplate> uiTemplates = new TreeMap<String, UITemplate>();
-		try {
-			uiTemplateReader = new BufferedReader(new FileReader(uiTemplateFile));
-			String line = "";
-			String cvsSplitBy = ",";
-			Boolean firstLine = true;
-			String currentTarget = null;
-			UITemplate currentTemplate = null;
-			while ((line = uiTemplateReader.readLine()) != null) {
-				if (firstLine) {
-					firstLine = false;
-				} else {
-					String[] template = line.split(cvsSplitBy);
-					if (template.length == 16) {
-						String target = null;
-						try {
-							target = template[4].trim();
-							if (!target.equals(currentTarget)) {
-								currentTemplate = new UITemplate(template[0].trim(), template[1].trim(),
-										template[2].trim(), template[3].trim(), template[4].trim(), template[5].trim(),
-										template[6].trim(), template[7].trim(), template[8].trim());
-								currentTarget = target;
-								uiTemplates.put(target, currentTemplate);
-							}
-							currentTemplate.getProperties().put(Float.parseFloat(template[12].trim()),
-									new PropertyTemplate(template[9].trim(), template[10].trim(), template[11].trim(),
-											Float.parseFloat(template[12].trim()),
-											Boolean.parseBoolean(template[13].trim()), template[14].trim(),
-											template[15].trim()));
-						} catch (Exception e) {
-						} finally {
-						}
-					}
-				}
-			}
-		} catch (FileNotFoundException e) {
-
-		} finally {
-			if (uiTemplateReader != null) {
-				uiTemplateReader.close();
-			}
-		}
-		return uiTemplates;
-	}
-
 	private static TreeMap<String, UITemplate> readUITemplateJson(String schemaName) throws IOException {
 
 		TreeMap<String, UITemplate> uiTemplates;
@@ -241,11 +131,13 @@ public class GenerateLens {
 					UITemplate formTemplate = uiTemplates.get(formTarget);
 
 					formTemplate.update(null, entity.getEntity(), entity.getIcon(), entity.getImage(), form.getTarget(),
-							form.getTargetIcon(), "Form", form.getTargetEntity(), form.getTargetVisible());
+							form.getTargetIcon(), "Form", form.getTargetEntity(), form.getTargetVisible(),form.getFormStyle(),null);
 					if (form.getTargetIcon() != null && !form.getTargetIcon().isEmpty())
 						entityType.getEntity().setTargetIcon(form.getTargetIcon());
 					if (form.getTargetVisible() != null && !form.getTargetVisible().toString().isEmpty())
-						entityType.getEntitySet().setVisible(form.getTargetVisible());
+						entityType.getEntity().setVisible(form.getTargetVisible());
+					if (form.getFormStyle() != null && !form.getFormStyle().toString().isEmpty())
+						entityType.getEntity().setFormStyle(form.getFormStyle());
 					for (com.inova8.uiTemplate.Property property : form.getProperties()) {
 						formTemplate.updateProperty(property.getProperty(), property.getPropertyType(),
 								property.getPropertyRange(), property.getOrdinal(), property.getPropertyVisible(),
@@ -258,11 +150,13 @@ public class GenerateLens {
 					UITemplate gridTemplate = uiTemplates.get(gridTarget);
 
 					gridTemplate.update(null, entity.getEntity(), entity.getIcon(), entity.getImage(), grid.getTarget(),
-							grid.getTargetIcon(), "Grid", grid.getTargetEntity(), grid.getTargetVisible());
+							grid.getTargetIcon(), "Grid", grid.getTargetEntity(), grid.getTargetVisible(),null,grid.getGridStyle());
 					if (grid.getTargetIcon() != null && !grid.getTargetIcon().isEmpty())
 						entityType.getEntity().setTargetIcon(grid.getTargetIcon());
 					if (grid.getTargetVisible() != null && !grid.getTargetVisible().toString().isEmpty())
 						entityType.getEntitySet().setVisible(grid.getTargetVisible());
+					if (grid.getGridStyle() != null && !grid.getGridStyle().toString().isEmpty())
+						entityType.getEntitySet().setGridStyle(grid.getGridStyle());
 					for (com.inova8.uiTemplate.Property property : grid.getProperties()) {
 						gridTemplate.updateProperty(property.getProperty(), property.getPropertyType(),
 								property.getPropertyRange(), property.getOrdinal(), property.getPropertyVisible(),
@@ -293,7 +187,7 @@ public class GenerateLens {
 				Form form = entity.getForm();
 				UITemplate formTemplate = new UITemplate(sequence.toString(), entity.getEntity(), entity.getIcon(),
 						entity.getImage(), form.getTarget(), form.getTargetIcon(), "Form", form.getTargetEntity(),
-						form.getTargetVisible().toString());
+						form.getTargetVisible().toString(), form.getFormStyle(),null);
 				for (com.inova8.uiTemplate.Property property : form.getProperties()) {
 					formTemplate.getProperties().put(property.getOrdinal(),
 							new PropertyTemplate(property.getProperty(), property.getPropertyType(),
@@ -305,7 +199,7 @@ public class GenerateLens {
 				Grid grid = entity.getGrid();
 				UITemplate gridTemplate = new UITemplate(sequence.toString(), entity.getEntity(), entity.getIcon(),
 						entity.getImage(), form.getTarget(), form.getTargetIcon(), "Grid", form.getTargetEntity(),
-						form.getTargetVisible().toString());
+						form.getTargetVisible().toString(),null,grid.getGridStyle());
 				for (com.inova8.uiTemplate.Property property : grid.getProperties()) {
 					gridTemplate.getProperties().put(property.getOrdinal(),
 							new PropertyTemplate(property.getProperty(), property.getPropertyType(),
@@ -410,7 +304,7 @@ public class GenerateLens {
 										? entityTypeAnnotations.get("sap.quickinfo") + "s"
 										: "Show " + edmEntityType.getName() + "s"),
 
-						"./images/icons/unknown.png", "sap-icon://group-2", true,
+						"./images/icons/unknown.svg", "sap-icon://group-2", true,
 						entityTypeAnnotations.containsKey("odata.baseType")
 								? entityTypeAnnotations.get("odata.baseType")
 								: null
@@ -560,36 +454,13 @@ public class GenerateLens {
 						"routing.json"));
 		fw.write(routingWriter.toString());
 		fw.close();
-		//System.out.println(routingWriter.toString());
-
 	}
 
-	@SuppressWarnings("unused")
-	private static void generateUITemplate(String schemaName) throws IOException {
 
-		Template uiTemplate = null;
-
-		uiTemplate = Velocity.getTemplate("uiTemplate.vm");
-		StringWriter uiWriter = new StringWriter();
-		VelocityContext uiContext = new VelocityContext();
-
-		uiContext.put("schema", schemaName);
-		uiContext.put("entityTypes", entityTypes);
-
-		uiTemplate.merge(uiContext, uiWriter);
-
-		FileWriter fw = new FileWriter(new File(getDestinationPath() + File.separator + schemaName + File.separator,
-				"uiTemplate.generated.csv"));
-		fw.write(uiWriter.toString());
-		fw.close();
-		//System.out.println(uiWriter.toString());
-	}
 
 	private static void generateUITemplateJson(String schemaName) throws IOException {
 
 		Template uiTemplate = null;
-
-		//uiTemplate = Velocity.getTemplate(getWorkingPath() + File.separator + "uiTemplate.json.vm");
 		uiTemplate = Velocity.getTemplate("uiTemplate.json.vm");
 		StringWriter uiWriter = new StringWriter();
 		VelocityContext uiContext = new VelocityContext();
@@ -603,7 +474,6 @@ public class GenerateLens {
 				"uiTemplate.generated.json"));
 		fw.write(uiWriter.toString());
 		fw.close();
-		//System.out.println(uiWriter.toString());
 	}
 
 	private static void generateContextMenu(String schemaName, TreeMap<String, UITemplate> uiTemplates)
@@ -625,17 +495,18 @@ public class GenerateLens {
 						"contextMenu.json"));
 		fw.write(contextMenuWriter.toString());
 		fw.close();
-		//System.out.println(contextMenuWriter.toString());
 	}
 
 	private static void generateEntitySet(String schemaName, StringWriter i18nWriter,
 			TreeMap<String, UITemplate> uiTemplates) throws IOException {
 
-		Template entitySetTemplate = null;
-		Template i18nTemplate = null;
+//		Template entitySet360Template = null;
+//		Template entitySetTableTemplate = null;
+//		Template i18nTemplate = null;
 
-		entitySetTemplate = Velocity.getTemplate("entitySet360.vm");
-		i18nTemplate = Velocity.getTemplate("i18n.entitySet360.vm");
+		Template entitySet360Template = Velocity.getTemplate("entitySet360.vm");
+		Template entitySetTableTemplate = Velocity.getTemplate("entitySetTable.vm");
+		Template i18nTemplate = Velocity.getTemplate("i18n.entitySet360.vm");
 
 		for (EntityType entityType : entityTypes.values()) {
 			StringWriter entitySetWriter = new StringWriter();
@@ -645,20 +516,25 @@ public class GenerateLens {
 			entitySetContext.put("entity", entityType.getEntity());
 			entitySetContext.put("entitySet", entityType.getEntitySet());
 			entitySetContext.put("complexTypes", complexTypes);
-			entitySetContext.put("uiTemplate", uiTemplates.get(entityType.getEntitySet().getTarget()));
-			entitySetTemplate.merge(entitySetContext, entitySetWriter);
-
-			i18nTemplate.merge(entitySetContext, i18nWriter);
-
+			entitySetContext.put("uiTemplate", uiTemplates.get(entityType.getEntitySet().getTarget()));		
+			if(entityType.getEntitySet().getGridStyle()==null || entityType.getEntitySet().getGridStyle().equals("entitySet360")) {
+				entitySet360Template.merge(entitySetContext, entitySetWriter);
+				i18nTemplate.merge(entitySetContext, i18nWriter);
+			}else if(entityType.getEntitySet().getGridStyle().equals("entitySetTable")){
+				entitySetTableTemplate.merge(entitySetContext, entitySetWriter);
+				i18nTemplate.merge(entitySetContext, i18nWriter);
+			}else {
+				
+				System.out.println("Invalid template "+ entityType.getEntitySet().getGridStyle());
+			}
 			(new File(getDestinationPath() + File.separator + schemaName + File.separator + "view" + File.separator
 					+ entityType.getEntitySet().getTarget())).mkdirs();
 			FileWriter fw = new FileWriter(new File(getDestinationPath() + File.separator + schemaName + File.separator
 					+ "view" + File.separator + entityType.getEntitySet().getTarget() + File.separator
 					+ entityType.getEntitySet().getTarget() + ".view.xml"));
 			fw.write(entitySetWriter.toString());
-			fw.close();
-			//System.out.println(entitySetWriter.toString());
-			//System.out.println(i18nWriter.toString());
+			fw.close();		
+			
 		}
 
 	}
@@ -692,17 +568,11 @@ public class GenerateLens {
 					+ entityType.getEntity().getTarget() + ".view.xml"));
 			fw.write(entityWriter.toString());
 			fw.close();
-			//System.out.println(entityWriter.toString());
-			//System.out.println(i18nWriter.toString());
 		}
-
 	}
 
 	private static Properties setTemplateLocation() {
 		Properties props = new Properties();
-		//		String sPath = getWorkingPath();
-		//		props.put("file.resource.loader.path", sPath);
-
 		props.put(RuntimeConstants.RESOURCE_LOADER, "classpath");
 		props.put("classpath.resource.loader.class", ClasspathResourceLoader.class.getName());
 		props.setProperty("runtime.log.logsystem.class", "org.apache.velocity.runtime.log.NullLogSystem");
@@ -720,11 +590,6 @@ public class GenerateLens {
 
 	private static String getDestinationPath() {
 		return destinationPath;
-		//		URL main = GenerateLens.class.getResource("GenerateLens.class");
-		//		File file = new File(main.getPath());
-		//		Path path = Paths.get(file.getPath());
-		//		String sPath = path.getParent().getParent().getParent().getParent().toString();
-		//		return sPath.replace("%20", " ");
 	}
 
 	private static String getSourcePath() {
@@ -740,4 +605,132 @@ public class GenerateLens {
 		return edm;
 
 	}
+//	@SuppressWarnings("unused")
+//	private static TreeMap<String, UITemplate> readUITemplate(String schemaName) throws IOException {
+//
+//		BufferedReader uiTemplateReader = null;
+//		TreeMap<String, UITemplate> uiTemplates = new TreeMap<String, UITemplate>();
+//
+//		uiTemplates = readUITemplateFile(
+//				getDestinationPath() + File.separator + schemaName + File.separator + "uitemplate.generated.csv");
+//		try {
+//			String uiTemplateFile = getSourcePath() + File.separator + schemaName + File.separator + "uitemplate.csv";
+//			uiTemplateReader = new BufferedReader(new FileReader(uiTemplateFile));
+//			String line = "";
+//			String cvsSplitBy = ",";
+//			Boolean firstLine = true;
+//			while ((line = uiTemplateReader.readLine()) != null) {
+//				if (firstLine) {
+//					firstLine = false;
+//				} else {
+//					String[] template = line.split(cvsSplitBy);
+//					if (template.length > 13) {
+//						String target = null;
+//						try {
+//							target = template[4].trim();
+//							UITemplate currentTemplate = uiTemplates.get(target);
+//							currentTemplate.update(template[0].trim(), template[1].trim(), template[2].trim(),
+//									template[3].trim(), template[4].trim(), template[5].trim(), template[6].trim(),
+//									template[7].trim(), template[8].trim());
+//							EntityType entityType = entityTypes.get(template[1].trim());
+//							if (!template[2].trim().isEmpty())
+//								entityType.getEntitySet().setEntityIcon(template[2].trim());
+//							if (!template[3].trim().isEmpty())
+//								entityType.getEntitySet().setImage(template[3].trim());
+//							if (!template[5].trim().isEmpty())
+//								entityType.getEntity().setTargetIcon(template[5].trim());
+//							if (!template[8].trim().isEmpty())
+//								entityType.getEntitySet().setVisible(Boolean.parseBoolean(template[8].trim()));
+//							if (template.length == 16)
+//								currentTemplate.updateProperty(template[9].trim(), template[10].trim(),
+//										template[11].trim(), Float.parseFloat(template[12].trim()),
+//										Boolean.parseBoolean(template[13].trim()), template[14].trim(),
+//										template[15].trim());
+//							else
+//								currentTemplate.updateProperty(template[9].trim(), template[10].trim(),
+//										template[11].trim(), Float.parseFloat(template[12].trim()),
+//										Boolean.parseBoolean(template[13].trim()), template[14].trim(), "");
+//						} catch (Exception e) {
+//						} finally {
+//						}
+//					}
+//				}
+//			}
+//		} catch (FileNotFoundException e) {
+//
+//		} finally {
+//			if (uiTemplateReader != null) {
+//				uiTemplateReader.close();
+//			}
+//		}
+//		return uiTemplates;
+//	}
+//	@SuppressWarnings("unused")
+//	private static TreeMap<String, UITemplate> readUITemplateFile(String uiTemplateFile) throws IOException {
+//
+//		BufferedReader uiTemplateReader = null;
+//		TreeMap<String, UITemplate> uiTemplates = new TreeMap<String, UITemplate>();
+//		try {
+//			uiTemplateReader = new BufferedReader(new FileReader(uiTemplateFile));
+//			String line = "";
+//			String cvsSplitBy = ",";
+//			Boolean firstLine = true;
+//			String currentTarget = null;
+//			UITemplate currentTemplate = null;
+//			while ((line = uiTemplateReader.readLine()) != null) {
+//				if (firstLine) {
+//					firstLine = false;
+//				} else {
+//					String[] template = line.split(cvsSplitBy);
+//					if (template.length == 16) {
+//						String target = null;
+//						try {
+//							target = template[4].trim();
+//							if (!target.equals(currentTarget)) {
+//								currentTemplate = new UITemplate(template[0].trim(), template[1].trim(),
+//										template[2].trim(), template[3].trim(), template[4].trim(), template[5].trim(),
+//										template[6].trim(), template[7].trim(), template[8].trim());
+//								currentTarget = target;
+//								uiTemplates.put(target, currentTemplate);
+//							}
+//							currentTemplate.getProperties().put(Float.parseFloat(template[12].trim()),
+//									new PropertyTemplate(template[9].trim(), template[10].trim(), template[11].trim(),
+//											Float.parseFloat(template[12].trim()),
+//											Boolean.parseBoolean(template[13].trim()), template[14].trim(),
+//											template[15].trim()));
+//						} catch (Exception e) {
+//						} finally {
+//						}
+//					}
+//				}
+//			}
+//		} catch (FileNotFoundException e) {
+//
+//		} finally {
+//			if (uiTemplateReader != null) {
+//				uiTemplateReader.close();
+//			}
+//		}
+//		return uiTemplates;
+//	}
+//	@SuppressWarnings("unused")
+//	private static void generateUITemplate(String schemaName) throws IOException {
+//
+//		Template uiTemplate = null;
+//
+//		uiTemplate = Velocity.getTemplate("uiTemplate.vm");
+//		StringWriter uiWriter = new StringWriter();
+//		VelocityContext uiContext = new VelocityContext();
+//
+//		uiContext.put("schema", schemaName);
+//		uiContext.put("entityTypes", entityTypes);
+//
+//		uiTemplate.merge(uiContext, uiWriter);
+//
+//		FileWriter fw = new FileWriter(new File(getDestinationPath() + File.separator + schemaName + File.separator,
+//				"uiTemplate.generated.csv"));
+//		fw.write(uiWriter.toString());
+//		fw.close();
+//	}
+
 }

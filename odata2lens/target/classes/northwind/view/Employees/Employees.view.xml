@@ -1,17 +1,17 @@
-<mvc:View controllerName="com.inova8.lens.controller.EntitySet360" xmlns="sap.m" xmlns:mvc="sap.ui.core.mvc" xmlns:layout="sap.ui.layout"
-	xmlns:rdf="com.inova8.lens.control" xmlns:core="sap.ui.core">
+<mvc:View controllerName="com.inova8.lens.controller.EntitySetTable" xmlns="sap.m" xmlns:mvc="sap.ui.core.mvc"
+	xmlns:layout="sap.ui.layout" xmlns:rdf="com.inova8.lens.control" xmlns:core="sap.ui.core" xmlns:table="sap.ui.table">
 	<Page showHeader="false" id="page" navButtonPress="onNavBack" showNavButton="true" title="{i18n>Employees.ViewTitle}">
 		<content>
-			<Table id="table360" inset="false" 
-					items="{ path: 'dataModel>/Employee' 
+			<table:Table id="table" inset="false" 
+					rows="{ path: 'dataModel>/Employee' 
 						   , sorter: { path: 'label', descending: false } 
-						   , parameters:{$expand:{ managesOrder:{ $count:true}	
-						  						,  managesEmployee:{ $count:true}	
+						   , parameters:{$expand:{ managesEmployee:{ $count:true}	
+						  						,  managesOrder:{ $count:true}	
 							},$select:'*'} 
 						}"
-				noDataText="{entitySetView>/tableNoDataText}" busyIndicatorDelay="{entitySetView>/tableBusyDelay}" growing="true" growingScrollToLoad="true"
-				updateFinished="onUpdateFinished"  fixedLayout="false">
-				<headerToolbar>
+				enableColumnFreeze="true" enableCellFilter="true" showColumnVisibilityMenu="true" enableColumnReordering="true" enableBusyIndicator="true"
+				selectionMode="Single" width="auto" fixedColumnCount="1" selectionBehavior="RowSelector" rowSelectionChange= "onPress">
+				<table:toolbar>
 					<Toolbar>
 						<ToolbarSpacer/>
 						<HBox id="sourceTitle" alignItems="Center">
@@ -29,76 +29,54 @@
 						<ToolbarSpacer/>
 						<SearchField id="searchField" tooltip="{i18n>search.searchTooltip}" search="onSearch" width="auto"></SearchField>
 					</Toolbar>
-				</headerToolbar>
-				<columns>
-					<Column >
-						<Text text="{i18n>Employees.this}"/>
-					</Column>
-					<Column demandPopin="true" minScreenWidth="Tablet">
-						<Text text="{i18n>Employees.titleOfCourtesy}"/>
-					</Column>
-					<Column demandPopin="true" minScreenWidth="Tablet">
-						<Text text="{i18n>Employees.firstName}"/>
-					</Column>
-					<Column demandPopin="true" minScreenWidth="Tablet">
-						<Text text="{i18n>Employees.lastName}"/>
-					</Column>
-					<Column demandPopin="true" minScreenWidth="Tablet">
-						<Text text="{i18n>Employees.birthDate}"/>
-					</Column>
-					<Column demandPopin="true" minScreenWidth="Tablet">
-						<Text text="{i18n>Employees.employeeCountry}"/>
-					</Column>
-					<Column demandPopin="true" minScreenWidth="Tablet">
-						<Text text="{i18n>Employees.employeeLinkedIn}"/>
-					</Column>
-					<Column demandPopin="true" minScreenWidth="Tablet">
-						<Text text="{i18n>Employees.employeeCity}"/>
-					</Column>
-					<Column demandPopin="true" minScreenWidth="Tablet">
-						<Text text="{i18n>Employees.employeeAddress}"/>
-					</Column>
-					<Column demandPopin="true" minScreenWidth="Tablet">
-						<Text text="{i18n>Employees.employeePostalCode}"/>
-					</Column>
-					<Column demandPopin="true" minScreenWidth="Tablet">
-						<Text text="{i18n>Employees.homePhone}"/>
-					</Column>
-					<Column demandPopin="true" minScreenWidth="Tablet">
-						<Text text="{i18n>Employees.extension}"/>
-					</Column>
-					<Column demandPopin="true" minScreenWidth="Tablet">
-						<Text text="{i18n>Employees.hireDate}"/>
-					</Column>
-					<Column demandPopin="true" minScreenWidth="Tablet">
-						<Text text="{i18n>Employees.employeeSalary}"/>
-					</Column>
-					<Column demandPopin="true" minScreenWidth="Tablet">
-						<Text text="{i18n>Employees.managesOrder}"/>
-					</Column>
-					<Column demandPopin="true" minScreenWidth="Tablet">
-						<Text text="{i18n>Employees.managesEmployee}"/>
-					</Column>
-					<Column demandPopin="true" minScreenWidth="Tablet">
-						<Text text="{i18n>Employees.title}"/>
-					</Column>
-				</columns>
-				<items>
-					<ColumnListItem id="template360" type="Navigation" press="onPress">
-						<cells>
+				</table:toolbar>
+
+				<table:columns>
+					<table:Column >
+						<Label text="{i18n>Employees.this}"/>
+						<table:template>
 							<rdf:TextResource path="dataModel>" entitySet="Employee"/>
-							<rdf:TextLink text="{path:'dataModel>titleOfCourtesy',type:'sap.ui.model.type.String' }" linkText="{i18n>Employees.titleOfCourtesy}" tooltip="{i18n>Employees.titleOfCourtesy}"/>
-							<rdf:TextLink text="{path:'dataModel>firstName',type:'sap.ui.model.type.String' }" linkText="{i18n>Employees.firstName}" tooltip="{i18n>Employees.firstName}"/>
-							<rdf:TextLink text="{path:'dataModel>lastName',type:'sap.ui.model.type.String' }" linkText="{i18n>Employees.lastName}" tooltip="{i18n>Employees.lastName}"/>
-							<Text text="{dataModel>birthDate}" tooltip="{i18n>Employees.birthDate}"/>
-							<rdf:TextLink text="{path:'dataModel>employeeCountry',type:'sap.ui.model.type.String' }" linkText="{i18n>Employees.employeeCountry}" tooltip="{i18n>Employees.employeeCountry}"/>
-							<rdf:TextLink text="{path:'dataModel>employeeLinkedIn',type:'sap.ui.model.type.String' }" linkText="{i18n>Employees.employeeLinkedIn}" tooltip="{i18n>Employees.employeeLinkedIn}"/>
-							<rdf:TextLink text="{path:'dataModel>employeeCity',type:'sap.ui.model.type.String' }" linkText="{i18n>Employees.employeeCity}" tooltip="{i18n>Employees.employeeCity}"/>
-							<rdf:TextLink text="{path:'dataModel>employeeAddress',type:'sap.ui.model.type.String' }" linkText="{i18n>Employees.employeeAddress}" tooltip="{i18n>Employees.employeeAddress}"/>
+						</table:template>
+					</table:Column>
+					<table:Column minWidth="150" sortProperty="employeePostalCode" filterProperty="employeePostalCode" showFilterMenuEntry="true" showSortMenuEntry="true">
+						<Label text="{i18n>Employees.employeePostalCode}"/>
+						<table:template>
 							<rdf:TextLink text="{path:'dataModel>employeePostalCode',type:'sap.ui.model.type.String' }" linkText="{i18n>Employees.employeePostalCode}" tooltip="{i18n>Employees.employeePostalCode}"/>
-							<rdf:TextLink text="{path:'dataModel>homePhone',type:'sap.ui.model.type.String' }" linkText="{i18n>Employees.homePhone}" tooltip="{i18n>Employees.homePhone}"/>
-							<rdf:TextLink text="{path:'dataModel>extension',type:'sap.ui.model.type.String' }" linkText="{i18n>Employees.extension}" tooltip="{i18n>Employees.extension}"/>
-							<Text text="{dataModel>hireDate}" tooltip="{i18n>Employees.hireDate}"/>
+						</table:template>
+				 	</table:Column>									
+					<table:Column minWidth="150" sortProperty="long" filterProperty="long" showFilterMenuEntry="true" showSortMenuEntry="true">
+						<Label text="{i18n>Employees.long}"/>
+						<table:template>
+							<Text text="{path:'dataModel>long',type:'sap.ui.model.type.Float', formatOptions:{'style':'short','minFractionDigits':5} }" tooltip="{i18n>Employees.long}"/>
+						</table:template>
+				 	</table:Column>									
+					<table:Column minWidth="150" sortProperty="employeeAddress" filterProperty="employeeAddress" showFilterMenuEntry="true" showSortMenuEntry="true">
+						<Label text="{i18n>Employees.employeeAddress}"/>
+						<table:template>
+							<rdf:TextLink text="{path:'dataModel>employeeAddress',type:'sap.ui.model.type.String' }" linkText="{i18n>Employees.employeeAddress}" tooltip="{i18n>Employees.employeeAddress}"/>
+						</table:template>
+				 	</table:Column>									
+					<table:Column minWidth="150" sortProperty="employeeCity" filterProperty="employeeCity" showFilterMenuEntry="true" showSortMenuEntry="true">
+						<Label text="{i18n>Employees.employeeCity}"/>
+						<table:template>
+							<rdf:TextLink text="{path:'dataModel>employeeCity',type:'sap.ui.model.type.String' }" linkText="{i18n>Employees.employeeCity}" tooltip="{i18n>Employees.employeeCity}"/>
+						</table:template>
+				 	</table:Column>									
+					<table:Column minWidth="150" sortProperty="employeeCountry" filterProperty="employeeCountry" showFilterMenuEntry="true" showSortMenuEntry="true">
+						<Label text="{i18n>Employees.employeeCountry}"/>
+						<table:template>
+							<rdf:TextLink text="{path:'dataModel>employeeCountry',type:'sap.ui.model.type.String' }" linkText="{i18n>Employees.employeeCountry}" tooltip="{i18n>Employees.employeeCountry}"/>
+						</table:template>
+				 	</table:Column>									
+					<table:Column minWidth="150" sortProperty="employeeLinkedIn" filterProperty="employeeLinkedIn" showFilterMenuEntry="true" showSortMenuEntry="true">
+						<Label text="{i18n>Employees.employeeLinkedIn}"/>
+						<table:template>
+							<rdf:TextLink text="{path:'dataModel>employeeLinkedIn',type:'sap.ui.model.type.String' }" linkText="{i18n>Employees.employeeLinkedIn}" tooltip="{i18n>Employees.employeeLinkedIn}"/>
+						</table:template>
+				 	</table:Column>									
+					<table:Column minWidth="150" sortProperty="employeeSalary" filterProperty="employeeSalary" showFilterMenuEntry="true" showSortMenuEntry="true">
+						<Label text="{i18n>Employees.employeeSalary}"/>
+						<table:template>
 							<VBox>					
 								<HBox  justifyContent="Center" alignItems="Stretch">
 							<Text text="{path:'dataModel>employeeSalary/systemBEmployeeAnnualSalary',type:'sap.ui.model.type.Float', formatOptions:{'style':'short','maxFractionDigits':2} }" tooltip="{i18n>Employees.employeeSalary/systemBEmployeeAnnualSalary}"/>
@@ -109,13 +87,70 @@
 							<Text text="{path:'dataModel>employeeSalary/systemAEmployeeSalary',type:'sap.ui.model.type.Float', formatOptions:{'style':'short','maxFractionDigits':2} }" tooltip="{i18n>Employees.employeeSalary/systemAEmployeeSalary}"/>
 								</HBox>
 							</VBox>							
-							<rdf:NavigationPropertyCollection path="dataModel>managesOrder/$count" navigationProperty="Employee/managesOrder"/>
+						</table:template>
+				 	</table:Column>									
+					<table:Column minWidth="150" sortProperty="extension" filterProperty="extension" showFilterMenuEntry="true" showSortMenuEntry="true">
+						<Label text="{i18n>Employees.extension}"/>
+						<table:template>
+							<rdf:TextLink text="{path:'dataModel>extension',type:'sap.ui.model.type.String' }" linkText="{i18n>Employees.extension}" tooltip="{i18n>Employees.extension}"/>
+						</table:template>
+				 	</table:Column>									
+					<table:Column minWidth="150" sortProperty="lat" filterProperty="lat" showFilterMenuEntry="true" showSortMenuEntry="true">
+						<Label text="{i18n>Employees.lat}"/>
+						<table:template>
+							<Text text="{path:'dataModel>lat',type:'sap.ui.model.type.Float', formatOptions:{'style':'short','maxFractionDigits':2} }" tooltip="{i18n>Employees.lat}"/>
+						</table:template>
+				 	</table:Column>									
+					<table:Column minWidth="150" sortProperty="firstName" filterProperty="firstName" showFilterMenuEntry="true" showSortMenuEntry="true">
+						<Label text="{i18n>Employees.firstName}"/>
+						<table:template>
+							<rdf:TextLink text="{path:'dataModel>firstName',type:'sap.ui.model.type.String' }" linkText="{i18n>Employees.firstName}" tooltip="{i18n>Employees.firstName}"/>
+						</table:template>
+				 	</table:Column>									
+					<table:Column minWidth="150" sortProperty="hireDate" filterProperty="hireDate" showFilterMenuEntry="true" showSortMenuEntry="true">
+						<Label text="{i18n>Employees.hireDate}"/>
+						<table:template>
+							<Text text="{dataModel>hireDate}" tooltip="{i18n>Employees.hireDate}"/>
+						</table:template>
+				 	</table:Column>									
+					<table:Column minWidth="150" sortProperty="homePhone" filterProperty="homePhone" showFilterMenuEntry="true" showSortMenuEntry="true">
+						<Label text="{i18n>Employees.homePhone}"/>
+						<table:template>
+							<rdf:TextLink text="{path:'dataModel>homePhone',type:'sap.ui.model.type.String' }" linkText="{i18n>Employees.homePhone}" tooltip="{i18n>Employees.homePhone}"/>
+						</table:template>
+				 	</table:Column>									
+					<table:Column minWidth="150" sortProperty="lastName" filterProperty="lastName" showFilterMenuEntry="true" showSortMenuEntry="true">
+						<Label text="{i18n>Employees.lastName}"/>
+						<table:template>
+							<rdf:TextLink text="{path:'dataModel>lastName',type:'sap.ui.model.type.String' }" linkText="{i18n>Employees.lastName}" tooltip="{i18n>Employees.lastName}"/>
+						</table:template>
+				 	</table:Column>									
+					<table:Column minWidth="150" sortProperty="managesEmployee" filterProperty="managesEmployee" showFilterMenuEntry="true" showSortMenuEntry="true">
+						<Label text="{i18n>Employees.managesEmployee}"/>
+						<table:template>
 							<rdf:NavigationPropertyCollection path="dataModel>managesEmployee/$count" navigationProperty="Employee/managesEmployee"/>
+						</table:template>
+				 	</table:Column>									
+					<table:Column minWidth="150" sortProperty="managesOrder" filterProperty="managesOrder" showFilterMenuEntry="true" showSortMenuEntry="true">
+						<Label text="{i18n>Employees.managesOrder}"/>
+						<table:template>
+							<rdf:NavigationPropertyCollection path="dataModel>managesOrder/$count" navigationProperty="Employee/managesOrder"/>
+						</table:template>
+				 	</table:Column>									
+					<table:Column minWidth="150" sortProperty="title" filterProperty="title" showFilterMenuEntry="true" showSortMenuEntry="true">
+						<Label text="{i18n>Employees.title}"/>
+						<table:template>
 							<rdf:TextLink text="{path:'dataModel>title',type:'sap.ui.model.type.String' }" linkText="{i18n>Employees.title}" tooltip="{i18n>Employees.title}"/>
-						</cells>
-					</ColumnListItem>
-				</items>
-			</Table>
+						</table:template>
+				 	</table:Column>									
+					<table:Column minWidth="150" sortProperty="titleOfCourtesy" filterProperty="titleOfCourtesy" showFilterMenuEntry="true" showSortMenuEntry="true">
+						<Label text="{i18n>Employees.titleOfCourtesy}"/>
+						<table:template>
+							<rdf:TextLink text="{path:'dataModel>titleOfCourtesy',type:'sap.ui.model.type.String' }" linkText="{i18n>Employees.titleOfCourtesy}" tooltip="{i18n>Employees.titleOfCourtesy}"/>
+						</table:template>
+				 	</table:Column>									
+				</table:columns>
+			</table:Table>
 		</content>
 	</Page>
 </mvc:View>

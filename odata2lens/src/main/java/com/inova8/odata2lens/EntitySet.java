@@ -3,14 +3,15 @@ package com.inova8.odata2lens;
 import java.util.HashSet;
 
 public class EntitySet {
-	String name;
-	String target;
-	String dashboardTarget;
-	String label;
-	String tooltip;
-	String image;
-	String entityIcon;
-	Boolean visible;
+	private String name;
+	private String target;
+	private String dashboardTarget;
+	private String label;
+	private String tooltip;
+	private String image;
+	private String entityIcon;
+	private Boolean visible;
+	private String gridStyle="entitySet360";
 	HashSet<String> baseTypes = new HashSet<String>();
 	HashSet<EntitySet> parentEntitySets = new HashSet<EntitySet>();
 	HashSet<EntitySet> childEntitySets = new HashSet<EntitySet>();
@@ -93,6 +94,14 @@ public class EntitySet {
 
 	void setVisible(Boolean visible) {
 		this.visible = visible;
+	}
+
+	public String getGridStyle() {
+		return gridStyle;
+	}
+
+	public void setGridStyle(String gridStyle) {
+		this.gridStyle = gridStyle;
 	}
 
 }

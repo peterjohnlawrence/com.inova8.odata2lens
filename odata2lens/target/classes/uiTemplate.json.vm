@@ -6,13 +6,14 @@
 	#set ( $firstGridProperty = true )
 	"$entityType.entitySet.name": {
 	"entity": "$entityType.entitySet.name",
-	"icon": "sap-icon://expand-group",
-	"image": "./images/icons/category.png",
+	"icon": "sap-icon://group-2",
+	"image": "./images/icons/unknown.svg",
 	"entitySetVisible":true,
 	"grid": {
 		"target": "$entityType.entitySet.target",
+		"gridStyle":"entitySet360",
 		"targetVisible": true,
-		"targetIcon": "sap-icon://expand-group",
+		"targetIcon": "sap-icon://group-2",
 		"targetEntity": "$entityType.entitySet.name",	
 		"properties": [	
 	#foreach($property in $entityType.entity.properties)
@@ -107,6 +108,7 @@
 	#set ( $firstFormProperty = true )
 	"form": {
 		"target": "$entityType.entity.target",
+		"formStyle":"entity360",
 		"targetVisible": true,
 		"targetIcon": "sap-icon://expand-group",
 		"targetEntity": "$entityType.entitySet.name",

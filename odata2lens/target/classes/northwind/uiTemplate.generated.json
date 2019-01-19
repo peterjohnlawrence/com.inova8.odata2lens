@@ -1,13 +1,14 @@
 {
 	"Category": {
 	"entity": "Category",
-	"icon": "sap-icon://expand-group",
-	"image": "./images/icons/category.png",
+	"icon": "sap-icon://group-2",
+	"image": "./images/icons/unknown.svg",
 	"entitySetVisible":true,
 	"grid": {
 		"target": "Categorys",
+		"gridStyle":"entitySet360",
 		"targetVisible": true,
-		"targetIcon": "sap-icon://expand-group",
+		"targetIcon": "sap-icon://group-2",
 		"targetEntity": "Category",	
 		"properties": [	
 			{  
@@ -68,6 +69,7 @@
 		},
 	"form": {
 		"target": "Category",
+		"formStyle":"entity360",
 		"targetVisible": true,
 		"targetIcon": "sap-icon://expand-group",
 		"targetEntity": "Category",
@@ -132,13 +134,14 @@
 	,
 	"Customer": {
 	"entity": "Customer",
-	"icon": "sap-icon://expand-group",
-	"image": "./images/icons/category.png",
+	"icon": "sap-icon://group-2",
+	"image": "./images/icons/unknown.svg",
 	"entitySetVisible":true,
 	"grid": {
 		"target": "Customers",
+		"gridStyle":"entitySet360",
 		"targetVisible": true,
-		"targetIcon": "sap-icon://expand-group",
+		"targetIcon": "sap-icon://group-2",
 		"targetEntity": "Customer",	
 		"properties": [	
 			{  
@@ -316,6 +319,7 @@
 		},
 	"form": {
 		"target": "Customer",
+		"formStyle":"entity360",
 		"targetVisible": true,
 		"targetIcon": "sap-icon://expand-group",
 		"targetEntity": "Customer",
@@ -497,13 +501,14 @@
 	,
 	"Customer_Order": {
 	"entity": "Customer_Order",
-	"icon": "sap-icon://expand-group",
-	"image": "./images/icons/category.png",
+	"icon": "sap-icon://group-2",
+	"image": "./images/icons/unknown.svg",
 	"entitySetVisible":true,
 	"grid": {
 		"target": "Customer_Orders",
+		"gridStyle":"entitySet360",
 		"targetVisible": true,
-		"targetIcon": "sap-icon://expand-group",
+		"targetIcon": "sap-icon://group-2",
 		"targetEntity": "Customer_Order",	
 		"properties": [	
 			{  
@@ -573,6 +578,7 @@
 		},
 	"form": {
 		"target": "Customer_Order",
+		"formStyle":"entity360",
 		"targetVisible": true,
 		"targetIcon": "sap-icon://expand-group",
 		"targetEntity": "Customer_Order",
@@ -646,13 +652,14 @@
 	,
 	"Employee": {
 	"entity": "Employee",
-	"icon": "sap-icon://expand-group",
-	"image": "./images/icons/category.png",
+	"icon": "sap-icon://group-2",
+	"image": "./images/icons/unknown.svg",
 	"entitySetVisible":true,
 	"grid": {
 		"target": "Employees",
+		"gridStyle":"entitySet360",
 		"targetVisible": true,
-		"targetIcon": "sap-icon://expand-group",
+		"targetIcon": "sap-icon://group-2",
 		"targetEntity": "Employee",	
 		"properties": [	
 			{  
@@ -947,6 +954,7 @@
 		},
 	"form": {
 		"target": "Employee",
+		"formStyle":"entity360",
 		"targetVisible": true,
 		"targetIcon": "sap-icon://expand-group",
 		"targetEntity": "Employee",
@@ -1245,13 +1253,14 @@
 	,
 	"Order": {
 	"entity": "Order",
-	"icon": "sap-icon://expand-group",
-	"image": "./images/icons/category.png",
+	"icon": "sap-icon://group-2",
+	"image": "./images/icons/unknown.svg",
 	"entitySetVisible":true,
 	"grid": {
 		"target": "Orders",
+		"gridStyle":"entitySet360",
 		"targetVisible": true,
-		"targetIcon": "sap-icon://expand-group",
+		"targetIcon": "sap-icon://group-2",
 		"targetEntity": "Order",	
 		"properties": [	
 			{  
@@ -1519,6 +1528,7 @@
 		},
 	"form": {
 		"target": "Order",
+		"formStyle":"entity360",
 		"targetVisible": true,
 		"targetIcon": "sap-icon://expand-group",
 		"targetEntity": "Order",
@@ -1790,13 +1800,14 @@
 	,
 	"OrderDetail": {
 	"entity": "OrderDetail",
-	"icon": "sap-icon://expand-group",
-	"image": "./images/icons/category.png",
+	"icon": "sap-icon://group-2",
+	"image": "./images/icons/unknown.svg",
 	"entitySetVisible":true,
 	"grid": {
 		"target": "OrderDetails",
+		"gridStyle":"entitySet360",
 		"targetVisible": true,
-		"targetIcon": "sap-icon://expand-group",
+		"targetIcon": "sap-icon://group-2",
 		"targetEntity": "OrderDetail",	
 		"properties": [	
 			{  
@@ -1902,6 +1913,7 @@
 		},
 	"form": {
 		"target": "OrderDetail",
+		"formStyle":"entity360",
 		"targetVisible": true,
 		"targetIcon": "sap-icon://expand-group",
 		"targetEntity": "OrderDetail",
@@ -2011,13 +2023,14 @@
 	,
 	"OrderSummary": {
 	"entity": "OrderSummary",
-	"icon": "sap-icon://expand-group",
-	"image": "./images/icons/category.png",
+	"icon": "sap-icon://group-2",
+	"image": "./images/icons/unknown.svg",
 	"entitySetVisible":true,
 	"grid": {
 		"target": "OrderSummarys",
+		"gridStyle":"entitySet360",
 		"targetVisible": true,
-		"targetIcon": "sap-icon://expand-group",
+		"targetIcon": "sap-icon://group-2",
 		"targetEntity": "OrderSummary",	
 		"properties": [	
 			{  
@@ -2069,6 +2082,7 @@
 		},
 	"form": {
 		"target": "OrderSummary",
+		"formStyle":"entity360",
 		"targetVisible": true,
 		"targetIcon": "sap-icon://expand-group",
 		"targetEntity": "OrderSummary",
@@ -2124,13 +2138,14 @@
 	,
 	"Product": {
 	"entity": "Product",
-	"icon": "sap-icon://expand-group",
-	"image": "./images/icons/category.png",
+	"icon": "sap-icon://group-2",
+	"image": "./images/icons/unknown.svg",
 	"entitySetVisible":true,
 	"grid": {
 		"target": "Products",
+		"gridStyle":"entitySet360",
 		"targetVisible": true,
-		"targetIcon": "sap-icon://expand-group",
+		"targetIcon": "sap-icon://group-2",
 		"targetEntity": "Product",	
 		"properties": [	
 			{  
@@ -2299,6 +2314,7 @@
 		},
 	"form": {
 		"target": "Product",
+		"formStyle":"entity360",
 		"targetVisible": true,
 		"targetIcon": "sap-icon://expand-group",
 		"targetEntity": "Product",
@@ -2471,13 +2487,14 @@
 	,
 	"Region": {
 	"entity": "Region",
-	"icon": "sap-icon://expand-group",
-	"image": "./images/icons/category.png",
+	"icon": "sap-icon://group-2",
+	"image": "./images/icons/unknown.svg",
 	"entitySetVisible":true,
 	"grid": {
 		"target": "Regions",
+		"gridStyle":"entitySet360",
 		"targetVisible": true,
-		"targetIcon": "sap-icon://expand-group",
+		"targetIcon": "sap-icon://group-2",
 		"targetEntity": "Region",	
 		"properties": [	
 			{  
@@ -2511,6 +2528,7 @@
 		},
 	"form": {
 		"target": "Region",
+		"formStyle":"entity360",
 		"targetVisible": true,
 		"targetIcon": "sap-icon://expand-group",
 		"targetEntity": "Region",
@@ -2548,13 +2566,14 @@
 	,
 	"Shipper": {
 	"entity": "Shipper",
-	"icon": "sap-icon://expand-group",
-	"image": "./images/icons/category.png",
+	"icon": "sap-icon://group-2",
+	"image": "./images/icons/unknown.svg",
 	"entitySetVisible":true,
 	"grid": {
 		"target": "Shippers",
+		"gridStyle":"entitySet360",
 		"targetVisible": true,
-		"targetIcon": "sap-icon://expand-group",
+		"targetIcon": "sap-icon://group-2",
 		"targetEntity": "Shipper",	
 		"properties": [	
 			{  
@@ -2606,6 +2625,7 @@
 		},
 	"form": {
 		"target": "Shipper",
+		"formStyle":"entity360",
 		"targetVisible": true,
 		"targetIcon": "sap-icon://expand-group",
 		"targetEntity": "Shipper",
@@ -2661,13 +2681,14 @@
 	,
 	"Supplier": {
 	"entity": "Supplier",
-	"icon": "sap-icon://expand-group",
-	"image": "./images/icons/category.png",
+	"icon": "sap-icon://group-2",
+	"image": "./images/icons/unknown.svg",
 	"entitySetVisible":true,
 	"grid": {
 		"target": "Suppliers",
+		"gridStyle":"entitySet360",
 		"targetVisible": true,
-		"targetIcon": "sap-icon://expand-group",
+		"targetIcon": "sap-icon://group-2",
 		"targetEntity": "Supplier",	
 		"properties": [	
 			{  
@@ -2845,6 +2866,7 @@
 		},
 	"form": {
 		"target": "Supplier",
+		"formStyle":"entity360",
 		"targetVisible": true,
 		"targetIcon": "sap-icon://expand-group",
 		"targetEntity": "Supplier",
@@ -3026,13 +3048,14 @@
 	,
 	"SystemAEmployee": {
 	"entity": "SystemAEmployee",
-	"icon": "sap-icon://expand-group",
-	"image": "./images/icons/category.png",
+	"icon": "sap-icon://group-2",
+	"image": "./images/icons/unknown.svg",
 	"entitySetVisible":true,
 	"grid": {
 		"target": "SystemAEmployees",
+		"gridStyle":"entitySet360",
 		"targetVisible": true,
-		"targetIcon": "sap-icon://expand-group",
+		"targetIcon": "sap-icon://group-2",
 		"targetEntity": "SystemAEmployee",	
 		"properties": [	
 			{  
@@ -3345,6 +3368,7 @@
 		},
 	"form": {
 		"target": "SystemAEmployee",
+		"formStyle":"entity360",
 		"targetVisible": true,
 		"targetIcon": "sap-icon://expand-group",
 		"targetEntity": "SystemAEmployee",
@@ -3661,13 +3685,14 @@
 	,
 	"SystemAProduct": {
 	"entity": "SystemAProduct",
-	"icon": "sap-icon://expand-group",
-	"image": "./images/icons/category.png",
+	"icon": "sap-icon://group-2",
+	"image": "./images/icons/unknown.svg",
 	"entitySetVisible":true,
 	"grid": {
 		"target": "SystemAProducts",
+		"gridStyle":"entitySet360",
 		"targetVisible": true,
-		"targetIcon": "sap-icon://expand-group",
+		"targetIcon": "sap-icon://group-2",
 		"targetEntity": "SystemAProduct",	
 		"properties": [	
 			{  
@@ -3836,6 +3861,7 @@
 		},
 	"form": {
 		"target": "SystemAProduct",
+		"formStyle":"entity360",
 		"targetVisible": true,
 		"targetIcon": "sap-icon://expand-group",
 		"targetEntity": "SystemAProduct",
@@ -4008,13 +4034,14 @@
 	,
 	"SystemBEmployee": {
 	"entity": "SystemBEmployee",
-	"icon": "sap-icon://expand-group",
-	"image": "./images/icons/category.png",
+	"icon": "sap-icon://group-2",
+	"image": "./images/icons/unknown.svg",
 	"entitySetVisible":true,
 	"grid": {
 		"target": "SystemBEmployees",
+		"gridStyle":"entitySet360",
 		"targetVisible": true,
-		"targetIcon": "sap-icon://expand-group",
+		"targetIcon": "sap-icon://group-2",
 		"targetEntity": "SystemBEmployee",	
 		"properties": [	
 			{  
@@ -4336,6 +4363,7 @@
 		},
 	"form": {
 		"target": "SystemBEmployee",
+		"formStyle":"entity360",
 		"targetVisible": true,
 		"targetIcon": "sap-icon://expand-group",
 		"targetEntity": "SystemBEmployee",
@@ -4661,13 +4689,14 @@
 	,
 	"SystemBProduct": {
 	"entity": "SystemBProduct",
-	"icon": "sap-icon://expand-group",
-	"image": "./images/icons/category.png",
+	"icon": "sap-icon://group-2",
+	"image": "./images/icons/unknown.svg",
 	"entitySetVisible":true,
 	"grid": {
 		"target": "SystemBProducts",
+		"gridStyle":"entitySet360",
 		"targetVisible": true,
-		"targetIcon": "sap-icon://expand-group",
+		"targetIcon": "sap-icon://group-2",
 		"targetEntity": "SystemBProduct",	
 		"properties": [	
 			{  
@@ -4836,6 +4865,7 @@
 		},
 	"form": {
 		"target": "SystemBProduct",
+		"formStyle":"entity360",
 		"targetVisible": true,
 		"targetIcon": "sap-icon://expand-group",
 		"targetEntity": "SystemBProduct",
@@ -5008,13 +5038,14 @@
 	,
 	"Territory": {
 	"entity": "Territory",
-	"icon": "sap-icon://expand-group",
-	"image": "./images/icons/category.png",
+	"icon": "sap-icon://group-2",
+	"image": "./images/icons/unknown.svg",
 	"entitySetVisible":true,
 	"grid": {
 		"target": "Territorys",
+		"gridStyle":"entitySet360",
 		"targetVisible": true,
-		"targetIcon": "sap-icon://expand-group",
+		"targetIcon": "sap-icon://group-2",
 		"targetEntity": "Territory",	
 		"properties": [	
 			{  
@@ -5075,6 +5106,7 @@
 		},
 	"form": {
 		"target": "Territory",
+		"formStyle":"entity360",
 		"targetVisible": true,
 		"targetIcon": "sap-icon://expand-group",
 		"targetEntity": "Territory",
@@ -5139,13 +5171,14 @@
 	,
 	"USState": {
 	"entity": "USState",
-	"icon": "sap-icon://expand-group",
-	"image": "./images/icons/category.png",
+	"icon": "sap-icon://group-2",
+	"image": "./images/icons/unknown.svg",
 	"entitySetVisible":true,
 	"grid": {
 		"target": "USStates",
+		"gridStyle":"entitySet360",
 		"targetVisible": true,
-		"targetIcon": "sap-icon://expand-group",
+		"targetIcon": "sap-icon://group-2",
 		"targetEntity": "USState",	
 		"properties": [	
 			{  
@@ -5215,6 +5248,7 @@
 		},
 	"form": {
 		"target": "USState",
+		"formStyle":"entity360",
 		"targetVisible": true,
 		"targetIcon": "sap-icon://expand-group",
 		"targetEntity": "USState",

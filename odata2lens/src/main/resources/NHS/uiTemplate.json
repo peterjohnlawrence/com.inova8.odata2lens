@@ -1,0 +1,272 @@
+{
+	"Actual_Medicinal_Product": {
+		"entity": "Actual_Medicinal_Product",
+		"icon": "sap-icon://NHS/Actual_Medicinal_Product",
+		"image": "./apartment/NHS/images/Actual_Medicinal_Product.svg",
+		"entitySetVisible": true
+	},
+	"Actual_Medicinal_Product_Pack": {
+		"entity": "Actual_Medicinal_Product_Pack",
+		"icon": "sap-icon://NHS/Actual_Medicinal_Product_Pack",
+		"image": "./apartment/NHS/images/Actual_Medicinal_Product_Pack.svg",
+		"entitySetVisible": true
+	},
+	"Amended_Record_Indicator": {
+		"entity": "Amended_Record_Indicator",
+		"icon": "sap-icon://NHS/Amended_Record_Indicator",
+		"image": "./apartment/NHS/images/Amended_Record_Indicator.svg",
+		"entitySetVisible": false
+	},
+	"BNF_Medicinal_Product": {
+		"entity": "BNF_Medicinal_Product",
+		"icon": "sap-icon://NHS/BNF_Medicinal_Product",
+		"image": "./apartment/NHS/images/BNF_Medicinal_Product.svg",
+		"entitySetVisible": true
+	},
+	"Care_Organisation": {
+		"entity": "Care_Organisation",
+		"icon": "sap-icon://NHS/Care_Organisation",
+		"image": "./apartment/NHS/images/Care_Organisation.svg",
+		"entitySetVisible": true
+	},
+	"Clinical_Commissioning_Group": {
+		"entity": "Clinical_Commissioning_Group",
+		"icon": "sap-icon://NHS/Clinical_Commissioning_Group",
+		"image": "./apartment/NHS/images/Clinical_Commissioning_Group.svg",
+		"entitySetVisible": true
+	},
+	"Clinical_Commissioning_Group_Site": {
+		"entity": "Clinical_Commissioning_Group_Site",
+		"icon": "sap-icon://NHS/Clinical_Commissioning_Group_Site",
+		"image": "./apartment/NHS/images/Clinical_Commissioning_Group_Site.svg",
+		"entitySetVisible": true
+	},
+	"Current_Care_Organisation": {
+		"entity": "Current_Care_Organisation",
+		"icon": "sap-icon://NHS/Current_Care_Organisation",
+		"image": "./apartment/NHS/images/Current_Care_Organisation.svg",
+		"entitySetVisible": true
+	},
+	"Dental_Consultant": {
+		"entity": "Dental_Consultant",
+		"icon": "sap-icon://NHS/Dental_Consultant",
+		"image": "./apartment/NHS/images/Dental_Consultant.svg",
+		"entitySetVisible": true
+	},
+	"Dispensary": {
+		"entity": "Dispensary",
+		"icon": "sap-icon://NHS/Dispensary",
+		"image": "./apartment/NHS/images/Dispensary.svg",
+		"entitySetVisible": true
+	},
+	"GP_Branch_Surgery": {
+		"entity": "GP_Branch_Surgery",
+		"icon": "sap-icon://NHS/GP_Branch_Surgery",
+		"image": "./apartment/NHS/images/GP_Branch_Surgery.svg",
+		"entitySetVisible": true
+	},
+	"GP_Practice": {
+		"entity": "GP_Practice",
+		"icon": "sap-icon://NHS/GP_Practice",
+		"image": "./apartment/NHS/images/GP_Practice.svg",
+		"entitySetVisible": true
+	},
+	"General_Dental_Practice": {
+		"entity": "General_Dental_Practice",
+		"icon": "sap-icon://NHS/General_Dental_Practice",
+		"image": "./apartment/NHS/images/General_Dental_Practice.svg",
+		"entitySetVisible": true
+	},
+	"General_Dental_Practitioner": {
+		"entity": "General_Dental_Practitioner",
+		"icon": "sap-icon://NHS/General_Dental_Practitioner",
+		"image": "./apartment/NHS/images/General_Dental_Practitioner.svg",
+		"entitySetVisible": true
+	},
+	"General_Dental_Practitioner_Membership": {
+		"entity": "General_Dental_Practitioner_Membership",
+		"icon": "sap-icon://NHS/General_Dental_Practitioner_Membership",
+		"image": "./apartment/NHS/images/General_Dental_Practitioner_Membership.svg",
+		"entitySetVisible": true
+	},
+	"General_Practitioner": {
+		"entity": "General_Practitioner",
+		"icon": "sap-icon://NHS/General_Practitioner",
+		"image": "./apartment/NHS/images/General_Practitioner.svg",
+		"entitySetVisible": true
+	},
+	"General_Practitioner_Membership": {
+		"entity": "General_Practitioner_Membership",
+		"icon": "sap-icon://NHS/General_Practitioner_Membership",
+		"image": "./apartment/NHS/images/General_Practitioner_Membership.svg",
+		"entitySetVisible": true
+	},
+	"Geographical_Region": {
+		"entity": "Geographical_Region",
+		"icon": "sap-icon://NHS/Geographical_Region",
+		"image": "./apartment/NHS/images/Geographical_Region.svg",
+		"entitySetVisible": true
+	},
+	"Hospital_Consultant": {
+		"entity": "Hospital_Consultant",
+		"icon": "sap-icon://NHS/Hospital_Consultant",
+		"image": "./apartment/NHS/images/Hospital_Consultant.svg",
+		"entitySetVisible": true
+	},
+	"Independent_Healthcare_Provider": {
+		"entity": "Independent_Healthcare_Provider",
+		"icon": "sap-icon://NHS/Independent_Healthcare_Provider",
+		"image": "./apartment/NHS/images/Independent_Healthcare_Provider.svg",
+		"entitySetVisible": true
+	},
+	"Independent_Healthcare_Provider_Site": {
+		"entity": "Independent_Healthcare_Provider_Site",
+		"icon": "sap-icon://NHS/Independent_Healthcare_Provider_Site",
+		"image": "./apartment/NHS/images/Independent_Healthcare_Provider_Site.svg",
+		"entitySetVisible": true
+	},
+	"Independent_Provider": {
+		"entity": "Independent_Provider",
+		"icon": "sap-icon://NHS/Independent_Provider",
+		"image": "./apartment/NHS/images/Independent_Provider.svg",
+		"entitySetVisible": true
+	},
+	"Location_Organisation": {
+		"entity": "Location_Organisation",
+		"icon": "sap-icon://NHS/Location_Organisation",
+		"image": "./apartment/NHS/images/Location_Organisation.svg",
+		"entitySetVisible": false
+	},
+	"NHS_Care_Trust": {
+		"entity": "NHS_Care_Trust",
+		"icon": "sap-icon://NHS/NHS_Care_Trust",
+		"image": "./apartment/NHS/images/NHS_Care_Trust.svg",
+		"entitySetVisible": true
+	},
+	"NHS_Trust": {
+		"entity": "NHS_Trust",
+		"icon": "sap-icon://NHS/NHS_Trust",
+		"image": "./apartment/NHS/images/NHS_Trust.svg",
+		"entitySetVisible": true
+	},
+	"NHS_Trust_Site": {
+		"entity": "NHS_Trust_Site",
+		"icon": "sap-icon://NHS/NHS_Trust_Site",
+		"image": "./apartment/NHS/images/NHS_Trust_Site.svg",
+		"entitySetVisible": true
+	},
+	"Nurse_Prescriber": {
+		"entity": "Nurse_Prescriber",
+		"icon": "sap-icon://NHS/Nurse_Prescriber",
+		"image": "./apartment/NHS/images/Nurse_Prescriber.svg",
+		"entitySetVisible": true
+	},
+	"Nurse_Type": {
+		"entity": "Nurse_Type",
+		"icon": "sap-icon://NHS/Nurse_Type",
+		"image": "./apartment/NHS/images/Nurse_Type.svg",
+		"entitySetVisible": false
+	},
+	"Organisation_Sub_Type": {
+		"entity": "Organisation_Sub_Type",
+		"icon": "sap-icon://NHS/Organisation_Sub_Type",
+		"image": "./apartment/NHS/images/Organisation_Sub_Type.svg",
+		"entitySetVisible": false
+	},
+	"Parent_Organisation": {
+		"entity": "Parent_Organisation",
+		"icon": "sap-icon://NHS/Parent_Organisation",
+		"image": "./apartment/NHS/images/Parent_Organisation.svg",
+		"entitySetVisible": true
+	},
+	"Pharmacy_Headquarters_Organisation": {
+		"entity": "Pharmacy_Headquarters_Organisation",
+		"icon": "sap-icon://NHS/Pharmacy_Headquarters_Organisation",
+		"image": "./apartment/NHS/images/Pharmacy_Headquarters_Organisation.svg",
+		"entitySetVisible": true
+	},
+	"Practice_Membership": {
+		"entity": "Practice_Membership",
+		"icon": "sap-icon://NHS/Practice_Membership",
+		"image": "./apartment/NHS/images/Practice_Membership.svg",
+		"entitySetVisible": true
+	},
+	"Prescribing_Setting": {
+		"entity": "Prescribing_Setting",
+		"icon": "sap-icon://NHS/Prescribing_Setting",
+		"image": "./apartment/NHS/images/Prescribing_Setting.svg",
+		"entitySetVisible": false
+	},
+	"Prescription_Order": {
+		"entity": "Prescription_Order",
+		"icon": "sap-icon://NHS/Prescription_Order",
+		"image": "./apartment/NHS/images/Prescription_Order.svg",
+		"entitySetVisible": true
+	},
+	"Primary_Care_Trust": {
+		"entity": "Primary_Care_Trust",
+		"icon": "sap-icon://NHS/Primary_Care_Trust",
+		"image": "./apartment/NHS/images/Primary_Care_Trust.svg",
+		"entitySetVisible": true
+	},
+	"Primary_Care_Trust_Site": {
+		"entity": "Primary_Care_Trust_Site",
+		"icon": "sap-icon://NHS/Primary_Care_Trust_Site",
+		"image": "./apartment/NHS/images/Primary_Care_Trust_Site.svg",
+		"entitySetVisible": true
+	},
+	"Private_Controlled_Drug_Prescriber": {
+		"entity": "Private_Controlled_Drug_Prescriber",
+		"icon": "sap-icon://NHS/Private_Controlled_Drug_Prescriber",
+		"image": "./apartment/NHS/images/Private_Controlled_Drug_Prescriber.svg",
+		"entitySetVisible": true
+	},
+	"Provider_Purchaser": {
+		"entity": "Provider_Purchaser",
+		"icon": "sap-icon://NHS/Provider_Purchaser",
+		"image": "./apartment/NHS/images/Provider_Purchaser.svg",
+		"entitySetVisible": true
+	},
+	"Qualification_Indicator": {
+		"entity": "Qualification_Indicator",
+		"icon": "sap-icon://NHS/Qualification_Indicator",
+		"image": "./apartment/NHS/images/Qualification_Indicator.svg",
+		"entitySetVisible": false
+	},
+	"Sex": {
+		"entity": "Sex",
+		"icon": "sap-icon://NHS/Sex",
+		"image": "./apartment/NHS/images/Sex.svg",
+		"entitySetVisible": false
+	},
+	"Status": {
+		"entity": "Status",
+		"icon": "sap-icon://NHS/Status",
+		"image": "./apartment/NHS/images/Status.svg",
+		"entitySetVisible": false
+	},
+	"Supplier": {
+		"entity": "Supplier",
+		"icon": "sap-icon://NHS/Supplier",
+		"image": "./apartment/NHS/images/Supplier.svg",
+		"entitySetVisible": true
+	},
+	"Virtual_Medicinal_Product": {
+		"entity": "Virtual_Medicinal_Product",
+		"icon": "sap-icon://NHS/Virtual_Medicinal_Product",
+		"image": "./apartment/NHS/images/Virtual_Medicinal_Product.svg",
+		"entitySetVisible": true
+	},
+	"Virtual_Medicinal_Product_Pack": {
+		"entity": "Virtual_Medicinal_Product_Pack",
+		"icon": "sap-icon://NHS/Virtual_Medicinal_Product_Pack",
+		"image": "./apartment/NHS/images/Virtual_Medicinal_Product_Pack.svg",
+		"entitySetVisible": true
+	},
+	"Virtual_Therapeutic_Moiety": {
+		"entity": "Virtual_Therapeutic_Moiety",
+		"icon": "sap-icon://NHS/Virtual_Therapeutic_Moiety",
+		"image": "./apartment/NHS/images/Virtual_Therapeutic_Moiety.svg",
+		"entitySetVisible": true
+	}
+}

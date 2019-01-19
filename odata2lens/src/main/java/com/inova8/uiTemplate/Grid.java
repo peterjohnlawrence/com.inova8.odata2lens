@@ -2,6 +2,7 @@ package com.inova8.uiTemplate;
 
 public class Grid {
 	String target;
+	String gridStyle;
 	Boolean targetVisible;
 	String targetIcon;
 	String targetEntity;	
@@ -11,6 +12,12 @@ public class Grid {
 	}
 	public void setTarget(String target) {
 		this.target = target;
+	}
+	public String getGridStyle() {
+		return gridStyle;
+	}
+	public void setGridStyle(String gridStyle) {
+		this.gridStyle = gridStyle;
 	}
 	public Boolean getTargetVisible() {
 		return targetVisible;

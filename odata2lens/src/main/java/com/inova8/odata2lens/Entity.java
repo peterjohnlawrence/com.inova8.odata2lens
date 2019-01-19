@@ -11,6 +11,10 @@ public class Entity {
 	private String label;
 	private String tooltip;
 	private String targetIcon;
+	private String formStyle="entity360";
+	private Boolean visible;
+
+
 	private  TreeMap<String,EntityNavigationSet> navigationSet;
 	private  TreeMap<String,NavigationProperty> navigationProperties;
 	private  TreeMap<String,Property> properties;
@@ -75,6 +79,21 @@ public class Entity {
 	public Boolean getOwnProperties() {
 		return !(navigationSet.isEmpty() && navigationProperties.isEmpty() && properties.isEmpty() && !hasPrimitiveProperties );
 		
+	}
+
+	public String getFormStyle() {
+		return formStyle;
+	}
+
+	public void setFormStyle(String formStyle) {
+		this.formStyle = formStyle;
+	}
+	public Boolean getVisible() {
+		return visible;
+	}
+
+	public void setVisible(Boolean visible) {
+		this.visible = visible;
 	}
 	
 }
