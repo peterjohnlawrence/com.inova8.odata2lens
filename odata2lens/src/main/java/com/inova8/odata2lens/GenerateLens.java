@@ -107,9 +107,9 @@ public class GenerateLens {
 		TreeMap<String, UITemplate> uiTemplates;
 
 		uiTemplates = readUITemplateJsonFile(
-				getDestinationPath() + File.separator + schemaName + File.separator + "uitemplate.generated.json");
+				getDestinationPath() + File.separator + schemaName + File.separator + "uiTemplate.generated.json");
 		try {
-			String uiTemplateFile = getSourcePath() + File.separator + schemaName + File.separator + "uitemplate.json";
+			String uiTemplateFile = getSourcePath() + File.separator + schemaName + File.separator + "uiTemplate.json";
 			JsonReader entitiesReader = new JsonReader(new FileReader(uiTemplateFile));
 			Type targetClassType = new TypeToken<TreeMap<String, com.inova8.uiTemplate.Entity>>() {
 			}.getType();
