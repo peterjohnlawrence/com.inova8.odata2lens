@@ -53,9 +53,6 @@
 						<Text text="{i18n>SystemBProducts.reorderLevel}"/>
 					</Column>
 					<Column demandPopin="true" minScreenWidth="Tablet">
-						<Text text="{i18n>SystemBProducts.seeAlso}"/>
-					</Column>
-					<Column demandPopin="true" minScreenWidth="Tablet">
 						<Text text="{i18n>SystemBProducts.supplierNotation}"/>
 					</Column>
 					<Column demandPopin="true" minScreenWidth="Tablet">
@@ -79,7 +76,6 @@
 							<Text text="{path:'dataModel>productUnitPrice',type:'sap.ui.model.type.Float', formatOptions:{'style':'short','maxFractionDigits':2} }" tooltip="{i18n>SystemBProducts.productUnitPrice}"/>
 							<rdf:TextLink text="{path:'dataModel>quantityPerUnit',type:'sap.ui.model.type.String' }" linkText="{i18n>SystemBProducts.quantityPerUnit}" tooltip="{i18n>SystemBProducts.quantityPerUnit}"/>
 							<Text text="{path:'dataModel>reorderLevel',type:'sap.ui.model.type.Integer' }" tooltip="{i18n>SystemBProducts.reorderLevel}"/>
-							<rdf:TextLink text="{path:'dataModel>seeAlso',type:'sap.ui.model.type.String' }" linkText="{i18n>SystemBProducts.seeAlso}" tooltip="{i18n>SystemBProducts.seeAlso}"/>
 							<rdf:TextLink text="{path:'dataModel>supplierNotation',type:'sap.ui.model.type.String' }" linkText="{i18n>SystemBProducts.supplierNotation}" tooltip="{i18n>SystemBProducts.supplierNotation}"/>
 							<Text text="{dataModel>systemBUnitCommission}" tooltip="{i18n>SystemBProducts.systemBUnitCommission}"/>
 							<Text text="{path:'dataModel>unitsInStock',type:'sap.ui.model.type.Integer' }" tooltip="{i18n>SystemBProducts.unitsInStock}"/>

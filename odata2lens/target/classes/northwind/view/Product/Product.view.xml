@@ -105,14 +105,6 @@
 				</ColumnListItem>
 				<ColumnListItem >
 					<cells>
-						<Label text="{i18n>Product.seeAlso}" required="false"/> 
-						<rdf:TextLink text="{path:'dataModel>seeAlso',type:'sap.ui.model.type.String' }" linkText="{i18n>Product.seeAlso}" tooltip="{i18n>Product.seeAlso}"/>
-						<Text text=""/>
-						<Text text=""/>
-					</cells>
-				</ColumnListItem>
-				<ColumnListItem >
-					<cells>
 						<Label text="{i18n>Product.supplierNotation}" required="false"/> 
 						<rdf:TextLink text="{path:'dataModel>supplierNotation',type:'sap.ui.model.type.String' }" linkText="{i18n>Product.supplierNotation}" tooltip="{i18n>Product.supplierNotation}"/>
 						<Text text=""/>

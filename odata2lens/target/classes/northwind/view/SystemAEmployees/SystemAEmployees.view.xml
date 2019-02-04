@@ -89,9 +89,6 @@
 						<Text text="{i18n>SystemAEmployees.reportsToNotation}"/>
 					</Column>
 					<Column demandPopin="true" minScreenWidth="Tablet">
-						<Text text="{i18n>SystemAEmployees.seeAlso}"/>
-					</Column>
-					<Column demandPopin="true" minScreenWidth="Tablet">
 						<Text text="{i18n>SystemAEmployees.systemAEmployeeSalary}"/>
 					</Column>
 					<Column demandPopin="true" minScreenWidth="Tablet">
@@ -127,7 +124,6 @@
 							<rdf:TextLink text="{path:'dataModel>photo',type:'sap.ui.model.type.String' }" linkText="{i18n>SystemAEmployees.photo}" tooltip="{i18n>SystemAEmployees.photo}"/>
 							<rdf:TextLink text="{path:'dataModel>regionDescription',type:'sap.ui.model.type.String' }" linkText="{i18n>SystemAEmployees.regionDescription}" tooltip="{i18n>SystemAEmployees.regionDescription}"/>
 							<rdf:TextLink text="{path:'dataModel>reportsToNotation',type:'sap.ui.model.type.String' }" linkText="{i18n>SystemAEmployees.reportsToNotation}" tooltip="{i18n>SystemAEmployees.reportsToNotation}"/>
-							<rdf:TextLink text="{path:'dataModel>seeAlso',type:'sap.ui.model.type.String' }" linkText="{i18n>SystemAEmployees.seeAlso}" tooltip="{i18n>SystemAEmployees.seeAlso}"/>
 							<Text text="{path:'dataModel>systemAEmployeeSalary',type:'sap.ui.model.type.Float', formatOptions:{'style':'short','maxFractionDigits':2} }" tooltip="{i18n>SystemAEmployees.systemAEmployeeSalary}"/>
 							<rdf:TextLink text="{path:'dataModel>territoryNotation',type:'sap.ui.model.type.String' }" linkText="{i18n>SystemAEmployees.territoryNotation}" tooltip="{i18n>SystemAEmployees.territoryNotation}"/>
 							<rdf:TextLink text="{path:'dataModel>title',type:'sap.ui.model.type.String' }" linkText="{i18n>SystemAEmployees.title}" tooltip="{i18n>SystemAEmployees.title}"/>

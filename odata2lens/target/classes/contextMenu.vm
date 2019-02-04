@@ -1,6 +1,7 @@
 #set ( $plural= "s")	
 #set ( $dashboard= "DashBoard")		
-{
+{ "defaultNamespace": "$defaultNamespace",
+"entitySets": {
 	"qb_DataSet": {
 		"image": "./images/icons/qb_DataSet.svg",
 		"menu": [{
@@ -300,4 +301,4 @@
 	,
 	#end	
 #end
-}
+}}

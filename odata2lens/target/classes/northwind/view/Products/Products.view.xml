@@ -53,9 +53,6 @@
 						<Text text="{i18n>Products.reorderLevel}"/>
 					</Column>
 					<Column demandPopin="true" minScreenWidth="Tablet">
-						<Text text="{i18n>Products.seeAlso}"/>
-					</Column>
-					<Column demandPopin="true" minScreenWidth="Tablet">
 						<Text text="{i18n>Products.supplierNotation}"/>
 					</Column>
 					<Column demandPopin="true" minScreenWidth="Tablet">
@@ -79,7 +76,6 @@
 							<Text text="{path:'dataModel>productUnitPrice',type:'sap.ui.model.type.Float', formatOptions:{'style':'short','maxFractionDigits':2} }" tooltip="{i18n>Products.productUnitPrice}"/>
 							<rdf:TextLink text="{path:'dataModel>quantityPerUnit',type:'sap.ui.model.type.String' }" linkText="{i18n>Products.quantityPerUnit}" tooltip="{i18n>Products.quantityPerUnit}"/>
 							<Text text="{path:'dataModel>reorderLevel',type:'sap.ui.model.type.Integer' }" tooltip="{i18n>Products.reorderLevel}"/>
-							<rdf:TextLink text="{path:'dataModel>seeAlso',type:'sap.ui.model.type.String' }" linkText="{i18n>Products.seeAlso}" tooltip="{i18n>Products.seeAlso}"/>
 							<rdf:TextLink text="{path:'dataModel>supplierNotation',type:'sap.ui.model.type.String' }" linkText="{i18n>Products.supplierNotation}" tooltip="{i18n>Products.supplierNotation}"/>
 							<VBox>					
 								<HBox  justifyContent="Center" alignItems="Stretch">

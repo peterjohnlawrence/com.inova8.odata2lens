@@ -53,12 +53,6 @@
 						<rdf:TextLink text="{path:'dataModel>regionDescription',type:'sap.ui.model.type.String' }" linkText="{i18n>Region.regionDescription}" tooltip="{i18n>Region.regionDescription}"/>
 					</cells>
 				</ColumnListItem>
-				<ColumnListItem >
-					<cells>
-						<Label text="{i18n>Region.seeAlso}" required="false"/> 
-						<rdf:TextLink text="{path:'dataModel>seeAlso',type:'sap.ui.model.type.String' }" linkText="{i18n>Region.seeAlso}" tooltip="{i18n>Region.seeAlso}"/>
-					</cells>
-				</ColumnListItem>
 			</items>
 		</Table>
 	</Page>

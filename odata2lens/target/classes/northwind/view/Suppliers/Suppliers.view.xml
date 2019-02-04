@@ -50,9 +50,6 @@
 						<Text text="{i18n>Suppliers.regionDescription}"/>
 					</Column>
 					<Column demandPopin="true" minScreenWidth="Tablet">
-						<Text text="{i18n>Suppliers.seeAlso}"/>
-					</Column>
-					<Column demandPopin="true" minScreenWidth="Tablet">
 						<Text text="{i18n>Suppliers.supplierAddress}"/>
 					</Column>
 					<Column demandPopin="true" minScreenWidth="Tablet">
@@ -93,7 +90,6 @@
 							<rdf:TextLink text="{path:'dataModel>lat_long',type:'sap.ui.model.type.String' }" linkText="{i18n>Suppliers.lat_long}" tooltip="{i18n>Suppliers.lat_long}"/>
 							<Text text="{path:'dataModel>long',type:'sap.ui.model.type.Float', formatOptions:{'style':'short','maxFractionDigits':2} }" tooltip="{i18n>Suppliers.long}"/>
 							<rdf:TextLink text="{path:'dataModel>regionDescription',type:'sap.ui.model.type.String' }" linkText="{i18n>Suppliers.regionDescription}" tooltip="{i18n>Suppliers.regionDescription}"/>
-							<rdf:TextLink text="{path:'dataModel>seeAlso',type:'sap.ui.model.type.String' }" linkText="{i18n>Suppliers.seeAlso}" tooltip="{i18n>Suppliers.seeAlso}"/>
 							<rdf:TextLink text="{path:'dataModel>supplierAddress',type:'sap.ui.model.type.String' }" linkText="{i18n>Suppliers.supplierAddress}" tooltip="{i18n>Suppliers.supplierAddress}"/>
 							<rdf:TextLink text="{path:'dataModel>supplierCity',type:'sap.ui.model.type.String' }" linkText="{i18n>Suppliers.supplierCity}" tooltip="{i18n>Suppliers.supplierCity}"/>
 							<rdf:TextLink text="{path:'dataModel>supplierCompanyName',type:'sap.ui.model.type.String' }" linkText="{i18n>Suppliers.supplierCompanyName}" tooltip="{i18n>Suppliers.supplierCompanyName}"/>

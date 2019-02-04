@@ -4,6 +4,7 @@ import java.util.HashSet;
 
 public class EntitySet {
 	private String name;
+	private String fqn;
 	private String target;
 	private String dashboardTarget;
 	private String label;
@@ -16,9 +17,10 @@ public class EntitySet {
 	HashSet<EntitySet> parentEntitySets = new HashSet<EntitySet>();
 	HashSet<EntitySet> childEntitySets = new HashSet<EntitySet>();
 
-	public EntitySet(String name, String target, String dashboardTarget, String label, String tooltip, String image,
+	public EntitySet(String name,String fqn, String target, String dashboardTarget, String label, String tooltip, String image,
 			String entityIcon, Boolean visible, String baseType) {
 		this.name = name;
+		this.fqn = fqn;
 		this.target = target;
 		this.dashboardTarget = dashboardTarget;
 		this.label = label;
@@ -32,6 +34,10 @@ public class EntitySet {
 
 	public String getName() {
 		return name;
+	}
+
+	public String getFqn() {
+		return fqn;
 	}
 
 	public String getTarget() {

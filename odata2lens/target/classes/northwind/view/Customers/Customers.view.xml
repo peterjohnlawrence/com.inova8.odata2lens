@@ -76,9 +76,6 @@
 					<Column demandPopin="true" minScreenWidth="Tablet">
 						<Text text="{i18n>Customers.regionDescription}"/>
 					</Column>
-					<Column demandPopin="true" minScreenWidth="Tablet">
-						<Text text="{i18n>Customers.seeAlso}"/>
-					</Column>
 				</columns>
 				<items>
 					<ColumnListItem id="template360" type="Navigation" press="onPress">
@@ -99,7 +96,6 @@
 							<rdf:TextLink text="{path:'dataModel>lat_long',type:'sap.ui.model.type.String' }" linkText="{i18n>Customers.lat_long}" tooltip="{i18n>Customers.lat_long}"/>
 							<Text text="{path:'dataModel>long',type:'sap.ui.model.type.Float', formatOptions:{'style':'short','maxFractionDigits':2} }" tooltip="{i18n>Customers.long}"/>
 							<rdf:TextLink text="{path:'dataModel>regionDescription',type:'sap.ui.model.type.String' }" linkText="{i18n>Customers.regionDescription}" tooltip="{i18n>Customers.regionDescription}"/>
-							<rdf:TextLink text="{path:'dataModel>seeAlso',type:'sap.ui.model.type.String' }" linkText="{i18n>Customers.seeAlso}" tooltip="{i18n>Customers.seeAlso}"/>
 						</cells>
 					</ColumnListItem>
 				</items>

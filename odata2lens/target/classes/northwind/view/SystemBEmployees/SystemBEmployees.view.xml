@@ -89,9 +89,6 @@
 						<Text text="{i18n>SystemBEmployees.reportsToNotation}"/>
 					</Column>
 					<Column demandPopin="true" minScreenWidth="Tablet">
-						<Text text="{i18n>SystemBEmployees.seeAlso}"/>
-					</Column>
-					<Column demandPopin="true" minScreenWidth="Tablet">
 						<Text text="{i18n>SystemBEmployees.systemBEmployeeAnnualSalary}"/>
 					</Column>
 					<Column demandPopin="true" minScreenWidth="Tablet">
@@ -133,7 +130,6 @@
 							<rdf:TextLink text="{path:'dataModel>photo',type:'sap.ui.model.type.String' }" linkText="{i18n>SystemBEmployees.photo}" tooltip="{i18n>SystemBEmployees.photo}"/>
 							<rdf:TextLink text="{path:'dataModel>regionDescription',type:'sap.ui.model.type.String' }" linkText="{i18n>SystemBEmployees.regionDescription}" tooltip="{i18n>SystemBEmployees.regionDescription}"/>
 							<rdf:TextLink text="{path:'dataModel>reportsToNotation',type:'sap.ui.model.type.String' }" linkText="{i18n>SystemBEmployees.reportsToNotation}" tooltip="{i18n>SystemBEmployees.reportsToNotation}"/>
-							<rdf:TextLink text="{path:'dataModel>seeAlso',type:'sap.ui.model.type.String' }" linkText="{i18n>SystemBEmployees.seeAlso}" tooltip="{i18n>SystemBEmployees.seeAlso}"/>
 							<Text text="{path:'dataModel>systemBEmployeeAnnualSalary',type:'sap.ui.model.type.Float', formatOptions:{'style':'short','maxFractionDigits':2} }" tooltip="{i18n>SystemBEmployees.systemBEmployeeAnnualSalary}"/>
 							<Text text="{path:'dataModel>systemBEmployeeMonthlySalary',type:'sap.ui.model.type.Float', formatOptions:{'style':'short','maxFractionDigits':2} }" tooltip="{i18n>SystemBEmployees.systemBEmployeeMonthlySalary}"/>
 							<Text text="{dataModel>systemBHours}" tooltip="{i18n>SystemBEmployees.systemBHours}"/>

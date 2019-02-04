@@ -79,12 +79,6 @@
 				</ColumnListItem>
 				<ColumnListItem >
 					<cells>
-						<Label text="{i18n>Supplier.seeAlso}" required="false"/> 
-						<rdf:TextLink text="{path:'dataModel>seeAlso',type:'sap.ui.model.type.String' }" linkText="{i18n>Supplier.seeAlso}" tooltip="{i18n>Supplier.seeAlso}"/>
-					</cells>
-				</ColumnListItem>
-				<ColumnListItem >
-					<cells>
 						<Label text="{i18n>Supplier.supplierAddress}" required="false"/> 
 						<rdf:TextLink text="{path:'dataModel>supplierAddress',type:'sap.ui.model.type.String' }" linkText="{i18n>Supplier.supplierAddress}" tooltip="{i18n>Supplier.supplierAddress}"/>
 					</cells>

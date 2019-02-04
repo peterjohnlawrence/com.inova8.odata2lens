@@ -67,12 +67,6 @@
 				</ColumnListItem>
 				<ColumnListItem >
 					<cells>
-						<Label text="{i18n>Category.seeAlso}" required="false"/> 
-						<rdf:TextLink text="{path:'dataModel>seeAlso',type:'sap.ui.model.type.String' }" linkText="{i18n>Category.seeAlso}" tooltip="{i18n>Category.seeAlso}"/>
-					</cells>
-				</ColumnListItem>
-				<ColumnListItem >
-					<cells>
 						<Label text="{i18n>Category.isCategoryOf}" required="false"/> 
 						<rdf:ListResource path="dataModel>isCategoryOf" entitySet="Product" tooltip="{i18n>Category.isCategoryOf}"/>
 					</cells>

@@ -35,9 +35,6 @@
 						<Text text="{i18n>Shippers.comment}"/>
 					</Column>
 					<Column demandPopin="true" minScreenWidth="Tablet">
-						<Text text="{i18n>Shippers.seeAlso}"/>
-					</Column>
-					<Column demandPopin="true" minScreenWidth="Tablet">
 						<Text text="{i18n>Shippers.shipperCompanyName}"/>
 					</Column>
 					<Column demandPopin="true" minScreenWidth="Tablet">
@@ -49,7 +46,6 @@
 						<cells>
 							<rdf:TextResource path="dataModel>" entitySet="Shipper"/>
 							<rdf:TextLink text="{path:'dataModel>comment',type:'sap.ui.model.type.String' }" linkText="{i18n>Shippers.comment}" tooltip="{i18n>Shippers.comment}"/>
-							<rdf:TextLink text="{path:'dataModel>seeAlso',type:'sap.ui.model.type.String' }" linkText="{i18n>Shippers.seeAlso}" tooltip="{i18n>Shippers.seeAlso}"/>
 							<rdf:TextLink text="{path:'dataModel>shipperCompanyName',type:'sap.ui.model.type.String' }" linkText="{i18n>Shippers.shipperCompanyName}" tooltip="{i18n>Shippers.shipperCompanyName}"/>
 							<rdf:TextLink text="{path:'dataModel>shipperPhone',type:'sap.ui.model.type.String' }" linkText="{i18n>Shippers.shipperPhone}" tooltip="{i18n>Shippers.shipperPhone}"/>
 						</cells>

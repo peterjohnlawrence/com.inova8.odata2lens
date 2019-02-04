@@ -38,9 +38,6 @@
 						<Text text="{i18n>Territorys.regionNotation}"/>
 					</Column>
 					<Column demandPopin="true" minScreenWidth="Tablet">
-						<Text text="{i18n>Territorys.seeAlso}"/>
-					</Column>
-					<Column demandPopin="true" minScreenWidth="Tablet">
 						<Text text="{i18n>Territorys.territoryDescription}"/>
 					</Column>
 				</columns>
@@ -50,7 +47,6 @@
 							<rdf:TextResource path="dataModel>" entitySet="Territory"/>
 							<rdf:TextLink text="{path:'dataModel>comment',type:'sap.ui.model.type.String' }" linkText="{i18n>Territorys.comment}" tooltip="{i18n>Territorys.comment}"/>
 							<rdf:TextLink text="{path:'dataModel>regionNotation',type:'sap.ui.model.type.String' }" linkText="{i18n>Territorys.regionNotation}" tooltip="{i18n>Territorys.regionNotation}"/>
-							<rdf:TextLink text="{path:'dataModel>seeAlso',type:'sap.ui.model.type.String' }" linkText="{i18n>Territorys.seeAlso}" tooltip="{i18n>Territorys.seeAlso}"/>
 							<rdf:TextLink text="{path:'dataModel>territoryDescription',type:'sap.ui.model.type.String' }" linkText="{i18n>Territorys.territoryDescription}" tooltip="{i18n>Territorys.territoryDescription}"/>
 						</cells>
 					</ColumnListItem>

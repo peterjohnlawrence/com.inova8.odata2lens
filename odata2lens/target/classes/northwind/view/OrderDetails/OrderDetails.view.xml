@@ -49,9 +49,6 @@
 					<Column demandPopin="true" minScreenWidth="Tablet">
 						<Text text="{i18n>OrderDetails.quantity}"/>
 					</Column>
-					<Column demandPopin="true" minScreenWidth="Tablet">
-						<Text text="{i18n>OrderDetails.seeAlso}"/>
-					</Column>
 				</columns>
 				<items>
 					<ColumnListItem id="template360" type="Navigation" press="onPress">
@@ -63,7 +60,6 @@
 							<rdf:TextLink text="{path:'dataModel>orderNotation',type:'sap.ui.model.type.String' }" linkText="{i18n>OrderDetails.orderNotation}" tooltip="{i18n>OrderDetails.orderNotation}"/>
 							<rdf:TextLink text="{path:'dataModel>productNotation',type:'sap.ui.model.type.String' }" linkText="{i18n>OrderDetails.productNotation}" tooltip="{i18n>OrderDetails.productNotation}"/>
 							<Text text="{path:'dataModel>quantity',type:'sap.ui.model.type.Integer' }" tooltip="{i18n>OrderDetails.quantity}"/>
-							<rdf:TextLink text="{path:'dataModel>seeAlso',type:'sap.ui.model.type.String' }" linkText="{i18n>OrderDetails.seeAlso}" tooltip="{i18n>OrderDetails.seeAlso}"/>
 						</cells>
 					</ColumnListItem>
 				</items>

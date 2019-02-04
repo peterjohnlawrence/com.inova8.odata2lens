@@ -41,9 +41,6 @@
 						<Text text="{i18n>USStates.regionNotation}"/>
 					</Column>
 					<Column demandPopin="true" minScreenWidth="Tablet">
-						<Text text="{i18n>USStates.seeAlso}"/>
-					</Column>
-					<Column demandPopin="true" minScreenWidth="Tablet">
 						<Text text="{i18n>USStates.stateAbbr}"/>
 					</Column>
 					<Column demandPopin="true" minScreenWidth="Tablet">
@@ -57,7 +54,6 @@
 							<rdf:TextLink text="{path:'dataModel>comment',type:'sap.ui.model.type.String' }" linkText="{i18n>USStates.comment}" tooltip="{i18n>USStates.comment}"/>
 							<rdf:TextLink text="{path:'dataModel>regionDescription',type:'sap.ui.model.type.String' }" linkText="{i18n>USStates.regionDescription}" tooltip="{i18n>USStates.regionDescription}"/>
 							<rdf:TextLink text="{path:'dataModel>regionNotation',type:'sap.ui.model.type.String' }" linkText="{i18n>USStates.regionNotation}" tooltip="{i18n>USStates.regionNotation}"/>
-							<rdf:TextLink text="{path:'dataModel>seeAlso',type:'sap.ui.model.type.String' }" linkText="{i18n>USStates.seeAlso}" tooltip="{i18n>USStates.seeAlso}"/>
 							<rdf:TextLink text="{path:'dataModel>stateAbbr',type:'sap.ui.model.type.String' }" linkText="{i18n>USStates.stateAbbr}" tooltip="{i18n>USStates.stateAbbr}"/>
 							<rdf:TextLink text="{path:'dataModel>stateName',type:'sap.ui.model.type.String' }" linkText="{i18n>USStates.stateName}" tooltip="{i18n>USStates.stateName}"/>
 						</cells>

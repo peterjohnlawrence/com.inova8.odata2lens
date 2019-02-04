@@ -62,7 +62,7 @@
 				</HBox>
 				<Title id="entityTypeTitle" text="{i18n>$entity.target.$This}"/>
 				<Title text="(" width="4px"/>
-				<rdf:TextResource path="dataModel>" entitySet="$entity.name"/>
+				<rdf:TextResource path="dataModel>" entitySet="$entitySet.name"/>
 				<Title text=")" width="5px"/>
 	
 				<ToolbarSpacer/>

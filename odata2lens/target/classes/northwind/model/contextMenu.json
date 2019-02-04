@@ -1,4 +1,5 @@
-{
+{ "defaultNamespace": "northwind",
+"entitySets": {
 	"qb_DataSet": {
 		"image": "./images/icons/qb_DataSet.svg",
 		"menu": [{
@@ -528,6 +529,54 @@
 				"visible": true 			}
 			, {
 				"type":"navigationSet",
+				"key": "Employee_systemAEmployer",
+				"text": "SystemA employer",
+				"icon": "sap-icon://expand-group",
+				"target": "Suppliers", 
+				"tooltip": "SystemA employer",
+				"visible": true, 
+				"parameters": {
+					"navigation": "Employee_systemAEmployer"
+				}	
+			}
+			, {
+				"type":"navigationSet",
+				"key": "Employee_systemAFavorite",
+				"text": "SystemA favorite",
+				"icon": "sap-icon://expand-group",
+				"target": "Products", 
+				"tooltip": "SystemA favorite",
+				"visible": true, 
+				"parameters": {
+					"navigation": "Employee_systemAFavorite"
+				}	
+			}
+			, {
+				"type":"navigationSet",
+				"key": "Employee_systemBEmployer",
+				"text": "SystemB employer",
+				"icon": "sap-icon://expand-group",
+				"target": "Suppliers", 
+				"tooltip": "SystemB employer",
+				"visible": true, 
+				"parameters": {
+					"navigation": "Employee_systemBEmployer"
+				}	
+			}
+			, {
+				"type":"navigationSet",
+				"key": "Employee_systemBFavorite",
+				"text": "SystemB favorite",
+				"icon": "sap-icon://expand-group",
+				"target": "Products", 
+				"tooltip": "SystemB favorite",
+				"visible": true, 
+				"parameters": {
+					"navigation": "Employee_systemBFavorite"
+				}	
+			}
+			, {
+				"type":"navigationSet",
 				"key": "employeeRegion",
 				"text": "supports region",
 				"icon": "sap-icon://expand-group",
@@ -635,7 +684,103 @@
 			]
 		}
 		,"navigationProperty": {
-			"employeeRegion": {
+			"Employee_systemAEmployer": {
+				"target": "Suppliers",
+				"icon": "sap-icon://northwind/employee",
+				"menu": [{
+					"type":"navigationSet",
+					"key": "graph",
+					"text": "Graph View",
+					"icon": "sap-icon://overview-chart",
+					"target": "navigationSetGraph",
+					"tooltip": "Employee_systemAEmployer Graph",
+					"visible": true
+				}, {
+					"type":"navigationSet",
+					"key": "Employee_systemAEmployer",
+					"text": "SystemA employer",
+					"icon": "sap-icon://expand-group",
+					"target":  "Suppliers", 
+					"tooltip": "SystemA employer",
+					"visible": true,
+					"parameters": {
+						"navigation": "Employee_systemAEmployer"
+					}
+				}]
+			}
+											, 			"Employee_systemAFavorite": {
+				"target": "Products",
+				"icon": "sap-icon://northwind/employee",
+				"menu": [{
+					"type":"navigationSet",
+					"key": "graph",
+					"text": "Graph View",
+					"icon": "sap-icon://overview-chart",
+					"target": "navigationSetGraph",
+					"tooltip": "Employee_systemAFavorite Graph",
+					"visible": true
+				}, {
+					"type":"navigationSet",
+					"key": "Employee_systemAFavorite",
+					"text": "SystemA favorite",
+					"icon": "sap-icon://expand-group",
+					"target":  "Products", 
+					"tooltip": "SystemA favorite",
+					"visible": true,
+					"parameters": {
+						"navigation": "Employee_systemAFavorite"
+					}
+				}]
+			}
+											, 			"Employee_systemBEmployer": {
+				"target": "Suppliers",
+				"icon": "sap-icon://northwind/employee",
+				"menu": [{
+					"type":"navigationSet",
+					"key": "graph",
+					"text": "Graph View",
+					"icon": "sap-icon://overview-chart",
+					"target": "navigationSetGraph",
+					"tooltip": "Employee_systemBEmployer Graph",
+					"visible": true
+				}, {
+					"type":"navigationSet",
+					"key": "Employee_systemBEmployer",
+					"text": "SystemB employer",
+					"icon": "sap-icon://expand-group",
+					"target":  "Suppliers", 
+					"tooltip": "SystemB employer",
+					"visible": true,
+					"parameters": {
+						"navigation": "Employee_systemBEmployer"
+					}
+				}]
+			}
+											, 			"Employee_systemBFavorite": {
+				"target": "Products",
+				"icon": "sap-icon://northwind/employee",
+				"menu": [{
+					"type":"navigationSet",
+					"key": "graph",
+					"text": "Graph View",
+					"icon": "sap-icon://overview-chart",
+					"target": "navigationSetGraph",
+					"tooltip": "Employee_systemBFavorite Graph",
+					"visible": true
+				}, {
+					"type":"navigationSet",
+					"key": "Employee_systemBFavorite",
+					"text": "SystemB favorite",
+					"icon": "sap-icon://expand-group",
+					"target":  "Products", 
+					"tooltip": "SystemB favorite",
+					"visible": true,
+					"parameters": {
+						"navigation": "Employee_systemBFavorite"
+					}
+				}]
+			}
+											, 			"employeeRegion": {
 				"target": "Regions",
 				"icon": "sap-icon://northwind/employee",
 				"menu": [{
@@ -1665,6 +1810,66 @@
 				"visible": true 			}
 			, {
 				"type":"navigationSet",
+				"key": "Employee_systemAEmployer",
+				"text": "SystemA employer",
+				"icon": "sap-icon://expand-group",
+				"target": "Suppliers", 
+				"tooltip": "SystemA employer",
+				"visible": true, 
+				"parameters": {
+					"navigation": "Employee_systemAEmployer"
+				}	
+			}
+			, {
+				"type":"navigationSet",
+				"key": "Employee_systemAFavorite",
+				"text": "SystemA favorite",
+				"icon": "sap-icon://expand-group",
+				"target": "Products", 
+				"tooltip": "SystemA favorite",
+				"visible": true, 
+				"parameters": {
+					"navigation": "Employee_systemAFavorite"
+				}	
+			}
+			, {
+				"type":"navigationSet",
+				"key": "Employee_systemBEmployer",
+				"text": "SystemB employer",
+				"icon": "sap-icon://expand-group",
+				"target": "Suppliers", 
+				"tooltip": "SystemB employer",
+				"visible": true, 
+				"parameters": {
+					"navigation": "Employee_systemBEmployer"
+				}	
+			}
+			, {
+				"type":"navigationSet",
+				"key": "Employee_systemBFavorite",
+				"text": "SystemB favorite",
+				"icon": "sap-icon://expand-group",
+				"target": "Products", 
+				"tooltip": "SystemB favorite",
+				"visible": true, 
+				"parameters": {
+					"navigation": "Employee_systemBFavorite"
+				}	
+			}
+			, {
+				"type":"navigationSet",
+				"key": "SystemAEmployee_systemAEmployer",
+				"text": "SystemA employer",
+				"icon": "sap-icon://expand-group",
+				"target": "Suppliers", 
+				"tooltip": "SystemA employer",
+				"visible": true, 
+				"parameters": {
+					"navigation": "SystemAEmployee_systemAEmployer"
+				}	
+			}
+			, {
+				"type":"navigationSet",
 				"key": "employeeRegion",
 				"text": "supports region",
 				"icon": "sap-icon://expand-group",
@@ -1713,18 +1918,6 @@
 			}
 			, {
 				"type":"navigationSet",
-				"key": "systemAEmployer",
-				"text": "SystemA employer",
-				"icon": "sap-icon://expand-group",
-				"target": "Suppliers", 
-				"tooltip": "SystemA employer",
-				"visible": true, 
-				"parameters": {
-					"navigation": "systemAEmployer"
-				}	
-			}
-			, {
-				"type":"navigationSet",
 				"key": "territory",
 				"text": "operates within territory",
 				"icon": "sap-icon://expand-group",
@@ -1734,6 +1927,18 @@
 				"parameters": {
 					"navigation": "territory"
 				}	
+			}
+			, {				
+				"type":"navigationProperty",
+				"key": "SystemAEmployee_systemAFavorite",
+				"text": "SystemA favorite",
+				"icon": "sap-icon://expand-group",
+				"target": "Product",
+				"tooltip": "SystemA favorite",
+				"visible": true ,
+				"parameters": {
+					"navigation": "SystemAEmployee_systemAFavorite"
+				}
 			}
 			, {				
 				"type":"navigationProperty",
@@ -1747,22 +1952,130 @@
 					"navigation": "reportsTo"
 				}
 			}
-			, {				
-				"type":"navigationProperty",
-				"key": "systemAFavorite",
-				"text": "SystemA favorite",
-				"icon": "sap-icon://expand-group",
-				"target": "Product",
-				"tooltip": "SystemA favorite",
-				"visible": true ,
-				"parameters": {
-					"navigation": "systemAFavorite"
-				}
-			}
 			]
 		}
 		,"navigationProperty": {
-			"employeeRegion": {
+			"Employee_systemAEmployer": {
+				"target": "Suppliers",
+				"icon": "sap-icon://expand-group",
+				"menu": [{
+					"type":"navigationSet",
+					"key": "graph",
+					"text": "Graph View",
+					"icon": "sap-icon://overview-chart",
+					"target": "navigationSetGraph",
+					"tooltip": "Employee_systemAEmployer Graph",
+					"visible": true
+				}, {
+					"type":"navigationSet",
+					"key": "Employee_systemAEmployer",
+					"text": "SystemA employer",
+					"icon": "sap-icon://expand-group",
+					"target":  "Suppliers", 
+					"tooltip": "SystemA employer",
+					"visible": true,
+					"parameters": {
+						"navigation": "Employee_systemAEmployer"
+					}
+				}]
+			}
+											, 			"Employee_systemAFavorite": {
+				"target": "Products",
+				"icon": "sap-icon://expand-group",
+				"menu": [{
+					"type":"navigationSet",
+					"key": "graph",
+					"text": "Graph View",
+					"icon": "sap-icon://overview-chart",
+					"target": "navigationSetGraph",
+					"tooltip": "Employee_systemAFavorite Graph",
+					"visible": true
+				}, {
+					"type":"navigationSet",
+					"key": "Employee_systemAFavorite",
+					"text": "SystemA favorite",
+					"icon": "sap-icon://expand-group",
+					"target":  "Products", 
+					"tooltip": "SystemA favorite",
+					"visible": true,
+					"parameters": {
+						"navigation": "Employee_systemAFavorite"
+					}
+				}]
+			}
+											, 			"Employee_systemBEmployer": {
+				"target": "Suppliers",
+				"icon": "sap-icon://expand-group",
+				"menu": [{
+					"type":"navigationSet",
+					"key": "graph",
+					"text": "Graph View",
+					"icon": "sap-icon://overview-chart",
+					"target": "navigationSetGraph",
+					"tooltip": "Employee_systemBEmployer Graph",
+					"visible": true
+				}, {
+					"type":"navigationSet",
+					"key": "Employee_systemBEmployer",
+					"text": "SystemB employer",
+					"icon": "sap-icon://expand-group",
+					"target":  "Suppliers", 
+					"tooltip": "SystemB employer",
+					"visible": true,
+					"parameters": {
+						"navigation": "Employee_systemBEmployer"
+					}
+				}]
+			}
+											, 			"Employee_systemBFavorite": {
+				"target": "Products",
+				"icon": "sap-icon://expand-group",
+				"menu": [{
+					"type":"navigationSet",
+					"key": "graph",
+					"text": "Graph View",
+					"icon": "sap-icon://overview-chart",
+					"target": "navigationSetGraph",
+					"tooltip": "Employee_systemBFavorite Graph",
+					"visible": true
+				}, {
+					"type":"navigationSet",
+					"key": "Employee_systemBFavorite",
+					"text": "SystemB favorite",
+					"icon": "sap-icon://expand-group",
+					"target":  "Products", 
+					"tooltip": "SystemB favorite",
+					"visible": true,
+					"parameters": {
+						"navigation": "Employee_systemBFavorite"
+					}
+				}]
+			}
+											, 			"SystemAEmployee_systemAEmployer": {
+				"target": "Suppliers",
+				"icon": "sap-icon://expand-group",
+				"menu": [{
+					"type":"navigationSet",
+					"key": "graph",
+					"text": "Graph View",
+					"icon": "sap-icon://overview-chart",
+					"target": "navigationSetGraph",
+					"tooltip": "SystemAEmployee_systemAEmployer Graph",
+					"visible": true
+				}, {
+					"type":"navigationSet",
+					"key": "SystemAEmployee_systemAEmployer",
+					"text": "SystemA employer",
+					"icon": "sap-icon://expand-group",
+					"target":  "Suppliers", 
+					"tooltip": "SystemA employer",
+					"visible": true,
+					"parameters": {
+						"navigation": "SystemAEmployee_systemAEmployer"
+					}
+				}]
+			}
+											, 			"employeeRegion": {
 				"target": "Regions",
 				"icon": "sap-icon://expand-group",
 				"menu": [{
@@ -1855,30 +2168,6 @@
 					"visible": true,
 					"parameters": {
 						"navigation": "systemACustomer"
-					}
-				}]
-			}
-											, 			"systemAEmployer": {
-				"target": "Suppliers",
-				"icon": "sap-icon://expand-group",
-				"menu": [{
-					"type":"navigationSet",
-					"key": "graph",
-					"text": "Graph View",
-					"icon": "sap-icon://overview-chart",
-					"target": "navigationSetGraph",
-					"tooltip": "systemAEmployer Graph",
-					"visible": true
-				}, {
-					"type":"navigationSet",
-					"key": "systemAEmployer",
-					"text": "SystemA employer",
-					"icon": "sap-icon://expand-group",
-					"target":  "Suppliers", 
-					"tooltip": "SystemA employer",
-					"visible": true,
-					"parameters": {
-						"navigation": "systemAEmployer"
 					}
 				}]
 			}
@@ -2135,6 +2424,66 @@
 				"visible": true 			}
 			, {
 				"type":"navigationSet",
+				"key": "Employee_systemAEmployer",
+				"text": "SystemA employer",
+				"icon": "sap-icon://expand-group",
+				"target": "Suppliers", 
+				"tooltip": "SystemA employer",
+				"visible": true, 
+				"parameters": {
+					"navigation": "Employee_systemAEmployer"
+				}	
+			}
+			, {
+				"type":"navigationSet",
+				"key": "Employee_systemAFavorite",
+				"text": "SystemA favorite",
+				"icon": "sap-icon://expand-group",
+				"target": "Products", 
+				"tooltip": "SystemA favorite",
+				"visible": true, 
+				"parameters": {
+					"navigation": "Employee_systemAFavorite"
+				}	
+			}
+			, {
+				"type":"navigationSet",
+				"key": "Employee_systemBEmployer",
+				"text": "SystemB employer",
+				"icon": "sap-icon://expand-group",
+				"target": "Suppliers", 
+				"tooltip": "SystemB employer",
+				"visible": true, 
+				"parameters": {
+					"navigation": "Employee_systemBEmployer"
+				}	
+			}
+			, {
+				"type":"navigationSet",
+				"key": "Employee_systemBFavorite",
+				"text": "SystemB favorite",
+				"icon": "sap-icon://expand-group",
+				"target": "Products", 
+				"tooltip": "SystemB favorite",
+				"visible": true, 
+				"parameters": {
+					"navigation": "Employee_systemBFavorite"
+				}	
+			}
+			, {
+				"type":"navigationSet",
+				"key": "SystemBEmployee_systemBEmployer",
+				"text": "SystemB employer",
+				"icon": "sap-icon://expand-group",
+				"target": "Suppliers", 
+				"tooltip": "SystemB employer",
+				"visible": true, 
+				"parameters": {
+					"navigation": "SystemBEmployee_systemBEmployer"
+				}	
+			}
+			, {
+				"type":"navigationSet",
 				"key": "employeeRegion",
 				"text": "supports region",
 				"icon": "sap-icon://expand-group",
@@ -2171,18 +2520,6 @@
 			}
 			, {
 				"type":"navigationSet",
-				"key": "systemBEmployer",
-				"text": "SystemB employer",
-				"icon": "sap-icon://expand-group",
-				"target": "Suppliers", 
-				"tooltip": "SystemB employer",
-				"visible": true, 
-				"parameters": {
-					"navigation": "systemBEmployer"
-				}	
-			}
-			, {
-				"type":"navigationSet",
 				"key": "territory",
 				"text": "operates within territory",
 				"icon": "sap-icon://expand-group",
@@ -2192,6 +2529,18 @@
 				"parameters": {
 					"navigation": "territory"
 				}	
+			}
+			, {				
+				"type":"navigationProperty",
+				"key": "SystemBEmployee_systemBFavorite",
+				"text": "SystemB favorite",
+				"icon": "sap-icon://expand-group",
+				"target": "Product",
+				"tooltip": "SystemB favorite",
+				"visible": true ,
+				"parameters": {
+					"navigation": "SystemBEmployee_systemBFavorite"
+				}
 			}
 			, {				
 				"type":"navigationProperty",
@@ -2205,22 +2554,130 @@
 					"navigation": "reportsTo"
 				}
 			}
-			, {				
-				"type":"navigationProperty",
-				"key": "systemBFavorite",
-				"text": "SystemB favorite",
-				"icon": "sap-icon://expand-group",
-				"target": "Product",
-				"tooltip": "SystemB favorite",
-				"visible": true ,
-				"parameters": {
-					"navigation": "systemBFavorite"
-				}
-			}
 			]
 		}
 		,"navigationProperty": {
-			"employeeRegion": {
+			"Employee_systemAEmployer": {
+				"target": "Suppliers",
+				"icon": "sap-icon://expand-group",
+				"menu": [{
+					"type":"navigationSet",
+					"key": "graph",
+					"text": "Graph View",
+					"icon": "sap-icon://overview-chart",
+					"target": "navigationSetGraph",
+					"tooltip": "Employee_systemAEmployer Graph",
+					"visible": true
+				}, {
+					"type":"navigationSet",
+					"key": "Employee_systemAEmployer",
+					"text": "SystemA employer",
+					"icon": "sap-icon://expand-group",
+					"target":  "Suppliers", 
+					"tooltip": "SystemA employer",
+					"visible": true,
+					"parameters": {
+						"navigation": "Employee_systemAEmployer"
+					}
+				}]
+			}
+											, 			"Employee_systemAFavorite": {
+				"target": "Products",
+				"icon": "sap-icon://expand-group",
+				"menu": [{
+					"type":"navigationSet",
+					"key": "graph",
+					"text": "Graph View",
+					"icon": "sap-icon://overview-chart",
+					"target": "navigationSetGraph",
+					"tooltip": "Employee_systemAFavorite Graph",
+					"visible": true
+				}, {
+					"type":"navigationSet",
+					"key": "Employee_systemAFavorite",
+					"text": "SystemA favorite",
+					"icon": "sap-icon://expand-group",
+					"target":  "Products", 
+					"tooltip": "SystemA favorite",
+					"visible": true,
+					"parameters": {
+						"navigation": "Employee_systemAFavorite"
+					}
+				}]
+			}
+											, 			"Employee_systemBEmployer": {
+				"target": "Suppliers",
+				"icon": "sap-icon://expand-group",
+				"menu": [{
+					"type":"navigationSet",
+					"key": "graph",
+					"text": "Graph View",
+					"icon": "sap-icon://overview-chart",
+					"target": "navigationSetGraph",
+					"tooltip": "Employee_systemBEmployer Graph",
+					"visible": true
+				}, {
+					"type":"navigationSet",
+					"key": "Employee_systemBEmployer",
+					"text": "SystemB employer",
+					"icon": "sap-icon://expand-group",
+					"target":  "Suppliers", 
+					"tooltip": "SystemB employer",
+					"visible": true,
+					"parameters": {
+						"navigation": "Employee_systemBEmployer"
+					}
+				}]
+			}
+											, 			"Employee_systemBFavorite": {
+				"target": "Products",
+				"icon": "sap-icon://expand-group",
+				"menu": [{
+					"type":"navigationSet",
+					"key": "graph",
+					"text": "Graph View",
+					"icon": "sap-icon://overview-chart",
+					"target": "navigationSetGraph",
+					"tooltip": "Employee_systemBFavorite Graph",
+					"visible": true
+				}, {
+					"type":"navigationSet",
+					"key": "Employee_systemBFavorite",
+					"text": "SystemB favorite",
+					"icon": "sap-icon://expand-group",
+					"target":  "Products", 
+					"tooltip": "SystemB favorite",
+					"visible": true,
+					"parameters": {
+						"navigation": "Employee_systemBFavorite"
+					}
+				}]
+			}
+											, 			"SystemBEmployee_systemBEmployer": {
+				"target": "Suppliers",
+				"icon": "sap-icon://expand-group",
+				"menu": [{
+					"type":"navigationSet",
+					"key": "graph",
+					"text": "Graph View",
+					"icon": "sap-icon://overview-chart",
+					"target": "navigationSetGraph",
+					"tooltip": "SystemBEmployee_systemBEmployer Graph",
+					"visible": true
+				}, {
+					"type":"navigationSet",
+					"key": "SystemBEmployee_systemBEmployer",
+					"text": "SystemB employer",
+					"icon": "sap-icon://expand-group",
+					"target":  "Suppliers", 
+					"tooltip": "SystemB employer",
+					"visible": true,
+					"parameters": {
+						"navigation": "SystemBEmployee_systemBEmployer"
+					}
+				}]
+			}
+											, 			"employeeRegion": {
 				"target": "Regions",
 				"icon": "sap-icon://expand-group",
 				"menu": [{
@@ -2289,30 +2746,6 @@
 					"visible": true,
 					"parameters": {
 						"navigation": "managesOrder"
-					}
-				}]
-			}
-											, 			"systemBEmployer": {
-				"target": "Suppliers",
-				"icon": "sap-icon://expand-group",
-				"menu": [{
-					"type":"navigationSet",
-					"key": "graph",
-					"text": "Graph View",
-					"icon": "sap-icon://overview-chart",
-					"target": "navigationSetGraph",
-					"tooltip": "systemBEmployer Graph",
-					"visible": true
-				}, {
-					"type":"navigationSet",
-					"key": "systemBEmployer",
-					"text": "SystemB employer",
-					"icon": "sap-icon://expand-group",
-					"target":  "Suppliers", 
-					"tooltip": "SystemB employer",
-					"visible": true,
-					"parameters": {
-						"navigation": "systemBEmployer"
 					}
 				}]
 			}
@@ -2747,4 +3180,4 @@
 			}
 													}
 	}
-}
+}}

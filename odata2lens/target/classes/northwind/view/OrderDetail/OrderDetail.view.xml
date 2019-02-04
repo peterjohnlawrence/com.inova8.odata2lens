@@ -79,12 +79,6 @@
 				</ColumnListItem>
 				<ColumnListItem >
 					<cells>
-						<Label text="{i18n>OrderDetail.seeAlso}" required="false"/> 
-						<rdf:TextLink text="{path:'dataModel>seeAlso',type:'sap.ui.model.type.String' }" linkText="{i18n>OrderDetail.seeAlso}" tooltip="{i18n>OrderDetail.seeAlso}"/>
-					</cells>
-				</ColumnListItem>
-				<ColumnListItem >
-					<cells>
 						<Label text="{i18n>OrderDetail.order}" required="false"/> 
 						<rdf:TextResource path="dataModel>order" entitySet="Order" tooltip="{i18n>OrderDetail.order}"/>		
 					</cells>

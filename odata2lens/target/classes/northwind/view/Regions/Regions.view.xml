@@ -37,9 +37,6 @@
 					<Column demandPopin="true" minScreenWidth="Tablet">
 						<Text text="{i18n>Regions.regionDescription}"/>
 					</Column>
-					<Column demandPopin="true" minScreenWidth="Tablet">
-						<Text text="{i18n>Regions.seeAlso}"/>
-					</Column>
 				</columns>
 				<items>
 					<ColumnListItem id="template360" type="Navigation" press="onPress">
@@ -47,7 +44,6 @@
 							<rdf:TextResource path="dataModel>" entitySet="Region"/>
 							<rdf:TextLink text="{path:'dataModel>comment',type:'sap.ui.model.type.String' }" linkText="{i18n>Regions.comment}" tooltip="{i18n>Regions.comment}"/>
 							<rdf:TextLink text="{path:'dataModel>regionDescription',type:'sap.ui.model.type.String' }" linkText="{i18n>Regions.regionDescription}" tooltip="{i18n>Regions.regionDescription}"/>
-							<rdf:TextLink text="{path:'dataModel>seeAlso',type:'sap.ui.model.type.String' }" linkText="{i18n>Regions.seeAlso}" tooltip="{i18n>Regions.seeAlso}"/>
 						</cells>
 					</ColumnListItem>
 				</items>

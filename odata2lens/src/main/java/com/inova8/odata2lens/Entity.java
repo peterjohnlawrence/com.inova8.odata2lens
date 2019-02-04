@@ -7,6 +7,7 @@ import java.util.TreeMap;
 public class Entity {
 
 	private String name;
+	private String fqn;
 	private String target;
 	private String label;
 	private String tooltip;
@@ -20,8 +21,9 @@ public class Entity {
 	private  TreeMap<String,Property> properties;
 	private Set<String> subTypeNames = new HashSet<String>();
 	private boolean hasPrimitiveProperties =false;
-	public Entity(String name, String target, String label, String tooltip, String targetIcon, TreeMap<String,EntityNavigationSet> entityNavigationSets,TreeMap<String,NavigationProperty> navigationProperties,TreeMap<String,Property> properties) {
+	public Entity(String name, String fqn, String target, String label, String tooltip, String targetIcon, TreeMap<String,EntityNavigationSet> entityNavigationSets,TreeMap<String,NavigationProperty> navigationProperties,TreeMap<String,Property> properties) {
 		this.name = name;
+		this.fqn = fqn;
 		this.target = target;
 		this.label = label;
 		this.tooltip = tooltip;
@@ -34,6 +36,10 @@ public class Entity {
 	public String getName() {
 		return name;
 	}
+	public String getFqn() {
+		return fqn;
+	}
+
 	public String getTarget() {
 		return target;
 	}

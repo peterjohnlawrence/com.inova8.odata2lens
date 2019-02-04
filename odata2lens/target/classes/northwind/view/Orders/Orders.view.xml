@@ -62,9 +62,6 @@
 						<Text text="{i18n>Orders.requiredDate}"/>
 					</Column>
 					<Column demandPopin="true" minScreenWidth="Tablet">
-						<Text text="{i18n>Orders.seeAlso}"/>
-					</Column>
-					<Column demandPopin="true" minScreenWidth="Tablet">
 						<Text text="{i18n>Orders.shipAddress}"/>
 					</Column>
 					<Column demandPopin="true" minScreenWidth="Tablet">
@@ -100,7 +97,6 @@
 							<Text text="{dataModel>orderDate}" tooltip="{i18n>Orders.orderDate}"/>
 							<rdf:TextLink text="{path:'dataModel>regionDescription',type:'sap.ui.model.type.String' }" linkText="{i18n>Orders.regionDescription}" tooltip="{i18n>Orders.regionDescription}"/>
 							<Text text="{dataModel>requiredDate}" tooltip="{i18n>Orders.requiredDate}"/>
-							<rdf:TextLink text="{path:'dataModel>seeAlso',type:'sap.ui.model.type.String' }" linkText="{i18n>Orders.seeAlso}" tooltip="{i18n>Orders.seeAlso}"/>
 							<rdf:TextLink text="{path:'dataModel>shipAddress',type:'sap.ui.model.type.String' }" linkText="{i18n>Orders.shipAddress}" tooltip="{i18n>Orders.shipAddress}"/>
 							<rdf:TextLink text="{path:'dataModel>shipCity',type:'sap.ui.model.type.String' }" linkText="{i18n>Orders.shipCity}" tooltip="{i18n>Orders.shipCity}"/>
 							<rdf:TextLink text="{path:'dataModel>shipCountry',type:'sap.ui.model.type.String' }" linkText="{i18n>Orders.shipCountry}" tooltip="{i18n>Orders.shipCountry}"/>

@@ -133,12 +133,6 @@
 				</ColumnListItem>
 				<ColumnListItem >
 					<cells>
-						<Label text="{i18n>Customer.seeAlso}" required="false"/> 
-						<rdf:TextLink text="{path:'dataModel>seeAlso',type:'sap.ui.model.type.String' }" linkText="{i18n>Customer.seeAlso}" tooltip="{i18n>Customer.seeAlso}"/>
-					</cells>
-				</ColumnListItem>
-				<ColumnListItem >
-					<cells>
 						<Label text="{i18n>Customer.customerRegion}" required="false"/> 
 						<rdf:ListResource path="dataModel>customerRegion" entitySet="Region" tooltip="{i18n>Customer.customerRegion}"/>
 					</cells>

@@ -43,9 +43,6 @@
 					<Column demandPopin="true" minScreenWidth="Tablet">
 						<Text text="{i18n>Categorys.picture}"/>
 					</Column>
-					<Column demandPopin="true" minScreenWidth="Tablet">
-						<Text text="{i18n>Categorys.seeAlso}"/>
-					</Column>
 				</columns>
 				<items>
 					<ColumnListItem id="template360" type="Navigation" press="onPress">
@@ -55,7 +52,6 @@
 							<rdf:TextLink text="{path:'dataModel>comment',type:'sap.ui.model.type.String' }" linkText="{i18n>Categorys.comment}" tooltip="{i18n>Categorys.comment}"/>
 							<rdf:TextLink text="{path:'dataModel>description',type:'sap.ui.model.type.String' }" linkText="{i18n>Categorys.description}" tooltip="{i18n>Categorys.description}"/>
 							<rdf:TextLink text="{path:'dataModel>picture',type:'sap.ui.model.type.String' }" linkText="{i18n>Categorys.picture}" tooltip="{i18n>Categorys.picture}"/>
-							<rdf:TextLink text="{path:'dataModel>seeAlso',type:'sap.ui.model.type.String' }" linkText="{i18n>Categorys.seeAlso}" tooltip="{i18n>Categorys.seeAlso}"/>
 						</cells>
 					</ColumnListItem>
 				</items>
