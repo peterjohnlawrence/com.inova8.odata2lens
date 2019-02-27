@@ -870,47 +870,11 @@
 				"formatOptions": ""
 			}	
 			,{ 
-				"property": "Employee_systemAEmployer",
-				"propertyVisible": false,
-				"propertyType": "C",
-				"propertyRange": "Supplier",
-				"ordinal": 27,
-				"aggregate": "[Count]",
-				"formatOptions": ""
-			}	
-			,{ 
-				"property": "Employee_systemAFavorite",
-				"propertyVisible": false,
-				"propertyType": "C",
-				"propertyRange": "Product",
-				"ordinal": 28,
-				"aggregate": "[Count]",
-				"formatOptions": ""
-			}	
-			,{ 
-				"property": "Employee_systemBEmployer",
-				"propertyVisible": false,
-				"propertyType": "C",
-				"propertyRange": "Supplier",
-				"ordinal": 29,
-				"aggregate": "[Count]",
-				"formatOptions": ""
-			}	
-			,{ 
-				"property": "Employee_systemBFavorite",
-				"propertyVisible": false,
-				"propertyType": "C",
-				"propertyRange": "Product",
-				"ordinal": 30,
-				"aggregate": "[Count]",
-				"formatOptions": ""
-			}	
-			,{ 
 				"property": "employeeRegion",
 				"propertyVisible": false,
 				"propertyType": "C",
 				"propertyRange": "Region",
-				"ordinal": 31,
+				"ordinal": 27,
 				"aggregate": "[Count]",
 				"formatOptions": ""
 			}	
@@ -919,7 +883,7 @@
 				"propertyVisible": false,
 				"propertyType": "C",
 				"propertyRange": "Employee",
-				"ordinal": 32,
+				"ordinal": 28,
 				"aggregate": "[Count]",
 				"formatOptions": ""
 			}	
@@ -928,7 +892,7 @@
 				"propertyVisible": false,
 				"propertyType": "C",
 				"propertyRange": "Order",
-				"ordinal": 33,
+				"ordinal": 29,
 				"aggregate": "[Count]",
 				"formatOptions": ""
 			}	
@@ -937,7 +901,7 @@
 				"propertyVisible": false,
 				"propertyType": "C",
 				"propertyRange": "Territory",
-				"ordinal": 34,
+				"ordinal": 30,
 				"aggregate": "[Count]",
 				"formatOptions": ""
 			}	
@@ -1194,47 +1158,11 @@
 				"formatOptions": null
 			}
 			,{ 
-				"property": "Employee_systemAEmployer",
-				"propertyVisible": true,
-				"propertyType": "C",
-				"propertyRange": "Supplier",
-				"ordinal": 27,
-				"aggregate": "[List]",
-				"formatOptions": null
-			}
-			,{ 
-				"property": "Employee_systemAFavorite",
-				"propertyVisible": true,
-				"propertyType": "C",
-				"propertyRange": "Product",
-				"ordinal": 28,
-				"aggregate": "[List]",
-				"formatOptions": null
-			}
-			,{ 
-				"property": "Employee_systemBEmployer",
-				"propertyVisible": true,
-				"propertyType": "C",
-				"propertyRange": "Supplier",
-				"ordinal": 29,
-				"aggregate": "[List]",
-				"formatOptions": null
-			}
-			,{ 
-				"property": "Employee_systemBFavorite",
-				"propertyVisible": true,
-				"propertyType": "C",
-				"propertyRange": "Product",
-				"ordinal": 30,
-				"aggregate": "[List]",
-				"formatOptions": null
-			}
-			,{ 
 				"property": "employeeRegion",
 				"propertyVisible": true,
 				"propertyType": "C",
 				"propertyRange": "Region",
-				"ordinal": 31,
+				"ordinal": 27,
 				"aggregate": "[List]",
 				"formatOptions": null
 			}
@@ -1243,7 +1171,7 @@
 				"propertyVisible": true,
 				"propertyType": "C",
 				"propertyRange": "Employee",
-				"ordinal": 32,
+				"ordinal": 28,
 				"aggregate": "[List]",
 				"formatOptions": null
 			}
@@ -1252,7 +1180,7 @@
 				"propertyVisible": true,
 				"propertyType": "C",
 				"propertyRange": "Order",
-				"ordinal": 33,
+				"ordinal": 29,
 				"aggregate": "[List]",
 				"formatOptions": null
 			}
@@ -1261,7 +1189,7 @@
 				"propertyVisible": true,
 				"propertyType": "C",
 				"propertyRange": "Territory",
-				"ordinal": 34,
+				"ordinal": 30,
 				"aggregate": "[List]",
 				"formatOptions": null
 			}
@@ -3194,66 +3122,21 @@
 				"formatOptions": ""
 			}	
 			,{ 
-				"property": "SystemAEmployee_systemAFavorite",
+				"property": "reportsTo",
 				"propertyVisible": false,
 				"propertyType": "O",
-				"propertyRange": "Product",
+				"propertyRange": "Employee",
 				"ordinal": 25,
 				"aggregate": "[]",
 				"formatOptions": ""
 			}	
 			,{ 
-				"property": "reportsTo",
+				"property": "systemAFavorite",
 				"propertyVisible": false,
 				"propertyType": "O",
-				"propertyRange": "Employee",
+				"propertyRange": "Product",
 				"ordinal": 26,
 				"aggregate": "[]",
-				"formatOptions": ""
-			}	
-			,{ 
-				"property": "Employee_systemAEmployer",
-				"propertyVisible": false,
-				"propertyType": "C",
-				"propertyRange": "Supplier",
-				"ordinal": 27,
-				"aggregate": "[Count]",
-				"formatOptions": ""
-			}	
-			,{ 
-				"property": "Employee_systemAFavorite",
-				"propertyVisible": false,
-				"propertyType": "C",
-				"propertyRange": "Product",
-				"ordinal": 28,
-				"aggregate": "[Count]",
-				"formatOptions": ""
-			}	
-			,{ 
-				"property": "Employee_systemBEmployer",
-				"propertyVisible": false,
-				"propertyType": "C",
-				"propertyRange": "Supplier",
-				"ordinal": 29,
-				"aggregate": "[Count]",
-				"formatOptions": ""
-			}	
-			,{ 
-				"property": "Employee_systemBFavorite",
-				"propertyVisible": false,
-				"propertyType": "C",
-				"propertyRange": "Product",
-				"ordinal": 30,
-				"aggregate": "[Count]",
-				"formatOptions": ""
-			}	
-			,{ 
-				"property": "SystemAEmployee_systemAEmployer",
-				"propertyVisible": false,
-				"propertyType": "C",
-				"propertyRange": "Supplier",
-				"ordinal": 31,
-				"aggregate": "[Count]",
 				"formatOptions": ""
 			}	
 			,{ 
@@ -3261,7 +3144,7 @@
 				"propertyVisible": false,
 				"propertyType": "C",
 				"propertyRange": "Region",
-				"ordinal": 32,
+				"ordinal": 27,
 				"aggregate": "[Count]",
 				"formatOptions": ""
 			}	
@@ -3270,7 +3153,7 @@
 				"propertyVisible": false,
 				"propertyType": "C",
 				"propertyRange": "Employee",
-				"ordinal": 33,
+				"ordinal": 28,
 				"aggregate": "[Count]",
 				"formatOptions": ""
 			}	
@@ -3279,7 +3162,7 @@
 				"propertyVisible": false,
 				"propertyType": "C",
 				"propertyRange": "Order",
-				"ordinal": 34,
+				"ordinal": 29,
 				"aggregate": "[Count]",
 				"formatOptions": ""
 			}	
@@ -3288,7 +3171,16 @@
 				"propertyVisible": false,
 				"propertyType": "C",
 				"propertyRange": "Customer",
-				"ordinal": 35,
+				"ordinal": 30,
+				"aggregate": "[Count]",
+				"formatOptions": ""
+			}	
+			,{ 
+				"property": "systemAEmployer",
+				"propertyVisible": false,
+				"propertyType": "C",
+				"propertyRange": "Supplier",
+				"ordinal": 31,
 				"aggregate": "[Count]",
 				"formatOptions": ""
 			}	
@@ -3297,7 +3189,7 @@
 				"propertyVisible": false,
 				"propertyType": "C",
 				"propertyRange": "Territory",
-				"ordinal": 36,
+				"ordinal": 32,
 				"aggregate": "[Count]",
 				"formatOptions": ""
 			}	
@@ -3536,66 +3428,21 @@
 				"formatOptions": null
 			}
 			,{ 
-				"property": "SystemAEmployee_systemAFavorite",
+				"property": "reportsTo",
 				"propertyVisible": true,
 				"propertyType": "O",
-				"propertyRange": "Product",
+				"propertyRange": "Employee",
 				"ordinal": 25,
 				"aggregate": "[]",
 				"formatOptions": null
 			}
 			,{ 
-				"property": "reportsTo",
+				"property": "systemAFavorite",
 				"propertyVisible": true,
 				"propertyType": "O",
-				"propertyRange": "Employee",
+				"propertyRange": "Product",
 				"ordinal": 26,
 				"aggregate": "[]",
-				"formatOptions": null
-			}
-			,{ 
-				"property": "Employee_systemAEmployer",
-				"propertyVisible": true,
-				"propertyType": "C",
-				"propertyRange": "Supplier",
-				"ordinal": 27,
-				"aggregate": "[List]",
-				"formatOptions": null
-			}
-			,{ 
-				"property": "Employee_systemAFavorite",
-				"propertyVisible": true,
-				"propertyType": "C",
-				"propertyRange": "Product",
-				"ordinal": 28,
-				"aggregate": "[List]",
-				"formatOptions": null
-			}
-			,{ 
-				"property": "Employee_systemBEmployer",
-				"propertyVisible": true,
-				"propertyType": "C",
-				"propertyRange": "Supplier",
-				"ordinal": 29,
-				"aggregate": "[List]",
-				"formatOptions": null
-			}
-			,{ 
-				"property": "Employee_systemBFavorite",
-				"propertyVisible": true,
-				"propertyType": "C",
-				"propertyRange": "Product",
-				"ordinal": 30,
-				"aggregate": "[List]",
-				"formatOptions": null
-			}
-			,{ 
-				"property": "SystemAEmployee_systemAEmployer",
-				"propertyVisible": true,
-				"propertyType": "C",
-				"propertyRange": "Supplier",
-				"ordinal": 31,
-				"aggregate": "[List]",
 				"formatOptions": null
 			}
 			,{ 
@@ -3603,7 +3450,7 @@
 				"propertyVisible": true,
 				"propertyType": "C",
 				"propertyRange": "Region",
-				"ordinal": 32,
+				"ordinal": 27,
 				"aggregate": "[List]",
 				"formatOptions": null
 			}
@@ -3612,7 +3459,7 @@
 				"propertyVisible": true,
 				"propertyType": "C",
 				"propertyRange": "Employee",
-				"ordinal": 33,
+				"ordinal": 28,
 				"aggregate": "[List]",
 				"formatOptions": null
 			}
@@ -3621,7 +3468,7 @@
 				"propertyVisible": true,
 				"propertyType": "C",
 				"propertyRange": "Order",
-				"ordinal": 34,
+				"ordinal": 29,
 				"aggregate": "[List]",
 				"formatOptions": null
 			}
@@ -3630,7 +3477,16 @@
 				"propertyVisible": true,
 				"propertyType": "C",
 				"propertyRange": "Customer",
-				"ordinal": 35,
+				"ordinal": 30,
+				"aggregate": "[List]",
+				"formatOptions": null
+			}
+			,{ 
+				"property": "systemAEmployer",
+				"propertyVisible": true,
+				"propertyType": "C",
+				"propertyRange": "Supplier",
+				"ordinal": 31,
 				"aggregate": "[List]",
 				"formatOptions": null
 			}
@@ -3639,7 +3495,7 @@
 				"propertyVisible": true,
 				"propertyType": "C",
 				"propertyRange": "Territory",
-				"ordinal": 36,
+				"ordinal": 32,
 				"aggregate": "[List]",
 				"formatOptions": null
 			}
@@ -4234,66 +4090,21 @@
 				"formatOptions": ""
 			}	
 			,{ 
-				"property": "SystemBEmployee_systemBFavorite",
+				"property": "reportsTo",
 				"propertyVisible": false,
 				"propertyType": "O",
-				"propertyRange": "Product",
+				"propertyRange": "Employee",
 				"ordinal": 27,
 				"aggregate": "[]",
 				"formatOptions": ""
 			}	
 			,{ 
-				"property": "reportsTo",
+				"property": "systemBFavorite",
 				"propertyVisible": false,
 				"propertyType": "O",
-				"propertyRange": "Employee",
+				"propertyRange": "Product",
 				"ordinal": 28,
 				"aggregate": "[]",
-				"formatOptions": ""
-			}	
-			,{ 
-				"property": "Employee_systemAEmployer",
-				"propertyVisible": false,
-				"propertyType": "C",
-				"propertyRange": "Supplier",
-				"ordinal": 29,
-				"aggregate": "[Count]",
-				"formatOptions": ""
-			}	
-			,{ 
-				"property": "Employee_systemAFavorite",
-				"propertyVisible": false,
-				"propertyType": "C",
-				"propertyRange": "Product",
-				"ordinal": 30,
-				"aggregate": "[Count]",
-				"formatOptions": ""
-			}	
-			,{ 
-				"property": "Employee_systemBEmployer",
-				"propertyVisible": false,
-				"propertyType": "C",
-				"propertyRange": "Supplier",
-				"ordinal": 31,
-				"aggregate": "[Count]",
-				"formatOptions": ""
-			}	
-			,{ 
-				"property": "Employee_systemBFavorite",
-				"propertyVisible": false,
-				"propertyType": "C",
-				"propertyRange": "Product",
-				"ordinal": 32,
-				"aggregate": "[Count]",
-				"formatOptions": ""
-			}	
-			,{ 
-				"property": "SystemBEmployee_systemBEmployer",
-				"propertyVisible": false,
-				"propertyType": "C",
-				"propertyRange": "Supplier",
-				"ordinal": 33,
-				"aggregate": "[Count]",
 				"formatOptions": ""
 			}	
 			,{ 
@@ -4301,7 +4112,7 @@
 				"propertyVisible": false,
 				"propertyType": "C",
 				"propertyRange": "Region",
-				"ordinal": 34,
+				"ordinal": 29,
 				"aggregate": "[Count]",
 				"formatOptions": ""
 			}	
@@ -4310,7 +4121,7 @@
 				"propertyVisible": false,
 				"propertyType": "C",
 				"propertyRange": "Employee",
-				"ordinal": 35,
+				"ordinal": 30,
 				"aggregate": "[Count]",
 				"formatOptions": ""
 			}	
@@ -4319,7 +4130,16 @@
 				"propertyVisible": false,
 				"propertyType": "C",
 				"propertyRange": "Order",
-				"ordinal": 36,
+				"ordinal": 31,
+				"aggregate": "[Count]",
+				"formatOptions": ""
+			}	
+			,{ 
+				"property": "systemBEmployer",
+				"propertyVisible": false,
+				"propertyType": "C",
+				"propertyRange": "Supplier",
+				"ordinal": 32,
 				"aggregate": "[Count]",
 				"formatOptions": ""
 			}	
@@ -4328,7 +4148,7 @@
 				"propertyVisible": false,
 				"propertyType": "C",
 				"propertyRange": "Territory",
-				"ordinal": 37,
+				"ordinal": 33,
 				"aggregate": "[Count]",
 				"formatOptions": ""
 			}	
@@ -4585,66 +4405,21 @@
 				"formatOptions": null
 			}
 			,{ 
-				"property": "SystemBEmployee_systemBFavorite",
+				"property": "reportsTo",
 				"propertyVisible": true,
 				"propertyType": "O",
-				"propertyRange": "Product",
+				"propertyRange": "Employee",
 				"ordinal": 27,
 				"aggregate": "[]",
 				"formatOptions": null
 			}
 			,{ 
-				"property": "reportsTo",
+				"property": "systemBFavorite",
 				"propertyVisible": true,
 				"propertyType": "O",
-				"propertyRange": "Employee",
+				"propertyRange": "Product",
 				"ordinal": 28,
 				"aggregate": "[]",
-				"formatOptions": null
-			}
-			,{ 
-				"property": "Employee_systemAEmployer",
-				"propertyVisible": true,
-				"propertyType": "C",
-				"propertyRange": "Supplier",
-				"ordinal": 29,
-				"aggregate": "[List]",
-				"formatOptions": null
-			}
-			,{ 
-				"property": "Employee_systemAFavorite",
-				"propertyVisible": true,
-				"propertyType": "C",
-				"propertyRange": "Product",
-				"ordinal": 30,
-				"aggregate": "[List]",
-				"formatOptions": null
-			}
-			,{ 
-				"property": "Employee_systemBEmployer",
-				"propertyVisible": true,
-				"propertyType": "C",
-				"propertyRange": "Supplier",
-				"ordinal": 31,
-				"aggregate": "[List]",
-				"formatOptions": null
-			}
-			,{ 
-				"property": "Employee_systemBFavorite",
-				"propertyVisible": true,
-				"propertyType": "C",
-				"propertyRange": "Product",
-				"ordinal": 32,
-				"aggregate": "[List]",
-				"formatOptions": null
-			}
-			,{ 
-				"property": "SystemBEmployee_systemBEmployer",
-				"propertyVisible": true,
-				"propertyType": "C",
-				"propertyRange": "Supplier",
-				"ordinal": 33,
-				"aggregate": "[List]",
 				"formatOptions": null
 			}
 			,{ 
@@ -4652,7 +4427,7 @@
 				"propertyVisible": true,
 				"propertyType": "C",
 				"propertyRange": "Region",
-				"ordinal": 34,
+				"ordinal": 29,
 				"aggregate": "[List]",
 				"formatOptions": null
 			}
@@ -4661,7 +4436,7 @@
 				"propertyVisible": true,
 				"propertyType": "C",
 				"propertyRange": "Employee",
-				"ordinal": 35,
+				"ordinal": 30,
 				"aggregate": "[List]",
 				"formatOptions": null
 			}
@@ -4670,7 +4445,16 @@
 				"propertyVisible": true,
 				"propertyType": "C",
 				"propertyRange": "Order",
-				"ordinal": 36,
+				"ordinal": 31,
+				"aggregate": "[List]",
+				"formatOptions": null
+			}
+			,{ 
+				"property": "systemBEmployer",
+				"propertyVisible": true,
+				"propertyType": "C",
+				"propertyRange": "Supplier",
+				"ordinal": 32,
 				"aggregate": "[List]",
 				"formatOptions": null
 			}
@@ -4679,7 +4463,7 @@
 				"propertyVisible": true,
 				"propertyType": "C",
 				"propertyRange": "Territory",
-				"ordinal": 37,
+				"ordinal": 33,
 				"aggregate": "[List]",
 				"formatOptions": null
 			}

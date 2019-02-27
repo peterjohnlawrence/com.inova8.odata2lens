@@ -118,8 +118,8 @@
 					<cells>
 						<Label text="{i18n>Employee.employer}" required="false"/> 
 						<Text text=""/>
-						<rdf:ListResource path="dataModel>employer/SystemBEmployee_systemBEmployer" entitySet="Supplier" tooltip="{i18n>Employee.employer/SystemBEmployee_systemBEmployer}"/>
-						<rdf:ListResource path="dataModel>employer/SystemAEmployee_systemAEmployer" entitySet="Supplier" tooltip="{i18n>Employee.employer/SystemAEmployee_systemAEmployer}"/>
+						<rdf:ListResource path="dataModel>employer/systemBEmployer" entitySet="Supplier" tooltip="{i18n>Employee.employer/systemBEmployer}"/>
+						<rdf:ListResource path="dataModel>employer/systemAEmployer" entitySet="Supplier" tooltip="{i18n>Employee.employer/systemAEmployer}"/>
 					</cells>
 				</ColumnListItem>
 				<ColumnListItem >
@@ -134,8 +134,8 @@
 					<cells>
 						<Label text="{i18n>Employee.favorite}" required="false"/> 
 						<Text text=""/>
-						<rdf:TextResource path="dataModel>favorite/SystemBEmployee_systemBFavorite" entitySet="Product" tooltip="{i18n>Employee.favorite/SystemBEmployee_systemBFavorite}"/>		
-						<rdf:TextResource path="dataModel>favorite/SystemAEmployee_systemAFavorite" entitySet="Product" tooltip="{i18n>Employee.favorite/SystemAEmployee_systemAFavorite}"/>		
+						<rdf:TextResource path="dataModel>favorite/systemBFavorite" entitySet="Product" tooltip="{i18n>Employee.favorite/systemBFavorite}"/>		
+						<rdf:TextResource path="dataModel>favorite/systemAFavorite" entitySet="Product" tooltip="{i18n>Employee.favorite/systemAFavorite}"/>		
 					</cells>
 				</ColumnListItem>
 				<ColumnListItem >
@@ -254,38 +254,6 @@
 					<cells>
 						<Label text="{i18n>Employee.reportsTo}" required="false"/> 
 						<rdf:TextResource path="dataModel>reportsTo" entitySet="Employee" tooltip="{i18n>Employee.reportsTo}"/>		
-						<Text text=""/>
-						<Text text=""/>
-					</cells>
-				</ColumnListItem>
-				<ColumnListItem >
-					<cells>
-						<Label text="{i18n>Employee.Employee_systemAEmployer}" required="false"/> 
-						<rdf:ListResource path="dataModel>Employee_systemAEmployer" entitySet="Supplier" tooltip="{i18n>Employee.Employee_systemAEmployer}"/>
-						<Text text=""/>
-						<Text text=""/>
-					</cells>
-				</ColumnListItem>
-				<ColumnListItem >
-					<cells>
-						<Label text="{i18n>Employee.Employee_systemAFavorite}" required="false"/> 
-						<rdf:ListResource path="dataModel>Employee_systemAFavorite" entitySet="Product" tooltip="{i18n>Employee.Employee_systemAFavorite}"/>
-						<Text text=""/>
-						<Text text=""/>
-					</cells>
-				</ColumnListItem>
-				<ColumnListItem >
-					<cells>
-						<Label text="{i18n>Employee.Employee_systemBEmployer}" required="false"/> 
-						<rdf:ListResource path="dataModel>Employee_systemBEmployer" entitySet="Supplier" tooltip="{i18n>Employee.Employee_systemBEmployer}"/>
-						<Text text=""/>
-						<Text text=""/>
-					</cells>
-				</ColumnListItem>
-				<ColumnListItem >
-					<cells>
-						<Label text="{i18n>Employee.Employee_systemBFavorite}" required="false"/> 
-						<rdf:ListResource path="dataModel>Employee_systemBFavorite" entitySet="Product" tooltip="{i18n>Employee.Employee_systemBFavorite}"/>
 						<Text text=""/>
 						<Text text=""/>
 					</cells>

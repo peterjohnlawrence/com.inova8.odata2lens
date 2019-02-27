@@ -181,44 +181,14 @@
 				</ColumnListItem>
 				<ColumnListItem >
 					<cells>
-						<Label text="{i18n>SystemAEmployee.SystemAEmployee_systemAFavorite}" required="false"/> 
-						<rdf:TextResource path="dataModel>SystemAEmployee_systemAFavorite" entitySet="Product" tooltip="{i18n>SystemAEmployee.SystemAEmployee_systemAFavorite}"/>		
-					</cells>
-				</ColumnListItem>
-				<ColumnListItem >
-					<cells>
 						<Label text="{i18n>SystemAEmployee.reportsTo}" required="false"/> 
 						<rdf:TextResource path="dataModel>reportsTo" entitySet="Employee" tooltip="{i18n>SystemAEmployee.reportsTo}"/>		
 					</cells>
 				</ColumnListItem>
 				<ColumnListItem >
 					<cells>
-						<Label text="{i18n>SystemAEmployee.Employee_systemAEmployer}" required="false"/> 
-						<rdf:ListResource path="dataModel>Employee_systemAEmployer" entitySet="Supplier" tooltip="{i18n>SystemAEmployee.Employee_systemAEmployer}"/>
-					</cells>
-				</ColumnListItem>
-				<ColumnListItem >
-					<cells>
-						<Label text="{i18n>SystemAEmployee.Employee_systemAFavorite}" required="false"/> 
-						<rdf:ListResource path="dataModel>Employee_systemAFavorite" entitySet="Product" tooltip="{i18n>SystemAEmployee.Employee_systemAFavorite}"/>
-					</cells>
-				</ColumnListItem>
-				<ColumnListItem >
-					<cells>
-						<Label text="{i18n>SystemAEmployee.Employee_systemBEmployer}" required="false"/> 
-						<rdf:ListResource path="dataModel>Employee_systemBEmployer" entitySet="Supplier" tooltip="{i18n>SystemAEmployee.Employee_systemBEmployer}"/>
-					</cells>
-				</ColumnListItem>
-				<ColumnListItem >
-					<cells>
-						<Label text="{i18n>SystemAEmployee.Employee_systemBFavorite}" required="false"/> 
-						<rdf:ListResource path="dataModel>Employee_systemBFavorite" entitySet="Product" tooltip="{i18n>SystemAEmployee.Employee_systemBFavorite}"/>
-					</cells>
-				</ColumnListItem>
-				<ColumnListItem >
-					<cells>
-						<Label text="{i18n>SystemAEmployee.SystemAEmployee_systemAEmployer}" required="false"/> 
-						<rdf:ListResource path="dataModel>SystemAEmployee_systemAEmployer" entitySet="Supplier" tooltip="{i18n>SystemAEmployee.SystemAEmployee_systemAEmployer}"/>
+						<Label text="{i18n>SystemAEmployee.systemAFavorite}" required="false"/> 
+						<rdf:TextResource path="dataModel>systemAFavorite" entitySet="Product" tooltip="{i18n>SystemAEmployee.systemAFavorite}"/>		
 					</cells>
 				</ColumnListItem>
 				<ColumnListItem >
@@ -243,6 +213,12 @@
 					<cells>
 						<Label text="{i18n>SystemAEmployee.systemACustomer}" required="false"/> 
 						<rdf:ListResource path="dataModel>systemACustomer" entitySet="Customer" tooltip="{i18n>SystemAEmployee.systemACustomer}"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>
+						<Label text="{i18n>SystemAEmployee.systemAEmployer}" required="false"/> 
+						<rdf:ListResource path="dataModel>systemAEmployer" entitySet="Supplier" tooltip="{i18n>SystemAEmployee.systemAEmployer}"/>
 					</cells>
 				</ColumnListItem>
 				<ColumnListItem >
