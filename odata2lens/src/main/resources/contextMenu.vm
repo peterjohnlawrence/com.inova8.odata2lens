@@ -99,7 +99,7 @@
 			"text": "Graph View",
 			"target": "graph",
 			"tooltip": "$entityType.entitySet.label Graph",
-			"visible":$entityType.entitySet.visible,
+			"visible":true, ## $entityType.entitySet.visible,
 			"parameters": {
 				"objectId": "$entityType.entitySet.name",
 				"queryOptions": {
@@ -112,7 +112,7 @@
 			"text": "$entityType.entitySet.label",
 			"target": "$entityType.entitySet.target",
 			"tooltip": "Show all $entityType.entitySet.label",
-			"visible":$entityType.entitySet.visible,
+			"visible":true, ## $entityType.entitySet.visible,
 			"parameters": {
 				"objectId": "$entityType.entitySet.name"
 			}
@@ -122,8 +122,19 @@
 			"text": "$dashboard",
 			"target": "$entityType.entitySet.dashboardTarget",
 			"tooltip": "Show $entityType.entitySet.label $dashboard",
-			"visible":$entityType.entitySet.visible
+			"visible":true ## $entityType.entitySet.visible
 		}
+		#foreach($parentEntitySet in $entityType.entitySet.parentEntitySets)
+		,{
+			"type":"returnNavigation",
+			"key": "$parentEntitySet.name",
+			"text": "▲ $parentEntitySet.label",
+			"icon": "$parentEntitySet.icon",
+			"target": "$parentEntitySet.name",
+			"tooltip": "Go up to $parentEntitySet.label",
+			"visible": true ##$parentEntitySet.visible
+		}
+		#end
 		#foreach($childEntitySet in $entityType.entitySet.childEntitySets)
 		,{
 			"type":"menuNavigation",
@@ -132,20 +143,9 @@
 			"icon": "$childEntitySet.icon",
 			"target": "$childEntitySet.name",
 			"tooltip": "Go down to $childEntitySet.label",
-			"visible": $childEntitySet.visible
+			"visible": true ## $childEntitySet.visible
 		}
 		#end		
-		#foreach($parentEntitySet in $entityType.entitySet.parentEntitySets)
-		,{
-			"type":"menuNavigation",
-			"key": "$parentEntitySet.name",
-			"text": "▲ $parentEntitySet.label",
-			"icon": "$parentEntitySet.icon",
-			"target": "$parentEntitySet.name",
-			"tooltip": "Go up to $parentEntitySet.label",
-			"visible": $parentEntitySet.visible
-		}
-		#end
 		],
 		"entity": {
 			"target": "$entityType.entity.target",
@@ -176,7 +176,7 @@
 				"visible": true ##$entityType.entity.targetVisible
 			}
 	#foreach($navigationSet in $entityType.entity.navigationSet)
-		#if($navigationSet.rangeType.entitySet.visible)
+		##if($navigationSet.rangeType.entitySet.visible)
 			, {
 				"type":"navigationSet",
 				"key": "$navigationSet.name",
@@ -189,10 +189,10 @@
 					"navigation": "$navigationSet.name"
 				}	
 			}
-		#end
+		##end
 	#end	
 	#foreach($navigationProperty in $entityType.entity.navigationProperties)
-		#if($navigationProperty.rangeType.entitySet.visible)
+		##if($navigationProperty.rangeType.entitySet.visible)
 			, {				
 				"type":"navigationProperty",
 				"key": "$navigationProperty.name",
@@ -205,7 +205,7 @@
 					"navigation": "$navigationProperty.name"
 				}
 			}
-		#end
+		##end
 	#end	
 	#foreach($complexNavigationProperty in $entityType.entity.properties)
 		#if($complexNavigationProperty.complexRange.isNavigationProperty)
@@ -263,7 +263,7 @@
 		,"navigationProperty": {
 	#set( $previous=false)
 	#foreach($navigationSet in $entityType.entity.navigationSet)
-		#if($navigationSet.rangeType.entitySet.visible)
+		##if($navigationSet.rangeType.entitySet.visible)
 		#if ($previous ), #end
 			#set( $previous=true)
 			"$navigationSet.name": {
@@ -293,7 +293,7 @@
 			##if ( $foreach.hasNext ) 
 			##,
 			##end
-		#end
+		##end
 	#end
 		}
 	}

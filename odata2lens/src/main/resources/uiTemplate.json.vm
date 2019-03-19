@@ -11,7 +11,7 @@
 	"entitySetVisible":true,
 	"grid": {
 		"target": "$entityType.entitySet.target",
-		"gridStyle":"entitySet360",
+		"gridStyle":"entitySetTable",
 		"targetVisible": true,
 		"targetIcon": "sap-icon://group-2",
 		"targetEntity": "$entityType.entitySet.name",	

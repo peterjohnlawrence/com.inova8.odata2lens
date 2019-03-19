@@ -193,13 +193,13 @@
 			}
 #foreach($entityType in $entityTypes)		
 			,"$entityType.entitySet.target": {
-				"viewName": "view/$entityType.entitySet.target/$entityType.entitySet.target",
+				"viewName": "view/entitySet/$entityType.entitySet.target/$entityType.entitySet.target",
 				"viewPath":"$schema",
 				"viewId": "$entityType.entitySet.target",
 				"viewLevel": 1
 			}
 			,"$entityType.entity.target": {
-				"viewName": "view/$entityType.entity.target/$entityType.entity.target",
+				"viewName": "view/entity/$entityType.entity.target/$entityType.entity.target",
 				"viewPath":"$schema",
 				"viewId": "$entityType.entity.target",
 				"viewLevel": 1

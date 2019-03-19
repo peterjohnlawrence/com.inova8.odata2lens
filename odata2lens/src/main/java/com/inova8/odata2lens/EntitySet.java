@@ -1,5 +1,7 @@
 package com.inova8.odata2lens;
 
+import java.util.ArrayList;
+import java.util.Comparator;
 import java.util.HashSet;
 
 public class EntitySet {
@@ -12,13 +14,13 @@ public class EntitySet {
 	private String image;
 	private String entityIcon;
 	private Boolean visible;
-	private String gridStyle="entitySet360";
+	private String gridStyle="entitySetTable";
 	HashSet<String> baseTypes = new HashSet<String>();
 	HashSet<EntitySet> parentEntitySets = new HashSet<EntitySet>();
 	HashSet<EntitySet> childEntitySets = new HashSet<EntitySet>();
 
 	public EntitySet(String name,String fqn, String target, String dashboardTarget, String label, String tooltip, String image,
-			String entityIcon, Boolean visible, String baseType) {
+			String entityIcon, Boolean visible, String baseType, HashSet<String> baseTypes) {
 		this.name = name;
 		this.fqn = fqn;
 		this.target = target;
@@ -30,6 +32,7 @@ public class EntitySet {
 		this.visible = visible;
 		if (baseType != null)
 			this.addBaseType(baseType);
+		this.baseTypes = baseTypes;
 	}
 
 	public String getName() {
@@ -53,7 +56,10 @@ public class EntitySet {
 	}
 
 	public Boolean getVisible() {
-		return visible;
+		if(parentEntitySets.isEmpty() )
+			return visible;
+		else
+			return false;
 	}
 
 	public String getTooltip() {
@@ -70,12 +76,16 @@ public class EntitySet {
 		return baseTypes;
 	}
 
-	public HashSet<EntitySet> getParentEntitySets() {
-		return parentEntitySets;
+	public ArrayList<EntitySet> getParentEntitySets() {
+		ArrayList<EntitySet> parentEntitySetCollection = new ArrayList<EntitySet>(parentEntitySets);
+		parentEntitySetCollection.sort(Comparator.comparing(EntitySet::getLabel));
+		return parentEntitySetCollection;
 	}
 
-	public HashSet<EntitySet> getChildEntitySets() {
-		return childEntitySets;
+	public ArrayList<EntitySet> getChildEntitySets() {	
+		ArrayList<EntitySet> childEntitySetCollection = new ArrayList<EntitySet>(childEntitySets);
+		childEntitySetCollection.sort(Comparator.comparing(EntitySet::getLabel));
+		return childEntitySetCollection;
 	}
 
 	void addParentEntitySet(EntitySet entitySet) {

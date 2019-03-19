@@ -10,8 +10,11 @@ import java.lang.reflect.Type;
 import java.net.URL;
 import java.nio.file.Path;
 import java.nio.file.Paths;
+import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Comparator;
 import java.util.HashMap;
+import java.util.HashSet;
 import java.util.List;
 import java.util.Properties;
 import java.util.TreeMap;
@@ -29,6 +32,8 @@ import org.apache.olingo.commons.api.edm.EdmFunction;
 import org.apache.olingo.commons.api.edm.EdmNavigationProperty;
 import org.apache.olingo.commons.api.edm.EdmProperty;
 import org.apache.olingo.commons.api.edm.EdmSchema;
+import org.apache.olingo.commons.api.edm.annotation.EdmExpression;
+import org.apache.olingo.commons.api.edm.annotation.EdmExpression.EdmExpressionType;
 import org.apache.olingo.commons.api.ex.ODataException;
 import org.apache.velocity.Template;
 import org.apache.velocity.VelocityContext;
@@ -52,7 +57,7 @@ public class GenerateLens {
 	static String defaultNamespace;
 
 	public static void main(String[] args) throws IOException, ODataException {
-			generate(args[0], args[1], Arrays.copyOfRange(args, 2, args.length), getWorkingPath(), getWorkingPath());
+		generate(args[0], args[1], Arrays.copyOfRange(args, 2, args.length), getWorkingPath(), getWorkingPath());
 	}
 
 	public static boolean generate(String odataEndpoint, String apartmentName, String schemaNames[], String source,
@@ -230,206 +235,242 @@ public class GenerateLens {
 	private static HashMap<String, String> getAnnotations(String defaultLabel, List<EdmAnnotation> annotations) {
 		HashMap<String, String> annotationStrings = new HashMap<String, String>();
 		for (EdmAnnotation annotation : annotations) {
-			String expressionvalue = annotation.getExpression().asConstant().getValueAsString();
+			if (!annotation.getExpression().getExpressionType().equals(EdmExpressionType.Collection)) {
+				String expressionvalue = annotation.getExpression().asConstant().getValueAsString();
+				String termFQN = annotation.getTerm().getFullQualifiedName().toString();
+				if (expressionvalue != "") {
+					annotationStrings.put(termFQN, annotation.getExpression().asConstant().getValueAsString());
+					defaultLabel = expressionvalue;
+				} else {
+					annotationStrings.put(termFQN, defaultLabel);
+				}
+			}
+		}
+		return annotationStrings;
+	}
+
+	private static HashSet<String> getBaseTypesAnnotations(List<EdmAnnotation> annotations) {
+		HashSet<String> annotationStrings = new HashSet<String>();
+		for (EdmAnnotation annotation : annotations) {
 			String termFQN = annotation.getTerm().getFullQualifiedName().toString();
-			if (expressionvalue != "") {
-				annotationStrings.put(termFQN, annotation.getExpression().asConstant().getValueAsString());
-				defaultLabel = expressionvalue;
-			} else {
-				annotationStrings.put(termFQN, defaultLabel);
+			if (termFQN.equals("odata.baseType")) {
+				if (annotation.getExpression().getExpressionType().equals(EdmExpressionType.Collection)) {
+					List<EdmExpression> items = annotation.getExpression().asDynamic().asCollection().getItems();
+					for (EdmExpression item : items) {
+						annotationStrings.add(item.asConstant().getValueAsString());
+					}
+				}
 			}
 		}
 		return annotationStrings;
 	}
 
 	private static void createMetadata(Edm edm, String schemaNames[]) throws IOException {
-		
+
 		List<EdmEntitySet> entitySets = edm.getSchema("Instances").getEntityContainer().getEntitySets();
-		defaultNamespace = getAnnotations("",edm.getSchema("Instances").getAnnotations()).get("odata.defaultNamespace");
-		
+		defaultNamespace = getAnnotations("", edm.getSchema("Instances").getAnnotations())
+				.get("odata.defaultNamespace");
+
 		for (String schemaName : schemaNames) {
 			EdmSchema schema = edm.getSchema(schemaName);
-			for (EdmComplexType edmComplexType : schema.getComplexTypes()) {
-				ComplexType complexType = new ComplexType(edmComplexType.getName());
-				complexTypes.put(edmComplexType.getFullQualifiedName().toString(), complexType);
-				String subTypeName;
-				for (String propertyName : edmComplexType.getPropertyNames()) {
-					EdmProperty edmProperty = (EdmProperty) edmComplexType.getProperty(propertyName);
-					//String name, String label, String tooltip, String range, String formatOptions
-					subTypeName = getAnnotations("", edmProperty.getAnnotations()).get("odata.subType");
-					Property property = new Property(propertyName, propertyName, propertyName,
-							edmProperty.getType().getFullQualifiedName().toString(), null, false);
-					property.setSubTypeName(subTypeName);
-					complexType.putProperty(subTypeName, property);
-				}
-				for (String navigationPropertyName : edmComplexType.getNavigationPropertyNames()) {
-					EdmNavigationProperty edmNavigationProperty = edmComplexType
-							.getNavigationProperty(navigationPropertyName);
-					subTypeName = getAnnotations("", edmNavigationProperty.getAnnotations()).get("odata.subType");
-					if (edmNavigationProperty.isCollection()) {
-						//String name, String target, String label, String tooltip, String targetEntityType,String range, String icon
-						EntityNavigationSet entityNavigationSet = new EntityNavigationSet(navigationPropertyName,
-								navigationPropertyName, navigationPropertyName, navigationPropertyName,
-								edmNavigationProperty.getType().getName(), edmNavigationProperty.getType().getName(),
-								"");
-						entityNavigationSet.setSubTypeName(subTypeName);
-						//entityNavigationSet.setRangeType( );
-						complexType.putNavigationSet(subTypeName, entityNavigationSet);
-					} else {
-						//String name, String label, String tooltip, String targetEntityType, String range,	String icon					
-						NavigationProperty navigationProperty = new NavigationProperty(navigationPropertyName,
-								navigationPropertyName, navigationPropertyName,
-								edmNavigationProperty.getType().getName(), edmNavigationProperty.getType().getName(),
-								null);
-						navigationProperty.setSubTypeName(subTypeName);
-						//navigationProperty.setRangeType(subTypeName);
-						complexType.putNavigationProperty(subTypeName, navigationProperty);
-					}
-				}
-			}
-			for (EdmEntityType edmEntityType : schema.getEntityTypes()) {
-				if (!isFunctionImport(schema.getFunctions(), edmEntityType)) {
-					HashMap<String, String> entityTypeAnnotations = getAnnotations(edmEntityType.getName(),
-							edmEntityType.getAnnotations());
-
-//					EdmEntitySet edmEntitySet = edm.getSchema("Instances").getEntityContainer()
-//							.getEntitySet(edmEntityType.getName());			
-					
-					EdmEntitySet edmEntitySet = entitySets.stream()
-							  .filter(entitySet -> edmEntityType.getName().equals(entitySet.getEntityType().getName()))
-							  .findAny()
-							  .orElse(null);
-					
-					HashMap<String, String> entitySetAnnotations = getAnnotations(edmEntityType.getName(),
-							edmEntitySet.getAnnotations());
-
-					EntitySet entitySet = new EntitySet(edmEntitySet.getName(), edmEntityType.getFullQualifiedName().toString().replace('.', '~'),edmEntityType.getName() + "s",
-							edmEntityType.getName() + "sDashBoard",
-							entitySetAnnotations.containsKey("sap.label") ? entitySetAnnotations.get("sap.label")
-									: (entityTypeAnnotations.containsKey("sap.label")
-											? entityTypeAnnotations.get("sap.label") + "s"
-											: edmEntityType.getName() + "s"),
-
-							entitySetAnnotations.containsKey("sap.quickinfo")
-									? entitySetAnnotations.get("sap.quickinfo")
-									: (entityTypeAnnotations.containsKey("sap.quickinfo")
-											? entityTypeAnnotations.get("sap.quickinfo") + "s"
-											: "Show " + edmEntityType.getName() + "s"),
-
-							"./images/icons/unknown.svg", "sap-icon://group-2", true,
-							entityTypeAnnotations.containsKey("odata.baseType")
-									? entityTypeAnnotations.get("odata.baseType")
-									: null
-
-					);
-					TreeMap<String, EntityNavigationSet> entityNavigationSets = new TreeMap<String, EntityNavigationSet>();
-					TreeMap<String, NavigationProperty> navigationProperties = new TreeMap<String, NavigationProperty>();
-					TreeMap<String, Property> properties = new TreeMap<String, Property>();
-					for (String propertyName : edmEntityType.getPropertyNames()) {
-						if (!propertyName.equals("subjectId") && !propertyName.equals("label")) {
-							EdmProperty edmProperty = (EdmProperty) edmEntityType.getProperty(propertyName);
-							HashMap<String, String> propertyAnnotations = getAnnotations(propertyName,
-									edmProperty.getAnnotations());
-							String type = edmProperty.getType().getFullQualifiedName().toString();
-
-							Property property = new Property(propertyName,
-									propertyAnnotations.containsKey("sap.label") ? propertyAnnotations.get("sap.label")
-											: propertyName,
-									propertyAnnotations.containsKey("sap.quickinfo")
-											? propertyAnnotations.get("sap.quickinfo")
-											: propertyName,
-									type, null, propertyAnnotations.containsKey("odata.FK") ? true : false);
-							if (edmProperty.isPrimitive()) {
-								//primitiveType = edmProperty.getType().getFullQualifiedName().toString();
-
-							} else {
-								ComplexType complexType = complexTypes.get(type);
-								property.setComplexRange(complexType);
-							}
-							properties.put(propertyName, property);
+			if (schema != null) {
+				if (schema.getComplexTypes() != null) {
+					for (EdmComplexType edmComplexType : schema.getComplexTypes()) {
+						ComplexType complexType = new ComplexType(edmComplexType.getName());
+						complexTypes.put(edmComplexType.getFullQualifiedName().toString(), complexType);
+						String subTypeName;
+						for (String propertyName : edmComplexType.getPropertyNames()) {
+							EdmProperty edmProperty = (EdmProperty) edmComplexType.getProperty(propertyName);
+							//String name, String label, String tooltip, String range, String formatOptions
+							subTypeName = getAnnotations("", edmProperty.getAnnotations()).get("odata.subType");
+							Property property = new Property(propertyName, propertyName, propertyName,
+									edmProperty.getType().getFullQualifiedName().toString(), null, false);
+							property.setSubTypeName(subTypeName);
+							complexType.putProperty(subTypeName, property);
 						}
-					}
-
-					for (String navigationPropertyName : edmEntityType.getNavigationPropertyNames()) {
-						EdmNavigationProperty edmNavigationProperty = edmEntityType
-								.getNavigationProperty(navigationPropertyName);
-						HashMap<String, String> navigationPropertyAnnotations = getAnnotations(navigationPropertyName,
-								edmNavigationProperty.getAnnotations());
-						if (!isFunctionImport(schema.getFunctions(), edmNavigationProperty.getType())
-								&& !isNavigationOutsideOfNamespace(schemaNames,
-										edmNavigationProperty.getType())) {
+						for (String navigationPropertyName : edmComplexType.getNavigationPropertyNames()) {
+							EdmNavigationProperty edmNavigationProperty = edmComplexType
+									.getNavigationProperty(navigationPropertyName);
+							subTypeName = getAnnotations("", edmNavigationProperty.getAnnotations())
+									.get("odata.subType");
 							if (edmNavigationProperty.isCollection()) {
+								//String name, String target, String label, String tooltip, String targetEntityType,String range, String icon
 								EntityNavigationSet entityNavigationSet = new EntityNavigationSet(
-										navigationPropertyName, edmEntityType.getName() + navigationPropertyName,
-										navigationPropertyAnnotations.containsKey("sap.label")
-												? navigationPropertyAnnotations.get("sap.label")
-												: navigationPropertyName,
-										navigationPropertyAnnotations.containsKey("sap.quickinfo")
-												? navigationPropertyAnnotations.get("sap.quickinfo")
-												: "Show " + edmEntityType.getName() + "s "
-														+ edmNavigationProperty.getType().getName(),
-										edmNavigationProperty.getType().getName(),
+										navigationPropertyName, navigationPropertyName, navigationPropertyName,
+										navigationPropertyName, edmNavigationProperty.getType().getName(),
 										edmNavigationProperty.getType().getName(), "");
-
-								entityNavigationSets.put(navigationPropertyName, entityNavigationSet);
+								entityNavigationSet.setSubTypeName(subTypeName);
+								//entityNavigationSet.setRangeType( );
+								complexType.putNavigationSet(subTypeName, entityNavigationSet);
 							} else {
+								//String name, String label, String tooltip, String targetEntityType, String range,	String icon					
 								NavigationProperty navigationProperty = new NavigationProperty(navigationPropertyName,
-										navigationPropertyAnnotations.containsKey("sap.label")
-												? navigationPropertyAnnotations.get("sap.label")
-												: navigationPropertyName,
-										navigationPropertyAnnotations.containsKey("sap.quickinfo")
-												? navigationPropertyAnnotations.get("sap.quickinfo")
-												: "Show " + navigationPropertyName,
+										navigationPropertyName, navigationPropertyName,
 										edmNavigationProperty.getType().getName(),
-										edmNavigationProperty.getType().getName(), "");
-								navigationProperties.put(navigationPropertyName, navigationProperty);
+										edmNavigationProperty.getType().getName(), null);
+								navigationProperty.setSubTypeName(subTypeName);
+								//navigationProperty.setRangeType(subTypeName);
+								complexType.putNavigationProperty(subTypeName, navigationProperty);
 							}
 						}
 					}
+				}
+				if (schema.getEntityTypes() != null) {
+					for (EdmEntityType edmEntityType : schema.getEntityTypes()) {
+						if (!isFunctionImport(schema.getFunctions(), edmEntityType)) {
+							HashSet<String> baseTypes = getBaseTypesAnnotations(edmEntityType.getAnnotations());
+							HashMap<String, String> entityTypeAnnotations = getAnnotations(edmEntityType.getName(),
+									edmEntityType.getAnnotations());
 
-					Entity entity = new Entity(edmEntityType.getName(), edmEntityType.getFullQualifiedName().toString().replace('.', '~'),edmEntityType.getName(),
-							entityTypeAnnotations.containsKey("sap.label") ? entityTypeAnnotations.get("sap.label")
-									: edmEntityType.getName(),
-							entityTypeAnnotations.containsKey("sap.quickinfo")
-									? entityTypeAnnotations.get("sap.quickinfo")
-									: edmEntityType.getName(),
-							"sap-icon://expand-group", entityNavigationSets, navigationProperties, properties);
-					entityTypes.put(edmEntityType.getName(), new EntityType(entity, entitySet));
-				}
-			}
-			//Post process to identify parent and child entitySets, and sets of subTypes used in complex properties
-			for (EntityType entityType : entityTypes.values()) {
-				for (NavigationProperty navigationProperty : entityType.getEntity().getNavigationProperties()
-						.values()) {
-					navigationProperty.setRangeType(entityTypes.get(navigationProperty.getRange()));
-				}
-				for (EntityNavigationSet navigationSet : entityType.getEntity().getNavigationSet().values()) {
-					navigationSet.setRangeType(entityTypes.get(navigationSet.getRange()));
-				}
-				for (Property property : entityType.getEntity().getProperties().values()) {
-					if (property.getComplex()) {
-						for (String subTypeName : property.getComplexRange().getProperties().keySet()) {
-							entityType.getEntity().getSubTypeNames().add(subTypeName);
+							//					EdmEntitySet edmEntitySet = edm.getSchema("Instances").getEntityContainer()
+							//							.getEntitySet(edmEntityType.getName());			
+
+							EdmEntitySet edmEntitySet = entitySets.stream().filter(
+									entitySet -> edmEntityType.getName().equals(entitySet.getEntityType().getName()))
+									.findAny().orElse(null);
+
+							HashMap<String, String> entitySetAnnotations = getAnnotations(edmEntityType.getName(),
+									edmEntitySet.getAnnotations());
+
+							EntitySet entitySet = new EntitySet(edmEntitySet.getName(),
+									edmEntityType.getFullQualifiedName().toString().replace('.', '~'),
+									edmEntityType.getName() + "s", edmEntityType.getName() + "sDashBoard",
+									entitySetAnnotations.containsKey("sap.label")
+											? entitySetAnnotations.get("sap.label")
+											: (entityTypeAnnotations.containsKey("sap.label")
+													? entityTypeAnnotations.get("sap.label") + "s"
+													: edmEntityType.getName() + "s"),
+
+									entitySetAnnotations.containsKey("sap.quickinfo")
+											? entitySetAnnotations.get("sap.quickinfo")
+											: (entityTypeAnnotations.containsKey("sap.quickinfo")
+													? entityTypeAnnotations.get("sap.quickinfo") + "s"
+													: "Show " + edmEntityType.getName() + "s"),
+
+									"./images/icons/unknown.svg", "sap-icon://group-2", true,
+									entityTypeAnnotations.containsKey("odata.baseType")
+											? entityTypeAnnotations.get("odata.baseType")
+											: null,
+											baseTypes
+
+							);
+							TreeMap<String, EntityNavigationSet> entityNavigationSets = new TreeMap<String, EntityNavigationSet>();
+							TreeMap<String, NavigationProperty> navigationProperties = new TreeMap<String, NavigationProperty>();
+							TreeMap<String, Property> properties = new TreeMap<String, Property>();
+							for (String propertyName : edmEntityType.getPropertyNames()) {
+								if (!propertyName.equals("subjectId") && !propertyName.equals("label")) {
+									EdmProperty edmProperty = (EdmProperty) edmEntityType.getProperty(propertyName);
+									HashMap<String, String> propertyAnnotations = getAnnotations(propertyName,
+											edmProperty.getAnnotations());
+									String type = edmProperty.getType().getFullQualifiedName().toString();
+
+									Property property = new Property(propertyName,
+											propertyAnnotations.containsKey("sap.label")
+													? propertyAnnotations.get("sap.label")
+													: propertyName,
+											propertyAnnotations.containsKey("sap.quickinfo")
+													? propertyAnnotations.get("sap.quickinfo")
+													: propertyName,
+											type, null, propertyAnnotations.containsKey("odata.FK") ? true : false);
+									if (edmProperty.isPrimitive()) {
+										//primitiveType = edmProperty.getType().getFullQualifiedName().toString();
+
+									} else {
+										ComplexType complexType = complexTypes.get(type);
+										property.setComplexRange(complexType);
+									}
+									properties.put(propertyName, property);
+								}
+							}
+
+							for (String navigationPropertyName : edmEntityType.getNavigationPropertyNames()) {
+								EdmNavigationProperty edmNavigationProperty = edmEntityType
+										.getNavigationProperty(navigationPropertyName);
+								HashMap<String, String> navigationPropertyAnnotations = getAnnotations(
+										navigationPropertyName, edmNavigationProperty.getAnnotations());
+								if (!isFunctionImport(schema.getFunctions(), edmNavigationProperty.getType())
+										&& !isNavigationOutsideOfNamespace(schemaNames,
+												edmNavigationProperty.getType())) {
+									if (edmNavigationProperty.isCollection()) {
+										EntityNavigationSet entityNavigationSet = new EntityNavigationSet(
+												navigationPropertyName,
+												edmEntityType.getName() + navigationPropertyName,
+												navigationPropertyAnnotations.containsKey("sap.label")
+														? navigationPropertyAnnotations.get("sap.label")
+														: navigationPropertyName,
+												navigationPropertyAnnotations.containsKey("sap.quickinfo")
+														? navigationPropertyAnnotations.get("sap.quickinfo")
+														: "Show " + edmEntityType.getName() + "s "
+																+ edmNavigationProperty.getType().getName(),
+												edmNavigationProperty.getType().getName(),
+												edmNavigationProperty.getType().getName(), "");
+
+										entityNavigationSets.put(navigationPropertyName, entityNavigationSet);
+									} else {
+										NavigationProperty navigationProperty = new NavigationProperty(
+												navigationPropertyName,
+												navigationPropertyAnnotations.containsKey("sap.label")
+														? navigationPropertyAnnotations.get("sap.label")
+														: navigationPropertyName,
+												navigationPropertyAnnotations.containsKey("sap.quickinfo")
+														? navigationPropertyAnnotations.get("sap.quickinfo")
+														: "Show " + navigationPropertyName,
+												edmNavigationProperty.getType().getName(),
+												edmNavigationProperty.getType().getName(), "");
+										navigationProperties.put(navigationPropertyName, navigationProperty);
+									}
+								}
+							}
+
+							Entity entity = new Entity(edmEntityType.getName(),
+									edmEntityType.getFullQualifiedName().toString().replace('.', '~'),
+									edmEntityType.getName(),
+									entityTypeAnnotations.containsKey("sap.label")
+											? entityTypeAnnotations.get("sap.label")
+											: edmEntityType.getName(),
+									entityTypeAnnotations.containsKey("sap.quickinfo")
+											? entityTypeAnnotations.get("sap.quickinfo")
+											: edmEntityType.getName(),
+									"sap-icon://expand-group", entityNavigationSets, navigationProperties, properties);
+							entityTypes.put(edmEntityType.getName(), new EntityType(entity, entitySet));
 						}
-						for (String subTypeName : property.getComplexRange().getNavigationProperties().keySet()) {
-							entityType.getEntity().getSubTypeNames().add(subTypeName);
-							//	complexNavigationProperty.setRangeType(entityType);
-						}
-						for (String subTypeName : property.getComplexRange().getNavigationSets().keySet()) {
-							entityType.getEntity().getSubTypeNames().add(subTypeName);
-							//	complexNavigationSet.setRangeType(entityTypes.get(complexNavigationSet.getRange()));
-						}
-					} else {
-						entityType.getEntity().hasPrimitiveProperties(true);
 					}
-				}
-				EntitySet entitySet = entityType.getEntitySet();
-				if (!entitySet.getBaseTypes().isEmpty()) {
-					for (String baseType : entitySet.getBaseTypes()) {
-						if (entityTypes.containsKey(baseType)) {
-							EntityType baseEntityType = entityTypes.get(baseType);
-							baseEntityType.getEntitySet().addChildEntitySet(entitySet);
-							entitySet.addParentEntitySet(baseEntityType.getEntitySet());
+					//Post process to identify parent and child entitySets, and sets of subTypes used in complex properties
+					for (EntityType entityType : entityTypes.values()) {
+						for (NavigationProperty navigationProperty : entityType.getEntity().getNavigationProperties()
+								.values()) {
+							navigationProperty.setRangeType(entityTypes.get(navigationProperty.getRange()));
+						}
+						for (EntityNavigationSet navigationSet : entityType.getEntity().getNavigationSet().values()) {
+							navigationSet.setRangeType(entityTypes.get(navigationSet.getRange()));
+						}
+						for (Property property : entityType.getEntity().getProperties().values()) {
+							if (property.getComplex()) {
+								for (String subTypeName : property.getComplexRange().getProperties().keySet()) {
+									entityType.getEntity().getSubTypeNames().add(subTypeName);
+								}
+								for (String subTypeName : property.getComplexRange().getNavigationProperties()
+										.keySet()) {
+									entityType.getEntity().getSubTypeNames().add(subTypeName);
+									//	complexNavigationProperty.setRangeType(entityType);
+								}
+								for (String subTypeName : property.getComplexRange().getNavigationSets().keySet()) {
+									entityType.getEntity().getSubTypeNames().add(subTypeName);
+									//	complexNavigationSet.setRangeType(entityTypes.get(complexNavigationSet.getRange()));
+								}
+							} else {
+								entityType.getEntity().hasPrimitiveProperties(true);
+							}
+						}
+						EntitySet entitySet = entityType.getEntitySet();
+						if (!entitySet.getBaseTypes().isEmpty()) {
+							for (String baseType : entitySet.getBaseTypes()) {
+								if (entityTypes.containsKey(baseType)) {
+									EntityType baseEntityType = entityTypes.get(baseType);
+									baseEntityType.getEntitySet().addChildEntitySet(entitySet);
+									entitySet.addParentEntitySet(baseEntityType.getEntitySet());
+								}
+							}
 						}
 					}
 				}
@@ -437,10 +478,9 @@ public class GenerateLens {
 		}
 	}
 
-	private static boolean isNavigationOutsideOfNamespace(String schemaNames[],
-			EdmEntityType entityType) {
+	private static boolean isNavigationOutsideOfNamespace(String schemaNames[], EdmEntityType entityType) {
 
-	return 	!Arrays.stream(schemaNames).anyMatch(x -> entityType.getNamespace().equals(x));
+		return !Arrays.stream(schemaNames).anyMatch(x -> entityType.getNamespace().equals(x));
 
 	}
 
@@ -501,7 +541,9 @@ public class GenerateLens {
 
 		contextMenuContext.put("schema", apartmentName);
 		contextMenuContext.put("defaultNamespace", defaultNamespace);
-		contextMenuContext.put("entityTypes", entityTypes.values());
+		ArrayList<EntityType> entityTypesCollection = new ArrayList<EntityType>(entityTypes.values());
+		entityTypesCollection.sort(Comparator.comparing(EntityType::getEntitySetLabel));
+		contextMenuContext.put("entityTypes", entityTypesCollection);
 
 		contextMenuTemplate.merge(contextMenuContext, contextMenuWriter);
 
@@ -532,11 +574,11 @@ public class GenerateLens {
 			entitySetContext.put("entitySet", entityType.getEntitySet());
 			entitySetContext.put("complexTypes", complexTypes);
 			entitySetContext.put("uiTemplate", uiTemplates.get(entityType.getEntitySet().getTarget()));
-			if (entityType.getEntitySet().getGridStyle() == null
-					|| entityType.getEntitySet().getGridStyle().equals("entitySet360")) {
+			if (entityType.getEntitySet().getGridStyle().equals("entitySet360")) {
 				entitySet360Template.merge(entitySetContext, entitySetWriter);
 				i18nTemplate.merge(entitySetContext, i18nWriter);
-			} else if (entityType.getEntitySet().getGridStyle().equals("entitySetTable")) {
+			} else if (entityType.getEntitySet().getGridStyle() == null
+					|| entityType.getEntitySet().getGridStyle().equals("entitySetTable")) {
 				entitySetTableTemplate.merge(entitySetContext, entitySetWriter);
 				i18nTemplate.merge(entitySetContext, i18nWriter);
 			} else {
@@ -544,10 +586,11 @@ public class GenerateLens {
 				System.out.println("Invalid template " + entityType.getEntitySet().getGridStyle());
 			}
 			(new File(getDestinationPath() + File.separator + apartmentName + File.separator + "view" + File.separator
-					+ entityType.getEntitySet().getTarget())).mkdirs();
-			FileWriter fw = new FileWriter(new File(getDestinationPath() + File.separator + apartmentName
-					+ File.separator + "view" + File.separator + entityType.getEntitySet().getTarget() + File.separator
-					+ entityType.getEntitySet().getTarget() + ".view.xml"));
+					+ "entitySet" + File.separator + entityType.getEntitySet().getTarget())).mkdirs();
+			FileWriter fw = new FileWriter(
+					new File(getDestinationPath() + File.separator + apartmentName + File.separator + "view"
+							+ File.separator + "entitySet" + File.separator + entityType.getEntitySet().getTarget()
+							+ File.separator + entityType.getEntitySet().getTarget() + ".view.xml"));
 			fw.write(entitySetWriter.toString());
 			fw.close();
 
@@ -578,10 +621,11 @@ public class GenerateLens {
 			i18nTemplate.merge(entityContext, i18nWriter);
 
 			(new File(getDestinationPath() + File.separator + apartmentName + File.separator + "view" + File.separator
-					+ entityType.getEntity().getTarget())).mkdirs();
-			FileWriter fw = new FileWriter(new File(getDestinationPath() + File.separator + apartmentName
-					+ File.separator + "view" + File.separator + entityType.getEntity().getTarget() + File.separator
-					+ entityType.getEntity().getTarget() + ".view.xml"));
+					+ "entity" + File.separator + entityType.getEntity().getTarget())).mkdirs();
+			FileWriter fw = new FileWriter(
+					new File(getDestinationPath() + File.separator + apartmentName + File.separator + "view"
+							+ File.separator + "entity" + File.separator + entityType.getEntity().getTarget()
+							+ File.separator + entityType.getEntity().getTarget() + ".view.xml"));
 			fw.write(entityWriter.toString());
 			fw.close();
 		}

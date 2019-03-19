@@ -13,4 +13,7 @@ public class EntityType {
 	public EntitySet getEntitySet() {
 		return entitySet;
 	}
+	public String getEntitySetLabel() {
+		return entitySet.getLabel();
+	}
 }
