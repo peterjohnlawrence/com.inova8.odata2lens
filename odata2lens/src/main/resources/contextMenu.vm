@@ -109,7 +109,7 @@
 		}, {
 			"type":"entitySet",
 			"key": "$entityType.entitySet.target",
-			"text": "$entityType.entitySet.label",
+			"text": "Display $entityType.entitySet.label",
 			"target": "$entityType.entitySet.target",
 			"tooltip": "Show all $entityType.entitySet.label",
 			"visible":true, ## $entityType.entitySet.visible,

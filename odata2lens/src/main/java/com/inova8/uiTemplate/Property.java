@@ -8,6 +8,7 @@ public class Property {
 	Float ordinal;
 	String aggregate;
 	String formatOptions;
+	private String height;
 	public String getProperty() {
 		return property;
 	}
@@ -49,5 +50,11 @@ public class Property {
 	}
 	public void setFormatOptions(String formatOptions) {
 		this.formatOptions = formatOptions;
+	}
+	public void setHeight(String height) {
+		this.height=height;
+	}
+	public String getHeight() {
+		return height;
 	}
 }

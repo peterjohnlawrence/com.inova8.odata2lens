@@ -9,8 +9,9 @@ public class Property {
 	private String subTypeName;
 	ComplexType complexRange;
 	String formatOptions="";
+	String height="";
 
-	public Property(String name, String label, String tooltip, String range, String formatOptions, Boolean isFK) {
+	public Property(String name, String label, String tooltip, String range, String formatOptions, Boolean isFK, String height) {
 		this.name = name;
 
 		this.label = label;
@@ -27,6 +28,11 @@ public class Property {
 			this.formatOptions = formatOptions;
 		}
 		this.isFK = isFK;	
+		if(height==null|| height=="") {
+			this.height="4rem";
+		}else {
+			this.height=height;
+		}
 	}
 
 	public String getName() {
@@ -84,5 +90,8 @@ public class Property {
 	}
 	public Boolean getIsNotFK() {
 		return !isFK;
+	}
+	public String getHeight() {
+		return height;
 	}
 }

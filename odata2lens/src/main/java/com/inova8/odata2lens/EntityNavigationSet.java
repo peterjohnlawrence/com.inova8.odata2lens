@@ -12,9 +12,10 @@ public class EntityNavigationSet {
 	private String range;
 	private EntityType rangeType;
 	private String subTypeName;
+	private String height;
 
 	public EntityNavigationSet(String name, String target, String label, String tooltip, String targetEntityType,
-			String range, String icon) {
+			String range, String icon, String height) {
 		this.name = name;
 		this.target = target;
 		this.label = label;
@@ -22,6 +23,7 @@ public class EntityNavigationSet {
 		this.targetEntityType = targetEntityType;
 		this.range = range;
 		this.icon = icon;
+		this.height = height;
 	}
 
 	public String getName() {
@@ -82,4 +84,7 @@ public class EntityNavigationSet {
 		return rangeType;
 	}
 
+	public String getHeight() {
+		return height;
+	}
 }

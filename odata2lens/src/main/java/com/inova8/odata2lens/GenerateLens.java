@@ -16,6 +16,7 @@ import java.util.Comparator;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.List;
+import java.util.Map.Entry;
 import java.util.Properties;
 import java.util.TreeMap;
 
@@ -119,8 +120,10 @@ public class GenerateLens {
 			TreeMap<String, com.inova8.uiTemplate.Entity> entities = new GsonBuilder().create().fromJson(entitiesReader,
 					targetClassType);
 			EntityType entityType;
-			for (com.inova8.uiTemplate.Entity entity : entities.values()) {
-				entityType = entityTypes.get(entity.getEntity());
+			//	for (com.inova8.uiTemplate.Entity entity : entities.values()) {
+			for (Entry<String, com.inova8.uiTemplate.Entity> entityEntry : entities.entrySet()) {
+				com.inova8.uiTemplate.Entity entity = entityEntry.getValue();
+				entityType = entityTypes.get(entityEntry.getKey());
 				if (entity.getIcon() != null && !entity.getIcon().isEmpty())
 					entityType.getEntitySet().setEntityIcon(entity.getIcon());
 				if (entity.getImage() != null && !entity.getImage().isEmpty())
@@ -145,7 +148,7 @@ public class GenerateLens {
 					for (com.inova8.uiTemplate.Property property : form.getProperties()) {
 						formTemplate.updateProperty(property.getProperty(), property.getPropertyType(),
 								property.getPropertyRange(), property.getOrdinal(), property.getPropertyVisible(),
-								property.getAggregate(), property.getFormatOptions());
+								property.getAggregate(), property.getFormatOptions(), property.getHeight());
 					}
 				}
 				Grid grid = entity.getGrid();
@@ -165,7 +168,7 @@ public class GenerateLens {
 					for (com.inova8.uiTemplate.Property property : grid.getProperties()) {
 						gridTemplate.updateProperty(property.getProperty(), property.getPropertyType(),
 								property.getPropertyRange(), property.getOrdinal(), property.getPropertyVisible(),
-								property.getAggregate(), property.getFormatOptions());
+								property.getAggregate(), property.getFormatOptions(), property.getHeight());
 					}
 				}
 			}
@@ -197,7 +200,7 @@ public class GenerateLens {
 					formTemplate.getProperties().put(property.getOrdinal(),
 							new PropertyTemplate(property.getProperty(), property.getPropertyType(),
 									property.getPropertyRange(), property.getOrdinal(), property.getPropertyVisible(),
-									property.getAggregate(), property.getFormatOptions()));
+									property.getAggregate(), property.getFormatOptions(), property.getHeight()));
 				}
 				uiTemplates.put(form.getTarget(), formTemplate);
 				sequence++;
@@ -209,7 +212,7 @@ public class GenerateLens {
 					gridTemplate.getProperties().put(property.getOrdinal(),
 							new PropertyTemplate(property.getProperty(), property.getPropertyType(),
 									property.getPropertyRange(), property.getOrdinal(), property.getPropertyVisible(),
-									property.getAggregate(), property.getFormatOptions()));
+									property.getAggregate(), property.getFormatOptions(), property.getHeight()));
 				}
 				uiTemplates.put(grid.getTarget(), gridTemplate);
 			}
@@ -284,7 +287,7 @@ public class GenerateLens {
 							//String name, String label, String tooltip, String range, String formatOptions
 							subTypeName = getAnnotations("", edmProperty.getAnnotations()).get("odata.subType");
 							Property property = new Property(propertyName, propertyName, propertyName,
-									edmProperty.getType().getFullQualifiedName().toString(), null, false);
+									edmProperty.getType().getFullQualifiedName().toString(), null, false, null);
 							property.setSubTypeName(subTypeName);
 							complexType.putProperty(subTypeName, property);
 						}
@@ -298,7 +301,7 @@ public class GenerateLens {
 								EntityNavigationSet entityNavigationSet = new EntityNavigationSet(
 										navigationPropertyName, navigationPropertyName, navigationPropertyName,
 										navigationPropertyName, edmNavigationProperty.getType().getName(),
-										edmNavigationProperty.getType().getName(), "");
+										edmNavigationProperty.getType().getName(), "", "4rem");
 								entityNavigationSet.setSubTypeName(subTypeName);
 								//entityNavigationSet.setRangeType( );
 								complexType.putNavigationSet(subTypeName, entityNavigationSet);
@@ -351,7 +354,7 @@ public class GenerateLens {
 									entityTypeAnnotations.containsKey("odata.baseType")
 											? entityTypeAnnotations.get("odata.baseType")
 											: null,
-											baseTypes
+									baseTypes
 
 							);
 							TreeMap<String, EntityNavigationSet> entityNavigationSets = new TreeMap<String, EntityNavigationSet>();
@@ -371,7 +374,8 @@ public class GenerateLens {
 											propertyAnnotations.containsKey("sap.quickinfo")
 													? propertyAnnotations.get("sap.quickinfo")
 													: propertyName,
-											type, null, propertyAnnotations.containsKey("odata.FK") ? true : false);
+											type, null, propertyAnnotations.containsKey("odata.FK") ? true : false,
+											null);
 									if (edmProperty.isPrimitive()) {
 										//primitiveType = edmProperty.getType().getFullQualifiedName().toString();
 
@@ -391,8 +395,14 @@ public class GenerateLens {
 								if (!isFunctionImport(schema.getFunctions(), edmNavigationProperty.getType())
 										&& !isNavigationOutsideOfNamespace(schemaNames,
 												edmNavigationProperty.getType())) {
+									String range = "";
+									if( edmNavigationProperty.getType().getNamespace().equals(schemaNames[0])) {
+										range = edmNavigationProperty.getType().getName();
+									}else {
+										range = edmNavigationProperty.getType().getFullQualifiedName().toString().replace(".", "_");
+									}
 									if (edmNavigationProperty.isCollection()) {
-										EntityNavigationSet entityNavigationSet = new EntityNavigationSet(
+											EntityNavigationSet entityNavigationSet = new EntityNavigationSet(
 												navigationPropertyName,
 												edmEntityType.getName() + navigationPropertyName,
 												navigationPropertyAnnotations.containsKey("sap.label")
@@ -403,7 +413,7 @@ public class GenerateLens {
 														: "Show " + edmEntityType.getName() + "s "
 																+ edmNavigationProperty.getType().getName(),
 												edmNavigationProperty.getType().getName(),
-												edmNavigationProperty.getType().getName(), "");
+												range, "", "4rem");
 
 										entityNavigationSets.put(navigationPropertyName, entityNavigationSet);
 									} else {
@@ -416,7 +426,7 @@ public class GenerateLens {
 														? navigationPropertyAnnotations.get("sap.quickinfo")
 														: "Show " + navigationPropertyName,
 												edmNavigationProperty.getType().getName(),
-												edmNavigationProperty.getType().getName(), "");
+												range, "");
 										navigationProperties.put(navigationPropertyName, navigationProperty);
 									}
 								}
@@ -432,50 +442,104 @@ public class GenerateLens {
 											? entityTypeAnnotations.get("sap.quickinfo")
 											: edmEntityType.getName(),
 									"sap-icon://expand-group", entityNavigationSets, navigationProperties, properties);
-							entityTypes.put(edmEntityType.getName(), new EntityType(entity, entitySet));
+							if (schema.getNamespace().equals(schemaNames[0])) {
+								entityTypes.put(edmEntityType.getName(), new EntityType(entity, entitySet));
+							} else {
+								entityTypes.put(edmEntityType.getFullQualifiedName().toString().replace('.', '_'),
+										new EntityType(entity, entitySet));
+								//entityTypes.put(edmEntityType.getName(), new EntityType(entity, entitySet));
+								//entityTypes.put(entity.getFqn(), new EntityType(entity, entitySet));
+							}
 						}
 					}
 					//Post process to identify parent and child entitySets, and sets of subTypes used in complex properties
-					for (EntityType entityType : entityTypes.values()) {
-						for (NavigationProperty navigationProperty : entityType.getEntity().getNavigationProperties()
-								.values()) {
-							navigationProperty.setRangeType(entityTypes.get(navigationProperty.getRange()));
-						}
-						for (EntityNavigationSet navigationSet : entityType.getEntity().getNavigationSet().values()) {
-							navigationSet.setRangeType(entityTypes.get(navigationSet.getRange()));
-						}
-						for (Property property : entityType.getEntity().getProperties().values()) {
-							if (property.getComplex()) {
-								for (String subTypeName : property.getComplexRange().getProperties().keySet()) {
-									entityType.getEntity().getSubTypeNames().add(subTypeName);
-								}
-								for (String subTypeName : property.getComplexRange().getNavigationProperties()
-										.keySet()) {
-									entityType.getEntity().getSubTypeNames().add(subTypeName);
-									//	complexNavigationProperty.setRangeType(entityType);
-								}
-								for (String subTypeName : property.getComplexRange().getNavigationSets().keySet()) {
-									entityType.getEntity().getSubTypeNames().add(subTypeName);
-									//	complexNavigationSet.setRangeType(entityTypes.get(complexNavigationSet.getRange()));
-								}
-							} else {
-								entityType.getEntity().hasPrimitiveProperties(true);
+//					for (EntityType entityType : entityTypes.values()) {
+//						for (NavigationProperty navigationProperty : entityType.getEntity().getNavigationProperties()
+//								.values()) {
+//							navigationProperty.setRangeType(entityTypes.get(navigationProperty.getRange()));
+//						}
+//						for (EntityNavigationSet navigationSet : entityType.getEntity().getNavigationSet().values()) {
+//							navigationSet.setRangeType(entityTypes.get(navigationSet.getRange()));
+//						}
+//						for (Property property : entityType.getEntity().getProperties().values()) {
+//							if (property.getComplex()) {
+//								for (String subTypeName : property.getComplexRange().getProperties().keySet()) {
+//									entityType.getEntity().getSubTypeNames().add(subTypeName);
+//								}
+//								for (String subTypeName : property.getComplexRange().getNavigationProperties()
+//										.keySet()) {
+//									entityType.getEntity().getSubTypeNames().add(subTypeName);
+//									//	complexNavigationProperty.setRangeType(entityType);
+//								}
+//								for (String subTypeName : property.getComplexRange().getNavigationSets().keySet()) {
+//									entityType.getEntity().getSubTypeNames().add(subTypeName);
+//									//	complexNavigationSet.setRangeType(entityTypes.get(complexNavigationSet.getRange()));
+//								}
+//							} else {
+//								entityType.getEntity().hasPrimitiveProperties(true);
+//							}
+//						}
+//						EntitySet entitySet = entityType.getEntitySet();
+//						if (!entitySet.getBaseTypes().isEmpty()) {
+//							for (String baseType : entitySet.getBaseTypes()) {
+//								if (entityTypes.containsKey(baseType)) {
+//									EntityType baseEntityType = entityTypes.get(baseType);
+//									baseEntityType.getEntitySet().addChildEntitySet(entitySet);
+//									entitySet.addParentEntitySet(baseEntityType.getEntitySet());
+//								}
+//							}
+//						}
+//					}
+				}
+			}
+		}
+
+		for (String schemaName : schemaNames) {
+			EdmSchema schema = edm.getSchema(schemaName);
+			if (schema != null) {
+				for (EntityType entityType : entityTypes.values()) {
+					for (NavigationProperty navigationProperty : entityType.getEntity().getNavigationProperties()
+							.values()) {
+						navigationProperty.setRangeType(entityTypes.get(navigationProperty.getRange()));
+					}
+					for (EntityNavigationSet navigationSet : entityType.getEntity().getNavigationSet().values()) {
+						navigationSet.setRangeType(entityTypes.get(navigationSet.getRange()));
+					}
+					for (Property property : entityType.getEntity().getProperties().values()) {
+						if (property.getComplex()) {
+							for (String subTypeName : property.getComplexRange().getProperties().keySet()) {
+								entityType.getEntity().getSubTypeNames().add(subTypeName);
 							}
+							for (String subTypeName : property.getComplexRange().getNavigationProperties()
+									.keySet()) {
+								entityType.getEntity().getSubTypeNames().add(subTypeName);
+								//	complexNavigationProperty.setRangeType(entityType);
+							}
+							for (String subTypeName : property.getComplexRange().getNavigationSets().keySet()) {
+								entityType.getEntity().getSubTypeNames().add(subTypeName);
+								//	complexNavigationSet.setRangeType(entityTypes.get(complexNavigationSet.getRange()));
+							}
+						} else {
+							entityType.getEntity().hasPrimitiveProperties(true);
 						}
-						EntitySet entitySet = entityType.getEntitySet();
-						if (!entitySet.getBaseTypes().isEmpty()) {
-							for (String baseType : entitySet.getBaseTypes()) {
-								if (entityTypes.containsKey(baseType)) {
-									EntityType baseEntityType = entityTypes.get(baseType);
-									baseEntityType.getEntitySet().addChildEntitySet(entitySet);
-									entitySet.addParentEntitySet(baseEntityType.getEntitySet());
-								}
+					}
+					EntitySet entitySet = entityType.getEntitySet();
+					if (!entitySet.getBaseTypes().isEmpty()) {
+						for (String baseType : entitySet.getBaseTypes()) {
+							if (entityTypes.containsKey(baseType)) {
+								EntityType baseEntityType = entityTypes.get(baseType);
+								baseEntityType.getEntitySet().addChildEntitySet(entitySet);
+								entitySet.addParentEntitySet(baseEntityType.getEntitySet());
 							}
 						}
 					}
 				}
+				
+				
+				
 			}
 		}
+
 	}
 
 	private static boolean isNavigationOutsideOfNamespace(String schemaNames[], EdmEntityType entityType) {

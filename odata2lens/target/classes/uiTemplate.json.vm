@@ -112,6 +112,7 @@
 		"targetVisible": true,
 		"targetIcon": "sap-icon://expand-group",
 		"targetEntity": "$entityType.entitySet.name",
+		"allowEdit" : true,
 		"properties": [		
 	#foreach($property in $entityType.entity.properties)
 		#if( $property.complex )
@@ -127,7 +128,8 @@
 				"propertyRange": "$property.range",
 				"ordinal": $numSoFar,
 				"aggregate": "[]",
-				"formatOptions": null
+				"formatOptions": null,
+				"allowEdit": true
 			}
 		#else	
 			#if ($firstFormProperty ) 
@@ -142,7 +144,8 @@
 				"propertyRange": "$property.range",
 				"ordinal": $numSoFar,
 				"aggregate": "[]",
-				"formatOptions": null
+				"formatOptions": null,
+				"allowEdit": true
 			}
 	#end
 	#set ($numSoFar = $numSoFar + 1  )
@@ -160,7 +163,8 @@
 				"propertyRange": "$navigationProperty.range",
 				"ordinal": $numSoFar,
 				"aggregate": "[]",
-				"formatOptions": null
+				"formatOptions": null,
+				"allowEdit": true
 			}
 	#set ($numSoFar = $numSoFar + 1  )
 	#end	
@@ -177,7 +181,9 @@
 				"propertyRange": "$entityNavigationSet.range",
 				"ordinal": $numSoFar,
 				"aggregate": "[List]",
-				"formatOptions": null
+				"formatOptions": null,
+				"allowEdit": true,
+				"height":"4rem"
 			}
 	#set ($numSoFar = $numSoFar + 1  )
 	#end		

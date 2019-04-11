@@ -8,7 +8,8 @@ public class PropertyTemplate {
 	private boolean visible = true;
 	private String aggregate;
 	private String formatOptions;
-	public PropertyTemplate(String property, String propertyType, String range, Float ordinal, Boolean visible, String aggregate, String formatOptions) {
+	private String height;
+	public PropertyTemplate(String property, String propertyType, String range, Float ordinal, Boolean visible, String aggregate, String formatOptions, String height) {
 		super();
 		this.property = property;
 		this.propertyType = propertyType;
@@ -17,6 +18,7 @@ public class PropertyTemplate {
 		if(visible!=null)this.visible = visible;
 		this.aggregate = aggregate;
 		this.formatOptions= (formatOptions==null || formatOptions.isEmpty()||formatOptions.equals("\"\"") ? null:", formatOptions:" +  formatOptions.replace(";",","));
+		this.height=height;
 	}
 	public String getProperty() {
 		return property;
@@ -39,7 +41,10 @@ public class PropertyTemplate {
 	public String getFormatOptions() {
 		return formatOptions;
 	}
-	public void update(String property, String propertyType, String range, Float ordinal, Boolean visible, String aggregate, String formatOptions) {
+	public String getHeight() {
+		return height;
+	}
+	public void update(String property, String propertyType, String range, Float ordinal, Boolean visible, String aggregate, String formatOptions, String height) {
 		this.property = property;
 		if(propertyType!=null) this.propertyType = propertyType;
 		if(range!=null) this.range = range;
@@ -48,6 +53,9 @@ public class PropertyTemplate {
 		if(aggregate!=null)this.aggregate = aggregate;		
 		if(formatOptions!=null) {
 			this.formatOptions= (formatOptions.isEmpty()||formatOptions.equals("\"\"")? null :", formatOptions:" +formatOptions.replace(";",","));
+		}
+		if(height!=null) {
+			this.height = height;
 		}
 	}
 

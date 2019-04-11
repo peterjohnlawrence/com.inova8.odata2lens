@@ -6,7 +6,7 @@
 	"entitySetVisible":true,
 	"grid": {
 		"target": "Categorys",
-		"gridStyle":"entitySet360",
+		"gridStyle":"entitySetTable",
 		"targetVisible": true,
 		"targetIcon": "sap-icon://group-2",
 		"targetEntity": "Category",	
@@ -64,6 +64,7 @@
 		"targetVisible": true,
 		"targetIcon": "sap-icon://expand-group",
 		"targetEntity": "Category",
+		"allowEdit" : true,
 		"properties": [		
 			{  
 				"property": "categoryName",
@@ -72,7 +73,8 @@
 				"propertyRange": "Edm.String",
 				"ordinal": 0,
 				"aggregate": "[]",
-				"formatOptions": null
+				"formatOptions": null,
+				"allowEdit": true
 			}
 			,{ 
 				"property": "comment",
@@ -81,7 +83,8 @@
 				"propertyRange": "Edm.String",
 				"ordinal": 1,
 				"aggregate": "[]",
-				"formatOptions": null
+				"formatOptions": null,
+				"allowEdit": true
 			}
 			,{ 
 				"property": "description",
@@ -90,7 +93,8 @@
 				"propertyRange": "Edm.String",
 				"ordinal": 2,
 				"aggregate": "[]",
-				"formatOptions": null
+				"formatOptions": null,
+				"allowEdit": true
 			}
 			,{ 
 				"property": "picture",
@@ -99,7 +103,8 @@
 				"propertyRange": "Edm.String",
 				"ordinal": 3,
 				"aggregate": "[]",
-				"formatOptions": null
+				"formatOptions": null,
+				"allowEdit": true
 			}
 			,{ 
 				"property": "isCategoryOf",
@@ -108,7 +113,9 @@
 				"propertyRange": "Product",
 				"ordinal": 4,
 				"aggregate": "[List]",
-				"formatOptions": null
+				"formatOptions": null,
+				"allowEdit": true,
+				"height":"4rem"
 			}
 			]
 		}
@@ -121,7 +128,7 @@
 	"entitySetVisible":true,
 	"grid": {
 		"target": "Customers",
-		"gridStyle":"entitySet360",
+		"gridStyle":"entitySetTable",
 		"targetVisible": true,
 		"targetIcon": "sap-icon://group-2",
 		"targetEntity": "Customer",	
@@ -296,6 +303,7 @@
 		"targetVisible": true,
 		"targetIcon": "sap-icon://expand-group",
 		"targetEntity": "Customer",
+		"allowEdit" : true,
 		"properties": [		
 			{  
 				"property": "comment",
@@ -304,7 +312,8 @@
 				"propertyRange": "Edm.String",
 				"ordinal": 0,
 				"aggregate": "[]",
-				"formatOptions": null
+				"formatOptions": null,
+				"allowEdit": true
 			}
 			,{ 
 				"property": "customerAddress",
@@ -313,7 +322,8 @@
 				"propertyRange": "Edm.String",
 				"ordinal": 1,
 				"aggregate": "[]",
-				"formatOptions": null
+				"formatOptions": null,
+				"allowEdit": true
 			}
 			,{ 
 				"property": "customerCity",
@@ -322,7 +332,8 @@
 				"propertyRange": "Edm.String",
 				"ordinal": 2,
 				"aggregate": "[]",
-				"formatOptions": null
+				"formatOptions": null,
+				"allowEdit": true
 			}
 			,{ 
 				"property": "customerCompanyName",
@@ -331,7 +342,8 @@
 				"propertyRange": "Edm.String",
 				"ordinal": 3,
 				"aggregate": "[]",
-				"formatOptions": null
+				"formatOptions": null,
+				"allowEdit": true
 			}
 			,{ 
 				"property": "customerContactName",
@@ -340,7 +352,8 @@
 				"propertyRange": "Edm.String",
 				"ordinal": 4,
 				"aggregate": "[]",
-				"formatOptions": null
+				"formatOptions": null,
+				"allowEdit": true
 			}
 			,{ 
 				"property": "customerContactTitle",
@@ -349,7 +362,8 @@
 				"propertyRange": "Edm.String",
 				"ordinal": 5,
 				"aggregate": "[]",
-				"formatOptions": null
+				"formatOptions": null,
+				"allowEdit": true
 			}
 			,{ 
 				"property": "customerCountry",
@@ -358,7 +372,8 @@
 				"propertyRange": "Edm.String",
 				"ordinal": 6,
 				"aggregate": "[]",
-				"formatOptions": null
+				"formatOptions": null,
+				"allowEdit": true
 			}
 			,{ 
 				"property": "customerFax",
@@ -367,7 +382,8 @@
 				"propertyRange": "Edm.String",
 				"ordinal": 7,
 				"aggregate": "[]",
-				"formatOptions": null
+				"formatOptions": null,
+				"allowEdit": true
 			}
 			,{ 
 				"property": "customerPhone",
@@ -376,7 +392,8 @@
 				"propertyRange": "Edm.String",
 				"ordinal": 8,
 				"aggregate": "[]",
-				"formatOptions": null
+				"formatOptions": null,
+				"allowEdit": true
 			}
 			,{ 
 				"property": "customerPostalCode",
@@ -385,7 +402,8 @@
 				"propertyRange": "Edm.String",
 				"ordinal": 9,
 				"aggregate": "[]",
-				"formatOptions": null
+				"formatOptions": null,
+				"allowEdit": true
 			}
 			,{ 
 				"property": "customerWebsite",
@@ -394,7 +412,8 @@
 				"propertyRange": "Edm.String",
 				"ordinal": 10,
 				"aggregate": "[]",
-				"formatOptions": null
+				"formatOptions": null,
+				"allowEdit": true
 			}
 			,{ 
 				"property": "lat",
@@ -403,7 +422,8 @@
 				"propertyRange": "Edm.Double",
 				"ordinal": 11,
 				"aggregate": "[]",
-				"formatOptions": null
+				"formatOptions": null,
+				"allowEdit": true
 			}
 			,{ 
 				"property": "lat_long",
@@ -412,7 +432,8 @@
 				"propertyRange": "Edm.String",
 				"ordinal": 12,
 				"aggregate": "[]",
-				"formatOptions": null
+				"formatOptions": null,
+				"allowEdit": true
 			}
 			,{ 
 				"property": "long",
@@ -421,7 +442,8 @@
 				"propertyRange": "Edm.Double",
 				"ordinal": 13,
 				"aggregate": "[]",
-				"formatOptions": null
+				"formatOptions": null,
+				"allowEdit": true
 			}
 			,{ 
 				"property": "regionDescription",
@@ -430,7 +452,8 @@
 				"propertyRange": "Edm.String",
 				"ordinal": 14,
 				"aggregate": "[]",
-				"formatOptions": null
+				"formatOptions": null,
+				"allowEdit": true
 			}
 			,{ 
 				"property": "customerRegion",
@@ -439,7 +462,9 @@
 				"propertyRange": "Region",
 				"ordinal": 15,
 				"aggregate": "[List]",
-				"formatOptions": null
+				"formatOptions": null,
+				"allowEdit": true,
+				"height":"4rem"
 			}
 			,{ 
 				"property": "customer_customer_Order",
@@ -448,7 +473,9 @@
 				"propertyRange": "Customer_Order",
 				"ordinal": 16,
 				"aggregate": "[List]",
-				"formatOptions": null
+				"formatOptions": null,
+				"allowEdit": true,
+				"height":"4rem"
 			}
 			,{ 
 				"property": "hasPlacedOrder",
@@ -457,7 +484,9 @@
 				"propertyRange": "Order",
 				"ordinal": 17,
 				"aggregate": "[List]",
-				"formatOptions": null
+				"formatOptions": null,
+				"allowEdit": true,
+				"height":"4rem"
 			}
 			]
 		}
@@ -470,7 +499,7 @@
 	"entitySetVisible":true,
 	"grid": {
 		"target": "Customer_Orders",
-		"gridStyle":"entitySet360",
+		"gridStyle":"entitySetTable",
 		"targetVisible": true,
 		"targetIcon": "sap-icon://group-2",
 		"targetEntity": "Customer_Order",	
@@ -546,6 +575,7 @@
 		"targetVisible": true,
 		"targetIcon": "sap-icon://expand-group",
 		"targetEntity": "Customer_Order",
+		"allowEdit" : true,
 		"properties": [		
 			{  
 				"property": "customer",
@@ -554,7 +584,8 @@
 				"propertyRange": "Edm.String",
 				"ordinal": 0,
 				"aggregate": "[]",
-				"formatOptions": null
+				"formatOptions": null,
+				"allowEdit": true
 			}
 			,{ 
 				"property": "customer_Order_customerCity",
@@ -563,7 +594,8 @@
 				"propertyRange": "Edm.String",
 				"ordinal": 1,
 				"aggregate": "[]",
-				"formatOptions": null
+				"formatOptions": null,
+				"allowEdit": true
 			}
 			,{ 
 				"property": "customer_Order_customerCompanyName",
@@ -572,7 +604,8 @@
 				"propertyRange": "Edm.String",
 				"ordinal": 2,
 				"aggregate": "[]",
-				"formatOptions": null
+				"formatOptions": null,
+				"allowEdit": true
 			}
 			,{ 
 				"property": "customer_Order_shipCity",
@@ -581,7 +614,8 @@
 				"propertyRange": "Edm.String",
 				"ordinal": 3,
 				"aggregate": "[]",
-				"formatOptions": null
+				"formatOptions": null,
+				"allowEdit": true
 			}
 			,{ 
 				"property": "order",
@@ -590,7 +624,8 @@
 				"propertyRange": "Edm.String",
 				"ordinal": 4,
 				"aggregate": "[]",
-				"formatOptions": null
+				"formatOptions": null,
+				"allowEdit": true
 			}
 			,{ 
 				"property": "customer_Order_customer",
@@ -599,7 +634,8 @@
 				"propertyRange": "Customer",
 				"ordinal": 5,
 				"aggregate": "[]",
-				"formatOptions": null
+				"formatOptions": null,
+				"allowEdit": true
 			}
 			,{ 
 				"property": "customer_Order_order",
@@ -608,7 +644,8 @@
 				"propertyRange": "Order",
 				"ordinal": 6,
 				"aggregate": "[]",
-				"formatOptions": null
+				"formatOptions": null,
+				"allowEdit": true
 			}
 			]
 		}
@@ -621,7 +658,7 @@
 	"entitySetVisible":true,
 	"grid": {
 		"target": "Employees",
-		"gridStyle":"entitySet360",
+		"gridStyle":"entitySetTable",
 		"targetVisible": true,
 		"targetIcon": "sap-icon://group-2",
 		"targetEntity": "Employee",	
@@ -913,6 +950,7 @@
 		"targetVisible": true,
 		"targetIcon": "sap-icon://expand-group",
 		"targetEntity": "Employee",
+		"allowEdit" : true,
 		"properties": [		
 			{  
 				"property": "birthDate",
@@ -921,7 +959,8 @@
 				"propertyRange": "Edm.Date",
 				"ordinal": 0,
 				"aggregate": "[]",
-				"formatOptions": null
+				"formatOptions": null,
+				"allowEdit": true
 			}
 			,{ 
 				"property": "comment",
@@ -930,7 +969,8 @@
 				"propertyRange": "Edm.String",
 				"ordinal": 1,
 				"aggregate": "[]",
-				"formatOptions": null
+				"formatOptions": null,
+				"allowEdit": true
 			}
 			,{ 
 				"property": "employeeAddress",
@@ -939,7 +979,8 @@
 				"propertyRange": "Edm.String",
 				"ordinal": 2,
 				"aggregate": "[]",
-				"formatOptions": null
+				"formatOptions": null,
+				"allowEdit": true
 			}
 			,{ 
 				"property": "employeeCity",
@@ -948,7 +989,8 @@
 				"propertyRange": "Edm.String",
 				"ordinal": 3,
 				"aggregate": "[]",
-				"formatOptions": null
+				"formatOptions": null,
+				"allowEdit": true
 			}
 			,{ 
 				"property": "employeeCountry",
@@ -957,7 +999,8 @@
 				"propertyRange": "Edm.String",
 				"ordinal": 4,
 				"aggregate": "[]",
-				"formatOptions": null
+				"formatOptions": null,
+				"allowEdit": true
 			}
 			,{ 
 				"property": "employeeLinkedIn",
@@ -966,7 +1009,8 @@
 				"propertyRange": "Edm.String",
 				"ordinal": 5,
 				"aggregate": "[]",
-				"formatOptions": null
+				"formatOptions": null,
+				"allowEdit": true
 			}
 			,{ 
 				"property": "employeePostalCode",
@@ -975,7 +1019,8 @@
 				"propertyRange": "Edm.String",
 				"ordinal": 6,
 				"aggregate": "[]",
-				"formatOptions": null
+				"formatOptions": null,
+				"allowEdit": true
 			}
 			,{ 
 				"property": "employeeSalary",
@@ -984,7 +1029,8 @@
 				"propertyRange": "northwind.employeeSalary",
 				"ordinal": 7,
 				"aggregate": "[]",
-				"formatOptions": null
+				"formatOptions": null,
+				"allowEdit": true
 			}
 			,{ 
 				"property": "employer",
@@ -993,7 +1039,8 @@
 				"propertyRange": "northwind.employer",
 				"ordinal": 8,
 				"aggregate": "[]",
-				"formatOptions": null
+				"formatOptions": null,
+				"allowEdit": true
 			}
 			,{ 
 				"property": "extension",
@@ -1002,7 +1049,8 @@
 				"propertyRange": "Edm.String",
 				"ordinal": 9,
 				"aggregate": "[]",
-				"formatOptions": null
+				"formatOptions": null,
+				"allowEdit": true
 			}
 			,{ 
 				"property": "favorite",
@@ -1011,7 +1059,8 @@
 				"propertyRange": "northwind.favorite",
 				"ordinal": 10,
 				"aggregate": "[]",
-				"formatOptions": null
+				"formatOptions": null,
+				"allowEdit": true
 			}
 			,{ 
 				"property": "firstName",
@@ -1020,7 +1069,8 @@
 				"propertyRange": "Edm.String",
 				"ordinal": 11,
 				"aggregate": "[]",
-				"formatOptions": null
+				"formatOptions": null,
+				"allowEdit": true
 			}
 			,{ 
 				"property": "hireDate",
@@ -1029,7 +1079,8 @@
 				"propertyRange": "Edm.Date",
 				"ordinal": 12,
 				"aggregate": "[]",
-				"formatOptions": null
+				"formatOptions": null,
+				"allowEdit": true
 			}
 			,{ 
 				"property": "homePhone",
@@ -1038,7 +1089,8 @@
 				"propertyRange": "Edm.String",
 				"ordinal": 13,
 				"aggregate": "[]",
-				"formatOptions": null
+				"formatOptions": null,
+				"allowEdit": true
 			}
 			,{ 
 				"property": "lastName",
@@ -1047,7 +1099,8 @@
 				"propertyRange": "Edm.String",
 				"ordinal": 14,
 				"aggregate": "[]",
-				"formatOptions": null
+				"formatOptions": null,
+				"allowEdit": true
 			}
 			,{ 
 				"property": "lat",
@@ -1056,7 +1109,8 @@
 				"propertyRange": "Edm.Double",
 				"ordinal": 15,
 				"aggregate": "[]",
-				"formatOptions": null
+				"formatOptions": null,
+				"allowEdit": true
 			}
 			,{ 
 				"property": "lat_long",
@@ -1065,7 +1119,8 @@
 				"propertyRange": "Edm.String",
 				"ordinal": 16,
 				"aggregate": "[]",
-				"formatOptions": null
+				"formatOptions": null,
+				"allowEdit": true
 			}
 			,{ 
 				"property": "long",
@@ -1074,7 +1129,8 @@
 				"propertyRange": "Edm.Double",
 				"ordinal": 17,
 				"aggregate": "[]",
-				"formatOptions": null
+				"formatOptions": null,
+				"allowEdit": true
 			}
 			,{ 
 				"property": "notes",
@@ -1083,7 +1139,8 @@
 				"propertyRange": "Edm.String",
 				"ordinal": 18,
 				"aggregate": "[]",
-				"formatOptions": null
+				"formatOptions": null,
+				"allowEdit": true
 			}
 			,{ 
 				"property": "photo",
@@ -1092,7 +1149,8 @@
 				"propertyRange": "Edm.String",
 				"ordinal": 19,
 				"aggregate": "[]",
-				"formatOptions": null
+				"formatOptions": null,
+				"allowEdit": true
 			}
 			,{ 
 				"property": "regionDescription",
@@ -1101,7 +1159,8 @@
 				"propertyRange": "Edm.String",
 				"ordinal": 20,
 				"aggregate": "[]",
-				"formatOptions": null
+				"formatOptions": null,
+				"allowEdit": true
 			}
 			,{ 
 				"property": "reportsToId",
@@ -1110,7 +1169,8 @@
 				"propertyRange": "Edm.String",
 				"ordinal": 21,
 				"aggregate": "[]",
-				"formatOptions": null
+				"formatOptions": null,
+				"allowEdit": true
 			}
 			,{ 
 				"property": "reportsToNotation",
@@ -1119,7 +1179,8 @@
 				"propertyRange": "Edm.String",
 				"ordinal": 22,
 				"aggregate": "[]",
-				"formatOptions": null
+				"formatOptions": null,
+				"allowEdit": true
 			}
 			,{ 
 				"property": "territoryNotation",
@@ -1128,7 +1189,8 @@
 				"propertyRange": "Edm.String",
 				"ordinal": 23,
 				"aggregate": "[]",
-				"formatOptions": null
+				"formatOptions": null,
+				"allowEdit": true
 			}
 			,{ 
 				"property": "title",
@@ -1137,7 +1199,8 @@
 				"propertyRange": "Edm.String",
 				"ordinal": 24,
 				"aggregate": "[]",
-				"formatOptions": null
+				"formatOptions": null,
+				"allowEdit": true
 			}
 			,{ 
 				"property": "titleOfCourtesy",
@@ -1146,7 +1209,8 @@
 				"propertyRange": "Edm.String",
 				"ordinal": 25,
 				"aggregate": "[]",
-				"formatOptions": null
+				"formatOptions": null,
+				"allowEdit": true
 			}
 			,{ 
 				"property": "reportsTo",
@@ -1155,7 +1219,8 @@
 				"propertyRange": "Employee",
 				"ordinal": 26,
 				"aggregate": "[]",
-				"formatOptions": null
+				"formatOptions": null,
+				"allowEdit": true
 			}
 			,{ 
 				"property": "employeeRegion",
@@ -1164,7 +1229,9 @@
 				"propertyRange": "Region",
 				"ordinal": 27,
 				"aggregate": "[List]",
-				"formatOptions": null
+				"formatOptions": null,
+				"allowEdit": true,
+				"height":"4rem"
 			}
 			,{ 
 				"property": "managesEmployee",
@@ -1173,7 +1240,9 @@
 				"propertyRange": "Employee",
 				"ordinal": 28,
 				"aggregate": "[List]",
-				"formatOptions": null
+				"formatOptions": null,
+				"allowEdit": true,
+				"height":"4rem"
 			}
 			,{ 
 				"property": "managesOrder",
@@ -1182,7 +1251,9 @@
 				"propertyRange": "Order",
 				"ordinal": 29,
 				"aggregate": "[List]",
-				"formatOptions": null
+				"formatOptions": null,
+				"allowEdit": true,
+				"height":"4rem"
 			}
 			,{ 
 				"property": "territory",
@@ -1191,7 +1262,9 @@
 				"propertyRange": "Territory",
 				"ordinal": 30,
 				"aggregate": "[List]",
-				"formatOptions": null
+				"formatOptions": null,
+				"allowEdit": true,
+				"height":"4rem"
 			}
 			]
 		}
@@ -1204,7 +1277,7 @@
 	"entitySetVisible":true,
 	"grid": {
 		"target": "Orders",
-		"gridStyle":"entitySet360",
+		"gridStyle":"entitySetTable",
 		"targetVisible": true,
 		"targetIcon": "sap-icon://group-2",
 		"targetEntity": "Order",	
@@ -1469,6 +1542,7 @@
 		"targetVisible": true,
 		"targetIcon": "sap-icon://expand-group",
 		"targetEntity": "Order",
+		"allowEdit" : true,
 		"properties": [		
 			{  
 				"property": "comment",
@@ -1477,7 +1551,8 @@
 				"propertyRange": "Edm.String",
 				"ordinal": 0,
 				"aggregate": "[]",
-				"formatOptions": null
+				"formatOptions": null,
+				"allowEdit": true
 			}
 			,{ 
 				"property": "customerId",
@@ -1486,7 +1561,8 @@
 				"propertyRange": "Edm.String",
 				"ordinal": 1,
 				"aggregate": "[]",
-				"formatOptions": null
+				"formatOptions": null,
+				"allowEdit": true
 			}
 			,{ 
 				"property": "customerNotation",
@@ -1495,7 +1571,8 @@
 				"propertyRange": "Edm.String",
 				"ordinal": 2,
 				"aggregate": "[]",
-				"formatOptions": null
+				"formatOptions": null,
+				"allowEdit": true
 			}
 			,{ 
 				"property": "employeeId",
@@ -1504,7 +1581,8 @@
 				"propertyRange": "Edm.String",
 				"ordinal": 3,
 				"aggregate": "[]",
-				"formatOptions": null
+				"formatOptions": null,
+				"allowEdit": true
 			}
 			,{ 
 				"property": "employeeNotation",
@@ -1513,7 +1591,8 @@
 				"propertyRange": "Edm.String",
 				"ordinal": 4,
 				"aggregate": "[]",
-				"formatOptions": null
+				"formatOptions": null,
+				"allowEdit": true
 			}
 			,{ 
 				"property": "freight",
@@ -1522,7 +1601,8 @@
 				"propertyRange": "Edm.String",
 				"ordinal": 5,
 				"aggregate": "[]",
-				"formatOptions": null
+				"formatOptions": null,
+				"allowEdit": true
 			}
 			,{ 
 				"property": "lat",
@@ -1531,7 +1611,8 @@
 				"propertyRange": "Edm.Double",
 				"ordinal": 6,
 				"aggregate": "[]",
-				"formatOptions": null
+				"formatOptions": null,
+				"allowEdit": true
 			}
 			,{ 
 				"property": "lat_long",
@@ -1540,7 +1621,8 @@
 				"propertyRange": "Edm.String",
 				"ordinal": 7,
 				"aggregate": "[]",
-				"formatOptions": null
+				"formatOptions": null,
+				"allowEdit": true
 			}
 			,{ 
 				"property": "long",
@@ -1549,7 +1631,8 @@
 				"propertyRange": "Edm.Double",
 				"ordinal": 8,
 				"aggregate": "[]",
-				"formatOptions": null
+				"formatOptions": null,
+				"allowEdit": true
 			}
 			,{ 
 				"property": "orderDate",
@@ -1558,7 +1641,8 @@
 				"propertyRange": "Edm.DateTimeOffset",
 				"ordinal": 9,
 				"aggregate": "[]",
-				"formatOptions": null
+				"formatOptions": null,
+				"allowEdit": true
 			}
 			,{ 
 				"property": "orderRegionId",
@@ -1567,7 +1651,8 @@
 				"propertyRange": "Edm.String",
 				"ordinal": 10,
 				"aggregate": "[]",
-				"formatOptions": null
+				"formatOptions": null,
+				"allowEdit": true
 			}
 			,{ 
 				"property": "regionDescription",
@@ -1576,7 +1661,8 @@
 				"propertyRange": "Edm.String",
 				"ordinal": 11,
 				"aggregate": "[]",
-				"formatOptions": null
+				"formatOptions": null,
+				"allowEdit": true
 			}
 			,{ 
 				"property": "requiredDate",
@@ -1585,7 +1671,8 @@
 				"propertyRange": "Edm.DateTimeOffset",
 				"ordinal": 12,
 				"aggregate": "[]",
-				"formatOptions": null
+				"formatOptions": null,
+				"allowEdit": true
 			}
 			,{ 
 				"property": "shipAddress",
@@ -1594,7 +1681,8 @@
 				"propertyRange": "Edm.String",
 				"ordinal": 13,
 				"aggregate": "[]",
-				"formatOptions": null
+				"formatOptions": null,
+				"allowEdit": true
 			}
 			,{ 
 				"property": "shipCity",
@@ -1603,7 +1691,8 @@
 				"propertyRange": "Edm.String",
 				"ordinal": 14,
 				"aggregate": "[]",
-				"formatOptions": null
+				"formatOptions": null,
+				"allowEdit": true
 			}
 			,{ 
 				"property": "shipCountry",
@@ -1612,7 +1701,8 @@
 				"propertyRange": "Edm.String",
 				"ordinal": 15,
 				"aggregate": "[]",
-				"formatOptions": null
+				"formatOptions": null,
+				"allowEdit": true
 			}
 			,{ 
 				"property": "shipName",
@@ -1621,7 +1711,8 @@
 				"propertyRange": "Edm.String",
 				"ordinal": 16,
 				"aggregate": "[]",
-				"formatOptions": null
+				"formatOptions": null,
+				"allowEdit": true
 			}
 			,{ 
 				"property": "shipPostalCode",
@@ -1630,7 +1721,8 @@
 				"propertyRange": "Edm.String",
 				"ordinal": 17,
 				"aggregate": "[]",
-				"formatOptions": null
+				"formatOptions": null,
+				"allowEdit": true
 			}
 			,{ 
 				"property": "shipViaId",
@@ -1639,7 +1731,8 @@
 				"propertyRange": "Edm.String",
 				"ordinal": 18,
 				"aggregate": "[]",
-				"formatOptions": null
+				"formatOptions": null,
+				"allowEdit": true
 			}
 			,{ 
 				"property": "shipViaNotation",
@@ -1648,7 +1741,8 @@
 				"propertyRange": "Edm.String",
 				"ordinal": 19,
 				"aggregate": "[]",
-				"formatOptions": null
+				"formatOptions": null,
+				"allowEdit": true
 			}
 			,{ 
 				"property": "shippedDate",
@@ -1657,7 +1751,8 @@
 				"propertyRange": "Edm.DateTimeOffset",
 				"ordinal": 20,
 				"aggregate": "[]",
-				"formatOptions": null
+				"formatOptions": null,
+				"allowEdit": true
 			}
 			,{ 
 				"property": "customer",
@@ -1666,7 +1761,8 @@
 				"propertyRange": "Customer",
 				"ordinal": 21,
 				"aggregate": "[]",
-				"formatOptions": null
+				"formatOptions": null,
+				"allowEdit": true
 			}
 			,{ 
 				"property": "employee",
@@ -1675,7 +1771,8 @@
 				"propertyRange": "Employee",
 				"ordinal": 22,
 				"aggregate": "[]",
-				"formatOptions": null
+				"formatOptions": null,
+				"allowEdit": true
 			}
 			,{ 
 				"property": "orderRegion",
@@ -1684,7 +1781,8 @@
 				"propertyRange": "Region",
 				"ordinal": 23,
 				"aggregate": "[]",
-				"formatOptions": null
+				"formatOptions": null,
+				"allowEdit": true
 			}
 			,{ 
 				"property": "shipVia",
@@ -1693,7 +1791,8 @@
 				"propertyRange": "Shipper",
 				"ordinal": 24,
 				"aggregate": "[]",
-				"formatOptions": null
+				"formatOptions": null,
+				"allowEdit": true
 			}
 			,{ 
 				"property": "hasOrderDetail",
@@ -1702,7 +1801,9 @@
 				"propertyRange": "OrderDetail",
 				"ordinal": 25,
 				"aggregate": "[List]",
-				"formatOptions": null
+				"formatOptions": null,
+				"allowEdit": true,
+				"height":"4rem"
 			}
 			,{ 
 				"property": "order_customer_Order",
@@ -1711,7 +1812,9 @@
 				"propertyRange": "Customer_Order",
 				"ordinal": 26,
 				"aggregate": "[List]",
-				"formatOptions": null
+				"formatOptions": null,
+				"allowEdit": true,
+				"height":"4rem"
 			}
 			,{ 
 				"property": "order_orderSummary",
@@ -1720,7 +1823,9 @@
 				"propertyRange": "OrderSummary",
 				"ordinal": 27,
 				"aggregate": "[List]",
-				"formatOptions": null
+				"formatOptions": null,
+				"allowEdit": true,
+				"height":"4rem"
 			}
 			]
 		}
@@ -1733,7 +1838,7 @@
 	"entitySetVisible":true,
 	"grid": {
 		"target": "OrderDetails",
-		"gridStyle":"entitySet360",
+		"gridStyle":"entitySetTable",
 		"targetVisible": true,
 		"targetIcon": "sap-icon://group-2",
 		"targetEntity": "OrderDetail",	
@@ -1836,6 +1941,7 @@
 		"targetVisible": true,
 		"targetIcon": "sap-icon://expand-group",
 		"targetEntity": "OrderDetail",
+		"allowEdit" : true,
 		"properties": [		
 			{  
 				"property": "comment",
@@ -1844,7 +1950,8 @@
 				"propertyRange": "Edm.String",
 				"ordinal": 0,
 				"aggregate": "[]",
-				"formatOptions": null
+				"formatOptions": null,
+				"allowEdit": true
 			}
 			,{ 
 				"property": "discount",
@@ -1853,7 +1960,8 @@
 				"propertyRange": "Edm.Double",
 				"ordinal": 1,
 				"aggregate": "[]",
-				"formatOptions": null
+				"formatOptions": null,
+				"allowEdit": true
 			}
 			,{ 
 				"property": "orderDetailUnitPrice",
@@ -1862,7 +1970,8 @@
 				"propertyRange": "Edm.Double",
 				"ordinal": 2,
 				"aggregate": "[]",
-				"formatOptions": null
+				"formatOptions": null,
+				"allowEdit": true
 			}
 			,{ 
 				"property": "orderId",
@@ -1871,7 +1980,8 @@
 				"propertyRange": "Edm.String",
 				"ordinal": 3,
 				"aggregate": "[]",
-				"formatOptions": null
+				"formatOptions": null,
+				"allowEdit": true
 			}
 			,{ 
 				"property": "orderNotation",
@@ -1880,7 +1990,8 @@
 				"propertyRange": "Edm.String",
 				"ordinal": 4,
 				"aggregate": "[]",
-				"formatOptions": null
+				"formatOptions": null,
+				"allowEdit": true
 			}
 			,{ 
 				"property": "productId",
@@ -1889,7 +2000,8 @@
 				"propertyRange": "Edm.String",
 				"ordinal": 5,
 				"aggregate": "[]",
-				"formatOptions": null
+				"formatOptions": null,
+				"allowEdit": true
 			}
 			,{ 
 				"property": "productNotation",
@@ -1898,7 +2010,8 @@
 				"propertyRange": "Edm.String",
 				"ordinal": 6,
 				"aggregate": "[]",
-				"formatOptions": null
+				"formatOptions": null,
+				"allowEdit": true
 			}
 			,{ 
 				"property": "quantity",
@@ -1907,7 +2020,8 @@
 				"propertyRange": "Edm.Int32",
 				"ordinal": 7,
 				"aggregate": "[]",
-				"formatOptions": null
+				"formatOptions": null,
+				"allowEdit": true
 			}
 			,{ 
 				"property": "order",
@@ -1916,7 +2030,8 @@
 				"propertyRange": "Order",
 				"ordinal": 8,
 				"aggregate": "[]",
-				"formatOptions": null
+				"formatOptions": null,
+				"allowEdit": true
 			}
 			,{ 
 				"property": "product",
@@ -1925,7 +2040,8 @@
 				"propertyRange": "Product",
 				"ordinal": 9,
 				"aggregate": "[]",
-				"formatOptions": null
+				"formatOptions": null,
+				"allowEdit": true
 			}
 			]
 		}
@@ -1938,7 +2054,7 @@
 	"entitySetVisible":true,
 	"grid": {
 		"target": "OrderSummarys",
-		"gridStyle":"entitySet360",
+		"gridStyle":"entitySetTable",
 		"targetVisible": true,
 		"targetIcon": "sap-icon://group-2",
 		"targetEntity": "OrderSummary",	
@@ -1996,6 +2112,7 @@
 		"targetVisible": true,
 		"targetIcon": "sap-icon://expand-group",
 		"targetEntity": "OrderSummary",
+		"allowEdit" : true,
 		"properties": [		
 			{  
 				"property": "order",
@@ -2004,7 +2121,8 @@
 				"propertyRange": "Edm.String",
 				"ordinal": 0,
 				"aggregate": "[]",
-				"formatOptions": null
+				"formatOptions": null,
+				"allowEdit": true
 			}
 			,{ 
 				"property": "orderSummary_Value",
@@ -2013,7 +2131,8 @@
 				"propertyRange": "Edm.Double",
 				"ordinal": 1,
 				"aggregate": "[]",
-				"formatOptions": null
+				"formatOptions": null,
+				"allowEdit": true
 			}
 			,{ 
 				"property": "prod",
@@ -2022,7 +2141,8 @@
 				"propertyRange": "Edm.String",
 				"ordinal": 2,
 				"aggregate": "[]",
-				"formatOptions": null
+				"formatOptions": null,
+				"allowEdit": true
 			}
 			,{ 
 				"property": "orderSummary_order",
@@ -2031,7 +2151,8 @@
 				"propertyRange": "Order",
 				"ordinal": 3,
 				"aggregate": "[]",
-				"formatOptions": null
+				"formatOptions": null,
+				"allowEdit": true
 			}
 			,{ 
 				"property": "orderSummary_product",
@@ -2040,7 +2161,8 @@
 				"propertyRange": "Product",
 				"ordinal": 4,
 				"aggregate": "[]",
-				"formatOptions": null
+				"formatOptions": null,
+				"allowEdit": true
 			}
 			]
 		}
@@ -2053,7 +2175,7 @@
 	"entitySetVisible":true,
 	"grid": {
 		"target": "Products",
-		"gridStyle":"entitySet360",
+		"gridStyle":"entitySetTable",
 		"targetVisible": true,
 		"targetIcon": "sap-icon://group-2",
 		"targetEntity": "Product",	
@@ -2219,6 +2341,7 @@
 		"targetVisible": true,
 		"targetIcon": "sap-icon://expand-group",
 		"targetEntity": "Product",
+		"allowEdit" : true,
 		"properties": [		
 			{  
 				"property": "categoryId",
@@ -2227,7 +2350,8 @@
 				"propertyRange": "Edm.String",
 				"ordinal": 0,
 				"aggregate": "[]",
-				"formatOptions": null
+				"formatOptions": null,
+				"allowEdit": true
 			}
 			,{ 
 				"property": "categoryNotation",
@@ -2236,7 +2360,8 @@
 				"propertyRange": "Edm.String",
 				"ordinal": 1,
 				"aggregate": "[]",
-				"formatOptions": null
+				"formatOptions": null,
+				"allowEdit": true
 			}
 			,{ 
 				"property": "comment",
@@ -2245,7 +2370,8 @@
 				"propertyRange": "Edm.String",
 				"ordinal": 2,
 				"aggregate": "[]",
-				"formatOptions": null
+				"formatOptions": null,
+				"allowEdit": true
 			}
 			,{ 
 				"property": "discontinued",
@@ -2254,7 +2380,8 @@
 				"propertyRange": "Edm.Boolean",
 				"ordinal": 3,
 				"aggregate": "[]",
-				"formatOptions": null
+				"formatOptions": null,
+				"allowEdit": true
 			}
 			,{ 
 				"property": "productName",
@@ -2263,7 +2390,8 @@
 				"propertyRange": "Edm.String",
 				"ordinal": 4,
 				"aggregate": "[]",
-				"formatOptions": null
+				"formatOptions": null,
+				"allowEdit": true
 			}
 			,{ 
 				"property": "productUnitPrice",
@@ -2272,7 +2400,8 @@
 				"propertyRange": "Edm.Double",
 				"ordinal": 5,
 				"aggregate": "[]",
-				"formatOptions": null
+				"formatOptions": null,
+				"allowEdit": true
 			}
 			,{ 
 				"property": "quantityPerUnit",
@@ -2281,7 +2410,8 @@
 				"propertyRange": "Edm.String",
 				"ordinal": 6,
 				"aggregate": "[]",
-				"formatOptions": null
+				"formatOptions": null,
+				"allowEdit": true
 			}
 			,{ 
 				"property": "reorderLevel",
@@ -2290,7 +2420,8 @@
 				"propertyRange": "Edm.Int32",
 				"ordinal": 7,
 				"aggregate": "[]",
-				"formatOptions": null
+				"formatOptions": null,
+				"allowEdit": true
 			}
 			,{ 
 				"property": "supplierId",
@@ -2299,7 +2430,8 @@
 				"propertyRange": "Edm.String",
 				"ordinal": 8,
 				"aggregate": "[]",
-				"formatOptions": null
+				"formatOptions": null,
+				"allowEdit": true
 			}
 			,{ 
 				"property": "supplierNotation",
@@ -2308,7 +2440,8 @@
 				"propertyRange": "Edm.String",
 				"ordinal": 9,
 				"aggregate": "[]",
-				"formatOptions": null
+				"formatOptions": null,
+				"allowEdit": true
 			}
 			,{ 
 				"property": "unitCommission",
@@ -2317,7 +2450,8 @@
 				"propertyRange": "northwind.unitCommission",
 				"ordinal": 10,
 				"aggregate": "[]",
-				"formatOptions": null
+				"formatOptions": null,
+				"allowEdit": true
 			}
 			,{ 
 				"property": "unitsInStock",
@@ -2326,7 +2460,8 @@
 				"propertyRange": "Edm.Int32",
 				"ordinal": 11,
 				"aggregate": "[]",
-				"formatOptions": null
+				"formatOptions": null,
+				"allowEdit": true
 			}
 			,{ 
 				"property": "unitsOnOrder",
@@ -2335,7 +2470,8 @@
 				"propertyRange": "Edm.Int32",
 				"ordinal": 12,
 				"aggregate": "[]",
-				"formatOptions": null
+				"formatOptions": null,
+				"allowEdit": true
 			}
 			,{ 
 				"property": "category",
@@ -2344,7 +2480,8 @@
 				"propertyRange": "Category",
 				"ordinal": 13,
 				"aggregate": "[]",
-				"formatOptions": null
+				"formatOptions": null,
+				"allowEdit": true
 			}
 			,{ 
 				"property": "supplier",
@@ -2353,7 +2490,8 @@
 				"propertyRange": "Supplier",
 				"ordinal": 14,
 				"aggregate": "[]",
-				"formatOptions": null
+				"formatOptions": null,
+				"allowEdit": true
 			}
 			,{ 
 				"property": "isPartOfOrderDetail",
@@ -2362,7 +2500,9 @@
 				"propertyRange": "OrderDetail",
 				"ordinal": 15,
 				"aggregate": "[List]",
-				"formatOptions": null
+				"formatOptions": null,
+				"allowEdit": true,
+				"height":"4rem"
 			}
 			,{ 
 				"property": "product_orderSummary",
@@ -2371,7 +2511,9 @@
 				"propertyRange": "OrderSummary",
 				"ordinal": 16,
 				"aggregate": "[List]",
-				"formatOptions": null
+				"formatOptions": null,
+				"allowEdit": true,
+				"height":"4rem"
 			}
 			]
 		}
@@ -2384,7 +2526,7 @@
 	"entitySetVisible":true,
 	"grid": {
 		"target": "Regions",
-		"gridStyle":"entitySet360",
+		"gridStyle":"entitySetTable",
 		"targetVisible": true,
 		"targetIcon": "sap-icon://group-2",
 		"targetEntity": "Region",	
@@ -2415,6 +2557,7 @@
 		"targetVisible": true,
 		"targetIcon": "sap-icon://expand-group",
 		"targetEntity": "Region",
+		"allowEdit" : true,
 		"properties": [		
 			{  
 				"property": "comment",
@@ -2423,7 +2566,8 @@
 				"propertyRange": "Edm.String",
 				"ordinal": 0,
 				"aggregate": "[]",
-				"formatOptions": null
+				"formatOptions": null,
+				"allowEdit": true
 			}
 			,{ 
 				"property": "regionDescription",
@@ -2432,7 +2576,8 @@
 				"propertyRange": "Edm.String",
 				"ordinal": 1,
 				"aggregate": "[]",
-				"formatOptions": null
+				"formatOptions": null,
+				"allowEdit": true
 			}
 			]
 		}
@@ -2445,7 +2590,7 @@
 	"entitySetVisible":true,
 	"grid": {
 		"target": "Shippers",
-		"gridStyle":"entitySet360",
+		"gridStyle":"entitySetTable",
 		"targetVisible": true,
 		"targetIcon": "sap-icon://group-2",
 		"targetEntity": "Shipper",	
@@ -2494,6 +2639,7 @@
 		"targetVisible": true,
 		"targetIcon": "sap-icon://expand-group",
 		"targetEntity": "Shipper",
+		"allowEdit" : true,
 		"properties": [		
 			{  
 				"property": "comment",
@@ -2502,7 +2648,8 @@
 				"propertyRange": "Edm.String",
 				"ordinal": 0,
 				"aggregate": "[]",
-				"formatOptions": null
+				"formatOptions": null,
+				"allowEdit": true
 			}
 			,{ 
 				"property": "shipperCompanyName",
@@ -2511,7 +2658,8 @@
 				"propertyRange": "Edm.String",
 				"ordinal": 1,
 				"aggregate": "[]",
-				"formatOptions": null
+				"formatOptions": null,
+				"allowEdit": true
 			}
 			,{ 
 				"property": "shipperPhone",
@@ -2520,7 +2668,8 @@
 				"propertyRange": "Edm.String",
 				"ordinal": 2,
 				"aggregate": "[]",
-				"formatOptions": null
+				"formatOptions": null,
+				"allowEdit": true
 			}
 			,{ 
 				"property": "shipsOrder",
@@ -2529,7 +2678,9 @@
 				"propertyRange": "Order",
 				"ordinal": 3,
 				"aggregate": "[List]",
-				"formatOptions": null
+				"formatOptions": null,
+				"allowEdit": true,
+				"height":"4rem"
 			}
 			]
 		}
@@ -2542,7 +2693,7 @@
 	"entitySetVisible":true,
 	"grid": {
 		"target": "Suppliers",
-		"gridStyle":"entitySet360",
+		"gridStyle":"entitySetTable",
 		"targetVisible": true,
 		"targetIcon": "sap-icon://group-2",
 		"targetEntity": "Supplier",	
@@ -2717,6 +2868,7 @@
 		"targetVisible": true,
 		"targetIcon": "sap-icon://expand-group",
 		"targetEntity": "Supplier",
+		"allowEdit" : true,
 		"properties": [		
 			{  
 				"property": "comment",
@@ -2725,7 +2877,8 @@
 				"propertyRange": "Edm.String",
 				"ordinal": 0,
 				"aggregate": "[]",
-				"formatOptions": null
+				"formatOptions": null,
+				"allowEdit": true
 			}
 			,{ 
 				"property": "homePage",
@@ -2734,7 +2887,8 @@
 				"propertyRange": "Edm.String",
 				"ordinal": 1,
 				"aggregate": "[]",
-				"formatOptions": null
+				"formatOptions": null,
+				"allowEdit": true
 			}
 			,{ 
 				"property": "lat",
@@ -2743,7 +2897,8 @@
 				"propertyRange": "Edm.Double",
 				"ordinal": 2,
 				"aggregate": "[]",
-				"formatOptions": null
+				"formatOptions": null,
+				"allowEdit": true
 			}
 			,{ 
 				"property": "lat_long",
@@ -2752,7 +2907,8 @@
 				"propertyRange": "Edm.String",
 				"ordinal": 3,
 				"aggregate": "[]",
-				"formatOptions": null
+				"formatOptions": null,
+				"allowEdit": true
 			}
 			,{ 
 				"property": "long",
@@ -2761,7 +2917,8 @@
 				"propertyRange": "Edm.Double",
 				"ordinal": 4,
 				"aggregate": "[]",
-				"formatOptions": null
+				"formatOptions": null,
+				"allowEdit": true
 			}
 			,{ 
 				"property": "regionDescription",
@@ -2770,7 +2927,8 @@
 				"propertyRange": "Edm.String",
 				"ordinal": 5,
 				"aggregate": "[]",
-				"formatOptions": null
+				"formatOptions": null,
+				"allowEdit": true
 			}
 			,{ 
 				"property": "supplierAddress",
@@ -2779,7 +2937,8 @@
 				"propertyRange": "Edm.String",
 				"ordinal": 6,
 				"aggregate": "[]",
-				"formatOptions": null
+				"formatOptions": null,
+				"allowEdit": true
 			}
 			,{ 
 				"property": "supplierCity",
@@ -2788,7 +2947,8 @@
 				"propertyRange": "Edm.String",
 				"ordinal": 7,
 				"aggregate": "[]",
-				"formatOptions": null
+				"formatOptions": null,
+				"allowEdit": true
 			}
 			,{ 
 				"property": "supplierCompanyName",
@@ -2797,7 +2957,8 @@
 				"propertyRange": "Edm.String",
 				"ordinal": 8,
 				"aggregate": "[]",
-				"formatOptions": null
+				"formatOptions": null,
+				"allowEdit": true
 			}
 			,{ 
 				"property": "supplierContactName",
@@ -2806,7 +2967,8 @@
 				"propertyRange": "Edm.String",
 				"ordinal": 9,
 				"aggregate": "[]",
-				"formatOptions": null
+				"formatOptions": null,
+				"allowEdit": true
 			}
 			,{ 
 				"property": "supplierContactTitle",
@@ -2815,7 +2977,8 @@
 				"propertyRange": "Edm.String",
 				"ordinal": 10,
 				"aggregate": "[]",
-				"formatOptions": null
+				"formatOptions": null,
+				"allowEdit": true
 			}
 			,{ 
 				"property": "supplierCountry",
@@ -2824,7 +2987,8 @@
 				"propertyRange": "Edm.String",
 				"ordinal": 11,
 				"aggregate": "[]",
-				"formatOptions": null
+				"formatOptions": null,
+				"allowEdit": true
 			}
 			,{ 
 				"property": "supplierFax",
@@ -2833,7 +2997,8 @@
 				"propertyRange": "Edm.String",
 				"ordinal": 12,
 				"aggregate": "[]",
-				"formatOptions": null
+				"formatOptions": null,
+				"allowEdit": true
 			}
 			,{ 
 				"property": "supplierHomePage",
@@ -2842,7 +3007,8 @@
 				"propertyRange": "Edm.String",
 				"ordinal": 13,
 				"aggregate": "[]",
-				"formatOptions": null
+				"formatOptions": null,
+				"allowEdit": true
 			}
 			,{ 
 				"property": "supplierPhone",
@@ -2851,7 +3017,8 @@
 				"propertyRange": "Edm.String",
 				"ordinal": 14,
 				"aggregate": "[]",
-				"formatOptions": null
+				"formatOptions": null,
+				"allowEdit": true
 			}
 			,{ 
 				"property": "supplierPostalCode",
@@ -2860,7 +3027,8 @@
 				"propertyRange": "Edm.String",
 				"ordinal": 15,
 				"aggregate": "[]",
-				"formatOptions": null
+				"formatOptions": null,
+				"allowEdit": true
 			}
 			,{ 
 				"property": "supplierRegion",
@@ -2869,7 +3037,9 @@
 				"propertyRange": "Region",
 				"ordinal": 16,
 				"aggregate": "[List]",
-				"formatOptions": null
+				"formatOptions": null,
+				"allowEdit": true,
+				"height":"4rem"
 			}
 			,{ 
 				"property": "suppliesProduct",
@@ -2878,7 +3048,9 @@
 				"propertyRange": "Product",
 				"ordinal": 17,
 				"aggregate": "[List]",
-				"formatOptions": null
+				"formatOptions": null,
+				"allowEdit": true,
+				"height":"4rem"
 			}
 			]
 		}
@@ -2891,7 +3063,7 @@
 	"entitySetVisible":true,
 	"grid": {
 		"target": "SystemAEmployees",
-		"gridStyle":"entitySet360",
+		"gridStyle":"entitySetTable",
 		"targetVisible": true,
 		"targetIcon": "sap-icon://group-2",
 		"targetEntity": "SystemAEmployee",	
@@ -3201,6 +3373,7 @@
 		"targetVisible": true,
 		"targetIcon": "sap-icon://expand-group",
 		"targetEntity": "SystemAEmployee",
+		"allowEdit" : true,
 		"properties": [		
 			{  
 				"property": "birthDate",
@@ -3209,7 +3382,8 @@
 				"propertyRange": "Edm.Date",
 				"ordinal": 0,
 				"aggregate": "[]",
-				"formatOptions": null
+				"formatOptions": null,
+				"allowEdit": true
 			}
 			,{ 
 				"property": "comment",
@@ -3218,7 +3392,8 @@
 				"propertyRange": "Edm.String",
 				"ordinal": 1,
 				"aggregate": "[]",
-				"formatOptions": null
+				"formatOptions": null,
+				"allowEdit": true
 			}
 			,{ 
 				"property": "employeeAddress",
@@ -3227,7 +3402,8 @@
 				"propertyRange": "Edm.String",
 				"ordinal": 2,
 				"aggregate": "[]",
-				"formatOptions": null
+				"formatOptions": null,
+				"allowEdit": true
 			}
 			,{ 
 				"property": "employeeCity",
@@ -3236,7 +3412,8 @@
 				"propertyRange": "Edm.String",
 				"ordinal": 3,
 				"aggregate": "[]",
-				"formatOptions": null
+				"formatOptions": null,
+				"allowEdit": true
 			}
 			,{ 
 				"property": "employeeCountry",
@@ -3245,7 +3422,8 @@
 				"propertyRange": "Edm.String",
 				"ordinal": 4,
 				"aggregate": "[]",
-				"formatOptions": null
+				"formatOptions": null,
+				"allowEdit": true
 			}
 			,{ 
 				"property": "employeeLinkedIn",
@@ -3254,7 +3432,8 @@
 				"propertyRange": "Edm.String",
 				"ordinal": 5,
 				"aggregate": "[]",
-				"formatOptions": null
+				"formatOptions": null,
+				"allowEdit": true
 			}
 			,{ 
 				"property": "employeePostalCode",
@@ -3263,7 +3442,8 @@
 				"propertyRange": "Edm.String",
 				"ordinal": 6,
 				"aggregate": "[]",
-				"formatOptions": null
+				"formatOptions": null,
+				"allowEdit": true
 			}
 			,{ 
 				"property": "extension",
@@ -3272,7 +3452,8 @@
 				"propertyRange": "Edm.String",
 				"ordinal": 7,
 				"aggregate": "[]",
-				"formatOptions": null
+				"formatOptions": null,
+				"allowEdit": true
 			}
 			,{ 
 				"property": "firstName",
@@ -3281,7 +3462,8 @@
 				"propertyRange": "Edm.String",
 				"ordinal": 8,
 				"aggregate": "[]",
-				"formatOptions": null
+				"formatOptions": null,
+				"allowEdit": true
 			}
 			,{ 
 				"property": "hireDate",
@@ -3290,7 +3472,8 @@
 				"propertyRange": "Edm.Date",
 				"ordinal": 9,
 				"aggregate": "[]",
-				"formatOptions": null
+				"formatOptions": null,
+				"allowEdit": true
 			}
 			,{ 
 				"property": "homePhone",
@@ -3299,7 +3482,8 @@
 				"propertyRange": "Edm.String",
 				"ordinal": 10,
 				"aggregate": "[]",
-				"formatOptions": null
+				"formatOptions": null,
+				"allowEdit": true
 			}
 			,{ 
 				"property": "lastName",
@@ -3308,7 +3492,8 @@
 				"propertyRange": "Edm.String",
 				"ordinal": 11,
 				"aggregate": "[]",
-				"formatOptions": null
+				"formatOptions": null,
+				"allowEdit": true
 			}
 			,{ 
 				"property": "lat",
@@ -3317,7 +3502,8 @@
 				"propertyRange": "Edm.Double",
 				"ordinal": 12,
 				"aggregate": "[]",
-				"formatOptions": null
+				"formatOptions": null,
+				"allowEdit": true
 			}
 			,{ 
 				"property": "lat_long",
@@ -3326,7 +3512,8 @@
 				"propertyRange": "Edm.String",
 				"ordinal": 13,
 				"aggregate": "[]",
-				"formatOptions": null
+				"formatOptions": null,
+				"allowEdit": true
 			}
 			,{ 
 				"property": "long",
@@ -3335,7 +3522,8 @@
 				"propertyRange": "Edm.Double",
 				"ordinal": 14,
 				"aggregate": "[]",
-				"formatOptions": null
+				"formatOptions": null,
+				"allowEdit": true
 			}
 			,{ 
 				"property": "notes",
@@ -3344,7 +3532,8 @@
 				"propertyRange": "Edm.String",
 				"ordinal": 15,
 				"aggregate": "[]",
-				"formatOptions": null
+				"formatOptions": null,
+				"allowEdit": true
 			}
 			,{ 
 				"property": "photo",
@@ -3353,7 +3542,8 @@
 				"propertyRange": "Edm.String",
 				"ordinal": 16,
 				"aggregate": "[]",
-				"formatOptions": null
+				"formatOptions": null,
+				"allowEdit": true
 			}
 			,{ 
 				"property": "regionDescription",
@@ -3362,7 +3552,8 @@
 				"propertyRange": "Edm.String",
 				"ordinal": 17,
 				"aggregate": "[]",
-				"formatOptions": null
+				"formatOptions": null,
+				"allowEdit": true
 			}
 			,{ 
 				"property": "reportsToId",
@@ -3371,7 +3562,8 @@
 				"propertyRange": "Edm.String",
 				"ordinal": 18,
 				"aggregate": "[]",
-				"formatOptions": null
+				"formatOptions": null,
+				"allowEdit": true
 			}
 			,{ 
 				"property": "reportsToNotation",
@@ -3380,7 +3572,8 @@
 				"propertyRange": "Edm.String",
 				"ordinal": 19,
 				"aggregate": "[]",
-				"formatOptions": null
+				"formatOptions": null,
+				"allowEdit": true
 			}
 			,{ 
 				"property": "systemAEmployeeSalary",
@@ -3389,7 +3582,8 @@
 				"propertyRange": "Edm.Double",
 				"ordinal": 20,
 				"aggregate": "[]",
-				"formatOptions": null
+				"formatOptions": null,
+				"allowEdit": true
 			}
 			,{ 
 				"property": "systemAFavoriteId",
@@ -3398,7 +3592,8 @@
 				"propertyRange": "Edm.String",
 				"ordinal": 21,
 				"aggregate": "[]",
-				"formatOptions": null
+				"formatOptions": null,
+				"allowEdit": true
 			}
 			,{ 
 				"property": "territoryNotation",
@@ -3407,7 +3602,8 @@
 				"propertyRange": "Edm.String",
 				"ordinal": 22,
 				"aggregate": "[]",
-				"formatOptions": null
+				"formatOptions": null,
+				"allowEdit": true
 			}
 			,{ 
 				"property": "title",
@@ -3416,7 +3612,8 @@
 				"propertyRange": "Edm.String",
 				"ordinal": 23,
 				"aggregate": "[]",
-				"formatOptions": null
+				"formatOptions": null,
+				"allowEdit": true
 			}
 			,{ 
 				"property": "titleOfCourtesy",
@@ -3425,7 +3622,8 @@
 				"propertyRange": "Edm.String",
 				"ordinal": 24,
 				"aggregate": "[]",
-				"formatOptions": null
+				"formatOptions": null,
+				"allowEdit": true
 			}
 			,{ 
 				"property": "reportsTo",
@@ -3434,7 +3632,8 @@
 				"propertyRange": "Employee",
 				"ordinal": 25,
 				"aggregate": "[]",
-				"formatOptions": null
+				"formatOptions": null,
+				"allowEdit": true
 			}
 			,{ 
 				"property": "systemAFavorite",
@@ -3443,7 +3642,8 @@
 				"propertyRange": "Product",
 				"ordinal": 26,
 				"aggregate": "[]",
-				"formatOptions": null
+				"formatOptions": null,
+				"allowEdit": true
 			}
 			,{ 
 				"property": "employeeRegion",
@@ -3452,7 +3652,9 @@
 				"propertyRange": "Region",
 				"ordinal": 27,
 				"aggregate": "[List]",
-				"formatOptions": null
+				"formatOptions": null,
+				"allowEdit": true,
+				"height":"4rem"
 			}
 			,{ 
 				"property": "managesEmployee",
@@ -3461,7 +3663,9 @@
 				"propertyRange": "Employee",
 				"ordinal": 28,
 				"aggregate": "[List]",
-				"formatOptions": null
+				"formatOptions": null,
+				"allowEdit": true,
+				"height":"4rem"
 			}
 			,{ 
 				"property": "managesOrder",
@@ -3470,7 +3674,9 @@
 				"propertyRange": "Order",
 				"ordinal": 29,
 				"aggregate": "[List]",
-				"formatOptions": null
+				"formatOptions": null,
+				"allowEdit": true,
+				"height":"4rem"
 			}
 			,{ 
 				"property": "systemACustomer",
@@ -3479,7 +3685,9 @@
 				"propertyRange": "Customer",
 				"ordinal": 30,
 				"aggregate": "[List]",
-				"formatOptions": null
+				"formatOptions": null,
+				"allowEdit": true,
+				"height":"4rem"
 			}
 			,{ 
 				"property": "systemAEmployer",
@@ -3488,7 +3696,9 @@
 				"propertyRange": "Supplier",
 				"ordinal": 31,
 				"aggregate": "[List]",
-				"formatOptions": null
+				"formatOptions": null,
+				"allowEdit": true,
+				"height":"4rem"
 			}
 			,{ 
 				"property": "territory",
@@ -3497,7 +3707,9 @@
 				"propertyRange": "Territory",
 				"ordinal": 32,
 				"aggregate": "[List]",
-				"formatOptions": null
+				"formatOptions": null,
+				"allowEdit": true,
+				"height":"4rem"
 			}
 			]
 		}
@@ -3510,7 +3722,7 @@
 	"entitySetVisible":true,
 	"grid": {
 		"target": "SystemAProducts",
-		"gridStyle":"entitySet360",
+		"gridStyle":"entitySetTable",
 		"targetVisible": true,
 		"targetIcon": "sap-icon://group-2",
 		"targetEntity": "SystemAProduct",	
@@ -3676,6 +3888,7 @@
 		"targetVisible": true,
 		"targetIcon": "sap-icon://expand-group",
 		"targetEntity": "SystemAProduct",
+		"allowEdit" : true,
 		"properties": [		
 			{  
 				"property": "categoryId",
@@ -3684,7 +3897,8 @@
 				"propertyRange": "Edm.String",
 				"ordinal": 0,
 				"aggregate": "[]",
-				"formatOptions": null
+				"formatOptions": null,
+				"allowEdit": true
 			}
 			,{ 
 				"property": "categoryNotation",
@@ -3693,7 +3907,8 @@
 				"propertyRange": "Edm.String",
 				"ordinal": 1,
 				"aggregate": "[]",
-				"formatOptions": null
+				"formatOptions": null,
+				"allowEdit": true
 			}
 			,{ 
 				"property": "comment",
@@ -3702,7 +3917,8 @@
 				"propertyRange": "Edm.String",
 				"ordinal": 2,
 				"aggregate": "[]",
-				"formatOptions": null
+				"formatOptions": null,
+				"allowEdit": true
 			}
 			,{ 
 				"property": "discontinued",
@@ -3711,7 +3927,8 @@
 				"propertyRange": "Edm.Boolean",
 				"ordinal": 3,
 				"aggregate": "[]",
-				"formatOptions": null
+				"formatOptions": null,
+				"allowEdit": true
 			}
 			,{ 
 				"property": "productName",
@@ -3720,7 +3937,8 @@
 				"propertyRange": "Edm.String",
 				"ordinal": 4,
 				"aggregate": "[]",
-				"formatOptions": null
+				"formatOptions": null,
+				"allowEdit": true
 			}
 			,{ 
 				"property": "productUnitPrice",
@@ -3729,7 +3947,8 @@
 				"propertyRange": "Edm.Double",
 				"ordinal": 5,
 				"aggregate": "[]",
-				"formatOptions": null
+				"formatOptions": null,
+				"allowEdit": true
 			}
 			,{ 
 				"property": "quantityPerUnit",
@@ -3738,7 +3957,8 @@
 				"propertyRange": "Edm.String",
 				"ordinal": 6,
 				"aggregate": "[]",
-				"formatOptions": null
+				"formatOptions": null,
+				"allowEdit": true
 			}
 			,{ 
 				"property": "reorderLevel",
@@ -3747,7 +3967,8 @@
 				"propertyRange": "Edm.Int32",
 				"ordinal": 7,
 				"aggregate": "[]",
-				"formatOptions": null
+				"formatOptions": null,
+				"allowEdit": true
 			}
 			,{ 
 				"property": "supplierId",
@@ -3756,7 +3977,8 @@
 				"propertyRange": "Edm.String",
 				"ordinal": 8,
 				"aggregate": "[]",
-				"formatOptions": null
+				"formatOptions": null,
+				"allowEdit": true
 			}
 			,{ 
 				"property": "supplierNotation",
@@ -3765,7 +3987,8 @@
 				"propertyRange": "Edm.String",
 				"ordinal": 9,
 				"aggregate": "[]",
-				"formatOptions": null
+				"formatOptions": null,
+				"allowEdit": true
 			}
 			,{ 
 				"property": "systemAUnitCommision",
@@ -3774,7 +3997,8 @@
 				"propertyRange": "Edm.Decimal",
 				"ordinal": 10,
 				"aggregate": "[]",
-				"formatOptions": null
+				"formatOptions": null,
+				"allowEdit": true
 			}
 			,{ 
 				"property": "unitsInStock",
@@ -3783,7 +4007,8 @@
 				"propertyRange": "Edm.Int32",
 				"ordinal": 11,
 				"aggregate": "[]",
-				"formatOptions": null
+				"formatOptions": null,
+				"allowEdit": true
 			}
 			,{ 
 				"property": "unitsOnOrder",
@@ -3792,7 +4017,8 @@
 				"propertyRange": "Edm.Int32",
 				"ordinal": 12,
 				"aggregate": "[]",
-				"formatOptions": null
+				"formatOptions": null,
+				"allowEdit": true
 			}
 			,{ 
 				"property": "category",
@@ -3801,7 +4027,8 @@
 				"propertyRange": "Category",
 				"ordinal": 13,
 				"aggregate": "[]",
-				"formatOptions": null
+				"formatOptions": null,
+				"allowEdit": true
 			}
 			,{ 
 				"property": "supplier",
@@ -3810,7 +4037,8 @@
 				"propertyRange": "Supplier",
 				"ordinal": 14,
 				"aggregate": "[]",
-				"formatOptions": null
+				"formatOptions": null,
+				"allowEdit": true
 			}
 			,{ 
 				"property": "isPartOfOrderDetail",
@@ -3819,7 +4047,9 @@
 				"propertyRange": "OrderDetail",
 				"ordinal": 15,
 				"aggregate": "[List]",
-				"formatOptions": null
+				"formatOptions": null,
+				"allowEdit": true,
+				"height":"4rem"
 			}
 			,{ 
 				"property": "product_orderSummary",
@@ -3828,7 +4058,9 @@
 				"propertyRange": "OrderSummary",
 				"ordinal": 16,
 				"aggregate": "[List]",
-				"formatOptions": null
+				"formatOptions": null,
+				"allowEdit": true,
+				"height":"4rem"
 			}
 			]
 		}
@@ -3841,7 +4073,7 @@
 	"entitySetVisible":true,
 	"grid": {
 		"target": "SystemBEmployees",
-		"gridStyle":"entitySet360",
+		"gridStyle":"entitySetTable",
 		"targetVisible": true,
 		"targetIcon": "sap-icon://group-2",
 		"targetEntity": "SystemBEmployee",	
@@ -4160,6 +4392,7 @@
 		"targetVisible": true,
 		"targetIcon": "sap-icon://expand-group",
 		"targetEntity": "SystemBEmployee",
+		"allowEdit" : true,
 		"properties": [		
 			{  
 				"property": "birthDate",
@@ -4168,7 +4401,8 @@
 				"propertyRange": "Edm.Date",
 				"ordinal": 0,
 				"aggregate": "[]",
-				"formatOptions": null
+				"formatOptions": null,
+				"allowEdit": true
 			}
 			,{ 
 				"property": "comment",
@@ -4177,7 +4411,8 @@
 				"propertyRange": "Edm.String",
 				"ordinal": 1,
 				"aggregate": "[]",
-				"formatOptions": null
+				"formatOptions": null,
+				"allowEdit": true
 			}
 			,{ 
 				"property": "employeeAddress",
@@ -4186,7 +4421,8 @@
 				"propertyRange": "Edm.String",
 				"ordinal": 2,
 				"aggregate": "[]",
-				"formatOptions": null
+				"formatOptions": null,
+				"allowEdit": true
 			}
 			,{ 
 				"property": "employeeCity",
@@ -4195,7 +4431,8 @@
 				"propertyRange": "Edm.String",
 				"ordinal": 3,
 				"aggregate": "[]",
-				"formatOptions": null
+				"formatOptions": null,
+				"allowEdit": true
 			}
 			,{ 
 				"property": "employeeCountry",
@@ -4204,7 +4441,8 @@
 				"propertyRange": "Edm.String",
 				"ordinal": 4,
 				"aggregate": "[]",
-				"formatOptions": null
+				"formatOptions": null,
+				"allowEdit": true
 			}
 			,{ 
 				"property": "employeeLinkedIn",
@@ -4213,7 +4451,8 @@
 				"propertyRange": "Edm.String",
 				"ordinal": 5,
 				"aggregate": "[]",
-				"formatOptions": null
+				"formatOptions": null,
+				"allowEdit": true
 			}
 			,{ 
 				"property": "employeePostalCode",
@@ -4222,7 +4461,8 @@
 				"propertyRange": "Edm.String",
 				"ordinal": 6,
 				"aggregate": "[]",
-				"formatOptions": null
+				"formatOptions": null,
+				"allowEdit": true
 			}
 			,{ 
 				"property": "extension",
@@ -4231,7 +4471,8 @@
 				"propertyRange": "Edm.String",
 				"ordinal": 7,
 				"aggregate": "[]",
-				"formatOptions": null
+				"formatOptions": null,
+				"allowEdit": true
 			}
 			,{ 
 				"property": "firstName",
@@ -4240,7 +4481,8 @@
 				"propertyRange": "Edm.String",
 				"ordinal": 8,
 				"aggregate": "[]",
-				"formatOptions": null
+				"formatOptions": null,
+				"allowEdit": true
 			}
 			,{ 
 				"property": "hireDate",
@@ -4249,7 +4491,8 @@
 				"propertyRange": "Edm.Date",
 				"ordinal": 9,
 				"aggregate": "[]",
-				"formatOptions": null
+				"formatOptions": null,
+				"allowEdit": true
 			}
 			,{ 
 				"property": "homePhone",
@@ -4258,7 +4501,8 @@
 				"propertyRange": "Edm.String",
 				"ordinal": 10,
 				"aggregate": "[]",
-				"formatOptions": null
+				"formatOptions": null,
+				"allowEdit": true
 			}
 			,{ 
 				"property": "lastName",
@@ -4267,7 +4511,8 @@
 				"propertyRange": "Edm.String",
 				"ordinal": 11,
 				"aggregate": "[]",
-				"formatOptions": null
+				"formatOptions": null,
+				"allowEdit": true
 			}
 			,{ 
 				"property": "lat",
@@ -4276,7 +4521,8 @@
 				"propertyRange": "Edm.Double",
 				"ordinal": 12,
 				"aggregate": "[]",
-				"formatOptions": null
+				"formatOptions": null,
+				"allowEdit": true
 			}
 			,{ 
 				"property": "lat_long",
@@ -4285,7 +4531,8 @@
 				"propertyRange": "Edm.String",
 				"ordinal": 13,
 				"aggregate": "[]",
-				"formatOptions": null
+				"formatOptions": null,
+				"allowEdit": true
 			}
 			,{ 
 				"property": "long",
@@ -4294,7 +4541,8 @@
 				"propertyRange": "Edm.Double",
 				"ordinal": 14,
 				"aggregate": "[]",
-				"formatOptions": null
+				"formatOptions": null,
+				"allowEdit": true
 			}
 			,{ 
 				"property": "notes",
@@ -4303,7 +4551,8 @@
 				"propertyRange": "Edm.String",
 				"ordinal": 15,
 				"aggregate": "[]",
-				"formatOptions": null
+				"formatOptions": null,
+				"allowEdit": true
 			}
 			,{ 
 				"property": "photo",
@@ -4312,7 +4561,8 @@
 				"propertyRange": "Edm.String",
 				"ordinal": 16,
 				"aggregate": "[]",
-				"formatOptions": null
+				"formatOptions": null,
+				"allowEdit": true
 			}
 			,{ 
 				"property": "regionDescription",
@@ -4321,7 +4571,8 @@
 				"propertyRange": "Edm.String",
 				"ordinal": 17,
 				"aggregate": "[]",
-				"formatOptions": null
+				"formatOptions": null,
+				"allowEdit": true
 			}
 			,{ 
 				"property": "reportsToId",
@@ -4330,7 +4581,8 @@
 				"propertyRange": "Edm.String",
 				"ordinal": 18,
 				"aggregate": "[]",
-				"formatOptions": null
+				"formatOptions": null,
+				"allowEdit": true
 			}
 			,{ 
 				"property": "reportsToNotation",
@@ -4339,7 +4591,8 @@
 				"propertyRange": "Edm.String",
 				"ordinal": 19,
 				"aggregate": "[]",
-				"formatOptions": null
+				"formatOptions": null,
+				"allowEdit": true
 			}
 			,{ 
 				"property": "systemBEmployeeAnnualSalary",
@@ -4348,7 +4601,8 @@
 				"propertyRange": "Edm.Double",
 				"ordinal": 20,
 				"aggregate": "[]",
-				"formatOptions": null
+				"formatOptions": null,
+				"allowEdit": true
 			}
 			,{ 
 				"property": "systemBEmployeeMonthlySalary",
@@ -4357,7 +4611,8 @@
 				"propertyRange": "Edm.Double",
 				"ordinal": 21,
 				"aggregate": "[]",
-				"formatOptions": null
+				"formatOptions": null,
+				"allowEdit": true
 			}
 			,{ 
 				"property": "systemBFavoriteId",
@@ -4366,7 +4621,8 @@
 				"propertyRange": "Edm.String",
 				"ordinal": 22,
 				"aggregate": "[]",
-				"formatOptions": null
+				"formatOptions": null,
+				"allowEdit": true
 			}
 			,{ 
 				"property": "systemBHours",
@@ -4375,7 +4631,8 @@
 				"propertyRange": "Edm.Decimal",
 				"ordinal": 23,
 				"aggregate": "[]",
-				"formatOptions": null
+				"formatOptions": null,
+				"allowEdit": true
 			}
 			,{ 
 				"property": "territoryNotation",
@@ -4384,7 +4641,8 @@
 				"propertyRange": "Edm.String",
 				"ordinal": 24,
 				"aggregate": "[]",
-				"formatOptions": null
+				"formatOptions": null,
+				"allowEdit": true
 			}
 			,{ 
 				"property": "title",
@@ -4393,7 +4651,8 @@
 				"propertyRange": "Edm.String",
 				"ordinal": 25,
 				"aggregate": "[]",
-				"formatOptions": null
+				"formatOptions": null,
+				"allowEdit": true
 			}
 			,{ 
 				"property": "titleOfCourtesy",
@@ -4402,7 +4661,8 @@
 				"propertyRange": "Edm.String",
 				"ordinal": 26,
 				"aggregate": "[]",
-				"formatOptions": null
+				"formatOptions": null,
+				"allowEdit": true
 			}
 			,{ 
 				"property": "reportsTo",
@@ -4411,7 +4671,8 @@
 				"propertyRange": "Employee",
 				"ordinal": 27,
 				"aggregate": "[]",
-				"formatOptions": null
+				"formatOptions": null,
+				"allowEdit": true
 			}
 			,{ 
 				"property": "systemBFavorite",
@@ -4420,7 +4681,8 @@
 				"propertyRange": "Product",
 				"ordinal": 28,
 				"aggregate": "[]",
-				"formatOptions": null
+				"formatOptions": null,
+				"allowEdit": true
 			}
 			,{ 
 				"property": "employeeRegion",
@@ -4429,7 +4691,9 @@
 				"propertyRange": "Region",
 				"ordinal": 29,
 				"aggregate": "[List]",
-				"formatOptions": null
+				"formatOptions": null,
+				"allowEdit": true,
+				"height":"4rem"
 			}
 			,{ 
 				"property": "managesEmployee",
@@ -4438,7 +4702,9 @@
 				"propertyRange": "Employee",
 				"ordinal": 30,
 				"aggregate": "[List]",
-				"formatOptions": null
+				"formatOptions": null,
+				"allowEdit": true,
+				"height":"4rem"
 			}
 			,{ 
 				"property": "managesOrder",
@@ -4447,7 +4713,9 @@
 				"propertyRange": "Order",
 				"ordinal": 31,
 				"aggregate": "[List]",
-				"formatOptions": null
+				"formatOptions": null,
+				"allowEdit": true,
+				"height":"4rem"
 			}
 			,{ 
 				"property": "systemBEmployer",
@@ -4456,7 +4724,9 @@
 				"propertyRange": "Supplier",
 				"ordinal": 32,
 				"aggregate": "[List]",
-				"formatOptions": null
+				"formatOptions": null,
+				"allowEdit": true,
+				"height":"4rem"
 			}
 			,{ 
 				"property": "territory",
@@ -4465,7 +4735,9 @@
 				"propertyRange": "Territory",
 				"ordinal": 33,
 				"aggregate": "[List]",
-				"formatOptions": null
+				"formatOptions": null,
+				"allowEdit": true,
+				"height":"4rem"
 			}
 			]
 		}
@@ -4478,7 +4750,7 @@
 	"entitySetVisible":true,
 	"grid": {
 		"target": "SystemBProducts",
-		"gridStyle":"entitySet360",
+		"gridStyle":"entitySetTable",
 		"targetVisible": true,
 		"targetIcon": "sap-icon://group-2",
 		"targetEntity": "SystemBProduct",	
@@ -4644,6 +4916,7 @@
 		"targetVisible": true,
 		"targetIcon": "sap-icon://expand-group",
 		"targetEntity": "SystemBProduct",
+		"allowEdit" : true,
 		"properties": [		
 			{  
 				"property": "categoryId",
@@ -4652,7 +4925,8 @@
 				"propertyRange": "Edm.String",
 				"ordinal": 0,
 				"aggregate": "[]",
-				"formatOptions": null
+				"formatOptions": null,
+				"allowEdit": true
 			}
 			,{ 
 				"property": "categoryNotation",
@@ -4661,7 +4935,8 @@
 				"propertyRange": "Edm.String",
 				"ordinal": 1,
 				"aggregate": "[]",
-				"formatOptions": null
+				"formatOptions": null,
+				"allowEdit": true
 			}
 			,{ 
 				"property": "comment",
@@ -4670,7 +4945,8 @@
 				"propertyRange": "Edm.String",
 				"ordinal": 2,
 				"aggregate": "[]",
-				"formatOptions": null
+				"formatOptions": null,
+				"allowEdit": true
 			}
 			,{ 
 				"property": "discontinued",
@@ -4679,7 +4955,8 @@
 				"propertyRange": "Edm.Boolean",
 				"ordinal": 3,
 				"aggregate": "[]",
-				"formatOptions": null
+				"formatOptions": null,
+				"allowEdit": true
 			}
 			,{ 
 				"property": "productName",
@@ -4688,7 +4965,8 @@
 				"propertyRange": "Edm.String",
 				"ordinal": 4,
 				"aggregate": "[]",
-				"formatOptions": null
+				"formatOptions": null,
+				"allowEdit": true
 			}
 			,{ 
 				"property": "productUnitPrice",
@@ -4697,7 +4975,8 @@
 				"propertyRange": "Edm.Double",
 				"ordinal": 5,
 				"aggregate": "[]",
-				"formatOptions": null
+				"formatOptions": null,
+				"allowEdit": true
 			}
 			,{ 
 				"property": "quantityPerUnit",
@@ -4706,7 +4985,8 @@
 				"propertyRange": "Edm.String",
 				"ordinal": 6,
 				"aggregate": "[]",
-				"formatOptions": null
+				"formatOptions": null,
+				"allowEdit": true
 			}
 			,{ 
 				"property": "reorderLevel",
@@ -4715,7 +4995,8 @@
 				"propertyRange": "Edm.Int32",
 				"ordinal": 7,
 				"aggregate": "[]",
-				"formatOptions": null
+				"formatOptions": null,
+				"allowEdit": true
 			}
 			,{ 
 				"property": "supplierId",
@@ -4724,7 +5005,8 @@
 				"propertyRange": "Edm.String",
 				"ordinal": 8,
 				"aggregate": "[]",
-				"formatOptions": null
+				"formatOptions": null,
+				"allowEdit": true
 			}
 			,{ 
 				"property": "supplierNotation",
@@ -4733,7 +5015,8 @@
 				"propertyRange": "Edm.String",
 				"ordinal": 9,
 				"aggregate": "[]",
-				"formatOptions": null
+				"formatOptions": null,
+				"allowEdit": true
 			}
 			,{ 
 				"property": "systemBUnitCommission",
@@ -4742,7 +5025,8 @@
 				"propertyRange": "Edm.Decimal",
 				"ordinal": 10,
 				"aggregate": "[]",
-				"formatOptions": null
+				"formatOptions": null,
+				"allowEdit": true
 			}
 			,{ 
 				"property": "unitsInStock",
@@ -4751,7 +5035,8 @@
 				"propertyRange": "Edm.Int32",
 				"ordinal": 11,
 				"aggregate": "[]",
-				"formatOptions": null
+				"formatOptions": null,
+				"allowEdit": true
 			}
 			,{ 
 				"property": "unitsOnOrder",
@@ -4760,7 +5045,8 @@
 				"propertyRange": "Edm.Int32",
 				"ordinal": 12,
 				"aggregate": "[]",
-				"formatOptions": null
+				"formatOptions": null,
+				"allowEdit": true
 			}
 			,{ 
 				"property": "category",
@@ -4769,7 +5055,8 @@
 				"propertyRange": "Category",
 				"ordinal": 13,
 				"aggregate": "[]",
-				"formatOptions": null
+				"formatOptions": null,
+				"allowEdit": true
 			}
 			,{ 
 				"property": "supplier",
@@ -4778,7 +5065,8 @@
 				"propertyRange": "Supplier",
 				"ordinal": 14,
 				"aggregate": "[]",
-				"formatOptions": null
+				"formatOptions": null,
+				"allowEdit": true
 			}
 			,{ 
 				"property": "isPartOfOrderDetail",
@@ -4787,7 +5075,9 @@
 				"propertyRange": "OrderDetail",
 				"ordinal": 15,
 				"aggregate": "[List]",
-				"formatOptions": null
+				"formatOptions": null,
+				"allowEdit": true,
+				"height":"4rem"
 			}
 			,{ 
 				"property": "product_orderSummary",
@@ -4796,7 +5086,9 @@
 				"propertyRange": "OrderSummary",
 				"ordinal": 16,
 				"aggregate": "[List]",
-				"formatOptions": null
+				"formatOptions": null,
+				"allowEdit": true,
+				"height":"4rem"
 			}
 			]
 		}
@@ -4809,7 +5101,7 @@
 	"entitySetVisible":true,
 	"grid": {
 		"target": "Territorys",
-		"gridStyle":"entitySet360",
+		"gridStyle":"entitySetTable",
 		"targetVisible": true,
 		"targetIcon": "sap-icon://group-2",
 		"targetEntity": "Territory",	
@@ -4867,6 +5159,7 @@
 		"targetVisible": true,
 		"targetIcon": "sap-icon://expand-group",
 		"targetEntity": "Territory",
+		"allowEdit" : true,
 		"properties": [		
 			{  
 				"property": "comment",
@@ -4875,7 +5168,8 @@
 				"propertyRange": "Edm.String",
 				"ordinal": 0,
 				"aggregate": "[]",
-				"formatOptions": null
+				"formatOptions": null,
+				"allowEdit": true
 			}
 			,{ 
 				"property": "regionNotation",
@@ -4884,7 +5178,8 @@
 				"propertyRange": "Edm.String",
 				"ordinal": 1,
 				"aggregate": "[]",
-				"formatOptions": null
+				"formatOptions": null,
+				"allowEdit": true
 			}
 			,{ 
 				"property": "territoryDescription",
@@ -4893,7 +5188,8 @@
 				"propertyRange": "Edm.String",
 				"ordinal": 2,
 				"aggregate": "[]",
-				"formatOptions": null
+				"formatOptions": null,
+				"allowEdit": true
 			}
 			,{ 
 				"property": "territoryOf",
@@ -4902,7 +5198,9 @@
 				"propertyRange": "Employee",
 				"ordinal": 3,
 				"aggregate": "[List]",
-				"formatOptions": null
+				"formatOptions": null,
+				"allowEdit": true,
+				"height":"4rem"
 			}
 			,{ 
 				"property": "territoryRegion",
@@ -4911,7 +5209,9 @@
 				"propertyRange": "Region",
 				"ordinal": 4,
 				"aggregate": "[List]",
-				"formatOptions": null
+				"formatOptions": null,
+				"allowEdit": true,
+				"height":"4rem"
 			}
 			]
 		}
@@ -4924,7 +5224,7 @@
 	"entitySetVisible":true,
 	"grid": {
 		"target": "USStates",
-		"gridStyle":"entitySet360",
+		"gridStyle":"entitySetTable",
 		"targetVisible": true,
 		"targetIcon": "sap-icon://group-2",
 		"targetEntity": "USState",	
@@ -4991,6 +5291,7 @@
 		"targetVisible": true,
 		"targetIcon": "sap-icon://expand-group",
 		"targetEntity": "USState",
+		"allowEdit" : true,
 		"properties": [		
 			{  
 				"property": "comment",
@@ -4999,7 +5300,8 @@
 				"propertyRange": "Edm.String",
 				"ordinal": 0,
 				"aggregate": "[]",
-				"formatOptions": null
+				"formatOptions": null,
+				"allowEdit": true
 			}
 			,{ 
 				"property": "regionDescription",
@@ -5008,7 +5310,8 @@
 				"propertyRange": "Edm.String",
 				"ordinal": 1,
 				"aggregate": "[]",
-				"formatOptions": null
+				"formatOptions": null,
+				"allowEdit": true
 			}
 			,{ 
 				"property": "regionNotation",
@@ -5017,7 +5320,8 @@
 				"propertyRange": "Edm.String",
 				"ordinal": 2,
 				"aggregate": "[]",
-				"formatOptions": null
+				"formatOptions": null,
+				"allowEdit": true
 			}
 			,{ 
 				"property": "stateAbbr",
@@ -5026,7 +5330,8 @@
 				"propertyRange": "Edm.String",
 				"ordinal": 3,
 				"aggregate": "[]",
-				"formatOptions": null
+				"formatOptions": null,
+				"allowEdit": true
 			}
 			,{ 
 				"property": "stateName",
@@ -5035,7 +5340,8 @@
 				"propertyRange": "Edm.String",
 				"ordinal": 4,
 				"aggregate": "[]",
-				"formatOptions": null
+				"formatOptions": null,
+				"allowEdit": true
 			}
 			,{ 
 				"property": "usstateRegion",
@@ -5044,7 +5350,9 @@
 				"propertyRange": "Region",
 				"ordinal": 5,
 				"aggregate": "[List]",
-				"formatOptions": null
+				"formatOptions": null,
+				"allowEdit": true,
+				"height":"4rem"
 			}
 			]
 		}

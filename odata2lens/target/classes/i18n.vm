@@ -127,5 +127,8 @@ graph.regroup = Regroup Nodes
 
 #~~~ Entity360 View ~~~~~~~~~~~~~~~~~~~~~~~~~~
 
+entity360.changesSentMessage =  User data sent to the server
+entity360.changesErrorMessage =  Error received from server
+
 #~~~ EntitySet360 View ~~~~~~~~~~~~~~~~~~~~~~~~~~
 

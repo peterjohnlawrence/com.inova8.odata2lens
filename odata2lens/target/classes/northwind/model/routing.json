@@ -414,205 +414,205 @@
 				"viewId": "notFound"
 			}
 			,"Categorys": {
-				"viewName": "view/Categorys/Categorys",
+				"viewName": "view/entitySet/Categorys/Categorys",
 				"viewPath":"northwind",
 				"viewId": "Categorys",
 				"viewLevel": 1
 			}
 			,"Category": {
-				"viewName": "view/Category/Category",
+				"viewName": "view/entity/Category/Category",
 				"viewPath":"northwind",
 				"viewId": "Category",
 				"viewLevel": 1
 			}					
 			,"Customers": {
-				"viewName": "view/Customers/Customers",
+				"viewName": "view/entitySet/Customers/Customers",
 				"viewPath":"northwind",
 				"viewId": "Customers",
 				"viewLevel": 1
 			}
 			,"Customer": {
-				"viewName": "view/Customer/Customer",
+				"viewName": "view/entity/Customer/Customer",
 				"viewPath":"northwind",
 				"viewId": "Customer",
 				"viewLevel": 1
 			}					
 			,"Customer_Orders": {
-				"viewName": "view/Customer_Orders/Customer_Orders",
+				"viewName": "view/entitySet/Customer_Orders/Customer_Orders",
 				"viewPath":"northwind",
 				"viewId": "Customer_Orders",
 				"viewLevel": 1
 			}
 			,"Customer_Order": {
-				"viewName": "view/Customer_Order/Customer_Order",
+				"viewName": "view/entity/Customer_Order/Customer_Order",
 				"viewPath":"northwind",
 				"viewId": "Customer_Order",
 				"viewLevel": 1
 			}					
 			,"Employees": {
-				"viewName": "view/Employees/Employees",
+				"viewName": "view/entitySet/Employees/Employees",
 				"viewPath":"northwind",
 				"viewId": "Employees",
 				"viewLevel": 1
 			}
 			,"Employee": {
-				"viewName": "view/Employee/Employee",
+				"viewName": "view/entity/Employee/Employee",
 				"viewPath":"northwind",
 				"viewId": "Employee",
 				"viewLevel": 1
 			}					
 			,"Orders": {
-				"viewName": "view/Orders/Orders",
+				"viewName": "view/entitySet/Orders/Orders",
 				"viewPath":"northwind",
 				"viewId": "Orders",
 				"viewLevel": 1
 			}
 			,"Order": {
-				"viewName": "view/Order/Order",
+				"viewName": "view/entity/Order/Order",
 				"viewPath":"northwind",
 				"viewId": "Order",
 				"viewLevel": 1
 			}					
 			,"OrderDetails": {
-				"viewName": "view/OrderDetails/OrderDetails",
+				"viewName": "view/entitySet/OrderDetails/OrderDetails",
 				"viewPath":"northwind",
 				"viewId": "OrderDetails",
 				"viewLevel": 1
 			}
 			,"OrderDetail": {
-				"viewName": "view/OrderDetail/OrderDetail",
+				"viewName": "view/entity/OrderDetail/OrderDetail",
 				"viewPath":"northwind",
 				"viewId": "OrderDetail",
 				"viewLevel": 1
 			}					
 			,"OrderSummarys": {
-				"viewName": "view/OrderSummarys/OrderSummarys",
+				"viewName": "view/entitySet/OrderSummarys/OrderSummarys",
 				"viewPath":"northwind",
 				"viewId": "OrderSummarys",
 				"viewLevel": 1
 			}
 			,"OrderSummary": {
-				"viewName": "view/OrderSummary/OrderSummary",
+				"viewName": "view/entity/OrderSummary/OrderSummary",
 				"viewPath":"northwind",
 				"viewId": "OrderSummary",
 				"viewLevel": 1
 			}					
 			,"Products": {
-				"viewName": "view/Products/Products",
+				"viewName": "view/entitySet/Products/Products",
 				"viewPath":"northwind",
 				"viewId": "Products",
 				"viewLevel": 1
 			}
 			,"Product": {
-				"viewName": "view/Product/Product",
+				"viewName": "view/entity/Product/Product",
 				"viewPath":"northwind",
 				"viewId": "Product",
 				"viewLevel": 1
 			}					
 			,"Regions": {
-				"viewName": "view/Regions/Regions",
+				"viewName": "view/entitySet/Regions/Regions",
 				"viewPath":"northwind",
 				"viewId": "Regions",
 				"viewLevel": 1
 			}
 			,"Region": {
-				"viewName": "view/Region/Region",
+				"viewName": "view/entity/Region/Region",
 				"viewPath":"northwind",
 				"viewId": "Region",
 				"viewLevel": 1
 			}					
 			,"Shippers": {
-				"viewName": "view/Shippers/Shippers",
+				"viewName": "view/entitySet/Shippers/Shippers",
 				"viewPath":"northwind",
 				"viewId": "Shippers",
 				"viewLevel": 1
 			}
 			,"Shipper": {
-				"viewName": "view/Shipper/Shipper",
+				"viewName": "view/entity/Shipper/Shipper",
 				"viewPath":"northwind",
 				"viewId": "Shipper",
 				"viewLevel": 1
 			}					
 			,"Suppliers": {
-				"viewName": "view/Suppliers/Suppliers",
+				"viewName": "view/entitySet/Suppliers/Suppliers",
 				"viewPath":"northwind",
 				"viewId": "Suppliers",
 				"viewLevel": 1
 			}
 			,"Supplier": {
-				"viewName": "view/Supplier/Supplier",
+				"viewName": "view/entity/Supplier/Supplier",
 				"viewPath":"northwind",
 				"viewId": "Supplier",
 				"viewLevel": 1
 			}					
 			,"SystemAEmployees": {
-				"viewName": "view/SystemAEmployees/SystemAEmployees",
+				"viewName": "view/entitySet/SystemAEmployees/SystemAEmployees",
 				"viewPath":"northwind",
 				"viewId": "SystemAEmployees",
 				"viewLevel": 1
 			}
 			,"SystemAEmployee": {
-				"viewName": "view/SystemAEmployee/SystemAEmployee",
+				"viewName": "view/entity/SystemAEmployee/SystemAEmployee",
 				"viewPath":"northwind",
 				"viewId": "SystemAEmployee",
 				"viewLevel": 1
 			}					
 			,"SystemAProducts": {
-				"viewName": "view/SystemAProducts/SystemAProducts",
+				"viewName": "view/entitySet/SystemAProducts/SystemAProducts",
 				"viewPath":"northwind",
 				"viewId": "SystemAProducts",
 				"viewLevel": 1
 			}
 			,"SystemAProduct": {
-				"viewName": "view/SystemAProduct/SystemAProduct",
+				"viewName": "view/entity/SystemAProduct/SystemAProduct",
 				"viewPath":"northwind",
 				"viewId": "SystemAProduct",
 				"viewLevel": 1
 			}					
 			,"SystemBEmployees": {
-				"viewName": "view/SystemBEmployees/SystemBEmployees",
+				"viewName": "view/entitySet/SystemBEmployees/SystemBEmployees",
 				"viewPath":"northwind",
 				"viewId": "SystemBEmployees",
 				"viewLevel": 1
 			}
 			,"SystemBEmployee": {
-				"viewName": "view/SystemBEmployee/SystemBEmployee",
+				"viewName": "view/entity/SystemBEmployee/SystemBEmployee",
 				"viewPath":"northwind",
 				"viewId": "SystemBEmployee",
 				"viewLevel": 1
 			}					
 			,"SystemBProducts": {
-				"viewName": "view/SystemBProducts/SystemBProducts",
+				"viewName": "view/entitySet/SystemBProducts/SystemBProducts",
 				"viewPath":"northwind",
 				"viewId": "SystemBProducts",
 				"viewLevel": 1
 			}
 			,"SystemBProduct": {
-				"viewName": "view/SystemBProduct/SystemBProduct",
+				"viewName": "view/entity/SystemBProduct/SystemBProduct",
 				"viewPath":"northwind",
 				"viewId": "SystemBProduct",
 				"viewLevel": 1
 			}					
 			,"Territorys": {
-				"viewName": "view/Territorys/Territorys",
+				"viewName": "view/entitySet/Territorys/Territorys",
 				"viewPath":"northwind",
 				"viewId": "Territorys",
 				"viewLevel": 1
 			}
 			,"Territory": {
-				"viewName": "view/Territory/Territory",
+				"viewName": "view/entity/Territory/Territory",
 				"viewPath":"northwind",
 				"viewId": "Territory",
 				"viewLevel": 1
 			}					
 			,"USStates": {
-				"viewName": "view/USStates/USStates",
+				"viewName": "view/entitySet/USStates/USStates",
 				"viewPath":"northwind",
 				"viewId": "USStates",
 				"viewLevel": 1
 			}
 			,"USState": {
-				"viewName": "view/USState/USState",
+				"viewName": "view/entity/USState/USState",
 				"viewPath":"northwind",
 				"viewId": "USState",
 				"viewLevel": 1
