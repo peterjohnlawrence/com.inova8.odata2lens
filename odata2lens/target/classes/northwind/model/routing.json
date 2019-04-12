@@ -38,11 +38,46 @@
 				"DataSetisDatasetOf"
 			]
 		}, {
-			"pattern": "Settings",
-			"name": "settings",
+			"pattern": "ConfigurationEditor",
+			"name": "configurationEditor",
 			"target": [
-				"settings"
+				"configurationEditor"
 			]
+		}, {
+			"pattern": "PrivacyPolicies",
+			"name": "privacyPolicies",
+			"target": [
+				"privacyPolicies"
+			]
+		}, {
+			"pattern": "CopyrightNotices",
+			"name": "copyrightNotices",
+			"target": [
+				"copyrightNotices"
+			]
+		},
+
+		{
+			"pattern": "TermsOfUse",
+			"name": "termsofUse",
+			"target": [
+				"termsofUse"
+			]
+		},
+
+		{
+			"pattern": "CorporatePolicies",
+			"name": "corporatePolicies",
+			"target": [
+				"corporatePolicies"
+			]
+		},
+		{
+		"pattern": "Settings",
+		"name": "settings",
+		"target": [
+			"settings"
+		]
 		}, {
 			"pattern": "Legal",
 			"name": "legal",
@@ -363,6 +398,32 @@
 			"settings": {
 				"viewName": "Settings",
 				"viewId": "settings",
+				"viewLevel": 1
+			},
+			"configurationEditor": {
+				"viewName": "ConfigurationEditor",
+				"viewId": "configurationEditor",
+				"viewLevel": 1
+			},
+			"privacyPolicies": {
+				"viewName": "PrivacyPolicies",
+				"viewId": "privacyPolicies",
+				"viewLevel": 1
+			},
+			"copyrightNotices": {
+				"viewName": "CopyrightNotices",
+				"viewId": "copyrightNotices",
+				"viewLevel": 1
+			},
+			"termsofUse": {
+				"viewName": "TermsOfUse",
+				"viewId": "termsofUse",
+				"viewLevel": 1
+			},
+
+			"corporatePolicies": {
+				"viewName": "CorporatePolicies",
+				"viewId": "corporatePolicies",
 				"viewLevel": 1
 			},
 			"legal": {
