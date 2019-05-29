@@ -1,0 +1,2972 @@
+{
+	"Collection": {
+	"entity": "Collection",
+	"icon": "sap-icon://group-2",
+	"image": "./images/icons/unknown.svg",
+	"entitySetVisible":true,
+	"grid": {
+		"target": "Collections",
+		"gridStyle":"entitySetTable",
+		"targetVisible": true,
+		"targetIcon": "sap-icon://group-2",
+		"targetEntity": "Collection",	
+		"properties": [	
+			{  
+				"property": "altLabel",
+				"propertyVisible": false,
+				"propertyType": "D",
+				"propertyRange": "Edm.String",
+				"ordinal": 0,
+				"aggregate": "[]",
+				"formatOptions": ""
+			}	
+			,{ 
+				"property": "altLabelNarrower",
+				"propertyVisible": false,
+				"propertyType": "D",
+				"propertyRange": "Edm.String",
+				"ordinal": 1,
+				"aggregate": "[]",
+				"formatOptions": ""
+			}	
+			,{ 
+				"property": "changeNote",
+				"propertyVisible": false,
+				"propertyType": "D",
+				"propertyRange": "Edm.String",
+				"ordinal": 2,
+				"aggregate": "[]",
+				"formatOptions": ""
+			}	
+			,{ 
+				"property": "definition",
+				"propertyVisible": false,
+				"propertyType": "D",
+				"propertyRange": "Edm.String",
+				"ordinal": 3,
+				"aggregate": "[]",
+				"formatOptions": ""
+			}	
+			,{ 
+				"property": "editorialNote",
+				"propertyVisible": false,
+				"propertyType": "D",
+				"propertyRange": "Edm.String",
+				"ordinal": 4,
+				"aggregate": "[]",
+				"formatOptions": ""
+			}	
+			,{ 
+				"property": "example",
+				"propertyVisible": false,
+				"propertyType": "D",
+				"propertyRange": "Edm.String",
+				"ordinal": 5,
+				"aggregate": "[]",
+				"formatOptions": ""
+			}	
+			,{ 
+				"property": "hiddenLabel",
+				"propertyVisible": false,
+				"propertyType": "D",
+				"propertyRange": "Edm.String",
+				"ordinal": 6,
+				"aggregate": "[]",
+				"formatOptions": ""
+			}	
+			,{ 
+				"property": "historyNote",
+				"propertyVisible": false,
+				"propertyType": "D",
+				"propertyRange": "Edm.String",
+				"ordinal": 7,
+				"aggregate": "[]",
+				"formatOptions": ""
+			}	
+			,{ 
+				"property": "notation",
+				"propertyVisible": false,
+				"propertyType": "D",
+				"propertyRange": "Edm.String",
+				"ordinal": 8,
+				"aggregate": "[]",
+				"formatOptions": ""
+			}	
+			,{ 
+				"property": "note",
+				"propertyVisible": false,
+				"propertyType": "D",
+				"propertyRange": "Edm.String",
+				"ordinal": 9,
+				"aggregate": "[]",
+				"formatOptions": ""
+			}	
+			,{ 
+				"property": "prefLabel",
+				"propertyVisible": true,
+				"propertyType": "D",
+				"propertyRange": "Edm.String",
+				"ordinal": 10,
+				"aggregate": "[]",
+				"formatOptions": ""
+			}	
+			,{ 
+				"property": "scopeNote",
+				"propertyVisible": false,
+				"propertyType": "D",
+				"propertyRange": "Edm.String",
+				"ordinal": 11,
+				"aggregate": "[]",
+				"formatOptions": ""
+			}	
+			,{ 
+				"property": "useInsteadNote",
+				"propertyVisible": false,
+				"propertyType": "D",
+				"propertyRange": "Edm.String",
+				"ordinal": 12,
+				"aggregate": "[]",
+				"formatOptions": ""
+			}	
+			]
+		},
+	"form": {
+		"target": "Collection",
+		"formStyle":"entity360",
+		"targetVisible": true,
+		"targetIcon": "sap-icon://expand-group",
+		"targetEntity": "Collection",
+		"allowEdit" : true,
+		"properties": [		
+			{  
+				"property": "altLabel",
+				"propertyVisible": true,
+				"propertyType": "D",
+				"propertyRange": "Edm.String",
+				"ordinal": 0,
+				"aggregate": "[]",
+				"formatOptions": null,
+				"allowEdit": true
+			}
+			,{ 
+				"property": "altLabelNarrower",
+				"propertyVisible": false,
+				"propertyType": "D",
+				"propertyRange": "Edm.String",
+				"ordinal": 1,
+				"aggregate": "[]",
+				"formatOptions": null,
+				"allowEdit": true
+			}
+			,{ 
+				"property": "changeNote",
+				"propertyVisible": false,
+				"propertyType": "D",
+				"propertyRange": "Edm.String",
+				"ordinal": 2,
+				"aggregate": "[]",
+				"formatOptions": null,
+				"allowEdit": true
+			}
+			,{ 
+				"property": "definition",
+				"propertyVisible": false,
+				"propertyType": "D",
+				"propertyRange": "Edm.String",
+				"ordinal": 3,
+				"aggregate": "[]",
+				"formatOptions": null,
+				"allowEdit": true
+			}
+			,{ 
+				"property": "editorialNote",
+				"propertyVisible": false,
+				"propertyType": "D",
+				"propertyRange": "Edm.String",
+				"ordinal": 4,
+				"aggregate": "[]",
+				"formatOptions": null,
+				"allowEdit": true
+			}
+			,{ 
+				"property": "example",
+				"propertyVisible": false,
+				"propertyType": "D",
+				"propertyRange": "Edm.String",
+				"ordinal": 5,
+				"aggregate": "[]",
+				"formatOptions": null,
+				"allowEdit": true
+			}
+			,{ 
+				"property": "hiddenLabel",
+				"propertyVisible": false,
+				"propertyType": "D",
+				"propertyRange": "Edm.String",
+				"ordinal": 6,
+				"aggregate": "[]",
+				"formatOptions": null,
+				"allowEdit": true
+			}
+			,{ 
+				"property": "historyNote",
+				"propertyVisible": false,
+				"propertyType": "D",
+				"propertyRange": "Edm.String",
+				"ordinal": 7,
+				"aggregate": "[]",
+				"formatOptions": null,
+				"allowEdit": true
+			}
+			,{ 
+				"property": "notation",
+				"propertyVisible": false,
+				"propertyType": "D",
+				"propertyRange": "Edm.String",
+				"ordinal": 8,
+				"aggregate": "[]",
+				"formatOptions": null,
+				"allowEdit": true
+			}
+			,{ 
+				"property": "note",
+				"propertyVisible": false,
+				"propertyType": "D",
+				"propertyRange": "Edm.String",
+				"ordinal": 9,
+				"aggregate": "[]",
+				"formatOptions": null,
+				"allowEdit": true
+			}
+			,{ 
+				"property": "prefLabel",
+				"propertyVisible": true,
+				"propertyType": "D",
+				"propertyRange": "Edm.String",
+				"ordinal": 10,
+				"aggregate": "[]",
+				"formatOptions": null,
+				"allowEdit": true
+			}
+			,{ 
+				"property": "scopeNote",
+				"propertyVisible": false,
+				"propertyType": "D",
+				"propertyRange": "Edm.String",
+				"ordinal": 11,
+				"aggregate": "[]",
+				"formatOptions": null,
+				"allowEdit": true
+			}
+			,{ 
+				"property": "useInsteadNote",
+				"propertyVisible": false,
+				"propertyType": "D",
+				"propertyRange": "Edm.String",
+				"ordinal": 12,
+				"aggregate": "[]",
+				"formatOptions": null,
+				"allowEdit": true
+			}
+			]
+		}
+	}
+	,
+	"Concept": {
+	"entity": "Concept",
+	"icon": "sap-icon://group-2",
+	"image": "./images/icons/unknown.svg",
+	"entitySetVisible":true,
+	"grid": {
+		"target": "Concepts",
+		"gridStyle":"entitySetTable",
+		"targetVisible": true,
+		"targetIcon": "sap-icon://group-2",
+		"targetEntity": "Concept",	
+		"properties": [	
+			{  
+				"property": "altLabel",
+				"propertyVisible": true,
+				"propertyType": "D",
+				"propertyRange": "Edm.String",
+				"ordinal": 0,
+				"aggregate": "[]",
+				"formatOptions": ""
+			}	
+			,{ 
+				"property": "altLabelNarrower",
+				"propertyVisible": false,
+				"propertyType": "D",
+				"propertyRange": "Edm.String",
+				"ordinal": 1,
+				"aggregate": "[]",
+				"formatOptions": ""
+			}	
+			,{ 
+				"property": "changeNote",
+				"propertyVisible": false,
+				"propertyType": "D",
+				"propertyRange": "Edm.String",
+				"ordinal": 2,
+				"aggregate": "[]",
+				"formatOptions": ""
+			}	
+			,{ 
+				"property": "definition",
+				"propertyVisible": false,
+				"propertyType": "D",
+				"propertyRange": "Edm.String",
+				"ordinal": 3,
+				"aggregate": "[]",
+				"formatOptions": ""
+			}	
+			,{ 
+				"property": "editorialNote",
+				"propertyVisible": false,
+				"propertyType": "D",
+				"propertyRange": "Edm.String",
+				"ordinal": 4,
+				"aggregate": "[]",
+				"formatOptions": ""
+			}	
+			,{ 
+				"property": "example",
+				"propertyVisible": false,
+				"propertyType": "D",
+				"propertyRange": "Edm.String",
+				"ordinal": 5,
+				"aggregate": "[]",
+				"formatOptions": ""
+			}	
+			,{ 
+				"property": "hiddenLabel",
+				"propertyVisible": false,
+				"propertyType": "D",
+				"propertyRange": "Edm.String",
+				"ordinal": 6,
+				"aggregate": "[]",
+				"formatOptions": ""
+			}	
+			,{ 
+				"property": "historyNote",
+				"propertyVisible": false,
+				"propertyType": "D",
+				"propertyRange": "Edm.String",
+				"ordinal": 7,
+				"aggregate": "[]",
+				"formatOptions": ""
+			}	
+			,{ 
+				"property": "notation",
+				"propertyVisible": false,
+				"propertyType": "D",
+				"propertyRange": "Edm.String",
+				"ordinal": 8,
+				"aggregate": "[]",
+				"formatOptions": ""
+			}	
+			,{ 
+				"property": "note",
+				"propertyVisible": false,
+				"propertyType": "D",
+				"propertyRange": "Edm.String",
+				"ordinal": 9,
+				"aggregate": "[]",
+				"formatOptions": ""
+			}	
+			,{ 
+				"property": "prefLabel",
+				"propertyVisible": true,
+				"propertyType": "D",
+				"propertyRange": "Edm.String",
+				"ordinal": 10,
+				"aggregate": "[]",
+				"formatOptions": ""
+			}	
+			,{ 
+				"property": "scopeNote",
+				"propertyVisible": true,
+				"propertyType": "D",
+				"propertyRange": "Edm.String",
+				"ordinal": 11,
+				"aggregate": "[]",
+				"formatOptions": ""
+			}	
+			,{ 
+				"property": "useInsteadNote",
+				"propertyVisible": true,
+				"propertyType": "D",
+				"propertyRange": "Edm.String",
+				"ordinal": 12,
+				"aggregate": "[]",
+				"formatOptions": ""
+			}	
+			,{ 
+				"property": "broadMatch",
+				"propertyVisible": false,
+				"propertyType": "C",
+				"propertyRange": "Concept",
+				"ordinal": 13,
+				"aggregate": "[Count]",
+				"formatOptions": ""
+			}	
+			,{ 
+				"property": "broader",
+				"propertyVisible": false,
+				"propertyType": "C",
+				"propertyRange": "Concept",
+				"ordinal": 14,
+				"aggregate": "[Count]",
+				"formatOptions": ""
+			}	
+			,{ 
+				"property": "broaderTransitive",
+				"propertyVisible": false,
+				"propertyType": "C",
+				"propertyRange": "Concept",
+				"ordinal": 15,
+				"aggregate": "[Count]",
+				"formatOptions": ""
+			}	
+			,{ 
+				"property": "closeMatch",
+				"propertyVisible": false,
+				"propertyType": "C",
+				"propertyRange": "Concept",
+				"ordinal": 16,
+				"aggregate": "[Count]",
+				"formatOptions": ""
+			}	
+			,{ 
+				"property": "exactMatch",
+				"propertyVisible": false,
+				"propertyType": "C",
+				"propertyRange": "Concept",
+				"ordinal": 17,
+				"aggregate": "[Count]",
+				"formatOptions": ""
+			}	
+			,{ 
+				"property": "mappingRelation",
+				"propertyVisible": false,
+				"propertyType": "C",
+				"propertyRange": "Concept",
+				"ordinal": 18,
+				"aggregate": "[Count]",
+				"formatOptions": ""
+			}	
+			,{ 
+				"property": "narrowMatch",
+				"propertyVisible": false,
+				"propertyType": "C",
+				"propertyRange": "Concept",
+				"ordinal": 19,
+				"aggregate": "[Count]",
+				"formatOptions": ""
+			}	
+			,{ 
+				"property": "narrower",
+				"propertyVisible": false,
+				"propertyType": "C",
+				"propertyRange": "Concept",
+				"ordinal": 20,
+				"aggregate": "[Count]",
+				"formatOptions": ""
+			}	
+			,{ 
+				"property": "narrowerTransitive",
+				"propertyVisible": false,
+				"propertyType": "C",
+				"propertyRange": "Concept",
+				"ordinal": 21,
+				"aggregate": "[Count]",
+				"formatOptions": ""
+			}	
+			,{ 
+				"property": "related",
+				"propertyVisible": false,
+				"propertyType": "C",
+				"propertyRange": "Concept",
+				"ordinal": 22,
+				"aggregate": "[Count]",
+				"formatOptions": ""
+			}	
+			,{ 
+				"property": "relatedMatch",
+				"propertyVisible": false,
+				"propertyType": "C",
+				"propertyRange": "Concept",
+				"ordinal": 23,
+				"aggregate": "[Count]",
+				"formatOptions": ""
+			}	
+			,{ 
+				"property": "semanticRelation",
+				"propertyVisible": false,
+				"propertyType": "C",
+				"propertyRange": "Concept",
+				"ordinal": 24,
+				"aggregate": "[Count]",
+				"formatOptions": ""
+			}	
+			,{ 
+				"property": "topConceptOf",
+				"propertyVisible": false,
+				"propertyType": "C",
+				"propertyRange": "ConceptScheme",
+				"ordinal": 25,
+				"aggregate": "[Count]",
+				"formatOptions": ""
+			}	
+			]
+		},
+	"form": {
+		"target": "Concept",
+		"formStyle":"entity360",
+		"targetVisible": true,
+		"targetIcon": "sap-icon://expand-group",
+		"targetEntity": "Concept",
+		"allowEdit" : true,
+		"properties": [		
+			{  
+				"property": "altLabel",
+				"propertyVisible": true,
+				"propertyType": "D",
+				"propertyRange": "Edm.String",
+				"ordinal": 0,
+				"aggregate": "[]",
+				"formatOptions": null,
+				"allowEdit": true
+			}
+			,{ 
+				"property": "altLabelNarrower",
+				"propertyVisible": false,
+				"propertyType": "D",
+				"propertyRange": "Edm.String",
+				"ordinal": 1,
+				"aggregate": "[]",
+				"formatOptions": null,
+				"allowEdit": true
+			}
+			,{ 
+				"property": "changeNote",
+				"propertyVisible": false,
+				"propertyType": "D",
+				"propertyRange": "Edm.String",
+				"ordinal": 2,
+				"aggregate": "[]",
+				"formatOptions": null,
+				"allowEdit": true
+			}
+			,{ 
+				"property": "definition",
+				"propertyVisible": false,
+				"propertyType": "D",
+				"propertyRange": "Edm.String",
+				"ordinal": 3,
+				"aggregate": "[]",
+				"formatOptions": null,
+				"allowEdit": true
+			}
+			,{ 
+				"property": "editorialNote",
+				"propertyVisible": false,
+				"propertyType": "D",
+				"propertyRange": "Edm.String",
+				"ordinal": 4,
+				"aggregate": "[]",
+				"formatOptions": null,
+				"allowEdit": true
+			}
+			,{ 
+				"property": "example",
+				"propertyVisible": false,
+				"propertyType": "D",
+				"propertyRange": "Edm.String",
+				"ordinal": 5,
+				"aggregate": "[]",
+				"formatOptions": null,
+				"allowEdit": true
+			}
+			,{ 
+				"property": "hiddenLabel",
+				"propertyVisible": true,
+				"propertyType": "D",
+				"propertyRange": "Edm.String",
+				"ordinal": 6,
+				"aggregate": "[]",
+				"formatOptions": null,
+				"allowEdit": true
+			}
+			,{ 
+				"property": "historyNote",
+				"propertyVisible": false,
+				"propertyType": "D",
+				"propertyRange": "Edm.String",
+				"ordinal": 7,
+				"aggregate": "[]",
+				"formatOptions": null,
+				"allowEdit": true
+			}
+			,{ 
+				"property": "notation",
+				"propertyVisible": false,
+				"propertyType": "D",
+				"propertyRange": "Edm.String",
+				"ordinal": 8,
+				"aggregate": "[]",
+				"formatOptions": null,
+				"allowEdit": true
+			}
+			,{ 
+				"property": "note",
+				"propertyVisible": false,
+				"propertyType": "D",
+				"propertyRange": "Edm.String",
+				"ordinal": 9,
+				"aggregate": "[]",
+				"formatOptions": null,
+				"allowEdit": true
+			}
+			,{ 
+				"property": "prefLabel",
+				"propertyVisible": true,
+				"propertyType": "D",
+				"propertyRange": "Edm.String",
+				"ordinal": 10,
+				"aggregate": "[]",
+				"formatOptions": null,
+				"allowEdit": true
+			}
+			,{ 
+				"property": "scopeNote",
+				"propertyVisible": true,
+				"propertyType": "D",
+				"propertyRange": "Edm.String",
+				"ordinal": 11,
+				"aggregate": "[]",
+				"formatOptions": null,
+				"allowEdit": true
+			}
+			,{ 
+				"property": "useInsteadNote",
+				"propertyVisible": false,
+				"propertyType": "D",
+				"propertyRange": "Edm.String",
+				"ordinal": 12,
+				"aggregate": "[]",
+				"formatOptions": null,
+				"allowEdit": true
+			}
+			,{ 
+				"property": "broadMatch",
+				"propertyVisible": true,
+				"propertyType": "C",
+				"propertyRange": "Concept",
+				"ordinal": 13,
+				"aggregate": "[List]",
+				"formatOptions": null,
+				"allowEdit": true,
+				"height":"4rem"
+			}
+			,{ 
+				"property": "broader",
+				"propertyVisible": true,
+				"propertyType": "C",
+				"propertyRange": "Concept",
+				"ordinal": 14,
+				"aggregate": "[List]",
+				"formatOptions": null,
+				"allowEdit": true,
+				"height":"8rem"
+			}
+			,{ 
+				"property": "broaderTransitive",
+				"propertyVisible": false,
+				"propertyType": "C",
+				"propertyRange": "Concept",
+				"ordinal": 15,
+				"aggregate": "[List]",
+				"formatOptions": null,
+				"allowEdit": true,
+				"height":"4rem"
+			}
+			,{ 
+				"property": "closeMatch",
+				"propertyVisible": false,
+				"propertyType": "C",
+				"propertyRange": "Concept",
+				"ordinal": 16,
+				"aggregate": "[List]",
+				"formatOptions": null,
+				"allowEdit": true,
+				"height":"4rem"
+			}
+			,{ 
+				"property": "exactMatch",
+				"propertyVisible": false,
+				"propertyType": "C",
+				"propertyRange": "Concept",
+				"ordinal": 17,
+				"aggregate": "[List]",
+				"formatOptions": null,
+				"allowEdit": true,
+				"height":"4rem"
+			}
+			,{ 
+				"property": "mappingRelation",
+				"propertyVisible": false,
+				"propertyType": "C",
+				"propertyRange": "Concept",
+				"ordinal": 18,
+				"aggregate": "[List]",
+				"formatOptions": null,
+				"allowEdit": true,
+				"height":"4rem"
+			}
+			,{ 
+				"property": "narrowMatch",
+				"propertyVisible": true,
+				"propertyType": "C",
+				"propertyRange": "Concept",
+				"ordinal": 19,
+				"aggregate": "[List]",
+				"formatOptions": null,
+				"allowEdit": true,
+				"height":"4rem"
+			}
+			,{ 
+				"property": "narrower",
+				"propertyVisible": true,
+				"propertyType": "C",
+				"propertyRange": "Concept",
+				"ordinal": 20,
+				"aggregate": "[List]",
+				"formatOptions": null,
+				"allowEdit": true,
+				"height":"8rem"
+			}
+			,{ 
+				"property": "narrowerTransitive",
+				"propertyVisible": false,
+				"propertyType": "C",
+				"propertyRange": "Concept",
+				"ordinal": 21,
+				"aggregate": "[List]",
+				"formatOptions": null,
+				"allowEdit": true,
+				"height":"8rem"
+			}
+			,{ 
+				"property": "related",
+				"propertyVisible": true,
+				"propertyType": "C",
+				"propertyRange": "Concept",
+				"ordinal": 22,
+				"aggregate": "[List]",
+				"formatOptions": null,
+				"allowEdit": true,
+				"height":"8rem"
+			}
+			,{ 
+				"property": "relatedMatch",
+				"propertyVisible": false,
+				"propertyType": "C",
+				"propertyRange": "Concept",
+				"ordinal": 23,
+				"aggregate": "[List]",
+				"formatOptions": null,
+				"allowEdit": true,
+				"height":"4rem"
+			}
+			,{ 
+				"property": "semanticRelation",
+				"propertyVisible": false,
+				"propertyType": "C",
+				"propertyRange": "Concept",
+				"ordinal": 24,
+				"aggregate": "[List]",
+				"formatOptions": null,
+				"allowEdit": true,
+				"height":"4rem"
+			}
+			,{ 
+				"property": "topConceptOf",
+				"propertyVisible": false,
+				"propertyType": "C",
+				"propertyRange": "ConceptScheme",
+				"ordinal": 25,
+				"aggregate": "[List]",
+				"formatOptions": null,
+				"allowEdit": true,
+				"height":"4rem"
+			}
+			]
+		}
+	}
+	,
+	"ConceptScheme": {
+	"entity": "ConceptScheme",
+	"icon": "sap-icon://group-2",
+	"image": "./images/icons/unknown.svg",
+	"entitySetVisible":true,
+	"grid": {
+		"target": "ConceptSchemes",
+		"gridStyle":"entitySetTable",
+		"targetVisible": true,
+		"targetIcon": "sap-icon://group-2",
+		"targetEntity": "ConceptScheme",	
+		"properties": [	
+			{  
+				"property": "altLabel",
+				"propertyVisible": false,
+				"propertyType": "D",
+				"propertyRange": "Edm.String",
+				"ordinal": 0,
+				"aggregate": "[]",
+				"formatOptions": ""
+			}	
+			,{ 
+				"property": "altLabelNarrower",
+				"propertyVisible": false,
+				"propertyType": "D",
+				"propertyRange": "Edm.String",
+				"ordinal": 1,
+				"aggregate": "[]",
+				"formatOptions": ""
+			}	
+			,{ 
+				"property": "changeNote",
+				"propertyVisible": false,
+				"propertyType": "D",
+				"propertyRange": "Edm.String",
+				"ordinal": 2,
+				"aggregate": "[]",
+				"formatOptions": ""
+			}	
+			,{ 
+				"property": "definition",
+				"propertyVisible": false,
+				"propertyType": "D",
+				"propertyRange": "Edm.String",
+				"ordinal": 3,
+				"aggregate": "[]",
+				"formatOptions": ""
+			}	
+			,{ 
+				"property": "editorialNote",
+				"propertyVisible": false,
+				"propertyType": "D",
+				"propertyRange": "Edm.String",
+				"ordinal": 4,
+				"aggregate": "[]",
+				"formatOptions": ""
+			}	
+			,{ 
+				"property": "example",
+				"propertyVisible": false,
+				"propertyType": "D",
+				"propertyRange": "Edm.String",
+				"ordinal": 5,
+				"aggregate": "[]",
+				"formatOptions": ""
+			}	
+			,{ 
+				"property": "hiddenLabel",
+				"propertyVisible": false,
+				"propertyType": "D",
+				"propertyRange": "Edm.String",
+				"ordinal": 6,
+				"aggregate": "[]",
+				"formatOptions": ""
+			}	
+			,{ 
+				"property": "historyNote",
+				"propertyVisible": false,
+				"propertyType": "D",
+				"propertyRange": "Edm.String",
+				"ordinal": 7,
+				"aggregate": "[]",
+				"formatOptions": ""
+			}	
+			,{ 
+				"property": "notation",
+				"propertyVisible": false,
+				"propertyType": "D",
+				"propertyRange": "Edm.String",
+				"ordinal": 8,
+				"aggregate": "[]",
+				"formatOptions": ""
+			}	
+			,{ 
+				"property": "note",
+				"propertyVisible": false,
+				"propertyType": "D",
+				"propertyRange": "Edm.String",
+				"ordinal": 9,
+				"aggregate": "[]",
+				"formatOptions": ""
+			}	
+			,{ 
+				"property": "prefLabel",
+				"propertyVisible": true,
+				"propertyType": "D",
+				"propertyRange": "Edm.String",
+				"ordinal": 10,
+				"aggregate": "[]",
+				"formatOptions": ""
+			}	
+			,{ 
+				"property": "scopeNote",
+				"propertyVisible": false,
+				"propertyType": "D",
+				"propertyRange": "Edm.String",
+				"ordinal": 11,
+				"aggregate": "[]",
+				"formatOptions": ""
+			}	
+			,{ 
+				"property": "useInsteadNote",
+				"propertyVisible": false,
+				"propertyType": "D",
+				"propertyRange": "Edm.String",
+				"ordinal": 12,
+				"aggregate": "[]",
+				"formatOptions": ""
+			}	
+			,{ 
+				"property": "hasTopConcept",
+				"propertyVisible": false,
+				"propertyType": "C",
+				"propertyRange": "Concept",
+				"ordinal": 13,
+				"aggregate": "[Count]",
+				"formatOptions": ""
+			}	
+			]
+		},
+	"form": {
+		"target": "ConceptScheme",
+		"formStyle":"entity360",
+		"targetVisible": true,
+		"targetIcon": "sap-icon://expand-group",
+		"targetEntity": "ConceptScheme",
+		"allowEdit" : true,
+		"properties": [		
+			{  
+				"property": "altLabel",
+				"propertyVisible": false,
+				"propertyType": "D",
+				"propertyRange": "Edm.String",
+				"ordinal": 0,
+				"aggregate": "[]",
+				"formatOptions": null,
+				"allowEdit": true
+			}
+			,{ 
+				"property": "altLabelNarrower",
+				"propertyVisible": false,
+				"propertyType": "D",
+				"propertyRange": "Edm.String",
+				"ordinal": 1,
+				"aggregate": "[]",
+				"formatOptions": null,
+				"allowEdit": true
+			}
+			,{ 
+				"property": "changeNote",
+				"propertyVisible": false,
+				"propertyType": "D",
+				"propertyRange": "Edm.String",
+				"ordinal": 2,
+				"aggregate": "[]",
+				"formatOptions": null,
+				"allowEdit": true
+			}
+			,{ 
+				"property": "definition",
+				"propertyVisible": false,
+				"propertyType": "D",
+				"propertyRange": "Edm.String",
+				"ordinal": 3,
+				"aggregate": "[]",
+				"formatOptions": null,
+				"allowEdit": true
+			}
+			,{ 
+				"property": "editorialNote",
+				"propertyVisible": false,
+				"propertyType": "D",
+				"propertyRange": "Edm.String",
+				"ordinal": 4,
+				"aggregate": "[]",
+				"formatOptions": null,
+				"allowEdit": true
+			}
+			,{ 
+				"property": "example",
+				"propertyVisible": false,
+				"propertyType": "D",
+				"propertyRange": "Edm.String",
+				"ordinal": 5,
+				"aggregate": "[]",
+				"formatOptions": null,
+				"allowEdit": true
+			}
+			,{ 
+				"property": "hiddenLabel",
+				"propertyVisible": false,
+				"propertyType": "D",
+				"propertyRange": "Edm.String",
+				"ordinal": 6,
+				"aggregate": "[]",
+				"formatOptions": null,
+				"allowEdit": true
+			}
+			,{ 
+				"property": "historyNote",
+				"propertyVisible": false,
+				"propertyType": "D",
+				"propertyRange": "Edm.String",
+				"ordinal": 7,
+				"aggregate": "[]",
+				"formatOptions": null,
+				"allowEdit": true
+			}
+			,{ 
+				"property": "notation",
+				"propertyVisible": false,
+				"propertyType": "D",
+				"propertyRange": "Edm.String",
+				"ordinal": 8,
+				"aggregate": "[]",
+				"formatOptions": null,
+				"allowEdit": true
+			}
+			,{ 
+				"property": "note",
+				"propertyVisible": false,
+				"propertyType": "D",
+				"propertyRange": "Edm.String",
+				"ordinal": 9,
+				"aggregate": "[]",
+				"formatOptions": null,
+				"allowEdit": true
+			}
+			,{ 
+				"property": "prefLabel",
+				"propertyVisible": true,
+				"propertyType": "D",
+				"propertyRange": "Edm.String",
+				"ordinal": 10,
+				"aggregate": "[]",
+				"formatOptions": null,
+				"allowEdit": true
+			}
+			,{ 
+				"property": "scopeNote",
+				"propertyVisible": false,
+				"propertyType": "D",
+				"propertyRange": "Edm.String",
+				"ordinal": 11,
+				"aggregate": "[]",
+				"formatOptions": null,
+				"allowEdit": true
+			}
+			,{ 
+				"property": "useInsteadNote",
+				"propertyVisible": false,
+				"propertyType": "D",
+				"propertyRange": "Edm.String",
+				"ordinal": 12,
+				"aggregate": "[]",
+				"formatOptions": null,
+				"allowEdit": true
+			}
+			,{ 
+				"property": "hasTopConcept",
+				"propertyVisible": true,
+				"propertyType": "C",
+				"propertyRange": "Concept",
+				"ordinal": 13,
+				"aggregate": "[List]",
+				"formatOptions": null,
+				"allowEdit": true,
+				"height":"20rem"
+			}
+			]
+		}
+	}
+	,
+	"OrderedCollection": {
+	"entity": "OrderedCollection",
+	"icon": "sap-icon://group-2",
+	"image": "./images/icons/unknown.svg",
+	"entitySetVisible":true,
+	"grid": {
+		"target": "OrderedCollections",
+		"gridStyle":"entitySetTable",
+		"targetVisible": true,
+		"targetIcon": "sap-icon://group-2",
+		"targetEntity": "OrderedCollection",	
+		"properties": [	
+			{  
+				"property": "altLabel",
+				"propertyVisible": true,
+				"propertyType": "D",
+				"propertyRange": "Edm.String",
+				"ordinal": 0,
+				"aggregate": "[]",
+				"formatOptions": ""
+			}	
+			,{ 
+				"property": "altLabelNarrower",
+				"propertyVisible": true,
+				"propertyType": "D",
+				"propertyRange": "Edm.String",
+				"ordinal": 1,
+				"aggregate": "[]",
+				"formatOptions": ""
+			}	
+			,{ 
+				"property": "changeNote",
+				"propertyVisible": true,
+				"propertyType": "D",
+				"propertyRange": "Edm.String",
+				"ordinal": 2,
+				"aggregate": "[]",
+				"formatOptions": ""
+			}	
+			,{ 
+				"property": "definition",
+				"propertyVisible": true,
+				"propertyType": "D",
+				"propertyRange": "Edm.String",
+				"ordinal": 3,
+				"aggregate": "[]",
+				"formatOptions": ""
+			}	
+			,{ 
+				"property": "editorialNote",
+				"propertyVisible": true,
+				"propertyType": "D",
+				"propertyRange": "Edm.String",
+				"ordinal": 4,
+				"aggregate": "[]",
+				"formatOptions": ""
+			}	
+			,{ 
+				"property": "example",
+				"propertyVisible": true,
+				"propertyType": "D",
+				"propertyRange": "Edm.String",
+				"ordinal": 5,
+				"aggregate": "[]",
+				"formatOptions": ""
+			}	
+			,{ 
+				"property": "hiddenLabel",
+				"propertyVisible": true,
+				"propertyType": "D",
+				"propertyRange": "Edm.String",
+				"ordinal": 6,
+				"aggregate": "[]",
+				"formatOptions": ""
+			}	
+			,{ 
+				"property": "historyNote",
+				"propertyVisible": true,
+				"propertyType": "D",
+				"propertyRange": "Edm.String",
+				"ordinal": 7,
+				"aggregate": "[]",
+				"formatOptions": ""
+			}	
+			,{ 
+				"property": "notation",
+				"propertyVisible": true,
+				"propertyType": "D",
+				"propertyRange": "Edm.String",
+				"ordinal": 8,
+				"aggregate": "[]",
+				"formatOptions": ""
+			}	
+			,{ 
+				"property": "note",
+				"propertyVisible": true,
+				"propertyType": "D",
+				"propertyRange": "Edm.String",
+				"ordinal": 9,
+				"aggregate": "[]",
+				"formatOptions": ""
+			}	
+			,{ 
+				"property": "prefLabel",
+				"propertyVisible": true,
+				"propertyType": "D",
+				"propertyRange": "Edm.String",
+				"ordinal": 10,
+				"aggregate": "[]",
+				"formatOptions": ""
+			}	
+			,{ 
+				"property": "scopeNote",
+				"propertyVisible": true,
+				"propertyType": "D",
+				"propertyRange": "Edm.String",
+				"ordinal": 11,
+				"aggregate": "[]",
+				"formatOptions": ""
+			}	
+			,{ 
+				"property": "useInsteadNote",
+				"propertyVisible": true,
+				"propertyType": "D",
+				"propertyRange": "Edm.String",
+				"ordinal": 12,
+				"aggregate": "[]",
+				"formatOptions": ""
+			}	
+			]
+		},
+	"form": {
+		"target": "OrderedCollection",
+		"formStyle":"entity360",
+		"targetVisible": true,
+		"targetIcon": "sap-icon://expand-group",
+		"targetEntity": "OrderedCollection",
+		"allowEdit" : true,
+		"properties": [		
+			{  
+				"property": "altLabel",
+				"propertyVisible": true,
+				"propertyType": "D",
+				"propertyRange": "Edm.String",
+				"ordinal": 0,
+				"aggregate": "[]",
+				"formatOptions": null,
+				"allowEdit": true
+			}
+			,{ 
+				"property": "altLabelNarrower",
+				"propertyVisible": true,
+				"propertyType": "D",
+				"propertyRange": "Edm.String",
+				"ordinal": 1,
+				"aggregate": "[]",
+				"formatOptions": null,
+				"allowEdit": true
+			}
+			,{ 
+				"property": "changeNote",
+				"propertyVisible": true,
+				"propertyType": "D",
+				"propertyRange": "Edm.String",
+				"ordinal": 2,
+				"aggregate": "[]",
+				"formatOptions": null,
+				"allowEdit": true
+			}
+			,{ 
+				"property": "definition",
+				"propertyVisible": true,
+				"propertyType": "D",
+				"propertyRange": "Edm.String",
+				"ordinal": 3,
+				"aggregate": "[]",
+				"formatOptions": null,
+				"allowEdit": true
+			}
+			,{ 
+				"property": "editorialNote",
+				"propertyVisible": true,
+				"propertyType": "D",
+				"propertyRange": "Edm.String",
+				"ordinal": 4,
+				"aggregate": "[]",
+				"formatOptions": null,
+				"allowEdit": true
+			}
+			,{ 
+				"property": "example",
+				"propertyVisible": true,
+				"propertyType": "D",
+				"propertyRange": "Edm.String",
+				"ordinal": 5,
+				"aggregate": "[]",
+				"formatOptions": null,
+				"allowEdit": true
+			}
+			,{ 
+				"property": "hiddenLabel",
+				"propertyVisible": true,
+				"propertyType": "D",
+				"propertyRange": "Edm.String",
+				"ordinal": 6,
+				"aggregate": "[]",
+				"formatOptions": null,
+				"allowEdit": true
+			}
+			,{ 
+				"property": "historyNote",
+				"propertyVisible": true,
+				"propertyType": "D",
+				"propertyRange": "Edm.String",
+				"ordinal": 7,
+				"aggregate": "[]",
+				"formatOptions": null,
+				"allowEdit": true
+			}
+			,{ 
+				"property": "notation",
+				"propertyVisible": true,
+				"propertyType": "D",
+				"propertyRange": "Edm.String",
+				"ordinal": 8,
+				"aggregate": "[]",
+				"formatOptions": null,
+				"allowEdit": true
+			}
+			,{ 
+				"property": "note",
+				"propertyVisible": true,
+				"propertyType": "D",
+				"propertyRange": "Edm.String",
+				"ordinal": 9,
+				"aggregate": "[]",
+				"formatOptions": null,
+				"allowEdit": true
+			}
+			,{ 
+				"property": "prefLabel",
+				"propertyVisible": true,
+				"propertyType": "D",
+				"propertyRange": "Edm.String",
+				"ordinal": 10,
+				"aggregate": "[]",
+				"formatOptions": null,
+				"allowEdit": true
+			}
+			,{ 
+				"property": "scopeNote",
+				"propertyVisible": true,
+				"propertyType": "D",
+				"propertyRange": "Edm.String",
+				"ordinal": 11,
+				"aggregate": "[]",
+				"formatOptions": null,
+				"allowEdit": true
+			}
+			,{ 
+				"property": "useInsteadNote",
+				"propertyVisible": true,
+				"propertyType": "D",
+				"propertyRange": "Edm.String",
+				"ordinal": 12,
+				"aggregate": "[]",
+				"formatOptions": null,
+				"allowEdit": true
+			}
+			]
+		}
+	}
+	,
+	"ZBWEXT_Descriptor": {
+	"entity": "ZBWEXT_Descriptor",
+	"icon": "sap-icon://group-2",
+	"image": "./images/icons/unknown.svg",
+	"entitySetVisible":true,
+	"grid": {
+		"target": "Descriptors",
+		"gridStyle":"entitySetTable",
+		"targetVisible": true,
+		"targetIcon": "sap-icon://group-2",
+		"targetEntity": "ZBWEXT_Descriptor",	
+		"properties": [	
+			{  
+				"property": "altLabel",
+				"propertyVisible": true,
+				"propertyType": "D",
+				"propertyRange": "Edm.String",
+				"ordinal": 0,
+				"aggregate": "[]",
+				"formatOptions": ""
+			}	
+			,{ 
+				"property": "altLabelNarrower",
+				"propertyVisible": false,
+				"propertyType": "D",
+				"propertyRange": "Edm.String",
+				"ordinal": 1,
+				"aggregate": "[]",
+				"formatOptions": ""
+			}	
+			,{ 
+				"property": "changeNote",
+				"propertyVisible": false,
+				"propertyType": "D",
+				"propertyRange": "Edm.String",
+				"ordinal": 2,
+				"aggregate": "[]",
+				"formatOptions": ""
+			}	
+			,{ 
+				"property": "definition",
+				"propertyVisible": false,
+				"propertyType": "D",
+				"propertyRange": "Edm.String",
+				"ordinal": 3,
+				"aggregate": "[]",
+				"formatOptions": ""
+			}	
+			,{ 
+				"property": "editorialNote",
+				"propertyVisible": false,
+				"propertyType": "D",
+				"propertyRange": "Edm.String",
+				"ordinal": 4,
+				"aggregate": "[]",
+				"formatOptions": ""
+			}	
+			,{ 
+				"property": "example",
+				"propertyVisible": false,
+				"propertyType": "D",
+				"propertyRange": "Edm.String",
+				"ordinal": 5,
+				"aggregate": "[]",
+				"formatOptions": ""
+			}	
+			,{ 
+				"property": "hiddenLabel",
+				"propertyVisible": false,
+				"propertyType": "D",
+				"propertyRange": "Edm.String",
+				"ordinal": 6,
+				"aggregate": "[]",
+				"formatOptions": ""
+			}	
+			,{ 
+				"property": "historyNote",
+				"propertyVisible": false,
+				"propertyType": "D",
+				"propertyRange": "Edm.String",
+				"ordinal": 7,
+				"aggregate": "[]",
+				"formatOptions": ""
+			}	
+			,{ 
+				"property": "notation",
+				"propertyVisible": false,
+				"propertyType": "D",
+				"propertyRange": "Edm.String",
+				"ordinal": 8,
+				"aggregate": "[]",
+				"formatOptions": ""
+			}	
+			,{ 
+				"property": "note",
+				"propertyVisible": false,
+				"propertyType": "D",
+				"propertyRange": "Edm.String",
+				"ordinal": 9,
+				"aggregate": "[]",
+				"formatOptions": ""
+			}	
+			,{ 
+				"property": "prefLabel",
+				"propertyVisible": true,
+				"propertyType": "D",
+				"propertyRange": "Edm.String",
+				"ordinal": 10,
+				"aggregate": "[]",
+				"formatOptions": ""
+			}	
+			,{ 
+				"property": "scopeNote",
+				"propertyVisible": false,
+				"propertyType": "D",
+				"propertyRange": "Edm.String",
+				"ordinal": 11,
+				"aggregate": "[]",
+				"formatOptions": ""
+			}	
+			,{ 
+				"property": "useInsteadNote",
+				"propertyVisible": true,
+				"propertyType": "D",
+				"propertyRange": "Edm.String",
+				"ordinal": 12,
+				"aggregate": "[]",
+				"formatOptions": ""
+			}	
+			,{ 
+				"property": "broadMatch",
+				"propertyVisible": false,
+				"propertyType": "C",
+				"propertyRange": "Concept",
+				"ordinal": 13,
+				"aggregate": "[Count]",
+				"formatOptions": ""
+			}	
+			,{ 
+				"property": "broader",
+				"propertyVisible": false,
+				"propertyType": "C",
+				"propertyRange": "Concept",
+				"ordinal": 14,
+				"aggregate": "[Count]",
+				"formatOptions": ""
+			}	
+			,{ 
+				"property": "broaderTransitive",
+				"propertyVisible": false,
+				"propertyType": "C",
+				"propertyRange": "Concept",
+				"ordinal": 15,
+				"aggregate": "[Count]",
+				"formatOptions": ""
+			}	
+			,{ 
+				"property": "closeMatch",
+				"propertyVisible": false,
+				"propertyType": "C",
+				"propertyRange": "Concept",
+				"ordinal": 16,
+				"aggregate": "[Count]",
+				"formatOptions": ""
+			}	
+			,{ 
+				"property": "exactMatch",
+				"propertyVisible": false,
+				"propertyType": "C",
+				"propertyRange": "Concept",
+				"ordinal": 17,
+				"aggregate": "[Count]",
+				"formatOptions": ""
+			}	
+			,{ 
+				"property": "mappingRelation",
+				"propertyVisible": false,
+				"propertyType": "C",
+				"propertyRange": "Concept",
+				"ordinal": 18,
+				"aggregate": "[Count]",
+				"formatOptions": ""
+			}	
+			,{ 
+				"property": "narrowMatch",
+				"propertyVisible": false,
+				"propertyType": "C",
+				"propertyRange": "Concept",
+				"ordinal": 19,
+				"aggregate": "[Count]",
+				"formatOptions": ""
+			}	
+			,{ 
+				"property": "narrower",
+				"propertyVisible": false,
+				"propertyType": "C",
+				"propertyRange": "Concept",
+				"ordinal": 20,
+				"aggregate": "[Count]",
+				"formatOptions": ""
+			}	
+			,{ 
+				"property": "narrowerTransitive",
+				"propertyVisible": false,
+				"propertyType": "C",
+				"propertyRange": "Concept",
+				"ordinal": 21,
+				"aggregate": "[Count]",
+				"formatOptions": ""
+			}	
+			,{ 
+				"property": "related",
+				"propertyVisible": false,
+				"propertyType": "C",
+				"propertyRange": "Concept",
+				"ordinal": 22,
+				"aggregate": "[Count]",
+				"formatOptions": ""
+			}	
+			,{ 
+				"property": "relatedMatch",
+				"propertyVisible": false,
+				"propertyType": "C",
+				"propertyRange": "Concept",
+				"ordinal": 23,
+				"aggregate": "[Count]",
+				"formatOptions": ""
+			}	
+			,{ 
+				"property": "semanticRelation",
+				"propertyVisible": false,
+				"propertyType": "C",
+				"propertyRange": "Concept",
+				"ordinal": 24,
+				"aggregate": "[Count]",
+				"formatOptions": ""
+			}	
+			,{ 
+				"property": "topConceptOf",
+				"propertyVisible": false,
+				"propertyType": "C",
+				"propertyRange": "ConceptScheme",
+				"ordinal": 25,
+				"aggregate": "[Count]",
+				"formatOptions": ""
+			}	
+			]
+		},
+	"form": {
+		"target": "Descriptor",
+		"formStyle":"entity360",
+		"targetVisible": true,
+		"targetIcon": "sap-icon://expand-group",
+		"targetEntity": "ZBWEXT_Descriptor",
+		"allowEdit" : true,
+		"properties": [		
+			{  
+				"property": "altLabel",
+				"propertyVisible": true,
+				"propertyType": "D",
+				"propertyRange": "Edm.String",
+				"ordinal": 0,
+				"aggregate": "[]",
+				"formatOptions": null,
+				"allowEdit": true
+			}
+			,{ 
+				"property": "altLabelNarrower",
+				"propertyVisible": false,
+				"propertyType": "D",
+				"propertyRange": "Edm.String",
+				"ordinal": 1,
+				"aggregate": "[]",
+				"formatOptions": null,
+				"allowEdit": true
+			}
+			,{ 
+				"property": "changeNote",
+				"propertyVisible": false,
+				"propertyType": "D",
+				"propertyRange": "Edm.String",
+				"ordinal": 2,
+				"aggregate": "[]",
+				"formatOptions": null,
+				"allowEdit": true
+			}
+			,{ 
+				"property": "definition",
+				"propertyVisible": false,
+				"propertyType": "D",
+				"propertyRange": "Edm.String",
+				"ordinal": 3,
+				"aggregate": "[]",
+				"formatOptions": null,
+				"allowEdit": true
+			}
+			,{ 
+				"property": "editorialNote",
+				"propertyVisible": false,
+				"propertyType": "D",
+				"propertyRange": "Edm.String",
+				"ordinal": 4,
+				"aggregate": "[]",
+				"formatOptions": null,
+				"allowEdit": true
+			}
+			,{ 
+				"property": "example",
+				"propertyVisible": false,
+				"propertyType": "D",
+				"propertyRange": "Edm.String",
+				"ordinal": 5,
+				"aggregate": "[]",
+				"formatOptions": null,
+				"allowEdit": true
+			}
+			,{ 
+				"property": "hiddenLabel",
+				"propertyVisible": false,
+				"propertyType": "D",
+				"propertyRange": "Edm.String",
+				"ordinal": 6,
+				"aggregate": "[]",
+				"formatOptions": null,
+				"allowEdit": true
+			}
+			,{ 
+				"property": "historyNote",
+				"propertyVisible": false,
+				"propertyType": "D",
+				"propertyRange": "Edm.String",
+				"ordinal": 7,
+				"aggregate": "[]",
+				"formatOptions": null,
+				"allowEdit": true
+			}
+			,{ 
+				"property": "notation",
+				"propertyVisible": false,
+				"propertyType": "D",
+				"propertyRange": "Edm.String",
+				"ordinal": 8,
+				"aggregate": "[]",
+				"formatOptions": null,
+				"allowEdit": true
+			}
+			,{ 
+				"property": "note",
+				"propertyVisible": false,
+				"propertyType": "D",
+				"propertyRange": "Edm.String",
+				"ordinal": 9,
+				"aggregate": "[]",
+				"formatOptions": null,
+				"allowEdit": true
+			}
+			,{ 
+				"property": "prefLabel",
+				"propertyVisible": true,
+				"propertyType": "D",
+				"propertyRange": "Edm.String",
+				"ordinal": 10,
+				"aggregate": "[]",
+				"formatOptions": null,
+				"allowEdit": true
+			}
+			,{ 
+				"property": "scopeNote",
+				"propertyVisible": false,
+				"propertyType": "D",
+				"propertyRange": "Edm.String",
+				"ordinal": 11,
+				"aggregate": "[]",
+				"formatOptions": null,
+				"allowEdit": true
+			}
+			,{ 
+				"property": "useInsteadNote",
+				"propertyVisible": true,
+				"propertyType": "D",
+				"propertyRange": "Edm.String",
+				"ordinal": 12,
+				"aggregate": "[]",
+				"formatOptions": null,
+				"allowEdit": true
+			}
+			,{ 
+				"property": "broadMatch",
+				"propertyVisible": true,
+				"propertyType": "C",
+				"propertyRange": "Concept",
+				"ordinal": 13,
+				"aggregate": "[List]",
+				"formatOptions": null,
+				"allowEdit": true,
+				"height":"4rem"
+			}
+			,{ 
+				"property": "broader",
+				"propertyVisible": true,
+				"propertyType": "C",
+				"propertyRange": "Concept",
+				"ordinal": 14,
+				"aggregate": "[List]",
+				"formatOptions": null,
+				"allowEdit": true,
+				"height":"4rem"
+			}
+			,{ 
+				"property": "broaderTransitive",
+				"propertyVisible": false,
+				"propertyType": "C",
+				"propertyRange": "Concept",
+				"ordinal": 15,
+				"aggregate": "[List]",
+				"formatOptions": null,
+				"allowEdit": true,
+				"height":"4rem"
+			}
+			,{ 
+				"property": "closeMatch",
+				"propertyVisible": false,
+				"propertyType": "C",
+				"propertyRange": "Concept",
+				"ordinal": 16,
+				"aggregate": "[List]",
+				"formatOptions": null,
+				"allowEdit": true,
+				"height":"4rem"
+			}
+			,{ 
+				"property": "exactMatch",
+				"propertyVisible": false,
+				"propertyType": "C",
+				"propertyRange": "Concept",
+				"ordinal": 17,
+				"aggregate": "[List]",
+				"formatOptions": null,
+				"allowEdit": true,
+				"height":"4rem"
+			}
+			,{ 
+				"property": "mappingRelation",
+				"propertyVisible": false,
+				"propertyType": "C",
+				"propertyRange": "Concept",
+				"ordinal": 18,
+				"aggregate": "[List]",
+				"formatOptions": null,
+				"allowEdit": true,
+				"height":"4rem"
+			}
+			,{ 
+				"property": "narrowMatch",
+				"propertyVisible": false,
+				"propertyType": "C",
+				"propertyRange": "Concept",
+				"ordinal": 19,
+				"aggregate": "[List]",
+				"formatOptions": null,
+				"allowEdit": true,
+				"height":"4rem"
+			}
+			,{ 
+				"property": "narrower",
+				"propertyVisible": true,
+				"propertyType": "C",
+				"propertyRange": "Concept",
+				"ordinal": 20,
+				"aggregate": "[List]",
+				"formatOptions": null,
+				"allowEdit": true,
+				"height":"4rem"
+			}
+			,{ 
+				"property": "narrowerTransitive",
+				"propertyVisible": false,
+				"propertyType": "C",
+				"propertyRange": "Concept",
+				"ordinal": 21,
+				"aggregate": "[List]",
+				"formatOptions": null,
+				"allowEdit": true,
+				"height":"4rem"
+			}
+			,{ 
+				"property": "related",
+				"propertyVisible": true,
+				"propertyType": "C",
+				"propertyRange": "Concept",
+				"ordinal": 22,
+				"aggregate": "[List]",
+				"formatOptions": null,
+				"allowEdit": true,
+				"height":"4rem"
+			}
+			,{ 
+				"property": "relatedMatch",
+				"propertyVisible": true,
+				"propertyType": "C",
+				"propertyRange": "Concept",
+				"ordinal": 23,
+				"aggregate": "[List]",
+				"formatOptions": null,
+				"allowEdit": true,
+				"height":"4rem"
+			}
+			,{ 
+				"property": "semanticRelation",
+				"propertyVisible": false,
+				"propertyType": "C",
+				"propertyRange": "Concept",
+				"ordinal": 24,
+				"aggregate": "[List]",
+				"formatOptions": null,
+				"allowEdit": true,
+				"height":"4rem"
+			}
+			,{ 
+				"property": "topConceptOf",
+				"propertyVisible": false,
+				"propertyType": "C",
+				"propertyRange": "ConceptScheme",
+				"ordinal": 25,
+				"aggregate": "[List]",
+				"formatOptions": null,
+				"allowEdit": true,
+				"height":"4rem"
+			}
+			]
+		}
+	}
+	,
+	"ZBWEXT_Found": {
+	"entity": "ZBWEXT_Found",
+	"icon": "sap-icon://group-2",
+	"image": "./images/icons/unknown.svg",
+	"entitySetVisible":true,
+	"grid": {
+		"target": "Founds",
+		"gridStyle":"entitySetTable",
+		"targetVisible": true,
+		"targetIcon": "sap-icon://group-2",
+		"targetEntity": "ZBWEXT_Found",	
+		"properties": [	
+			{  
+				"property": "altLabel",
+				"propertyVisible": true,
+				"propertyType": "D",
+				"propertyRange": "Edm.String",
+				"ordinal": 0,
+				"aggregate": "[]",
+				"formatOptions": ""
+			}	
+			,{ 
+				"property": "altLabelNarrower",
+				"propertyVisible": true,
+				"propertyType": "D",
+				"propertyRange": "Edm.String",
+				"ordinal": 1,
+				"aggregate": "[]",
+				"formatOptions": ""
+			}	
+			,{ 
+				"property": "changeNote",
+				"propertyVisible": true,
+				"propertyType": "D",
+				"propertyRange": "Edm.String",
+				"ordinal": 2,
+				"aggregate": "[]",
+				"formatOptions": ""
+			}	
+			,{ 
+				"property": "definition",
+				"propertyVisible": true,
+				"propertyType": "D",
+				"propertyRange": "Edm.String",
+				"ordinal": 3,
+				"aggregate": "[]",
+				"formatOptions": ""
+			}	
+			,{ 
+				"property": "editorialNote",
+				"propertyVisible": true,
+				"propertyType": "D",
+				"propertyRange": "Edm.String",
+				"ordinal": 4,
+				"aggregate": "[]",
+				"formatOptions": ""
+			}	
+			,{ 
+				"property": "example",
+				"propertyVisible": true,
+				"propertyType": "D",
+				"propertyRange": "Edm.String",
+				"ordinal": 5,
+				"aggregate": "[]",
+				"formatOptions": ""
+			}	
+			,{ 
+				"property": "hiddenLabel",
+				"propertyVisible": true,
+				"propertyType": "D",
+				"propertyRange": "Edm.String",
+				"ordinal": 6,
+				"aggregate": "[]",
+				"formatOptions": ""
+			}	
+			,{ 
+				"property": "historyNote",
+				"propertyVisible": true,
+				"propertyType": "D",
+				"propertyRange": "Edm.String",
+				"ordinal": 7,
+				"aggregate": "[]",
+				"formatOptions": ""
+			}	
+			,{ 
+				"property": "notation",
+				"propertyVisible": true,
+				"propertyType": "D",
+				"propertyRange": "Edm.String",
+				"ordinal": 8,
+				"aggregate": "[]",
+				"formatOptions": ""
+			}	
+			,{ 
+				"property": "note",
+				"propertyVisible": true,
+				"propertyType": "D",
+				"propertyRange": "Edm.String",
+				"ordinal": 9,
+				"aggregate": "[]",
+				"formatOptions": ""
+			}	
+			,{ 
+				"property": "prefLabel",
+				"propertyVisible": true,
+				"propertyType": "D",
+				"propertyRange": "Edm.String",
+				"ordinal": 10,
+				"aggregate": "[]",
+				"formatOptions": ""
+			}	
+			,{ 
+				"property": "scopeNote",
+				"propertyVisible": true,
+				"propertyType": "D",
+				"propertyRange": "Edm.String",
+				"ordinal": 11,
+				"aggregate": "[]",
+				"formatOptions": ""
+			}	
+			,{ 
+				"property": "useInsteadNote",
+				"propertyVisible": true,
+				"propertyType": "D",
+				"propertyRange": "Edm.String",
+				"ordinal": 12,
+				"aggregate": "[]",
+				"formatOptions": ""
+			}	
+			,{ 
+				"property": "broadMatch",
+				"propertyVisible": false,
+				"propertyType": "C",
+				"propertyRange": "Concept",
+				"ordinal": 13,
+				"aggregate": "[Count]",
+				"formatOptions": ""
+			}	
+			,{ 
+				"property": "broader",
+				"propertyVisible": false,
+				"propertyType": "C",
+				"propertyRange": "Concept",
+				"ordinal": 14,
+				"aggregate": "[Count]",
+				"formatOptions": ""
+			}	
+			,{ 
+				"property": "broaderTransitive",
+				"propertyVisible": false,
+				"propertyType": "C",
+				"propertyRange": "Concept",
+				"ordinal": 15,
+				"aggregate": "[Count]",
+				"formatOptions": ""
+			}	
+			,{ 
+				"property": "closeMatch",
+				"propertyVisible": false,
+				"propertyType": "C",
+				"propertyRange": "Concept",
+				"ordinal": 16,
+				"aggregate": "[Count]",
+				"formatOptions": ""
+			}	
+			,{ 
+				"property": "exactMatch",
+				"propertyVisible": false,
+				"propertyType": "C",
+				"propertyRange": "Concept",
+				"ordinal": 17,
+				"aggregate": "[Count]",
+				"formatOptions": ""
+			}	
+			,{ 
+				"property": "mappingRelation",
+				"propertyVisible": false,
+				"propertyType": "C",
+				"propertyRange": "Concept",
+				"ordinal": 18,
+				"aggregate": "[Count]",
+				"formatOptions": ""
+			}	
+			,{ 
+				"property": "narrowMatch",
+				"propertyVisible": false,
+				"propertyType": "C",
+				"propertyRange": "Concept",
+				"ordinal": 19,
+				"aggregate": "[Count]",
+				"formatOptions": ""
+			}	
+			,{ 
+				"property": "narrower",
+				"propertyVisible": false,
+				"propertyType": "C",
+				"propertyRange": "Concept",
+				"ordinal": 20,
+				"aggregate": "[Count]",
+				"formatOptions": ""
+			}	
+			,{ 
+				"property": "narrowerTransitive",
+				"propertyVisible": false,
+				"propertyType": "C",
+				"propertyRange": "Concept",
+				"ordinal": 21,
+				"aggregate": "[Count]",
+				"formatOptions": ""
+			}	
+			,{ 
+				"property": "related",
+				"propertyVisible": false,
+				"propertyType": "C",
+				"propertyRange": "Concept",
+				"ordinal": 22,
+				"aggregate": "[Count]",
+				"formatOptions": ""
+			}	
+			,{ 
+				"property": "relatedMatch",
+				"propertyVisible": false,
+				"propertyType": "C",
+				"propertyRange": "Concept",
+				"ordinal": 23,
+				"aggregate": "[Count]",
+				"formatOptions": ""
+			}	
+			,{ 
+				"property": "semanticRelation",
+				"propertyVisible": false,
+				"propertyType": "C",
+				"propertyRange": "Concept",
+				"ordinal": 24,
+				"aggregate": "[Count]",
+				"formatOptions": ""
+			}	
+			,{ 
+				"property": "topConceptOf",
+				"propertyVisible": false,
+				"propertyType": "C",
+				"propertyRange": "ConceptScheme",
+				"ordinal": 25,
+				"aggregate": "[Count]",
+				"formatOptions": ""
+			}	
+			]
+		},
+	"form": {
+		"target": "Found",
+		"formStyle":"entity360",
+		"targetVisible": true,
+		"targetIcon": "sap-icon://expand-group",
+		"targetEntity": "ZBWEXT_Found",
+		"allowEdit" : true,
+		"properties": [		
+			{  
+				"property": "altLabel",
+				"propertyVisible": true,
+				"propertyType": "D",
+				"propertyRange": "Edm.String",
+				"ordinal": 0,
+				"aggregate": "[]",
+				"formatOptions": null,
+				"allowEdit": true
+			}
+			,{ 
+				"property": "altLabelNarrower",
+				"propertyVisible": true,
+				"propertyType": "D",
+				"propertyRange": "Edm.String",
+				"ordinal": 1,
+				"aggregate": "[]",
+				"formatOptions": null,
+				"allowEdit": true
+			}
+			,{ 
+				"property": "changeNote",
+				"propertyVisible": true,
+				"propertyType": "D",
+				"propertyRange": "Edm.String",
+				"ordinal": 2,
+				"aggregate": "[]",
+				"formatOptions": null,
+				"allowEdit": true
+			}
+			,{ 
+				"property": "definition",
+				"propertyVisible": true,
+				"propertyType": "D",
+				"propertyRange": "Edm.String",
+				"ordinal": 3,
+				"aggregate": "[]",
+				"formatOptions": null,
+				"allowEdit": true
+			}
+			,{ 
+				"property": "editorialNote",
+				"propertyVisible": true,
+				"propertyType": "D",
+				"propertyRange": "Edm.String",
+				"ordinal": 4,
+				"aggregate": "[]",
+				"formatOptions": null,
+				"allowEdit": true
+			}
+			,{ 
+				"property": "example",
+				"propertyVisible": true,
+				"propertyType": "D",
+				"propertyRange": "Edm.String",
+				"ordinal": 5,
+				"aggregate": "[]",
+				"formatOptions": null,
+				"allowEdit": true
+			}
+			,{ 
+				"property": "hiddenLabel",
+				"propertyVisible": true,
+				"propertyType": "D",
+				"propertyRange": "Edm.String",
+				"ordinal": 6,
+				"aggregate": "[]",
+				"formatOptions": null,
+				"allowEdit": true
+			}
+			,{ 
+				"property": "historyNote",
+				"propertyVisible": true,
+				"propertyType": "D",
+				"propertyRange": "Edm.String",
+				"ordinal": 7,
+				"aggregate": "[]",
+				"formatOptions": null,
+				"allowEdit": true
+			}
+			,{ 
+				"property": "notation",
+				"propertyVisible": true,
+				"propertyType": "D",
+				"propertyRange": "Edm.String",
+				"ordinal": 8,
+				"aggregate": "[]",
+				"formatOptions": null,
+				"allowEdit": true
+			}
+			,{ 
+				"property": "note",
+				"propertyVisible": true,
+				"propertyType": "D",
+				"propertyRange": "Edm.String",
+				"ordinal": 9,
+				"aggregate": "[]",
+				"formatOptions": null,
+				"allowEdit": true
+			}
+			,{ 
+				"property": "prefLabel",
+				"propertyVisible": true,
+				"propertyType": "D",
+				"propertyRange": "Edm.String",
+				"ordinal": 10,
+				"aggregate": "[]",
+				"formatOptions": null,
+				"allowEdit": true
+			}
+			,{ 
+				"property": "scopeNote",
+				"propertyVisible": true,
+				"propertyType": "D",
+				"propertyRange": "Edm.String",
+				"ordinal": 11,
+				"aggregate": "[]",
+				"formatOptions": null,
+				"allowEdit": true
+			}
+			,{ 
+				"property": "useInsteadNote",
+				"propertyVisible": true,
+				"propertyType": "D",
+				"propertyRange": "Edm.String",
+				"ordinal": 12,
+				"aggregate": "[]",
+				"formatOptions": null,
+				"allowEdit": true
+			}
+			,{ 
+				"property": "broadMatch",
+				"propertyVisible": true,
+				"propertyType": "C",
+				"propertyRange": "Concept",
+				"ordinal": 13,
+				"aggregate": "[List]",
+				"formatOptions": null,
+				"allowEdit": true,
+				"height":"4rem"
+			}
+			,{ 
+				"property": "broader",
+				"propertyVisible": true,
+				"propertyType": "C",
+				"propertyRange": "Concept",
+				"ordinal": 14,
+				"aggregate": "[List]",
+				"formatOptions": null,
+				"allowEdit": true,
+				"height":"4rem"
+			}
+			,{ 
+				"property": "broaderTransitive",
+				"propertyVisible": true,
+				"propertyType": "C",
+				"propertyRange": "Concept",
+				"ordinal": 15,
+				"aggregate": "[List]",
+				"formatOptions": null,
+				"allowEdit": true,
+				"height":"4rem"
+			}
+			,{ 
+				"property": "closeMatch",
+				"propertyVisible": true,
+				"propertyType": "C",
+				"propertyRange": "Concept",
+				"ordinal": 16,
+				"aggregate": "[List]",
+				"formatOptions": null,
+				"allowEdit": true,
+				"height":"4rem"
+			}
+			,{ 
+				"property": "exactMatch",
+				"propertyVisible": true,
+				"propertyType": "C",
+				"propertyRange": "Concept",
+				"ordinal": 17,
+				"aggregate": "[List]",
+				"formatOptions": null,
+				"allowEdit": true,
+				"height":"4rem"
+			}
+			,{ 
+				"property": "mappingRelation",
+				"propertyVisible": true,
+				"propertyType": "C",
+				"propertyRange": "Concept",
+				"ordinal": 18,
+				"aggregate": "[List]",
+				"formatOptions": null,
+				"allowEdit": true,
+				"height":"4rem"
+			}
+			,{ 
+				"property": "narrowMatch",
+				"propertyVisible": true,
+				"propertyType": "C",
+				"propertyRange": "Concept",
+				"ordinal": 19,
+				"aggregate": "[List]",
+				"formatOptions": null,
+				"allowEdit": true,
+				"height":"4rem"
+			}
+			,{ 
+				"property": "narrower",
+				"propertyVisible": true,
+				"propertyType": "C",
+				"propertyRange": "Concept",
+				"ordinal": 20,
+				"aggregate": "[List]",
+				"formatOptions": null,
+				"allowEdit": true,
+				"height":"4rem"
+			}
+			,{ 
+				"property": "narrowerTransitive",
+				"propertyVisible": true,
+				"propertyType": "C",
+				"propertyRange": "Concept",
+				"ordinal": 21,
+				"aggregate": "[List]",
+				"formatOptions": null,
+				"allowEdit": true,
+				"height":"4rem"
+			}
+			,{ 
+				"property": "related",
+				"propertyVisible": true,
+				"propertyType": "C",
+				"propertyRange": "Concept",
+				"ordinal": 22,
+				"aggregate": "[List]",
+				"formatOptions": null,
+				"allowEdit": true,
+				"height":"4rem"
+			}
+			,{ 
+				"property": "relatedMatch",
+				"propertyVisible": true,
+				"propertyType": "C",
+				"propertyRange": "Concept",
+				"ordinal": 23,
+				"aggregate": "[List]",
+				"formatOptions": null,
+				"allowEdit": true,
+				"height":"4rem"
+			}
+			,{ 
+				"property": "semanticRelation",
+				"propertyVisible": true,
+				"propertyType": "C",
+				"propertyRange": "Concept",
+				"ordinal": 24,
+				"aggregate": "[List]",
+				"formatOptions": null,
+				"allowEdit": true,
+				"height":"4rem"
+			}
+			,{ 
+				"property": "topConceptOf",
+				"propertyVisible": true,
+				"propertyType": "C",
+				"propertyRange": "ConceptScheme",
+				"ordinal": 25,
+				"aggregate": "[List]",
+				"formatOptions": null,
+				"allowEdit": true,
+				"height":"4rem"
+			}
+			]
+		}
+	}
+	,
+	"ZBWEXT_Thsys": {
+	"entity": "ZBWEXT_Thsys",
+	"icon": "sap-icon://group-2",
+	"image": "./images/icons/unknown.svg",
+	"entitySetVisible":true,
+	"grid": {
+		"target": "Thsyss",
+		"gridStyle":"entitySetTable",
+		"targetVisible": true,
+		"targetIcon": "sap-icon://group-2",
+		"targetEntity": "ZBWEXT_Thsys",	
+		"properties": [	
+			{  
+				"property": "altLabel",
+				"propertyVisible": false,
+				"propertyType": "D",
+				"propertyRange": "Edm.String",
+				"ordinal": 0,
+				"aggregate": "[]",
+				"formatOptions": ""
+			}	
+			,{ 
+				"property": "altLabelNarrower",
+				"propertyVisible": false,
+				"propertyType": "D",
+				"propertyRange": "Edm.String",
+				"ordinal": 1,
+				"aggregate": "[]",
+				"formatOptions": ""
+			}	
+			,{ 
+				"property": "changeNote",
+				"propertyVisible": false,
+				"propertyType": "D",
+				"propertyRange": "Edm.String",
+				"ordinal": 2,
+				"aggregate": "[]",
+				"formatOptions": ""
+			}	
+			,{ 
+				"property": "definition",
+				"propertyVisible": false,
+				"propertyType": "D",
+				"propertyRange": "Edm.String",
+				"ordinal": 3,
+				"aggregate": "[]",
+				"formatOptions": ""
+			}	
+			,{ 
+				"property": "editorialNote",
+				"propertyVisible": false,
+				"propertyType": "D",
+				"propertyRange": "Edm.String",
+				"ordinal": 4,
+				"aggregate": "[]",
+				"formatOptions": ""
+			}	
+			,{ 
+				"property": "example",
+				"propertyVisible": false,
+				"propertyType": "D",
+				"propertyRange": "Edm.String",
+				"ordinal": 5,
+				"aggregate": "[]",
+				"formatOptions": ""
+			}	
+			,{ 
+				"property": "hiddenLabel",
+				"propertyVisible": false,
+				"propertyType": "D",
+				"propertyRange": "Edm.String",
+				"ordinal": 6,
+				"aggregate": "[]",
+				"formatOptions": ""
+			}	
+			,{ 
+				"property": "historyNote",
+				"propertyVisible": true,
+				"propertyType": "D",
+				"propertyRange": "Edm.String",
+				"ordinal": 7,
+				"aggregate": "[]",
+				"formatOptions": ""
+			}	
+			,{ 
+				"property": "notation",
+				"propertyVisible": true,
+				"propertyType": "D",
+				"propertyRange": "Edm.String",
+				"ordinal": 8,
+				"aggregate": "[]",
+				"formatOptions": ""
+			}	
+			,{ 
+				"property": "note",
+				"propertyVisible": false,
+				"propertyType": "D",
+				"propertyRange": "Edm.String",
+				"ordinal": 9,
+				"aggregate": "[]",
+				"formatOptions": ""
+			}	
+			,{ 
+				"property": "prefLabel",
+				"propertyVisible": true,
+				"propertyType": "D",
+				"propertyRange": "Edm.String",
+				"ordinal": 10,
+				"aggregate": "[]",
+				"formatOptions": ""
+			}	
+			,{ 
+				"property": "scopeNote",
+				"propertyVisible": false,
+				"propertyType": "D",
+				"propertyRange": "Edm.String",
+				"ordinal": 11,
+				"aggregate": "[]",
+				"formatOptions": ""
+			}	
+			,{ 
+				"property": "useInsteadNote",
+				"propertyVisible": false,
+				"propertyType": "D",
+				"propertyRange": "Edm.String",
+				"ordinal": 12,
+				"aggregate": "[]",
+				"formatOptions": ""
+			}	
+			,{ 
+				"property": "broadMatch",
+				"propertyVisible": false,
+				"propertyType": "C",
+				"propertyRange": "Concept",
+				"ordinal": 13,
+				"aggregate": "[Count]",
+				"formatOptions": ""
+			}	
+			,{ 
+				"property": "broader",
+				"propertyVisible": false,
+				"propertyType": "C",
+				"propertyRange": "Concept",
+				"ordinal": 14,
+				"aggregate": "[Count]",
+				"formatOptions": ""
+			}	
+			,{ 
+				"property": "broaderTransitive",
+				"propertyVisible": false,
+				"propertyType": "C",
+				"propertyRange": "Concept",
+				"ordinal": 15,
+				"aggregate": "[Count]",
+				"formatOptions": ""
+			}	
+			,{ 
+				"property": "closeMatch",
+				"propertyVisible": false,
+				"propertyType": "C",
+				"propertyRange": "Concept",
+				"ordinal": 16,
+				"aggregate": "[Count]",
+				"formatOptions": ""
+			}	
+			,{ 
+				"property": "exactMatch",
+				"propertyVisible": false,
+				"propertyType": "C",
+				"propertyRange": "Concept",
+				"ordinal": 17,
+				"aggregate": "[Count]",
+				"formatOptions": ""
+			}	
+			,{ 
+				"property": "mappingRelation",
+				"propertyVisible": false,
+				"propertyType": "C",
+				"propertyRange": "Concept",
+				"ordinal": 18,
+				"aggregate": "[Count]",
+				"formatOptions": ""
+			}	
+			,{ 
+				"property": "narrowMatch",
+				"propertyVisible": false,
+				"propertyType": "C",
+				"propertyRange": "Concept",
+				"ordinal": 19,
+				"aggregate": "[Count]",
+				"formatOptions": ""
+			}	
+			,{ 
+				"property": "narrower",
+				"propertyVisible": false,
+				"propertyType": "C",
+				"propertyRange": "Concept",
+				"ordinal": 20,
+				"aggregate": "[Count]",
+				"formatOptions": ""
+			}	
+			,{ 
+				"property": "narrowerTransitive",
+				"propertyVisible": false,
+				"propertyType": "C",
+				"propertyRange": "Concept",
+				"ordinal": 21,
+				"aggregate": "[Count]",
+				"formatOptions": ""
+			}	
+			,{ 
+				"property": "related",
+				"propertyVisible": false,
+				"propertyType": "C",
+				"propertyRange": "Concept",
+				"ordinal": 22,
+				"aggregate": "[Count]",
+				"formatOptions": ""
+			}	
+			,{ 
+				"property": "relatedMatch",
+				"propertyVisible": false,
+				"propertyType": "C",
+				"propertyRange": "Concept",
+				"ordinal": 23,
+				"aggregate": "[Count]",
+				"formatOptions": ""
+			}	
+			,{ 
+				"property": "semanticRelation",
+				"propertyVisible": false,
+				"propertyType": "C",
+				"propertyRange": "Concept",
+				"ordinal": 24,
+				"aggregate": "[Count]",
+				"formatOptions": ""
+			}	
+			,{ 
+				"property": "topConceptOf",
+				"propertyVisible": false,
+				"propertyType": "C",
+				"propertyRange": "ConceptScheme",
+				"ordinal": 25,
+				"aggregate": "[Count]",
+				"formatOptions": ""
+			}	
+			]
+		},
+	"form": {
+		"target": "Thsys",
+		"formStyle":"entity360",
+		"targetVisible": true,
+		"targetIcon": "sap-icon://expand-group",
+		"targetEntity": "ZBWEXT_Thsys",
+		"allowEdit" : true,
+		"properties": [		
+			{  
+				"property": "altLabel",
+				"propertyVisible": false,
+				"propertyType": "D",
+				"propertyRange": "Edm.String",
+				"ordinal": 0,
+				"aggregate": "[]",
+				"formatOptions": null,
+				"allowEdit": true
+			}
+			,{ 
+				"property": "altLabelNarrower",
+				"propertyVisible": false,
+				"propertyType": "D",
+				"propertyRange": "Edm.String",
+				"ordinal": 1,
+				"aggregate": "[]",
+				"formatOptions": null,
+				"allowEdit": true
+			}
+			,{ 
+				"property": "changeNote",
+				"propertyVisible": false,
+				"propertyType": "D",
+				"propertyRange": "Edm.String",
+				"ordinal": 2,
+				"aggregate": "[]",
+				"formatOptions": null,
+				"allowEdit": true
+			}
+			,{ 
+				"property": "definition",
+				"propertyVisible": false,
+				"propertyType": "D",
+				"propertyRange": "Edm.String",
+				"ordinal": 3,
+				"aggregate": "[]",
+				"formatOptions": null,
+				"allowEdit": true
+			}
+			,{ 
+				"property": "editorialNote",
+				"propertyVisible": false,
+				"propertyType": "D",
+				"propertyRange": "Edm.String",
+				"ordinal": 4,
+				"aggregate": "[]",
+				"formatOptions": null,
+				"allowEdit": true
+			}
+			,{ 
+				"property": "example",
+				"propertyVisible": false,
+				"propertyType": "D",
+				"propertyRange": "Edm.String",
+				"ordinal": 5,
+				"aggregate": "[]",
+				"formatOptions": null,
+				"allowEdit": true
+			}
+			,{ 
+				"property": "hiddenLabel",
+				"propertyVisible": false,
+				"propertyType": "D",
+				"propertyRange": "Edm.String",
+				"ordinal": 6,
+				"aggregate": "[]",
+				"formatOptions": null,
+				"allowEdit": true
+			}
+			,{ 
+				"property": "historyNote",
+				"propertyVisible": true,
+				"propertyType": "D",
+				"propertyRange": "Edm.String",
+				"ordinal": 7,
+				"aggregate": "[]",
+				"formatOptions": null,
+				"allowEdit": true
+			}
+			,{ 
+				"property": "notation",
+				"propertyVisible": true,
+				"propertyType": "D",
+				"propertyRange": "Edm.String",
+				"ordinal": 8,
+				"aggregate": "[]",
+				"formatOptions": null,
+				"allowEdit": true
+			}
+			,{ 
+				"property": "note",
+				"propertyVisible": false,
+				"propertyType": "D",
+				"propertyRange": "Edm.String",
+				"ordinal": 9,
+				"aggregate": "[]",
+				"formatOptions": null,
+				"allowEdit": true
+			}
+			,{ 
+				"property": "prefLabel",
+				"propertyVisible": true,
+				"propertyType": "D",
+				"propertyRange": "Edm.String",
+				"ordinal": 10,
+				"aggregate": "[]",
+				"formatOptions": null,
+				"allowEdit": true
+			}
+			,{ 
+				"property": "scopeNote",
+				"propertyVisible": false,
+				"propertyType": "D",
+				"propertyRange": "Edm.String",
+				"ordinal": 11,
+				"aggregate": "[]",
+				"formatOptions": null,
+				"allowEdit": true
+			}
+			,{ 
+				"property": "useInsteadNote",
+				"propertyVisible": false,
+				"propertyType": "D",
+				"propertyRange": "Edm.String",
+				"ordinal": 12,
+				"aggregate": "[]",
+				"formatOptions": null,
+				"allowEdit": true
+			}
+			,{ 
+				"property": "broadMatch",
+				"propertyVisible": false,
+				"propertyType": "C",
+				"propertyRange": "Concept",
+				"ordinal": 13,
+				"aggregate": "[List]",
+				"formatOptions": null,
+				"allowEdit": true,
+				"height":"4rem"
+			}
+			,{ 
+				"property": "broader",
+				"propertyVisible": true,
+				"propertyType": "C",
+				"propertyRange": "Concept",
+				"ordinal": 14,
+				"aggregate": "[List]",
+				"formatOptions": null,
+				"allowEdit": true,
+				"height":"4rem"
+			}
+			,{ 
+				"property": "broaderTransitive",
+				"propertyVisible": false,
+				"propertyType": "C",
+				"propertyRange": "Concept",
+				"ordinal": 15,
+				"aggregate": "[List]",
+				"formatOptions": null,
+				"allowEdit": true,
+				"height":"4rem"
+			}
+			,{ 
+				"property": "closeMatch",
+				"propertyVisible": false,
+				"propertyType": "C",
+				"propertyRange": "Concept",
+				"ordinal": 16,
+				"aggregate": "[List]",
+				"formatOptions": null,
+				"allowEdit": true,
+				"height":"4rem"
+			}
+			,{ 
+				"property": "exactMatch",
+				"propertyVisible": false,
+				"propertyType": "C",
+				"propertyRange": "Concept",
+				"ordinal": 17,
+				"aggregate": "[List]",
+				"formatOptions": null,
+				"allowEdit": true,
+				"height":"4rem"
+			}
+			,{ 
+				"property": "mappingRelation",
+				"propertyVisible": false,
+				"propertyType": "C",
+				"propertyRange": "Concept",
+				"ordinal": 18,
+				"aggregate": "[List]",
+				"formatOptions": null,
+				"allowEdit": true,
+				"height":"4rem"
+			}
+			,{ 
+				"property": "narrowMatch",
+				"propertyVisible": false,
+				"propertyType": "C",
+				"propertyRange": "Concept",
+				"ordinal": 19,
+				"aggregate": "[List]",
+				"formatOptions": null,
+				"allowEdit": true,
+				"height":"4rem"
+			}
+			,{ 
+				"property": "narrower",
+				"propertyVisible": true,
+				"propertyType": "C",
+				"propertyRange": "Concept",
+				"ordinal": 20,
+				"aggregate": "[List]",
+				"formatOptions": null,
+				"allowEdit": true,
+				"height":"4rem"
+			}
+			,{ 
+				"property": "narrowerTransitive",
+				"propertyVisible": false,
+				"propertyType": "C",
+				"propertyRange": "Concept",
+				"ordinal": 21,
+				"aggregate": "[List]",
+				"formatOptions": null,
+				"allowEdit": true,
+				"height":"4rem"
+			}
+			,{ 
+				"property": "related",
+				"propertyVisible": true,
+				"propertyType": "C",
+				"propertyRange": "Concept",
+				"ordinal": 22,
+				"aggregate": "[List]",
+				"formatOptions": null,
+				"allowEdit": true,
+				"height":"4rem"
+			}
+			,{ 
+				"property": "relatedMatch",
+				"propertyVisible": true,
+				"propertyType": "C",
+				"propertyRange": "Concept",
+				"ordinal": 23,
+				"aggregate": "[List]",
+				"formatOptions": null,
+				"allowEdit": true,
+				"height":"4rem"
+			}
+			,{ 
+				"property": "semanticRelation",
+				"propertyVisible": false,
+				"propertyType": "C",
+				"propertyRange": "Concept",
+				"ordinal": 24,
+				"aggregate": "[List]",
+				"formatOptions": null,
+				"allowEdit": true,
+				"height":"4rem"
+			}
+			,{ 
+				"property": "topConceptOf",
+				"propertyVisible": false,
+				"propertyType": "C",
+				"propertyRange": "ConceptScheme",
+				"ordinal": 25,
+				"aggregate": "[List]",
+				"formatOptions": null,
+				"allowEdit": true,
+				"height":"4rem"
+			}
+			]
+		}
+	}
+}

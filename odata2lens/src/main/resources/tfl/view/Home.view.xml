@@ -1,0 +1,21 @@
+<mvc:View xmlns:core="sap.ui.core" xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m" xmlns:l="sap.ui.layout" xmlns:base="sap.ui.base"
+	controllerName="northwind.controller.Home" xmlns:html="http://www.w3.org/1999/xhtml" xmlns:tool="com.inova8.lens.control">
+	<App >
+		<pages >
+			<Page title="{i18n>home.ViewTitle}" navButtonPress="onNavBack" showNavButton="false">
+				<content>
+					<FormattedText htmlText="A demonstration using a dataset that descibes the London tube stations, lines, and zones."/>
+					<Image src="./apartment/tfl/images/londontuberail.png" height="70%"></Image>
+					<FormattedText htmlText="Try the following:"/>
+					<FormattedText htmlText="Display the list of Lines"/>
+					<FormattedText htmlText="Select one line, for example Northern."/>
+					<FormattedText htmlText="Choose the Graph option. You should then see a single node on the graph."/>
+					<FormattedText htmlText="Double click this node, and then select Expand All. This will show everything connected to the line. "/>
+					<FormattedText htmlText="Then toggle GeoMap view to show the route this line takes through London"/>
+					<FormattedText htmlText=""/>
+					<FormattedText htmlText="Note that this 'Home Page' is usually reserved for a dashboard summary of the information"/>
+				</content>
+			</Page>
+		</pages>
+	</App>
+</mvc:View>

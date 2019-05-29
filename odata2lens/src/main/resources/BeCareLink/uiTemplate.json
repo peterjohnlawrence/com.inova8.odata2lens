@@ -1,0 +1,5192 @@
+{
+  "Activity": {
+    "entity": "Activity",
+    "icon": "sap-icon://group-2",
+    "image": "./apartment/BeCareLink/images/activity.svg",
+    "entitySetVisible": true,
+    "grid": {
+      "target": "Activitys",
+      "gridStyle": "entitySetTable",
+      "targetVisible": true,
+      "targetIcon": "sap-icon://group-2",
+      "targetEntity": "Activity",
+      "properties": [
+        {
+          "property": "activityType",
+          "propertyVisible": true,
+          "propertyType": "D",
+          "propertyRange": "Edm.String",
+          "ordinal": 0,
+          "aggregate": "[]",
+          "formatOptions": ""
+        },
+        {
+          "property": "activityid",
+          "propertyVisible": false,
+          "propertyType": "D",
+          "propertyRange": "Edm.String",
+          "ordinal": 1,
+          "aggregate": "[]",
+          "formatOptions": ""
+        },
+        {
+          "property": "avgDuration",
+          "propertyVisible": true,
+          "propertyType": "D",
+          "propertyRange": "Edm.Double",
+          "ordinal": 2,
+          "aggregate": "[]",
+          "formatOptions": "{'style':'short';'maxFractionDigits':2}"
+        },
+        {
+          "property": "dataPoints",
+          "propertyVisible": true,
+          "propertyType": "D",
+          "propertyRange": "Edm.Int32",
+          "ordinal": 3,
+          "aggregate": "[]",
+          "formatOptions": ""
+        },
+        {
+          "property": "dateTime",
+          "propertyVisible": true,
+          "propertyType": "D",
+          "propertyRange": "Edm.DateTimeOffset",
+          "ordinal": 4,
+          "aggregate": "[]",
+          "formatOptions": ""
+        },
+        {
+          "property": "standardDeviation",
+          "propertyVisible": true,
+          "propertyType": "D",
+          "propertyRange": "Edm.Decimal",
+          "ordinal": 5,
+          "aggregate": "[]",
+          "formatOptions": ""
+        },
+        {
+          "property": "totalDuration",
+          "propertyVisible": true,
+          "propertyType": "D",
+          "propertyRange": "Edm.Double",
+          "ordinal": 6,
+          "aggregate": "[]",
+          "formatOptions": "{'style':'short';'maxFractionDigits':2}"
+        },
+        {
+          "property": "hasActivityMeasurement",
+          "propertyVisible": false,
+          "propertyType": "C",
+          "propertyRange": "ActivityMeasurement",
+          "ordinal": 7,
+          "aggregate": "[Count]",
+          "formatOptions": ""
+        },
+        {
+          "property": "isActivityOfUser",
+          "propertyVisible": false,
+          "propertyType": "C",
+          "propertyRange": "User",
+          "ordinal": 8,
+          "aggregate": "[Count]",
+          "formatOptions": ""
+        }
+      ]
+    },
+    "form": {
+      "target": "Activity",
+      "formStyle": "entity360",
+      "targetVisible": true,
+      "targetIcon": "sap-icon://expand-group",
+      "targetEntity": "Activity",
+      "properties": [
+        {
+          "property": "activityType",
+          "propertyVisible": true,
+          "propertyType": "D",
+          "propertyRange": "Edm.String",
+          "ordinal": 0,
+          "aggregate": "[]",
+          "formatOptions": null
+        },
+        {
+          "property": "activityid",
+          "propertyVisible": false,
+          "propertyType": "D",
+          "propertyRange": "Edm.String",
+          "ordinal": 1,
+          "aggregate": "[]",
+          "formatOptions": null
+        },
+        {
+          "property": "avgDuration",
+          "propertyVisible": true,
+          "propertyType": "D",
+          "propertyRange": "Edm.Double",
+          "ordinal": 2,
+          "aggregate": "[]",
+          "formatOptions": "{'style':'short';'maxFractionDigits':2}"
+        },
+        {
+          "property": "dataPoints",
+          "propertyVisible": true,
+          "propertyType": "D",
+          "propertyRange": "Edm.Int32",
+          "ordinal": 3,
+          "aggregate": "[]",
+          "formatOptions": null
+        },
+        {
+          "property": "dateTime",
+          "propertyVisible": true,
+          "propertyType": "D",
+          "propertyRange": "Edm.DateTimeOffset",
+          "ordinal": 4,
+          "aggregate": "[]",
+          "formatOptions": null
+        },
+        {
+          "property": "standardDeviation",
+          "propertyVisible": true,
+          "propertyType": "D",
+          "propertyRange": "Edm.Decimal",
+          "ordinal": 5,
+          "aggregate": "[]",
+          "formatOptions": null
+        },
+        {
+          "property": "totalDuration",
+          "propertyVisible": true,
+          "propertyType": "D",
+          "propertyRange": "Edm.Double",
+          "ordinal": 6,
+          "aggregate": "[]",
+          "formatOptions": "{'style':'short';'maxFractionDigits':2}"
+        },
+        {
+          "property": "hasActivityMeasurement",
+          "propertyVisible": true,
+          "propertyType": "C",
+          "propertyRange": "ActivityMeasurement",
+          "ordinal": 7,
+          "aggregate": "[List]",
+          "formatOptions": null
+        },
+        {
+          "property": "isActivityOfUser",
+          "propertyVisible": true,
+          "propertyType": "C",
+          "propertyRange": "User",
+          "ordinal": 8,
+          "aggregate": "[List]",
+          "formatOptions": null
+        }
+      ]
+    }
+  },
+  "ActivityMeasurement": {
+    "entity": "ActivityMeasurement",
+    "icon": "sap-icon://group-2",
+    "image": "./apartment/BeCareLink/images/measure.svg",
+    "entitySetVisible": true,
+    "grid": {
+      "target": "ActivityMeasurements",
+      "gridStyle": "entitySetTable",
+      "targetVisible": true,
+      "targetIcon": "sap-icon://group-2",
+      "targetEntity": "ActivityMeasurement",
+      "properties": [
+        {
+          "property": "activityMeasurementType",
+          "propertyVisible": true,
+          "propertyType": "D",
+          "propertyRange": "Edm.String",
+          "ordinal": 0,
+          "aggregate": "[]",
+          "formatOptions": ""
+        },
+        {
+          "property": "activitymeasurementid",
+          "propertyVisible": false,
+          "propertyType": "D",
+          "propertyRange": "Edm.String",
+          "ordinal": 1,
+          "aggregate": "[]",
+          "formatOptions": ""
+        },
+        {
+          "property": "dateTime",
+          "propertyVisible": true,
+          "propertyType": "D",
+          "propertyRange": "Edm.DateTimeOffset",
+          "ordinal": 2,
+          "aggregate": "[]",
+          "formatOptions": ""
+        },
+        {
+          "property": "duration",
+          "propertyVisible": true,
+          "propertyType": "D",
+          "propertyRange": "Edm.Int32",
+          "ordinal": 3,
+          "aggregate": "[]",
+          "formatOptions": ""
+        },
+        {
+          "property": "sequence",
+          "propertyVisible": true,
+          "propertyType": "D",
+          "propertyRange": "Edm.Int32",
+          "ordinal": 4,
+          "aggregate": "[]",
+          "formatOptions": ""
+        },
+        {
+          "property": "isActivityMeasurementOfActivity",
+          "propertyVisible": false,
+          "propertyType": "C",
+          "propertyRange": "Activity",
+          "ordinal": 5,
+          "aggregate": "[Count]",
+          "formatOptions": ""
+        }
+      ]
+    },
+    "form": {
+      "target": "ActivityMeasurement",
+      "formStyle": "entity360",
+      "targetVisible": true,
+      "targetIcon": "sap-icon://expand-group",
+      "targetEntity": "ActivityMeasurement",
+      "properties": [
+        {
+          "property": "activityMeasurementType",
+          "propertyVisible": true,
+          "propertyType": "D",
+          "propertyRange": "Edm.String",
+          "ordinal": 0,
+          "aggregate": "[]",
+          "formatOptions": null
+        },
+        {
+          "property": "activitymeasurementid",
+          "propertyVisible": false,
+          "propertyType": "D",
+          "propertyRange": "Edm.String",
+          "ordinal": 1,
+          "aggregate": "[]",
+          "formatOptions": null
+        },
+        {
+          "property": "dateTime",
+          "propertyVisible": true,
+          "propertyType": "D",
+          "propertyRange": "Edm.DateTimeOffset",
+          "ordinal": 2,
+          "aggregate": "[]",
+          "formatOptions": null
+        },
+        {
+          "property": "duration",
+          "propertyVisible": true,
+          "propertyType": "D",
+          "propertyRange": "Edm.Int32",
+          "ordinal": 3,
+          "aggregate": "[]",
+          "formatOptions": null
+        },
+        {
+          "property": "sequence",
+          "propertyVisible": true,
+          "propertyType": "D",
+          "propertyRange": "Edm.Int32",
+          "ordinal": 4,
+          "aggregate": "[]",
+          "formatOptions": null
+        },
+        {
+          "property": "isActivityMeasurementOfActivity",
+          "propertyVisible": true,
+          "propertyType": "C",
+          "propertyRange": "Activity",
+          "ordinal": 5,
+          "aggregate": "[List]",
+          "formatOptions": null
+        }
+      ]
+    }
+  },
+  "ArmElevationActivity": {
+    "entity": "ArmElevationActivity",
+    "icon": "sap-icon://group-2",
+    "image": "./apartment/BeCareLink/images/arm.svg",
+    "entitySetVisible": true,
+    "grid": {
+      "target": "ArmElevationActivitys",
+      "gridStyle": "entitySetTable",
+      "targetVisible": true,
+      "targetIcon": "sap-icon://group-2",
+      "targetEntity": "ArmElevationActivity",
+      "properties": [
+        {
+          "property": "activityType",
+          "propertyVisible": true,
+          "propertyType": "D",
+          "propertyRange": "Edm.String",
+          "ordinal": 0,
+          "aggregate": "[]",
+          "formatOptions": ""
+        },
+        {
+          "property": "activityid",
+          "propertyVisible": false,
+          "propertyType": "D",
+          "propertyRange": "Edm.String",
+          "ordinal": 1,
+          "aggregate": "[]",
+          "formatOptions": ""
+        },
+        {
+          "property": "avgDuration",
+          "propertyVisible": true,
+          "propertyType": "D",
+          "propertyRange": "Edm.Decimal",
+          "ordinal": 2,
+          "aggregate": "[]",
+          "formatOptions": ""
+        },
+        {
+          "property": "dataPoints",
+          "propertyVisible": true,
+          "propertyType": "D",
+          "propertyRange": "Edm.Int32",
+          "ordinal": 3,
+          "aggregate": "[]",
+          "formatOptions": ""
+        },
+        {
+          "property": "dateTime",
+          "propertyVisible": true,
+          "propertyType": "D",
+          "propertyRange": "Edm.DateTimeOffset",
+          "ordinal": 4,
+          "aggregate": "[]",
+          "formatOptions": ""
+        },
+        {
+          "property": "standardDeviation",
+          "propertyVisible": true,
+          "propertyType": "D",
+          "propertyRange": "Edm.Decimal",
+          "ordinal": 5,
+          "aggregate": "[]",
+          "formatOptions": ""
+        },
+        {
+          "property": "totalDuration",
+          "propertyVisible": true,
+          "propertyType": "D",
+          "propertyRange": "Edm.Decimal",
+          "ordinal": 6,
+          "aggregate": "[]",
+          "formatOptions": ""
+        },
+        {
+          "property": "hasActivityMeasurement",
+          "propertyVisible": false,
+          "propertyType": "C",
+          "propertyRange": "ActivityMeasurement",
+          "ordinal": 7,
+          "aggregate": "[Count]",
+          "formatOptions": ""
+        },
+        {
+          "property": "hasArmElevationActivityMeasurement",
+          "propertyVisible": false,
+          "propertyType": "C",
+          "propertyRange": "ArmElevationActivityMeasurement",
+          "ordinal": 8,
+          "aggregate": "[Count]",
+          "formatOptions": ""
+        },
+        {
+          "property": "isActivityOfUser",
+          "propertyVisible": false,
+          "propertyType": "C",
+          "propertyRange": "User",
+          "ordinal": 9,
+          "aggregate": "[Count]",
+          "formatOptions": ""
+        },
+        {
+          "property": "isArmElevationActivityOfUser",
+          "propertyVisible": false,
+          "propertyType": "C",
+          "propertyRange": "User",
+          "ordinal": 10,
+          "aggregate": "[Count]",
+          "formatOptions": ""
+        }
+      ]
+    },
+    "form": {
+      "target": "ArmElevationActivity",
+      "formStyle": "entity360",
+      "targetVisible": true,
+      "targetIcon": "sap-icon://expand-group",
+      "targetEntity": "ArmElevationActivity",
+      "properties": [
+        {
+          "property": "activityType",
+          "propertyVisible": true,
+          "propertyType": "D",
+          "propertyRange": "Edm.String",
+          "ordinal": 0,
+          "aggregate": "[]",
+          "formatOptions": null
+        },
+        {
+          "property": "activityid",
+          "propertyVisible": false,
+          "propertyType": "D",
+          "propertyRange": "Edm.String",
+          "ordinal": 1,
+          "aggregate": "[]",
+          "formatOptions": null
+        },
+        {
+          "property": "avgDuration",
+          "propertyVisible": true,
+          "propertyType": "D",
+          "propertyRange": "Edm.Decimal",
+          "ordinal": 2,
+          "aggregate": "[]",
+          "formatOptions": null
+        },
+        {
+          "property": "dataPoints",
+          "propertyVisible": true,
+          "propertyType": "D",
+          "propertyRange": "Edm.Int32",
+          "ordinal": 3,
+          "aggregate": "[]",
+          "formatOptions": null
+        },
+        {
+          "property": "dateTime",
+          "propertyVisible": true,
+          "propertyType": "D",
+          "propertyRange": "Edm.DateTimeOffset",
+          "ordinal": 4,
+          "aggregate": "[]",
+          "formatOptions": null
+        },
+        {
+          "property": "standardDeviation",
+          "propertyVisible": true,
+          "propertyType": "D",
+          "propertyRange": "Edm.Decimal",
+          "ordinal": 5,
+          "aggregate": "[]",
+          "formatOptions": null
+        },
+        {
+          "property": "totalDuration",
+          "propertyVisible": true,
+          "propertyType": "D",
+          "propertyRange": "Edm.Decimal",
+          "ordinal": 6,
+          "aggregate": "[]",
+          "formatOptions": null
+        },
+        {
+          "property": "hasActivityMeasurement",
+          "propertyVisible": true,
+          "propertyType": "C",
+          "propertyRange": "ActivityMeasurement",
+          "ordinal": 7,
+          "aggregate": "[List]",
+          "formatOptions": null
+        },
+        {
+          "property": "hasArmElevationActivityMeasurement",
+          "propertyVisible": true,
+          "propertyType": "C",
+          "propertyRange": "ArmElevationActivityMeasurement",
+          "ordinal": 8,
+          "aggregate": "[List]",
+          "formatOptions": null
+        },
+        {
+          "property": "isActivityOfUser",
+          "propertyVisible": true,
+          "propertyType": "C",
+          "propertyRange": "User",
+          "ordinal": 9,
+          "aggregate": "[List]",
+          "formatOptions": null
+        },
+        {
+          "property": "isArmElevationActivityOfUser",
+          "propertyVisible": true,
+          "propertyType": "C",
+          "propertyRange": "User",
+          "ordinal": 10,
+          "aggregate": "[List]",
+          "formatOptions": null
+        }
+      ]
+    }
+  },
+  "ArmElevationActivityMeasurement": {
+    "entity": "ArmElevationActivityMeasurement",
+    "icon": "sap-icon://group-2",
+    "image": "./apartment/BeCareLink/images/measure.svg",
+    "entitySetVisible": true,
+    "grid": {
+      "target": "ArmElevationActivityMeasurements",
+      "gridStyle": "entitySetTable",
+      "targetVisible": true,
+      "targetIcon": "sap-icon://group-2",
+      "targetEntity": "ArmElevationActivityMeasurement",
+      "properties": [
+        {
+          "property": "activityMeasurementType",
+          "propertyVisible": true,
+          "propertyType": "D",
+          "propertyRange": "Edm.String",
+          "ordinal": 0,
+          "aggregate": "[]",
+          "formatOptions": ""
+        },
+        {
+          "property": "activitymeasurementid",
+          "propertyVisible": false,
+          "propertyType": "D",
+          "propertyRange": "Edm.String",
+          "ordinal": 1,
+          "aggregate": "[]",
+          "formatOptions": ""
+        },
+        {
+          "property": "dateTime",
+          "propertyVisible": true,
+          "propertyType": "D",
+          "propertyRange": "Edm.DateTimeOffset",
+          "ordinal": 2,
+          "aggregate": "[]",
+          "formatOptions": ""
+        },
+        {
+          "property": "duration",
+          "propertyVisible": true,
+          "propertyType": "D",
+          "propertyRange": "Edm.Int32",
+          "ordinal": 3,
+          "aggregate": "[]",
+          "formatOptions": ""
+        },
+        {
+          "property": "sequence",
+          "propertyVisible": true,
+          "propertyType": "D",
+          "propertyRange": "Edm.Int32",
+          "ordinal": 4,
+          "aggregate": "[]",
+          "formatOptions": ""
+        },
+        {
+          "property": "isActivityMeasurementOfActivity",
+          "propertyVisible": false,
+          "propertyType": "C",
+          "propertyRange": "Activity",
+          "ordinal": 5,
+          "aggregate": "[Count]",
+          "formatOptions": ""
+        },
+        {
+          "property": "isArmElevationActivityMeasurementOfArmElevationActivity",
+          "propertyVisible": false,
+          "propertyType": "C",
+          "propertyRange": "ArmElevationActivity",
+          "ordinal": 6,
+          "aggregate": "[Count]",
+          "formatOptions": ""
+        }
+      ]
+    },
+    "form": {
+      "target": "ArmElevationActivityMeasurement",
+      "formStyle": "entity360",
+      "targetVisible": true,
+      "targetIcon": "sap-icon://expand-group",
+      "targetEntity": "ArmElevationActivityMeasurement",
+      "properties": [
+        {
+          "property": "activityMeasurementType",
+          "propertyVisible": true,
+          "propertyType": "D",
+          "propertyRange": "Edm.String",
+          "ordinal": 0,
+          "aggregate": "[]",
+          "formatOptions": null
+        },
+        {
+          "property": "activitymeasurementid",
+          "propertyVisible": false,
+          "propertyType": "D",
+          "propertyRange": "Edm.String",
+          "ordinal": 1,
+          "aggregate": "[]",
+          "formatOptions": null
+        },
+        {
+          "property": "dateTime",
+          "propertyVisible": true,
+          "propertyType": "D",
+          "propertyRange": "Edm.DateTimeOffset",
+          "ordinal": 2,
+          "aggregate": "[]",
+          "formatOptions": null
+        },
+        {
+          "property": "duration",
+          "propertyVisible": true,
+          "propertyType": "D",
+          "propertyRange": "Edm.Int32",
+          "ordinal": 3,
+          "aggregate": "[]",
+          "formatOptions": null
+        },
+        {
+          "property": "sequence",
+          "propertyVisible": true,
+          "propertyType": "D",
+          "propertyRange": "Edm.Int32",
+          "ordinal": 4,
+          "aggregate": "[]",
+          "formatOptions": null
+        },
+        {
+          "property": "isActivityMeasurementOfActivity",
+          "propertyVisible": true,
+          "propertyType": "C",
+          "propertyRange": "Activity",
+          "ordinal": 5,
+          "aggregate": "[List]",
+          "formatOptions": null
+        },
+        {
+          "property": "isArmElevationActivityMeasurementOfArmElevationActivity",
+          "propertyVisible": true,
+          "propertyType": "C",
+          "propertyRange": "ArmElevationActivity",
+          "ordinal": 6,
+          "aggregate": "[List]",
+          "formatOptions": null
+        }
+      ]
+    }
+  },
+  "CognitiveTestActivity": {
+    "entity": "CognitiveTestActivity",
+    "icon": "sap-icon://group-2",
+    "image": "./apartment/BeCareLink/images/cognitive.svg",
+    "entitySetVisible": true,
+    "grid": {
+      "target": "CognitiveTestActivitys",
+      "gridStyle": "entitySetTable",
+      "targetVisible": true,
+      "targetIcon": "sap-icon://group-2",
+      "targetEntity": "CognitiveTestActivity",
+      "properties": [
+        {
+          "property": "activityType",
+          "propertyVisible": true,
+          "propertyType": "D",
+          "propertyRange": "Edm.String",
+          "ordinal": 0,
+          "aggregate": "[]",
+          "formatOptions": ""
+        },
+        {
+          "property": "activityid",
+          "propertyVisible": false,
+          "propertyType": "D",
+          "propertyRange": "Edm.String",
+          "ordinal": 1,
+          "aggregate": "[]",
+          "formatOptions": ""
+        },
+        {
+          "property": "avgDuration",
+          "propertyVisible": true,
+          "propertyType": "D",
+          "propertyRange": "Edm.Decimal",
+          "ordinal": 2,
+          "aggregate": "[]",
+          "formatOptions": ""
+        },
+        {
+          "property": "dataPoints",
+          "propertyVisible": true,
+          "propertyType": "D",
+          "propertyRange": "Edm.Int32",
+          "ordinal": 3,
+          "aggregate": "[]",
+          "formatOptions": ""
+        },
+        {
+          "property": "dateTime",
+          "propertyVisible": true,
+          "propertyType": "D",
+          "propertyRange": "Edm.DateTimeOffset",
+          "ordinal": 4,
+          "aggregate": "[]",
+          "formatOptions": ""
+        },
+        {
+          "property": "standardDeviation",
+          "propertyVisible": true,
+          "propertyType": "D",
+          "propertyRange": "Edm.Decimal",
+          "ordinal": 5,
+          "aggregate": "[]",
+          "formatOptions": ""
+        },
+        {
+          "property": "totalDuration",
+          "propertyVisible": true,
+          "propertyType": "D",
+          "propertyRange": "Edm.Decimal",
+          "ordinal": 6,
+          "aggregate": "[]",
+          "formatOptions": ""
+        },
+        {
+          "property": "hasActivityMeasurement",
+          "propertyVisible": false,
+          "propertyType": "C",
+          "propertyRange": "ActivityMeasurement",
+          "ordinal": 7,
+          "aggregate": "[Count]",
+          "formatOptions": ""
+        },
+        {
+          "property": "hasCognitiveTestActivityMeasurement",
+          "propertyVisible": false,
+          "propertyType": "C",
+          "propertyRange": "CognitiveTestActivityMeasurement",
+          "ordinal": 8,
+          "aggregate": "[Count]",
+          "formatOptions": ""
+        },
+        {
+          "property": "isActivityOfUser",
+          "propertyVisible": false,
+          "propertyType": "C",
+          "propertyRange": "User",
+          "ordinal": 9,
+          "aggregate": "[Count]",
+          "formatOptions": ""
+        },
+        {
+          "property": "isCognitiveTestActivityOfUser",
+          "propertyVisible": false,
+          "propertyType": "C",
+          "propertyRange": "User",
+          "ordinal": 10,
+          "aggregate": "[Count]",
+          "formatOptions": ""
+        }
+      ]
+    },
+    "form": {
+      "target": "CognitiveTestActivity",
+      "formStyle": "entity360",
+      "targetVisible": true,
+      "targetIcon": "sap-icon://expand-group",
+      "targetEntity": "CognitiveTestActivity",
+      "properties": [
+        {
+          "property": "activityType",
+          "propertyVisible": true,
+          "propertyType": "D",
+          "propertyRange": "Edm.String",
+          "ordinal": 0,
+          "aggregate": "[]",
+          "formatOptions": null
+        },
+        {
+          "property": "activityid",
+          "propertyVisible": false,
+          "propertyType": "D",
+          "propertyRange": "Edm.String",
+          "ordinal": 1,
+          "aggregate": "[]",
+          "formatOptions": null
+        },
+        {
+          "property": "avgDuration",
+          "propertyVisible": true,
+          "propertyType": "D",
+          "propertyRange": "Edm.Decimal",
+          "ordinal": 2,
+          "aggregate": "[]",
+          "formatOptions": null
+        },
+        {
+          "property": "dataPoints",
+          "propertyVisible": true,
+          "propertyType": "D",
+          "propertyRange": "Edm.Int32",
+          "ordinal": 3,
+          "aggregate": "[]",
+          "formatOptions": null
+        },
+        {
+          "property": "dateTime",
+          "propertyVisible": true,
+          "propertyType": "D",
+          "propertyRange": "Edm.DateTimeOffset",
+          "ordinal": 4,
+          "aggregate": "[]",
+          "formatOptions": null
+        },
+        {
+          "property": "standardDeviation",
+          "propertyVisible": true,
+          "propertyType": "D",
+          "propertyRange": "Edm.Decimal",
+          "ordinal": 5,
+          "aggregate": "[]",
+          "formatOptions": null
+        },
+        {
+          "property": "totalDuration",
+          "propertyVisible": true,
+          "propertyType": "D",
+          "propertyRange": "Edm.Decimal",
+          "ordinal": 6,
+          "aggregate": "[]",
+          "formatOptions": null
+        },
+        {
+          "property": "hasActivityMeasurement",
+          "propertyVisible": true,
+          "propertyType": "C",
+          "propertyRange": "ActivityMeasurement",
+          "ordinal": 7,
+          "aggregate": "[List]",
+          "formatOptions": null
+        },
+        {
+          "property": "hasCognitiveTestActivityMeasurement",
+          "propertyVisible": true,
+          "propertyType": "C",
+          "propertyRange": "CognitiveTestActivityMeasurement",
+          "ordinal": 8,
+          "aggregate": "[List]",
+          "formatOptions": null
+        },
+        {
+          "property": "isActivityOfUser",
+          "propertyVisible": true,
+          "propertyType": "C",
+          "propertyRange": "User",
+          "ordinal": 9,
+          "aggregate": "[List]",
+          "formatOptions": null
+        },
+        {
+          "property": "isCognitiveTestActivityOfUser",
+          "propertyVisible": true,
+          "propertyType": "C",
+          "propertyRange": "User",
+          "ordinal": 10,
+          "aggregate": "[List]",
+          "formatOptions": null
+        }
+      ]
+    }
+  },
+  "CognitiveTestActivityMeasurement": {
+    "entity": "CognitiveTestActivityMeasurement",
+    "icon": "sap-icon://group-2",
+    "image": "./apartment/BeCareLink/images/measure.svg",
+    "entitySetVisible": true,
+    "grid": {
+      "target": "CognitiveTestActivityMeasurements",
+      "gridStyle": "entitySetTable",
+      "targetVisible": true,
+      "targetIcon": "sap-icon://group-2",
+      "targetEntity": "CognitiveTestActivityMeasurement",
+      "properties": [
+        {
+          "property": "activityMeasurementType",
+          "propertyVisible": true,
+          "propertyType": "D",
+          "propertyRange": "Edm.String",
+          "ordinal": 0,
+          "aggregate": "[]",
+          "formatOptions": ""
+        },
+        {
+          "property": "activitymeasurementid",
+          "propertyVisible": false,
+          "propertyType": "D",
+          "propertyRange": "Edm.String",
+          "ordinal": 1,
+          "aggregate": "[]",
+          "formatOptions": ""
+        },
+        {
+          "property": "dateTime",
+          "propertyVisible": true,
+          "propertyType": "D",
+          "propertyRange": "Edm.DateTimeOffset",
+          "ordinal": 2,
+          "aggregate": "[]",
+          "formatOptions": ""
+        },
+        {
+          "property": "duration",
+          "propertyVisible": true,
+          "propertyType": "D",
+          "propertyRange": "Edm.Int32",
+          "ordinal": 3,
+          "aggregate": "[]",
+          "formatOptions": ""
+        },
+        {
+          "property": "sequence",
+          "propertyVisible": true,
+          "propertyType": "D",
+          "propertyRange": "Edm.Int32",
+          "ordinal": 4,
+          "aggregate": "[]",
+          "formatOptions": ""
+        },
+        {
+          "property": "isActivityMeasurementOfActivity",
+          "propertyVisible": false,
+          "propertyType": "C",
+          "propertyRange": "Activity",
+          "ordinal": 5,
+          "aggregate": "[Count]",
+          "formatOptions": ""
+        },
+        {
+          "property": "isCognitiveTestActivityMeasurementOfCognitiveTestActivity",
+          "propertyVisible": false,
+          "propertyType": "C",
+          "propertyRange": "CognitiveTestActivity",
+          "ordinal": 6,
+          "aggregate": "[Count]",
+          "formatOptions": ""
+        }
+      ]
+    },
+    "form": {
+      "target": "CognitiveTestActivityMeasurement",
+      "formStyle": "entity360",
+      "targetVisible": true,
+      "targetIcon": "sap-icon://expand-group",
+      "targetEntity": "CognitiveTestActivityMeasurement",
+      "properties": [
+        {
+          "property": "activityMeasurementType",
+          "propertyVisible": true,
+          "propertyType": "D",
+          "propertyRange": "Edm.String",
+          "ordinal": 0,
+          "aggregate": "[]",
+          "formatOptions": null
+        },
+        {
+          "property": "activitymeasurementid",
+          "propertyVisible": false,
+          "propertyType": "D",
+          "propertyRange": "Edm.String",
+          "ordinal": 1,
+          "aggregate": "[]",
+          "formatOptions": null
+        },
+        {
+          "property": "dateTime",
+          "propertyVisible": true,
+          "propertyType": "D",
+          "propertyRange": "Edm.DateTimeOffset",
+          "ordinal": 2,
+          "aggregate": "[]",
+          "formatOptions": null
+        },
+        {
+          "property": "duration",
+          "propertyVisible": true,
+          "propertyType": "D",
+          "propertyRange": "Edm.Int32",
+          "ordinal": 3,
+          "aggregate": "[]",
+          "formatOptions": null
+        },
+        {
+          "property": "sequence",
+          "propertyVisible": true,
+          "propertyType": "D",
+          "propertyRange": "Edm.Int32",
+          "ordinal": 4,
+          "aggregate": "[]",
+          "formatOptions": null
+        },
+        {
+          "property": "isActivityMeasurementOfActivity",
+          "propertyVisible": true,
+          "propertyType": "C",
+          "propertyRange": "Activity",
+          "ordinal": 5,
+          "aggregate": "[List]",
+          "formatOptions": null
+        },
+        {
+          "property": "isCognitiveTestActivityMeasurementOfCognitiveTestActivity",
+          "propertyVisible": true,
+          "propertyType": "C",
+          "propertyRange": "CognitiveTestActivity",
+          "ordinal": 6,
+          "aggregate": "[List]",
+          "formatOptions": null
+        }
+      ]
+    }
+  },
+  "ContrastSensitivityActivity": {
+    "entity": "ContrastSensitivityActivity",
+    "icon": "sap-icon://group-2",
+    "image": "./apartment/BeCareLink/images/contrast.svg",
+    "entitySetVisible": true,
+    "grid": {
+      "target": "ContrastSensitivityActivitys",
+      "gridStyle": "entitySetTable",
+      "targetVisible": true,
+      "targetIcon": "sap-icon://group-2",
+      "targetEntity": "ContrastSensitivityActivity",
+      "properties": [
+        {
+          "property": "activityType",
+          "propertyVisible": true,
+          "propertyType": "D",
+          "propertyRange": "Edm.String",
+          "ordinal": 0,
+          "aggregate": "[]",
+          "formatOptions": ""
+        },
+        {
+          "property": "activityid",
+          "propertyVisible": false,
+          "propertyType": "D",
+          "propertyRange": "Edm.String",
+          "ordinal": 1,
+          "aggregate": "[]",
+          "formatOptions": ""
+        },
+        {
+          "property": "avgDuration",
+          "propertyVisible": true,
+          "propertyType": "D",
+          "propertyRange": "Edm.Decimal",
+          "ordinal": 2,
+          "aggregate": "[]",
+          "formatOptions": ""
+        },
+        {
+          "property": "dataPoints",
+          "propertyVisible": true,
+          "propertyType": "D",
+          "propertyRange": "Edm.Int32",
+          "ordinal": 3,
+          "aggregate": "[]",
+          "formatOptions": ""
+        },
+        {
+          "property": "dateTime",
+          "propertyVisible": true,
+          "propertyType": "D",
+          "propertyRange": "Edm.DateTimeOffset",
+          "ordinal": 4,
+          "aggregate": "[]",
+          "formatOptions": ""
+        },
+        {
+          "property": "standardDeviation",
+          "propertyVisible": true,
+          "propertyType": "D",
+          "propertyRange": "Edm.Decimal",
+          "ordinal": 5,
+          "aggregate": "[]",
+          "formatOptions": ""
+        },
+        {
+          "property": "totalDuration",
+          "propertyVisible": true,
+          "propertyType": "D",
+          "propertyRange": "Edm.Decimal",
+          "ordinal": 6,
+          "aggregate": "[]",
+          "formatOptions": ""
+        },
+        {
+          "property": "hasActivityMeasurement",
+          "propertyVisible": false,
+          "propertyType": "C",
+          "propertyRange": "ActivityMeasurement",
+          "ordinal": 7,
+          "aggregate": "[Count]",
+          "formatOptions": ""
+        },
+        {
+          "property": "hasContrastSensitivityActivityMeasurement",
+          "propertyVisible": false,
+          "propertyType": "C",
+          "propertyRange": "ContrastSensitivityActivityMeasurement",
+          "ordinal": 8,
+          "aggregate": "[Count]",
+          "formatOptions": ""
+        },
+        {
+          "property": "isActivityOfUser",
+          "propertyVisible": false,
+          "propertyType": "C",
+          "propertyRange": "User",
+          "ordinal": 9,
+          "aggregate": "[Count]",
+          "formatOptions": ""
+        },
+        {
+          "property": "isContrastSensitivityActivityOfUser",
+          "propertyVisible": false,
+          "propertyType": "C",
+          "propertyRange": "User",
+          "ordinal": 10,
+          "aggregate": "[Count]",
+          "formatOptions": ""
+        }
+      ]
+    },
+    "form": {
+      "target": "ContrastSensitivityActivity",
+      "formStyle": "entity360",
+      "targetVisible": true,
+      "targetIcon": "sap-icon://expand-group",
+      "targetEntity": "ContrastSensitivityActivity",
+      "properties": [
+        {
+          "property": "activityType",
+          "propertyVisible": true,
+          "propertyType": "D",
+          "propertyRange": "Edm.String",
+          "ordinal": 0,
+          "aggregate": "[]",
+          "formatOptions": null
+        },
+        {
+          "property": "activityid",
+          "propertyVisible": false,
+          "propertyType": "D",
+          "propertyRange": "Edm.String",
+          "ordinal": 1,
+          "aggregate": "[]",
+          "formatOptions": null
+        },
+        {
+          "property": "avgDuration",
+          "propertyVisible": true,
+          "propertyType": "D",
+          "propertyRange": "Edm.Decimal",
+          "ordinal": 2,
+          "aggregate": "[]",
+          "formatOptions": null
+        },
+        {
+          "property": "dataPoints",
+          "propertyVisible": true,
+          "propertyType": "D",
+          "propertyRange": "Edm.Int32",
+          "ordinal": 3,
+          "aggregate": "[]",
+          "formatOptions": null
+        },
+        {
+          "property": "dateTime",
+          "propertyVisible": true,
+          "propertyType": "D",
+          "propertyRange": "Edm.DateTimeOffset",
+          "ordinal": 4,
+          "aggregate": "[]",
+          "formatOptions": null
+        },
+        {
+          "property": "standardDeviation",
+          "propertyVisible": true,
+          "propertyType": "D",
+          "propertyRange": "Edm.Decimal",
+          "ordinal": 5,
+          "aggregate": "[]",
+          "formatOptions": null
+        },
+        {
+          "property": "totalDuration",
+          "propertyVisible": true,
+          "propertyType": "D",
+          "propertyRange": "Edm.Decimal",
+          "ordinal": 6,
+          "aggregate": "[]",
+          "formatOptions": null
+        },
+        {
+          "property": "hasActivityMeasurement",
+          "propertyVisible": true,
+          "propertyType": "C",
+          "propertyRange": "ActivityMeasurement",
+          "ordinal": 7,
+          "aggregate": "[List]",
+          "formatOptions": null
+        },
+        {
+          "property": "hasContrastSensitivityActivityMeasurement",
+          "propertyVisible": true,
+          "propertyType": "C",
+          "propertyRange": "ContrastSensitivityActivityMeasurement",
+          "ordinal": 8,
+          "aggregate": "[List]",
+          "formatOptions": null
+        },
+        {
+          "property": "isActivityOfUser",
+          "propertyVisible": true,
+          "propertyType": "C",
+          "propertyRange": "User",
+          "ordinal": 9,
+          "aggregate": "[List]",
+          "formatOptions": null
+        },
+        {
+          "property": "isContrastSensitivityActivityOfUser",
+          "propertyVisible": true,
+          "propertyType": "C",
+          "propertyRange": "User",
+          "ordinal": 10,
+          "aggregate": "[List]",
+          "formatOptions": null
+        }
+      ]
+    }
+  },
+  "ContrastSensitivityActivityMeasurement": {
+    "entity": "ContrastSensitivityActivityMeasurement",
+    "icon": "sap-icon://group-2",
+    "image": "./apartment/BeCareLink/images/measure.svg",
+    "entitySetVisible": true,
+    "grid": {
+      "target": "ContrastSensitivityActivityMeasurements",
+      "gridStyle": "entitySetTable",
+      "targetVisible": true,
+      "targetIcon": "sap-icon://group-2",
+      "targetEntity": "ContrastSensitivityActivityMeasurement",
+      "properties": [
+        {
+          "property": "activityMeasurementType",
+          "propertyVisible": true,
+          "propertyType": "D",
+          "propertyRange": "Edm.String",
+          "ordinal": 0,
+          "aggregate": "[]",
+          "formatOptions": ""
+        },
+        {
+          "property": "activitymeasurementid",
+          "propertyVisible": false,
+          "propertyType": "D",
+          "propertyRange": "Edm.String",
+          "ordinal": 1,
+          "aggregate": "[]",
+          "formatOptions": ""
+        },
+        {
+          "property": "dateTime",
+          "propertyVisible": true,
+          "propertyType": "D",
+          "propertyRange": "Edm.DateTimeOffset",
+          "ordinal": 2,
+          "aggregate": "[]",
+          "formatOptions": ""
+        },
+        {
+          "property": "duration",
+          "propertyVisible": true,
+          "propertyType": "D",
+          "propertyRange": "Edm.Int32",
+          "ordinal": 3,
+          "aggregate": "[]",
+          "formatOptions": ""
+        },
+        {
+          "property": "sequence",
+          "propertyVisible": true,
+          "propertyType": "D",
+          "propertyRange": "Edm.Int32",
+          "ordinal": 4,
+          "aggregate": "[]",
+          "formatOptions": ""
+        },
+        {
+          "property": "isActivityMeasurementOfActivity",
+          "propertyVisible": false,
+          "propertyType": "C",
+          "propertyRange": "Activity",
+          "ordinal": 5,
+          "aggregate": "[Count]",
+          "formatOptions": ""
+        },
+        {
+          "property": "isContrastSensitivityActivityMeasurementOfContrastSensitivityActivity",
+          "propertyVisible": false,
+          "propertyType": "C",
+          "propertyRange": "ContrastSensitivityActivity",
+          "ordinal": 6,
+          "aggregate": "[Count]",
+          "formatOptions": ""
+        }
+      ]
+    },
+    "form": {
+      "target": "ContrastSensitivityActivityMeasurement",
+      "formStyle": "entity360",
+      "targetVisible": true,
+      "targetIcon": "sap-icon://expand-group",
+      "targetEntity": "ContrastSensitivityActivityMeasurement",
+      "properties": [
+        {
+          "property": "activityMeasurementType",
+          "propertyVisible": true,
+          "propertyType": "D",
+          "propertyRange": "Edm.String",
+          "ordinal": 0,
+          "aggregate": "[]",
+          "formatOptions": null
+        },
+        {
+          "property": "activitymeasurementid",
+          "propertyVisible": false,
+          "propertyType": "D",
+          "propertyRange": "Edm.String",
+          "ordinal": 1,
+          "aggregate": "[]",
+          "formatOptions": null
+        },
+        {
+          "property": "dateTime",
+          "propertyVisible": true,
+          "propertyType": "D",
+          "propertyRange": "Edm.DateTimeOffset",
+          "ordinal": 2,
+          "aggregate": "[]",
+          "formatOptions": null
+        },
+        {
+          "property": "duration",
+          "propertyVisible": true,
+          "propertyType": "D",
+          "propertyRange": "Edm.Int32",
+          "ordinal": 3,
+          "aggregate": "[]",
+          "formatOptions": null
+        },
+        {
+          "property": "sequence",
+          "propertyVisible": true,
+          "propertyType": "D",
+          "propertyRange": "Edm.Int32",
+          "ordinal": 4,
+          "aggregate": "[]",
+          "formatOptions": null
+        },
+        {
+          "property": "isActivityMeasurementOfActivity",
+          "propertyVisible": true,
+          "propertyType": "C",
+          "propertyRange": "Activity",
+          "ordinal": 5,
+          "aggregate": "[List]",
+          "formatOptions": null
+        },
+        {
+          "property": "isContrastSensitivityActivityMeasurementOfContrastSensitivityActivity",
+          "propertyVisible": true,
+          "propertyType": "C",
+          "propertyRange": "ContrastSensitivityActivity",
+          "ordinal": 6,
+          "aggregate": "[List]",
+          "formatOptions": null
+        }
+      ]
+    }
+  },
+  "MemoryTestActivity": {
+    "entity": "MemoryTestActivity",
+    "icon": "sap-icon://group-2",
+    "image": "./apartment/BeCareLink/images/memory.svg",
+    "entitySetVisible": true,
+    "grid": {
+      "target": "MemoryTestActivitys",
+      "gridStyle": "entitySetTable",
+      "targetVisible": true,
+      "targetIcon": "sap-icon://group-2",
+      "targetEntity": "MemoryTestActivity",
+      "properties": [
+        {
+          "property": "activityType",
+          "propertyVisible": true,
+          "propertyType": "D",
+          "propertyRange": "Edm.String",
+          "ordinal": 0,
+          "aggregate": "[]",
+          "formatOptions": ""
+        },
+        {
+          "property": "activityid",
+          "propertyVisible": false,
+          "propertyType": "D",
+          "propertyRange": "Edm.String",
+          "ordinal": 1,
+          "aggregate": "[]",
+          "formatOptions": ""
+        },
+        {
+          "property": "avgDuration",
+          "propertyVisible": true,
+          "propertyType": "D",
+          "propertyRange": "Edm.Double",
+          "ordinal": 2,
+          "aggregate": "[]",
+          "formatOptions": "{'style':'short';'maxFractionDigits':2}"
+        },
+        {
+          "property": "dataPoints",
+          "propertyVisible": true,
+          "propertyType": "D",
+          "propertyRange": "Edm.Int32",
+          "ordinal": 3,
+          "aggregate": "[]",
+          "formatOptions": ""
+        },
+        {
+          "property": "dateTime",
+          "propertyVisible": true,
+          "propertyType": "D",
+          "propertyRange": "Edm.DateTimeOffset",
+          "ordinal": 4,
+          "aggregate": "[]",
+          "formatOptions": ""
+        },
+        {
+          "property": "standardDeviation",
+          "propertyVisible": true,
+          "propertyType": "D",
+          "propertyRange": "Edm.Decimal",
+          "ordinal": 5,
+          "aggregate": "[]",
+          "formatOptions": ""
+        },
+        {
+          "property": "totalDuration",
+          "propertyVisible": true,
+          "propertyType": "D",
+          "propertyRange": "Edm.Double",
+          "ordinal": 6,
+          "aggregate": "[]",
+          "formatOptions": "{'style':'short';'maxFractionDigits':2}"
+        },
+        {
+          "property": "hasActivityMeasurement",
+          "propertyVisible": false,
+          "propertyType": "C",
+          "propertyRange": "ActivityMeasurement",
+          "ordinal": 7,
+          "aggregate": "[Count]",
+          "formatOptions": ""
+        },
+        {
+          "property": "hasMemoryTestActivityMeasurement",
+          "propertyVisible": false,
+          "propertyType": "C",
+          "propertyRange": "MemoryTestActivityMeasurement",
+          "ordinal": 8,
+          "aggregate": "[Count]",
+          "formatOptions": ""
+        },
+        {
+          "property": "isActivityOfUser",
+          "propertyVisible": false,
+          "propertyType": "C",
+          "propertyRange": "User",
+          "ordinal": 9,
+          "aggregate": "[Count]",
+          "formatOptions": ""
+        },
+        {
+          "property": "isMemoryTestActivityOfUser",
+          "propertyVisible": false,
+          "propertyType": "C",
+          "propertyRange": "User",
+          "ordinal": 10,
+          "aggregate": "[Count]",
+          "formatOptions": ""
+        }
+      ]
+    },
+    "form": {
+      "target": "MemoryTestActivity",
+      "formStyle": "entity360",
+      "targetVisible": true,
+      "targetIcon": "sap-icon://expand-group",
+      "targetEntity": "MemoryTestActivity",
+      "properties": [
+        {
+          "property": "activityType",
+          "propertyVisible": true,
+          "propertyType": "D",
+          "propertyRange": "Edm.String",
+          "ordinal": 0,
+          "aggregate": "[]",
+          "formatOptions": null
+        },
+        {
+          "property": "activityid",
+          "propertyVisible": false,
+          "propertyType": "D",
+          "propertyRange": "Edm.String",
+          "ordinal": 1,
+          "aggregate": "[]",
+          "formatOptions": null
+        },
+        {
+          "property": "avgDuration",
+          "propertyVisible": true,
+          "propertyType": "D",
+          "propertyRange": "Edm.Double",
+          "ordinal": 2,
+          "aggregate": "[]",
+          "formatOptions": "{'style':'short';'maxFractionDigits':2}"
+        },
+        {
+          "property": "dataPoints",
+          "propertyVisible": true,
+          "propertyType": "D",
+          "propertyRange": "Edm.Int32",
+          "ordinal": 3,
+          "aggregate": "[]",
+          "formatOptions": null
+        },
+        {
+          "property": "dateTime",
+          "propertyVisible": true,
+          "propertyType": "D",
+          "propertyRange": "Edm.DateTimeOffset",
+          "ordinal": 4,
+          "aggregate": "[]",
+          "formatOptions": null
+        },
+        {
+          "property": "standardDeviation",
+          "propertyVisible": true,
+          "propertyType": "D",
+          "propertyRange": "Edm.Decimal",
+          "ordinal": 5,
+          "aggregate": "[]",
+          "formatOptions": null
+        },
+        {
+          "property": "totalDuration",
+          "propertyVisible": true,
+          "propertyType": "D",
+          "propertyRange": "Edm.Double",
+          "ordinal": 6,
+          "aggregate": "[]",
+          "formatOptions": "{'style':'short';'maxFractionDigits':2}"
+        },
+        {
+          "property": "hasActivityMeasurement",
+          "propertyVisible": true,
+          "propertyType": "C",
+          "propertyRange": "ActivityMeasurement",
+          "ordinal": 7,
+          "aggregate": "[List]",
+          "formatOptions": null
+        },
+        {
+          "property": "hasMemoryTestActivityMeasurement",
+          "propertyVisible": true,
+          "propertyType": "C",
+          "propertyRange": "MemoryTestActivityMeasurement",
+          "ordinal": 8,
+          "aggregate": "[List]",
+          "formatOptions": null
+        },
+        {
+          "property": "isActivityOfUser",
+          "propertyVisible": true,
+          "propertyType": "C",
+          "propertyRange": "User",
+          "ordinal": 9,
+          "aggregate": "[List]",
+          "formatOptions": null
+        },
+        {
+          "property": "isMemoryTestActivityOfUser",
+          "propertyVisible": true,
+          "propertyType": "C",
+          "propertyRange": "User",
+          "ordinal": 10,
+          "aggregate": "[List]",
+          "formatOptions": null
+        }
+      ]
+    }
+  },
+  "MemoryTestActivityMeasurement": {
+    "entity": "MemoryTestActivityMeasurement",
+    "icon": "sap-icon://group-2",
+    "image": "./apartment/BeCareLink/images/measure.svg",
+    "entitySetVisible": true,
+    "grid": {
+      "target": "MemoryTestActivityMeasurements",
+      "gridStyle": "entitySetTable",
+      "targetVisible": true,
+      "targetIcon": "sap-icon://group-2",
+      "targetEntity": "MemoryTestActivityMeasurement",
+      "properties": [
+        {
+          "property": "activityMeasurementType",
+          "propertyVisible": true,
+          "propertyType": "D",
+          "propertyRange": "Edm.String",
+          "ordinal": 0,
+          "aggregate": "[]",
+          "formatOptions": ""
+        },
+        {
+          "property": "activitymeasurementid",
+          "propertyVisible": false,
+          "propertyType": "D",
+          "propertyRange": "Edm.String",
+          "ordinal": 1,
+          "aggregate": "[]",
+          "formatOptions": ""
+        },
+        {
+          "property": "ansColor",
+          "propertyVisible": true,
+          "propertyType": "D",
+          "propertyRange": "Edm.String",
+          "ordinal": 2,
+          "aggregate": "[]",
+          "formatOptions": ""
+        },
+        {
+          "property": "ansPic",
+          "propertyVisible": true,
+          "propertyType": "D",
+          "propertyRange": "Edm.String",
+          "ordinal": 3,
+          "aggregate": "[]",
+          "formatOptions": ""
+        },
+        {
+          "property": "correct",
+          "propertyVisible": true,
+          "propertyType": "D",
+          "propertyRange": "Edm.Boolean",
+          "ordinal": 4,
+          "aggregate": "[]",
+          "formatOptions": ""
+        },
+        {
+          "property": "dateTime",
+          "propertyVisible": true,
+          "propertyType": "D",
+          "propertyRange": "Edm.DateTimeOffset",
+          "ordinal": 5,
+          "aggregate": "[]",
+          "formatOptions": ""
+        },
+        {
+          "property": "duration",
+          "propertyVisible": true,
+          "propertyType": "D",
+          "propertyRange": "Edm.Int32",
+          "ordinal": 6,
+          "aggregate": "[]",
+          "formatOptions": ""
+        },
+        {
+          "property": "qColor",
+          "propertyVisible": true,
+          "propertyType": "D",
+          "propertyRange": "Edm.String",
+          "ordinal": 7,
+          "aggregate": "[]",
+          "formatOptions": ""
+        },
+        {
+          "property": "qPic",
+          "propertyVisible": true,
+          "propertyType": "D",
+          "propertyRange": "Edm.String",
+          "ordinal": 8,
+          "aggregate": "[]",
+          "formatOptions": ""
+        },
+        {
+          "property": "sequence",
+          "propertyVisible": true,
+          "propertyType": "D",
+          "propertyRange": "Edm.Int32",
+          "ordinal": 9,
+          "aggregate": "[]",
+          "formatOptions": ""
+        },
+        {
+          "property": "isActivityMeasurementOfActivity",
+          "propertyVisible": false,
+          "propertyType": "C",
+          "propertyRange": "Activity",
+          "ordinal": 10,
+          "aggregate": "[Count]",
+          "formatOptions": ""
+        },
+        {
+          "property": "isMemoryTestActivityMeasurementOfMemoryTestActivity",
+          "propertyVisible": false,
+          "propertyType": "C",
+          "propertyRange": "MemoryTestActivity",
+          "ordinal": 11,
+          "aggregate": "[Count]",
+          "formatOptions": ""
+        }
+      ]
+    },
+    "form": {
+      "target": "MemoryTestActivityMeasurement",
+      "formStyle": "entity360",
+      "targetVisible": true,
+      "targetIcon": "sap-icon://expand-group",
+      "targetEntity": "MemoryTestActivityMeasurement",
+      "properties": [
+        {
+          "property": "activityMeasurementType",
+          "propertyVisible": true,
+          "propertyType": "D",
+          "propertyRange": "Edm.String",
+          "ordinal": 0,
+          "aggregate": "[]",
+          "formatOptions": null
+        },
+        {
+          "property": "activitymeasurementid",
+          "propertyVisible": false,
+          "propertyType": "D",
+          "propertyRange": "Edm.String",
+          "ordinal": 1,
+          "aggregate": "[]",
+          "formatOptions": null
+        },
+        {
+          "property": "ansColor",
+          "propertyVisible": true,
+          "propertyType": "D",
+          "propertyRange": "Edm.String",
+          "ordinal": 2,
+          "aggregate": "[]",
+          "formatOptions": null
+        },
+        {
+          "property": "ansPic",
+          "propertyVisible": true,
+          "propertyType": "D",
+          "propertyRange": "Edm.String",
+          "ordinal": 3,
+          "aggregate": "[]",
+          "formatOptions": null
+        },
+        {
+          "property": "correct",
+          "propertyVisible": true,
+          "propertyType": "D",
+          "propertyRange": "Edm.Boolean",
+          "ordinal": 4,
+          "aggregate": "[]",
+          "formatOptions": null
+        },
+        {
+          "property": "dateTime",
+          "propertyVisible": true,
+          "propertyType": "D",
+          "propertyRange": "Edm.DateTimeOffset",
+          "ordinal": 5,
+          "aggregate": "[]",
+          "formatOptions": null
+        },
+        {
+          "property": "duration",
+          "propertyVisible": true,
+          "propertyType": "D",
+          "propertyRange": "Edm.Int32",
+          "ordinal": 6,
+          "aggregate": "[]",
+          "formatOptions": null
+        },
+        {
+          "property": "qColor",
+          "propertyVisible": true,
+          "propertyType": "D",
+          "propertyRange": "Edm.String",
+          "ordinal": 7,
+          "aggregate": "[]",
+          "formatOptions": null
+        },
+        {
+          "property": "qPic",
+          "propertyVisible": true,
+          "propertyType": "D",
+          "propertyRange": "Edm.String",
+          "ordinal": 8,
+          "aggregate": "[]",
+          "formatOptions": null
+        },
+        {
+          "property": "sequence",
+          "propertyVisible": true,
+          "propertyType": "D",
+          "propertyRange": "Edm.Int32",
+          "ordinal": 9,
+          "aggregate": "[]",
+          "formatOptions": null
+        },
+        {
+          "property": "isActivityMeasurementOfActivity",
+          "propertyVisible": true,
+          "propertyType": "C",
+          "propertyRange": "Activity",
+          "ordinal": 10,
+          "aggregate": "[List]",
+          "formatOptions": null
+        },
+        {
+          "property": "isMemoryTestActivityMeasurementOfMemoryTestActivity",
+          "propertyVisible": true,
+          "propertyType": "C",
+          "propertyRange": "MemoryTestActivity",
+          "ordinal": 11,
+          "aggregate": "[List]",
+          "formatOptions": null
+        }
+      ]
+    }
+  },
+  "Path2Activity": {
+    "entity": "Path2Activity",
+    "icon": "sap-icon://group-2",
+    "image": "./apartment/BeCareLink/images/path.svg",
+    "entitySetVisible": true,
+    "grid": {
+      "target": "Path2Activitys",
+      "gridStyle": "entitySetTable",
+      "targetVisible": true,
+      "targetIcon": "sap-icon://group-2",
+      "targetEntity": "Path2Activity",
+      "properties": [
+        {
+          "property": "activityType",
+          "propertyVisible": true,
+          "propertyType": "D",
+          "propertyRange": "Edm.String",
+          "ordinal": 0,
+          "aggregate": "[]",
+          "formatOptions": ""
+        },
+        {
+          "property": "activityid",
+          "propertyVisible": false,
+          "propertyType": "D",
+          "propertyRange": "Edm.String",
+          "ordinal": 1,
+          "aggregate": "[]",
+          "formatOptions": ""
+        },
+        {
+          "property": "avgDuration",
+          "propertyVisible": true,
+          "propertyType": "D",
+          "propertyRange": "Edm.Double",
+          "ordinal": 2,
+          "aggregate": "[]",
+          "formatOptions": "{'style':'short';'maxFractionDigits':2}"
+        },
+        {
+          "property": "dataPoints",
+          "propertyVisible": true,
+          "propertyType": "D",
+          "propertyRange": "Edm.Int32",
+          "ordinal": 3,
+          "aggregate": "[]",
+          "formatOptions": ""
+        },
+        {
+          "property": "dateTime",
+          "propertyVisible": true,
+          "propertyType": "D",
+          "propertyRange": "Edm.DateTimeOffset",
+          "ordinal": 4,
+          "aggregate": "[]",
+          "formatOptions": ""
+        },
+        {
+          "property": "standardDeviation",
+          "propertyVisible": true,
+          "propertyType": "D",
+          "propertyRange": "Edm.Decimal",
+          "ordinal": 5,
+          "aggregate": "[]",
+          "formatOptions": ""
+        },
+        {
+          "property": "totalDuration",
+          "propertyVisible": true,
+          "propertyType": "D",
+          "propertyRange": "Edm.Double",
+          "ordinal": 6,
+          "aggregate": "[]",
+          "formatOptions": "{'style':'short';'maxFractionDigits':2}"
+        },
+        {
+          "property": "hasActivityMeasurement",
+          "propertyVisible": false,
+          "propertyType": "C",
+          "propertyRange": "ActivityMeasurement",
+          "ordinal": 7,
+          "aggregate": "[Count]",
+          "formatOptions": ""
+        },
+        {
+          "property": "hasPath2ActivityMeasurement",
+          "propertyVisible": false,
+          "propertyType": "C",
+          "propertyRange": "Path2ActivityMeasurement",
+          "ordinal": 8,
+          "aggregate": "[Count]",
+          "formatOptions": ""
+        },
+        {
+          "property": "isActivityOfUser",
+          "propertyVisible": false,
+          "propertyType": "C",
+          "propertyRange": "User",
+          "ordinal": 9,
+          "aggregate": "[Count]",
+          "formatOptions": ""
+        },
+        {
+          "property": "isPath2ActivityOfUser",
+          "propertyVisible": false,
+          "propertyType": "C",
+          "propertyRange": "User",
+          "ordinal": 10,
+          "aggregate": "[Count]",
+          "formatOptions": ""
+        }
+      ]
+    },
+    "form": {
+      "target": "Path2Activity",
+      "formStyle": "entity360",
+      "targetVisible": true,
+      "targetIcon": "sap-icon://expand-group",
+      "targetEntity": "Path2Activity",
+      "properties": [
+        {
+          "property": "activityType",
+          "propertyVisible": true,
+          "propertyType": "D",
+          "propertyRange": "Edm.String",
+          "ordinal": 0,
+          "aggregate": "[]",
+          "formatOptions": null
+        },
+        {
+          "property": "activityid",
+          "propertyVisible": false,
+          "propertyType": "D",
+          "propertyRange": "Edm.String",
+          "ordinal": 1,
+          "aggregate": "[]",
+          "formatOptions": null
+        },
+        {
+          "property": "avgDuration",
+          "propertyVisible": true,
+          "propertyType": "D",
+          "propertyRange": "Edm.Double",
+          "ordinal": 2,
+          "aggregate": "[]",
+          "formatOptions": "{'style':'short';'maxFractionDigits':2}"
+        },
+        {
+          "property": "dataPoints",
+          "propertyVisible": true,
+          "propertyType": "D",
+          "propertyRange": "Edm.Int32",
+          "ordinal": 3,
+          "aggregate": "[]",
+          "formatOptions": null
+        },
+        {
+          "property": "dateTime",
+          "propertyVisible": true,
+          "propertyType": "D",
+          "propertyRange": "Edm.DateTimeOffset",
+          "ordinal": 4,
+          "aggregate": "[]",
+          "formatOptions": null
+        },
+        {
+          "property": "standardDeviation",
+          "propertyVisible": true,
+          "propertyType": "D",
+          "propertyRange": "Edm.Decimal",
+          "ordinal": 5,
+          "aggregate": "[]",
+          "formatOptions": null
+        },
+        {
+          "property": "totalDuration",
+          "propertyVisible": true,
+          "propertyType": "D",
+          "propertyRange": "Edm.Double",
+          "ordinal": 6,
+          "aggregate": "[]",
+          "formatOptions": "{'style':'short';'maxFractionDigits':2}"
+        },
+        {
+          "property": "hasActivityMeasurement",
+          "propertyVisible": true,
+          "propertyType": "C",
+          "propertyRange": "ActivityMeasurement",
+          "ordinal": 7,
+          "aggregate": "[List]",
+          "formatOptions": null
+        },
+        {
+          "property": "hasPath2ActivityMeasurement",
+          "propertyVisible": true,
+          "propertyType": "C",
+          "propertyRange": "Path2ActivityMeasurement",
+          "ordinal": 8,
+          "aggregate": "[List]",
+          "formatOptions": null
+        },
+        {
+          "property": "isActivityOfUser",
+          "propertyVisible": true,
+          "propertyType": "C",
+          "propertyRange": "User",
+          "ordinal": 9,
+          "aggregate": "[List]",
+          "formatOptions": null
+        },
+        {
+          "property": "isPath2ActivityOfUser",
+          "propertyVisible": true,
+          "propertyType": "C",
+          "propertyRange": "User",
+          "ordinal": 10,
+          "aggregate": "[List]",
+          "formatOptions": null
+        }
+      ]
+    }
+  },
+  "Path2ActivityMeasurement": {
+    "entity": "Path2ActivityMeasurement",
+    "icon": "sap-icon://group-2",
+    "image": "./apartment/BeCareLink/images/measure.svg",
+    "entitySetVisible": true,
+    "grid": {
+      "target": "Path2ActivityMeasurements",
+      "gridStyle": "entitySetTable",
+      "targetVisible": true,
+      "targetIcon": "sap-icon://group-2",
+      "targetEntity": "Path2ActivityMeasurement",
+      "properties": [
+        {
+          "property": "activityMeasurementType",
+          "propertyVisible": true,
+          "propertyType": "D",
+          "propertyRange": "Edm.String",
+          "ordinal": 0,
+          "aggregate": "[]",
+          "formatOptions": ""
+        },
+        {
+          "property": "activitymeasurementid",
+          "propertyVisible": false,
+          "propertyType": "D",
+          "propertyRange": "Edm.String",
+          "ordinal": 1,
+          "aggregate": "[]",
+          "formatOptions": ""
+        },
+        {
+          "property": "dateTime",
+          "propertyVisible": true,
+          "propertyType": "D",
+          "propertyRange": "Edm.DateTimeOffset",
+          "ordinal": 2,
+          "aggregate": "[]",
+          "formatOptions": ""
+        },
+        {
+          "property": "deviation",
+          "propertyVisible": true,
+          "propertyType": "D",
+          "propertyRange": "Edm.Int32",
+          "ordinal": 3,
+          "aggregate": "[]",
+          "formatOptions": ""
+        },
+        {
+          "property": "duration",
+          "propertyVisible": true,
+          "propertyType": "D",
+          "propertyRange": "Edm.Int32",
+          "ordinal": 4,
+          "aggregate": "[]",
+          "formatOptions": ""
+        },
+        {
+          "property": "mouseco_x",
+          "propertyVisible": true,
+          "propertyType": "D",
+          "propertyRange": "Edm.Int32",
+          "ordinal": 5,
+          "aggregate": "[]",
+          "formatOptions": ""
+        },
+        {
+          "property": "mouseco_y",
+          "propertyVisible": true,
+          "propertyType": "D",
+          "propertyRange": "Edm.Int32",
+          "ordinal": 6,
+          "aggregate": "[]",
+          "formatOptions": ""
+        },
+        {
+          "property": "pathco_x",
+          "propertyVisible": true,
+          "propertyType": "D",
+          "propertyRange": "Edm.Int32",
+          "ordinal": 7,
+          "aggregate": "[]",
+          "formatOptions": ""
+        },
+        {
+          "property": "pathco_y",
+          "propertyVisible": true,
+          "propertyType": "D",
+          "propertyRange": "Edm.Int32",
+          "ordinal": 8,
+          "aggregate": "[]",
+          "formatOptions": ""
+        },
+        {
+          "property": "sequence",
+          "propertyVisible": true,
+          "propertyType": "D",
+          "propertyRange": "Edm.Int32",
+          "ordinal": 9,
+          "aggregate": "[]",
+          "formatOptions": ""
+        },
+        {
+          "property": "isActivityMeasurementOfActivity",
+          "propertyVisible": false,
+          "propertyType": "C",
+          "propertyRange": "Activity",
+          "ordinal": 10,
+          "aggregate": "[Count]",
+          "formatOptions": ""
+        },
+        {
+          "property": "isPath2ActivityMeasurementOfPath2Activity",
+          "propertyVisible": false,
+          "propertyType": "C",
+          "propertyRange": "Path2Activity",
+          "ordinal": 11,
+          "aggregate": "[Count]",
+          "formatOptions": ""
+        }
+      ]
+    },
+    "form": {
+      "target": "Path2ActivityMeasurement",
+      "formStyle": "entity360",
+      "targetVisible": true,
+      "targetIcon": "sap-icon://expand-group",
+      "targetEntity": "Path2ActivityMeasurement",
+      "properties": [
+        {
+          "property": "activityMeasurementType",
+          "propertyVisible": true,
+          "propertyType": "D",
+          "propertyRange": "Edm.String",
+          "ordinal": 0,
+          "aggregate": "[]",
+          "formatOptions": null
+        },
+        {
+          "property": "activitymeasurementid",
+          "propertyVisible": false,
+          "propertyType": "D",
+          "propertyRange": "Edm.String",
+          "ordinal": 1,
+          "aggregate": "[]",
+          "formatOptions": null
+        },
+        {
+          "property": "dateTime",
+          "propertyVisible": true,
+          "propertyType": "D",
+          "propertyRange": "Edm.DateTimeOffset",
+          "ordinal": 2,
+          "aggregate": "[]",
+          "formatOptions": null
+        },
+        {
+          "property": "deviation",
+          "propertyVisible": true,
+          "propertyType": "D",
+          "propertyRange": "Edm.Int32",
+          "ordinal": 3,
+          "aggregate": "[]",
+          "formatOptions": null
+        },
+        {
+          "property": "duration",
+          "propertyVisible": true,
+          "propertyType": "D",
+          "propertyRange": "Edm.Int32",
+          "ordinal": 4,
+          "aggregate": "[]",
+          "formatOptions": null
+        },
+        {
+          "property": "mouseco_x",
+          "propertyVisible": true,
+          "propertyType": "D",
+          "propertyRange": "Edm.Int32",
+          "ordinal": 5,
+          "aggregate": "[]",
+          "formatOptions": null
+        },
+        {
+          "property": "mouseco_y",
+          "propertyVisible": true,
+          "propertyType": "D",
+          "propertyRange": "Edm.Int32",
+          "ordinal": 6,
+          "aggregate": "[]",
+          "formatOptions": null
+        },
+        {
+          "property": "pathco_x",
+          "propertyVisible": true,
+          "propertyType": "D",
+          "propertyRange": "Edm.Int32",
+          "ordinal": 7,
+          "aggregate": "[]",
+          "formatOptions": null
+        },
+        {
+          "property": "pathco_y",
+          "propertyVisible": true,
+          "propertyType": "D",
+          "propertyRange": "Edm.Int32",
+          "ordinal": 8,
+          "aggregate": "[]",
+          "formatOptions": null
+        },
+        {
+          "property": "sequence",
+          "propertyVisible": true,
+          "propertyType": "D",
+          "propertyRange": "Edm.Int32",
+          "ordinal": 9,
+          "aggregate": "[]",
+          "formatOptions": null
+        },
+        {
+          "property": "isActivityMeasurementOfActivity",
+          "propertyVisible": true,
+          "propertyType": "C",
+          "propertyRange": "Activity",
+          "ordinal": 10,
+          "aggregate": "[List]",
+          "formatOptions": null
+        },
+        {
+          "property": "isPath2ActivityMeasurementOfPath2Activity",
+          "propertyVisible": true,
+          "propertyType": "C",
+          "propertyRange": "Path2Activity",
+          "ordinal": 11,
+          "aggregate": "[List]",
+          "formatOptions": null
+        }
+      ]
+    }
+  },
+  "SnookerActivity": {
+    "entity": "SnookerActivity",
+    "icon": "sap-icon://group-2",
+    "image": "./apartment/BeCareLink/images/snooker.svg",
+    "entitySetVisible": true,
+    "grid": {
+      "target": "SnookerActivitys",
+      "gridStyle": "entitySetTable",
+      "targetVisible": true,
+      "targetIcon": "sap-icon://group-2",
+      "targetEntity": "SnookerActivity",
+      "properties": [
+        {
+          "property": "activityType",
+          "propertyVisible": true,
+          "propertyType": "D",
+          "propertyRange": "Edm.String",
+          "ordinal": 0,
+          "aggregate": "[]",
+          "formatOptions": ""
+        },
+        {
+          "property": "activityid",
+          "propertyVisible": false,
+          "propertyType": "D",
+          "propertyRange": "Edm.String",
+          "ordinal": 1,
+          "aggregate": "[]",
+          "formatOptions": ""
+        },
+        {
+          "property": "avgDuration",
+          "propertyVisible": true,
+          "propertyType": "D",
+          "propertyRange": "Edm.Double",
+          "ordinal": 2,
+          "aggregate": "[]",
+          "formatOptions": "{'style':'short';'maxFractionDigits':2}"
+        },
+        {
+          "property": "dataPoints",
+          "propertyVisible": true,
+          "propertyType": "D",
+          "propertyRange": "Edm.Int32",
+          "ordinal": 3,
+          "aggregate": "[]",
+          "formatOptions": ""
+        },
+        {
+          "property": "dateTime",
+          "propertyVisible": true,
+          "propertyType": "D",
+          "propertyRange": "Edm.DateTimeOffset",
+          "ordinal": 4,
+          "aggregate": "[]",
+          "formatOptions": ""
+        },
+        {
+          "property": "standardDeviation",
+          "propertyVisible": true,
+          "propertyType": "D",
+          "propertyRange": "Edm.Decimal",
+          "ordinal": 5,
+          "aggregate": "[]",
+          "formatOptions": ""
+        },
+        {
+          "property": "totalDuration",
+          "propertyVisible": true,
+          "propertyType": "D",
+          "propertyRange": "Edm.Double",
+          "ordinal": 6,
+          "aggregate": "[]",
+          "formatOptions": "{'style':'short';'maxFractionDigits':2}"
+        },
+        {
+          "property": "hasActivityMeasurement",
+          "propertyVisible": false,
+          "propertyType": "C",
+          "propertyRange": "ActivityMeasurement",
+          "ordinal": 7,
+          "aggregate": "[Count]",
+          "formatOptions": ""
+        },
+        {
+          "property": "hasSnookerActivityMeasurement",
+          "propertyVisible": false,
+          "propertyType": "C",
+          "propertyRange": "SnookerActivityMeasurement",
+          "ordinal": 8,
+          "aggregate": "[Count]",
+          "formatOptions": ""
+        },
+        {
+          "property": "isActivityOfUser",
+          "propertyVisible": false,
+          "propertyType": "C",
+          "propertyRange": "User",
+          "ordinal": 9,
+          "aggregate": "[Count]",
+          "formatOptions": ""
+        },
+        {
+          "property": "isSnookerActivityOfUser",
+          "propertyVisible": false,
+          "propertyType": "C",
+          "propertyRange": "User",
+          "ordinal": 10,
+          "aggregate": "[Count]",
+          "formatOptions": ""
+        }
+      ]
+    },
+    "form": {
+      "target": "SnookerActivity",
+      "formStyle": "entity360",
+      "targetVisible": true,
+      "targetIcon": "sap-icon://expand-group",
+      "targetEntity": "SnookerActivity",
+      "properties": [
+        {
+          "property": "activityType",
+          "propertyVisible": true,
+          "propertyType": "D",
+          "propertyRange": "Edm.String",
+          "ordinal": 0,
+          "aggregate": "[]",
+          "formatOptions": null
+        },
+        {
+          "property": "activityid",
+          "propertyVisible": false,
+          "propertyType": "D",
+          "propertyRange": "Edm.String",
+          "ordinal": 1,
+          "aggregate": "[]",
+          "formatOptions": null
+        },
+        {
+          "property": "avgDuration",
+          "propertyVisible": true,
+          "propertyType": "D",
+          "propertyRange": "Edm.Double",
+          "ordinal": 2,
+          "aggregate": "[]",
+          "formatOptions": "{'style':'short';'maxFractionDigits':2}"
+        },
+        {
+          "property": "dataPoints",
+          "propertyVisible": true,
+          "propertyType": "D",
+          "propertyRange": "Edm.Int32",
+          "ordinal": 3,
+          "aggregate": "[]",
+          "formatOptions": null
+        },
+        {
+          "property": "dateTime",
+          "propertyVisible": true,
+          "propertyType": "D",
+          "propertyRange": "Edm.DateTimeOffset",
+          "ordinal": 4,
+          "aggregate": "[]",
+          "formatOptions": null
+        },
+        {
+          "property": "standardDeviation",
+          "propertyVisible": true,
+          "propertyType": "D",
+          "propertyRange": "Edm.Decimal",
+          "ordinal": 5,
+          "aggregate": "[]",
+          "formatOptions": null
+        },
+        {
+          "property": "totalDuration",
+          "propertyVisible": true,
+          "propertyType": "D",
+          "propertyRange": "Edm.Double",
+          "ordinal": 6,
+          "aggregate": "[]",
+          "formatOptions": "{'style':'short';'maxFractionDigits':2}"
+        },
+        {
+          "property": "hasActivityMeasurement",
+          "propertyVisible": true,
+          "propertyType": "C",
+          "propertyRange": "ActivityMeasurement",
+          "ordinal": 7,
+          "aggregate": "[List]",
+          "formatOptions": null
+        },
+        {
+          "property": "hasSnookerActivityMeasurement",
+          "propertyVisible": true,
+          "propertyType": "C",
+          "propertyRange": "SnookerActivityMeasurement",
+          "ordinal": 8,
+          "aggregate": "[List]",
+          "formatOptions": null
+        },
+        {
+          "property": "isActivityOfUser",
+          "propertyVisible": true,
+          "propertyType": "C",
+          "propertyRange": "User",
+          "ordinal": 9,
+          "aggregate": "[List]",
+          "formatOptions": null
+        },
+        {
+          "property": "isSnookerActivityOfUser",
+          "propertyVisible": true,
+          "propertyType": "C",
+          "propertyRange": "User",
+          "ordinal": 10,
+          "aggregate": "[List]",
+          "formatOptions": null
+        }
+      ]
+    }
+  },
+  "SnookerActivityMeasurement": {
+    "entity": "SnookerActivityMeasurement",
+    "icon": "sap-icon://group-2",
+    "image": "./apartment/BeCareLink/images/measure.svg",
+    "entitySetVisible": true,
+    "grid": {
+      "target": "SnookerActivityMeasurements",
+      "gridStyle": "entitySetTable",
+      "targetVisible": true,
+      "targetIcon": "sap-icon://group-2",
+      "targetEntity": "SnookerActivityMeasurement",
+      "properties": [
+        {
+          "property": "activityMeasurementType",
+          "propertyVisible": true,
+          "propertyType": "D",
+          "propertyRange": "Edm.String",
+          "ordinal": 0,
+          "aggregate": "[]",
+          "formatOptions": ""
+        },
+        {
+          "property": "activitymeasurementid",
+          "propertyVisible": false,
+          "propertyType": "D",
+          "propertyRange": "Edm.String",
+          "ordinal": 1,
+          "aggregate": "[]",
+          "formatOptions": ""
+        },
+        {
+          "property": "dateTime",
+          "propertyVisible": true,
+          "propertyType": "D",
+          "propertyRange": "Edm.DateTimeOffset",
+          "ordinal": 2,
+          "aggregate": "[]",
+          "formatOptions": ""
+        },
+        {
+          "property": "duration",
+          "propertyVisible": true,
+          "propertyType": "D",
+          "propertyRange": "Edm.Int32",
+          "ordinal": 3,
+          "aggregate": "[]",
+          "formatOptions": ""
+        },
+        {
+          "property": "sequence",
+          "propertyVisible": true,
+          "propertyType": "D",
+          "propertyRange": "Edm.Int32",
+          "ordinal": 4,
+          "aggregate": "[]",
+          "formatOptions": ""
+        },
+        {
+          "property": "isActivityMeasurementOfActivity",
+          "propertyVisible": false,
+          "propertyType": "C",
+          "propertyRange": "Activity",
+          "ordinal": 5,
+          "aggregate": "[Count]",
+          "formatOptions": ""
+        },
+        {
+          "property": "isSnookerActivityMeasurementOfSnookerActivity",
+          "propertyVisible": false,
+          "propertyType": "C",
+          "propertyRange": "SnookerActivity",
+          "ordinal": 6,
+          "aggregate": "[Count]",
+          "formatOptions": ""
+        }
+      ]
+    },
+    "form": {
+      "target": "SnookerActivityMeasurement",
+      "formStyle": "entity360",
+      "targetVisible": true,
+      "targetIcon": "sap-icon://expand-group",
+      "targetEntity": "SnookerActivityMeasurement",
+      "properties": [
+        {
+          "property": "activityMeasurementType",
+          "propertyVisible": true,
+          "propertyType": "D",
+          "propertyRange": "Edm.String",
+          "ordinal": 0,
+          "aggregate": "[]",
+          "formatOptions": null
+        },
+        {
+          "property": "activitymeasurementid",
+          "propertyVisible": false,
+          "propertyType": "D",
+          "propertyRange": "Edm.String",
+          "ordinal": 1,
+          "aggregate": "[]",
+          "formatOptions": null
+        },
+        {
+          "property": "dateTime",
+          "propertyVisible": true,
+          "propertyType": "D",
+          "propertyRange": "Edm.DateTimeOffset",
+          "ordinal": 2,
+          "aggregate": "[]",
+          "formatOptions": null
+        },
+        {
+          "property": "duration",
+          "propertyVisible": true,
+          "propertyType": "D",
+          "propertyRange": "Edm.Int32",
+          "ordinal": 3,
+          "aggregate": "[]",
+          "formatOptions": null
+        },
+        {
+          "property": "sequence",
+          "propertyVisible": true,
+          "propertyType": "D",
+          "propertyRange": "Edm.Int32",
+          "ordinal": 4,
+          "aggregate": "[]",
+          "formatOptions": null
+        },
+        {
+          "property": "isActivityMeasurementOfActivity",
+          "propertyVisible": true,
+          "propertyType": "C",
+          "propertyRange": "Activity",
+          "ordinal": 5,
+          "aggregate": "[List]",
+          "formatOptions": null
+        },
+        {
+          "property": "isSnookerActivityMeasurementOfSnookerActivity",
+          "propertyVisible": true,
+          "propertyType": "C",
+          "propertyRange": "SnookerActivity",
+          "ordinal": 6,
+          "aggregate": "[List]",
+          "formatOptions": null
+        }
+      ]
+    }
+  },
+  "StroopTestActivity": {
+    "entity": "StroopTestActivity",
+    "icon": "sap-icon://group-2",
+    "image": "./apartment/BeCareLink/images/stroop.svg",
+    "entitySetVisible": true,
+    "grid": {
+      "target": "StroopTestActivitys",
+      "gridStyle": "entitySetTable",
+      "targetVisible": true,
+      "targetIcon": "sap-icon://group-2",
+      "targetEntity": "StroopTestActivity",
+      "properties": [
+        {
+          "property": "activityType",
+          "propertyVisible": true,
+          "propertyType": "D",
+          "propertyRange": "Edm.String",
+          "ordinal": 0,
+          "aggregate": "[]",
+          "formatOptions": ""
+        },
+        {
+          "property": "activityid",
+          "propertyVisible": false,
+          "propertyType": "D",
+          "propertyRange": "Edm.String",
+          "ordinal": 1,
+          "aggregate": "[]",
+          "formatOptions": ""
+        },
+        {
+          "property": "avgDuration",
+          "propertyVisible": true,
+          "propertyType": "D",
+          "propertyRange": "Edm.Double",
+          "ordinal": 2,
+          "aggregate": "[]",
+          "formatOptions": "{'style':'short';'maxFractionDigits':2}"
+        },
+        {
+          "property": "dataPoints",
+          "propertyVisible": true,
+          "propertyType": "D",
+          "propertyRange": "Edm.Int32",
+          "ordinal": 3,
+          "aggregate": "[]",
+          "formatOptions": ""
+        },
+        {
+          "property": "dateTime",
+          "propertyVisible": true,
+          "propertyType": "D",
+          "propertyRange": "Edm.DateTimeOffset",
+          "ordinal": 4,
+          "aggregate": "[]",
+          "formatOptions": ""
+        },
+        {
+          "property": "standardDeviation",
+          "propertyVisible": true,
+          "propertyType": "D",
+          "propertyRange": "Edm.Decimal",
+          "ordinal": 5,
+          "aggregate": "[]",
+          "formatOptions": ""
+        },
+        {
+          "property": "totalDuration",
+          "propertyVisible": true,
+          "propertyType": "D",
+          "propertyRange": "Edm.Double",
+          "ordinal": 6,
+          "aggregate": "[]",
+          "formatOptions": "{'style':'short';'maxFractionDigits':2}"
+        },
+        {
+          "property": "hasActivityMeasurement",
+          "propertyVisible": false,
+          "propertyType": "C",
+          "propertyRange": "ActivityMeasurement",
+          "ordinal": 7,
+          "aggregate": "[Count]",
+          "formatOptions": ""
+        },
+        {
+          "property": "hasStroopTestActivityMeasurement",
+          "propertyVisible": false,
+          "propertyType": "C",
+          "propertyRange": "StroopTestActivityMeasurement",
+          "ordinal": 8,
+          "aggregate": "[Count]",
+          "formatOptions": ""
+        },
+        {
+          "property": "isActivityOfUser",
+          "propertyVisible": false,
+          "propertyType": "C",
+          "propertyRange": "User",
+          "ordinal": 9,
+          "aggregate": "[Count]",
+          "formatOptions": ""
+        },
+        {
+          "property": "isStroopTestActivityOfUser",
+          "propertyVisible": false,
+          "propertyType": "C",
+          "propertyRange": "User",
+          "ordinal": 10,
+          "aggregate": "[Count]",
+          "formatOptions": ""
+        }
+      ]
+    },
+    "form": {
+      "target": "StroopTestActivity",
+      "formStyle": "entity360",
+      "targetVisible": true,
+      "targetIcon": "sap-icon://expand-group",
+      "targetEntity": "StroopTestActivity",
+      "properties": [
+        {
+          "property": "activityType",
+          "propertyVisible": true,
+          "propertyType": "D",
+          "propertyRange": "Edm.String",
+          "ordinal": 0,
+          "aggregate": "[]",
+          "formatOptions": null
+        },
+        {
+          "property": "activityid",
+          "propertyVisible": false,
+          "propertyType": "D",
+          "propertyRange": "Edm.String",
+          "ordinal": 1,
+          "aggregate": "[]",
+          "formatOptions": null
+        },
+        {
+          "property": "avgDuration",
+          "propertyVisible": true,
+          "propertyType": "D",
+          "propertyRange": "Edm.Double",
+          "ordinal": 2,
+          "aggregate": "[]",
+          "formatOptions": "{'style':'short';'maxFractionDigits':2}"
+        },
+        {
+          "property": "dataPoints",
+          "propertyVisible": true,
+          "propertyType": "D",
+          "propertyRange": "Edm.Int32",
+          "ordinal": 3,
+          "aggregate": "[]",
+          "formatOptions": null
+        },
+        {
+          "property": "dateTime",
+          "propertyVisible": true,
+          "propertyType": "D",
+          "propertyRange": "Edm.DateTimeOffset",
+          "ordinal": 4,
+          "aggregate": "[]",
+          "formatOptions": null
+        },
+        {
+          "property": "standardDeviation",
+          "propertyVisible": true,
+          "propertyType": "D",
+          "propertyRange": "Edm.Decimal",
+          "ordinal": 5,
+          "aggregate": "[]",
+          "formatOptions": null
+        },
+        {
+          "property": "totalDuration",
+          "propertyVisible": true,
+          "propertyType": "D",
+          "propertyRange": "Edm.Double",
+          "ordinal": 6,
+          "aggregate": "[]",
+          "formatOptions": "{'style':'short';'maxFractionDigits':2}"
+        },
+        {
+          "property": "hasActivityMeasurement",
+          "propertyVisible": true,
+          "propertyType": "C",
+          "propertyRange": "ActivityMeasurement",
+          "ordinal": 7,
+          "aggregate": "[List]",
+          "formatOptions": null
+        },
+        {
+          "property": "hasStroopTestActivityMeasurement",
+          "propertyVisible": true,
+          "propertyType": "C",
+          "propertyRange": "StroopTestActivityMeasurement",
+          "ordinal": 8,
+          "aggregate": "[List]",
+          "formatOptions": null
+        },
+        {
+          "property": "isActivityOfUser",
+          "propertyVisible": true,
+          "propertyType": "C",
+          "propertyRange": "User",
+          "ordinal": 9,
+          "aggregate": "[List]",
+          "formatOptions": null
+        },
+        {
+          "property": "isStroopTestActivityOfUser",
+          "propertyVisible": true,
+          "propertyType": "C",
+          "propertyRange": "User",
+          "ordinal": 10,
+          "aggregate": "[List]",
+          "formatOptions": null
+        }
+      ]
+    }
+  },
+  "StroopTestActivityMeasurement": {
+    "entity": "StroopTestActivityMeasurement",
+    "icon": "sap-icon://group-2",
+    "image": "./apartment/BeCareLink/images/measure.svg",
+    "entitySetVisible": true,
+    "grid": {
+      "target": "StroopTestActivityMeasurements",
+      "gridStyle": "entitySetTable",
+      "targetVisible": true,
+      "targetIcon": "sap-icon://group-2",
+      "targetEntity": "StroopTestActivityMeasurement",
+      "properties": [
+        {
+          "property": "activityMeasurementType",
+          "propertyVisible": true,
+          "propertyType": "D",
+          "propertyRange": "Edm.String",
+          "ordinal": 0,
+          "aggregate": "[]",
+          "formatOptions": ""
+        },
+        {
+          "property": "activitymeasurementid",
+          "propertyVisible": false,
+          "propertyType": "D",
+          "propertyRange": "Edm.String",
+          "ordinal": 1,
+          "aggregate": "[]",
+          "formatOptions": ""
+        },
+        {
+          "property": "answer",
+          "propertyVisible": true,
+          "propertyType": "D",
+          "propertyRange": "Edm.String",
+          "ordinal": 2,
+          "aggregate": "[]",
+          "formatOptions": ""
+        },
+        {
+          "property": "color",
+          "propertyVisible": true,
+          "propertyType": "D",
+          "propertyRange": "Edm.String",
+          "ordinal": 3,
+          "aggregate": "[]",
+          "formatOptions": ""
+        },
+        {
+          "property": "correct",
+          "propertyVisible": true,
+          "propertyType": "D",
+          "propertyRange": "Edm.Boolean",
+          "ordinal": 4,
+          "aggregate": "[]",
+          "formatOptions": ""
+        },
+        {
+          "property": "dateTime",
+          "propertyVisible": true,
+          "propertyType": "D",
+          "propertyRange": "Edm.DateTimeOffset",
+          "ordinal": 5,
+          "aggregate": "[]",
+          "formatOptions": ""
+        },
+        {
+          "property": "duration",
+          "propertyVisible": true,
+          "propertyType": "D",
+          "propertyRange": "Edm.Int32",
+          "ordinal": 6,
+          "aggregate": "[]",
+          "formatOptions": ""
+        },
+        {
+          "property": "sequence",
+          "propertyVisible": true,
+          "propertyType": "D",
+          "propertyRange": "Edm.Int32",
+          "ordinal": 7,
+          "aggregate": "[]",
+          "formatOptions": ""
+        },
+        {
+          "property": "word",
+          "propertyVisible": true,
+          "propertyType": "D",
+          "propertyRange": "Edm.String",
+          "ordinal": 8,
+          "aggregate": "[]",
+          "formatOptions": ""
+        },
+        {
+          "property": "isActivityMeasurementOfActivity",
+          "propertyVisible": false,
+          "propertyType": "C",
+          "propertyRange": "Activity",
+          "ordinal": 9,
+          "aggregate": "[Count]",
+          "formatOptions": ""
+        },
+        {
+          "property": "isStroopTestActivityMeasurementOfStroopTestActivity",
+          "propertyVisible": false,
+          "propertyType": "C",
+          "propertyRange": "StroopTestActivity",
+          "ordinal": 10,
+          "aggregate": "[Count]",
+          "formatOptions": ""
+        }
+      ]
+    },
+    "form": {
+      "target": "StroopTestActivityMeasurement",
+      "formStyle": "entity360",
+      "targetVisible": true,
+      "targetIcon": "sap-icon://expand-group",
+      "targetEntity": "StroopTestActivityMeasurement",
+      "properties": [
+        {
+          "property": "activityMeasurementType",
+          "propertyVisible": true,
+          "propertyType": "D",
+          "propertyRange": "Edm.String",
+          "ordinal": 0,
+          "aggregate": "[]",
+          "formatOptions": null
+        },
+        {
+          "property": "activitymeasurementid",
+          "propertyVisible": false,
+          "propertyType": "D",
+          "propertyRange": "Edm.String",
+          "ordinal": 1,
+          "aggregate": "[]",
+          "formatOptions": null
+        },
+        {
+          "property": "answer",
+          "propertyVisible": true,
+          "propertyType": "D",
+          "propertyRange": "Edm.String",
+          "ordinal": 2,
+          "aggregate": "[]",
+          "formatOptions": null
+        },
+        {
+          "property": "color",
+          "propertyVisible": true,
+          "propertyType": "D",
+          "propertyRange": "Edm.String",
+          "ordinal": 3,
+          "aggregate": "[]",
+          "formatOptions": null
+        },
+        {
+          "property": "correct",
+          "propertyVisible": true,
+          "propertyType": "D",
+          "propertyRange": "Edm.Boolean",
+          "ordinal": 4,
+          "aggregate": "[]",
+          "formatOptions": null
+        },
+        {
+          "property": "dateTime",
+          "propertyVisible": true,
+          "propertyType": "D",
+          "propertyRange": "Edm.DateTimeOffset",
+          "ordinal": 5,
+          "aggregate": "[]",
+          "formatOptions": null
+        },
+        {
+          "property": "duration",
+          "propertyVisible": true,
+          "propertyType": "D",
+          "propertyRange": "Edm.Int32",
+          "ordinal": 6,
+          "aggregate": "[]",
+          "formatOptions": null
+        },
+        {
+          "property": "sequence",
+          "propertyVisible": true,
+          "propertyType": "D",
+          "propertyRange": "Edm.Int32",
+          "ordinal": 7,
+          "aggregate": "[]",
+          "formatOptions": null
+        },
+        {
+          "property": "word",
+          "propertyVisible": true,
+          "propertyType": "D",
+          "propertyRange": "Edm.String",
+          "ordinal": 8,
+          "aggregate": "[]",
+          "formatOptions": null
+        },
+        {
+          "property": "isActivityMeasurementOfActivity",
+          "propertyVisible": true,
+          "propertyType": "C",
+          "propertyRange": "Activity",
+          "ordinal": 9,
+          "aggregate": "[List]",
+          "formatOptions": null
+        },
+        {
+          "property": "isStroopTestActivityMeasurementOfStroopTestActivity",
+          "propertyVisible": true,
+          "propertyType": "C",
+          "propertyRange": "StroopTestActivity",
+          "ordinal": 10,
+          "aggregate": "[List]",
+          "formatOptions": null
+        }
+      ]
+    }
+  },
+  "TapTaskActivity": {
+    "entity": "TapTaskActivity",
+    "icon": "sap-icon://group-2",
+    "image": "./apartment/BeCareLink/images/tap.svg",
+    "entitySetVisible": true,
+    "grid": {
+      "target": "TapTaskActivitys",
+      "gridStyle": "entitySetTable",
+      "targetVisible": true,
+      "targetIcon": "sap-icon://group-2",
+      "targetEntity": "TapTaskActivity",
+      "properties": [
+        {
+          "property": "activityType",
+          "propertyVisible": true,
+          "propertyType": "D",
+          "propertyRange": "Edm.String",
+          "ordinal": 0,
+          "aggregate": "[]",
+          "formatOptions": ""
+        },
+        {
+          "property": "activityid",
+          "propertyVisible": false,
+          "propertyType": "D",
+          "propertyRange": "Edm.String",
+          "ordinal": 1,
+          "aggregate": "[]",
+          "formatOptions": ""
+        },
+        {
+          "property": "avgDuration",
+          "propertyVisible": true,
+          "propertyType": "D",
+          "propertyRange": "Edm.Double",
+          "ordinal": 2,
+          "aggregate": "[]",
+          "formatOptions": "{'style':'short';'maxFractionDigits':2}"
+        },
+        {
+          "property": "dataPoints",
+          "propertyVisible": true,
+          "propertyType": "D",
+          "propertyRange": "Edm.Int32",
+          "ordinal": 3,
+          "aggregate": "[]",
+          "formatOptions": ""
+        },
+        {
+          "property": "dateTime",
+          "propertyVisible": true,
+          "propertyType": "D",
+          "propertyRange": "Edm.DateTimeOffset",
+          "ordinal": 4,
+          "aggregate": "[]",
+          "formatOptions": ""
+        },
+        {
+          "property": "standardDeviation",
+          "propertyVisible": true,
+          "propertyType": "D",
+          "propertyRange": "Edm.Decimal",
+          "ordinal": 5,
+          "aggregate": "[]",
+          "formatOptions": ""
+        },
+        {
+          "property": "totalDuration",
+          "propertyVisible": true,
+          "propertyType": "D",
+          "propertyRange": "Edm.Double",
+          "ordinal": 6,
+          "aggregate": "[]",
+          "formatOptions": "{'style':'short';'maxFractionDigits':2}"
+        },
+        {
+          "property": "hasActivityMeasurement",
+          "propertyVisible": false,
+          "propertyType": "C",
+          "propertyRange": "ActivityMeasurement",
+          "ordinal": 7,
+          "aggregate": "[Count]",
+          "formatOptions": ""
+        },
+        {
+          "property": "hasTapTaskActivityMeasurement",
+          "propertyVisible": false,
+          "propertyType": "C",
+          "propertyRange": "User",
+          "ordinal": 8,
+          "aggregate": "[Count]",
+          "formatOptions": ""
+        },
+        {
+          "property": "isActivityOfUser",
+          "propertyVisible": false,
+          "propertyType": "C",
+          "propertyRange": "User",
+          "ordinal": 9,
+          "aggregate": "[Count]",
+          "formatOptions": ""
+        },
+        {
+          "property": "isTapTaskActivityOfUser",
+          "propertyVisible": false,
+          "propertyType": "C",
+          "propertyRange": "User",
+          "ordinal": 10,
+          "aggregate": "[Count]",
+          "formatOptions": ""
+        }
+      ]
+    },
+    "form": {
+      "target": "TapTaskActivity",
+      "formStyle": "entity360",
+      "targetVisible": true,
+      "targetIcon": "sap-icon://expand-group",
+      "targetEntity": "TapTaskActivity",
+      "properties": [
+        {
+          "property": "activityType",
+          "propertyVisible": true,
+          "propertyType": "D",
+          "propertyRange": "Edm.String",
+          "ordinal": 0,
+          "aggregate": "[]",
+          "formatOptions": null
+        },
+        {
+          "property": "activityid",
+          "propertyVisible": false,
+          "propertyType": "D",
+          "propertyRange": "Edm.String",
+          "ordinal": 1,
+          "aggregate": "[]",
+          "formatOptions": null
+        },
+        {
+          "property": "avgDuration",
+          "propertyVisible": true,
+          "propertyType": "D",
+          "propertyRange": "Edm.Double",
+          "ordinal": 2,
+          "aggregate": "[]",
+          "formatOptions": "{'style':'short';'maxFractionDigits':2}"
+        },
+        {
+          "property": "dataPoints",
+          "propertyVisible": true,
+          "propertyType": "D",
+          "propertyRange": "Edm.Int32",
+          "ordinal": 3,
+          "aggregate": "[]",
+          "formatOptions": null
+        },
+        {
+          "property": "dateTime",
+          "propertyVisible": true,
+          "propertyType": "D",
+          "propertyRange": "Edm.DateTimeOffset",
+          "ordinal": 4,
+          "aggregate": "[]",
+          "formatOptions": null
+        },
+        {
+          "property": "standardDeviation",
+          "propertyVisible": true,
+          "propertyType": "D",
+          "propertyRange": "Edm.Decimal",
+          "ordinal": 5,
+          "aggregate": "[]",
+          "formatOptions": null
+        },
+        {
+          "property": "totalDuration",
+          "propertyVisible": true,
+          "propertyType": "D",
+          "propertyRange": "Edm.Double",
+          "ordinal": 6,
+          "aggregate": "[]",
+          "formatOptions": "{'style':'short';'maxFractionDigits':2}"
+        },
+        {
+          "property": "hasActivityMeasurement",
+          "propertyVisible": true,
+          "propertyType": "C",
+          "propertyRange": "ActivityMeasurement",
+          "ordinal": 7,
+          "aggregate": "[List]",
+          "formatOptions": null
+        },
+        {
+          "property": "hasTapTaskActivityMeasurement",
+          "propertyVisible": true,
+          "propertyType": "C",
+          "propertyRange": "User",
+          "ordinal": 8,
+          "aggregate": "[List]",
+          "formatOptions": null
+        },
+        {
+          "property": "isActivityOfUser",
+          "propertyVisible": true,
+          "propertyType": "C",
+          "propertyRange": "User",
+          "ordinal": 9,
+          "aggregate": "[List]",
+          "formatOptions": null
+        },
+        {
+          "property": "isTapTaskActivityOfUser",
+          "propertyVisible": true,
+          "propertyType": "C",
+          "propertyRange": "User",
+          "ordinal": 10,
+          "aggregate": "[List]",
+          "formatOptions": null
+        }
+      ]
+    }
+  },
+  "TapTaskActivityMeasurement": {
+    "entity": "TapTaskActivityMeasurement",
+    "icon": "sap-icon://group-2",
+    "image": "./apartment/BeCareLink/images/measure.svg",
+    "entitySetVisible": true,
+    "grid": {
+      "target": "TapTaskActivityMeasurements",
+      "gridStyle": "entitySetTable",
+      "targetVisible": true,
+      "targetIcon": "sap-icon://group-2",
+      "targetEntity": "TapTaskActivityMeasurement",
+      "properties": [
+        {
+          "property": "activityMeasurementType",
+          "propertyVisible": true,
+          "propertyType": "D",
+          "propertyRange": "Edm.String",
+          "ordinal": 0,
+          "aggregate": "[]",
+          "formatOptions": ""
+        },
+        {
+          "property": "activitymeasurementid",
+          "propertyVisible": false,
+          "propertyType": "D",
+          "propertyRange": "Edm.String",
+          "ordinal": 1,
+          "aggregate": "[]",
+          "formatOptions": ""
+        },
+        {
+          "property": "cointype",
+          "propertyVisible": true,
+          "propertyType": "D",
+          "propertyRange": "Edm.String",
+          "ordinal": 2,
+          "aggregate": "[]",
+          "formatOptions": ""
+        },
+        {
+          "property": "dateTime",
+          "propertyVisible": true,
+          "propertyType": "D",
+          "propertyRange": "Edm.DateTimeOffset",
+          "ordinal": 3,
+          "aggregate": "[]",
+          "formatOptions": ""
+        },
+        {
+          "property": "duration",
+          "propertyVisible": true,
+          "propertyType": "D",
+          "propertyRange": "Edm.Int32",
+          "ordinal": 4,
+          "aggregate": "[]",
+          "formatOptions": ""
+        },
+        {
+          "property": "hand",
+          "propertyVisible": true,
+          "propertyType": "D",
+          "propertyRange": "Edm.String",
+          "ordinal": 5,
+          "aggregate": "[]",
+          "formatOptions": ""
+        },
+        {
+          "property": "sequence",
+          "propertyVisible": true,
+          "propertyType": "D",
+          "propertyRange": "Edm.Int32",
+          "ordinal": 6,
+          "aggregate": "[]",
+          "formatOptions": ""
+        },
+        {
+          "property": "isActivityMeasurementOfActivity",
+          "propertyVisible": false,
+          "propertyType": "C",
+          "propertyRange": "Activity",
+          "ordinal": 7,
+          "aggregate": "[Count]",
+          "formatOptions": ""
+        }
+      ]
+    },
+    "form": {
+      "target": "TapTaskActivityMeasurement",
+      "formStyle": "entity360",
+      "targetVisible": true,
+      "targetIcon": "sap-icon://expand-group",
+      "targetEntity": "TapTaskActivityMeasurement",
+      "properties": [
+        {
+          "property": "activityMeasurementType",
+          "propertyVisible": true,
+          "propertyType": "D",
+          "propertyRange": "Edm.String",
+          "ordinal": 0,
+          "aggregate": "[]",
+          "formatOptions": null
+        },
+        {
+          "property": "activitymeasurementid",
+          "propertyVisible": false,
+          "propertyType": "D",
+          "propertyRange": "Edm.String",
+          "ordinal": 1,
+          "aggregate": "[]",
+          "formatOptions": null
+        },
+        {
+          "property": "cointype",
+          "propertyVisible": true,
+          "propertyType": "D",
+          "propertyRange": "Edm.String",
+          "ordinal": 2,
+          "aggregate": "[]",
+          "formatOptions": null
+        },
+        {
+          "property": "dateTime",
+          "propertyVisible": true,
+          "propertyType": "D",
+          "propertyRange": "Edm.DateTimeOffset",
+          "ordinal": 3,
+          "aggregate": "[]",
+          "formatOptions": null
+        },
+        {
+          "property": "duration",
+          "propertyVisible": true,
+          "propertyType": "D",
+          "propertyRange": "Edm.Int32",
+          "ordinal": 4,
+          "aggregate": "[]",
+          "formatOptions": null
+        },
+        {
+          "property": "hand",
+          "propertyVisible": true,
+          "propertyType": "D",
+          "propertyRange": "Edm.String",
+          "ordinal": 5,
+          "aggregate": "[]",
+          "formatOptions": null
+        },
+        {
+          "property": "sequence",
+          "propertyVisible": true,
+          "propertyType": "D",
+          "propertyRange": "Edm.Int32",
+          "ordinal": 6,
+          "aggregate": "[]",
+          "formatOptions": null
+        },
+        {
+          "property": "isActivityMeasurementOfActivity",
+          "propertyVisible": true,
+          "propertyType": "C",
+          "propertyRange": "Activity",
+          "ordinal": 7,
+          "aggregate": "[List]",
+          "formatOptions": null
+        }
+      ]
+    }
+  },
+  "TranscriptionTestActivity": {
+    "entity": "TranscriptionTestActivity",
+    "icon": "sap-icon://group-2",
+    "image": "./apartment/BeCareLink/images/transcription.svg",
+    "entitySetVisible": true,
+    "grid": {
+      "target": "TranscriptionTestActivitys",
+      "gridStyle": "entitySetTable",
+      "targetVisible": true,
+      "targetIcon": "sap-icon://group-2",
+      "targetEntity": "TranscriptionTestActivity",
+      "properties": [
+        {
+          "property": "activityType",
+          "propertyVisible": true,
+          "propertyType": "D",
+          "propertyRange": "Edm.String",
+          "ordinal": 0,
+          "aggregate": "[]",
+          "formatOptions": ""
+        },
+        {
+          "property": "activityid",
+          "propertyVisible": false,
+          "propertyType": "D",
+          "propertyRange": "Edm.String",
+          "ordinal": 1,
+          "aggregate": "[]",
+          "formatOptions": ""
+        },
+        {
+          "property": "answer",
+          "propertyVisible": true,
+          "propertyType": "D",
+          "propertyRange": "Edm.String",
+          "ordinal": 2,
+          "aggregate": "[]",
+          "formatOptions": ""
+        },
+        {
+          "property": "avgDuration",
+          "propertyVisible": true,
+          "propertyType": "D",
+          "propertyRange": "Edm.Double",
+          "ordinal": 3,
+          "aggregate": "[]",
+          "formatOptions": "{'style':'short';'maxFractionDigits':2}"
+        },
+        {
+          "property": "correct",
+          "propertyVisible": true,
+          "propertyType": "D",
+          "propertyRange": "Edm.Boolean",
+          "ordinal": 4,
+          "aggregate": "[]",
+          "formatOptions": ""
+        },
+        {
+          "property": "dataPoints",
+          "propertyVisible": true,
+          "propertyType": "D",
+          "propertyRange": "Edm.Int32",
+          "ordinal": 5,
+          "aggregate": "[]",
+          "formatOptions": ""
+        },
+        {
+          "property": "dateTime",
+          "propertyVisible": true,
+          "propertyType": "D",
+          "propertyRange": "Edm.DateTimeOffset",
+          "ordinal": 6,
+          "aggregate": "[]",
+          "formatOptions": ""
+        },
+        {
+          "property": "incorrect",
+          "propertyVisible": true,
+          "propertyType": "D",
+          "propertyRange": "Edm.Int32",
+          "ordinal": 7,
+          "aggregate": "[]",
+          "formatOptions": ""
+        },
+        {
+          "property": "question",
+          "propertyVisible": true,
+          "propertyType": "D",
+          "propertyRange": "Edm.String",
+          "ordinal": 8,
+          "aggregate": "[]",
+          "formatOptions": ""
+        },
+        {
+          "property": "standardDeviation",
+          "propertyVisible": true,
+          "propertyType": "D",
+          "propertyRange": "Edm.Decimal",
+          "ordinal": 9,
+          "aggregate": "[]",
+          "formatOptions": ""
+        },
+        {
+          "property": "totalDuration",
+          "propertyVisible": true,
+          "propertyType": "D",
+          "propertyRange": "Edm.Double",
+          "ordinal": 10,
+          "aggregate": "[]",
+          "formatOptions": "{'style':'short';'maxFractionDigits':2}"
+        },
+        {
+          "property": "hasActivityMeasurement",
+          "propertyVisible": false,
+          "propertyType": "C",
+          "propertyRange": "ActivityMeasurement",
+          "ordinal": 11,
+          "aggregate": "[Count]",
+          "formatOptions": ""
+        },
+        {
+          "property": "hasTranscriptionTestActivityMeasurement",
+          "propertyVisible": false,
+          "propertyType": "C",
+          "propertyRange": "TranscriptionTestActivityMeasurement",
+          "ordinal": 12,
+          "aggregate": "[Count]",
+          "formatOptions": ""
+        },
+        {
+          "property": "isActivityOfUser",
+          "propertyVisible": false,
+          "propertyType": "C",
+          "propertyRange": "User",
+          "ordinal": 13,
+          "aggregate": "[Count]",
+          "formatOptions": ""
+        },
+        {
+          "property": "isTranscriptionTestActivityOfUser",
+          "propertyVisible": false,
+          "propertyType": "C",
+          "propertyRange": "User",
+          "ordinal": 14,
+          "aggregate": "[Count]",
+          "formatOptions": ""
+        }
+      ]
+    },
+    "form": {
+      "target": "TranscriptionTestActivity",
+      "formStyle": "entity360",
+      "targetVisible": true,
+      "targetIcon": "sap-icon://expand-group",
+      "targetEntity": "TranscriptionTestActivity",
+      "properties": [
+        {
+          "property": "activityType",
+          "propertyVisible": true,
+          "propertyType": "D",
+          "propertyRange": "Edm.String",
+          "ordinal": 0,
+          "aggregate": "[]",
+          "formatOptions": null
+        },
+        {
+          "property": "activityid",
+          "propertyVisible": false,
+          "propertyType": "D",
+          "propertyRange": "Edm.String",
+          "ordinal": 1,
+          "aggregate": "[]",
+          "formatOptions": null
+        },
+        {
+          "property": "answer",
+          "propertyVisible": true,
+          "propertyType": "D",
+          "propertyRange": "Edm.String",
+          "ordinal": 2,
+          "aggregate": "[]",
+          "formatOptions": null
+        },
+        {
+          "property": "avgDuration",
+          "propertyVisible": true,
+          "propertyType": "D",
+          "propertyRange": "Edm.Double",
+          "ordinal": 3,
+          "aggregate": "[]",
+          "formatOptions": "{'style':'short';'maxFractionDigits':2}"
+        },
+        {
+          "property": "correct",
+          "propertyVisible": true,
+          "propertyType": "D",
+          "propertyRange": "Edm.Boolean",
+          "ordinal": 4,
+          "aggregate": "[]",
+          "formatOptions": null
+        },
+        {
+          "property": "dataPoints",
+          "propertyVisible": true,
+          "propertyType": "D",
+          "propertyRange": "Edm.Int32",
+          "ordinal": 5,
+          "aggregate": "[]",
+          "formatOptions": null
+        },
+        {
+          "property": "dateTime",
+          "propertyVisible": true,
+          "propertyType": "D",
+          "propertyRange": "Edm.DateTimeOffset",
+          "ordinal": 6,
+          "aggregate": "[]",
+          "formatOptions": null
+        },
+        {
+          "property": "incorrect",
+          "propertyVisible": true,
+          "propertyType": "D",
+          "propertyRange": "Edm.Int32",
+          "ordinal": 7,
+          "aggregate": "[]",
+          "formatOptions": null
+        },
+        {
+          "property": "question",
+          "propertyVisible": true,
+          "propertyType": "D",
+          "propertyRange": "Edm.String",
+          "ordinal": 8,
+          "aggregate": "[]",
+          "formatOptions": null
+        },
+        {
+          "property": "standardDeviation",
+          "propertyVisible": true,
+          "propertyType": "D",
+          "propertyRange": "Edm.Decimal",
+          "ordinal": 9,
+          "aggregate": "[]",
+          "formatOptions": null
+        },
+        {
+          "property": "totalDuration",
+          "propertyVisible": true,
+          "propertyType": "D",
+          "propertyRange": "Edm.Double",
+          "ordinal": 10,
+          "aggregate": "[]",
+          "formatOptions": "{'style':'short';'maxFractionDigits':2}"
+        },
+        {
+          "property": "hasActivityMeasurement",
+          "propertyVisible": true,
+          "propertyType": "C",
+          "propertyRange": "ActivityMeasurement",
+          "ordinal": 11,
+          "aggregate": "[List]",
+          "formatOptions": null
+        },
+        {
+          "property": "hasTranscriptionTestActivityMeasurement",
+          "propertyVisible": true,
+          "propertyType": "C",
+          "propertyRange": "TranscriptionTestActivityMeasurement",
+          "ordinal": 12,
+          "aggregate": "[List]",
+          "formatOptions": null
+        },
+        {
+          "property": "isActivityOfUser",
+          "propertyVisible": true,
+          "propertyType": "C",
+          "propertyRange": "User",
+          "ordinal": 13,
+          "aggregate": "[List]",
+          "formatOptions": null
+        },
+        {
+          "property": "isTranscriptionTestActivityOfUser",
+          "propertyVisible": true,
+          "propertyType": "C",
+          "propertyRange": "User",
+          "ordinal": 14,
+          "aggregate": "[List]",
+          "formatOptions": null
+        }
+      ]
+    }
+  },
+  "TranscriptionTestActivityMeasurement": {
+    "entity": "TranscriptionTestActivityMeasurement",
+    "icon": "sap-icon://group-2",
+    "image": "./apartment/BeCareLink/images/measure.svg",
+    "entitySetVisible": true,
+    "grid": {
+      "target": "TranscriptionTestActivityMeasurements",
+      "gridStyle": "entitySetTable",
+      "targetVisible": true,
+      "targetIcon": "sap-icon://group-2",
+      "targetEntity": "TranscriptionTestActivityMeasurement",
+      "properties": [
+        {
+          "property": "activityMeasurementType",
+          "propertyVisible": true,
+          "propertyType": "D",
+          "propertyRange": "Edm.String",
+          "ordinal": 0,
+          "aggregate": "[]",
+          "formatOptions": ""
+        },
+        {
+          "property": "activitymeasurementid",
+          "propertyVisible": false,
+          "propertyType": "D",
+          "propertyRange": "Edm.String",
+          "ordinal": 1,
+          "aggregate": "[]",
+          "formatOptions": ""
+        },
+        {
+          "property": "dateTime",
+          "propertyVisible": true,
+          "propertyType": "D",
+          "propertyRange": "Edm.DateTimeOffset",
+          "ordinal": 2,
+          "aggregate": "[]",
+          "formatOptions": ""
+        },
+        {
+          "property": "duration",
+          "propertyVisible": true,
+          "propertyType": "D",
+          "propertyRange": "Edm.Int32",
+          "ordinal": 3,
+          "aggregate": "[]",
+          "formatOptions": ""
+        },
+        {
+          "property": "inputChar",
+          "propertyVisible": true,
+          "propertyType": "D",
+          "propertyRange": "Edm.String",
+          "ordinal": 4,
+          "aggregate": "[]",
+          "formatOptions": ""
+        },
+        {
+          "property": "match",
+          "propertyVisible": true,
+          "propertyType": "D",
+          "propertyRange": "Edm.Boolean",
+          "ordinal": 5,
+          "aggregate": "[]",
+          "formatOptions": ""
+        },
+        {
+          "property": "origChar",
+          "propertyVisible": true,
+          "propertyType": "D",
+          "propertyRange": "Edm.String",
+          "ordinal": 6,
+          "aggregate": "[]",
+          "formatOptions": ""
+        },
+        {
+          "property": "sequence",
+          "propertyVisible": true,
+          "propertyType": "D",
+          "propertyRange": "Edm.Int32",
+          "ordinal": 7,
+          "aggregate": "[]",
+          "formatOptions": ""
+        },
+        {
+          "property": "isActivityMeasurementOfActivity",
+          "propertyVisible": false,
+          "propertyType": "C",
+          "propertyRange": "Activity",
+          "ordinal": 8,
+          "aggregate": "[Count]",
+          "formatOptions": ""
+        },
+        {
+          "property": "isTranscriptionTestActivityMeasurementOfTranscriptionTestActivity",
+          "propertyVisible": false,
+          "propertyType": "C",
+          "propertyRange": "TranscriptionTestActivity",
+          "ordinal": 9,
+          "aggregate": "[Count]",
+          "formatOptions": ""
+        }
+      ]
+    },
+    "form": {
+      "target": "TranscriptionTestActivityMeasurement",
+      "formStyle": "entity360",
+      "targetVisible": true,
+      "targetIcon": "sap-icon://expand-group",
+      "targetEntity": "TranscriptionTestActivityMeasurement",
+      "properties": [
+        {
+          "property": "activityMeasurementType",
+          "propertyVisible": true,
+          "propertyType": "D",
+          "propertyRange": "Edm.String",
+          "ordinal": 0,
+          "aggregate": "[]",
+          "formatOptions": null
+        },
+        {
+          "property": "activitymeasurementid",
+          "propertyVisible": false,
+          "propertyType": "D",
+          "propertyRange": "Edm.String",
+          "ordinal": 1,
+          "aggregate": "[]",
+          "formatOptions": null
+        },
+        {
+          "property": "dateTime",
+          "propertyVisible": true,
+          "propertyType": "D",
+          "propertyRange": "Edm.DateTimeOffset",
+          "ordinal": 2,
+          "aggregate": "[]",
+          "formatOptions": null
+        },
+        {
+          "property": "duration",
+          "propertyVisible": true,
+          "propertyType": "D",
+          "propertyRange": "Edm.Int32",
+          "ordinal": 3,
+          "aggregate": "[]",
+          "formatOptions": null
+        },
+        {
+          "property": "inputChar",
+          "propertyVisible": true,
+          "propertyType": "D",
+          "propertyRange": "Edm.String",
+          "ordinal": 4,
+          "aggregate": "[]",
+          "formatOptions": null
+        },
+        {
+          "property": "match",
+          "propertyVisible": true,
+          "propertyType": "D",
+          "propertyRange": "Edm.Boolean",
+          "ordinal": 5,
+          "aggregate": "[]",
+          "formatOptions": null
+        },
+        {
+          "property": "origChar",
+          "propertyVisible": true,
+          "propertyType": "D",
+          "propertyRange": "Edm.String",
+          "ordinal": 6,
+          "aggregate": "[]",
+          "formatOptions": null
+        },
+        {
+          "property": "sequence",
+          "propertyVisible": true,
+          "propertyType": "D",
+          "propertyRange": "Edm.Int32",
+          "ordinal": 7,
+          "aggregate": "[]",
+          "formatOptions": null
+        },
+        {
+          "property": "isActivityMeasurementOfActivity",
+          "propertyVisible": true,
+          "propertyType": "C",
+          "propertyRange": "Activity",
+          "ordinal": 8,
+          "aggregate": "[List]",
+          "formatOptions": null
+        },
+        {
+          "property": "isTranscriptionTestActivityMeasurementOfTranscriptionTestActivity",
+          "propertyVisible": true,
+          "propertyType": "C",
+          "propertyRange": "TranscriptionTestActivity",
+          "ordinal": 9,
+          "aggregate": "[List]",
+          "formatOptions": null
+        }
+      ]
+    }
+  },
+  "TwentyFiveStepsActivity": {
+    "entity": "TwentyFiveStepsActivity",
+    "icon": "sap-icon://group-2",
+    "image": "./apartment/BeCareLink/images/steps.svg",
+    "entitySetVisible": true,
+    "grid": {
+      "target": "TwentyFiveStepsActivitys",
+      "gridStyle": "entitySetTable",
+      "targetVisible": true,
+      "targetIcon": "sap-icon://group-2",
+      "targetEntity": "TwentyFiveStepsActivity",
+      "properties": [
+        {
+          "property": "activityType",
+          "propertyVisible": true,
+          "propertyType": "D",
+          "propertyRange": "Edm.String",
+          "ordinal": 0,
+          "aggregate": "[]",
+          "formatOptions": ""
+        },
+        {
+          "property": "activityid",
+          "propertyVisible": false,
+          "propertyType": "D",
+          "propertyRange": "Edm.String",
+          "ordinal": 1,
+          "aggregate": "[]",
+          "formatOptions": ""
+        },
+        {
+          "property": "avgDuration",
+          "propertyVisible": true,
+          "propertyType": "D",
+          "propertyRange": "Edm.Double",
+          "ordinal": 2,
+          "aggregate": "[]",
+          "formatOptions": "{'style':'short';'maxFractionDigits':2}"
+        },
+        {
+          "property": "dataPoints",
+          "propertyVisible": true,
+          "propertyType": "D",
+          "propertyRange": "Edm.Int32",
+          "ordinal": 3,
+          "aggregate": "[]",
+          "formatOptions": ""
+        },
+        {
+          "property": "dateTime",
+          "propertyVisible": true,
+          "propertyType": "D",
+          "propertyRange": "Edm.DateTimeOffset",
+          "ordinal": 4,
+          "aggregate": "[]",
+          "formatOptions": ""
+        },
+        {
+          "property": "standardDeviation",
+          "propertyVisible": true,
+          "propertyType": "D",
+          "propertyRange": "Edm.Decimal",
+          "ordinal": 5,
+          "aggregate": "[]",
+          "formatOptions": ""
+        },
+        {
+          "property": "totalDuration",
+          "propertyVisible": true,
+          "propertyType": "D",
+          "propertyRange": "Edm.Double",
+          "ordinal": 6,
+          "aggregate": "[]",
+          "formatOptions": "{'style':'short';'maxFractionDigits':2}"
+        },
+        {
+          "property": "hasActivityMeasurement",
+          "propertyVisible": false,
+          "propertyType": "C",
+          "propertyRange": "ActivityMeasurement",
+          "ordinal": 7,
+          "aggregate": "[Count]",
+          "formatOptions": ""
+        },
+        {
+          "property": "hasTwentyFiveStepsActivityMeasurement",
+          "propertyVisible": false,
+          "propertyType": "C",
+          "propertyRange": "TwentyFiveStepsActivityMeasurement",
+          "ordinal": 8,
+          "aggregate": "[Count]",
+          "formatOptions": ""
+        },
+        {
+          "property": "isActivityOfUser",
+          "propertyVisible": false,
+          "propertyType": "C",
+          "propertyRange": "User",
+          "ordinal": 9,
+          "aggregate": "[Count]",
+          "formatOptions": ""
+        }
+      ]
+    },
+    "form": {
+      "target": "TwentyFiveStepsActivity",
+      "formStyle": "entity360",
+      "targetVisible": true,
+      "targetIcon": "sap-icon://expand-group",
+      "targetEntity": "TwentyFiveStepsActivity",
+      "properties": [
+        {
+          "property": "activityType",
+          "propertyVisible": true,
+          "propertyType": "D",
+          "propertyRange": "Edm.String",
+          "ordinal": 0,
+          "aggregate": "[]",
+          "formatOptions": null
+        },
+        {
+          "property": "activityid",
+          "propertyVisible": false,
+          "propertyType": "D",
+          "propertyRange": "Edm.String",
+          "ordinal": 1,
+          "aggregate": "[]",
+          "formatOptions": null
+        },
+        {
+          "property": "avgDuration",
+          "propertyVisible": true,
+          "propertyType": "D",
+          "propertyRange": "Edm.Double",
+          "ordinal": 2,
+          "aggregate": "[]",
+          "formatOptions": "{'style':'short';'maxFractionDigits':2}"
+        },
+        {
+          "property": "dataPoints",
+          "propertyVisible": true,
+          "propertyType": "D",
+          "propertyRange": "Edm.Int32",
+          "ordinal": 3,
+          "aggregate": "[]",
+          "formatOptions": null
+        },
+        {
+          "property": "dateTime",
+          "propertyVisible": true,
+          "propertyType": "D",
+          "propertyRange": "Edm.DateTimeOffset",
+          "ordinal": 4,
+          "aggregate": "[]",
+          "formatOptions": null
+        },
+        {
+          "property": "standardDeviation",
+          "propertyVisible": true,
+          "propertyType": "D",
+          "propertyRange": "Edm.Decimal",
+          "ordinal": 5,
+          "aggregate": "[]",
+          "formatOptions": null
+        },
+        {
+          "property": "totalDuration",
+          "propertyVisible": true,
+          "propertyType": "D",
+          "propertyRange": "Edm.Double",
+          "ordinal": 6,
+          "aggregate": "[]",
+          "formatOptions": "{'style':'short';'maxFractionDigits':2}"
+        },
+        {
+          "property": "hasActivityMeasurement",
+          "propertyVisible": true,
+          "propertyType": "C",
+          "propertyRange": "ActivityMeasurement",
+          "ordinal": 7,
+          "aggregate": "[List]",
+          "formatOptions": null
+        },
+        {
+          "property": "hasTwentyFiveStepsActivityMeasurement",
+          "propertyVisible": true,
+          "propertyType": "C",
+          "propertyRange": "TwentyFiveStepsActivityMeasurement",
+          "ordinal": 8,
+          "aggregate": "[List]",
+          "formatOptions": null
+        },
+        {
+          "property": "isActivityOfUser",
+          "propertyVisible": true,
+          "propertyType": "C",
+          "propertyRange": "User",
+          "ordinal": 9,
+          "aggregate": "[List]",
+          "formatOptions": null
+        }
+      ]
+    }
+  },
+  "TwentyFiveStepsActivityMeasurement": {
+    "entity": "TwentyFiveStepsActivityMeasurement",
+    "icon": "sap-icon://group-2",
+    "image": "./apartment/BeCareLink/images/measure.svg",
+    "entitySetVisible": true,
+    "grid": {
+      "target": "TwentyFiveStepsActivityMeasurements",
+      "gridStyle": "entitySetTable",
+      "targetVisible": true,
+      "targetIcon": "sap-icon://group-2",
+      "targetEntity": "TwentyFiveStepsActivityMeasurement",
+      "properties": [
+        {
+          "property": "activityMeasurementType",
+          "propertyVisible": true,
+          "propertyType": "D",
+          "propertyRange": "Edm.String",
+          "ordinal": 0,
+          "aggregate": "[]",
+          "formatOptions": ""
+        },
+        {
+          "property": "activitymeasurementid",
+          "propertyVisible": false,
+          "propertyType": "D",
+          "propertyRange": "Edm.String",
+          "ordinal": 1,
+          "aggregate": "[]",
+          "formatOptions": ""
+        },
+        {
+          "property": "dateTime",
+          "propertyVisible": true,
+          "propertyType": "D",
+          "propertyRange": "Edm.DateTimeOffset",
+          "ordinal": 2,
+          "aggregate": "[]",
+          "formatOptions": ""
+        },
+        {
+          "property": "distance",
+          "propertyVisible": true,
+          "propertyType": "D",
+          "propertyRange": "Edm.Double",
+          "ordinal": 3,
+          "aggregate": "[]",
+          "formatOptions": "{'style':'short';'maxFractionDigits':2}"
+        },
+        {
+          "property": "duration",
+          "propertyVisible": true,
+          "propertyType": "D",
+          "propertyRange": "Edm.Int32",
+          "ordinal": 4,
+          "aggregate": "[]",
+          "formatOptions": ""
+        },
+        {
+          "property": "height",
+          "propertyVisible": true,
+          "propertyType": "D",
+          "propertyRange": "Edm.Double",
+          "ordinal": 5,
+          "aggregate": "[]",
+          "formatOptions": "{'style':'short';'maxFractionDigits':2}"
+        },
+        {
+          "property": "sequence",
+          "propertyVisible": true,
+          "propertyType": "D",
+          "propertyRange": "Edm.Int32",
+          "ordinal": 6,
+          "aggregate": "[]",
+          "formatOptions": ""
+        },
+        {
+          "property": "speed",
+          "propertyVisible": true,
+          "propertyType": "D",
+          "propertyRange": "Edm.Double",
+          "ordinal": 7,
+          "aggregate": "[]",
+          "formatOptions": "{'style':'short';'maxFractionDigits':2}"
+        },
+        {
+          "property": "step",
+          "propertyVisible": true,
+          "propertyType": "D",
+          "propertyRange": "Edm.Int32",
+          "ordinal": 8,
+          "aggregate": "[]",
+          "formatOptions": ""
+        },
+        {
+          "property": "isActivityMeasurementOfActivity",
+          "propertyVisible": false,
+          "propertyType": "C",
+          "propertyRange": "Activity",
+          "ordinal": 9,
+          "aggregate": "[Count]",
+          "formatOptions": ""
+        },
+        {
+          "property": "isTwentyFiveStepsActivityMeasurementOfTwentyFiveStepsActivity",
+          "propertyVisible": false,
+          "propertyType": "C",
+          "propertyRange": "TwentyFiveStepsActivity",
+          "ordinal": 10,
+          "aggregate": "[Count]",
+          "formatOptions": ""
+        },
+        {
+          "property": "isTwentyFiveStepsActivityOfUser",
+          "propertyVisible": false,
+          "propertyType": "C",
+          "propertyRange": "User",
+          "ordinal": 11,
+          "aggregate": "[Count]",
+          "formatOptions": ""
+        }
+      ]
+    },
+    "form": {
+      "target": "TwentyFiveStepsActivityMeasurement",
+      "formStyle": "entity360",
+      "targetVisible": true,
+      "targetIcon": "sap-icon://expand-group",
+      "targetEntity": "TwentyFiveStepsActivityMeasurement",
+      "properties": [
+        {
+          "property": "activityMeasurementType",
+          "propertyVisible": true,
+          "propertyType": "D",
+          "propertyRange": "Edm.String",
+          "ordinal": 0,
+          "aggregate": "[]",
+          "formatOptions": null
+        },
+        {
+          "property": "activitymeasurementid",
+          "propertyVisible": false,
+          "propertyType": "D",
+          "propertyRange": "Edm.String",
+          "ordinal": 1,
+          "aggregate": "[]",
+          "formatOptions": null
+        },
+        {
+          "property": "dateTime",
+          "propertyVisible": true,
+          "propertyType": "D",
+          "propertyRange": "Edm.DateTimeOffset",
+          "ordinal": 2,
+          "aggregate": "[]",
+          "formatOptions": null
+        },
+        {
+          "property": "distance",
+          "propertyVisible": true,
+          "propertyType": "D",
+          "propertyRange": "Edm.Double",
+          "ordinal": 3,
+          "aggregate": "[]",
+          "formatOptions": "{'style':'short';'maxFractionDigits':2}"
+        },
+        {
+          "property": "duration",
+          "propertyVisible": true,
+          "propertyType": "D",
+          "propertyRange": "Edm.Int32",
+          "ordinal": 4,
+          "aggregate": "[]",
+          "formatOptions": null
+        },
+        {
+          "property": "height",
+          "propertyVisible": true,
+          "propertyType": "D",
+          "propertyRange": "Edm.Double",
+          "ordinal": 5,
+          "aggregate": "[]",
+          "formatOptions": "{'style':'short';'maxFractionDigits':2}"
+        },
+        {
+          "property": "sequence",
+          "propertyVisible": true,
+          "propertyType": "D",
+          "propertyRange": "Edm.Int32",
+          "ordinal": 6,
+          "aggregate": "[]",
+          "formatOptions": null
+        },
+        {
+          "property": "speed",
+          "propertyVisible": true,
+          "propertyType": "D",
+          "propertyRange": "Edm.Double",
+          "ordinal": 7,
+          "aggregate": "[]",
+          "formatOptions": "{'style':'short';'maxFractionDigits':2}"
+        },
+        {
+          "property": "step",
+          "propertyVisible": true,
+          "propertyType": "D",
+          "propertyRange": "Edm.Int32",
+          "ordinal": 8,
+          "aggregate": "[]",
+          "formatOptions": null
+        },
+        {
+          "property": "isActivityMeasurementOfActivity",
+          "propertyVisible": true,
+          "propertyType": "C",
+          "propertyRange": "Activity",
+          "ordinal": 9,
+          "aggregate": "[List]",
+          "formatOptions": null
+        },
+        {
+          "property": "isTwentyFiveStepsActivityMeasurementOfTwentyFiveStepsActivity",
+          "propertyVisible": true,
+          "propertyType": "C",
+          "propertyRange": "TwentyFiveStepsActivity",
+          "ordinal": 10,
+          "aggregate": "[List]",
+          "formatOptions": null
+        },
+        {
+          "property": "isTwentyFiveStepsActivityOfUser",
+          "propertyVisible": true,
+          "propertyType": "C",
+          "propertyRange": "User",
+          "ordinal": 11,
+          "aggregate": "[List]",
+          "formatOptions": null
+        }
+      ]
+    }
+  },
+  "UpAndGoActivity": {
+    "entity": "UpAndGoActivity",
+    "icon": "sap-icon://group-2",
+    "image": "./apartment/BeCareLink/images/up_and_go.svg",
+    "entitySetVisible": true,
+    "grid": {
+      "target": "UpAndGoActivitys",
+      "gridStyle": "entitySetTable",
+      "targetVisible": true,
+      "targetIcon": "sap-icon://group-2",
+      "targetEntity": "UpAndGoActivity",
+      "properties": [
+        {
+          "property": "activityType",
+          "propertyVisible": true,
+          "propertyType": "D",
+          "propertyRange": "Edm.String",
+          "ordinal": 0,
+          "aggregate": "[]",
+          "formatOptions": ""
+        },
+        {
+          "property": "activityid",
+          "propertyVisible": false,
+          "propertyType": "D",
+          "propertyRange": "Edm.String",
+          "ordinal": 1,
+          "aggregate": "[]",
+          "formatOptions": ""
+        },
+        {
+          "property": "avgDuration",
+          "propertyVisible": true,
+          "propertyType": "D",
+          "propertyRange": "Edm.Double",
+          "ordinal": 2,
+          "aggregate": "[]",
+          "formatOptions": "{'style':'short';'maxFractionDigits':2}"
+        },
+        {
+          "property": "dataPoints",
+          "propertyVisible": true,
+          "propertyType": "D",
+          "propertyRange": "Edm.Int32",
+          "ordinal": 3,
+          "aggregate": "[]",
+          "formatOptions": ""
+        },
+        {
+          "property": "dateTime",
+          "propertyVisible": true,
+          "propertyType": "D",
+          "propertyRange": "Edm.DateTimeOffset",
+          "ordinal": 4,
+          "aggregate": "[]",
+          "formatOptions": ""
+        },
+        {
+          "property": "standardDeviation",
+          "propertyVisible": true,
+          "propertyType": "D",
+          "propertyRange": "Edm.Decimal",
+          "ordinal": 5,
+          "aggregate": "[]",
+          "formatOptions": ""
+        },
+        {
+          "property": "totalDuration",
+          "propertyVisible": true,
+          "propertyType": "D",
+          "propertyRange": "Edm.Double",
+          "ordinal": 6,
+          "aggregate": "[]",
+          "formatOptions": "{'style':'short';'maxFractionDigits':2}"
+        },
+        {
+          "property": "hasActivityMeasurement",
+          "propertyVisible": false,
+          "propertyType": "C",
+          "propertyRange": "ActivityMeasurement",
+          "ordinal": 7,
+          "aggregate": "[Count]",
+          "formatOptions": ""
+        },
+        {
+          "property": "hasUpAndGoActivityMeasurement",
+          "propertyVisible": false,
+          "propertyType": "C",
+          "propertyRange": "UpAndGoActivityMeasurement",
+          "ordinal": 8,
+          "aggregate": "[Count]",
+          "formatOptions": ""
+        },
+        {
+          "property": "isActivityOfUser",
+          "propertyVisible": false,
+          "propertyType": "C",
+          "propertyRange": "User",
+          "ordinal": 9,
+          "aggregate": "[Count]",
+          "formatOptions": ""
+        },
+        {
+          "property": "isUpAndGoActivityOfUser",
+          "propertyVisible": false,
+          "propertyType": "C",
+          "propertyRange": "User",
+          "ordinal": 10,
+          "aggregate": "[Count]",
+          "formatOptions": ""
+        }
+      ]
+    },
+    "form": {
+      "target": "UpAndGoActivity",
+      "formStyle": "entity360",
+      "targetVisible": true,
+      "targetIcon": "sap-icon://expand-group",
+      "targetEntity": "UpAndGoActivity",
+      "properties": [
+        {
+          "property": "activityType",
+          "propertyVisible": true,
+          "propertyType": "D",
+          "propertyRange": "Edm.String",
+          "ordinal": 0,
+          "aggregate": "[]",
+          "formatOptions": null
+        },
+        {
+          "property": "activityid",
+          "propertyVisible": false,
+          "propertyType": "D",
+          "propertyRange": "Edm.String",
+          "ordinal": 1,
+          "aggregate": "[]",
+          "formatOptions": null
+        },
+        {
+          "property": "avgDuration",
+          "propertyVisible": true,
+          "propertyType": "D",
+          "propertyRange": "Edm.Double",
+          "ordinal": 2,
+          "aggregate": "[]",
+          "formatOptions": "{'style':'short';'maxFractionDigits':2}"
+        },
+        {
+          "property": "dataPoints",
+          "propertyVisible": true,
+          "propertyType": "D",
+          "propertyRange": "Edm.Int32",
+          "ordinal": 3,
+          "aggregate": "[]",
+          "formatOptions": null
+        },
+        {
+          "property": "dateTime",
+          "propertyVisible": true,
+          "propertyType": "D",
+          "propertyRange": "Edm.DateTimeOffset",
+          "ordinal": 4,
+          "aggregate": "[]",
+          "formatOptions": null
+        },
+        {
+          "property": "standardDeviation",
+          "propertyVisible": true,
+          "propertyType": "D",
+          "propertyRange": "Edm.Decimal",
+          "ordinal": 5,
+          "aggregate": "[]",
+          "formatOptions": null
+        },
+        {
+          "property": "totalDuration",
+          "propertyVisible": true,
+          "propertyType": "D",
+          "propertyRange": "Edm.Double",
+          "ordinal": 6,
+          "aggregate": "[]",
+          "formatOptions": "{'style':'short';'maxFractionDigits':2}"
+        },
+        {
+          "property": "hasActivityMeasurement",
+          "propertyVisible": true,
+          "propertyType": "C",
+          "propertyRange": "ActivityMeasurement",
+          "ordinal": 7,
+          "aggregate": "[List]",
+          "formatOptions": null
+        },
+        {
+          "property": "hasUpAndGoActivityMeasurement",
+          "propertyVisible": true,
+          "propertyType": "C",
+          "propertyRange": "UpAndGoActivityMeasurement",
+          "ordinal": 8,
+          "aggregate": "[List]",
+          "formatOptions": null
+        },
+        {
+          "property": "isActivityOfUser",
+          "propertyVisible": true,
+          "propertyType": "C",
+          "propertyRange": "User",
+          "ordinal": 9,
+          "aggregate": "[List]",
+          "formatOptions": null
+        },
+        {
+          "property": "isUpAndGoActivityOfUser",
+          "propertyVisible": true,
+          "propertyType": "C",
+          "propertyRange": "User",
+          "ordinal": 10,
+          "aggregate": "[List]",
+          "formatOptions": null
+        }
+      ]
+    }
+  },
+  "UpAndGoActivityMeasurement": {
+    "entity": "UpAndGoActivityMeasurement",
+    "icon": "sap-icon://group-2",
+    "image": "./apartment/BeCareLink/images/measure.svg",
+    "entitySetVisible": true,
+    "grid": {
+      "target": "UpAndGoActivityMeasurements",
+      "gridStyle": "entitySetTable",
+      "targetVisible": true,
+      "targetIcon": "sap-icon://group-2",
+      "targetEntity": "UpAndGoActivityMeasurement",
+      "properties": [
+        {
+          "property": "activityMeasurementType",
+          "propertyVisible": true,
+          "propertyType": "D",
+          "propertyRange": "Edm.String",
+          "ordinal": 0,
+          "aggregate": "[]",
+          "formatOptions": ""
+        },
+        {
+          "property": "activitymeasurementid",
+          "propertyVisible": false,
+          "propertyType": "D",
+          "propertyRange": "Edm.String",
+          "ordinal": 1,
+          "aggregate": "[]",
+          "formatOptions": ""
+        },
+        {
+          "property": "dateTime",
+          "propertyVisible": true,
+          "propertyType": "D",
+          "propertyRange": "Edm.DateTimeOffset",
+          "ordinal": 2,
+          "aggregate": "[]",
+          "formatOptions": ""
+        },
+        {
+          "property": "duration",
+          "propertyVisible": true,
+          "propertyType": "D",
+          "propertyRange": "Edm.Int32",
+          "ordinal": 3,
+          "aggregate": "[]",
+          "formatOptions": ""
+        },
+        {
+          "property": "motion",
+          "propertyVisible": true,
+          "propertyType": "D",
+          "propertyRange": "Edm.String",
+          "ordinal": 4,
+          "aggregate": "[]",
+          "formatOptions": ""
+        },
+        {
+          "property": "sequence",
+          "propertyVisible": true,
+          "propertyType": "D",
+          "propertyRange": "Edm.Int32",
+          "ordinal": 5,
+          "aggregate": "[]",
+          "formatOptions": ""
+        },
+        {
+          "property": "step",
+          "propertyVisible": true,
+          "propertyType": "D",
+          "propertyRange": "Edm.Int32",
+          "ordinal": 6,
+          "aggregate": "[]",
+          "formatOptions": ""
+        },
+        {
+          "property": "isActivityMeasurementOfActivity",
+          "propertyVisible": false,
+          "propertyType": "C",
+          "propertyRange": "Activity",
+          "ordinal": 7,
+          "aggregate": "[Count]",
+          "formatOptions": ""
+        },
+        {
+          "property": "isUpAndGoActivityMeasurementOfUpAndGoActivity",
+          "propertyVisible": false,
+          "propertyType": "C",
+          "propertyRange": "UpAndGoActivity",
+          "ordinal": 8,
+          "aggregate": "[Count]",
+          "formatOptions": ""
+        }
+      ]
+    },
+    "form": {
+      "target": "UpAndGoActivityMeasurement",
+      "formStyle": "entity360",
+      "targetVisible": true,
+      "targetIcon": "sap-icon://expand-group",
+      "targetEntity": "UpAndGoActivityMeasurement",
+      "properties": [
+        {
+          "property": "activityMeasurementType",
+          "propertyVisible": true,
+          "propertyType": "D",
+          "propertyRange": "Edm.String",
+          "ordinal": 0,
+          "aggregate": "[]",
+          "formatOptions": null
+        },
+        {
+          "property": "activitymeasurementid",
+          "propertyVisible": false,
+          "propertyType": "D",
+          "propertyRange": "Edm.String",
+          "ordinal": 1,
+          "aggregate": "[]",
+          "formatOptions": null
+        },
+        {
+          "property": "dateTime",
+          "propertyVisible": true,
+          "propertyType": "D",
+          "propertyRange": "Edm.DateTimeOffset",
+          "ordinal": 2,
+          "aggregate": "[]",
+          "formatOptions": null
+        },
+        {
+          "property": "duration",
+          "propertyVisible": true,
+          "propertyType": "D",
+          "propertyRange": "Edm.Int32",
+          "ordinal": 3,
+          "aggregate": "[]",
+          "formatOptions": null
+        },
+        {
+          "property": "motion",
+          "propertyVisible": true,
+          "propertyType": "D",
+          "propertyRange": "Edm.String",
+          "ordinal": 4,
+          "aggregate": "[]",
+          "formatOptions": null
+        },
+        {
+          "property": "sequence",
+          "propertyVisible": true,
+          "propertyType": "D",
+          "propertyRange": "Edm.Int32",
+          "ordinal": 5,
+          "aggregate": "[]",
+          "formatOptions": null
+        },
+        {
+          "property": "step",
+          "propertyVisible": true,
+          "propertyType": "D",
+          "propertyRange": "Edm.Int32",
+          "ordinal": 6,
+          "aggregate": "[]",
+          "formatOptions": null
+        },
+        {
+          "property": "isActivityMeasurementOfActivity",
+          "propertyVisible": true,
+          "propertyType": "C",
+          "propertyRange": "Activity",
+          "ordinal": 7,
+          "aggregate": "[List]",
+          "formatOptions": null
+        },
+        {
+          "property": "isUpAndGoActivityMeasurementOfUpAndGoActivity",
+          "propertyVisible": true,
+          "propertyType": "C",
+          "propertyRange": "UpAndGoActivity",
+          "ordinal": 8,
+          "aggregate": "[List]",
+          "formatOptions": null
+        }
+      ]
+    }
+  },
+  "User": {
+    "entity": "User",
+    "icon": "sap-icon://group-2",
+    "image": "./apartment/BeCareLink/images/user.svg",
+    "entitySetVisible": true,
+    "grid": {
+      "target": "Users",
+      "gridStyle": "entitySet360",
+      "targetVisible": true,
+      "targetIcon": "sap-icon://group-2",
+      "targetEntity": "User",
+      "properties": [
+        {
+          "property": "userId",
+          "propertyVisible": true,
+          "propertyType": "D",
+          "propertyRange": "Edm.String",
+          "ordinal": 0,
+          "aggregate": "[]",
+          "formatOptions": ""
+        },
+        {
+          "property": "hasActivity",
+          "propertyVisible": false,
+          "propertyType": "C",
+          "propertyRange": "Activity",
+          "ordinal": 1,
+          "aggregate": "[Count]",
+          "formatOptions": ""
+        },
+        {
+          "property": "hasArmElevationActivity",
+          "propertyVisible": false,
+          "propertyType": "C",
+          "propertyRange": "ArmElevationActivity",
+          "ordinal": 2,
+          "aggregate": "[Count]",
+          "formatOptions": ""
+        },
+        {
+          "property": "hasCognitiveTestActivity",
+          "propertyVisible": false,
+          "propertyType": "C",
+          "propertyRange": "CognitiveTestActivity",
+          "ordinal": 3,
+          "aggregate": "[Count]",
+          "formatOptions": ""
+        },
+        {
+          "property": "hasContrastSenistivityActivity",
+          "propertyVisible": false,
+          "propertyType": "C",
+          "propertyRange": "ContrastSensitivityActivity",
+          "ordinal": 4,
+          "aggregate": "[Count]",
+          "formatOptions": ""
+        },
+        {
+          "property": "hasMemoryTestActivity",
+          "propertyVisible": false,
+          "propertyType": "C",
+          "propertyRange": "MemoryTestActivity",
+          "ordinal": 5,
+          "aggregate": "[Count]",
+          "formatOptions": ""
+        },
+        {
+          "property": "hasPath2Activity",
+          "propertyVisible": false,
+          "propertyType": "C",
+          "propertyRange": "Path2Activity",
+          "ordinal": 6,
+          "aggregate": "[Count]",
+          "formatOptions": ""
+        },
+        {
+          "property": "hasSnookerActivity",
+          "propertyVisible": false,
+          "propertyType": "C",
+          "propertyRange": "SnookerActivity",
+          "ordinal": 7,
+          "aggregate": "[Count]",
+          "formatOptions": ""
+        },
+        {
+          "property": "hasStroopTestActivity",
+          "propertyVisible": false,
+          "propertyType": "C",
+          "propertyRange": "StroopTestActivity",
+          "ordinal": 8,
+          "aggregate": "[Count]",
+          "formatOptions": ""
+        },
+        {
+          "property": "hasTapTaskActivity",
+          "propertyVisible": false,
+          "propertyType": "C",
+          "propertyRange": "TapTaskActivity",
+          "ordinal": 9,
+          "aggregate": "[Count]",
+          "formatOptions": ""
+        },
+        {
+          "property": "hasTranscriptionTestActivity",
+          "propertyVisible": false,
+          "propertyType": "C",
+          "propertyRange": "TranscriptionTestActivity",
+          "ordinal": 10,
+          "aggregate": "[Count]",
+          "formatOptions": ""
+        },
+        {
+          "property": "hasTwentyFiveStepsActivity",
+          "propertyVisible": false,
+          "propertyType": "C",
+          "propertyRange": "TwentyFiveStepsActivityMeasurement",
+          "ordinal": 11,
+          "aggregate": "[Count]",
+          "formatOptions": ""
+        },
+        {
+          "property": "hasUpAndGoActivity",
+          "propertyVisible": false,
+          "propertyType": "C",
+          "propertyRange": "UpAndGoActivity",
+          "ordinal": 12,
+          "aggregate": "[Count]",
+          "formatOptions": ""
+        },
+        {
+          "property": "isUserOfTapTaskActivity",
+          "propertyVisible": false,
+          "propertyType": "C",
+          "propertyRange": "TapTaskActivity",
+          "ordinal": 13,
+          "aggregate": "[Count]",
+          "formatOptions": ""
+        }
+      ]
+    },
+    "form": {
+      "target": "User",
+      "formStyle": "entity360",
+      "targetVisible": true,
+      "targetIcon": "sap-icon://expand-group",
+      "targetEntity": "User",
+      "properties": [
+        {
+          "property": "userId",
+          "propertyVisible": true,
+          "propertyType": "D",
+          "propertyRange": "Edm.String",
+          "ordinal": 0,
+          "aggregate": "[]",
+          "formatOptions": null
+        },
+        {
+          "property": "hasActivity",
+          "propertyVisible": true,
+          "propertyType": "C",
+          "propertyRange": "Activity",
+          "ordinal": 1,
+          "aggregate": "[List]",
+          "formatOptions": null
+        },
+        {
+          "property": "hasArmElevationActivity",
+          "propertyVisible": true,
+          "propertyType": "C",
+          "propertyRange": "ArmElevationActivity",
+          "ordinal": 2,
+          "aggregate": "[List]",
+          "formatOptions": null
+        },
+        {
+          "property": "hasCognitiveTestActivity",
+          "propertyVisible": true,
+          "propertyType": "C",
+          "propertyRange": "CognitiveTestActivity",
+          "ordinal": 3,
+          "aggregate": "[List]",
+          "formatOptions": null
+        },
+        {
+          "property": "hasContrastSenistivityActivity",
+          "propertyVisible": true,
+          "propertyType": "C",
+          "propertyRange": "ContrastSensitivityActivity",
+          "ordinal": 4,
+          "aggregate": "[List]",
+          "formatOptions": null
+        },
+        {
+          "property": "hasMemoryTestActivity",
+          "propertyVisible": true,
+          "propertyType": "C",
+          "propertyRange": "MemoryTestActivity",
+          "ordinal": 5,
+          "aggregate": "[List]",
+          "formatOptions": null
+        },
+        {
+          "property": "hasPath2Activity",
+          "propertyVisible": true,
+          "propertyType": "C",
+          "propertyRange": "Path2Activity",
+          "ordinal": 6,
+          "aggregate": "[List]",
+          "formatOptions": null
+        },
+        {
+          "property": "hasSnookerActivity",
+          "propertyVisible": true,
+          "propertyType": "C",
+          "propertyRange": "SnookerActivity",
+          "ordinal": 7,
+          "aggregate": "[List]",
+          "formatOptions": null
+        },
+        {
+          "property": "hasStroopTestActivity",
+          "propertyVisible": true,
+          "propertyType": "C",
+          "propertyRange": "StroopTestActivity",
+          "ordinal": 8,
+          "aggregate": "[List]",
+          "formatOptions": null
+        },
+        {
+          "property": "hasTapTaskActivity",
+          "propertyVisible": true,
+          "propertyType": "C",
+          "propertyRange": "TapTaskActivity",
+          "ordinal": 9,
+          "aggregate": "[List]",
+          "formatOptions": null
+        },
+        {
+          "property": "hasTranscriptionTestActivity",
+          "propertyVisible": true,
+          "propertyType": "C",
+          "propertyRange": "TranscriptionTestActivity",
+          "ordinal": 10,
+          "aggregate": "[List]",
+          "formatOptions": null
+        },
+        {
+          "property": "hasTwentyFiveStepsActivity",
+          "propertyVisible": true,
+          "propertyType": "C",
+          "propertyRange": "TwentyFiveStepsActivityMeasurement",
+          "ordinal": 11,
+          "aggregate": "[List]",
+          "formatOptions": null
+        },
+        {
+          "property": "hasUpAndGoActivity",
+          "propertyVisible": true,
+          "propertyType": "C",
+          "propertyRange": "UpAndGoActivity",
+          "ordinal": 12,
+          "aggregate": "[List]",
+          "formatOptions": null
+        },
+        {
+          "property": "isUserOfTapTaskActivity",
+          "propertyVisible": true,
+          "propertyType": "C",
+          "propertyRange": "TapTaskActivity",
+          "ordinal": 13,
+          "aggregate": "[List]",
+          "formatOptions": null
+        }
+      ]
+    }
+  }
+}

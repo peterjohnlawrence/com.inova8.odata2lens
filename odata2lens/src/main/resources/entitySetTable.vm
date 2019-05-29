@@ -44,7 +44,7 @@
 	xmlns:layout="sap.ui.layout" xmlns:rdf="com.inova8.lens.control" xmlns:core="sap.ui.core" xmlns:table="sap.ui.table">
 	<Page showHeader="false" id="page" navButtonPress="onNavBack" showNavButton="true" title="{i18n>$entitySet.target.$ViewTitle}">
 		<content>
-			<table:Table id="table" inset="false" 
+			<table:Table id="table"
 					rows="{ path: 'dataModel>/$entitySet.name' 
 						   , sorter: { path: 'label', descending: false } 
 					#set($numOfExpand = 0)		

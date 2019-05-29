@@ -59,6 +59,17 @@ Login.verificationCodePlaceholder
 Login.newpass=New password
 Login.newpassPlaceholder =
 
+#~~~ GraphCrumb View ~~~~~~~~~~~~~~~~~~~~~~~~~~
+graphCrumb.contextMenu = Graph Crumb
+graphCrumb.moveToHere = Move here
+graphCrumb.pruneToHere = Prune here
+graphCrumb.startBranchFromHere = Branch here
+graphCrumb.graphView = Graph View
+graphCrumb.export = Export
+graphCrumb.save = Save
+graphCrumb.open = Open
+graphCrumb.clear = Clear
+
 #~~~ Search View ~~~~~~~~~~~~~~~~~~~~~~~~~~
 search.placeholder=Search
 search.ViewTitle=Search Results
@@ -132,6 +143,7 @@ graph.DeleteFilter = Delete
 graph.Layout = Layout
 graph.LayoutAlgorithm = Layout Algorithm
 graph.GeoMap= Geomap
+graph.Appearance= Appearance
 graph.mapMode = Toggle Map Mode
 graph.mapModeTooltip = Selecting Map Mode will position nodes over map. Other layout preferences will be ignored.
 graph.History = History

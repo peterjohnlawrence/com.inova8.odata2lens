@@ -96,15 +96,22 @@
 				#set( $complexTypeName =  $property.range)
 				<ColumnListItem >
 					<cells>
-						<Label text="{i18n>$entity.target.$property.property}" required="false"/> 
+						
 					#if($entity.ownProperties)
 						#if($property.propertyType == "D")
+						<Label text="{i18n>$entity.target.$property.property}" required="false"/> 
 						#entitymaptypes( $property $entity.target  ) 
 						#elseif ($property.propertyType == "O")
+						<Label text="{i18n>$entity.target.$property.property}" required="false"/> 
 						<rdf:TextResource path="dataModel>$property.property" entitySet="$property.range" tooltip="{i18n>$entity.target.$property.property}"/>		
 						#elseif ($property.propertyType == "C")
+						<rdf:NavigationPropertyCollection
+								path="dataModel>$property.property/$count"
+								navigationProperty="$property.range/$property.property"
+								label="{i18n>$entity.target.$property.property}" />
 						<rdf:ListResource path="dataModel>$property.property" entitySet="$property.range" tooltip="{i18n>$entity.target.$property.property}" height="$property.height"/>
 						#elseif ($property.propertyType == "S")
+						<Label text="{i18n>$entity.target.$property.property}" required="false"/> 
 						<Text text=""/>
 						#end
 					#end

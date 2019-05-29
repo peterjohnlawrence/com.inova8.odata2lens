@@ -1,0 +1,74 @@
+<mvc:View xmlns:core="sap.ui.core" xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m" xmlns:l="sap.ui.layout" xmlns:base="sap.ui.base"
+	controllerName="STW.controller.Home" xmlns:html="http://www.w3.org/1999/xhtml" xmlns:tool="com.inova8.lens.control">
+	<App>
+		<pages>
+			<Page title="{i18n>home.ViewTitle}" navButtonPress="onNavBack" showNavButton="false">
+				<content>
+					<FormattedText htmlText="A demonstration using Composition of foods integrated dataset (CoFID), details below"/>
+					<html:h1>COFID</html:h1>
+					<html:p>· We have taken the Cofid data and converted it to a graph data-structure.</html:p>
+					<html:p>· From there we have composed a standard interface that allows the data to be used from Excel and auto-generated a user-interface
+						application which can be used for querying, discovery, and searching of information.</html:p>
+					<html:p>· Why? This has been done because our information-centric methodology is enhanced when users have the opportunity to see and
+						interact with their information.</html:p>
+					<html:h2>Quorum360</html:h2>
+					<html:p>· Quorum360 is our information-driven user interface that allows for exploring the information, navigating through data, searching
+						for specific data, and visualizing the links between data.</html:p>
+					<html:p>· Opening Quorum360 takes us to the home page where KPIs etc could be configured. This is just a placeholder at present.</html:p>
+					<html:h2>Exploration and navigation</html:h2>
+					<html:p>· On the left there is an explorer showing all the different categories of food that we found in Cofid. Note that this is
+						information-driven so adding more categories would immediately change this explorer.</html:p>
+					<html:p>· Let us expand Food, and this reveals all of the subcategories of Food., including Cereals</html:p>
+					<html:p>· Let’s expand Cereals, where we can see Pizzas which we can select.</html:p>
+					<html:p>· Then we can select Display Pizzas to show all of the different pizzas found in Cofid in a grid format.</html:p>
+					<html:p>
+						This grid contains all of the information in Cofid. If there were other datasources that contributed to the knowledge about pizzas, their
+						information can also appear in this grid.</html:p>
+					<html:p>· But I want even more detail than can be fitted into this grid. Lets select Ham and Pineapple pizza.</html:p>
+					<html:p>· This then shows everything we know about Ham and Pineapple, including the different types of analyses that are available.</html:p>
+					<html:p>o Note that there are many categories of analyses, more are easily added without coding.</html:p>
+					<html:p>o Each can have more than one set of results, for example if analyses from different origins or times.</html:p>
+					<html:p>· We could first look at Inorganic Analysis which came directly from Cofid.</html:p>
+					<html:p>· Going back to Ham and Pineapple we could look at the FreeSugar Analysis. This is calculated as outlined in the RFQ documents.
+					</html:p>
+					<html:p>o Again this could be one of many variants of the calculated analysis.</html:p>
+					<html:p>o Note that this is showing the full accuracy of the calculation. Configuration of formats is easily done.</html:p>
+					<html:h2>Search and Graph</html:h2>
+					<html:p>· But what is we did not know where to start navigating: we can instead 'search' for Pineapple or Ham AND Pineapple in the search box.</html:p>
+					<html:p>· This searches all of the database for any text matching this pattern.</html:p>
+					<html:p>· Having found some candidate starting points we could start our navigation again.
+					</html:p>
+					<html:p>o For example we can navigate to Pineapple and see the free sugar is calculated differently now for a fruit</html:p>
+					<html:p>· Alternatively we could extend out search to see how Ham AND Pineapple is linked to, say, 'homemade'
+					</html:p>
+					<html:p>· We do this by invoking Linked search on the Ham and Pineapple pizza.
+					</html:p>
+					<html:p>· The results show the path in the graph database between these two concepts.</html:p>
+					<html:p>· By clicking on one of these paths, we can illustrate the path on a graphical display, which emphasizes the network of concepts
+						that constitutes the data.</html:p>
+					<html:p>· Within the graphical display we can expand any of the nodes to show related concepts ... and so on.</html:p>
+					<html:h2>Excel Reporting and data manipulation/validation</html:h2>
+					<html:p>· Not everything can be solved by exploring, navigating, searching or graphing the information. Sometimes we just want tabulated
+						results for doing our own analysis, perhaps validating calculation results for example.</html:p>
+					<html:p>· Excel is the ubiquitous tool for this job, and Quorum360 is fully integrated allowing information to be pulled directly from the
+						API into Excel.
+					</html:p>
+					<html:p>· I will illustrate this with Excel using the PowerQuery add-in:</html:p>
+					<html:p>· Open up a new Excel book.</html:p>
+					<html:p>· Go to the PowerQuery tab</html:p>
+					<html:p>· Select the from Other sources/OData tab and enter the URL of the Quorom360 API.
+					</html:p>
+					<html:p>· Excel will then interrogate the API, and bring back a description of all of the entitySets within the datastore.</html:p>
+					<html:p>· Note this is entirely information-driven: change the model and like Quorum360 this list will change.</html:p>
+					<html:p>· Select, say A, and then Excel will retrieve a sample of data</html:p>
+					<html:p>· We can edit that, which allows us to explore the data further, such as selecting hasFreeSugarAnalysis which will appear at the
+						bottom of the display (or double-click to show in new window)</html:p>
+					<html:p>· On closing this window you will be given the option to keep these results. Excel will then populate a sheet with this data.</html:p>
+					<html:p>· Note this is 'live' data. So if the workbook is saved, on reload the user will be prompted to either use what was saved or refresh
+						to get the latest.</html:p>
+					<html:iframe width="100%" height="100%" src="https://quadram.ac.uk/UKfoodcomposition/"/>
+				</content>
+			</Page>
+		</pages>
+	</App>
+</mvc:View>

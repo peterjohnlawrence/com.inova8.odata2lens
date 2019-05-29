@@ -1,0 +1,408 @@
+{
+	"TubeLine": {
+	"entity": "TubeLine",
+	"icon": "sap-icon://group-2",
+	"image": "./apartment/tfl/images/TubeLine.jpg",
+	"entitySetVisible":true,
+	"grid": {
+		"target": "TubeLines",
+		"gridStyle":"entitySetTable",
+		"targetVisible": true,
+		"targetIcon": "sap-icon://group-2",
+		"targetEntity": "TubeLine",	
+		"properties": [	
+			{  
+				"property": "NumberStationsOnLine",
+				"propertyVisible": false,
+				"propertyType": "D",
+				"propertyRange": "Edm.Int32",
+				"ordinal": 0,
+				"aggregate": "[]",
+				"formatOptions": ""
+			}	
+			,{ 
+				"property": "comment",
+				"propertyVisible": false,
+				"propertyType": "D",
+				"propertyRange": "Edm.String",
+				"ordinal": 1,
+				"aggregate": "[]",
+				"formatOptions": ""
+			}	
+			,{ 
+				"property": "hasStationOnLine",
+				"propertyVisible": true,
+				"propertyType": "C",
+				"propertyRange": "TubeStation",
+				"ordinal": 2,
+				"aggregate": "[Count]",
+				"formatOptions": ""
+			}	
+			]
+		},
+	"form": {
+		"target": "TubeLine",
+		"formStyle":"entity360",
+		"targetVisible": true,
+		"targetIcon": "sap-icon://expand-group",
+		"targetEntity": "TubeLine",
+		"allowEdit" : true,
+		"properties": [		
+			{  
+				"property": "NumberStationsOnLine",
+				"propertyVisible": false,
+				"propertyType": "D",
+				"propertyRange": "Edm.Int32",
+				"ordinal": 0,
+				"aggregate": "[]",
+				"formatOptions": null,
+				"allowEdit": true
+			}
+			,{ 
+				"property": "comment",
+				"propertyVisible": false,
+				"propertyType": "D",
+				"propertyRange": "Edm.String",
+				"ordinal": 1,
+				"aggregate": "[]",
+				"formatOptions": null,
+				"allowEdit": true
+			}
+			,{ 
+				"property": "hasStationOnLine",
+				"propertyVisible": true,
+				"propertyType": "C",
+				"propertyRange": "TubeStation",
+				"ordinal": 2,
+				"aggregate": "[List]",
+				"formatOptions": null,
+				"allowEdit": true,
+				"height":"20rem"
+			}
+			]
+		}
+	}
+	,
+	"TubeStation": {
+	"entity": "TubeStation",
+	"icon": "sap-icon://group-2",
+	"image": "./apartment/tfl/images/TubeStation.jpg",
+	"entitySetVisible":true,
+	"grid": {
+		"target": "TubeStations",
+		"gridStyle":"entitySetTable",
+		"targetVisible": true,
+		"targetIcon": "sap-icon://group-2",
+		"targetEntity": "TubeStation",	
+		"properties": [	
+			{  
+				"property": "comment",
+				"propertyVisible": false,
+				"propertyType": "D",
+				"propertyRange": "Edm.String",
+				"ordinal": 0,
+				"aggregate": "[]",
+				"formatOptions": ""
+			}	
+			,{ 
+				"property": "lat",
+				"propertyVisible": true,
+				"propertyType": "D",
+				"propertyRange": "Edm.String",
+				"ordinal": 1,
+				"aggregate": "[]",
+				"formatOptions": ""
+			}	
+			,{ 
+				"property": "lat_long",
+				"propertyVisible": false,
+				"propertyType": "D",
+				"propertyRange": "Edm.String",
+				"ordinal": 2,
+				"aggregate": "[]",
+				"formatOptions": ""
+			}	
+			,{ 
+				"property": "long",
+				"propertyVisible": true,
+				"propertyType": "D",
+				"propertyRange": "Edm.String",
+				"ordinal": 3,
+				"aggregate": "[]",
+				"formatOptions": ""
+			}	
+			,{ 
+				"property": "osx",
+				"propertyVisible": true,
+				"propertyType": "D",
+				"propertyRange": "Edm.Int32",
+				"ordinal": 4,
+				"aggregate": "[]",
+				"formatOptions": ""
+			}	
+			,{ 
+				"property": "osy",
+				"propertyVisible": true,
+				"propertyType": "D",
+				"propertyRange": "Edm.Int32",
+				"ordinal": 5,
+				"aggregate": "[]",
+				"formatOptions": ""
+			}	
+			,{ 
+				"property": "postcode",
+				"propertyVisible": true,
+				"propertyType": "D",
+				"propertyRange": "Edm.String",
+				"ordinal": 6,
+				"aggregate": "[]",
+				"formatOptions": ""
+			}	
+			,{ 
+				"property": "connectsFrom",
+				"propertyVisible": true,
+				"propertyType": "C",
+				"propertyRange": "TubeStation",
+				"ordinal": 7,
+				"aggregate": "[Count]",
+				"formatOptions": ""
+			}	
+			,{ 
+				"property": "connectsTo",
+				"propertyVisible": true,
+				"propertyType": "C",
+				"propertyRange": "TubeStation",
+				"ordinal": 8,
+				"aggregate": "[Count]",
+				"formatOptions": ""
+			}	
+			,{ 
+				"property": "inZone",
+				"propertyVisible": true,
+				"propertyType": "C",
+				"propertyRange": "Zone",
+				"ordinal": 9,
+				"aggregate": "[Count]",
+				"formatOptions": ""
+			}	
+			,{ 
+				"property": "onLine",
+				"propertyVisible": true,
+				"propertyType": "C",
+				"propertyRange": "TubeLine",
+				"ordinal": 10,
+				"aggregate": "[Count]",
+				"formatOptions": ""
+			}	
+			]
+		},
+	"form": {
+		"target": "TubeStation",
+		"formStyle":"entity360",
+		"targetVisible": true,
+		"targetIcon": "sap-icon://expand-group",
+		"targetEntity": "TubeStation",
+		"allowEdit" : true,
+		"properties": [		
+			{  
+				"property": "comment",
+				"propertyVisible": false,
+				"propertyType": "D",
+				"propertyRange": "Edm.String",
+				"ordinal": 0,
+				"aggregate": "[]",
+				"formatOptions": null,
+				"allowEdit": true
+			}
+			,{ 
+				"property": "lat",
+				"propertyVisible": true,
+				"propertyType": "D",
+				"propertyRange": "Edm.String",
+				"ordinal": 1,
+				"aggregate": "[]",
+				"formatOptions": null,
+				"allowEdit": true
+			}
+			,{ 
+				"property": "lat_long",
+				"propertyVisible": false,
+				"propertyType": "D",
+				"propertyRange": "Edm.String",
+				"ordinal": 2,
+				"aggregate": "[]",
+				"formatOptions": null,
+				"allowEdit": true
+			}
+			,{ 
+				"property": "long",
+				"propertyVisible": true,
+				"propertyType": "D",
+				"propertyRange": "Edm.String",
+				"ordinal": 3,
+				"aggregate": "[]",
+				"formatOptions": null,
+				"allowEdit": true
+			}
+			,{ 
+				"property": "osx",
+				"propertyVisible": true,
+				"propertyType": "D",
+				"propertyRange": "Edm.Int32",
+				"ordinal": 4,
+				"aggregate": "[]",
+				"formatOptions": null,
+				"allowEdit": true
+			}
+			,{ 
+				"property": "osy",
+				"propertyVisible": true,
+				"propertyType": "D",
+				"propertyRange": "Edm.Int32",
+				"ordinal": 5,
+				"aggregate": "[]",
+				"formatOptions": null,
+				"allowEdit": true
+			}
+			,{ 
+				"property": "postcode",
+				"propertyVisible": true,
+				"propertyType": "D",
+				"propertyRange": "Edm.String",
+				"ordinal": 6,
+				"aggregate": "[]",
+				"formatOptions": null,
+				"allowEdit": true
+			}
+			,{ 
+				"property": "connectsFrom",
+				"propertyVisible": true,
+				"propertyType": "C",
+				"propertyRange": "TubeStation",
+				"ordinal": 7,
+				"aggregate": "[List]",
+				"formatOptions": null,
+				"allowEdit": true,
+				"height":"4rem"
+			}
+			,{ 
+				"property": "connectsTo",
+				"propertyVisible": true,
+				"propertyType": "C",
+				"propertyRange": "TubeStation",
+				"ordinal": 8,
+				"aggregate": "[List]",
+				"formatOptions": null,
+				"allowEdit": true,
+				"height":"4rem"
+			}
+			,{ 
+				"property": "inZone",
+				"propertyVisible": true,
+				"propertyType": "C",
+				"propertyRange": "Zone",
+				"ordinal": 9,
+				"aggregate": "[List]",
+				"formatOptions": null,
+				"allowEdit": true,
+				"height":"4rem"
+			}
+			,{ 
+				"property": "onLine",
+				"propertyVisible": true,
+				"propertyType": "C",
+				"propertyRange": "TubeLine",
+				"ordinal": 10,
+				"aggregate": "[List]",
+				"formatOptions": null,
+				"allowEdit": true,
+				"height":"4rem"
+			}
+			]
+		}
+	}
+	,
+	"Zone": {
+	"entity": "Zone",
+	"icon": "sap-icon://group-2",
+	"image": "./apartment/tfl/images/Zone.png",
+	"entitySetVisible":true,
+	"grid": {
+		"target": "Zones",
+		"gridStyle":"entitySetTable",
+		"targetVisible": true,
+		"targetIcon": "sap-icon://group-2",
+		"targetEntity": "Zone",	
+		"properties": [	
+			{  
+				"property": "NumberStationsInZone",
+				"propertyVisible": false,
+				"propertyType": "D",
+				"propertyRange": "Edm.Int32",
+				"ordinal": 0,
+				"aggregate": "[]",
+				"formatOptions": ""
+			}	
+			,{ 
+				"property": "comment",
+				"propertyVisible": false,
+				"propertyType": "D",
+				"propertyRange": "Edm.String",
+				"ordinal": 1,
+				"aggregate": "[]",
+				"formatOptions": ""
+			}	
+			,{ 
+				"property": "hasStationInZone",
+				"propertyVisible": true,
+				"propertyType": "C",
+				"propertyRange": "TubeStation",
+				"ordinal": 2,
+				"aggregate": "[Count]",
+				"formatOptions": ""
+			}	
+			]
+		},
+	"form": {
+		"target": "Zone",
+		"formStyle":"entity360",
+		"targetVisible": true,
+		"targetIcon": "sap-icon://expand-group",
+		"targetEntity": "Zone",
+		"allowEdit" : true,
+		"properties": [		
+			{  
+				"property": "NumberStationsInZone",
+				"propertyVisible": false,
+				"propertyType": "D",
+				"propertyRange": "Edm.Int32",
+				"ordinal": 0,
+				"aggregate": "[]",
+				"formatOptions": null,
+				"allowEdit": true
+			}
+			,{ 
+				"property": "comment",
+				"propertyVisible": false,
+				"propertyType": "D",
+				"propertyRange": "Edm.String",
+				"ordinal": 1,
+				"aggregate": "[]",
+				"formatOptions": null,
+				"allowEdit": true
+			}
+			,{ 
+				"property": "hasStationInZone",
+				"propertyVisible": true,
+				"propertyType": "C",
+				"propertyRange": "TubeStation",
+				"ordinal": 2,
+				"aggregate": "[List]",
+				"formatOptions": null,
+				"allowEdit": true,
+				"height":"20rem"
+			}
+			]
+		}
+	}
+}
