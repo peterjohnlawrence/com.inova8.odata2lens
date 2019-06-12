@@ -98,21 +98,21 @@
 			]
 		}, {
 			"pattern": "Search:?queryOptions:",
-			"name": "search",
+			"name": "Search",
 			"target": [
-				"search"
+				"Search"
 			]
 		}, {
 			"pattern": "LinkedSearch/{objectId}/:?queryOptions:",
-			"name": "linkedSearch",
+			"name": "LinkedSearch",
 			"target": [
-				"linkedSearch"
+				"LinkedSearch"
 			]
 		}, {
 			"pattern": "AdvancedSearch:?queryOptions:",
-			"name": "advancedSearch",
+			"name": "AdvancedSearch",
 			"target": [
-				"advancedSearch"
+				"AdvancedSearch"
 			]
 		}, {
 			"pattern": "Graph/{objectId}/:navigation::?queryOptions:",
@@ -219,19 +219,19 @@
 				"viewId": "login",
 				"viewLevel": 1
 			},
-			"search": {
+			"Search": {
 				"viewName": "Search",
-				"viewId": "search",
+				"viewId": "Search",
 				"viewLevel": 1
 			},
-			"linkedSearch": {
+			"LinkedSearch": {
 				"viewName": "LinkedSearch",
-				"viewId": "linkedSearch",
+				"viewId": "LinkedSearch",
 				"viewLevel": 1
 			},
-			"advancedSearch": {
+			"AdvancedSearch": {
 				"viewName": "AdvancedSearch",
-				"viewId": "advancedSearch",
+				"viewId": "AdvancedSearch",
 				"viewLevel": 1
 			},
 			"graph": {

@@ -452,44 +452,6 @@ public class GenerateLens {
 							}
 						}
 					}
-					//Post process to identify parent and child entitySets, and sets of subTypes used in complex properties
-//					for (EntityType entityType : entityTypes.values()) {
-//						for (NavigationProperty navigationProperty : entityType.getEntity().getNavigationProperties()
-//								.values()) {
-//							navigationProperty.setRangeType(entityTypes.get(navigationProperty.getRange()));
-//						}
-//						for (EntityNavigationSet navigationSet : entityType.getEntity().getNavigationSet().values()) {
-//							navigationSet.setRangeType(entityTypes.get(navigationSet.getRange()));
-//						}
-//						for (Property property : entityType.getEntity().getProperties().values()) {
-//							if (property.getComplex()) {
-//								for (String subTypeName : property.getComplexRange().getProperties().keySet()) {
-//									entityType.getEntity().getSubTypeNames().add(subTypeName);
-//								}
-//								for (String subTypeName : property.getComplexRange().getNavigationProperties()
-//										.keySet()) {
-//									entityType.getEntity().getSubTypeNames().add(subTypeName);
-//									//	complexNavigationProperty.setRangeType(entityType);
-//								}
-//								for (String subTypeName : property.getComplexRange().getNavigationSets().keySet()) {
-//									entityType.getEntity().getSubTypeNames().add(subTypeName);
-//									//	complexNavigationSet.setRangeType(entityTypes.get(complexNavigationSet.getRange()));
-//								}
-//							} else {
-//								entityType.getEntity().hasPrimitiveProperties(true);
-//							}
-//						}
-//						EntitySet entitySet = entityType.getEntitySet();
-//						if (!entitySet.getBaseTypes().isEmpty()) {
-//							for (String baseType : entitySet.getBaseTypes()) {
-//								if (entityTypes.containsKey(baseType)) {
-//									EntityType baseEntityType = entityTypes.get(baseType);
-//									baseEntityType.getEntitySet().addChildEntitySet(entitySet);
-//									entitySet.addParentEntitySet(baseEntityType.getEntitySet());
-//								}
-//							}
-//						}
-//					}
 				}
 			}
 		}
@@ -526,20 +488,25 @@ public class GenerateLens {
 					EntitySet entitySet = entityType.getEntitySet();
 					if (!entitySet.getBaseTypes().isEmpty()) {
 						for (String baseType : entitySet.getBaseTypes()) {
-							if (entityTypes.containsKey(baseType)) {
-								EntityType baseEntityType = entityTypes.get(baseType);
+							String baseEntityTypeName = baseType;
+							String[] namespacePrefix = baseType.split("~");
+							if(namespacePrefix.length > 1) {
+								if (namespacePrefix[0].equals(schemaNames[0])) {
+									baseEntityTypeName = namespacePrefix[1];
+								}else {
+									baseEntityTypeName = namespacePrefix[0] + "_" + namespacePrefix[1];
+								}
+							}				
+							if (entityTypes.containsKey(baseEntityTypeName)) {
+								EntityType baseEntityType = entityTypes.get(baseEntityTypeName);
 								baseEntityType.getEntitySet().addChildEntitySet(entitySet);
 								entitySet.addParentEntitySet(baseEntityType.getEntitySet());
 							}
 						}
 					}
 				}
-				
-				
-				
 			}
 		}
-
 	}
 
 	private static boolean isNavigationOutsideOfNamespace(String schemaNames[], EdmEntityType entityType) {
