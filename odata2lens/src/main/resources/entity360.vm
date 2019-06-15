@@ -107,7 +107,7 @@
 						#elseif ($property.propertyType == "C")
 						<rdf:NavigationPropertyCollection
 								path="dataModel>$property.property/$count"
-								navigationProperty="$entity.target/$property.property"
+								navigationProperty="$entitySet.name/$property.property"
 								label="{i18n>$entity.target.$property.property}" />
 						<rdf:ListResource path="dataModel>$property.property" entitySet="$property.range" tooltip="{i18n>$entity.target.$property.property}" height="$property.height"/>
 						#elseif ($property.propertyType == "S")

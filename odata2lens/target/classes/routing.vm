@@ -15,128 +15,132 @@
 		},
 		"routes": [{
 			"pattern": "",
-			"name": "home",
+			"name": "_home",
 			"target": [
-				"home"
+				"_home"
 			]
 		}, {
-			"pattern": "notFound",
-			"name": "notFound",
+			"pattern": "_notFound",
+			"name": "_notFound",
 			"target": [
-				"notFound"
+				"_notFound"
 			]
 		}, {
-			"pattern": "DataSets/:objectId:/:navigation::?queryOptions:",
-			"name": "DataSets",
+			"pattern": "_DataSets/:objectId:/:navigation::?queryOptions:",
+			"name": "_DataSets",
 			"target": [
-				"DataSets"
+				"_DataSets"
 			]
 		}, {
-			"pattern": "DataSetisDatasetOf/:objectId:/:navigation::?queryOptions:",
-			"name": "DataSetisDatasetOf",
+			"pattern": "_DataSetisDatasetOf/:objectId:/:navigation::?queryOptions:",
+			"name": "_DataSetisDatasetOf",
 			"target": [
-				"DataSetisDatasetOf"
+				"_DataSetisDatasetOf"
 			]
 		}, {
-			"pattern": "ConfigurationEditor",
-			"name": "configurationEditor",
+			"pattern": "_ConfigurationEditor",
+			"name": "_configurationEditor",
 			"target": [
-				"configurationEditor"
+				"_configurationEditor"
 			]
 		}, {
-			"pattern": "PrivacyPolicies",
-			"name": "privacyPolicies",
+			"pattern": "_PrivacyPolicies",
+			"name": "_privacyPolicies",
 			"target": [
-				"privacyPolicies"
+				"_privacyPolicies"
 			]
 		}, {
-			"pattern": "CopyrightNotices",
-			"name": "copyrightNotices",
+			"pattern": "_CopyrightNotices",
+			"name": "_copyrightNotices",
 			"target": [
-				"copyrightNotices"
-			]
-		},
-
-		{
-			"pattern": "TermsOfUse",
-			"name": "termsofUse",
-			"target": [
-				"termsofUse"
-			]
-		},
-
-		{
-			"pattern": "CorporatePolicies",
-			"name": "corporatePolicies",
-			"target": [
-				"corporatePolicies"
+				"_copyrightNotices"
 			]
 		},
 		{
-		"pattern": "Settings",
-		"name": "settings",
+			"pattern": "_TermsOfUse",
+			"name": "_termsofUse",
+			"target": [
+				"_termsofUse"
+			]
+		},
+		{
+			"pattern": "_CorporatePolicies",
+			"name": "_corporatePolicies",
+			"target": [
+				"_corporatePolicies"
+			]
+		},
+		{
+		"pattern": "_Settings",
+		"name": "_settings",
 		"target": [
-			"settings"
+			"_settings"
 		]
 		}, {
-			"pattern": "Legal",
-			"name": "legal",
+			"pattern": "_Legal",
+			"name": "_legal",
 			"target": [
-				"legal"
+				"_legal"
 			]
 		},{
-			"pattern": "Links",
-			"name": "links",
+			"pattern": "_Links",
+			"name": "_links",
 			"target": [
-				"links"
+				"_links"
 			]
 		},{
-			"pattern": "login",
-			"name": "login",
+			"pattern": "_login",
+			"name": "_login",
 			"target": [
-				"login"
+				"_login"
 			]
 		}, {
-			"pattern": "Search:?queryOptions:",
-			"name": "Search",
+			"pattern": "_Search:?queryOptions:",
+			"name": "_Search",
 			"target": [
-				"Search"
+				"_Search"
 			]
 		}, {
-			"pattern": "LinkedSearch/{objectId}/:?queryOptions:",
-			"name": "LinkedSearch",
+			"pattern": "_LinkedSearch/{objectId}/:?queryOptions:",
+			"name": "_LinkedSearch",
 			"target": [
-				"LinkedSearch"
+				"_LinkedSearch"
 			]
 		}, {
-			"pattern": "AdvancedSearch:?queryOptions:",
-			"name": "AdvancedSearch",
+			"pattern": "_AdvancedSearch:?queryOptions:",
+			"name": "_AdvancedSearch",
 			"target": [
-				"AdvancedSearch"
+				"_AdvancedSearch"
 			]
 		}, {
-			"pattern": "Graph/{objectId}/:navigation::?queryOptions:",
-			"name": "graph",
+			"pattern": "_Graph/{objectId}/:navigation::?queryOptions:",
+			"name": "_graph",
 			"target": [
-				"graph"
+				"_graph"
 			]
 		}, {
-			"pattern": "Graph/{objectId}/:navigation::?queryOptions:",
-			"name": "navigationSetGraph",
+			"pattern": "_Graph/{target}/{objectId}/:navigation::?queryOptions:",
+			"name": "_graphview",
 			"target": [
-				"graph"
+				"_graph"
+			]
+		},{
+			"pattern": "_Graph/{objectId}/:navigation::?queryOptions:",
+			"name": "_navigationSetGraph",
+			"target": [
+				"_graph"
 			]
 		}, {
-			"pattern": "Graph/{objectId}/qb_isDatasetOf?graph=true",
-			"name": "graphgraph",
+			"pattern": "_Graph/{objectId}/qb_isDatasetOf?graph=true",
+			"name": "_graphgraph",
 			"target": [
-				"graph"
+				"_graph"
 			]
 		}, {
-			"pattern": "QueryGraph/{objectId}/:queries*:",
-			"name": "querygraph",
+			"pattern": "_QueryGraph/{objectId}/:queries*:",
+			"name": "_querygraph",
 			"target": [
-				"graph"
+				"_graph"
 			]
 		}
 #foreach($entityType in $entityTypes)		
@@ -157,98 +161,98 @@
 #end			
 	],
 		"targets": {
-			"home": {
+			"_home": {
 				"viewName": "view/Home",
 				"viewPath": "$schema",
 				"viewId": "home",
 				"viewLevel": 1
 			},
-			"DataSets": {
+			"_DataSets": {
 				"viewName": "DataSets",
 				"viewId": "DataSets",
 				"viewLevel": 1
 			},
-			"DataSetisDatasetOf": {
+			"_DataSetisDatasetOf": {
 				"viewName": "DataSetisDatasetOf",
 				"viewId": "DataSetisDatasetOf",
 				"viewLevel": 1
 			},
-			"settings": {
+			"_settings": {
 				"viewName": "Settings",
 				"viewId": "settings",
 				"viewLevel": 1
 			},
-			"configurationEditor": {
+			"_configurationEditor": {
 				"viewName": "ConfigurationEditor",
 				"viewId": "configurationEditor",
 				"viewLevel": 1
 			},
-			"privacyPolicies": {
+			"_privacyPolicies": {
 				"viewName": "PrivacyPolicies",
 				"viewId": "privacyPolicies",
 				"viewLevel": 1
 			},
-			"copyrightNotices": {
+			"_copyrightNotices": {
 				"viewName": "CopyrightNotices",
 				"viewId": "copyrightNotices",
 				"viewLevel": 1
 			},
-			"termsofUse": {
+			"_termsofUse": {
 				"viewName": "TermsOfUse",
 				"viewId": "termsofUse",
 				"viewLevel": 1
 			},
 
-			"corporatePolicies": {
+			"_corporatePolicies": {
 				"viewName": "CorporatePolicies",
 				"viewId": "corporatePolicies",
 				"viewLevel": 1
 			},
-			"legal": {
+			"_legal": {
 				"viewName": "Legal",
 				"viewId": "legal",
 				"viewLevel": 1
 			},
-			"links": {
+			"_links": {
 				"viewName": "Links",
 				"viewId": "links",
 				"viewLevel": 1
 			},
-			"login": {
+			"_login": {
 				"viewName": "Login",
 				"viewId": "login",
 				"viewLevel": 1
 			},
-			"Search": {
+			"_Search": {
 				"viewName": "Search",
 				"viewId": "Search",
 				"viewLevel": 1
 			},
-			"LinkedSearch": {
+			"_LinkedSearch": {
 				"viewName": "LinkedSearch",
 				"viewId": "LinkedSearch",
 				"viewLevel": 1
 			},
-			"AdvancedSearch": {
+			"_AdvancedSearch": {
 				"viewName": "AdvancedSearch",
 				"viewId": "AdvancedSearch",
 				"viewLevel": 1
 			},
-			"graph": {
+			"_graph": {
 				"viewName": "Graph/Graph",
 				"viewId": "graph",
 				"viewLevel": 1
 			},
-			"default": {
+			"_default": {
 				"viewName": "Default",
 				"viewId": "Default",
 				"viewLevel": 1
 			},
-			"objectNotFound": {
+			"_objectNotFound": {
 				"viewName": "ObjectNotFound",
 				"viewId": "objectNotFound"
 			},
-			"notFound": {
+			"_notFound": {
 				"viewName": "NotFound",
 				"viewId": "notFound"
 			}

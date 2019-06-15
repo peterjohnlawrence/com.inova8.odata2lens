@@ -19,7 +19,27 @@
 	"Customer": {
 		"entity": "Customer",
 		"icon": "sap-icon://northwind/customer",
-		"image": "./apartment/northwind/images/customer.svg"
+		"image": "./apartment/northwind/images/customer.svg",
+		"form": {
+			"target": "Customer",
+			"formStyle":"entity360",
+			"targetVisible": true,
+			"targetIcon": "sap-icon://expand-group",
+			"targetEntity": "Customer",
+			"allowEdit" : true,
+			"properties": [		
+	{ 
+					"property": "customer_customer_Order",
+					"propertyVisible": false,
+					"propertyType": "C",
+					"propertyRange": "Customer_Order",
+					"ordinal": 16,
+					"aggregate": "[List]",
+					"formatOptions": null,
+					"allowEdit": true,
+					"height":"4rem"
+				}		]
+		}
 	},
 	"Employee": {
 		"entity": "Employee",
@@ -197,6 +217,37 @@
 					"ordinal": 0.5,
 					"aggregate": "[]",
 					"formatOptions": ""
+				}]
+				},
+		"form": {
+			"target": "Order",
+			"formStyle":"entity360",
+			"targetVisible": true,
+			"targetIcon": "sap-icon://expand-group",
+			"targetEntity": "Order",
+			"allowEdit" : true,
+			"properties": [		
+					{ 
+					"property": "order_customer_Order",
+					"propertyVisible": false,
+					"propertyType": "C",
+					"propertyRange": "Customer_Order",
+					"ordinal": 26,
+					"aggregate": "[List]",
+					"formatOptions": null,
+					"allowEdit": true,
+					"height":"4rem"
+				}
+				,{ 
+					"property": "order_orderSummary",
+					"propertyVisible": false,
+					"propertyType": "C",
+					"propertyRange": "OrderSummary",
+					"ordinal": 27,
+					"aggregate": "[List]",
+					"formatOptions": null,
+					"allowEdit": true,
+					"height":"4rem"
 				}
 			]
 		}

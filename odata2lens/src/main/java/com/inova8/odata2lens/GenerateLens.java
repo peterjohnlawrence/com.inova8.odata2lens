@@ -412,7 +412,7 @@ public class GenerateLens {
 														? navigationPropertyAnnotations.get("sap.quickinfo")
 														: "Show " + edmEntityType.getName() + "s "
 																+ edmNavigationProperty.getType().getName(),
-												edmNavigationProperty.getType().getName(),
+												edmNavigationProperty.getType().getFullQualifiedName().getFullQualifiedNameAsString(),//.getName(),
 												range, "", "4rem");
 
 										entityNavigationSets.put(navigationPropertyName, entityNavigationSet);
@@ -425,7 +425,7 @@ public class GenerateLens {
 												navigationPropertyAnnotations.containsKey("sap.quickinfo")
 														? navigationPropertyAnnotations.get("sap.quickinfo")
 														: "Show " + navigationPropertyName,
-												edmNavigationProperty.getType().getName(),
+												edmNavigationProperty.getType().getFullQualifiedName().getFullQualifiedNameAsString(),//.getName(),
 												range, "");
 										navigationProperties.put(navigationPropertyName, navigationProperty);
 									}

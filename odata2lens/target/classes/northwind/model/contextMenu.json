@@ -6,7 +6,7 @@
 			"key": "graph",
 			"text": "Graph View",
 			"icon": "sap-icon://overview-chart",
-			"target": "graphgraph",
+			"target": "_graphgraph",
 			"tooltip": "Category Graph",
 			"visible": true
 		}, {
@@ -14,7 +14,7 @@
 			"key": "Details",
 			"text": "Details",
 			"icon": "sap-icon://detail-view",
-			"target": "DataSet",
+			"target": "_DataSet",
 			"tooltip": "DataSet Details",
 			"visible": true
 		}, {
@@ -22,7 +22,7 @@
 			"key": "DataSetisDatasetOf",
 			"text": "Graph",
 			"icon": "sap-icon://database",
-			"target": "DataSetisDatasetOf",
+			"target": "_DataSetisDatasetOf",
 			"tooltip": "Dataset's Graph Details",
 			"visible": true
 		}],
@@ -33,7 +33,7 @@
 				"key": "graph",
 				"text": "Graph View",
 				"icon": "sap-icon://overview-chart",
-				"target": "graphgraph",
+				"target": "_graphgraph",
 				"tooltip": "Category Graph",
 				"visible": true
 			}, {
@@ -41,7 +41,7 @@
 				"key": "Details",
 				"text": "Details",
 				"icon": "sap-icon://detail-view",
-				"target": "DataSet",
+				"target": "_DataSet",
 				"tooltip": "DataSet Details",
 				"visible": true
 			}, {
@@ -49,7 +49,7 @@
 				"key": "DataSetisDatasetOf",
 				"text": "Graph",
 				"icon": "sap-icon://database",
-				"target": "DataSetisDatasetOf",
+				"target": "_DataSetisDatasetOf",
 				"tooltip": "Dataset's Graph Details",
 				"visible": true
 			}]
@@ -62,14 +62,14 @@
 					"key": "graph",
 					"text": "Graph View",
 					"icon": "sap-icon://overview-chart",
-					"target": "navigationSetGraph",
+					"target": "_navigationSetGraph",
 					"tooltip": "isCategoryOf Graph",
 					"visible": true
 				}, {
 					"key": "qb_isDatasetOf",
 					"text": "is dataset of",
 					"icon": "sap-icon://database",
-					"target": "DataSetisDatasetOf",
+					"target": "_DataSetisDatasetOf",
 					"tooltip": "is dataset of",
 					"visible": true
 				}]
@@ -94,11 +94,11 @@
 			"type":"entitySet",
 		    "key": "graph",
 			"text": "Graph View",
-			"target": "graph",
+			"target": "_graph",
 			"tooltip": "Categorys Graph",
 			"visible":true, 			"parameters": {
 				"objectId": "Category",
-				"queryOptions": {
+				"?queryOptions": {
 					"$top": 10
 				}
 			}
@@ -127,7 +127,7 @@
 				"key": "graph",
 				"text": "Graph View",
 				"icon": "sap-icon://overview-chart",
-				"target": "graph",
+				"target": "_graph",
 				"tooltip": "Category Graph",
 				"visible": true
 			},{
@@ -135,7 +135,7 @@
 				"key": "linked",
 				"text": "Linked Search",
 				"icon": "sap-icon://chain-link",
-				"target": "LinkedSearch",
+				"target": "_LinkedSearch",
 				"tooltip": "Search for things linked to this",
 				"visible": true
 			}, {
@@ -161,15 +161,17 @@
 						]
 		}
 		,"navigationProperty": {
-							"isCategoryOf": {
+	 "isCategoryOf": {
 				"target": "Products",
 				"icon": "sap-icon://expand-group",
+				"key": "isCategoryOf",
+				"text": "isCategoryOf",						
 				"menu": [{
 					"type":"navigationSet",
 					"key": "graph",
 					"text": "Graph View",
 					"icon": "sap-icon://overview-chart",
-					"target": "navigationSetGraph",
+					"target": "_navigationSetGraph",
 					"tooltip": "isCategoryOf Graph",
 					"visible": true
 				}, {
@@ -185,7 +187,7 @@
 					}
 				}]
 			}
-														}
+		}
 	}
 	,
 	"Customer_Order": {
@@ -203,11 +205,11 @@
 			"type":"entitySet",
 		    "key": "graph",
 			"text": "Graph View",
-			"target": "graph",
+			"target": "_graph",
 			"tooltip": "Customer_Orders Graph",
 			"visible":true, 			"parameters": {
 				"objectId": "Customer_Order",
-				"queryOptions": {
+				"?queryOptions": {
 					"$top": 10
 				}
 			}
@@ -236,7 +238,7 @@
 				"key": "graph",
 				"text": "Graph View",
 				"icon": "sap-icon://overview-chart",
-				"target": "graph",
+				"target": "_graph",
 				"tooltip": "Customer_Order Graph",
 				"visible": true
 			},{
@@ -244,7 +246,7 @@
 				"key": "linked",
 				"text": "Linked Search",
 				"icon": "sap-icon://chain-link",
-				"target": "LinkedSearch",
+				"target": "_LinkedSearch",
 				"tooltip": "Search for things linked to this",
 				"visible": true
 			}, {
@@ -260,7 +262,7 @@
 				"key": "customer_Order_customer",
 				"text": "customer_Order_customer",
 				"icon": "sap-icon://expand-group",
-				"target": "Customer",
+				"target": "northwind.Customer",
 				"tooltip": "Show customer_Order_customer",
 				"visible": true ,
 				"parameters": {
@@ -272,7 +274,7 @@
 				"key": "customer_Order_order",
 				"text": "customer_Order_order",
 				"icon": "sap-icon://expand-group",
-				"target": "Order",
+				"target": "northwind.Order",
 				"tooltip": "Show customer_Order_order",
 				"visible": true ,
 				"parameters": {
@@ -282,6 +284,58 @@
 						]
 		}
 		,"navigationProperty": {
+  "customer_Order_customer": {
+				"target": "northwind.Customer",
+				"icon": "sap-icon://expand-group",
+				"key": "customer_Order_customer",
+				"text": "customer_Order_customer",						
+				"menu": [{
+					"type":"navigationSet",
+					"key": "graph",
+					"text": "Graph View",
+					"icon": "sap-icon://overview-chart",
+					"target": "_navigationSetGraph",
+					"tooltip": "$navigationSet.name Graph",
+					"visible": true
+				}, {
+					"type":"navigationSet",
+					"key": "customer_Order_customer",
+					"text": "customer_Order_customer",
+					"icon": "sap-icon://expand-group",
+					"target":  "northwind.Customer", 
+					"tooltip": "Show customer_Order_customer",
+					"visible": true,
+					"parameters": {
+						"navigation": "customer_Order_customer"
+					}
+				}]
+			}		
+			,  "customer_Order_order": {
+				"target": "northwind.Order",
+				"icon": "sap-icon://expand-group",
+				"key": "customer_Order_order",
+				"text": "customer_Order_order",						
+				"menu": [{
+					"type":"navigationSet",
+					"key": "graph",
+					"text": "Graph View",
+					"icon": "sap-icon://overview-chart",
+					"target": "_navigationSetGraph",
+					"tooltip": "$navigationSet.name Graph",
+					"visible": true
+				}, {
+					"type":"navigationSet",
+					"key": "customer_Order_order",
+					"text": "customer_Order_order",
+					"icon": "sap-icon://expand-group",
+					"target":  "northwind.Order", 
+					"tooltip": "Show customer_Order_order",
+					"visible": true,
+					"parameters": {
+						"navigation": "customer_Order_order"
+					}
+				}]
+			}		
 		}
 	}
 	,
@@ -300,11 +354,11 @@
 			"type":"entitySet",
 		    "key": "graph",
 			"text": "Graph View",
-			"target": "graph",
+			"target": "_graph",
 			"tooltip": "Customers Graph",
 			"visible":true, 			"parameters": {
 				"objectId": "Customer",
-				"queryOptions": {
+				"?queryOptions": {
 					"$top": 10
 				}
 			}
@@ -333,7 +387,7 @@
 				"key": "graph",
 				"text": "Graph View",
 				"icon": "sap-icon://overview-chart",
-				"target": "graph",
+				"target": "_graph",
 				"tooltip": "Customer Graph",
 				"visible": true
 			},{
@@ -341,7 +395,7 @@
 				"key": "linked",
 				"text": "Linked Search",
 				"icon": "sap-icon://chain-link",
-				"target": "LinkedSearch",
+				"target": "_LinkedSearch",
 				"tooltip": "Search for things linked to this",
 				"visible": true
 			}, {
@@ -391,15 +445,17 @@
 						]
 		}
 		,"navigationProperty": {
-							"customerRegion": {
+	 "customerRegion": {
 				"target": "Regions",
 				"icon": "sap-icon://expand-group",
+				"key": "customerRegion",
+				"text": "customerRegion",						
 				"menu": [{
 					"type":"navigationSet",
 					"key": "graph",
 					"text": "Graph View",
 					"icon": "sap-icon://overview-chart",
-					"target": "navigationSetGraph",
+					"target": "_navigationSetGraph",
 					"tooltip": "customerRegion Graph",
 					"visible": true
 				}, {
@@ -415,15 +471,17 @@
 					}
 				}]
 			}
-																, 			"customer_customer_Order": {
+			, 	 "customer_customer_Order": {
 				"target": "Customer_Orders",
 				"icon": "sap-icon://expand-group",
+				"key": "customer_customer_Order",
+				"text": "customer_customer_Order",						
 				"menu": [{
 					"type":"navigationSet",
 					"key": "graph",
 					"text": "Graph View",
 					"icon": "sap-icon://overview-chart",
-					"target": "navigationSetGraph",
+					"target": "_navigationSetGraph",
 					"tooltip": "customer_customer_Order Graph",
 					"visible": true
 				}, {
@@ -439,15 +497,17 @@
 					}
 				}]
 			}
-																, 			"hasPlacedOrder": {
+			, 	 "hasPlacedOrder": {
 				"target": "Orders",
 				"icon": "sap-icon://expand-group",
+				"key": "hasPlacedOrder",
+				"text": "hasPlacedOrder",						
 				"menu": [{
 					"type":"navigationSet",
 					"key": "graph",
 					"text": "Graph View",
 					"icon": "sap-icon://overview-chart",
-					"target": "navigationSetGraph",
+					"target": "_navigationSetGraph",
 					"tooltip": "hasPlacedOrder Graph",
 					"visible": true
 				}, {
@@ -463,7 +523,7 @@
 					}
 				}]
 			}
-														}
+		}
 	}
 	,
 	"Employee": {
@@ -481,11 +541,11 @@
 			"type":"entitySet",
 		    "key": "graph",
 			"text": "Graph View",
-			"target": "graph",
+			"target": "_graph",
 			"tooltip": "Employees Graph",
 			"visible":true, 			"parameters": {
 				"objectId": "Employee",
-				"queryOptions": {
+				"?queryOptions": {
 					"$top": 10
 				}
 			}
@@ -530,7 +590,7 @@
 				"key": "graph",
 				"text": "Graph View",
 				"icon": "sap-icon://overview-chart",
-				"target": "graph",
+				"target": "_graph",
 				"tooltip": "Employee Graph",
 				"visible": true
 			},{
@@ -538,7 +598,7 @@
 				"key": "linked",
 				"text": "Linked Search",
 				"icon": "sap-icon://chain-link",
-				"target": "LinkedSearch",
+				"target": "_LinkedSearch",
 				"tooltip": "Search for things linked to this",
 				"visible": true
 			}, {
@@ -602,7 +662,7 @@
 				"key": "reportsTo",
 				"text": "reportsTo",
 				"icon": "sap-icon://northwind/employee",
-				"target": "Employee",
+				"target": "northwind.Employee",
 				"tooltip": "Show reportsTo",
 				"visible": true ,
 				"parameters": {
@@ -619,7 +679,7 @@
 				"visible": true , 
 				"parameters": {
 					"navigation": "employer",
-					"queryOptions": {
+					"?queryOptions": {
 						"$expand": "*"
 					},
 					"versions": [	
@@ -642,7 +702,7 @@
 				"visible": true , 
 				"parameters": {
 					"navigation": "favorite",
-					"queryOptions": {
+					"?queryOptions": {
 						"$expand": "*"
 					},
 					"versions": [	
@@ -658,15 +718,17 @@
 			]
 		}
 		,"navigationProperty": {
-							"employeeRegion": {
+	 "employeeRegion": {
 				"target": "Regions",
 				"icon": "sap-icon://northwind/employee",
+				"key": "employeeRegion",
+				"text": "employeeRegion",						
 				"menu": [{
 					"type":"navigationSet",
 					"key": "graph",
 					"text": "Graph View",
 					"icon": "sap-icon://overview-chart",
-					"target": "navigationSetGraph",
+					"target": "_navigationSetGraph",
 					"tooltip": "employeeRegion Graph",
 					"visible": true
 				}, {
@@ -682,15 +744,17 @@
 					}
 				}]
 			}
-																, 			"managesEmployee": {
+			, 	 "managesEmployee": {
 				"target": "Employees",
 				"icon": "sap-icon://northwind/employee",
+				"key": "managesEmployee",
+				"text": "managesEmployee",						
 				"menu": [{
 					"type":"navigationSet",
 					"key": "graph",
 					"text": "Graph View",
 					"icon": "sap-icon://overview-chart",
-					"target": "navigationSetGraph",
+					"target": "_navigationSetGraph",
 					"tooltip": "managesEmployee Graph",
 					"visible": true
 				}, {
@@ -706,15 +770,17 @@
 					}
 				}]
 			}
-																, 			"managesOrder": {
+			, 	 "managesOrder": {
 				"target": "Orders",
 				"icon": "sap-icon://northwind/employee",
+				"key": "managesOrder",
+				"text": "managesOrder",						
 				"menu": [{
 					"type":"navigationSet",
 					"key": "graph",
 					"text": "Graph View",
 					"icon": "sap-icon://overview-chart",
-					"target": "navigationSetGraph",
+					"target": "_navigationSetGraph",
 					"tooltip": "managesOrder Graph",
 					"visible": true
 				}, {
@@ -730,15 +796,17 @@
 					}
 				}]
 			}
-																, 			"territory": {
+			, 	 "territory": {
 				"target": "Territorys",
 				"icon": "sap-icon://northwind/employee",
+				"key": "territory",
+				"text": "territory",						
 				"menu": [{
 					"type":"navigationSet",
 					"key": "graph",
 					"text": "Graph View",
 					"icon": "sap-icon://overview-chart",
-					"target": "navigationSetGraph",
+					"target": "_navigationSetGraph",
 					"tooltip": "territory Graph",
 					"visible": true
 				}, {
@@ -754,7 +822,33 @@
 					}
 				}]
 			}
-														}
+			,  "reportsTo": {
+				"target": "northwind.Employee",
+				"icon": "sap-icon://northwind/employee",
+				"key": "reportsTo",
+				"text": "reportsTo",						
+				"menu": [{
+					"type":"navigationSet",
+					"key": "graph",
+					"text": "Graph View",
+					"icon": "sap-icon://overview-chart",
+					"target": "_navigationSetGraph",
+					"tooltip": "$navigationSet.name Graph",
+					"visible": true
+				}, {
+					"type":"navigationSet",
+					"key": "reportsTo",
+					"text": "reportsTo",
+					"icon": "sap-icon://northwind/employee",
+					"target":  "northwind.Employee", 
+					"tooltip": "Show reportsTo",
+					"visible": true,
+					"parameters": {
+						"navigation": "reportsTo"
+					}
+				}]
+			}		
+		}
 	}
 	,
 	"OrderDetail": {
@@ -772,11 +866,11 @@
 			"type":"entitySet",
 		    "key": "graph",
 			"text": "Graph View",
-			"target": "graph",
+			"target": "_graph",
 			"tooltip": "OrderDetails Graph",
 			"visible":true, 			"parameters": {
 				"objectId": "OrderDetail",
-				"queryOptions": {
+				"?queryOptions": {
 					"$top": 10
 				}
 			}
@@ -805,7 +899,7 @@
 				"key": "graph",
 				"text": "Graph View",
 				"icon": "sap-icon://overview-chart",
-				"target": "graph",
+				"target": "_graph",
 				"tooltip": "OrderDetail Graph",
 				"visible": true
 			},{
@@ -813,7 +907,7 @@
 				"key": "linked",
 				"text": "Linked Search",
 				"icon": "sap-icon://chain-link",
-				"target": "LinkedSearch",
+				"target": "_LinkedSearch",
 				"tooltip": "Search for things linked to this",
 				"visible": true
 			}, {
@@ -829,7 +923,7 @@
 				"key": "order",
 				"text": "order",
 				"icon": "sap-icon://expand-group",
-				"target": "Order",
+				"target": "northwind.Order",
 				"tooltip": "Show order",
 				"visible": true ,
 				"parameters": {
@@ -841,7 +935,7 @@
 				"key": "product",
 				"text": "product",
 				"icon": "sap-icon://expand-group",
-				"target": "Product",
+				"target": "northwind.Product",
 				"tooltip": "Show product",
 				"visible": true ,
 				"parameters": {
@@ -851,6 +945,58 @@
 						]
 		}
 		,"navigationProperty": {
+  "order": {
+				"target": "northwind.Order",
+				"icon": "sap-icon://expand-group",
+				"key": "order",
+				"text": "order",						
+				"menu": [{
+					"type":"navigationSet",
+					"key": "graph",
+					"text": "Graph View",
+					"icon": "sap-icon://overview-chart",
+					"target": "_navigationSetGraph",
+					"tooltip": "$navigationSet.name Graph",
+					"visible": true
+				}, {
+					"type":"navigationSet",
+					"key": "order",
+					"text": "order",
+					"icon": "sap-icon://expand-group",
+					"target":  "northwind.Order", 
+					"tooltip": "Show order",
+					"visible": true,
+					"parameters": {
+						"navigation": "order"
+					}
+				}]
+			}		
+			,  "product": {
+				"target": "northwind.Product",
+				"icon": "sap-icon://expand-group",
+				"key": "product",
+				"text": "product",						
+				"menu": [{
+					"type":"navigationSet",
+					"key": "graph",
+					"text": "Graph View",
+					"icon": "sap-icon://overview-chart",
+					"target": "_navigationSetGraph",
+					"tooltip": "$navigationSet.name Graph",
+					"visible": true
+				}, {
+					"type":"navigationSet",
+					"key": "product",
+					"text": "product",
+					"icon": "sap-icon://expand-group",
+					"target":  "northwind.Product", 
+					"tooltip": "Show product",
+					"visible": true,
+					"parameters": {
+						"navigation": "product"
+					}
+				}]
+			}		
 		}
 	}
 	,
@@ -869,11 +1015,11 @@
 			"type":"entitySet",
 		    "key": "graph",
 			"text": "Graph View",
-			"target": "graph",
+			"target": "_graph",
 			"tooltip": "OrderSummarys Graph",
 			"visible":true, 			"parameters": {
 				"objectId": "OrderSummary",
-				"queryOptions": {
+				"?queryOptions": {
 					"$top": 10
 				}
 			}
@@ -902,7 +1048,7 @@
 				"key": "graph",
 				"text": "Graph View",
 				"icon": "sap-icon://overview-chart",
-				"target": "graph",
+				"target": "_graph",
 				"tooltip": "OrderSummary Graph",
 				"visible": true
 			},{
@@ -910,7 +1056,7 @@
 				"key": "linked",
 				"text": "Linked Search",
 				"icon": "sap-icon://chain-link",
-				"target": "LinkedSearch",
+				"target": "_LinkedSearch",
 				"tooltip": "Search for things linked to this",
 				"visible": true
 			}, {
@@ -926,7 +1072,7 @@
 				"key": "orderSummary_order",
 				"text": "orderSummary_order",
 				"icon": "sap-icon://expand-group",
-				"target": "Order",
+				"target": "northwind.Order",
 				"tooltip": "Show orderSummary_order",
 				"visible": true ,
 				"parameters": {
@@ -938,7 +1084,7 @@
 				"key": "orderSummary_product",
 				"text": "orderSummary_product",
 				"icon": "sap-icon://expand-group",
-				"target": "Product",
+				"target": "northwind.Product",
 				"tooltip": "Show orderSummary_product",
 				"visible": true ,
 				"parameters": {
@@ -948,6 +1094,58 @@
 						]
 		}
 		,"navigationProperty": {
+  "orderSummary_order": {
+				"target": "northwind.Order",
+				"icon": "sap-icon://expand-group",
+				"key": "orderSummary_order",
+				"text": "orderSummary_order",						
+				"menu": [{
+					"type":"navigationSet",
+					"key": "graph",
+					"text": "Graph View",
+					"icon": "sap-icon://overview-chart",
+					"target": "_navigationSetGraph",
+					"tooltip": "$navigationSet.name Graph",
+					"visible": true
+				}, {
+					"type":"navigationSet",
+					"key": "orderSummary_order",
+					"text": "orderSummary_order",
+					"icon": "sap-icon://expand-group",
+					"target":  "northwind.Order", 
+					"tooltip": "Show orderSummary_order",
+					"visible": true,
+					"parameters": {
+						"navigation": "orderSummary_order"
+					}
+				}]
+			}		
+			,  "orderSummary_product": {
+				"target": "northwind.Product",
+				"icon": "sap-icon://expand-group",
+				"key": "orderSummary_product",
+				"text": "orderSummary_product",						
+				"menu": [{
+					"type":"navigationSet",
+					"key": "graph",
+					"text": "Graph View",
+					"icon": "sap-icon://overview-chart",
+					"target": "_navigationSetGraph",
+					"tooltip": "$navigationSet.name Graph",
+					"visible": true
+				}, {
+					"type":"navigationSet",
+					"key": "orderSummary_product",
+					"text": "orderSummary_product",
+					"icon": "sap-icon://expand-group",
+					"target":  "northwind.Product", 
+					"tooltip": "Show orderSummary_product",
+					"visible": true,
+					"parameters": {
+						"navigation": "orderSummary_product"
+					}
+				}]
+			}		
 		}
 	}
 	,
@@ -966,11 +1164,11 @@
 			"type":"entitySet",
 		    "key": "graph",
 			"text": "Graph View",
-			"target": "graph",
+			"target": "_graph",
 			"tooltip": "Orders Graph",
 			"visible":true, 			"parameters": {
 				"objectId": "Order",
-				"queryOptions": {
+				"?queryOptions": {
 					"$top": 10
 				}
 			}
@@ -999,7 +1197,7 @@
 				"key": "graph",
 				"text": "Graph View",
 				"icon": "sap-icon://overview-chart",
-				"target": "graph",
+				"target": "_graph",
 				"tooltip": "Order Graph",
 				"visible": true
 			},{
@@ -1007,7 +1205,7 @@
 				"key": "linked",
 				"text": "Linked Search",
 				"icon": "sap-icon://chain-link",
-				"target": "LinkedSearch",
+				"target": "_LinkedSearch",
 				"tooltip": "Search for things linked to this",
 				"visible": true
 			}, {
@@ -1059,7 +1257,7 @@
 				"key": "customer",
 				"text": "customer",
 				"icon": "sap-icon://expand-group",
-				"target": "Customer",
+				"target": "northwind.Customer",
 				"tooltip": "Show customer",
 				"visible": true ,
 				"parameters": {
@@ -1071,7 +1269,7 @@
 				"key": "employee",
 				"text": "employee",
 				"icon": "sap-icon://northwind/employee",
-				"target": "Employee",
+				"target": "northwind.Employee",
 				"tooltip": "Show employee",
 				"visible": true ,
 				"parameters": {
@@ -1083,7 +1281,7 @@
 				"key": "orderRegion",
 				"text": "orderRegion",
 				"icon": "sap-icon://expand-group",
-				"target": "Region",
+				"target": "northwind.Region",
 				"tooltip": "Show orderRegion",
 				"visible": true ,
 				"parameters": {
@@ -1095,7 +1293,7 @@
 				"key": "shipVia",
 				"text": "shipVia",
 				"icon": "sap-icon://expand-group",
-				"target": "Shipper",
+				"target": "northwind.Shipper",
 				"tooltip": "Show shipVia",
 				"visible": true ,
 				"parameters": {
@@ -1105,15 +1303,17 @@
 						]
 		}
 		,"navigationProperty": {
-							"hasOrderDetail": {
+	 "hasOrderDetail": {
 				"target": "OrderDetails",
 				"icon": "sap-icon://expand-group",
+				"key": "hasOrderDetail",
+				"text": "hasOrderDetail",						
 				"menu": [{
 					"type":"navigationSet",
 					"key": "graph",
 					"text": "Graph View",
 					"icon": "sap-icon://overview-chart",
-					"target": "navigationSetGraph",
+					"target": "_navigationSetGraph",
 					"tooltip": "hasOrderDetail Graph",
 					"visible": true
 				}, {
@@ -1129,15 +1329,17 @@
 					}
 				}]
 			}
-																, 			"order_customer_Order": {
+			, 	 "order_customer_Order": {
 				"target": "Customer_Orders",
 				"icon": "sap-icon://expand-group",
+				"key": "order_customer_Order",
+				"text": "order_customer_Order",						
 				"menu": [{
 					"type":"navigationSet",
 					"key": "graph",
 					"text": "Graph View",
 					"icon": "sap-icon://overview-chart",
-					"target": "navigationSetGraph",
+					"target": "_navigationSetGraph",
 					"tooltip": "order_customer_Order Graph",
 					"visible": true
 				}, {
@@ -1153,15 +1355,17 @@
 					}
 				}]
 			}
-																, 			"order_orderSummary": {
+			, 	 "order_orderSummary": {
 				"target": "OrderSummarys",
 				"icon": "sap-icon://expand-group",
+				"key": "order_orderSummary",
+				"text": "order_orderSummary",						
 				"menu": [{
 					"type":"navigationSet",
 					"key": "graph",
 					"text": "Graph View",
 					"icon": "sap-icon://overview-chart",
-					"target": "navigationSetGraph",
+					"target": "_navigationSetGraph",
 					"tooltip": "order_orderSummary Graph",
 					"visible": true
 				}, {
@@ -1177,7 +1381,111 @@
 					}
 				}]
 			}
-														}
+			,  "customer": {
+				"target": "northwind.Customer",
+				"icon": "sap-icon://expand-group",
+				"key": "customer",
+				"text": "customer",						
+				"menu": [{
+					"type":"navigationSet",
+					"key": "graph",
+					"text": "Graph View",
+					"icon": "sap-icon://overview-chart",
+					"target": "_navigationSetGraph",
+					"tooltip": "$navigationSet.name Graph",
+					"visible": true
+				}, {
+					"type":"navigationSet",
+					"key": "customer",
+					"text": "customer",
+					"icon": "sap-icon://expand-group",
+					"target":  "northwind.Customer", 
+					"tooltip": "Show customer",
+					"visible": true,
+					"parameters": {
+						"navigation": "customer"
+					}
+				}]
+			}		
+			,  "employee": {
+				"target": "northwind.Employee",
+				"icon": "sap-icon://expand-group",
+				"key": "employee",
+				"text": "employee",						
+				"menu": [{
+					"type":"navigationSet",
+					"key": "graph",
+					"text": "Graph View",
+					"icon": "sap-icon://overview-chart",
+					"target": "_navigationSetGraph",
+					"tooltip": "$navigationSet.name Graph",
+					"visible": true
+				}, {
+					"type":"navigationSet",
+					"key": "employee",
+					"text": "employee",
+					"icon": "sap-icon://northwind/employee",
+					"target":  "northwind.Employee", 
+					"tooltip": "Show employee",
+					"visible": true,
+					"parameters": {
+						"navigation": "employee"
+					}
+				}]
+			}		
+			,  "orderRegion": {
+				"target": "northwind.Region",
+				"icon": "sap-icon://expand-group",
+				"key": "orderRegion",
+				"text": "orderRegion",						
+				"menu": [{
+					"type":"navigationSet",
+					"key": "graph",
+					"text": "Graph View",
+					"icon": "sap-icon://overview-chart",
+					"target": "_navigationSetGraph",
+					"tooltip": "$navigationSet.name Graph",
+					"visible": true
+				}, {
+					"type":"navigationSet",
+					"key": "orderRegion",
+					"text": "orderRegion",
+					"icon": "sap-icon://expand-group",
+					"target":  "northwind.Region", 
+					"tooltip": "Show orderRegion",
+					"visible": true,
+					"parameters": {
+						"navigation": "orderRegion"
+					}
+				}]
+			}		
+			,  "shipVia": {
+				"target": "northwind.Shipper",
+				"icon": "sap-icon://expand-group",
+				"key": "shipVia",
+				"text": "shipVia",						
+				"menu": [{
+					"type":"navigationSet",
+					"key": "graph",
+					"text": "Graph View",
+					"icon": "sap-icon://overview-chart",
+					"target": "_navigationSetGraph",
+					"tooltip": "$navigationSet.name Graph",
+					"visible": true
+				}, {
+					"type":"navigationSet",
+					"key": "shipVia",
+					"text": "shipVia",
+					"icon": "sap-icon://expand-group",
+					"target":  "northwind.Shipper", 
+					"tooltip": "Show shipVia",
+					"visible": true,
+					"parameters": {
+						"navigation": "shipVia"
+					}
+				}]
+			}		
+		}
 	}
 	,
 	"Product": {
@@ -1195,11 +1503,11 @@
 			"type":"entitySet",
 		    "key": "graph",
 			"text": "Graph View",
-			"target": "graph",
+			"target": "_graph",
 			"tooltip": "Products Graph",
 			"visible":true, 			"parameters": {
 				"objectId": "Product",
-				"queryOptions": {
+				"?queryOptions": {
 					"$top": 10
 				}
 			}
@@ -1244,7 +1552,7 @@
 				"key": "graph",
 				"text": "Graph View",
 				"icon": "sap-icon://overview-chart",
-				"target": "graph",
+				"target": "_graph",
 				"tooltip": "Product Graph",
 				"visible": true
 			},{
@@ -1252,7 +1560,7 @@
 				"key": "linked",
 				"text": "Linked Search",
 				"icon": "sap-icon://chain-link",
-				"target": "LinkedSearch",
+				"target": "_LinkedSearch",
 				"tooltip": "Search for things linked to this",
 				"visible": true
 			}, {
@@ -1292,7 +1600,7 @@
 				"key": "category",
 				"text": "category",
 				"icon": "sap-icon://expand-group",
-				"target": "Category",
+				"target": "northwind.Category",
 				"tooltip": "Show category",
 				"visible": true ,
 				"parameters": {
@@ -1304,7 +1612,7 @@
 				"key": "supplier",
 				"text": "supplier",
 				"icon": "sap-icon://expand-group",
-				"target": "Supplier",
+				"target": "northwind.Supplier",
 				"tooltip": "Show supplier",
 				"visible": true ,
 				"parameters": {
@@ -1314,15 +1622,17 @@
 						]
 		}
 		,"navigationProperty": {
-							"isPartOfOrderDetail": {
+	 "isPartOfOrderDetail": {
 				"target": "OrderDetails",
 				"icon": "sap-icon://expand-group",
+				"key": "isPartOfOrderDetail",
+				"text": "isPartOfOrderDetail",						
 				"menu": [{
 					"type":"navigationSet",
 					"key": "graph",
 					"text": "Graph View",
 					"icon": "sap-icon://overview-chart",
-					"target": "navigationSetGraph",
+					"target": "_navigationSetGraph",
 					"tooltip": "isPartOfOrderDetail Graph",
 					"visible": true
 				}, {
@@ -1338,15 +1648,17 @@
 					}
 				}]
 			}
-																, 			"product_orderSummary": {
+			, 	 "product_orderSummary": {
 				"target": "OrderSummarys",
 				"icon": "sap-icon://expand-group",
+				"key": "product_orderSummary",
+				"text": "product_orderSummary",						
 				"menu": [{
 					"type":"navigationSet",
 					"key": "graph",
 					"text": "Graph View",
 					"icon": "sap-icon://overview-chart",
-					"target": "navigationSetGraph",
+					"target": "_navigationSetGraph",
 					"tooltip": "product_orderSummary Graph",
 					"visible": true
 				}, {
@@ -1362,7 +1674,59 @@
 					}
 				}]
 			}
-														}
+			,  "category": {
+				"target": "northwind.Category",
+				"icon": "sap-icon://expand-group",
+				"key": "category",
+				"text": "category",						
+				"menu": [{
+					"type":"navigationSet",
+					"key": "graph",
+					"text": "Graph View",
+					"icon": "sap-icon://overview-chart",
+					"target": "_navigationSetGraph",
+					"tooltip": "$navigationSet.name Graph",
+					"visible": true
+				}, {
+					"type":"navigationSet",
+					"key": "category",
+					"text": "category",
+					"icon": "sap-icon://expand-group",
+					"target":  "northwind.Category", 
+					"tooltip": "Show category",
+					"visible": true,
+					"parameters": {
+						"navigation": "category"
+					}
+				}]
+			}		
+			,  "supplier": {
+				"target": "northwind.Supplier",
+				"icon": "sap-icon://expand-group",
+				"key": "supplier",
+				"text": "supplier",						
+				"menu": [{
+					"type":"navigationSet",
+					"key": "graph",
+					"text": "Graph View",
+					"icon": "sap-icon://overview-chart",
+					"target": "_navigationSetGraph",
+					"tooltip": "$navigationSet.name Graph",
+					"visible": true
+				}, {
+					"type":"navigationSet",
+					"key": "supplier",
+					"text": "supplier",
+					"icon": "sap-icon://expand-group",
+					"target":  "northwind.Supplier", 
+					"tooltip": "Show supplier",
+					"visible": true,
+					"parameters": {
+						"navigation": "supplier"
+					}
+				}]
+			}		
+		}
 	}
 	,
 	"Region": {
@@ -1380,11 +1744,11 @@
 			"type":"entitySet",
 		    "key": "graph",
 			"text": "Graph View",
-			"target": "graph",
+			"target": "_graph",
 			"tooltip": "Regions Graph",
 			"visible":true, 			"parameters": {
 				"objectId": "Region",
-				"queryOptions": {
+				"?queryOptions": {
 					"$top": 10
 				}
 			}
@@ -1413,7 +1777,7 @@
 				"key": "graph",
 				"text": "Graph View",
 				"icon": "sap-icon://overview-chart",
-				"target": "graph",
+				"target": "_graph",
 				"tooltip": "Region Graph",
 				"visible": true
 			},{
@@ -1421,7 +1785,7 @@
 				"key": "linked",
 				"text": "Linked Search",
 				"icon": "sap-icon://chain-link",
-				"target": "LinkedSearch",
+				"target": "_LinkedSearch",
 				"tooltip": "Search for things linked to this",
 				"visible": true
 			}, {
@@ -1453,11 +1817,11 @@
 			"type":"entitySet",
 		    "key": "graph",
 			"text": "Graph View",
-			"target": "graph",
+			"target": "_graph",
 			"tooltip": "Shippers Graph",
 			"visible":true, 			"parameters": {
 				"objectId": "Shipper",
-				"queryOptions": {
+				"?queryOptions": {
 					"$top": 10
 				}
 			}
@@ -1486,7 +1850,7 @@
 				"key": "graph",
 				"text": "Graph View",
 				"icon": "sap-icon://overview-chart",
-				"target": "graph",
+				"target": "_graph",
 				"tooltip": "Shipper Graph",
 				"visible": true
 			},{
@@ -1494,7 +1858,7 @@
 				"key": "linked",
 				"text": "Linked Search",
 				"icon": "sap-icon://chain-link",
-				"target": "LinkedSearch",
+				"target": "_LinkedSearch",
 				"tooltip": "Search for things linked to this",
 				"visible": true
 			}, {
@@ -1520,15 +1884,17 @@
 						]
 		}
 		,"navigationProperty": {
-							"shipsOrder": {
+	 "shipsOrder": {
 				"target": "Orders",
 				"icon": "sap-icon://expand-group",
+				"key": "shipsOrder",
+				"text": "shipsOrder",						
 				"menu": [{
 					"type":"navigationSet",
 					"key": "graph",
 					"text": "Graph View",
 					"icon": "sap-icon://overview-chart",
-					"target": "navigationSetGraph",
+					"target": "_navigationSetGraph",
 					"tooltip": "shipsOrder Graph",
 					"visible": true
 				}, {
@@ -1544,7 +1910,7 @@
 					}
 				}]
 			}
-														}
+		}
 	}
 	,
 	"Supplier": {
@@ -1562,11 +1928,11 @@
 			"type":"entitySet",
 		    "key": "graph",
 			"text": "Graph View",
-			"target": "graph",
+			"target": "_graph",
 			"tooltip": "Suppliers Graph",
 			"visible":true, 			"parameters": {
 				"objectId": "Supplier",
-				"queryOptions": {
+				"?queryOptions": {
 					"$top": 10
 				}
 			}
@@ -1595,7 +1961,7 @@
 				"key": "graph",
 				"text": "Graph View",
 				"icon": "sap-icon://overview-chart",
-				"target": "graph",
+				"target": "_graph",
 				"tooltip": "Supplier Graph",
 				"visible": true
 			},{
@@ -1603,7 +1969,7 @@
 				"key": "linked",
 				"text": "Linked Search",
 				"icon": "sap-icon://chain-link",
-				"target": "LinkedSearch",
+				"target": "_LinkedSearch",
 				"tooltip": "Search for things linked to this",
 				"visible": true
 			}, {
@@ -1641,15 +2007,17 @@
 						]
 		}
 		,"navigationProperty": {
-							"supplierRegion": {
+	 "supplierRegion": {
 				"target": "Regions",
 				"icon": "sap-icon://expand-group",
+				"key": "supplierRegion",
+				"text": "supplierRegion",						
 				"menu": [{
 					"type":"navigationSet",
 					"key": "graph",
 					"text": "Graph View",
 					"icon": "sap-icon://overview-chart",
-					"target": "navigationSetGraph",
+					"target": "_navigationSetGraph",
 					"tooltip": "supplierRegion Graph",
 					"visible": true
 				}, {
@@ -1665,15 +2033,17 @@
 					}
 				}]
 			}
-																, 			"suppliesProduct": {
+			, 	 "suppliesProduct": {
 				"target": "Products",
 				"icon": "sap-icon://expand-group",
+				"key": "suppliesProduct",
+				"text": "suppliesProduct",						
 				"menu": [{
 					"type":"navigationSet",
 					"key": "graph",
 					"text": "Graph View",
 					"icon": "sap-icon://overview-chart",
-					"target": "navigationSetGraph",
+					"target": "_navigationSetGraph",
 					"tooltip": "suppliesProduct Graph",
 					"visible": true
 				}, {
@@ -1689,7 +2059,7 @@
 					}
 				}]
 			}
-														}
+		}
 	}
 	,
 	"SystemAEmployee": {
@@ -1707,11 +2077,11 @@
 			"type":"entitySet",
 		    "key": "graph",
 			"text": "Graph View",
-			"target": "graph",
+			"target": "_graph",
 			"tooltip": "SystemAEmployees Graph",
 			"visible":true, 			"parameters": {
 				"objectId": "SystemAEmployee",
-				"queryOptions": {
+				"?queryOptions": {
 					"$top": 10
 				}
 			}
@@ -1748,7 +2118,7 @@
 				"key": "graph",
 				"text": "Graph View",
 				"icon": "sap-icon://overview-chart",
-				"target": "graph",
+				"target": "_graph",
 				"tooltip": "SystemAEmployee Graph",
 				"visible": true
 			},{
@@ -1756,7 +2126,7 @@
 				"key": "linked",
 				"text": "Linked Search",
 				"icon": "sap-icon://chain-link",
-				"target": "LinkedSearch",
+				"target": "_LinkedSearch",
 				"tooltip": "Search for things linked to this",
 				"visible": true
 			}, {
@@ -1844,7 +2214,7 @@
 				"key": "reportsTo",
 				"text": "reportsTo",
 				"icon": "sap-icon://northwind/employee",
-				"target": "Employee",
+				"target": "northwind.Employee",
 				"tooltip": "Show reportsTo",
 				"visible": true ,
 				"parameters": {
@@ -1856,7 +2226,7 @@
 				"key": "systemAFavorite",
 				"text": "systemAFavorite",
 				"icon": "sap-icon://expand-group",
-				"target": "Product",
+				"target": "northwind.Product",
 				"tooltip": "Show systemAFavorite",
 				"visible": true ,
 				"parameters": {
@@ -1866,15 +2236,17 @@
 						]
 		}
 		,"navigationProperty": {
-							"employeeRegion": {
+	 "employeeRegion": {
 				"target": "Regions",
 				"icon": "sap-icon://expand-group",
+				"key": "employeeRegion",
+				"text": "employeeRegion",						
 				"menu": [{
 					"type":"navigationSet",
 					"key": "graph",
 					"text": "Graph View",
 					"icon": "sap-icon://overview-chart",
-					"target": "navigationSetGraph",
+					"target": "_navigationSetGraph",
 					"tooltip": "employeeRegion Graph",
 					"visible": true
 				}, {
@@ -1890,15 +2262,17 @@
 					}
 				}]
 			}
-																, 			"managesEmployee": {
+			, 	 "managesEmployee": {
 				"target": "Employees",
 				"icon": "sap-icon://expand-group",
+				"key": "managesEmployee",
+				"text": "managesEmployee",						
 				"menu": [{
 					"type":"navigationSet",
 					"key": "graph",
 					"text": "Graph View",
 					"icon": "sap-icon://overview-chart",
-					"target": "navigationSetGraph",
+					"target": "_navigationSetGraph",
 					"tooltip": "managesEmployee Graph",
 					"visible": true
 				}, {
@@ -1914,15 +2288,17 @@
 					}
 				}]
 			}
-																, 			"managesOrder": {
+			, 	 "managesOrder": {
 				"target": "Orders",
 				"icon": "sap-icon://expand-group",
+				"key": "managesOrder",
+				"text": "managesOrder",						
 				"menu": [{
 					"type":"navigationSet",
 					"key": "graph",
 					"text": "Graph View",
 					"icon": "sap-icon://overview-chart",
-					"target": "navigationSetGraph",
+					"target": "_navigationSetGraph",
 					"tooltip": "managesOrder Graph",
 					"visible": true
 				}, {
@@ -1938,15 +2314,17 @@
 					}
 				}]
 			}
-																, 			"systemACustomer": {
+			, 	 "systemACustomer": {
 				"target": "Customers",
 				"icon": "sap-icon://expand-group",
+				"key": "systemACustomer",
+				"text": "systemACustomer",						
 				"menu": [{
 					"type":"navigationSet",
 					"key": "graph",
 					"text": "Graph View",
 					"icon": "sap-icon://overview-chart",
-					"target": "navigationSetGraph",
+					"target": "_navigationSetGraph",
 					"tooltip": "systemACustomer Graph",
 					"visible": true
 				}, {
@@ -1962,15 +2340,17 @@
 					}
 				}]
 			}
-																, 			"systemAEmployer": {
+			, 	 "systemAEmployer": {
 				"target": "Suppliers",
 				"icon": "sap-icon://expand-group",
+				"key": "systemAEmployer",
+				"text": "systemAEmployer",						
 				"menu": [{
 					"type":"navigationSet",
 					"key": "graph",
 					"text": "Graph View",
 					"icon": "sap-icon://overview-chart",
-					"target": "navigationSetGraph",
+					"target": "_navigationSetGraph",
 					"tooltip": "systemAEmployer Graph",
 					"visible": true
 				}, {
@@ -1986,15 +2366,17 @@
 					}
 				}]
 			}
-																, 			"territory": {
+			, 	 "territory": {
 				"target": "Territorys",
 				"icon": "sap-icon://expand-group",
+				"key": "territory",
+				"text": "territory",						
 				"menu": [{
 					"type":"navigationSet",
 					"key": "graph",
 					"text": "Graph View",
 					"icon": "sap-icon://overview-chart",
-					"target": "navigationSetGraph",
+					"target": "_navigationSetGraph",
 					"tooltip": "territory Graph",
 					"visible": true
 				}, {
@@ -2010,7 +2392,59 @@
 					}
 				}]
 			}
-														}
+			,  "reportsTo": {
+				"target": "northwind.Employee",
+				"icon": "sap-icon://expand-group",
+				"key": "reportsTo",
+				"text": "reportsTo",						
+				"menu": [{
+					"type":"navigationSet",
+					"key": "graph",
+					"text": "Graph View",
+					"icon": "sap-icon://overview-chart",
+					"target": "_navigationSetGraph",
+					"tooltip": "$navigationSet.name Graph",
+					"visible": true
+				}, {
+					"type":"navigationSet",
+					"key": "reportsTo",
+					"text": "reportsTo",
+					"icon": "sap-icon://northwind/employee",
+					"target":  "northwind.Employee", 
+					"tooltip": "Show reportsTo",
+					"visible": true,
+					"parameters": {
+						"navigation": "reportsTo"
+					}
+				}]
+			}		
+			,  "systemAFavorite": {
+				"target": "northwind.Product",
+				"icon": "sap-icon://expand-group",
+				"key": "systemAFavorite",
+				"text": "systemAFavorite",						
+				"menu": [{
+					"type":"navigationSet",
+					"key": "graph",
+					"text": "Graph View",
+					"icon": "sap-icon://overview-chart",
+					"target": "_navigationSetGraph",
+					"tooltip": "$navigationSet.name Graph",
+					"visible": true
+				}, {
+					"type":"navigationSet",
+					"key": "systemAFavorite",
+					"text": "systemAFavorite",
+					"icon": "sap-icon://expand-group",
+					"target":  "northwind.Product", 
+					"tooltip": "Show systemAFavorite",
+					"visible": true,
+					"parameters": {
+						"navigation": "systemAFavorite"
+					}
+				}]
+			}		
+		}
 	}
 	,
 	"SystemAProduct": {
@@ -2028,11 +2462,11 @@
 			"type":"entitySet",
 		    "key": "graph",
 			"text": "Graph View",
-			"target": "graph",
+			"target": "_graph",
 			"tooltip": "SystemAProducts Graph",
 			"visible":true, 			"parameters": {
 				"objectId": "SystemAProduct",
-				"queryOptions": {
+				"?queryOptions": {
 					"$top": 10
 				}
 			}
@@ -2069,7 +2503,7 @@
 				"key": "graph",
 				"text": "Graph View",
 				"icon": "sap-icon://overview-chart",
-				"target": "graph",
+				"target": "_graph",
 				"tooltip": "SystemAProduct Graph",
 				"visible": true
 			},{
@@ -2077,7 +2511,7 @@
 				"key": "linked",
 				"text": "Linked Search",
 				"icon": "sap-icon://chain-link",
-				"target": "LinkedSearch",
+				"target": "_LinkedSearch",
 				"tooltip": "Search for things linked to this",
 				"visible": true
 			}, {
@@ -2117,7 +2551,7 @@
 				"key": "category",
 				"text": "category",
 				"icon": "sap-icon://expand-group",
-				"target": "Category",
+				"target": "northwind.Category",
 				"tooltip": "Show category",
 				"visible": true ,
 				"parameters": {
@@ -2129,7 +2563,7 @@
 				"key": "supplier",
 				"text": "supplier",
 				"icon": "sap-icon://expand-group",
-				"target": "Supplier",
+				"target": "northwind.Supplier",
 				"tooltip": "Show supplier",
 				"visible": true ,
 				"parameters": {
@@ -2139,15 +2573,17 @@
 						]
 		}
 		,"navigationProperty": {
-							"isPartOfOrderDetail": {
+	 "isPartOfOrderDetail": {
 				"target": "OrderDetails",
 				"icon": "sap-icon://expand-group",
+				"key": "isPartOfOrderDetail",
+				"text": "isPartOfOrderDetail",						
 				"menu": [{
 					"type":"navigationSet",
 					"key": "graph",
 					"text": "Graph View",
 					"icon": "sap-icon://overview-chart",
-					"target": "navigationSetGraph",
+					"target": "_navigationSetGraph",
 					"tooltip": "isPartOfOrderDetail Graph",
 					"visible": true
 				}, {
@@ -2163,15 +2599,17 @@
 					}
 				}]
 			}
-																, 			"product_orderSummary": {
+			, 	 "product_orderSummary": {
 				"target": "OrderSummarys",
 				"icon": "sap-icon://expand-group",
+				"key": "product_orderSummary",
+				"text": "product_orderSummary",						
 				"menu": [{
 					"type":"navigationSet",
 					"key": "graph",
 					"text": "Graph View",
 					"icon": "sap-icon://overview-chart",
-					"target": "navigationSetGraph",
+					"target": "_navigationSetGraph",
 					"tooltip": "product_orderSummary Graph",
 					"visible": true
 				}, {
@@ -2187,7 +2625,59 @@
 					}
 				}]
 			}
-														}
+			,  "category": {
+				"target": "northwind.Category",
+				"icon": "sap-icon://expand-group",
+				"key": "category",
+				"text": "category",						
+				"menu": [{
+					"type":"navigationSet",
+					"key": "graph",
+					"text": "Graph View",
+					"icon": "sap-icon://overview-chart",
+					"target": "_navigationSetGraph",
+					"tooltip": "$navigationSet.name Graph",
+					"visible": true
+				}, {
+					"type":"navigationSet",
+					"key": "category",
+					"text": "category",
+					"icon": "sap-icon://expand-group",
+					"target":  "northwind.Category", 
+					"tooltip": "Show category",
+					"visible": true,
+					"parameters": {
+						"navigation": "category"
+					}
+				}]
+			}		
+			,  "supplier": {
+				"target": "northwind.Supplier",
+				"icon": "sap-icon://expand-group",
+				"key": "supplier",
+				"text": "supplier",						
+				"menu": [{
+					"type":"navigationSet",
+					"key": "graph",
+					"text": "Graph View",
+					"icon": "sap-icon://overview-chart",
+					"target": "_navigationSetGraph",
+					"tooltip": "$navigationSet.name Graph",
+					"visible": true
+				}, {
+					"type":"navigationSet",
+					"key": "supplier",
+					"text": "supplier",
+					"icon": "sap-icon://expand-group",
+					"target":  "northwind.Supplier", 
+					"tooltip": "Show supplier",
+					"visible": true,
+					"parameters": {
+						"navigation": "supplier"
+					}
+				}]
+			}		
+		}
 	}
 	,
 	"SystemBEmployee": {
@@ -2205,11 +2695,11 @@
 			"type":"entitySet",
 		    "key": "graph",
 			"text": "Graph View",
-			"target": "graph",
+			"target": "_graph",
 			"tooltip": "SystemBEmployees Graph",
 			"visible":true, 			"parameters": {
 				"objectId": "SystemBEmployee",
-				"queryOptions": {
+				"?queryOptions": {
 					"$top": 10
 				}
 			}
@@ -2246,7 +2736,7 @@
 				"key": "graph",
 				"text": "Graph View",
 				"icon": "sap-icon://overview-chart",
-				"target": "graph",
+				"target": "_graph",
 				"tooltip": "SystemBEmployee Graph",
 				"visible": true
 			},{
@@ -2254,7 +2744,7 @@
 				"key": "linked",
 				"text": "Linked Search",
 				"icon": "sap-icon://chain-link",
-				"target": "LinkedSearch",
+				"target": "_LinkedSearch",
 				"tooltip": "Search for things linked to this",
 				"visible": true
 			}, {
@@ -2330,7 +2820,7 @@
 				"key": "reportsTo",
 				"text": "reportsTo",
 				"icon": "sap-icon://northwind/employee",
-				"target": "Employee",
+				"target": "northwind.Employee",
 				"tooltip": "Show reportsTo",
 				"visible": true ,
 				"parameters": {
@@ -2342,7 +2832,7 @@
 				"key": "systemBFavorite",
 				"text": "systemBFavorite",
 				"icon": "sap-icon://expand-group",
-				"target": "Product",
+				"target": "northwind.Product",
 				"tooltip": "Show systemBFavorite",
 				"visible": true ,
 				"parameters": {
@@ -2352,15 +2842,17 @@
 						]
 		}
 		,"navigationProperty": {
-							"employeeRegion": {
+	 "employeeRegion": {
 				"target": "Regions",
 				"icon": "sap-icon://expand-group",
+				"key": "employeeRegion",
+				"text": "employeeRegion",						
 				"menu": [{
 					"type":"navigationSet",
 					"key": "graph",
 					"text": "Graph View",
 					"icon": "sap-icon://overview-chart",
-					"target": "navigationSetGraph",
+					"target": "_navigationSetGraph",
 					"tooltip": "employeeRegion Graph",
 					"visible": true
 				}, {
@@ -2376,15 +2868,17 @@
 					}
 				}]
 			}
-																, 			"managesEmployee": {
+			, 	 "managesEmployee": {
 				"target": "Employees",
 				"icon": "sap-icon://expand-group",
+				"key": "managesEmployee",
+				"text": "managesEmployee",						
 				"menu": [{
 					"type":"navigationSet",
 					"key": "graph",
 					"text": "Graph View",
 					"icon": "sap-icon://overview-chart",
-					"target": "navigationSetGraph",
+					"target": "_navigationSetGraph",
 					"tooltip": "managesEmployee Graph",
 					"visible": true
 				}, {
@@ -2400,15 +2894,17 @@
 					}
 				}]
 			}
-																, 			"managesOrder": {
+			, 	 "managesOrder": {
 				"target": "Orders",
 				"icon": "sap-icon://expand-group",
+				"key": "managesOrder",
+				"text": "managesOrder",						
 				"menu": [{
 					"type":"navigationSet",
 					"key": "graph",
 					"text": "Graph View",
 					"icon": "sap-icon://overview-chart",
-					"target": "navigationSetGraph",
+					"target": "_navigationSetGraph",
 					"tooltip": "managesOrder Graph",
 					"visible": true
 				}, {
@@ -2424,15 +2920,17 @@
 					}
 				}]
 			}
-																, 			"systemBEmployer": {
+			, 	 "systemBEmployer": {
 				"target": "Suppliers",
 				"icon": "sap-icon://expand-group",
+				"key": "systemBEmployer",
+				"text": "systemBEmployer",						
 				"menu": [{
 					"type":"navigationSet",
 					"key": "graph",
 					"text": "Graph View",
 					"icon": "sap-icon://overview-chart",
-					"target": "navigationSetGraph",
+					"target": "_navigationSetGraph",
 					"tooltip": "systemBEmployer Graph",
 					"visible": true
 				}, {
@@ -2448,15 +2946,17 @@
 					}
 				}]
 			}
-																, 			"territory": {
+			, 	 "territory": {
 				"target": "Territorys",
 				"icon": "sap-icon://expand-group",
+				"key": "territory",
+				"text": "territory",						
 				"menu": [{
 					"type":"navigationSet",
 					"key": "graph",
 					"text": "Graph View",
 					"icon": "sap-icon://overview-chart",
-					"target": "navigationSetGraph",
+					"target": "_navigationSetGraph",
 					"tooltip": "territory Graph",
 					"visible": true
 				}, {
@@ -2472,7 +2972,59 @@
 					}
 				}]
 			}
-														}
+			,  "reportsTo": {
+				"target": "northwind.Employee",
+				"icon": "sap-icon://expand-group",
+				"key": "reportsTo",
+				"text": "reportsTo",						
+				"menu": [{
+					"type":"navigationSet",
+					"key": "graph",
+					"text": "Graph View",
+					"icon": "sap-icon://overview-chart",
+					"target": "_navigationSetGraph",
+					"tooltip": "$navigationSet.name Graph",
+					"visible": true
+				}, {
+					"type":"navigationSet",
+					"key": "reportsTo",
+					"text": "reportsTo",
+					"icon": "sap-icon://northwind/employee",
+					"target":  "northwind.Employee", 
+					"tooltip": "Show reportsTo",
+					"visible": true,
+					"parameters": {
+						"navigation": "reportsTo"
+					}
+				}]
+			}		
+			,  "systemBFavorite": {
+				"target": "northwind.Product",
+				"icon": "sap-icon://expand-group",
+				"key": "systemBFavorite",
+				"text": "systemBFavorite",						
+				"menu": [{
+					"type":"navigationSet",
+					"key": "graph",
+					"text": "Graph View",
+					"icon": "sap-icon://overview-chart",
+					"target": "_navigationSetGraph",
+					"tooltip": "$navigationSet.name Graph",
+					"visible": true
+				}, {
+					"type":"navigationSet",
+					"key": "systemBFavorite",
+					"text": "systemBFavorite",
+					"icon": "sap-icon://expand-group",
+					"target":  "northwind.Product", 
+					"tooltip": "Show systemBFavorite",
+					"visible": true,
+					"parameters": {
+						"navigation": "systemBFavorite"
+					}
+				}]
+			}		
+		}
 	}
 	,
 	"SystemBProduct": {
@@ -2490,11 +3042,11 @@
 			"type":"entitySet",
 		    "key": "graph",
 			"text": "Graph View",
-			"target": "graph",
+			"target": "_graph",
 			"tooltip": "SystemBProducts Graph",
 			"visible":true, 			"parameters": {
 				"objectId": "SystemBProduct",
-				"queryOptions": {
+				"?queryOptions": {
 					"$top": 10
 				}
 			}
@@ -2531,7 +3083,7 @@
 				"key": "graph",
 				"text": "Graph View",
 				"icon": "sap-icon://overview-chart",
-				"target": "graph",
+				"target": "_graph",
 				"tooltip": "SystemBProduct Graph",
 				"visible": true
 			},{
@@ -2539,7 +3091,7 @@
 				"key": "linked",
 				"text": "Linked Search",
 				"icon": "sap-icon://chain-link",
-				"target": "LinkedSearch",
+				"target": "_LinkedSearch",
 				"tooltip": "Search for things linked to this",
 				"visible": true
 			}, {
@@ -2579,7 +3131,7 @@
 				"key": "category",
 				"text": "category",
 				"icon": "sap-icon://expand-group",
-				"target": "Category",
+				"target": "northwind.Category",
 				"tooltip": "Show category",
 				"visible": true ,
 				"parameters": {
@@ -2591,7 +3143,7 @@
 				"key": "supplier",
 				"text": "supplier",
 				"icon": "sap-icon://expand-group",
-				"target": "Supplier",
+				"target": "northwind.Supplier",
 				"tooltip": "Show supplier",
 				"visible": true ,
 				"parameters": {
@@ -2601,15 +3153,17 @@
 						]
 		}
 		,"navigationProperty": {
-							"isPartOfOrderDetail": {
+	 "isPartOfOrderDetail": {
 				"target": "OrderDetails",
 				"icon": "sap-icon://expand-group",
+				"key": "isPartOfOrderDetail",
+				"text": "isPartOfOrderDetail",						
 				"menu": [{
 					"type":"navigationSet",
 					"key": "graph",
 					"text": "Graph View",
 					"icon": "sap-icon://overview-chart",
-					"target": "navigationSetGraph",
+					"target": "_navigationSetGraph",
 					"tooltip": "isPartOfOrderDetail Graph",
 					"visible": true
 				}, {
@@ -2625,15 +3179,17 @@
 					}
 				}]
 			}
-																, 			"product_orderSummary": {
+			, 	 "product_orderSummary": {
 				"target": "OrderSummarys",
 				"icon": "sap-icon://expand-group",
+				"key": "product_orderSummary",
+				"text": "product_orderSummary",						
 				"menu": [{
 					"type":"navigationSet",
 					"key": "graph",
 					"text": "Graph View",
 					"icon": "sap-icon://overview-chart",
-					"target": "navigationSetGraph",
+					"target": "_navigationSetGraph",
 					"tooltip": "product_orderSummary Graph",
 					"visible": true
 				}, {
@@ -2649,7 +3205,59 @@
 					}
 				}]
 			}
-														}
+			,  "category": {
+				"target": "northwind.Category",
+				"icon": "sap-icon://expand-group",
+				"key": "category",
+				"text": "category",						
+				"menu": [{
+					"type":"navigationSet",
+					"key": "graph",
+					"text": "Graph View",
+					"icon": "sap-icon://overview-chart",
+					"target": "_navigationSetGraph",
+					"tooltip": "$navigationSet.name Graph",
+					"visible": true
+				}, {
+					"type":"navigationSet",
+					"key": "category",
+					"text": "category",
+					"icon": "sap-icon://expand-group",
+					"target":  "northwind.Category", 
+					"tooltip": "Show category",
+					"visible": true,
+					"parameters": {
+						"navigation": "category"
+					}
+				}]
+			}		
+			,  "supplier": {
+				"target": "northwind.Supplier",
+				"icon": "sap-icon://expand-group",
+				"key": "supplier",
+				"text": "supplier",						
+				"menu": [{
+					"type":"navigationSet",
+					"key": "graph",
+					"text": "Graph View",
+					"icon": "sap-icon://overview-chart",
+					"target": "_navigationSetGraph",
+					"tooltip": "$navigationSet.name Graph",
+					"visible": true
+				}, {
+					"type":"navigationSet",
+					"key": "supplier",
+					"text": "supplier",
+					"icon": "sap-icon://expand-group",
+					"target":  "northwind.Supplier", 
+					"tooltip": "Show supplier",
+					"visible": true,
+					"parameters": {
+						"navigation": "supplier"
+					}
+				}]
+			}		
+		}
 	}
 	,
 	"Territory": {
@@ -2667,11 +3275,11 @@
 			"type":"entitySet",
 		    "key": "graph",
 			"text": "Graph View",
-			"target": "graph",
+			"target": "_graph",
 			"tooltip": "Territorys Graph",
 			"visible":true, 			"parameters": {
 				"objectId": "Territory",
-				"queryOptions": {
+				"?queryOptions": {
 					"$top": 10
 				}
 			}
@@ -2700,7 +3308,7 @@
 				"key": "graph",
 				"text": "Graph View",
 				"icon": "sap-icon://overview-chart",
-				"target": "graph",
+				"target": "_graph",
 				"tooltip": "Territory Graph",
 				"visible": true
 			},{
@@ -2708,7 +3316,7 @@
 				"key": "linked",
 				"text": "Linked Search",
 				"icon": "sap-icon://chain-link",
-				"target": "LinkedSearch",
+				"target": "_LinkedSearch",
 				"tooltip": "Search for things linked to this",
 				"visible": true
 			}, {
@@ -2746,15 +3354,17 @@
 						]
 		}
 		,"navigationProperty": {
-							"territoryOf": {
+	 "territoryOf": {
 				"target": "Employees",
 				"icon": "sap-icon://expand-group",
+				"key": "territoryOf",
+				"text": "territoryOf",						
 				"menu": [{
 					"type":"navigationSet",
 					"key": "graph",
 					"text": "Graph View",
 					"icon": "sap-icon://overview-chart",
-					"target": "navigationSetGraph",
+					"target": "_navigationSetGraph",
 					"tooltip": "territoryOf Graph",
 					"visible": true
 				}, {
@@ -2770,15 +3380,17 @@
 					}
 				}]
 			}
-																, 			"territoryRegion": {
+			, 	 "territoryRegion": {
 				"target": "Regions",
 				"icon": "sap-icon://expand-group",
+				"key": "territoryRegion",
+				"text": "territoryRegion",						
 				"menu": [{
 					"type":"navigationSet",
 					"key": "graph",
 					"text": "Graph View",
 					"icon": "sap-icon://overview-chart",
-					"target": "navigationSetGraph",
+					"target": "_navigationSetGraph",
 					"tooltip": "territoryRegion Graph",
 					"visible": true
 				}, {
@@ -2794,7 +3406,7 @@
 					}
 				}]
 			}
-														}
+		}
 	}
 	,
 	"USState": {
@@ -2812,11 +3424,11 @@
 			"type":"entitySet",
 		    "key": "graph",
 			"text": "Graph View",
-			"target": "graph",
+			"target": "_graph",
 			"tooltip": "USStates Graph",
 			"visible":true, 			"parameters": {
 				"objectId": "USState",
-				"queryOptions": {
+				"?queryOptions": {
 					"$top": 10
 				}
 			}
@@ -2845,7 +3457,7 @@
 				"key": "graph",
 				"text": "Graph View",
 				"icon": "sap-icon://overview-chart",
-				"target": "graph",
+				"target": "_graph",
 				"tooltip": "USState Graph",
 				"visible": true
 			},{
@@ -2853,7 +3465,7 @@
 				"key": "linked",
 				"text": "Linked Search",
 				"icon": "sap-icon://chain-link",
-				"target": "LinkedSearch",
+				"target": "_LinkedSearch",
 				"tooltip": "Search for things linked to this",
 				"visible": true
 			}, {
@@ -2879,15 +3491,17 @@
 						]
 		}
 		,"navigationProperty": {
-							"usstateRegion": {
+	 "usstateRegion": {
 				"target": "Regions",
 				"icon": "sap-icon://expand-group",
+				"key": "usstateRegion",
+				"text": "usstateRegion",						
 				"menu": [{
 					"type":"navigationSet",
 					"key": "graph",
 					"text": "Graph View",
 					"icon": "sap-icon://overview-chart",
-					"target": "navigationSetGraph",
+					"target": "_navigationSetGraph",
 					"tooltip": "usstateRegion Graph",
 					"visible": true
 				}, {
@@ -2903,6 +3517,6 @@
 					}
 				}]
 			}
-														}
+		}
 	}
 }}

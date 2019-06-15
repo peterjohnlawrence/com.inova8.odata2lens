@@ -71,6 +71,7 @@ graphCrumb.export = Export
 graphCrumb.save = Save
 graphCrumb.open = Open
 graphCrumb.clear = Clear
+graphCrumb.toggleView = Toggle Data<->Graph view
 
 #~~~ Search View ~~~~~~~~~~~~~~~~~~~~~~~~~~
 search.placeholder=Search
