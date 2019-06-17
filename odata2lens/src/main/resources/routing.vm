@@ -113,7 +113,7 @@
 				"_AdvancedSearch"
 			]
 		}, {
-			"pattern": "_Graph/{objectId}/:navigation::?queryOptions:",
+			"pattern": "_Graphxx/{objectId}/:navigation::?queryOptions:",
 			"name": "_graph",
 			"target": [
 				"_graph"
@@ -125,13 +125,13 @@
 				"_graph"
 			]
 		},{
-			"pattern": "_Graph/{objectId}/:navigation::?queryOptions:",
+			"pattern": "_Graphxx/{objectId}/:navigation::?queryOptions:",
 			"name": "_navigationSetGraph",
 			"target": [
 				"_graph"
 			]
 		}, {
-			"pattern": "_Graph/{objectId}/qb_isDatasetOf?graph=true",
+			"pattern": "_Graphxx/{objectId}/qb_isDatasetOf?graph=true",
 			"name": "_graphgraph",
 			"target": [
 				"_graph"

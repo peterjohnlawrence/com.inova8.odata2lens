@@ -274,7 +274,28 @@
 	"Product": {
 		"entity": "Product",
 		"icon": "sap-icon://northwind/product",
-		"image": "./apartment/northwind/images/product.svg"
+		"image": "./apartment/northwind/images/product.svg",
+			"form": {
+		"target": "Product",
+		"formStyle":"entity360",
+		"targetVisible": true,
+		"targetIcon": "sap-icon://expand-group",
+		"targetEntity": "Product",
+		"allowEdit" : true,
+		"properties": [		
+		{ 
+				"property": "product_orderSummary",
+				"propertyVisible": false,
+				"propertyType": "C",
+				"propertyRange": "OrderSummary",
+				"ordinal": 16,
+				"aggregate": "[List]",
+				"formatOptions": null,
+				"allowEdit": true,
+				"height":"4rem"
+			}
+		]
+		}
 	},
 	"Region": {
 		"entity": "Region",
