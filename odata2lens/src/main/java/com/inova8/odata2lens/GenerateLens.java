@@ -288,8 +288,10 @@ public class GenerateLens {
 							subTypeName = getAnnotations("", edmProperty.getAnnotations()).get("odata.subType");
 							Property property = new Property(propertyName, propertyName, propertyName,
 									edmProperty.getType().getFullQualifiedName().toString(), null, false, null);
-							property.setSubTypeName(subTypeName);
-							complexType.putProperty(subTypeName, property);
+							if(subTypeName!=null) {
+								property.setSubTypeName(subTypeName);
+								complexType.putProperty(subTypeName, property);
+							}
 						}
 						for (String navigationPropertyName : edmComplexType.getNavigationPropertyNames()) {
 							EdmNavigationProperty edmNavigationProperty = edmComplexType
@@ -327,9 +329,9 @@ public class GenerateLens {
 
 							//					EdmEntitySet edmEntitySet = edm.getSchema("Instances").getEntityContainer()
 							//							.getEntitySet(edmEntityType.getName());			
-
+							
 							EdmEntitySet edmEntitySet = entitySets.stream().filter(
-									entitySet -> edmEntityType.getName().equals(entitySet.getEntityType().getName()))
+									entitySet -> edmEntityType.getFullQualifiedName().equals(entitySet.getEntityType().getFullQualifiedName()))
 									.findAny().orElse(null);
 
 							HashMap<String, String> entitySetAnnotations = getAnnotations(edmEntityType.getName(),
