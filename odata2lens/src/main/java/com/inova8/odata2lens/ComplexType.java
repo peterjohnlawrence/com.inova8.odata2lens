@@ -114,25 +114,40 @@ public class ComplexType {
 		return properties.isEmpty() && navigationProperties.isEmpty();
 	}
 
-	//	public String getTargetEntityType() {
-	//		if (this.getIsNavigationProperty()) {
-	//			return navigationProperties.firstEntry().getValue().getTargetEntityType();
-	//		} else if (this.getIsNavigationSet()) {
-	//			return navigationSets.firstEntry().getValue().getTargetEntityType();
-	//		} else {
-	//			return null;
-	//		}
-	//	}
-	//
-	//	public String getTargetEntitySet() {
-	//		if (this.getIsNavigationProperty()) {
-	//			return navigationProperties.firstEntry().getValue().getRangeType().getEntitySet().getTarget();
-	//		} else if (this.getIsNavigationSet()) {
-	//			return navigationSets.firstEntry().getValue().getRangeType().getEntitySet().getTarget();
-	//		} else {
-	//			return null;
-	//		}
-	//	}
+	public String getTargetEntityType() {
+		if (this.getIsNavigationProperty()) {
+			String targetEntityType = getAllNavigationProperties().get(0).getTargetEntityType();
+			for(NavigationProperty navigationProperty  :  getAllNavigationProperties() ) {	
+				if(navigationProperty.getTargetEntityType() != targetEntityType ) return "***inhomogeneous***";
+			}
+			return targetEntityType;				
+		} else if (this.getIsNavigationSet()) {
+			String targetEntityType = getAllNavigationSets().get(0).getTargetEntityType();
+			for( EntityNavigationSet navigationSet  :  getAllNavigationSets() ) {	
+				if(navigationSet.getTargetEntityType() != targetEntityType ) return "***inhomogeneous***";
+			}
+			return targetEntityType;					
+		} else {
+			return "";
+		}
+	}
+	public String getTargetEntitySet() {
+		if (this.getIsNavigationProperty()) {
+			String targetEntitySet = getAllNavigationProperties().get(0).getTargetEntityType();
+			for(NavigationProperty navigationProperty  :  getAllNavigationProperties() ) {	
+				if(navigationProperty.getTargetEntityType() != targetEntitySet ) return "***inhomogeneous***";
+			}
+			return targetEntitySet;
+		} else if (this.getIsNavigationSet()) {
+			String targetEntitySet = getAllNavigationSets().get(0).getTargetEntityType();
+			for( EntityNavigationSet navigationSet  :  getAllNavigationSets() ) {	
+				if(navigationSet.getTargetEntityType() != targetEntitySet ) return "***inhomogeneous***";
+			}
+			return targetEntitySet;				
+		} else {
+			return "";
+		}
+	}
 	//
 	//	public String getTooltip() {
 	//		if (this.getIsNavigationProperty()) {
@@ -144,15 +159,15 @@ public class ComplexType {
 	//		}
 	//	}
 	//
-	//	public String getIcon() {
-	//		if (this.getIsNavigationProperty()) {
-	//			return navigationProperties.firstEntry().getValue().getIcon();
-	//		} else if (this.getIsNavigationSet()) {
-	//			return navigationSets.firstEntry().getValue().getIcon();
-	//		} else {
-	//			return null;
-	//		}
-	//	}
+		public String getIcon() {
+			if (this.getIsNavigationProperty()) {
+				return getAllNavigationProperties().get(0).getIcon();
+			} else if (this.getIsNavigationSet()) {
+				return getAllNavigationSets().get(0).getIcon();
+			} else {
+				return "";
+			}
+		}
 
 	public ComplexType(String name) {
 		super();

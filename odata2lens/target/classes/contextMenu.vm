@@ -198,7 +198,7 @@
 				"key": "$navigationProperty.name",
 				"text": "$navigationProperty.label",
 				"icon": "$navigationProperty.icon",
-				"target": "$navigationProperty.targetEntityType",
+				"target": "$navigationProperty.rangeType.entity.target",
 				"tooltip": "$navigationProperty.tooltip",
 				"visible": true ,
 				"parameters": {
@@ -223,7 +223,7 @@
 						"$expand": "*"
 					},
 					"versions": [	
-				#foreach($navigationProperty in $complexNavigationProperty.complexRange.navigationProperties)
+				#foreach($navigationProperty in $complexNavigationProperty.complexRange.allNavigationProperties)
 						{	"text": "$navigationProperty.subTypeName",
 							"navigation": "$navigationProperty.name"
 						}#if( $foreach.hasNext ),	#end
@@ -247,7 +247,7 @@
 						"$expand": "*"
 					},
 					"versions": [	
-				#foreach($navigationSet in $complexNavigationProperty.complexRange.navigationSets)
+				#foreach($navigationSet in $complexNavigationProperty.complexRange.allNavigationSets)
 						{	"text": "$navigationSet.subTypeName",
 							"navigation": "$navigationSet.name"
 						}#if( $foreach.hasNext ),	#end
@@ -309,7 +309,7 @@
 					"key": "$navigationProperty.name",
 					"text": "$navigationProperty.label",
 					"icon": "$navigationProperty.icon",
-					"target":  "$navigationProperty.targetEntityType", 
+					"target":  "$navigationProperty.rangeType.entity.target", 
 					"tooltip": "$navigationProperty.tooltip",
 					"visible": true,
 					"parameters": {

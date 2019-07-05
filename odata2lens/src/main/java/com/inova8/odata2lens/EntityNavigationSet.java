@@ -2,17 +2,17 @@ package com.inova8.odata2lens;
 
 public class EntityNavigationSet {
 
-	private String name;
+	 String name;
 
-	private String target;
-	private String label;
-	private String tooltip;
-	private String targetEntityType;
-	private String icon;
-	private String range;
-	private EntityType rangeType;
-	private String subTypeName;
-	private String height;
+	 String target;
+	 String label;
+	 String tooltip;
+	 String targetEntityType;
+	 String icon;
+	 String range;
+	 EntityType rangeType;
+	 String subTypeName;
+	 String height;
 
 	public EntityNavigationSet(String name, String target, String label, String tooltip, String targetEntityType,
 			String range, String icon, String height) {

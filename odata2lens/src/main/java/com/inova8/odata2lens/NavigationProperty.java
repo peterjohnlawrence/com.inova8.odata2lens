@@ -50,10 +50,10 @@ public class NavigationProperty {
 	}
 
 	public String getIcon() {
-		if ( icon == null || icon.isEmpty()) {
+		if ( (icon == null || icon.isEmpty()) && rangeType != null) {
 			return rangeType.getEntity().getTargetIcon();
 		} else {
-			return icon;
+			return icon==null?"":icon;
 		}
 	}
 
