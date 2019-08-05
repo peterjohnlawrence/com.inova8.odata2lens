@@ -17,6 +17,13 @@
 				"operationMode": "Server",
 				"synchronizationMode": "None"
 			},
+			"proxyService": {
+				"serviceUrl": "./../../odata2sparql/ODATA2SPARQL/",
+				"odataVersion": "4.0",
+				"autoExpandSelect": true,
+				"operationMode": "Server",
+				"synchronizationMode": "None"
+			},
 			"local": {
 				"serviceUrl": "http://127.0.0.1:8080/odata2sparql/tfl/",
 				"odataVersion": "4.0",
@@ -76,6 +83,16 @@
 			},
 			"dataModel": {
 				"dataSource": "dataService",
+				"settings": {
+					"odataVersion": "4.0",
+					"autoExpandSelect": true,
+					"operationMode": "Server",
+					"synchronizationMode": "None"
+				},
+				"type": "sap.ui.model.odata.v4.ODataModel"
+			},
+			"odata2sparql": {
+				"dataSource": "proxyService",
 				"settings": {
 					"odataVersion": "4.0",
 					"autoExpandSelect": true,

@@ -262,7 +262,7 @@
 				"key": "customer_Order_customer",
 				"text": "customer_Order_customer",
 				"icon": "sap-icon://expand-group",
-				"target": "northwind.Customer",
+				"target": "Customer",
 				"tooltip": "Show customer_Order_customer",
 				"visible": true ,
 				"parameters": {
@@ -274,7 +274,7 @@
 				"key": "customer_Order_order",
 				"text": "customer_Order_order",
 				"icon": "sap-icon://expand-group",
-				"target": "northwind.Order",
+				"target": "Order",
 				"tooltip": "Show customer_Order_order",
 				"visible": true ,
 				"parameters": {
@@ -302,7 +302,7 @@
 					"key": "customer_Order_customer",
 					"text": "customer_Order_customer",
 					"icon": "sap-icon://expand-group",
-					"target":  "northwind.Customer", 
+					"target":  "Customer", 
 					"tooltip": "Show customer_Order_customer",
 					"visible": true,
 					"parameters": {
@@ -328,7 +328,7 @@
 					"key": "customer_Order_order",
 					"text": "customer_Order_order",
 					"icon": "sap-icon://expand-group",
-					"target":  "northwind.Order", 
+					"target":  "Order", 
 					"tooltip": "Show customer_Order_order",
 					"visible": true,
 					"parameters": {
@@ -662,7 +662,7 @@
 				"key": "reportsTo",
 				"text": "reportsTo",
 				"icon": "sap-icon://northwind/employee",
-				"target": "northwind.Employee",
+				"target": "Employee",
 				"tooltip": "Show reportsTo",
 				"visible": true ,
 				"parameters": {
@@ -673,8 +673,8 @@
 				"type":"complexNavigationSet",
 				"key": "employer",
 				"text": "employer",
-				"icon": "$complexNavigationProperty.complexRange.icon",
-				"target": "$complexNavigationProperty.complexRange.targetEntitySet",
+				"icon": "",
+				"target": "Supplier",
 				"tooltip": "employer",
 				"visible": true , 
 				"parameters": {
@@ -683,11 +683,11 @@
 						"$expand": "*"
 					},
 					"versions": [	
-						{	"text": "$navigationSet.subTypeName",
-							"navigation": "$navigationSet.name"
+						{	"text": "SystemAEmployee",
+							"navigation": "systemAEmployer"
 						},						
-						{	"text": "$navigationSet.subTypeName",
-							"navigation": "$navigationSet.name"
+						{	"text": "SystemBEmployee",
+							"navigation": "systemBEmployer"
 						}					
 					]
 				}
@@ -696,8 +696,8 @@
 				"type":"complexNavigationProperty",
 				"key": "favorite",
 				"text": "favorite",
-				"icon": "$complexNavigationProperty.complexRange.icon",
-				"target": "$complexNavigationProperty.complexRange.targetEntityType",
+				"icon": "",
+				"target": "Product",
 				"tooltip": "favorite",
 				"visible": true , 
 				"parameters": {
@@ -706,11 +706,11 @@
 						"$expand": "*"
 					},
 					"versions": [	
-						{	"text": "$navigationProperty.subTypeName",
-							"navigation": "$navigationProperty.name"
+						{	"text": "SystemAEmployee",
+							"navigation": "systemAFavorite"
 						},						
-						{	"text": "$navigationProperty.subTypeName",
-							"navigation": "$navigationProperty.name"
+						{	"text": "SystemBEmployee",
+							"navigation": "systemBFavorite"
 						}					
 					]
 				}
@@ -840,7 +840,7 @@
 					"key": "reportsTo",
 					"text": "reportsTo",
 					"icon": "sap-icon://northwind/employee",
-					"target":  "northwind.Employee", 
+					"target":  "Employee", 
 					"tooltip": "Show reportsTo",
 					"visible": true,
 					"parameters": {
@@ -923,7 +923,7 @@
 				"key": "order",
 				"text": "order",
 				"icon": "sap-icon://expand-group",
-				"target": "northwind.Order",
+				"target": "Order",
 				"tooltip": "Show order",
 				"visible": true ,
 				"parameters": {
@@ -935,7 +935,7 @@
 				"key": "product",
 				"text": "product",
 				"icon": "sap-icon://expand-group",
-				"target": "northwind.Product",
+				"target": "Product",
 				"tooltip": "Show product",
 				"visible": true ,
 				"parameters": {
@@ -963,7 +963,7 @@
 					"key": "order",
 					"text": "order",
 					"icon": "sap-icon://expand-group",
-					"target":  "northwind.Order", 
+					"target":  "Order", 
 					"tooltip": "Show order",
 					"visible": true,
 					"parameters": {
@@ -989,7 +989,7 @@
 					"key": "product",
 					"text": "product",
 					"icon": "sap-icon://expand-group",
-					"target":  "northwind.Product", 
+					"target":  "Product", 
 					"tooltip": "Show product",
 					"visible": true,
 					"parameters": {
@@ -1072,7 +1072,7 @@
 				"key": "orderSummary_order",
 				"text": "orderSummary_order",
 				"icon": "sap-icon://expand-group",
-				"target": "northwind.Order",
+				"target": "Order",
 				"tooltip": "Show orderSummary_order",
 				"visible": true ,
 				"parameters": {
@@ -1084,7 +1084,7 @@
 				"key": "orderSummary_product",
 				"text": "orderSummary_product",
 				"icon": "sap-icon://expand-group",
-				"target": "northwind.Product",
+				"target": "Product",
 				"tooltip": "Show orderSummary_product",
 				"visible": true ,
 				"parameters": {
@@ -1112,7 +1112,7 @@
 					"key": "orderSummary_order",
 					"text": "orderSummary_order",
 					"icon": "sap-icon://expand-group",
-					"target":  "northwind.Order", 
+					"target":  "Order", 
 					"tooltip": "Show orderSummary_order",
 					"visible": true,
 					"parameters": {
@@ -1138,7 +1138,7 @@
 					"key": "orderSummary_product",
 					"text": "orderSummary_product",
 					"icon": "sap-icon://expand-group",
-					"target":  "northwind.Product", 
+					"target":  "Product", 
 					"tooltip": "Show orderSummary_product",
 					"visible": true,
 					"parameters": {
@@ -1257,7 +1257,7 @@
 				"key": "customer",
 				"text": "customer",
 				"icon": "sap-icon://expand-group",
-				"target": "northwind.Customer",
+				"target": "Customer",
 				"tooltip": "Show customer",
 				"visible": true ,
 				"parameters": {
@@ -1269,7 +1269,7 @@
 				"key": "employee",
 				"text": "employee",
 				"icon": "sap-icon://northwind/employee",
-				"target": "northwind.Employee",
+				"target": "Employee",
 				"tooltip": "Show employee",
 				"visible": true ,
 				"parameters": {
@@ -1281,7 +1281,7 @@
 				"key": "orderRegion",
 				"text": "orderRegion",
 				"icon": "sap-icon://expand-group",
-				"target": "northwind.Region",
+				"target": "Region",
 				"tooltip": "Show orderRegion",
 				"visible": true ,
 				"parameters": {
@@ -1293,7 +1293,7 @@
 				"key": "shipVia",
 				"text": "shipVia",
 				"icon": "sap-icon://expand-group",
-				"target": "northwind.Shipper",
+				"target": "Shipper",
 				"tooltip": "Show shipVia",
 				"visible": true ,
 				"parameters": {
@@ -1399,7 +1399,7 @@
 					"key": "customer",
 					"text": "customer",
 					"icon": "sap-icon://expand-group",
-					"target":  "northwind.Customer", 
+					"target":  "Customer", 
 					"tooltip": "Show customer",
 					"visible": true,
 					"parameters": {
@@ -1425,7 +1425,7 @@
 					"key": "employee",
 					"text": "employee",
 					"icon": "sap-icon://northwind/employee",
-					"target":  "northwind.Employee", 
+					"target":  "Employee", 
 					"tooltip": "Show employee",
 					"visible": true,
 					"parameters": {
@@ -1451,7 +1451,7 @@
 					"key": "orderRegion",
 					"text": "orderRegion",
 					"icon": "sap-icon://expand-group",
-					"target":  "northwind.Region", 
+					"target":  "Region", 
 					"tooltip": "Show orderRegion",
 					"visible": true,
 					"parameters": {
@@ -1477,7 +1477,7 @@
 					"key": "shipVia",
 					"text": "shipVia",
 					"icon": "sap-icon://expand-group",
-					"target":  "northwind.Shipper", 
+					"target":  "Shipper", 
 					"tooltip": "Show shipVia",
 					"visible": true,
 					"parameters": {
@@ -1600,7 +1600,7 @@
 				"key": "category",
 				"text": "category",
 				"icon": "sap-icon://expand-group",
-				"target": "northwind.Category",
+				"target": "Category",
 				"tooltip": "Show category",
 				"visible": true ,
 				"parameters": {
@@ -1612,7 +1612,7 @@
 				"key": "supplier",
 				"text": "supplier",
 				"icon": "sap-icon://expand-group",
-				"target": "northwind.Supplier",
+				"target": "Supplier",
 				"tooltip": "Show supplier",
 				"visible": true ,
 				"parameters": {
@@ -1692,7 +1692,7 @@
 					"key": "category",
 					"text": "category",
 					"icon": "sap-icon://expand-group",
-					"target":  "northwind.Category", 
+					"target":  "Category", 
 					"tooltip": "Show category",
 					"visible": true,
 					"parameters": {
@@ -1718,7 +1718,7 @@
 					"key": "supplier",
 					"text": "supplier",
 					"icon": "sap-icon://expand-group",
-					"target":  "northwind.Supplier", 
+					"target":  "Supplier", 
 					"tooltip": "Show supplier",
 					"visible": true,
 					"parameters": {
@@ -2214,7 +2214,7 @@
 				"key": "reportsTo",
 				"text": "reportsTo",
 				"icon": "sap-icon://northwind/employee",
-				"target": "northwind.Employee",
+				"target": "Employee",
 				"tooltip": "Show reportsTo",
 				"visible": true ,
 				"parameters": {
@@ -2226,7 +2226,7 @@
 				"key": "systemAFavorite",
 				"text": "systemAFavorite",
 				"icon": "sap-icon://expand-group",
-				"target": "northwind.Product",
+				"target": "Product",
 				"tooltip": "Show systemAFavorite",
 				"visible": true ,
 				"parameters": {
@@ -2410,7 +2410,7 @@
 					"key": "reportsTo",
 					"text": "reportsTo",
 					"icon": "sap-icon://northwind/employee",
-					"target":  "northwind.Employee", 
+					"target":  "Employee", 
 					"tooltip": "Show reportsTo",
 					"visible": true,
 					"parameters": {
@@ -2436,7 +2436,7 @@
 					"key": "systemAFavorite",
 					"text": "systemAFavorite",
 					"icon": "sap-icon://expand-group",
-					"target":  "northwind.Product", 
+					"target":  "Product", 
 					"tooltip": "Show systemAFavorite",
 					"visible": true,
 					"parameters": {
@@ -2551,7 +2551,7 @@
 				"key": "category",
 				"text": "category",
 				"icon": "sap-icon://expand-group",
-				"target": "northwind.Category",
+				"target": "Category",
 				"tooltip": "Show category",
 				"visible": true ,
 				"parameters": {
@@ -2563,7 +2563,7 @@
 				"key": "supplier",
 				"text": "supplier",
 				"icon": "sap-icon://expand-group",
-				"target": "northwind.Supplier",
+				"target": "Supplier",
 				"tooltip": "Show supplier",
 				"visible": true ,
 				"parameters": {
@@ -2643,7 +2643,7 @@
 					"key": "category",
 					"text": "category",
 					"icon": "sap-icon://expand-group",
-					"target":  "northwind.Category", 
+					"target":  "Category", 
 					"tooltip": "Show category",
 					"visible": true,
 					"parameters": {
@@ -2669,7 +2669,7 @@
 					"key": "supplier",
 					"text": "supplier",
 					"icon": "sap-icon://expand-group",
-					"target":  "northwind.Supplier", 
+					"target":  "Supplier", 
 					"tooltip": "Show supplier",
 					"visible": true,
 					"parameters": {
@@ -2820,7 +2820,7 @@
 				"key": "reportsTo",
 				"text": "reportsTo",
 				"icon": "sap-icon://northwind/employee",
-				"target": "northwind.Employee",
+				"target": "Employee",
 				"tooltip": "Show reportsTo",
 				"visible": true ,
 				"parameters": {
@@ -2832,7 +2832,7 @@
 				"key": "systemBFavorite",
 				"text": "systemBFavorite",
 				"icon": "sap-icon://expand-group",
-				"target": "northwind.Product",
+				"target": "Product",
 				"tooltip": "Show systemBFavorite",
 				"visible": true ,
 				"parameters": {
@@ -2990,7 +2990,7 @@
 					"key": "reportsTo",
 					"text": "reportsTo",
 					"icon": "sap-icon://northwind/employee",
-					"target":  "northwind.Employee", 
+					"target":  "Employee", 
 					"tooltip": "Show reportsTo",
 					"visible": true,
 					"parameters": {
@@ -3016,7 +3016,7 @@
 					"key": "systemBFavorite",
 					"text": "systemBFavorite",
 					"icon": "sap-icon://expand-group",
-					"target":  "northwind.Product", 
+					"target":  "Product", 
 					"tooltip": "Show systemBFavorite",
 					"visible": true,
 					"parameters": {
@@ -3131,7 +3131,7 @@
 				"key": "category",
 				"text": "category",
 				"icon": "sap-icon://expand-group",
-				"target": "northwind.Category",
+				"target": "Category",
 				"tooltip": "Show category",
 				"visible": true ,
 				"parameters": {
@@ -3143,7 +3143,7 @@
 				"key": "supplier",
 				"text": "supplier",
 				"icon": "sap-icon://expand-group",
-				"target": "northwind.Supplier",
+				"target": "Supplier",
 				"tooltip": "Show supplier",
 				"visible": true ,
 				"parameters": {
@@ -3223,7 +3223,7 @@
 					"key": "category",
 					"text": "category",
 					"icon": "sap-icon://expand-group",
-					"target":  "northwind.Category", 
+					"target":  "Category", 
 					"tooltip": "Show category",
 					"visible": true,
 					"parameters": {
@@ -3249,7 +3249,7 @@
 					"key": "supplier",
 					"text": "supplier",
 					"icon": "sap-icon://expand-group",
-					"target":  "northwind.Supplier", 
+					"target":  "Supplier", 
 					"tooltip": "Show supplier",
 					"visible": true,
 					"parameters": {

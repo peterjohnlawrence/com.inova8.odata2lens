@@ -224,17 +224,17 @@
 				"viewLevel": 1
 			},
 			"_Search": {
-				"viewName": "Search",
+				"viewName": "Search/ProxySearch",
 				"viewId": "Search",
 				"viewLevel": 1
 			},
 			"_LinkedSearch": {
-				"viewName": "LinkedSearch",
+				"viewName": "Search/ProxyLinkedSearch",
 				"viewId": "LinkedSearch",
 				"viewLevel": 1
 			},
 			"_AdvancedSearch": {
-				"viewName": "AdvancedSearch",
+				"viewName": "Search/ProxyAdvancedSearch",
 				"viewId": "AdvancedSearch",
 				"viewLevel": 1
 			},
