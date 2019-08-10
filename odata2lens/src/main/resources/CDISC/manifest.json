@@ -17,6 +17,13 @@
 				"operationMode": "Server",
 				"synchronizationMode": "None"
 			},
+			"proxyService": {
+				"serviceUrl": "./../../odata2sparql/ODATA2SPARQL/",
+				"odataVersion": "4.0",
+				"autoExpandSelect": true,
+				"operationMode": "Server",
+				"synchronizationMode": "None"
+			},
 			"local": {
 				"serviceUrl": "http://127.0.0.1:8080/odata2sparql/CDISC/",
 				"odataVersion": "4.0",
@@ -84,6 +91,16 @@
 				},
 				"type": "sap.ui.model.odata.v4.ODataModel"
 			},
+			"odata2sparql": {
+				"dataSource": "proxyService",
+				"settings": {
+					"odataVersion": "4.0",
+					"autoExpandSelect": true,
+					"operationMode": "Server",
+					"synchronizationMode": "None"
+				},
+				"type": "sap.ui.model.odata.v4.ODataModel"
+			},
 			"metaModel": {
 				"type": "sap.ui.model.odata.v4.ODataMetaModel"
 			},
@@ -102,10 +119,6 @@
 			"routing": {
 				"type": "sap.ui.model.json.JSONModel",
 				"uri": "model/routing.json"
-			},
-			"history": {
-				"type": "sap.ui.model.json.JSONModel",
-				"uri": "model/history.json"
 			},
 			"resourceCache": {
 				"type": "sap.ui.model.json.JSONModel",

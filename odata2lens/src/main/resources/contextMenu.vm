@@ -97,10 +97,11 @@
 			"type":"entitySet",
 		    "key": "graph",
 			"text": "Graph View",
-			"target": "_graph",
+			"target": "_graphview",
 			"tooltip": "$entityType.entitySet.label Graph",
-			"visible":true, ## $entityType.entitySet.visible,
+			"visible":true, 
 			"parameters": {
+				"target": "$entityType.entitySet.target",
 				"objectId": "$entityType.entitySet.name",
 				"?queryOptions": {
 					"$top": 10
@@ -112,7 +113,7 @@
 			"text": "Display $entityType.entitySet.label",
 			"target": "$entityType.entitySet.target",
 			"tooltip": "Show all $entityType.entitySet.label",
-			"visible":true, ## $entityType.entitySet.visible,
+			"visible":true, 
 			"parameters": {
 				"objectId": "$entityType.entitySet.name"
 			}
@@ -122,7 +123,7 @@
 			"text": "$dashboard",
 			"target": "$entityType.entitySet.dashboardTarget",
 			"tooltip": "Show $entityType.entitySet.label $dashboard",
-			"visible":true ## $entityType.entitySet.visible
+			"visible":true 
 		}
 		#foreach($parentEntitySet in $entityType.entitySet.parentEntitySets)
 		,{
@@ -132,7 +133,7 @@
 			"icon": "$parentEntitySet.icon",
 			"target": "$parentEntitySet.name",
 			"tooltip": "Go up to $parentEntitySet.label",
-			"visible": true ##$parentEntitySet.visible
+			"visible": true 
 		}
 		#end
 		#foreach($childEntitySet in $entityType.entitySet.childEntitySets)
@@ -143,7 +144,7 @@
 			"icon": "$childEntitySet.icon",
 			"target": "$childEntitySet.name",
 			"tooltip": "Go down to $childEntitySet.label",
-			"visible": true ## $childEntitySet.visible
+			"visible": true 
 		}
 		#end		
 		],
@@ -155,9 +156,12 @@
 				"key": "graph",
 				"text": "Graph View",
 				"icon": "sap-icon://overview-chart",
-				"target": "_graph",
+				"target": "_graphview",
 				"tooltip": "$entityType.entity.tooltip Graph",
-				"visible": true
+				"visible": true,
+				"parameters": {
+					"target": "$entityType.entity.target"
+				}
 			},{
 				"type":"entity",
 				"key": "linked",
@@ -273,9 +277,13 @@
 					"key": "graph",
 					"text": "Graph View",
 					"icon": "sap-icon://overview-chart",
-					"target": "_navigationSetGraph",
+					"target": "_graphview",
 					"tooltip": "$navigationSet.name Graph",
-					"visible": true
+					"visible": true,
+					"parameters": {
+						"target": "$navigationSet.rangeType.entitySet.target",
+						"navigation": "$navigationSet.name"
+					}
 				}, {
 					"type":"navigationSet",
 					"key": "$navigationSet.name",
@@ -301,9 +309,13 @@
 					"key": "graph",
 					"text": "Graph View",
 					"icon": "sap-icon://overview-chart",
-					"target": "_navigationSetGraph",
+					"target": "_graphview",
 					"tooltip": "$navigationSet.name Graph",
-					"visible": true
+					"visible": true,
+					"parameters": {
+						"target":  "$navigationProperty.rangeType.entity.target", 
+						"navigation": "$navigationProperty.name"
+					}
 				}, {
 					"type":"navigationSet",
 					"key": "$navigationProperty.name",
