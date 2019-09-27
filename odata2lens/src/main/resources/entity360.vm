@@ -43,7 +43,7 @@
 #set ($SearchTooltip	= "SearchTooltip") 
 <mvc:View controllerName="com.inova8.lens.controller.Entity360" xmlns="sap.m" xmlns:mvc="sap.ui.core.mvc" xmlns:l="sap.ui.layout"
 	xmlns:f="sap.ui.layout.form" xmlns:table="sap.ui.table" xmlns:rdf="com.inova8.lens.control" xmlns:html="http://www.w3.org/1999/xhtml"
-	xmlns:core="sap.ui.core">
+	xmlns:core="sap.ui.core"  xmlns:cd="http://schemas.sap.com/sapui5/extension/sap.ui.core.CustomData/1">
 	<Page showHeader="true" id="page" navButtonPress="onNavBack" showNavButton="false" title="{i18n>$entity.target#[[.Title]]#}" busy="{entityView>/busy}"
 		busyIndicatorDelay="{entityView>/delay}" >
 		<customHeader>
@@ -66,7 +66,12 @@
 				<Title text=")" width="5px"/>
 	
 				<ToolbarSpacer/>
-				<ToggleButton id="toggleColumns" icon="sap-icon://hide" activeIcon="sap-icon://show" press="onSettingsPressed"#if($entity.hasMultipleColumns) visible="true"#else visible="false"#end	>
+				<ToggleButton id="toggleRows" icon="sap-icon://table-row" activeIcon="sap-icon://table-view" press="onHideRowsPressed" visible="true"	tooltip="{i18n>entity360.toggleRows}">
+					<layoutData>
+						<OverflowToolbarLayoutData priority="NeverOverflow"/>
+					</layoutData>
+				</ToggleButton>
+				<ToggleButton id="toggleColumns" icon="sap-icon://table-column" activeIcon="sap-icon://table-view" tooltip="{i18n>entity360.toggleColumns}" press="onHideColumnsPressed" #if($entity.hasMultipleColumns) visible="true"#else visible="false"#end	>
 					<layoutData>
 						<OverflowToolbarLayoutData priority="NeverOverflow"/>
 					</layoutData>
@@ -74,7 +79,24 @@
 				
 			</Toolbar>
 		</customHeader>
-		<Table id="form360" inset="false" fixedLayout="true" class="multicolumnform" updateFinished="hideColumns">
+		<Table id="form360" inset="false" fixedLayout="true" class="multicolumnform" updateFinished="hideColumns"
+							cd:parameters="{ 
+					#set($numOfExpand = 0)		
+					#foreach($property in $uiTemplate.properties)
+						#if(($property.visible) && ($property.propertyType == "C")) 
+							#if($numOfExpand == 0) 
+						    $expand:{#else 
+						  						, #end $property.property:{ $count:true,$select:'subjectId,label'}	
+							#set($numOfExpand = $numOfExpand + 1)
+						#end	
+						#if(($property.visible) && ($property.propertyType == "O")) 
+							#if($numOfExpand == 0) 
+						    $expand:{#else 
+						  						, #end $property.property:{$select:'subjectId,label'}	
+							#set($numOfExpand = $numOfExpand + 1)
+						#end				
+					#end
+					#if($numOfExpand > 0)},#end$select:'subjectId,label,*'}">
 			<columns>
 				<Column hAlign="Right" width="300px">
 					<Title text="{i18n>Lens.field}"/>

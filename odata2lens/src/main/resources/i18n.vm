@@ -72,14 +72,18 @@ graphCrumb.manage = Manage
 graphCrumb.save = Save
 graphCrumb.open = Open
 graphCrumb.delete = Delete
+graphCrumb.share = Share
 graphCrumb.clear = Clear
 graphCrumb.toggleView = Toggle Data<->Graph view
 
 #~~~ Search View ~~~~~~~~~~~~~~~~~~~~~~~~~~
-search.placeholder=Search
+search.searchEntitySet= Search all 
+search.searchTooltip=Enter text value or a part of it using the following syntax:\nAnchoring: Use ^ to indicate the beginning or $ to indicate the endMatch any character.\nMatch any character: . can be used to represent any character.\nOne-or-more: + can be used to repeat the preceding shortest pattern once or more times.\nZero-or-more: * can be used to match the preceding shortest pattern zero-or-more times.\nZero-or-one: ? makes the preceding shortest pattern optional.\nMin-to-max: {} can be used to specify a minimum and (optionally) a maximum number of times the preceding shortest pattern can repeat.\nGrouping: () can be used to form sub-patterns.\nAlternation: | acts as an OR operator.\nComplement: The shortest pattern that follows a tilde ~ is negated.\nInterval: Numeric ranges, enclosed by angle brackets <>.\nIntersection: & joins two patterns in a way that both of them have to match.\nAny string: @ matches any string in its entirety.
+search.clearAllFilters= Clear all set filters
+search.clearAllSorts= Clear all set sorts
+search.placeholder=Search everywhere
 search.ViewTitle=Search Results
 search.TableTitle=Search
-search.searchTooltip=Enter text value or a part of it using the following syntax:\nAnchoring: Use ^ to indicate the beginning or $ to indicate the endMatch any character.\nMatch any character: . can be used to represent any character.\nOne-or-more: + can be used to repeat the preceding shortest pattern once or more times.\nZero-or-more: * can be used to match the preceding shortest pattern zero-or-more times.\nZero-or-one: ? makes the preceding shortest pattern optional.\nMin-to-max: {} can be used to specify a minimum and (optionally) a maximum number of times the preceding shortest pattern can repeat.\nGrouping: () can be used to form sub-patterns.\nAlternation: | acts as an OR operator.\nComplement: The shortest pattern that follows a tilde ~ is negated.\nInterval: Numeric ranges, enclosed by angle brackets <>.\nIntersection: & joins two patterns in a way that both of them have to match.\nAny string: @ matches any string in its entirety.
 search.NoDataWithSearchText=No matching Employees found
 search.TableTitleCount=Search ({0})
 search.tableNoDataText=No search results are currently available
@@ -194,6 +198,8 @@ graph.shape = Shape
 
 entity360.changesSentMessage =  User data sent to the server
 entity360.changesErrorMessage =  Error received from server
+entity360.toggleRows =  Toggle empty rows
+entity360.toggleColumns =  Toggle empty columns
 
 #~~~ EntitySet360 View ~~~~~~~~~~~~~~~~~~~~~~~~~~
 

@@ -145,10 +145,12 @@ public class GenerateLens {
 						entityType.getEntity().setVisible(form.getTargetVisible());
 					if (form.getFormStyle() != null && !form.getFormStyle().toString().isEmpty())
 						entityType.getEntity().setFormStyle(form.getFormStyle());
-					for (com.inova8.uiTemplate.Property property : form.getProperties()) {
-						formTemplate.updateProperty(property.getProperty(), property.getPropertyType(),
-								property.getPropertyRange(), property.getOrdinal(), property.getPropertyVisible(),
-								property.getAggregate(), property.getFormatOptions(), property.getHeight());
+					if(form.getProperties()!=null) {
+						for (com.inova8.uiTemplate.Property property : form.getProperties()) {
+							formTemplate.updateProperty(property.getProperty(), property.getPropertyType(),
+									property.getPropertyRange(), property.getOrdinal(), property.getPropertyVisible(),
+									property.getAggregate(), property.getFormatOptions(), property.getHeight());
+						}
 					}
 				}
 				Grid grid = entity.getGrid();
@@ -165,10 +167,12 @@ public class GenerateLens {
 						entityType.getEntitySet().setVisible(grid.getTargetVisible());
 					if (grid.getGridStyle() != null && !grid.getGridStyle().toString().isEmpty())
 						entityType.getEntitySet().setGridStyle(grid.getGridStyle());
-					for (com.inova8.uiTemplate.Property property : grid.getProperties()) {
-						gridTemplate.updateProperty(property.getProperty(), property.getPropertyType(),
-								property.getPropertyRange(), property.getOrdinal(), property.getPropertyVisible(),
-								property.getAggregate(), property.getFormatOptions(), property.getHeight());
+					if (grid.getProperties() != null ) {
+						for (com.inova8.uiTemplate.Property property : grid.getProperties()) {
+							gridTemplate.updateProperty(property.getProperty(), property.getPropertyType(),
+									property.getPropertyRange(), property.getOrdinal(), property.getPropertyVisible(),
+									property.getAggregate(), property.getFormatOptions(), property.getHeight());
+						}
 					}
 				}
 			}

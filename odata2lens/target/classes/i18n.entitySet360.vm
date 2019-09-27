@@ -8,6 +8,7 @@ $entitySet.target#[[.SearchTooltip]]#=Enter an $entitySet.target name or a part 
 $entitySet.target#[[.NoDataWithSearchText]]#=No matching $entitySet.target found
 $entitySet.target#[[.tableNoDataText]]#=No $entitySet.target are currently available
 $entitySet.target#[[.this]]# = $entitySet.label
+$entitySet.target#[[.searchThis]]# = Search $entitySet.label
 #foreach($property in $entity.properties)
 	#if($property.complex )
 		#set($complexType = $property.complexRange)

@@ -13,7 +13,7 @@
 			"dataService": {
 				"serviceUrl": "./../../odata2sparql/northwind/",
 				"odataVersion": "4.0",
-				"autoExpandSelect": true,
+				"autoExpandSelect": false,
 				"operationMode": "Server",
 				"synchronizationMode": "None"
 			},

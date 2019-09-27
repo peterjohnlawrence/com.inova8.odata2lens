@@ -8,7 +8,7 @@
 			"controlAggregation": "pages",
 			"bypassed": {
 				"target": [
-					"notFound"
+					"_notFound"
 				]
 			},
 			"async": true
@@ -71,11 +71,11 @@
 			]
 		},
 		{
-		"pattern": "_Settings",
-		"name": "_settings",
-		"target": [
-			"_settings"
-		]
+			"pattern": "_Settings",
+			"name": "_settings",
+			"target": [
+				"_settings"
+			]
 		}, {
 			"pattern": "_Legal",
 			"name": "_legal",
@@ -113,10 +113,16 @@
 				"_AdvancedSearch"
 			]
 		}, {
-			"pattern": "_Graphxx/{objectId}/:navigation::?queryOptions:",
-			"name": "_graph",
+			"pattern": "_PathAdvancedSearch/{startObjectId}/{endObjectId}/:?queryOptions:",
+			"name": "_PathAdvancedSearch",
 			"target": [
-				"_graph"
+				"_PathAdvancedSearch"
+			]
+		}, {
+			"pattern": "_PathLinkSearch/{startObjectId}/{endObjectId}/:?queryOptions:",
+			"name": "_PathLinkSearch",
+			"target": [
+				"_PathLinkSearch"
 			]
 		}, {
 			"pattern": "_Graph/{target}/{objectId}/:navigation::?queryOptions:",
@@ -124,21 +130,9 @@
 			"target": [
 				"_graph"
 			]
-		},{
-			"pattern": "_Graphxx/{objectId}/:navigation::?queryOptions:",
-			"name": "_navigationSetGraph",
-			"target": [
-				"_graph"
-			]
 		}, {
-			"pattern": "_Graphxx/{objectId}/qb_isDatasetOf?graph=true",
-			"name": "_graphgraph",
-			"target": [
-				"_graph"
-			]
-		}, {
-			"pattern": "_QueryGraph/{objectId}/:queries*:",
-			"name": "_querygraph",
+			"pattern": "_GraphPath/{target}/{startObjectId}/{endObjectId}:?queryOptions:",
+			"name": "_graphpath",
 			"target": [
 				"_graph"
 			]
@@ -446,18 +440,28 @@
 				"viewLevel": 1
 			},
 			"_Search": {
-				"viewName": "Search",
+				"viewName": "Search/ProxySearch",
 				"viewId": "Search",
 				"viewLevel": 1
 			},
 			"_LinkedSearch": {
-				"viewName": "LinkedSearch",
+				"viewName": "Search/ProxyLinkedSearch",
 				"viewId": "LinkedSearch",
 				"viewLevel": 1
 			},
 			"_AdvancedSearch": {
-				"viewName": "AdvancedSearch",
+				"viewName": "Search/ProxyAdvancedSearch",
 				"viewId": "AdvancedSearch",
+				"viewLevel": 1
+			},			
+			"_PathAdvancedSearch": {
+				"viewName": "Search/ProxyAdvancedSearch",
+				"viewId": "AdvancedSearch",
+				"viewLevel": 1
+			},
+			"_PathLinkedSearch": {
+				"viewName": "Search/ProxyLinkedSearch",
+				"viewId": "LinkedSearch",
 				"viewLevel": 1
 			},
 			"_graph": {

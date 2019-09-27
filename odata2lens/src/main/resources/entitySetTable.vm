@@ -1,5 +1,6 @@
 #set ($ViewTitle	= "ViewTitle") 
 #set ($This	= "this") 
+#set ($SearchThis	= "searchThis") 
 #set ($SearchTooltip	= "SearchTooltip") 
 #macro( entitySetmaptypes $propertyObject $target )
 #set( $range =  $propertyObject.range)
@@ -40,28 +41,69 @@
   #else
   #end 
 #end
+#macro( entitySetfiltertypes $propertyObject  )
+#set( $range =  $propertyObject.range)
+#set( $formatOptions =  $propertyObject.formatOptions)
+  #if ($range == "Edm.Binary")	defaultFilterOperator="EQ" filterType="sap.ui.model.type.String"
+  #elseif ($range == "Edm.Boolean")	defaultFilterOperator="EQ" filterType="sap.ui.model.type.Boolean"
+  #elseif ($range == "Edm.Byte") defaultFilterOperator="EQ" filterType="sap.ui.model.type.Integer"
+  #elseif ($range == "Edm.SByte") defaultFilterOperator="EQ" filterType="sap.ui.model.type.Integer"
+  #elseif ($range == "Edm.Date") defaultFilterOperator="EQ" filterType="sap.ui.model.type.String"
+  #elseif ($range == "Edm.DateTimeOffset") defaultFilterOperator="EQ" filterType="sap.ui.model.type.String"
+  #elseif ($range == "Edm.TimeOfDay") defaultFilterOperator="EQ" filterType="sap.ui.model.type.Time"
+  #elseif ($range == "Edm.Duration") defaultFilterOperator="EQ" filterType="sap.ui.model.type.String"
+  #elseif ($range == "Edm.Decimal") defaultFilterOperator="EQ" filterType="sap.ui.model.type.Float"
+  #elseif ($range == "Edm.Single") defaultFilterOperator="EQ" filterType="sap.ui.model.type.Float"
+  #elseif ($range == "Edm.Double") defaultFilterOperator="EQ" filterType="sap.ui.model.type.Float"
+  #elseif ($range == "Edm.Guid") defaultFilterOperator="EQ" filterType="sap.ui.model.type.String"
+  #elseif ($range == "Edm.Int16") defaultFilterOperator="EQ" filterType="sap.ui.model.type.Integer"
+  #elseif ($range == "Edm.Int32") defaultFilterOperator="EQ" filterType="sap.ui.model.type.Integer"
+  #elseif ($range == "Edm.Int64") defaultFilterOperator="EQ" filterType="sap.ui.model.type.Integer"
+  #elseif ($range == "Edm.String") defaultFilterOperator="Contains" filterType="sap.ui.model.type.String"
+  #elseif ($range == "Edm.Stream") defaultFilterOperator="EQ" filterType="sap.ui.model.type.String"
+  #elseif ($range == "Edm.Geography") defaultFilterOperator="Contains" filterType="sap.ui.model.type.String"
+  #elseif ($range == "Edm.GeographyPoint") defaultFilterOperator="Contains" filterType="sap.ui.model.type.String"
+  #elseif ($range == "Edm.GeographyLineString") defaultFilterOperator="Contains" filterType="sap.ui.model.type.String"/>
+  #elseif ($range == "Edm.GeographyPolygon") defaultFilterOperator="Contains" filterType="sap.ui.model.type.String"
+  #elseif ($range == "Edm.GeographyMultiPoint") defaultFilterOperator="Contains" filterType="sap.ui.model.type.String"
+  #elseif ($range == "Edm.GeographyMultiLineString") defaultFilterOperator="Contains" filterType="sap.ui.model.type.String"
+  #elseif ($range == "Edm.GeographyMultiPolygon") defaultFilterOperator="Contains" filterType="sap.ui.model.type.String"
+  #elseif ($range == "Edm.GeographyCollection")	defaultFilterOperator="Contains" filterType="sap.ui.model.type.String"
+  #elseif ($range == "Edm.Geometry") defaultFilterOperator="Contains" filterType="sap.ui.model.type.String"
+  #elseif ($range == "Edm.GeometryPoint") defaultFilterOperator="Contains" filterType="sap.ui.model.type.String"
+  #elseif ($range == "Edm.GeometryLineString")	defaultFilterOperator="Contains" filterType="sap.ui.model.type.String"
+  #elseif ($range == "Edm.GeometryPolygon")	defaultFilterOperator="Contains" filterType="sap.ui.model.type.String"
+  #elseif ($range == "Edm.GeometryMultiPoint")	defaultFilterOperator="Contains" filterType="sap.ui.model.type.String"
+  #elseif ($range == "Edm.GeometryMultiLineString")	defaultFilterOperator="Contains" filterType="sap.ui.model.type.String"
+  #elseif ($range == "Edm.GeometryMultiPolygon")	defaultFilterOperator="Contains" filterType="sap.ui.model.type.String"
+  #elseif ($range == "Edm.GeometryCollection")	defaultFilterOperator="Contains" filterType="sap.ui.model.type.String"
+  #else
+  #end 
+#end
 <mvc:View controllerName="com.inova8.lens.controller.EntitySetTable" xmlns="sap.m" xmlns:mvc="sap.ui.core.mvc"
-	xmlns:layout="sap.ui.layout" xmlns:rdf="com.inova8.lens.control" xmlns:core="sap.ui.core" xmlns:table="sap.ui.table">
+	xmlns:layout="sap.ui.layout" xmlns:rdf="com.inova8.lens.control" xmlns:core="sap.ui.core" xmlns:table="sap.ui.table" xmlns:cd="http://schemas.sap.com/sapui5/extension/sap.ui.core.CustomData/1">
 	<Page showHeader="false" id="page" navButtonPress="onNavBack" showNavButton="true" title="{i18n>$entitySet.target.$ViewTitle}">
 		<content>
 			<table:Table id="table"
-					rows="{ path: 'dataModel>/$entitySet.name' 
-						   , sorter: { path: 'label', descending: false } 
+					cd:parameters="{ 
 					#set($numOfExpand = 0)		
 					#foreach($property in $uiTemplate.properties)
 						#if(($property.visible) && ($property.propertyType == "C")) 
 							#if($numOfExpand == 0) 
-						   , parameters:{$expand:{#else 
+						    $expand:{#else 
 						  						, #end $property.property:{ $count:true}	
 							#set($numOfExpand = $numOfExpand + 1)
-						#end					
+						#end	
+						#if(($property.visible) && ($property.propertyType == "O")) 
+							#if($numOfExpand == 0) 
+						    $expand:{#else 
+						  						, #end $property.property:{ $select:'subjectId,label'}	
+							#set($numOfExpand = $numOfExpand + 1)
+						#end				
 					#end
-					#if($numOfExpand > 0) 
-							},$select:'*'} 
-					#end 
-						}"
-				enableColumnFreeze="true" enableCellFilter="true" showColumnVisibilityMenu="true" enableColumnReordering="true" enableBusyIndicator="true"
-				selectionMode="Single" width="auto" fixedColumnCount="1" selectionBehavior="RowSelector" rowSelectionChange= "onPress">
+					#if($numOfExpand > 0) },#end$select:'subjectId,label,*'}"
+				enableColumnFreeze="true" enableCellFilter="true" enableCustomFilter="false" showColumnVisibilityMenu="true" enableColumnReordering="true" enableBusyIndicator="true"
+				selectionMode="Single" width="auto" fixedColumnCount="1" visibleRowCountMode="Auto" >
 				<table:toolbar>
 					<Toolbar>
 						<ToolbarSpacer/>
@@ -78,12 +120,20 @@
 						</HBox>
 						<Title id="tableHeader" text="{entitySetView>/entitySetTableTitle}"/>
 						<ToolbarSpacer/>
-						<SearchField id="searchField" tooltip="{i18n>search.searchTooltip}" search="onSearch" width="auto"></SearchField>
+						<Button
+							icon="sap-icon://sort"
+							tooltip="{i18n>search.clearAllSorts}"
+							press="clearAllSorts"/>
+						<Button
+							icon="sap-icon://clear-filter"
+							tooltip="{i18n>search.clearAllFilters}"
+							press="clearAllFilters"/>
+						<SearchField id="searchField" tooltip="{i18n>search.searchTooltip}" search="onSearch" width="auto" placeholder="{i18n>$entitySet.target.$SearchThis}"></SearchField>
 					</Toolbar>
 				</table:toolbar>
 
 				<table:columns>
-					<table:Column >
+					<table:Column  width="200px" autoResizable="true">
 						<Label text="{i18n>$entitySet.target.$This}"/>
 						<table:template>
 							<rdf:TextResource path="dataModel>" entitySet="$entitySet.name"/>
@@ -92,11 +142,11 @@
 							#foreach($property in $uiTemplate.properties)					
 								#if($property.visible)
 								#if ($property.propertyType == "C")	
-					<table:Column minWidth="150" showFilterMenuEntry="false" showSortMenuEntry="false">
+					<table:Column id="$property.property" minWidth="150" autoResizable="true" showFilterMenuEntry="false" showSortMenuEntry="false">
 								#elseif ($property.propertyType == "S")	
-					<table:Column minWidth="150" showFilterMenuEntry="false" showSortMenuEntry="false">
+					<table:Column id="$property.property" minWidth="150" autoResizable="true" showFilterMenuEntry="false" showSortMenuEntry="false">
 								#else
-					<table:Column minWidth="150" sortProperty="$property.property" filterProperty="$property.property" showFilterMenuEntry="true" showSortMenuEntry="true">								
+					<table:Column id="$property.property"  minWidth="150" autoResizable="true" sortProperty="$property.property" filterProperty="$property.property" showFilterMenuEntry="true" showSortMenuEntry="true" #entitySetfiltertypes($property ) >								
 								#end
 						<Label text="{i18n>$entitySet.target.$property.property}"/>
 						<table:template>

@@ -94,9 +94,11 @@
 			"type":"entitySet",
 		    "key": "graph",
 			"text": "Graph View",
-			"target": "_graph",
+			"target": "_graphview",
 			"tooltip": "Categorys Graph",
-			"visible":true, 			"parameters": {
+			"visible":true, 
+			"parameters": {
+				"target": "Categorys",
 				"objectId": "Category",
 				"?queryOptions": {
 					"$top": 10
@@ -108,7 +110,8 @@
 			"text": "Display Categorys",
 			"target": "Categorys",
 			"tooltip": "Show all Categorys",
-			"visible":true, 			"parameters": {
+			"visible":true, 
+			"parameters": {
 				"objectId": "Category"
 			}
 		}, {
@@ -117,7 +120,8 @@
 			"text": "DashBoard",
 			"target": "CategorysDashBoard",
 			"tooltip": "Show Categorys DashBoard",
-			"visible":true 		}
+			"visible":true 
+		}
 		],
 		"entity": {
 			"target": "Category",
@@ -127,9 +131,12 @@
 				"key": "graph",
 				"text": "Graph View",
 				"icon": "sap-icon://overview-chart",
-				"target": "_graph",
+				"target": "_graphview",
 				"tooltip": "Category Graph",
-				"visible": true
+				"visible": true,
+				"parameters": {
+					"target": "Category"
+				}
 			},{
 				"type":"entity",
 				"key": "linked",
@@ -171,9 +178,13 @@
 					"key": "graph",
 					"text": "Graph View",
 					"icon": "sap-icon://overview-chart",
-					"target": "_navigationSetGraph",
+					"target": "_graphview",
 					"tooltip": "isCategoryOf Graph",
-					"visible": true
+					"visible": true,
+					"parameters": {
+						"target": "Products",
+						"navigation": "isCategoryOf"
+					}
 				}, {
 					"type":"navigationSet",
 					"key": "isCategoryOf",
@@ -205,9 +216,11 @@
 			"type":"entitySet",
 		    "key": "graph",
 			"text": "Graph View",
-			"target": "_graph",
+			"target": "_graphview",
 			"tooltip": "Customer_Orders Graph",
-			"visible":true, 			"parameters": {
+			"visible":true, 
+			"parameters": {
+				"target": "Customer_Orders",
 				"objectId": "Customer_Order",
 				"?queryOptions": {
 					"$top": 10
@@ -219,7 +232,8 @@
 			"text": "Display Customer_Orders",
 			"target": "Customer_Orders",
 			"tooltip": "Show all Customer_Orders",
-			"visible":true, 			"parameters": {
+			"visible":true, 
+			"parameters": {
 				"objectId": "Customer_Order"
 			}
 		}, {
@@ -228,7 +242,8 @@
 			"text": "DashBoard",
 			"target": "Customer_OrdersDashBoard",
 			"tooltip": "Show Customer_Orders DashBoard",
-			"visible":true 		}
+			"visible":true 
+		}
 		],
 		"entity": {
 			"target": "Customer_Order",
@@ -238,9 +253,12 @@
 				"key": "graph",
 				"text": "Graph View",
 				"icon": "sap-icon://overview-chart",
-				"target": "_graph",
+				"target": "_graphview",
 				"tooltip": "Customer_Order Graph",
-				"visible": true
+				"visible": true,
+				"parameters": {
+					"target": "Customer_Order"
+				}
 			},{
 				"type":"entity",
 				"key": "linked",
@@ -294,9 +312,13 @@
 					"key": "graph",
 					"text": "Graph View",
 					"icon": "sap-icon://overview-chart",
-					"target": "_navigationSetGraph",
+					"target": "_graphview",
 					"tooltip": "$navigationSet.name Graph",
-					"visible": true
+					"visible": true,
+					"parameters": {
+						"target":  "Customer", 
+						"navigation": "customer_Order_customer"
+					}
 				}, {
 					"type":"navigationSet",
 					"key": "customer_Order_customer",
@@ -320,9 +342,13 @@
 					"key": "graph",
 					"text": "Graph View",
 					"icon": "sap-icon://overview-chart",
-					"target": "_navigationSetGraph",
+					"target": "_graphview",
 					"tooltip": "$navigationSet.name Graph",
-					"visible": true
+					"visible": true,
+					"parameters": {
+						"target":  "Order", 
+						"navigation": "customer_Order_order"
+					}
 				}, {
 					"type":"navigationSet",
 					"key": "customer_Order_order",
@@ -354,9 +380,11 @@
 			"type":"entitySet",
 		    "key": "graph",
 			"text": "Graph View",
-			"target": "_graph",
+			"target": "_graphview",
 			"tooltip": "Customers Graph",
-			"visible":true, 			"parameters": {
+			"visible":true, 
+			"parameters": {
+				"target": "Customers",
 				"objectId": "Customer",
 				"?queryOptions": {
 					"$top": 10
@@ -368,7 +396,8 @@
 			"text": "Display Customers",
 			"target": "Customers",
 			"tooltip": "Show all Customers",
-			"visible":true, 			"parameters": {
+			"visible":true, 
+			"parameters": {
 				"objectId": "Customer"
 			}
 		}, {
@@ -377,7 +406,8 @@
 			"text": "DashBoard",
 			"target": "CustomersDashBoard",
 			"tooltip": "Show Customers DashBoard",
-			"visible":true 		}
+			"visible":true 
+		}
 		],
 		"entity": {
 			"target": "Customer",
@@ -387,9 +417,12 @@
 				"key": "graph",
 				"text": "Graph View",
 				"icon": "sap-icon://overview-chart",
-				"target": "_graph",
+				"target": "_graphview",
 				"tooltip": "Customer Graph",
-				"visible": true
+				"visible": true,
+				"parameters": {
+					"target": "Customer"
+				}
 			},{
 				"type":"entity",
 				"key": "linked",
@@ -455,9 +488,13 @@
 					"key": "graph",
 					"text": "Graph View",
 					"icon": "sap-icon://overview-chart",
-					"target": "_navigationSetGraph",
+					"target": "_graphview",
 					"tooltip": "customerRegion Graph",
-					"visible": true
+					"visible": true,
+					"parameters": {
+						"target": "Regions",
+						"navigation": "customerRegion"
+					}
 				}, {
 					"type":"navigationSet",
 					"key": "customerRegion",
@@ -481,9 +518,13 @@
 					"key": "graph",
 					"text": "Graph View",
 					"icon": "sap-icon://overview-chart",
-					"target": "_navigationSetGraph",
+					"target": "_graphview",
 					"tooltip": "customer_customer_Order Graph",
-					"visible": true
+					"visible": true,
+					"parameters": {
+						"target": "Customer_Orders",
+						"navigation": "customer_customer_Order"
+					}
 				}, {
 					"type":"navigationSet",
 					"key": "customer_customer_Order",
@@ -507,9 +548,13 @@
 					"key": "graph",
 					"text": "Graph View",
 					"icon": "sap-icon://overview-chart",
-					"target": "_navigationSetGraph",
+					"target": "_graphview",
 					"tooltip": "hasPlacedOrder Graph",
-					"visible": true
+					"visible": true,
+					"parameters": {
+						"target": "Orders",
+						"navigation": "hasPlacedOrder"
+					}
 				}, {
 					"type":"navigationSet",
 					"key": "hasPlacedOrder",
@@ -541,9 +586,11 @@
 			"type":"entitySet",
 		    "key": "graph",
 			"text": "Graph View",
-			"target": "_graph",
+			"target": "_graphview",
 			"tooltip": "Employees Graph",
-			"visible":true, 			"parameters": {
+			"visible":true, 
+			"parameters": {
+				"target": "Employees",
 				"objectId": "Employee",
 				"?queryOptions": {
 					"$top": 10
@@ -555,7 +602,8 @@
 			"text": "Display Employees",
 			"target": "Employees",
 			"tooltip": "Show all Employees",
-			"visible":true, 			"parameters": {
+			"visible":true, 
+			"parameters": {
 				"objectId": "Employee"
 			}
 		}, {
@@ -564,7 +612,8 @@
 			"text": "DashBoard",
 			"target": "EmployeesDashBoard",
 			"tooltip": "Show Employees DashBoard",
-			"visible":true 		}
+			"visible":true 
+		}
 		,{
 			"type":"menuNavigation",
 			"key": "SystemAEmployee",
@@ -572,7 +621,8 @@
 			"icon": "$childEntitySet.icon",
 			"target": "SystemAEmployee",
 			"tooltip": "Go down to SystemAEmployees",
-			"visible": true 		}
+			"visible": true 
+		}
 		,{
 			"type":"menuNavigation",
 			"key": "SystemBEmployee",
@@ -580,7 +630,8 @@
 			"icon": "$childEntitySet.icon",
 			"target": "SystemBEmployee",
 			"tooltip": "Go down to SystemBEmployees",
-			"visible": true 		}
+			"visible": true 
+		}
 		],
 		"entity": {
 			"target": "Employee",
@@ -590,9 +641,12 @@
 				"key": "graph",
 				"text": "Graph View",
 				"icon": "sap-icon://overview-chart",
-				"target": "_graph",
+				"target": "_graphview",
 				"tooltip": "Employee Graph",
-				"visible": true
+				"visible": true,
+				"parameters": {
+					"target": "Employee"
+				}
 			},{
 				"type":"entity",
 				"key": "linked",
@@ -728,9 +782,13 @@
 					"key": "graph",
 					"text": "Graph View",
 					"icon": "sap-icon://overview-chart",
-					"target": "_navigationSetGraph",
+					"target": "_graphview",
 					"tooltip": "employeeRegion Graph",
-					"visible": true
+					"visible": true,
+					"parameters": {
+						"target": "Regions",
+						"navigation": "employeeRegion"
+					}
 				}, {
 					"type":"navigationSet",
 					"key": "employeeRegion",
@@ -754,9 +812,13 @@
 					"key": "graph",
 					"text": "Graph View",
 					"icon": "sap-icon://overview-chart",
-					"target": "_navigationSetGraph",
+					"target": "_graphview",
 					"tooltip": "managesEmployee Graph",
-					"visible": true
+					"visible": true,
+					"parameters": {
+						"target": "Employees",
+						"navigation": "managesEmployee"
+					}
 				}, {
 					"type":"navigationSet",
 					"key": "managesEmployee",
@@ -780,9 +842,13 @@
 					"key": "graph",
 					"text": "Graph View",
 					"icon": "sap-icon://overview-chart",
-					"target": "_navigationSetGraph",
+					"target": "_graphview",
 					"tooltip": "managesOrder Graph",
-					"visible": true
+					"visible": true,
+					"parameters": {
+						"target": "Orders",
+						"navigation": "managesOrder"
+					}
 				}, {
 					"type":"navigationSet",
 					"key": "managesOrder",
@@ -806,9 +872,13 @@
 					"key": "graph",
 					"text": "Graph View",
 					"icon": "sap-icon://overview-chart",
-					"target": "_navigationSetGraph",
+					"target": "_graphview",
 					"tooltip": "territory Graph",
-					"visible": true
+					"visible": true,
+					"parameters": {
+						"target": "Territorys",
+						"navigation": "territory"
+					}
 				}, {
 					"type":"navigationSet",
 					"key": "territory",
@@ -832,9 +902,13 @@
 					"key": "graph",
 					"text": "Graph View",
 					"icon": "sap-icon://overview-chart",
-					"target": "_navigationSetGraph",
+					"target": "_graphview",
 					"tooltip": "$navigationSet.name Graph",
-					"visible": true
+					"visible": true,
+					"parameters": {
+						"target":  "Employee", 
+						"navigation": "reportsTo"
+					}
 				}, {
 					"type":"navigationSet",
 					"key": "reportsTo",
@@ -866,9 +940,11 @@
 			"type":"entitySet",
 		    "key": "graph",
 			"text": "Graph View",
-			"target": "_graph",
+			"target": "_graphview",
 			"tooltip": "OrderDetails Graph",
-			"visible":true, 			"parameters": {
+			"visible":true, 
+			"parameters": {
+				"target": "OrderDetails",
 				"objectId": "OrderDetail",
 				"?queryOptions": {
 					"$top": 10
@@ -880,7 +956,8 @@
 			"text": "Display OrderDetails",
 			"target": "OrderDetails",
 			"tooltip": "Show all OrderDetails",
-			"visible":true, 			"parameters": {
+			"visible":true, 
+			"parameters": {
 				"objectId": "OrderDetail"
 			}
 		}, {
@@ -889,7 +966,8 @@
 			"text": "DashBoard",
 			"target": "OrderDetailsDashBoard",
 			"tooltip": "Show OrderDetails DashBoard",
-			"visible":true 		}
+			"visible":true 
+		}
 		],
 		"entity": {
 			"target": "OrderDetail",
@@ -899,9 +977,12 @@
 				"key": "graph",
 				"text": "Graph View",
 				"icon": "sap-icon://overview-chart",
-				"target": "_graph",
+				"target": "_graphview",
 				"tooltip": "OrderDetail Graph",
-				"visible": true
+				"visible": true,
+				"parameters": {
+					"target": "OrderDetail"
+				}
 			},{
 				"type":"entity",
 				"key": "linked",
@@ -955,9 +1036,13 @@
 					"key": "graph",
 					"text": "Graph View",
 					"icon": "sap-icon://overview-chart",
-					"target": "_navigationSetGraph",
+					"target": "_graphview",
 					"tooltip": "$navigationSet.name Graph",
-					"visible": true
+					"visible": true,
+					"parameters": {
+						"target":  "Order", 
+						"navigation": "order"
+					}
 				}, {
 					"type":"navigationSet",
 					"key": "order",
@@ -981,9 +1066,13 @@
 					"key": "graph",
 					"text": "Graph View",
 					"icon": "sap-icon://overview-chart",
-					"target": "_navigationSetGraph",
+					"target": "_graphview",
 					"tooltip": "$navigationSet.name Graph",
-					"visible": true
+					"visible": true,
+					"parameters": {
+						"target":  "Product", 
+						"navigation": "product"
+					}
 				}, {
 					"type":"navigationSet",
 					"key": "product",
@@ -1015,9 +1104,11 @@
 			"type":"entitySet",
 		    "key": "graph",
 			"text": "Graph View",
-			"target": "_graph",
+			"target": "_graphview",
 			"tooltip": "OrderSummarys Graph",
-			"visible":true, 			"parameters": {
+			"visible":true, 
+			"parameters": {
+				"target": "OrderSummarys",
 				"objectId": "OrderSummary",
 				"?queryOptions": {
 					"$top": 10
@@ -1029,7 +1120,8 @@
 			"text": "Display OrderSummarys",
 			"target": "OrderSummarys",
 			"tooltip": "Show all OrderSummarys",
-			"visible":true, 			"parameters": {
+			"visible":true, 
+			"parameters": {
 				"objectId": "OrderSummary"
 			}
 		}, {
@@ -1038,7 +1130,8 @@
 			"text": "DashBoard",
 			"target": "OrderSummarysDashBoard",
 			"tooltip": "Show OrderSummarys DashBoard",
-			"visible":true 		}
+			"visible":true 
+		}
 		],
 		"entity": {
 			"target": "OrderSummary",
@@ -1048,9 +1141,12 @@
 				"key": "graph",
 				"text": "Graph View",
 				"icon": "sap-icon://overview-chart",
-				"target": "_graph",
+				"target": "_graphview",
 				"tooltip": "OrderSummary Graph",
-				"visible": true
+				"visible": true,
+				"parameters": {
+					"target": "OrderSummary"
+				}
 			},{
 				"type":"entity",
 				"key": "linked",
@@ -1104,9 +1200,13 @@
 					"key": "graph",
 					"text": "Graph View",
 					"icon": "sap-icon://overview-chart",
-					"target": "_navigationSetGraph",
+					"target": "_graphview",
 					"tooltip": "$navigationSet.name Graph",
-					"visible": true
+					"visible": true,
+					"parameters": {
+						"target":  "Order", 
+						"navigation": "orderSummary_order"
+					}
 				}, {
 					"type":"navigationSet",
 					"key": "orderSummary_order",
@@ -1130,9 +1230,13 @@
 					"key": "graph",
 					"text": "Graph View",
 					"icon": "sap-icon://overview-chart",
-					"target": "_navigationSetGraph",
+					"target": "_graphview",
 					"tooltip": "$navigationSet.name Graph",
-					"visible": true
+					"visible": true,
+					"parameters": {
+						"target":  "Product", 
+						"navigation": "orderSummary_product"
+					}
 				}, {
 					"type":"navigationSet",
 					"key": "orderSummary_product",
@@ -1164,9 +1268,11 @@
 			"type":"entitySet",
 		    "key": "graph",
 			"text": "Graph View",
-			"target": "_graph",
+			"target": "_graphview",
 			"tooltip": "Orders Graph",
-			"visible":true, 			"parameters": {
+			"visible":true, 
+			"parameters": {
+				"target": "Orders",
 				"objectId": "Order",
 				"?queryOptions": {
 					"$top": 10
@@ -1178,7 +1284,8 @@
 			"text": "Display Orders",
 			"target": "Orders",
 			"tooltip": "Show all Orders",
-			"visible":true, 			"parameters": {
+			"visible":true, 
+			"parameters": {
 				"objectId": "Order"
 			}
 		}, {
@@ -1187,7 +1294,8 @@
 			"text": "DashBoard",
 			"target": "OrdersDashBoard",
 			"tooltip": "Show Orders DashBoard",
-			"visible":true 		}
+			"visible":true 
+		}
 		],
 		"entity": {
 			"target": "Order",
@@ -1197,9 +1305,12 @@
 				"key": "graph",
 				"text": "Graph View",
 				"icon": "sap-icon://overview-chart",
-				"target": "_graph",
+				"target": "_graphview",
 				"tooltip": "Order Graph",
-				"visible": true
+				"visible": true,
+				"parameters": {
+					"target": "Order"
+				}
 			},{
 				"type":"entity",
 				"key": "linked",
@@ -1313,9 +1424,13 @@
 					"key": "graph",
 					"text": "Graph View",
 					"icon": "sap-icon://overview-chart",
-					"target": "_navigationSetGraph",
+					"target": "_graphview",
 					"tooltip": "hasOrderDetail Graph",
-					"visible": true
+					"visible": true,
+					"parameters": {
+						"target": "OrderDetails",
+						"navigation": "hasOrderDetail"
+					}
 				}, {
 					"type":"navigationSet",
 					"key": "hasOrderDetail",
@@ -1339,9 +1454,13 @@
 					"key": "graph",
 					"text": "Graph View",
 					"icon": "sap-icon://overview-chart",
-					"target": "_navigationSetGraph",
+					"target": "_graphview",
 					"tooltip": "order_customer_Order Graph",
-					"visible": true
+					"visible": true,
+					"parameters": {
+						"target": "Customer_Orders",
+						"navigation": "order_customer_Order"
+					}
 				}, {
 					"type":"navigationSet",
 					"key": "order_customer_Order",
@@ -1365,9 +1484,13 @@
 					"key": "graph",
 					"text": "Graph View",
 					"icon": "sap-icon://overview-chart",
-					"target": "_navigationSetGraph",
+					"target": "_graphview",
 					"tooltip": "order_orderSummary Graph",
-					"visible": true
+					"visible": true,
+					"parameters": {
+						"target": "OrderSummarys",
+						"navigation": "order_orderSummary"
+					}
 				}, {
 					"type":"navigationSet",
 					"key": "order_orderSummary",
@@ -1391,9 +1514,13 @@
 					"key": "graph",
 					"text": "Graph View",
 					"icon": "sap-icon://overview-chart",
-					"target": "_navigationSetGraph",
+					"target": "_graphview",
 					"tooltip": "$navigationSet.name Graph",
-					"visible": true
+					"visible": true,
+					"parameters": {
+						"target":  "Customer", 
+						"navigation": "customer"
+					}
 				}, {
 					"type":"navigationSet",
 					"key": "customer",
@@ -1417,9 +1544,13 @@
 					"key": "graph",
 					"text": "Graph View",
 					"icon": "sap-icon://overview-chart",
-					"target": "_navigationSetGraph",
+					"target": "_graphview",
 					"tooltip": "$navigationSet.name Graph",
-					"visible": true
+					"visible": true,
+					"parameters": {
+						"target":  "Employee", 
+						"navigation": "employee"
+					}
 				}, {
 					"type":"navigationSet",
 					"key": "employee",
@@ -1443,9 +1574,13 @@
 					"key": "graph",
 					"text": "Graph View",
 					"icon": "sap-icon://overview-chart",
-					"target": "_navigationSetGraph",
+					"target": "_graphview",
 					"tooltip": "$navigationSet.name Graph",
-					"visible": true
+					"visible": true,
+					"parameters": {
+						"target":  "Region", 
+						"navigation": "orderRegion"
+					}
 				}, {
 					"type":"navigationSet",
 					"key": "orderRegion",
@@ -1469,9 +1604,13 @@
 					"key": "graph",
 					"text": "Graph View",
 					"icon": "sap-icon://overview-chart",
-					"target": "_navigationSetGraph",
+					"target": "_graphview",
 					"tooltip": "$navigationSet.name Graph",
-					"visible": true
+					"visible": true,
+					"parameters": {
+						"target":  "Shipper", 
+						"navigation": "shipVia"
+					}
 				}, {
 					"type":"navigationSet",
 					"key": "shipVia",
@@ -1503,9 +1642,11 @@
 			"type":"entitySet",
 		    "key": "graph",
 			"text": "Graph View",
-			"target": "_graph",
+			"target": "_graphview",
 			"tooltip": "Products Graph",
-			"visible":true, 			"parameters": {
+			"visible":true, 
+			"parameters": {
+				"target": "Products",
 				"objectId": "Product",
 				"?queryOptions": {
 					"$top": 10
@@ -1517,7 +1658,8 @@
 			"text": "Display Products",
 			"target": "Products",
 			"tooltip": "Show all Products",
-			"visible":true, 			"parameters": {
+			"visible":true, 
+			"parameters": {
 				"objectId": "Product"
 			}
 		}, {
@@ -1526,7 +1668,8 @@
 			"text": "DashBoard",
 			"target": "ProductsDashBoard",
 			"tooltip": "Show Products DashBoard",
-			"visible":true 		}
+			"visible":true 
+		}
 		,{
 			"type":"menuNavigation",
 			"key": "SystemAProduct",
@@ -1534,7 +1677,8 @@
 			"icon": "$childEntitySet.icon",
 			"target": "SystemAProduct",
 			"tooltip": "Go down to SystemAProducts",
-			"visible": true 		}
+			"visible": true 
+		}
 		,{
 			"type":"menuNavigation",
 			"key": "SystemBProduct",
@@ -1542,7 +1686,8 @@
 			"icon": "$childEntitySet.icon",
 			"target": "SystemBProduct",
 			"tooltip": "Go down to SystemBProducts",
-			"visible": true 		}
+			"visible": true 
+		}
 		],
 		"entity": {
 			"target": "Product",
@@ -1552,9 +1697,12 @@
 				"key": "graph",
 				"text": "Graph View",
 				"icon": "sap-icon://overview-chart",
-				"target": "_graph",
+				"target": "_graphview",
 				"tooltip": "Product Graph",
-				"visible": true
+				"visible": true,
+				"parameters": {
+					"target": "Product"
+				}
 			},{
 				"type":"entity",
 				"key": "linked",
@@ -1632,9 +1780,13 @@
 					"key": "graph",
 					"text": "Graph View",
 					"icon": "sap-icon://overview-chart",
-					"target": "_navigationSetGraph",
+					"target": "_graphview",
 					"tooltip": "isPartOfOrderDetail Graph",
-					"visible": true
+					"visible": true,
+					"parameters": {
+						"target": "OrderDetails",
+						"navigation": "isPartOfOrderDetail"
+					}
 				}, {
 					"type":"navigationSet",
 					"key": "isPartOfOrderDetail",
@@ -1658,9 +1810,13 @@
 					"key": "graph",
 					"text": "Graph View",
 					"icon": "sap-icon://overview-chart",
-					"target": "_navigationSetGraph",
+					"target": "_graphview",
 					"tooltip": "product_orderSummary Graph",
-					"visible": true
+					"visible": true,
+					"parameters": {
+						"target": "OrderSummarys",
+						"navigation": "product_orderSummary"
+					}
 				}, {
 					"type":"navigationSet",
 					"key": "product_orderSummary",
@@ -1684,9 +1840,13 @@
 					"key": "graph",
 					"text": "Graph View",
 					"icon": "sap-icon://overview-chart",
-					"target": "_navigationSetGraph",
+					"target": "_graphview",
 					"tooltip": "$navigationSet.name Graph",
-					"visible": true
+					"visible": true,
+					"parameters": {
+						"target":  "Category", 
+						"navigation": "category"
+					}
 				}, {
 					"type":"navigationSet",
 					"key": "category",
@@ -1710,9 +1870,13 @@
 					"key": "graph",
 					"text": "Graph View",
 					"icon": "sap-icon://overview-chart",
-					"target": "_navigationSetGraph",
+					"target": "_graphview",
 					"tooltip": "$navigationSet.name Graph",
-					"visible": true
+					"visible": true,
+					"parameters": {
+						"target":  "Supplier", 
+						"navigation": "supplier"
+					}
 				}, {
 					"type":"navigationSet",
 					"key": "supplier",
@@ -1744,9 +1908,11 @@
 			"type":"entitySet",
 		    "key": "graph",
 			"text": "Graph View",
-			"target": "_graph",
+			"target": "_graphview",
 			"tooltip": "Regions Graph",
-			"visible":true, 			"parameters": {
+			"visible":true, 
+			"parameters": {
+				"target": "Regions",
 				"objectId": "Region",
 				"?queryOptions": {
 					"$top": 10
@@ -1758,7 +1924,8 @@
 			"text": "Display Regions",
 			"target": "Regions",
 			"tooltip": "Show all Regions",
-			"visible":true, 			"parameters": {
+			"visible":true, 
+			"parameters": {
 				"objectId": "Region"
 			}
 		}, {
@@ -1767,7 +1934,8 @@
 			"text": "DashBoard",
 			"target": "RegionsDashBoard",
 			"tooltip": "Show Regions DashBoard",
-			"visible":true 		}
+			"visible":true 
+		}
 		],
 		"entity": {
 			"target": "Region",
@@ -1777,9 +1945,12 @@
 				"key": "graph",
 				"text": "Graph View",
 				"icon": "sap-icon://overview-chart",
-				"target": "_graph",
+				"target": "_graphview",
 				"tooltip": "Region Graph",
-				"visible": true
+				"visible": true,
+				"parameters": {
+					"target": "Region"
+				}
 			},{
 				"type":"entity",
 				"key": "linked",
@@ -1817,9 +1988,11 @@
 			"type":"entitySet",
 		    "key": "graph",
 			"text": "Graph View",
-			"target": "_graph",
+			"target": "_graphview",
 			"tooltip": "Shippers Graph",
-			"visible":true, 			"parameters": {
+			"visible":true, 
+			"parameters": {
+				"target": "Shippers",
 				"objectId": "Shipper",
 				"?queryOptions": {
 					"$top": 10
@@ -1831,7 +2004,8 @@
 			"text": "Display Shippers",
 			"target": "Shippers",
 			"tooltip": "Show all Shippers",
-			"visible":true, 			"parameters": {
+			"visible":true, 
+			"parameters": {
 				"objectId": "Shipper"
 			}
 		}, {
@@ -1840,7 +2014,8 @@
 			"text": "DashBoard",
 			"target": "ShippersDashBoard",
 			"tooltip": "Show Shippers DashBoard",
-			"visible":true 		}
+			"visible":true 
+		}
 		],
 		"entity": {
 			"target": "Shipper",
@@ -1850,9 +2025,12 @@
 				"key": "graph",
 				"text": "Graph View",
 				"icon": "sap-icon://overview-chart",
-				"target": "_graph",
+				"target": "_graphview",
 				"tooltip": "Shipper Graph",
-				"visible": true
+				"visible": true,
+				"parameters": {
+					"target": "Shipper"
+				}
 			},{
 				"type":"entity",
 				"key": "linked",
@@ -1894,9 +2072,13 @@
 					"key": "graph",
 					"text": "Graph View",
 					"icon": "sap-icon://overview-chart",
-					"target": "_navigationSetGraph",
+					"target": "_graphview",
 					"tooltip": "shipsOrder Graph",
-					"visible": true
+					"visible": true,
+					"parameters": {
+						"target": "Orders",
+						"navigation": "shipsOrder"
+					}
 				}, {
 					"type":"navigationSet",
 					"key": "shipsOrder",
@@ -1928,9 +2110,11 @@
 			"type":"entitySet",
 		    "key": "graph",
 			"text": "Graph View",
-			"target": "_graph",
+			"target": "_graphview",
 			"tooltip": "Suppliers Graph",
-			"visible":true, 			"parameters": {
+			"visible":true, 
+			"parameters": {
+				"target": "Suppliers",
 				"objectId": "Supplier",
 				"?queryOptions": {
 					"$top": 10
@@ -1942,7 +2126,8 @@
 			"text": "Display Suppliers",
 			"target": "Suppliers",
 			"tooltip": "Show all Suppliers",
-			"visible":true, 			"parameters": {
+			"visible":true, 
+			"parameters": {
 				"objectId": "Supplier"
 			}
 		}, {
@@ -1951,7 +2136,8 @@
 			"text": "DashBoard",
 			"target": "SuppliersDashBoard",
 			"tooltip": "Show Suppliers DashBoard",
-			"visible":true 		}
+			"visible":true 
+		}
 		],
 		"entity": {
 			"target": "Supplier",
@@ -1961,9 +2147,12 @@
 				"key": "graph",
 				"text": "Graph View",
 				"icon": "sap-icon://overview-chart",
-				"target": "_graph",
+				"target": "_graphview",
 				"tooltip": "Supplier Graph",
-				"visible": true
+				"visible": true,
+				"parameters": {
+					"target": "Supplier"
+				}
 			},{
 				"type":"entity",
 				"key": "linked",
@@ -2017,9 +2206,13 @@
 					"key": "graph",
 					"text": "Graph View",
 					"icon": "sap-icon://overview-chart",
-					"target": "_navigationSetGraph",
+					"target": "_graphview",
 					"tooltip": "supplierRegion Graph",
-					"visible": true
+					"visible": true,
+					"parameters": {
+						"target": "Regions",
+						"navigation": "supplierRegion"
+					}
 				}, {
 					"type":"navigationSet",
 					"key": "supplierRegion",
@@ -2043,9 +2236,13 @@
 					"key": "graph",
 					"text": "Graph View",
 					"icon": "sap-icon://overview-chart",
-					"target": "_navigationSetGraph",
+					"target": "_graphview",
 					"tooltip": "suppliesProduct Graph",
-					"visible": true
+					"visible": true,
+					"parameters": {
+						"target": "Products",
+						"navigation": "suppliesProduct"
+					}
 				}, {
 					"type":"navigationSet",
 					"key": "suppliesProduct",
@@ -2077,9 +2274,11 @@
 			"type":"entitySet",
 		    "key": "graph",
 			"text": "Graph View",
-			"target": "_graph",
+			"target": "_graphview",
 			"tooltip": "SystemAEmployees Graph",
-			"visible":true, 			"parameters": {
+			"visible":true, 
+			"parameters": {
+				"target": "SystemAEmployees",
 				"objectId": "SystemAEmployee",
 				"?queryOptions": {
 					"$top": 10
@@ -2091,7 +2290,8 @@
 			"text": "Display SystemAEmployees",
 			"target": "SystemAEmployees",
 			"tooltip": "Show all SystemAEmployees",
-			"visible":true, 			"parameters": {
+			"visible":true, 
+			"parameters": {
 				"objectId": "SystemAEmployee"
 			}
 		}, {
@@ -2100,7 +2300,8 @@
 			"text": "DashBoard",
 			"target": "SystemAEmployeesDashBoard",
 			"tooltip": "Show SystemAEmployees DashBoard",
-			"visible":true 		}
+			"visible":true 
+		}
 		,{
 			"type":"returnNavigation",
 			"key": "Employee",
@@ -2108,7 +2309,8 @@
 			"icon": "$parentEntitySet.icon",
 			"target": "Employee",
 			"tooltip": "Go up to Employees",
-			"visible": true 		}
+			"visible": true 
+		}
 		],
 		"entity": {
 			"target": "SystemAEmployee",
@@ -2118,9 +2320,12 @@
 				"key": "graph",
 				"text": "Graph View",
 				"icon": "sap-icon://overview-chart",
-				"target": "_graph",
+				"target": "_graphview",
 				"tooltip": "SystemAEmployee Graph",
-				"visible": true
+				"visible": true,
+				"parameters": {
+					"target": "SystemAEmployee"
+				}
 			},{
 				"type":"entity",
 				"key": "linked",
@@ -2246,9 +2451,13 @@
 					"key": "graph",
 					"text": "Graph View",
 					"icon": "sap-icon://overview-chart",
-					"target": "_navigationSetGraph",
+					"target": "_graphview",
 					"tooltip": "employeeRegion Graph",
-					"visible": true
+					"visible": true,
+					"parameters": {
+						"target": "Regions",
+						"navigation": "employeeRegion"
+					}
 				}, {
 					"type":"navigationSet",
 					"key": "employeeRegion",
@@ -2272,9 +2481,13 @@
 					"key": "graph",
 					"text": "Graph View",
 					"icon": "sap-icon://overview-chart",
-					"target": "_navigationSetGraph",
+					"target": "_graphview",
 					"tooltip": "managesEmployee Graph",
-					"visible": true
+					"visible": true,
+					"parameters": {
+						"target": "Employees",
+						"navigation": "managesEmployee"
+					}
 				}, {
 					"type":"navigationSet",
 					"key": "managesEmployee",
@@ -2298,9 +2511,13 @@
 					"key": "graph",
 					"text": "Graph View",
 					"icon": "sap-icon://overview-chart",
-					"target": "_navigationSetGraph",
+					"target": "_graphview",
 					"tooltip": "managesOrder Graph",
-					"visible": true
+					"visible": true,
+					"parameters": {
+						"target": "Orders",
+						"navigation": "managesOrder"
+					}
 				}, {
 					"type":"navigationSet",
 					"key": "managesOrder",
@@ -2324,9 +2541,13 @@
 					"key": "graph",
 					"text": "Graph View",
 					"icon": "sap-icon://overview-chart",
-					"target": "_navigationSetGraph",
+					"target": "_graphview",
 					"tooltip": "systemACustomer Graph",
-					"visible": true
+					"visible": true,
+					"parameters": {
+						"target": "Customers",
+						"navigation": "systemACustomer"
+					}
 				}, {
 					"type":"navigationSet",
 					"key": "systemACustomer",
@@ -2350,9 +2571,13 @@
 					"key": "graph",
 					"text": "Graph View",
 					"icon": "sap-icon://overview-chart",
-					"target": "_navigationSetGraph",
+					"target": "_graphview",
 					"tooltip": "systemAEmployer Graph",
-					"visible": true
+					"visible": true,
+					"parameters": {
+						"target": "Suppliers",
+						"navigation": "systemAEmployer"
+					}
 				}, {
 					"type":"navigationSet",
 					"key": "systemAEmployer",
@@ -2376,9 +2601,13 @@
 					"key": "graph",
 					"text": "Graph View",
 					"icon": "sap-icon://overview-chart",
-					"target": "_navigationSetGraph",
+					"target": "_graphview",
 					"tooltip": "territory Graph",
-					"visible": true
+					"visible": true,
+					"parameters": {
+						"target": "Territorys",
+						"navigation": "territory"
+					}
 				}, {
 					"type":"navigationSet",
 					"key": "territory",
@@ -2402,9 +2631,13 @@
 					"key": "graph",
 					"text": "Graph View",
 					"icon": "sap-icon://overview-chart",
-					"target": "_navigationSetGraph",
+					"target": "_graphview",
 					"tooltip": "$navigationSet.name Graph",
-					"visible": true
+					"visible": true,
+					"parameters": {
+						"target":  "Employee", 
+						"navigation": "reportsTo"
+					}
 				}, {
 					"type":"navigationSet",
 					"key": "reportsTo",
@@ -2428,9 +2661,13 @@
 					"key": "graph",
 					"text": "Graph View",
 					"icon": "sap-icon://overview-chart",
-					"target": "_navigationSetGraph",
+					"target": "_graphview",
 					"tooltip": "$navigationSet.name Graph",
-					"visible": true
+					"visible": true,
+					"parameters": {
+						"target":  "Product", 
+						"navigation": "systemAFavorite"
+					}
 				}, {
 					"type":"navigationSet",
 					"key": "systemAFavorite",
@@ -2462,9 +2699,11 @@
 			"type":"entitySet",
 		    "key": "graph",
 			"text": "Graph View",
-			"target": "_graph",
+			"target": "_graphview",
 			"tooltip": "SystemAProducts Graph",
-			"visible":true, 			"parameters": {
+			"visible":true, 
+			"parameters": {
+				"target": "SystemAProducts",
 				"objectId": "SystemAProduct",
 				"?queryOptions": {
 					"$top": 10
@@ -2476,7 +2715,8 @@
 			"text": "Display SystemAProducts",
 			"target": "SystemAProducts",
 			"tooltip": "Show all SystemAProducts",
-			"visible":true, 			"parameters": {
+			"visible":true, 
+			"parameters": {
 				"objectId": "SystemAProduct"
 			}
 		}, {
@@ -2485,7 +2725,8 @@
 			"text": "DashBoard",
 			"target": "SystemAProductsDashBoard",
 			"tooltip": "Show SystemAProducts DashBoard",
-			"visible":true 		}
+			"visible":true 
+		}
 		,{
 			"type":"returnNavigation",
 			"key": "Product",
@@ -2493,7 +2734,8 @@
 			"icon": "$parentEntitySet.icon",
 			"target": "Product",
 			"tooltip": "Go up to Products",
-			"visible": true 		}
+			"visible": true 
+		}
 		],
 		"entity": {
 			"target": "SystemAProduct",
@@ -2503,9 +2745,12 @@
 				"key": "graph",
 				"text": "Graph View",
 				"icon": "sap-icon://overview-chart",
-				"target": "_graph",
+				"target": "_graphview",
 				"tooltip": "SystemAProduct Graph",
-				"visible": true
+				"visible": true,
+				"parameters": {
+					"target": "SystemAProduct"
+				}
 			},{
 				"type":"entity",
 				"key": "linked",
@@ -2583,9 +2828,13 @@
 					"key": "graph",
 					"text": "Graph View",
 					"icon": "sap-icon://overview-chart",
-					"target": "_navigationSetGraph",
+					"target": "_graphview",
 					"tooltip": "isPartOfOrderDetail Graph",
-					"visible": true
+					"visible": true,
+					"parameters": {
+						"target": "OrderDetails",
+						"navigation": "isPartOfOrderDetail"
+					}
 				}, {
 					"type":"navigationSet",
 					"key": "isPartOfOrderDetail",
@@ -2609,9 +2858,13 @@
 					"key": "graph",
 					"text": "Graph View",
 					"icon": "sap-icon://overview-chart",
-					"target": "_navigationSetGraph",
+					"target": "_graphview",
 					"tooltip": "product_orderSummary Graph",
-					"visible": true
+					"visible": true,
+					"parameters": {
+						"target": "OrderSummarys",
+						"navigation": "product_orderSummary"
+					}
 				}, {
 					"type":"navigationSet",
 					"key": "product_orderSummary",
@@ -2635,9 +2888,13 @@
 					"key": "graph",
 					"text": "Graph View",
 					"icon": "sap-icon://overview-chart",
-					"target": "_navigationSetGraph",
+					"target": "_graphview",
 					"tooltip": "$navigationSet.name Graph",
-					"visible": true
+					"visible": true,
+					"parameters": {
+						"target":  "Category", 
+						"navigation": "category"
+					}
 				}, {
 					"type":"navigationSet",
 					"key": "category",
@@ -2661,9 +2918,13 @@
 					"key": "graph",
 					"text": "Graph View",
 					"icon": "sap-icon://overview-chart",
-					"target": "_navigationSetGraph",
+					"target": "_graphview",
 					"tooltip": "$navigationSet.name Graph",
-					"visible": true
+					"visible": true,
+					"parameters": {
+						"target":  "Supplier", 
+						"navigation": "supplier"
+					}
 				}, {
 					"type":"navigationSet",
 					"key": "supplier",
@@ -2695,9 +2956,11 @@
 			"type":"entitySet",
 		    "key": "graph",
 			"text": "Graph View",
-			"target": "_graph",
+			"target": "_graphview",
 			"tooltip": "SystemBEmployees Graph",
-			"visible":true, 			"parameters": {
+			"visible":true, 
+			"parameters": {
+				"target": "SystemBEmployees",
 				"objectId": "SystemBEmployee",
 				"?queryOptions": {
 					"$top": 10
@@ -2709,7 +2972,8 @@
 			"text": "Display SystemBEmployees",
 			"target": "SystemBEmployees",
 			"tooltip": "Show all SystemBEmployees",
-			"visible":true, 			"parameters": {
+			"visible":true, 
+			"parameters": {
 				"objectId": "SystemBEmployee"
 			}
 		}, {
@@ -2718,7 +2982,8 @@
 			"text": "DashBoard",
 			"target": "SystemBEmployeesDashBoard",
 			"tooltip": "Show SystemBEmployees DashBoard",
-			"visible":true 		}
+			"visible":true 
+		}
 		,{
 			"type":"returnNavigation",
 			"key": "Employee",
@@ -2726,7 +2991,8 @@
 			"icon": "$parentEntitySet.icon",
 			"target": "Employee",
 			"tooltip": "Go up to Employees",
-			"visible": true 		}
+			"visible": true 
+		}
 		],
 		"entity": {
 			"target": "SystemBEmployee",
@@ -2736,9 +3002,12 @@
 				"key": "graph",
 				"text": "Graph View",
 				"icon": "sap-icon://overview-chart",
-				"target": "_graph",
+				"target": "_graphview",
 				"tooltip": "SystemBEmployee Graph",
-				"visible": true
+				"visible": true,
+				"parameters": {
+					"target": "SystemBEmployee"
+				}
 			},{
 				"type":"entity",
 				"key": "linked",
@@ -2852,9 +3121,13 @@
 					"key": "graph",
 					"text": "Graph View",
 					"icon": "sap-icon://overview-chart",
-					"target": "_navigationSetGraph",
+					"target": "_graphview",
 					"tooltip": "employeeRegion Graph",
-					"visible": true
+					"visible": true,
+					"parameters": {
+						"target": "Regions",
+						"navigation": "employeeRegion"
+					}
 				}, {
 					"type":"navigationSet",
 					"key": "employeeRegion",
@@ -2878,9 +3151,13 @@
 					"key": "graph",
 					"text": "Graph View",
 					"icon": "sap-icon://overview-chart",
-					"target": "_navigationSetGraph",
+					"target": "_graphview",
 					"tooltip": "managesEmployee Graph",
-					"visible": true
+					"visible": true,
+					"parameters": {
+						"target": "Employees",
+						"navigation": "managesEmployee"
+					}
 				}, {
 					"type":"navigationSet",
 					"key": "managesEmployee",
@@ -2904,9 +3181,13 @@
 					"key": "graph",
 					"text": "Graph View",
 					"icon": "sap-icon://overview-chart",
-					"target": "_navigationSetGraph",
+					"target": "_graphview",
 					"tooltip": "managesOrder Graph",
-					"visible": true
+					"visible": true,
+					"parameters": {
+						"target": "Orders",
+						"navigation": "managesOrder"
+					}
 				}, {
 					"type":"navigationSet",
 					"key": "managesOrder",
@@ -2930,9 +3211,13 @@
 					"key": "graph",
 					"text": "Graph View",
 					"icon": "sap-icon://overview-chart",
-					"target": "_navigationSetGraph",
+					"target": "_graphview",
 					"tooltip": "systemBEmployer Graph",
-					"visible": true
+					"visible": true,
+					"parameters": {
+						"target": "Suppliers",
+						"navigation": "systemBEmployer"
+					}
 				}, {
 					"type":"navigationSet",
 					"key": "systemBEmployer",
@@ -2956,9 +3241,13 @@
 					"key": "graph",
 					"text": "Graph View",
 					"icon": "sap-icon://overview-chart",
-					"target": "_navigationSetGraph",
+					"target": "_graphview",
 					"tooltip": "territory Graph",
-					"visible": true
+					"visible": true,
+					"parameters": {
+						"target": "Territorys",
+						"navigation": "territory"
+					}
 				}, {
 					"type":"navigationSet",
 					"key": "territory",
@@ -2982,9 +3271,13 @@
 					"key": "graph",
 					"text": "Graph View",
 					"icon": "sap-icon://overview-chart",
-					"target": "_navigationSetGraph",
+					"target": "_graphview",
 					"tooltip": "$navigationSet.name Graph",
-					"visible": true
+					"visible": true,
+					"parameters": {
+						"target":  "Employee", 
+						"navigation": "reportsTo"
+					}
 				}, {
 					"type":"navigationSet",
 					"key": "reportsTo",
@@ -3008,9 +3301,13 @@
 					"key": "graph",
 					"text": "Graph View",
 					"icon": "sap-icon://overview-chart",
-					"target": "_navigationSetGraph",
+					"target": "_graphview",
 					"tooltip": "$navigationSet.name Graph",
-					"visible": true
+					"visible": true,
+					"parameters": {
+						"target":  "Product", 
+						"navigation": "systemBFavorite"
+					}
 				}, {
 					"type":"navigationSet",
 					"key": "systemBFavorite",
@@ -3042,9 +3339,11 @@
 			"type":"entitySet",
 		    "key": "graph",
 			"text": "Graph View",
-			"target": "_graph",
+			"target": "_graphview",
 			"tooltip": "SystemBProducts Graph",
-			"visible":true, 			"parameters": {
+			"visible":true, 
+			"parameters": {
+				"target": "SystemBProducts",
 				"objectId": "SystemBProduct",
 				"?queryOptions": {
 					"$top": 10
@@ -3056,7 +3355,8 @@
 			"text": "Display SystemBProducts",
 			"target": "SystemBProducts",
 			"tooltip": "Show all SystemBProducts",
-			"visible":true, 			"parameters": {
+			"visible":true, 
+			"parameters": {
 				"objectId": "SystemBProduct"
 			}
 		}, {
@@ -3065,7 +3365,8 @@
 			"text": "DashBoard",
 			"target": "SystemBProductsDashBoard",
 			"tooltip": "Show SystemBProducts DashBoard",
-			"visible":true 		}
+			"visible":true 
+		}
 		,{
 			"type":"returnNavigation",
 			"key": "Product",
@@ -3073,7 +3374,8 @@
 			"icon": "$parentEntitySet.icon",
 			"target": "Product",
 			"tooltip": "Go up to Products",
-			"visible": true 		}
+			"visible": true 
+		}
 		],
 		"entity": {
 			"target": "SystemBProduct",
@@ -3083,9 +3385,12 @@
 				"key": "graph",
 				"text": "Graph View",
 				"icon": "sap-icon://overview-chart",
-				"target": "_graph",
+				"target": "_graphview",
 				"tooltip": "SystemBProduct Graph",
-				"visible": true
+				"visible": true,
+				"parameters": {
+					"target": "SystemBProduct"
+				}
 			},{
 				"type":"entity",
 				"key": "linked",
@@ -3163,9 +3468,13 @@
 					"key": "graph",
 					"text": "Graph View",
 					"icon": "sap-icon://overview-chart",
-					"target": "_navigationSetGraph",
+					"target": "_graphview",
 					"tooltip": "isPartOfOrderDetail Graph",
-					"visible": true
+					"visible": true,
+					"parameters": {
+						"target": "OrderDetails",
+						"navigation": "isPartOfOrderDetail"
+					}
 				}, {
 					"type":"navigationSet",
 					"key": "isPartOfOrderDetail",
@@ -3189,9 +3498,13 @@
 					"key": "graph",
 					"text": "Graph View",
 					"icon": "sap-icon://overview-chart",
-					"target": "_navigationSetGraph",
+					"target": "_graphview",
 					"tooltip": "product_orderSummary Graph",
-					"visible": true
+					"visible": true,
+					"parameters": {
+						"target": "OrderSummarys",
+						"navigation": "product_orderSummary"
+					}
 				}, {
 					"type":"navigationSet",
 					"key": "product_orderSummary",
@@ -3215,9 +3528,13 @@
 					"key": "graph",
 					"text": "Graph View",
 					"icon": "sap-icon://overview-chart",
-					"target": "_navigationSetGraph",
+					"target": "_graphview",
 					"tooltip": "$navigationSet.name Graph",
-					"visible": true
+					"visible": true,
+					"parameters": {
+						"target":  "Category", 
+						"navigation": "category"
+					}
 				}, {
 					"type":"navigationSet",
 					"key": "category",
@@ -3241,9 +3558,13 @@
 					"key": "graph",
 					"text": "Graph View",
 					"icon": "sap-icon://overview-chart",
-					"target": "_navigationSetGraph",
+					"target": "_graphview",
 					"tooltip": "$navigationSet.name Graph",
-					"visible": true
+					"visible": true,
+					"parameters": {
+						"target":  "Supplier", 
+						"navigation": "supplier"
+					}
 				}, {
 					"type":"navigationSet",
 					"key": "supplier",
@@ -3275,9 +3596,11 @@
 			"type":"entitySet",
 		    "key": "graph",
 			"text": "Graph View",
-			"target": "_graph",
+			"target": "_graphview",
 			"tooltip": "Territorys Graph",
-			"visible":true, 			"parameters": {
+			"visible":true, 
+			"parameters": {
+				"target": "Territorys",
 				"objectId": "Territory",
 				"?queryOptions": {
 					"$top": 10
@@ -3289,7 +3612,8 @@
 			"text": "Display Territorys",
 			"target": "Territorys",
 			"tooltip": "Show all Territorys",
-			"visible":true, 			"parameters": {
+			"visible":true, 
+			"parameters": {
 				"objectId": "Territory"
 			}
 		}, {
@@ -3298,7 +3622,8 @@
 			"text": "DashBoard",
 			"target": "TerritorysDashBoard",
 			"tooltip": "Show Territorys DashBoard",
-			"visible":true 		}
+			"visible":true 
+		}
 		],
 		"entity": {
 			"target": "Territory",
@@ -3308,9 +3633,12 @@
 				"key": "graph",
 				"text": "Graph View",
 				"icon": "sap-icon://overview-chart",
-				"target": "_graph",
+				"target": "_graphview",
 				"tooltip": "Territory Graph",
-				"visible": true
+				"visible": true,
+				"parameters": {
+					"target": "Territory"
+				}
 			},{
 				"type":"entity",
 				"key": "linked",
@@ -3364,9 +3692,13 @@
 					"key": "graph",
 					"text": "Graph View",
 					"icon": "sap-icon://overview-chart",
-					"target": "_navigationSetGraph",
+					"target": "_graphview",
 					"tooltip": "territoryOf Graph",
-					"visible": true
+					"visible": true,
+					"parameters": {
+						"target": "Employees",
+						"navigation": "territoryOf"
+					}
 				}, {
 					"type":"navigationSet",
 					"key": "territoryOf",
@@ -3390,9 +3722,13 @@
 					"key": "graph",
 					"text": "Graph View",
 					"icon": "sap-icon://overview-chart",
-					"target": "_navigationSetGraph",
+					"target": "_graphview",
 					"tooltip": "territoryRegion Graph",
-					"visible": true
+					"visible": true,
+					"parameters": {
+						"target": "Regions",
+						"navigation": "territoryRegion"
+					}
 				}, {
 					"type":"navigationSet",
 					"key": "territoryRegion",
@@ -3424,9 +3760,11 @@
 			"type":"entitySet",
 		    "key": "graph",
 			"text": "Graph View",
-			"target": "_graph",
+			"target": "_graphview",
 			"tooltip": "USStates Graph",
-			"visible":true, 			"parameters": {
+			"visible":true, 
+			"parameters": {
+				"target": "USStates",
 				"objectId": "USState",
 				"?queryOptions": {
 					"$top": 10
@@ -3438,7 +3776,8 @@
 			"text": "Display USStates",
 			"target": "USStates",
 			"tooltip": "Show all USStates",
-			"visible":true, 			"parameters": {
+			"visible":true, 
+			"parameters": {
 				"objectId": "USState"
 			}
 		}, {
@@ -3447,7 +3786,8 @@
 			"text": "DashBoard",
 			"target": "USStatesDashBoard",
 			"tooltip": "Show USStates DashBoard",
-			"visible":true 		}
+			"visible":true 
+		}
 		],
 		"entity": {
 			"target": "USState",
@@ -3457,9 +3797,12 @@
 				"key": "graph",
 				"text": "Graph View",
 				"icon": "sap-icon://overview-chart",
-				"target": "_graph",
+				"target": "_graphview",
 				"tooltip": "USState Graph",
-				"visible": true
+				"visible": true,
+				"parameters": {
+					"target": "USState"
+				}
 			},{
 				"type":"entity",
 				"key": "linked",
@@ -3501,9 +3844,13 @@
 					"key": "graph",
 					"text": "Graph View",
 					"icon": "sap-icon://overview-chart",
-					"target": "_navigationSetGraph",
+					"target": "_graphview",
 					"tooltip": "usstateRegion Graph",
-					"visible": true
+					"visible": true,
+					"parameters": {
+						"target": "Regions",
+						"navigation": "usstateRegion"
+					}
 				}, {
 					"type":"navigationSet",
 					"key": "usstateRegion",

@@ -207,7 +207,7 @@
 		"image": "./apartment/northwind/images/order.svg",
 		"grid": {
 			"target": "Orders",
-			"gridStyle":"entitySet360",
+			"gridStyle":"entitySetTable",
 			"properties": [
 				{
 					"property": "lat",
@@ -339,7 +339,11 @@
 	"Territory": {
 		"entity": "Territory",
 		"icon": "sap-icon://northwind/territory",
-		"image": "./apartment/northwind/images/territory.svg"
+		"image": "./apartment/northwind/images/territory.svg",
+		"grid": {
+			"target": "Territorys",
+			"gridStyle":"entitySet360"
+		}
 	},
 	"USState": {
 		"entity": "USState",

@@ -13,7 +13,7 @@
 			"dataService": {
 				"serviceUrl": "./../../odata2sparql/NHS360/",
 				"odataVersion": "4.0",
-				"autoExpandSelect": true,
+				"autoExpandSelect": false,
 				"operationMode": "Server",
 				"synchronizationMode": "None"
 			},

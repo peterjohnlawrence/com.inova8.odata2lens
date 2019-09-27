@@ -13,7 +13,7 @@
 			"dataService": {
 				"serviceUrl": "./../../odata2sparql/CDISC/",
 				"odataVersion": "4.0",
-				"autoExpandSelect": true,
+				"autoExpandSelect": false,
 				"operationMode": "Server",
 				"synchronizationMode": "None"
 			},
