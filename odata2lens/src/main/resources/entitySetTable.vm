@@ -86,22 +86,52 @@
 		<content>
 			<table:Table id="table"
 					cd:parameters="{ 
-					#set($numOfExpand = 0)		
+					#set($numOfExpand = 0)	
+					#set($selectprops = "")	
 					#foreach($property in $uiTemplate.properties)
-						#if(($property.visible) && ($property.propertyType == "C")) 
-							#if($numOfExpand == 0) 
-						    $expand:{#else 
-						  						, #end $property.property:{ $count:true}	
-							#set($numOfExpand = $numOfExpand + 1)
-						#end	
-						#if(($property.visible) && ($property.propertyType == "O")) 
-							#if($numOfExpand == 0) 
-						    $expand:{#else 
-						  						, #end $property.property:{ $select:'subjectId,label'}	
-							#set($numOfExpand = $numOfExpand + 1)
+						#if($property.visible)
+							#set( $complexTypeName =  $property.range)
+							#if($property.propertyType == "D")
+								#set($selectprops = $selectprops + "," + $property.property)
+							#elseif($property.propertyType == "O") 
+								#if($numOfExpand == 0) 
+							    $expand:{#else 
+							  			, #end $property.property:{$select:'subjectId,label'}	
+								#set($numOfExpand = $numOfExpand + 1)
+							#elseif($property.propertyType == "C") 
+								#if($numOfExpand == 0) 
+							    $expand:{#else 
+							  			, #end $property.property:{ $count:true}	
+								#set($numOfExpand = $numOfExpand + 1)	
+							#elseif ($property.propertyType == "S")
+								#set($selectprops = $selectprops + "," + $property.property)
+							#end
+							#foreach($subTypeName in $entity.subTypeNames)				
+								#set( $complexType = $complexTypes.get($complexTypeName))
+								#if(  $complexType.getPropertyTemplates($subTypeName)  )
+									#set( $complexProperties = $complexType.getPropertyTemplates($subTypeName))
+									#foreach( $complexProperty in   $complexProperties)
+										#if($complexProperty.propertyType == "D")
+										#elseif ($complexProperty.propertyType == "O")
+											#if($numOfExpand == 0) 
+							    $expand:{#else 
+							  			, #end '$complexProperty.property':{$select:'subjectId,label'}
+							  				#set($numOfExpand = $numOfExpand + 1)					
+										#elseif ($complexProperty.propertyType == "C")
+											#if($numOfExpand == 0) 
+							    $expand:{#else 
+							  			, #end '$complexProperty.property':{$select:'subjectId,label'}	
+							  				#set($numOfExpand = $numOfExpand + 1)			
+										#end	
+									#end
+								#else
+								#end
+							#end	
 						#end				
 					#end
-					#if($numOfExpand > 0) },#end$select:'subjectId,label,*'}"
+					#if($numOfExpand > 0)										},#end
+					
+								$select:'subjectId,label$selectprops'}"			
 				enableColumnFreeze="true" enableCellFilter="true" enableCustomFilter="false" showColumnVisibilityMenu="true" enableColumnReordering="true" enableBusyIndicator="true"
 				selectionMode="Single" width="auto" fixedColumnCount="1" visibleRowCountMode="Auto" >
 				<table:toolbar>
