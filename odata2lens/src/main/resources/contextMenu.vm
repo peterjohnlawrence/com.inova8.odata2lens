@@ -81,6 +81,90 @@
 	"datacube_Graph": {
 		"image": "./images/icons/datacube_Graph.svg"
 	},
+	"rdfs_Resource": {
+	"key": "rdfs_Resource",
+	"text": "Resources",
+	"target": "rdfs_Resources",
+	"tooltip": "Show all Resources",
+	"image": "./images/icons/rdfs_Resources.svg",
+	"icon": "sap-icon://thing-type",
+	"visible": true,
+	"parameters": {
+		"objectId": "rdfs_Resource"
+	},
+	"menu": [
+		{
+			"type": "entitySet",
+			"key": "graph",
+			"text": "Graph View",
+			"target": "_graphview",
+			"tooltip": "Resources Graph",
+			"visible": true,
+			"parameters": {
+				"target": "rdfs_Resources",
+				"objectId": "rdfs_Resources",
+				"?queryOptions": {
+					"$top": 10
+				}
+			}
+		},
+		{
+			"type": "entitySet",
+			"key": "rdfs_Resource",
+			"text": "Display Resources",
+			"target": "rdfs_Resources",
+			"tooltip": "Show all Resources",
+			"visible": true,
+			"parameters": {
+				"objectId": "rdfs_Resource"
+			}
+		},
+		{
+			"type": "entitySet",
+			"key": "DashBoard",
+			"text": "DashBoard",
+			"target": "rdfs_ResourcesDashBoard",
+			"tooltip": "Show Resource DashBoard",
+			"visible": true
+		}
+	],
+	"entity": {
+		"target": "rdfs_Resource",
+		"icon": "sap-icon://resource",
+		"menu": [
+			{
+				"type": "entity",
+				"key": "graph",
+				"text": "Graph View",
+				"icon": "sap-icon://overview-chart",
+				"target": "_graphview",
+				"tooltip": "Resource Graph",
+				"visible": true,
+				"parameters": {
+					"target": "rdfs_Resource"
+				}
+			},
+			{
+				"type": "entity",
+				"key": "linked",
+				"text": "Linked Search",
+				"icon": "sap-icon://chain-link",
+				"target": "_LinkedSearch",
+				"tooltip": "Search for things linked to this",
+				"visible": true
+			},
+			{
+				"type": "entity",
+				"key": "rdfs_Resource",
+				"text": "Details",
+				"icon": "sap-icon://detail-view",
+				"target": "rdfs_Resource",
+				"tooltip": "Resource Details",
+				"visible": true
+			}
+		]
+	}
+},
 #foreach($entityType in $entityTypes)
 	"$entityType.entitySet.name": {
 		"key": "$entityType.entitySet.name",

@@ -203,3 +203,17 @@ entity360.toggleColumns =  Toggle empty columns
 
 #~~~ EntitySet360 View ~~~~~~~~~~~~~~~~~~~~~~~~~~
 
+#~~~ Resource View ~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Resource.this = Resource
+Resource.property=Property
+Resource.term=Value
+Resource.searchThis=Search Resource
+Resource.TableTitle=Resource
+
+#~~~ Resources View ~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Resources.this=Resource
+Resources.comment=Comment
+Resources.searchThis=Search Resources
+Resources.TableTitle=Resources
