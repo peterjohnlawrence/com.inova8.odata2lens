@@ -133,7 +133,7 @@
 					
 								$select:'subjectId,label$selectprops'}"			
 				enableColumnFreeze="true" enableCellFilter="true" enableCustomFilter="false" showColumnVisibilityMenu="true" enableColumnReordering="true" enableBusyIndicator="true"
-				selectionMode="Single" width="auto" fixedColumnCount="1" visibleRowCountMode="Auto" >
+				selectionMode="Single" width="auto" visibleRowCountMode="Auto" >
 				<table:toolbar>
 					<Toolbar>
 						<ToolbarSpacer/>
