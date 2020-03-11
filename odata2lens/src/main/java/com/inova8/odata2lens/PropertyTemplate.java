@@ -9,7 +9,8 @@ public class PropertyTemplate {
 	private String aggregate;
 	private String formatOptions;
 	private String height;
-	public PropertyTemplate(String property, String propertyType, String range, Float ordinal, Boolean visible, String aggregate, String formatOptions, String height) {
+	private String listStyle;
+	public PropertyTemplate(String property, String propertyType, String range, Float ordinal, Boolean visible, String aggregate, String formatOptions, String height, String listStyle) {
 		super();
 		this.property = property;
 		this.propertyType = propertyType;
@@ -19,6 +20,24 @@ public class PropertyTemplate {
 		this.aggregate = aggregate;
 		this.formatOptions= (formatOptions==null || formatOptions.isEmpty()||formatOptions.equals("\"\"") ? null:", formatOptions:" +  formatOptions.replace(";",","));
 		this.height=height;
+		this.listStyle=listStyle;
+	}
+	public void update(String property, String propertyType, String range, Float ordinal, Boolean visible, String aggregate, String formatOptions, String height, String listStyle) {
+		this.property = property;
+		if(propertyType!=null) this.propertyType = propertyType;
+		if(range!=null) this.range = range;
+		if(ordinal!=null)this.ordinal = ordinal;
+		if(visible!=null)this.visible = visible;
+		if(aggregate!=null)this.aggregate = aggregate;		
+		if(formatOptions!=null) {
+			this.formatOptions= (formatOptions.isEmpty()||formatOptions.equals("\"\"")? null :", formatOptions:" +formatOptions.replace(";",","));
+		}
+		if(height!=null) {
+			this.height = height;
+		}
+		if(listStyle!=null) {
+			this.listStyle = listStyle;
+		}
 	}
 	public String getProperty() {
 		return property;
@@ -44,19 +63,7 @@ public class PropertyTemplate {
 	public String getHeight() {
 		return height;
 	}
-	public void update(String property, String propertyType, String range, Float ordinal, Boolean visible, String aggregate, String formatOptions, String height) {
-		this.property = property;
-		if(propertyType!=null) this.propertyType = propertyType;
-		if(range!=null) this.range = range;
-		if(ordinal!=null)this.ordinal = ordinal;
-		if(visible!=null)this.visible = visible;
-		if(aggregate!=null)this.aggregate = aggregate;		
-		if(formatOptions!=null) {
-			this.formatOptions= (formatOptions.isEmpty()||formatOptions.equals("\"\"")? null :", formatOptions:" +formatOptions.replace(";",","));
-		}
-		if(height!=null) {
-			this.height = height;
-		}
+	public String getListStyle() {
+		return listStyle;
 	}
-
 }

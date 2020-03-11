@@ -19,7 +19,8 @@
   #elseif ($range == "Edm.Int16")							<Text text="{path:'dataModel>$propertyObject.property',type:'sap.ui.model.type.Integer'$!formatOptions }" tooltip="{i18n>$target.$propertyObject.property}"/>
   #elseif ($range == "Edm.Int32")							<Text text="{path:'dataModel>$propertyObject.property',type:'sap.ui.model.type.Integer'$!formatOptions }" tooltip="{i18n>$target.$propertyObject.property}"/>
   #elseif ($range == "Edm.Int64")							<Text text="{path:'dataModel>$propertyObject.property',type:'sap.ui.model.type.Integer'$!formatOptions}" tooltip="{i18n>$target.$propertyObject.property}"/>
-  #elseif ($range == "Edm.String")							<rdf:TextLink text="{path:'dataModel>$propertyObject.property',type:'sap.ui.model.type.String' }" linkText="{i18n>$target.$propertyObject.property}" tooltip="{i18n>$target.$propertyObject.property}"/>
+  #elseif ($range == "Edm.String")							<Text text="{path:'dataModel>$propertyObject.property',type:'sap.ui.model.type.String' }"  tooltip="{i18n>$target.$propertyObject.property}"/>
+  #elseif ($range == "Edm.anyURI")							<Link text="{dataModel>$propertyObject.property}" href="{dataModel>$propertyObject.property}" tooltip="{dataModel>$propertyObject.property}" validateUrl="true"/>
   #elseif ($range == "Edm.Stream")							<Text text="{dataModel>$propertyObject.property}" tooltip="{i18n>$target.$propertyObject.property}"/>
   #elseif ($range == "Edm.Geography")							<Text text="{dataModel>$propertyObject.property}" tooltip="{i18n>$target.$propertyObject.property}"/>
   #elseif ($range == "Edm.GeographyPoint")							<Text text="{dataModel>$propertyObject.property}" tooltip="{i18n>$target.$propertyObject.property}"/>
@@ -41,8 +42,8 @@
   #end 
 #end
 <mvc:View controllerName="com.inova8.lens.controller.EntitySet360" xmlns="sap.m" xmlns:mvc="sap.ui.core.mvc" xmlns:layout="sap.ui.layout"
-	xmlns:rdf="com.inova8.lens.control" xmlns:core="sap.ui.core">
-	<Page showHeader="false" id="page" navButtonPress="onNavBack" showNavButton="true" title="{i18n>$entitySet.target.$ViewTitle}">
+	xmlns:rdf="com.inova8.lens.control" xmlns:core="sap.ui.core" xmlns:cd="http://schemas.sap.com/sapui5/extension/sap.ui.core.CustomData/1">
+	<Page showHeader="false" id="page" navButtonPress="onNavBack" showNavButton="true" title="{i18n>$entitySet.target.$ViewTitle}" cd:parameters="{'appName':'$entitySet.target', 'entityType':'$entitySet.name','entitySet':'$entitySet.name'}">
 		<content>
 			<Table id="table360" inset="false" 
 					items="{ path: 'dataModel>/$entitySet.name' 

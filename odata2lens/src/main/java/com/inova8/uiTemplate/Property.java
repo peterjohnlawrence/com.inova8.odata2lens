@@ -9,6 +9,7 @@ public class Property {
 	String aggregate;
 	String formatOptions;
 	private String height;
+	private String listStyle;
 	public String getProperty() {
 		return property;
 	}
@@ -56,5 +57,8 @@ public class Property {
 	}
 	public String getHeight() {
 		return height;
+	}
+	public String getListStyle() {
+		return listStyle;
 	}
 }

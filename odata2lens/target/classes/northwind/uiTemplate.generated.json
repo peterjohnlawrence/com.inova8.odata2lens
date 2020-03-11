@@ -115,7 +115,8 @@
 				"aggregate": "[List]",
 				"formatOptions": null,
 				"allowEdit": true,
-				"height":"4rem"
+				"height":"2rem",
+				"listStyle":"Multi"
 			}
 			]
 		}
@@ -227,7 +228,7 @@
 				"property": "customerWebsite",
 				"propertyVisible": true,
 				"propertyType": "D",
-				"propertyRange": "Edm.String",
+				"propertyRange": "Edm.anyURI",
 				"ordinal": 10,
 				"aggregate": "[]",
 				"formatOptions": ""
@@ -409,7 +410,7 @@
 				"property": "customerWebsite",
 				"propertyVisible": true,
 				"propertyType": "D",
-				"propertyRange": "Edm.String",
+				"propertyRange": "Edm.anyURI",
 				"ordinal": 10,
 				"aggregate": "[]",
 				"formatOptions": null,
@@ -464,7 +465,8 @@
 				"aggregate": "[List]",
 				"formatOptions": null,
 				"allowEdit": true,
-				"height":"4rem"
+				"height":"2rem",
+				"listStyle":"Multi"
 			}
 			,{ 
 				"property": "customer_customer_Order",
@@ -475,7 +477,8 @@
 				"aggregate": "[List]",
 				"formatOptions": null,
 				"allowEdit": true,
-				"height":"4rem"
+				"height":"2rem",
+				"listStyle":"Multi"
 			}
 			,{ 
 				"property": "hasPlacedOrder",
@@ -486,7 +489,8 @@
 				"aggregate": "[List]",
 				"formatOptions": null,
 				"allowEdit": true,
-				"height":"4rem"
+				"height":"2rem",
+				"listStyle":"Multi"
 			}
 			]
 		}
@@ -712,7 +716,7 @@
 				"property": "employeeLinkedIn",
 				"propertyVisible": true,
 				"propertyType": "D",
-				"propertyRange": "Edm.String",
+				"propertyRange": "Edm.anyURI",
 				"ordinal": 5,
 				"aggregate": "[]",
 				"formatOptions": ""
@@ -1006,7 +1010,7 @@
 				"property": "employeeLinkedIn",
 				"propertyVisible": true,
 				"propertyType": "D",
-				"propertyRange": "Edm.String",
+				"propertyRange": "Edm.anyURI",
 				"ordinal": 5,
 				"aggregate": "[]",
 				"formatOptions": null,
@@ -1231,7 +1235,8 @@
 				"aggregate": "[List]",
 				"formatOptions": null,
 				"allowEdit": true,
-				"height":"4rem"
+				"height":"2rem",
+				"listStyle":"Multi"
 			}
 			,{ 
 				"property": "managesEmployee",
@@ -1242,7 +1247,8 @@
 				"aggregate": "[List]",
 				"formatOptions": null,
 				"allowEdit": true,
-				"height":"4rem"
+				"height":"2rem",
+				"listStyle":"Multi"
 			}
 			,{ 
 				"property": "managesOrder",
@@ -1253,7 +1259,8 @@
 				"aggregate": "[List]",
 				"formatOptions": null,
 				"allowEdit": true,
-				"height":"4rem"
+				"height":"2rem",
+				"listStyle":"Multi"
 			}
 			,{ 
 				"property": "territory",
@@ -1264,7 +1271,8 @@
 				"aggregate": "[List]",
 				"formatOptions": null,
 				"allowEdit": true,
-				"height":"4rem"
+				"height":"2rem",
+				"listStyle":"Multi"
 			}
 			]
 		}
@@ -1331,10 +1339,10 @@
 				"property": "freight",
 				"propertyVisible": true,
 				"propertyType": "D",
-				"propertyRange": "Edm.String",
+				"propertyRange": "Edm.Double",
 				"ordinal": 5,
 				"aggregate": "[]",
-				"formatOptions": ""
+				"formatOptions": "{'style':'short';'maxFractionDigits':2}"
 			}	
 			,{ 
 				"property": "lat",
@@ -1598,7 +1606,7 @@
 				"property": "freight",
 				"propertyVisible": true,
 				"propertyType": "D",
-				"propertyRange": "Edm.String",
+				"propertyRange": "Edm.Double",
 				"ordinal": 5,
 				"aggregate": "[]",
 				"formatOptions": null,
@@ -1803,7 +1811,8 @@
 				"aggregate": "[List]",
 				"formatOptions": null,
 				"allowEdit": true,
-				"height":"4rem"
+				"height":"2rem",
+				"listStyle":"Multi"
 			}
 			,{ 
 				"property": "order_customer_Order",
@@ -1814,7 +1823,8 @@
 				"aggregate": "[List]",
 				"formatOptions": null,
 				"allowEdit": true,
-				"height":"4rem"
+				"height":"2rem",
+				"listStyle":"Multi"
 			}
 			,{ 
 				"property": "order_orderSummary",
@@ -1825,7 +1835,8 @@
 				"aggregate": "[List]",
 				"formatOptions": null,
 				"allowEdit": true,
-				"height":"4rem"
+				"height":"2rem",
+				"listStyle":"Multi"
 			}
 			]
 		}
@@ -2502,7 +2513,8 @@
 				"aggregate": "[List]",
 				"formatOptions": null,
 				"allowEdit": true,
-				"height":"4rem"
+				"height":"2rem",
+				"listStyle":"Multi"
 			}
 			,{ 
 				"property": "product_orderSummary",
@@ -2513,7 +2525,8 @@
 				"aggregate": "[List]",
 				"formatOptions": null,
 				"allowEdit": true,
-				"height":"4rem"
+				"height":"2rem",
+				"listStyle":"Multi"
 			}
 			]
 		}
@@ -2680,7 +2693,8 @@
 				"aggregate": "[List]",
 				"formatOptions": null,
 				"allowEdit": true,
-				"height":"4rem"
+				"height":"2rem",
+				"listStyle":"Multi"
 			}
 			]
 		}
@@ -3039,7 +3053,8 @@
 				"aggregate": "[List]",
 				"formatOptions": null,
 				"allowEdit": true,
-				"height":"4rem"
+				"height":"2rem",
+				"listStyle":"Multi"
 			}
 			,{ 
 				"property": "suppliesProduct",
@@ -3050,7 +3065,8 @@
 				"aggregate": "[List]",
 				"formatOptions": null,
 				"allowEdit": true,
-				"height":"4rem"
+				"height":"2rem",
+				"listStyle":"Multi"
 			}
 			]
 		}
@@ -3117,7 +3133,7 @@
 				"property": "employeeLinkedIn",
 				"propertyVisible": true,
 				"propertyType": "D",
-				"propertyRange": "Edm.String",
+				"propertyRange": "Edm.anyURI",
 				"ordinal": 5,
 				"aggregate": "[]",
 				"formatOptions": ""
@@ -3429,7 +3445,7 @@
 				"property": "employeeLinkedIn",
 				"propertyVisible": true,
 				"propertyType": "D",
-				"propertyRange": "Edm.String",
+				"propertyRange": "Edm.anyURI",
 				"ordinal": 5,
 				"aggregate": "[]",
 				"formatOptions": null,
@@ -3654,7 +3670,8 @@
 				"aggregate": "[List]",
 				"formatOptions": null,
 				"allowEdit": true,
-				"height":"4rem"
+				"height":"2rem",
+				"listStyle":"Multi"
 			}
 			,{ 
 				"property": "managesEmployee",
@@ -3665,7 +3682,8 @@
 				"aggregate": "[List]",
 				"formatOptions": null,
 				"allowEdit": true,
-				"height":"4rem"
+				"height":"2rem",
+				"listStyle":"Multi"
 			}
 			,{ 
 				"property": "managesOrder",
@@ -3676,7 +3694,8 @@
 				"aggregate": "[List]",
 				"formatOptions": null,
 				"allowEdit": true,
-				"height":"4rem"
+				"height":"2rem",
+				"listStyle":"Multi"
 			}
 			,{ 
 				"property": "systemACustomer",
@@ -3687,7 +3706,8 @@
 				"aggregate": "[List]",
 				"formatOptions": null,
 				"allowEdit": true,
-				"height":"4rem"
+				"height":"2rem",
+				"listStyle":"Multi"
 			}
 			,{ 
 				"property": "systemAEmployer",
@@ -3698,7 +3718,8 @@
 				"aggregate": "[List]",
 				"formatOptions": null,
 				"allowEdit": true,
-				"height":"4rem"
+				"height":"2rem",
+				"listStyle":"Multi"
 			}
 			,{ 
 				"property": "territory",
@@ -3709,7 +3730,8 @@
 				"aggregate": "[List]",
 				"formatOptions": null,
 				"allowEdit": true,
-				"height":"4rem"
+				"height":"2rem",
+				"listStyle":"Multi"
 			}
 			]
 		}
@@ -4049,7 +4071,8 @@
 				"aggregate": "[List]",
 				"formatOptions": null,
 				"allowEdit": true,
-				"height":"4rem"
+				"height":"2rem",
+				"listStyle":"Multi"
 			}
 			,{ 
 				"property": "product_orderSummary",
@@ -4060,7 +4083,8 @@
 				"aggregate": "[List]",
 				"formatOptions": null,
 				"allowEdit": true,
-				"height":"4rem"
+				"height":"2rem",
+				"listStyle":"Multi"
 			}
 			]
 		}
@@ -4127,7 +4151,7 @@
 				"property": "employeeLinkedIn",
 				"propertyVisible": true,
 				"propertyType": "D",
-				"propertyRange": "Edm.String",
+				"propertyRange": "Edm.anyURI",
 				"ordinal": 5,
 				"aggregate": "[]",
 				"formatOptions": ""
@@ -4448,7 +4472,7 @@
 				"property": "employeeLinkedIn",
 				"propertyVisible": true,
 				"propertyType": "D",
-				"propertyRange": "Edm.String",
+				"propertyRange": "Edm.anyURI",
 				"ordinal": 5,
 				"aggregate": "[]",
 				"formatOptions": null,
@@ -4693,7 +4717,8 @@
 				"aggregate": "[List]",
 				"formatOptions": null,
 				"allowEdit": true,
-				"height":"4rem"
+				"height":"2rem",
+				"listStyle":"Multi"
 			}
 			,{ 
 				"property": "managesEmployee",
@@ -4704,7 +4729,8 @@
 				"aggregate": "[List]",
 				"formatOptions": null,
 				"allowEdit": true,
-				"height":"4rem"
+				"height":"2rem",
+				"listStyle":"Multi"
 			}
 			,{ 
 				"property": "managesOrder",
@@ -4715,7 +4741,8 @@
 				"aggregate": "[List]",
 				"formatOptions": null,
 				"allowEdit": true,
-				"height":"4rem"
+				"height":"2rem",
+				"listStyle":"Multi"
 			}
 			,{ 
 				"property": "systemBEmployer",
@@ -4726,7 +4753,8 @@
 				"aggregate": "[List]",
 				"formatOptions": null,
 				"allowEdit": true,
-				"height":"4rem"
+				"height":"2rem",
+				"listStyle":"Multi"
 			}
 			,{ 
 				"property": "territory",
@@ -4737,7 +4765,8 @@
 				"aggregate": "[List]",
 				"formatOptions": null,
 				"allowEdit": true,
-				"height":"4rem"
+				"height":"2rem",
+				"listStyle":"Multi"
 			}
 			]
 		}
@@ -5077,7 +5106,8 @@
 				"aggregate": "[List]",
 				"formatOptions": null,
 				"allowEdit": true,
-				"height":"4rem"
+				"height":"2rem",
+				"listStyle":"Multi"
 			}
 			,{ 
 				"property": "product_orderSummary",
@@ -5088,7 +5118,8 @@
 				"aggregate": "[List]",
 				"formatOptions": null,
 				"allowEdit": true,
-				"height":"4rem"
+				"height":"2rem",
+				"listStyle":"Multi"
 			}
 			]
 		}
@@ -5200,7 +5231,8 @@
 				"aggregate": "[List]",
 				"formatOptions": null,
 				"allowEdit": true,
-				"height":"4rem"
+				"height":"2rem",
+				"listStyle":"Multi"
 			}
 			,{ 
 				"property": "territoryRegion",
@@ -5211,7 +5243,8 @@
 				"aggregate": "[List]",
 				"formatOptions": null,
 				"allowEdit": true,
-				"height":"4rem"
+				"height":"2rem",
+				"listStyle":"Multi"
 			}
 			]
 		}
@@ -5352,7 +5385,8 @@
 				"aggregate": "[List]",
 				"formatOptions": null,
 				"allowEdit": true,
-				"height":"4rem"
+				"height":"2rem",
+				"listStyle":"Multi"
 			}
 			]
 		}

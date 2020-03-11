@@ -149,7 +149,7 @@ public class GenerateLens {
 						for (com.inova8.uiTemplate.Property property : form.getProperties()) {
 							formTemplate.updateProperty(property.getProperty(), property.getPropertyType(),
 									property.getPropertyRange(), property.getOrdinal(), property.getPropertyVisible(),
-									property.getAggregate(), property.getFormatOptions(), property.getHeight());
+									property.getAggregate(), property.getFormatOptions(), property.getHeight(), property.getListStyle());
 						}
 					}
 				}
@@ -171,7 +171,7 @@ public class GenerateLens {
 						for (com.inova8.uiTemplate.Property property : grid.getProperties()) {
 							gridTemplate.updateProperty(property.getProperty(), property.getPropertyType(),
 									property.getPropertyRange(), property.getOrdinal(), property.getPropertyVisible(),
-									property.getAggregate(), property.getFormatOptions(), property.getHeight());
+									property.getAggregate(), property.getFormatOptions(), property.getHeight(),property.getListStyle());
 						}
 					}
 				}
@@ -204,7 +204,7 @@ public class GenerateLens {
 					formTemplate.getProperties().put(property.getOrdinal(),
 							new PropertyTemplate(property.getProperty(), property.getPropertyType(),
 									property.getPropertyRange(), property.getOrdinal(), property.getPropertyVisible(),
-									property.getAggregate(), property.getFormatOptions(), property.getHeight()));
+									property.getAggregate(), property.getFormatOptions(), property.getHeight(),property.getListStyle()));
 				}
 				uiTemplates.put(form.getTarget(), formTemplate);
 				sequence++;
@@ -216,7 +216,7 @@ public class GenerateLens {
 					gridTemplate.getProperties().put(property.getOrdinal(),
 							new PropertyTemplate(property.getProperty(), property.getPropertyType(),
 									property.getPropertyRange(), property.getOrdinal(), property.getPropertyVisible(),
-									property.getAggregate(), property.getFormatOptions(), property.getHeight()));
+									property.getAggregate(), property.getFormatOptions(), property.getHeight(),property.getListStyle()));
 				}
 				uiTemplates.put(grid.getTarget(), gridTemplate);
 			}
@@ -286,12 +286,19 @@ public class GenerateLens {
 						ComplexType complexType = new ComplexType(edmComplexType.getName());
 						complexTypes.put(edmComplexType.getFullQualifiedName().toString(), complexType);
 						String subTypeName;
+						String rdfTypeName;
 						for (String propertyName : edmComplexType.getPropertyNames()) {
 							EdmProperty edmProperty = (EdmProperty) edmComplexType.getProperty(propertyName);
 							//String name, String label, String tooltip, String range, String formatOptions
 							subTypeName = getAnnotations("", edmProperty.getAnnotations()).get("odata.subType");
+							
+							HashMap<String, String> propertyAnnotations = getAnnotations(propertyName,
+									edmProperty.getAnnotations());
+							String type = edmProperty.getType().getFullQualifiedName().toString();
+							type =  propertyAnnotations.containsKey("odata.rdfType") ? propertyAnnotations.get("odata.rdfType") : type;
+							
 							Property property = new Property(propertyName, propertyName, propertyName,
-									edmProperty.getType().getFullQualifiedName().toString(), null, false, null);
+									type, null, false, null,null);
 							if(subTypeName!=null) {
 								property.setSubTypeName(subTypeName);
 								complexType.putProperty(subTypeName, property);
@@ -307,7 +314,7 @@ public class GenerateLens {
 								EntityNavigationSet entityNavigationSet = new EntityNavigationSet(
 										navigationPropertyName, navigationPropertyName, navigationPropertyName,
 										navigationPropertyName, edmNavigationProperty.getType().getName(),
-										edmNavigationProperty.getType().getName(), "", "4rem");
+										edmNavigationProperty.getType().getName(), "", "2rem","Multi");
 								entityNavigationSet.setSubTypeName(subTypeName);
 								//entityNavigationSet.setRangeType( );
 								complexType.putNavigationSet(subTypeName, entityNavigationSet);
@@ -372,7 +379,7 @@ public class GenerateLens {
 									HashMap<String, String> propertyAnnotations = getAnnotations(propertyName,
 											edmProperty.getAnnotations());
 									String type = edmProperty.getType().getFullQualifiedName().toString();
-
+									type =  propertyAnnotations.containsKey("odata.rdfType") ? propertyAnnotations.get("odata.rdfType") : type;
 									Property property = new Property(propertyName,
 											propertyAnnotations.containsKey("sap.label")
 													? propertyAnnotations.get("sap.label")
@@ -381,7 +388,7 @@ public class GenerateLens {
 													? propertyAnnotations.get("sap.quickinfo")
 													: propertyName,
 											type, null, propertyAnnotations.containsKey("odata.FK") ? true : false,
-											null);
+											null,null);
 									if (edmProperty.isPrimitive()) {
 										//primitiveType = edmProperty.getType().getFullQualifiedName().toString();
 
@@ -419,7 +426,7 @@ public class GenerateLens {
 														: "Show " + edmEntityType.getName() + "s "
 																+ edmNavigationProperty.getType().getName(),
 												edmNavigationProperty.getType().getFullQualifiedName().getFullQualifiedNameAsString(),//.getName(),
-												range, "", "4rem");
+												range, "", "2rem","Multi");
 
 										entityNavigationSets.put(navigationPropertyName, entityNavigationSet);
 									} else {

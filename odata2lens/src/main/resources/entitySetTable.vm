@@ -1,3 +1,4 @@
+#set ($d = '$')
 #set ($ViewTitle	= "ViewTitle") 
 #set ($This	= "this") 
 #set ($SearchThis	= "searchThis") 
@@ -20,7 +21,8 @@
   #elseif ($range == "Edm.Int16")							<Text text="{path:'dataModel>$propertyObject.property',type:'sap.ui.model.type.Integer'$!formatOptions }" tooltip="{i18n>$target.$propertyObject.property}"/>
   #elseif ($range == "Edm.Int32")							<Text text="{path:'dataModel>$propertyObject.property',type:'sap.ui.model.type.Integer'$!formatOptions }" tooltip="{i18n>$target.$propertyObject.property}"/>
   #elseif ($range == "Edm.Int64")							<Text text="{path:'dataModel>$propertyObject.property',type:'sap.ui.model.type.Integer'$!formatOptions}" tooltip="{i18n>$target.$propertyObject.property}"/>
-  #elseif ($range == "Edm.String")							<rdf:TextLink text="{path:'dataModel>$propertyObject.property',type:'sap.ui.model.type.String' }" linkText="{i18n>$target.$propertyObject.property}" tooltip="{i18n>$target.$propertyObject.property}"/>
+  #elseif ($range == "Edm.String")							<Text text="{path:'dataModel>$propertyObject.property',type:'sap.ui.model.type.String' }"  tooltip="{i18n>$target.$propertyObject.property}"/>
+  #elseif ($range == "Edm.anyURI")							<Link text="{dataModel>$propertyObject.property}" href="{dataModel>$propertyObject.property}" tooltip="{dataModel>$propertyObject.property}" validateUrl="true"/>
   #elseif ($range == "Edm.Stream")							<Text text="{dataModel>$propertyObject.property}" tooltip="{i18n>$target.$propertyObject.property}"/>
   #elseif ($range == "Edm.Geography")							<Text text="{dataModel>$propertyObject.property}" tooltip="{i18n>$target.$propertyObject.property}"/>
   #elseif ($range == "Edm.GeographyPoint")							<Text text="{dataModel>$propertyObject.property}" tooltip="{i18n>$target.$propertyObject.property}"/>
@@ -44,45 +46,45 @@
 #macro( entitySetfiltertypes $propertyObject  )
 #set( $range =  $propertyObject.range)
 #set( $formatOptions =  $propertyObject.formatOptions)
-  #if ($range == "Edm.Binary")	defaultFilterOperator="EQ" filterType="sap.ui.model.type.String"
-  #elseif ($range == "Edm.Boolean")	defaultFilterOperator="EQ" filterType="sap.ui.model.type.Boolean"
-  #elseif ($range == "Edm.Byte") defaultFilterOperator="EQ" filterType="sap.ui.model.type.Integer"
-  #elseif ($range == "Edm.SByte") defaultFilterOperator="EQ" filterType="sap.ui.model.type.Integer"
-  #elseif ($range == "Edm.Date") defaultFilterOperator="EQ" filterType="sap.ui.model.type.String"
-  #elseif ($range == "Edm.DateTimeOffset") defaultFilterOperator="EQ" filterType="sap.ui.model.type.String"
-  #elseif ($range == "Edm.TimeOfDay") defaultFilterOperator="EQ" filterType="sap.ui.model.type.Time"
-  #elseif ($range == "Edm.Duration") defaultFilterOperator="EQ" filterType="sap.ui.model.type.String"
-  #elseif ($range == "Edm.Decimal") defaultFilterOperator="EQ" filterType="sap.ui.model.type.Float"
-  #elseif ($range == "Edm.Single") defaultFilterOperator="EQ" filterType="sap.ui.model.type.Float"
-  #elseif ($range == "Edm.Double") defaultFilterOperator="EQ" filterType="sap.ui.model.type.Float"
-  #elseif ($range == "Edm.Guid") defaultFilterOperator="EQ" filterType="sap.ui.model.type.String"
-  #elseif ($range == "Edm.Int16") defaultFilterOperator="EQ" filterType="sap.ui.model.type.Integer"
-  #elseif ($range == "Edm.Int32") defaultFilterOperator="EQ" filterType="sap.ui.model.type.Integer"
-  #elseif ($range == "Edm.Int64") defaultFilterOperator="EQ" filterType="sap.ui.model.type.Integer"
-  #elseif ($range == "Edm.String") defaultFilterOperator="Contains" filterType="sap.ui.model.type.String"
-  #elseif ($range == "Edm.Stream") defaultFilterOperator="EQ" filterType="sap.ui.model.type.String"
-  #elseif ($range == "Edm.Geography") defaultFilterOperator="Contains" filterType="sap.ui.model.type.String"
-  #elseif ($range == "Edm.GeographyPoint") defaultFilterOperator="Contains" filterType="sap.ui.model.type.String"
-  #elseif ($range == "Edm.GeographyLineString") defaultFilterOperator="Contains" filterType="sap.ui.model.type.String"/>
-  #elseif ($range == "Edm.GeographyPolygon") defaultFilterOperator="Contains" filterType="sap.ui.model.type.String"
-  #elseif ($range == "Edm.GeographyMultiPoint") defaultFilterOperator="Contains" filterType="sap.ui.model.type.String"
-  #elseif ($range == "Edm.GeographyMultiLineString") defaultFilterOperator="Contains" filterType="sap.ui.model.type.String"
-  #elseif ($range == "Edm.GeographyMultiPolygon") defaultFilterOperator="Contains" filterType="sap.ui.model.type.String"
-  #elseif ($range == "Edm.GeographyCollection")	defaultFilterOperator="Contains" filterType="sap.ui.model.type.String"
-  #elseif ($range == "Edm.Geometry") defaultFilterOperator="Contains" filterType="sap.ui.model.type.String"
-  #elseif ($range == "Edm.GeometryPoint") defaultFilterOperator="Contains" filterType="sap.ui.model.type.String"
-  #elseif ($range == "Edm.GeometryLineString")	defaultFilterOperator="Contains" filterType="sap.ui.model.type.String"
-  #elseif ($range == "Edm.GeometryPolygon")	defaultFilterOperator="Contains" filterType="sap.ui.model.type.String"
-  #elseif ($range == "Edm.GeometryMultiPoint")	defaultFilterOperator="Contains" filterType="sap.ui.model.type.String"
-  #elseif ($range == "Edm.GeometryMultiLineString")	defaultFilterOperator="Contains" filterType="sap.ui.model.type.String"
-  #elseif ($range == "Edm.GeometryMultiPolygon")	defaultFilterOperator="Contains" filterType="sap.ui.model.type.String"
-  #elseif ($range == "Edm.GeometryCollection")	defaultFilterOperator="Contains" filterType="sap.ui.model.type.String"
-  #else
+  #if ($range == "Edm.Binary")	defaultFilterOperator="EQ" filterType="sap.ui.model.type.String">
+  #elseif ($range == "Edm.Boolean")	defaultFilterOperator="EQ" filterType="sap.ui.model.type.Boolean">
+  #elseif ($range == "Edm.Byte") defaultFilterOperator="EQ" filterType="sap.ui.model.type.Integer">
+  #elseif ($range == "Edm.SByte") defaultFilterOperator="EQ" filterType="sap.ui.model.type.Integer">
+  #elseif ($range == "Edm.Date") defaultFilterOperator="EQ" filterType="sap.ui.model.type.String">
+  #elseif ($range == "Edm.DateTimeOffset") defaultFilterOperator="EQ" filterType="sap.ui.model.type.String">
+  #elseif ($range == "Edm.TimeOfDay") defaultFilterOperator="EQ" filterType="sap.ui.model.type.Time">
+  #elseif ($range == "Edm.Duration") defaultFilterOperator="EQ" filterType="sap.ui.model.type.String">
+  #elseif ($range == "Edm.Decimal") defaultFilterOperator="EQ" filterType="sap.ui.model.type.Float">
+  #elseif ($range == "Edm.Single") defaultFilterOperator="EQ" filterType="sap.ui.model.type.Float">
+  #elseif ($range == "Edm.Double") defaultFilterOperator="EQ" filterType="sap.ui.model.type.Float">
+  #elseif ($range == "Edm.Guid") defaultFilterOperator="EQ" filterType="sap.ui.model.type.String">
+  #elseif ($range == "Edm.Int16") defaultFilterOperator="EQ" filterType="sap.ui.model.type.Integer">
+  #elseif ($range == "Edm.Int32") defaultFilterOperator="EQ" filterType="sap.ui.model.type.Integer">
+  #elseif ($range == "Edm.Int64") defaultFilterOperator="EQ" filterType="sap.ui.model.type.Integer">
+  #elseif ($range == "Edm.String") defaultFilterOperator="Contains" filterType="sap.ui.model.type.String">
+  #elseif ($range == "Edm.Stream") defaultFilterOperator="EQ" filterType="sap.ui.model.type.String">
+  #elseif ($range == "Edm.Geography") defaultFilterOperator="Contains" filterType="sap.ui.model.type.String">
+  #elseif ($range == "Edm.GeographyPoint") defaultFilterOperator="Contains" filterType="sap.ui.model.type.String">
+  #elseif ($range == "Edm.GeographyLineString") defaultFilterOperator="Contains" filterType="sap.ui.model.type.String">
+  #elseif ($range == "Edm.GeographyPolygon") defaultFilterOperator="Contains" filterType="sap.ui.model.type.String">
+  #elseif ($range == "Edm.GeographyMultiPoint") defaultFilterOperator="Contains" filterType="sap.ui.model.type.String">
+  #elseif ($range == "Edm.GeographyMultiLineString") defaultFilterOperator="Contains" filterType="sap.ui.model.type.String">
+  #elseif ($range == "Edm.GeographyMultiPolygon") defaultFilterOperator="Contains" filterType="sap.ui.model.type.String">
+  #elseif ($range == "Edm.GeographyCollection")	defaultFilterOperator="Contains" filterType="sap.ui.model.type.String">
+  #elseif ($range == "Edm.Geometry") defaultFilterOperator="Contains" filterType="sap.ui.model.type.String">
+  #elseif ($range == "Edm.GeometryPoint") defaultFilterOperator="Contains" filterType="sap.ui.model.type.String">
+  #elseif ($range == "Edm.GeometryLineString")	defaultFilterOperator="Contains" filterType="sap.ui.model.type.String">
+  #elseif ($range == "Edm.GeometryPolygon")	defaultFilterOperator="Contains" filterType="sap.ui.model.type.String">
+  #elseif ($range == "Edm.GeometryMultiPoint")	defaultFilterOperator="Contains" filterType="sap.ui.model.type.String">
+  #elseif ($range == "Edm.GeometryMultiLineString")	defaultFilterOperator="Contains" filterType="sap.ui.model.type.String">
+  #elseif ($range == "Edm.GeometryMultiPolygon")	defaultFilterOperator="Contains" filterType="sap.ui.model.type.String">
+  #elseif ($range == "Edm.GeometryCollection")	defaultFilterOperator="Contains" filterType="sap.ui.model.type.String">
+  #else >
   #end 
 #end
 <mvc:View controllerName="com.inova8.lens.controller.EntitySetTable" xmlns="sap.m" xmlns:mvc="sap.ui.core.mvc"
 	xmlns:layout="sap.ui.layout" xmlns:rdf="com.inova8.lens.control" xmlns:core="sap.ui.core" xmlns:table="sap.ui.table" xmlns:cd="http://schemas.sap.com/sapui5/extension/sap.ui.core.CustomData/1">
-	<Page showHeader="false" id="page" navButtonPress="onNavBack" showNavButton="true" title="{i18n>$entitySet.target.$ViewTitle}">
+	<Page showHeader="false" id="page" navButtonPress="onNavBack" showNavButton="true" title="{i18n>$entitySet.target.$ViewTitle}" cd:parameters="{'appName':'$entitySet.target', 'entityType':'$entitySet.name','entitySet':'$entitySet.name'}">
 		<content>
 			<table:Table id="table"
 					cd:parameters="{ 
@@ -133,7 +135,7 @@
 					
 								$select:'subjectId,label$selectprops'}"			
 				enableColumnFreeze="true" enableCellFilter="true" enableCustomFilter="false" showColumnVisibilityMenu="true" enableColumnReordering="true" enableBusyIndicator="true"
-				selectionMode="Single" width="auto" visibleRowCountMode="Auto" >
+				selectionMode="Single" width="auto" visibleRowCountMode="Auto" rowSelectionChange=".onRowSelectionChange">
 				<table:toolbar>
 					<Toolbar>
 						<ToolbarSpacer/>
@@ -150,6 +152,12 @@
 						</HBox>
 						<Title id="tableHeader" text="{entitySetView>/entitySetTableTitle}"/>
 						<ToolbarSpacer/>
+						<Button id="remove" icon="sap-icon://negative"  press="onRemovePress" 	visible="{= ${d}{entitySetView>/rowSelected} &amp;&amp; ${d}{entitySetView>/navigationSet}}" tooltip="{= ${d}{i18n>crud.remove.tooltip1} + ' ' + '$entitySet.name' +' '+ ${d}{i18n>crud.remove.tooltip2}}">
+						</Button>
+						<Button id="delete" icon="sap-icon://delete"  press="onDeletePress" 	visible="{= ${d}{entitySetView>/rowSelected} &amp;&amp; !${d}{entitySetView>/navigationSet}}" tooltip="{= ${d}{i18n>crud.delete.tooltip1} + ' ' + '$entitySet.name' +' '+ ${d}{i18n>crud.delete.tooltip2}}">
+						</Button>
+						<Button id="add" icon="sap-icon://positive"   press="onAddPress" visible="{entitySetView>/navigationSet}" 	tooltip="{= ${d}{i18n>crud.add.tooltip} + ' ' + '$entitySet.name'}"/>
+						<Button id="create" icon="sap-icon://create-form"   press="onCreatePress" 	tooltip="{= ${d}{i18n>crud.create.tooltip} + ' ' + '$entitySet.name'}"/>
 						<Button
 							icon="sap-icon://sort"
 							tooltip="{i18n>search.clearAllSorts}"
@@ -176,7 +184,7 @@
 								#elseif ($property.propertyType == "S")	
 					<table:Column id="$property.property" minWidth="150" autoResizable="true" showFilterMenuEntry="false" showSortMenuEntry="false">
 								#else
-					<table:Column id="$property.property"  minWidth="150" autoResizable="true" sortProperty="$property.property" filterProperty="$property.property" showFilterMenuEntry="true" showSortMenuEntry="true" #entitySetfiltertypes($property ) >								
+					<table:Column id="$property.property"  minWidth="150" autoResizable="true" sortProperty="$property.property" filterProperty="$property.property" showFilterMenuEntry="true" showSortMenuEntry="true" #entitySetfiltertypes($property )								
 								#end
 						<Label text="{i18n>$entitySet.target.$property.property}"/>
 						<table:template>

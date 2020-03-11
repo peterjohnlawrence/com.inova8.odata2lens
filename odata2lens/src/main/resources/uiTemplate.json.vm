@@ -183,7 +183,8 @@
 				"aggregate": "[List]",
 				"formatOptions": null,
 				"allowEdit": true,
-				"height":"4rem"
+				"height":"$entityNavigationSet.height",
+				"listStyle":"$entityNavigationSet.listStyle"
 			}
 	#set ($numSoFar = $numSoFar + 1  )
 	#end		

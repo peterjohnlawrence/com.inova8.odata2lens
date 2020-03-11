@@ -136,6 +136,19 @@
 			"target": [
 				"_graph"
 			]
+		},{
+			"pattern": "rdfs_Resources/:objectId:/:navigation::?queryOptions:",
+			"name": "rdfs_Resources",
+			"target": [
+				"rdfs_Resources"
+			]
+		}	
+		,{
+			"pattern": "rdfs_Resource/:objectId:/:navigation::?queryOptions:",
+			"name": "rdfs_Resource",
+			"target": [
+				"rdfs_Resource"
+			]
 		}
 		,{
 			"pattern": "Categorys/:objectId:/:navigation::?queryOptions:",
@@ -481,6 +494,16 @@
 			"_notFound": {
 				"viewName": "NotFound",
 				"viewId": "notFound"
+			},
+			"rdfs_Resources": {
+				"viewName": "rdfs_Resources",
+				"viewId": "rdfs_Resources",
+				"viewLevel": 1
+			}
+			,"rdfs_Resource": {
+				"viewName": "rdfs_Resource",
+				"viewId": "rdfs_Resource",
+				"viewLevel": 1
 			}
 			,"Categorys": {
 				"viewName": "view/entitySet/Categorys/Categorys",

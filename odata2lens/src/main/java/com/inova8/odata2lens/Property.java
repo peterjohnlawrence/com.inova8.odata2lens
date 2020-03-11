@@ -10,8 +10,8 @@ public class Property {
 	ComplexType complexRange;
 	String formatOptions="";
 	String height="";
-
-	public Property(String name, String label, String tooltip, String range, String formatOptions, Boolean isFK, String height) {
+	String listStyle="List";
+	public Property(String name, String label, String tooltip, String range, String formatOptions, Boolean isFK, String height, String listStyle) {
 		this.name = name;
 
 		this.label = label;
@@ -32,6 +32,11 @@ public class Property {
 			this.height="4rem";
 		}else {
 			this.height=height;
+		}
+		if(listStyle==null|| listStyle=="") {
+			this.listStyle="List";
+		}else {
+			this.listStyle=listStyle;
 		}
 	}
 
@@ -93,5 +98,8 @@ public class Property {
 	}
 	public String getHeight() {
 		return height;
+	}
+	public String getListStyle() {
+		return listStyle;
 	}
 }

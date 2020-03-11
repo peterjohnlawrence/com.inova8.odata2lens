@@ -22,13 +22,13 @@
 		"image": "./apartment/northwind/images/customer.svg",
 		"form": {
 			"target": "Customer",
-			"formStyle":"entity360",
+			"formStyle": "entity360",
 			"targetVisible": true,
 			"targetIcon": "sap-icon://expand-group",
 			"targetEntity": "Customer",
-			"allowEdit" : true,
-			"properties": [		
-	{ 
+			"allowEdit": true,
+			"properties": [
+				{
 					"property": "customer_customer_Order",
 					"propertyVisible": false,
 					"propertyType": "C",
@@ -37,8 +37,33 @@
 					"aggregate": "[List]",
 					"formatOptions": null,
 					"allowEdit": true,
-					"height":"4rem"
-				}		]
+					"height": "4rem"
+				},
+			{ 
+				"property": "customerRegion",
+				"propertyVisible": true,
+				"propertyType": "C",
+				"propertyRange": "Region",
+				"ordinal": 15,
+				"aggregate": "[List]",
+				"formatOptions": null,
+				"allowEdit": true,
+				"height":"2rem",
+				"listStyle":"Multi"
+			},
+				{
+					"property": "hasPlacedOrder",
+					"propertyVisible": true,
+					"propertyType": "C",
+					"propertyRange": "Order",
+					"ordinal": 17,
+					"aggregate": "[List]",
+					"formatOptions": null,
+					"allowEdit": true,
+					"height": "2rem",
+					"listStyle": "Multi"
+				}
+			]
 		}
 	},
 	"Employee": {
@@ -47,7 +72,7 @@
 		"image": "./apartment/northwind/images/employee.svg",
 		"form": {
 			"target": "Employee",
-			"formStyle":"entity360",
+			"formStyle": "entity360",
 			"targetVisible": true,
 			"targetIcon": "sap-icon://northwind/employee",
 			"targetEntity": "Employee",
@@ -74,7 +99,7 @@
 		},
 		"grid": {
 			"target": "Employees",
-			"gridStyle":"entitySetTable",
+			"gridStyle": "entitySetTable",
 			"targetVisible": true,
 			"targetIcon": "sap-icon://northwind/employee",
 			"targetEntity": "Employee",
@@ -207,7 +232,7 @@
 		"image": "./apartment/northwind/images/order.svg",
 		"grid": {
 			"target": "Orders",
-			"gridStyle":"entitySetTable",
+			"gridStyle": "entitySetTable",
 			"properties": [
 				{
 					"property": "lat",
@@ -217,17 +242,18 @@
 					"ordinal": 0.5,
 					"aggregate": "[]",
 					"formatOptions": ""
-				}]
-				},
+				}
+			]
+		},
 		"form": {
 			"target": "Order",
-			"formStyle":"entity360",
+			"formStyle": "entity360",
 			"targetVisible": true,
 			"targetIcon": "sap-icon://expand-group",
 			"targetEntity": "Order",
-			"allowEdit" : true,
-			"properties": [		
-					{ 
+			"allowEdit": true,
+			"properties": [
+				{
 					"property": "order_customer_Order",
 					"propertyVisible": false,
 					"propertyType": "C",
@@ -236,9 +262,9 @@
 					"aggregate": "[List]",
 					"formatOptions": null,
 					"allowEdit": true,
-					"height":"4rem"
-				}
-				,{ 
+					"height": "4rem"
+				},
+				{
 					"property": "order_orderSummary",
 					"propertyVisible": false,
 					"propertyType": "C",
@@ -247,7 +273,7 @@
 					"aggregate": "[List]",
 					"formatOptions": null,
 					"allowEdit": true,
-					"height":"4rem"
+					"height": "4rem"
 				}
 			]
 		}
@@ -275,26 +301,26 @@
 		"entity": "Product",
 		"icon": "sap-icon://northwind/product",
 		"image": "./apartment/northwind/images/product.svg",
-			"form": {
-		"target": "Product",
-		"formStyle":"entity360",
-		"targetVisible": true,
-		"targetIcon": "sap-icon://expand-group",
-		"targetEntity": "Product",
-		"allowEdit" : true,
-		"properties": [		
-		{ 
-				"property": "product_orderSummary",
-				"propertyVisible": false,
-				"propertyType": "C",
-				"propertyRange": "OrderSummary",
-				"ordinal": 16,
-				"aggregate": "[List]",
-				"formatOptions": null,
-				"allowEdit": true,
-				"height":"4rem"
-			}
-		]
+		"form": {
+			"target": "Product",
+			"formStyle": "entity360",
+			"targetVisible": true,
+			"targetIcon": "sap-icon://expand-group",
+			"targetEntity": "Product",
+			"allowEdit": true,
+			"properties": [
+				{
+					"property": "product_orderSummary",
+					"propertyVisible": false,
+					"propertyType": "C",
+					"propertyRange": "OrderSummary",
+					"ordinal": 16,
+					"aggregate": "[List]",
+					"formatOptions": null,
+					"allowEdit": true,
+					"height": "4rem"
+				}
+			]
 		}
 	},
 	"Region": {
@@ -342,7 +368,7 @@
 		"image": "./apartment/northwind/images/territory.svg",
 		"grid": {
 			"target": "Territorys",
-			"gridStyle":"entitySet360"
+			"gridStyle": "entitySet360"
 		}
 	},
 	"USState": {
