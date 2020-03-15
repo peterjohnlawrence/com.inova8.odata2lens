@@ -29,7 +29,7 @@ public class Property {
 		}
 		this.isFK = isFK;	
 		if(height==null|| height=="") {
-			this.height="4rem";
+			this.height="2rem";
 		}else {
 			this.height=height;
 		}
