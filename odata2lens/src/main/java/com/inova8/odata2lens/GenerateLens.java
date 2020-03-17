@@ -149,7 +149,7 @@ public class GenerateLens {
 						for (com.inova8.uiTemplate.Property property : form.getProperties()) {
 							formTemplate.updateProperty(property.getProperty(), property.getPropertyType(),
 									property.getPropertyRange(), property.getOrdinal(), property.getPropertyVisible(),
-									property.getAggregate(), property.getFormatOptions(), property.getHeight(), property.getListStyle());
+									property.getAggregate(), property.getFormatOptions(), property.getHeight(), property.getStyle(), property.getNullable());
 						}
 					}
 				}
@@ -171,7 +171,7 @@ public class GenerateLens {
 						for (com.inova8.uiTemplate.Property property : grid.getProperties()) {
 							gridTemplate.updateProperty(property.getProperty(), property.getPropertyType(),
 									property.getPropertyRange(), property.getOrdinal(), property.getPropertyVisible(),
-									property.getAggregate(), property.getFormatOptions(), property.getHeight(),property.getListStyle());
+									property.getAggregate(), property.getFormatOptions(), property.getHeight(),property.getStyle(), property.getNullable());
 						}
 					}
 				}
@@ -204,7 +204,7 @@ public class GenerateLens {
 					formTemplate.getProperties().put(property.getOrdinal(),
 							new PropertyTemplate(property.getProperty(), property.getPropertyType(),
 									property.getPropertyRange(), property.getOrdinal(), property.getPropertyVisible(),
-									property.getAggregate(), property.getFormatOptions(), property.getHeight(),property.getListStyle()));
+									property.getAggregate(), property.getFormatOptions(), property.getHeight(),property.getStyle(),property.getNullable()));
 				}
 				uiTemplates.put(form.getTarget(), formTemplate);
 				sequence++;
@@ -216,7 +216,7 @@ public class GenerateLens {
 					gridTemplate.getProperties().put(property.getOrdinal(),
 							new PropertyTemplate(property.getProperty(), property.getPropertyType(),
 									property.getPropertyRange(), property.getOrdinal(), property.getPropertyVisible(),
-									property.getAggregate(), property.getFormatOptions(), property.getHeight(),property.getListStyle()));
+									property.getAggregate(), property.getFormatOptions(), property.getHeight(),property.getStyle(),property.getNullable()));
 				}
 				uiTemplates.put(grid.getTarget(), gridTemplate);
 			}
@@ -298,7 +298,7 @@ public class GenerateLens {
 							type =  propertyAnnotations.containsKey("odata.rdfType") ? propertyAnnotations.get("odata.rdfType") : type;
 							
 							Property property = new Property(propertyName, propertyName, propertyName,
-									type, null, false, null,null);
+									type, null, false, "2rem","Input",edmProperty.isNullable());
 							if(subTypeName!=null) {
 								property.setSubTypeName(subTypeName);
 								complexType.putProperty(subTypeName, property);
@@ -314,7 +314,7 @@ public class GenerateLens {
 								EntityNavigationSet entityNavigationSet = new EntityNavigationSet(
 										navigationPropertyName, navigationPropertyName, navigationPropertyName,
 										navigationPropertyName, edmNavigationProperty.getType().getName(),
-										edmNavigationProperty.getType().getName(), "", "2rem","Multi");
+										edmNavigationProperty.getType().getName(), "", "2rem","Multi",edmNavigationProperty.isNullable());
 								entityNavigationSet.setSubTypeName(subTypeName);
 								//entityNavigationSet.setRangeType( );
 								complexType.putNavigationSet(subTypeName, entityNavigationSet);
@@ -323,7 +323,7 @@ public class GenerateLens {
 								NavigationProperty navigationProperty = new NavigationProperty(navigationPropertyName,
 										navigationPropertyName, navigationPropertyName,
 										edmNavigationProperty.getType().getName(),
-										edmNavigationProperty.getType().getName(), null);
+										edmNavigationProperty.getType().getName(), null, "2rem","Single",edmNavigationProperty.isNullable());
 								navigationProperty.setSubTypeName(subTypeName);
 								//navigationProperty.setRangeType(subTypeName);
 								complexType.putNavigationProperty(subTypeName, navigationProperty);
@@ -388,7 +388,7 @@ public class GenerateLens {
 													? propertyAnnotations.get("sap.quickinfo")
 													: propertyName,
 											type, null, propertyAnnotations.containsKey("odata.FK") ? true : false,
-											null,null);
+											"2rem","Input",edmProperty.isNullable());
 									if (edmProperty.isPrimitive()) {
 										//primitiveType = edmProperty.getType().getFullQualifiedName().toString();
 
@@ -426,7 +426,7 @@ public class GenerateLens {
 														: "Show " + edmEntityType.getName() + "s "
 																+ edmNavigationProperty.getType().getName(),
 												edmNavigationProperty.getType().getFullQualifiedName().getFullQualifiedNameAsString(),//.getName(),
-												range, "", "2rem","Multi");
+												range, "", "2rem","Multi",edmNavigationProperty.isNullable());
 
 										entityNavigationSets.put(navigationPropertyName, entityNavigationSet);
 									} else {
@@ -439,7 +439,7 @@ public class GenerateLens {
 														? navigationPropertyAnnotations.get("sap.quickinfo")
 														: "Show " + navigationPropertyName,
 												edmNavigationProperty.getType().getFullQualifiedName().getFullQualifiedNameAsString(),//.getName(),
-												range, "");
+												range, "", "2rem","Single",edmNavigationProperty.isNullable());
 										navigationProperties.put(navigationPropertyName, navigationProperty);
 									}
 								}

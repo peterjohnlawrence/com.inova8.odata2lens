@@ -181,7 +181,7 @@ public class ComplexType {
 			for (Property property : subTypeProperties) {
 				propertyTemplates.add(new PropertyTemplate(//String property, String propertyType, String range, Float ordinal, boolean visible, String aggregate, String formatOptions
 						name + "/" + property.getName(), "D", property.getRange(), null, true, "[]",
-						property.getFormatOptions(), property.getHeight(), property.getListStyle()));
+						property.getFormatOptions(), property.getHeight(), property.getStyle(), property.getNullable()));
 			}
 
 		} else if (navigationProperties.containsKey(subTypeName)) {
@@ -189,7 +189,7 @@ public class ComplexType {
 			for (NavigationProperty navigationProperty : subTypeNavigationProperties) {
 				propertyTemplates.add(new PropertyTemplate(//String property, String propertyType, String range, Float ordinal, boolean visible, String aggregate, String formatOptions
 						name + "/" + navigationProperty.getName(), "O", navigationProperty.getRange(), null, true, "[]",
-						"","", ""));
+						"","", "", navigationProperty.getNullable()));
 			}
 
 		} else if (navigationSets.containsKey(subTypeName)) {
@@ -197,7 +197,7 @@ public class ComplexType {
 			for (EntityNavigationSet entityNavigationSet : subTypeNavigationSets) {
 				propertyTemplates.add(new PropertyTemplate(//String property, String propertyType, String range, Float ordinal, boolean visible, String aggregate, String formatOptions
 						name + "/" + entityNavigationSet.getName(), "C", entityNavigationSet.getRange(), null, true,
-						"[]", "", entityNavigationSet.getHeight(), entityNavigationSet.getListStyle()));
+						"[]", "", entityNavigationSet.getHeight(), entityNavigationSet.getStyle(), entityNavigationSet.getNullable()));
 			}
 		}
 		if (propertyTemplates.size() > 0) {

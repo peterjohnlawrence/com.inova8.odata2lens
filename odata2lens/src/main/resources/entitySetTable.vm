@@ -152,6 +152,8 @@
 						</HBox>
 						<Title id="tableHeader" text="{entitySetView>/entitySetTableTitle}"/>
 						<ToolbarSpacer/>
+						<Button id="replace" icon="sap-icon://repost"  press="onReplacePress" 	visible="{= ${d}{entitySetView>/rowSelected} &amp;&amp; ${d}{entitySetView>/navigationSet}}" tooltip="{= ${d}{i18n>crud.replace.tooltip1} + ' ' + '$entitySet.name' +' '+ ${d}{i18n>crud.replace.tooltip2}}">
+						</Button>
 						<Button id="remove" icon="sap-icon://negative"  press="onRemovePress" 	visible="{= ${d}{entitySetView>/rowSelected} &amp;&amp; ${d}{entitySetView>/navigationSet}}" tooltip="{= ${d}{i18n>crud.remove.tooltip1} + ' ' + '$entitySet.name' +' '+ ${d}{i18n>crud.remove.tooltip2}}">
 						</Button>
 						<Button id="delete" icon="sap-icon://delete"  press="onDeletePress" 	visible="{= ${d}{entitySetView>/rowSelected} &amp;&amp; !${d}{entitySetView>/navigationSet}}" tooltip="{= ${d}{i18n>crud.delete.tooltip1} + ' ' + '$entitySet.name' +' '+ ${d}{i18n>crud.delete.tooltip2}}">

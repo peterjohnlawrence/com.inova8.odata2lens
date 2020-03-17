@@ -145,7 +145,7 @@ public class UITemplate {
 	}
 
 	public void updateProperty(String property, String propertyType, String range, Float ordinal, Boolean visible,
-			String aggregate, String formatOptions, String height, String listStyle) {
+			String aggregate, String formatOptions, String height, String style, Boolean nullable) {
 		if (ordinal != null) {
 			Float currentOrdinal = null;
 			PropertyTemplate currentTemplate = null;
@@ -168,7 +168,9 @@ public class UITemplate {
 						(aggregate == null) ? currentTemplate.getAggregate() : aggregate,
 						(formatOptions == null) ? currentTemplate.getFormatOptions() : formatOptions,
 						(height == null) ? currentTemplate.getHeight() : height	,	
-						(listStyle == null) ? currentTemplate.getListStyle() : listStyle					
+						(style == null) ? currentTemplate.getStyle() : style	,
+								(nullable == null) ? currentTemplate.getNullable() : nullable
+								
 						);
 				properties.remove(currentOrdinal);
 				properties.put(ordinal + increment, propertyTemplate);
@@ -176,7 +178,7 @@ public class UITemplate {
 		} else {
 			for (PropertyTemplate propertyTemplate : properties.values()) {
 				if (propertyTemplate.getProperty().equals(property)) {
-					propertyTemplate.update(property, propertyType, range, ordinal, visible, aggregate, formatOptions, height,listStyle);
+					propertyTemplate.update(property, propertyType, range, ordinal, visible, aggregate, formatOptions, height,style,nullable);
 					break;
 				}
 			}

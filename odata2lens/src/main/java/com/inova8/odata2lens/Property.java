@@ -10,8 +10,10 @@ public class Property {
 	ComplexType complexRange;
 	String formatOptions="";
 	String height="";
-	String listStyle="List";
-	public Property(String name, String label, String tooltip, String range, String formatOptions, Boolean isFK, String height, String listStyle) {
+	String style="List";
+	String styletag ="Input ";
+	Boolean nullable = true;
+	public Property(String name, String label, String tooltip, String range, String formatOptions, Boolean isFK, String height, String style,Boolean nullable) {
 		this.name = name;
 
 		this.label = label;
@@ -33,10 +35,15 @@ public class Property {
 		}else {
 			this.height=height;
 		}
-		if(listStyle==null|| listStyle=="") {
-			this.listStyle="List";
+		if(style==null|| style=="") {
+			this.style="List";
 		}else {
-			this.listStyle=listStyle;
+			this.style=style;
+		}
+		if(nullable==null) {
+			this.nullable=true;
+		}else {
+			this.nullable=nullable;
 		}
 	}
 
@@ -99,7 +106,13 @@ public class Property {
 	public String getHeight() {
 		return height;
 	}
-	public String getListStyle() {
-		return listStyle;
+	public String getStyle() {
+		return style;
+	}
+	public String getStyletag() {
+		return styletag;
+	}
+	public Boolean getNullable() {
+		return nullable;
 	}
 }

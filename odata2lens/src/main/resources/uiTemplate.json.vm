@@ -31,7 +31,11 @@
 				"propertyRange": "$property.range",
 				"ordinal": $numSoFar,
 				"aggregate": "[]",
-				"formatOptions": "$property.formatOptions"
+				"formatOptions": "$property.formatOptions",
+				"allowEdit": false,
+				"height":"$property.height",
+				"style":"$property.style",
+				"nullable":"$property.nullable"
 			}
 		#else
 			#if ($firstGridProperty ) 
@@ -46,7 +50,11 @@
 				"propertyRange": "$property.range",
 				"ordinal": $numSoFar,
 				"aggregate": "[]",
-				"formatOptions": ""
+				"formatOptions": "",
+				"allowEdit": false,
+				"height":"$property.height",
+				"style":"$property.style",
+				"nullable":"$property.nullable"
 			}
 		#end
 	#else
@@ -62,7 +70,11 @@
 				"propertyRange": "$property.range",
 				"ordinal": $numSoFar,
 				"aggregate": "[]",
-				"formatOptions": "$property.formatOptions"
+				"formatOptions": "$property.formatOptions",
+				"allowEdit": false,
+				"height":"$property.height",
+				"style":"$property.style",
+				"nullable":"$property.nullable"
 			}	
 	#end
 	#set ($numSoFar = $numSoFar + 1  )
@@ -80,7 +92,11 @@
 				"propertyRange": "$navigationProperty.range",
 				"ordinal": $numSoFar,
 				"aggregate": "[]",
-				"formatOptions": ""
+				"formatOptions": "",
+				"allowEdit": false,
+				"height":"$navigationProperty.height",
+				"style":"$navigationProperty.style",
+				"nullable":"$navigationProperty.nullable"
 			}	
 		#set ($numSoFar = $numSoFar + 1  )
 	#end	
@@ -97,7 +113,11 @@
 				"propertyRange": "$entityNavigationSet.range",
 				"ordinal": $numSoFar,
 				"aggregate": "[Count]",
-				"formatOptions": ""
+				"formatOptions": "",
+				"allowEdit": false,
+				"height":"$entityNavigationSet.height",
+				"style":"$entityNavigationSet.style",
+				"nullable":"$entityNavigationSet.nullable"
 			}	
 		#set ($numSoFar = $numSoFar + 1  )
 	#end	
@@ -129,7 +149,10 @@
 				"ordinal": $numSoFar,
 				"aggregate": "[]",
 				"formatOptions": null,
-				"allowEdit": true
+				"allowEdit": true,
+				"height":"$property.height",
+				"style":"$property.style",
+				"nullable":"$property.nullable"
 			}
 		#else	
 			#if ($firstFormProperty ) 
@@ -145,7 +168,10 @@
 				"ordinal": $numSoFar,
 				"aggregate": "[]",
 				"formatOptions": null,
-				"allowEdit": true
+				"allowEdit": true,
+				"height":"$property.height",
+				"style":"$property.style",
+				"nullable":"$property.nullable"
 			}
 	#end
 	#set ($numSoFar = $numSoFar + 1  )
@@ -164,7 +190,10 @@
 				"ordinal": $numSoFar,
 				"aggregate": "[]",
 				"formatOptions": null,
-				"allowEdit": true
+				"allowEdit": true ,				
+				"height":"$navigationProperty.height",
+				"style":"$navigationProperty.style",
+				"nullable":"$navigationProperty.nullable"
 			}
 	#set ($numSoFar = $numSoFar + 1  )
 	#end	
@@ -184,7 +213,8 @@
 				"formatOptions": null,
 				"allowEdit": true,
 				"height":"$entityNavigationSet.height",
-				"listStyle":"$entityNavigationSet.listStyle"
+				"style":"$entityNavigationSet.style",
+				"nullable":"$entityNavigationSet.nullable"
 			}
 	#set ($numSoFar = $numSoFar + 1  )
 	#end		

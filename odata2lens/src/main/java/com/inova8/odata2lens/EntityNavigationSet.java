@@ -13,10 +13,11 @@ public class EntityNavigationSet {
 	 EntityType rangeType;
 	 String subTypeName;
 	 String height;
-	 String listStyle;
+	 String style;
+	 Boolean nullable;
 
 	public EntityNavigationSet(String name, String target, String label, String tooltip, String targetEntityType,
-			String range, String icon, String height, String listStyle) {
+			String range, String icon, String height, String style, Boolean nullable) {
 		this.name = name;
 		this.target = target;
 		this.label = label;
@@ -25,7 +26,8 @@ public class EntityNavigationSet {
 		this.range = range;
 		this.icon = icon;
 		this.height = height;
-		this.listStyle = listStyle;
+		this.style = style;
+		this.nullable = nullable;
 	}
 
 	public String getName() {
@@ -89,10 +91,13 @@ public class EntityNavigationSet {
 	public String getHeight() {
 		return height;
 	}
-	public String getListStyle() {
-		return listStyle;
+	public String getStyle() {
+		return style;
 	}
-	public void setListStyle( String listStyle) {
-		this.listStyle=listStyle;
+	public void setStyle( String style) {
+		this.style=style;
+	}
+	public Boolean getNullable() {
+		return nullable;
 	}
 }

@@ -242,7 +242,9 @@ change.RollbackTo = Rollback to:
 
 #~~~ crud ~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-crud.add Add Existing
+crud.edit= Edit
+crud.edit.tooltip= Edit properties and navigation properties. To edit navigationset, navigate to their respective page.
+crud.add= Add Existing
 crud.add.tooltip= Add existing
 crud.select.title= Select {0} to add to list
 crud.replace= Replace

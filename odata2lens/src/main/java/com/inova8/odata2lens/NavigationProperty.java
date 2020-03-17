@@ -9,15 +9,20 @@ public class NavigationProperty {
 	private String subTypeName;
 	private String icon;
 	private EntityType rangeType;
-
+	 String height;
+	 String style;
+	Boolean nullable;
 	public NavigationProperty(String name, String label, String tooltip, String targetEntityType, String range,
-			String icon) {
+			String icon, String height, String style, Boolean nullable) {
 		this.name = name;
 		this.label = label;
 		this.tooltip = tooltip;
 		this.targetEntityType = targetEntityType;
 		this.range = range;
 		this.icon = icon;
+		this.height = height;
+		this.style = style;
+		this.nullable = nullable;
 	}
 
 	public String getName() {
@@ -69,5 +74,16 @@ public class NavigationProperty {
 	public EntityType getRangeType() {
 		return rangeType;
 	}
-
+	public String getHeight() {
+		return height;
+	}
+	public String getStyle() {
+		return style;
+	}
+	public void setStyle( String style) {
+		this.style=style;
+	}
+	public Boolean getNullable() {
+		return nullable;
+	}
 }

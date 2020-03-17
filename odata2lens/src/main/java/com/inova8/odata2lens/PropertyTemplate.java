@@ -9,8 +9,9 @@ public class PropertyTemplate {
 	private String aggregate;
 	private String formatOptions;
 	private String height;
-	private String listStyle;
-	public PropertyTemplate(String property, String propertyType, String range, Float ordinal, Boolean visible, String aggregate, String formatOptions, String height, String listStyle) {
+	private String style;
+	private Boolean nullable;
+	public PropertyTemplate(String property, String propertyType, String range, Float ordinal, Boolean visible, String aggregate, String formatOptions, String height, String style,Boolean nullable) {
 		super();
 		this.property = property;
 		this.propertyType = propertyType;
@@ -20,9 +21,10 @@ public class PropertyTemplate {
 		this.aggregate = aggregate;
 		this.formatOptions= (formatOptions==null || formatOptions.isEmpty()||formatOptions.equals("\"\"") ? null:", formatOptions:" +  formatOptions.replace(";",","));
 		this.height=height;
-		this.listStyle=listStyle;
+		this.style=style;
+		this.nullable=nullable;
 	}
-	public void update(String property, String propertyType, String range, Float ordinal, Boolean visible, String aggregate, String formatOptions, String height, String listStyle) {
+	public void update(String property, String propertyType, String range, Float ordinal, Boolean visible, String aggregate, String formatOptions, String height, String style,Boolean nullable) {
 		this.property = property;
 		if(propertyType!=null) this.propertyType = propertyType;
 		if(range!=null) this.range = range;
@@ -35,8 +37,11 @@ public class PropertyTemplate {
 		if(height!=null) {
 			this.height = height;
 		}
-		if(listStyle!=null) {
-			this.listStyle = listStyle;
+		if(style!=null) {
+			this.style = style;
+		}
+		if(nullable!=null) {
+			this.nullable = nullable;
 		}
 	}
 	public String getProperty() {
@@ -63,7 +68,13 @@ public class PropertyTemplate {
 	public String getHeight() {
 		return height;
 	}
-	public String getListStyle() {
-		return listStyle;
+	public String getStyle() {
+		return style;
+	}
+//	public String getStyletag() {
+//		return style;
+//	}
+	public Boolean getNullable() {
+		return nullable;
 	}
 }
