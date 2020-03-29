@@ -71,10 +71,10 @@ public class PropertyTemplate {
 	public String getStyle() {
 		return style;
 	}
-//	public String getStyletag() {
-//		return style;
-//	}
 	public Boolean getNullable() {
 		return nullable;
+	}
+	public Boolean getRequired() {
+		return  !nullable;
 	}
 }

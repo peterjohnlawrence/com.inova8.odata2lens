@@ -56,7 +56,8 @@ public class GenerateLens {
 	static String destinationPath;
 	static String sourcePath;
 	static String defaultNamespace;
-
+	static HashSet<String> namespaceStrings;
+	static TreeMap<String,String> namespaces = new TreeMap<String,String>();
 	public static void main(String[] args) throws IOException, ODataException {
 		generate(args[0], args[1], Arrays.copyOfRange(args, 2, args.length), getWorkingPath(), getWorkingPath());
 	}
@@ -81,6 +82,7 @@ public class GenerateLens {
 			//		TreeMap<String, EntityType> entityTypes = new TreeMap<String, EntityType>();
 			//		TreeMap<String, ComplexType> complexTypes = new TreeMap<String, ComplexType>();
 			createMetadata(edm, schemaNames);
+			deduceNamespaces();
 			//generateUITemplate(apartmentName);
 			generateUITemplateJson(apartmentName);
 			//TreeMap<String, UITemplate> uiTemplates = readUITemplate(schemaName);
@@ -104,6 +106,14 @@ public class GenerateLens {
 			return false;
 		}
 	}
+	public static void deduceNamespaces(){
+		for(String namespacestring: namespaceStrings) {
+			String[] splitNamespace = namespacestring.split(": <");
+			String prefix = splitNamespace[0];
+			String namespace = 	splitNamespace[1].substring(0, splitNamespace[1].length() - 1);
+			namespaces.put(prefix, namespace);
+		}		
+	}
 
 	private static TreeMap<String, UITemplate> readUITemplateJson(String apartmentName) throws IOException {
 
@@ -124,56 +134,64 @@ public class GenerateLens {
 			for (Entry<String, com.inova8.uiTemplate.Entity> entityEntry : entities.entrySet()) {
 				com.inova8.uiTemplate.Entity entity = entityEntry.getValue();
 				entityType = entityTypes.get(entityEntry.getKey());
-				if (entity.getIcon() != null && !entity.getIcon().isEmpty())
-					entityType.getEntitySet().setEntityIcon(entity.getIcon());
-				if (entity.getImage() != null && !entity.getImage().isEmpty())
-					entityType.getEntitySet().setImage(entity.getImage());
-				if (entity.getEntitySetVisible() != null && !entity.getEntitySetVisible().toString().isEmpty())
-					entityType.getEntitySet().setVisible(entity.getEntitySetVisible());
+				if (entityType != null) {
+					if (entity.getIcon() != null && !entity.getIcon().isEmpty())
+						entityType.getEntitySet().setEntityIcon(entity.getIcon());
+					if (entity.getImage() != null && !entity.getImage().isEmpty())
+						entityType.getEntitySet().setImage(entity.getImage());
+					if (entity.getEntitySetVisible() != null && !entity.getEntitySetVisible().toString().isEmpty())
+						entityType.getEntitySet().setVisible(entity.getEntitySetVisible());
 
-				Form form = entity.getForm();
-				if (form != null) {
-					String formTarget = form.getTarget();
-					UITemplate formTemplate = uiTemplates.get(formTarget);
+					Form form = entity.getForm();
+					if (form != null) {
+						String formTarget = form.getTarget();
+						UITemplate formTemplate = uiTemplates.get(formTarget);
 
-					formTemplate.update(null, entity.getEntity(), entity.getIcon(), entity.getImage(), form.getTarget(),
-							form.getTargetIcon(), "Form", form.getTargetEntity(), form.getTargetVisible(),
-							form.getFormStyle(), null);
-					if (form.getTargetIcon() != null && !form.getTargetIcon().isEmpty())
-						entityType.getEntity().setTargetIcon(form.getTargetIcon());
-					if (form.getTargetVisible() != null && !form.getTargetVisible().toString().isEmpty())
-						entityType.getEntity().setVisible(form.getTargetVisible());
-					if (form.getFormStyle() != null && !form.getFormStyle().toString().isEmpty())
-						entityType.getEntity().setFormStyle(form.getFormStyle());
-					if(form.getProperties()!=null) {
-						for (com.inova8.uiTemplate.Property property : form.getProperties()) {
-							formTemplate.updateProperty(property.getProperty(), property.getPropertyType(),
-									property.getPropertyRange(), property.getOrdinal(), property.getPropertyVisible(),
-									property.getAggregate(), property.getFormatOptions(), property.getHeight(), property.getStyle(), property.getNullable());
+						formTemplate.update(null, entity.getEntity(), entity.getIcon(), entity.getImage(),
+								form.getTarget(), form.getTargetIcon(), "Form", form.getTargetEntity(),
+								form.getTargetVisible(), form.getFormStyle(), null);
+						if (form.getTargetIcon() != null && !form.getTargetIcon().isEmpty())
+							entityType.getEntity().setTargetIcon(form.getTargetIcon());
+						if (form.getTargetVisible() != null && !form.getTargetVisible().toString().isEmpty())
+							entityType.getEntity().setVisible(form.getTargetVisible());
+						if (form.getFormStyle() != null && !form.getFormStyle().toString().isEmpty())
+							entityType.getEntity().setFormStyle(form.getFormStyle());
+						if (form.getProperties() != null) {
+							for (com.inova8.uiTemplate.Property property : form.getProperties()) {
+								formTemplate.updateProperty(property.getProperty(), property.getPropertyType(),
+										property.getPropertyRange(), property.getOrdinal(),
+										property.getPropertyVisible(), property.getAggregate(),
+										property.getFormatOptions(), property.getHeight(), property.getStyle(),
+										property.getNullable());
+							}
 						}
 					}
-				}
-				Grid grid = entity.getGrid();
-				if (grid != null) {
-					String gridTarget = grid.getTarget();
-					UITemplate gridTemplate = uiTemplates.get(gridTarget);
+					Grid grid = entity.getGrid();
+					if (grid != null) {
+						String gridTarget = grid.getTarget();
+						UITemplate gridTemplate = uiTemplates.get(gridTarget);
 
-					gridTemplate.update(null, entity.getEntity(), entity.getIcon(), entity.getImage(), grid.getTarget(),
-							grid.getTargetIcon(), "Grid", grid.getTargetEntity(), grid.getTargetVisible(), null,
-							grid.getGridStyle());
-					if (grid.getTargetIcon() != null && !grid.getTargetIcon().isEmpty())
-						entityType.getEntity().setTargetIcon(grid.getTargetIcon());
-					if (grid.getTargetVisible() != null && !grid.getTargetVisible().toString().isEmpty())
-						entityType.getEntitySet().setVisible(grid.getTargetVisible());
-					if (grid.getGridStyle() != null && !grid.getGridStyle().toString().isEmpty())
-						entityType.getEntitySet().setGridStyle(grid.getGridStyle());
-					if (grid.getProperties() != null ) {
-						for (com.inova8.uiTemplate.Property property : grid.getProperties()) {
-							gridTemplate.updateProperty(property.getProperty(), property.getPropertyType(),
-									property.getPropertyRange(), property.getOrdinal(), property.getPropertyVisible(),
-									property.getAggregate(), property.getFormatOptions(), property.getHeight(),property.getStyle(), property.getNullable());
+						gridTemplate.update(null, entity.getEntity(), entity.getIcon(), entity.getImage(),
+								grid.getTarget(), grid.getTargetIcon(), "Grid", grid.getTargetEntity(),
+								grid.getTargetVisible(), null, grid.getGridStyle());
+						if (grid.getTargetIcon() != null && !grid.getTargetIcon().isEmpty())
+							entityType.getEntity().setTargetIcon(grid.getTargetIcon());
+						if (grid.getTargetVisible() != null && !grid.getTargetVisible().toString().isEmpty())
+							entityType.getEntitySet().setVisible(grid.getTargetVisible());
+						if (grid.getGridStyle() != null && !grid.getGridStyle().toString().isEmpty())
+							entityType.getEntitySet().setGridStyle(grid.getGridStyle());
+						if (grid.getProperties() != null) {
+							for (com.inova8.uiTemplate.Property property : grid.getProperties()) {
+								gridTemplate.updateProperty(property.getProperty(), property.getPropertyType(),
+										property.getPropertyRange(), property.getOrdinal(),
+										property.getPropertyVisible(), property.getAggregate(),
+										property.getFormatOptions(), property.getHeight(), property.getStyle(),
+										property.getNullable());
+							}
 						}
 					}
+				}else {
+					System.out.println("UiTemplate refers to unrecognized entityType:" + entity);
 				}
 			}
 
@@ -204,19 +222,21 @@ public class GenerateLens {
 					formTemplate.getProperties().put(property.getOrdinal(),
 							new PropertyTemplate(property.getProperty(), property.getPropertyType(),
 									property.getPropertyRange(), property.getOrdinal(), property.getPropertyVisible(),
-									property.getAggregate(), property.getFormatOptions(), property.getHeight(),property.getStyle(),property.getNullable()));
+									property.getAggregate(), property.getFormatOptions(), property.getHeight(),
+									property.getStyle(), property.getNullable()));
 				}
 				uiTemplates.put(form.getTarget(), formTemplate);
 				sequence++;
 				Grid grid = entity.getGrid();
 				UITemplate gridTemplate = new UITemplate(sequence.toString(), entity.getEntity(), entity.getIcon(),
-						entity.getImage(), form.getTarget(), form.getTargetIcon(), "Grid", form.getTargetEntity(),
-						form.getTargetVisible().toString(), null, grid.getGridStyle());
+						entity.getImage(), grid.getTarget(), grid.getTargetIcon(), "Grid", grid.getTargetEntity(),
+						grid.getTargetVisible().toString(), null, grid.getGridStyle());
 				for (com.inova8.uiTemplate.Property property : grid.getProperties()) {
 					gridTemplate.getProperties().put(property.getOrdinal(),
 							new PropertyTemplate(property.getProperty(), property.getPropertyType(),
 									property.getPropertyRange(), property.getOrdinal(), property.getPropertyVisible(),
-									property.getAggregate(), property.getFormatOptions(), property.getHeight(),property.getStyle(),property.getNullable()));
+									property.getAggregate(), property.getFormatOptions(), property.getHeight(),
+									property.getStyle(), property.getNullable()));
 				}
 				uiTemplates.put(grid.getTarget(), gridTemplate);
 			}
@@ -255,7 +275,21 @@ public class GenerateLens {
 		}
 		return annotationStrings;
 	}
-
+	private static HashSet<String> getNamespacesAnnotations(List<EdmAnnotation> annotations) {
+		HashSet<String> annotationStrings = new HashSet<String>();
+		for (EdmAnnotation annotation : annotations) {
+			String termFQN = annotation.getTerm().getFullQualifiedName().toString();
+			if (termFQN.equals("odata.namespaces")) {
+				if (annotation.getExpression().getExpressionType().equals(EdmExpressionType.Collection)) {
+					List<EdmExpression> items = annotation.getExpression().asDynamic().asCollection().getItems();
+					for (EdmExpression item : items) {
+						annotationStrings.add(item.asConstant().getValueAsString());
+					}
+				}
+			}
+		}
+		return annotationStrings;
+	}
 	private static HashSet<String> getBaseTypesAnnotations(List<EdmAnnotation> annotations) {
 		HashSet<String> annotationStrings = new HashSet<String>();
 		for (EdmAnnotation annotation : annotations) {
@@ -277,6 +311,7 @@ public class GenerateLens {
 		List<EdmEntitySet> entitySets = edm.getSchema("Instances").getEntityContainer().getEntitySets();
 		defaultNamespace = getAnnotations("", edm.getSchema("Instances").getAnnotations())
 				.get("odata.defaultNamespace");
+		namespaceStrings = getNamespacesAnnotations( edm.getSchema("Instances").getAnnotations());
 
 		for (String schemaName : schemaNames) {
 			EdmSchema schema = edm.getSchema(schemaName);
@@ -286,20 +321,21 @@ public class GenerateLens {
 						ComplexType complexType = new ComplexType(edmComplexType.getName());
 						complexTypes.put(edmComplexType.getFullQualifiedName().toString(), complexType);
 						String subTypeName;
-						String rdfTypeName;
 						for (String propertyName : edmComplexType.getPropertyNames()) {
 							EdmProperty edmProperty = (EdmProperty) edmComplexType.getProperty(propertyName);
 							//String name, String label, String tooltip, String range, String formatOptions
 							subTypeName = getAnnotations("", edmProperty.getAnnotations()).get("odata.subType");
-							
+
 							HashMap<String, String> propertyAnnotations = getAnnotations(propertyName,
 									edmProperty.getAnnotations());
 							String type = edmProperty.getType().getFullQualifiedName().toString();
-							type =  propertyAnnotations.containsKey("odata.rdfType") ? propertyAnnotations.get("odata.rdfType") : type;
-							
-							Property property = new Property(propertyName, propertyName, propertyName,
-									type, null, false, "2rem","Input",edmProperty.isNullable());
-							if(subTypeName!=null) {
+							type = propertyAnnotations.containsKey("odata.rdfType")
+									? propertyAnnotations.get("odata.rdfType")
+									: type;
+
+							Property property = new Property(propertyName, propertyName, propertyName, type, null,
+									false, "2rem", "Input", edmProperty.isNullable());
+							if (subTypeName != null) {
 								property.setSubTypeName(subTypeName);
 								complexType.putProperty(subTypeName, property);
 							}
@@ -314,7 +350,8 @@ public class GenerateLens {
 								EntityNavigationSet entityNavigationSet = new EntityNavigationSet(
 										navigationPropertyName, navigationPropertyName, navigationPropertyName,
 										navigationPropertyName, edmNavigationProperty.getType().getName(),
-										edmNavigationProperty.getType().getName(), "", "2rem","Multi",edmNavigationProperty.isNullable());
+										edmNavigationProperty.getType().getName(), "", "2rem", "Multi",
+										edmNavigationProperty.isNullable());
 								entityNavigationSet.setSubTypeName(subTypeName);
 								//entityNavigationSet.setRangeType( );
 								complexType.putNavigationSet(subTypeName, entityNavigationSet);
@@ -323,7 +360,8 @@ public class GenerateLens {
 								NavigationProperty navigationProperty = new NavigationProperty(navigationPropertyName,
 										navigationPropertyName, navigationPropertyName,
 										edmNavigationProperty.getType().getName(),
-										edmNavigationProperty.getType().getName(), null, "2rem","Single",edmNavigationProperty.isNullable());
+										edmNavigationProperty.getType().getName(), null, "2rem", "Single",
+										edmNavigationProperty.isNullable());
 								navigationProperty.setSubTypeName(subTypeName);
 								//navigationProperty.setRangeType(subTypeName);
 								complexType.putNavigationProperty(subTypeName, navigationProperty);
@@ -340,9 +378,10 @@ public class GenerateLens {
 
 							//					EdmEntitySet edmEntitySet = edm.getSchema("Instances").getEntityContainer()
 							//							.getEntitySet(edmEntityType.getName());			
-							
-							EdmEntitySet edmEntitySet = entitySets.stream().filter(
-									entitySet -> edmEntityType.getFullQualifiedName().equals(entitySet.getEntityType().getFullQualifiedName()))
+
+							EdmEntitySet edmEntitySet = entitySets.stream()
+									.filter(entitySet -> edmEntityType.getFullQualifiedName()
+											.equals(entitySet.getEntityType().getFullQualifiedName()))
 									.findAny().orElse(null);
 
 							HashMap<String, String> entitySetAnnotations = getAnnotations(edmEntityType.getName(),
@@ -379,7 +418,9 @@ public class GenerateLens {
 									HashMap<String, String> propertyAnnotations = getAnnotations(propertyName,
 											edmProperty.getAnnotations());
 									String type = edmProperty.getType().getFullQualifiedName().toString();
-									type =  propertyAnnotations.containsKey("odata.rdfType") ? propertyAnnotations.get("odata.rdfType") : type;
+									type = propertyAnnotations.containsKey("odata.rdfType")
+											? propertyAnnotations.get("odata.rdfType")
+											: type;
 									Property property = new Property(propertyName,
 											propertyAnnotations.containsKey("sap.label")
 													? propertyAnnotations.get("sap.label")
@@ -388,7 +429,7 @@ public class GenerateLens {
 													? propertyAnnotations.get("sap.quickinfo")
 													: propertyName,
 											type, null, propertyAnnotations.containsKey("odata.FK") ? true : false,
-											"2rem","Input",edmProperty.isNullable());
+											"2rem", "Input", edmProperty.isNullable());
 									if (edmProperty.isPrimitive()) {
 										//primitiveType = edmProperty.getType().getFullQualifiedName().toString();
 
@@ -409,13 +450,14 @@ public class GenerateLens {
 										&& !isNavigationOutsideOfNamespace(schemaNames,
 												edmNavigationProperty.getType())) {
 									String range = "";
-									if( edmNavigationProperty.getType().getNamespace().equals(schemaNames[0])) {
+									if (edmNavigationProperty.getType().getNamespace().equals(schemaNames[0])) {
 										range = edmNavigationProperty.getType().getName();
-									}else {
-										range = edmNavigationProperty.getType().getFullQualifiedName().toString().replace(".", "_");
+									} else {
+										range = edmNavigationProperty.getType().getFullQualifiedName().toString()
+												.replace(".", "_");
 									}
 									if (edmNavigationProperty.isCollection()) {
-											EntityNavigationSet entityNavigationSet = new EntityNavigationSet(
+										EntityNavigationSet entityNavigationSet = new EntityNavigationSet(
 												navigationPropertyName,
 												edmEntityType.getName() + navigationPropertyName,
 												navigationPropertyAnnotations.containsKey("sap.label")
@@ -425,8 +467,9 @@ public class GenerateLens {
 														? navigationPropertyAnnotations.get("sap.quickinfo")
 														: "Show " + edmEntityType.getName() + "s "
 																+ edmNavigationProperty.getType().getName(),
-												edmNavigationProperty.getType().getFullQualifiedName().getFullQualifiedNameAsString(),//.getName(),
-												range, "", "2rem","Multi",edmNavigationProperty.isNullable());
+												edmNavigationProperty.getType().getFullQualifiedName()
+														.getFullQualifiedNameAsString(), //.getName(),
+												range, "", "2rem", "Multi", edmNavigationProperty.isNullable());
 
 										entityNavigationSets.put(navigationPropertyName, entityNavigationSet);
 									} else {
@@ -438,8 +481,9 @@ public class GenerateLens {
 												navigationPropertyAnnotations.containsKey("sap.quickinfo")
 														? navigationPropertyAnnotations.get("sap.quickinfo")
 														: "Show " + navigationPropertyName,
-												edmNavigationProperty.getType().getFullQualifiedName().getFullQualifiedNameAsString(),//.getName(),
-												range, "", "2rem","Single",edmNavigationProperty.isNullable());
+												edmNavigationProperty.getType().getFullQualifiedName()
+														.getFullQualifiedNameAsString(), //.getName(),
+												range, "", "2rem", "Single", edmNavigationProperty.isNullable());
 										navigationProperties.put(navigationPropertyName, navigationProperty);
 									}
 								}
@@ -485,8 +529,7 @@ public class GenerateLens {
 							for (String subTypeName : property.getComplexRange().getProperties().keySet()) {
 								entityType.getEntity().getSubTypeNames().add(subTypeName);
 							}
-							for (String subTypeName : property.getComplexRange().getNavigationProperties()
-									.keySet()) {
+							for (String subTypeName : property.getComplexRange().getNavigationProperties().keySet()) {
 								entityType.getEntity().getSubTypeNames().add(subTypeName);
 								//	complexNavigationProperty.setRangeType(entityType);
 							}
@@ -503,13 +546,13 @@ public class GenerateLens {
 						for (String baseType : entitySet.getBaseTypes()) {
 							String baseEntityTypeName = baseType;
 							String[] namespacePrefix = baseType.split("~");
-							if(namespacePrefix.length > 1) {
+							if (namespacePrefix.length > 1) {
 								if (namespacePrefix[0].equals(schemaNames[0])) {
 									baseEntityTypeName = namespacePrefix[1];
-								}else {
+								} else {
 									baseEntityTypeName = namespacePrefix[0] + "_" + namespacePrefix[1];
 								}
-							}				
+							}
 							if (entityTypes.containsKey(baseEntityTypeName)) {
 								EntityType baseEntityType = entityTypes.get(baseEntityTypeName);
 								baseEntityType.getEntitySet().addChildEntitySet(entitySet);
@@ -573,7 +616,6 @@ public class GenerateLens {
 		fw.write(uiWriter.toString());
 		fw.close();
 	}
-
 	private static void generateContextMenu(String apartmentName, TreeMap<String, UITemplate> uiTemplates)
 			throws IOException {
 
@@ -585,6 +627,7 @@ public class GenerateLens {
 
 		contextMenuContext.put("schema", apartmentName);
 		contextMenuContext.put("defaultNamespace", defaultNamespace);
+		contextMenuContext.put("namespaces", namespaces);
 		ArrayList<EntityType> entityTypesCollection = new ArrayList<EntityType>(entityTypes.values());
 		entityTypesCollection.sort(Comparator.comparing(EntityType::getEntitySetLabel));
 		contextMenuContext.put("entityTypes", entityTypesCollection);
@@ -631,15 +674,30 @@ public class GenerateLens {
 			}
 			(new File(getDestinationPath() + File.separator + apartmentName + File.separator + "view" + File.separator
 					+ "entitySet" + File.separator + entityType.getEntitySet().getTarget())).mkdirs();
-			FileWriter fw = new FileWriter(
-					new File(getDestinationPath() + File.separator + apartmentName + File.separator + "view"
-							+ File.separator + "entitySet" + File.separator + entityType.getEntitySet().getTarget()
-							+ File.separator + entityType.getEntitySet().getTarget() + ".view.xml"));
-			fw.write(entitySetWriter.toString());
-			fw.close();
-
+			
+			String fileName = getDestinationPath() + File.separator + apartmentName + File.separator + "view"
+					+ File.separator + "entitySet" + File.separator + entityType.getEntitySet().getTarget()
+					+ File.separator + entityType.getEntitySet().getTarget() ;		
+			
+			formCreator(entitySetWriter, fileName);
 		}
 
+	}
+
+	protected static void formCreator(StringWriter entitySetWriter, String fileName) throws IOException {
+		File handCodedFile = new File(fileName + ".hc.view.xml");
+		File targetFile= new File(fileName + ".view.xml");
+		File generatedFile= new File(fileName + ".generated.view.xml");
+		if(handCodedFile.exists()) {
+			FileWriter fw = new FileWriter(	generatedFile);
+			fw.write(entitySetWriter.toString());
+			handCodedFile.renameTo(targetFile);
+			fw.close();
+		}else {
+			FileWriter fw = new FileWriter(	targetFile);
+			fw.write(entitySetWriter.toString());
+			fw.close();
+		}
 	}
 
 	private static void generateEntity(String apartmentName, StringWriter i18nWriter,
@@ -666,12 +724,27 @@ public class GenerateLens {
 
 			(new File(getDestinationPath() + File.separator + apartmentName + File.separator + "view" + File.separator
 					+ "entity" + File.separator + entityType.getEntity().getTarget())).mkdirs();
-			FileWriter fw = new FileWriter(
-					new File(getDestinationPath() + File.separator + apartmentName + File.separator + "view"
-							+ File.separator + "entity" + File.separator + entityType.getEntity().getTarget()
-							+ File.separator + entityType.getEntity().getTarget() + ".view.xml"));
-			fw.write(entityWriter.toString());
-			fw.close();
+			
+			String fileName = getDestinationPath() + File.separator + apartmentName + File.separator + "view"
+					+ File.separator + "entity" + File.separator + entityType.getEntity().getTarget()
+					+ File.separator + entityType.getEntity().getTarget() ;
+			formCreator(entityWriter, fileName);
+			
+//			File handCodedFile = new File(fileName + ".hc.view.xml");
+//			File targetFile= new File(fileName + ".view.xml");
+//			if(handCodedFile.exists()) {
+//				fileName=fileName+".generated";
+//			}
+//			File generatedFile;
+//			FileWriter fw = new FileWriter(	generatedFile= new File(fileName + ".view.xml"));
+//			fw.write(entityWriter.toString());
+//			
+//			if(handCodedFile.exists()) {
+//				handCodedFile.renameTo(targetFile);
+//				fileName=fileName+".generated";
+//			}		
+//
+//			fw.close();
 		}
 	}
 

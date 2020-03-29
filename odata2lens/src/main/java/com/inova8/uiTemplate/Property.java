@@ -10,7 +10,6 @@ public class Property {
 	String formatOptions;
 	private String height;
 	private String style;
-	private String styletag;
 	private Boolean nullable;
 	public String getProperty() {
 		return property;
@@ -63,10 +62,11 @@ public class Property {
 	public String getStyle() {
 		return style;
 	}
-	public String getStyletag() {
-		return styletag;
-	}
+
 	public Boolean getNullable() {
 		return nullable;
+	}
+	public Boolean getRequired() {
+		return !nullable;
 	}
 }

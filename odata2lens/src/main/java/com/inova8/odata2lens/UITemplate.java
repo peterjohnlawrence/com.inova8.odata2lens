@@ -145,7 +145,7 @@ public class UITemplate {
 	}
 
 	public void updateProperty(String property, String propertyType, String range, Float ordinal, Boolean visible,
-			String aggregate, String formatOptions, String height, String style, Boolean nullable) {
+			String aggregate, String formatOptions, String height, String style,Boolean nullable) {
 		if (ordinal != null) {
 			Float currentOrdinal = null;
 			PropertyTemplate currentTemplate = null;
@@ -169,7 +169,7 @@ public class UITemplate {
 						(formatOptions == null) ? currentTemplate.getFormatOptions() : formatOptions,
 						(height == null) ? currentTemplate.getHeight() : height	,	
 						(style == null) ? currentTemplate.getStyle() : style	,
-								(nullable == null) ? currentTemplate.getNullable() : nullable
+						(nullable == null) ? currentTemplate.getNullable() : nullable
 								
 						);
 				properties.remove(currentOrdinal);

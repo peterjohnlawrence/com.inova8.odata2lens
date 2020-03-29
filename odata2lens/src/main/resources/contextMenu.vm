@@ -1,6 +1,12 @@
 #set ( $plural= "s")	
 #set ( $dashboard= "DashBoard")		
 { "defaultNamespace": "$defaultNamespace",
+"namespaces":{
+#foreach($namespaceItem in $namespaces.entrySet())
+	"$namespaceItem.key":{"prefix":"$namespaceItem.key", "namespace":"$namespaceItem.value" }#if ( $foreach.hasNext ),#end	
+	
+#end
+},
 "entitySets": {
 	"qb_DataSet": {
 		"image": "./images/icons/qb_DataSet.svg",
@@ -201,13 +207,6 @@
 			"parameters": {
 				"objectId": "$entityType.entitySet.name"
 			}
-		}, {
-			"type":"entitySet",
-			"key": "$dashboard",
-			"text": "$dashboard",
-			"target": "$entityType.entitySet.dashboardTarget",
-			"tooltip": "Show $entityType.entitySet.label $dashboard",
-			"visible":true 
 		}
 		#foreach($parentEntitySet in $entityType.entitySet.parentEntitySets)
 		,{

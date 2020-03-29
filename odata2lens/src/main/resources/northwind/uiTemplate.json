@@ -15,38 +15,38 @@
 		"entity": "Category",
 		"icon": "sap-icon://northwind/category",
 		"image": "./apartment/northwind/images/category.svg",
-	"form": {
-		"target": "Category",
-		"formStyle":"entity360",
-		"targetVisible": true,
-		"targetIcon": "sap-icon://expand-group",
-		"targetEntity": "Category",
-		"allowEdit" : true,
-		"properties": [		
-		{ 
-				"property": "comment",
-				"propertyVisible": true,
-				"propertyType": "D",
-				"propertyRange": "Edm.String",
-				"ordinal": 1,
-				"aggregate": "[]",
-				"formatOptions": null,
-				"allowEdit": true,
-				"height":"6rem",
-				"style":"TextArea width='100%' rows='3'"
-			}
-			,{ 
-				"property": "description",
-				"propertyVisible": true,
-				"propertyType": "D",
-				"propertyRange": "Edm.String",
-				"ordinal": 2,
-				"aggregate": "[]",
-				"formatOptions": null,
-				"allowEdit": true,
-				"height":"6rem",
-				"style":"TextArea width='100%' rows='3'"
-			}
+		"form": {
+			"target": "Category",
+			"formStyle": "entity360",
+			"targetVisible": true,
+			"targetIcon": "sap-icon://expand-group",
+			"targetEntity": "Category",
+			"allowEdit": true,
+			"properties": [
+				{
+					"property": "comment",
+					"propertyVisible": true,
+					"propertyType": "D",
+					"propertyRange": "Edm.String",
+					"ordinal": 1,
+					"aggregate": "[]",
+					"formatOptions": null,
+					"allowEdit": true,
+					"height": "6rem",
+					"style": "TextArea width='100%' rows='3'"
+				},
+				{
+					"property": "description",
+					"propertyVisible": true,
+					"propertyType": "D",
+					"propertyRange": "Edm.String",
+					"ordinal": 2,
+					"aggregate": "[]",
+					"formatOptions": null,
+					"allowEdit": true,
+					"height": "6rem",
+					"style": "TextArea width='100%' rows='3'"
+				}
 			]
 		}
 	},
@@ -73,18 +73,18 @@
 					"allowEdit": true,
 					"height": "4rem"
 				},
-			{ 
-				"property": "customerRegion",
-				"propertyVisible": true,
-				"propertyType": "C",
-				"propertyRange": "Region",
-				"ordinal": 15,
-				"aggregate": "[List]",
-				"formatOptions": null,
-				"allowEdit": true,
-				"height":"2rem",
-				"style":"Multi"
-			},
+				{
+					"property": "customerRegion",
+					"propertyVisible": true,
+					"propertyType": "C",
+					"propertyRange": "Region",
+					"ordinal": 15,
+					"aggregate": "[List]",
+					"formatOptions": null,
+					"allowEdit": true,
+					"height": "2rem",
+					"style": "Multi"
+				},
 				{
 					"property": "hasPlacedOrder",
 					"propertyVisible": true,

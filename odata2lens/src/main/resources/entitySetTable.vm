@@ -22,7 +22,7 @@
   #elseif ($range == "Edm.Int32")							<Text text="{path:'dataModel>$propertyObject.property',type:'sap.ui.model.type.Integer'$!formatOptions }" tooltip="{i18n>$target.$propertyObject.property#[[.]]#tooltip}"/>
   #elseif ($range == "Edm.Int64")							<Text text="{path:'dataModel>$propertyObject.property',type:'sap.ui.model.type.Integer'$!formatOptions}" tooltip="{i18n>$target.$propertyObject.property#[[.]]#tooltip}"/>
   #elseif ($range == "Edm.String")							<Text text="{path:'dataModel>$propertyObject.property',type:'sap.ui.model.type.String' }"  tooltip="{i18n>$target.$propertyObject.property#[[.]]#tooltip}"/>
-  #elseif ($range == "Edm.anyURI")							<Link text="{dataModel>$propertyObject.property}" href="{dataModel>$propertyObject.property}" tooltip="{dataModel>$propertyObject.property#[[.]]#tooltip}" validateUrl="true"/>
+  #elseif ($range == "Edm.anyURI")							<Link text="{dataModel>$propertyObject.property}" href="{dataModel>$propertyObject.property}" tooltip="{i18n>$target.$propertyObject.property#[[.]]#tooltip}" validateUrl="true"/>
   #elseif ($range == "Edm.Stream")							<Text text="{dataModel>$propertyObject.property}" tooltip="{i18n>$target.$propertyObject.property#[[.]]#tooltip}"/>
   #elseif ($range == "Edm.Geography")							<Text text="{dataModel>$propertyObject.property}" tooltip="{i18n>$target.$propertyObject.property#[[.]]#tooltip}"/>
   #elseif ($range == "Edm.GeographyPoint")							<Text text="{dataModel>$propertyObject.property}" tooltip="{i18n>$target.$propertyObject.property#[[.]]#tooltip}"/>
@@ -103,7 +103,10 @@
 							#elseif($property.propertyType == "C") 
 								#if($numOfExpand == 0) 
 							    $expand:{#else 
-							  			, #end $property.property:{ $count:true}	
+							  			, #end #if($property.aggregate == "[]") 
+$property.property:{$select:'subjectId,label'}	
+							  			#else  
+$property.property:{ $count:true} #end
 								#set($numOfExpand = $numOfExpand + 1)	
 							#elseif ($property.propertyType == "S")
 								#set($selectprops = $selectprops + "," + $property.property)
@@ -195,7 +198,11 @@
 									#elseif ($property.propertyType == "O")
 							<rdf:TextResource path="dataModel>$property.property" entitySet="$property.range"/>
 									#elseif ($property.propertyType == "C")
+										#if($property.aggregate == "[]") 
+							<rdf:MultiResource path="dataModel>$property.property" entitySet="$property.range" tooltip="{i18n>$entity.target.$property.property#[[.]]#tooltip}" height="$property.height" />
+										#else
 							<rdf:NavigationPropertyCollection path="dataModel>$property.property/$count" navigationProperty="$entitySet.name/$property.property"/>
+										#end
 									#elseif ($property.propertyType == "S")		
 							<VBox>					
 										#foreach($subTypeName in $entity.subTypeNames)
