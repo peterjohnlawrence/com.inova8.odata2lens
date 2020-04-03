@@ -9,12 +9,18 @@
 	"icon": "sap-icon://group-2",
 	"image": "./images/icons/unknown.svg",
 	"entitySetVisible":true,
+	"namespaces":[
+		#foreach($namespaceItem in $entityType.namespaces.entrySet())
+			{"prefix":"$namespaceItem.key", "namespace":"$namespaceItem.value" }#if($foreach.hasNext ),#end
+		#end
+	],
 	"grid": {
 		"target": "$entityType.entitySet.target",
 		"gridStyle":"entitySetTable",
 		"targetVisible": true,
 		"targetIcon": "sap-icon://group-2",
 		"targetEntity": "$entityType.entitySet.name",	
+		"allowEdit" : true,
 		"properties": [	
 	#foreach($property in $entityType.entity.properties)
 	#if( $property.complex )

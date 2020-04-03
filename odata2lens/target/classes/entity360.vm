@@ -1,5 +1,5 @@
 #macro( entitymaptypes  $propertyObject $target )
-#set( $styletag =  $propertyObject.styletag)
+#set( $styletag =  $propertyObject.style)
 #set( $property =  $propertyObject.property)
 #set( $range =  $propertyObject.range)
 #set( $formatOptions =  $propertyObject.formatOptions)
@@ -160,32 +160,31 @@
 					<cells>		
 					#if($entity.ownProperties)
 						#if($property.propertyType == "D")
-						<Label text="{i18n>$entity.target.$property.property}" tooltip="{i18n>$entity.target.$property.property#[[.]]#tooltip}" required="false"/> 
+						<Label text="{i18n>$entity.target.$property.property}" tooltip="{i18n>$entity.target.$property.property#[[.]]#tooltip}" required="$property.required"/> 
 						#entitymaptypes( $property $entity.target  ) 
 						#elseif ($property.propertyType == "O")
-						<Label text="{i18n>$entity.target.$property.property}" tooltip="{i18n>$entity.target.$property.property#[[.]]#tooltip}" required="false"/> 
-						<HBox>
-							<rdf:TextResource path="dataModel>$property.property" entitySet="$property.range" tooltip="{i18n>$entity.target.$property.property#[[.]]#tooltip}"/>	
-							<Button  icon="sap-icon://repost"  press="onReplacePress" type="Transparent" visible="{entityView>/editMode}" tooltip="{= ${d}{i18n>crud.replace.tooltip1} + ' ' + '$property.range' +' '+ ${d}{i18n>crud.replace.tooltip2}}">
-							</Button>
-							<Button  icon="sap-icon://negative"  press="onRemovePress" type="Transparent" visible="{entityView>/editMode}" tooltip="{= ${d}{i18n>crud.remove.tooltip1} + ' ' + '$property.range' +' '+ ${d}{i18n>crud.remove.tooltip2}}">
-							</Button>
-							<Button  icon="sap-icon://positive"  press="onAddPress" type="Transparent" visible="{entityView>/editMode}" tooltip="{= ${d}{i18n>crud.add.tooltip} + ' ' + '$property.range'}">
-							</Button>
-						</HBox>	
+						<Label text="{i18n>$entity.target.$property.property}" tooltip="{i18n>$entity.target.$property.property#[[.]]#tooltip}" required="$property.required"/> 
+						<Toolbar>
+							<rdf:TextResource path="dataModel>$property.property" entitySet="$property.range" tooltip="{i18n>$entity.target.$property.property#[[.]]#tooltip}"/>
+							<ToolbarSpacer/>	
+							#if ($property.required == false)				
+							<Button  icon="sap-icon://negative"  press="onRemovePress" type="Transparent" visible="{entityView>/editMode}" tooltip="{= ${d}{i18n>crud.remove.tooltip1} + ' ' + '$property.range' +' '+ ${d}{i18n>crud.remove.tooltip2}}"/>
+							#end
+							<Button  icon="sap-icon://positive"  press="onAddPress" type="Transparent" visible="{entityView>/editMode}" tooltip="{= ${d}{i18n>crud.add.tooltip} + ' ' + '$property.range'}"/>
+						</Toolbar>
 						#elseif ($property.propertyType == "C")
 						<rdf:NavigationPropertyCollection
 								path="dataModel>$property.property/$count"
 								navigationProperty="$entitySet.name/$property.property"
 								label="{i18n>$entity.target.$property.property}" 
-								tooltip="{i18n>$entity.target.$property.property#[[.]]#tooltip}"/>
+								tooltip="{i18n>$entity.target.$property.property#[[.]]#tooltip}" required="$property.required"/>
 							#if ($property.style == "Multi")	
 						<rdf:MultiResource path="dataModel>$property.property" entitySet="$property.range" tooltip="{i18n>$entity.target.$property.property#[[.]]#tooltip}" height="$property.height"/>
 							#else
 						<rdf:ListResource path="dataModel>$property.property" entitySet="$property.range" tooltip="{i18n>$entity.target.$property.property#[[.]]#tooltip}" height="$property.height"/>
 							#end	
 						#elseif ($property.propertyType == "S")
-						<Label text="{i18n>$entity.target.$property.property}" tooltip="{i18n>$entity.target.$property.property#[[.]]#tooltip}" required="false"/> 
+						<Label text="{i18n>$entity.target.$property.property}" tooltip="{i18n>$entity.target.$property.property#[[.]]#tooltip}" required="$property.required"/> 
 						<Text text=""/>
 						#end
 					#end
@@ -201,15 +200,14 @@
 						#entitymaptypes( $complexProperty $entity.target  ) 
 								#elseif ($complexProperty.propertyType == "O")
 						<rdf:TextResource path="dataModel>$complexProperty.property" entitySet="$complexProperty.range" tooltip="{i18n>$entity.target.$complexProperty.property#[[.]]#tooltip}"/>	
-						<HBox>
+						<Toolbar>
 							<rdf:TextResource path="dataModel>$complexProperty.property" entitySet="$complexProperty.range" tooltip="{i18n>$entity.target.$complexProperty.property#[[.]]#tooltip}"/>	
-							<Button  icon="sap-icon://repost"  press="onReplacePress" type="Transparent" visible="{entityView>/editMode}" tooltip="{= ${d}{i18n>crud.replace.tooltip1} + ' ' + '$complexProperty.range' +' '+ ${d}{i18n>crud.replace.tooltip2}}">
-							</Button>
-							<Button  icon="sap-icon://negative"  press="onRemovePress" type="Transparent" visible="{entityView>/editMode}" tooltip="{= ${d}{i18n>crud.remove.tooltip1} + ' ' + '$complexProperty.range' +' '+ ${d}{i18n>crud.remove.tooltip2}}">
-							</Button>
-							<Button  icon="sap-icon://positive"  press="onAddPress" type="Transparent" visible="{entityView>/editMode}" tooltip="{= ${d}{i18n>crud.add.tooltip} + ' ' + '$complexProperty.range'}">
-							</Button>
-						</HBox>	
+							<ToolbarSpacer/>
+							#if ($complexProperty.required == false)	
+							<Button  icon="sap-icon://negative"  press="onRemovePress" type="Transparent" visible="{entityView>/editMode}" tooltip="{= ${d}{i18n>crud.remove.tooltip1} + ' ' + '$complexProperty.range' +' '+ ${d}{i18n>crud.remove.tooltip2}}"/>
+							#end
+							<Button  icon="sap-icon://positive"  press="onAddPress" type="Transparent" visible="{entityView>/editMode}" tooltip="{= ${d}{i18n>crud.add.tooltip} + ' ' + '$complexProperty.range'}"/>
+						</Toolbar>
 							
 								#elseif ($complexProperty.propertyType == "C")
 									#if ($complexProperty.style == "Multi")	

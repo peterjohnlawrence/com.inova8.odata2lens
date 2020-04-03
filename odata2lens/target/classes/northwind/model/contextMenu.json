@@ -1,4 +1,22 @@
 { "defaultNamespace": "northwind",
+"namespaces":{
+	"NWD":{"prefix":"NWD", "namespace":"http://northwind.com/" },	
+	"contextmenu":{"prefix":"contextmenu", "namespace":"http://inova8.com/odata4sparql/contextmenu/" },	
+	"datacube":{"prefix":"datacube", "namespace":"http://inova8.com/odata4sparql/datacube/" },	
+	"dc":{"prefix":"dc", "namespace":"http://purl.org/dc/elements/1.1/" },	
+	"foaf":{"prefix":"foaf", "namespace":"http://xmlns.com/foaf/0.1/" },	
+	"geo":{"prefix":"geo", "namespace":"http://www.w3.org/2003/01/geo/wgs84_pos#" },	
+	"northwind":{"prefix":"northwind", "namespace":"http://northwind.com/model/" },	
+	"owl":{"prefix":"owl", "namespace":"http://www.w3.org/2002/07/owl#" },	
+	"qb":{"prefix":"qb", "namespace":"http://purl.org/linked-data/cube#" },	
+	"rdf":{"prefix":"rdf", "namespace":"http://www.w3.org/1999/02/22-rdf-syntax-ns#" },	
+	"rdfs":{"prefix":"rdfs", "namespace":"http://www.w3.org/2000/01/rdf-schema#" },	
+	"search":{"prefix":"search", "namespace":"http://inova8.com/odata4sparql/search/" },	
+	"shapes":{"prefix":"shapes", "namespace":"http://northwind.com/shapes/" },	
+	"skos":{"prefix":"skos", "namespace":"http://www.w3.org/2004/02/skos/core#" },	
+	"urn":{"prefix":"urn", "namespace":"urn:" },	
+	"xsd":{"prefix":"xsd", "namespace":"http://www.w3.org/2001/XMLSchema#" }	
+},
 "entitySets": {
 	"qb_DataSet": {
 		"image": "./images/icons/qb_DataSet.svg",
@@ -174,6 +192,8 @@
 		"parameters": {
 				"objectId": "Category"
 		},
+		"namespaces":{
+		},
 		"menu": [{
 			"type":"entitySet",
 		    "key": "graph",
@@ -198,13 +218,6 @@
 			"parameters": {
 				"objectId": "Category"
 			}
-		}, {
-			"type":"entitySet",
-			"key": "DashBoard",
-			"text": "DashBoard",
-			"target": "CategorysDashBoard",
-			"tooltip": "Show Categorys DashBoard",
-			"visible":true 
 		}
 		],
 		"entity": {
@@ -296,6 +309,8 @@
 		"parameters": {
 				"objectId": "Customer_Order"
 		},
+		"namespaces":{
+		},
 		"menu": [{
 			"type":"entitySet",
 		    "key": "graph",
@@ -320,13 +335,6 @@
 			"parameters": {
 				"objectId": "Customer_Order"
 			}
-		}, {
-			"type":"entitySet",
-			"key": "DashBoard",
-			"text": "DashBoard",
-			"target": "Customer_OrdersDashBoard",
-			"tooltip": "Show Customer_Orders DashBoard",
-			"visible":true 
 		}
 		],
 		"entity": {
@@ -460,6 +468,8 @@
 		"parameters": {
 				"objectId": "Customer"
 		},
+		"namespaces":{
+		},
 		"menu": [{
 			"type":"entitySet",
 		    "key": "graph",
@@ -484,13 +494,6 @@
 			"parameters": {
 				"objectId": "Customer"
 			}
-		}, {
-			"type":"entitySet",
-			"key": "DashBoard",
-			"text": "DashBoard",
-			"target": "CustomersDashBoard",
-			"tooltip": "Show Customers DashBoard",
-			"visible":true 
 		}
 		],
 		"entity": {
@@ -666,6 +669,8 @@
 		"parameters": {
 				"objectId": "Employee"
 		},
+		"namespaces":{
+		},
 		"menu": [{
 			"type":"entitySet",
 		    "key": "graph",
@@ -690,13 +695,6 @@
 			"parameters": {
 				"objectId": "Employee"
 			}
-		}, {
-			"type":"entitySet",
-			"key": "DashBoard",
-			"text": "DashBoard",
-			"target": "EmployeesDashBoard",
-			"tooltip": "Show Employees DashBoard",
-			"visible":true 
 		}
 		,{
 			"type":"menuNavigation",
@@ -1020,6 +1018,8 @@
 		"parameters": {
 				"objectId": "OrderDetail"
 		},
+		"namespaces":{
+		},
 		"menu": [{
 			"type":"entitySet",
 		    "key": "graph",
@@ -1044,13 +1044,6 @@
 			"parameters": {
 				"objectId": "OrderDetail"
 			}
-		}, {
-			"type":"entitySet",
-			"key": "DashBoard",
-			"text": "DashBoard",
-			"target": "OrderDetailsDashBoard",
-			"tooltip": "Show OrderDetails DashBoard",
-			"visible":true 
 		}
 		],
 		"entity": {
@@ -1112,7 +1105,7 @@
 		,"navigationProperty": {
   "order": {
 				"target": "northwind.Order",
-				"icon": "sap-icon://expand-group",
+				"icon": "sap-icon://group-2",
 				"key": "order",
 				"text": "order",						
 				"menu": [{
@@ -1142,7 +1135,7 @@
 			}		
 			,  "product": {
 				"target": "northwind.Product",
-				"icon": "sap-icon://expand-group",
+				"icon": "sap-icon://group-2",
 				"key": "product",
 				"text": "product",						
 				"menu": [{
@@ -1184,6 +1177,8 @@
 		"parameters": {
 				"objectId": "OrderSummary"
 		},
+		"namespaces":{
+		},
 		"menu": [{
 			"type":"entitySet",
 		    "key": "graph",
@@ -1208,13 +1203,6 @@
 			"parameters": {
 				"objectId": "OrderSummary"
 			}
-		}, {
-			"type":"entitySet",
-			"key": "DashBoard",
-			"text": "DashBoard",
-			"target": "OrderSummarysDashBoard",
-			"tooltip": "Show OrderSummarys DashBoard",
-			"visible":true 
 		}
 		],
 		"entity": {
@@ -1348,6 +1336,8 @@
 		"parameters": {
 				"objectId": "Order"
 		},
+		"namespaces":{
+		},
 		"menu": [{
 			"type":"entitySet",
 		    "key": "graph",
@@ -1372,13 +1362,6 @@
 			"parameters": {
 				"objectId": "Order"
 			}
-		}, {
-			"type":"entitySet",
-			"key": "DashBoard",
-			"text": "DashBoard",
-			"target": "OrdersDashBoard",
-			"tooltip": "Show Orders DashBoard",
-			"visible":true 
 		}
 		],
 		"entity": {
@@ -1415,7 +1398,7 @@
 				"type":"navigationSet",
 				"key": "hasOrderDetail",
 				"text": "hasOrderDetail",
-				"icon": "sap-icon://expand-group",
+				"icon": "sap-icon://group-2",
 				"target": "OrderDetails", 
 				"tooltip": "Show Orders OrderDetail",
 				"visible": true, 
@@ -1519,7 +1502,7 @@
 					"type":"navigationSet",
 					"key": "hasOrderDetail",
 					"text": "hasOrderDetail",
-					"icon": "sap-icon://expand-group",
+					"icon": "sap-icon://group-2",
 					"target":  "OrderDetails", 
 					"tooltip": "Show Orders OrderDetail",
 					"visible": true,
@@ -1722,6 +1705,8 @@
 		"parameters": {
 				"objectId": "Product"
 		},
+		"namespaces":{
+		},
 		"menu": [{
 			"type":"entitySet",
 		    "key": "graph",
@@ -1746,13 +1731,6 @@
 			"parameters": {
 				"objectId": "Product"
 			}
-		}, {
-			"type":"entitySet",
-			"key": "DashBoard",
-			"text": "DashBoard",
-			"target": "ProductsDashBoard",
-			"tooltip": "Show Products DashBoard",
-			"visible":true 
 		}
 		,{
 			"type":"menuNavigation",
@@ -1807,7 +1785,7 @@
 				"type":"navigationSet",
 				"key": "isPartOfOrderDetail",
 				"text": "isPartOfOrderDetail",
-				"icon": "sap-icon://expand-group",
+				"icon": "sap-icon://group-2",
 				"target": "OrderDetails", 
 				"tooltip": "Show Products OrderDetail",
 				"visible": true, 
@@ -1875,7 +1853,7 @@
 					"type":"navigationSet",
 					"key": "isPartOfOrderDetail",
 					"text": "isPartOfOrderDetail",
-					"icon": "sap-icon://expand-group",
+					"icon": "sap-icon://group-2",
 					"target":  "OrderDetails", 
 					"tooltip": "Show Products OrderDetail",
 					"visible": true,
@@ -1988,6 +1966,8 @@
 		"parameters": {
 				"objectId": "Region"
 		},
+		"namespaces":{
+		},
 		"menu": [{
 			"type":"entitySet",
 		    "key": "graph",
@@ -2012,13 +1992,6 @@
 			"parameters": {
 				"objectId": "Region"
 			}
-		}, {
-			"type":"entitySet",
-			"key": "DashBoard",
-			"text": "DashBoard",
-			"target": "RegionsDashBoard",
-			"tooltip": "Show Regions DashBoard",
-			"visible":true 
 		}
 		],
 		"entity": {
@@ -2068,6 +2041,8 @@
 		"parameters": {
 				"objectId": "Shipper"
 		},
+		"namespaces":{
+		},
 		"menu": [{
 			"type":"entitySet",
 		    "key": "graph",
@@ -2092,13 +2067,6 @@
 			"parameters": {
 				"objectId": "Shipper"
 			}
-		}, {
-			"type":"entitySet",
-			"key": "DashBoard",
-			"text": "DashBoard",
-			"target": "ShippersDashBoard",
-			"tooltip": "Show Shippers DashBoard",
-			"visible":true 
 		}
 		],
 		"entity": {
@@ -2190,6 +2158,8 @@
 		"parameters": {
 				"objectId": "Supplier"
 		},
+		"namespaces":{
+		},
 		"menu": [{
 			"type":"entitySet",
 		    "key": "graph",
@@ -2214,13 +2184,6 @@
 			"parameters": {
 				"objectId": "Supplier"
 			}
-		}, {
-			"type":"entitySet",
-			"key": "DashBoard",
-			"text": "DashBoard",
-			"target": "SuppliersDashBoard",
-			"tooltip": "Show Suppliers DashBoard",
-			"visible":true 
 		}
 		],
 		"entity": {
@@ -2354,6 +2317,8 @@
 		"parameters": {
 				"objectId": "SystemAEmployee"
 		},
+		"namespaces":{
+		},
 		"menu": [{
 			"type":"entitySet",
 		    "key": "graph",
@@ -2378,13 +2343,6 @@
 			"parameters": {
 				"objectId": "SystemAEmployee"
 			}
-		}, {
-			"type":"entitySet",
-			"key": "DashBoard",
-			"text": "DashBoard",
-			"target": "SystemAEmployeesDashBoard",
-			"tooltip": "Show SystemAEmployees DashBoard",
-			"visible":true 
 		}
 		,{
 			"type":"returnNavigation",
@@ -2779,6 +2737,8 @@
 		"parameters": {
 				"objectId": "SystemAProduct"
 		},
+		"namespaces":{
+		},
 		"menu": [{
 			"type":"entitySet",
 		    "key": "graph",
@@ -2803,13 +2763,6 @@
 			"parameters": {
 				"objectId": "SystemAProduct"
 			}
-		}, {
-			"type":"entitySet",
-			"key": "DashBoard",
-			"text": "DashBoard",
-			"target": "SystemAProductsDashBoard",
-			"tooltip": "Show SystemAProducts DashBoard",
-			"visible":true 
 		}
 		,{
 			"type":"returnNavigation",
@@ -2855,7 +2808,7 @@
 				"type":"navigationSet",
 				"key": "isPartOfOrderDetail",
 				"text": "isPartOfOrderDetail",
-				"icon": "sap-icon://expand-group",
+				"icon": "sap-icon://group-2",
 				"target": "OrderDetails", 
 				"tooltip": "Show SystemAProducts OrderDetail",
 				"visible": true, 
@@ -2923,7 +2876,7 @@
 					"type":"navigationSet",
 					"key": "isPartOfOrderDetail",
 					"text": "isPartOfOrderDetail",
-					"icon": "sap-icon://expand-group",
+					"icon": "sap-icon://group-2",
 					"target":  "OrderDetails", 
 					"tooltip": "Show SystemAProducts OrderDetail",
 					"visible": true,
@@ -3036,6 +2989,8 @@
 		"parameters": {
 				"objectId": "SystemBEmployee"
 		},
+		"namespaces":{
+		},
 		"menu": [{
 			"type":"entitySet",
 		    "key": "graph",
@@ -3060,13 +3015,6 @@
 			"parameters": {
 				"objectId": "SystemBEmployee"
 			}
-		}, {
-			"type":"entitySet",
-			"key": "DashBoard",
-			"text": "DashBoard",
-			"target": "SystemBEmployeesDashBoard",
-			"tooltip": "Show SystemBEmployees DashBoard",
-			"visible":true 
 		}
 		,{
 			"type":"returnNavigation",
@@ -3419,6 +3367,8 @@
 		"parameters": {
 				"objectId": "SystemBProduct"
 		},
+		"namespaces":{
+		},
 		"menu": [{
 			"type":"entitySet",
 		    "key": "graph",
@@ -3443,13 +3393,6 @@
 			"parameters": {
 				"objectId": "SystemBProduct"
 			}
-		}, {
-			"type":"entitySet",
-			"key": "DashBoard",
-			"text": "DashBoard",
-			"target": "SystemBProductsDashBoard",
-			"tooltip": "Show SystemBProducts DashBoard",
-			"visible":true 
 		}
 		,{
 			"type":"returnNavigation",
@@ -3495,7 +3438,7 @@
 				"type":"navigationSet",
 				"key": "isPartOfOrderDetail",
 				"text": "isPartOfOrderDetail",
-				"icon": "sap-icon://expand-group",
+				"icon": "sap-icon://group-2",
 				"target": "OrderDetails", 
 				"tooltip": "Show SystemBProducts OrderDetail",
 				"visible": true, 
@@ -3563,7 +3506,7 @@
 					"type":"navigationSet",
 					"key": "isPartOfOrderDetail",
 					"text": "isPartOfOrderDetail",
-					"icon": "sap-icon://expand-group",
+					"icon": "sap-icon://group-2",
 					"target":  "OrderDetails", 
 					"tooltip": "Show SystemBProducts OrderDetail",
 					"visible": true,
@@ -3676,6 +3619,8 @@
 		"parameters": {
 				"objectId": "Territory"
 		},
+		"namespaces":{
+		},
 		"menu": [{
 			"type":"entitySet",
 		    "key": "graph",
@@ -3700,13 +3645,6 @@
 			"parameters": {
 				"objectId": "Territory"
 			}
-		}, {
-			"type":"entitySet",
-			"key": "DashBoard",
-			"text": "DashBoard",
-			"target": "TerritorysDashBoard",
-			"tooltip": "Show Territorys DashBoard",
-			"visible":true 
 		}
 		],
 		"entity": {
@@ -3840,6 +3778,8 @@
 		"parameters": {
 				"objectId": "USState"
 		},
+		"namespaces":{
+		},
 		"menu": [{
 			"type":"entitySet",
 		    "key": "graph",
@@ -3864,13 +3804,6 @@
 			"parameters": {
 				"objectId": "USState"
 			}
-		}, {
-			"type":"entitySet",
-			"key": "DashBoard",
-			"text": "DashBoard",
-			"target": "USStatesDashBoard",
-			"tooltip": "Show USStates DashBoard",
-			"visible":true 
 		}
 		],
 		"entity": {

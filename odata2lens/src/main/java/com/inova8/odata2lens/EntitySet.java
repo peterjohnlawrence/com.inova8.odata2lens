@@ -14,13 +14,16 @@ public class EntitySet {
 	private String image;
 	private String entityIcon;
 	private Boolean visible;
+	private Boolean isReified;
+	private NavigationProperty reifiedSubject;
+	private NavigationProperty reifiedObject;
 	private String gridStyle="entitySetTable";
 	HashSet<String> baseTypes = new HashSet<String>();
 	HashSet<EntitySet> parentEntitySets = new HashSet<EntitySet>();
 	HashSet<EntitySet> childEntitySets = new HashSet<EntitySet>();
 
 	public EntitySet(String name,String fqn, String target, String dashboardTarget, String label, String tooltip, String image,
-			String entityIcon, Boolean visible, String baseType, HashSet<String> baseTypes) {
+			String entityIcon, Boolean visible, String baseType, HashSet<String> baseTypes, Boolean isReified) {
 		this.name = name;
 		this.fqn = fqn;
 		this.target = target;
@@ -33,6 +36,7 @@ public class EntitySet {
 		if (baseType != null)
 			this.addBaseType(baseType);
 		this.baseTypes = baseTypes;
+		this.isReified = isReified;
 	}
 
 	public String getName() {
@@ -41,6 +45,17 @@ public class EntitySet {
 
 	public String getFqn() {
 		return fqn;
+	}
+
+	public Boolean getIsReified() {
+		return isReified;
+	}
+
+	public Boolean getReifiedSubject() {
+		return isReified;
+	}
+	public void setIsReified(Boolean isReified) {
+		this.isReified = isReified;
 	}
 
 	public String getTarget() {
@@ -119,5 +134,20 @@ public class EntitySet {
 	public void setGridStyle(String gridStyle) {
 		this.gridStyle = gridStyle;
 	}
+
+	public void setReifiedSubject(NavigationProperty reifiedSubject) {
+		this.reifiedSubject = reifiedSubject;
+	}
+
+	public void setReifiedObject(NavigationProperty reifiedObject) {
+		this.reifiedObject = reifiedObject;
+	}
+	public String getReifiedSubjectName() {
+		return this.reifiedSubject.getRangeType().getEntitySet().getName();
+	}
+	public String getReifiedObjectName() {
+		return this.reifiedObject.getRangeType().getEntitySet().getName();
+	}
+
 
 }

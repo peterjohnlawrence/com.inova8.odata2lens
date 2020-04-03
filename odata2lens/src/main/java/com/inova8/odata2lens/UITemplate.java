@@ -146,6 +146,7 @@ public class UITemplate {
 
 	public void updateProperty(String property, String propertyType, String range, Float ordinal, Boolean visible,
 			String aggregate, String formatOptions, String height, String style,Boolean nullable) {
+		propertyType = null;// cannot overwrite the propertyType as it is deduced from the OData metadata
 		if (ordinal != null) {
 			Float currentOrdinal = null;
 			PropertyTemplate currentTemplate = null;

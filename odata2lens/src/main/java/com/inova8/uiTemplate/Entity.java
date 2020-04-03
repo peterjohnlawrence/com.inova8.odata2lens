@@ -7,6 +7,10 @@ public class Entity {
 	Boolean entitySetVisible;
 	Grid grid;
 	Form form;
+	Namespace[] namespaces;
+	public Namespace[] getNamespaces() {
+		return namespaces;
+	}
 	public String getEntity() {
 		return entity;
 	}

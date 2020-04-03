@@ -329,6 +329,28 @@
 					"formatOptions": "{'style':'short';'minFractionDigits':5}"
 				}
 			]
+		},
+			"grid": {
+		"target": "OrderDetails",
+		"gridStyle":"entitySetTable",
+		"targetVisible": true,
+		"targetIcon": "sap-icon://group-2",
+		"targetEntity": "OrderDetail",	
+		"properties": [	
+			{ 
+				"property": "product",
+				"propertyVisible": true,
+				"propertyType": "O",
+				"propertyRange": "Product",
+				"ordinal": 9,
+				"aggregate": "[]",
+				"formatOptions": "",
+				"allowEdit": false,
+				"height":"2rem",
+				"style":"Single",
+				"nullable":"false"
+			}	
+			]
 		}
 	},
 	"Product": {

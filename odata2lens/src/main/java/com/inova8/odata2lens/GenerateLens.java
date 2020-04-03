@@ -20,6 +20,7 @@ import java.util.Map.Entry;
 import java.util.Properties;
 import java.util.TreeMap;
 
+import org.apache.commons.lang3.ArrayUtils;
 import org.apache.olingo.client.api.ODataClient;
 import org.apache.olingo.client.api.communication.request.retrieve.EdmMetadataRequest;
 import org.apache.olingo.client.api.communication.response.ODataRetrieveResponse;
@@ -48,6 +49,7 @@ import com.google.gson.stream.JsonReader;
 import com.inova8.odata2lens.NavigationProperty;
 import com.inova8.uiTemplate.Form;
 import com.inova8.uiTemplate.Grid;
+import com.inova8.uiTemplate.Namespace;
 
 public class GenerateLens {
 	String workingPath;
@@ -87,6 +89,7 @@ public class GenerateLens {
 			generateUITemplateJson(apartmentName);
 			//TreeMap<String, UITemplate> uiTemplates = readUITemplate(schemaName);
 			TreeMap<String, UITemplate> uiTemplates = readUITemplateJson(apartmentName);
+
 			generateRouting(apartmentName);
 			generateContextMenu(apartmentName, uiTemplates);
 			StringWriter i18nWriter = generateI18n();
@@ -99,6 +102,7 @@ public class GenerateLens {
 					"i18n.properties"));
 			fw.write(i18nWriter.toString());
 			fw.close();
+			writeUITemplatesAsBuiltJson(apartmentName,uiTemplates);
 			System.out.println(apartmentName + " generated");
 			return true;
 		} catch (Exception e) {
@@ -107,11 +111,20 @@ public class GenerateLens {
 		}
 	}
 	public static void deduceNamespaces(){
+
 		for(String namespacestring: namespaceStrings) {
 			String[] splitNamespace = namespacestring.split(": <");
 			String prefix = splitNamespace[0];
 			String namespace = 	splitNamespace[1].substring(0, splitNamespace[1].length() - 1);
 			namespaces.put(prefix, namespace);
+			String[] splitPrefix = prefix.split("\\.");
+			if (splitPrefix.length>0) {
+				String postfix = splitPrefix[splitPrefix.length - 1];
+				EntityType entityType = entityTypes.get(postfix);
+				if(entityType !=null) {
+					entityType.getNamespaces().put(prefix, namespace);
+				}
+			}
 		}		
 	}
 
@@ -122,6 +135,7 @@ public class GenerateLens {
 		uiTemplates = readUITemplateJsonFile(
 				getDestinationPath() + File.separator + apartmentName + File.separator + "uiTemplate.generated.json");
 		try {
+			//Overlay the template with the differences in the hand-crafted template file
 			String uiTemplateFile = getSourcePath() + File.separator + apartmentName + File.separator
 					+ "uiTemplate.json";
 			JsonReader entitiesReader = new JsonReader(new FileReader(uiTemplateFile));
@@ -141,7 +155,12 @@ public class GenerateLens {
 						entityType.getEntitySet().setImage(entity.getImage());
 					if (entity.getEntitySetVisible() != null && !entity.getEntitySetVisible().toString().isEmpty())
 						entityType.getEntitySet().setVisible(entity.getEntitySetVisible());
-
+					if (entity.getNamespaces() != null ) {
+						for( Namespace namespace : entity.getNamespaces()) {
+							entityType.getNamespaces().put(namespace.getPrefix(), namespace.getNamespace());
+						}
+					}
+						
 					Form form = entity.getForm();
 					if (form != null) {
 						String formTarget = form.getTarget();
@@ -202,8 +221,24 @@ public class GenerateLens {
 		}
 		return uiTemplates;
 	}
+	private static void writeUITemplatesAsBuiltJson(String apartmentName, TreeMap<String, UITemplate>  uiTemplates) throws IOException {
 
+		Template uiTemplate = null;
+		uiTemplate = Velocity.getTemplate("uiTemplate.asbuilt.json.vm");
+		StringWriter uiWriter = new StringWriter();
+		VelocityContext uiContext = new VelocityContext();
+		uiContext.put("entityTypes", entityTypes);
+		uiContext.put("uiTemplates", uiTemplates);
+
+		uiTemplate.merge(uiContext, uiWriter);
+
+		FileWriter fw = new FileWriter(new File(getDestinationPath() + File.separator + apartmentName + File.separator,
+				"uiTemplate.asbuilt.json"));
+		fw.write(uiWriter.toString());
+		fw.close();
+	}
 	private static TreeMap<String, UITemplate> readUITemplateJsonFile(String uiTemplateFile) throws IOException {
+		//Read the generated uitemplate file, derived from the metadata
 		TreeMap<String, UITemplate> uiTemplates = new TreeMap<String, UITemplate>();
 		try {
 			JsonReader entitiesReader = new JsonReader(new FileReader(uiTemplateFile));
@@ -345,6 +380,8 @@ public class GenerateLens {
 									.getNavigationProperty(navigationPropertyName);
 							subTypeName = getAnnotations("", edmNavigationProperty.getAnnotations())
 									.get("odata.subType");
+							HashMap<String, String> navigationPropertyAnnotations = getAnnotations(
+									navigationPropertyName, edmNavigationProperty.getAnnotations());
 							if (edmNavigationProperty.isCollection()) {
 								//String name, String target, String label, String tooltip, String targetEntityType,String range, String icon
 								EntityNavigationSet entityNavigationSet = new EntityNavigationSet(
@@ -361,7 +398,13 @@ public class GenerateLens {
 										navigationPropertyName, navigationPropertyName,
 										edmNavigationProperty.getType().getName(),
 										edmNavigationProperty.getType().getName(), null, "2rem", "Single",
-										edmNavigationProperty.isNullable());
+										edmNavigationProperty.isNullable(),
+										navigationPropertyAnnotations.containsKey("odata.isReifiedSubject")
+										? (navigationPropertyAnnotations.get("odata.isReifiedSubject").equals("true"))
+										: false,
+										navigationPropertyAnnotations.containsKey("odata.isReifiedObject")
+										? (navigationPropertyAnnotations.get("odata.isReifiedSubject").equals("true"))
+										: false);
 								navigationProperty.setSubTypeName(subTypeName);
 								//navigationProperty.setRangeType(subTypeName);
 								complexType.putNavigationProperty(subTypeName, navigationProperty);
@@ -406,7 +449,10 @@ public class GenerateLens {
 									entityTypeAnnotations.containsKey("odata.baseType")
 											? entityTypeAnnotations.get("odata.baseType")
 											: null,
-									baseTypes
+									baseTypes,
+									entityTypeAnnotations.containsKey("odata.isReified")
+									? entityTypeAnnotations.get("odata.isReified").equals("true")
+									: false
 
 							);
 							TreeMap<String, EntityNavigationSet> entityNavigationSets = new TreeMap<String, EntityNavigationSet>();
@@ -429,7 +475,9 @@ public class GenerateLens {
 													? propertyAnnotations.get("sap.quickinfo")
 													: propertyName,
 											type, null, propertyAnnotations.containsKey("odata.FK") ? true : false,
-											"2rem", "Input", edmProperty.isNullable());
+											"2rem", "Input", edmProperty.isNullable()
+											
+											);
 									if (edmProperty.isPrimitive()) {
 										//primitiveType = edmProperty.getType().getFullQualifiedName().toString();
 
@@ -483,7 +531,15 @@ public class GenerateLens {
 														: "Show " + navigationPropertyName,
 												edmNavigationProperty.getType().getFullQualifiedName()
 														.getFullQualifiedNameAsString(), //.getName(),
-												range, "", "2rem", "Single", edmNavigationProperty.isNullable());
+												range, "", "2rem", "Single", edmNavigationProperty.isNullable(),
+												navigationPropertyAnnotations.containsKey("odata.isReifiedSubject")
+												? (navigationPropertyAnnotations.get("odata.isReifiedSubject").equals("true"))
+												: false,
+												navigationPropertyAnnotations.containsKey("odata.isReifiedObject")
+												? (navigationPropertyAnnotations.get("odata.isReifiedObject").equals("true"))
+												: false);
+										if(navigationPropertyAnnotations.containsKey("odata.isReifiedSubject")&& (navigationPropertyAnnotations.get("odata.isReifiedSubject").equals("true")) )entitySet.setReifiedSubject(navigationProperty);
+										if(navigationPropertyAnnotations.containsKey("odata.isReifiedObject")&& (navigationPropertyAnnotations.get("odata.isReifiedObject").equals("true")) )entitySet.setReifiedObject(navigationProperty);
 										navigationProperties.put(navigationPropertyName, navigationProperty);
 									}
 								}
@@ -616,6 +672,7 @@ public class GenerateLens {
 		fw.write(uiWriter.toString());
 		fw.close();
 	}
+
 	private static void generateContextMenu(String apartmentName, TreeMap<String, UITemplate> uiTemplates)
 			throws IOException {
 

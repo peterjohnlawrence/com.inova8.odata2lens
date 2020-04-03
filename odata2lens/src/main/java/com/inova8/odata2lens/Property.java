@@ -13,6 +13,7 @@ public class Property {
 	String style="List";
 	String styletag ="Input ";
 	Boolean nullable = true;
+
 	public Property(String name, String label, String tooltip, String range, String formatOptions, Boolean isFK, String height, String style,Boolean nullable) {
 		this.name = name;
 
@@ -45,6 +46,7 @@ public class Property {
 		}else {
 			this.nullable=nullable;
 		}
+
 	}
 
 	public String getName() {
@@ -74,6 +76,8 @@ public class Property {
 	public String getFormatOptions() {
 		return formatOptions;
 	}
+
+
 
 	public ComplexType getComplexRange() {
 		return complexRange;

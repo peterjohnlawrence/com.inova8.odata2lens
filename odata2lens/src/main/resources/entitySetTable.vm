@@ -84,7 +84,15 @@
 #end
 <mvc:View controllerName="com.inova8.lens.controller.EntitySetTable" xmlns="sap.m" xmlns:mvc="sap.ui.core.mvc"
 	xmlns:layout="sap.ui.layout" xmlns:rdf="com.inova8.lens.control" xmlns:core="sap.ui.core" xmlns:table="sap.ui.table" xmlns:cd="http://schemas.sap.com/sapui5/extension/sap.ui.core.CustomData/1">
-	<Page showHeader="false" id="page" navButtonPress="onNavBack" showNavButton="true" title="{i18n>$entitySet.target.$ViewTitle}" cd:parameters="{'appName':'$entitySet.target', 'entityType':'$entitySet.name','entitySet':'$entitySet.name'}">
+	<Page showHeader="false" id="page" navButtonPress="onNavBack" showNavButton="true" title="{i18n>$entitySet.target.$ViewTitle}" cd:parameters="{'appName':'$entitySet.target', 'entityType':'$entitySet.name','entitySet':'$entitySet.name'
+	#if($entitySet.getIsReified()),'reification':{'reifiedPredicates':[
+		{'subjectId': '$entitySet.fqn','label': '$entitySet.name'}
+		#foreach($childEntitySet in $entitySet.childEntitySets)
+		,{'subjectId': '$childEntitySet.fqn','label': '$childEntitySet.name'}
+		#end
+		],'reifiedSubject':'$entitySet.reifiedSubjectName','reifiedObject':'$entitySet.reifiedObjectName'}	
+	#end
+	}">
 		<content>
 			<table:Table id="table"
 					cd:parameters="{ 
@@ -162,7 +170,11 @@ $property.property:{ $count:true} #end
 						<Button id="delete" icon="sap-icon://delete"  press="onDeletePress" 	visible="{= ${d}{entitySetView>/rowSelected} &amp;&amp; !${d}{entitySetView>/navigationSet}}" tooltip="{= ${d}{i18n>crud.delete.tooltip1} + ' ' + '$entitySet.name' +' '+ ${d}{i18n>crud.delete.tooltip2}}">
 						</Button>
 						<Button id="add" icon="sap-icon://positive"   press="onAddPress" visible="{entitySetView>/navigationSet}" 	tooltip="{= ${d}{i18n>crud.add.tooltip} + ' ' + '$entitySet.name'}"/>
+						#if( $entitySet.getIsReified())
+						<Button id="createreified" icon="sap-icon://create-form"   press="onCreateReifiedPress" 	tooltip="{= ${d}{i18n>crud.createreified.tooltip} + ' ' + '$entitySet.name'}"/>
+						#else
 						<Button id="create" icon="sap-icon://create-form"   press="onCreatePress" 	tooltip="{= ${d}{i18n>crud.create.tooltip} + ' ' + '$entitySet.name'}"/>
+						#end
 						<Button
 							icon="sap-icon://sort"
 							tooltip="{i18n>search.clearAllSorts}"

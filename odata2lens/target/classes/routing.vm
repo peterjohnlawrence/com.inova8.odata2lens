@@ -43,6 +43,12 @@
 			"target": [
 				"_configurationEditor"
 			]
+		},{
+			"pattern": "_ChangeHistory",
+			"name": "_changeHistory",
+			"target": [
+				"_changeHistory"
+			]
 		}, {
 			"pattern": "_PrivacyPolicies",
 			"name": "_privacyPolicies",
@@ -192,6 +198,11 @@
 			"_configurationEditor": {
 				"viewName": "ConfigurationEditor",
 				"viewId": "configurationEditor",
+				"viewLevel": 1
+			},
+			"_changeHistory": {
+				"viewName": "Change/ChangeHistory",
+				"viewId": "changeHistory",
 				"viewLevel": 1
 			},
 			"_privacyPolicies": {

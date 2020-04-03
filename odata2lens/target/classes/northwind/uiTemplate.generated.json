@@ -4,6 +4,8 @@
 	"icon": "sap-icon://group-2",
 	"image": "./images/icons/unknown.svg",
 	"entitySetVisible":true,
+	"namespaces":[
+	],
 	"grid": {
 		"target": "Categorys",
 		"gridStyle":"entitySetTable",
@@ -160,6 +162,8 @@
 	"icon": "sap-icon://group-2",
 	"image": "./images/icons/unknown.svg",
 	"entitySetVisible":true,
+	"namespaces":[
+	],
 	"grid": {
 		"target": "Customers",
 		"gridStyle":"entitySetTable",
@@ -654,6 +658,8 @@
 	"icon": "sap-icon://group-2",
 	"image": "./images/icons/unknown.svg",
 	"entitySetVisible":true,
+	"namespaces":[
+	],
 	"grid": {
 		"target": "Customer_Orders",
 		"gridStyle":"entitySetTable",
@@ -862,6 +868,8 @@
 	"icon": "sap-icon://group-2",
 	"image": "./images/icons/unknown.svg",
 	"entitySetVisible":true,
+	"namespaces":[
+	],
 	"grid": {
 		"target": "Employees",
 		"gridStyle":"entitySetTable",
@@ -1694,6 +1702,8 @@
 	"icon": "sap-icon://group-2",
 	"image": "./images/icons/unknown.svg",
 	"entitySetVisible":true,
+	"namespaces":[
+	],
 	"grid": {
 		"target": "Orders",
 		"gridStyle":"entitySetTable",
@@ -2448,6 +2458,8 @@
 	"icon": "sap-icon://group-2",
 	"image": "./images/icons/unknown.svg",
 	"entitySetVisible":true,
+	"namespaces":[
+	],
 	"grid": {
 		"target": "OrderDetails",
 		"gridStyle":"entitySetTable",
@@ -2734,6 +2746,8 @@
 	"icon": "sap-icon://group-2",
 	"image": "./images/icons/unknown.svg",
 	"entitySetVisible":true,
+	"namespaces":[
+	],
 	"grid": {
 		"target": "OrderSummarys",
 		"gridStyle":"entitySetTable",
@@ -2890,6 +2904,8 @@
 	"icon": "sap-icon://group-2",
 	"image": "./images/icons/unknown.svg",
 	"entitySetVisible":true,
+	"namespaces":[
+	],
 	"grid": {
 		"target": "Products",
 		"gridStyle":"entitySetTable",
@@ -3358,6 +3374,8 @@
 	"icon": "sap-icon://group-2",
 	"image": "./images/icons/unknown.svg",
 	"entitySetVisible":true,
+	"namespaces":[
+	],
 	"grid": {
 		"target": "Regions",
 		"gridStyle":"entitySetTable",
@@ -3436,6 +3454,8 @@
 	"icon": "sap-icon://group-2",
 	"image": "./images/icons/unknown.svg",
 	"entitySetVisible":true,
+	"namespaces":[
+	],
 	"grid": {
 		"target": "Shippers",
 		"gridStyle":"entitySetTable",
@@ -3566,6 +3586,8 @@
 	"icon": "sap-icon://group-2",
 	"image": "./images/icons/unknown.svg",
 	"entitySetVisible":true,
+	"namespaces":[
+	],
 	"grid": {
 		"target": "Suppliers",
 		"gridStyle":"entitySetTable",
@@ -4060,6 +4082,8 @@
 	"icon": "sap-icon://group-2",
 	"image": "./images/icons/unknown.svg",
 	"entitySetVisible":true,
+	"namespaces":[
+	],
 	"grid": {
 		"target": "SystemAEmployees",
 		"gridStyle":"entitySetTable",
@@ -4944,6 +4968,8 @@
 	"icon": "sap-icon://group-2",
 	"image": "./images/icons/unknown.svg",
 	"entitySetVisible":true,
+	"namespaces":[
+	],
 	"grid": {
 		"target": "SystemAProducts",
 		"gridStyle":"entitySetTable",
@@ -5412,6 +5438,8 @@
 	"icon": "sap-icon://group-2",
 	"image": "./images/icons/unknown.svg",
 	"entitySetVisible":true,
+	"namespaces":[
+	],
 	"grid": {
 		"target": "SystemBEmployees",
 		"gridStyle":"entitySetTable",
@@ -6322,6 +6350,8 @@
 	"icon": "sap-icon://group-2",
 	"image": "./images/icons/unknown.svg",
 	"entitySetVisible":true,
+	"namespaces":[
+	],
 	"grid": {
 		"target": "SystemBProducts",
 		"gridStyle":"entitySetTable",
@@ -6790,6 +6820,8 @@
 	"icon": "sap-icon://group-2",
 	"image": "./images/icons/unknown.svg",
 	"entitySetVisible":true,
+	"namespaces":[
+	],
 	"grid": {
 		"target": "Territorys",
 		"gridStyle":"entitySetTable",
@@ -6946,6 +6978,8 @@
 	"icon": "sap-icon://group-2",
 	"image": "./images/icons/unknown.svg",
 	"entitySetVisible":true,
+	"namespaces":[
+	],
 	"grid": {
 		"target": "USStates",
 		"gridStyle":"entitySetTable",
