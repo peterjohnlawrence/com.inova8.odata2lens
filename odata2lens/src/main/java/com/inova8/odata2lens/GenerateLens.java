@@ -51,6 +51,7 @@ import com.inova8.uiTemplate.Form;
 import com.inova8.uiTemplate.Grid;
 import com.inova8.uiTemplate.Namespace;
 
+@SuppressWarnings("unused")
 public class GenerateLens {
 	String workingPath;
 	static TreeMap<String, EntityType> entityTypes = new TreeMap<String, EntityType>();
@@ -128,6 +129,17 @@ public class GenerateLens {
 		}		
 	}
 
+	@SuppressWarnings("unused")
+	private static String extractUppercase(String prefix) {
+		String namePrefix="";
+		   for(int i=prefix.length()-1; i>=0; i--) {
+		        if(Character.isUpperCase(prefix.charAt(i))) {
+		        	namePrefix = prefix.charAt(i) + namePrefix ;
+		        }
+		    }	
+		return namePrefix+"-";
+	}
+
 	private static TreeMap<String, UITemplate> readUITemplateJson(String apartmentName) throws IOException {
 
 		TreeMap<String, UITemplate> uiTemplates;
@@ -154,13 +166,15 @@ public class GenerateLens {
 					if (entity.getImage() != null && !entity.getImage().isEmpty())
 						entityType.getEntitySet().setImage(entity.getImage());
 					if (entity.getEntitySetVisible() != null && !entity.getEntitySetVisible().toString().isEmpty())
-						entityType.getEntitySet().setVisible(entity.getEntitySetVisible());
+						entityType.setEntityTypeVisible(entity.getEntitySetVisible());
+
 					if (entity.getNamespaces() != null ) {
 						for( Namespace namespace : entity.getNamespaces()) {
 							entityType.getNamespaces().put(namespace.getPrefix(), namespace.getNamespace());
 						}
 					}
-						
+					if (entity.getNamePattern() != null && !entity.getNamePattern().isEmpty())
+						entityType.setNamePattern(entity.getNamePattern());	
 					Form form = entity.getForm();
 					if (form != null) {
 						String formTarget = form.getTarget();
@@ -210,7 +224,7 @@ public class GenerateLens {
 						}
 					}
 				}else {
-					System.out.println("UiTemplate refers to unrecognized entityType:" + entity);
+					System.out.println("UiTemplate refers to unrecognized entityType:" + entity.getEntity());
 				}
 			}
 
@@ -404,7 +418,12 @@ public class GenerateLens {
 										: false,
 										navigationPropertyAnnotations.containsKey("odata.isReifiedObject")
 										? (navigationPropertyAnnotations.get("odata.isReifiedSubject").equals("true"))
-										: false);
+										: false,
+										navigationPropertyAnnotations.containsKey("odata.isReifiedPredicate")
+										? (navigationPropertyAnnotations.get("odata.isReifiedPredicate").equals("true"))
+										: false
+										);
+								
 								navigationProperty.setSubTypeName(subTypeName);
 								//navigationProperty.setRangeType(subTypeName);
 								complexType.putNavigationProperty(subTypeName, navigationProperty);
@@ -450,8 +469,8 @@ public class GenerateLens {
 											? entityTypeAnnotations.get("odata.baseType")
 											: null,
 									baseTypes,
-									entityTypeAnnotations.containsKey("odata.isReified")
-									? entityTypeAnnotations.get("odata.isReified").equals("true")
+									entityTypeAnnotations.containsKey("odata.isReifiedStatement")
+									? entityTypeAnnotations.get("odata.isReifiedStatement").equals("true")
 									: false
 
 							);
@@ -537,9 +556,20 @@ public class GenerateLens {
 												: false,
 												navigationPropertyAnnotations.containsKey("odata.isReifiedObject")
 												? (navigationPropertyAnnotations.get("odata.isReifiedObject").equals("true"))
+												: false,
+												navigationPropertyAnnotations.containsKey("odata.isReifiedPredicate")
+												? (navigationPropertyAnnotations.get("odata.isReifiedPredicate").equals("true"))
 												: false);
-										if(navigationPropertyAnnotations.containsKey("odata.isReifiedSubject")&& (navigationPropertyAnnotations.get("odata.isReifiedSubject").equals("true")) )entitySet.setReifiedSubject(navigationProperty);
-										if(navigationPropertyAnnotations.containsKey("odata.isReifiedObject")&& (navigationPropertyAnnotations.get("odata.isReifiedObject").equals("true")) )entitySet.setReifiedObject(navigationProperty);
+										if(navigationPropertyAnnotations.containsKey("odata.isReifiedSubject")&& (navigationPropertyAnnotations.get("odata.isReifiedSubject").equals("true")) ) {
+											entitySet.setReifiedSubject(navigationProperty);
+											if(navigationPropertyAnnotations.containsKey("odata.inverseOf"))entitySet.setReifiedInverseSubjectPredicate(navigationPropertyAnnotations.get("odata.inverseOf"));
+										}
+										if(navigationPropertyAnnotations.containsKey("odata.isReifiedObject")&& (navigationPropertyAnnotations.get("odata.isReifiedObject").equals("true")) ) {
+											entitySet.setReifiedObject(navigationProperty);
+											if(navigationPropertyAnnotations.containsKey("odata.inverseOf"))entitySet.setReifiedInverseObjectPredicate(navigationPropertyAnnotations.get("odata.inverseOf"));
+										}
+										if(navigationPropertyAnnotations.containsKey("odata.isReifiedPredicate")&& (navigationPropertyAnnotations.get("odata.isReifiedPredicate").equals("true")) )entitySet.setReifiedPredicate(navigationProperty);
+
 										navigationProperties.put(navigationPropertyName, navigationProperty);
 									}
 								}
@@ -616,6 +646,14 @@ public class GenerateLens {
 							}
 						}
 					}
+				}
+			}
+		}
+		for (String schemaName : schemaNames) {
+			EdmSchema schema = edm.getSchema(schemaName);
+			if (schema != null) {
+				for (EntityType entityType : entityTypes.values()) {
+					entityType.setEntityTypeVisible(entityType.getEntitySet().getVisible());
 				}
 			}
 		}

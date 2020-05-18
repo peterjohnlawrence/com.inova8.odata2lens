@@ -14,8 +14,9 @@ public class NavigationProperty {
 	Boolean nullable;
 	Boolean isReifiedSubject =false;
 	Boolean isReifiedObject =false;
+	Boolean isReifiedPredicate =false;
 	public NavigationProperty(String name, String label, String tooltip, String targetEntityType, String range,
-			String icon, String height, String style, Boolean nullable,Boolean isReifiedSubject,Boolean isReifiedObject) {
+			String icon, String height, String style, Boolean nullable,Boolean isReifiedSubject,Boolean isReifiedObject,Boolean isReifiedPredicate) {
 		this.name = name;
 		this.label = label;
 		this.tooltip = tooltip;
@@ -27,6 +28,7 @@ public class NavigationProperty {
 		this.nullable = nullable;
 		this.isReifiedSubject = isReifiedSubject;
 		this.isReifiedObject = isReifiedObject;		
+		this.isReifiedPredicate=isReifiedPredicate;
 	}
 
 	public String getName() {
@@ -96,5 +98,8 @@ public class NavigationProperty {
 
 	public Boolean getIsReifiedObject() {
 		return isReifiedObject;
+	}
+	public Boolean getIsReifiedPredicate() {
+		return isReifiedPredicate;
 	}
 }

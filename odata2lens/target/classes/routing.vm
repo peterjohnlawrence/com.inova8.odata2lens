@@ -125,10 +125,10 @@
 				"_PathAdvancedSearch"
 			]
 		}, {
-			"pattern": "_PathLinkSearch/{startObjectId}/{endObjectId}/:?queryOptions:",
-			"name": "_PathLinkSearch",
+			"pattern": "_PathLinkedSearch/{startObjectId}/{endObjectId}/:?queryOptions:",
+			"name": "_PathLinkedSearch",
 			"target": [
-				"_PathLinkSearch"
+				"_PathLinkedSearch"
 			]
 		}, {
 			"pattern": "_Graph/{target}/{objectId}/:navigation::?queryOptions:",

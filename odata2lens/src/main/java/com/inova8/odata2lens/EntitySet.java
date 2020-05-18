@@ -16,11 +16,14 @@ public class EntitySet {
 	private Boolean visible;
 	private Boolean isReified;
 	private NavigationProperty reifiedSubject;
+	private NavigationProperty reifiedPredicate;
 	private NavigationProperty reifiedObject;
 	private String gridStyle="entitySetTable";
 	HashSet<String> baseTypes = new HashSet<String>();
 	HashSet<EntitySet> parentEntitySets = new HashSet<EntitySet>();
 	HashSet<EntitySet> childEntitySets = new HashSet<EntitySet>();
+	private String reifiedInverseSubjectPredicate;
+	private String reifiedInverseObjectPredicate;
 
 	public EntitySet(String name,String fqn, String target, String dashboardTarget, String label, String tooltip, String image,
 			String entityIcon, Boolean visible, String baseType, HashSet<String> baseTypes, Boolean isReified) {
@@ -51,9 +54,9 @@ public class EntitySet {
 		return isReified;
 	}
 
-	public Boolean getReifiedSubject() {
-		return isReified;
-	}
+//	public Boolean getReifiedSubject() {
+//		return isReified;
+//	}
 	public void setIsReified(Boolean isReified) {
 		this.isReified = isReified;
 	}
@@ -72,11 +75,13 @@ public class EntitySet {
 
 	public Boolean getVisible() {
 		if(parentEntitySets.isEmpty() )
-			return visible;
+			return true;
 		else
 			return false;
 	}
-
+	public Boolean isVisible() {
+		return visible;
+	}
 	public String getTooltip() {
 		return tooltip;
 	}
@@ -138,16 +143,60 @@ public class EntitySet {
 	public void setReifiedSubject(NavigationProperty reifiedSubject) {
 		this.reifiedSubject = reifiedSubject;
 	}
-
+	public void setReifiedPredicate(NavigationProperty reifiedPredicate) {
+		this.reifiedPredicate = reifiedPredicate;
+	}
 	public void setReifiedObject(NavigationProperty reifiedObject) {
 		this.reifiedObject = reifiedObject;
 	}
-	public String getReifiedSubjectName() {
+	public void setReifiedInverseSubjectPredicate(String reifiedInverseSubjectPredicate) {
+		this.reifiedInverseSubjectPredicate =  reifiedInverseSubjectPredicate;
+	}
+
+	public void setReifiedInverseObjectPredicate(String reifiedInverseObjectPredicate) {
+		this.reifiedInverseObjectPredicate =  reifiedInverseObjectPredicate;		
+	}
+	public String getReifiedSubjectClass() {
 		return this.reifiedSubject.getRangeType().getEntitySet().getName();
 	}
-	public String getReifiedObjectName() {
+	public String getReifiedPredicateClass() {
+		if (this.reifiedPredicate!=null)
+			return this.reifiedPredicate.getRangeType().getEntitySet().getName();
+		else
+			return null;
+	}
+	public String getReifiedObjectClass() {
 		return this.reifiedObject.getRangeType().getEntitySet().getName();
 	}
+	public String getReifiedSubjectPredicate() {	
+		return this.reifiedSubject.getName();
+	}
+	public String getReifiedPredicate() {
+		if (this.reifiedPredicate!=null)
+			return this.reifiedPredicate.getName();
+		else
+			return null;
+	}
+	
+	public String getReifiedInverseSubjectPredicate() {
+		return reifiedInverseSubjectPredicate.split("/")[1];
+	}
+
+	public String getReifiedInverseObjectPredicate() {
+		return reifiedInverseObjectPredicate.split("/")[1];
+	}
+
+	public Boolean hasReifiedPredicate() {
+		if (this.reifiedPredicate!=null)
+			return true;
+		else
+			return false;
+	}
+	public String getReifiedObjectPredicate() {
+		return this.reifiedObject.getName();
+	}
+
+
 
 
 }

@@ -164,7 +164,7 @@
 						#entitymaptypes( $property $entity.target  ) 
 						#elseif ($property.propertyType == "O")
 						<Label text="{i18n>$entity.target.$property.property}" tooltip="{i18n>$entity.target.$property.property#[[.]]#tooltip}" required="$property.required"/> 
-						<Toolbar>
+						<Toolbar style="Clear">
 							<rdf:TextResource path="dataModel>$property.property" entitySet="$property.range" tooltip="{i18n>$entity.target.$property.property#[[.]]#tooltip}"/>
 							<ToolbarSpacer/>	
 							#if ($property.required == false)				
@@ -200,7 +200,7 @@
 						#entitymaptypes( $complexProperty $entity.target  ) 
 								#elseif ($complexProperty.propertyType == "O")
 						<rdf:TextResource path="dataModel>$complexProperty.property" entitySet="$complexProperty.range" tooltip="{i18n>$entity.target.$complexProperty.property#[[.]]#tooltip}"/>	
-						<Toolbar>
+						<Toolbar style="Clear">
 							<rdf:TextResource path="dataModel>$complexProperty.property" entitySet="$complexProperty.range" tooltip="{i18n>$entity.target.$complexProperty.property#[[.]]#tooltip}"/>	
 							<ToolbarSpacer/>
 							#if ($complexProperty.required == false)	

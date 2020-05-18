@@ -8,12 +8,13 @@
 	"entity": "$entityType.entitySet.name",
 	"icon": "sap-icon://group-2",
 	"image": "./images/icons/unknown.svg",
-	"entitySetVisible":true,
+	"entitySetVisible":$entityType.entitySet.getVisible(),
 	"namespaces":[
 		#foreach($namespaceItem in $entityType.namespaces.entrySet())
 			{"prefix":"$namespaceItem.key", "namespace":"$namespaceItem.value" }#if($foreach.hasNext ),#end
 		#end
 	],
+	"namePattern":"",
 	"grid": {
 		"target": "$entityType.entitySet.target",
 		"gridStyle":"entitySetTable",

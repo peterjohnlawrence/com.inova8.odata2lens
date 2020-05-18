@@ -8,6 +8,7 @@ public class Entity {
 	Grid grid;
 	Form form;
 	Namespace[] namespaces;
+	String namePattern;
 	public Namespace[] getNamespaces() {
 		return namespaces;
 	}
@@ -16,6 +17,12 @@ public class Entity {
 	}
 	public void setEntity(String entity) {
 		this.entity = entity;
+	}
+	public String getNamePattern() {
+		return namePattern;
+	}
+	public void setNamePattern(String namePattern) {
+		this.namePattern = namePattern;
 	}
 	public String getIcon() {
 		return icon;

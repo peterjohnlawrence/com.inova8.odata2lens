@@ -85,12 +85,9 @@
 <mvc:View controllerName="com.inova8.lens.controller.EntitySetTable" xmlns="sap.m" xmlns:mvc="sap.ui.core.mvc"
 	xmlns:layout="sap.ui.layout" xmlns:rdf="com.inova8.lens.control" xmlns:core="sap.ui.core" xmlns:table="sap.ui.table" xmlns:cd="http://schemas.sap.com/sapui5/extension/sap.ui.core.CustomData/1">
 	<Page showHeader="false" id="page" navButtonPress="onNavBack" showNavButton="true" title="{i18n>$entitySet.target.$ViewTitle}" cd:parameters="{'appName':'$entitySet.target', 'entityType':'$entitySet.name','entitySet':'$entitySet.name'
-	#if($entitySet.getIsReified()),'reification':{'reifiedPredicates':[
+	#if($entitySet.getIsReified()),'reification':{'reifiedStatement':
 		{'subjectId': '$entitySet.fqn','label': '$entitySet.name'}
-		#foreach($childEntitySet in $entitySet.childEntitySets)
-		,{'subjectId': '$childEntitySet.fqn','label': '$childEntitySet.name'}
-		#end
-		],'reifiedSubject':'$entitySet.reifiedSubjectName','reifiedObject':'$entitySet.reifiedObjectName'}	
+		,'reifiedSubject': {'predicate':'$entitySet.reifiedSubjectPredicate', 'class':'$entitySet.reifiedSubjectClass' , 'inverse':'$entitySet.reifiedInverseSubjectPredicate' },'reifiedPredicate':#if($entitySet.hasReifiedPredicate()){'predicate':'$entitySet.reifiedPredicate', 'class':'$entitySet.reifiedPredicateClass'}#else{}#end,'reifiedObject':{'predicate':'$entitySet.reifiedObjectPredicate', 'class':'$entitySet.reifiedObjectClass', 'inverse':'$entitySet.reifiedInverseObjectPredicate' }}	
 	#end
 	}">
 		<content>

@@ -54,6 +54,7 @@
 		"entity": "Customer",
 		"icon": "sap-icon://northwind/customer",
 		"image": "./apartment/northwind/images/customer.svg",
+		"namePattern": "Customer-",
 		"form": {
 			"target": "Customer",
 			"formStyle": "entity360",
@@ -316,6 +317,7 @@
 		"entity": "OrderDetail",
 		"icon": "sap-icon://northwind/orderDetail",
 		"image": "./apartment/northwind/images/orderDetail.svg",
+		"namePattern": "{subjectId}-",
 		"form": {
 			"target": "OrderDetail",
 			"properties": [

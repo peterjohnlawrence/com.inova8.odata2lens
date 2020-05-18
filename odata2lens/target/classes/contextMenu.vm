@@ -174,12 +174,13 @@
 #foreach($entityType in $entityTypes)
 	"$entityType.entitySet.name": {
 		"key": "$entityType.entitySet.name",
+		"fqn": "$entityType.entitySet.fqn",
 		"text": "$entityType.entitySet.label",
 		"target": "$entityType.entitySet.target",
 		"tooltip": "Show all $entityType.entitySet.label",
 		"image": "$entityType.entitySet.image",
 		"icon": "$entityType.entitySet.entityIcon",
-		"visible":$entityType.entitySet.visible,
+		"visible":$entityType.entityTypeVisible,
 		"parameters": {
 				"objectId": "$entityType.entitySet.name"
 		},
@@ -189,6 +190,7 @@
 				
 			#end
 		},
+		"namePattern": "$entityType.namePattern",
 		"menu": [{
 			"type":"entitySet",
 		    "key": "graph",
