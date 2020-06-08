@@ -55,21 +55,22 @@
 		<customHeader>
 			<Toolbar>
 				<ToolbarSpacer/>
-				<HBox id="sourceTitle" alignItems="Center">
-						<rdf:TextResource id="selectedResource" path="" entitySet=""/>
-				</HBox>	
-				<Title id="pathTitle" text="{entityView>/navigationText}"/>
-				<HBox id="versionsTitle" alignItems="Center">
-					<Title text="(" width="4px"/>
-					<ComboBox id="versionSelection" items="{ path: 'entityView>/versions' }" selectionChange="onVersionChange">
-						<core:Item key="{entityView>navigation}" text="{entityView>text}"/>
-					</ComboBox>
-					<Title text=")" width="5px"/>
-				</HBox>
-				<Title id="entityTypeTitle" text="{i18n>$entity.target.$This}"/>
-				<Title text="(" width="4px"/>
-				<rdf:TextResource path="dataModel>" entitySet="$entitySet.name"/>
-				<Title text=")" width="5px"/>
+<!-- 				<HBox id="sourceTitle" alignItems="Center"> -->
+<!-- 						<rdf:TextResource id="selectedResource" path="" entitySet=""/> -->
+<!-- 				</HBox>	 -->
+<!-- 				<Title id="pathTitle" text="{entityView>/navigationText}"/> -->
+<!-- 				<HBox id="versionsTitle" alignItems="Center"> -->
+<!-- 					<Title text="(" width="4px"/> -->
+<!-- 					<ComboBox id="versionSelection" items="{ path: 'entityView>/versions' }" selectionChange="onVersionChange"> -->
+<!-- 						<core:Item key="{entityView>navigation}" text="{entityView>text}"/> -->
+<!-- 					</ComboBox> -->
+<!-- 					<Title text=")" width="5px"/> -->
+<!-- 				</HBox> -->
+<!-- 				<Title id="entityTypeTitle" text="{i18n>$entity.target.$This}"/> -->
+<!-- 				<Title text="(" width="4px"/> -->
+<!-- 				<rdf:TextResource path="dataModel>" entitySet="$entitySet.name"/> -->
+<!-- 				<Title text=")" width="5px"/> -->
+				<rdf:GraphCrumb id="titleCrumb" style="title" crumb="{entityView>/context}"/> 
 				<ToolbarSpacer/>
 				<ToggleButton id="edit" icon="sap-icon://edit"  activeIcon="sap-icon://cancel"  press="onEditPress" 	tooltip="{i18n>crud.edit.tooltip}">
 					<layoutData>

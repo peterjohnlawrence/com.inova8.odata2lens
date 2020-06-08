@@ -146,19 +146,25 @@ $property.property:{ $count:true} #end
 				selectionMode="Single" width="auto" visibleRowCountMode="Auto" rowSelectionChange=".onRowSelectionChange">
 				<table:toolbar>
 					<Toolbar>
+
 						<ToolbarSpacer/>
-						<HBox id="sourceTitle" alignItems="Center">
-							<rdf:TextResource id="selectedResource" path="" entitySet=""/>
-						</HBox>
-						<Title id="pathTitle" text="{entitySetView>/navigationText}"/>
-						<HBox id="versionsTitle" alignItems="Center">
-							<Title text="(" />
-							<ComboBox id="versionSelection" items="{ path: 'entitySetView>/versions' }" selectionChange="onVersionChange">
-								<core:Item key="{entitySetView>navigation}" text="{entitySetView>text}"/>
-							</ComboBox>
-							<Title text=")" />
-						</HBox>
-						<Title id="tableHeader" text="{entitySetView>/entitySetTableTitle}"/>
+<!-- 						<HBox id="sourceTitle" alignItems="Center"> -->
+<!-- 							<rdf:TextResource id="selectedResource" path="" entitySet=""/> -->
+<!-- 						</HBox> -->
+<!-- 						<Title id="pathTitle" text="{entitySetView>/navigationText}"/> -->
+<!-- 						<HBox id="versionsTitle" alignItems="Center"> -->
+<!-- 							<Title text="(" /> -->
+<!-- 							<ComboBox id="versionSelection" items="{ path: 'entitySetView>/versions' }" selectionChange="onVersionChange"> -->
+<!-- 								<core:Item key="{entitySetView>navigation}" text="{entitySetView>text}"/> -->
+<!-- 							</ComboBox> -->
+<!-- 							<Title text=")" /> -->
+<!-- 						</HBox> -->
+<!-- 						<Title id="tableHeader" text="{entitySetView>/entitySetTableTitle}"/> -->
+						<rdf:GraphCrumb id="titleCrumb" style="title" crumb="{entitySetView>/context}"/> 
+						<Button
+							icon="sap-icon://clear-filter"
+							tooltip="{i18n>search.clearAllFilters}"
+							press="clearAllFilters"/>
 						<ToolbarSpacer/>
 						<Button id="replace" icon="sap-icon://repost"  press="onReplacePress" 	visible="{= ${d}{entitySetView>/rowSelected} &amp;&amp; ${d}{entitySetView>/navigationSet}}" tooltip="{= ${d}{i18n>crud.replace.tooltip1} + ' ' + '$entitySet.name' +' '+ ${d}{i18n>crud.replace.tooltip2}}">
 						</Button>
@@ -176,10 +182,7 @@ $property.property:{ $count:true} #end
 							icon="sap-icon://sort"
 							tooltip="{i18n>search.clearAllSorts}"
 							press="clearAllSorts"/>
-						<Button
-							icon="sap-icon://clear-filter"
-							tooltip="{i18n>search.clearAllFilters}"
-							press="clearAllFilters"/>
+
 						<SearchField id="searchField" tooltip="{i18n>search.searchTooltip}" search="onSearch" width="auto" placeholder="{i18n>$entitySet.target.$SearchThis}"></SearchField>
 					</Toolbar>
 				</table:toolbar>
@@ -197,6 +200,8 @@ $property.property:{ $count:true} #end
 					<table:Column id="$property.property" minWidth="150" autoResizable="true" showFilterMenuEntry="false" showSortMenuEntry="false">
 								#elseif ($property.propertyType == "S")	
 					<table:Column id="$property.property" minWidth="150" autoResizable="true" showFilterMenuEntry="false" showSortMenuEntry="false">
+								#elseif ($property.propertyType == "O")	
+					<table:Column id="$property.property"  minWidth="150" autoResizable="true" sortProperty="$property.property/label" filterProperty="$property.property/label" showFilterMenuEntry="true" showSortMenuEntry="true" #entitySetfiltertypes($property )								
 								#else
 					<table:Column id="$property.property"  minWidth="150" autoResizable="true" sortProperty="$property.property" filterProperty="$property.property" showFilterMenuEntry="true" showSortMenuEntry="true" #entitySetfiltertypes($property )								
 								#end
