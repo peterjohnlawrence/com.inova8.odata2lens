@@ -179,11 +179,17 @@ public class EntitySet {
 	}
 	
 	public String getReifiedInverseSubjectPredicate() {
-		return reifiedInverseSubjectPredicate.split("/")[1];
+		if(reifiedInverseSubjectPredicate!=null)
+			return reifiedInverseSubjectPredicate.split("/")[1];
+		else
+			return null;
 	}
 
 	public String getReifiedInverseObjectPredicate() {
-		return reifiedInverseObjectPredicate.split("/")[1];
+		if(reifiedInverseObjectPredicate!=null)
+			return reifiedInverseObjectPredicate.split("/")[1];
+		else
+			return null;
 	}
 
 	public Boolean hasReifiedPredicate() {
