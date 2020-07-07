@@ -94,7 +94,7 @@
 			,{ 
 			#end
 				"property": "$navigationProperty.name",
-				"propertyVisible": false,
+				"propertyVisible": true,
 				"propertyType": "O",
 				"propertyRange": "$navigationProperty.range",
 				"ordinal": $numSoFar,

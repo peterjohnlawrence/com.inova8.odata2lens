@@ -1,0 +1,7491 @@
+{
+	"Activity": {
+	"entity": "Activity",
+	"icon": "sap-icon://group-2",
+	"image": "./images/icons/unknown.svg",
+	"entitySetVisible":null,
+	"grid": {
+		"target": "Activitys",
+		"gridStyle":"entitySetTable",
+		"targetVisible": true,
+		"targetIcon": "sap-icon://group-2",
+		"targetEntity": "Activity",	
+		"properties": [	
+			{  
+				"property": "ID","propertyVisible": false,
+				"propertyType": "D",
+				"propertyRange": "Edm.String",
+				"ordinal": 0,
+				"aggregate": "[]",
+				"formatOptions": "",
+				"allowEdit": false,
+				"height":"2rem",
+				"style":"Input"
+			}	
+			,{ 
+				"property": "comment",
+				"propertyVisible": false,
+				"propertyType": "D",
+				"propertyRange": "Edm.String",
+				"ordinal": 1,
+				"aggregate": "[]",
+				"formatOptions": "",
+				"allowEdit": false,
+				"height":"2rem",
+				"style":"Input"
+			}	
+			,{ 
+				"property": "relations","propertyVisible": false,
+				"propertyType": "D",
+				"propertyRange": "Edm.String",
+				"ordinal": 2,
+				"aggregate": "[]",
+				"formatOptions": "",
+				"allowEdit": false,
+				"height":"2rem",
+				"style":"Input"
+			}	
+			,{ 
+				"property": "relationships","propertyVisible": false,
+				"propertyType": "D",
+				"propertyRange": "Edm.String",
+				"ordinal": 3,
+				"aggregate": "[]",
+				"formatOptions": "",
+				"allowEdit": false,
+				"height":"2rem",
+				"style":"Input"
+			}	
+			,{ 
+				"property": "seeExternal",
+				"propertyVisible": false,
+				"propertyType": "D",
+				"propertyRange": "Edm.anyURI",
+				"ordinal": 4,
+				"aggregate": "[]",
+				"formatOptions": "",
+				"allowEdit": false,
+				"height":"2rem",
+				"style":"Input"
+			}	
+			,{ 
+				"property": "activity_On",
+				"propertyVisible": true,
+				"propertyType": "O",
+				"propertyRange": "ActedUpon",
+				"ordinal": 5,
+				"aggregate": "[]",
+				"formatOptions": "",
+				"allowEdit": false,
+				"height":"2rem",
+				"style":"Single",
+				"nullable":"false"
+			},				
+				{  
+					"property": "activity_ActivityType",
+					"propertyVisible": true,
+					"propertyType": "O",
+					"propertyRange": "ActivityType",
+					"ordinal": 5.0,
+					"aggregate": "[]",
+					"formatOptions": "",
+					"allowEdit": false,
+					"height":"2rem",
+					"style":"Single",
+					"nullable":"false"
+				}	
+			,{ 
+				"property": "performedBy_Actor",
+				"propertyVisible": true,
+				"propertyType": "O",
+				"propertyRange": "Actor",
+				"ordinal": 6,
+				"aggregate": "[]",
+				"formatOptions": "",
+				"allowEdit": false,
+				"height":"2rem",
+				"style":"Single",
+				"nullable":"false"
+			}	
+			]
+		},
+	"form": {
+		"target": "Activity",
+		"formStyle":"entity360",
+		"targetVisible": true,
+		"targetIcon": "sap-icon://expand-group",
+		"targetEntity": "Activity",
+		"allowEdit" : true,
+		"properties": [		
+			{  
+				"property": "ID","propertyVisible": false,
+				"propertyType": "D",
+				"propertyRange": "Edm.String",
+				"ordinal": 0,
+				"aggregate": "[]",
+				"formatOptions": null,
+				"allowEdit": true,
+				"height":"2rem",
+				"style":"Input"
+			}
+			,{ 
+				"property": "comment",
+				"propertyVisible": true,
+				"propertyType": "D",
+				"propertyRange": "Edm.String",
+				"ordinal": 1,
+				"aggregate": "[]",
+				"formatOptions": null,
+				"allowEdit": true,
+				"height":"2rem",
+				"style":"TextArea width='100%' rows='3'"
+			}
+			,{ 
+				"property": "relations","propertyVisible": false,
+				"propertyType": "D",
+				"propertyRange": "Edm.String",
+				"ordinal": 2,
+				"aggregate": "[]",
+				"formatOptions": null,
+				"allowEdit": true,
+				"height":"2rem",
+				"style":"Input"
+			}
+			,{ 
+				"property": "relationships","propertyVisible": false,
+				"propertyType": "D",
+				"propertyRange": "Edm.String",
+				"ordinal": 3,
+				"aggregate": "[]",
+				"formatOptions": null,
+				"allowEdit": true,
+				"height":"2rem",
+				"style":"Input"
+			}
+			,{ 
+				"property": "seeExternal",
+				"propertyVisible": true,
+				"propertyType": "D",
+				"propertyRange": "Edm.anyURI",
+				"ordinal": 4,
+				"aggregate": "[]",
+				"formatOptions": null,
+				"allowEdit": true,
+				"height":"2rem",
+				"style":"Input"
+			}
+			,{ 
+				"property": "activity_On",
+				"propertyVisible": true,
+				"propertyType": "C",
+				"propertyRange": "Actor",
+				"ordinal": 5,
+				"aggregate": "[List]",
+				"formatOptions": null,
+				"allowEdit": true,
+				"height":"2rem",
+				"style":"Multi"
+			}
+			,{ 
+				"property": "performedBy_Actor",
+				"propertyVisible": true,
+				"propertyType": "C",
+				"propertyRange": "Actor",
+				"ordinal": 6,
+				"aggregate": "[List]",
+				"formatOptions": null,
+				"allowEdit": true,
+				"height":"2rem",
+				"style":"Multi"
+			}
+			]
+		}
+	}
+	,
+	"Actor": {
+	"entity": "Actor",
+	"icon": "sap-icon://group-2",
+	"image": "./images/icons/unknown.svg",
+	"entitySetVisible":null,
+	"grid": {
+		"target": "Actors",
+		"gridStyle":"entitySetTable",
+		"targetVisible": true,
+		"targetIcon": "sap-icon://group-2",
+		"targetEntity": "Actor",	
+		"properties": [	
+			{  
+				"property": "ID","propertyVisible": false,
+				"propertyType": "D",
+				"propertyRange": "Edm.String",
+				"ordinal": 0,
+				"aggregate": "[]",
+				"formatOptions": "",
+				"allowEdit": false,
+				"height":"2rem",
+				"style":"Input"
+			}	
+			,{ 
+				"property": "actor_Address",
+				"propertyVisible": true,
+				"propertyType": "D",
+				"propertyRange": "Edm.String",
+				"ordinal": 1,
+				"aggregate": "[]",
+				"formatOptions": "",
+				"allowEdit": false,
+				"height":"2rem",
+				"style":"Input"
+			}	
+			,{ 
+				"property": "actor_Contact",
+				"propertyVisible": true,
+				"propertyType": "D",
+				"propertyRange": "Edm.String",
+				"ordinal": 2,
+				"aggregate": "[]",
+				"formatOptions": "",
+				"allowEdit": false,
+				"height":"2rem",
+				"style":"Input"
+			}	
+			,{ 
+				"property": "actor_Email",
+				"propertyVisible": true,
+				"propertyType": "D",
+				"propertyRange": "Edm.anyURI",
+				"ordinal": 3,
+				"aggregate": "[]",
+				"formatOptions": "",
+				"allowEdit": false,
+				"height":"2rem",
+				"style":"Input"
+			}	
+			,{ 
+				"property": "actor_Support_Website",
+				"propertyVisible": true,
+				"propertyType": "D",
+				"propertyRange": "Edm.anyURI",
+				"ordinal": 4,
+				"aggregate": "[]",
+				"formatOptions": "",
+				"allowEdit": false,
+				"height":"2rem",
+				"style":"Input"
+			}	
+			,{ 
+				"property": "actor_Telephone",
+				"propertyVisible": true,
+				"propertyType": "D",
+				"propertyRange": "Edm.String",
+				"ordinal": 5,
+				"aggregate": "[]",
+				"formatOptions": "",
+				"allowEdit": false,
+				"height":"2rem",
+				"style":"Input"
+			}	
+			,{ 
+				"property": "actor_Website",
+				"propertyVisible": true,
+				"propertyType": "D",
+				"propertyRange": "Edm.anyURI",
+				"ordinal": 6,
+				"aggregate": "[]",
+				"formatOptions": "",
+				"allowEdit": false,
+				"height":"2rem",
+				"style":"Input"
+			}	
+			,{ 
+				"property": "comment",
+				"propertyVisible": true,
+				"propertyType": "D",
+				"propertyRange": "Edm.String",
+				"ordinal": 7,
+				"aggregate": "[]",
+				"formatOptions": "",
+				"allowEdit": false,
+				"height":"2rem",
+				"style":"Input"
+			}	
+			,{ 
+				"property": "relations","propertyVisible": false,
+				"propertyType": "D",
+				"propertyRange": "Edm.String",
+				"ordinal": 8,
+				"aggregate": "[]",
+				"formatOptions": "",
+				"allowEdit": false,
+				"height":"2rem",
+				"style":"Input"
+			}	
+			,{ 
+				"property": "relationships","propertyVisible": false,
+				"propertyType": "D",
+				"propertyRange": "Edm.String",
+				"ordinal": 9,
+				"aggregate": "[]",
+				"formatOptions": "",
+				"allowEdit": false,
+				"height":"2rem",
+				"style":"Input"
+			}	
+			,{ 
+				"property": "seeExternal",
+				"propertyVisible": true,
+				"propertyType": "D",
+				"propertyRange": "Edm.anyURI",
+				"ordinal": 10,
+				"aggregate": "[]",
+				"formatOptions": "",
+				"allowEdit": false,
+				"height":"2rem",
+				"style":"Input"
+			}	
+			,{ 
+				"property": "actor_Country",
+				"propertyVisible": false,
+				"propertyType": "C",
+				"propertyRange": "Country",
+				"ordinal": 11,
+				"aggregate": "[Count]",
+				"formatOptions": "",
+				"allowEdit": false,
+				"height":"2rem",
+				"style":"Multi"
+			}	
+			,{ 
+				"property": "performs_Activity",
+				"propertyVisible": false,
+				"propertyType": "C",
+				"propertyRange": "Activity",
+				"ordinal": 12,
+				"aggregate": "[Count]",
+				"formatOptions": "",
+				"allowEdit": false,
+				"height":"2rem",
+				"style":"Multi"
+			}	
+			,{ 
+				"property": "resultOf_Activity",
+				"propertyVisible": false,
+				"propertyType": "C",
+				"propertyRange": "Activity",
+				"ordinal": 13,
+				"aggregate": "[Count]",
+				"formatOptions": "",
+				"allowEdit": false,
+				"height":"2rem",
+				"style":"Multi"
+			}	
+			]
+		},
+	"form": {
+		"target": "Actor",
+		"formStyle":"entity360",
+		"targetVisible": true,
+		"targetIcon": "sap-icon://expand-group",
+		"targetEntity": "Actor",
+		"allowEdit" : true,
+		"properties": [		
+			{  
+				"property": "ID","propertyVisible": false,
+				"propertyType": "D",
+				"propertyRange": "Edm.String",
+				"ordinal": 0,
+				"aggregate": "[]",
+				"formatOptions": null,
+				"allowEdit": true,
+				"height":"2rem",
+				"style":"Input"
+			}
+			,{ 
+				"property": "actor_Address",
+				"propertyVisible": true,
+				"propertyType": "D",
+				"propertyRange": "Edm.String",
+				"ordinal": 1,
+				"aggregate": "[]",
+				"formatOptions": null,
+				"allowEdit": true,
+				"height":"2rem",
+				"style":"Input"
+			}
+			,{ 
+				"property": "actor_Contact",
+				"propertyVisible": true,
+				"propertyType": "D",
+				"propertyRange": "Edm.String",
+				"ordinal": 2,
+				"aggregate": "[]",
+				"formatOptions": null,
+				"allowEdit": true,
+				"height":"2rem",
+				"style":"Input"
+			}
+			,{ 
+				"property": "actor_Email",
+				"propertyVisible": true,
+				"propertyType": "D",
+				"propertyRange": "Edm.anyURI",
+				"ordinal": 3,
+				"aggregate": "[]",
+				"formatOptions": null,
+				"allowEdit": true,
+				"height":"2rem",
+				"style":"Input"
+			}
+			,{ 
+				"property": "actor_Support_Website",
+				"propertyVisible": true,
+				"propertyType": "D",
+				"propertyRange": "Edm.anyURI",
+				"ordinal": 4,
+				"aggregate": "[]",
+				"formatOptions": null,
+				"allowEdit": true,
+				"height":"2rem",
+				"style":"Input"
+			}
+			,{ 
+				"property": "actor_Telephone",
+				"propertyVisible": true,
+				"propertyType": "D",
+				"propertyRange": "Edm.String",
+				"ordinal": 5,
+				"aggregate": "[]",
+				"formatOptions": null,
+				"allowEdit": true,
+				"height":"2rem",
+				"style":"Input"
+			}
+			,{ 
+				"property": "actor_Website",
+				"propertyVisible": true,
+				"propertyType": "D",
+				"propertyRange": "Edm.anyURI",
+				"ordinal": 6,
+				"aggregate": "[]",
+				"formatOptions": null,
+				"allowEdit": true,
+				"height":"2rem",
+				"style":"Input"
+			}
+			,{ 
+				"property": "comment",
+				"propertyVisible": true,
+				"propertyType": "D",
+				"propertyRange": "Edm.String",
+				"ordinal": 7,
+				"aggregate": "[]",
+				"formatOptions": null,
+				"allowEdit": true,
+				"height":"2rem",
+				"style":"TextArea width='100%' rows='3'"
+			}
+			,{ 
+				"property": "relations","propertyVisible": false,
+				"propertyType": "D",
+				"propertyRange": "Edm.String",
+				"ordinal": 8,
+				"aggregate": "[]",
+				"formatOptions": null,
+				"allowEdit": true,
+				"height":"2rem",
+				"style":"Input"
+			}
+			,{ 
+				"property": "relationships","propertyVisible": false,
+				"propertyType": "D",
+				"propertyRange": "Edm.String",
+				"ordinal": 9,
+				"aggregate": "[]",
+				"formatOptions": null,
+				"allowEdit": true,
+				"height":"2rem",
+				"style":"Input"
+			}
+			,{ 
+				"property": "seeExternal",
+				"propertyVisible": true,
+				"propertyType": "D",
+				"propertyRange": "Edm.anyURI",
+				"ordinal": 10,
+				"aggregate": "[]",
+				"formatOptions": null,
+				"allowEdit": true,
+				"height":"2rem",
+				"style":"Input"
+			}
+			,{ 
+				"property": "actor_Country",
+				"propertyVisible": true,
+				"propertyType": "C",
+				"propertyRange": "Country",
+				"ordinal": 11,
+				"aggregate": "[List]",
+				"formatOptions": null,
+				"allowEdit": true,
+				"height":"2rem",
+				"style":"Multi"
+			}
+			,{ 
+				"property": "performs_Activity",
+				"propertyVisible": true,
+				"propertyType": "C",
+				"propertyRange": "Activity",
+				"ordinal": 12,
+				"aggregate": "[List]",
+				"formatOptions": null,
+				"allowEdit": true,
+				"height":"2rem",
+				"style":"Multi"
+			}
+			,{ 
+				"property": "resultOf_Activity",
+				"propertyVisible": true,
+				"propertyType": "C",
+				"propertyRange": "Activity",
+				"ordinal": 13,
+				"aggregate": "[List]",
+				"formatOptions": null,
+				"allowEdit": true,
+				"height":"2rem",
+				"style":"Multi"
+			}
+			]
+		}
+	}
+	,
+	"ActorType": {
+	"entity": "ActorType",
+	"icon": "sap-icon://group-2",
+	"image": "./images/icons/unknown.svg",
+	"entitySetVisible":null,
+	"grid": {
+		"target": "ActorTypes",
+		"gridStyle":"entitySetTable",
+		"targetVisible": true,
+		"targetIcon": "sap-icon://group-2",
+		"targetEntity": "ActorType",	
+		"properties": [	
+			{  
+				"property": "ID","propertyVisible": false,
+				"propertyType": "D",
+				"propertyRange": "Edm.String",
+				"ordinal": 0,
+				"aggregate": "[]",
+				"formatOptions": "",
+				"allowEdit": false,
+				"height":"2rem",
+				"style":"Input"
+			}	
+			,{ 
+				"property": "comment",
+				"propertyVisible": true,
+				"propertyType": "D",
+				"propertyRange": "Edm.String",
+				"ordinal": 1,
+				"aggregate": "[]",
+				"formatOptions": "",
+				"allowEdit": false,
+				"height":"2rem",
+				"style":"Input"
+			}	
+			,{ 
+				"property": "relations","propertyVisible": false,
+				"propertyType": "D",
+				"propertyRange": "Edm.String",
+				"ordinal": 2,
+				"aggregate": "[]",
+				"formatOptions": "",
+				"allowEdit": false,
+				"height":"2rem",
+				"style":"Input"
+			}	
+			,{ 
+				"property": "relationships","propertyVisible": false,
+				"propertyType": "D",
+				"propertyRange": "Edm.String",
+				"ordinal": 3,
+				"aggregate": "[]",
+				"formatOptions": "",
+				"allowEdit": false,
+				"height":"2rem",
+				"style":"Input"
+			}	
+			,{ 
+				"property": "seeExternal",
+				"propertyVisible": true,
+				"propertyType": "D",
+				"propertyRange": "Edm.anyURI",
+				"ordinal": 4,
+				"aggregate": "[]",
+				"formatOptions": "",
+				"allowEdit": false,
+				"height":"2rem",
+				"style":"Input"
+			}	
+			]
+		},
+	"form": {
+		"target": "ActorType",
+		"formStyle":"entity360",
+		"targetVisible": true,
+		"targetIcon": "sap-icon://expand-group",
+		"targetEntity": "ActorType",
+		"allowEdit" : true,
+		"properties": [		
+			{  
+				"property": "ID","propertyVisible": false,
+				"propertyType": "D",
+				"propertyRange": "Edm.String",
+				"ordinal": 0,
+				"aggregate": "[]",
+				"formatOptions": null,
+				"allowEdit": true,
+				"height":"2rem",
+				"style":"Input"
+			}
+			,{ 
+				"property": "comment",
+				"propertyVisible": true,
+				"propertyType": "D",
+				"propertyRange": "Edm.String",
+				"ordinal": 1,
+				"aggregate": "[]",
+				"formatOptions": null,
+				"allowEdit": true,
+				"height":"2rem",
+				"style":"TextArea width='100%' rows='3'"
+			}
+			,{ 
+				"property": "relations","propertyVisible": false,
+				"propertyType": "D",
+				"propertyRange": "Edm.String",
+				"ordinal": 2,
+				"aggregate": "[]",
+				"formatOptions": null,
+				"allowEdit": true,
+				"height":"2rem",
+				"style":"Input"
+			}
+			,{ 
+				"property": "relationships","propertyVisible": false,
+				"propertyType": "D",
+				"propertyRange": "Edm.String",
+				"ordinal": 3,
+				"aggregate": "[]",
+				"formatOptions": null,
+				"allowEdit": true,
+				"height":"2rem",
+				"style":"Input"
+			}
+			,{ 
+				"property": "seeExternal",
+				"propertyVisible": true,
+				"propertyType": "D",
+				"propertyRange": "Edm.anyURI",
+				"ordinal": 4,
+				"aggregate": "[]",
+				"formatOptions": null,
+				"allowEdit": true,
+				"height":"2rem",
+				"style":"Input"
+			}
+			]
+		}
+	}
+	,
+	"Alias": {
+	"entity": "Alias",
+	"icon": "sap-icon://group-2",
+	"image": "./images/icons/unknown.svg",
+	"entitySetVisible":null,
+	"grid": {
+		"target": "Aliass",
+		"gridStyle":"entitySetTable",
+		"targetVisible": true,
+		"targetIcon": "sap-icon://group-2",
+		"targetEntity": "Alias",	
+		"properties": [	
+			{  
+				"property": "ID","propertyVisible": false,
+				"propertyType": "D",
+				"propertyRange": "Edm.String",
+				"ordinal": 0,
+				"aggregate": "[]",
+				"formatOptions": "",
+				"allowEdit": false,
+				"height":"2rem",
+				"style":"Input"
+			}	
+			,{ 
+				"property": "alias_Version",
+				"propertyVisible": true,
+				"propertyType": "D",
+				"propertyRange": "Edm.String",
+				"ordinal": 1,
+				"aggregate": "[]",
+				"formatOptions": "",
+				"allowEdit": false,
+				"height":"2rem",
+				"style":"Input"
+			}	
+			,{ 
+				"property": "comment",
+				"propertyVisible": true,
+				"propertyType": "D",
+				"propertyRange": "Edm.String",
+				"ordinal": 2,
+				"aggregate": "[]",
+				"formatOptions": "",
+				"allowEdit": false,
+				"height":"2rem",
+				"style":"Input"
+			}	
+			,{ 
+				"property": "compression_aliases_ID",
+				"propertyVisible": true,
+				"propertyType": "D",
+				"propertyRange": "Edm.Int32",
+				"ordinal": 3,
+				"aggregate": "[]",
+				"formatOptions": "",
+				"allowEdit": false,
+				"height":"2rem",
+				"style":"Input"
+			}	
+			,{ 
+				"property": "format_aliases_ID",
+				"propertyVisible": true,
+				"propertyType": "D",
+				"propertyRange": "Edm.Int32",
+				"ordinal": 4,
+				"aggregate": "[]",
+				"formatOptions": "",
+				"allowEdit": false,
+				"height":"2rem",
+				"style":"Input"
+			}	
+			,{ 
+				"property": "relations","propertyVisible": false,
+				"propertyType": "D",
+				"propertyRange": "Edm.String",
+				"ordinal": 5,
+				"aggregate": "[]",
+				"formatOptions": "",
+				"allowEdit": false,
+				"height":"2rem",
+				"style":"Input"
+			}	
+			,{ 
+				"property": "relationships","propertyVisible": false,
+				"propertyType": "D",
+				"propertyRange": "Edm.String",
+				"ordinal": 6,
+				"aggregate": "[]",
+				"formatOptions": "",
+				"allowEdit": false,
+				"height":"2rem",
+				"style":"Input"
+			}	
+			,{ 
+				"property": "seeExternal",
+				"propertyVisible": true,
+				"propertyType": "D",
+				"propertyRange": "Edm.anyURI",
+				"ordinal": 7,
+				"aggregate": "[]",
+				"formatOptions": "",
+				"allowEdit": false,
+				"height":"2rem",
+				"style":"Input"
+			}	
+			,{ 
+				"property": "software_aliases_ID",
+				"propertyVisible": true,
+				"propertyType": "D",
+				"propertyRange": "Edm.Int32",
+				"ordinal": 8,
+				"aggregate": "[]",
+				"formatOptions": "",
+				"allowEdit": false,
+				"height":"2rem",
+				"style":"Input"
+			}	
+			,{ 
+				"property": "alias_Registry",
+				"propertyVisible": false,
+				"propertyType": "C",
+				"propertyRange": "Registry",
+				"ordinal": 9,
+				"aggregate": "[Count]",
+				"formatOptions": "",
+				"allowEdit": false,
+				"height":"2rem",
+				"style":"Multi"
+			}	
+			]
+		},
+	"form": {
+		"target": "Alias",
+		"formStyle":"entity360",
+		"targetVisible": true,
+		"targetIcon": "sap-icon://expand-group",
+		"targetEntity": "Alias",
+		"allowEdit" : true,
+		"properties": [		
+			{  
+				"property": "ID","propertyVisible": false,
+				"propertyType": "D",
+				"propertyRange": "Edm.String",
+				"ordinal": 0,
+				"aggregate": "[]",
+				"formatOptions": null,
+				"allowEdit": true,
+				"height":"2rem",
+				"style":"Input"
+			}
+			,{ 
+				"property": "alias_Version",
+				"propertyVisible": true,
+				"propertyType": "D",
+				"propertyRange": "Edm.String",
+				"ordinal": 1,
+				"aggregate": "[]",
+				"formatOptions": null,
+				"allowEdit": true,
+				"height":"2rem",
+				"style":"Input"
+			}
+			,{ 
+				"property": "comment",
+				"propertyVisible": true,
+				"propertyType": "D",
+				"propertyRange": "Edm.String",
+				"ordinal": 2,
+				"aggregate": "[]",
+				"formatOptions": null,
+				"allowEdit": true,
+				"height":"2rem",
+				"style":"TextArea width='100%' rows='3'"
+			}
+			,{ 
+				"property": "compression_aliases_ID",
+				"propertyVisible": true,
+				"propertyType": "D",
+				"propertyRange": "Edm.Int32",
+				"ordinal": 3,
+				"aggregate": "[]",
+				"formatOptions": null,
+				"allowEdit": true,
+				"height":"2rem",
+				"style":"Input"
+			}
+			,{ 
+				"property": "format_aliases_ID",
+				"propertyVisible": true,
+				"propertyType": "D",
+				"propertyRange": "Edm.Int32",
+				"ordinal": 4,
+				"aggregate": "[]",
+				"formatOptions": null,
+				"allowEdit": true,
+				"height":"2rem",
+				"style":"Input"
+			}
+			,{ 
+				"property": "relations","propertyVisible": false,
+				"propertyType": "D",
+				"propertyRange": "Edm.String",
+				"ordinal": 5,
+				"aggregate": "[]",
+				"formatOptions": null,
+				"allowEdit": true,
+				"height":"2rem",
+				"style":"Input"
+			}
+			,{ 
+				"property": "relationships","propertyVisible": false,
+				"propertyType": "D",
+				"propertyRange": "Edm.String",
+				"ordinal": 6,
+				"aggregate": "[]",
+				"formatOptions": null,
+				"allowEdit": true,
+				"height":"2rem",
+				"style":"Input"
+			}
+			,{ 
+				"property": "seeExternal",
+				"propertyVisible": true,
+				"propertyType": "D",
+				"propertyRange": "Edm.anyURI",
+				"ordinal": 7,
+				"aggregate": "[]",
+				"formatOptions": null,
+				"allowEdit": true,
+				"height":"2rem",
+				"style":"Input"
+			}
+			,{ 
+				"property": "software_aliases_ID",
+				"propertyVisible": true,
+				"propertyType": "D",
+				"propertyRange": "Edm.Int32",
+				"ordinal": 8,
+				"aggregate": "[]",
+				"formatOptions": null,
+				"allowEdit": true,
+				"height":"2rem",
+				"style":"Input"
+			}
+			,{ 
+				"property": "alias_Registry",
+				"propertyVisible": true,
+				"propertyType": "C",
+				"propertyRange": "Registry",
+				"ordinal": 9,
+				"aggregate": "[List]",
+				"formatOptions": null,
+				"allowEdit": true,
+				"height":"2rem",
+				"style":"Multi"
+			}
+			]
+		}
+	}
+
+	,
+	"ByteOrder": {
+	"entity": "ByteOrder",
+	"icon": "sap-icon://group-2",
+	"image": "./images/icons/unknown.svg",
+	"entitySetVisible":null,
+	"grid": {
+		"target": "ByteOrders",
+		"gridStyle":"entitySetTable",
+		"targetVisible": true,
+		"targetIcon": "sap-icon://group-2",
+		"targetEntity": "ByteOrder",	
+		"properties": [	
+			{  
+				"property": "ID","propertyVisible": false,
+				"propertyType": "D",
+				"propertyRange": "Edm.String",
+				"ordinal": 0,
+				"aggregate": "[]",
+				"formatOptions": "",
+				"allowEdit": false,
+				"height":"2rem",
+				"style":"Input"
+			}	
+			,{ 
+				"property": "actor_types_ID",
+				"propertyVisible": true,
+				"propertyType": "D",
+				"propertyRange": "Edm.Int32",
+				"ordinal": 1,
+				"aggregate": "[]",
+				"formatOptions": "",
+				"allowEdit": false,
+				"height":"2rem",
+				"style":"Input"
+			}	
+			,{ 
+				"property": "byte_orders_ID",
+				"propertyVisible": true,
+				"propertyType": "D",
+				"propertyRange": "Edm.Int32",
+				"ordinal": 2,
+				"aggregate": "[]",
+				"formatOptions": "",
+				"allowEdit": false,
+				"height":"2rem",
+				"style":"Input"
+			}	
+			,{ 
+				"property": "comment",
+				"propertyVisible": true,
+				"propertyType": "D",
+				"propertyRange": "Edm.String",
+				"ordinal": 3,
+				"aggregate": "[]",
+				"formatOptions": "",
+				"allowEdit": false,
+				"height":"2rem",
+				"style":"Input"
+			}	
+			,{ 
+				"property": "relations","propertyVisible": false,
+				"propertyType": "D",
+				"propertyRange": "Edm.String",
+				"ordinal": 4,
+				"aggregate": "[]",
+				"formatOptions": "",
+				"allowEdit": false,
+				"height":"2rem",
+				"style":"Input"
+			}	
+			,{ 
+				"property": "relationships","propertyVisible": false,
+				"propertyType": "D",
+				"propertyRange": "Edm.String",
+				"ordinal": 5,
+				"aggregate": "[]",
+				"formatOptions": "",
+				"allowEdit": false,
+				"height":"2rem",
+				"style":"Input"
+			}	
+			,{ 
+				"property": "seeExternal",
+				"propertyVisible": true,
+				"propertyType": "D",
+				"propertyRange": "Edm.anyURI",
+				"ordinal": 6,
+				"aggregate": "[]",
+				"formatOptions": "",
+				"allowEdit": false,
+				"height":"2rem",
+				"style":"Input"
+			}	
+			,{ 
+				"property": "byteOrder_ByteSequence",
+				"propertyVisible": false,
+				"propertyType": "C",
+				"propertyRange": "ByteSequence",
+				"ordinal": 7,
+				"aggregate": "[Count]",
+				"formatOptions": "",
+				"allowEdit": false,
+				"height":"2rem",
+				"style":"Multi"
+			}	
+			,{ 
+				"property": "byteOrder_FileFormat",
+				"propertyVisible": false,
+				"propertyType": "C",
+				"propertyRange": "FileFormat",
+				"ordinal": 8,
+				"aggregate": "[Count]",
+				"formatOptions": "",
+				"allowEdit": false,
+				"height":"2rem",
+				"style":"Multi"
+			}	
+			]
+		},
+	"form": {
+		"target": "ByteOrder",
+		"formStyle":"entity360",
+		"targetVisible": true,
+		"targetIcon": "sap-icon://expand-group",
+		"targetEntity": "ByteOrder",
+		"allowEdit" : true,
+		"properties": [		
+			{  
+				"property": "ID","propertyVisible": false,
+				"propertyType": "D",
+				"propertyRange": "Edm.String",
+				"ordinal": 0,
+				"aggregate": "[]",
+				"formatOptions": null,
+				"allowEdit": true,
+				"height":"2rem",
+				"style":"Input"
+			}
+			,{ 
+				"property": "actor_types_ID",
+				"propertyVisible": true,
+				"propertyType": "D",
+				"propertyRange": "Edm.Int32",
+				"ordinal": 1,
+				"aggregate": "[]",
+				"formatOptions": null,
+				"allowEdit": true,
+				"height":"2rem",
+				"style":"Input"
+			}
+			,{ 
+				"property": "byte_orders_ID",
+				"propertyVisible": true,
+				"propertyType": "D",
+				"propertyRange": "Edm.Int32",
+				"ordinal": 2,
+				"aggregate": "[]",
+				"formatOptions": null,
+				"allowEdit": true,
+				"height":"2rem",
+				"style":"Input"
+			}
+			,{ 
+				"property": "comment",
+				"propertyVisible": true,
+				"propertyType": "D",
+				"propertyRange": "Edm.String",
+				"ordinal": 3,
+				"aggregate": "[]",
+				"formatOptions": null,
+				"allowEdit": true,
+				"height":"2rem",
+				"style":"TextArea width='100%' rows='3'"
+			}
+			,{ 
+				"property": "relations","propertyVisible": false,
+				"propertyType": "D",
+				"propertyRange": "Edm.String",
+				"ordinal": 4,
+				"aggregate": "[]",
+				"formatOptions": null,
+				"allowEdit": true,
+				"height":"2rem",
+				"style":"Input"
+			}
+			,{ 
+				"property": "relationships","propertyVisible": false,
+				"propertyType": "D",
+				"propertyRange": "Edm.String",
+				"ordinal": 5,
+				"aggregate": "[]",
+				"formatOptions": null,
+				"allowEdit": true,
+				"height":"2rem",
+				"style":"Input"
+			}
+			,{ 
+				"property": "seeExternal",
+				"propertyVisible": true,
+				"propertyType": "D",
+				"propertyRange": "Edm.anyURI",
+				"ordinal": 6,
+				"aggregate": "[]",
+				"formatOptions": null,
+				"allowEdit": true,
+				"height":"2rem",
+				"style":"Input"
+			}
+			,{ 
+				"property": "byteOrder_ByteSequence",
+				"propertyVisible": true,
+				"propertyType": "C",
+				"propertyRange": "ByteSequence",
+				"ordinal": 7,
+				"aggregate": "[List]",
+				"formatOptions": null,
+				"allowEdit": true,
+				"height":"2rem",
+				"style":"Multi"
+			}
+			,{ 
+				"property": "byteOrder_FileFormat",
+				"propertyVisible": true,
+				"propertyType": "C",
+				"propertyRange": "FileFormat",
+				"ordinal": 8,
+				"aggregate": "[List]",
+				"formatOptions": null,
+				"allowEdit": true,
+				"height":"2rem",
+				"style":"Multi"
+			}
+			]
+		}
+	}
+	,
+	"ByteSequence": {
+	"entity": "ByteSequence",
+	"icon": "sap-icon://group-2",
+	"image": "./images/icons/unknown.svg",
+	"entitySetVisible":null,
+	"grid": {
+		"target": "ByteSequences",
+		"gridStyle":"entitySetTable",
+		"targetVisible": true,
+		"targetIcon": "sap-icon://group-2",
+		"targetEntity": "ByteSequence",	
+		"properties": [	
+			{  
+				"property": "ID","propertyVisible": false,
+				"propertyType": "D",
+				"propertyRange": "Edm.String",
+				"ordinal": 0,
+				"aggregate": "[]",
+				"formatOptions": "",
+				"allowEdit": false,
+				"height":"2rem",
+				"style":"Input"
+			}	
+			,{ 
+				"property": "byteSequence_IndirectOffsetLength",
+				"propertyVisible": true,
+				"propertyType": "D",
+				"propertyRange": "Edm.Int32",
+				"ordinal": 1,
+				"aggregate": "[]",
+				"formatOptions": "",
+				"allowEdit": false,
+				"height":"2rem",
+				"style":"Input"
+			}	
+			,{ 
+				"property": "byteSequence_IndirectOffsetLocation",
+				"propertyVisible": true,
+				"propertyType": "D",
+				"propertyRange": "Edm.Int32",
+				"ordinal": 2,
+				"aggregate": "[]",
+				"formatOptions": "",
+				"allowEdit": false,
+				"height":"2rem",
+				"style":"Input"
+			}	
+			,{ 
+				"property": "byteSequence_MaxOffset",
+				"propertyVisible": true,
+				"propertyType": "D",
+				"propertyRange": "Edm.Int32",
+				"ordinal": 3,
+				"aggregate": "[]",
+				"formatOptions": "",
+				"allowEdit": false,
+				"height":"2rem",
+				"style":"Input"
+			}	
+			,{ 
+				"property": "byteSequence_Offset",
+				"propertyVisible": true,
+				"propertyType": "D",
+				"propertyRange": "Edm.Int32",
+				"ordinal": 4,
+				"aggregate": "[]",
+				"formatOptions": "",
+				"allowEdit": false,
+				"height":"2rem",
+				"style":"Input"
+			}	
+			,{ 
+				"property": "byteSequence_Position",
+				"propertyVisible": false,
+				"propertyType": "D",
+				"propertyRange": "Edm.Int32",
+				"ordinal": 5,
+				"aggregate": "[]",
+				"formatOptions": "",
+				"allowEdit": false,
+				"height":"2rem",
+				"style":"Input",
+				"nullable":"true"
+			}	,{ 
+				"property": "byteSequence_Value",
+				"propertyVisible": true,
+				"propertyType": "D",
+				"propertyRange": "Edm.String",
+				"ordinal": 5,
+				"aggregate": "[]",
+				"formatOptions": "",
+				"allowEdit": false,
+				"height":"2rem",
+				"style":"Input"
+			}	
+			,{ 
+				"property": "byte_sequences_ID",
+				"propertyVisible": true,
+				"propertyType": "D",
+				"propertyRange": "Edm.Int32",
+				"ordinal": 6,
+				"aggregate": "[]",
+				"formatOptions": "",
+				"allowEdit": false,
+				"height":"2rem",
+				"style":"Input"
+			}	
+			,{ 
+				"property": "comment",
+				"propertyVisible": true,
+				"propertyType": "D",
+				"propertyRange": "Edm.String",
+				"ordinal": 7,
+				"aggregate": "[]",
+				"formatOptions": "",
+				"allowEdit": false,
+				"height":"2rem",
+				"style":"Input"
+			}	
+			,{ 
+				"property": "internalSignature_ID",
+				"propertyVisible": true,
+				"propertyType": "D",
+				"propertyRange": "Edm.Int32",
+				"ordinal": 8,
+				"aggregate": "[]",
+				"formatOptions": "",
+				"allowEdit": false,
+				"height":"2rem",
+				"style":"Input"
+			}	
+			,{ 
+				"property": "relations","propertyVisible": false,
+				"propertyType": "D",
+				"propertyRange": "Edm.String",
+				"ordinal": 9,
+				"aggregate": "[]",
+				"formatOptions": "",
+				"allowEdit": false,
+				"height":"2rem",
+				"style":"Input"
+			}	
+			,{ 
+				"property": "relationships","propertyVisible": false,
+				"propertyType": "D",
+				"propertyRange": "Edm.String",
+				"ordinal": 10,
+				"aggregate": "[]",
+				"formatOptions": "",
+				"allowEdit": false,
+				"height":"2rem",
+				"style":"Input"
+			}	
+			,{ 
+				"property": "seeExternal",
+				"propertyVisible": true,
+				"propertyType": "D",
+				"propertyRange": "Edm.anyURI",
+				"ordinal": 11,
+				"aggregate": "[]",
+				"formatOptions": "",
+				"allowEdit": false,
+				"height":"2rem",
+				"style":"Input"
+			}	
+			,{ 
+				"property": "byteSequence_ByteOrder",
+				"propertyVisible": false,
+				"propertyType": "O",
+				"propertyRange": "ByteOrder",
+				"ordinal": 12,
+				"aggregate": "[]",
+				"formatOptions": "",
+				"allowEdit": false,
+				"height":"2rem",
+				"style":"Single"
+			}	
+			,{ 
+				"property": "byteSequence_ByteSequencePosition",
+				"propertyVisible": false,
+				"propertyType": "O",
+				"propertyRange": "ByteSequencePosition",
+				"ordinal": 13,
+				"aggregate": "[]",
+				"formatOptions": "",
+				"allowEdit": false,
+				"height":"2rem",
+				"style":"Single"
+			}	
+			,{ 
+				"property": "byteSequence_ContainerFile",
+				"propertyVisible": false,
+				"propertyType": "C",
+				"propertyRange": "ContainerFile",
+				"ordinal": 14,
+				"aggregate": "[Count]",
+				"formatOptions": "",
+				"allowEdit": false,
+				"height":"2rem",
+				"style":"Multi"
+			}	
+			,{ 
+				"property": "byteSequence_InternalSignature",
+				"propertyVisible": false,
+				"propertyType": "C",
+				"propertyRange": "InternalSignature",
+				"ordinal": 15,
+				"aggregate": "[Count]",
+				"formatOptions": "",
+				"allowEdit": false,
+				"height":"2rem",
+				"style":"Multi"
+			}	
+			]
+		},
+	"form": {
+		"target": "ByteSequence",
+		"formStyle":"entity360",
+		"targetVisible": true,
+		"targetIcon": "sap-icon://expand-group",
+		"targetEntity": "ByteSequence",
+		"allowEdit" : true,
+		"properties": [		
+			{  
+				"property": "ID","propertyVisible": false,
+				"propertyType": "D",
+				"propertyRange": "Edm.String",
+				"ordinal": 0,
+				"aggregate": "[]",
+				"formatOptions": null,
+				"allowEdit": true,
+				"height":"2rem",
+				"style":"Input"
+			}
+			,{ 
+				"property": "byteSequence_IndirectOffsetLength",
+				"propertyVisible": false,
+				"propertyType": "D",
+				"propertyRange": "Edm.Int32",
+				"ordinal": 1,
+				"aggregate": "[]",
+				"formatOptions": null,
+				"allowEdit": true,
+				"height":"2rem",
+				"style":"Input"
+			}
+			,{ 
+				"property": "byteSequence_IndirectOffsetLocation",
+				"propertyVisible": false,
+				"propertyType": "D",
+				"propertyRange": "Edm.Int32",
+				"ordinal": 2,
+				"aggregate": "[]",
+				"formatOptions": null,
+				"allowEdit": true,
+				"height":"2rem",
+				"style":"Input"
+			}
+			,{ 
+				"property": "byteSequence_MaxOffset",
+				"propertyVisible": true,
+				"propertyType": "D",
+				"propertyRange": "Edm.Int32",
+				"ordinal": 3,
+				"aggregate": "[]",
+				"formatOptions": null,
+				"allowEdit": true,
+				"height":"2rem",
+				"style":"Input"
+			}
+			,{ 
+				"property": "byteSequence_Offset",
+				"propertyVisible": true,
+				"propertyType": "D",
+				"propertyRange": "Edm.Int32",
+				"ordinal": 1,
+				"aggregate": "[]",
+				"formatOptions": null,
+				"allowEdit": true,
+				"height":"2rem",
+				"style":"Input"
+			}
+			,{ 
+				"property": "byteSequence_Position",
+				"propertyVisible": false,
+				"propertyType": "D",
+				"propertyRange": "Edm.Int32",
+				"ordinal": 5,
+				"aggregate": "[]",
+				"formatOptions": null,
+				"allowEdit": true,
+				"height":"2rem",
+				"style":"Input",
+				"nullable":"true"
+			},{ 
+				"property": "byteSequence_Value",
+				"propertyVisible": true,
+				"propertyType": "D",
+				"propertyRange": "Edm.String",
+				"ordinal": 3,
+				"aggregate": "[]",
+				"formatOptions": null,
+				"allowEdit": true,
+				"height":"2rem",
+				"style":"TextArea width='100%' rows='3'"
+			}
+			,{ 
+				"property": "byte_sequences_ID",
+				"propertyVisible": false,
+				"propertyType": "D",
+				"propertyRange": "Edm.Int32",
+				"ordinal": 6,
+				"aggregate": "[]",
+				"formatOptions": null,
+				"allowEdit": true,
+				"height":"2rem",
+				"style":"Input"
+			}
+			,{ 
+				"property": "comment",
+				"propertyVisible": true,
+				"propertyType": "D",
+				"propertyRange": "Edm.String",
+				"ordinal": 7,
+				"aggregate": "[]",
+				"formatOptions": null,
+				"allowEdit": true,
+				"height":"2rem",
+				"style":"TextArea width='100%' rows='3'"
+			}
+			,{ 
+				"property": "internalSignature_ID",
+				"propertyVisible": false,
+				"propertyType": "D",
+				"propertyRange": "Edm.Int32",
+				"ordinal": 8,
+				"aggregate": "[]",
+				"formatOptions": null,
+				"allowEdit": true,
+				"height":"2rem",
+				"style":"Input"
+			}
+			,{ 
+				"property": "relations","propertyVisible": false,
+				"propertyType": "D",
+				"propertyRange": "Edm.String",
+				"ordinal": 9,
+				"aggregate": "[]",
+				"formatOptions": null,
+				"allowEdit": true,
+				"height":"2rem",
+				"style":"Input"
+			}
+			,{ 
+				"property": "relationships","propertyVisible": false,
+				"propertyType": "D",
+				"propertyRange": "Edm.String",
+				"ordinal": 10,
+				"aggregate": "[]",
+				"formatOptions": null,
+				"allowEdit": true,
+				"height":"2rem",
+				"style":"Input"
+			}
+			,{ 
+				"property": "seeExternal",
+				"propertyVisible": false,
+				"propertyType": "D",
+				"propertyRange": "Edm.anyURI",
+				"ordinal": 11,
+				"aggregate": "[]",
+				"formatOptions": null,
+				"allowEdit": true,
+				"height":"2rem",
+				"style":"Input"
+			}
+			,{ 
+				"property": "byteSequence_ByteOrder",
+				"propertyVisible": true,
+				"propertyType": "O",
+				"propertyRange": "ByteOrder",
+				"ordinal": 2,
+				"aggregate": "[]",
+				"formatOptions": null,
+				"allowEdit": true ,				
+				"height":"2rem",
+				"style":"Single"
+			}
+			,{ 
+				"property": "byteSequence_ByteSequencePosition",
+				"propertyVisible": true,
+				"propertyType": "O",
+				"propertyRange": "ByteSequencePosition",
+				"ordinal": 0,
+				"aggregate": "[]",
+				"formatOptions": null,
+				"allowEdit": true ,				
+				"height":"2rem",
+				"style":"Single"
+			}
+			,{ 
+				"property": "byteSequence_ContainerFile",
+				"propertyVisible": false,
+				"propertyType": "C",
+				"propertyRange": "ContainerFile",
+				"ordinal": 14,
+				"aggregate": "[List]",
+				"formatOptions": null,
+				"allowEdit": true,
+				"height":"2rem",
+				"style":"Multi"
+			}
+			,{ 
+				"property": "byteSequence_InternalSignature",
+				"propertyVisible": true,
+				"propertyType": "C",
+				"propertyRange": "InternalSignature",
+				"ordinal": 15,
+				"aggregate": "[List]",
+				"formatOptions": null,
+				"allowEdit": true,
+				"height":"2rem",
+				"style":"Multi"
+			}
+			]
+		}
+	}
+	,
+	"ByteSequencePosition": {
+	"entity": "ByteSequencePosition",
+	"icon": "sap-icon://group-2",
+	"image": "./images/icons/unknown.svg",
+	"entitySetVisible":null,
+	"grid": {
+		"target": "ByteSequencePositions",
+		"gridStyle":"entitySetTable",
+		"targetVisible": true,
+		"targetIcon": "sap-icon://group-2",
+		"targetEntity": "ByteSequencePosition",	
+		"properties": [	
+			{  
+				"property": "ID","propertyVisible": false,
+				"propertyType": "D",
+				"propertyRange": "Edm.String",
+				"ordinal": 0,
+				"aggregate": "[]",
+				"formatOptions": "",
+				"allowEdit": false,
+				"height":"2rem",
+				"style":"Input"
+			}	
+			,{ 
+				"property": "comment",
+				"propertyVisible": true,
+				"propertyType": "D",
+				"propertyRange": "Edm.String",
+				"ordinal": 1,
+				"aggregate": "[]",
+				"formatOptions": "",
+				"allowEdit": false,
+				"height":"2rem",
+				"style":"Input"
+			}	
+			,{ 
+				"property": "position_types_ID",
+				"propertyVisible": true,
+				"propertyType": "D",
+				"propertyRange": "Edm.Int32",
+				"ordinal": 2,
+				"aggregate": "[]",
+				"formatOptions": "",
+				"allowEdit": false,
+				"height":"2rem",
+				"style":"Input"
+			}	
+			,{ 
+				"property": "relations","propertyVisible": false,
+				"propertyType": "D",
+				"propertyRange": "Edm.String",
+				"ordinal": 3,
+				"aggregate": "[]",
+				"formatOptions": "",
+				"allowEdit": false,
+				"height":"2rem",
+				"style":"Input"
+			}	
+			,{ 
+				"property": "relationships","propertyVisible": false,
+				"propertyType": "D",
+				"propertyRange": "Edm.String",
+				"ordinal": 4,
+				"aggregate": "[]",
+				"formatOptions": "",
+				"allowEdit": false,
+				"height":"2rem",
+				"style":"Input"
+			}	
+			,{ 
+				"property": "seeExternal",
+				"propertyVisible": true,
+				"propertyType": "D",
+				"propertyRange": "Edm.anyURI",
+				"ordinal": 5,
+				"aggregate": "[]",
+				"formatOptions": "",
+				"allowEdit": false,
+				"height":"2rem",
+				"style":"Input"
+			}	
+			,{ 
+				"property": "byteSequencePosition_ByteSequence",
+				"propertyVisible": false,
+				"propertyType": "C",
+				"propertyRange": "ByteSequence",
+				"ordinal": 6,
+				"aggregate": "[Count]",
+				"formatOptions": "",
+				"allowEdit": false,
+				"height":"2rem",
+				"style":"Multi"
+			}	
+			]
+		},
+	"form": {
+		"target": "ByteSequencePosition",
+		"formStyle":"entity360",
+		"targetVisible": true,
+		"targetIcon": "sap-icon://expand-group",
+		"targetEntity": "ByteSequencePosition",
+		"allowEdit" : true,
+		"properties": [		
+			{  
+				"property": "ID","propertyVisible": false,
+				"propertyType": "D",
+				"propertyRange": "Edm.String",
+				"ordinal": 0,
+				"aggregate": "[]",
+				"formatOptions": null,
+				"allowEdit": true,
+				"height":"2rem",
+				"style":"Input"
+			}
+			,{ 
+				"property": "comment",
+				"propertyVisible": true,
+				"propertyType": "D",
+				"propertyRange": "Edm.String",
+				"ordinal": 1,
+				"aggregate": "[]",
+				"formatOptions": null,
+				"allowEdit": true,
+				"height":"2rem",
+				"style":"TextArea width='100%' rows='3'"
+			}
+			,{ 
+				"property": "position_types_ID",
+				"propertyVisible": true,
+				"propertyType": "D",
+				"propertyRange": "Edm.Int32",
+				"ordinal": 2,
+				"aggregate": "[]",
+				"formatOptions": null,
+				"allowEdit": true,
+				"height":"2rem",
+				"style":"Input"
+			}
+			,{ 
+				"property": "relations","propertyVisible": false,
+				"propertyType": "D",
+				"propertyRange": "Edm.String",
+				"ordinal": 3,
+				"aggregate": "[]",
+				"formatOptions": null,
+				"allowEdit": true,
+				"height":"2rem",
+				"style":"Input"
+			}
+			,{ 
+				"property": "relationships","propertyVisible": false,
+				"propertyType": "D",
+				"propertyRange": "Edm.String",
+				"ordinal": 4,
+				"aggregate": "[]",
+				"formatOptions": null,
+				"allowEdit": true,
+				"height":"2rem",
+				"style":"Input"
+			}
+			,{ 
+				"property": "seeExternal",
+				"propertyVisible": true,
+				"propertyType": "D",
+				"propertyRange": "Edm.anyURI",
+				"ordinal": 5,
+				"aggregate": "[]",
+				"formatOptions": null,
+				"allowEdit": true,
+				"height":"2rem",
+				"style":"Input"
+			}
+			,{ 
+				"property": "byteSequencePosition_ByteSequence",
+				"propertyVisible": true,
+				"propertyType": "C",
+				"propertyRange": "ByteSequence",
+				"ordinal": 6,
+				"aggregate": "[List]",
+				"formatOptions": null,
+				"allowEdit": true,
+				"height":"2rem",
+				"style":"Multi"
+			}
+			]
+		}
+	}
+	,
+
+	"Classification": {
+	"entity": "Classification",
+	"icon": "sap-icon://group-2",
+	"image": "./images/icons/unknown.svg",
+	"entitySetVisible":null,
+	"grid": {
+		"target": "Classifications",
+		"gridStyle":"entitySetTable",
+		"targetVisible": true,
+		"targetIcon": "sap-icon://group-2",
+		"targetEntity": "Classification",	
+		"properties": [	
+			{  
+				"property": "ID","propertyVisible": false,
+				"propertyType": "D",
+				"propertyRange": "Edm.String",
+				"ordinal": 0,
+				"aggregate": "[]",
+				"formatOptions": "",
+				"allowEdit": false,
+				"height":"2rem",
+				"style":"Input"
+			}	
+			,{ 
+				"property": "comment",
+				"propertyVisible": true,
+				"propertyType": "D",
+				"propertyRange": "Edm.String",
+				"ordinal": 1,
+				"aggregate": "[]",
+				"formatOptions": "",
+				"allowEdit": false,
+				"height":"2rem",
+				"style":"Input"
+			}	
+			,{ 
+				"property": "format_types_ID",
+				"propertyVisible": true,
+				"propertyType": "D",
+				"propertyRange": "Edm.Int32",
+				"ordinal": 2,
+				"aggregate": "[]",
+				"formatOptions": "",
+				"allowEdit": false,
+				"height":"2rem",
+				"style":"Input"
+			}	
+			,{ 
+				"property": "relations","propertyVisible": false,
+				"propertyType": "D",
+				"propertyRange": "Edm.String",
+				"ordinal": 3,
+				"aggregate": "[]",
+				"formatOptions": "",
+				"allowEdit": false,
+				"height":"2rem",
+				"style":"Input"
+			}	
+			,{ 
+				"property": "relationships","propertyVisible": false,
+				"propertyType": "D",
+				"propertyRange": "Edm.String",
+				"ordinal": 4,
+				"aggregate": "[]",
+				"formatOptions": "",
+				"allowEdit": false,
+				"height":"2rem",
+				"style":"Input"
+			}	
+			,{ 
+				"property": "seeExternal",
+				"propertyVisible": true,
+				"propertyType": "D",
+				"propertyRange": "Edm.anyURI",
+				"ordinal": 5,
+				"aggregate": "[]",
+				"formatOptions": "",
+				"allowEdit": false,
+				"height":"2rem",
+				"style":"Input"
+			}	
+			,{ 
+				"property": "classification_FileFormat",
+				"propertyVisible": false,
+				"propertyType": "C",
+				"propertyRange": "FileFormat",
+				"ordinal": 6,
+				"aggregate": "[Count]",
+				"formatOptions": "",
+				"allowEdit": false,
+				"height":"2rem",
+				"style":"Multi"
+			}	
+			]
+		},
+	"form": {
+		"target": "Classification",
+		"formStyle":"entity360",
+		"targetVisible": true,
+		"targetIcon": "sap-icon://expand-group",
+		"targetEntity": "Classification",
+		"allowEdit" : true,
+		"properties": [		
+			{  
+				"property": "ID","propertyVisible": false,
+				"propertyType": "D",
+				"propertyRange": "Edm.String",
+				"ordinal": 0,
+				"aggregate": "[]",
+				"formatOptions": null,
+				"allowEdit": true,
+				"height":"2rem",
+				"style":"Input"
+			}
+			,{ 
+				"property": "comment",
+				"propertyVisible": true,
+				"propertyType": "D",
+				"propertyRange": "Edm.String",
+				"ordinal": 1,
+				"aggregate": "[]",
+				"formatOptions": null,
+				"allowEdit": true,
+				"height":"2rem",
+				"style":"TextArea width='100%' rows='3'"
+			}
+			,{ 
+				"property": "format_types_ID",
+				"propertyVisible": true,
+				"propertyType": "D",
+				"propertyRange": "Edm.Int32",
+				"ordinal": 2,
+				"aggregate": "[]",
+				"formatOptions": null,
+				"allowEdit": true,
+				"height":"2rem",
+				"style":"Input"
+			}
+			,{ 
+				"property": "relations","propertyVisible": false,
+				"propertyType": "D",
+				"propertyRange": "Edm.String",
+				"ordinal": 3,
+				"aggregate": "[]",
+				"formatOptions": null,
+				"allowEdit": true,
+				"height":"2rem",
+				"style":"Input"
+			}
+			,{ 
+				"property": "relationships","propertyVisible": false,
+				"propertyType": "D",
+				"propertyRange": "Edm.String",
+				"ordinal": 4,
+				"aggregate": "[]",
+				"formatOptions": null,
+				"allowEdit": true,
+				"height":"2rem",
+				"style":"Input"
+			}
+			,{ 
+				"property": "seeExternal",
+				"propertyVisible": true,
+				"propertyType": "D",
+				"propertyRange": "Edm.anyURI",
+				"ordinal": 5,
+				"aggregate": "[]",
+				"formatOptions": null,
+				"allowEdit": true,
+				"height":"2rem",
+				"style":"Input"
+			}
+			,{ 
+				"property": "classification_FileFormat",
+				"propertyVisible": true,
+				"propertyType": "C",
+				"propertyRange": "FileFormat",
+				"ordinal": 6,
+				"aggregate": "[List]",
+				"formatOptions": null,
+				"allowEdit": true,
+				"height":"2rem",
+				"style":"Multi"
+			}
+			]
+		}
+	}
+	,
+	"CompressionType": {
+	"entity": "CompressionType",
+	"icon": "sap-icon://group-2",
+	"image": "./images/icons/unknown.svg",
+	"entitySetVisible":null,
+		"namespaces":[
+				{"prefix":"cmp", "namespace":"http://data.nationalarchives.gov.uk/PRONOM/cmp/" },
+				{"prefix":"x-cmp", "namespace":"http://data.nationalarchives.gov.uk/PRONOM/x-cmp/" }								
+		],
+	"grid": {
+		"target": "CompressionTypes",
+		"gridStyle":"entitySetTable",
+		"targetVisible": true,
+		"targetIcon": "sap-icon://group-2",
+		"targetEntity": "CompressionType",	
+		"properties": [	
+			{  
+				"property": "ID","propertyVisible": false,
+				"propertyType": "D",
+				"propertyRange": "Edm.String",
+				"ordinal": 0,
+				"aggregate": "[]",
+				"formatOptions": "",
+				"allowEdit": false,
+				"height":"2rem",
+				"style":"Input"
+			}	
+			,{ 
+				"property": "comment",
+				"propertyVisible": true,
+				"propertyType": "D",
+				"propertyRange": "Edm.String",
+				"ordinal": 1,
+				"aggregate": "[]",
+				"formatOptions": "",
+				"allowEdit": false,
+				"height":"2rem",
+				"style":"Input"
+			}	
+			,{ 
+				"property": "compression_types_ID",
+				"propertyVisible": true,
+				"propertyType": "D",
+				"propertyRange": "Edm.Int32",
+				"ordinal": 2,
+				"aggregate": "[]",
+				"formatOptions": "",
+				"allowEdit": false,
+				"height":"2rem",
+				"style":"Input"
+			}	
+			,{ 
+				"property": "puid",
+				"propertyVisible": true,
+				"propertyType": "D",
+				"propertyRange": "Edm.String",
+				"ordinal": 3,
+				"aggregate": "[]",
+				"formatOptions": "",
+				"allowEdit": false,
+				"height":"2rem",
+				"style":"Input"
+			}	
+			,{ 
+				"property": "relations","propertyVisible": false,
+				"propertyType": "D",
+				"propertyRange": "Edm.String",
+				"ordinal": 4,
+				"aggregate": "[]",
+				"formatOptions": "",
+				"allowEdit": false,
+				"height":"2rem",
+				"style":"Input"
+			}	
+			,{ 
+				"property": "relationships","propertyVisible": false,
+				"propertyType": "D",
+				"propertyRange": "Edm.String",
+				"ordinal": 5,
+				"aggregate": "[]",
+				"formatOptions": "",
+				"allowEdit": false,
+				"height":"2rem",
+				"style":"Input"
+			}	
+			,{ 
+				"property": "seeExternal",
+				"propertyVisible": true,
+				"propertyType": "D",
+				"propertyRange": "Edm.anyURI",
+				"ordinal": 6,
+				"aggregate": "[]",
+				"formatOptions": "",
+				"allowEdit": false,
+				"height":"2rem",
+				"style":"Input"
+			}	
+			,{ 
+				"property": "compressionType_FileFormat",
+				"propertyVisible": false,
+				"propertyType": "C",
+				"propertyRange": "FileFormat",
+				"ordinal": 7,
+				"aggregate": "[Count]",
+				"formatOptions": "",
+				"allowEdit": false,
+				"height":"2rem",
+				"style":"Multi"
+			}	
+			,{ 
+				"property": "compressionType_Lossiness",
+				"propertyVisible": false,
+				"propertyType": "C",
+				"propertyRange": "Lossiness",
+				"ordinal": 8,
+				"aggregate": "[Count]",
+				"formatOptions": "",
+				"allowEdit": false,
+				"height":"2rem",
+				"style":"Multi"
+			}	
+			,{ 
+				"property": "registry_Alias",
+				"propertyVisible": false,
+				"propertyType": "C",
+				"propertyRange": "Alias",
+				"ordinal": 9,
+				"aggregate": "[Count]",
+				"formatOptions": "",
+				"allowEdit": false,
+				"height":"2rem",
+				"style":"Multi"
+			}	
+			,{ 
+				"property": "registry_Document",
+				"propertyVisible": false,
+				"propertyType": "C",
+				"propertyRange": "Document",
+				"ordinal": 10,
+				"aggregate": "[Count]",
+				"formatOptions": "",
+				"allowEdit": false,
+				"height":"2rem",
+				"style":"Multi"
+			}	
+			,{ 
+				"property": "resultOf_Activity",
+				"propertyVisible": false,
+				"propertyType": "C",
+				"propertyRange": "Activity",
+				"ordinal": 11,
+				"aggregate": "[Count]",
+				"formatOptions": "",
+				"allowEdit": false,
+				"height":"2rem",
+				"style":"Multi"
+			}	
+			]
+		},
+	"form": {
+		"target": "CompressionType",
+		"formStyle":"entity360",
+		"targetVisible": true,
+		"targetIcon": "sap-icon://expand-group",
+		"targetEntity": "CompressionType",
+		"allowEdit" : true,
+		"properties": [		
+			{  
+				"property": "ID","propertyVisible": false,
+				"propertyType": "D",
+				"propertyRange": "Edm.String",
+				"ordinal": 0,
+				"aggregate": "[]",
+				"formatOptions": null,
+				"allowEdit": true,
+				"height":"2rem",
+				"style":"Input"
+			}
+			,{ 
+				"property": "comment",
+				"propertyVisible": true,
+				"propertyType": "D",
+				"propertyRange": "Edm.String",
+				"ordinal": 1,
+				"aggregate": "[]",
+				"formatOptions": null,
+				"allowEdit": true,
+				"height":"2rem",
+				"style":"TextArea width='100%' rows='3'"
+			}
+			,{ 
+				"property": "compression_types_ID",
+				"propertyVisible": true,
+				"propertyType": "D",
+				"propertyRange": "Edm.Int32",
+				"ordinal": 2,
+				"aggregate": "[]",
+				"formatOptions": null,
+				"allowEdit": true,
+				"height":"2rem",
+				"style":"Input"
+			}
+			,{ 
+				"property": "puid",
+				"propertyVisible": true,
+				"propertyType": "D",
+				"propertyRange": "Edm.String",
+				"ordinal": 3,
+				"aggregate": "[]",
+				"formatOptions": null,
+				"allowEdit": true,
+				"height":"2rem",
+				"style":"Input"
+			}
+			,{ 
+				"property": "relations","propertyVisible": false,
+				"propertyType": "D",
+				"propertyRange": "Edm.String",
+				"ordinal": 4,
+				"aggregate": "[]",
+				"formatOptions": null,
+				"allowEdit": true,
+				"height":"2rem",
+				"style":"Input"
+			}
+			,{ 
+				"property": "relationships","propertyVisible": false,
+				"propertyType": "D",
+				"propertyRange": "Edm.String",
+				"ordinal": 5,
+				"aggregate": "[]",
+				"formatOptions": null,
+				"allowEdit": true,
+				"height":"2rem",
+				"style":"Input"
+			}
+			,{ 
+				"property": "seeExternal",
+				"propertyVisible": true,
+				"propertyType": "D",
+				"propertyRange": "Edm.anyURI",
+				"ordinal": 6,
+				"aggregate": "[]",
+				"formatOptions": null,
+				"allowEdit": true,
+				"height":"2rem",
+				"style":"Input"
+			}
+			,{ 
+				"property": "compressionType_FileFormat",
+				"propertyVisible": true,
+				"propertyType": "C",
+				"propertyRange": "FileFormat",
+				"ordinal": 7,
+				"aggregate": "[List]",
+				"formatOptions": null,
+				"allowEdit": true,
+				"height":"2rem",
+				"style":"Multi"
+			}
+			,{ 
+				"property": "compressionType_Lossiness",
+				"propertyVisible": true,
+				"propertyType": "C",
+				"propertyRange": "Lossiness",
+				"ordinal": 8,
+				"aggregate": "[List]",
+				"formatOptions": null,
+				"allowEdit": true,
+				"height":"2rem",
+				"style":"Multi"
+			}
+			,{ 
+				"property": "registry_Alias",
+				"propertyVisible": true,
+				"propertyType": "C",
+				"propertyRange": "Alias",
+				"ordinal": 9,
+				"aggregate": "[List]",
+				"formatOptions": null,
+				"allowEdit": true,
+				"height":"2rem",
+				"style":"Multi"
+			}
+			,{ 
+				"property": "registry_Document",
+				"propertyVisible": true,
+				"propertyType": "C",
+				"propertyRange": "Document",
+				"ordinal": 10,
+				"aggregate": "[List]",
+				"formatOptions": null,
+				"allowEdit": true,
+				"height":"2rem",
+				"style":"Multi"
+			}
+			,{ 
+				"property": "resultOf_Activity",
+				"propertyVisible": true,
+				"propertyType": "C",
+				"propertyRange": "Activity",
+				"ordinal": 11,
+				"aggregate": "[List]",
+				"formatOptions": null,
+				"allowEdit": true,
+				"height":"2rem",
+				"style":"Multi"
+			}
+			]
+		}
+	}
+	,
+	"ContainerFile": {
+	"entity": "ContainerFile",
+	"icon": "sap-icon://group-2",
+	"image": "./images/icons/unknown.svg",
+	"entitySetVisible":null,
+	"grid": {
+		"target": "ContainerFiles",
+		"gridStyle":"entitySetTable",
+		"targetVisible": true,
+		"targetIcon": "sap-icon://group-2",
+		"targetEntity": "ContainerFile",	
+		"properties": [	
+			{  
+				"property": "ID","propertyVisible": false,
+				"propertyType": "D",
+				"propertyRange": "Edm.String",
+				"ordinal": 0,
+				"aggregate": "[]",
+				"formatOptions": "",
+				"allowEdit": false,
+				"height":"2rem",
+				"style":"Input"
+			}	
+			,{ 
+				"property": "comment",
+				"propertyVisible": true,
+				"propertyType": "D",
+				"propertyRange": "Edm.String",
+				"ordinal": 1,
+				"aggregate": "[]",
+				"formatOptions": "",
+				"allowEdit": false,
+				"height":"2rem",
+				"style":"Input"
+			}	
+			,{ 
+				"property": "containerFile_FilePath",
+				"propertyVisible": true,
+				"propertyType": "D",
+				"propertyRange": "Edm.String",
+				"ordinal": 2,
+				"aggregate": "[]",
+				"formatOptions": "",
+				"allowEdit": false,
+				"height":"2rem",
+				"style":"Input"
+			}	
+			,{ 
+				"property": "relations","propertyVisible": false,
+				"propertyType": "D",
+				"propertyRange": "Edm.String",
+				"ordinal": 3,
+				"aggregate": "[]",
+				"formatOptions": "",
+				"allowEdit": false,
+				"height":"2rem",
+				"style":"Input"
+			}	
+			,{ 
+				"property": "relationships","propertyVisible": false,
+				"propertyType": "D",
+				"propertyRange": "Edm.String",
+				"ordinal": 4,
+				"aggregate": "[]",
+				"formatOptions": "",
+				"allowEdit": false,
+				"height":"2rem",
+				"style":"Input"
+			}	
+			,{ 
+				"property": "seeExternal",
+				"propertyVisible": true,
+				"propertyType": "D",
+				"propertyRange": "Edm.anyURI",
+				"ordinal": 5,
+				"aggregate": "[]",
+				"formatOptions": "",
+				"allowEdit": false,
+				"height":"2rem",
+				"style":"Input"
+			}	
+			,{ 
+				"property": "containerFile_ByteSequence",
+				"propertyVisible": false,
+				"propertyType": "C",
+				"propertyRange": "ByteSequence",
+				"ordinal": 6,
+				"aggregate": "[Count]",
+				"formatOptions": "",
+				"allowEdit": false,
+				"height":"2rem",
+				"style":"Multi"
+			}	
+			,{ 
+				"property": "containerFile_ContainerSignature",
+				"propertyVisible": false,
+				"propertyType": "C",
+				"propertyRange": "ContainerSignature",
+				"ordinal": 7,
+				"aggregate": "[Count]",
+				"formatOptions": "",
+				"allowEdit": false,
+				"height":"2rem",
+				"style":"Multi"
+			}	
+			]
+		},
+	"form": {
+		"target": "ContainerFile",
+		"formStyle":"entity360",
+		"targetVisible": true,
+		"targetIcon": "sap-icon://expand-group",
+		"targetEntity": "ContainerFile",
+		"allowEdit" : true,
+		"properties": [		
+			{  
+				"property": "ID","propertyVisible": false,
+				"propertyType": "D",
+				"propertyRange": "Edm.String",
+				"ordinal": 0,
+				"aggregate": "[]",
+				"formatOptions": null,
+				"allowEdit": true,
+				"height":"2rem",
+				"style":"Input"
+			}
+			,{ 
+				"property": "comment",
+				"propertyVisible": true,
+				"propertyType": "D",
+				"propertyRange": "Edm.String",
+				"ordinal": 1,
+				"aggregate": "[]",
+				"formatOptions": null,
+				"allowEdit": true,
+				"height":"2rem",
+				"style":"TextArea width='100%' rows='3'"
+			}
+			,{ 
+				"property": "containerFile_FilePath",
+				"propertyVisible": true,
+				"propertyType": "D",
+				"propertyRange": "Edm.String",
+				"ordinal": 2,
+				"aggregate": "[]",
+				"formatOptions": null,
+				"allowEdit": true,
+				"height":"2rem",
+				"style":"Input"
+			}
+			,{ 
+				"property": "relations","propertyVisible": false,
+				"propertyType": "D",
+				"propertyRange": "Edm.String",
+				"ordinal": 3,
+				"aggregate": "[]",
+				"formatOptions": null,
+				"allowEdit": true,
+				"height":"2rem",
+				"style":"Input"
+			}
+			,{ 
+				"property": "relationships","propertyVisible": false,
+				"propertyType": "D",
+				"propertyRange": "Edm.String",
+				"ordinal": 4,
+				"aggregate": "[]",
+				"formatOptions": null,
+				"allowEdit": true,
+				"height":"2rem",
+				"style":"Input"
+			}
+			,{ 
+				"property": "seeExternal",
+				"propertyVisible": true,
+				"propertyType": "D",
+				"propertyRange": "Edm.anyURI",
+				"ordinal": 5,
+				"aggregate": "[]",
+				"formatOptions": null,
+				"allowEdit": true,
+				"height":"2rem",
+				"style":"Input"
+			}
+			,{ 
+				"property": "containerFile_ByteSequence",
+				"propertyVisible": true,
+				"propertyType": "C",
+				"propertyRange": "ByteSequence",
+				"ordinal": 6,
+				"aggregate": "[List]",
+				"formatOptions": null,
+				"allowEdit": true,
+				"height":"2rem",
+				"style":"Multi"
+			}
+			,{ 
+				"property": "containerFile_ContainerSignature",
+				"propertyVisible": true,
+				"propertyType": "C",
+				"propertyRange": "ContainerSignature",
+				"ordinal": 7,
+				"aggregate": "[List]",
+				"formatOptions": null,
+				"allowEdit": true,
+				"height":"2rem",
+				"style":"Multi"
+			}
+			]
+		}
+	}
+	,
+	"ContainerSignature": {
+	"entity": "ContainerSignature",
+	"icon": "sap-icon://group-2",
+	"image": "./images/icons/unknown.svg",
+	"entitySetVisible":null,
+	"grid": {
+		"target": "ContainerSignatures",
+		"gridStyle":"entitySetTable",
+		"targetVisible": true,
+		"targetIcon": "sap-icon://group-2",
+		"targetEntity": "ContainerSignature",	
+		"properties": [	
+			{  
+				"property": "ID","propertyVisible": false,
+				"propertyType": "D",
+				"propertyRange": "Edm.String",
+				"ordinal": 0,
+				"aggregate": "[]",
+				"formatOptions": "",
+				"allowEdit": false,
+				"height":"2rem",
+				"style":"Input"
+			}	
+			,{ 
+				"property": "comment",
+				"propertyVisible": true,
+				"propertyType": "D",
+				"propertyRange": "Edm.String",
+				"ordinal": 1,
+				"aggregate": "[]",
+				"formatOptions": "",
+				"allowEdit": false,
+				"height":"2rem",
+				"style":"Input"
+			}	
+			,{ 
+				"property": "containerSignature_ID",
+				"propertyVisible": true,
+				"propertyType": "D",
+				"propertyRange": "Edm.Int32",
+				"ordinal": 2,
+				"aggregate": "[]",
+				"formatOptions": "",
+				"allowEdit": false,
+				"height":"2rem",
+				"style":"Input"
+			}	
+			,{ 
+				"property": "relations","propertyVisible": false,
+				"propertyType": "D",
+				"propertyRange": "Edm.String",
+				"ordinal": 3,
+				"aggregate": "[]",
+				"formatOptions": "",
+				"allowEdit": false,
+				"height":"2rem",
+				"style":"Input"
+			}	
+			,{ 
+				"property": "relationships","propertyVisible": false,
+				"propertyType": "D",
+				"propertyRange": "Edm.String",
+				"ordinal": 4,
+				"aggregate": "[]",
+				"formatOptions": "",
+				"allowEdit": false,
+				"height":"2rem",
+				"style":"Input"
+			}	
+			,{ 
+				"property": "seeExternal",
+				"propertyVisible": true,
+				"propertyType": "D",
+				"propertyRange": "Edm.anyURI",
+				"ordinal": 5,
+				"aggregate": "[]",
+				"formatOptions": "",
+				"allowEdit": false,
+				"height":"2rem",
+				"style":"Input"
+			}	
+			,{ 
+				"property": "containerSignature_ContainerFile",
+				"propertyVisible": false,
+				"propertyType": "C",
+				"propertyRange": "ContainerFile",
+				"ordinal": 6,
+				"aggregate": "[Count]",
+				"formatOptions": "",
+				"allowEdit": false,
+				"height":"2rem",
+				"style":"Multi"
+			}	
+			,{ 
+				"property": "containerSignature_ContainerType",
+				"propertyVisible": false,
+				"propertyType": "C",
+				"propertyRange": "ContainerType",
+				"ordinal": 7,
+				"aggregate": "[Count]",
+				"formatOptions": "",
+				"allowEdit": false,
+				"height":"2rem",
+				"style":"Multi"
+			}	
+			,{ 
+				"property": "containerSignature_FileFormat",
+				"propertyVisible": false,
+				"propertyType": "C",
+				"propertyRange": "FileFormat",
+				"ordinal": 8,
+				"aggregate": "[Count]",
+				"formatOptions": "",
+				"allowEdit": false,
+				"height":"2rem",
+				"style":"Multi"
+			}	
+			]
+		},
+	"form": {
+		"target": "ContainerSignature",
+		"formStyle":"entity360",
+		"targetVisible": true,
+		"targetIcon": "sap-icon://expand-group",
+		"targetEntity": "ContainerSignature",
+		"allowEdit" : true,
+		"properties": [		
+			{  
+				"property": "ID","propertyVisible": false,
+				"propertyType": "D",
+				"propertyRange": "Edm.String",
+				"ordinal": 0,
+				"aggregate": "[]",
+				"formatOptions": null,
+				"allowEdit": true,
+				"height":"2rem",
+				"style":"Input"
+			}
+			,{ 
+				"property": "comment",
+				"propertyVisible": true,
+				"propertyType": "D",
+				"propertyRange": "Edm.String",
+				"ordinal": 1,
+				"aggregate": "[]",
+				"formatOptions": null,
+				"allowEdit": true,
+				"height":"2rem",
+				"style":"TextArea width='100%' rows='3'"
+			}
+			,{ 
+				"property": "containerSignature_ID",
+				"propertyVisible": true,
+				"propertyType": "D",
+				"propertyRange": "Edm.Int32",
+				"ordinal": 2,
+				"aggregate": "[]",
+				"formatOptions": null,
+				"allowEdit": true,
+				"height":"2rem",
+				"style":"Input"
+			}
+			,{ 
+				"property": "relations","propertyVisible": false,
+				"propertyType": "D",
+				"propertyRange": "Edm.String",
+				"ordinal": 3,
+				"aggregate": "[]",
+				"formatOptions": null,
+				"allowEdit": true,
+				"height":"2rem",
+				"style":"Input"
+			}
+			,{ 
+				"property": "relationships","propertyVisible": false,
+				"propertyType": "D",
+				"propertyRange": "Edm.String",
+				"ordinal": 4,
+				"aggregate": "[]",
+				"formatOptions": null,
+				"allowEdit": true,
+				"height":"2rem",
+				"style":"Input"
+			}
+			,{ 
+				"property": "seeExternal",
+				"propertyVisible": true,
+				"propertyType": "D",
+				"propertyRange": "Edm.anyURI",
+				"ordinal": 5,
+				"aggregate": "[]",
+				"formatOptions": null,
+				"allowEdit": true,
+				"height":"2rem",
+				"style":"Input"
+			}
+			,{ 
+				"property": "containerSignature_ContainerFile",
+				"propertyVisible": true,
+				"propertyType": "C",
+				"propertyRange": "ContainerFile",
+				"ordinal": 6,
+				"aggregate": "[List]",
+				"formatOptions": null,
+				"allowEdit": true,
+				"height":"2rem",
+				"style":"Multi"
+			}
+			,{ 
+				"property": "containerSignature_ContainerType",
+				"propertyVisible": true,
+				"propertyType": "C",
+				"propertyRange": "ContainerType",
+				"ordinal": 7,
+				"aggregate": "[List]",
+				"formatOptions": null,
+				"allowEdit": true,
+				"height":"2rem",
+				"style":"Multi"
+			}
+			,{ 
+				"property": "containerSignature_FileFormat",
+				"propertyVisible": true,
+				"propertyType": "C",
+				"propertyRange": "FileFormat",
+				"ordinal": 8,
+				"aggregate": "[List]",
+				"formatOptions": null,
+				"allowEdit": true,
+				"height":"2rem",
+				"style":"Multi"
+			}
+			]
+		}
+	}
+	,
+	"ContainerType": {
+	"entity": "ContainerType",
+	"icon": "sap-icon://group-2",
+	"image": "./images/icons/unknown.svg",
+	"entitySetVisible":null,
+	"grid": {
+		"target": "ContainerTypes",
+		"gridStyle":"entitySetTable",
+		"targetVisible": true,
+		"targetIcon": "sap-icon://group-2",
+		"targetEntity": "ContainerType",	
+		"properties": [	
+			{  
+				"property": "ID","propertyVisible": false,
+				"propertyType": "D",
+				"propertyRange": "Edm.String",
+				"ordinal": 0,
+				"aggregate": "[]",
+				"formatOptions": "",
+				"allowEdit": false,
+				"height":"2rem",
+				"style":"Input"
+			}	
+			,{ 
+				"property": "comment",
+				"propertyVisible": true,
+				"propertyType": "D",
+				"propertyRange": "Edm.String",
+				"ordinal": 1,
+				"aggregate": "[]",
+				"formatOptions": "",
+				"allowEdit": false,
+				"height":"2rem",
+				"style":"Input"
+			}	
+			,{ 
+				"property": "relations","propertyVisible": false,
+				"propertyType": "D",
+				"propertyRange": "Edm.String",
+				"ordinal": 2,
+				"aggregate": "[]",
+				"formatOptions": "",
+				"allowEdit": false,
+				"height":"2rem",
+				"style":"Input"
+			}	
+			,{ 
+				"property": "relationships","propertyVisible": false,
+				"propertyType": "D",
+				"propertyRange": "Edm.String",
+				"ordinal": 3,
+				"aggregate": "[]",
+				"formatOptions": "",
+				"allowEdit": false,
+				"height":"2rem",
+				"style":"Input"
+			}	
+			,{ 
+				"property": "seeExternal",
+				"propertyVisible": true,
+				"propertyType": "D",
+				"propertyRange": "Edm.anyURI",
+				"ordinal": 4,
+				"aggregate": "[]",
+				"formatOptions": "",
+				"allowEdit": false,
+				"height":"2rem",
+				"style":"Input"
+			}	
+			,{ 
+				"property": "containerType_ContainerSignature",
+				"propertyVisible": false,
+				"propertyType": "C",
+				"propertyRange": "ContainerSignature",
+				"ordinal": 5,
+				"aggregate": "[Count]",
+				"formatOptions": "",
+				"allowEdit": false,
+				"height":"2rem",
+				"style":"Multi"
+			}	
+			,{ 
+				"property": "containerType_FileFormat",
+				"propertyVisible": false,
+				"propertyType": "C",
+				"propertyRange": "FileFormat",
+				"ordinal": 6,
+				"aggregate": "[Count]",
+				"formatOptions": "",
+				"allowEdit": false,
+				"height":"2rem",
+				"style":"Multi"
+			}	
+			]
+		},
+	"form": {
+		"target": "ContainerType",
+		"formStyle":"entity360",
+		"targetVisible": true,
+		"targetIcon": "sap-icon://expand-group",
+		"targetEntity": "ContainerType",
+		"allowEdit" : true,
+		"properties": [		
+			{  
+				"property": "ID","propertyVisible": false,
+				"propertyType": "D",
+				"propertyRange": "Edm.String",
+				"ordinal": 0,
+				"aggregate": "[]",
+				"formatOptions": null,
+				"allowEdit": true,
+				"height":"2rem",
+				"style":"Input"
+			}
+			,{ 
+				"property": "comment",
+				"propertyVisible": true,
+				"propertyType": "D",
+				"propertyRange": "Edm.String",
+				"ordinal": 1,
+				"aggregate": "[]",
+				"formatOptions": null,
+				"allowEdit": true,
+				"height":"2rem",
+				"style":"TextArea width='100%' rows='3'"
+			}
+			,{ 
+				"property": "relations","propertyVisible": false,
+				"propertyType": "D",
+				"propertyRange": "Edm.String",
+				"ordinal": 2,
+				"aggregate": "[]",
+				"formatOptions": null,
+				"allowEdit": true,
+				"height":"2rem",
+				"style":"Input"
+			}
+			,{ 
+				"property": "relationships","propertyVisible": false,
+				"propertyType": "D",
+				"propertyRange": "Edm.String",
+				"ordinal": 3,
+				"aggregate": "[]",
+				"formatOptions": null,
+				"allowEdit": true,
+				"height":"2rem",
+				"style":"Input"
+			}
+			,{ 
+				"property": "seeExternal",
+				"propertyVisible": true,
+				"propertyType": "D",
+				"propertyRange": "Edm.anyURI",
+				"ordinal": 4,
+				"aggregate": "[]",
+				"formatOptions": null,
+				"allowEdit": true,
+				"height":"2rem",
+				"style":"Input"
+			}
+			,{ 
+				"property": "containerType_ContainerSignature",
+				"propertyVisible": true,
+				"propertyType": "C",
+				"propertyRange": "ContainerSignature",
+				"ordinal": 5,
+				"aggregate": "[List]",
+				"formatOptions": null,
+				"allowEdit": true,
+				"height":"2rem",
+				"style":"Multi"
+			}
+			,{ 
+				"property": "containerType_FileFormat",
+				"propertyVisible": true,
+				"propertyType": "C",
+				"propertyRange": "FileFormat",
+				"ordinal": 6,
+				"aggregate": "[List]",
+				"formatOptions": null,
+				"allowEdit": true,
+				"height":"2rem",
+				"style":"Multi"
+			}
+			]
+		}
+	}
+	,
+	"Country": {
+	"entity": "Country",
+	"icon": "sap-icon://group-2",
+	"image": "./images/icons/unknown.svg",
+	"entitySetVisible":null,
+	"grid": {
+		"target": "Countrys",
+		"gridStyle":"entitySetTable",
+		"targetVisible": true,
+		"targetIcon": "sap-icon://group-2",
+		"targetEntity": "Country",	
+		"properties": [	
+			{  
+				"property": "ID","propertyVisible": false,
+				"propertyType": "D",
+				"propertyRange": "Edm.String",
+				"ordinal": 0,
+				"aggregate": "[]",
+				"formatOptions": "",
+				"allowEdit": false,
+				"height":"2rem",
+				"style":"Input"
+			}	
+			,{ 
+				"property": "comment",
+				"propertyVisible": true,
+				"propertyType": "D",
+				"propertyRange": "Edm.String",
+				"ordinal": 1,
+				"aggregate": "[]",
+				"formatOptions": "",
+				"allowEdit": false,
+				"height":"2rem",
+				"style":"Input"
+			}	
+			,{ 
+				"property": "relations","propertyVisible": false,
+				"propertyType": "D",
+				"propertyRange": "Edm.String",
+				"ordinal": 2,
+				"aggregate": "[]",
+				"formatOptions": "",
+				"allowEdit": false,
+				"height":"2rem",
+				"style":"Input"
+			}	
+			,{ 
+				"property": "relationships","propertyVisible": false,
+				"propertyType": "D",
+				"propertyRange": "Edm.String",
+				"ordinal": 3,
+				"aggregate": "[]",
+				"formatOptions": "",
+				"allowEdit": false,
+				"height":"2rem",
+				"style":"Input"
+			}	
+			,{ 
+				"property": "seeExternal",
+				"propertyVisible": true,
+				"propertyType": "D",
+				"propertyRange": "Edm.anyURI",
+				"ordinal": 4,
+				"aggregate": "[]",
+				"formatOptions": "",
+				"allowEdit": false,
+				"height":"2rem",
+				"style":"Input"
+			}	
+			,{ 
+				"property": "country_Actor",
+				"propertyVisible": false,
+				"propertyType": "C",
+				"propertyRange": "Actor",
+				"ordinal": 5,
+				"aggregate": "[Count]",
+				"formatOptions": "",
+				"allowEdit": false,
+				"height":"2rem",
+				"style":"Multi"
+			}	
+			]
+		},
+	"form": {
+		"target": "Country",
+		"formStyle":"entity360",
+		"targetVisible": true,
+		"targetIcon": "sap-icon://expand-group",
+		"targetEntity": "Country",
+		"allowEdit" : true,
+		"properties": [		
+			{  
+				"property": "ID","propertyVisible": false,
+				"propertyType": "D",
+				"propertyRange": "Edm.String",
+				"ordinal": 0,
+				"aggregate": "[]",
+				"formatOptions": null,
+				"allowEdit": true,
+				"height":"2rem",
+				"style":"Input"
+			}
+			,{ 
+				"property": "comment",
+				"propertyVisible": true,
+				"propertyType": "D",
+				"propertyRange": "Edm.String",
+				"ordinal": 1,
+				"aggregate": "[]",
+				"formatOptions": null,
+				"allowEdit": true,
+				"height":"2rem",
+				"style":"TextArea width='100%' rows='3'"
+			}
+			,{ 
+				"property": "relations","propertyVisible": false,
+				"propertyType": "D",
+				"propertyRange": "Edm.String",
+				"ordinal": 2,
+				"aggregate": "[]",
+				"formatOptions": null,
+				"allowEdit": true,
+				"height":"2rem",
+				"style":"Input"
+			}
+			,{ 
+				"property": "relationships","propertyVisible": false,
+				"propertyType": "D",
+				"propertyRange": "Edm.String",
+				"ordinal": 3,
+				"aggregate": "[]",
+				"formatOptions": null,
+				"allowEdit": true,
+				"height":"2rem",
+				"style":"Input"
+			}
+			,{ 
+				"property": "seeExternal",
+				"propertyVisible": true,
+				"propertyType": "D",
+				"propertyRange": "Edm.anyURI",
+				"ordinal": 4,
+				"aggregate": "[]",
+				"formatOptions": null,
+				"allowEdit": true,
+				"height":"2rem",
+				"style":"Input"
+			}
+			,{ 
+				"property": "country_Actor",
+				"propertyVisible": true,
+				"propertyType": "C",
+				"propertyRange": "Actor",
+				"ordinal": 5,
+				"aggregate": "[List]",
+				"formatOptions": null,
+				"allowEdit": true,
+				"height":"2rem",
+				"style":"Multi"
+			}
+			]
+		}
+	}
+	,
+
+	"Document": {
+	"entity": "Document",
+	"icon": "sap-icon://group-2",
+	"image": "./images/icons/unknown.svg",
+	"entitySetVisible":null,
+	"grid": {
+		"target": "Documents",
+		"gridStyle":"entitySetTable",
+		"targetVisible": true,
+		"targetIcon": "sap-icon://group-2",
+		"targetEntity": "Document",	
+		"properties": [	
+			{  
+				"property": "ID","propertyVisible": false,
+				"propertyType": "D",
+				"propertyRange": "Edm.String",
+				"ordinal": 0,
+				"aggregate": "[]",
+				"formatOptions": "",
+				"allowEdit": false,
+				"height":"2rem",
+				"style":"Input"
+			}	
+			,{ 
+				"property": "comment",
+				"propertyVisible": true,
+				"propertyType": "D",
+				"propertyRange": "Edm.String",
+				"ordinal": 1,
+				"aggregate": "[]",
+				"formatOptions": "",
+				"allowEdit": false,
+				"height":"2rem",
+				"style":"Input"
+			}	
+			,{ 
+				"property": "document_Availability",
+				"propertyVisible": true,
+				"propertyType": "D",
+				"propertyRange": "Edm.String",
+				"ordinal": 2,
+				"aggregate": "[]",
+				"formatOptions": "",
+				"allowEdit": false,
+				"height":"2rem",
+				"style":"Input"
+			}	
+			,{ 
+				"property": "documents_ID",
+				"propertyVisible": true,
+				"propertyType": "D",
+				"propertyRange": "Edm.Int32",
+				"ordinal": 3,
+				"aggregate": "[]",
+				"formatOptions": "",
+				"allowEdit": false,
+				"height":"2rem",
+				"style":"Input"
+			}	
+			,{ 
+				"property": "relations","propertyVisible": false,
+				"propertyType": "D",
+				"propertyRange": "Edm.String",
+				"ordinal": 4,
+				"aggregate": "[]",
+				"formatOptions": "",
+				"allowEdit": false,
+				"height":"2rem",
+				"style":"Input"
+			}	
+			,{ 
+				"property": "relationships","propertyVisible": false,
+				"propertyType": "D",
+				"propertyRange": "Edm.String",
+				"ordinal": 5,
+				"aggregate": "[]",
+				"formatOptions": "",
+				"allowEdit": false,
+				"height":"2rem",
+				"style":"Input"
+			}	
+			,{ 
+				"property": "seeExternal",
+				"propertyVisible": true,
+				"propertyType": "D",
+				"propertyRange": "Edm.anyURI",
+				"ordinal": 6,
+				"aggregate": "[]",
+				"formatOptions": "",
+				"allowEdit": false,
+				"height":"2rem",
+				"style":"Input"
+			}	
+			,{ 
+				"property": "document_DocumentType",
+				"propertyVisible": false,
+				"propertyType": "C",
+				"propertyRange": "DocumentType",
+				"ordinal": 7,
+				"aggregate": "[Count]",
+				"formatOptions": "",
+				"allowEdit": false,
+				"height":"2rem",
+				"style":"Multi"
+			}	
+			,{ 
+				"property": "document_Registry",
+				"propertyVisible": false,
+				"propertyType": "C",
+				"propertyRange": "Registry",
+				"ordinal": 8,
+				"aggregate": "[Count]",
+				"formatOptions": "",
+				"allowEdit": false,
+				"height":"2rem",
+				"style":"Multi"
+			}	
+			,{ 
+				"property": "resultOf_Activity",
+				"propertyVisible": false,
+				"propertyType": "C",
+				"propertyRange": "Activity",
+				"ordinal": 9,
+				"aggregate": "[Count]",
+				"formatOptions": "",
+				"allowEdit": false,
+				"height":"2rem",
+				"style":"Multi"
+			}	
+			]
+		},
+	"form": {
+		"target": "Document",
+		"formStyle":"entity360",
+		"targetVisible": true,
+		"targetIcon": "sap-icon://expand-group",
+		"targetEntity": "Document",
+		"allowEdit" : true,
+		"properties": [		
+			{  
+				"property": "ID","propertyVisible": false,
+				"propertyType": "D",
+				"propertyRange": "Edm.String",
+				"ordinal": 0,
+				"aggregate": "[]",
+				"formatOptions": null,
+				"allowEdit": true,
+				"height":"2rem",
+				"style":"Input"
+			}
+			,{ 
+				"property": "comment",
+				"propertyVisible": true,
+				"propertyType": "D",
+				"propertyRange": "Edm.String",
+				"ordinal": 1,
+				"aggregate": "[]",
+				"formatOptions": null,
+				"allowEdit": true,
+				"height":"2rem",
+				"style":"TextArea width='100%' rows='3'"
+			}
+			,{ 
+				"property": "document_Availability",
+				"propertyVisible": true,
+				"propertyType": "D",
+				"propertyRange": "Edm.String",
+				"ordinal": 2,
+				"aggregate": "[]",
+				"formatOptions": null,
+				"allowEdit": true,
+				"height":"2rem",
+				"style":"Input"
+			}
+			,{ 
+				"property": "documents_ID",
+				"propertyVisible": true,
+				"propertyType": "D",
+				"propertyRange": "Edm.Int32",
+				"ordinal": 3,
+				"aggregate": "[]",
+				"formatOptions": null,
+				"allowEdit": true,
+				"height":"2rem",
+				"style":"Input"
+			}
+			,{ 
+				"property": "relations","propertyVisible": false,
+				"propertyType": "D",
+				"propertyRange": "Edm.String",
+				"ordinal": 4,
+				"aggregate": "[]",
+				"formatOptions": null,
+				"allowEdit": true,
+				"height":"2rem",
+				"style":"Input"
+			}
+			,{ 
+				"property": "relationships","propertyVisible": false,
+				"propertyType": "D",
+				"propertyRange": "Edm.String",
+				"ordinal": 5,
+				"aggregate": "[]",
+				"formatOptions": null,
+				"allowEdit": true,
+				"height":"2rem",
+				"style":"Input"
+			}
+			,{ 
+				"property": "seeExternal",
+				"propertyVisible": true,
+				"propertyType": "D",
+				"propertyRange": "Edm.anyURI",
+				"ordinal": 6,
+				"aggregate": "[]",
+				"formatOptions": null,
+				"allowEdit": true,
+				"height":"2rem",
+				"style":"Input"
+			}
+			,{ 
+				"property": "document_DocumentType",
+				"propertyVisible": true,
+				"propertyType": "C",
+				"propertyRange": "DocumentType",
+				"ordinal": 7,
+				"aggregate": "[List]",
+				"formatOptions": null,
+				"allowEdit": true,
+				"height":"2rem",
+				"style":"Multi"
+			}
+			,{ 
+				"property": "document_Registry",
+				"propertyVisible": true,
+				"propertyType": "C",
+				"propertyRange": "Registry",
+				"ordinal": 8,
+				"aggregate": "[List]",
+				"formatOptions": null,
+				"allowEdit": true,
+				"height":"2rem",
+				"style":"Multi"
+			}
+			,{ 
+				"property": "resultOf_Activity",
+				"propertyVisible": true,
+				"propertyType": "C",
+				"propertyRange": "Activity",
+				"ordinal": 9,
+				"aggregate": "[List]",
+				"formatOptions": null,
+				"allowEdit": true,
+				"height":"2rem",
+				"style":"Multi"
+			}
+			]
+		}
+	}
+	,
+	"DocumentType": {
+	"entity": "DocumentType",
+	"icon": "sap-icon://group-2",
+	"image": "./images/icons/unknown.svg",
+	"entitySetVisible":null,
+	"grid": {
+		"target": "DocumentTypes",
+		"gridStyle":"entitySetTable",
+		"targetVisible": true,
+		"targetIcon": "sap-icon://group-2",
+		"targetEntity": "DocumentType",	
+		"properties": [	
+			{  
+				"property": "ID","propertyVisible": false,
+				"propertyType": "D",
+				"propertyRange": "Edm.String",
+				"ordinal": 0,
+				"aggregate": "[]",
+				"formatOptions": "",
+				"allowEdit": false,
+				"height":"2rem",
+				"style":"Input"
+			}	
+			,{ 
+				"property": "comment",
+				"propertyVisible": true,
+				"propertyType": "D",
+				"propertyRange": "Edm.String",
+				"ordinal": 1,
+				"aggregate": "[]",
+				"formatOptions": "",
+				"allowEdit": false,
+				"height":"2rem",
+				"style":"Input"
+			}	
+			,{ 
+				"property": "document_types_ID",
+				"propertyVisible": true,
+				"propertyType": "D",
+				"propertyRange": "Edm.Int32",
+				"ordinal": 2,
+				"aggregate": "[]",
+				"formatOptions": "",
+				"allowEdit": false,
+				"height":"2rem",
+				"style":"Input"
+			}	
+			,{ 
+				"property": "relations","propertyVisible": false,
+				"propertyType": "D",
+				"propertyRange": "Edm.String",
+				"ordinal": 3,
+				"aggregate": "[]",
+				"formatOptions": "",
+				"allowEdit": false,
+				"height":"2rem",
+				"style":"Input"
+			}	
+			,{ 
+				"property": "relationships","propertyVisible": false,
+				"propertyType": "D",
+				"propertyRange": "Edm.String",
+				"ordinal": 4,
+				"aggregate": "[]",
+				"formatOptions": "",
+				"allowEdit": false,
+				"height":"2rem",
+				"style":"Input"
+			}	
+			,{ 
+				"property": "seeExternal",
+				"propertyVisible": true,
+				"propertyType": "D",
+				"propertyRange": "Edm.anyURI",
+				"ordinal": 5,
+				"aggregate": "[]",
+				"formatOptions": "",
+				"allowEdit": false,
+				"height":"2rem",
+				"style":"Input"
+			}	
+			,{ 
+				"property": "documentType_Document",
+				"propertyVisible": false,
+				"propertyType": "C",
+				"propertyRange": "Document",
+				"ordinal": 6,
+				"aggregate": "[Count]",
+				"formatOptions": "",
+				"allowEdit": false,
+				"height":"2rem",
+				"style":"Multi"
+			}	
+			]
+		},
+	"form": {
+		"target": "DocumentType",
+		"formStyle":"entity360",
+		"targetVisible": true,
+		"targetIcon": "sap-icon://expand-group",
+		"targetEntity": "DocumentType",
+		"allowEdit" : true,
+		"properties": [		
+			{  
+				"property": "ID","propertyVisible": false,
+				"propertyType": "D",
+				"propertyRange": "Edm.String",
+				"ordinal": 0,
+				"aggregate": "[]",
+				"formatOptions": null,
+				"allowEdit": true,
+				"height":"2rem",
+				"style":"Input"
+			}
+			,{ 
+				"property": "comment",
+				"propertyVisible": true,
+				"propertyType": "D",
+				"propertyRange": "Edm.String",
+				"ordinal": 1,
+				"aggregate": "[]",
+				"formatOptions": null,
+				"allowEdit": true,
+				"height":"2rem",
+				"style":"TextArea width='100%' rows='3'"
+			}
+			,{ 
+				"property": "document_types_ID",
+				"propertyVisible": true,
+				"propertyType": "D",
+				"propertyRange": "Edm.Int32",
+				"ordinal": 2,
+				"aggregate": "[]",
+				"formatOptions": null,
+				"allowEdit": true,
+				"height":"2rem",
+				"style":"Input"
+			}
+			,{ 
+				"property": "relations","propertyVisible": false,
+				"propertyType": "D",
+				"propertyRange": "Edm.String",
+				"ordinal": 3,
+				"aggregate": "[]",
+				"formatOptions": null,
+				"allowEdit": true,
+				"height":"2rem",
+				"style":"Input"
+			}
+			,{ 
+				"property": "relationships","propertyVisible": false,
+				"propertyType": "D",
+				"propertyRange": "Edm.String",
+				"ordinal": 4,
+				"aggregate": "[]",
+				"formatOptions": null,
+				"allowEdit": true,
+				"height":"2rem",
+				"style":"Input"
+			}
+			,{ 
+				"property": "seeExternal",
+				"propertyVisible": true,
+				"propertyType": "D",
+				"propertyRange": "Edm.anyURI",
+				"ordinal": 5,
+				"aggregate": "[]",
+				"formatOptions": null,
+				"allowEdit": true,
+				"height":"2rem",
+				"style":"Input"
+			}
+			,{ 
+				"property": "documentType_Document",
+				"propertyVisible": true,
+				"propertyType": "C",
+				"propertyRange": "Document",
+				"ordinal": 6,
+				"aggregate": "[List]",
+				"formatOptions": null,
+				"allowEdit": true,
+				"height":"2rem",
+				"style":"Multi"
+			}
+			]
+		}
+	}
+	,
+	"Encoding": {
+	"entity": "Encoding",
+	"icon": "sap-icon://group-2",
+	"image": "./images/icons/unknown.svg",
+	"entitySetVisible":null,
+		"namespaces":[
+				{"prefix":"chr", "namespace":"http://data.nationalarchives.gov.uk/PRONOM/chr/" },
+				{"prefix":"x-chr", "namespace":"http://data.nationalarchives.gov.uk/PRONOM/x-chr/" }								
+		],
+	"grid": {
+		"target": "Encodings",
+		"gridStyle":"entitySetTable",
+		"targetVisible": true,
+		"targetIcon": "sap-icon://group-2",
+		"targetEntity": "Encoding",	
+		"properties": [	
+			{  
+				"property": "ID","propertyVisible": false,
+				"propertyType": "D",
+				"propertyRange": "Edm.String",
+				"ordinal": 0,
+				"aggregate": "[]",
+				"formatOptions": "",
+				"allowEdit": false,
+				"height":"2rem",
+				"style":"Input"
+			}	
+			,{ 
+				"property": "comment",
+				"propertyVisible": true,
+				"propertyType": "D",
+				"propertyRange": "Edm.String",
+				"ordinal": 1,
+				"aggregate": "[]",
+				"formatOptions": "",
+				"allowEdit": false,
+				"height":"2rem",
+				"style":"Input"
+			}	
+			,{ 
+				"property": "encoding_ID",
+				"propertyVisible": true,
+				"propertyType": "D",
+				"propertyRange": "Edm.Int32",
+				"ordinal": 2,
+				"aggregate": "[]",
+				"formatOptions": "",
+				"allowEdit": false,
+				"height":"2rem",
+				"style":"Input"
+			}	
+			,{ 
+				"property": "puid",
+				"propertyVisible": true,
+				"propertyType": "D",
+				"propertyRange": "Edm.String",
+				"ordinal": 3,
+				"aggregate": "[]",
+				"formatOptions": "",
+				"allowEdit": false,
+				"height":"2rem",
+				"style":"Input"
+			}	
+			,{ 
+				"property": "relations","propertyVisible": false,
+				"propertyType": "D",
+				"propertyRange": "Edm.String",
+				"ordinal": 4,
+				"aggregate": "[]",
+				"formatOptions": "",
+				"allowEdit": false,
+				"height":"2rem",
+				"style":"Input"
+			}	
+			,{ 
+				"property": "relationships","propertyVisible": false,
+				"propertyType": "D",
+				"propertyRange": "Edm.String",
+				"ordinal": 5,
+				"aggregate": "[]",
+				"formatOptions": "",
+				"allowEdit": false,
+				"height":"2rem",
+				"style":"Input"
+			}	
+			,{ 
+				"property": "seeExternal",
+				"propertyVisible": true,
+				"propertyType": "D",
+				"propertyRange": "Edm.anyURI",
+				"ordinal": 6,
+				"aggregate": "[]",
+				"formatOptions": "",
+				"allowEdit": false,
+				"height":"2rem",
+				"style":"Input"
+			}	
+			,{ 
+				"property": "encoding_FileFormat",
+				"propertyVisible": false,
+				"propertyType": "C",
+				"propertyRange": "FileFormat",
+				"ordinal": 7,
+				"aggregate": "[Count]",
+				"formatOptions": "",
+				"allowEdit": false,
+				"height":"2rem",
+				"style":"Multi"
+			}	
+			,{ 
+				"property": "registry_Alias",
+				"propertyVisible": false,
+				"propertyType": "C",
+				"propertyRange": "Alias",
+				"ordinal": 8,
+				"aggregate": "[Count]",
+				"formatOptions": "",
+				"allowEdit": false,
+				"height":"2rem",
+				"style":"Multi"
+			}	
+			,{ 
+				"property": "registry_Document",
+				"propertyVisible": false,
+				"propertyType": "C",
+				"propertyRange": "Document",
+				"ordinal": 9,
+				"aggregate": "[Count]",
+				"formatOptions": "",
+				"allowEdit": false,
+				"height":"2rem",
+				"style":"Multi"
+			}	
+			,{ 
+				"property": "resultOf_Activity",
+				"propertyVisible": false,
+				"propertyType": "C",
+				"propertyRange": "Activity",
+				"ordinal": 10,
+				"aggregate": "[Count]",
+				"formatOptions": "",
+				"allowEdit": false,
+				"height":"2rem",
+				"style":"Multi"
+			}	
+			]
+		},
+	"form": {
+		"target": "Encoding",
+		"formStyle":"entity360",
+		"targetVisible": true,
+		"targetIcon": "sap-icon://expand-group",
+		"targetEntity": "Encoding",
+		"allowEdit" : true,
+		"properties": [		
+			{  
+				"property": "ID","propertyVisible": false,
+				"propertyType": "D",
+				"propertyRange": "Edm.String",
+				"ordinal": 0,
+				"aggregate": "[]",
+				"formatOptions": null,
+				"allowEdit": true,
+				"height":"2rem",
+				"style":"Input"
+			}
+			,{ 
+				"property": "comment",
+				"propertyVisible": true,
+				"propertyType": "D",
+				"propertyRange": "Edm.String",
+				"ordinal": 1,
+				"aggregate": "[]",
+				"formatOptions": null,
+				"allowEdit": true,
+				"height":"2rem",
+				"style":"TextArea width='100%' rows='3'"
+			}
+			,{ 
+				"property": "encoding_ID",
+				"propertyVisible": true,
+				"propertyType": "D",
+				"propertyRange": "Edm.Int32",
+				"ordinal": 2,
+				"aggregate": "[]",
+				"formatOptions": null,
+				"allowEdit": true,
+				"height":"2rem",
+				"style":"Input"
+			}
+			,{ 
+				"property": "puid",
+				"propertyVisible": true,
+				"propertyType": "D",
+				"propertyRange": "Edm.String",
+				"ordinal": 3,
+				"aggregate": "[]",
+				"formatOptions": null,
+				"allowEdit": true,
+				"height":"2rem",
+				"style":"Input"
+			}
+			,{ 
+				"property": "relations","propertyVisible": false,
+				"propertyType": "D",
+				"propertyRange": "Edm.String",
+				"ordinal": 4,
+				"aggregate": "[]",
+				"formatOptions": null,
+				"allowEdit": true,
+				"height":"2rem",
+				"style":"Input"
+			}
+			,{ 
+				"property": "relationships","propertyVisible": false,
+				"propertyType": "D",
+				"propertyRange": "Edm.String",
+				"ordinal": 5,
+				"aggregate": "[]",
+				"formatOptions": null,
+				"allowEdit": true,
+				"height":"2rem",
+				"style":"Input"
+			}
+			,{ 
+				"property": "seeExternal",
+				"propertyVisible": true,
+				"propertyType": "D",
+				"propertyRange": "Edm.anyURI",
+				"ordinal": 6,
+				"aggregate": "[]",
+				"formatOptions": null,
+				"allowEdit": true,
+				"height":"2rem",
+				"style":"Input"
+			}
+			,{ 
+				"property": "encoding_FileFormat",
+				"propertyVisible": true,
+				"propertyType": "C",
+				"propertyRange": "FileFormat",
+				"ordinal": 7,
+				"aggregate": "[List]",
+				"formatOptions": null,
+				"allowEdit": true,
+				"height":"2rem",
+				"style":"Multi"
+			}
+			,{ 
+				"property": "registry_Alias",
+				"propertyVisible": true,
+				"propertyType": "C",
+				"propertyRange": "Alias",
+				"ordinal": 8,
+				"aggregate": "[List]",
+				"formatOptions": null,
+				"allowEdit": true,
+				"height":"2rem",
+				"style":"Multi"
+			}
+			,{ 
+				"property": "registry_Document",
+				"propertyVisible": true,
+				"propertyType": "C",
+				"propertyRange": "Document",
+				"ordinal": 9,
+				"aggregate": "[List]",
+				"formatOptions": null,
+				"allowEdit": true,
+				"height":"2rem",
+				"style":"Multi"
+			}
+			,{ 
+				"property": "resultOf_Activity",
+				"propertyVisible": true,
+				"propertyType": "C",
+				"propertyRange": "Activity",
+				"ordinal": 10,
+				"aggregate": "[List]",
+				"formatOptions": null,
+				"allowEdit": true,
+				"height":"2rem",
+				"style":"Multi"
+			}
+			]
+		}
+	}
+	,
+	"ExternalSignature": {
+	"entity": "ExternalSignature",
+	"icon": "sap-icon://group-2",
+	"image": "./images/icons/unknown.svg",
+	"entitySetVisible":null,
+	"grid": {
+		"target": "ExternalSignatures",
+		"gridStyle":"entitySetTable",
+		"targetVisible": true,
+		"targetIcon": "sap-icon://group-2",
+		"targetEntity": "ExternalSignature",	
+		"properties": [	
+			{  
+				"property": "ID","propertyVisible": false,
+				"propertyType": "D",
+				"propertyRange": "Edm.String",
+				"ordinal": 0,
+				"aggregate": "[]",
+				"formatOptions": "",
+				"allowEdit": false,
+				"height":"2rem",
+				"style":"Input"
+			}	
+			,{ 
+				"property": "comment",
+				"propertyVisible": true,
+				"propertyType": "D",
+				"propertyRange": "Edm.String",
+				"ordinal": 1,
+				"aggregate": "[]",
+				"formatOptions": "",
+				"allowEdit": false,
+				"height":"2rem",
+				"style":"Input"
+			}	
+			,{ 
+				"property": "externalSignature_Extension",
+				"propertyVisible": true,
+				"propertyType": "D",
+				"propertyRange": "Edm.String",
+				"ordinal": 2,
+				"aggregate": "[]",
+				"formatOptions": "",
+				"allowEdit": false,
+				"height":"2rem",
+				"style":"Input"
+			}	
+			,{ 
+				"property": "external_signatures_ID",
+				"propertyVisible": true,
+				"propertyType": "D",
+				"propertyRange": "Edm.Int32",
+				"ordinal": 3,
+				"aggregate": "[]",
+				"formatOptions": "",
+				"allowEdit": false,
+				"height":"2rem",
+				"style":"Input"
+			}	
+			,{ 
+				"property": "relations","propertyVisible": false,
+				"propertyType": "D",
+				"propertyRange": "Edm.String",
+				"ordinal": 4,
+				"aggregate": "[]",
+				"formatOptions": "",
+				"allowEdit": false,
+				"height":"2rem",
+				"style":"Input"
+			}	
+			,{ 
+				"property": "relationships","propertyVisible": false,
+				"propertyType": "D",
+				"propertyRange": "Edm.String",
+				"ordinal": 5,
+				"aggregate": "[]",
+				"formatOptions": "",
+				"allowEdit": false,
+				"height":"2rem",
+				"style":"Input"
+			}	
+			,{ 
+				"property": "seeExternal",
+				"propertyVisible": true,
+				"propertyType": "D",
+				"propertyRange": "Edm.anyURI",
+				"ordinal": 6,
+				"aggregate": "[]",
+				"formatOptions": "",
+				"allowEdit": false,
+				"height":"2rem",
+				"style":"Input"
+			}	
+			,{ 
+				"property": "externalSignature_FileFormat",
+				"propertyVisible": false,
+				"propertyType": "C",
+				"propertyRange": "FileFormat",
+				"ordinal": 7,
+				"aggregate": "[Count]",
+				"formatOptions": "",
+				"allowEdit": false,
+				"height":"2rem",
+				"style":"Multi"
+			}	
+			]
+		},
+	"form": {
+		"target": "ExternalSignature",
+		"formStyle":"entity360",
+		"targetVisible": true,
+		"targetIcon": "sap-icon://expand-group",
+		"targetEntity": "ExternalSignature",
+		"allowEdit" : true,
+		"properties": [		
+			{  
+				"property": "ID","propertyVisible": false,
+				"propertyType": "D",
+				"propertyRange": "Edm.String",
+				"ordinal": 0,
+				"aggregate": "[]",
+				"formatOptions": null,
+				"allowEdit": true,
+				"height":"2rem",
+				"style":"Input"
+			}
+			,{ 
+				"property": "comment",
+				"propertyVisible": true,
+				"propertyType": "D",
+				"propertyRange": "Edm.String",
+				"ordinal": 1,
+				"aggregate": "[]",
+				"formatOptions": null,
+				"allowEdit": true,
+				"height":"2rem",
+				"style":"TextArea width='100%' rows='3'"
+			}
+			,{ 
+				"property": "externalSignature_Extension",
+				"propertyVisible": true,
+				"propertyType": "D",
+				"propertyRange": "Edm.String",
+				"ordinal": 2,
+				"aggregate": "[]",
+				"formatOptions": null,
+				"allowEdit": true,
+				"height":"2rem",
+				"style":"Input"
+			}
+			,{ 
+				"property": "external_signatures_ID",
+				"propertyVisible": true,
+				"propertyType": "D",
+				"propertyRange": "Edm.Int32",
+				"ordinal": 3,
+				"aggregate": "[]",
+				"formatOptions": null,
+				"allowEdit": true,
+				"height":"2rem",
+				"style":"Input"
+			}
+			,{ 
+				"property": "relations","propertyVisible": false,
+				"propertyType": "D",
+				"propertyRange": "Edm.String",
+				"ordinal": 4,
+				"aggregate": "[]",
+				"formatOptions": null,
+				"allowEdit": true,
+				"height":"2rem",
+				"style":"Input"
+			}
+			,{ 
+				"property": "relationships","propertyVisible": false,
+				"propertyType": "D",
+				"propertyRange": "Edm.String",
+				"ordinal": 5,
+				"aggregate": "[]",
+				"formatOptions": null,
+				"allowEdit": true,
+				"height":"2rem",
+				"style":"Input"
+			}
+			,{ 
+				"property": "seeExternal",
+				"propertyVisible": true,
+				"propertyType": "D",
+				"propertyRange": "Edm.anyURI",
+				"ordinal": 6,
+				"aggregate": "[]",
+				"formatOptions": null,
+				"allowEdit": true,
+				"height":"2rem",
+				"style":"Input"
+			}
+			,{ 
+				"property": "externalSignature_FileFormat",
+				"propertyVisible": true,
+				"propertyType": "C",
+				"propertyRange": "FileFormat",
+				"ordinal": 7,
+				"aggregate": "[List]",
+				"formatOptions": null,
+				"allowEdit": true,
+				"height":"2rem",
+				"style":"Multi"
+			}
+			]
+		}
+	}
+	,
+	"Family": {
+	"entity": "Family",
+	"icon": "sap-icon://group-2",
+	"image": "./images/icons/unknown.svg",
+	"entitySetVisible":null,
+	"grid": {
+		"target": "Familys",
+		"gridStyle":"entitySetTable",
+		"targetVisible": true,
+		"targetIcon": "sap-icon://group-2",
+		"targetEntity": "Family",	
+		"properties": [	
+			{  
+				"property": "ID","propertyVisible": false,
+				"propertyType": "D",
+				"propertyRange": "Edm.String",
+				"ordinal": 0,
+				"aggregate": "[]",
+				"formatOptions": "",
+				"allowEdit": false,
+				"height":"2rem",
+				"style":"Input"
+			}	
+			,{ 
+				"property": "comment",
+				"propertyVisible": true,
+				"propertyType": "D",
+				"propertyRange": "Edm.String",
+				"ordinal": 1,
+				"aggregate": "[]",
+				"formatOptions": "",
+				"allowEdit": false,
+				"height":"2rem",
+				"style":"Input"
+			}	
+			,{ 
+				"property": "relations","propertyVisible": false,
+				"propertyType": "D",
+				"propertyRange": "Edm.String",
+				"ordinal": 2,
+				"aggregate": "[]",
+				"formatOptions": "",
+				"allowEdit": false,
+				"height":"2rem",
+				"style":"Input"
+			}	
+			,{ 
+				"property": "relationships","propertyVisible": false,
+				"propertyType": "D",
+				"propertyRange": "Edm.String",
+				"ordinal": 3,
+				"aggregate": "[]",
+				"formatOptions": "",
+				"allowEdit": false,
+				"height":"2rem",
+				"style":"Input"
+			}	
+			,{ 
+				"property": "seeExternal",
+				"propertyVisible": true,
+				"propertyType": "D",
+				"propertyRange": "Edm.anyURI",
+				"ordinal": 4,
+				"aggregate": "[]",
+				"formatOptions": "",
+				"allowEdit": false,
+				"height":"2rem",
+				"style":"Input"
+			}	
+			]
+		},
+	"form": {
+		"target": "Family",
+		"formStyle":"entity360",
+		"targetVisible": true,
+		"targetIcon": "sap-icon://expand-group",
+		"targetEntity": "Family",
+		"allowEdit" : true,
+		"properties": [		
+			{  
+				"property": "ID","propertyVisible": false,
+				"propertyType": "D",
+				"propertyRange": "Edm.String",
+				"ordinal": 0,
+				"aggregate": "[]",
+				"formatOptions": null,
+				"allowEdit": true,
+				"height":"2rem",
+				"style":"Input"
+			}
+			,{ 
+				"property": "comment",
+				"propertyVisible": true,
+				"propertyType": "D",
+				"propertyRange": "Edm.String",
+				"ordinal": 1,
+				"aggregate": "[]",
+				"formatOptions": null,
+				"allowEdit": true,
+				"height":"2rem",
+				"style":"TextArea width='100%' rows='3'"
+			}
+			,{ 
+				"property": "relations","propertyVisible": false,
+				"propertyType": "D",
+				"propertyRange": "Edm.String",
+				"ordinal": 2,
+				"aggregate": "[]",
+				"formatOptions": null,
+				"allowEdit": true,
+				"height":"2rem",
+				"style":"Input"
+			}
+			,{ 
+				"property": "relationships","propertyVisible": false,
+				"propertyType": "D",
+				"propertyRange": "Edm.String",
+				"ordinal": 3,
+				"aggregate": "[]",
+				"formatOptions": null,
+				"allowEdit": true,
+				"height":"2rem",
+				"style":"Input"
+			}
+			,{ 
+				"property": "seeExternal",
+				"propertyVisible": true,
+				"propertyType": "D",
+				"propertyRange": "Edm.anyURI",
+				"ordinal": 4,
+				"aggregate": "[]",
+				"formatOptions": null,
+				"allowEdit": true,
+				"height":"2rem",
+				"style":"Input"
+			}
+			]
+		}
+	}
+	,
+	"FileFormat": {
+	"entity": "FileFormat",
+	"icon": "sap-icon://group-2",
+	"image": "./images/icons/unknown.svg",
+	"entitySetVisible":null,
+	"namespaces":[
+				{"prefix":"fmt", "namespace":"http://data.nationalarchives.gov.uk/PRONOM/fmt/" },
+				{"prefix":"x-fmt", "namespace":"http://data.nationalarchives.gov.uk/PRONOM/x-fmt/" }								
+		],
+	"namePattern": "",
+	"grid": {
+		"target": "FileFormats",
+		"gridStyle":"entitySetTable",
+		"targetVisible": true,
+		"targetIcon": "sap-icon://group-2",
+		"targetEntity": "FileFormat",	
+		"properties": [	
+			{  
+				"property": "ID","propertyVisible": false,
+				"propertyType": "D",
+				"propertyRange": "Edm.String",
+				"ordinal": 0,
+				"aggregate": "[]",
+				"formatOptions": "",
+				"allowEdit": false,
+				"height":"2rem",
+				"style":"Input"
+			}	
+			,{ 
+				"property": "comment",
+				"propertyVisible": true,
+				"propertyType": "D",
+				"propertyRange": "Edm.String",
+				"ordinal": 3,
+				"aggregate": "[]",
+				"formatOptions": "",
+				"allowEdit": false,
+				"height":"2rem",
+				"style":"Input"
+			}	
+			,{ 
+				"property": "fileFormat_Version",
+				"propertyVisible": true,
+				"propertyType": "D",
+				"propertyRange": "Edm.String",
+				"ordinal": 2,
+				"aggregate": "[]",
+				"formatOptions": "",
+				"allowEdit": false,
+				"height":"2rem",
+				"style":"Input"
+			}	
+			,{ 
+				"property": "file_formats_ID",
+				"propertyVisible": true,
+				"propertyType": "D",
+				"propertyRange": "Edm.Int32",
+				"ordinal": 3,
+				"aggregate": "[]",
+				"formatOptions": "",
+				"allowEdit": false,
+				"height":"2rem",
+				"style":"Input"
+			}	
+			,{ 
+				"property": "puid",
+				"propertyVisible": true,
+				"propertyType": "D",
+				"propertyRange": "Edm.String",
+				"ordinal": 4,
+				"aggregate": "[]",
+				"formatOptions": "",
+				"allowEdit": false,
+				"height":"2rem",
+				"style":"Input"
+			}	
+			,{ 
+				"property": "relations","propertyVisible": false,
+				"propertyType": "D",
+				"propertyRange": "Edm.String",
+				"ordinal": 5,
+				"aggregate": "[]",
+				"formatOptions": "",
+				"allowEdit": false,
+				"height":"2rem",
+				"style":"Input"
+			}	
+			,{ 
+				"property": "relationships","propertyVisible": false,
+				"propertyType": "D",
+				"propertyRange": "Edm.String",
+				"ordinal": 6,
+				"aggregate": "[]",
+				"formatOptions": "",
+				"allowEdit": false,
+				"height":"2rem",
+				"style":"Input"
+			}	
+			,{ 
+				"property": "seeExternal",
+				"propertyVisible": false,
+				"propertyType": "D",
+				"propertyRange": "Edm.anyURI",
+				"ordinal": 7,
+				"aggregate": "[]",
+				"formatOptions": "",
+				"allowEdit": false,
+				"height":"2rem",
+				"style":"Input"
+			}	
+			,{ 
+				"property": "fileFormat_ByteOrder",
+				"propertyVisible": false,
+				"propertyType": "O",
+				"propertyRange": "ByteOrder",
+				"ordinal": 8,
+				"aggregate": "[]",
+				"formatOptions": "",
+				"allowEdit": false,
+				"height":"2rem",
+				"style":"Single"
+			}	
+			,{ 
+				"property": "about_Relationship",
+				"propertyVisible": false,
+				"propertyType": "C",
+				"propertyRange": "Relationship",
+				"ordinal": 9,
+				"aggregate": "[Count]",
+				"formatOptions": "",
+				"allowEdit": false,
+				"height":"2rem",
+				"style":"Multi"
+			}	
+			,{ 
+				"property": "fileFormat_Classification",
+				"propertyVisible": false,
+				"propertyType": "C",
+				"propertyRange": "Classification",
+				"ordinal": 10,
+				"aggregate": "[Count]",
+				"formatOptions": "",
+				"allowEdit": false,
+				"height":"2rem",
+				"style":"Multi"
+			}	
+			,{ 
+				"property": "fileFormat_CompressionType",
+				"propertyVisible": false,
+				"propertyType": "C",
+				"propertyRange": "CompressionType",
+				"ordinal": 11,
+				"aggregate": "[Count]",
+				"formatOptions": "",
+				"allowEdit": false,
+				"height":"2rem",
+				"style":"Multi"
+			}	
+			,{ 
+				"property": "fileFormat_ContainerSignature",
+				"propertyVisible": false,
+				"propertyType": "C",
+				"propertyRange": "ContainerSignature",
+				"ordinal": 12,
+				"aggregate": "[Count]",
+				"formatOptions": "",
+				"allowEdit": false,
+				"height":"2rem",
+				"style":"Multi"
+			}	
+			,{ 
+				"property": "fileFormat_ContainerType",
+				"propertyVisible": false,
+				"propertyType": "C",
+				"propertyRange": "ContainerType",
+				"ordinal": 13,
+				"aggregate": "[Count]",
+				"formatOptions": "",
+				"allowEdit": false,
+				"height":"2rem",
+				"style":"Multi"
+			}	
+			,{ 
+				"property": "fileFormat_Encoding",
+				"propertyVisible": false,
+				"propertyType": "C",
+				"propertyRange": "Encoding",
+				"ordinal": 14,
+				"aggregate": "[Count]",
+				"formatOptions": "",
+				"allowEdit": false,
+				"height":"2rem",
+				"style":"Multi"
+			}	
+			,{ 
+				"property": "fileFormat_ExternalSignature",
+				"propertyVisible": false,
+				"propertyType": "C",
+				"propertyRange": "ExternalSignature",
+				"ordinal": 15,
+				"aggregate": "[Count]",
+				"formatOptions": "",
+				"allowEdit": false,
+				"height":"2rem",
+				"style":"Multi"
+			}	
+			,{ 
+				"property": "fileFormat_FileFormatFamily",
+				"propertyVisible": false,
+				"propertyType": "C",
+				"propertyRange": "FileFormatFamily",
+				"ordinal": 16,
+				"aggregate": "[Count]",
+				"formatOptions": "",
+				"allowEdit": false,
+				"height":"2rem",
+				"style":"Multi"
+			}	
+			,{ 
+				"property": "fileFormat_FormatIdentifier",
+				"propertyVisible": false,
+				"propertyType": "C",
+				"propertyRange": "FormatIdentifier",
+				"ordinal": 17,
+				"aggregate": "[Count]",
+				"formatOptions": "",
+				"allowEdit": false,
+				"height":"2rem",
+				"style":"Multi"
+			}	
+			,{ 
+				"property": "fileFormat_InternalSignature",
+				"propertyVisible": false,
+				"propertyType": "C",
+				"propertyRange": "InternalSignature",
+				"ordinal": 18,
+				"aggregate": "[Count]",
+				"formatOptions": "",
+				"allowEdit": false,
+				"height":"2rem",
+				"style":"Multi"
+			}	
+			,{ 
+				"property": "has_Relationship",
+				"propertyVisible": false,
+				"propertyType": "C",
+				"propertyRange": "Relationship",
+				"ordinal": 19,
+				"aggregate": "[Count]",
+				"formatOptions": "",
+				"allowEdit": false,
+				"height":"2rem",
+				"style":"Multi"
+			}	
+			,{ 
+				"property": "registry_Alias",
+				"propertyVisible": false,
+				"propertyType": "C",
+				"propertyRange": "Alias",
+				"ordinal": 20,
+				"aggregate": "[Count]",
+				"formatOptions": "",
+				"allowEdit": false,
+				"height":"2rem",
+				"style":"Multi"
+			}	
+			,{ 
+				"property": "registry_Document",
+				"propertyVisible": false,
+				"propertyType": "C",
+				"propertyRange": "Document",
+				"ordinal": 21,
+				"aggregate": "[Count]",
+				"formatOptions": "",
+				"allowEdit": false,
+				"height":"2rem",
+				"style":"Multi"
+			}	
+			,{ 
+				"property": "resultOf_Activity",
+				"propertyVisible": false,
+				"propertyType": "C",
+				"propertyRange": "Activity",
+				"ordinal": 22,
+				"aggregate": "[Count]",
+				"formatOptions": "",
+				"allowEdit": false,
+				"height":"2rem",
+				"style":"Multi"
+			}	
+			,{ 
+				"property": "resultOf_Process",
+				"propertyVisible": false,
+				"propertyType": "C",
+				"propertyRange": "Process",
+				"ordinal": 23,
+				"aggregate": "[Count]",
+				"formatOptions": "",
+				"allowEdit": false,
+				"height":"2rem",
+				"style":"Multi"
+			}	
+			]
+		},
+	"form": {
+		"target": "FileFormat",
+		"formStyle":"entity360",
+		"targetVisible": true,
+		"targetIcon": "sap-icon://expand-group",
+		"targetEntity": "FileFormat",
+		"allowEdit" : true,
+		"properties": [		
+			{  
+				"property": "ID","propertyVisible": false,
+				"propertyType": "D",
+				"propertyRange": "Edm.String",
+				"ordinal": 0,
+				"aggregate": "[]",
+				"formatOptions": null,
+				"allowEdit": true,
+				"height":"2rem",
+				"style":"Input"
+			}
+			,{ 
+				"property": "comment",
+				"propertyVisible": true,
+				"propertyType": "D",
+				"propertyRange": "Edm.String",
+				"ordinal": 1,
+				"aggregate": "[]",
+				"formatOptions": null,
+				"allowEdit": true,
+				"height":"2rem",
+				"style":"TextArea width='100%' rows='3'"
+			}
+			,{ 
+				"property": "fileFormat_Version",
+				"propertyVisible": true,
+				"propertyType": "D",
+				"propertyRange": "Edm.String",
+				"ordinal": 2,
+				"aggregate": "[]",
+				"formatOptions": null,
+				"allowEdit": true,
+				"height":"2rem",
+				"style":"Input"
+			}
+			,{ 
+				"property": "file_formats_ID",
+				"propertyVisible": true,
+				"propertyType": "D",
+				"propertyRange": "Edm.Int32",
+				"ordinal": 3,
+				"aggregate": "[]",
+				"formatOptions": null,
+				"allowEdit": true,
+				"height":"2rem",
+				"style":"Input"
+			}
+			,{ 
+				"property": "puid",
+				"propertyVisible": true,
+				"propertyType": "D",
+				"propertyRange": "Edm.String",
+				"ordinal": 4,
+				"aggregate": "[]",
+				"formatOptions": null,
+				"allowEdit": true,
+				"height":"2rem",
+				"style":"Input"
+			}
+			,{ 
+				"property": "relations","propertyVisible": false,
+				"propertyType": "D",
+				"propertyRange": "Edm.String",
+				"ordinal": 5,
+				"aggregate": "[]",
+				"formatOptions": null,
+				"allowEdit": true,
+				"height":"2rem",
+				"style":"Input"
+			}
+			,{ 
+				"property": "relationships","propertyVisible": false,
+				"propertyType": "D",
+				"propertyRange": "Edm.String",
+				"ordinal": 6,
+				"aggregate": "[]",
+				"formatOptions": null,
+				"allowEdit": true,
+				"height":"2rem",
+				"style":"Input"
+			}
+			,{ 
+				"property": "seeExternal",
+				"propertyVisible": true,
+				"propertyType": "D",
+				"propertyRange": "Edm.anyURI",
+				"ordinal": 7,
+				"aggregate": "[]",
+				"formatOptions": null,
+				"allowEdit": true,
+				"height":"2rem",
+				"style":"Input"
+			}
+			,{ 
+				"property": "fileFormat_ByteOrder",
+				"propertyVisible": true,
+				"propertyType": "O",
+				"propertyRange": "ByteOrder",
+				"ordinal": 8,
+				"aggregate": "[]",
+				"formatOptions": null,
+				"allowEdit": true ,				
+				"height":"2rem",
+				"style":"Single"
+			}
+			,{ 
+				"property": "about_Relationship",
+				"propertyVisible": true,
+				"propertyType": "C",
+				"propertyRange": "Relationship",
+				"ordinal": 9,
+				"aggregate": "[List]",
+				"formatOptions": null,
+				"allowEdit": true,
+				"height":"2rem",
+				"style":"Multi"
+			}
+			,{ 
+				"property": "fileFormat_Classification",
+				"propertyVisible": true,
+				"propertyType": "C",
+				"propertyRange": "Classification",
+				"ordinal": 10,
+				"aggregate": "[List]",
+				"formatOptions": null,
+				"allowEdit": true,
+				"height":"2rem",
+				"style":"Multi"
+			}
+			,{ 
+				"property": "fileFormat_CompressionType",
+				"propertyVisible": true,
+				"propertyType": "C",
+				"propertyRange": "CompressionType",
+				"ordinal": 11,
+				"aggregate": "[List]",
+				"formatOptions": null,
+				"allowEdit": true,
+				"height":"2rem",
+				"style":"Multi"
+			}
+			,{ 
+				"property": "fileFormat_ContainerSignature",
+				"propertyVisible": true,
+				"propertyType": "C",
+				"propertyRange": "ContainerSignature",
+				"ordinal": 12,
+				"aggregate": "[List]",
+				"formatOptions": null,
+				"allowEdit": true,
+				"height":"2rem",
+				"style":"Multi"
+			}
+			,{ 
+				"property": "fileFormat_ContainerType",
+				"propertyVisible": true,
+				"propertyType": "C",
+				"propertyRange": "ContainerType",
+				"ordinal": 13,
+				"aggregate": "[List]",
+				"formatOptions": null,
+				"allowEdit": true,
+				"height":"2rem",
+				"style":"Multi"
+			}
+			,{ 
+				"property": "fileFormat_Encoding",
+				"propertyVisible": true,
+				"propertyType": "C",
+				"propertyRange": "Encoding",
+				"ordinal": 14,
+				"aggregate": "[List]",
+				"formatOptions": null,
+				"allowEdit": true,
+				"height":"2rem",
+				"style":"Multi"
+			}
+			,{ 
+				"property": "fileFormat_ExternalSignature",
+				"propertyVisible": true,
+				"propertyType": "C",
+				"propertyRange": "ExternalSignature",
+				"ordinal": 15,
+				"aggregate": "[List]",
+				"formatOptions": null,
+				"allowEdit": true,
+				"height":"2rem",
+				"style":"Multi"
+			}
+			,{ 
+				"property": "fileFormat_FileFormatFamily",
+				"propertyVisible": true,
+				"propertyType": "C",
+				"propertyRange": "FileFormatFamily",
+				"ordinal": 16,
+				"aggregate": "[List]",
+				"formatOptions": null,
+				"allowEdit": true,
+				"height":"2rem",
+				"style":"Multi"
+			}
+			,{ 
+				"property": "fileFormat_FormatIdentifier",
+				"propertyVisible": true,
+				"propertyType": "C",
+				"propertyRange": "FormatIdentifier",
+				"ordinal": 17,
+				"aggregate": "[List]",
+				"formatOptions": null,
+				"allowEdit": true,
+				"height":"2rem",
+				"style":"Multi"
+			}
+			,{ 
+				"property": "fileFormat_InternalSignature",
+				"propertyVisible": true,
+				"propertyType": "C",
+				"propertyRange": "InternalSignature",
+				"ordinal": 18,
+				"aggregate": "[List]",
+				"formatOptions": null,
+				"allowEdit": true,
+				"height":"2rem",
+				"style":"Multi"
+			}
+			,{ 
+				"property": "has_Relationship",
+				"propertyVisible": true,
+				"propertyType": "C",
+				"propertyRange": "Relationship",
+				"ordinal": 19,
+				"aggregate": "[List]",
+				"formatOptions": null,
+				"allowEdit": true,
+				"height":"2rem",
+				"style":"Multi"
+			}
+			,{ 
+				"property": "registry_Alias",
+				"propertyVisible": true,
+				"propertyType": "C",
+				"propertyRange": "Alias",
+				"ordinal": 20,
+				"aggregate": "[List]",
+				"formatOptions": null,
+				"allowEdit": true,
+				"height":"2rem",
+				"style":"Multi"
+			}
+			,{ 
+				"property": "registry_Document",
+				"propertyVisible": true,
+				"propertyType": "C",
+				"propertyRange": "Document",
+				"ordinal": 21,
+				"aggregate": "[List]",
+				"formatOptions": null,
+				"allowEdit": true,
+				"height":"2rem",
+				"style":"Multi"
+			}
+			,{ 
+				"property": "resultOf_Activity",
+				"propertyVisible": true,
+				"propertyType": "C",
+				"propertyRange": "Activity",
+				"ordinal": 22,
+				"aggregate": "[List]",
+				"formatOptions": null,
+				"allowEdit": true,
+				"height":"2rem",
+				"style":"Multi"
+			}
+			,{ 
+				"property": "resultOf_Process",
+				"propertyVisible": true,
+				"propertyType": "C",
+				"propertyRange": "Process",
+				"ordinal": 23,
+				"aggregate": "[List]",
+				"formatOptions": null,
+				"allowEdit": true,
+				"height":"2rem",
+				"style":"Multi"
+			}
+			]
+		}
+	}
+	,
+	"FileFormatFamily": {
+	"entity": "FileFormatFamily",
+	"icon": "sap-icon://group-2",
+	"image": "./images/icons/unknown.svg",
+	"entitySetVisible":null,
+	"grid": {
+		"target": "FileFormatFamilys",
+		"gridStyle":"entitySetTable",
+		"targetVisible": true,
+		"targetIcon": "sap-icon://group-2",
+		"targetEntity": "FileFormatFamily",	
+		"properties": [	
+			{  
+				"property": "ID","propertyVisible": false,
+				"propertyType": "D",
+				"propertyRange": "Edm.String",
+				"ordinal": 0,
+				"aggregate": "[]",
+				"formatOptions": "",
+				"allowEdit": false,
+				"height":"2rem",
+				"style":"Input"
+			}	
+			,{ 
+				"property": "comment",
+				"propertyVisible": true,
+				"propertyType": "D",
+				"propertyRange": "Edm.String",
+				"ordinal": 1,
+				"aggregate": "[]",
+				"formatOptions": "",
+				"allowEdit": false,
+				"height":"2rem",
+				"style":"Input"
+			}	
+			,{ 
+				"property": "format_families_ID",
+				"propertyVisible": true,
+				"propertyType": "D",
+				"propertyRange": "Edm.Int32",
+				"ordinal": 2,
+				"aggregate": "[]",
+				"formatOptions": "",
+				"allowEdit": false,
+				"height":"2rem",
+				"style":"Input"
+			}	
+			,{ 
+				"property": "relations","propertyVisible": false,
+				"propertyType": "D",
+				"propertyRange": "Edm.String",
+				"ordinal": 3,
+				"aggregate": "[]",
+				"formatOptions": "",
+				"allowEdit": false,
+				"height":"2rem",
+				"style":"Input"
+			}	
+			,{ 
+				"property": "relationships","propertyVisible": false,
+				"propertyType": "D",
+				"propertyRange": "Edm.String",
+				"ordinal": 4,
+				"aggregate": "[]",
+				"formatOptions": "",
+				"allowEdit": false,
+				"height":"2rem",
+				"style":"Input"
+			}	
+			,{ 
+				"property": "seeExternal",
+				"propertyVisible": true,
+				"propertyType": "D",
+				"propertyRange": "Edm.anyURI",
+				"ordinal": 5,
+				"aggregate": "[]",
+				"formatOptions": "",
+				"allowEdit": false,
+				"height":"2rem",
+				"style":"Input"
+			}	
+			,{ 
+				"property": "fileFormatFamily_FileFormat",
+				"propertyVisible": false,
+				"propertyType": "C",
+				"propertyRange": "FileFormat",
+				"ordinal": 6,
+				"aggregate": "[Count]",
+				"formatOptions": "",
+				"allowEdit": false,
+				"height":"2rem",
+				"style":"Multi"
+			}	
+			]
+		},
+	"form": {
+		"target": "FileFormatFamily",
+		"formStyle":"entity360",
+		"targetVisible": true,
+		"targetIcon": "sap-icon://expand-group",
+		"targetEntity": "FileFormatFamily",
+		"allowEdit" : true,
+		"properties": [		
+			{  
+				"property": "ID","propertyVisible": false,
+				"propertyType": "D",
+				"propertyRange": "Edm.String",
+				"ordinal": 0,
+				"aggregate": "[]",
+				"formatOptions": null,
+				"allowEdit": true,
+				"height":"2rem",
+				"style":"Input"
+			}
+			,{ 
+				"property": "comment",
+				"propertyVisible": true,
+				"propertyType": "D",
+				"propertyRange": "Edm.String",
+				"ordinal": 1,
+				"aggregate": "[]",
+				"formatOptions": null,
+				"allowEdit": true,
+				"height":"2rem",
+				"style":"TextArea width='100%' rows='3'"
+			}
+			,{ 
+				"property": "format_families_ID",
+				"propertyVisible": true,
+				"propertyType": "D",
+				"propertyRange": "Edm.Int32",
+				"ordinal": 2,
+				"aggregate": "[]",
+				"formatOptions": null,
+				"allowEdit": true,
+				"height":"2rem",
+				"style":"Input"
+			}
+			,{ 
+				"property": "relations","propertyVisible": false,
+				"propertyType": "D",
+				"propertyRange": "Edm.String",
+				"ordinal": 3,
+				"aggregate": "[]",
+				"formatOptions": null,
+				"allowEdit": true,
+				"height":"2rem",
+				"style":"Input"
+			}
+			,{ 
+				"property": "relationships","propertyVisible": false,
+				"propertyType": "D",
+				"propertyRange": "Edm.String",
+				"ordinal": 4,
+				"aggregate": "[]",
+				"formatOptions": null,
+				"allowEdit": true,
+				"height":"2rem",
+				"style":"Input"
+			}
+			,{ 
+				"property": "seeExternal",
+				"propertyVisible": true,
+				"propertyType": "D",
+				"propertyRange": "Edm.anyURI",
+				"ordinal": 5,
+				"aggregate": "[]",
+				"formatOptions": null,
+				"allowEdit": true,
+				"height":"2rem",
+				"style":"Input"
+			}
+			,{ 
+				"property": "fileFormatFamily_FileFormat",
+				"propertyVisible": true,
+				"propertyType": "C",
+				"propertyRange": "FileFormat",
+				"ordinal": 6,
+				"aggregate": "[List]",
+				"formatOptions": null,
+				"allowEdit": true,
+				"height":"2rem",
+				"style":"Multi"
+			}
+			]
+		}
+	}
+	,
+	"FormatIdentifier": {
+	"entity": "FormatIdentifier",
+	"icon": "sap-icon://group-2",
+	"image": "./images/icons/unknown.svg",
+	"entitySetVisible":null,
+	"grid": {
+		"target": "FormatIdentifiers",
+		"gridStyle":"entitySetTable",
+		"targetVisible": true,
+		"targetIcon": "sap-icon://group-2",
+		"targetEntity": "FormatIdentifier",	
+		"properties": [	
+			{  
+				"property": "ID","propertyVisible": false,
+				"propertyType": "D",
+				"propertyRange": "Edm.String",
+				"ordinal": 0,
+				"aggregate": "[]",
+				"formatOptions": "",
+				"allowEdit": false,
+				"height":"2rem",
+				"style":"Input"
+			}	
+			,{ 
+				"property": "comment",
+				"propertyVisible": true,
+				"propertyType": "D",
+				"propertyRange": "Edm.String",
+				"ordinal": 1,
+				"aggregate": "[]",
+				"formatOptions": "",
+				"allowEdit": false,
+				"height":"2rem",
+				"style":"Input"
+			}	
+			,{ 
+				"property": "format_identifiers_ID",
+				"propertyVisible": true,
+				"propertyType": "D",
+				"propertyRange": "Edm.Int32",
+				"ordinal": 2,
+				"aggregate": "[]",
+				"formatOptions": "",
+				"allowEdit": false,
+				"height":"2rem",
+				"style":"Input"
+			}	
+			,{ 
+				"property": "relations","propertyVisible": false,
+				"propertyType": "D",
+				"propertyRange": "Edm.String",
+				"ordinal": 3,
+				"aggregate": "[]",
+				"formatOptions": "",
+				"allowEdit": false,
+				"height":"2rem",
+				"style":"Input"
+			}	
+			,{ 
+				"property": "relationships","propertyVisible": false,
+				"propertyType": "D",
+				"propertyRange": "Edm.String",
+				"ordinal": 4,
+				"aggregate": "[]",
+				"formatOptions": "",
+				"allowEdit": false,
+				"height":"2rem",
+				"style":"Input"
+			}	
+			,{ 
+				"property": "seeExternal",
+				"propertyVisible": true,
+				"propertyType": "D",
+				"propertyRange": "Edm.anyURI",
+				"ordinal": 5,
+				"aggregate": "[]",
+				"formatOptions": "",
+				"allowEdit": false,
+				"height":"2rem",
+				"style":"Input"
+			}	
+			,{ 
+				"property": "formatIdentifier_FormatRegistry",
+				"propertyVisible": false,
+				"propertyType": "O",
+				"propertyRange": "FormatRegistry",
+				"ordinal": 6,
+				"aggregate": "[]",
+				"formatOptions": "",
+				"allowEdit": false,
+				"height":"2rem",
+				"style":"Single"
+			}	
+			,{ 
+				"property": "formatIdentifier_FileFormat",
+				"propertyVisible": false,
+				"propertyType": "C",
+				"propertyRange": "FileFormat",
+				"ordinal": 7,
+				"aggregate": "[Count]",
+				"formatOptions": "",
+				"allowEdit": false,
+				"height":"2rem",
+				"style":"Multi"
+			}	
+			]
+		},
+	"form": {
+		"target": "FormatIdentifier",
+		"formStyle":"entity360",
+		"targetVisible": true,
+		"targetIcon": "sap-icon://expand-group",
+		"targetEntity": "FormatIdentifier",
+		"allowEdit" : true,
+		"properties": [		
+			{  
+				"property": "ID","propertyVisible": false,
+				"propertyType": "D",
+				"propertyRange": "Edm.String",
+				"ordinal": 0,
+				"aggregate": "[]",
+				"formatOptions": null,
+				"allowEdit": true,
+				"height":"2rem",
+				"style":"Input"
+			}
+			,{ 
+				"property": "comment",
+				"propertyVisible": true,
+				"propertyType": "D",
+				"propertyRange": "Edm.String",
+				"ordinal": 1,
+				"aggregate": "[]",
+				"formatOptions": null,
+				"allowEdit": true,
+				"height":"2rem",
+				"style":"TextArea width='100%' rows='3'"
+			}
+			,{ 
+				"property": "format_identifiers_ID",
+				"propertyVisible": true,
+				"propertyType": "D",
+				"propertyRange": "Edm.Int32",
+				"ordinal": 2,
+				"aggregate": "[]",
+				"formatOptions": null,
+				"allowEdit": true,
+				"height":"2rem",
+				"style":"Input"
+			}
+			,{ 
+				"property": "relations","propertyVisible": false,
+				"propertyType": "D",
+				"propertyRange": "Edm.String",
+				"ordinal": 3,
+				"aggregate": "[]",
+				"formatOptions": null,
+				"allowEdit": true,
+				"height":"2rem",
+				"style":"Input"
+			}
+			,{ 
+				"property": "relationships","propertyVisible": false,
+				"propertyType": "D",
+				"propertyRange": "Edm.String",
+				"ordinal": 4,
+				"aggregate": "[]",
+				"formatOptions": null,
+				"allowEdit": true,
+				"height":"2rem",
+				"style":"Input"
+			}
+			,{ 
+				"property": "seeExternal",
+				"propertyVisible": true,
+				"propertyType": "D",
+				"propertyRange": "Edm.anyURI",
+				"ordinal": 5,
+				"aggregate": "[]",
+				"formatOptions": null,
+				"allowEdit": true,
+				"height":"2rem",
+				"style":"Input"
+			}
+			,{ 
+				"property": "formatIdentifier_FormatRegistry",
+				"propertyVisible": true,
+				"propertyType": "O",
+				"propertyRange": "FormatRegistry",
+				"ordinal": 6,
+				"aggregate": "[]",
+				"formatOptions": null,
+				"allowEdit": true ,				
+				"height":"2rem",
+				"style":"Single"
+			}
+			,{ 
+				"property": "formatIdentifier_FileFormat",
+				"propertyVisible": true,
+				"propertyType": "C",
+				"propertyRange": "FileFormat",
+				"ordinal": 7,
+				"aggregate": "[List]",
+				"formatOptions": null,
+				"allowEdit": true,
+				"height":"2rem",
+				"style":"Multi"
+			}
+			]
+		}
+	}
+	,
+	"FormatRegistry": {
+	"entity": "FormatRegistry",
+	"icon": "sap-icon://group-2",
+	"image": "./images/icons/unknown.svg",
+	"entitySetVisible":null,
+	"grid": {
+		"target": "FormatRegistrys",
+		"gridStyle":"entitySetTable",
+		"targetVisible": true,
+		"targetIcon": "sap-icon://group-2",
+		"targetEntity": "FormatRegistry",	
+		"properties": [	
+			{  
+				"property": "ID","propertyVisible": false,
+				"propertyType": "D",
+				"propertyRange": "Edm.String",
+				"ordinal": 0,
+				"aggregate": "[]",
+				"formatOptions": "",
+				"allowEdit": false,
+				"height":"2rem",
+				"style":"Input"
+			}	
+			,{ 
+				"property": "comment",
+				"propertyVisible": true,
+				"propertyType": "D",
+				"propertyRange": "Edm.String",
+				"ordinal": 1,
+				"aggregate": "[]",
+				"formatOptions": "",
+				"allowEdit": false,
+				"height":"2rem",
+				"style":"Input"
+			}	
+			,{ 
+				"property": "relations","propertyVisible": false,
+				"propertyType": "D",
+				"propertyRange": "Edm.String",
+				"ordinal": 2,
+				"aggregate": "[]",
+				"formatOptions": "",
+				"allowEdit": false,
+				"height":"2rem",
+				"style":"Input"
+			}	
+			,{ 
+				"property": "relationships","propertyVisible": false,
+				"propertyType": "D",
+				"propertyRange": "Edm.String",
+				"ordinal": 3,
+				"aggregate": "[]",
+				"formatOptions": "",
+				"allowEdit": false,
+				"height":"2rem",
+				"style":"Input"
+			}	
+			,{ 
+				"property": "seeExternal",
+				"propertyVisible": true,
+				"propertyType": "D",
+				"propertyRange": "Edm.anyURI",
+				"ordinal": 4,
+				"aggregate": "[]",
+				"formatOptions": "",
+				"allowEdit": false,
+				"height":"2rem",
+				"style":"Input"
+			}	
+			,{ 
+				"property": "formatRegistry_FormatIdentifier",
+				"propertyVisible": false,
+				"propertyType": "C",
+				"propertyRange": "FormatIdentifier",
+				"ordinal": 5,
+				"aggregate": "[Count]",
+				"formatOptions": "",
+				"allowEdit": false,
+				"height":"2rem",
+				"style":"Multi"
+			}	
+			]
+		},
+	"form": {
+		"target": "FormatRegistry",
+		"formStyle":"entity360",
+		"targetVisible": true,
+		"targetIcon": "sap-icon://expand-group",
+		"targetEntity": "FormatRegistry",
+		"allowEdit" : true,
+		"properties": [		
+			{  
+				"property": "ID","propertyVisible": false,
+				"propertyType": "D",
+				"propertyRange": "Edm.String",
+				"ordinal": 0,
+				"aggregate": "[]",
+				"formatOptions": null,
+				"allowEdit": true,
+				"height":"2rem",
+				"style":"Input"
+			}
+			,{ 
+				"property": "comment",
+				"propertyVisible": true,
+				"propertyType": "D",
+				"propertyRange": "Edm.String",
+				"ordinal": 1,
+				"aggregate": "[]",
+				"formatOptions": null,
+				"allowEdit": true,
+				"height":"2rem",
+				"style":"TextArea width='100%' rows='3'"
+			}
+			,{ 
+				"property": "relations","propertyVisible": false,
+				"propertyType": "D",
+				"propertyRange": "Edm.String",
+				"ordinal": 2,
+				"aggregate": "[]",
+				"formatOptions": null,
+				"allowEdit": true,
+				"height":"2rem",
+				"style":"Input"
+			}
+			,{ 
+				"property": "relationships","propertyVisible": false,
+				"propertyType": "D",
+				"propertyRange": "Edm.String",
+				"ordinal": 3,
+				"aggregate": "[]",
+				"formatOptions": null,
+				"allowEdit": true,
+				"height":"2rem",
+				"style":"Input"
+			}
+			,{ 
+				"property": "seeExternal",
+				"propertyVisible": true,
+				"propertyType": "D",
+				"propertyRange": "Edm.anyURI",
+				"ordinal": 4,
+				"aggregate": "[]",
+				"formatOptions": null,
+				"allowEdit": true,
+				"height":"2rem",
+				"style":"Input"
+			}
+			,{ 
+				"property": "formatRegistry_FormatIdentifier",
+				"propertyVisible": true,
+				"propertyType": "C",
+				"propertyRange": "FormatIdentifier",
+				"ordinal": 5,
+				"aggregate": "[List]",
+				"formatOptions": null,
+				"allowEdit": true,
+				"height":"2rem",
+				"style":"Multi"
+			}
+			]
+		}
+	}
+	,
+	"InternalSignature": {
+	"entity": "InternalSignature",
+	"icon": "sap-icon://group-2",
+	"image": "./images/icons/unknown.svg",
+	"entitySetVisible":null,
+	"grid": {
+		"target": "InternalSignatures",
+		"gridStyle":"entitySetTable",
+		"targetVisible": true,
+		"targetIcon": "sap-icon://group-2",
+		"targetEntity": "InternalSignature",	
+		"properties": [	
+			{  
+				"property": "ID","propertyVisible": false,
+				"propertyType": "D",
+				"propertyRange": "Edm.String",
+				"ordinal": 0,
+				"aggregate": "[]",
+				"formatOptions": "",
+				"allowEdit": false,
+				"height":"2rem",
+				"style":"Input"
+			}	
+			,{ 
+				"property": "comment",
+				"propertyVisible": true,
+				"propertyType": "D",
+				"propertyRange": "Edm.String",
+				"ordinal": 1,
+				"aggregate": "[]",
+				"formatOptions": "",
+				"allowEdit": false,
+				"height":"2rem",
+				"style":"Input"
+			}	
+			,{ 
+				"property": "internal_signatures_ID",
+				"propertyVisible": false,
+				"propertyType": "D",
+				"propertyRange": "Edm.Int32",
+				"ordinal": 2,
+				"aggregate": "[]",
+				"formatOptions": "",
+				"allowEdit": false,
+				"height":"2rem",
+				"style":"Input"
+			}	
+			,{ 
+				"property": "relations","propertyVisible": false,
+				"propertyType": "D",
+				"propertyRange": "Edm.String",
+				"ordinal": 3,
+				"aggregate": "[]",
+				"formatOptions": "",
+				"allowEdit": false,
+				"height":"2rem",
+				"style":"Input"
+			}	
+			,{ 
+				"property": "relationships","propertyVisible": false,
+				"propertyType": "D",
+				"propertyRange": "Edm.String",
+				"ordinal": 4,
+				"aggregate": "[]",
+				"formatOptions": "",
+				"allowEdit": false,
+				"height":"2rem",
+				"style":"Input"
+			}	
+			,{ 
+				"property": "seeExternal",
+				"propertyVisible": false,
+				"propertyType": "D",
+				"propertyRange": "Edm.anyURI",
+				"ordinal": 5,
+				"aggregate": "[]",
+				"formatOptions": "",
+				"allowEdit": false,
+				"height":"2rem",
+				"style":"Input"
+			}	
+			,{ 
+				"property": "internalSignature_Sequence",
+				"propertyVisible": false,
+				"propertyType": "D",
+				"propertyRange": "Edm.String",
+				"ordinal": 6,
+				"aggregate": "[]",
+				"formatOptions": "",
+				"allowEdit": false,
+				"height":"2rem",
+				"style":"Input"
+			}	
+			,{ 
+				"property": "internalSignature_ByteOrder",
+				"propertyVisible": false,
+				"propertyType": "C",
+				"propertyRange": "ByteOrder",
+				"ordinal": 7,
+				"aggregate": "[Count]",
+				"formatOptions": "",
+				"allowEdit": false,
+				"height":"2rem",
+				"style":"Multi"
+			}	
+			,{ 
+				"property": "internalSignature_ByteSequence",
+				"propertyVisible": true,
+				"propertyType": "C",
+				"propertyRange": "ByteSequence",
+				"ordinal": 8,
+				"aggregate": "[]",
+				"formatOptions": "",
+				"allowEdit": false,
+				"height":"2rem",
+				"style":"Multi"
+			}	
+			,{ 
+				"property": "internalSignature_FileFormat",
+				"propertyVisible": false,
+				"propertyType": "C",
+				"propertyRange": "FileFormat",
+				"ordinal": 9,
+				"aggregate": "[Count]",
+				"formatOptions": "",
+				"allowEdit": false,
+				"height":"2rem",
+				"style":"Multi"
+			}	
+			]
+		},
+	"form": {
+		"target": "InternalSignature",
+		"formStyle":"entity360",
+		"targetVisible": true,
+		"targetIcon": "sap-icon://expand-group",
+		"targetEntity": "InternalSignature",
+		"allowEdit" : true,
+		"properties": [		
+			{  
+				"property": "ID","propertyVisible": false,
+				"propertyType": "D",
+				"propertyRange": "Edm.String",
+				"ordinal": 0,
+				"aggregate": "[]",
+				"formatOptions": null,
+				"allowEdit": true,
+				"height":"2rem",
+				"style":"Input"
+			}
+			,{ 
+				"property": "comment",
+				"propertyVisible": true,
+				"propertyType": "D",
+				"propertyRange": "Edm.String",
+				"ordinal": 1,
+				"aggregate": "[]",
+				"formatOptions": null,
+				"allowEdit": true,
+				"height":"2rem",
+				"style":"TextArea width='100%' rows='3'"
+			}
+			,{ 
+				"property": "internal_signatures_ID",
+				"propertyVisible": true,
+				"propertyType": "D",
+				"propertyRange": "Edm.Int32",
+				"ordinal": 2,
+				"aggregate": "[]",
+				"formatOptions": null,
+				"allowEdit": true,
+				"height":"2rem",
+				"style":"Input"
+			}
+			,{ 
+				"property": "relations","propertyVisible": false,
+				"propertyType": "D",
+				"propertyRange": "Edm.String",
+				"ordinal": 3,
+				"aggregate": "[]",
+				"formatOptions": null,
+				"allowEdit": true,
+				"height":"2rem",
+				"style":"Input"
+			}
+			,{ 
+				"property": "relationships","propertyVisible": false,
+				"propertyType": "D",
+				"propertyRange": "Edm.String",
+				"ordinal": 4,
+				"aggregate": "[]",
+				"formatOptions": null,
+				"allowEdit": true,
+				"height":"2rem",
+				"style":"Input"
+			}
+			,{ 
+				"property": "seeExternal",
+				"propertyVisible": true,
+				"propertyType": "D",
+				"propertyRange": "Edm.anyURI",
+				"ordinal": 5,
+				"aggregate": "[]",
+				"formatOptions": null,
+				"allowEdit": true,
+				"height":"2rem",
+				"style":"Input"
+			}
+			,{ 
+				"property": "internalSignature_Sequence",
+				"propertyVisible": true,
+				"propertyType": "D",
+				"propertyRange": "Edm.String",
+				"ordinal": 6,
+				"aggregate": "[]",
+				"formatOptions": null,
+				"allowEdit": true,
+				"height":"2rem",
+				"style":"Input"
+			}
+			,{ 
+				"property": "internalSignature_ByteOrder",
+				"propertyVisible": true,
+				"propertyType": "C",
+				"propertyRange": "ByteOrder",
+				"ordinal": 7,
+				"aggregate": "[List]",
+				"formatOptions": null,
+				"allowEdit": true,
+				"height":"2rem",
+				"style":"Multi"
+			}
+			,{ 
+				"property": "internalSignature_ByteSequence",
+				"propertyVisible": true,
+				"propertyType": "C",
+				"propertyRange": "ByteSequence",
+				"ordinal": 8,
+				"aggregate": "[List]",
+				"formatOptions": null,
+				"allowEdit": true,
+				"height":"2rem",
+				"style":"Multi"
+			}
+			,{ 
+				"property": "internalSignature_FileFormat",
+				"propertyVisible": true,
+				"propertyType": "C",
+				"propertyRange": "FileFormat",
+				"ordinal": 9,
+				"aggregate": "[List]",
+				"formatOptions": null,
+				"allowEdit": true,
+				"height":"2rem",
+				"style":"Multi"
+			}
+			]
+		}
+	}
+	,
+	"Lossiness": {
+	"entity": "Lossiness",
+	"icon": "sap-icon://group-2",
+	"image": "./images/icons/unknown.svg",
+	"entitySetVisible":null,
+	"grid": {
+		"target": "Lossinesss",
+		"gridStyle":"entitySetTable",
+		"targetVisible": true,
+		"targetIcon": "sap-icon://group-2",
+		"targetEntity": "Lossiness",	
+		"properties": [	
+			{  
+				"property": "ID","propertyVisible": false,
+				"propertyType": "D",
+				"propertyRange": "Edm.String",
+				"ordinal": 0,
+				"aggregate": "[]",
+				"formatOptions": "",
+				"allowEdit": false,
+				"height":"2rem",
+				"style":"Input"
+			}	
+			,{ 
+				"property": "comment",
+				"propertyVisible": true,
+				"propertyType": "D",
+				"propertyRange": "Edm.String",
+				"ordinal": 1,
+				"aggregate": "[]",
+				"formatOptions": "",
+				"allowEdit": false,
+				"height":"2rem",
+				"style":"Input"
+			}	
+			,{ 
+				"property": "relations","propertyVisible": false,
+				"propertyType": "D",
+				"propertyRange": "Edm.String",
+				"ordinal": 2,
+				"aggregate": "[]",
+				"formatOptions": "",
+				"allowEdit": false,
+				"height":"2rem",
+				"style":"Input"
+			}	
+			,{ 
+				"property": "relationships","propertyVisible": false,
+				"propertyType": "D",
+				"propertyRange": "Edm.String",
+				"ordinal": 3,
+				"aggregate": "[]",
+				"formatOptions": "",
+				"allowEdit": false,
+				"height":"2rem",
+				"style":"Input"
+			}	
+			,{ 
+				"property": "seeExternal",
+				"propertyVisible": true,
+				"propertyType": "D",
+				"propertyRange": "Edm.anyURI",
+				"ordinal": 4,
+				"aggregate": "[]",
+				"formatOptions": "",
+				"allowEdit": false,
+				"height":"2rem",
+				"style":"Input"
+			}	
+			,{ 
+				"property": "lossiness_CompressionType",
+				"propertyVisible": false,
+				"propertyType": "C",
+				"propertyRange": "CompressionType",
+				"ordinal": 5,
+				"aggregate": "[Count]",
+				"formatOptions": "",
+				"allowEdit": false,
+				"height":"2rem",
+				"style":"Multi"
+			}	
+			]
+		},
+	"form": {
+		"target": "Lossiness",
+		"formStyle":"entity360",
+		"targetVisible": true,
+		"targetIcon": "sap-icon://expand-group",
+		"targetEntity": "Lossiness",
+		"allowEdit" : true,
+		"properties": [		
+			{  
+				"property": "ID","propertyVisible": false,
+				"propertyType": "D",
+				"propertyRange": "Edm.String",
+				"ordinal": 0,
+				"aggregate": "[]",
+				"formatOptions": null,
+				"allowEdit": true,
+				"height":"2rem",
+				"style":"Input"
+			}
+			,{ 
+				"property": "comment",
+				"propertyVisible": true,
+				"propertyType": "D",
+				"propertyRange": "Edm.String",
+				"ordinal": 1,
+				"aggregate": "[]",
+				"formatOptions": null,
+				"allowEdit": true,
+				"height":"2rem",
+				"style":"TextArea width='100%' rows='3'"
+			}
+			,{ 
+				"property": "relations","propertyVisible": false,
+				"propertyType": "D",
+				"propertyRange": "Edm.String",
+				"ordinal": 2,
+				"aggregate": "[]",
+				"formatOptions": null,
+				"allowEdit": true,
+				"height":"2rem",
+				"style":"Input"
+			}
+			,{ 
+				"property": "relationships","propertyVisible": false,
+				"propertyType": "D",
+				"propertyRange": "Edm.String",
+				"ordinal": 3,
+				"aggregate": "[]",
+				"formatOptions": null,
+				"allowEdit": true,
+				"height":"2rem",
+				"style":"Input"
+			}
+			,{ 
+				"property": "seeExternal",
+				"propertyVisible": true,
+				"propertyType": "D",
+				"propertyRange": "Edm.anyURI",
+				"ordinal": 4,
+				"aggregate": "[]",
+				"formatOptions": null,
+				"allowEdit": true,
+				"height":"2rem",
+				"style":"Input"
+			}
+			,{ 
+				"property": "lossiness_CompressionType",
+				"propertyVisible": true,
+				"propertyType": "C",
+				"propertyRange": "CompressionType",
+				"ordinal": 5,
+				"aggregate": "[List]",
+				"formatOptions": null,
+				"allowEdit": true,
+				"height":"2rem",
+				"style":"Multi"
+			}
+			]
+		}
+	}
+	,
+	"Process": {
+	"entity": "Process",
+	"icon": "sap-icon://group-2",
+	"image": "./images/icons/unknown.svg",
+	"entitySetVisible":null,
+	"grid": {
+		"target": "Processs",
+		"gridStyle":"entitySetTable",
+		"targetVisible": true,
+		"targetIcon": "sap-icon://group-2",
+		"targetEntity": "Process",	
+		"properties": [	
+			{  
+				"property": "ID","propertyVisible": false,
+				"propertyType": "D",
+				"propertyRange": "Edm.String",
+				"ordinal": 0,
+				"aggregate": "[]",
+				"formatOptions": "",
+				"allowEdit": false,
+				"height":"2rem",
+				"style":"Input"
+			}	
+			,{ 
+				"property": "comment",
+				"propertyVisible": false,
+				"propertyType": "D",
+				"propertyRange": "Edm.String",
+				"ordinal": 1,
+				"aggregate": "[]",
+				"formatOptions": "",
+				"allowEdit": false,
+				"height":"2rem",
+				"style":"Input"
+			}	
+			,{ 
+				"property": "relations","propertyVisible": false,
+				"propertyType": "D",
+				"propertyRange": "Edm.String",
+				"ordinal": 2,
+				"aggregate": "[]",
+				"formatOptions": "",
+				"allowEdit": false,
+				"height":"2rem",
+				"style":"Input"
+			}	
+			,{ 
+				"property": "relationships","propertyVisible": false,
+				"propertyType": "D",
+				"propertyRange": "Edm.String",
+				"ordinal": 3,
+				"aggregate": "[]",
+				"formatOptions": "",
+				"allowEdit": false,
+				"height":"2rem",
+				"style":"Input"
+			}	
+			,{ 
+				"property": "seeExternal",
+				"propertyVisible": false,
+				"propertyType": "D",
+				"propertyRange": "Edm.anyURI",
+				"ordinal": 4,
+				"aggregate": "[]",
+				"formatOptions": "",
+				"allowEdit": false,
+				"height":"2rem",
+				"style":"Input"
+			}	
+			,{ 
+				"property": "on_FileFormat",
+				"propertyVisible": true,
+				"propertyType": "O",
+				"propertyRange": "FileFormat",
+				"ordinal": 6,
+				"aggregate": "[]",
+				"formatOptions": "",
+				"allowEdit": false,
+				"height":"2rem",
+				"style":"Multi"
+			}	,				
+				{  
+					"property": "process_ProcessType",
+					"propertyVisible": true,
+					"propertyType": "O",
+					"propertyRange": "ProcessType",
+					"ordinal": 5.0,
+					"aggregate": "[]",
+					"formatOptions": "",
+					"allowEdit": false,
+					"height":"2rem",
+					"style":"Single",
+					"nullable":"false"
+				}
+			,{ 
+				"property": "performedBy_Software",
+				"propertyVisible": true,
+				"propertyType": "O",
+				"propertyRange": "Software",
+				"ordinal": 5,
+				"aggregate": "[]",
+				"formatOptions": "",
+				"allowEdit": false,
+				"height":"2rem",
+				"style":"Multi"
+			}	
+			]
+		},
+	"form": {
+		"target": "Process",
+		"formStyle":"entity360",
+		"targetVisible": true,
+		"targetIcon": "sap-icon://expand-group",
+		"targetEntity": "Process",
+		"allowEdit" : true,
+		"properties": [		
+			{  
+				"property": "ID","propertyVisible": false,
+				"propertyType": "D",
+				"propertyRange": "Edm.String",
+				"ordinal": 0,
+				"aggregate": "[]",
+				"formatOptions": null,
+				"allowEdit": true,
+				"height":"2rem",
+				"style":"Input"
+			}
+			,{ 
+				"property": "comment",
+				"propertyVisible": true,
+				"propertyType": "D",
+				"propertyRange": "Edm.String",
+				"ordinal": 1,
+				"aggregate": "[]",
+				"formatOptions": null,
+				"allowEdit": true,
+				"height":"2rem",
+				"style":"TextArea width='100%' rows='3'"
+			}
+			,{ 
+				"property": "relations","propertyVisible": false,
+				"propertyType": "D",
+				"propertyRange": "Edm.String",
+				"ordinal": 2,
+				"aggregate": "[]",
+				"formatOptions": null,
+				"allowEdit": true,
+				"height":"2rem",
+				"style":"Input"
+			}
+			,{ 
+				"property": "relationships","propertyVisible": false,
+				"propertyType": "D",
+				"propertyRange": "Edm.String",
+				"ordinal": 3,
+				"aggregate": "[]",
+				"formatOptions": null,
+				"allowEdit": true,
+				"height":"2rem",
+				"style":"Input"
+			}
+			,{ 
+				"property": "seeExternal",
+				"propertyVisible": true,
+				"propertyType": "D",
+				"propertyRange": "Edm.anyURI",
+				"ordinal": 4,
+				"aggregate": "[]",
+				"formatOptions": null,
+				"allowEdit": true,
+				"height":"2rem",
+				"style":"Input"
+			}
+			,{ 
+				"property": "on_FileFormat",
+				"propertyVisible": true,
+				"propertyType": "C",
+				"propertyRange": "FileFormat",
+				"ordinal": 5,
+				"aggregate": "[List]",
+				"formatOptions": null,
+				"allowEdit": true,
+				"height":"2rem",
+				"style":"Multi"
+			}
+			,{ 
+				"property": "performedBy_Software",
+				"propertyVisible": true,
+				"propertyType": "C",
+				"propertyRange": "Software",
+				"ordinal": 6,
+				"aggregate": "[List]",
+				"formatOptions": null,
+				"allowEdit": true,
+				"height":"2rem",
+				"style":"Multi"
+			}
+			]
+		}
+	}
+	,
+	"Reference": {
+	"entity": "Reference",
+	"icon": "sap-icon://group-2",
+	"image": "./images/icons/unknown.svg",
+	"entitySetVisible":null,
+	"grid": {
+		"target": "References",
+		"gridStyle":"entitySetTable",
+		"targetVisible": true,
+		"targetIcon": "sap-icon://group-2",
+		"targetEntity": "Reference",	
+		"properties": [	
+			{  
+				"property": "ID","propertyVisible": false,
+				"propertyType": "D",
+				"propertyRange": "Edm.String",
+				"ordinal": 0,
+				"aggregate": "[]",
+				"formatOptions": "",
+				"allowEdit": false,
+				"height":"2rem",
+				"style":"Input"
+			}	
+			,{ 
+				"property": "comment",
+				"propertyVisible": true,
+				"propertyType": "D",
+				"propertyRange": "Edm.String",
+				"ordinal": 1,
+				"aggregate": "[]",
+				"formatOptions": "",
+				"allowEdit": false,
+				"height":"2rem",
+				"style":"Input"
+			}	
+			,{ 
+				"property": "relations","propertyVisible": false,
+				"propertyType": "D",
+				"propertyRange": "Edm.String",
+				"ordinal": 2,
+				"aggregate": "[]",
+				"formatOptions": "",
+				"allowEdit": false,
+				"height":"2rem",
+				"style":"Input"
+			}	
+			,{ 
+				"property": "relationships","propertyVisible": false,
+				"propertyType": "D",
+				"propertyRange": "Edm.String",
+				"ordinal": 3,
+				"aggregate": "[]",
+				"formatOptions": "",
+				"allowEdit": false,
+				"height":"2rem",
+				"style":"Input"
+			}	
+			,{ 
+				"property": "seeExternal",
+				"propertyVisible": true,
+				"propertyType": "D",
+				"propertyRange": "Edm.anyURI",
+				"ordinal": 4,
+				"aggregate": "[]",
+				"formatOptions": "",
+				"allowEdit": false,
+				"height":"2rem",
+				"style":"Input"
+			}	
+			]
+		},
+	"form": {
+		"target": "Reference",
+		"formStyle":"entity360",
+		"targetVisible": true,
+		"targetIcon": "sap-icon://expand-group",
+		"targetEntity": "Reference",
+		"allowEdit" : true,
+		"properties": [		
+			{  
+				"property": "ID","propertyVisible": false,
+				"propertyType": "D",
+				"propertyRange": "Edm.String",
+				"ordinal": 0,
+				"aggregate": "[]",
+				"formatOptions": null,
+				"allowEdit": true,
+				"height":"2rem",
+				"style":"Input"
+			}
+			,{ 
+				"property": "comment",
+				"propertyVisible": true,
+				"propertyType": "D",
+				"propertyRange": "Edm.String",
+				"ordinal": 1,
+				"aggregate": "[]",
+				"formatOptions": null,
+				"allowEdit": true,
+				"height":"2rem",
+				"style":"TextArea width='100%' rows='3'"
+			}
+			,{ 
+				"property": "relations","propertyVisible": false,
+				"propertyType": "D",
+				"propertyRange": "Edm.String",
+				"ordinal": 2,
+				"aggregate": "[]",
+				"formatOptions": null,
+				"allowEdit": true,
+				"height":"2rem",
+				"style":"Input"
+			}
+			,{ 
+				"property": "relationships","propertyVisible": false,
+				"propertyType": "D",
+				"propertyRange": "Edm.String",
+				"ordinal": 3,
+				"aggregate": "[]",
+				"formatOptions": null,
+				"allowEdit": true,
+				"height":"2rem",
+				"style":"Input"
+			}
+			,{ 
+				"property": "seeExternal",
+				"propertyVisible": true,
+				"propertyType": "D",
+				"propertyRange": "Edm.anyURI",
+				"ordinal": 4,
+				"aggregate": "[]",
+				"formatOptions": null,
+				"allowEdit": true,
+				"height":"2rem",
+				"style":"Input"
+			}
+			]
+		}
+	}
+	,
+	"Registry": {
+	"entity": "Registry",
+	"icon": "sap-icon://group-2",
+	"image": "./images/icons/unknown.svg",
+	"entitySetVisible":true,
+	"grid": {
+		"target": "Registrys",
+		"gridStyle":"entitySetTable",
+		"targetVisible": true,
+		"targetIcon": "sap-icon://group-2",
+		"targetEntity": "Registry",	
+		"properties": [	
+			{  
+				"property": "ID","propertyVisible": false,
+				"propertyType": "D",
+				"propertyRange": "Edm.String",
+				"ordinal": 0,
+				"aggregate": "[]",
+				"formatOptions": "",
+				"allowEdit": false,
+				"height":"2rem",
+				"style":"Input"
+			}	
+			,{ 
+				"property": "comment",
+				"propertyVisible": true,
+				"propertyType": "D",
+				"propertyRange": "Edm.String",
+				"ordinal": 1,
+				"aggregate": "[]",
+				"formatOptions": "",
+				"allowEdit": false,
+				"height":"2rem",
+				"style":"Input"
+			}	
+			,{ 
+				"property": "puid",
+				"propertyVisible": true,
+				"propertyType": "D",
+				"propertyRange": "Edm.String",
+				"ordinal": 2,
+				"aggregate": "[]",
+				"formatOptions": "",
+				"allowEdit": false,
+				"height":"2rem",
+				"style":"Input"
+			}	
+			,{ 
+				"property": "relations","propertyVisible": false,
+				"propertyType": "D",
+				"propertyRange": "Edm.String",
+				"ordinal": 3,
+				"aggregate": "[]",
+				"formatOptions": "",
+				"allowEdit": false,
+				"height":"2rem",
+				"style":"Input"
+			}	
+			,{ 
+				"property": "relationships","propertyVisible": false,
+				"propertyType": "D",
+				"propertyRange": "Edm.String",
+				"ordinal": 4,
+				"aggregate": "[]",
+				"formatOptions": "",
+				"allowEdit": false,
+				"height":"2rem",
+				"style":"Input"
+			}	
+			,{ 
+				"property": "seeExternal",
+				"propertyVisible": true,
+				"propertyType": "D",
+				"propertyRange": "Edm.anyURI",
+				"ordinal": 5,
+				"aggregate": "[]",
+				"formatOptions": "",
+				"allowEdit": false,
+				"height":"2rem",
+				"style":"Input"
+			}	
+			,{ 
+				"property": "registry_Alias",
+				"propertyVisible": false,
+				"propertyType": "C",
+				"propertyRange": "Alias",
+				"ordinal": 6,
+				"aggregate": "[Count]",
+				"formatOptions": "",
+				"allowEdit": false,
+				"height":"2rem",
+				"style":"Multi"
+			}	
+			,{ 
+				"property": "registry_Document",
+				"propertyVisible": false,
+				"propertyType": "C",
+				"propertyRange": "Document",
+				"ordinal": 7,
+				"aggregate": "[Count]",
+				"formatOptions": "",
+				"allowEdit": false,
+				"height":"2rem",
+				"style":"Multi"
+			}	
+			,{ 
+				"property": "resultOf_Activity",
+				"propertyVisible": false,
+				"propertyType": "C",
+				"propertyRange": "Activity",
+				"ordinal": 8,
+				"aggregate": "[Count]",
+				"formatOptions": "",
+				"allowEdit": false,
+				"height":"2rem",
+				"style":"Multi"
+			}	
+			]
+		},
+	"form": {
+		"target": "Registry",
+		"formStyle":"entity360",
+		"targetVisible": true,
+		"targetIcon": "sap-icon://expand-group",
+		"targetEntity": "Registry",
+		"allowEdit" : true,
+		"properties": [		
+			{  
+				"property": "ID","propertyVisible": false,
+				"propertyType": "D",
+				"propertyRange": "Edm.String",
+				"ordinal": 0,
+				"aggregate": "[]",
+				"formatOptions": null,
+				"allowEdit": true,
+				"height":"2rem",
+				"style":"Input"
+			}
+			,{ 
+				"property": "comment",
+				"propertyVisible": true,
+				"propertyType": "D",
+				"propertyRange": "Edm.String",
+				"ordinal": 1,
+				"aggregate": "[]",
+				"formatOptions": null,
+				"allowEdit": true,
+				"height":"2rem",
+				"style":"TextArea width='100%' rows='3'"
+			}
+			,{ 
+				"property": "puid",
+				"propertyVisible": true,
+				"propertyType": "D",
+				"propertyRange": "Edm.String",
+				"ordinal": 2,
+				"aggregate": "[]",
+				"formatOptions": null,
+				"allowEdit": true,
+				"height":"2rem",
+				"style":"Input"
+			}
+			,{ 
+				"property": "relations","propertyVisible": false,
+				"propertyType": "D",
+				"propertyRange": "Edm.String",
+				"ordinal": 3,
+				"aggregate": "[]",
+				"formatOptions": null,
+				"allowEdit": true,
+				"height":"2rem",
+				"style":"Input"
+			}
+			,{ 
+				"property": "relationships","propertyVisible": false,
+				"propertyType": "D",
+				"propertyRange": "Edm.String",
+				"ordinal": 4,
+				"aggregate": "[]",
+				"formatOptions": null,
+				"allowEdit": true,
+				"height":"2rem",
+				"style":"Input"
+			}
+			,{ 
+				"property": "seeExternal",
+				"propertyVisible": true,
+				"propertyType": "D",
+				"propertyRange": "Edm.anyURI",
+				"ordinal": 5,
+				"aggregate": "[]",
+				"formatOptions": null,
+				"allowEdit": true,
+				"height":"2rem",
+				"style":"Input"
+			}
+			,{ 
+				"property": "registry_Alias",
+				"propertyVisible": true,
+				"propertyType": "C",
+				"propertyRange": "Alias",
+				"ordinal": 6,
+				"aggregate": "[List]",
+				"formatOptions": null,
+				"allowEdit": true,
+				"height":"2rem",
+				"style":"Multi"
+			}
+			,{ 
+				"property": "registry_Document",
+				"propertyVisible": true,
+				"propertyType": "C",
+				"propertyRange": "Document",
+				"ordinal": 7,
+				"aggregate": "[List]",
+				"formatOptions": null,
+				"allowEdit": true,
+				"height":"2rem",
+				"style":"Multi"
+			}
+			,{ 
+				"property": "resultOf_Activity",
+				"propertyVisible": true,
+				"propertyType": "C",
+				"propertyRange": "Activity",
+				"ordinal": 8,
+				"aggregate": "[List]",
+				"formatOptions": null,
+				"allowEdit": true,
+				"height":"2rem",
+				"style":"Multi"
+			}
+			]
+		}
+	}
+	,
+	"Related": {
+	"entity": "Related",
+	"icon": "sap-icon://group-2",
+	"image": "./images/icons/unknown.svg",
+	"entitySetVisible":null,
+	"grid": {
+		"target": "Relateds",
+		"gridStyle":"entitySetTable",
+		"targetVisible": true,
+		"targetIcon": "sap-icon://group-2",
+		"targetEntity": "Related",	
+		"properties": [	
+			{  
+				"property": "ID","propertyVisible": false,
+				"propertyType": "D",
+				"propertyRange": "Edm.String",
+				"ordinal": 0,
+				"aggregate": "[]",
+				"formatOptions": "",
+				"allowEdit": false,
+				"height":"2rem",
+				"style":"Input"
+			}	
+			,{ 
+				"property": "comment",
+				"propertyVisible": true,
+				"propertyType": "D",
+				"propertyRange": "Edm.String",
+				"ordinal": 1,
+				"aggregate": "[]",
+				"formatOptions": "",
+				"allowEdit": false,
+				"height":"2rem",
+				"style":"Input"
+			}	
+			,{ 
+				"property": "relations","propertyVisible": false,
+				"propertyType": "D",
+				"propertyRange": "Edm.String",
+				"ordinal": 2,
+				"aggregate": "[]",
+				"formatOptions": "",
+				"allowEdit": false,
+				"height":"2rem",
+				"style":"Input"
+			}	
+			,{ 
+				"property": "relationships","propertyVisible": false,
+				"propertyType": "D",
+				"propertyRange": "Edm.String",
+				"ordinal": 3,
+				"aggregate": "[]",
+				"formatOptions": "",
+				"allowEdit": false,
+				"height":"2rem",
+				"style":"Input"
+			}	
+			,{ 
+				"property": "seeExternal",
+				"propertyVisible": true,
+				"propertyType": "D",
+				"propertyRange": "Edm.anyURI",
+				"ordinal": 4,
+				"aggregate": "[]",
+				"formatOptions": "",
+				"allowEdit": false,
+				"height":"2rem",
+				"style":"Input"
+			}	
+			]
+		},
+	"form": {
+		"target": "Related",
+		"formStyle":"entity360",
+		"targetVisible": true,
+		"targetIcon": "sap-icon://expand-group",
+		"targetEntity": "Related",
+		"allowEdit" : true,
+		"properties": [		
+			{  
+				"property": "ID","propertyVisible": false,
+				"propertyType": "D",
+				"propertyRange": "Edm.String",
+				"ordinal": 0,
+				"aggregate": "[]",
+				"formatOptions": null,
+				"allowEdit": true,
+				"height":"2rem",
+				"style":"Input"
+			}
+			,{ 
+				"property": "comment",
+				"propertyVisible": true,
+				"propertyType": "D",
+				"propertyRange": "Edm.String",
+				"ordinal": 1,
+				"aggregate": "[]",
+				"formatOptions": null,
+				"allowEdit": true,
+				"height":"2rem",
+				"style":"TextArea width='100%' rows='3'"
+			}
+			,{ 
+				"property": "relations","propertyVisible": false,
+				"propertyType": "D",
+				"propertyRange": "Edm.String",
+				"ordinal": 2,
+				"aggregate": "[]",
+				"formatOptions": null,
+				"allowEdit": true,
+				"height":"2rem",
+				"style":"Input"
+			}
+			,{ 
+				"property": "relationships","propertyVisible": false,
+				"propertyType": "D",
+				"propertyRange": "Edm.String",
+				"ordinal": 3,
+				"aggregate": "[]",
+				"formatOptions": null,
+				"allowEdit": true,
+				"height":"2rem",
+				"style":"Input"
+			}
+			,{ 
+				"property": "seeExternal",
+				"propertyVisible": true,
+				"propertyType": "D",
+				"propertyRange": "Edm.anyURI",
+				"ordinal": 4,
+				"aggregate": "[]",
+				"formatOptions": null,
+				"allowEdit": true,
+				"height":"2rem",
+				"style":"Input"
+			}
+			]
+		}
+	}
+	,
+	"Relationship": {
+	"entity": "Relationship",
+	"icon": "sap-icon://group-2",
+	"image": "./images/icons/unknown.svg",
+	"entitySetVisible":null,
+	"grid": {
+		"target": "Relationships",
+		"gridStyle":"entitySetTable",
+		"targetVisible": true,
+		"targetIcon": "sap-icon://group-2",
+		"targetEntity": "Relationship",	
+		"properties": [	
+			{  
+				"property": "ID","propertyVisible": false,
+				"propertyType": "D",
+				"propertyRange": "Edm.String",
+				"ordinal": 0,
+				"aggregate": "[]",
+				"formatOptions": "",
+				"allowEdit": false,
+				"height":"2rem",
+				"style":"Input"
+			}	
+			,{ 
+				"property": "comment",
+				"propertyVisible": false,
+				"propertyType": "D",
+				"propertyRange": "Edm.String",
+				"ordinal": 1,
+				"aggregate": "[]",
+				"formatOptions": "",
+				"allowEdit": false,
+				"height":"2rem",
+				"style":"Input"
+			}	
+			,{ 
+				"property": "relations","propertyVisible": false,
+				"propertyType": "D",
+				"propertyRange": "Edm.String",
+				"ordinal": 2,
+				"aggregate": "[]",
+				"formatOptions": "",
+				"allowEdit": false,
+				"height":"2rem",
+				"style":"Input"
+			}	
+			,{ 
+				"property": "relationships","propertyVisible": false,
+				"propertyType": "D",
+				"propertyRange": "Edm.String",
+				"ordinal": 3,
+				"aggregate": "[]",
+				"formatOptions": "",
+				"allowEdit": false,
+				"height":"2rem",
+				"style":"Input"
+			}	
+			,{ 
+				"property": "seeExternal",
+				"propertyVisible": false,
+				"propertyType": "D",
+				"propertyRange": "Edm.anyURI",
+				"ordinal": 4,
+				"aggregate": "[]",
+				"formatOptions": "",
+				"allowEdit": false,
+				"height":"2rem",
+				"style":"Input"
+			}	
+			,{ 
+				"property": "of_FileFormat",
+				"propertyVisible": true,
+				"propertyType": "O",
+				"propertyRange": "FileFormat",
+				"ordinal": 5,
+				"aggregate": "[]",
+				"formatOptions": "",
+				"allowEdit": false,
+				"height":"2rem",
+				"style":"Multi"
+			},				
+				{  
+					"property": "relationship_RelationshipType",
+					"propertyVisible": true,
+					"propertyType": "O",
+					"propertyRange": "RelationshipType",
+					"ordinal": 5.0,
+					"aggregate": "[]",
+					"formatOptions": "",
+					"allowEdit": false,
+					"height":"2rem",
+					"style":"Single",
+					"nullable":"false"
+				}	
+			,{ 
+				"property": "with_FileFormat",
+				"propertyVisible": true,
+				"propertyType": "O",
+				"propertyRange": "FileFormat",
+				"ordinal": 6,
+				"aggregate": "[]",
+				"formatOptions": "",
+				"allowEdit": false,
+				"height":"2rem",
+				"style":"Multi"
+			}	
+			]
+		},
+	"form": {
+		"target": "Relationship",
+		"formStyle":"entity360",
+		"targetVisible": true,
+		"targetIcon": "sap-icon://expand-group",
+		"targetEntity": "Relationship",
+		"allowEdit" : true,
+		"properties": [		
+			{  
+				"property": "ID","propertyVisible": false,
+				"propertyType": "D",
+				"propertyRange": "Edm.String",
+				"ordinal": 0,
+				"aggregate": "[]",
+				"formatOptions": null,
+				"allowEdit": true,
+				"height":"2rem",
+				"style":"Input"
+			}
+			,{ 
+				"property": "comment",
+				"propertyVisible": true,
+				"propertyType": "D",
+				"propertyRange": "Edm.String",
+				"ordinal": 1,
+				"aggregate": "[]",
+				"formatOptions": null,
+				"allowEdit": true,
+				"height":"2rem",
+				"style":"TextArea width='100%' rows='3'"
+			}
+			,{ 
+				"property": "relations","propertyVisible": false,
+				"propertyType": "D",
+				"propertyRange": "Edm.String",
+				"ordinal": 2,
+				"aggregate": "[]",
+				"formatOptions": null,
+				"allowEdit": true,
+				"height":"2rem",
+				"style":"Input"
+			}
+			,{ 
+				"property": "relationships","propertyVisible": false,
+				"propertyType": "D",
+				"propertyRange": "Edm.String",
+				"ordinal": 3,
+				"aggregate": "[]",
+				"formatOptions": null,
+				"allowEdit": true,
+				"height":"2rem",
+				"style":"Input"
+			}
+			,{ 
+				"property": "seeExternal",
+				"propertyVisible": true,
+				"propertyType": "D",
+				"propertyRange": "Edm.anyURI",
+				"ordinal": 4,
+				"aggregate": "[]",
+				"formatOptions": null,
+				"allowEdit": true,
+				"height":"2rem",
+				"style":"Input"
+			}
+			,{ 
+				"property": "of_FileFormat",
+				"propertyVisible": true,
+				"propertyType": "C",
+				"propertyRange": "FileFormat",
+				"ordinal": 5,
+				"aggregate": "[List]",
+				"formatOptions": null,
+				"allowEdit": true,
+				"height":"2rem",
+				"style":"Multi"
+			}
+			,{ 
+				"property": "with_FileFormat",
+				"propertyVisible": true,
+				"propertyType": "C",
+				"propertyRange": "FileFormat",
+				"ordinal": 6,
+				"aggregate": "[List]",
+				"formatOptions": null,
+				"allowEdit": true,
+				"height":"2rem",
+				"style":"Multi"
+			}
+			]
+		}
+	}
+	,
+	"Relation": {
+	"entity": "Relation",
+	"icon": "sap-icon://group-2",
+	"image": "./images/icons/unknown.svg",
+	"entitySetVisible":null,
+	"grid": {
+		"target": "Relations",
+		"gridStyle":"entitySetTable",
+		"targetVisible": true,
+		"targetIcon": "sap-icon://group-2",
+		"targetEntity": "Relation",	
+		"properties": [	
+			{  
+				"property": "ID","propertyVisible": false,
+				"propertyType": "D",
+				"propertyRange": "Edm.String",
+				"ordinal": 0,
+				"aggregate": "[]",
+				"formatOptions": "",
+				"allowEdit": false,
+				"height":"2rem",
+				"style":"Input"
+			}	
+			,{ 
+				"property": "comment",
+				"propertyVisible": true,
+				"propertyType": "D",
+				"propertyRange": "Edm.String",
+				"ordinal": 1,
+				"aggregate": "[]",
+				"formatOptions": "",
+				"allowEdit": false,
+				"height":"2rem",
+				"style":"Input"
+			}	
+			,{ 
+				"property": "relations","propertyVisible": false,
+				"propertyType": "D",
+				"propertyRange": "Edm.String",
+				"ordinal": 2,
+				"aggregate": "[]",
+				"formatOptions": "",
+				"allowEdit": false,
+				"height":"2rem",
+				"style":"Input"
+			}	
+			,{ 
+				"property": "relationships","propertyVisible": false,
+				"propertyType": "D",
+				"propertyRange": "Edm.String",
+				"ordinal": 3,
+				"aggregate": "[]",
+				"formatOptions": "",
+				"allowEdit": false,
+				"height":"2rem",
+				"style":"Input"
+			}	
+			,{ 
+				"property": "seeExternal",
+				"propertyVisible": true,
+				"propertyType": "D",
+				"propertyRange": "Edm.anyURI",
+				"ordinal": 4,
+				"aggregate": "[]",
+				"formatOptions": "",
+				"allowEdit": false,
+				"height":"2rem",
+				"style":"Input"
+			}	
+			]
+		},
+	"form": {
+		"target": "Relation",
+		"formStyle":"entity360",
+		"targetVisible": true,
+		"targetIcon": "sap-icon://expand-group",
+		"targetEntity": "Relation",
+		"allowEdit" : true,
+		"properties": [		
+			{  
+				"property": "ID","propertyVisible": false,
+				"propertyType": "D",
+				"propertyRange": "Edm.String",
+				"ordinal": 0,
+				"aggregate": "[]",
+				"formatOptions": null,
+				"allowEdit": true,
+				"height":"2rem",
+				"style":"Input"
+			}
+			,{ 
+				"property": "comment",
+				"propertyVisible": true,
+				"propertyType": "D",
+				"propertyRange": "Edm.String",
+				"ordinal": 1,
+				"aggregate": "[]",
+				"formatOptions": null,
+				"allowEdit": true,
+				"height":"2rem",
+				"style":"TextArea width='100%' rows='3'"
+			}
+			,{ 
+				"property": "relations","propertyVisible": false,
+				"propertyType": "D",
+				"propertyRange": "Edm.String",
+				"ordinal": 2,
+				"aggregate": "[]",
+				"formatOptions": null,
+				"allowEdit": true,
+				"height":"2rem",
+				"style":"Input"
+			}
+			,{ 
+				"property": "relationships","propertyVisible": false,
+				"propertyType": "D",
+				"propertyRange": "Edm.String",
+				"ordinal": 3,
+				"aggregate": "[]",
+				"formatOptions": null,
+				"allowEdit": true,
+				"height":"2rem",
+				"style":"Input"
+			}
+			,{ 
+				"property": "seeExternal",
+				"propertyVisible": true,
+				"propertyType": "D",
+				"propertyRange": "Edm.anyURI",
+				"ordinal": 4,
+				"aggregate": "[]",
+				"formatOptions": null,
+				"allowEdit": true,
+				"height":"2rem",
+				"style":"Input"
+			}
+			]
+		}
+	}
+	,
+	"Signature": {
+	"entity": "Signature",
+	"icon": "sap-icon://group-2",
+	"image": "./images/icons/unknown.svg",
+	"entitySetVisible":null,
+	"grid": {
+		"target": "Signatures",
+		"gridStyle":"entitySetTable",
+		"targetVisible": true,
+		"targetIcon": "sap-icon://group-2",
+		"targetEntity": "Signature",	
+		"properties": [	
+			{  
+				"property": "ID","propertyVisible": false,
+				"propertyType": "D",
+				"propertyRange": "Edm.String",
+				"ordinal": 0,
+				"aggregate": "[]",
+				"formatOptions": "",
+				"allowEdit": false,
+				"height":"2rem",
+				"style":"Input"
+			}	
+			,{ 
+				"property": "comment",
+				"propertyVisible": true,
+				"propertyType": "D",
+				"propertyRange": "Edm.String",
+				"ordinal": 1,
+				"aggregate": "[]",
+				"formatOptions": "",
+				"allowEdit": false,
+				"height":"2rem",
+				"style":"Input"
+			}	
+			,{ 
+				"property": "relations","propertyVisible": false,
+				"propertyType": "D",
+				"propertyRange": "Edm.String",
+				"ordinal": 2,
+				"aggregate": "[]",
+				"formatOptions": "",
+				"allowEdit": false,
+				"height":"2rem",
+				"style":"Input"
+			}	
+			,{ 
+				"property": "relationships","propertyVisible": false,
+				"propertyType": "D",
+				"propertyRange": "Edm.String",
+				"ordinal": 3,
+				"aggregate": "[]",
+				"formatOptions": "",
+				"allowEdit": false,
+				"height":"2rem",
+				"style":"Input"
+			}	
+			,{ 
+				"property": "seeExternal",
+				"propertyVisible": true,
+				"propertyType": "D",
+				"propertyRange": "Edm.anyURI",
+				"ordinal": 4,
+				"aggregate": "[]",
+				"formatOptions": "",
+				"allowEdit": false,
+				"height":"2rem",
+				"style":"Input"
+			}	
+			]
+		},
+	"form": {
+		"target": "Signature",
+		"formStyle":"entity360",
+		"targetVisible": true,
+		"targetIcon": "sap-icon://expand-group",
+		"targetEntity": "Signature",
+		"allowEdit" : true,
+		"properties": [		
+			{  
+				"property": "ID","propertyVisible": false,
+				"propertyType": "D",
+				"propertyRange": "Edm.String",
+				"ordinal": 0,
+				"aggregate": "[]",
+				"formatOptions": null,
+				"allowEdit": true,
+				"height":"2rem",
+				"style":"Input"
+			}
+			,{ 
+				"property": "comment",
+				"propertyVisible": true,
+				"propertyType": "D",
+				"propertyRange": "Edm.String",
+				"ordinal": 1,
+				"aggregate": "[]",
+				"formatOptions": null,
+				"allowEdit": true,
+				"height":"2rem",
+				"style":"TextArea width='100%' rows='3'"
+			}
+			,{ 
+				"property": "relations","propertyVisible": false,
+				"propertyType": "D",
+				"propertyRange": "Edm.String",
+				"ordinal": 2,
+				"aggregate": "[]",
+				"formatOptions": null,
+				"allowEdit": true,
+				"height":"2rem",
+				"style":"Input"
+			}
+			,{ 
+				"property": "relationships","propertyVisible": false,
+				"propertyType": "D",
+				"propertyRange": "Edm.String",
+				"ordinal": 3,
+				"aggregate": "[]",
+				"formatOptions": null,
+				"allowEdit": true,
+				"height":"2rem",
+				"style":"Input"
+			}
+			,{ 
+				"property": "seeExternal",
+				"propertyVisible": true,
+				"propertyType": "D",
+				"propertyRange": "Edm.anyURI",
+				"ordinal": 4,
+				"aggregate": "[]",
+				"formatOptions": null,
+				"allowEdit": true,
+				"height":"2rem",
+				"style":"Input"
+			}
+			]
+		}
+	}
+	,
+	"Software": {
+	"entity": "Software",
+	"icon": "sap-icon://group-2",
+	"image": "./images/icons/unknown.svg",
+	"entitySetVisible":null,
+		"namespaces":[
+				{"prefix":"sfw", "namespace":"http://data.nationalarchives.gov.uk/PRONOM/sfw/" },
+				{"prefix":"x-sfw", "namespace":"http://data.nationalarchives.gov.uk/PRONOM/x-sfw/" }								
+		],
+	"grid": {
+		"target": "Softwares",
+		"gridStyle":"entitySetTable",
+		"targetVisible": true,
+		"targetIcon": "sap-icon://group-2",
+		"targetEntity": "Software",	
+		"properties": [	
+			{  
+				"property": "ID","propertyVisible": false,
+				"propertyType": "D",
+				"propertyRange": "Edm.String",
+				"ordinal": 0,
+				"aggregate": "[]",
+				"formatOptions": "",
+				"allowEdit": false,
+				"height":"2rem",
+				"style":"Input"
+			}	
+			,{ 
+				"property": "comment",
+				"propertyVisible": true,
+				"propertyType": "D",
+				"propertyRange": "Edm.String",
+				"ordinal": 1,
+				"aggregate": "[]",
+				"formatOptions": "",
+				"allowEdit": false,
+				"height":"2rem",
+				"style":"Input"
+			}	
+			,{ 
+				"property": "puid",
+				"propertyVisible": true,
+				"propertyType": "D",
+				"propertyRange": "Edm.String",
+				"ordinal": 2,
+				"aggregate": "[]",
+				"formatOptions": "",
+				"allowEdit": false,
+				"height":"2rem",
+				"style":"Input"
+			}	
+			,{ 
+				"property": "relations","propertyVisible": false,
+				"propertyType": "D",
+				"propertyRange": "Edm.String",
+				"ordinal": 3,
+				"aggregate": "[]",
+				"formatOptions": "",
+				"allowEdit": false,
+				"height":"2rem",
+				"style":"Input"
+			}	
+			,{ 
+				"property": "relationships","propertyVisible": false,
+				"propertyType": "D",
+				"propertyRange": "Edm.String",
+				"ordinal": 4,
+				"aggregate": "[]",
+				"formatOptions": "",
+				"allowEdit": false,
+				"height":"2rem",
+				"style":"Input"
+			}	
+			,{ 
+				"property": "seeExternal",
+				"propertyVisible": true,
+				"propertyType": "D",
+				"propertyRange": "Edm.anyURI",
+				"ordinal": 5,
+				"aggregate": "[]",
+				"formatOptions": "",
+				"allowEdit": false,
+				"height":"2rem",
+				"style":"Input"
+			}	
+			,{ 
+				"property": "software_ID",
+				"propertyVisible": true,
+				"propertyType": "D",
+				"propertyRange": "Edm.Int32",
+				"ordinal": 6,
+				"aggregate": "[]",
+				"formatOptions": "",
+				"allowEdit": false,
+				"height":"2rem",
+				"style":"Input"
+			}	
+			,{ 
+				"property": "software_Version",
+				"propertyVisible": true,
+				"propertyType": "D",
+				"propertyRange": "Edm.String",
+				"ordinal": 7,
+				"aggregate": "[]",
+				"formatOptions": "",
+				"allowEdit": false,
+				"height":"2rem",
+				"style":"Input"
+			}	
+			,{ 
+				"property": "performs_Process",
+				"propertyVisible": false,
+				"propertyType": "C",
+				"propertyRange": "Process",
+				"ordinal": 8,
+				"aggregate": "[Count]",
+				"formatOptions": "",
+				"allowEdit": false,
+				"height":"2rem",
+				"style":"Multi"
+			}	
+			,{ 
+				"property": "registry_Alias",
+				"propertyVisible": false,
+				"propertyType": "C",
+				"propertyRange": "Alias",
+				"ordinal": 9,
+				"aggregate": "[Count]",
+				"formatOptions": "",
+				"allowEdit": false,
+				"height":"2rem",
+				"style":"Multi"
+			}	
+			,{ 
+				"property": "registry_Document",
+				"propertyVisible": false,
+				"propertyType": "C",
+				"propertyRange": "Document",
+				"ordinal": 10,
+				"aggregate": "[Count]",
+				"formatOptions": "",
+				"allowEdit": false,
+				"height":"2rem",
+				"style":"Multi"
+			}	
+			,{ 
+				"property": "resultOf_Activity",
+				"propertyVisible": false,
+				"propertyType": "C",
+				"propertyRange": "Activity",
+				"ordinal": 11,
+				"aggregate": "[Count]",
+				"formatOptions": "",
+				"allowEdit": false,
+				"height":"2rem",
+				"style":"Multi"
+			}	
+			,{ 
+				"property": "resultOf_Process",
+				"propertyVisible": false,
+				"propertyType": "C",
+				"propertyRange": "Process",
+				"ordinal": 12,
+				"aggregate": "[Count]",
+				"formatOptions": "",
+				"allowEdit": false,
+				"height":"2rem",
+				"style":"Multi"
+			}	
+			]
+		},
+	"form": {
+		"target": "Software",
+		"formStyle":"entity360",
+		"targetVisible": true,
+		"targetIcon": "sap-icon://expand-group",
+		"targetEntity": "Software",
+		"allowEdit" : true,
+		"properties": [		
+			{  
+				"property": "ID","propertyVisible": false,
+				"propertyType": "D",
+				"propertyRange": "Edm.String",
+				"ordinal": 0,
+				"aggregate": "[]",
+				"formatOptions": null,
+				"allowEdit": true,
+				"height":"2rem",
+				"style":"Input"
+			}
+			,{ 
+				"property": "comment",
+				"propertyVisible": true,
+				"propertyType": "D",
+				"propertyRange": "Edm.String",
+				"ordinal": 1,
+				"aggregate": "[]",
+				"formatOptions": null,
+				"allowEdit": true,
+				"height":"2rem",
+				"style":"TextArea width='100%' rows='3'"
+			}
+			,{ 
+				"property": "puid",
+				"propertyVisible": true,
+				"propertyType": "D",
+				"propertyRange": "Edm.String",
+				"ordinal": 2,
+				"aggregate": "[]",
+				"formatOptions": null,
+				"allowEdit": true,
+				"height":"2rem",
+				"style":"Input"
+			}
+			,{ 
+				"property": "relations","propertyVisible": false,
+				"propertyType": "D",
+				"propertyRange": "Edm.String",
+				"ordinal": 3,
+				"aggregate": "[]",
+				"formatOptions": null,
+				"allowEdit": true,
+				"height":"2rem",
+				"style":"Input"
+			}
+			,{ 
+				"property": "relationships","propertyVisible": false,
+				"propertyType": "D",
+				"propertyRange": "Edm.String",
+				"ordinal": 4,
+				"aggregate": "[]",
+				"formatOptions": null,
+				"allowEdit": true,
+				"height":"2rem",
+				"style":"Input"
+			}
+			,{ 
+				"property": "seeExternal",
+				"propertyVisible": true,
+				"propertyType": "D",
+				"propertyRange": "Edm.anyURI",
+				"ordinal": 5,
+				"aggregate": "[]",
+				"formatOptions": null,
+				"allowEdit": true,
+				"height":"2rem",
+				"style":"Input"
+			}
+			,{ 
+				"property": "software_ID",
+				"propertyVisible": true,
+				"propertyType": "D",
+				"propertyRange": "Edm.Int32",
+				"ordinal": 6,
+				"aggregate": "[]",
+				"formatOptions": null,
+				"allowEdit": true,
+				"height":"2rem",
+				"style":"Input"
+			}
+			,{ 
+				"property": "software_Version",
+				"propertyVisible": true,
+				"propertyType": "D",
+				"propertyRange": "Edm.String",
+				"ordinal": 7,
+				"aggregate": "[]",
+				"formatOptions": null,
+				"allowEdit": true,
+				"height":"2rem",
+				"style":"Input"
+			}
+			,{ 
+				"property": "performs_Process",
+				"propertyVisible": true,
+				"propertyType": "C",
+				"propertyRange": "Process",
+				"ordinal": 8,
+				"aggregate": "[List]",
+				"formatOptions": null,
+				"allowEdit": true,
+				"height":"2rem",
+				"style":"Multi"
+			}
+			,{ 
+				"property": "registry_Alias",
+				"propertyVisible": true,
+				"propertyType": "C",
+				"propertyRange": "Alias",
+				"ordinal": 9,
+				"aggregate": "[List]",
+				"formatOptions": null,
+				"allowEdit": true,
+				"height":"2rem",
+				"style":"Multi"
+			}
+			,{ 
+				"property": "registry_Document",
+				"propertyVisible": true,
+				"propertyType": "C",
+				"propertyRange": "Document",
+				"ordinal": 10,
+				"aggregate": "[List]",
+				"formatOptions": null,
+				"allowEdit": true,
+				"height":"2rem",
+				"style":"Multi"
+			}
+			,{ 
+				"property": "resultOf_Activity",
+				"propertyVisible": true,
+				"propertyType": "C",
+				"propertyRange": "Activity",
+				"ordinal": 11,
+				"aggregate": "[List]",
+				"formatOptions": null,
+				"allowEdit": true,
+				"height":"2rem",
+				"style":"Multi"
+			}
+			,{ 
+				"property": "resultOf_Process",
+				"propertyVisible": true,
+				"propertyType": "C",
+				"propertyRange": "Process",
+				"ordinal": 12,
+				"aggregate": "[List]",
+				"formatOptions": null,
+				"allowEdit": true,
+				"height":"2rem",
+				"style":"Multi"
+			}
+			]
+		}
+	}
+	,
+	"SoftwareType": {
+	"entity": "SoftwareType",
+	"icon": "sap-icon://group-2",
+	"image": "./images/icons/unknown.svg",
+	"entitySetVisible":null,
+	"grid": {
+		"target": "SoftwareTypes",
+		"gridStyle":"entitySetTable",
+		"targetVisible": true,
+		"targetIcon": "sap-icon://group-2",
+		"targetEntity": "SoftwareType",	
+		"properties": [	
+			{  
+				"property": "ID","propertyVisible": false,
+				"propertyType": "D",
+				"propertyRange": "Edm.String",
+				"ordinal": 0,
+				"aggregate": "[]",
+				"formatOptions": "",
+				"allowEdit": false,
+				"height":"2rem",
+				"style":"Input"
+			}	
+			,{ 
+				"property": "comment",
+				"propertyVisible": true,
+				"propertyType": "D",
+				"propertyRange": "Edm.String",
+				"ordinal": 1,
+				"aggregate": "[]",
+				"formatOptions": "",
+				"allowEdit": false,
+				"height":"2rem",
+				"style":"Input"
+			}	
+			,{ 
+				"property": "relations","propertyVisible": false,
+				"propertyType": "D",
+				"propertyRange": "Edm.String",
+				"ordinal": 2,
+				"aggregate": "[]",
+				"formatOptions": "",
+				"allowEdit": false,
+				"height":"2rem",
+				"style":"Input"
+			}	
+			,{ 
+				"property": "relationships","propertyVisible": false,
+				"propertyType": "D",
+				"propertyRange": "Edm.String",
+				"ordinal": 3,
+				"aggregate": "[]",
+				"formatOptions": "",
+				"allowEdit": false,
+				"height":"2rem",
+				"style":"Input"
+			}	
+			,{ 
+				"property": "seeExternal",
+				"propertyVisible": true,
+				"propertyType": "D",
+				"propertyRange": "Edm.anyURI",
+				"ordinal": 4,
+				"aggregate": "[]",
+				"formatOptions": "",
+				"allowEdit": false,
+				"height":"2rem",
+				"style":"Input"
+			}	
+			,{ 
+				"property": "software_types_ID",
+				"propertyVisible": true,
+				"propertyType": "D",
+				"propertyRange": "Edm.Int32",
+				"ordinal": 5,
+				"aggregate": "[]",
+				"formatOptions": "",
+				"allowEdit": false,
+				"height":"2rem",
+				"style":"Input"
+			}	
+			]
+		},
+	"form": {
+		"target": "SoftwareType",
+		"formStyle":"entity360",
+		"targetVisible": true,
+		"targetIcon": "sap-icon://expand-group",
+		"targetEntity": "SoftwareType",
+		"allowEdit" : true,
+		"properties": [		
+			{  
+				"property": "ID","propertyVisible": false,
+				"propertyType": "D",
+				"propertyRange": "Edm.String",
+				"ordinal": 0,
+				"aggregate": "[]",
+				"formatOptions": null,
+				"allowEdit": true,
+				"height":"2rem",
+				"style":"Input"
+			}
+			,{ 
+				"property": "comment",
+				"propertyVisible": true,
+				"propertyType": "D",
+				"propertyRange": "Edm.String",
+				"ordinal": 1,
+				"aggregate": "[]",
+				"formatOptions": null,
+				"allowEdit": true,
+				"height":"2rem",
+				"style":"TextArea width='100%' rows='3'"
+			}
+			,{ 
+				"property": "relations","propertyVisible": false,
+				"propertyType": "D",
+				"propertyRange": "Edm.String",
+				"ordinal": 2,
+				"aggregate": "[]",
+				"formatOptions": null,
+				"allowEdit": true,
+				"height":"2rem",
+				"style":"Input"
+			}
+			,{ 
+				"property": "relationships","propertyVisible": false,
+				"propertyType": "D",
+				"propertyRange": "Edm.String",
+				"ordinal": 3,
+				"aggregate": "[]",
+				"formatOptions": null,
+				"allowEdit": true,
+				"height":"2rem",
+				"style":"Input"
+			}
+			,{ 
+				"property": "seeExternal",
+				"propertyVisible": true,
+				"propertyType": "D",
+				"propertyRange": "Edm.anyURI",
+				"ordinal": 4,
+				"aggregate": "[]",
+				"formatOptions": null,
+				"allowEdit": true,
+				"height":"2rem",
+				"style":"Input"
+			}
+			,{ 
+				"property": "software_types_ID",
+				"propertyVisible": true,
+				"propertyType": "D",
+				"propertyRange": "Edm.Int32",
+				"ordinal": 5,
+				"aggregate": "[]",
+				"formatOptions": null,
+				"allowEdit": true,
+				"height":"2rem",
+				"style":"Input"
+			}
+			]
+		}
+	}
+
+}

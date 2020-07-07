@@ -1,0 +1,95 @@
+<mvc:View controllerName="com.inova8.lens.controller.EntitySetTable" xmlns="sap.m" xmlns:mvc="sap.ui.core.mvc"
+	xmlns:layout="sap.ui.layout" xmlns:rdf="com.inova8.lens.control" xmlns:core="sap.ui.core" xmlns:table="sap.ui.table" xmlns:cd="http://schemas.sap.com/sapui5/extension/sap.ui.core.CustomData/1">
+	<Page showHeader="false" id="page" navButtonPress="onNavBack" showNavButton="true" title="{i18n>FileFormats.ViewTitle}" cd:parameters="{'appName':'FileFormats', 'entityType':'FileFormat','entitySet':'FileFormat'}">
+		<content>
+			<table:Table id="table"
+					cd:parameters="{ 
+					
+								$select:'subjectId,label,comment,fileFormat_Version,file_formats_ID,registry_Note,registry_puid,seeExternal'}"			
+				enableColumnFreeze="true" enableCellFilter="true" enableCustomFilter="false" showColumnVisibilityMenu="true" enableColumnReordering="true" enableBusyIndicator="true"
+				selectionMode="Single" width="auto" visibleRowCountMode="Auto" rowSelectionChange=".onRowSelectionChange">
+				<table:toolbar>
+					<Toolbar>
+						<ToolbarSpacer/>
+						<HBox id="sourceTitle" alignItems="Center">
+							<rdf:TextResource id="selectedResource" path="" entitySet=""/>
+						</HBox>
+						<Title id="pathTitle" text="{entitySetView>/navigationText}"/>
+						<HBox id="versionsTitle" alignItems="Center">
+							<Title text="(" />
+							<ComboBox id="versionSelection" items="{ path: 'entitySetView>/versions' }" selectionChange="onVersionChange">
+								<core:Item key="{entitySetView>navigation}" text="{entitySetView>text}"/>
+							</ComboBox>
+							<Title text=")" />
+						</HBox>
+						<Title id="tableHeader" text="{entitySetView>/entitySetTableTitle}"/>
+						<ToolbarSpacer/>
+						<Button id="replace" icon="sap-icon://repost"  press="onReplacePress" 	visible="{= ${entitySetView>/rowSelected} &amp;&amp; ${entitySetView>/navigationSet}}" tooltip="{= ${i18n>crud.replace.tooltip1} + ' ' + 'FileFormat' +' '+ ${i18n>crud.replace.tooltip2}}">
+						</Button>
+						<Button id="remove" icon="sap-icon://negative"  press="onRemovePress" 	visible="{= ${entitySetView>/rowSelected} &amp;&amp; ${entitySetView>/navigationSet}}" tooltip="{= ${i18n>crud.remove.tooltip1} + ' ' + 'FileFormat' +' '+ ${i18n>crud.remove.tooltip2}}">
+						</Button>
+						<Button id="delete" icon="sap-icon://delete"  press="onDeletePress" 	visible="{= ${entitySetView>/rowSelected} &amp;&amp; !${entitySetView>/navigationSet}}" tooltip="{= ${i18n>crud.delete.tooltip1} + ' ' + 'FileFormat' +' '+ ${i18n>crud.delete.tooltip2}}">
+						</Button>
+						<Button id="add" icon="sap-icon://positive"   press="onAddPress" visible="{entitySetView>/navigationSet}" 	tooltip="{= ${i18n>crud.add.tooltip} + ' ' + 'FileFormat'}"/>
+						<Button id="create" icon="sap-icon://create-form"   press="onCreatePress" 	tooltip="{= ${i18n>crud.create.tooltip} + ' ' + 'FileFormat'}"/>
+						<Button
+							icon="sap-icon://sort"
+							tooltip="{i18n>search.clearAllSorts}"
+							press="clearAllSorts"/>
+						<Button
+							icon="sap-icon://clear-filter"
+							tooltip="{i18n>search.clearAllFilters}"
+							press="clearAllFilters"/>
+						<SearchField id="searchField" tooltip="{i18n>search.searchTooltip}" search="onSearch" width="auto" placeholder="{i18n>FileFormats.searchThis}"></SearchField>
+					</Toolbar>
+				</table:toolbar>
+
+				<table:columns>
+					<table:Column  width="300px" autoResizable="true">
+						<Label text="{i18n>FileFormats.this}"/>
+						<table:template>
+							<rdf:TextResource path="dataModel>" entitySet="FileFormat"/>
+						</table:template>
+					</table:Column>
+								
+					<table:Column id="fileFormat_Version"  width="100px" autoResizable="true" sortProperty="fileFormat_Version" filterProperty="fileFormat_Version" showFilterMenuEntry="true" showSortMenuEntry="true"  defaultFilterOperator="Contains" filterType="sap.ui.model.type.String">
+						<Label text="{i18n>FileFormats.fileFormat_Version}"/>
+						<table:template>
+							<Text text="{path:'dataModel>fileFormat_Version',type:'sap.ui.model.type.String' }"  tooltip="{i18n>FileFormats.fileFormat_Version.tooltip}"/>
+						</table:template>
+				 	</table:Column>									
+<!-- 					<table:Column id="file_formats_ID"  minWidth="150" autoResizable="true" sortProperty="file_formats_ID" filterProperty="file_formats_ID" showFilterMenuEntry="true" showSortMenuEntry="true"  defaultFilterOperator="EQ" filterType="sap.ui.model.type.Integer"> -->
+<!-- 						<Label text="{i18n>FileFormats.file_formats_ID}"/> -->
+<!-- 						<table:template> -->
+<!-- 							<Text text="{path:'dataModel>file_formats_ID',type:'sap.ui.model.type.Integer' }" tooltip="{i18n>FileFormats.file_formats_ID.tooltip}"/> -->
+<!-- 						</table:template> -->
+<!-- 				 	</table:Column>									 -->
+<!-- 					<table:Column id="registry_Note"  minWidth="150" autoResizable="true" sortProperty="registry_Note" filterProperty="registry_Note" showFilterMenuEntry="true" showSortMenuEntry="true"  defaultFilterOperator="Contains" filterType="sap.ui.model.type.String"> -->
+<!-- 						<Label text="{i18n>FileFormats.registry_Note}"/> -->
+<!-- 						<table:template> -->
+<!-- 							<TextArea value="{path:'dataModel>registry_Note',type:'sap.ui.model.type.String' }"  tooltip="{i18n>FileFormats.registry_Note.tooltip}"/> -->
+<!-- 						</table:template> -->
+<!-- 				 	</table:Column>									 -->
+					<table:Column id="registry_puid"  width="100px" autoResizable="true" sortProperty="registry_puid" filterProperty="registry_puid" showFilterMenuEntry="true" showSortMenuEntry="true"  defaultFilterOperator="Contains" filterType="sap.ui.model.type.String">
+						<Label text="{i18n>FileFormats.registry_puid}"/>
+						<table:template>
+							<Text  text="{path:'dataModel>subjectId',type:'sap.ui.model.type.String' }"  tooltip="{i18n>FileFormats.registry_puid.tooltip}"/>
+						</table:template>
+				 	</table:Column>									
+<!-- 					<table:Column id="seeExternal"  minWidth="150" autoResizable="true" sortProperty="seeExternal" filterProperty="seeExternal" showFilterMenuEntry="true" showSortMenuEntry="true"  > -->
+<!-- 						<Label text="{i18n>FileFormats.seeExternal}"/> -->
+<!-- 						<table:template> -->
+<!-- 							<Link text="{dataModel>seeExternal}" href="{dataModel>seeExternal}" tooltip="{i18n>FileFormats.seeExternal.tooltip}" validateUrl="true"/> -->
+<!-- 						</table:template> -->
+<!-- 				 	</table:Column>									 -->
+					<table:Column id="comment" width="1000px" autoResizable="true" sortProperty="comment" filterProperty="comment" showFilterMenuEntry="true" showSortMenuEntry="true"  defaultFilterOperator="Contains" filterType="sap.ui.model.type.String">
+						<Label text="{i18n>FileFormats.comment}"/>
+						<table:template>
+							<Text width="100%"  maxLines="2" text="{path:'dataModel>comment',type:'sap.ui.model.type.String' }"  tooltip="{i18n>FileFormats.comment.tooltip}"/>
+						</table:template>
+				 	</table:Column>	
+				</table:columns>
+			</table:Table>
+		</content>
+	</Page>
+</mvc:View>

@@ -1,0 +1,263 @@
+<mvc:View controllerName="com.inova8.lens.controller.Entity360"
+	xmlns="sap.m" xmlns:mvc="sap.ui.core.mvc" xmlns:l="sap.ui.layout"
+	xmlns:f="sap.ui.layout.form" xmlns:table="sap.ui.table"
+	xmlns:rdf="com.inova8.lens.control"
+	xmlns:html="http://www.w3.org/1999/xhtml" xmlns:core="sap.ui.core"
+	xmlns:cd="http://schemas.sap.com/sapui5/extension/sap.ui.core.CustomData/1">
+	<Page showHeader="true" id="page" navButtonPress="onNavBack"
+		showNavButton="false" title="{i18n>FileFormat.Title}"
+		busy="{entityView>/busy}" busyIndicatorDelay="{entityView>/delay}"
+		cd:parameters="{'appName':'FileFormat', 'entityType':'FileFormat','entitySet':'FileFormat'}">
+		<customHeader>
+			<Toolbar>
+				<ToolbarSpacer />
+				<HBox id="sourceTitle" alignItems="Center">
+					<rdf:TextResource id="selectedResource" path=""
+						entitySet="" />
+				</HBox>
+				<Title id="pathTitle" text="{entityView>/navigationText}" />
+				<HBox id="versionsTitle" alignItems="Center">
+					<Title text="(" width="4px" />
+					<ComboBox id="versionSelection"
+						items="{ path: 'entityView>/versions' }"
+						selectionChange="onVersionChange">
+						<core:Item key="{entityView>navigation}"
+							text="{entityView>text}" />
+					</ComboBox>
+					<Title text=")" width="5px" />
+				</HBox>
+				<Title id="entityTypeTitle" text="{i18n>FileFormat.this}" />
+				<Title text="(" width="4px" />
+				<rdf:TextResource path="dataModel>"
+					entitySet="FileFormat" />
+				<Title text=")" width="5px" />
+				<ToolbarSpacer />
+				<ToggleButton id="edit" icon="sap-icon://edit"
+					activeIcon="sap-icon://cancel" press="onEditPress"
+					tooltip="{i18n>crud.edit.tooltip}">
+					<layoutData>
+						<OverflowToolbarLayoutData
+							priority="NeverOverflow" />
+					</layoutData>
+				</ToggleButton>
+				<ToggleButton id="toggleRows"
+					icon="sap-icon://table-row" activeIcon="sap-icon://table-view"
+					press="onHideRowsPressed" visible="false"
+					tooltip="{i18n>entity360.toggleRows}">
+					<layoutData>
+						<OverflowToolbarLayoutData
+							priority="NeverOverflow" />
+					</layoutData>
+				</ToggleButton>
+				<ToggleButton id="toggleColumns"
+					icon="sap-icon://table-column" activeIcon="sap-icon://table-view"
+					tooltip="{i18n>entity360.toggleColumns}"
+					press="onHideColumnsPressed" visible="false">
+					<layoutData>
+						<OverflowToolbarLayoutData
+							priority="NeverOverflow" />
+					</layoutData>
+				</ToggleButton>
+
+			</Toolbar>
+		</customHeader>
+		<f:SimpleForm id="form360" backgroundDesign="Solid"
+			cd:parameters="{ 
+					    $expand:{ fileFormat_ByteOrder:{$select:'subjectId,label'}	
+					  			,  about_Relationship:{ $count:true,$select:'subjectId,label'}	
+					  			,  registry_Document:{ $count:true,$select:'subjectId,label'}	
+					  			,  resultOf_Activity:{ $count:true,$select:'subjectId,label'}	
+					  			,  resultOf_Process:{ $count:true,$select:'subjectId,label'}						  			
+					  			,  fileFormat_Classification:{ $count:true,$select:'subjectId,label'}	
+					  			,  fileFormat_ExternalSignature:{ $count:true,$select:'subjectId,label'}	
+					  			,  registry_Alias:{ $count:true,$select:'subjectId,label'}	
+					  			,  fileFormat_ContainerSignature:{ $count:true,$select:'subjectId,label'}	
+					  			,  fileFormat_FileFormatFamily:{ $count:true,$select:'subjectId,label'}	
+					  			,  fileFormat_FormatIdentifier:{ $count:true,$select:'subjectId,label'}	
+					  			,  fileFormat_InternalSignature:{ $count:true,$select:'subjectId,label'}	
+								},					
+						$select:'subjectId,label,comment,fileFormat_Version,registry_Note,registry_puidIndex,seeExternal'}">
+			<f:content>
+				<core:Title text="Summary" emphasized="true" />
+				<Label text="{i18n>FileFormat.registry_puid}"
+					tooltip="{i18n>FileFormat.registry_puid.tooltip}" required="true" />
+				<Input
+					value="{path:'dataModel>subjectId',type:'sap.ui.model.type.String' }"
+					tooltip="{i18n>FileFormat.registry_puid.tooltip}" editable="false" />
+				<Label text="{i18n>FileFormat.comment}"
+					tooltip="{i18n>FileFormat.comment.tooltip}" required="false" />
+				<TextArea width='100%' rows='4'
+					value="{path:'dataModel>comment',type:'sap.ui.model.type.String' }"
+					tooltip="{i18n>FileFormat.comment.tooltip}"
+					editable="{entityView>/editMode}" />
+
+				<Label text="{i18n>FileFormat.fileFormat_Version}"
+					tooltip="{i18n>FileFormat.fileFormat_Version.tooltip}"
+					required="false" />
+				<Input
+					value="{path:'dataModel>fileFormat_Version',type:'sap.ui.model.type.String' }"
+					tooltip="{i18n>FileFormat.fileFormat_Version.tooltip}"
+					editable="{entityView>/editMode}" />
+				<Label text="{i18n>FileFormat.registry_Note}"
+					tooltip="{i18n>FileFormat.registry_Note.tooltip}" required="false" />
+				<TextArea width='100%' rows='4'
+					value="{path:'dataModel>registry_Note',type:'sap.ui.model.type.String' }"
+					tooltip="{i18n>FileFormat.registry_Note.tooltip}"
+					editable="{entityView>/editMode}" />
+				<Label text="{i18n>FileFormat.seeExternal}"
+					tooltip="{i18n>FileFormat.seeExternal.tooltip}" required="false" />
+				<VBox class="flexBoxBorder">
+					<Input
+						value="{path:'dataModel>seeExternal',type:'sap.ui.model.type.String' }"
+						tooltip="{i18n>FileFormat.seeExternal.tooltip}"
+						visible="{entityView>/editMode}" editable="{entityView>/editMode}" />
+					<Link text="{dataModel>seeExternal}"
+						href="{dataModel>seeExternal}"
+						tooltip="{i18n>FileFormat.seeExternal.tooltip}" validateUrl="true"
+						visible="{entityView>/viewMode}" />
+				</VBox>
+
+				<core:Title text="Classification" />
+				<rdf:NavigationPropertyCollection
+					path="dataModel>fileFormat_Classification/$count"
+					navigationProperty="FileFormat/fileFormat_Classification"
+					label="{i18n>FileFormat.fileFormat_Classification}"
+					tooltip="{i18n>FileFormat.fileFormat_Classification.tooltip}"
+					required="false" />
+				<rdf:MultiResource
+					path="dataModel>fileFormat_Classification"
+					entitySet="Classification"
+					tooltip="{i18n>FileFormat.fileFormat_Classification.tooltip}"
+					height="2rem" />
+				<rdf:NavigationPropertyCollection
+					path="dataModel>fileFormat_FileFormatFamily/$count"
+					navigationProperty="FileFormat/fileFormat_FileFormatFamily"
+					label="{i18n>FileFormat.fileFormat_FileFormatFamily}"
+					tooltip="{i18n>FileFormat.fileFormat_FileFormatFamily.tooltip}"
+					required="false" />
+				<rdf:MultiResource
+					path="dataModel>fileFormat_FileFormatFamily"
+					entitySet="FileFormatFamily"
+					tooltip="{i18n>FileFormat.fileFormat_FileFormatFamily.tooltip}"
+					height="2rem" />
+				<rdf:NavigationPropertyCollection
+					path="dataModel>fileFormat_FormatIdentifier/$count"
+					navigationProperty="FileFormat/fileFormat_FormatIdentifier"
+					label="{i18n>FileFormat.fileFormat_FormatIdentifier}"
+					tooltip="{i18n>FileFormat.fileFormat_FormatIdentifier.tooltip}"
+					required="false" />
+				<rdf:MultiResource
+					path="dataModel>fileFormat_FormatIdentifier"
+					entitySet="FormatIdentifier"
+					tooltip="{i18n>FileFormat.fileFormat_FormatIdentifier.tooltip}"
+					height="2rem" />
+
+				<rdf:NavigationPropertyCollection
+					path="dataModel>registry_Alias/$count"
+					navigationProperty="FileFormat/registry_Alias"
+					label="{i18n>FileFormat.registry_Alias}"
+					tooltip="{i18n>FileFormat.registry_Alias.tooltip}" required="false" />
+				<rdf:MultiResource path="dataModel>registry_Alias"
+					entitySet="Alias"
+					tooltip="{i18n>FileFormat.registry_Alias.tooltip}" height="2rem" />
+				<Label text="{i18n>FileFormat.fileFormat_ByteOrder}"
+					tooltip="{i18n>FileFormat.fileFormat_ByteOrder.tooltip}"
+					required="false" />
+				<HBox class="flexBoxBorder">
+					<Toolbar style="Clear">
+						<rdf:TextResource
+							path="dataModel>fileFormat_ByteOrder" entitySet="ByteOrder"
+							tooltip="{i18n>FileFormat.fileFormat_ByteOrder.tooltip}" />
+						<Button icon="sap-icon://negative" press="onRemovePress"
+							type="Transparent" visible="{entityView>/editMode}"
+							tooltip="{= ${i18n>crud.remove.tooltip1} + ' ' + 'ByteOrder' +' '+ ${i18n>crud.remove.tooltip2}}" />
+						<Button icon="sap-icon://positive" press="onAddPress"
+							type="Transparent" visible="{entityView>/editMode}"
+							tooltip="{= ${i18n>crud.add.tooltip} + ' ' + 'ByteOrder'}" />
+					</Toolbar>
+				</HBox>
+				<rdf:NavigationPropertyCollection
+					path="dataModel>fileFormat_ContainerSignature/$count"
+					navigationProperty="FileFormat/fileFormat_ContainerSignature"
+					label="{i18n>FileFormat.fileFormat_ContainerSignature}"
+					tooltip="{i18n>FileFormat.fileFormat_ContainerSignature.tooltip}"
+					required="false" />
+				<rdf:MultiResource
+					path="dataModel>fileFormat_ContainerSignature"
+					entitySet="ContainerSignature"
+					tooltip="{i18n>FileFormat.fileFormat_ContainerSignature.tooltip}"
+					height="2rem" />
+				<core:Title text="Internal Signature" />
+
+
+				<rdf:NavigationPropertyCollection
+					path="dataModel>fileFormat_InternalSignature/$count"
+					navigationProperty="FileFormat/fileFormat_InternalSignature"
+					label="{i18n>FileFormat.fileFormat_InternalSignature}"
+					tooltip="{i18n>FileFormat.fileFormat_InternalSignature.tooltip}"
+					required="false" />
+				<rdf:MultiResource
+					path="dataModel>fileFormat_InternalSignature"
+					entitySet="InternalSignature"
+					tooltip="{i18n>FileFormat.fileFormat_InternalSignature.tooltip}"
+					height="2rem" />
+
+				<core:Title text="External Signature" />
+				<rdf:NavigationPropertyCollection
+					path="dataModel>fileFormat_ExternalSignature/$count"
+					navigationProperty="FileFormat/fileFormat_ExternalSignature"
+					label="{i18n>FileFormat.fileFormat_ExternalSignature}"
+					tooltip="{i18n>FileFormat.fileFormat_ExternalSignature.tooltip}"
+					required="false" />
+				<rdf:MultiResource
+					path="dataModel>fileFormat_ExternalSignature"
+					entitySet="ExternalSignature"
+					tooltip="{i18n>FileFormat.fileFormat_ExternalSignature.tooltip}"
+					height="2rem" />
+
+
+				<core:Title text="Relationships" />
+				<rdf:NavigationPropertyCollection
+					path="dataModel>about_Relationship/$count"
+					navigationProperty="FileFormat/about_Relationship"
+					label="{i18n>FileFormat.about_Relationship}"
+					tooltip="{i18n>FileFormat.about_Relationship.tooltip}"
+					required="false" />
+				<rdf:ListResource
+					path="dataModel>about_Relationship" entitySet="Relationship"
+					tooltip="{i18n>FileFormat.about_Relationship.tooltip}"
+					height="4rem" />
+				<rdf:NavigationPropertyCollection
+					path="dataModel>registry_Document/$count"
+					navigationProperty="FileFormat/registry_Document"
+					label="{i18n>FileFormat.registry_Document}"
+					tooltip="{i18n>FileFormat.registry_Document.tooltip}"
+					required="false" />
+				<rdf:ListResource
+					path="dataModel>registry_Document" entitySet="Document"
+					tooltip="{i18n>FileFormat.registry_Document.tooltip}" height="4rem" />
+
+				<core:Title text="" />
+				<rdf:NavigationPropertyCollection
+					path="dataModel>resultOf_Activity/$count"
+					navigationProperty="FileFormat/resultOf_Activity"
+					label="{i18n>FileFormat.resultOf_Activity}"
+					tooltip="{i18n>FileFormat.resultOf_Activity.tooltip}"
+					required="false" />
+				<rdf:ListResource
+					path="dataModel>resultOf_Activity" entitySet="Activity"
+					tooltip="{i18n>FileFormat.resultOf_Activity.tooltip}" height="4rem" />
+				<rdf:NavigationPropertyCollection
+					path="dataModel>resultOf_Process/$count"
+					navigationProperty="FileFormat/resultOf_Process"
+					label="{i18n>FileFormat.resultOf_Process}"
+					tooltip="{i18n>FileFormat.resultOf_Process.tooltip}"
+					required="false" />
+				<rdf:ListResource path="dataModel>resultOf_Process"
+					entitySet="Process"
+					tooltip="{i18n>FileFormat.resultOf_Process.tooltip}" height="4rem" />
+
+			</f:content>
+		</f:SimpleForm>
+	</Page>
+</mvc:View>

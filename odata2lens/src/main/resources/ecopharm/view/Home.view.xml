@@ -1,0 +1,14 @@
+<mvc:View xmlns:core="sap.ui.core" xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m" xmlns:l="sap.ui.layout" xmlns:base="sap.ui.base"
+	controllerName="northwind.controller.Home" xmlns:html="http://www.w3.org/1999/xhtml" xmlns:tool="com.inova8.lens.control">
+	<App >
+		<pages >
+			<Page title="{i18n>home.ViewTitle}" navButtonPress="onNavBack" showNavButton="false">
+				<content>
+					<FormattedText htmlText="A demonstration using sample data from that supplied"/>
+					<Image src="./apartment/ecopharm/images/ecopharm.jpg" height="70%"></Image>
+					<FormattedText htmlText="Note that this 'Home Page' is usually reserved for a dashboard summary of the information"/>
+				</content>
+			</Page>
+		</pages>
+	</App>
+</mvc:View>

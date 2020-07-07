@@ -310,3 +310,8 @@ crud.confirmDelete= Confirm Deletion
 crud.deleting=Deleting URI:{0}, with label:{1}
 crud.deleted=Deleted {0}
 crud.cancel=Cancel
+crud.prefix=Prefix
+crud.reifiedLocalname=Localname
+crud.reifiedLocalname.placeholder=qName (prefix:localname)
+
+

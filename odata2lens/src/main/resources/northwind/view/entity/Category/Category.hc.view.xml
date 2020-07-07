@@ -1,0 +1,95 @@
+<mvc:View controllerName="com.inova8.lens.controller.Entity360" xmlns="sap.m" xmlns:mvc="sap.ui.core.mvc" xmlns:l="sap.ui.layout"
+	xmlns:f="sap.ui.layout.form" xmlns:table="sap.ui.table" xmlns:rdf="com.inova8.lens.control" xmlns:html="http://www.w3.org/1999/xhtml"
+	xmlns:core="sap.ui.core"  xmlns:cd="http://schemas.sap.com/sapui5/extension/sap.ui.core.CustomData/1">
+	<Page showHeader="true" id="page" navButtonPress="onNavBack" showNavButton="false" title="{i18n>Category.Title}" busy="{entityView>/busy}"
+		busyIndicatorDelay="{entityView>/delay}" cd:parameters="{'appName':'Category', 'entityType':'Category','entitySet':'Category'}" >
+		<customHeader>
+			<Toolbar>
+				<ToolbarSpacer/>
+<!-- 				<HBox id="sourceTitle" alignItems="Center"> -->
+<!-- 						<rdf:TextResource id="selectedResource" path="" entitySet=""/> -->
+<!-- 				</HBox>	 -->
+<!-- 				<Title id="pathTitle" text="{entityView>/navigationText}"/> -->
+<!-- 				<HBox id="versionsTitle" alignItems="Center"> -->
+<!-- 					<Title text="(" width="4px"/> -->
+<!-- 					<ComboBox id="versionSelection" items="{ path: 'entityView>/versions' }" selectionChange="onVersionChange"> -->
+<!-- 						<core:Item key="{entityView>navigation}" text="{entityView>text}"/> -->
+<!-- 					</ComboBox> -->
+<!-- 					<Title text=")" width="5px"/> -->
+<!-- 				</HBox> -->
+<!-- 				<Title id="entityTypeTitle" text="{i18n>$entity.target.$This}"/> -->
+<!-- 				<Title text="(" width="4px"/> -->
+<!-- 				<rdf:TextResource path="dataModel>" entitySet="$entitySet.name"/> -->
+<!-- 				<Title text=")" width="5px"/> -->
+				<rdf:GraphCrumb id="titleCrumb" style="title" crumb="{entityView>/context}"/> 
+				<ToolbarSpacer/>
+				<ToggleButton id="edit" icon="sap-icon://edit"  activeIcon="sap-icon://cancel"  press="onEditPress" 	tooltip="{i18n>crud.edit.tooltip}">
+					<layoutData>
+						<OverflowToolbarLayoutData priority="NeverOverflow"/>
+					</layoutData>
+				</ToggleButton>
+				<ToggleButton id="toggleRows" icon="sap-icon://table-row" activeIcon="sap-icon://table-view" press="onHideRowsPressed" visible="true"	tooltip="{i18n>entity360.toggleRows}">
+					<layoutData>
+						<OverflowToolbarLayoutData priority="NeverOverflow"/>
+					</layoutData>
+				</ToggleButton>
+				<ToggleButton id="toggleColumns" icon="sap-icon://table-column" activeIcon="sap-icon://table-view" tooltip="{i18n>entity360.toggleColumns}" press="onHideColumnsPressed"  visible="false"	>
+					<layoutData>
+						<OverflowToolbarLayoutData priority="NeverOverflow"/>
+					</layoutData>
+				</ToggleButton>
+				
+			</Toolbar>
+		</customHeader>
+		<Table id="form360" inset="false" fixedLayout="true" class="multicolumnform" updateFinished="hideColumns"
+							cd:parameters="{ 
+							    $expand:{ isCategoryOf:{ $count:true,$select:'subjectId,label'}	
+										},					
+								$select:'subjectId,label,categoryName,comment,description,picture'}">
+			<columns>
+				<Column hAlign="Right" width="300px">
+					<Title text="{i18n>Lens.field}"/>
+				</Column>
+				<Column visible="true">
+					<Title text="{i18n>Lens.common}"/>
+				</Column>
+			</columns>
+			<items>
+				<ColumnListItem >
+					<cells>		
+						<Label text="{i18n>Category.categoryName}" tooltip="{i18n>Category.categoryName.tooltip}" required="false"/> 
+						<Input value="{path:'dataModel>categoryName',type:'sap.ui.model.type.String' }" tooltip="{i18n>Category.categoryName.tooltip}" editable="{entityView>/editMode}"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>		
+						<Label text="{i18n>Category.comment}" tooltip="{i18n>Category.comment.tooltip}" required="false"/> 
+						<TextArea width='100%' rows='3' value="{path:'dataModel>comment',type:'sap.ui.model.type.String' }" tooltip="{i18n>Category.comment.tooltip}" editable="{entityView>/editMode}"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>		
+						<Label text="{i18n>Category.description}" tooltip="{i18n>Category.description.tooltip}" required="false"/> 
+						<TextArea width='100%' rows='3' value="{path:'dataModel>description',type:'sap.ui.model.type.String' }" tooltip="{i18n>Category.description.tooltip}" editable="{entityView>/editMode}"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>		
+						<Label text="{i18n>Category.picture}" tooltip="{i18n>Category.picture.tooltip}" required="false"/> 
+						<Input value="{path:'dataModel>picture',type:'sap.ui.model.type.String' }" tooltip="{i18n>Category.picture.tooltip}" editable="{entityView>/editMode}"/>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem >
+					<cells>		
+						<rdf:NavigationPropertyCollection
+								path="dataModel>isCategoryOf/$count"
+								navigationProperty="Category/isCategoryOf"
+								label="{i18n>Category.isCategoryOf}" 
+								tooltip="{i18n>Category.isCategoryOf.tooltip}" required="false"/>
+						<rdf:MultiResource path="dataModel>isCategoryOf" entitySet="Product" tooltip="{i18n>Category.isCategoryOf.tooltip}" height="2rem"/>
+					</cells>
+				</ColumnListItem>
+			</items>
+		</Table>
+	</Page>
+</mvc:View>
