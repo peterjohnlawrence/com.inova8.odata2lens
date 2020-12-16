@@ -1,0 +1,74 @@
+sequence, entity, entityIcon, image, target, targetIcon, type, targetEntity, targetVisible, property, propertyType, propertyRange, ordinal, propertyVisible, aggregate, formatOptions
+#set ($sequence = 0)
+#foreach($entityType in $entityTypes)
+	#set ($sequence = $sequence + 1)
+	#set ($numSoFar = 0)
+	#foreach($property in $entityType.entity.properties)
+	#if( $property.complex )
+		#if ( $property.complexRange.isProperty)
+		$sequence, $entityType.entitySet.name, "sap-icon://group-2", "./images/icons/unknown.svg", $entityType.entitySet.target, "sap-icon://group-2", Grid, $entityType.entitySet.name ,true ,$property.name, S, $property.range,$numSoFar,$property.isNotFK, [] , $property.formatOptions
+		#else
+		$sequence, $entityType.entitySet.name, "sap-icon://group-2", "./images/icons/unknown.svg", $entityType.entitySet.target, "sap-icon://group-2", Grid, $entityType.entitySet.name ,true ,$property.name, S, $property.range,$numSoFar,false, [] ,""
+		#end
+	#else
+		$sequence, $entityType.entitySet.name, "sap-icon://group-2", "./images/icons/unknown.svg", $entityType.entitySet.target, "sap-icon://group-2", Grid, $entityType.entitySet.name ,true ,$property.name, D, $property.range,$numSoFar,$property.isNotFK, [] , $property.formatOptions	
+	#end
+	#set ($numSoFar = $numSoFar + 1  )
+	#end				
+	#foreach($navigationProperty in $entityType.entity.navigationProperties)
+		$sequence, $entityType.entitySet.name, "sap-icon://group-2", "./images/icons/unknown.svg", $entityType.entitySet.target ,"sap-icon://group-2",  Grid,$entityType.entitySet.name ,true, $navigationProperty.name, O, $navigationProperty.range, $numSoFar,false, [] ,""
+		#set ($numSoFar = $numSoFar + 1  )
+	#end	
+	#foreach($entityNavigationSet in $entityType.entity.navigationSet)
+		$sequence, $entityType.entitySet.name, "sap-icon://group-2","./images/icons/unknown.svg", $entityType.entitySet.target ,"sap-icon://group-2", Grid,  $entityType.entitySet.name ,true, $entityNavigationSet.name, C, $entityNavigationSet.range,$numSoFar,false, [Count],""
+		#set ($numSoFar = $numSoFar + 1  )
+	#end	
+	
+	#set ($sequence = $sequence + 1)
+	#set ($numSoFar = 0)
+	#foreach($property in $entityType.entity.properties)
+	#if( $property.complex )
+		$sequence, $entityType.entitySet.name, "sap-icon://group-2","./images/icons/unknown.svg", $entityType.entity.target , "sap-icon://group-2",  Form, $entityType.entitySet.name ,true, $property.name, S, $property.range,$numSoFar,$property.isNotFK, [] ,"" 
+	#else	
+		$sequence, $entityType.entitySet.name, "sap-icon://group-2","./images/icons/unknown.svg", $entityType.entity.target , "sap-icon://group-2",  Form, $entityType.entitySet.name ,true, $property.name, D, $property.range,$numSoFar,$property.isNotFK, [] ,"" 
+	#end
+	#set ($numSoFar = $numSoFar + 1  )
+	#end				
+	#foreach($navigationProperty in $entityType.entity.navigationProperties)
+$sequence, $entityType.entitySet.name, "sap-icon://group-2","./images/icons/unknown.svg", $entityType.entity.target , "sap-icon://group-2", Form,  $entityType.entitySet.name ,	$navigationProperty.rangeType.entitySet.visible  ,$navigationProperty.name, O, $navigationProperty.range,$numSoFar,true, [] ,""
+		#set ($numSoFar = $numSoFar + 1  )
+	#end	
+	#foreach($entityNavigationSet in $entityType.entity.navigationSet)
+$sequence, $entityType.entitySet.name, "sap-icon://group-2","./images/icons/unknown.svg",$entityType.entity.target ,"sap-icon://group-2", Form,  $entityType.entitySet.name ,$entityNavigationSet.rangeType.entitySet.visible ,$entityNavigationSet.name, C, $entityNavigationSet.range,$numSoFar,true, [List],""
+		#set ($numSoFar = $numSoFar + 1  )
+	#end	
+
+#*	
+	#foreach($navigationSet in $entityType.entity.navigationSet)
+	#set ($sequence = $sequence + 1)
+	#set ( $thisEntityType = $entityTypes.get($navigationSet.targetEntityType))
+	#set ($numSoFar = 0)
+	#foreach($property in $thisEntityType.entity.properties)
+		#if( $property.complex )
+		#if ( $property.complexRange.isProperty)
+			$sequence, $entityType.entitySet.name, "sap-icon://group-2","./images/icons/unknown.svg", $entityType.entity.target$navigationSet.name , "sap-icon://group-2", Grid,  $navigationSet.targetEntityType ,true,$property.name, S, $property.range,$numSoFar,$property.isNotFK, [],$property.formatOptions 
+		#else
+			$sequence, $entityType.entitySet.name, "sap-icon://group-2","./images/icons/unknown.svg", $entityType.entity.target$navigationSet.name , "sap-icon://group-2", Grid,  $navigationSet.targetEntityType ,true,$property.name, S, $property.range,$numSoFar,false, [],""  
+		#end
+	#else
+		$sequence, $entityType.entitySet.name, "sap-icon://group-2","./images/icons/unknown.svg", $entityType.entity.target$navigationSet.name , "sap-icon://group-2", Grid,  $navigationSet.targetEntityType ,true,$property.name, D, $property.range,$numSoFar,$property.isNotFK, [], $property.formatOptions	 
+	#end
+	#set ($numSoFar = $numSoFar + 1  )
+	#end				
+	#foreach($navigationProperty in $thisEntityType.entity.navigationProperties)
+$sequence, $entityType.entitySet.name, "sap-icon://group-2","./images/icons/unknown.svg",  $entityType.entity.target$navigationSet.name , "sap-icon://group-2",Grid, $navigationSet.targetEntityType ,true, $navigationProperty.name, O,$navigationProperty.range, $numSoFar,false, [] ,""
+		#set ($numSoFar = $numSoFar + 1  )
+	#end	
+	#foreach($entityNavigationSet in $thisEntityType.entity.navigationSet)
+$sequence, $entityType.entitySet.name, "sap-icon://group-2","./images/icons/unknown.svg", $entityType.entity.target$navigationSet.name ,  "sap-icon://group-2", Grid,$navigationSet.targetEntityType ,true, $entityNavigationSet.name, C, $entityNavigationSet.range,$numSoFar,false, [Count] ,""
+		#set ($numSoFar = $numSoFar + 1  )
+	#end	
+	
+	#end	
+*#
+#end

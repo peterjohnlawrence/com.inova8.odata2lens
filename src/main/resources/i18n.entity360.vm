@@ -1,0 +1,35 @@
+
+#~~~ $entity.target View ~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+$entity.target#[[.Title]]# = Details
+$entity.target#[[.this]]# = $entity.label
+#foreach($property in $entity.properties)
+	#if($property.complex )
+		#set($complexType = $property.complexRange)
+$entity.target#[[.]]#$complexType.name = $property.label	
+$entity.target#[[.]]#$complexType.name#[[.]]#tooltip = $property.tooltip	
+		#foreach($complexProperty in $complexType.allProperties)
+$entity.target#[[.]]#$complexType.name#[[/]]#$complexProperty.name = $complexProperty.label	
+$entity.target#[[.]]#$complexType.name#[[/]]#$complexProperty.name#[[.]]#tooltip = $complexProperty.tooltip	
+		#end
+		#foreach($complexNavigationProperty in $complexType.allNavigationProperties)
+$entity.target#[[.]]#$complexType.name#[[/]]#$complexNavigationProperty.name = $complexNavigationProperty.label	
+$entity.target#[[.]]#$complexType.name#[[/]]#$complexNavigationProperty.name#[[.]]#tooltip = $complexNavigationProperty.tooltip	
+		#end	
+		#foreach($complexNavigationSet in $complexType.allNavigationSets)
+$entity.target#[[.]]#$complexType.name#[[/]]#$complexNavigationSet.name = $complexNavigationSet.label	
+$entity.target#[[.]]#$complexType.name#[[/]]#$complexNavigationSet.name#[[.]]#tooltip = $complexNavigationSet.tooltip	
+		#end	
+	#else
+$entity.target#[[.]]#$property.name = $property.label
+$entity.target#[[.]]#$property.name#[[.]]#tooltip = $property.tooltip
+	#end
+#end
+#foreach($navigationProperty in $entity.navigationProperties)
+$entity.target#[[.]]#$navigationProperty.name = $navigationProperty.label 
+$entity.target#[[.]]#$navigationProperty.name#[[.]]#tooltip = $navigationProperty.tooltip   
+#end
+#foreach($navigationSet in $entity.navigationSet)
+$entity.target#[[.]]#$navigationSet.name = $navigationSet.label  
+$entity.target#[[.]]#$navigationSet.name#[[.]]#tooltip = $navigationSet.tooltip  
+#end

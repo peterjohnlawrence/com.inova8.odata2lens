@@ -1,0 +1,313 @@
+{
+	"routing": {
+		"config": {
+			"routerClass": "sap.m.routing.Router",
+			"viewType": "XML",
+			"viewPath": "com.inova8.lens.view",
+			"controlId": "mainContents",
+			"controlAggregation": "pages",
+			"bypassed": {
+				"target": [
+					"_notFound"
+				]
+			},
+			"async": true
+		},
+		"routes": [{
+			"pattern": "",
+			"name": "_home",
+			"target": [
+				"_home"
+			]
+		}, {
+			"pattern": "_notFound",
+			"name": "_notFound",
+			"target": [
+				"_notFound"
+			]
+		}, {
+			"pattern": "_DataSets/:objectId:/:navigation::?queryOptions:",
+			"name": "_DataSets",
+			"target": [
+				"_DataSets"
+			]
+		}, {
+			"pattern": "_DataSetisDatasetOf/:objectId:/:navigation::?queryOptions:",
+			"name": "_DataSetisDatasetOf",
+			"target": [
+				"_DataSetisDatasetOf"
+			]
+		}, {
+			"pattern": "_ConfigurationEditor",
+			"name": "_configurationEditor",
+			"target": [
+				"_configurationEditor"
+			]
+		},{
+			"pattern": "_ChangeHistory",
+			"name": "_changeHistory",
+			"target": [
+				"_changeHistory"
+			]
+		}, {
+			"pattern": "_PrivacyPolicies",
+			"name": "_privacyPolicies",
+			"target": [
+				"_privacyPolicies"
+			]
+		}, {
+			"pattern": "_CopyrightNotices",
+			"name": "_copyrightNotices",
+			"target": [
+				"_copyrightNotices"
+			]
+		},
+		{
+			"pattern": "_TermsOfUse",
+			"name": "_termsofUse",
+			"target": [
+				"_termsofUse"
+			]
+		},
+		{
+			"pattern": "_CorporatePolicies",
+			"name": "_corporatePolicies",
+			"target": [
+				"_corporatePolicies"
+			]
+		},
+		{
+			"pattern": "_Settings",
+			"name": "_settings",
+			"target": [
+				"_settings"
+			]
+		}, {
+			"pattern": "_Legal",
+			"name": "_legal",
+			"target": [
+				"_legal"
+			]
+		},{
+			"pattern": "_Links",
+			"name": "_links",
+			"target": [
+				"_links"
+			]
+		},{
+			"pattern": "_login",
+			"name": "_login",
+			"target": [
+				"_login"
+			]
+		}, {
+			"pattern": "_Search:?queryOptions:",
+			"name": "_Search",
+			"target": [
+				"_Search"
+			]
+		}, {
+			"pattern": "_LinkedSearch/{objectId}/:?queryOptions:",
+			"name": "_LinkedSearch",
+			"target": [
+				"_LinkedSearch"
+			]
+		}, {
+			"pattern": "_AdvancedSearch:?queryOptions:",
+			"name": "_AdvancedSearch",
+			"target": [
+				"_AdvancedSearch"
+			]
+		}, {
+			"pattern": "_PathAdvancedSearch/{startObjectId}/{endObjectId}/:?queryOptions:",
+			"name": "_PathAdvancedSearch",
+			"target": [
+				"_PathAdvancedSearch"
+			]
+		}, {
+			"pattern": "_PathLinkedSearch/{startObjectId}/{endObjectId}/:?queryOptions:",
+			"name": "_PathLinkedSearch",
+			"target": [
+				"_PathLinkedSearch"
+			]
+		}, {
+			"pattern": "_Graph/{target}/{objectId}/:navigation::?queryOptions:",
+			"name": "_graphview",
+			"target": [
+				"_graph"
+			]
+		}, {
+			"pattern": "_GraphPath/{target}/{startObjectId}/{endObjectId}:?queryOptions:",
+			"name": "_graphpath",
+			"target": [
+				"_graph"
+			]
+		},{
+			"pattern": "rdfs_Resources/:objectId:/:navigation::?queryOptions:",
+			"name": "rdfs_Resources",
+			"target": [
+				"rdfs_Resources"
+			]
+		}	
+		,{
+			"pattern": "rdfs_Resource/:objectId:/:navigation::?queryOptions:",
+			"name": "rdfs_Resource",
+			"target": [
+				"rdfs_Resource"
+			]
+		}
+#foreach($entityType in $entityTypes)		
+		,{
+			"pattern": "$entityType.entitySet.target/:objectId:/:navigation::?queryOptions:",
+			"name": "$entityType.entitySet.target",
+			"target": [
+				"$entityType.entitySet.target"
+			]
+		}	
+		,{
+			"pattern": "$entityType.entity.target/:objectId:/:navigation::?queryOptions:",
+			"name": "$entityType.entity.target",
+			"target": [
+				"$entityType.entity.target"
+			]
+		}
+#end			
+	],
+		"targets": {
+			"_home": {
+				"viewName": "view/Home",
+				"viewPath": "$schema",
+				"viewId": "home",
+				"viewLevel": 1
+			},
+			"_DataSets": {
+				"viewName": "DataSets",
+				"viewId": "DataSets",
+				"viewLevel": 1
+			},
+			"_DataSetisDatasetOf": {
+				"viewName": "DataSetisDatasetOf",
+				"viewId": "DataSetisDatasetOf",
+				"viewLevel": 1
+			},
+			"_settings": {
+				"viewName": "Settings",
+				"viewId": "settings",
+				"viewLevel": 1
+			},
+			"_configurationEditor": {
+				"viewName": "ConfigurationEditor",
+				"viewId": "configurationEditor",
+				"viewLevel": 1
+			},
+			"_changeHistory": {
+				"viewName": "Change/ChangeHistory",
+				"viewId": "changeHistory",
+				"viewLevel": 1
+			},
+			"_privacyPolicies": {
+				"viewName": "PrivacyPolicies",
+				"viewId": "privacyPolicies",
+				"viewLevel": 1
+			},
+			"_copyrightNotices": {
+				"viewName": "CopyrightNotices",
+				"viewId": "copyrightNotices",
+				"viewLevel": 1
+			},
+			"_termsofUse": {
+				"viewName": "TermsOfUse",
+				"viewId": "termsofUse",
+				"viewLevel": 1
+			},
+
+			"_corporatePolicies": {
+				"viewName": "CorporatePolicies",
+				"viewId": "corporatePolicies",
+				"viewLevel": 1
+			},
+			"_legal": {
+				"viewName": "Legal",
+				"viewId": "legal",
+				"viewLevel": 1
+			},
+			"_links": {
+				"viewName": "Links",
+				"viewId": "links",
+				"viewLevel": 1
+			},
+			"_login": {
+				"viewName": "Login",
+				"viewId": "login",
+				"viewLevel": 1
+			},
+			"_Search": {
+				"viewName": "Search/ProxySearch",
+				"viewId": "Search",
+				"viewLevel": 1
+			},
+			"_LinkedSearch": {
+				"viewName": "Search/ProxyLinkedSearch",
+				"viewId": "LinkedSearch",
+				"viewLevel": 1
+			},
+			"_AdvancedSearch": {
+				"viewName": "Search/ProxyAdvancedSearch",
+				"viewId": "AdvancedSearch",
+				"viewLevel": 1
+			},			
+			"_PathAdvancedSearch": {
+				"viewName": "Search/ProxyAdvancedSearch",
+				"viewId": "AdvancedSearch",
+				"viewLevel": 1
+			},
+			"_PathLinkedSearch": {
+				"viewName": "Search/ProxyLinkedSearch",
+				"viewId": "LinkedSearch",
+				"viewLevel": 1
+			},
+			"_graph": {
+				"viewName": "Graph/Graph",
+				"viewId": "graph",
+				"viewLevel": 1
+			},
+			"_default": {
+				"viewName": "Default",
+				"viewId": "Default",
+				"viewLevel": 1
+			},
+			"_objectNotFound": {
+				"viewName": "ObjectNotFound",
+				"viewId": "objectNotFound"
+			},
+			"_notFound": {
+				"viewName": "NotFound",
+				"viewId": "notFound"
+			},
+			"rdfs_Resources": {
+				"viewName": "rdfs_Resources",
+				"viewId": "rdfs_Resources",
+				"viewLevel": 1
+			}
+			,"rdfs_Resource": {
+				"viewName": "rdfs_Resource",
+				"viewId": "rdfs_Resource",
+				"viewLevel": 1
+			}
+#foreach($entityType in $entityTypes)		
+			,"$entityType.entitySet.target": {
+				"viewName": "view/entitySet/$entityType.entitySet.target/$entityType.entitySet.target",
+				"viewPath":"$schema",
+				"viewId": "$entityType.entitySet.target",
+				"viewLevel": 1
+			}
+			,"$entityType.entity.target": {
+				"viewName": "view/entity/$entityType.entity.target/$entityType.entity.target",
+				"viewPath":"$schema",
+				"viewId": "$entityType.entity.target",
+				"viewLevel": 1
+			}					
+#end
+		}
+	}
+}

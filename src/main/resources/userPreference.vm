@@ -1,0 +1,56 @@
+	"$schema": {
+		"context":{
+			"start":"",
+			"end":"",
+			"aggregate":"Instant"
+		},
+		"searches": [
+			{
+				"search": "$schema"
+			}
+		],
+		"pathSettings": {
+			"edgePropertyInclude": [
+			],
+			"edgePropertyExclude": [
+				"rdf~type"
+			],
+			"inverseEdgePropertyInclude": [
+			],
+			"inverseEdgePropertyExclude": [
+				"rdf~type"
+			],
+			"bidirectional": true,
+			"maxPath": 20
+		},
+		"queries": {
+		},
+		"groupRules": {
+			"rules": [
+				{
+					"ruleName": "byType",
+					"type": "node",
+					"active": false,
+					"expanded": [
+					],
+					"rules": [
+						{
+							"type": "property",
+							"@odata_type": "rdfs_Resource",
+							"property": "rdf_type"
+						}
+					]
+				}
+			]
+		},
+		"filterRules": [
+			{
+				"name": "rdfs_Resource/rdf_type",
+				"active": false,
+				"@odata_type": "rdfs_Resource",
+				"property": "rdf_type",
+				"condition": " = rdfs_Resource"
+			}
+		],
+				"knowledgeWalks": {}
+	}

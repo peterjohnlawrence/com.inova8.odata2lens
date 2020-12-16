@@ -1,0 +1,251 @@
+#set ($d = '$')
+#set ($ViewTitle	= "ViewTitle") 
+#set ($This	= "this") 
+#set ($SearchThis	= "searchThis") 
+#set ($SearchTooltip	= "SearchTooltip") 
+#macro( entitySetTablemaptypes $propertyObject $target )
+#set( $range =  $propertyObject.range)
+#set( $formatOptions =  $propertyObject.formatOptions)
+#if ($supportScripting)
+ #set( $IRI =  $propertyObject.IRI)
+ #set( $provenance =  " editable=""false"" provenancePress=""onProvenanceRequest(#[[$]]#event,'$IRI')"" valueHelpOnly=""true""  showValueHelp=""true"" valueHelpRequest=""onProvenanceRequest(#[[$]]#event,'$IRI')""")
+ #set( $inputtag = "rdf:InputProvenance value=" )
+#else
+ #set( $provenance = "")
+ #set( $inputtag = "Text text=" )
+#end
+  #if ($range == "Edm.Binary")							<$inputtag "{dataModel>$propertyObject.property}" tooltip="{i18n>$target.$propertyObject.property#[[.]]#tooltip}" $provenance/>
+  #elseif ($range == "Edm.Boolean")							<$inputtag "{path:'dataModel>$propertyObject.property',type:'sap.ui.model.type.Boolean'}" tooltip="{i18n>$target.$propertyObject.property#[[.]]#tooltip}" $provenance/>
+  #elseif ($range == "Edm.Byte")							<$inputtag "{dataModel>$propertyObject.property}" tooltip="{i18n>$target.$propertyObject.property#[[.]]#tooltip}" $provenance/>
+  #elseif ($range == "Edm.SByte")							<$inputtag "{dataModel>$propertyObject.property}" tooltip="{i18n>$target.$propertyObject.property#[[.]]#tooltip}" $provenance/>
+  #elseif ($range == "Edm.Date")							<$inputtag "{dataModel>$propertyObject.property}" tooltip="{i18n>$target.$propertyObject.property#[[.]]#tooltip}" $provenance/>
+  #elseif ($range == "Edm.DateTimeOffset")							<$inputtag "{dataModel>$propertyObject.property}" tooltip="{i18n>$target.$propertyObject.property#[[.]]#tooltip}" $provenance/>
+  #elseif ($range == "Edm.TimeOfDay")							<$inputtag "{dataModel>$propertyObject.property}" tooltip="{i18n>$target.$propertyObject.property#[[.]]#tooltip}" $provenance/>
+  #elseif ($range == "Edm.Duration")							<$inputtag "{dataModel>$propertyObject.property}" tooltip="{i18n>$target.$propertyObject.property#[[.]]#tooltip}" $provenance/>
+  #elseif ($range == "Edm.Decimal")							<$inputtag "{dataModel>$propertyObject.property}" tooltip="{i18n>$target.$propertyObject.property#[[.]]#tooltip}" $provenance/>
+  #elseif ($range == "Edm.Single")							<$inputtag "{dataModel>$propertyObject.property}" tooltip="{i18n>$target.$propertyObject.property#[[.]]#tooltip}" $provenance/>
+  #elseif ($range == "Edm.Double")							<$inputtag "{path:'dataModel>$propertyObject.property',type:'sap.ui.model.type.Float'$!formatOptions }" tooltip="{i18n>$target.$propertyObject.property#[[.]]#tooltip}" $provenance/>
+  #elseif ($range == "Edm.Guid")							<$inputtag "{path:'dataModel>$propertyObject.property',type:'sap.ui.model.type.String'}" tooltip="{i18n>$target.$propertyObject.property#[[.]]#tooltip}" $provenance/>
+  #elseif ($range == "Edm.Int16")							<$inputtag "{path:'dataModel>$propertyObject.property',type:'sap.ui.model.type.Integer'$!formatOptions }" tooltip="{i18n>$target.$propertyObject.property#[[.]]#tooltip}" $provenance/>
+  #elseif ($range == "Edm.Int32")							<$inputtag "{path:'dataModel>$propertyObject.property',type:'sap.ui.model.type.Integer'$!formatOptions }" tooltip="{i18n>$target.$propertyObject.property#[[.]]#tooltip}" $provenance/>
+  #elseif ($range == "Edm.Int64")							<$inputtag "{path:'dataModel>$propertyObject.property',type:'sap.ui.model.type.Integer'$!formatOptions}" tooltip="{i18n>$target.$propertyObject.property#[[.]]#tooltip}" $provenance/>
+  #elseif ($range == "Edm.String")							<$inputtag "{path:'dataModel>$propertyObject.property',type:'sap.ui.model.type.String' }"  tooltip="{i18n>$target.$propertyObject.property#[[.]]#tooltip}" $provenance/>
+  #elseif ($range == "Edm.anyURI")							<Link text="{dataModel>$propertyObject.property}" href="{dataModel>$propertyObject.property}" tooltip="{i18n>$target.$propertyObject.property#[[.]]#tooltip}" validateUrl="true"/>
+  #elseif ($range == "Edm.Stream")							<Text text="{dataModel>$propertyObject.property}" tooltip="{i18n>$target.$propertyObject.property#[[.]]#tooltip}"/>
+  #elseif ($range == "Edm.Geography")							<Text text="{dataModel>$propertyObject.property}" tooltip="{i18n>$target.$propertyObject.property#[[.]]#tooltip}"/>
+  #elseif ($range == "Edm.GeographyPoint")							<Text text="{dataModel>$propertyObject.property}" tooltip="{i18n>$target.$propertyObject.property#[[.]]#tooltip}"/>
+  #elseif ($range == "Edm.GeographyLineString")							<Text text="{dataModel>$propertyObject.property}" tooltip="{i18n>$target.$propertyObject.property#[[.]]#tooltip}"/>
+  #elseif ($range == "Edm.GeographyPolygon")							<Text text="{dataModel>$propertyObject.property}" tooltip="{i18n>$target.$propertyObject.property#[[.]]#tooltip}"/>
+  #elseif ($range == "Edm.GeographyMultiPoint")							<Text text="{dataModel>$propertyObject.property}" tooltip="{i18n>$target.$propertyObject.property#[[.]]#tooltip}"/>
+  #elseif ($range == "Edm.GeographyMultiLineString")							<Text text="{dataModel>$propertyObject.property}" tooltip="{i18n>$target.$propertyObject.property#[[.]]#tooltip}"/>
+  #elseif ($range == "Edm.GeographyMultiPolygon")							<Text text="{dataModel>$propertyObject.property}" tooltip="{i18n>$target.$propertyObject.property#[[.]]#tooltip}"/>
+  #elseif ($range == "Edm.GeographyCollection")							<Text text="{dataModel>$propertyObject.property}" tooltip="{i18n>$target.$propertyObject.property#[[.]]#tooltip}"/>
+  #elseif ($range == "Edm.Geometry")							<Text text="{dataModel>$propertyObject.property}" tooltip="{i18n>$target.$propertyObject.property#[[.]]#tooltip}"/>
+  #elseif ($range == "Edm.GeometryPoint")							<Text text="{dataModel>$propertyObject.property}" tooltip="{i18n>$target.$propertyObject.property#[[.]]#tooltip}"/>
+  #elseif ($range == "Edm.GeometryLineString")							<Text text="{dataModel>$propertyObject.property}" tooltip="{i18n>$target.$propertyObject.property#[[.]]#tooltip}"/>
+  #elseif ($range == "Edm.GeometryPolygon")							<Text text="{dataModel>$propertyObject.property}" tooltip="{i18n>$target.$propertyObject.property#[[.]]#tooltip}"/>
+  #elseif ($range == "Edm.GeometryMultiPoint")							<Text text="{dataModel>$propertyObject.property}" tooltip="{i18n>$target.$propertyObject.property#[[.]]#tooltip}"/>
+  #elseif ($range == "Edm.GeometryMultiLineString")							<Text text="{dataModel>$propertyObject.property}" tooltip="{i18n>$target.$propertyObject.property#[[.]]#tooltip}"/>
+  #elseif ($range == "Edm.GeometryMultiPolygon")							<Text text="{dataModel>$propertyObject.property}" tooltip="{i18n>$target.$propertyObject.property#[[.]]#tooltip}"/>
+  #elseif ($range == "Edm.GeometryCollection")							<Text text="{dataModel>$propertyObject.property}" tooltip="{i18n>$target.$propertyObject.property#[[.]]#tooltip}"/>
+  #else
+  #end 
+#end
+#macro( entitySetfiltertypes $propertyObject  )
+#set( $range =  $propertyObject.range)
+#set( $formatOptions =  $propertyObject.formatOptions)
+  #if ($range == "Edm.Binary")	defaultFilterOperator="EQ" filterType="sap.ui.model.type.String">
+  #elseif ($range == "Edm.Boolean")	defaultFilterOperator="EQ" filterType="sap.ui.model.type.Boolean">
+  #elseif ($range == "Edm.Byte") defaultFilterOperator="EQ" filterType="sap.ui.model.type.Integer">
+  #elseif ($range == "Edm.SByte") defaultFilterOperator="EQ" filterType="sap.ui.model.type.Integer">
+  #elseif ($range == "Edm.Date") defaultFilterOperator="EQ" filterType="sap.ui.model.type.String">
+  #elseif ($range == "Edm.DateTimeOffset") defaultFilterOperator="EQ" filterType="sap.ui.model.type.String">
+  #elseif ($range == "Edm.TimeOfDay") defaultFilterOperator="EQ" filterType="sap.ui.model.type.Time">
+  #elseif ($range == "Edm.Duration") defaultFilterOperator="EQ" filterType="sap.ui.model.type.String">
+  #elseif ($range == "Edm.Decimal") defaultFilterOperator="EQ" filterType="sap.ui.model.type.Float">
+  #elseif ($range == "Edm.Single") defaultFilterOperator="EQ" filterType="sap.ui.model.type.Float">
+  #elseif ($range == "Edm.Double") defaultFilterOperator="EQ" filterType="sap.ui.model.type.Float">
+  #elseif ($range == "Edm.Guid") defaultFilterOperator="EQ" filterType="sap.ui.model.type.String">
+  #elseif ($range == "Edm.Int16") defaultFilterOperator="EQ" filterType="sap.ui.model.type.Integer">
+  #elseif ($range == "Edm.Int32") defaultFilterOperator="EQ" filterType="sap.ui.model.type.Integer">
+  #elseif ($range == "Edm.Int64") defaultFilterOperator="EQ" filterType="sap.ui.model.type.Integer">
+  #elseif ($range == "Edm.String") defaultFilterOperator="Contains" filterType="sap.ui.model.type.String">
+  #elseif ($range == "Edm.Stream") defaultFilterOperator="EQ" filterType="sap.ui.model.type.String">
+  #elseif ($range == "Edm.Geography") defaultFilterOperator="Contains" filterType="sap.ui.model.type.String">
+  #elseif ($range == "Edm.GeographyPoint") defaultFilterOperator="Contains" filterType="sap.ui.model.type.String">
+  #elseif ($range == "Edm.GeographyLineString") defaultFilterOperator="Contains" filterType="sap.ui.model.type.String">
+  #elseif ($range == "Edm.GeographyPolygon") defaultFilterOperator="Contains" filterType="sap.ui.model.type.String">
+  #elseif ($range == "Edm.GeographyMultiPoint") defaultFilterOperator="Contains" filterType="sap.ui.model.type.String">
+  #elseif ($range == "Edm.GeographyMultiLineString") defaultFilterOperator="Contains" filterType="sap.ui.model.type.String">
+  #elseif ($range == "Edm.GeographyMultiPolygon") defaultFilterOperator="Contains" filterType="sap.ui.model.type.String">
+  #elseif ($range == "Edm.GeographyCollection")	defaultFilterOperator="Contains" filterType="sap.ui.model.type.String">
+  #elseif ($range == "Edm.Geometry") defaultFilterOperator="Contains" filterType="sap.ui.model.type.String">
+  #elseif ($range == "Edm.GeometryPoint") defaultFilterOperator="Contains" filterType="sap.ui.model.type.String">
+  #elseif ($range == "Edm.GeometryLineString")	defaultFilterOperator="Contains" filterType="sap.ui.model.type.String">
+  #elseif ($range == "Edm.GeometryPolygon")	defaultFilterOperator="Contains" filterType="sap.ui.model.type.String">
+  #elseif ($range == "Edm.GeometryMultiPoint")	defaultFilterOperator="Contains" filterType="sap.ui.model.type.String">
+  #elseif ($range == "Edm.GeometryMultiLineString")	defaultFilterOperator="Contains" filterType="sap.ui.model.type.String">
+  #elseif ($range == "Edm.GeometryMultiPolygon")	defaultFilterOperator="Contains" filterType="sap.ui.model.type.String">
+  #elseif ($range == "Edm.GeometryCollection")	defaultFilterOperator="Contains" filterType="sap.ui.model.type.String">
+  #else >
+  #end 
+#end
+<mvc:View controllerName="com.inova8.lens.controller.EntitySetTable" xmlns="sap.m" xmlns:mvc="sap.ui.core.mvc"
+	xmlns:layout="sap.ui.layout" xmlns:rdf="com.inova8.lens.control" xmlns:core="sap.ui.core" xmlns:table="sap.ui.table" xmlns:cd="http://schemas.sap.com/sapui5/extension/sap.ui.core.CustomData/1">
+	<Page showHeader="false" id="page" navButtonPress="onNavBack" showNavButton="true" title="{i18n>$entitySet.target.$ViewTitle}" cd:parameters="{'appName':'$entitySet.target', 'entityType':'$entitySet.name','entitySet':'$entitySet.name','supportScripting':$supportScripting
+	#if($entitySet.getIsReified()),'reification':{'reifiedStatement':
+		{'subjectId': '$entitySet.fqn','label': '$entitySet.name'}
+		,'reifiedSubject': {'predicate':'$entitySet.reifiedSubjectPredicate', 'class':'$entitySet.reifiedSubjectClass' , 'inverse':'$entitySet.reifiedInverseSubjectPredicate' },'reifiedPredicate':#if($entitySet.hasReifiedPredicate()){'predicate':'$entitySet.reifiedPredicate', 'class':'$entitySet.reifiedPredicateClass'}#else{}#end,'reifiedObject':{'predicate':'$entitySet.reifiedObjectPredicate', 'class':'$entitySet.reifiedObjectClass', 'inverse':'$entitySet.reifiedInverseObjectPredicate' }}	
+	#end
+	}">
+		<content>
+			<table:Table id="table"
+					cd:parameters="{ 
+					#set($numOfExpand = 0)	
+					#set($selectprops = "")	
+					#foreach($property in $uiTemplate.properties)
+						#if($property.visible)
+							#set( $complexTypeName =  $property.range)
+							#if($property.propertyType == "D")
+								#set($selectprops = $selectprops + "," + $property.property)
+							#elseif($property.propertyType == "O") 
+								#if($numOfExpand == 0) 
+							    $expand:{#else 
+							  			, #end $property.property:{$select:'subjectId,label'}	
+								#set($numOfExpand = $numOfExpand + 1)
+							#elseif($property.propertyType == "C") 
+								#if($numOfExpand == 0) 
+							    $expand:{#else 
+							  			, #end #if($property.aggregate == "[]") 
+$property.property:{$select:'subjectId,label'}	
+							  			#else  
+$property.property:{ $count:true} #end
+								#set($numOfExpand = $numOfExpand + 1)	
+							#elseif ($property.propertyType == "S")
+								#set($selectprops = $selectprops + "," + $property.property)
+							#end
+							#foreach($subTypeName in $entity.subTypeNames)				
+								#set( $complexType = $complexTypes.get($complexTypeName))
+								#if(  $complexType.getPropertyTemplates($subTypeName)  )
+									#set( $complexProperties = $complexType.getPropertyTemplates($subTypeName))
+									#foreach( $complexProperty in   $complexProperties)
+										#if($complexProperty.propertyType == "D")
+										#elseif ($complexProperty.propertyType == "O")
+											#if($numOfExpand == 0) 
+							    $expand:{#else 
+							  			, #end '$complexProperty.property':{$select:'subjectId,label'}
+							  				#set($numOfExpand = $numOfExpand + 1)					
+										#elseif ($complexProperty.propertyType == "C")
+											#if($numOfExpand == 0) 
+							    $expand:{#else 
+							  			, #end '$complexProperty.property':{$select:'subjectId,label'}	
+							  				#set($numOfExpand = $numOfExpand + 1)			
+										#end	
+									#end
+								#else
+								#end
+							#end	
+						#end				
+					#end
+					#if($numOfExpand > 0)										},#end
+					
+								$select:'subjectId,label$selectprops'}"			
+				enableColumnFreeze="true" enableCellFilter="true" enableCustomFilter="false" showColumnVisibilityMenu="true" enableColumnReordering="true" enableBusyIndicator="true"
+				selectionMode="Single" width="auto" visibleRowCountMode="Auto" rowSelectionChange=".onRowSelectionChange">
+				<table:toolbar>
+					<Toolbar>
+
+						<ToolbarSpacer/>
+						<rdf:GraphCrumb id="titleCrumb" style="title" crumb="{entitySetView>/context}"/> 
+						<Button
+							icon="sap-icon://clear-filter"
+							tooltip="{i18n>search.clearAllFilters}"
+							press="clearAllFilters"/>
+						<ToolbarSpacer/>
+						<Button id="replace" icon="sap-icon://repost"  press="onReplacePress" 	visible="{= ${d}{entitySetView>/rowSelected} &amp;&amp; ${d}{entitySetView>/navigationSet}}" tooltip="{= ${d}{i18n>crud.replace.tooltip1} + ' ' + '$entitySet.name' +' '+ ${d}{i18n>crud.replace.tooltip2}}">
+						</Button>
+						<Button id="remove" icon="sap-icon://negative"  press="onRemovePress" 	visible="{= ${d}{entitySetView>/rowSelected} &amp;&amp; ${d}{entitySetView>/navigationSet}}" tooltip="{= ${d}{i18n>crud.remove.tooltip1} + ' ' + '$entitySet.name' +' '+ ${d}{i18n>crud.remove.tooltip2}}">
+						</Button>
+						<Button id="delete" icon="sap-icon://delete"  press="onDeletePress" 	visible="{= ${d}{entitySetView>/rowSelected} &amp;&amp; !${d}{entitySetView>/navigationSet}}" tooltip="{= ${d}{i18n>crud.delete.tooltip1} + ' ' + '$entitySet.name' +' '+ ${d}{i18n>crud.delete.tooltip2}}">
+						</Button>
+						<Button id="add" icon="sap-icon://positive"   press="onAddPress" visible="{entitySetView>/navigationSet}" 	tooltip="{= ${d}{i18n>crud.add.tooltip} + ' ' + '$entitySet.name'}"/>
+						#if( $entitySet.getIsReified())
+						<Button id="createreified" icon="sap-icon://create-form"   press="onCreateReifiedPress" 	tooltip="{= ${d}{i18n>crud.createreified.tooltip} + ' ' + '$entitySet.name'}"/>
+						#else
+						<Button id="create" icon="sap-icon://create-form"   press="onCreatePress" 	tooltip="{= ${d}{i18n>crud.create.tooltip} + ' ' + '$entitySet.name'}"/>
+						#end
+						<Button
+							icon="sap-icon://sort"
+							tooltip="{i18n>search.clearAllSorts}"
+							press="clearAllSorts"/>
+
+						<SearchField id="searchField" tooltip="{i18n>search.searchTooltip}" search="onSearch" width="auto" placeholder="{i18n>$entitySet.target.$SearchThis}"></SearchField>
+					</Toolbar>
+				</table:toolbar>
+
+				<table:columns>
+					<table:Column  width="200px" autoResizable="true">
+						<Label text="{i18n>$entitySet.target.$This}"/>
+						<table:template>
+							<rdf:TextResource path="dataModel>" entitySet="$entitySet.name"/>
+						</table:template>
+					</table:Column>
+							#foreach($property in $uiTemplate.properties)					
+								#if($property.visible)
+								#if ($property.propertyType == "C")	
+					<table:Column id="$property.property" minWidth="150" autoResizable="true" showFilterMenuEntry="false" showSortMenuEntry="false">
+								#elseif ($property.propertyType == "S")	
+					<table:Column id="$property.property" minWidth="150" autoResizable="true" showFilterMenuEntry="false" showSortMenuEntry="false">
+								#elseif ($property.propertyType == "O")	
+					<table:Column id="$property.property"  minWidth="150" autoResizable="true" sortProperty="$property.property/label" filterProperty="$property.property/label" showFilterMenuEntry="true" showSortMenuEntry="true" #entitySetfiltertypes($property )								
+								#else
+					<table:Column id="$property.property"  minWidth="150" autoResizable="true" sortProperty="$property.property" filterProperty="$property.property" showFilterMenuEntry="true" showSortMenuEntry="true" #entitySetfiltertypes($property )								
+								#end
+						<Label text="{i18n>$entitySet.target.$property.property}"/>
+						<table:template>
+									#if($property.propertyType == "D")
+							#entitySetTablemaptypes($property $entitySet.target  ) 
+									#elseif ($property.propertyType == "O")
+							<rdf:TextResource path="dataModel>$property.property" entitySet="$property.range"/>
+									#elseif ($property.propertyType == "C")
+										#if($property.aggregate == "[]") 
+							<rdf:MultiResource path="dataModel>$property.property" entitySet="$property.range" tooltip="{i18n>$entity.target.$property.property#[[.]]#tooltip}" height="$property.height" />
+										#else
+							<rdf:NavigationPropertyCollection path="dataModel>$property.property/$count" navigationProperty="$entitySet.name/$property.property"/>
+										#end
+									#elseif ($property.propertyType == "S")		
+							<VBox>					
+										#foreach($subTypeName in $entity.subTypeNames)
+											#set( $complexTypeName =  $property.range)				
+											#set( $complexType = $complexTypes.get($complexTypeName))
+											#if(  $complexType.getPropertyTemplates($subTypeName)  )
+												#set( $complexProperties = $complexType.getPropertyTemplates($subTypeName))
+								<HBox  justifyContent="Center" alignItems="Stretch">
+												#foreach( $complexProperty in   $complexProperties)
+													#if($complexProperty.propertyType == "D")
+									#entitySetTablemaptypes( $complexProperty $entitySet.target  ) 
+													#elseif ($complexProperty.propertyType == "O")
+							<rdf:TextResource path="dataModel>$complexProperty.property" entitySet="$complexProperty.range" tooltip="{i18n>$entitySet.target.$complexProperty.property#[[.]]#tooltip}"/>		
+													#elseif ($complexProperty.propertyType == "C")
+							<rdf:ListResource path="dataModel>$complexProperty.property" entitySet="$complexProperty.range" tooltip="{i18n>$entitySet.target.$complexProperty.property#[[.]]#tooltip}"/>
+													#end	
+													#if ( $foreach.hasNext ) 
+							<Text text="  " renderWhitespace="true"/>
+													#end
+												#end
+								</HBox>
+											#else
+											<Text text=""/>
+											#end
+										#end
+							</VBox>							
+									#end
+						</table:template>
+				 	</table:Column>									
+								#end
+							#end							
+				</table:columns>
+			</table:Table>
+		</content>
+	</Page>
+</mvc:View>

@@ -1,0 +1,41 @@
+
+#~~~ $entitySet.target View ~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+$entitySet.target#[[.ViewTitle]]#=$entitySet.target
+$entitySet.target#[[.TableTitle]]#=$entitySet.label
+$entitySet.target#[[.TableTitleCount]]#=({0})
+$entitySet.target#[[.SearchTooltip]]#=Enter an $entitySet.target name or a part of it.
+$entitySet.target#[[.NoDataWithSearchText]]#=No matching $entitySet.target found
+$entitySet.target#[[.tableNoDataText]]#=No $entitySet.target are currently available
+$entitySet.target#[[.this]]# = $entitySet.label
+$entitySet.target#[[.searchThis]]# = Search $entitySet.label
+#foreach($property in $entity.properties)
+	#if($property.complex )
+		#set($complexType = $property.complexRange)
+$entitySet.target#[[.]]#$complexType.name = $property.label	
+$entitySet.target#[[.]]#$complexType.name#[[.]]#tooltip = $property.tooltip	
+		#foreach($complexProperty in $complexType.allProperties)
+$entitySet.target#[[.]]#$complexType.name#[[/]]#$complexProperty.name = $complexProperty.label	
+$entitySet.target#[[.]]#$complexType.name#[[/]]#$complexProperty.name#[[.]]#tooltip = $complexProperty.tooltip	
+		#end
+		#foreach($complexNavigationProperty in $complexType.allNavigationProperties)
+$entitySet.target#[[.]]#$complexType.name#[[/]]#$complexNavigationProperty.name = $complexNavigationProperty.label	
+$entitySet.target#[[.]]#$complexType.name#[[/]]#$complexNavigationProperty.name#[[.]]#tooltip = $complexNavigationProperty.tooltip	
+		#end	
+		#foreach($complexNavigationSet in $complexType.allNavigationSets)
+$entitySet.target#[[.]]#$complexType.name#[[/]]#$complexNavigationSet.name = $complexNavigationSet.label	
+$entitySet.target#[[.]]#$complexType.name#[[/]]#$complexNavigationSet.name#[[.]]#tooltip = $complexNavigationSet.tooltip	
+		#end	
+	#else
+$entitySet.target#[[.]]#$property.name = $property.label
+$entitySet.target#[[.]]#$property.name#[[.]]#tooltip = $property.tooltip
+	#end
+#end
+#foreach($navigationProperty in $entity.navigationProperties)
+$entitySet.target#[[.]]#$navigationProperty.name = $navigationProperty.label  
+$entitySet.target#[[.]]#$navigationProperty.name#[[.]]#tooltip = $navigationProperty.tooltip  
+#end
+#foreach($navigationSet in $entity.navigationSet)
+$entitySet.target#[[.]]#$navigationSet.name = $navigationSet.label  
+$entitySet.target#[[.]]#$navigationSet.name#[[.]]#tooltip = $navigationSet.tooltip  
+#end

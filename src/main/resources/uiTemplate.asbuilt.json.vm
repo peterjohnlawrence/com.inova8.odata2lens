@@ -1,0 +1,77 @@
+{
+#set ($sequence = 0)
+#foreach($entityType in $entityTypes)
+	#set ($uiFormTemplate = $uiTemplates.get($entityType.entity.name)) 
+	#set ($uiGridTemplate = $uiTemplates.get($entityType.entitySet.getTarget())) 
+	"$entityType.entitySet.name": {
+		"entity": "$entityType.entitySet.name",
+		"icon": "$entityType.entitySet.entityIcon",
+		"image": "$entityType.entitySet.image",
+		"entitySetVisible":$entityType.entitySet.visible,
+		"namespaces":[
+		#foreach($namespaceItem in $entityType.namespaces.entrySet())
+			{"prefix":"$namespaceItem.key", "namespace":"$namespaceItem.value" }#if($foreach.hasNext ),#end
+		#end
+		],		
+		"namePattern":"$entityType.namePattern",
+		"grid": {
+			"target": "$uiGridTemplate.target",
+			"formStyle":"$uiGridTemplate.gridStyle",
+			"targetVisible": $uiGridTemplate.targetVisible,
+			"targetIcon": "$uiGridTemplate.targetIcon",
+			"targetEntity": "$uiGridTemplate.targetEntity",
+			"allowEdit" : true,
+			"properties": [		
+			#foreach($property in $uiGridTemplate.properties)		
+				{  
+					"property": "$property.property",
+					"propertyVisible": $property.visible,
+					"propertyType": "$property.propertyType",
+					"propertyRange": "$property.range",
+					"propertyIRI": "$property.QName",
+					"inverseProperty": "$property.inverseProperty",
+					"ordinal": $property.ordinal,
+					"aggregate": "$property.aggregate",
+					"formatOptions": "$!property.formatOptions",
+					"allowEdit": false,
+					"height":"$property.height",
+					"style":"$property.style",
+					"nullable":"$property.nullable"
+				}#if($foreach.hasNext),#end	
+				
+			#end
+			]	
+		},			
+		"form": {
+			"target": "$uiFormTemplate.target",
+			"gridStyle":"$uiFormTemplate.formStyle",
+			"targetVisible": $uiFormTemplate.targetVisible,
+			"targetIcon": "$uiFormTemplate.targetIcon",
+			"targetEntity": "$uiFormTemplate.targetEntity",	
+			"allowEdit" : true,
+			"properties": [	
+			#foreach($property in $uiFormTemplate.properties)		
+				{  
+					"property": "$property.property",
+					"propertyVisible": $property.visible,
+					"propertyType": "$property.propertyType",
+					"propertyRange": "$property.range",
+					"propertyIRI": "$property.QName",
+					"inverseProperty": "$property.inverseProperty",
+					"ordinal": $property.ordinal,
+					"aggregate": "$property.aggregate",
+					"formatOptions": "$!property.formatOptions",
+					"allowEdit": false,
+					"height":"$property.height",
+					"style":"$property.style",
+					"nullable":"$property.nullable"
+				}#if($foreach.hasNext),#end	
+				
+			#end
+			]
+		}
+	}
+	#if($foreach.hasNext)	,#end
+		
+#end
+}

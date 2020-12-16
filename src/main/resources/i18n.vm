@@ -1,0 +1,330 @@
+# This is the resource bundle for lens.framework.v4
+Lens.appTitle=Nexify Lens
+Lens.appDescription=Quorum Browser
+Lens.notificationTitle=Notifications
+Lens.notificationButtonText=Show all Notifications
+Lens.userHeaderTitle=Settings
+Lens.field=Field
+Lens.common=Common Values
+Lens.navigationToggle.tooltip = Show/hide class tree navigation
+
+#~~~ common errors ~~~~~~~~~~~~~~~~~~~~~~~~~~
+tableNoDataText = No data retrieved
+
+#~~~ Home View ~~~~~~~~~~~~~~~~~~~~~~~~~~
+home.ViewTitle=Home
+
+#~~~ Settings View ~~~~~~~~~~~~~~~~~~~~~~~~~~
+settings.ViewTitle=Settings
+
+#~~~ Configuration Editor ~~~~~~~~~~~~~~~~~~~~~~~~~~
+configurationEditor.ViewTitle.ViewTitle=UI Configuration Editor
+
+#~~~ Legal View ~~~~~~~~~~~~~~~~~~~~~~~~~~
+legal.ViewTitle=Legal
+
+#~~~ Links View ~~~~~~~~~~~~~~~~~~~~~~~~~~
+links.ViewTitle=Important Links
+
+#~~~ Privacy Policies View ~~~~~~~~~~~~~~~~~~~~~~~~~~
+privacyPolicies.ViewTitle=Privacy Policies
+
+#~~~ Copyright Notices View ~~~~~~~~~~~~~~~~~~~~~~~~~~
+copyrightNotices.ViewTitle=Copyright Notices
+
+#~~~ Terms and Conditions View ~~~~~~~~~~~~~~~~~~~~~~~~~~
+termsofUse.ViewTitle=Terms and Conditons of Use
+
+#~~~ Corporate Policies View ~~~~~~~~~~~~~~~~~~~~~~~~~~
+corporatePolicies.ViewTitle=Corporate Policies
+
+#~~~ Not Found View ~~~~~~~~~~~~~~~~~~~~~~~
+notFound.Title=Not Found
+notFound.noObjectFoundText=This <ObjectName> is not available
+notFound.noObjectsAvailableText=No <ObjectNamePlural> are currently available
+notFound.Text=The requested resource was not found
+notFound.backHome=Home
+
+#~~~ Error Handling ~~~~~~~~~~~~~~~~~~~~~~~
+ErrorHandler.errorText=Sorry, a technical error occurred! Please try again later.
+
+#~~~ Login Handling ~~~~~~~~~~~~~~~~~~~~~~~
+Login.title=Login
+Login.user=Username
+Login.userPlaceholder =
+Login.pass=Password
+Login.passPlaceholder =
+Login.OK=Login
+Login.PasswordReset=Reset Password
+Login.verificationCode=Verification Code
+Login.verificationCodePlaceholder
+Login.newpass=New password
+Login.newpassPlaceholder =
+
+#~~~ GraphCrumb View ~~~~~~~~~~~~~~~~~~~~~~~~~~
+graphCrumb.tooltip=Take actions to reposition Lens to location within graph trail
+graphCrumb.contextMenu = Graph Crumb
+graphCrumb.moveToHere = Move here
+graphCrumb.pruneToHere = Prune here
+graphCrumb.clearToHere = Clear here
+graphCrumb.startBranchFromHere = Branch here
+graphCrumb.moveToHere.tooltip = Move the Lens focus to this point in the navigation trail
+graphCrumb.pruneToHere.tooltip = Prune all of the steps in the branch after this
+graphCrumb.clearToHere.tooltip = Clear all of the steps in the branch after this
+graphCrumb.startBranchFromHere.tooltip = Use this to create a new start point using
+graphCrumb.graphView = Graph View
+graphCrumb.export = Export
+graphCrumb.manage = Manage
+graphCrumb.save = Save
+graphCrumb.open = Open
+graphCrumb.delete = Delete
+graphCrumb.share = Share
+graphCrumb.clear = Clear
+graphCrumb.toggleView = Toggle Data<->Graph view
+graphCrumb.navigateBack.tooltip =Navigate back to the previous position in the graph trail 
+graphCrumb.navigateForward.tooltip =Navigate forward to the next position in the graph trail 
+graphCrumb.manage.tooltip=Take actions to manage (tidy-up, save, restore, etc) graph trails
+
+#~~~ Search View ~~~~~~~~~~~~~~~~~~~~~~~~~~
+search.searchEntitySet= Search all 
+search.searchTooltip=Enter text value or a part of it using the following syntax:\nExact match: enclose strings within "..".\nAnchoring: Use ^ to indicate the beginning or $ to indicate the endMatch any character.\nMatch any character: . can be used to represent any character.\nOne-or-more: + can be used to repeat the preceding shortest pattern once or more times.\nZero-or-more: * can be used to match the preceding shortest pattern zero-or-more times.\nZero-or-one: ? makes the preceding shortest pattern optional.\nMin-to-max: {} can be used to specify a minimum and (optionally) a maximum number of times the preceding shortest pattern can repeat.\nGrouping: () can be used to form sub-patterns.\nAlternation: | or OR acts as an OR operator.\nComplement: The shortest pattern that follows a tilde ~ is negated.\nInterval: Bounded Ranges, enclosed by square(inclusive) or curly(exclusive) brackets [...TO...] or {...TO...}.\nInterval: Unbounded ranges, enclosed by square(inclusive) or curly(exclusive) [ * TO ...]  or [ ... TO * ].\nIntersection: & or AND joins two patterns in a way that both of them have to match.\nAny string: @ matches any string in its entirety.
+search.clearAllFilters= Clear all set filters
+search.clearAllSorts= Clear all set sorts
+search.placeholder=Search everywhere
+search.ViewTitle=Search Results
+search.TableTitle=Search
+search.NoDataWithSearchText=No matching Employees found
+search.TableTitleCount=Search ({0})
+search.tableNoDataText=No search results are currently available
+search.resource = Resource
+search.type = Type
+search.property = Property
+search.value = Value containing match
+
+#~~~ AdvancedSearch View ~~~~~~~~~~~~~~~~~~~~~~~~~~
+advancedsearch.ViewTitle=Advanced Search Results
+advancedsearch.TableTitle=Advanced Search
+advancedsearch.SearchTooltip=Enter text value or a part of it using the following syntax:\nExact match: enclose strings within "..".\nAnchoring: Use ^ to indicate the beginning or $ to indicate the endMatch any character.\nMatch any character: . can be used to represent any character.\nOne-or-more: + can be used to repeat the preceding shortest pattern once or more times.\nZero-or-more: * can be used to match the preceding shortest pattern zero-or-more times.\nZero-or-one: ? makes the preceding shortest pattern optional.\nMin-to-max: {} can be used to specify a minimum and (optionally) a maximum number of times the preceding shortest pattern can repeat.\nGrouping: () can be used to form sub-patterns.\nAlternation: | acts as an OR operator.\nComplement: The shortest pattern that follows a tilde ~ is negated.\nInterval: Bounded Ranges, enclosed by square(inclusive) or curly(exclusive) brackets [...TO...] or {...TO...}.\nInterval: Unbounded ranges, enclosed by square(inclusive) or curly(exclusive) [ * TO ...]  or [ ... TO * ].\nIntersection: & joins two patterns in a way that both of them have to match.\nAny string: @ matches any string in its entirety.
+advancedsearch.NoDataWithSearchText=No matching values found
+advancedsearch.TableTitleCount=Search ({0})
+advancedsearch.tableNoDataText=No search results are currently available
+advancedsearch.nopathfound=No path found with the current settings
+advancedsearch.linkedto = that is linked to 
+advancedsearch.linkPath = Path between A & B
+advancedsearch.typeA = TypeA
+advancedsearch.entityA = Path Start
+advancedsearch.formattedValueA = Value containing match
+advancedsearch.typeB = TypeB
+advancedsearch.entityB = Path End
+advancedsearch.formattedValueB = Value containing match
+advancedsearch.subject = Node
+advancedsearch.direct = Direction
+advancedsearch.property = Edge Property
+advancedsearch.object = Node
+advancedsearch.forward =\u21D2
+advancedsearch.back =\u21D0
+advancedsearch.shortestPath = Shortest Path between Start and End
+advancedsearch.shortestPathHelp = Select one of Path Start and Path End to find shortest path
+advancedsearch.pathSettings = Configure shortest path search
+advancedsearch.settingsDialog =  Configure shortest path search
+advancedsearch.edgePropertyInclude  = Property must include
+advancedsearch.edgePropertyExclude = Property excludes
+advancedsearch.bidirectional = Bidirectional edges (includes inverses)
+advancedsearch.inverseEdgePropertyInclude = Inverse property must include
+advancedsearch.inverseEdgePropertyExclude = Inverse property excludes
+advancedsearch.maxPath = Maximum path length to be searched
+advancedsearch.requery = Requery
+advancedsearch.edgePropertyTitle = Edge Property
+
+#~~~ LinkedSearch View ~~~~~~~~~~~~~~~~~~~~~~~~~~
+linkedsearch.ViewTitle=Linked Search Results
+linkedsearch.TableTitle=Linked Search
+linkedsearch.SearchTooltip=Enter text value or a part of it using the following syntax:\nExact match: enclose strings within "..".\nAnchoring: Use ^ to indicate the beginning or $ to indicate the endMatch any character.\nMatch any character: . can be used to represent any character.\nOne-or-more: + can be used to repeat the preceding shortest pattern once or more times.\nZero-or-more: * can be used to match the preceding shortest pattern zero-or-more times.\nZero-or-one: ? makes the preceding shortest pattern optional.\nMin-to-max: {} can be used to specify a minimum and (optionally) a maximum number of times the preceding shortest pattern can repeat.\nGrouping: () can be used to form sub-patterns.\nAlternation: | acts as an OR operator.\nComplement: The shortest pattern that follows a tilde ~ is negated.\nInterval: Numeric ranges, enclosed by angle brackets <>.\nIntersection: & joins two patterns in a way that both of them have to match.\nAny string: @ matches any string in its entirety.
+linkedsearch.NoDataWithSearchText=No matching values found
+linkedsearch.TableTitleCount=Search ({0})
+linkedsearch.tableNoDataText=No search results are currently available
+linkedsearch.nopathfound=No path found with the current settings
+linkedsearch.linkedto = that which is linked to 
+linkedsearch.linkPath = Path between A & B
+linkedsearch.typeA = TypeA
+linkedsearch.entityA = Path Start
+linkedsearch.typeB = TypeB
+linkedsearch.entityB = Path End
+linkedsearch.formattedValueB = ValueB containing match
+linkedsearch.subject = Node
+linkedsearch.direct = Direction
+linkedsearch.property = Edge Property
+linkedsearch.object = Node
+linkedsearch.forward =\u2192
+linkedsearch.back =\u2190
+linkedsearch.shortestPathHelp = Select one of Path End to find shortest path
+
+#~~~ Graph View ~~~~~~~~~~~~~~~~~~~~~~~~~~
+graph.ViewTitle=Entity Graph of
+graph.ViewTitleEntitySet=EntitySet {0} Graph
+graph.noDataText=No results are currently available
+graph.backgroundContextMenu = Background Menu
+graph.showHidden = Show Hidden
+graph.selectAll = Select All
+graph.regroupAll = Regroup All
+graph.linkContextMenu = Link Menu
+graph.hideLink = Hide Link
+graph.removeLink = Remove Link
+graph.selectEnds = Select Ends
+graph.nodeContextMenu = Node Menu
+graph.expandAllNode = Expand All
+graph.expandSelectedNode = Expand Selected
+graph.hideNode = Hide Node
+graph.removeNode = Remove Node
+graph.selectLinked = Select Linked
+graph.EntityNodeDetails = Entity Node Details
+graph.GroupNodeDetails = Group Node Details
+graph.NodeGrouping = Grouping
+graph.NodeFiltering = Filtering
+graph.Filter = Toggle Filtering
+graph.filterTooltip = Toggle filtering on causes all selected filters to be applied
+graph.AddFilter = Add
+graph.DeleteFilter = Delete
+graph.Layout = Layout
+graph.LayoutAlgorithm = Layout Algorithm
+graph.GeoMap= Geomap
+graph.Appearance= Appearance
+graph.mapMode = Toggle Map Mode
+graph.mapModeTooltip = Selecting Map Mode will position nodes over map. Other layout preferences will be ignored.
+graph.History = History
+graph.groupContextMenu = Group Menu
+graph.expandGroup = Expand Group
+graph.hideGroup = Hide Group
+graph.removeGroup = Remove Group
+graph.expandedGroupContextMenu = Expanded Group Menu
+graph.regroup = Regroup Nodes
+graph.appearanceTooltip = Add rules to change appearance of nodes on graph
+graph.AddAppearance = Add
+graph.DeleteAppearance = Delete
+graph.Type = Type
+graph.radius/property = Radius Property
+graph.radius/scale = Radius Scale
+graph.color = Color
+graph.shape = Shape
+graph.ExpandPath = Expand Path
+graph.Reification = Simplify Edges
+
+#~~~ Entity360 View ~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+entity360.changesSentMessage =  User data sent to the server
+entity360.changesErrorMessage =  Error received from server
+entity360.toggleRows =  Toggle empty rows
+entity360.toggleColumns =  Toggle empty columns
+
+#~~~ EntitySet360 View ~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+#~~~ Resource View ~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Resource.this = Resource
+Resource.property=Property
+Resource.term=Value
+Resource.searchThis=Search Resource
+Resource.TableTitle=Resource
+
+#~~~ Resources View ~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Resources.this=Resource
+Resources.comment=Comment
+Resources.searchThis=Search Resources
+Resources.TableTitle=Resources
+
+#~~~ Changes View ~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+change.ViewTitle = Change History
+change.date = DateTime
+change.type = Type
+change.added = Addition
+change.deleted = Deletion
+change.subject = Subject
+change.predicate = Property
+change.object = Value
+change.reversible = Reversible
+change.date.tooltip = Date stamp of when the change occurred
+change.type.tooltip = Type of change to the database
+change.added.tooltip = An addition to the database from list
+change.deleted.tooltip = An deletion from the database
+change.subject.tooltip = The subject of the statement
+change.predicate.tooltip = The property of the statement
+change.object.tooltip = The value of the statement
+change.reversible.tooltip = Change can be reverted (yes/no)
+change.RollbackThis = Rollback this:
+change.RollbackTo = Rollback to:
+
+#~~~ crud ~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+crud.createReified= Create {0}
+crud.createreified.tooltip =Create new
+crud.relationshipSpecification= {0} Specification
+crud.relationshipIdentification= {0} Identification
+crud.of={0}
+crud.relationship={0}
+crud.with={0}
+crud.reifiedsubjectId.placeholder=Identifier if default not required
+crud.reifiedsubjectId.tooltip=Enter a localname if default not required
+crud.reifiedcreate.incomplete=Must enter both local name and label
+crud.reified.nothingFound= No data found
+crud.autogenerateIdentification=Select autogenerate ID method
+crud.autogenerate.incomplete=Enter values for all components of specification
+crud.selectReifiedSubjectTitle=Select {0}
+crud.selectReifiedPredicateTitle=Select {0}
+crud.selectReifiedObjectTitle=Select {0}
+crud.edit= Edit
+crud.edit.tooltip= Edit properties and navigation properties. To edit navigationset, navigate to their respective page.
+crud.add= Add Existing
+crud.add.tooltip= Add existing
+crud.added= Added {0}
+crud.select.title= Select {0} to add to list
+crud.replace.title= Select {0} to replace {1}
+crud.replace= Replace
+crud.replace.tooltip= Replace {0} in this list. This will not delete that which is replaced from the database.
+crud.replace.tooltip1= Replace selected
+crud.replace.tooltip2= in this list. This will not delete that which is replaced from the database.
+crud.replaced= Added {0}, replacing {1}
+crud.remove= Remove
+crud.remove.tooltip= Remove {0} from this list. This will not delete it from the database.
+crud.remove.tooltip1= Remove selected
+crud.remove.tooltip2= from this list. This will not delete it from the database.
+crud.confirmRemove= Confirm Remove
+crud.removing=Removing URI:{0}, with label:{1}
+crud.removed=Removed URI:{0}
+crud.create= Create
+crud.create.tooltip= Create new
+crud.createResource= Create {0}
+crud.create.incomplete= Both localname and label must be provided
+crud.subjectId= Primary key
+crud.subjectId.tooltip= Enter the localname without prefix
+crud.subjectId.placeholder= Enter the localname without prefix ...
+crud.label= Label
+crud.label.tooltip= Enter the label by which this will be known
+crud.label.placeholder=Enter the label by which this will be known ...
+crud.comment= Description
+crud.comment.tooltip=Enter a full description
+crud.comment.placeholder=Enter a full description ...
+crud.delete= Delete
+crud.delete.tooltip= Delete {0} from database
+crud.delete.tooltip1= Delete selected
+crud.delete.tooltip2= from database
+crud.confirmDelete= Confirm Deletion
+crud.deleting=Deleting URI:{0}, with label:{1}
+crud.deleted=Deleted {0}
+crud.cancel=Cancel
+crud.prefix=Prefix
+crud.reifiedLocalname=Localname
+crud.reifiedLocalname.placeholder=qName (prefix:localname)
+
+#~~~ provenance ~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+provenance.title=Value Provenance
+provenance.property= Property
+provenance.value= Value
+provenance.scripttype=Source Type
+provenance.object= Source
+provenance.trace=Calculation Trace
+provenance.revert=Revert
+provenance.debug=Debug
+provenance.save=Save
